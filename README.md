@@ -1,5 +1,29 @@
 # 🦞🧹 ClawSweeper
 
+> [!IMPORTANT]
+> **Hamelyn deployment.** Este repo es el fork self-hosted de
+> [openclaw/clawsweeper](https://github.com/openclaw/clawsweeper) que barre los
+> repos de **Hamelyn-SL** (empezando por `hamelyn-serverless`, rama `dev`).
+> El resto de este README y los `docs/` son del upstream y hablan de OpenClaw:
+> el motor es el mismo; lo adaptado vive en la config y los workflows.
+>
+> - **Qué mirar**: targets en [`config/target-repositories.json`](config/target-repositories.json),
+>   presupuesto en [`config/automation-limits.json`](config/automation-limits.json),
+>   cadencia en los 5 crons de [`sweep.yml`](.github/workflows/sweep.yml).
+> - **Modelo**: Codex `gpt-5.5` vía la suscripción compartida —
+>   [`scripts/chatgpt-subscription-proxy.mjs`](scripts/chatgpt-subscription-proxy.mjs)
+>   (auth-mode `subscription` en `setup-codex`; sin API key).
+> - **Identidad**: GitHub App `clawsweeper-hamelyn`; comenta como
+>   `clawsweeper-hamelyn[bot]` y responde a `@clawsweeper …`.
+> - **Estado auditable**: [Hamelyn-SL/clawsweeper-state](https://github.com/Hamelyn-SL/clawsweeper-state)
+>   (rama `state`) + digest diario en Slack (#github-noty).
+> - **Cómo usarlo desde un PR/issue**: `@clawsweeper status | review | ask …`
+>   (autofix/automerge: fase 2, opt-in). Para pararlo en un item:
+>   label `clawsweeper:human-review`.
+>
+> Lo adaptado respecto a upstream (targets privados, rama default ≠ main,
+> slugs, tokens, suscripción): commits de julio 2026 en `main`.
+
 ![ClawSweeper banner](docs/assets/readme-banner.jpg)
 
 ClawSweeper is the conservative maintenance bot for OpenClaw repositories. It
