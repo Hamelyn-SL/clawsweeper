@@ -12,21 +12,21 @@ run-name: >-
     (github.event_name == 'repository_dispatch' &&
       github.event.action == 'clawsweeper_target_sweep' &&
       github.event.client_payload.hot_intake == 'true') &&
-      format('Review hot target repo {0}', github.event.client_payload.target_repo || 'openclaw/openclaw') ||
+      format('Review hot target repo {0}', github.event.client_payload.target_repo || 'Hamelyn-SL/hamelyn-serverless') ||
     (github.event_name == 'repository_dispatch' &&
       github.event.action == 'clawsweeper_target_sweep') &&
-      format('Review target repo {0}', github.event.client_payload.target_repo || 'openclaw/openclaw') ||
+      format('Review target repo {0}', github.event.client_payload.target_repo || 'Hamelyn-SL/hamelyn-serverless') ||
     (github.event_name == 'repository_dispatch' && github.event.client_payload.dispatch_key != '') &&
-      format('Review event item {0}#{1} [{2}]', github.event.client_payload.target_repo || 'openclaw/openclaw', github.event.client_payload.item_number || '?', github.event.client_payload.dispatch_key) ||
+      format('Review event item {0}#{1} [{2}]', github.event.client_payload.target_repo || 'Hamelyn-SL/hamelyn-serverless', github.event.client_payload.item_number || '?', github.event.client_payload.dispatch_key) ||
     github.event_name == 'repository_dispatch' &&
-      format('Review event item {0}#{1}', github.event.client_payload.target_repo || 'openclaw/openclaw', github.event.client_payload.item_number || '?') ||
+      format('Review event item {0}#{1}', github.event.client_payload.target_repo || 'Hamelyn-SL/hamelyn-serverless', github.event.client_payload.item_number || '?') ||
     (github.event_name == 'workflow_dispatch' && startsWith(github.event.inputs.item_numbers, 'router-')) &&
-      format('Review event item {0}#{1} [{2}]', github.event.inputs.target_repo || 'openclaw/openclaw', github.event.inputs.item_number || '?', github.event.inputs.item_numbers) ||
+      format('Review event item {0}#{1} [{2}]', github.event.inputs.target_repo || 'Hamelyn-SL/hamelyn-serverless', github.event.inputs.item_number || '?', github.event.inputs.item_numbers) ||
     ((github.event_name == 'workflow_dispatch' &&
       github.event.inputs.apply_existing == 'true' &&
       github.event.inputs.apply_sync_comments_only == 'true') ||
       (github.event_name == 'schedule' && github.event.schedule == '6,21,36,51 * * * *')) &&
-      format('Sync Codex review comments for {0}', github.event.inputs.target_repo || 'openclaw/openclaw') ||
+      format('Sync Codex review comments for {0}', github.event.inputs.target_repo || 'Hamelyn-SL/hamelyn-serverless') ||
     (github.event_name == 'workflow_dispatch' &&
       github.event.inputs.apply_existing == 'true' &&
       github.event.inputs.apply_sync_comments_only != 'true' &&
@@ -40,7 +40,7 @@ run-name: >-
         github.event.inputs.apply_close_delay_ms != '2000' ||
         github.event.inputs.apply_checkpoint_size != '5' ||
         github.event.inputs.apply_comment_sync_min_age_days != '7')) &&
-      format('Apply custom ClawSweeper closures for {0}', github.event.inputs.target_repo || 'openclaw/openclaw') ||
+      format('Apply custom ClawSweeper closures for {0}', github.event.inputs.target_repo || 'Hamelyn-SL/hamelyn-serverless') ||
     ((github.event_name == 'workflow_dispatch' && github.event.inputs.apply_existing == 'true') ||
       (github.event_name == 'schedule' &&
         (github.event.schedule == '3 * * * *' ||
@@ -48,7 +48,7 @@ run-name: >-
           github.event.schedule == '33 * * * *' ||
           github.event.schedule == '48 * * * *' ||
           github.event.schedule == '8,23,38,53 * * * *'))) &&
-      format('Apply default ClawSweeper closures for {0}', github.event.inputs.target_repo || ((github.event.schedule == '8,23,38,53 * * * *') && 'openclaw/clawhub' || 'openclaw/openclaw')) ||
+      format('Apply default ClawSweeper closures for {0}', github.event.inputs.target_repo || ((github.event.schedule == '8,23,38,53 * * * *') && 'openclaw/clawhub' || 'Hamelyn-SL/hamelyn-serverless')) ||
     ((github.event_name == 'workflow_dispatch' && github.event.inputs.audit_dashboard == 'true') ||
       (github.event_name == 'schedule' &&
         (github.event.schedule == '7 */6 * * *' ||
@@ -71,7 +71,7 @@ on:
       target_repo:
         description: "Repository to sweep"
         required: false
-        default: "openclaw/openclaw"
+        default: "Hamelyn-SL/hamelyn-serverless"
       target_branch:
         description: "Target repository branch to review"
         required: false
@@ -169,20 +169,12 @@ on:
         required: false
         default: "false"
   schedule:
-    - cron: "*/5 * * * *"
-    # ClawHub review/apply schedules stay opt-in until the ClawSweeper app is installed there.
-    - cron: "2/5 * * * *"
-    - cron: "7 */6 * * *"
-    - cron: "12 */6 * * *"
-    - cron: "17 */6 * * *"
-    - cron: "1/5 * * * *"
-    - cron: "22 * * * *"
+    # Hamelyn cadence. The cron strings double as routing keys in the job
+    # conditionals below, so entries may be removed or restored but never
+    # rewritten. Dropped upstream ticks: per-repo 5-minute hot intake, extra
+    # hourly applies, per-repo audits, and comment-sync — the fanout ticks
+    # below already cover every configured repository at Hamelyn scale.
     - cron: "3 * * * *"
-    - cron: "18 * * * *"
-    - cron: "33 * * * *"
-    - cron: "48 * * * *"
-    - cron: "8,23,38,53 * * * *"
-    - cron: "6,21,36,51 * * * *"
     - cron: "4/15 * * * *"
     - cron: "41 * * * *"
     - cron: "37 */6 * * *"
@@ -196,11 +188,11 @@ permissions:
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
-  CLAWSWEEPER_APP_CLIENT_ID: Iv23liOECG0slfuhz093
+  CLAWSWEEPER_APP_CLIENT_ID: ${{ vars.CLAWSWEEPER_APP_CLIENT_ID }}
   CLAWSWEEPER_MODEL: internal
 
 concurrency:
-  group: ${{ (github.event_name == 'schedule' && (github.event.schedule == '4/15 * * * *' || github.event.schedule == '41 * * * *' || github.event.schedule == '37 */6 * * *')) && format('clawsweeper-target-fanout-{0}', github.event.schedule || github.run_id) || github.event_name == 'repository_dispatch' && format('clawsweeper-event-{0}-{1}', github.event.client_payload.target_repo || 'openclaw/openclaw', github.event.client_payload.item_number || github.run_id) || format('{0}-{1}', (github.event_name == 'schedule' && github.event.schedule == '13 * * * *') && 'clawsweeper-failed-review-retry' || ((github.event_name == 'workflow_dispatch' && github.event.inputs.apply_existing == 'true' && github.event.inputs.apply_sync_comments_only == 'true') || (github.event_name == 'schedule' && github.event.schedule == '6,21,36,51 * * * *')) && 'clawsweeper-comment-sync' || ((github.event_name == 'workflow_dispatch' && github.event.inputs.apply_existing == 'true') || (github.event_name == 'schedule' && (github.event.schedule == '3 * * * *' || github.event.schedule == '18 * * * *' || github.event.schedule == '33 * * * *' || github.event.schedule == '48 * * * *' || github.event.schedule == '8,23,38,53 * * * *'))) && 'clawsweeper-apply' || (github.event_name == 'workflow_dispatch' && (github.event.inputs.item_number != '' || github.event.inputs.item_numbers != '')) && format('clawsweeper-intake-exact-{0}', github.event.inputs.item_number || github.event.inputs.item_numbers) || ((github.event_name == 'workflow_dispatch' && github.event.inputs.hot_intake == 'true') || (github.event_name == 'schedule' && (github.event.schedule == '*/5 * * * *' || github.event.schedule == '2/5 * * * *'))) && format('clawsweeper-intake-v2-{0}', github.run_id) || ((github.event_name == 'workflow_dispatch' && github.event.inputs.audit_dashboard == 'true') || (github.event_name == 'schedule' && (github.event.schedule == '7 */6 * * *' || github.event.schedule == '12 */6 * * *' || github.event.schedule == '17 */6 * * *'))) && 'clawsweeper-audit' || format('clawsweeper-review-{0}', github.run_id), github.event.inputs.target_repo || github.event.client_payload.target_repo || ((github.event.schedule == '17 */6 * * *') && 'openclaw/clawsweeper' || ((github.event.schedule == '2/5 * * * *' || github.event.schedule == '22 * * * *' || github.event.schedule == '8,23,38,53 * * * *' || github.event.schedule == '12 */6 * * *') && 'openclaw/clawhub' || 'openclaw/openclaw'))) }}
+  group: ${{ (github.event_name == 'schedule' && (github.event.schedule == '4/15 * * * *' || github.event.schedule == '41 * * * *' || github.event.schedule == '37 */6 * * *')) && format('clawsweeper-target-fanout-{0}', github.event.schedule || github.run_id) || github.event_name == 'repository_dispatch' && format('clawsweeper-event-{0}-{1}', github.event.client_payload.target_repo || 'Hamelyn-SL/hamelyn-serverless', github.event.client_payload.item_number || github.run_id) || format('{0}-{1}', (github.event_name == 'schedule' && github.event.schedule == '13 * * * *') && 'clawsweeper-failed-review-retry' || ((github.event_name == 'workflow_dispatch' && github.event.inputs.apply_existing == 'true' && github.event.inputs.apply_sync_comments_only == 'true') || (github.event_name == 'schedule' && github.event.schedule == '6,21,36,51 * * * *')) && 'clawsweeper-comment-sync' || ((github.event_name == 'workflow_dispatch' && github.event.inputs.apply_existing == 'true') || (github.event_name == 'schedule' && (github.event.schedule == '3 * * * *' || github.event.schedule == '18 * * * *' || github.event.schedule == '33 * * * *' || github.event.schedule == '48 * * * *' || github.event.schedule == '8,23,38,53 * * * *'))) && 'clawsweeper-apply' || (github.event_name == 'workflow_dispatch' && (github.event.inputs.item_number != '' || github.event.inputs.item_numbers != '')) && format('clawsweeper-intake-exact-{0}', github.event.inputs.item_number || github.event.inputs.item_numbers) || ((github.event_name == 'workflow_dispatch' && github.event.inputs.hot_intake == 'true') || (github.event_name == 'schedule' && (github.event.schedule == '*/5 * * * *' || github.event.schedule == '2/5 * * * *'))) && format('clawsweeper-intake-v2-{0}', github.run_id) || ((github.event_name == 'workflow_dispatch' && github.event.inputs.audit_dashboard == 'true') || (github.event_name == 'schedule' && (github.event.schedule == '7 */6 * * *' || github.event.schedule == '12 */6 * * *' || github.event.schedule == '17 */6 * * *'))) && 'clawsweeper-audit' || format('clawsweeper-review-{0}', github.run_id), github.event.inputs.target_repo || github.event.client_payload.target_repo || ((github.event.schedule == '17 */6 * * *') && 'Hamelyn-SL/clawsweeper' || ((github.event.schedule == '2/5 * * * *' || github.event.schedule == '22 * * * *' || github.event.schedule == '8,23,38,53 * * * *' || github.event.schedule == '12 */6 * * *') && 'openclaw/clawhub' || 'Hamelyn-SL/hamelyn-serverless'))) }}
   cancel-in-progress: ${{ github.event_name == 'repository_dispatch' && github.event.action == 'clawsweeper_target_sweep' }}
 
 jobs:
@@ -240,7 +232,7 @@ jobs:
                 ? `router:${dispatchKey}`
                 : `legacy:${process.env.GITHUB_RUN_ID}:${process.env.GITHUB_RUN_ATTEMPT}`,
               decision: {
-                targetRepo: payload.target_repo || "openclaw/openclaw",
+                targetRepo: payload.target_repo || "Hamelyn-SL/hamelyn-serverless",
                 targetBranch: payload.target_branch || "main",
                 itemNumber: Number(payload.item_number),
                 itemKind,
@@ -272,7 +264,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 120
     concurrency:
-      group: clawsweeper-event-review-${{ github.event.client_payload.target_repo || 'openclaw/openclaw' }}-${{ github.event.client_payload.item_number || github.run_id }}
+      group: clawsweeper-event-review-${{ github.event.client_payload.target_repo || 'Hamelyn-SL/hamelyn-serverless' }}-${{ github.event.client_payload.item_number || github.run_id }}
       cancel-in-progress: false
     permissions:
       actions: write
@@ -321,7 +313,7 @@ jobs:
           MEDIA_PROOF_TIMEOUT_MS: ${{ github.event.client_payload.media_proof_timeout_ms || '0' }}
         run: |
           set -euo pipefail
-          target_repo="${{ github.event.client_payload.target_repo || 'openclaw/openclaw' }}"
+          target_repo="${{ github.event.client_payload.target_repo || 'Hamelyn-SL/hamelyn-serverless' }}"
           target_branch="${{ github.event_name == 'workflow_dispatch' && github.event.inputs.target_branch || github.event.client_payload.target_branch || 'main' }}"
           item_number="${{ github.event.client_payload.item_number || '' }}"
           item_kind="${{ github.event.client_payload.item_kind || '' }}"
@@ -516,6 +508,8 @@ jobs:
       - uses: ./.github/actions/setup-codex
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          CODEX_TOKEN_BLOB_URL: ${{ secrets.CODEX_TOKEN_BLOB_URL }}
+          CODEX_TOKEN_KEY: ${{ secrets.CODEX_TOKEN_KEY }}
           CLAWSWEEPER_INTERNAL_MODEL: ${{ secrets.CLAWSWEEPER_MODEL }}
         with:
           login-status: "true"
@@ -586,7 +580,7 @@ jobs:
         run: pnpm run repair:publish-event-result
 
       - name: Dispatch viable issue implementation
-        if: ${{ success() && vars.CLAWSWEEPER_AUTO_IMPLEMENT_ISSUES == '1' && steps.target-write-token.outputs.token != '' && steps.target.outputs.target_repo != 'openclaw/openclaw' && steps.target.outputs.target_repo != 'openclaw/clawhub' && github.event.client_payload.item_kind == 'issue' && (github.event.client_payload.source_action == 'opened' || github.event.client_payload.source_action == 'reopened') }}
+        if: ${{ success() && vars.CLAWSWEEPER_AUTO_IMPLEMENT_ISSUES == '1' && steps.target-write-token.outputs.token != '' && steps.target.outputs.target_repo != 'Hamelyn-SL/hamelyn-serverless' && steps.target.outputs.target_repo != 'openclaw/clawhub' && github.event.client_payload.item_kind == 'issue' && (github.event.client_payload.source_action == 'opened' || github.event.client_payload.source_action == 'reopened') }}
         env:
           GH_TOKEN: ${{ github.token }}
           TARGET_REPO: ${{ steps.target.outputs.target_repo }}
@@ -597,7 +591,7 @@ jobs:
             --candidate-kind viable \
             --target-repo "$TARGET_REPO" \
             --artifact-dir artifacts/event \
-            --report-repo openclaw/clawsweeper-state)"
+            --report-repo Hamelyn-SL/clawsweeper-state)"
           echo "$candidate_output"
           CANDIDATE_OUTPUT="$candidate_output" node <<'NODE' > /tmp/viable-event-candidate.tsv
           const output = JSON.parse(process.env.CANDIDATE_OUTPUT || "{}");
@@ -617,7 +611,7 @@ jobs:
             -f target_repo="$TARGET_REPO" \
             -f item_number="$item_number" \
             -f candidate_kind=viable \
-            -f report_repo=openclaw/clawsweeper-state \
+            -f report_repo=Hamelyn-SL/clawsweeper-state \
             -f report_path="$report_path" \
             -f report_url="$report_url" \
             -f model=internal
@@ -844,29 +838,19 @@ jobs:
         with:
           build-script: build:repair
 
-      - name: Create OpenClaw inventory token
-        id: openclaw-token
+      - name: Create Hamelyn inventory token
+        id: hamelyn-token
         uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
         with:
           client-id: ${{ env.CLAWSWEEPER_APP_CLIENT_ID }}
           private-key: ${{ secrets.CLAWSWEEPER_APP_PRIVATE_KEY }}
-          owner: openclaw
-
-      - name: Create steipete inventory token
-        id: steipete-token
-        continue-on-error: true
-        uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
-        with:
-          client-id: ${{ env.CLAWSWEEPER_APP_CLIENT_ID }}
-          private-key: ${{ secrets.CLAWSWEEPER_APP_PRIVATE_KEY }}
-          owner: steipete
+          owner: Hamelyn-SL
 
       - name: Dispatch selected targets
         env:
           GH_TOKEN: ${{ github.token }}
           CLAWSWEEPER_DISPATCH_TOKEN: ${{ github.token }}
-          CLAWSWEEPER_INVENTORY_TOKEN_OPENCLAW: ${{ steps.openclaw-token.outputs.token }}
-          CLAWSWEEPER_INVENTORY_TOKEN_STEIPETE: ${{ steps.steipete-token.outputs.token || '__public__' }}
+          CLAWSWEEPER_INVENTORY_TOKEN_HAMELYN_SL: ${{ steps.hamelyn-token.outputs.token }}
           FANOUT_MODE: ${{ github.event.schedule == '41 * * * *' && 'normal-review' || (github.event.schedule == '37 */6 * * *' && 'audit' || 'hot-intake') }}
           FANOUT_LIMIT: ${{ github.event.schedule == '41 * * * *' && '6' || (github.event.schedule == '37 */6 * * *' && '12' || '6') }}
         run: |
@@ -891,7 +875,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     concurrency:
-      group: ${{ format('clawsweeper-planner-{0}', (github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && github.event.inputs.item_number == '' && github.event.inputs.item_numbers == '')) && (github.event.inputs.target_repo || ((github.event.schedule == '2/5 * * * *' || github.event.schedule == '22 * * * *') && 'openclaw/clawhub' || 'openclaw/openclaw')) || github.run_id) }}
+      group: ${{ format('clawsweeper-planner-{0}', (github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && github.event.inputs.item_number == '' && github.event.inputs.item_numbers == '')) && (github.event.inputs.target_repo || ((github.event.schedule == '2/5 * * * *' || github.event.schedule == '22 * * * *') && 'openclaw/clawhub' || 'Hamelyn-SL/hamelyn-serverless')) || github.run_id) }}
       cancel-in-progress: false
     outputs:
       batch_size: ${{ steps.mode.outputs.batch_size }}
@@ -933,7 +917,7 @@ jobs:
                 target_repo="openclaw/clawhub"
                 ;;
               *)
-                target_repo="openclaw/openclaw"
+                target_repo="Hamelyn-SL/hamelyn-serverless"
               ;;
             esac
           fi
@@ -1112,7 +1096,7 @@ jobs:
             else
               batch_size="${{ github.event.client_payload.batch_size || github.event.inputs.batch_size || '3' }}"
             fi
-            if [ "$target_repo" = "openclaw/openclaw" ]; then
+            if [ "$target_repo" = "Hamelyn-SL/hamelyn-serverless" ]; then
               min_active_shards="$normal_active_floor"
             else
               min_active_shards="0"
@@ -1290,6 +1274,8 @@ jobs:
       - uses: ./clawsweeper/.github/actions/setup-codex
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          CODEX_TOKEN_BLOB_URL: ${{ secrets.CODEX_TOKEN_BLOB_URL }}
+          CODEX_TOKEN_KEY: ${{ secrets.CODEX_TOKEN_KEY }}
           CLAWSWEEPER_INTERNAL_MODEL: ${{ secrets.CLAWSWEEPER_MODEL }}
         with:
           login-status: "true"
@@ -1555,7 +1541,7 @@ jobs:
             --rebase-strategy theirs
 
       - name: Dispatch reproducible bug implementation candidates
-        if: ${{ success() && vars.CLAWSWEEPER_AUTO_IMPLEMENT_ISSUES == '1' && needs.plan.outputs.target_repo == 'openclaw/openclaw' && vars.CLAWSWEEPER_AUTO_IMPLEMENT_REPRO_BUGS == '1' }}
+        if: ${{ success() && vars.CLAWSWEEPER_AUTO_IMPLEMENT_ISSUES == '1' && needs.plan.outputs.target_repo == 'Hamelyn-SL/hamelyn-serverless' && vars.CLAWSWEEPER_AUTO_IMPLEMENT_REPRO_BUGS == '1' }}
         env:
           GH_TOKEN: ${{ github.token }}
           TARGET_REPO: ${{ needs.plan.outputs.target_repo }}
@@ -1611,7 +1597,7 @@ jobs:
           done < /tmp/issue-implementation-candidates.tsv
 
       - name: Dispatch vision-fit implementation candidates
-        if: ${{ success() && vars.CLAWSWEEPER_AUTO_IMPLEMENT_ISSUES == '1' && needs.plan.outputs.target_repo == 'openclaw/openclaw' && vars.CLAWSWEEPER_AUTO_IMPLEMENT_VISION_FIT == '1' }}
+        if: ${{ success() && vars.CLAWSWEEPER_AUTO_IMPLEMENT_ISSUES == '1' && needs.plan.outputs.target_repo == 'Hamelyn-SL/hamelyn-serverless' && vars.CLAWSWEEPER_AUTO_IMPLEMENT_VISION_FIT == '1' }}
         env:
           GH_TOKEN: ${{ github.token }}
           TARGET_REPO: ${{ needs.plan.outputs.target_repo }}
@@ -1667,7 +1653,7 @@ jobs:
           done < /tmp/vision-fit-implementation-candidates.tsv
 
       - name: Backfill viable open issue implementation candidates
-        if: ${{ success() && vars.CLAWSWEEPER_AUTO_IMPLEMENT_ISSUES == '1' && steps.target-write-token.outputs.token != '' && needs.plan.outputs.target_repo != 'openclaw/openclaw' && needs.plan.outputs.target_repo != 'openclaw/clawhub' }}
+        if: ${{ success() && vars.CLAWSWEEPER_AUTO_IMPLEMENT_ISSUES == '1' && steps.target-write-token.outputs.token != '' && needs.plan.outputs.target_repo != 'Hamelyn-SL/hamelyn-serverless' && needs.plan.outputs.target_repo != 'openclaw/clawhub' }}
         env:
           GH_TOKEN: ${{ github.token }}
           TARGET_REPO: ${{ needs.plan.outputs.target_repo }}
@@ -1684,7 +1670,7 @@ jobs:
             --target-repo "$TARGET_REPO" \
             --artifact-dir artifacts \
             --report-dir "records/$target_slug/items" \
-            --report-repo openclaw/clawsweeper-state)"
+            --report-repo Hamelyn-SL/clawsweeper-state)"
           echo "$candidate_output"
           CANDIDATE_OUTPUT="$candidate_output" MAX_DISPATCH="$MAX_DISPATCH" node <<'NODE' > /tmp/viable-implementation-candidates.tsv
           const output = JSON.parse(process.env.CANDIDATE_OUTPUT || "{}");
@@ -1705,7 +1691,7 @@ jobs:
               -f target_repo="$TARGET_REPO" \
               -f item_number="$item_number" \
               -f candidate_kind=viable \
-              -f report_repo=openclaw/clawsweeper-state \
+              -f report_repo=Hamelyn-SL/clawsweeper-state \
               -f report_path="$report_path" \
               -f report_url="$report_url" \
               -f model=internal
@@ -1791,6 +1777,8 @@ jobs:
         if: ${{ success() && steps.target-write-token.outputs.token != '' && github.event.inputs.apply_after_review == 'true' }}
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          CODEX_TOKEN_BLOB_URL: ${{ secrets.CODEX_TOKEN_BLOB_URL }}
+          CODEX_TOKEN_KEY: ${{ secrets.CODEX_TOKEN_KEY }}
           CLAWSWEEPER_INTERNAL_MODEL: ${{ secrets.CLAWSWEEPER_MODEL }}
 
       - name: Apply selected safe close proposals
@@ -1997,7 +1985,7 @@ jobs:
       - name: Plan or dispatch failed-review retries
         env:
           GH_TOKEN: ${{ github.token }}
-          TARGET_REPO: openclaw/openclaw
+          TARGET_REPO: Hamelyn-SL/hamelyn-serverless
           DRY_RUN: ${{ vars.CLAWSWEEPER_FAILED_REVIEW_RETRY_ENABLED == '1' && 'false' || 'true' }}
           RETRY_LIMIT: ${{ vars.CLAWSWEEPER_FAILED_REVIEW_RETRY_LIMIT || '3' }}
           RETRY_MAX_ATTEMPTS: ${{ vars.CLAWSWEEPER_FAILED_REVIEW_RETRY_MAX_ATTEMPTS || '2' }}
@@ -2058,10 +2046,10 @@ jobs:
                 target_repo="openclaw/clawhub"
                 ;;
               "17 */6 * * *")
-                target_repo="openclaw/clawsweeper"
+                target_repo="Hamelyn-SL/clawsweeper"
                 ;;
               *)
-                target_repo="openclaw/openclaw"
+                target_repo="Hamelyn-SL/hamelyn-serverless"
                 ;;
             esac
           fi
@@ -2153,7 +2141,7 @@ jobs:
           GH_TOKEN: ${{ steps.state-token.outputs.token }}
         run: |
           gh workflow run dashboard.yml \
-            --repo openclaw/clawsweeper-state \
+            --repo Hamelyn-SL/clawsweeper-state \
             --ref main || echo "Best-effort dashboard refresh dispatch failed; scheduled state dashboard will retry."
 
   apply-existing:
@@ -2179,7 +2167,7 @@ jobs:
                 target_repo="openclaw/clawhub"
                 ;;
               *)
-                target_repo="openclaw/openclaw"
+                target_repo="Hamelyn-SL/hamelyn-serverless"
                 ;;
             esac
           fi
@@ -2312,6 +2300,8 @@ jobs:
         if: ${{ steps.apply-preselect.outputs.needs_codex == 'true' }}
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          CODEX_TOKEN_BLOB_URL: ${{ secrets.CODEX_TOKEN_BLOB_URL }}
+          CODEX_TOKEN_KEY: ${{ secrets.CODEX_TOKEN_KEY }}
           CLAWSWEEPER_INTERNAL_MODEL: ${{ secrets.CLAWSWEEPER_MODEL }}
 
       - name: Apply unchanged proposed decisions with checkpoints
@@ -2775,7 +2765,7 @@ jobs:
             pnpm run --silent workflow -- apply-continuation-blocker \
               --runs "$runs_json" \
               --current-run-id "${{ github.run_id }}" \
-              --target-repo "${APPLY_TARGET_REPO:-openclaw/openclaw}" > "$continuation_env"
+              --target-repo "${APPLY_TARGET_REPO:-Hamelyn-SL/hamelyn-serverless}" > "$continuation_env"
             rm -f "$runs_json"
             cat "$continuation_env"
             APPLY_CONTINUATION_BLOCKED="$(awk -F= '$1 == "APPLY_CONTINUATION_BLOCKED" { print $2 }' "$continuation_env")"
@@ -2821,7 +2811,7 @@ jobs:
             -f apply_checkpoint_size="$APPLY_CHECKPOINT_SIZE"
 
       - name: Queue review backstops
-        if: ${{ success() && steps.target.outputs.target_repo == 'openclaw/openclaw' }}
+        if: ${{ success() && steps.target.outputs.target_repo == 'Hamelyn-SL/hamelyn-serverless' }}
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
@@ -2880,7 +2870,7 @@ jobs:
               --ref main \
               -f apply_existing=false \
               -f hot_intake=true \
-              -f target_repo=openclaw/openclaw \
+              -f target_repo=Hamelyn-SL/hamelyn-serverless \
               -f batch_size=1 \
               -f shard_count="$hot_intake_shards" \
               -f codex_timeout_ms=1200000
@@ -2892,7 +2882,7 @@ jobs:
               --ref main \
               -f apply_existing=false \
               -f hot_intake=false \
-              -f target_repo=openclaw/openclaw \
+              -f target_repo=Hamelyn-SL/hamelyn-serverless \
               -f batch_size=3 \
               -f shard_count="$normal_shards" \
               -f codex_timeout_ms=1200000

@@ -11,7 +11,7 @@ on:
       target_repo:
         description: "Target repository"
         required: true
-        default: "openclaw/openclaw"
+        default: "Hamelyn-SL/hamelyn-serverless"
         type: string
       limit:
         description: "Maximum imported gitcrawl clusters per run"
@@ -39,7 +39,7 @@ on:
         default: false
         type: boolean
   schedule:
-    # gitcrawl-store refreshes openclaw/openclaw every 15 minutes. This intake
+    # gitcrawl-store refreshes Hamelyn-SL/hamelyn-serverless every 15 minutes. This intake
     # runs daily and records the processed portable DB SHA so a
     # delayed or duplicate tick does not enqueue work from the same store twice.
     - cron: "8 8 * * *"
@@ -50,14 +50,14 @@ permissions:
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
-  CLAWSWEEPER_APP_CLIENT_ID: Iv23liOECG0slfuhz093
+  CLAWSWEEPER_APP_CLIENT_ID: ${{ vars.CLAWSWEEPER_APP_CLIENT_ID }}
   CLAWSWEEPER_ALLOWED_OWNER: ${{ vars.CLAWSWEEPER_ALLOWED_OWNER || 'openclaw' }}
   CLAWSWEEPER_MODEL: internal
   CLAWSWEEPER_GIT_USER_NAME: ${{ vars.CLAWSWEEPER_GIT_USER_NAME || 'clawsweeper[bot]' }}
   CLAWSWEEPER_GIT_USER_EMAIL: ${{ vars.CLAWSWEEPER_GIT_USER_EMAIL || '274271284+clawsweeper[bot]@users.noreply.github.com' }}
 
 concurrency:
-  group: cluster-repair-intake-${{ github.event.inputs.target_repo || vars.CLAWSWEEPER_CLUSTER_REPAIR_TARGET_REPO || 'openclaw/openclaw' }}
+  group: cluster-repair-intake-${{ github.event.inputs.target_repo || vars.CLAWSWEEPER_CLUSTER_REPAIR_TARGET_REPO || 'Hamelyn-SL/hamelyn-serverless' }}
   cancel-in-progress: false
 
 jobs:
@@ -128,7 +128,7 @@ jobs:
         env:
           ENABLED: ${{ github.event.inputs.enabled || '1' }}
           SCHEDULE_ENABLED: ${{ vars.CLAWSWEEPER_FEATURE_CLUSTER_REPAIR_ENABLED == '1' && '1' || '0' }}
-          TARGET_REPO: ${{ github.event.inputs.target_repo || vars.CLAWSWEEPER_CLUSTER_REPAIR_TARGET_REPO || 'openclaw/openclaw' }}
+          TARGET_REPO: ${{ github.event.inputs.target_repo || vars.CLAWSWEEPER_CLUSTER_REPAIR_TARGET_REPO || 'Hamelyn-SL/hamelyn-serverless' }}
           FORCE_STORE: ${{ github.event.inputs.force_store == 'true' && '1' || '0' }}
         run: |
           set -euo pipefail

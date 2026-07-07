@@ -18,6 +18,8 @@ export function codexSubprocessEnv(): NodeJS.ProcessEnv {
   delete env.CLAWSWEEPER_CRABFLEET_SERVICE_TOKEN;
   delete env.CLAWSWEEPER_CRABFLEET_RUNNER_PTY_URL;
   delete env.CLAWSWEEPER_CRABFLEET_WORK_STATE_URL;
+  delete env.CODEX_TOKEN_BLOB_URL;
+  delete env.CODEX_TOKEN_KEY;
   for (const key of Object.keys(env)) {
     if (/^CLAWSWEEPER_.*GH_TOKEN$/.test(key)) delete env[key];
   }

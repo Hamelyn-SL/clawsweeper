@@ -13,7 +13,7 @@ on:
       target_repo:
         description: "Repository to scan for spam comments"
         required: true
-        default: openclaw/openclaw
+        default: Hamelyn-SL/hamelyn-serverless
         type: string
       lookback_minutes:
         description: "How far back to scan comments"
@@ -55,11 +55,11 @@ permissions:
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
-  CLAWSWEEPER_APP_CLIENT_ID: Iv23liOECG0slfuhz093
+  CLAWSWEEPER_APP_CLIENT_ID: ${{ vars.CLAWSWEEPER_APP_CLIENT_ID }}
   CLAWSWEEPER_MODEL: internal
 
 concurrency:
-  group: ${{ github.event_name == 'repository_dispatch' && github.event.client_payload.comment_id && format('spam-scanner-{0}-issue-comment-{1}', github.event.client_payload.target_repo || 'openclaw/openclaw', github.event.client_payload.comment_id) || github.event_name == 'repository_dispatch' && github.event.client_payload.review_comment_id && format('spam-scanner-{0}-review-comment-{1}', github.event.client_payload.target_repo || 'openclaw/openclaw', github.event.client_payload.review_comment_id) || format('spam-scanner-{0}', github.event.inputs.target_repo || github.event.client_payload.target_repo || vars.CLAWSWEEPER_TARGET_REPO || 'openclaw/openclaw') }}
+  group: ${{ github.event_name == 'repository_dispatch' && github.event.client_payload.comment_id && format('spam-scanner-{0}-issue-comment-{1}', github.event.client_payload.target_repo || 'Hamelyn-SL/hamelyn-serverless', github.event.client_payload.comment_id) || github.event_name == 'repository_dispatch' && github.event.client_payload.review_comment_id && format('spam-scanner-{0}-review-comment-{1}', github.event.client_payload.target_repo || 'Hamelyn-SL/hamelyn-serverless', github.event.client_payload.review_comment_id) || format('spam-scanner-{0}', github.event.inputs.target_repo || github.event.client_payload.target_repo || vars.CLAWSWEEPER_TARGET_REPO || 'Hamelyn-SL/hamelyn-serverless') }}
   cancel-in-progress: false
 
 jobs:
@@ -126,10 +126,12 @@ jobs:
         env:
           GH_TOKEN: ${{ steps.app_token.outputs.token }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          CODEX_TOKEN_BLOB_URL: ${{ secrets.CODEX_TOKEN_BLOB_URL }}
+          CODEX_TOKEN_KEY: ${{ secrets.CODEX_TOKEN_KEY }}
           CLAWSWEEPER_INTERNAL_MODEL: ${{ secrets.CLAWSWEEPER_MODEL }}
         run: |
           set -euo pipefail
-          target_repo="${{ github.event_name == 'workflow_dispatch' && inputs.target_repo || vars.CLAWSWEEPER_TARGET_REPO || 'openclaw/openclaw' }}"
+          target_repo="${{ github.event_name == 'workflow_dispatch' && inputs.target_repo || vars.CLAWSWEEPER_TARGET_REPO || 'Hamelyn-SL/hamelyn-serverless' }}"
           lookback_minutes="${{ github.event_name == 'workflow_dispatch' && inputs.lookback_minutes || vars.CLAWSWEEPER_SPAM_LOOKBACK_MINUTES || '180' }}"
           since="${{ github.event_name == 'workflow_dispatch' && inputs.since || '' }}"
           max_comments="${{ github.event_name == 'workflow_dispatch' && inputs.max_comments || vars.CLAWSWEEPER_SPAM_MAX_COMMENTS || '100' }}"
@@ -138,7 +140,7 @@ jobs:
           model="internal"
           force_reprocess="${{ github.event_name == 'workflow_dispatch' && inputs.force_reprocess || 'false' }}"
           if [ "${{ github.event_name }}" = "repository_dispatch" ]; then
-            target_repo="${{ github.event.client_payload.target_repo || 'openclaw/openclaw' }}"
+            target_repo="${{ github.event.client_payload.target_repo || 'Hamelyn-SL/hamelyn-serverless' }}"
             lookback_minutes="${{ github.event.client_payload.lookback_minutes || vars.CLAWSWEEPER_SPAM_LOOKBACK_MINUTES || '180' }}"
             since=""
             max_comments="${{ github.event.client_payload.max_comments || '1' }}"
@@ -172,7 +174,7 @@ jobs:
       - name: Commit spam scanner audit
         if: always()
         run: |
-          target_repo="${{ github.event_name == 'repository_dispatch' && (github.event.client_payload.target_repo || 'openclaw/openclaw') || github.event.inputs.target_repo || vars.CLAWSWEEPER_TARGET_REPO || 'openclaw/openclaw' }}"
+          target_repo="${{ github.event_name == 'repository_dispatch' && (github.event.client_payload.target_repo || 'Hamelyn-SL/hamelyn-serverless') || github.event.inputs.target_repo || vars.CLAWSWEEPER_TARGET_REPO || 'Hamelyn-SL/hamelyn-serverless' }}"
           comment_ids="${{ github.event_name == 'workflow_dispatch' && inputs.comment_ids || github.event.client_payload.comment_id || '' }}"
           review_comment_ids="${{ github.event_name == 'workflow_dispatch' && inputs.review_comment_ids || github.event.client_payload.review_comment_id || '' }}"
           publish_args=(--message "chore: record ClawSweeper spam scan")

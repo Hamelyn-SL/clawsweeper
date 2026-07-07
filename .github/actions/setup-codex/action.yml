@@ -8,8 +8,8 @@ inputs:
     description: Exact Codex Responses proxy npm package version.
     default: "0.139.0"
   auth-mode:
-    description: Authentication mode. Use proxy to keep OPENAI_API_KEY out of Codex subprocesses, or login for legacy codex login.
-    default: "proxy"
+    description: Authentication mode. Use subscription to route through the ChatGPT/Codex subscription proxy (Hamelyn default), proxy to keep OPENAI_API_KEY out of Codex subprocesses, or login for legacy codex login.
+    default: "subscription"
   codex-home:
     description: CODEX_HOME directory. Defaults to an isolated per-run ClawSweeper directory.
     default: ""
@@ -112,6 +112,43 @@ runs:
         chmod 600 "$CODEX_HOME/config.toml"
         echo "Configured Codex Responses proxy on localhost."
 
+    - name: Authenticate Codex through subscription proxy
+      if: ${{ inputs['auth-mode'] == 'subscription' }}
+      shell: bash
+      run: |
+        set -euo pipefail
+        export CODEX_HOME="${CODEX_HOME:?}"
+        test -n "${CODEX_TOKEN_BLOB_URL:-}"
+        test -n "${CODEX_TOKEN_KEY:-}"
+        server_info="$CODEX_HOME/responses-proxy.json"
+        node -e 'require("node:fs").rmSync(process.argv[1], { force: true })' "$server_info"
+        (
+          node -e 'process.stdout.write(JSON.stringify({ blob_url: process.env.CODEX_TOKEN_BLOB_URL, key_hex: process.env.CODEX_TOKEN_KEY }))' \
+            | env -u CODEX_TOKEN_BLOB_URL -u CODEX_TOKEN_KEY -u OPENAI_API_KEY -u CODEX_API_KEY \
+              node "${{ github.action_path }}/../../../scripts/chatgpt-subscription-proxy.mjs" --server-info "$server_info"
+        ) &
+        for _ in {1..100}; do
+          [[ -s "$server_info" ]] && break
+          sleep 0.1
+        done
+        if [[ ! -s "$server_info" ]]; then
+          echo "chatgpt-subscription-proxy did not write server info" >&2
+          exit 1
+        fi
+        port="$(node -e 'const fs=require("fs"); const p=process.argv[1]; const data=JSON.parse(fs.readFileSync(p,"utf8")); if (!Number.isInteger(data.port)) process.exit(2); process.stdout.write(String(data.port));' "$server_info")"
+        model_json="$(node -e 'process.stdout.write(JSON.stringify(process.argv[1]))' "$CLAWSWEEPER_INTERNAL_MODEL")"
+        cat > "$CODEX_HOME/config.toml" <<EOF
+        model = ${model_json}
+        model_provider = "clawsweeper-responses-proxy"
+
+        [model_providers.clawsweeper-responses-proxy]
+        name = "ClawSweeper Responses Proxy"
+        base_url = "http://127.0.0.1:${port}/v1"
+        wire_api = "responses"
+        EOF
+        chmod 600 "$CODEX_HOME/config.toml"
+        echo "Configured Codex subscription proxy on localhost."
+
     - name: Authenticate Codex with login
       if: ${{ inputs['auth-mode'] == 'login' }}
       shell: bash
@@ -125,7 +162,7 @@ runs:
         fi
 
     - name: Reject unknown Codex auth mode
-      if: ${{ inputs['auth-mode'] != 'proxy' && inputs['auth-mode'] != 'login' }}
+      if: ${{ inputs['auth-mode'] != 'proxy' && inputs['auth-mode'] != 'login' && inputs['auth-mode'] != 'subscription' }}
       shell: bash
       run: |
         echo "Unsupported setup-codex auth-mode: ${{ inputs['auth-mode'] }}" >&2

@@ -1,6 +1,6 @@
 name: ClawSweeper assist
 
-run-name: ${{ github.event.client_payload.dispatch_key && format('Assist {0}#{1} [{2}]', github.event.client_payload.target_repo || 'openclaw/openclaw', github.event.client_payload.item_number || '?', github.event.client_payload.dispatch_key) || format('Assist {0}#{1}', github.event.client_payload.target_repo || 'openclaw/openclaw', github.event.client_payload.item_number || '?') }}
+run-name: ${{ github.event.client_payload.dispatch_key && format('Assist {0}#{1} [{2}]', github.event.client_payload.target_repo || 'Hamelyn-SL/hamelyn-serverless', github.event.client_payload.item_number || '?', github.event.client_payload.dispatch_key) || format('Assist {0}#{1}', github.event.client_payload.target_repo || 'Hamelyn-SL/hamelyn-serverless', github.event.client_payload.item_number || '?') }}
 
 on:
   repository_dispatch:
@@ -10,7 +10,7 @@ on:
       target_repo:
         description: "Repository containing the issue or PR"
         required: true
-        default: openclaw/openclaw
+        default: Hamelyn-SL/hamelyn-serverless
         type: string
       item_number:
         description: "Issue or PR number"
@@ -54,11 +54,11 @@ permissions:
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
-  CLAWSWEEPER_APP_CLIENT_ID: Iv23liOECG0slfuhz093
+  CLAWSWEEPER_APP_CLIENT_ID: ${{ vars.CLAWSWEEPER_APP_CLIENT_ID }}
   CLAWSWEEPER_MODEL: internal
 
 concurrency:
-  group: ${{ format('clawsweeper-assist-{0}-{1}-{2}', github.event.client_payload.target_repo || inputs.target_repo || 'openclaw/openclaw', github.event.client_payload.item_number || inputs.item_number || github.run_id, github.event.client_payload.comment_id || inputs.comment_id || github.run_id) }}
+  group: ${{ format('clawsweeper-assist-{0}-{1}-{2}', github.event.client_payload.target_repo || inputs.target_repo || 'Hamelyn-SL/hamelyn-serverless', github.event.client_payload.item_number || inputs.item_number || github.run_id, github.event.client_payload.comment_id || inputs.comment_id || github.run_id) }}
   cancel-in-progress: false
 
 jobs:
@@ -77,7 +77,7 @@ jobs:
         env:
           DISPATCH_KEY: ${{ github.event.client_payload.dispatch_key || '' }}
           ITEM_NUMBER: ${{ github.event.client_payload.item_number || '?' }}
-          TARGET_REPO: ${{ github.event.client_payload.target_repo || 'openclaw/openclaw' }}
+          TARGET_REPO: ${{ github.event.client_payload.target_repo || 'Hamelyn-SL/hamelyn-serverless' }}
           GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
@@ -186,6 +186,8 @@ jobs:
       - uses: ./.github/actions/setup-codex
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          CODEX_TOKEN_BLOB_URL: ${{ secrets.CODEX_TOKEN_BLOB_URL }}
+          CODEX_TOKEN_KEY: ${{ secrets.CODEX_TOKEN_KEY }}
           CLAWSWEEPER_INTERNAL_MODEL: ${{ secrets.CLAWSWEEPER_MODEL }}
 
       - name: Answer maintainer question

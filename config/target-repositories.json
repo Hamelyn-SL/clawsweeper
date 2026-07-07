@@ -2,6 +2,35 @@
   "schema_version": 2,
   "repositories": [
     {
+      "target_repo": "Hamelyn-SL/hamelyn-serverless",
+      "display_name": "Hamelyn Serverless",
+      "checkout_dir": "hamelyn-serverless",
+      "prompt_note": "Use the hamelyn-serverless source tree and its default branch (dev). This is the private serverless monorepo behind the Hamelyn recommerce platform (ecommerce APIs, marketplace integrations, internal tooling). Review every issue and PR with the same evidence standard. Propose auto-close for issues and pull requests that are certainly implemented on the default branch; for pull requests only, also allow age-gated mostly implemented there. Keep everything else open for maintainer triage.",
+      "apply_close_rules": {
+        "issue": ["implemented_on_main"],
+        "pull_request": ["implemented_on_main", "mostly_implemented_on_main"]
+      },
+      "package_manager": "pnpm",
+      "validation_commands": [],
+      "changed_gate": null
+    },
+    {
+      "target_repo": "Hamelyn-SL/clawsweeper",
+      "display_name": "ClawSweeper (Hamelyn)",
+      "checkout_dir": "clawsweeper",
+      "prompt_note": "Use the ClawSweeper source tree and current main branch. This is the Hamelyn self-hosted fork of openclaw/clawsweeper. Review bot automation, workflow, and documentation changes conservatively. Propose auto-close for issues and pull requests that are certainly implemented on main; for pull requests only, also allow age-gated mostly implemented on main. Keep everything else open for maintainer triage.",
+      "apply_close_rules": {
+        "issue": ["implemented_on_main"],
+        "pull_request": ["implemented_on_main", "mostly_implemented_on_main"]
+      },
+      "package_manager": "pnpm",
+      "validation_commands": [],
+      "changed_gate": {
+        "command": "pnpm check:changed",
+        "required_script": "check:changed"
+      }
+    },
+    {
       "target_repo": "openclaw/clawhub",
       "display_name": "ClawHub",
       "checkout_dir": "clawhub",
@@ -47,6 +76,19 @@
   ],
   "generic_fallbacks": [
     {
+      "owner": "Hamelyn-SL",
+      "deny_repositories": ["Hamelyn-SL/clawsweeper-state", "Hamelyn-SL/.github"],
+      "allow_repo_name_pattern": "^[A-Za-z0-9_.-]+$",
+      "prompt_note": "Use the {target_repo} source tree and current default branch. This repository is using the generic Hamelyn onboarding profile, so review conservatively and do not auto-close issues or pull requests unless a repository-specific profile later enables that policy.",
+      "apply_close_rules": {
+        "issue": [],
+        "pull_request": []
+      },
+      "package_manager": "pnpm",
+      "validation_commands": [],
+      "changed_gate": null
+    },
+    {
       "owner": "openclaw",
       "deny_repositories": ["openclaw/clawsweeper-state", "openclaw/.github"],
       "allow_repo_name_pattern": "^[A-Za-z0-9_.-]+$",
@@ -84,9 +126,9 @@
     }
   },
   "target_inventory": {
-    "owners": ["openclaw", "steipete"],
-    "deny_repositories": ["openclaw/clawsweeper-state", "openclaw/.github"],
-    "include_private": false,
+    "owners": ["Hamelyn-SL"],
+    "deny_repositories": ["Hamelyn-SL/clawsweeper-state", "Hamelyn-SL/.github"],
+    "include_private": true,
     "include_archived": false,
     "include_forks": false,
     "require_issues": true

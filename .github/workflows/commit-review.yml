@@ -1,6 +1,6 @@
 name: ClawSweeper Commit Review
 
-run-name: Commit review ${{ github.event.inputs.target_repo || github.event.client_payload.target_repo || 'openclaw/openclaw' }}@${{ github.event.inputs.commit_sha || github.event.client_payload.after_sha || github.event.client_payload.commit_sha || '?' }}
+run-name: Commit review ${{ github.event.inputs.target_repo || github.event.client_payload.target_repo || 'Hamelyn-SL/hamelyn-serverless' }}@${{ github.event.inputs.commit_sha || github.event.client_payload.after_sha || github.event.client_payload.commit_sha || '?' }}
 
 on:
   workflow_dispatch:
@@ -12,7 +12,7 @@ on:
       target_repo:
         description: "Repository containing the main commit"
         required: false
-        default: "openclaw/openclaw"
+        default: "Hamelyn-SL/hamelyn-serverless"
       commit_sha:
         description: "Specific commit SHA to review"
         required: true
@@ -39,11 +39,11 @@ permissions:
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
-  CLAWSWEEPER_APP_CLIENT_ID: Iv23liOECG0slfuhz093
+  CLAWSWEEPER_APP_CLIENT_ID: ${{ vars.CLAWSWEEPER_APP_CLIENT_ID }}
   CLAWSWEEPER_MODEL: internal
 
 concurrency:
-  group: commit-review-${{ github.event.inputs.target_repo || github.event.client_payload.target_repo || 'openclaw/openclaw' }}-${{ github.event.inputs.commit_sha || github.event.client_payload.after_sha || github.event.client_payload.commit_sha || github.run_id }}
+  group: commit-review-${{ github.event.inputs.target_repo || github.event.client_payload.target_repo || 'Hamelyn-SL/hamelyn-serverless' }}-${{ github.event.inputs.commit_sha || github.event.client_payload.after_sha || github.event.client_payload.commit_sha || github.run_id }}
   cancel-in-progress: false
 
 jobs:
@@ -105,7 +105,7 @@ jobs:
       - name: Resolve target repository
         id: target
         run: |
-          target_repo="${{ github.event.inputs.target_repo || github.event.client_payload.target_repo || 'openclaw/openclaw' }}"
+          target_repo="${{ github.event.inputs.target_repo || github.event.client_payload.target_repo || 'Hamelyn-SL/hamelyn-serverless' }}"
           if ! printf '%s' "$target_repo" | grep -Eq '^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$'; then
             echo "Invalid target_repo: $target_repo" >&2
             exit 1
@@ -375,6 +375,8 @@ jobs:
       - uses: ./clawsweeper/.github/actions/setup-codex
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          CODEX_TOKEN_BLOB_URL: ${{ secrets.CODEX_TOKEN_BLOB_URL }}
+          CODEX_TOKEN_KEY: ${{ secrets.CODEX_TOKEN_KEY }}
           CLAWSWEEPER_INTERNAL_MODEL: ${{ secrets.CLAWSWEEPER_MODEL }}
         with:
           login-status: "true"
@@ -531,7 +533,7 @@ jobs:
           set -euo pipefail
           node dist/commit-sweeper.js dispatch-findings \
             --artifact-dir commit-artifacts \
-            --repair-repo openclaw/clawsweeper \
+            --repair-repo Hamelyn-SL/clawsweeper \
             --repair-workflow repair-commit-finding-intake.yml \
             --dispatch-mode workflow_dispatch \
             --report-repo "${{ github.repository }}" \

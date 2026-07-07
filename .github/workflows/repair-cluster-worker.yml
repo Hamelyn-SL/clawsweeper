@@ -62,7 +62,7 @@ permissions:
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
-  CLAWSWEEPER_APP_CLIENT_ID: Iv23liOECG0slfuhz093
+  CLAWSWEEPER_APP_CLIENT_ID: ${{ vars.CLAWSWEEPER_APP_CLIENT_ID }}
   CLAWSWEEPER_MODEL: internal
 
 concurrency:
@@ -235,6 +235,8 @@ jobs:
         if: ${{ steps.check_job.outputs.job_exists == '1' }}
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          CODEX_TOKEN_BLOB_URL: ${{ secrets.CODEX_TOKEN_BLOB_URL }}
+          CODEX_TOKEN_KEY: ${{ secrets.CODEX_TOKEN_KEY }}
           CLAWSWEEPER_INTERNAL_MODEL: ${{ secrets.CLAWSWEEPER_MODEL }}
         with:
           codex-home: ${{ steps.codex_session.outputs.codex_home }}
@@ -515,6 +517,8 @@ jobs:
         if: ${{ steps.check_job.outputs.job_exists == '1' }}
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          CODEX_TOKEN_BLOB_URL: ${{ secrets.CODEX_TOKEN_BLOB_URL }}
+          CODEX_TOKEN_KEY: ${{ secrets.CODEX_TOKEN_KEY }}
           CLAWSWEEPER_INTERNAL_MODEL: ${{ secrets.CLAWSWEEPER_MODEL }}
         with:
           cache-suffix: target-pnpm

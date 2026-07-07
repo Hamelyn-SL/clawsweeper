@@ -8,7 +8,7 @@ on:
       target_repo:
         description: "Repository to inspect for proof nudges"
         required: false
-        default: "openclaw/openclaw"
+        default: "Hamelyn-SL/hamelyn-serverless"
       execute:
         description: "Post proof-nudge comments; false runs dry-run only"
         required: false
@@ -51,10 +51,10 @@ permissions:
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
-  CLAWSWEEPER_APP_CLIENT_ID: Iv23liOECG0slfuhz093
+  CLAWSWEEPER_APP_CLIENT_ID: ${{ vars.CLAWSWEEPER_APP_CLIENT_ID }}
 
 concurrency:
-  group: ${{ format('clawsweeper-proof-nudges-{0}', github.event.inputs.target_repo || vars.CLAWSWEEPER_PROOF_NUDGES_TARGET_REPO || 'openclaw/openclaw') }}
+  group: ${{ format('clawsweeper-proof-nudges-{0}', github.event.inputs.target_repo || vars.CLAWSWEEPER_PROOF_NUDGES_TARGET_REPO || 'Hamelyn-SL/hamelyn-serverless') }}
   cancel-in-progress: false
 
 jobs:
@@ -72,7 +72,7 @@ jobs:
       - name: Resolve target repository
         id: target
         env:
-          TARGET_REPO_INPUT: ${{ github.event.inputs.target_repo || vars.CLAWSWEEPER_PROOF_NUDGES_TARGET_REPO || 'openclaw/openclaw' }}
+          TARGET_REPO_INPUT: ${{ github.event.inputs.target_repo || vars.CLAWSWEEPER_PROOF_NUDGES_TARGET_REPO || 'Hamelyn-SL/hamelyn-serverless' }}
         run: |
           target_repo="$TARGET_REPO_INPUT"
           if [[ ! "$target_repo" =~ ^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$ ]]; then

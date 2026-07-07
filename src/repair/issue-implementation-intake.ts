@@ -1048,7 +1048,7 @@ function displayTitle(value: string) {
 }
 
 function reportBranch(reportRepo: string) {
-  return reportRepo.trim().toLowerCase() === "openclaw/clawsweeper-state" ? "state" : "main";
+  return reportRepo.trim().toLowerCase().endsWith("/clawsweeper-state") ? "state" : "main";
 }
 
 function stripQuotes(value: string) {
