@@ -151,7 +151,8 @@ jobs:
           cursor_arg=()
           bot_cursor_arg=()
           cursor_publish_args=()
-          target_slug="$(printf '%s' "$TARGET_REPO" | tr '[:upper:]' '[:lower:]' | tr '/' '-')"
+          target_slug="${TARGET_REPO,,}"
+          target_slug="${target_slug//\//-}"
           if [ -n "$PROOF_NUDGES_ITEM_NUMBERS" ]; then
             if [[ ! "$PROOF_NUDGES_ITEM_NUMBERS" =~ ^[0-9]+([[:space:]]*,[[:space:]]*[0-9]+)*$ ]]; then
               echo "::error::item_numbers must be a comma-separated list of pull request numbers"
