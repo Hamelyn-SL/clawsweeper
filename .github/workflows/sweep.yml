@@ -454,8 +454,18 @@ jobs:
             ${{ steps.target.outputs.target_repo_name }}-git-${{ runner.os }}-
 
       - name: Check out target repository
+        env:
+          TARGET_GIT_TOKEN: ${{ steps.target-read-token.outputs.token }}
         run: |
           set -euo pipefail
+          # Hamelyn targets are private: authenticate git for this step only.
+          # The token never reaches the checkout's .git/config or later steps.
+          if [ -n "${TARGET_GIT_TOKEN:-}" ]; then
+            auth_b64="$(printf 'x-access-token:%s' "$TARGET_GIT_TOKEN" | base64 | tr -d '\n')"
+            export GIT_CONFIG_COUNT=1
+            export GIT_CONFIG_KEY_0="http.https://github.com/.extraheader"
+            export GIT_CONFIG_VALUE_0="AUTHORIZATION: basic $auth_b64"
+          fi
           url="https://github.com/${{ steps.target.outputs.target_repo }}.git"
           cache_dir="${{ steps.target.outputs.target_checkout_dir }}-cache.git"
           checkout_dir="${{ steps.target.outputs.target_checkout_dir }}"
@@ -1288,8 +1298,18 @@ jobs:
             ${{ needs.plan.outputs.target_repo_name }}-git-${{ runner.os }}-
 
       - name: Check out target repository
+        env:
+          TARGET_GIT_TOKEN: ${{ steps.target-read-token.outputs.token }}
         run: |
           set -euo pipefail
+          # Hamelyn targets are private: authenticate git for this step only.
+          # The token never reaches the checkout's .git/config or later steps.
+          if [ -n "${TARGET_GIT_TOKEN:-}" ]; then
+            auth_b64="$(printf 'x-access-token:%s' "$TARGET_GIT_TOKEN" | base64 | tr -d '\n')"
+            export GIT_CONFIG_COUNT=1
+            export GIT_CONFIG_KEY_0="http.https://github.com/.extraheader"
+            export GIT_CONFIG_VALUE_0="AUTHORIZATION: basic $auth_b64"
+          fi
           url="https://github.com/${{ needs.plan.outputs.target_repo }}.git"
           cache_dir="${{ needs.plan.outputs.target_checkout_dir }}-cache.git"
           checkout_dir="${{ needs.plan.outputs.target_checkout_dir }}"
