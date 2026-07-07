@@ -65,6 +65,6 @@ test("trusted-event state checkout remains pinned to the state repository branch
     runs?: { steps?: CheckoutStep[] };
   };
   const checkout = action.runs?.steps?.find((step) => step.uses === "actions/checkout@v7");
-  assert.equal(checkout?.with?.repository, "openclaw/clawsweeper-state");
+  assert.equal(checkout?.with?.repository, "Hamelyn-SL/clawsweeper-state");
   assert.equal(checkout?.with?.ref, "state");
 });

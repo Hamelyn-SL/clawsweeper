@@ -268,7 +268,10 @@ test("apply workflow bounds checkpoints and requeues with a fresh token", () => 
   assert.doesNotMatch(continueStep, /gh run list/);
   assert.match(continueStep, /pnpm run --silent workflow -- apply-continuation-blocker/);
   assert.match(continueStep, /--current-run-id "\$\{\{ github\.run_id \}\}"/);
-  assert.match(continueStep, /--target-repo "\$\{APPLY_TARGET_REPO:-openclaw\/openclaw\}"/);
+  assert.match(
+    continueStep,
+    /--target-repo "\$\{APPLY_TARGET_REPO:-Hamelyn-SL\/hamelyn-serverless\}"/,
+  );
   assert.match(continueStep, /APPLY_CONTINUATION_BLOCKED/);
   assert.match(continueStep, /existing default cursor run will continue the lane/);
   assert.match(continueStep, /already covered by \$/);
@@ -391,13 +394,15 @@ test("sweep target tokens fall back when an org app installation is missing", ()
       .slice(1)
       .map((block) => block.split("\n      - ")[0]);
 
+  // Hamelyn fork: a single private-org inventory token replaces the upstream
+  // openclaw/steipete pair, so there is no public "__public__" fallback owner.
   assert.match(
     workflow,
-    /CLAWSWEEPER_INVENTORY_TOKEN_STEIPETE: \$\{\{ steps\.steipete-token\.outputs\.token \|\| '__public__' \}\}/,
+    /CLAWSWEEPER_INVENTORY_TOKEN_HAMELYN_SL: \$\{\{ steps\.hamelyn-token\.outputs\.token \}\}/,
   );
-  const openclawInventoryBlocks = stepBlocks("Create OpenClaw inventory token");
-  assert.equal(openclawInventoryBlocks.length, 1);
-  assert.doesNotMatch(openclawInventoryBlocks[0] ?? "", /continue-on-error: true/);
+  const hamelynInventoryBlocks = stepBlocks("Create Hamelyn inventory token");
+  assert.equal(hamelynInventoryBlocks.length, 1);
+  assert.doesNotMatch(hamelynInventoryBlocks[0] ?? "", /continue-on-error: true/);
   for (const name of [
     "Create target read token",
     "Create target write token",
@@ -656,7 +661,10 @@ test("sweep workflow publishes target-scoped state paths", () => {
 test("sweep workflow schedules cursor-based PR comment sync batches", () => {
   const workflow = readText(".github/workflows/sweep.yml");
 
-  assert.match(workflow, /cron: "6,21,36,51 \* \* \* \*"/);
+  // Hamelyn cadence: the dedicated comment-sync cron tick was removed from
+  // on.schedule (sync still runs through review publish and manual dispatch),
+  // but the routing conditionals keep the cron string as their key.
+  assert.doesNotMatch(workflow, /cron: "6,21,36,51 \* \* \* \*"/);
   assert.doesNotMatch(workflow, /apply_sync_open_pr_batch:/);
   assert.match(
     workflow,
@@ -926,7 +934,7 @@ test("sweep event reviews and target fanout avoid storm amplification", () => {
   );
   assert.match(
     eventBlock,
-    /group: clawsweeper-event-review-\$\{\{ github\.event\.client_payload\.target_repo \|\| 'openclaw\/openclaw' \}\}-\$\{\{ github\.event\.client_payload\.item_number/,
+    /group: clawsweeper-event-review-\$\{\{ github\.event\.client_payload\.target_repo \|\| 'Hamelyn-SL\/hamelyn-serverless' \}\}-\$\{\{ github\.event\.client_payload\.item_number/,
   );
   assert.match(eventBlock, /queue_lease_id != ''/);
   assert.match(eventBlock, /cancel-in-progress: false/);
@@ -952,7 +960,7 @@ test("setup-state defaults to an auth-safe shallow checkout", () => {
   assert.match(action, /sparse-checkout: \$\{\{ inputs\.sparse-checkout \}\}/);
   assert.doesNotMatch(action, /state-repository:/);
   assert.doesNotMatch(action, /state-ref:/);
-  assert.match(action, /repository: openclaw\/clawsweeper-state/);
+  assert.match(action, /repository: Hamelyn-SL\/clawsweeper-state/);
   assert.match(action, /ref: state/);
 });
 
