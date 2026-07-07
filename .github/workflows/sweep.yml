@@ -470,6 +470,16 @@ jobs:
           cache_dir="${{ steps.target.outputs.target_checkout_dir }}-cache.git"
           checkout_dir="${{ steps.target.outputs.target_checkout_dir }}"
           target_branch="${{ steps.target.outputs.target_branch }}"
+          # "main" doubles as "unspecified" upstream; Hamelyn targets may use a
+          # different default branch (hamelyn-serverless lives on dev), so
+          # resolve the remote HEAD before cloning.
+          if [ "$target_branch" = "main" ]; then
+            resolved_default="$(git ls-remote --symref "$url" HEAD 2>/dev/null | awk '/^ref:/ {sub("refs/heads/", "", $2); print $2; exit}')"
+            if [ -n "$resolved_default" ] && [ "$resolved_default" != "main" ]; then
+              echo "Target default branch is $resolved_default; overriding requested main."
+              target_branch="$resolved_default"
+            fi
+          fi
           if [ -d "$cache_dir" ]; then
             git -C "$cache_dir" remote set-url origin "$url"
             git -C "$cache_dir" config remote.origin.promisor true
@@ -1314,6 +1324,16 @@ jobs:
           cache_dir="${{ needs.plan.outputs.target_checkout_dir }}-cache.git"
           checkout_dir="${{ needs.plan.outputs.target_checkout_dir }}"
           target_branch="${{ needs.plan.outputs.target_branch }}"
+          # "main" doubles as "unspecified" upstream; Hamelyn targets may use a
+          # different default branch (hamelyn-serverless lives on dev), so
+          # resolve the remote HEAD before cloning.
+          if [ "$target_branch" = "main" ]; then
+            resolved_default="$(git ls-remote --symref "$url" HEAD 2>/dev/null | awk '/^ref:/ {sub("refs/heads/", "", $2); print $2; exit}')"
+            if [ -n "$resolved_default" ] && [ "$resolved_default" != "main" ]; then
+              echo "Target default branch is $resolved_default; overriding requested main."
+              target_branch="$resolved_default"
+            fi
+          fi
           if [ -d "$cache_dir" ]; then
             git -C "$cache_dir" remote set-url origin "$url"
             git -C "$cache_dir" config remote.origin.promisor true
