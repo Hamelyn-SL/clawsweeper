@@ -21,6 +21,9 @@ export function codexSubprocessEnv(): NodeJS.ProcessEnv {
   delete env.CODEX_TOKEN_BLOB_URL;
   delete env.CODEX_TOKEN_KEY;
   for (const key of Object.keys(env)) {
+    if (key.startsWith("GIT_CONFIG_")) delete env[key];
+  }
+  for (const key of Object.keys(env)) {
     if (/^CLAWSWEEPER_.*GH_TOKEN$/.test(key)) delete env[key];
   }
   if (process.env.GITHUB_ACTIONS === "true") {

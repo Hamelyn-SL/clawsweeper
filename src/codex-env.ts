@@ -79,6 +79,9 @@ export function codexEnv(options: CodexEnvOptions = {}): NodeJS.ProcessEnv {
   delete env.CLAWSWEEPER_CRABFLEET_WORK_STATE_URL;
   delete env.CODEX_TOKEN_BLOB_URL;
   delete env.CODEX_TOKEN_KEY;
+  for (const key of Object.keys(env)) {
+    if (key.startsWith("GIT_CONFIG_")) delete env[key];
+  }
   if (!options.preserveCodexAuth) {
     delete env.OPENAI_API_KEY;
     delete env.CODEX_API_KEY;
