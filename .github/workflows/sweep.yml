@@ -1009,6 +1009,7 @@ jobs:
         working-directory: clawsweeper
         run: |
           target_slug="${{ steps.target.outputs.target_repo }}"
+          target_slug="$(printf '%s' "$target_slug" | tr '[:upper:]' '[:lower:]')"
           target_slug="${target_slug//\//-}"
           pnpm run status -- \
             --target-repo "${{ steps.target.outputs.target_repo }}" \
@@ -1222,6 +1223,7 @@ jobs:
           TARGET_REPO: ${{ steps.target.outputs.target_repo }}
         run: |
           target_slug="$TARGET_REPO"
+          target_slug="$(printf '%s' "$target_slug" | tr '[:upper:]' '[:lower:]')"
           target_slug="${target_slug//\//-}"
           pnpm run status -- \
             --target-repo "$TARGET_REPO" \
@@ -1580,6 +1582,7 @@ jobs:
           TARGET_REPO: ${{ needs.plan.outputs.target_repo }}
         run: |
           target_slug="$TARGET_REPO"
+          target_slug="$(printf '%s' "$target_slug" | tr '[:upper:]' '[:lower:]')"
           target_slug="${target_slug//\//-}"
           if [ "$HOT_INTAKE" = "true" ] && [ -z "$EXACT_ITEM" ]; then
             echo "Skipping full reconcile for broad hot-intake publish."
@@ -1787,6 +1790,7 @@ jobs:
           set -euo pipefail
           test -n "$GH_TOKEN"
           target_slug="$TARGET_REPO"
+          target_slug="$(printf '%s' "$target_slug" | tr '[:upper:]' '[:lower:]')"
           target_slug="${target_slug//\//-}"
           item_numbers="$(pnpm run --silent workflow -- artifact-item-numbers --artifact-dir artifacts)"
           if [ -z "$item_numbers" ]; then
@@ -1844,6 +1848,7 @@ jobs:
           set -euo pipefail
           test -n "$GH_TOKEN"
           target_slug="$TARGET_REPO"
+          target_slug="$(printf '%s' "$target_slug" | tr '[:upper:]' '[:lower:]')"
           target_slug="${target_slug//\//-}"
           item_numbers="$(pnpm run --silent workflow -- artifact-item-numbers --artifact-dir artifacts)"
           if [ -z "$item_numbers" ]; then
@@ -2179,6 +2184,7 @@ jobs:
           TARGET_REPO: ${{ steps.target.outputs.target_repo }}
         run: |
           target_slug="$TARGET_REPO"
+          target_slug="$(printf '%s' "$target_slug" | tr '[:upper:]' '[:lower:]')"
           target_slug="${target_slug//\//-}"
           pnpm run repair:publish-main -- \
             --message "chore: update sweep audit state" \
@@ -2317,6 +2323,7 @@ jobs:
           if [ "$sync_comments_only" = "true" ]; then
             if [ "$sync_open_pr_batch" = "true" ]; then
               target_slug="$TARGET_REPO"
+              target_slug="$(printf '%s' "$target_slug" | tr '[:upper:]' '[:lower:]')"
               target_slug="${target_slug//\//-}"
               cursor_path="results/comment-sync-cursors/${target_slug}.json"
               sync_batch_size="${{ github.event_name == 'workflow_dispatch' && github.event.inputs.apply_limit || '25' }}"
@@ -2404,6 +2411,7 @@ jobs:
           fi
           comment_sync_min_age_days="${{ github.event_name == 'workflow_dispatch' && github.event.inputs.apply_comment_sync_min_age_days || '7' }}"
           target_slug="$TARGET_REPO"
+          target_slug="$(printf '%s' "$target_slug" | tr '[:upper:]' '[:lower:]')"
           target_slug="${target_slug//\//-}"
           cursor_path="results/comment-sync-cursors/${target_slug}.json"
           apply_cursor_path="results/apply-cursors/${target_slug}.json"
@@ -2755,6 +2763,7 @@ jobs:
             exit 0
           fi
           target_slug="$APPLY_TARGET_REPO"
+          target_slug="$(printf '%s' "$target_slug" | tr '[:upper:]' '[:lower:]')"
           target_slug="${target_slug//\//-}"
           publish_args=(
             --message "chore: apply sweep decisions"

@@ -152,6 +152,7 @@ jobs:
           bot_cursor_arg=()
           cursor_publish_args=()
           target_slug="$TARGET_REPO"
+          target_slug="$(printf '%s' "$target_slug" | tr '[:upper:]' '[:lower:]')"
           target_slug="${target_slug//\//-}"
           if [ -n "$PROOF_NUDGES_ITEM_NUMBERS" ]; then
             if [[ ! "$PROOF_NUDGES_ITEM_NUMBERS" =~ ^[0-9]+([[:space:]]*,[[:space:]]*[0-9]+)*$ ]]; then
