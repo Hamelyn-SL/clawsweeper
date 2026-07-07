@@ -944,7 +944,7 @@ test("sweep event reviews and target fanout avoid storm amplification", () => {
   assert.match(legacyIntakeBlock, /\/internal\/exact-review\/enqueue/);
   assert.match(
     fanoutBlock,
-    /FANOUT_LIMIT: \$\{\{ github\.event\.schedule == '41 \* \* \* \*' && '6' \|\| \(github\.event\.schedule == '37 \*\/6 \* \* \*' && '12' \|\| '6'\) \}\}/,
+    /FANOUT_LIMIT: \$\{\{ github\.event\.schedule == '41 5,12 \* \* 1-5' && '6' \|\| \(github\.event\.schedule == '37 \*\/6 \* \* \*' && '12' \|\| '6'\) \}\}/,
   );
 });
 
