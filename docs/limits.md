@@ -33,14 +33,14 @@ The mental model:
 
 | Name                                       | Current | Meaning                                                                               |
 | ------------------------------------------ | ------: | ------------------------------------------------------------------------------------- |
-| `workers.max`                              |     128 | Maximum global Codex worker budget used to derive lane limits.                        |
-| `workers.reserve_for_interactive`          |      16 | Worker slots background lanes leave open for exact/manual/urgent work.                |
-| `workers.expansion_reserve`                |       8 | Extra slots background lanes leave open for independently planned matrix expansion.   |
-| `workers.minimum_background`               |      16 | Target floor for background progress when enough global capacity is available.        |
-| `lanes.exact_review.max_concurrent`        |      28 | Maximum concurrent exact-item review workflow runs admitted to Codex.                 |
-| `lanes.exact_review.target_max_concurrent` |      24 | Maximum concurrent exact-item review workflow runs one target repository may consume. |
-| `lanes.assist.max`                         |      10 | Maximum concurrent lightweight assist jobs.                                           |
-| `lanes.repair.cluster_max_live_runs`       |       2 | Default live repair workflow cap for imported gitcrawl cluster dispatches.            |
+| `workers.max`                              |     16 | Maximum global Codex worker budget used to derive lane limits.                        |
+| `workers.reserve_for_interactive`          |      2 | Worker slots background lanes leave open for exact/manual/urgent work.                |
+| `workers.expansion_reserve`                |       1 | Extra slots background lanes leave open for independently planned matrix expansion.   |
+| `workers.minimum_background`               |      4 | Target floor for background progress when enough global capacity is available.        |
+| `lanes.exact_review.max_concurrent`        |      4 | Maximum concurrent exact-item review workflow runs admitted to Codex.                 |
+| `lanes.exact_review.target_max_concurrent` |      3 | Maximum concurrent exact-item review workflow runs one target repository may consume. |
+| `lanes.assist.max`                         |      2 | Maximum concurrent lightweight assist jobs.                                           |
+| `lanes.repair.cluster_max_live_runs`       |       1 | Default live repair workflow cap for imported gitcrawl cluster dispatches.            |
 
 ## Derived Limits
 
@@ -53,22 +53,22 @@ by default.
 
 | Name                                                | Current | Meaning                                                                               |
 | --------------------------------------------------- | ------: | ------------------------------------------------------------------------------------- |
-| `exact_review.concurrent_max`                       |      28 | Exact-item review admission cap, clamped to `workers.max`.                            |
-| `exact_review.target_concurrent_max`                |      24 | Exact-item per-target admission cap, clamped to global exact-review capacity.         |
-| `assist.default`                                    |      10 | Maintainer assist job cap.                                                            |
-| `review_shards.normal_default`                      |      89 | Quiet-system normal review shard ceiling.                                             |
-| `review_shards.normal_active_floor`                 |      38 | Minimum active normal review shards to keep queued for `openclaw/openclaw`.           |
-| `review_shards.hot_intake_default`                  |      44 | Quiet-system broad hot-intake review shard ceiling.                                   |
+| `exact_review.concurrent_max`                       |      4 | Exact-item review admission cap, clamped to `workers.max`.                            |
+| `exact_review.target_concurrent_max`                |      3 | Exact-item per-target admission cap, clamped to global exact-review capacity.         |
+| `assist.default`                                    |      2 | Maintainer assist job cap.                                                            |
+| `review_shards.normal_default`                      |      11 | Quiet-system normal review shard ceiling.                                             |
+| `review_shards.normal_active_floor`                 |      4 | Minimum active normal review shards to keep queued for `openclaw/openclaw`.           |
+| `review_shards.hot_intake_default`                  |      5 | Quiet-system broad hot-intake review shard ceiling.                                   |
 | `review_shards.exact_item_default`                  |       1 | Exact-item hot-intake shard count.                                                    |
-| `review_shards.hard_cap`                            |     128 | Maximum accepted review shard count.                                                  |
-| `commit_review.page_size_default`                   |       6 | Commits selected per commit-review page.                                              |
-| `commit_review.page_size_hard_cap`                  |     128 | Maximum commit-review page size.                                                      |
-| `repair_live_runs.default`                          |      51 | Default live repair workflow run cap for manual dispatch/requeue/self-heal.           |
-| `repair_live_runs.hard_cap`                         |     128 | Absolute live repair run cap accepted by explicit CLI/env overrides with this config. |
-| `repair_live_runs.automerge_default`                |      51 | Live repair run cap for automerge comment-router dispatches.                          |
-| `repair_live_runs.issue_implementation_default`     |      51 | Live repair run cap for issue-to-PR implementation intake.                            |
-| `repair_live_runs.cluster_default`                  |       2 | Live repair run cap for imported gitcrawl cluster dispatches.                         |
-| `issue_implementation.dispatches_per_sweep_default` |       5 | Maximum implementation intake jobs queued from one review publish run.                |
+| `review_shards.hard_cap`                            |     16 | Maximum accepted review shard count.                                                  |
+| `commit_review.page_size_default`                   |       1 | Commits selected per commit-review page.                                              |
+| `commit_review.page_size_hard_cap`                  |     16 | Maximum commit-review page size.                                                      |
+| `repair_live_runs.default`                          |      6 | Default live repair workflow run cap for manual dispatch/requeue/self-heal.           |
+| `repair_live_runs.hard_cap`                         |     16 | Absolute live repair run cap accepted by explicit CLI/env overrides with this config. |
+| `repair_live_runs.automerge_default`                |      6 | Live repair run cap for automerge comment-router dispatches.                          |
+| `repair_live_runs.issue_implementation_default`     |      6 | Live repair run cap for issue-to-PR implementation intake.                            |
+| `repair_live_runs.cluster_default`                  |       1 | Live repair run cap for imported gitcrawl cluster dispatches.                         |
+| `issue_implementation.dispatches_per_sweep_default` |       1 | Maximum implementation intake jobs queued from one review publish run.                |
 
 Formula summary:
 

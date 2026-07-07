@@ -105,16 +105,32 @@ async function postToSlack(blocks) {
   if (!botToken || !channel) {
     fail("set SLACK_WEBHOOK_URL, or SLACK_BOT_TOKEN and SLACK_CHANNEL");
   }
-  const response = await fetch("https://slack.com/api/chat.postMessage", {
-    method: "POST",
-    headers: {
-      "content-type": "application/json; charset=utf-8",
-      authorization: `Bearer ${botToken}`,
-    },
-    body: JSON.stringify({ channel, blocks, text: "ClawSweeper digest" }),
-  });
-  const payload = await response.json();
-  if (!payload.ok) fail(`chat.postMessage failed: ${payload.error ?? response.status}`);
+  const post = async () => {
+    const response = await fetch("https://slack.com/api/chat.postMessage", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json; charset=utf-8",
+        authorization: `Bearer ${botToken}`,
+      },
+      body: JSON.stringify({ channel, blocks, text: "ClawSweeper digest" }),
+    });
+    return response.json();
+  };
+  let payload = await post();
+  if (!payload.ok && payload.error === "not_in_channel") {
+    const join = await fetch("https://slack.com/api/conversations.join", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json; charset=utf-8",
+        authorization: `Bearer ${botToken}`,
+      },
+      body: JSON.stringify({ channel }),
+    });
+    const joined = await join.json();
+    if (!joined.ok) fail(`conversations.join failed: ${joined.error}`);
+    payload = await post();
+  }
+  if (!payload.ok) fail(`chat.postMessage failed: ${payload.error ?? "unknown"}`);
 }
 
 async function main() {

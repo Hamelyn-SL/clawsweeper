@@ -116,7 +116,7 @@ maintainer-visible work. The checked-in default comes from
 `openclaw/clawsweeper` only when the org has enough rate-limit headroom:
 
 ```text
-CLAWSWEEPER_COMMIT_REVIEW_PAGE_SIZE=6
+CLAWSWEEPER_COMMIT_REVIEW_PAGE_SIZE=1
 ```
 
 The receiver clamps this between 1 and 128. Setting the variable bypasses the
