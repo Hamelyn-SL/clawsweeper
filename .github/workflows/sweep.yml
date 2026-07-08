@@ -1146,11 +1146,12 @@ jobs:
             else
               batch_size="${{ github.event.client_payload.batch_size || github.event.inputs.batch_size || '3' }}"
             fi
-            if [ "$target_repo" = "Hamelyn-SL/hamelyn-serverless" ]; then
-              min_active_shards="$normal_active_floor"
-            else
-              min_active_shards="0"
-            fi
+            # No active floor for Hamelyn. Upstream keeps openclaw's workers
+            # busy by backfilling re-reviews of items already reviewed 6h+ ago;
+            # Hamelyn's backlog is small, so that only re-comments the same
+            # items every subscription window. Review each item once (and again
+            # only on real target activity), never top up with re-reviews.
+            min_active_shards="0"
             shard_count="${{ github.event.client_payload.shard_count || github.event.inputs.shard_count || '' }}"
             if [ -z "$shard_count" ]; then
               shard_count="$normal_shards"
