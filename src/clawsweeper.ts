@@ -16348,6 +16348,12 @@ const PATCHABLE_REVIEW_COMMENT_AUTHORS = new Set(
     "clawsweeper",
     "clawsweeper[bot]",
     "openclaw-clawsweeper[bot]",
+    // Hamelyn fork: our GitHub App is "clawsweeper-hamelyn", so review comments
+    // are authored by clawsweeper-hamelyn[bot]. Without this the bot does not
+    // recognise its own comment as editable and posts a duplicate on every
+    // re-review instead of editing in place.
+    "clawsweeper-hamelyn",
+    "clawsweeper-hamelyn[bot]",
     process.env.CLAWSWEEPER_COMMENT_AUTHOR_LOGIN,
   ].filter((login): login is string => typeof login === "string" && login.length > 0),
 );
