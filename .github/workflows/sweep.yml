@@ -174,7 +174,11 @@ on:
     # rewritten. Dropped upstream ticks: per-repo 5-minute hot intake, extra
     # hourly applies, per-repo audits, and comment-sync — the fanout ticks
     # below already cover every configured repository at Hamelyn scale.
-    - cron: "3 * * * *"
+    #
+    # OBSERVE-ONLY MODE (2026-07): the apply tick "3 * * * *" is intentionally
+    # NOT scheduled, so ClawSweeper reviews and PROPOSES closes (visible in the
+    # comment and the Slack digest) but never closes anything itself. To let it
+    # close again, restore `- cron: "3 * * * *"` here.
     - cron: "4/15 * * * *"
     - cron: "41 * * * *"
     - cron: "37 */6 * * *"

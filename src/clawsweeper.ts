@@ -1484,100 +1484,111 @@ const ISSUE_ADVISORY_LABELS = [
     name: "issue-rating: 🦀 challenger crab",
     color: "1F883D",
     description:
-      "Exceptional issue quality: high-confidence current-main reproduction and actionable evidence.",
+      "Calidad de issue excepcional: reproducción en la rama actual con alta confianza y evidencia accionable.",
   },
   {
     name: "issue-rating: 🦞 diamond lobster",
     color: "0969DA",
     description:
-      "Very strong issue quality with high-confidence source-level or clear reproduction.",
+      "Calidad de issue muy alta, con reproducción clara o a nivel de código y alta confianza.",
   },
   {
     name: "issue-rating: 🐚 platinum hermit",
     color: "0F766E",
-    description: "Good issue quality with a plausible reproduction path needing some confirmation.",
+    description:
+      "Buena calidad de issue, con una vía de reproducción plausible que necesita algo de confirmación.",
   },
   {
     name: "issue-rating: 🦐 gold shrimp",
     color: "B7791F",
-    description: "Decent issue quality, but reproduction details are still incomplete.",
+    description:
+      "Calidad de issue aceptable, pero los detalles de reproducción aún están incompletos.",
   },
   {
     name: "issue-rating: 🦪 silver shellfish",
     color: "7A828E",
-    description: "Thin issue quality; more reproduction proof or environment detail is needed.",
+    description:
+      "Calidad de issue pobre; hacen falta más pruebas de reproducción o detalle del entorno.",
   },
   {
     name: "issue-rating: 🧂 unranked krab",
     color: "8C2F39",
-    description: "Issue quality is currently too unclear to act on safely.",
+    description:
+      "La calidad de la issue es demasiado incierta ahora mismo para actuar con seguridad.",
   },
   {
     name: "issue-rating: 🌊 off-meta tidepool",
     color: "6E7781",
-    description: "Issue quality rating does not apply to this item.",
+    description: "La valoración de calidad de issue no aplica a este item.",
   },
   {
     name: "clawsweeper:current-main-repro",
     color: "0A3069",
-    description: "ClawSweeper found a high-confidence current-main issue reproduction.",
+    description:
+      "ClawSweeper encontró una reproducción de la issue en la rama actual con alta confianza.",
   },
   {
     name: "clawsweeper:source-repro",
     color: "0A3069",
-    description: "ClawSweeper found a high-confidence source-level issue reproduction.",
+    description:
+      "ClawSweeper encontró una reproducción de la issue a nivel de código con alta confianza.",
   },
   {
     name: "clawsweeper:not-repro-on-main",
     color: "2DA44E",
     description:
-      "ClawSweeper found high-confidence evidence that this issue no longer reproduces on main.",
+      "ClawSweeper encontró evidencia de alta confianza de que esta issue ya no se reproduce en main.",
   },
   {
     name: "clawsweeper:needs-live-repro",
     color: "FBCA04",
     description:
-      "ClawSweeper needs live local, crabbox, or manual validation to confirm this issue.",
+      "ClawSweeper necesita validación en vivo (local, crabbox o manual) para confirmar esta issue.",
   },
   {
     name: "clawsweeper:needs-info",
     color: "6E7781",
-    description: "ClawSweeper needs more reporter information before it can verify this issue.",
+    description:
+      "ClawSweeper necesita más información del reportante antes de poder verificar esta issue.",
   },
   {
     name: "clawsweeper:linked-pr-open",
     color: "57606A",
-    description: "ClawSweeper found an open linked pull request for this issue.",
+    description: "ClawSweeper encontró un pull request abierto vinculado a esta issue.",
   },
   {
     name: "clawsweeper:no-new-fix-pr",
     color: "8C959F",
-    description: "ClawSweeper does not recommend queueing a new automated fix PR for this issue.",
+    description:
+      "ClawSweeper no recomienda encolar un nuevo PR de arreglo automático para esta issue.",
   },
   {
     name: "clawsweeper:queueable-fix",
     color: "0E8A16",
-    description: "ClawSweeper marked this issue as an existing queue_fix_pr work candidate.",
+    description: "ClawSweeper marcó esta issue como candidata de trabajo queue_fix_pr existente.",
   },
   {
     name: "clawsweeper:fix-shape-clear",
     color: "1A7F37",
-    description: "ClawSweeper found a clear likely implementation shape for this issue.",
+    description:
+      "ClawSweeper encontró una forma de implementación probable y clara para esta issue.",
   },
   {
     name: "clawsweeper:needs-maintainer-review",
     color: "FBCA04",
-    description: "ClawSweeper marked this issue as needing maintainer review before automation.",
+    description:
+      "ClawSweeper marcó esta issue como que necesita revisión del mantenedor antes de automatizar.",
   },
   {
     name: "clawsweeper:needs-product-decision",
     color: "FBCA04",
-    description: "ClawSweeper marked this issue as needing a product or behavior decision.",
+    description:
+      "ClawSweeper marcó esta issue como que necesita una decisión de producto o de comportamiento.",
   },
   {
     name: "clawsweeper:needs-security-review",
     color: "B60205",
-    description: "ClawSweeper marked this issue as needing security-sensitive review.",
+    description: "ClawSweeper marcó esta issue como que necesita revisión sensible de seguridad.",
   },
 ] as const;
 const ISSUE_ADVISORY_LABEL_NAMES = new Set(
