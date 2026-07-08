@@ -175,10 +175,13 @@ on:
     # hourly applies, per-repo audits, and comment-sync — the fanout ticks
     # below already cover every configured repository at Hamelyn scale.
     #
-    # OBSERVE-ONLY MODE (2026-07): the apply tick "3 * * * *" is intentionally
-    # NOT scheduled, so ClawSweeper reviews and PROPOSES closes (visible in the
-    # comment and the Slack digest) but never closes anything itself. To let it
-    # close again, restore `- cron: "3 * * * *"` here.
+    # OBSERVE-ONLY MODE (2026-07): the apply/close tick "3 * * * *" is
+    # intentionally NOT scheduled, so ClawSweeper reviews and PROPOSES closes
+    # (visible in the comment and the Slack digest) but never closes anything
+    # itself. To let it close again, restore `- cron: "3 * * * *"` here.
+    # Review comments are still posted right after each review by the "Sync
+    # selected review comments" publish step (sync-comments-only, zero closes),
+    # so every item gets exactly one Spanish comment without any closing tick.
     - cron: "4/15 * * * *"
     - cron: "41 * * * *"
     - cron: "37 */6 * * *"
@@ -1800,8 +1803,11 @@ jobs:
           done
           echo "::warning::Unable to dispatch background comment sync after three attempts; apply/comment-sync backstops can pick it up later."
 
+      # Observe-only mode: run after every review (not just exact-item events) so
+      # each reviewed issue/PR gets its single review comment posted/updated even
+      # though the closing apply tick is disabled. sync-comments-only never closes.
       - name: Sync selected review comments
-        if: ${{ success() && steps.target-write-token.outputs.token != '' && ((github.event_name == 'repository_dispatch' && github.event.action != 'clawsweeper_target_sweep') || github.event.inputs.item_number != '' || github.event.inputs.item_numbers != '') }}
+        if: ${{ success() && steps.target-write-token.outputs.token != '' }}
         timeout-minutes: 15
         env:
           GH_TOKEN: ${{ steps.target-write-token.outputs.token }}

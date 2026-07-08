@@ -428,10 +428,13 @@ test("sweep target tokens fall back when an org app installation is missing", ()
       "if: ${{ success() && steps.target-write-token.outputs.token != '' && needs.plan.outputs.hot_intake != 'true'",
     ),
   );
-  assert.ok(
-    workflow.includes(
-      "if: ${{ success() && steps.target-write-token.outputs.token != '' && ((github.event_name == 'repository_dispatch'",
-    ),
+  // Observe-only mode: the review-comment sync runs after every review (not
+  // only exact-item events) so each item gets its single comment while closing
+  // stays disabled. It still guards on the write token being present.
+  const syncStep = workflow.slice(workflow.indexOf("- name: Sync selected review comments"));
+  assert.match(
+    syncStep.slice(0, 220),
+    /if: \$\{\{ success\(\) && steps\.target-write-token\.outputs\.token != '' \}\}/,
   );
   assert.ok(
     workflow.includes(
