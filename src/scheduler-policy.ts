@@ -109,12 +109,25 @@ function isCreatedWithinDays(
   return Number.isFinite(createdAt) && now - createdAt < days * DAY_MS;
 }
 
+// Hamelyn opt-in (env CLAWSWEEPER_REVIEW_ONLY_ON_ACTIVITY=1): review each item once,
+// then re-review ONLY when there is real target-side activity (a new commit, a human
+// comment). Upstream also re-reviews unchanged items on a daily/weekly timer; for a
+// shared Codex subscription that (a) burns budget on items nobody touched and (b)
+// produces an all-at-once re-review wave whenever the 14-day content cache expires or a
+// review parameter (model/reasoning) changes and invalidates every cached review at once.
+// Real activity still triggers the hourly path above; a policy mismatch still forces a
+// fresh review via shouldReviewItem. This only removes the no-activity timer.
+function reviewOnlyOnActivity(): boolean {
+  return process.env.CLAWSWEEPER_REVIEW_ONLY_ON_ACTIVITY === "1";
+}
+
 function reviewCadenceMs(
   item: SchedulerItem,
   review: SchedulerExistingReview | null,
   now = Date.now(),
 ): number {
   if (hasActivitySinceReview(item, review)) return HOURLY_REVIEW_MS;
+  if (reviewOnlyOnActivity()) return Number.POSITIVE_INFINITY;
   if (isCreatedWithinDays(item, HOT_REVIEW_DAYS, now)) return DAILY_REVIEW_DAYS * DAY_MS;
   if (item.kind === "pull_request") return DAILY_REVIEW_DAYS * DAY_MS;
   const createdAt = Date.parse(item.createdAt);

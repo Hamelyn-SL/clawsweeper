@@ -203,6 +203,75 @@ test("scheduler ignores ClawSweeper-owned updated_at churn after review", () => 
   );
 });
 
+test("CLAWSWEEPER_REVIEW_ONLY_ON_ACTIVITY disables the no-activity re-review timer", () => {
+  const previous = process.env.CLAWSWEEPER_REVIEW_ONLY_ON_ACTIVITY;
+  process.env.CLAWSWEEPER_REVIEW_ONLY_ON_ACTIVITY = "1";
+  try {
+    const now = Date.parse("2026-04-26T12:00:00Z");
+    const review = (reviewedAt, itemUpdatedAt, extra = {}) => ({
+      path: "items/123.md",
+      markdown: "",
+      reviewedAt,
+      itemUpdatedAt,
+      decision: "keep_open",
+      reviewStatus: "complete",
+      reviewPolicy: "current",
+      ...extra,
+    });
+
+    // Hot new issue, no activity, reviewed long ago: without the flag this re-reviews
+    // daily (see the test above); with the flag it stays quiet.
+    assert.equal(
+      shouldReviewItem(
+        item({ createdAt: "2026-04-24T00:00:00Z", updatedAt: "2026-04-24T00:00:00Z" }),
+        review("2026-04-25T10:00:00Z", "2026-04-24T00:00:00Z"),
+        now,
+        "current",
+      ),
+      false,
+    );
+    // PR, no activity, reviewed a day ago: daily timer suppressed too.
+    assert.equal(
+      shouldReviewItem(
+        item({
+          kind: "pull_request",
+          createdAt: "2026-03-01T00:00:00Z",
+          updatedAt: "2026-03-01T00:00:00Z",
+        }),
+        review("2026-04-25T10:00:00Z", "2026-03-01T00:00:00Z"),
+        now,
+        "current",
+      ),
+      false,
+    );
+    // Real target-side activity (item updated after the review) still re-reviews.
+    assert.equal(
+      shouldReviewItem(
+        item({ createdAt: "2026-04-24T00:00:00Z", updatedAt: "2026-04-26T11:10:00Z" }),
+        review("2026-04-26T10:00:00Z", "2026-04-24T00:00:00Z"),
+        now,
+        "current",
+      ),
+      true,
+    );
+    // Never-reviewed items are always reviewed (first pass).
+    assert.equal(shouldReviewItem(item(), null, now, "current"), true);
+    // A review-policy change still forces a fresh review even without activity.
+    assert.equal(
+      shouldReviewItem(
+        item({ createdAt: "2026-04-24T00:00:00Z", updatedAt: "2026-04-24T00:00:00Z" }),
+        review("2026-04-26T11:59:00Z", "2026-04-24T00:00:00Z", { reviewPolicy: "old-policy" }),
+        now,
+        "current",
+      ),
+      true,
+    );
+  } finally {
+    if (previous === undefined) delete process.env.CLAWSWEEPER_REVIEW_ONLY_ON_ACTIVITY;
+    else process.env.CLAWSWEEPER_REVIEW_ONLY_ON_ACTIVITY = previous;
+  }
+});
+
 test("hot new item priority is protected from older activity churn", () => {
   const now = Date.parse("2026-04-30T12:00:00Z");
   const review = (reviewedAt, itemUpdatedAt) => ({
