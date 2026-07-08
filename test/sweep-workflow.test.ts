@@ -910,11 +910,16 @@ test("planned background reviews allow safe content-cache reuse without weakenin
   );
   assert.match(reviewJob, /if \[ -z "\$EXACT_ITEM" \]; then/);
   assert.match(reviewJob, /planned_automatic_review_arg=\(--planned-automatic-review\)/);
+  // Automatic backfill shards skip the "review started" placeholder so the bot
+  // leaves exactly one comment per item (the final review). The command-driven
+  // event review keeps its placeholder as an acknowledgement.
+  assert.match(reviewJob, /--skip-start-comment/);
   assert.match(
     reviewJob,
-    /--item-numbers "\$\{\{ matrix\.item_numbers \}\}" \\\n+\s+"\$\{planned_automatic_review_arg\[@\]\}"/,
+    /--item-numbers "\$\{\{ matrix\.item_numbers \}\}" \\\n+\s+--skip-start-comment \\\n+\s+"\$\{planned_automatic_review_arg\[@\]\}"/,
   );
   assert.doesNotMatch(eventReviewJob, /--planned-automatic-review/);
+  assert.doesNotMatch(eventReviewJob, /--skip-start-comment/);
 });
 
 test("sweep event reviews and target fanout avoid storm amplification", () => {
