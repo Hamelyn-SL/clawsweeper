@@ -932,6 +932,22 @@ jobs:
           filter: blob:none
           fetch-depth: 0
 
+      - name: Codex budget gate
+        env:
+          GH_TOKEN: ${{ github.token }}
+          CODEX_TOKEN_BLOB_URL: ${{ secrets.CODEX_TOKEN_BLOB_URL }}
+          CODEX_TOKEN_KEY: ${{ secrets.CODEX_TOKEN_KEY }}
+          CLAWSWEEPER_BUDGET_MAX_5H: ${{ vars.CLAWSWEEPER_BUDGET_MAX_5H || '60' }}
+          CLAWSWEEPER_BUDGET_MAX_WEEKLY: ${{ vars.CLAWSWEEPER_BUDGET_MAX_WEEKLY || '85' }}
+        run: |
+          set -euo pipefail
+          if ! node clawsweeper/scripts/codex-budget-gate.mjs; then
+            echo "Sin margen en la suscripción compartida; este run se cancela y el siguiente cron reintenta."
+            gh run cancel "${GITHUB_RUN_ID}" -R "${GITHUB_REPOSITORY}"
+            sleep 90
+            exit 1
+          fi
+
       - name: Resolve target repository
         id: target
         run: |
