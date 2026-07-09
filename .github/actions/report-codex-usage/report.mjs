@@ -14,9 +14,7 @@ const source = process.env.USAGE_SOURCE || "clawsweeper";
 const label = process.env.USAGE_LABEL || "";
 const sinkUrl = process.env.USAGE_SINK_URL || "";
 const sinkToken = process.env.USAGE_SINK_TOKEN || "";
-const runId = process.env.GITHUB_RUN_ID
-  ? `gh:${process.env.GITHUB_RUN_ID}`
-  : undefined;
+const runId = process.env.GITHUB_RUN_ID ? `gh:${process.env.GITHUB_RUN_ID}` : undefined;
 
 // The sink validates at most 500 events per request; batch to avoid drops.
 const MAX_EVENTS_PER_POST = 500;
@@ -61,9 +59,7 @@ function extractSession(path) {
   }
   if (!lastUsage) return null;
   const file = path.split("/").pop() ?? "";
-  const sessionId = file.startsWith("rollout-")
-    ? file.slice(28, -6)
-    : file.replace(/\.jsonl$/, "");
+  const sessionId = file.startsWith("rollout-") ? file.slice(28, -6) : file.replace(/\.jsonl$/, "");
 
   // Account rate-limit snapshot rides along as metadata (the sink schema keeps
   // usage fields first-class and everything else under `meta`).
@@ -113,8 +109,7 @@ function writeSummary(events) {
       "|---|---|---:|---:|---:|---:|---:|---:|\n";
     let burnTotal = 0;
     for (const e of events) {
-      const burn =
-        Math.max(0, e.inputTokens - e.cachedInputTokens) + e.outputTokens;
+      const burn = Math.max(0, e.inputTokens - e.cachedInputTokens) + e.outputTokens;
       burnTotal += burn;
       const rl5 = e.meta?.rateLimit5h ?? "?";
       const rlw = e.meta?.rateLimitWeek ?? "?";
@@ -154,9 +149,7 @@ async function postToSink(events) {
 
 try {
   if (!codexHome || !existsSync(codexHome)) {
-    console.log(
-      `CODEX_HOME not found (${codexHome || "unset"}); nothing to report`,
-    );
+    console.log(`CODEX_HOME not found (${codexHome || "unset"}); nothing to report`);
     process.exit(0);
   }
   const events = listRolloutFiles(codexHome)
