@@ -603,6 +603,13 @@ jobs:
             --shard-count 1 \
             "${additional_prompt_arg[@]}"
 
+      - name: Report Codex token usage
+        if: always()
+        uses: ./.github/actions/report-codex-usage
+        with:
+          label: "event-review:${{ steps.target.outputs.target_repo }}#${{ steps.target.outputs.item_number }}"
+          sink-token: ${{ secrets.AGENTS_API_TOKEN }}
+
       - name: Create state token
         id: state-token
         uses: ./.github/actions/create-state-token
@@ -1490,6 +1497,13 @@ jobs:
               target_repo: $target_repo
             }' > review-artifacts/metrics/shard-${{ matrix.shard }}.json
 
+      - name: Report Codex token usage
+        if: always()
+        uses: ./clawsweeper/.github/actions/report-codex-usage
+        with:
+          label: "review:${{ needs.plan.outputs.target_repo }}#shard-${{ matrix.shard }}"
+          sink-token: ${{ secrets.AGENTS_API_TOKEN }}
+
       - name: Record failed review shard
         if: ${{ failure() || steps.review-shard.outcome == 'failure' }}
         run: |
@@ -1929,6 +1943,13 @@ jobs:
             --path apply-report.json \
             --path "results/sweep-status/${target_slug}.json" \
             --rebase-strategy theirs
+
+      - name: Report Codex token usage
+        if: always()
+        uses: ./.github/actions/report-codex-usage
+        with:
+          label: "publish-apply:${{ needs.plan.outputs.target_repo }}"
+          sink-token: ${{ secrets.AGENTS_API_TOKEN }}
 
       - name: Continue sweep
         if: ${{ success() && needs.plan.outputs.planned_count == needs.plan.outputs.planned_capacity && github.event_name != 'repository_dispatch' && (github.event_name != 'workflow_dispatch' || (github.event.inputs.item_number == '' && github.event.inputs.item_numbers == '')) }}
@@ -2982,3 +3003,10 @@ jobs:
               -f shard_count="$normal_shards" \
               -f codex_timeout_ms=1200000
           fi
+
+      - name: Report Codex token usage
+        if: always()
+        uses: ./.github/actions/report-codex-usage
+        with:
+          label: "apply:${{ steps.target.outputs.target_repo }}"
+          sink-token: ${{ secrets.AGENTS_API_TOKEN }}

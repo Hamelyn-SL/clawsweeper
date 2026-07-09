@@ -1,0 +1,29 @@
+name: Report Codex usage
+description: >-
+  Extract per-session token usage and rate-limit snapshots from this run's
+  CODEX_HOME rollouts, append a job-summary table, and POST the events to the
+  Hamelyn agents usage sink (/api/usage). Telemetry only: never fails the job.
+inputs:
+  source:
+    description: Consumer id reported to the sink.
+    default: "clawsweeper"
+  label:
+    description: "Sub-label for attribution: lane + target repo (+ shard)."
+    default: ""
+  sink-url:
+    description: Agents usage sink endpoint.
+    default: "https://agents.hamelyn.com/api/usage"
+  sink-token:
+    description: Bearer token for the sink (AGENTS_API_TOKEN). Empty skips the POST (summary only).
+    default: ""
+runs:
+  using: composite
+  steps:
+    - name: Report Codex token usage
+      shell: bash
+      env:
+        USAGE_SOURCE: ${{ inputs.source }}
+        USAGE_LABEL: ${{ inputs.label }}
+        USAGE_SINK_URL: ${{ inputs['sink-url'] }}
+        USAGE_SINK_TOKEN: ${{ inputs['sink-token'] }}
+      run: node "$GITHUB_ACTION_PATH/report.mjs" || echo "::warning::codex usage report failed (non-blocking)"
