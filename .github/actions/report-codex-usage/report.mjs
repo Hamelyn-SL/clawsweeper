@@ -38,11 +38,16 @@ function extractSession(path) {
   let lastRateLimits = null;
   let lastTs = null;
   let model = null;
+  let effort = null;
   const lines = readFileSync(path, "utf8").split("\n");
   for (const line of lines) {
     if (!model && line.includes('"model"')) {
       const m = line.match(/"model"\s*:\s*"([^"]{1,60})"/);
       if (m) model = m[1];
+    }
+    if (!effort && line.includes("reasoning_effort")) {
+      const e = line.match(/"reasoning_effort"\s*:\s*"([^"]{1,20})"/);
+      if (e) effort = e[1];
     }
     if (!line.includes("total_token_usage")) continue;
     try {
@@ -80,6 +85,7 @@ function extractSession(path) {
     source,
     provider: "codex",
     ...(model ? { model } : {}),
+    ...(effort ? { effort } : {}),
     inputTokens: lastUsage.input_tokens ?? 0,
     outputTokens: lastUsage.output_tokens ?? 0,
     cachedInputTokens: lastUsage.cached_input_tokens ?? 0,
