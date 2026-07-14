@@ -1,4 +1,4 @@
-# 🧹 ClawSweeper
+# 🦞🧹 ClawSweeper
 
 > [!IMPORTANT]
 > **Hamelyn deployment.** Este repo es el fork self-hosted de

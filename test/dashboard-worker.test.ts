@@ -744,8 +744,9 @@ test("dashboard HTML preserves UTF-8 emoji labels", async () => {
   });
   assert.equal(response.headers.get("content-type"), "text/html; charset=utf-8");
   const html = await response.text();
-  assert.match(html, /<title>ClawSweeper Live<\/title>/);
-  assert.doesNotMatch(html, /\u{1F99E}/u);
+  assert.match(html, /<title>🦞 ClawSweeper Live<\/title>/);
+  assert.match(html, /<h1>🦞 ClawSweeper <span class="live-tag">Live<\/span><\/h1>/);
+  assert.doesNotMatch(html, /\.empty::before[^}]*\u{1F99E}/u);
   assert.match(html, /Claw Workers/);
   assert.match(html, /Active Sweeps/);
   assert.match(html, /Queue Depth/);

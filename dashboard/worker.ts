@@ -5223,7 +5223,7 @@ function triageHtml(config) {
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#f6f3ec">
-<title>${escapeHtml(config.title)}</title>
+<title>🦞 ${escapeHtml(config.title)}</title>
 ${dashboardThemeInitScript()}
 <style>
 :root {
@@ -5583,7 +5583,7 @@ body.resizing-col {
 <main>
   <header>
     <div>
-      <h1>${escapeHtml(config.title)}</h1>
+      <h1>🦞 ${escapeHtml(config.title)}</h1>
       <div class="muted" id="subtitle">${escapeHtml(config.loadingSubtitle)}</div>
     </div>
     <div class="top-links">
@@ -6049,7 +6049,7 @@ function dashboardHtml(env: DashboardEnv = {}) {
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#f6f3ec">
 ${dashboardThemeInitScript()}
-<title>ClawSweeper Live</title>
+<title>🦞 ClawSweeper Live</title>
 <style>
 :root {
   color-scheme: light dark;
@@ -6815,7 +6815,7 @@ a.pill:hover { color: var(--claw); text-decoration: none; }
 <body>
 <main>
   <header>
-    <h1>ClawSweeper <span class="live-tag">Live</span></h1>
+    <h1>🦞 ClawSweeper <span class="live-tag">Live</span></h1>
     <div class="top-links">
       <a class="top-link" href="/triage">Issue triage</a>
       <a class="top-link" href="/pr-proof-triage">PR proof triage</a>
