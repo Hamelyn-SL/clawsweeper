@@ -138,7 +138,7 @@ export function renderIssueImplementationStatusComment(
   if (normalizedState.includes("complete") || normalizedState.includes("open")) {
     return [
       marker,
-      "🦞✅",
+      "✅",
       options.prUrl
         ? `Implementation PR opened: ${options.prUrl}`
         : "Automatic implementation completed.",
@@ -151,7 +151,7 @@ export function renderIssueImplementationStatusComment(
   if (normalizedState.includes("block") || normalizedState.includes("fail")) {
     return [
       marker,
-      "🦞⚠️",
+      "⚠️",
       "Automatic implementation stopped before completion.",
       options.detail ? `Reason: ${options.detail}` : null,
       options.prUrl ? `PR: ${options.prUrl}` : null,
@@ -177,7 +177,7 @@ export function renderIssueImplementationStatusComment(
   if (!existing) {
     return [
       marker,
-      "🦞🔧",
+      "🔧",
       "ClawSweeper is automatically building this issue.",
       "",
       "The issue review finished and no active implementation pull request was found.",

@@ -26,31 +26,33 @@ import {
 import { closeDecision } from "./helpers.ts";
 
 test("ClawSweeper PR rating labels use one themed overall label", () => {
-  assert.deepEqual(prRatingLabelsForTest(["bug"], "A"), ["bug", "rating: 🦞 diamond lobster"]);
+  assert.deepEqual(prRatingLabelsForTest(["bug"], "A"), ["bug", "rating: 💎 diamond"]);
   assert.deepEqual(
-    prRatingLabelsForTest(["rating: 🦀 challenger crab", "bug", "rating: 🦐 gold shrimp"], "D"),
-    ["bug", "rating: 🦪 silver shellfish"],
+    prRatingLabelsForTest(["rating: 🏆 challenger", "bug", "rating: 🥇 gold"], "D"),
+    ["bug", "rating: 🥈 silver"],
   );
-  assert.deepEqual(prRatingLabelsForTest(["bug"], "bogus"), [
-    "bug",
-    "rating: 🌊 off-meta tidepool",
-  ]);
-  assert.deepEqual(prRatingLabelsForTest(["bug", "rating: 🌊 off-meta tidepool"], "NA", true), [
-    "bug",
-  ]);
+  assert.deepEqual(
+    prRatingLabelsForTest(
+      ["rating: 🦀 challenger crab", "bug", "rating: \u{1F99E} diamond lobster"],
+      "D",
+    ),
+    ["bug", "rating: 🥈 silver"],
+  );
+  assert.deepEqual(prRatingLabelsForTest(["bug"], "bogus"), ["bug", "rating: ➖ n/a"]);
+  assert.deepEqual(prRatingLabelsForTest(["bug", "rating: ➖ n/a"], "NA", true), ["bug"]);
 });
 
 test("ClawSweeper PR rating label scheme exposes boring internal tiers", () => {
   assert.deepEqual(
     prRatingLabelSchemeForTest().map(({ tier, name, color }) => ({ tier, name, color })),
     [
-      { tier: "S", name: "rating: 🦀 challenger crab", color: "1F883D" },
-      { tier: "A", name: "rating: 🦞 diamond lobster", color: "0969DA" },
-      { tier: "B", name: "rating: 🐚 platinum hermit", color: "0F766E" },
-      { tier: "C", name: "rating: 🦐 gold shrimp", color: "B7791F" },
-      { tier: "D", name: "rating: 🦪 silver shellfish", color: "7A828E" },
-      { tier: "F", name: "rating: 🧂 unranked krab", color: "8C2F39" },
-      { tier: "NA", name: "rating: 🌊 off-meta tidepool", color: "6E7781" },
+      { tier: "S", name: "rating: 🏆 challenger", color: "1F883D" },
+      { tier: "A", name: "rating: 💎 diamond", color: "0969DA" },
+      { tier: "B", name: "rating: ⚪ platinum", color: "0F766E" },
+      { tier: "C", name: "rating: 🥇 gold", color: "B7791F" },
+      { tier: "D", name: "rating: 🥈 silver", color: "7A828E" },
+      { tier: "F", name: "rating: 🥉 bronze", color: "A97142" },
+      { tier: "NA", name: "rating: ➖ n/a", color: "6E7781" },
     ],
   );
 });
@@ -177,7 +179,7 @@ test("ClawSweeper PR status labels preserve other label families", () => {
   assert.deepEqual(
     prStatusLabelsForTest(
       [
-        "rating: 🦞 diamond lobster",
+        "rating: 💎 diamond",
         "merge-risk: 🚨 compatibility",
         "proof: sufficient",
         "status: custom-user-label",
@@ -187,7 +189,7 @@ test("ClawSweeper PR status labels preserve other label families", () => {
       },
     ),
     [
-      "rating: 🦞 diamond lobster",
+      "rating: 💎 diamond",
       "merge-risk: 🚨 compatibility",
       "proof: sufficient",
       "status: custom-user-label",
@@ -757,7 +759,7 @@ test("ClawSweeper issue advisory labels expose high-confidence reproduction stat
       reproductionStatus: "reproduced",
       reproductionConfidence: "high",
     }),
-    ["bug", "issue-rating: 🦀 challenger crab", "clawsweeper:current-main-repro"],
+    ["bug", "issue-rating: 🏆 challenger", "clawsweeper:current-main-repro"],
   );
   assert.deepEqual(
     issueAdvisoryLabelsForTest(["bug"], {
@@ -765,7 +767,7 @@ test("ClawSweeper issue advisory labels expose high-confidence reproduction stat
       reproductionStatus: "source_reproducible",
       reproductionConfidence: "high",
     }),
-    ["bug", "issue-rating: 🦞 diamond lobster", "clawsweeper:source-repro"],
+    ["bug", "issue-rating: 💎 diamond", "clawsweeper:source-repro"],
   );
   assert.deepEqual(
     issueAdvisoryLabelsForTest(["bug"], {
@@ -773,7 +775,7 @@ test("ClawSweeper issue advisory labels expose high-confidence reproduction stat
       reproductionStatus: "reproduced",
       reproductionConfidence: "medium",
     }),
-    ["bug", "issue-rating: 🐚 platinum hermit"],
+    ["bug", "issue-rating: ⚪ platinum"],
   );
   assert.deepEqual(
     issueAdvisoryLabelsForTest(["bug"], {
@@ -781,7 +783,7 @@ test("ClawSweeper issue advisory labels expose high-confidence reproduction stat
       reproductionStatus: "not_reproduced",
       reproductionConfidence: "high",
     }),
-    ["bug", "issue-rating: 🦪 silver shellfish", "clawsweeper:not-repro-on-main"],
+    ["bug", "issue-rating: 🥈 silver", "clawsweeper:not-repro-on-main"],
   );
   assert.deepEqual(
     issueAdvisoryLabelsForTest(["bug"], {
@@ -789,7 +791,7 @@ test("ClawSweeper issue advisory labels expose high-confidence reproduction stat
       reproductionStatus: "source_reproducible",
       reproductionConfidence: "medium",
     }),
-    ["bug", "issue-rating: 🐚 platinum hermit", "clawsweeper:needs-live-repro"],
+    ["bug", "issue-rating: ⚪ platinum", "clawsweeper:needs-live-repro"],
   );
   assert.deepEqual(
     issueAdvisoryLabelsForTest(["bug"], {
@@ -797,7 +799,7 @@ test("ClawSweeper issue advisory labels expose high-confidence reproduction stat
       reproductionStatus: "unclear",
       reproductionConfidence: "low",
     }),
-    ["bug", "issue-rating: 🦪 silver shellfish", "clawsweeper:needs-info"],
+    ["bug", "issue-rating: 🥈 silver", "clawsweeper:needs-info"],
   );
 });
 
@@ -813,7 +815,7 @@ test("ClawSweeper issue advisory labels expose work-lane routing state", () => {
     [
       "clawsweeper",
       "no-stale",
-      "issue-rating: 🧂 unranked krab",
+      "issue-rating: 🥉 bronze",
       "clawsweeper:queueable-fix",
       "clawsweeper:fix-shape-clear",
     ],
@@ -825,7 +827,7 @@ test("ClawSweeper issue advisory labels expose work-lane routing state", () => {
       workStatus: "candidate",
       workConfidence: "medium",
     }),
-    ["clawsweeper", "issue-rating: 🧂 unranked krab"],
+    ["clawsweeper", "issue-rating: 🥉 bronze"],
   );
   assert.deepEqual(
     issueAdvisoryLabelsForTest(["clawsweeper"], {
@@ -834,7 +836,7 @@ test("ClawSweeper issue advisory labels expose work-lane routing state", () => {
     }),
     [
       "clawsweeper",
-      "issue-rating: 🧂 unranked krab",
+      "issue-rating: 🥉 bronze",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
     ],
@@ -846,7 +848,7 @@ test("ClawSweeper issue advisory labels expose work-lane routing state", () => {
     }),
     [
       "clawsweeper",
-      "issue-rating: 🧂 unranked krab",
+      "issue-rating: 🥉 bronze",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
     ],
@@ -1094,12 +1096,7 @@ test("ClawSweeper issue advisory labels expose linked PR and human decision bloc
       type: "issue",
       hasOpenLinkedPullRequest: true,
     }),
-    [
-      "bug",
-      "issue-rating: 🧂 unranked krab",
-      "clawsweeper:linked-pr-open",
-      "clawsweeper:no-new-fix-pr",
-    ],
+    ["bug", "issue-rating: 🥉 bronze", "clawsweeper:linked-pr-open", "clawsweeper:no-new-fix-pr"],
   );
   assert.deepEqual(
     issueAdvisoryLabelsForTest(["bug"], {
@@ -1108,7 +1105,7 @@ test("ClawSweeper issue advisory labels expose linked PR and human decision bloc
     }),
     [
       "bug",
-      "issue-rating: 🧂 unranked krab",
+      "issue-rating: 🥉 bronze",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-product-decision",
     ],
@@ -1120,7 +1117,7 @@ test("ClawSweeper issue advisory labels expose linked PR and human decision bloc
     }),
     [
       "bug",
-      "issue-rating: 🧂 unranked krab",
+      "issue-rating: 🥉 bronze",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-security-review",
     ],
@@ -1132,7 +1129,7 @@ test("ClawSweeper issue advisory labels expose linked PR and human decision bloc
     }),
     [
       "bug",
-      "issue-rating: 🧂 unranked krab",
+      "issue-rating: 🥉 bronze",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-security-review",
     ],
@@ -1155,8 +1152,9 @@ test("ClawSweeper issue advisory labels remove stale owned labels and preserve o
         "clawsweeper:fix-shape-clear",
         "clawsweeper:needs-product-decision",
         "clawsweeper:needs-security-review",
-        "issue-rating: 🦞 diamond lobster",
-        "issue-rating: 🌊 off-meta tidepool",
+        "issue-rating: 💎 diamond",
+        "issue-rating: ➖ n/a",
+        "issue-rating: 🦀 challenger crab",
         "clawsweeper:autofix",
         "clawsweeper:automerge",
         "clawsweeper:human-review",
@@ -1179,7 +1177,7 @@ test("ClawSweeper issue advisory labels remove stale owned labels and preserve o
       "clawsweeper:merge-ready",
       "proof: sufficient",
       "mantis: telegram-visible-proof",
-      "issue-rating: 🦀 challenger crab",
+      "issue-rating: 🏆 challenger",
       "clawsweeper:current-main-repro",
     ],
   );

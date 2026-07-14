@@ -56,10 +56,10 @@ const UNCONFIRMED_PRODUCT_DIRECTION_EXEMPT_LABELS = new Set([
   AUTOFIX_LABEL,
 ]);
 const CLAWSWEEPER_REPLY_BADGES = {
-  default: "🦞👀",
-  repair: "🦞🔧",
-  sweep: "🦞🧹",
-  done: "🦞✅",
+  default: "👀",
+  repair: "🔧",
+  sweep: "🧹",
+  done: "✅",
 };
 const AUTOMERGE_STATUS_INTENTS = new Set([
   "automerge",

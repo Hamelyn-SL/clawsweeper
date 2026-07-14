@@ -1107,7 +1107,13 @@ function validatePrCloseCoverageCoveringSafety({
       label === "triage: needs-real-behavior-proof" ||
       (label.startsWith("status:") && label.includes("needs proof")),
   );
-  if (labels.some((label) => label.startsWith("rating:") && label.includes("unranked"))) {
+  if (
+    labels.some(
+      (label) =>
+        label === "rating: 🥉 bronze" ||
+        (label.startsWith("rating:") && label.includes("unranked")),
+    )
+  ) {
     return `linked canonical PR #${coveringRef} is F-rated`;
   }
   if (needsProof && !proofPassed) {

@@ -342,7 +342,7 @@ function normalizedLogin(value: JsonValue) {
 export function renderFastAckComment(sourceCommentId: number) {
   return [
     fastAckMarker(sourceCommentId),
-    "🦞👀",
+    "👀",
     "ClawSweeper picked this up.",
     "",
     "Command router queued. I will update this comment with the next step.",

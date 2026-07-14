@@ -57,9 +57,9 @@ Full review comments:
   });
   const markers = reviewAutomationMarkersFromReport(report);
 
-  assert.match(comment, /\*\*Merge readiness\*\*\nOverall: 🦞 diamond lobster/);
-  assert.match(comment, /Proof: 🦞 diamond lobster/);
-  assert.match(comment, /Patch quality: 🦞 diamond lobster/);
+  assert.match(comment, /\*\*Merge readiness\*\*\nOverall: 💎 diamond/);
+  assert.match(comment, /Proof: 💎 diamond/);
+  assert.match(comment, /Patch quality: 💎 diamond/);
   assert.match(comment, /Result: ready for maintainer review\./);
   assert.match(
     comment,
@@ -67,9 +67,9 @@ Full review comments:
   );
   assert.doesNotMatch(comment, /\*\*PR rating\*\*/);
   assert.doesNotMatch(comment, /\*\*Real behavior proof\*\*/);
-  assert.match(comment, /<summary>What the crustacean ranks mean<\/summary>/);
-  assert.match(comment, /🦀 challenger crab: rare, exceptional readiness/);
-  assert.match(comment, /🧂 unranked krab: not merge-ready/);
+  assert.match(comment, /<summary>What the readiness ranks mean<\/summary>/);
+  assert.match(comment, /🏆 challenger: rare, exceptional readiness/);
+  assert.match(comment, /🥉 bronze: not merge-ready/);
   assert.match(markers, /clawsweeper-verdict:pass/);
   assert.doesNotMatch(markers, /clawsweeper-verdict:needs-human/);
 });
@@ -122,9 +122,9 @@ Full review comments:
   const comment = renderReviewCommentFromReport(report, "none");
   const labelDetails = detailsBody(comment, "Label changes");
 
-  assert.match(comment, /\*\*Merge readiness\*\*\nOverall: 🧂 unranked krab/);
-  assert.match(comment, /Proof: 🧂 unranked krab/);
-  assert.match(comment, /Patch quality: 🦞 diamond lobster/);
+  assert.match(comment, /\*\*Merge readiness\*\*\nOverall: 🥉 bronze/);
+  assert.match(comment, /Proof: 🥉 bronze/);
+  assert.match(comment, /Patch quality: 💎 diamond/);
   assert.match(comment, /Result: blocked until real behavior proof is added\./);
   assert.match(
     comment,
@@ -136,7 +136,7 @@ Full review comments:
   assert.match(comment, /@clawsweeper re-review/);
   assert.match(
     labelDetails,
-    /- `rating: 🧂 unranked krab`: Overall readiness is 🧂 unranked krab; proof is 🧂 unranked krab and patch quality is 🦞 diamond lobster\./,
+    /- `rating: 🥉 bronze`: Overall readiness is 🥉 bronze; proof is 🥉 bronze and patch quality is 💎 diamond\./,
   );
   assert.doesNotMatch(labelDetails, /PR readiness rating was derived from proof quality/);
 });
@@ -151,7 +151,7 @@ test("failed Codex review comments suppress PR readiness ratings", () => {
     confidence: "low",
     author: "contributor",
     author_association: "CONTRIBUTOR",
-    labels: JSON.stringify(["proof: supplied", "rating: 🌊 off-meta tidepool"]),
+    labels: JSON.stringify(["proof: supplied", "rating: ➖ n/a"]),
     work_candidate: "none",
     pull_head_sha: "abc123def456",
     triage_priority: "none",
@@ -186,9 +186,9 @@ ${prRatingReportSection({
   overallTier: "NA",
   proofTier: "NA",
   patchTier: "NA",
-  overallLabel: "🌊 off-meta tidepool",
-  proofLabel: "🌊 off-meta tidepool",
-  patchLabel: "🌊 off-meta tidepool",
+  overallLabel: "➖ n/a",
+  proofLabel: "➖ n/a",
+  patchLabel: "➖ n/a",
   summary: "PR readiness rating was not assessed because the Codex review failed.",
   nextSteps: "- none",
 })}
@@ -213,12 +213,12 @@ ${prRatingReportSection({
   );
   assert.doesNotMatch(comment, /Codex review: needs real behavior proof before merge\./);
   assert.doesNotMatch(comment, /Overall follows the weaker of proof and patch quality/);
-  assert.doesNotMatch(comment, /<summary>What the crustacean ranks mean<\/summary>/);
+  assert.doesNotMatch(comment, /<summary>What the readiness ranks mean<\/summary>/);
   assert.match(
     labelDetails,
-    /- remove `rating: 🌊 off-meta tidepool`: Current review failed before PR readiness was assessed, so no rating label should remain\./,
+    /- remove `rating: ➖ n\/a`: Current review failed before PR readiness was assessed, so no rating label should remain\./,
   );
-  assert.doesNotMatch(labelDetails, /Label justifications:[\s\S]*rating: 🌊 off-meta tidepool/);
+  assert.doesNotMatch(labelDetails, /Label justifications:[\s\S]*rating: ➖ n\/a/);
 });
 
 test("public PR review comments explain label changes without duplicate justifications", () => {
@@ -290,10 +290,10 @@ Full review comments:
   assert.match(comment, /<summary>Label changes<\/summary>/);
   assert.ok(
     comment.indexOf("<summary>Label changes</summary>") <
-      comment.indexOf("<summary>What the crustacean ranks mean</summary>"),
+      comment.indexOf("<summary>What the readiness ranks mean</summary>"),
   );
   assert.ok(
-    comment.indexOf("<summary>What the crustacean ranks mean</summary>") <
+    comment.indexOf("<summary>What the readiness ranks mean</summary>") <
       comment.indexOf("<summary>How this review workflow works</summary>"),
   );
   if (comment.includes("<summary>Review details</summary>")) {
@@ -330,7 +330,7 @@ test("public PR review details justify derived rating label changes", () => {
     confidence: "high",
     author: "contributor",
     author_association: "CONTRIBUTOR",
-    labels: JSON.stringify(["rating: 🦞 diamond lobster"]),
+    labels: JSON.stringify(["rating: 💎 diamond"]),
     work_candidate: "none",
     triage_priority: "none",
     impact_labels: JSON.stringify([]),
@@ -373,16 +373,16 @@ Full review comments:
   assert.match(labelDetails, /Label changes:/);
   assert.match(
     labelDetails,
-    /- add `rating: 🦪 silver shellfish`: Overall readiness is 🦪 silver shellfish; proof is 🦪 silver shellfish and patch quality is 🦞 diamond lobster\. Replaced prior `rating: 🦞 diamond lobster`\./,
+    /- add `rating: 🥈 silver`: Overall readiness is 🥈 silver; proof is 🥈 silver and patch quality is 💎 diamond\. Replaced prior `rating: 💎 diamond`\./,
   );
   assert.match(
     labelDetails,
-    /- remove `rating: 🦞 diamond lobster`: Current PR rating is `rating: 🦪 silver shellfish`, so this older rating label is no longer current\./,
+    /- remove `rating: 💎 diamond`: Current PR rating is `rating: 🥈 silver`, so this older rating label is no longer current\./,
   );
   assert.match(labelDetails, /Label justifications:/);
   assert.match(
     labelDetails,
-    /- `rating: 🦪 silver shellfish`: Overall readiness is 🦪 silver shellfish; proof is 🦪 silver shellfish and patch quality is 🦞 diamond lobster\. Replaced prior `rating: 🦞 diamond lobster`\./,
+    /- `rating: 🥈 silver`: Overall readiness is 🥈 silver; proof is 🥈 silver and patch quality is 💎 diamond\. Replaced prior `rating: 💎 diamond`\./,
   );
 });
 
@@ -482,7 +482,7 @@ test("public PR review details justify derived rating label changes", () => {
     confidence: "high",
     author: "contributor",
     author_association: "CONTRIBUTOR",
-    labels: JSON.stringify(["rating: 🦞 diamond lobster"]),
+    labels: JSON.stringify(["rating: 💎 diamond"]),
     work_candidate: "none",
     triage_priority: "none",
     impact_labels: JSON.stringify([]),
@@ -525,16 +525,16 @@ Full review comments:
   assert.match(labelDetails, /Label changes:/);
   assert.match(
     labelDetails,
-    /- add `rating: 🦪 silver shellfish`: Overall readiness is 🦪 silver shellfish; proof is 🦪 silver shellfish and patch quality is 🦞 diamond lobster\. Replaced prior `rating: 🦞 diamond lobster`\./,
+    /- add `rating: 🥈 silver`: Overall readiness is 🥈 silver; proof is 🥈 silver and patch quality is 💎 diamond\. Replaced prior `rating: 💎 diamond`\./,
   );
   assert.match(
     labelDetails,
-    /- remove `rating: 🦞 diamond lobster`: Current PR rating is `rating: 🦪 silver shellfish`, so this older rating label is no longer current\./,
+    /- remove `rating: 💎 diamond`: Current PR rating is `rating: 🥈 silver`, so this older rating label is no longer current\./,
   );
   assert.match(labelDetails, /Label justifications:/);
   assert.match(
     labelDetails,
-    /- `rating: 🦪 silver shellfish`: Overall readiness is 🦪 silver shellfish; proof is 🦪 silver shellfish and patch quality is 🦞 diamond lobster\. Replaced prior `rating: 🦞 diamond lobster`\./,
+    /- `rating: 🥈 silver`: Overall readiness is 🥈 silver; proof is 🥈 silver and patch quality is 💎 diamond\. Replaced prior `rating: 💎 diamond`\./,
   );
 });
 

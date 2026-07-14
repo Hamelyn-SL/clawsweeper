@@ -416,7 +416,7 @@ test("routineGithubActivityReason filters trusted ClawSweeper command status com
           body: [
             "<!-- clawsweeper-command-status:90328:re_review:bc62b391bf7 -->",
             "<!-- clawsweeper-command:4643099431:2026-06-07T15:28:02Z:re_review:bc62b391bf7 -->",
-            "🦞👀",
+            "👀",
             "ClawSweeper is reviewing @clawsweeper re-review.",
           ].join("\n"),
           user: { login: "clawsweeper[bot]" },

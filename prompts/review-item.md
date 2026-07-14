@@ -757,7 +757,7 @@ it does not, they can ask a maintainer to comment `@clawsweeper re-review`. Use
 `not_applicable`.
 
 Always fill `prRating` with boring internal tiers `S`, `A`, `B`, `C`, `D`, `F`,
-or `NA`; public output maps these to funny crustacean labels. Rate PR evidence
+or `NA`; public output maps these to visual readiness labels. Rate PR evidence
 and patch quality, not the contributor. Use a calibrated
 standard-distribution-style scale: `S` is rare and reserved for exceptional PRs
 with unusually strong proof, clean implementation, convincing validation, and no

@@ -1557,7 +1557,7 @@ async function listFastAckComments({ token, repo, itemNumber, sourceCommentId })
 function renderFastAckComment(sourceCommentId) {
   return [
     fastAckMarker(sourceCommentId),
-    "🦞👀",
+    "👀",
     "ClawSweeper picked this up.",
     "",
     "Command router queued. I will update this comment with the next step.",
@@ -5275,7 +5275,6 @@ h1 {
   align-items: center;
   gap: 9px;
 }
-h1::before { content: "🦞"; font-size: 20px; }
 h2 {
   margin: 32px 0 12px;
   font-size: 11px;
@@ -5564,7 +5563,6 @@ body.resizing-col {
   border-radius: 12px;
   text-align: center;
 }
-.empty::before { content: "🦞 "; opacity: 0.5; }
 .error { color: var(--red); border-color: color-mix(in srgb, var(--red) 40%, transparent); }
 @media (max-width: 1280px) {
   .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
@@ -6051,7 +6049,7 @@ function dashboardHtml(env: DashboardEnv = {}) {
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#f6f3ec">
 ${dashboardThemeInitScript()}
-<title>🦞 ClawSweeper Live</title>
+<title>ClawSweeper Live</title>
 <style>
 :root {
   color-scheme: light dark;
@@ -6102,7 +6100,6 @@ h1 {
   align-items: center;
   gap: 9px;
 }
-h1::before { content: "🦞"; font-size: 18px; }
 .live-tag {
   display: inline-flex;
   align-items: center;
@@ -6767,7 +6764,6 @@ a.pill:hover { color: var(--claw); text-decoration: none; }
   border-radius: 10px;
   text-align: center;
 }
-.empty::before { content: "🦞 "; opacity: 0.5; }
 @media (max-width: 1280px) {
   .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .metric { padding: 16px 18px 14px; }

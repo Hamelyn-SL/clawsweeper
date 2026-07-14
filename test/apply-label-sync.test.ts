@@ -270,7 +270,7 @@ if (args[0] === "api" && /\\/issues\\/74478$/.test(path)) {
     assert.match(report, /^labels_synced_at: /m);
     assert.match(report, /proof: sufficient/);
     assert.match(report, /proof: 📸 screenshot/);
-    assert.match(report, /rating: 🦞 diamond lobster/);
+    assert.match(report, /rating: 💎 diamond/);
     assert.match(report, /feature: ✨ showcase/);
     const calls = readFileSync(logPath, "utf8")
       .trim()
@@ -308,7 +308,7 @@ test("apply-decisions clears stale PR review labels when live head changed", () 
     mkdirSync(plansDir, { recursive: true });
     const staleLabels = [
       "P2",
-      "rating: 🧂 unranked krab",
+      "rating: 🥉 bronze",
       "merge-risk: 🚨 session-state",
       "status: 🔁 re-review loop",
       "proof: sufficient",
@@ -456,7 +456,7 @@ if (args[0] === "api" && /\\/issues\\/74481$/.test(path)) {
     assert.deepEqual(removedLabels, [
       "merge-risk: 🚨 session-state",
       "proof: sufficient",
-      "rating: 🧂 unranked krab",
+      "rating: 🥉 bronze",
       "status: 🔁 re-review loop",
     ]);
     const patchedBody = calls.find((args) => args[0] === "patched-review-body")?.[1] ?? "";
@@ -498,7 +498,7 @@ test("apply-decisions skips stale label cleanup when the durable review comment 
     const mergeRiskLabel = "merge-risk: \u{1F6A8} message-delivery";
     const staleLabels = [
       "P1",
-      "rating: \u{1F99E} diamond lobster",
+      "rating: 💎 diamond",
       mergeRiskLabel,
       readyLabel,
       "proof: sufficient",
@@ -746,7 +746,7 @@ if (args[0] === "api" && /\\/issues\\/74482$/.test(path)) {
     active_lock_reason: null,
     author_association: "CONTRIBUTOR",
     user: { login: "contributor" },
-    labels: ["status: 📣 needs proof", "rating: 🦪 silver shellfish"],
+    labels: ["status: 📣 needs proof", "rating: 🥈 silver"],
     pull_request: {}
   }));
 } else if (args[0] === "api" && args[1] === "-i" && /\\/issues\\/74482\\/timeline(?:\\?|$)/.test(args[2] || "")) {
@@ -827,7 +827,7 @@ if (args[0] === "api" && /\\/issues\\/74482$/.test(path)) {
     const updatedReport = readFileSync(itemPath, "utf8");
     assert.match(updatedReport, /^labels_synced_at: /m);
     assert.match(updatedReport, /proof: sufficient/);
-    assert.match(updatedReport, /rating: 🦞 diamond lobster/);
+    assert.match(updatedReport, /rating: 💎 diamond/);
     const calls = readFileSync(logPath, "utf8")
       .trim()
       .split("\n")
@@ -839,7 +839,7 @@ if (args[0] === "api" && /\\/issues\\/74482$/.test(path)) {
           args[0] === "issue" &&
           args[1] === "edit" &&
           args.includes("--add-label") &&
-          args.includes("rating: 🦞 diamond lobster"),
+          args.includes("rating: 💎 diamond"),
       ),
     );
     assert(
@@ -857,7 +857,7 @@ if (args[0] === "api" && /\\/issues\\/74482$/.test(path)) {
           args[0] === "issue" &&
           args[1] === "edit" &&
           args.includes("--remove-label") &&
-          args.includes("rating: 🦪 silver shellfish"),
+          args.includes("rating: 🥈 silver"),
       ),
     );
     assert(
@@ -1485,7 +1485,7 @@ if (args[0] === "api" && /\\/issues\\/74479$/.test(path)) {
     assert.match(patchedBody, /Label justifications:/);
     assert.match(patchedBody, /`proof: sufficient`/);
     assert.match(patchedBody, /`proof: 📸 screenshot`/);
-    assert.match(patchedBody, /`rating: 🦞 diamond lobster`/);
+    assert.match(patchedBody, /`rating: 💎 diamond`/);
     assert.match(readFileSync(itemPath, "utf8"), /^labels_synced_at: /m);
     assert.deepEqual(JSON.parse(readFileSync(reportPath, "utf8")), [
       {
