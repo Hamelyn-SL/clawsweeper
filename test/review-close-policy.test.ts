@@ -35,6 +35,29 @@ test("protected labels are normalized and only maintainer-only items stay planna
   assert.equal(shouldPlanItem(item({ labels: ["bug"] })), true);
 });
 
+test("generated Hamelyn production deploy PRs are not plannable", () => {
+  assert.equal(
+    shouldPlanItem(
+      item({
+        repo: "Hamelyn-SL/hamelyn-serverless",
+        kind: "pull_request",
+        title: "Deploy to Prod",
+      }),
+    ),
+    false,
+  );
+  assert.equal(
+    shouldPlanItem(
+      item({
+        repo: "Hamelyn-SL/clawsweeper",
+        kind: "pull_request",
+        title: "Deploy to Prod",
+      }),
+    ),
+    true,
+  );
+});
+
 test("parseGhJson adds gh command context to malformed JSON errors", () => {
   assert.throws(
     () => parseGhJson("{", ["api", "repos/openclaw/openclaw/issues"]),

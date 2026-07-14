@@ -19,6 +19,7 @@ import {
   DEFAULT_TARGET_REPO,
   REPOSITORY_PROFILES,
   isAutoCloseAllowed,
+  isReviewExcluded,
   normalizeRepo,
   repositoryProfileFor,
   repositoryProfileForSlug,
@@ -3390,8 +3391,17 @@ function applyProtectedLabelReason(labels: readonly string[], closeReason: unkno
   return `protected label: ${applyBlockingProtectedLabels(labels, closeReason).join(", ")}`;
 }
 
-export function shouldPlanItem(item: Pick<Item, "authorAssociation" | "labels">): boolean {
-  return protectedLabels(item.labels).every((label) => label === "maintainer");
+export function shouldPlanItem(
+  item: Pick<Item, "authorAssociation" | "kind" | "labels" | "repo" | "title">,
+): boolean {
+  return (
+    !isItemReviewExcluded(item) &&
+    protectedLabels(item.labels).every((label) => label === "maintainer")
+  );
+}
+
+function isItemReviewExcluded(item: Pick<Item, "kind" | "repo" | "title">): boolean {
+  return isReviewExcluded(repositoryProfileFor(item.repo), item);
 }
 
 function isOlderThanDays(isoTimestamp: string, days: number, now = Date.now()): boolean {
@@ -6256,7 +6266,7 @@ function selectCandidates(options: {
   if (options.itemNumbers) {
     const candidates = options.itemNumbers.flatMap((number) => {
       const { item, state } = fetchItem(number);
-      return state === "open" || options.allowClosed ? [item] : [];
+      return (state === "open" || options.allowClosed) && !isItemReviewExcluded(item) ? [item] : [];
     });
     return { candidates, scannedPages: 0 };
   }
@@ -6264,6 +6274,7 @@ function selectCandidates(options: {
     if (options.shardIndex !== 0) return { candidates: [], scannedPages: 0 };
     const { item, state } = fetchItem(options.itemNumber);
     if (state !== "open" && !options.allowClosed) return { candidates: [], scannedPages: 0 };
+    if (isItemReviewExcluded(item)) return { candidates: [], scannedPages: 0 };
     return { candidates: [item], scannedPages: 0 };
   }
   const due: DueCandidate[] = [];
@@ -6351,7 +6362,7 @@ function openExplicitItems(itemNumbers: readonly number[]): Item[] {
     if (seen.has(number)) continue;
     seen.add(number);
     const { item, state } = fetchItem(number);
-    if (state === "open") candidates.push(item);
+    if (state === "open" && !isItemReviewExcluded(item)) candidates.push(item);
   }
   return candidates;
 }
@@ -6460,7 +6471,7 @@ function planCandidates(options: {
   }
   if (options.itemNumber) {
     const { item, state } = fetchItem(options.itemNumber);
-    const shouldReview = state === "open";
+    const shouldReview = state === "open" && !isItemReviewExcluded(item);
     const candidates = shouldReview ? [item] : [];
     const shards = [{ shard: 0, itemNumbers: shouldReview ? [item.number] : [] }];
     return {
