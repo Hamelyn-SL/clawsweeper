@@ -249,8 +249,8 @@ Common commands:
 - `review`, `re-review`, and `re-run` dispatch a fresh ClawSweeper issue/PR
   review without starting repair.
 - Command status replies are marker-backed and edited in place per
-  issue/PR, intent, and head SHA. The visible badge is one lobster plus the
-  current state: `👀` for acknowledgement, `🧹` for review, `🔧` for repair, and
+  issue/PR, intent, and head SHA. The visible badge shows the current state:
+  `👀` for acknowledgement, `🧹` for review, `🔧` for repair, and
   `✅` for completed/paused work.
 - Freeform `@clawsweeper ...` mentions and explicit `ask ...` questions dispatch
   the maintainer-only assist lane. Assist runs the internal model with low reasoning, a

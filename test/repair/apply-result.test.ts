@@ -196,7 +196,7 @@ test("repair apply blocks F-rated covering PRs before coverage proof", () => {
           number: 202,
           title: "Rewrite config validation",
           pullRequest: true,
-          labels: ["proof: sufficient", "rating: 🧂 unranked krab"],
+          labels: ["proof: sufficient", "rating: 🥉 bronze"],
         }),
       },
       pulls: {

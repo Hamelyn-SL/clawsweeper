@@ -1,7 +1,30 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 
-import { REPOSITORY_PROFILES, repositoryProfileFor } from "../dist/repository-profiles.js";
+import {
+  REPOSITORY_PROFILES,
+  isReviewExcluded,
+  repositoryProfileFor,
+} from "../dist/repository-profiles.js";
+
+test("Hamelyn Serverless excludes only its generated production deploy PR", () => {
+  const profile = repositoryProfileFor("Hamelyn-SL/hamelyn-serverless");
+
+  assert.deepEqual(profile.excludedPullRequestTitles, ["Deploy to Prod"]);
+  assert.equal(isReviewExcluded(profile, { kind: "pull_request", title: "Deploy to Prod" }), true);
+  assert.equal(isReviewExcluded(profile, { kind: "issue", title: "Deploy to Prod" }), false);
+  assert.equal(
+    isReviewExcluded(profile, { kind: "pull_request", title: "Deploy to Prod hotfix" }),
+    false,
+  );
+  assert.equal(
+    isReviewExcluded(repositoryProfileFor("Hamelyn-SL/clawsweeper"), {
+      kind: "pull_request",
+      title: "Deploy to Prod",
+    }),
+    false,
+  );
+});
 
 test("repositoryProfileFor matches mixed-case input against canonical profiles", () => {
   const profile = repositoryProfileFor("OpenClaw/ClawHub");

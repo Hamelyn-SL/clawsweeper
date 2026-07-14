@@ -123,11 +123,11 @@ test("review item source revision ignores advisory labels but tracks protected l
         labels: [
           ...item.labels,
           { name: "status: ⏳ waiting on author" },
-          { name: "rating: 🧂 unranked krab" },
+          { name: "rating: 🥉 bronze" },
           { name: "proof: sufficient" },
           { name: "merge-risk: 🚨 automation" },
           { name: "impact:message-loss" },
-          { name: "issue-rating: 🦪 silver shellfish" },
+          { name: "issue-rating: 🥈 silver" },
           { name: "P1" },
           { name: "feature: ✨ showcase" },
           { name: "good first issue" },
@@ -294,10 +294,10 @@ Reason: Maintainers should review the tests after the targeted lane is green.
   );
   assert.ok(
     comment.indexOf("<summary>Evidence reviewed</summary>") <
-      comment.indexOf("<summary>What the crustacean ranks mean</summary>"),
+      comment.indexOf("<summary>What the readiness ranks mean</summary>"),
   );
   assert.ok(
-    comment.indexOf("<summary>What the crustacean ranks mean</summary>") <
+    comment.indexOf("<summary>What the readiness ranks mean</summary>") <
       comment.indexOf("<summary>How this review workflow works</summary>"),
   );
   assert.match(comment, /<!-- clawsweeper-verdict:needs-human item=74265 sha=abc123def456/);

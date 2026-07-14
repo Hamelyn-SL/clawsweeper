@@ -1581,7 +1581,7 @@ test("trusted close gates block protected labels, source drift, and unsupported 
       labels: [
         ...reviewedIssue.labels,
         { name: "status: ⏳ waiting on author" },
-        { name: "rating: 🧂 unranked krab" },
+        { name: "rating: 🥉 bronze" },
         { name: "proof: sufficient" },
         { name: "merge-risk: 🚨 automation" },
         { name: "P1" },
@@ -2339,7 +2339,7 @@ test("renderResponse reports trusted repair dispatches without losing guardrails
   assert.doesNotMatch(body, /ClawSweeper Repair/i);
 });
 
-test("renderResponse gives command replies stateful lobster badges", () => {
+test("renderResponse gives command replies stateful badges", () => {
   const body = renderResponse({ comment_id: "456", intent: "help", target: {} }, null);
   const reviewBody = renderResponse(
     { comment_id: "457", intent: "re_review", target: {} },
@@ -2361,11 +2361,11 @@ test("renderResponse gives command replies stateful lobster badges", () => {
 
   assert.match(
     body,
-    /^<!-- clawsweeper-command-status:unknown:help:na -->\n<!-- clawsweeper-command:456:help:na -->\n🦞👀\nClawSweeper is here/,
+    /^<!-- clawsweeper-command-status:unknown:help:na -->\n<!-- clawsweeper-command:456:help:na -->\n👀\nClawSweeper is here/,
   );
-  assert.match(reviewBody, /\n🦞🧹\nClawSweeper re-review requested/);
-  assert.match(repairBody, /\n🦞🔧\nClawSweeper issue implementation requested/);
-  assert.match(doneBody, /\n🦞✅\nClawSweeper merged this PR/);
+  assert.match(reviewBody, /\n🧹\nClawSweeper re-review requested/);
+  assert.match(repairBody, /\n🔧\nClawSweeper issue implementation requested/);
+  assert.match(doneBody, /\n✅\nClawSweeper merged this PR/);
   assert.match(body, /@clawsweeper fix/);
   assert.match(body, /\/clawsweeper visualize \[lens\]/);
 });

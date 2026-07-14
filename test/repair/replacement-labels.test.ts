@@ -61,7 +61,7 @@ test("replacement PRs do not copy source review, proof, status, risk, size, or p
     replacementLabelsToCopy(
       [
         [
-          "rating: 🧂 unranked krab",
+          "rating: 🥉 bronze",
           "status: 📣 needs proof",
           "proof: missing",
           "triage: needs-real-behavior-proof",
@@ -82,7 +82,7 @@ test("replacement source label filter documents denied classes", () => {
   for (const label of [
     "close:superseded",
     "stale",
-    "rating: 🧂 unranked krab",
+    "rating: 🥉 bronze",
     "status: 📣 needs proof",
     "proof: missing",
     "triage: needs-real-behavior-proof",

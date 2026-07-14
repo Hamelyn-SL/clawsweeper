@@ -180,7 +180,7 @@ jobs:
               OWNER|MEMBER|COLLABORATOR)
                 status_body="$(printf '%s\n' \
                   "<!-- clawsweeper-command-ack:$COMMENT_ID -->" \
-                  "🦞👀" \
+                  "👀" \
                   "ClawSweeper picked this up." \
                   "" \
                   "Command router queued. I will update this comment with the next step.")"

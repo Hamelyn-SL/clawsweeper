@@ -262,9 +262,9 @@ test("latest ClawSweeper durable review parser supports compact merge readiness 
 The PR changes review comment layout.
 
 **Merge readiness**
-Overall: 🧂 unranked krab
-Proof: 🧂 unranked krab
-Patch quality: 🦞 diamond lobster
+Overall: 🥉 bronze
+Proof: 🥉 bronze
+Patch quality: 💎 diamond
 Result: blocked until real behavior proof is added.
 
 Overall follows the weaker of proof and patch quality, so missing proof can cap an otherwise strong patch.
@@ -299,7 +299,7 @@ Add real behavior proof.
   assert.equal(review.reviewedAt, "May 24, 2026, 8:34 AM ET / 12:34 UTC");
   assert.equal(review.reviewedSha, "newsha");
   assert.equal(review.summary, "The PR changes review comment layout.");
-  assert.equal(review.rating, "Overall: 🧂 unranked krab");
+  assert.equal(review.rating, "Overall: 🥉 bronze");
   assert.match(review.proofStatus, /^Needs real behavior proof before merge:/);
   assert.equal(review.nextStep, "Add real behavior proof.");
   assert.equal(review.findings[0]?.priority, "P2");

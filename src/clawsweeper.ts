@@ -19,6 +19,7 @@ import {
   DEFAULT_TARGET_REPO,
   REPOSITORY_PROFILES,
   isAutoCloseAllowed,
+  isReviewExcluded,
   normalizeRepo,
   repositoryProfileFor,
   repositoryProfileForSlug,
@@ -1212,43 +1213,43 @@ const PROOF_MEDIA_LABEL_NAMES = new Set<string>(PROOF_MEDIA_LABELS.map((label) =
 const PR_RATING_LABELS = [
   {
     tier: "S",
-    name: "rating: 🦀 challenger crab",
+    name: "rating: 🏆 challenger",
     color: "1F883D",
     description: "Exceptional PR readiness: strong proof, clean patch, and convincing validation.",
   },
   {
     tier: "A",
-    name: "rating: 🦞 diamond lobster",
+    name: "rating: 💎 diamond",
     color: "0969DA",
     description: "Very strong PR readiness with only minor maintainer review expected.",
   },
   {
     tier: "B",
-    name: "rating: 🐚 platinum hermit",
+    name: "rating: ⚪ platinum",
     color: "0F766E",
     description: "Good normal PR readiness with ordinary maintainer review expected.",
   },
   {
     tier: "C",
-    name: "rating: 🦐 gold shrimp",
+    name: "rating: 🥇 gold",
     color: "B7791F",
     description: "Decent PR readiness signal, but merge confidence is limited.",
   },
   {
     tier: "D",
-    name: "rating: 🦪 silver shellfish",
+    name: "rating: 🥈 silver",
     color: "7A828E",
     description: "Thin PR readiness signal; proof, validation, or implementation needs work.",
   },
   {
     tier: "F",
-    name: "rating: 🧂 unranked krab",
-    color: "8C2F39",
+    name: "rating: 🥉 bronze",
+    color: "A97142",
     description: "Not merge-ready due to missing proof or serious correctness/safety concerns.",
   },
   {
     tier: "NA",
-    name: "rating: 🌊 off-meta tidepool",
+    name: "rating: ➖ n/a",
     color: "6E7781",
     description: "PR readiness rating does not apply to this item.",
   },
@@ -1258,7 +1259,19 @@ const PR_RATING_LABELS = [
   color: string;
   description: string;
 }[];
-const PR_RATING_LABEL_NAMES = new Set<string>(PR_RATING_LABELS.map((label) => label.name));
+const LEGACY_PR_RATING_LABEL_NAMES = [
+  "rating: 🦀 challenger crab",
+  "rating: \u{1F99E} diamond lobster",
+  "rating: 🐚 platinum hermit",
+  "rating: 🦐 gold shrimp",
+  "rating: 🦪 silver shellfish",
+  "rating: 🧂 unranked krab",
+  "rating: 🌊 off-meta tidepool",
+] as const;
+const PR_RATING_LABEL_NAMES = new Set<string>([
+  ...PR_RATING_LABELS.map((label) => label.name),
+  ...LEGACY_PR_RATING_LABEL_NAMES,
+]);
 const PR_STATUS_LABELS = [
   {
     kind: "automerge_armed",
@@ -1481,43 +1494,43 @@ const GOOD_FIRST_ISSUE_LABEL_DEFINITION = {
 } as const;
 const ISSUE_ADVISORY_LABELS = [
   {
-    name: "issue-rating: 🦀 challenger crab",
+    name: "issue-rating: 🏆 challenger",
     color: "1F883D",
     description:
       "Calidad de issue excepcional: reproducción en la rama actual con alta confianza y evidencia accionable.",
   },
   {
-    name: "issue-rating: 🦞 diamond lobster",
+    name: "issue-rating: 💎 diamond",
     color: "0969DA",
     description:
       "Calidad de issue muy alta, con reproducción clara o a nivel de código y alta confianza.",
   },
   {
-    name: "issue-rating: 🐚 platinum hermit",
+    name: "issue-rating: ⚪ platinum",
     color: "0F766E",
     description:
       "Buena calidad de issue, con una vía de reproducción plausible que necesita algo de confirmación.",
   },
   {
-    name: "issue-rating: 🦐 gold shrimp",
+    name: "issue-rating: 🥇 gold",
     color: "B7791F",
     description:
       "Calidad de issue aceptable, pero los detalles de reproducción aún están incompletos.",
   },
   {
-    name: "issue-rating: 🦪 silver shellfish",
+    name: "issue-rating: 🥈 silver",
     color: "7A828E",
     description:
       "Calidad de issue pobre; hacen falta más pruebas de reproducción o detalle del entorno.",
   },
   {
-    name: "issue-rating: 🧂 unranked krab",
-    color: "8C2F39",
+    name: "issue-rating: 🥉 bronze",
+    color: "A97142",
     description:
       "La calidad de la issue es demasiado incierta ahora mismo para actuar con seguridad.",
   },
   {
-    name: "issue-rating: 🌊 off-meta tidepool",
+    name: "issue-rating: ➖ n/a",
     color: "6E7781",
     description: "La valoración de calidad de issue no aplica a este item.",
   },
@@ -1591,9 +1604,19 @@ const ISSUE_ADVISORY_LABELS = [
     description: "ClawSweeper marcó esta issue como que necesita revisión sensible de seguridad.",
   },
 ] as const;
-const ISSUE_ADVISORY_LABEL_NAMES = new Set(
-  ISSUE_ADVISORY_LABELS.map((label) => label.name.toLowerCase()),
-);
+const LEGACY_ISSUE_RATING_LABEL_NAMES = [
+  "issue-rating: 🦀 challenger crab",
+  "issue-rating: \u{1F99E} diamond lobster",
+  "issue-rating: 🐚 platinum hermit",
+  "issue-rating: 🦐 gold shrimp",
+  "issue-rating: 🦪 silver shellfish",
+  "issue-rating: 🧂 unranked krab",
+  "issue-rating: 🌊 off-meta tidepool",
+] as const;
+const ISSUE_ADVISORY_LABEL_NAMES = new Set([
+  ...ISSUE_ADVISORY_LABELS.map((label) => label.name.toLowerCase()),
+  ...LEGACY_ISSUE_RATING_LABEL_NAMES,
+]);
 const STALE_LABEL = "stale";
 const NO_STALE_LABEL = "no-stale";
 const QUEUEABLE_FIX_LABEL = "clawsweeper:queueable-fix";
@@ -3368,8 +3391,17 @@ function applyProtectedLabelReason(labels: readonly string[], closeReason: unkno
   return `protected label: ${applyBlockingProtectedLabels(labels, closeReason).join(", ")}`;
 }
 
-export function shouldPlanItem(item: Pick<Item, "authorAssociation" | "labels">): boolean {
-  return protectedLabels(item.labels).every((label) => label === "maintainer");
+export function shouldPlanItem(
+  item: Pick<Item, "authorAssociation" | "kind" | "labels" | "repo" | "title">,
+): boolean {
+  return (
+    !isItemReviewExcluded(item) &&
+    protectedLabels(item.labels).every((label) => label === "maintainer")
+  );
+}
+
+function isItemReviewExcluded(item: Pick<Item, "kind" | "repo" | "title">): boolean {
+  return isReviewExcluded(repositoryProfileFor(item.repo), item);
 }
 
 function isOlderThanDays(isoTimestamp: string, days: number, now = Date.now()): boolean {
@@ -6234,7 +6266,7 @@ function selectCandidates(options: {
   if (options.itemNumbers) {
     const candidates = options.itemNumbers.flatMap((number) => {
       const { item, state } = fetchItem(number);
-      return state === "open" || options.allowClosed ? [item] : [];
+      return (state === "open" || options.allowClosed) && !isItemReviewExcluded(item) ? [item] : [];
     });
     return { candidates, scannedPages: 0 };
   }
@@ -6242,6 +6274,7 @@ function selectCandidates(options: {
     if (options.shardIndex !== 0) return { candidates: [], scannedPages: 0 };
     const { item, state } = fetchItem(options.itemNumber);
     if (state !== "open" && !options.allowClosed) return { candidates: [], scannedPages: 0 };
+    if (isItemReviewExcluded(item)) return { candidates: [], scannedPages: 0 };
     return { candidates: [item], scannedPages: 0 };
   }
   const due: DueCandidate[] = [];
@@ -6329,7 +6362,7 @@ function openExplicitItems(itemNumbers: readonly number[]): Item[] {
     if (seen.has(number)) continue;
     seen.add(number);
     const { item, state } = fetchItem(number);
-    if (state === "open") candidates.push(item);
+    if (state === "open" && !isItemReviewExcluded(item)) candidates.push(item);
   }
   return candidates;
 }
@@ -6438,7 +6471,7 @@ function planCandidates(options: {
   }
   if (options.itemNumber) {
     const { item, state } = fetchItem(options.itemNumber);
-    const shouldReview = state === "open";
+    const shouldReview = state === "open" && !isItemReviewExcluded(item);
     const candidates = shouldReview ? [item] : [];
     const shards = [{ shard: 0, itemNumbers: shouldReview ? [item.number] : [] }];
     return {
@@ -9225,14 +9258,14 @@ function publicRealBehaviorProofLine(proof: RealBehaviorProof): string {
 }
 
 function publicRankDetailsBlock(): string {
-  return collapsedDetailsBlock("What the crustacean ranks mean", [
-    "- 🦀 challenger crab: rare, exceptional readiness with strong proof, clean implementation, and convincing validation.",
-    "- 🦞 diamond lobster: very strong readiness with only minor maintainer review expected.",
-    "- 🐚 platinum hermit: good normal PR, likely mergeable with ordinary maintainer review.",
-    "- 🦐 gold shrimp: useful signal, but proof or patch confidence is still limited.",
-    "- 🦪 silver shellfish: thin signal; proof, validation, or implementation needs work.",
-    "- 🧂 unranked krab: not merge-ready because proof is missing/unusable or there are serious correctness or safety concerns.",
-    "- 🌊 off-meta tidepool: rating does not apply to this item.",
+  return collapsedDetailsBlock("What the readiness ranks mean", [
+    "- 🏆 challenger: rare, exceptional readiness with strong proof, clean implementation, and convincing validation.",
+    "- 💎 diamond: very strong readiness with only minor maintainer review expected.",
+    "- ⚪ platinum: good normal PR, likely mergeable with ordinary maintainer review.",
+    "- 🥇 gold: useful signal, but proof or patch confidence is still limited.",
+    "- 🥈 silver: thin signal; proof, validation, or implementation needs work.",
+    "- 🥉 bronze: not merge-ready because proof is missing/unusable or there are serious correctness or safety concerns.",
+    "- ➖ n/a: rating does not apply to this item.",
     "",
     "Shiny media proof means a screenshot, video, or linked artifact directly shows the changed behavior. Runtime, network, CSP, and security claims still need visible diagnostics.",
   ]);
@@ -11561,35 +11594,35 @@ function isGoodFirstIssue(
 function issueRatingLabelForState(state: IssueAdvisoryLabelState): string {
   if (state.type !== "issue") return "";
   if (state.reproductionStatus === "not_applicable") {
-    return "issue-rating: 🌊 off-meta tidepool";
+    return "issue-rating: ➖ n/a";
   }
   if (state.reproductionStatus === "reproduced" && state.reproductionConfidence === "high") {
-    return "issue-rating: 🦀 challenger crab";
+    return "issue-rating: 🏆 challenger";
   }
   if (
     (state.reproductionStatus === "source_reproducible" ||
       state.reproductionStatus === "reproduced") &&
     state.reproductionConfidence === "high"
   ) {
-    return "issue-rating: 🦞 diamond lobster";
+    return "issue-rating: 💎 diamond";
   }
   if (
     (state.reproductionStatus === "source_reproducible" ||
       state.reproductionStatus === "reproduced") &&
     state.reproductionConfidence === "medium"
   ) {
-    return "issue-rating: 🐚 platinum hermit";
+    return "issue-rating: ⚪ platinum";
   }
   if (state.reproductionStatus === "unclear" && state.reproductionConfidence === "medium") {
-    return "issue-rating: 🦐 gold shrimp";
+    return "issue-rating: 🥇 gold";
   }
   if (
     state.reproductionStatus === "not_reproduced" ||
     (state.reproductionStatus === "unclear" && state.reproductionConfidence === "low")
   ) {
-    return "issue-rating: 🦪 silver shellfish";
+    return "issue-rating: 🥈 silver";
   }
-  return "issue-rating: 🧂 unranked krab";
+  return "issue-rating: 🥉 bronze";
 }
 
 function wantedIssueAdvisoryLabels(
@@ -13747,7 +13780,10 @@ function unsafeCanonicalPullRequestReason(
   const reportProofPassed = proofPassedInReport(report);
   const proofPassed = reportProofPassed || labelProofPassed;
 
-  if (labels.some((label) => label.startsWith("rating:") && label.includes("unranked"))) {
+  if (
+    labels.includes(normalizeLabelName(ratingLabelForTier("F").name)) ||
+    labels.some((label) => label.startsWith("rating:") && label.includes("unranked"))
+  ) {
     return `linked canonical PR #${linkedPull.number} is F-rated`;
   }
   if (liveNeedsProof && !labelProofPassed) {

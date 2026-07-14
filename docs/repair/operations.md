@@ -298,8 +298,8 @@ it classifies the command, so the visible reply is available as soon as the
 target dispatcher starts. Exact comment dispatches scan only the source comment
 and use per-comment receiver concurrency; the scheduled sweep remains a
 five-minute fallback.
-The status comment itself uses one compact badge: `🦞👀` for acknowledgement,
-`🦞🧹` for review, `🦞🔧` for repair/build/fix work, and `🦞✅` for completed or
+The status comment itself uses one compact badge: `👀` for acknowledgement,
+`🧹` for review, `🔧` for repair/build/fix work, and `✅` for completed or
 paused work.
 It accepts only maintainer-authored commands, gated by GitHub
 `author_association` values `OWNER`, `MEMBER`, or `COLLABORATOR` by default.

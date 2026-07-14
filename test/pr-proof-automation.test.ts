@@ -52,9 +52,9 @@ ${prRatingReportSection({
   overallTier: "S",
   proofTier: "S",
   patchTier: "S",
-  overallLabel: "🦀 challenger crab",
-  proofLabel: "🦀 challenger crab ✨",
-  patchLabel: "🦀 challenger crab",
+  overallLabel: "🏆 challenger",
+  proofLabel: "🏆 challenger ✨",
+  patchLabel: "🏆 challenger",
   summary: "The PR has direct media proof and a clean, high-confidence patch.",
 })}
 
@@ -71,8 +71,8 @@ Full review comments:
 
   const comment = renderReviewCommentFromReport(report, "none");
 
-  assert.match(comment, /\*\*Merge readiness\*\*\nOverall: 🦀 challenger crab/);
-  assert.match(comment, /Proof: 🦀 challenger crab ✨ media proof bonus/);
+  assert.match(comment, /\*\*Merge readiness\*\*\nOverall: 🏆 challenger/);
+  assert.match(comment, /Proof: 🏆 challenger ✨ media proof bonus/);
   assert.match(comment, /Shiny media proof means a screenshot, video, or linked artifact/);
   assert.doesNotMatch(comment, /Rank-up moves:/);
 });
@@ -128,7 +128,7 @@ Full review comments:
   const markers = reviewAutomationMarkersFromReport(report);
 
   assert.match(comment, /\*\*Merge readiness\*\*/);
-  assert.match(comment, /Proof: 🌊 off-meta tidepool/);
+  assert.match(comment, /Proof: ➖ n\/a/);
   assert.match(markers, /clawsweeper-verdict:pass/);
   assert.doesNotMatch(markers, /clawsweeper-verdict:needs-human/);
 });
@@ -472,9 +472,9 @@ ${prRatingReportSection({
   );
 
   assert.deepEqual(prRatingLabelsForTest([], decision.prRating.overallTier), [
-    "rating: 🦞 diamond lobster",
+    "rating: 💎 diamond",
   ]);
-  assert.match(comment, /Patch quality: 🦞 diamond lobster/);
+  assert.match(comment, /Patch quality: 💎 diamond/);
   assert.match(comment, /Result: ready for maintainer review\./);
   assert.doesNotMatch(comment, /Result: blocked by patch quality or review findings\./);
   assert.doesNotMatch(comment, /Add changelog entry/i);
