@@ -1145,7 +1145,9 @@ const DAY_MS = 24 * 60 * 60 * 1000;
 const RECENT_MISSING_OPEN_MS = DAY_MS;
 const DEFAULT_CODEX_MODEL = PUBLIC_CODEX_MODEL;
 const DEFAULT_REASONING_EFFORT = "high";
-const DEFAULT_SERVICE_TIER = "";
+// Priority service tier for Codex calls (maintainer decision 2026-07-17:
+// "gpt 5.6 sol high fast"). Latency-only; excluded from review-policy hashing.
+const DEFAULT_SERVICE_TIER = "fast";
 const DEFAULT_REVIEW_CODEX_TIMEOUT_MS = 1_200_000;
 const DEFAULT_CODEX_FALLBACK_MIN_BUDGET_MS = 120_000;
 const REVIEW_POLICY_VERSION = "2026-07-04-policy-v23";
@@ -2523,10 +2525,20 @@ function reviewPolicyHash(options: {
     stableJson({
       version: REVIEW_POLICY_VERSION,
       freshDays: FRESH_DAYS,
-      model: options.model ?? DEFAULT_CODEX_MODEL,
+      // Maintainer decision 2026-07-17: the model is deliberately NOT part of
+      // review-policy identity. Baking it in made every model change invalidate
+      // all stored reviews (a fleet-wide re-review wave), which makes model
+      // swaps untestable in production. Model changes now roll through the
+      // normal review cadence instead; bump REVIEW_POLICY_VERSION explicitly
+      // when a full re-review is actually wanted. The sentinel migrates all
+      // hashes once, riding the 2026-07 prompt-change wave already in flight.
+      model: "model-excluded-2026-07",
       reasoningEffort: options.reasoningEffort ?? DEFAULT_REASONING_EFFORT,
       sandboxMode: options.sandboxMode ?? "read-only",
-      serviceTier: options.serviceTier ?? DEFAULT_SERVICE_TIER,
+      // Service tier changes latency, never decisions. Pinned to the historical
+      // hash value so tier changes cannot mark every stored review policy-stale
+      // and trigger a fleet-wide re-review wave.
+      serviceTier: "",
       targetRepo: targetRepo(),
       repositoryProfile: targetProfile(),
       prompt: reviewPromptTemplate(),
@@ -4107,7 +4119,9 @@ function firstMergeReadinessLine(body: string, prefix: string): string {
 function previousReviewRating(body: string): string {
   return (
     firstNonEmptyLine(markdownSection(body, "PR rating")) ||
-    firstMergeReadinessLine(body, "Overall:")
+    firstMergeReadinessLine(body, "Overall:") ||
+    // Compact readiness format: "Overall <tier> · Proof <tier> · Patch quality <tier> — <result>".
+    firstMergeReadinessLine(body, "Overall ")
   );
 }
 
@@ -4127,7 +4141,10 @@ function previousReviewProofStatus(body: string): string {
       .find(Boolean);
     if (guidance) return guidance;
   }
-  return firstMergeReadinessLine(body, "Proof:");
+  const legacyProofLine = firstMergeReadinessLine(body, "Proof:");
+  if (legacyProofLine) return legacyProofLine;
+  const compactProof = firstMergeReadinessLine(body, "Overall ").match(/·\s*(Proof [^·—]+)/);
+  return compactProof?.[1]?.trim() ?? "";
 }
 
 function reviewHistoryFindings(
@@ -9219,7 +9236,7 @@ function publicSecurityReviewLine(review: SecurityReview): string {
 }
 
 function realBehaviorProofReReviewGuidance(): string {
-  return "After adding proof, update the PR body; ClawSweeper should re-review automatically. If it does not, the PR author or someone with repository write access can comment `@clawsweeper re-review`.";
+  return "After adding proof, update the PR body; ClawSweeper re-reviews automatically (or comment `@clawsweeper re-review`).";
 }
 
 function realBehaviorProofBlockerSummary(summary: string, fallback: string): string {
@@ -9240,35 +9257,34 @@ function publicRealBehaviorProofLine(proof: RealBehaviorProof): string {
     case "missing":
       return `Needs real behavior proof before merge: ${realBehaviorProofBlockerSummary(
         summary,
-        "The PR must include after-fix evidence from a real setup. Screenshots or videos are preferred when they can show the behavior; terminal screenshots, console output, copied live output, linked artifacts, and redacted logs count. Redact private information like IP addresses, API keys, phone numbers, non-public endpoints, and other private details before posting evidence.",
+        "The PR must include after-fix evidence from a real setup (screenshot or video preferred; redacted terminal output, live output, or linked artifacts also count).",
       )}`;
     case "mock_only":
       return `Needs real behavior proof before merge: ${realBehaviorProofBlockerSummary(
         summary,
-        "Tests, mocks, snapshots, lint, typechecks, and CI are supplemental only. Screenshots or videos are preferred when they can show the behavior; terminal screenshots, console output, copied live output, linked artifacts, and redacted logs count. Redact private information like IP addresses, API keys, phone numbers, non-public endpoints, and other private details before posting evidence.",
+        "Tests, mocks, snapshots, lint, typechecks, and CI are supplemental only; add after-fix evidence from a real setup (screenshot or video preferred; redacted terminal output, live output, or linked artifacts also count).",
       )}`;
     case "insufficient":
       return `Needs stronger real behavior proof before merge: ${realBehaviorProofBlockerSummary(
         summary,
-        "Include after-fix evidence from a real setup. Screenshots or videos are preferred when they can show the behavior; terminal screenshots, console output, copied live output, linked artifacts, and redacted logs count. Redact private information like IP addresses, API keys, phone numbers, non-public endpoints, and other private details before posting evidence.",
+        "Include after-fix evidence from a real setup (screenshot or video preferred; redacted terminal output, live output, or linked artifacts also count).",
       )}`;
     case "not_applicable":
       return summary ? `Not applicable: ${summary}` : "";
   }
 }
 
-function publicRankDetailsBlock(): string {
-  return collapsedDetailsBlock("What the readiness ranks mean", [
-    "- 🏆 challenger: rare, exceptional readiness with strong proof, clean implementation, and convincing validation.",
-    "- 💎 diamond: very strong readiness with only minor maintainer review expected.",
-    "- ⚪ platinum: good normal PR, likely mergeable with ordinary maintainer review.",
-    "- 🥇 gold: useful signal, but proof or patch confidence is still limited.",
-    "- 🥈 silver: thin signal; proof, validation, or implementation needs work.",
-    "- 🥉 bronze: not merge-ready because proof is missing/unusable or there are serious correctness or safety concerns.",
-    "- ➖ n/a: rating does not apply to this item.",
-    "",
-    "Shiny media proof means a screenshot, video, or linked artifact directly shows the changed behavior. Runtime, network, CSP, and security claims still need visible diagnostics.",
-  ]);
+const REVIEW_COMMENT_GUIDE_URL =
+  "https://github.com/Hamelyn-SL/clawsweeper/blob/main/docs/pr-review-comments.md";
+
+function reviewFooterLine(withRanks: boolean): string {
+  const links = [
+    ...(withRanks
+      ? [markdownLink("rank legend", `${REVIEW_COMMENT_GUIDE_URL}#readiness-ranks`)]
+      : []),
+    markdownLink("commands & re-review", `${REVIEW_COMMENT_GUIDE_URL}#commands`),
+  ];
+  return `_ClawSweeper: ${links.join(" · ")}._`;
 }
 
 function publicMergeReadinessResult(rating: PrRating, proof: RealBehaviorProof): string {
@@ -9303,12 +9319,12 @@ function publicMergeReadinessBlock(rating: PrRating, proof: RealBehaviorProof): 
       ? publicPriorityBullet("P1", publicRealBehaviorProofLine(proof))
       : "";
   const lines = [
-    `Overall: ${themedRatingName(rating.overallTier)}`,
-    `Proof: ${themedRatingName(rating.proofTier)}${shiny}`,
-    `Patch quality: ${themedRatingName(rating.patchTier)}`,
-    `Result: ${publicMergeReadinessResult(rating, proof)}`,
-    "",
-    "Overall follows the weaker of proof and patch quality, so missing proof can cap an otherwise strong patch.",
+    `Overall ${themedRatingName(rating.overallTier)} · Proof ${themedRatingName(
+      rating.proofTier,
+    )}${shiny} · Patch quality ${themedRatingName(rating.patchTier)} — ${publicMergeReadinessResult(
+      rating,
+      proof,
+    )}`,
   ];
   if (rating.nextSteps.length) {
     const nextSteps = rating.nextSteps
@@ -9476,29 +9492,29 @@ function publicNonDispatchableMantisRecommendationBlock(
 function closeIntro(reason: CloseReason): string {
   switch (reason) {
     case "implemented_on_main":
-      return "Thanks for the context here. I did a careful shell check against current `main`, and this is already implemented.";
+      return "Thanks for the context here. I did a careful shell check against the current default branch, and this is already implemented.";
     case "mostly_implemented_on_main":
-      return "Thanks for the context here. I did a careful shell check against current `main`, and the useful part of this older PR is already implemented there.";
+      return "Thanks for the context here. I did a careful shell check against the current default branch, and the useful part of this older PR is already implemented there.";
     case "cannot_reproduce":
-      return "Thanks for the report. I gave this a fresh shell check against current `main`, and I could not reproduce it anymore.";
+      return "Thanks for the report. I gave this a fresh shell check against the current default branch, and I could not reproduce it anymore.";
     case "clawhub":
       return `Thanks for the idea. I checked the current extension path, and this is a better fit for ${markdownLink("ClawHub.com", targetProfile().communityUrl ?? "https://clawhub.ai/")} than OpenClaw core.`;
     case "duplicate_or_superseded":
       return "Thanks for the context here. I swept through the related work, and this is now duplicate or superseded.";
     case "low_signal_unmergeable_pr":
-      return "Thanks for the contribution. I reviewed the branch, and this PR is not a good landing base for OpenClaw.";
+      return "Thanks for the contribution. I reviewed the branch, and this PR is not a good landing base for this repository.";
     case "stalled_unproven_pr":
       return "Thanks for the contribution. This PR still needs the requested real-behavior proof, and the branch has been idle since that ask.";
     case "abandoned_pr":
       return "Thanks for the contribution. This PR has been inactive for a while and still is not in a landable state.";
     case "unconfirmed_product_direction":
-      return "Thanks for the contribution. ClawSweeper proposes closing this for now: the implementation may be reasonable, but passing review and proof does not establish that OpenClaw should add this product surface.";
+      return "Thanks for the contribution. ClawSweeper proposes closing this for now: the implementation may be reasonable, but passing review and proof does not establish that this repository should add this product surface.";
     case "not_actionable_in_repo":
-      return "Thanks for writing this up. I checked the repo boundary, and this lives outside the OpenClaw source shell.";
+      return "Thanks for writing this up. I checked the repo boundary, and this lives outside this repository's source tree.";
     case "incoherent":
       return "Thanks for the note. I could not crack enough detail here to turn it into a concrete OpenClaw code or docs action.";
     case "stale_insufficient_info":
-      return "Thanks for the report. I checked current `main`, but this shell is missing enough reproduction detail to verify a current bug.";
+      return "Thanks for the report. I checked the current default branch, but this report is missing enough reproduction detail to verify a current bug.";
     case "none":
       return "Thanks for the context here. I checked this with Codex and am closing it based on the evidence below.";
   }
@@ -14245,7 +14261,7 @@ function staleFRatedPullRequestPromotion(
       "- **no human follow-up:** live comments and timeline hydrated by apply contain no non-automation activity after the ClawSweeper review.",
     ].join("\n"),
     closeComment:
-      "Thanks for the contribution. I’m closing this stale PR because the latest ClawSweeper review rated it F, it still lacks the proof or branch shape needed for merge, and there has been no human follow-up after the review. A fresh PR against current `main` with the requested proof is the right next step.",
+      "Thanks for the contribution. I’m closing this stale PR because the latest ClawSweeper review rated it F, it still lacks the proof or branch shape needed for merge, and there has been no human follow-up after the review. A fresh PR against the current default branch with the requested proof is the right next step.",
   };
 }
 
@@ -15123,7 +15139,7 @@ function publicRootCauseClusterBlock(cluster: RootCauseClusterAssessment | undef
     "Members:",
     ...memberLines,
     "",
-    "Proposal only: this assessment does not dispatch repair, suppress jobs, mutate sibling items, close, or merge anything.",
+    "_Proposal only — nothing is dispatched, closed, or merged automatically._",
   ].join("\n");
 }
 
@@ -15305,22 +15321,6 @@ function appendReviewQuestionDetails(
   }
 }
 
-function reviewWorkflowCallout(): string[] {
-  return [
-    collapsedDetailsBlock("How this review workflow works", [
-      "- ClawSweeper keeps one durable marker-backed review comment per issue or PR.",
-      "- Re-runs edit this comment so the latest verdict, findings, and automation markers stay together instead of adding duplicate bot comments.",
-      "- A fresh review can be triggered by eligible `@clawsweeper re-review` comments, exact-item GitHub events, scheduled/background review runs, or manual workflow dispatch.",
-      "- PR/issue authors and users with repository write access can comment `@clawsweeper re-review` or `@clawsweeper re-run` on an open PR or issue to request a fresh review only.",
-      "- Maintainers can also comment `@clawsweeper review` to request a fresh review only.",
-      "- Fresh-review commands do not start repair, autofix, rebase, CI repair, or automerge.",
-      "- Maintainer-only repair and merge flows require explicit commands such as `@clawsweeper autofix`, `@clawsweeper automerge`, `@clawsweeper fix ci`, or `@clawsweeper address review`.",
-      "- Maintainers can comment `@clawsweeper explain` to ask for more context, or `@clawsweeper stop` to stop active automation.",
-    ]),
-    "",
-  ];
-}
-
 function reviewFreshnessText(markdown: string): string {
   const timestamp = formatReviewFreshnessTimestamp(frontMatterValue(markdown, "reviewed_at"));
   return timestamp ? ` _Reviewed ${timestamp}._` : "";
@@ -15439,10 +15439,10 @@ function renderKeepOpenCommentFromReport(
   if (!isPullRequest) {
     const reproductionHelp = issueReproductionHelpSuggestions(markdown);
     if (reproductionHelp.length) {
-      appendPublicSection(
-        lines,
-        "Ways to help us reproduce this",
-        reproductionHelp.map((suggestion) => `- ${suggestion}`).join("\n"),
+      reviewDetails.push(
+        "Ways to help us reproduce this:",
+        "",
+        ...reproductionHelp.map((suggestion) => `- ${suggestion}`),
       );
     }
   }
@@ -15481,9 +15481,16 @@ function renderKeepOpenCommentFromReport(
     lines.push("**Review findings**", ...reviewFindings.slice(0, 3).map(reviewFindingSummaryLine));
   }
   if (bestSolutionLine && publicReviewTextDiffers(bestSolutionLine, nextStepLine)) {
-    reviewDetails.push("Best possible solution:", "", bestSolutionLine);
+    reviewDetails.push(
+      ...(reviewDetails.length ? [""] : []),
+      "Best possible solution:",
+      "",
+      bestSolutionLine,
+    );
   }
-  appendReviewQuestionDetails(reviewDetails, reproductionAssessment, solutionAssessment);
+  // Reproducibility already renders inside the visible Summary block above, so
+  // the collapsed details only repeat the solution question.
+  appendReviewQuestionDetails(reviewDetails, undefined, solutionAssessment);
   const labelJustifications = labelJustificationsFromPublicReport(markdown, options);
   const labelTransitionJustifications = labelTransitionJustificationsFromPublicReport(
     markdown,
@@ -15497,12 +15504,20 @@ function renderKeepOpenCommentFromReport(
       labelTransitionJustificationsMarkdown(labelTransitionJustifications),
     );
   }
-  if (labelJustifications.length) {
+  // Transitions already carry their justification, so only labels without a
+  // transition line keep a separate justification entry.
+  const transitionLabelKeys = new Set(
+    labelTransitionJustifications.map((transition) => transition.label.toLowerCase()),
+  );
+  const nonTransitionJustifications = labelJustifications.filter(
+    (justification) => !transitionLabelKeys.has(justification.label.toLowerCase()),
+  );
+  if (nonTransitionJustifications.length) {
     if (labelDetails.length) labelDetails.push("");
     labelDetails.push(
       "Label justifications:",
       "",
-      labelJustificationsMarkdown(labelJustifications),
+      labelJustificationsMarkdown(nonTransitionJustifications),
     );
   }
   if (isPullRequest && reviewFindings.length) {
@@ -15576,8 +15591,7 @@ function renderKeepOpenCommentFromReport(
   const reviewHistoryBlock = renderReviewHistorySection(
     reviewHistoryForRender(markdown, options.previousReviewCommentBody),
   );
-  if (isPullRequest && !reviewFailed) lines.push("", publicRankDetailsBlock());
-  lines.push("", ...reviewWorkflowCallout());
+  lines.push("", reviewFooterLine(isPullRequest && !reviewFailed), "");
   const publicBody = neutralizeReviewControlMarkers(
     sanitizePublicSelfReferences(
       lines.join("\n"),

@@ -1026,7 +1026,7 @@ test("not-actionable-in-repo closes are allowed with evidence and comment", () =
   });
   assert.equal(action.actionTaken, "proposed_close");
   assert.match(action.closeComment, /Thanks for writing this up/);
-  assert.match(action.closeComment, /outside the OpenClaw source shell/);
+  assert.match(action.closeComment, /outside this repository's source tree/);
 });
 
 test("close reason labels keep incoherent distinct from not actionable in repo", () => {

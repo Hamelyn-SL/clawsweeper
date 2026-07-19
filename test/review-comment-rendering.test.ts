@@ -231,34 +231,15 @@ Reason: Maintainers should review the tests after the targeted lane is green.
     /\*\*Summary\*\*\nAdds regression coverage for session-scoped model overrides\./,
   );
   assert.doesNotMatch(comment, /\*\*Workflow note:\*\*/);
-  assert.match(comment, /<summary>How this review workflow works<\/summary>/);
+  assert.doesNotMatch(comment, /<summary>How this review workflow works<\/summary>/);
   assert.match(
     comment,
-    /- Re-runs edit this comment so the latest verdict, findings, and automation markers stay together instead of adding duplicate bot comments\./,
+    /_ClawSweeper: \[rank legend\]\(https:\/\/github\.com\/Hamelyn-SL\/clawsweeper\/blob\/main\/docs\/pr-review-comments\.md#readiness-ranks\) · \[commands & re-review\]\(https:\/\/github\.com\/Hamelyn-SL\/clawsweeper\/blob\/main\/docs\/pr-review-comments\.md#commands\)\._/,
   );
-  assert.match(
+  assert.doesNotMatch(comment, /- A fresh review can be triggered by eligible/);
+  assert.doesNotMatch(
     comment,
-    /- A fresh review can be triggered by eligible `@clawsweeper re-review` comments, exact-item GitHub events, scheduled\/background review runs, or manual workflow dispatch\./,
-  );
-  assert.match(
-    comment,
-    /- PR\/issue authors and users with repository write access can comment `@clawsweeper re-review` or `@clawsweeper re-run` on an open PR or issue to request a fresh review only\./,
-  );
-  assert.match(
-    comment,
-    /- Maintainers can also comment `@clawsweeper review` to request a fresh review only\./,
-  );
-  assert.match(
-    comment,
-    /- Fresh-review commands do not start repair, autofix, rebase, CI repair, or automerge\./,
-  );
-  assert.match(
-    comment,
-    /- Maintainer-only repair and merge flows require explicit commands such as `@clawsweeper autofix`, `@clawsweeper automerge`, `@clawsweeper fix ci`, or `@clawsweeper address review`\./,
-  );
-  assert.match(
-    comment,
-    /- Maintainers can comment `@clawsweeper explain` to ask for more context, or `@clawsweeper stop` to stop active automation\./,
+    /- Maintainer-only repair and merge flows require explicit commands/,
   );
   assert.match(comment, /\*\*Next step before merge\*\*/);
   assert.match(comment, /Maintainers should review the tests after the targeted lane is green\./);
@@ -267,10 +248,7 @@ Reason: Maintainers should review the tests after the targeted lane is green.
     comment,
     /Best possible solution:\n\nLand the tests after targeted validation is green\./,
   );
-  assert.match(
-    comment,
-    /Do we have a high-confidence way to reproduce the issue\?\n\nNot applicable\. This is a test-only PR/,
-  );
+  assert.doesNotMatch(comment, /Do we have a high-confidence way to reproduce the issue\?/);
   assert.match(
     comment,
     /Is this the best way to solve the issue\?\n\nYes\. Landing the focused regression test/,
@@ -293,12 +271,7 @@ Reason: Maintainers should review the tests after the targeted lane is green.
       comment.indexOf("<summary>Evidence reviewed</summary>"),
   );
   assert.ok(
-    comment.indexOf("<summary>Evidence reviewed</summary>") <
-      comment.indexOf("<summary>What the readiness ranks mean</summary>"),
-  );
-  assert.ok(
-    comment.indexOf("<summary>What the readiness ranks mean</summary>") <
-      comment.indexOf("<summary>How this review workflow works</summary>"),
+    comment.indexOf("<summary>Evidence reviewed</summary>") < comment.indexOf("_ClawSweeper: ["),
   );
   assert.match(comment, /<!-- clawsweeper-verdict:needs-human item=74265 sha=abc123def456/);
 });
@@ -344,10 +317,7 @@ Reason: The bug is narrow and source-reproducible.
   assert.doesNotMatch(comment, /\*\*Ways to help us reproduce this\*\*/);
   assert.doesNotMatch(comment, /\*\*Security\*\*/);
   assert.doesNotMatch(comment, /Not applicable:/);
-  assert.match(
-    comment,
-    /Do we have a high-confidence way to reproduce the issue\?\n\nYes\. A source-level reproduction is clear/,
-  );
+  assert.doesNotMatch(comment, /Do we have a high-confidence way to reproduce the issue\?/);
 });
 
 test("high-confidence root-cause clusters appear in keep-open review comments", () => {
@@ -386,7 +356,10 @@ Review the linked candidate PR.
   assert.match(comment, /Relationship: `same_root_cause`/);
   assert.match(comment, /Canonical: https:\/\/github\.com\/openclaw\/openclaw\/pull\/75880/);
   assert.match(comment, /- `canonical`: https:\/\/github\.com\/openclaw\/openclaw\/pull\/75880/);
-  assert.match(comment, /Proposal only: this assessment does not dispatch repair/);
+  assert.match(
+    comment,
+    /_Proposal only — nothing is dispatched, closed, or merged automatically\._/,
+  );
 });
 
 test("low-confidence root-cause clusters stay out of public comments", () => {
@@ -411,7 +384,7 @@ Keep open for more evidence.
   );
 
   assert.doesNotMatch(comment, /\*\*Root-cause cluster\*\*/);
-  assert.doesNotMatch(comment, /Proposal only: this assessment/);
+  assert.doesNotMatch(comment, /Proposal only —/);
 });
 
 test("high-confidence root-cause clusters appear in close comments", () => {
@@ -488,12 +461,14 @@ Ask for enough details to reproduce the issue before planning a fix.
     "none",
   );
 
-  assert.match(comment, /\*\*Ways to help us reproduce this\*\*/);
+  assert.doesNotMatch(comment, /\*\*Ways to help us reproduce this\*\*/);
+  assert.match(comment, /Ways to help us reproduce this:/);
   assert.match(comment, /- Add a screenshot or short recording showing the behavior\./);
   assert.match(comment, /- Include the exact command, prompt, or workflow that triggered it\./);
   assert.match(comment, /- Add expected vs actual behavior\./);
   assert.ok(
-    comment.indexOf("**Ways to help us reproduce this**") < comment.indexOf("**Next step**"),
+    comment.indexOf("<summary>Review details</summary>") <
+      comment.indexOf("Ways to help us reproduce this:"),
   );
 });
 
@@ -633,7 +608,7 @@ Reason: The fix is narrow and can be made on the PR branch.
 
   assert.match(comment, /Codex review: needs changes before merge\./);
   assert.doesNotMatch(comment, /\*\*Workflow note:\*\*/);
-  assert.match(comment, /<summary>How this review workflow works<\/summary>/);
+  assert.match(comment, /_ClawSweeper: \[rank legend\]\(/);
   assert.match(
     comment,
     /\*\*Review findings\*\*\n- \[P1\] Validate replace paths — `src\/config\/apply\.ts:42-44`/,

@@ -81,7 +81,13 @@ uncertainty. Do not repeat the same sentence or evidence across those fields.
 Keep these fields concise because they become the public review comment. Prefer
 one short sentence for `changeSummary`, `workReason`, `bestSolution`, and
 `securityReview.summary`; use bullets only inside `reviewFindings`,
-`securityReview.concerns`, `evidence`, and `likelyOwners`. Do not turn
+`securityReview.concerns`, `evidence`, and `likelyOwners`. Hard cap: keep
+`summary`, `changeSummary`, `workReason`, `bestSolution`,
+`reproductionAssessment`, `solutionAssessment`, and each risk, evidence, or
+justification bullet under roughly 45 words. Never restate a fact that an
+earlier field already states — later fields must add new information or stay
+empty; if a justification would repeat an assessment verbatim, reference the
+subject in a few words instead of copying the sentence. Do not turn
 `changeSummary` or `workReason` into an automerge/autofix status update; merge
 automation is reported by the command/status comment and hidden markers.
 

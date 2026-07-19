@@ -71,9 +71,11 @@ Full review comments:
 
   const comment = renderReviewCommentFromReport(report, "none");
 
-  assert.match(comment, /\*\*Merge readiness\*\*\nOverall: 🏆 challenger/);
-  assert.match(comment, /Proof: 🏆 challenger ✨ media proof bonus/);
-  assert.match(comment, /Shiny media proof means a screenshot, video, or linked artifact/);
+  assert.match(
+    comment,
+    /\*\*Merge readiness\*\*\nOverall 🏆 challenger · Proof 🏆 challenger ✨ media proof bonus/,
+  );
+  assert.match(comment, /✨ media proof bonus/);
   assert.doesNotMatch(comment, /Rank-up moves:/);
 });
 
@@ -128,7 +130,7 @@ Full review comments:
   const markers = reviewAutomationMarkersFromReport(report);
 
   assert.match(comment, /\*\*Merge readiness\*\*/);
-  assert.match(comment, /Proof: ➖ n\/a/);
+  assert.match(comment, /· Proof ➖ n\/a ·/);
   assert.match(markers, /clawsweeper-verdict:pass/);
   assert.doesNotMatch(markers, /clawsweeper-verdict:needs-human/);
 });
@@ -313,7 +315,7 @@ Full review comments:
   assert.match(comment, /Codex review: needs real behavior proof before merge\./);
   assert.match(comment, /\*\*Merge readiness\*\*/);
   assert.match(comment, /terminal screenshots, console output, copied live output/);
-  assert.match(comment, /update the PR body; ClawSweeper should re-review automatically/);
+  assert.match(comment, /update the PR body; ClawSweeper re-reviews automatically/);
   assert.match(comment, /@clawsweeper re-review/);
   assert.match(markers, /clawsweeper-verdict:needs-human/);
   assert.doesNotMatch(markers, /clawsweeper-verdict:pass/);
@@ -474,8 +476,8 @@ ${prRatingReportSection({
   assert.deepEqual(prRatingLabelsForTest([], decision.prRating.overallTier), [
     "rating: 💎 diamond",
   ]);
-  assert.match(comment, /Patch quality: 💎 diamond/);
-  assert.match(comment, /Result: ready for maintainer review\./);
+  assert.match(comment, /· Patch quality 💎 diamond —/);
+  assert.match(comment, /— ready for maintainer review\./);
   assert.doesNotMatch(comment, /Result: blocked by patch quality or review findings\./);
   assert.doesNotMatch(comment, /Add changelog entry/i);
 });
