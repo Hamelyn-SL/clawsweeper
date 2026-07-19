@@ -87,6 +87,23 @@ Full review comments, source links, owner routing, acceptance criteria, and
 evidence stay under the collapsed `Review details` block so the top-level PR
 comment reads like a concise review.
 
+To keep the visible part short, the comment also follows these condensation
+rules (Hamelyn fork):
+
+- `**Merge readiness**` is a single line
+  (`Overall <tier> · Proof <tier> · Patch quality <tier> — <result>.`), plus
+  `Rank-up moves:` and merge-blocking `Proof guidance:` when present.
+- Label transitions carry their own justification inline under the collapsed
+  `Label changes` block; a separate `Label justifications:` list appears only
+  for labels without a transition line, never duplicating a transition reason.
+- The reproducibility Q&A is not repeated inside `Review details` when the
+  visible Summary already shows the `Reproducibility:` line.
+- Issue reproduction help (`Ways to help us reproduce this:`) lives inside the
+  collapsed `Review details` block.
+- The static rank legend and command help are replaced by a one-line footer
+  linking to this document
+  (`_ClawSweeper: [rank legend](…#readiness-ranks) · [commands & re-review](…#commands)._`).
+
 Automerge and autofix state belongs in the command/status comment and hidden
 markers, not in the public review section headings. A clean opted-in PR should
 still read as `Codex review: passed.` in the durable review comment.
@@ -195,3 +212,47 @@ pnpm run apply-decisions -- --target-repo openclaw/openclaw --sync-comments-only
 ```
 
 - Normal review/apply workflows also refresh missing or stale durable comments.
+
+## Readiness ranks
+
+The one-line footer of every PR review comment links here.
+
+- 🏆 challenger: rare, exceptional readiness with strong proof, clean
+  implementation, and convincing validation.
+- 💎 diamond: very strong readiness with only minor maintainer review expected.
+- ⚪ platinum: good normal PR, likely mergeable with ordinary maintainer review.
+- 🥇 gold: useful signal, but proof or patch confidence is still limited.
+- 🥈 silver: thin signal; proof, validation, or implementation needs work.
+- 🥉 bronze: not merge-ready because proof is missing/unusable or there are
+  serious correctness or safety concerns.
+- ➖ n/a: rating does not apply to this item.
+
+Overall follows the weaker of proof and patch quality, so missing proof can cap
+an otherwise strong patch. `✨ media proof bonus` means a screenshot, video, or
+linked artifact directly shows the changed behavior. Runtime, network, CSP, and
+security claims still need visible diagnostics.
+
+When posting proof, redact private information such as IP addresses, API keys,
+phone numbers, and non-public endpoints before uploading evidence.
+
+## Commands
+
+ClawSweeper keeps one durable marker-backed review comment per issue or PR and
+edits it in place on every re-run, so the latest verdict, findings, and
+automation markers stay together.
+
+- A fresh review can be triggered by eligible `@clawsweeper re-review`
+  comments, exact-item GitHub events, scheduled/background review runs, or
+  manual workflow dispatch.
+- PR/issue authors and users with repository write access can comment
+  `@clawsweeper re-review` or `@clawsweeper re-run` on an open PR or issue to
+  request a fresh review only.
+- Maintainers can also comment `@clawsweeper review` to request a fresh review
+  only.
+- Fresh-review commands do not start repair, autofix, rebase, CI repair, or
+  automerge.
+- Maintainer-only repair and merge flows require explicit commands such as
+  `@clawsweeper autofix`, `@clawsweeper automerge`, `@clawsweeper fix ci`, or
+  `@clawsweeper address review`.
+- Maintainers can comment `@clawsweeper explain` to ask for more context, or
+  `@clawsweeper stop` to stop active automation.

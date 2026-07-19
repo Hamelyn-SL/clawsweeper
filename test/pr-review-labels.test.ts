@@ -57,19 +57,15 @@ Full review comments:
   });
   const markers = reviewAutomationMarkersFromReport(report);
 
-  assert.match(comment, /\*\*Merge readiness\*\*\nOverall: 💎 diamond/);
-  assert.match(comment, /Proof: 💎 diamond/);
-  assert.match(comment, /Patch quality: 💎 diamond/);
-  assert.match(comment, /Result: ready for maintainer review\./);
   assert.match(
     comment,
-    /Overall follows the weaker of proof and patch quality, so missing proof can cap an otherwise strong patch\./,
+    /\*\*Merge readiness\*\*\nOverall 💎 diamond · Proof 💎 diamond · Patch quality 💎 diamond — ready for maintainer review\./,
   );
+  assert.doesNotMatch(comment, /Overall follows the weaker of proof and patch quality/);
   assert.doesNotMatch(comment, /\*\*PR rating\*\*/);
   assert.doesNotMatch(comment, /\*\*Real behavior proof\*\*/);
-  assert.match(comment, /<summary>What the readiness ranks mean<\/summary>/);
-  assert.match(comment, /🏆 challenger: rare, exceptional readiness/);
-  assert.match(comment, /🥉 bronze: not merge-ready/);
+  assert.doesNotMatch(comment, /<summary>What the readiness ranks mean<\/summary>/);
+  assert.match(comment, /_ClawSweeper: \[rank legend\]\(/);
   assert.match(markers, /clawsweeper-verdict:pass/);
   assert.doesNotMatch(markers, /clawsweeper-verdict:needs-human/);
 });
@@ -122,21 +118,18 @@ Full review comments:
   const comment = renderReviewCommentFromReport(report, "none");
   const labelDetails = detailsBody(comment, "Label changes");
 
-  assert.match(comment, /\*\*Merge readiness\*\*\nOverall: 🥉 bronze/);
-  assert.match(comment, /Proof: 🥉 bronze/);
-  assert.match(comment, /Patch quality: 💎 diamond/);
-  assert.match(comment, /Result: blocked until real behavior proof is added\./);
   assert.match(
     comment,
-    /Overall follows the weaker of proof and patch quality, so missing proof can cap an otherwise strong patch\./,
+    /\*\*Merge readiness\*\*\nOverall 🥉 bronze · Proof 🥉 bronze · Patch quality 💎 diamond — blocked until real behavior proof is added\./,
   );
+  assert.doesNotMatch(comment, /Overall follows the weaker of proof and patch quality/);
   assert.match(comment, /Proof guidance:\n- \[P1\] Needs real behavior proof before merge:/);
   assert.match(comment, /The PR has no real ingestion-run proof yet\./);
   assert.match(comment, /After adding proof, update the PR body/);
   assert.match(comment, /@clawsweeper re-review/);
   assert.match(
     labelDetails,
-    /- `rating: 🥉 bronze`: Overall readiness is 🥉 bronze; proof is 🥉 bronze and patch quality is 💎 diamond\./,
+    /- add `rating: 🥉 bronze`: Overall readiness is 🥉 bronze; proof is 🥉 bronze and patch quality is 💎 diamond\./,
   );
   assert.doesNotMatch(labelDetails, /PR readiness rating was derived from proof quality/);
 });
@@ -289,12 +282,7 @@ Full review comments:
 
   assert.match(comment, /<summary>Label changes<\/summary>/);
   assert.ok(
-    comment.indexOf("<summary>Label changes</summary>") <
-      comment.indexOf("<summary>What the readiness ranks mean</summary>"),
-  );
-  assert.ok(
-    comment.indexOf("<summary>What the readiness ranks mean</summary>") <
-      comment.indexOf("<summary>How this review workflow works</summary>"),
+    comment.indexOf("<summary>Label changes</summary>") < comment.indexOf("_ClawSweeper: ["),
   );
   if (comment.includes("<summary>Review details</summary>")) {
     assert.doesNotMatch(detailsBody(comment, "Review details"), /Label changes:/);
@@ -309,15 +297,11 @@ Full review comments:
     labelDetails,
     /- add `merge-risk: 🚨 compatibility`: Merging changes the default upgrade behavior for existing configs\./,
   );
-  assert.match(labelDetails, /Label justifications:/);
   assert.match(
     labelDetails,
-    /- `P1`: The PR changes an active channel workflow affecting real users\./,
+    /Label justifications:[\s\S]*- `impact:message-loss`: The diff touches message retry and delivery ordering\./,
   );
-  assert.match(
-    labelDetails,
-    /- `impact:message-loss`: The diff touches message retry and delivery ordering\./,
-  );
+  assert.doesNotMatch(labelDetails, /Label justifications:[\s\S]*`P1`/);
 });
 
 test("public PR review details justify derived rating label changes", () => {
@@ -379,11 +363,7 @@ Full review comments:
     labelDetails,
     /- remove `rating: 💎 diamond`: Current PR rating is `rating: 🥈 silver`, so this older rating label is no longer current\./,
   );
-  assert.match(labelDetails, /Label justifications:/);
-  assert.match(
-    labelDetails,
-    /- `rating: 🥈 silver`: Overall readiness is 🥈 silver; proof is 🥈 silver and patch quality is 💎 diamond\. Replaced prior `rating: 💎 diamond`\./,
-  );
+  assert.doesNotMatch(labelDetails, /Label justifications:/);
 });
 
 test("public PR review details justify stale owned label removals", () => {
@@ -531,11 +511,7 @@ Full review comments:
     labelDetails,
     /- remove `rating: 💎 diamond`: Current PR rating is `rating: 🥈 silver`, so this older rating label is no longer current\./,
   );
-  assert.match(labelDetails, /Label justifications:/);
-  assert.match(
-    labelDetails,
-    /- `rating: 🥈 silver`: Overall readiness is 🥈 silver; proof is 🥈 silver and patch quality is 💎 diamond\. Replaced prior `rating: 💎 diamond`\./,
-  );
+  assert.doesNotMatch(labelDetails, /Label justifications:/);
 });
 
 test("public PR review details justify stale owned label removals", () => {

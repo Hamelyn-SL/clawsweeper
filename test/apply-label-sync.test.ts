@@ -879,7 +879,7 @@ if (args[0] === "api" && /\\/issues\\/74482$/.test(path)) {
       ),
     );
     const patchedBody = calls.find((args) => args[0] === "patched-review-body")?.[1] ?? "";
-    assert.match(patchedBody, /Label justifications:/);
+    assert.match(patchedBody, /Label changes:/);
     assert.deepEqual(JSON.parse(readFileSync(reportPath, "utf8")), [
       {
         number: 74482,
@@ -1482,7 +1482,7 @@ if (args[0] === "api" && /\\/issues\\/74479$/.test(path)) {
       .filter(Boolean)
       .map((line) => JSON.parse(line) as string[]);
     const patchedBody = calls.find((args) => args[0] === "patched-review-body")?.[1] ?? "";
-    assert.match(patchedBody, /Label justifications:/);
+    assert.match(patchedBody, /Label changes:/);
     assert.match(patchedBody, /`proof: sufficient`/);
     assert.match(patchedBody, /`proof: 📸 screenshot`/);
     assert.match(patchedBody, /`rating: 💎 diamond`/);
