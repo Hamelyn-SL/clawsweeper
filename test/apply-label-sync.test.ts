@@ -296,6 +296,16 @@ if (args[0] === "api" && /\\/issues\\/74478$/.test(path)) {
 });
 
 test("apply-decisions clears stale PR review labels when live head changed", () => {
+  // Age-gated stale-close policies key off the live item's created_at (60
+  // days); keep this fixture young and derive every timestamp from one base so
+  // only the stale-head label sync under test decides the outcome.
+  const HOUR_MS = 60 * 60 * 1000;
+  const liveCreatedAt = new Date(Date.now() - 30 * 24 * HOUR_MS).toISOString();
+  const reviewedAt = new Date(Date.parse(liveCreatedAt) + HOUR_MS).toISOString();
+  const liveUpdatedAt = new Date(
+    Date.parse(liveCreatedAt) + HOUR_MS + 10 * 60 * 1000,
+  ).toISOString();
+  const newerMarkerReviewedAt = new Date(Date.parse(liveCreatedAt) + 5 * HOUR_MS).toISOString();
   const root = mkdtempSync(tmpPrefix);
   try {
     const itemsDir = join(root, "items");
@@ -330,8 +340,8 @@ test("apply-decisions clears stale PR review labels when live head changed", () 
       author_association: "CONTRIBUTOR",
       labels: JSON.stringify(staleLabels),
       item_snapshot_hash: "snapshot-a",
-      item_updated_at: "2026-05-19T20:00:00Z",
-      reviewed_at: "2026-05-19T20:00:00Z",
+      item_updated_at: reviewedAt,
+      reviewed_at: reviewedAt,
       pull_head_sha: "old-head",
       merge_risk_labels: JSON.stringify(["merge-risk: 🚨 session-state"]),
     })}
@@ -358,7 +368,7 @@ Full review comments:
     writeFileSync(itemPath, synced.report, "utf8");
     const newerStaleHeadComment = synced.comment.replace(
       /\breviewed_at=[^\s>]+/,
-      "reviewed_at=2026-05-20T00:00:00.000Z",
+      `reviewed_at=${newerMarkerReviewedAt}`,
     );
 
     const ghMock = `
@@ -375,8 +385,8 @@ if (args[0] === "api" && /\\/issues\\/74481$/.test(path)) {
     number: 74481,
     title: "Stale review label cleanup",
     html_url: "https://github.com/openclaw/openclaw/pull/74481",
-    created_at: "2026-05-19T19:00:00Z",
-    updated_at: "2026-05-19T20:10:00Z",
+    created_at: ${JSON.stringify(liveCreatedAt)},
+    updated_at: ${JSON.stringify(liveUpdatedAt)},
     closed_at: null,
     state: "open",
     locked: false,
@@ -411,8 +421,8 @@ if (args[0] === "api" && /\\/issues\\/74481$/.test(path)) {
       html_url: "https://github.com/openclaw/openclaw/pull/74481#issuecomment-987481",
       body: comment,
       user: { login: "clawsweeper[bot]" },
-      created_at: "2026-05-19T20:00:00Z",
-      updated_at: "2026-05-19T20:00:00Z"
+      created_at: ${JSON.stringify(reviewedAt)},
+      updated_at: ${JSON.stringify(reviewedAt)}
     }
   ]]));
 } else if (args[0] === "api" && /\\/issues\\/comments\\/987481$/.test(path)) {
@@ -465,7 +475,9 @@ if (args[0] === "api" && /\\/issues\\/74481$/.test(path)) {
     assert.match(patchedBody, /clawsweeper-review-history v=1 total=1/);
     assert.match(
       patchedBody,
-      /- reviewed 2026-05-20T00:00:00\.000Z sha old-head :: needs maintainer review before merge\./,
+      new RegExp(
+        `- reviewed ${newerMarkerReviewedAt.replace(/[.]/g, "\\.")} sha old-head :: needs maintainer review before merge\\.`,
+      ),
     );
     assert.doesNotMatch(patchedBody, /clawsweeper-verdict:/);
     const updatedReport = readFileSync(itemPath, "utf8");

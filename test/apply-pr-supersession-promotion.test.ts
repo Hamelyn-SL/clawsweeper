@@ -13,6 +13,10 @@ import {
   withMockGh,
 } from "./helpers.ts";
 
+// The stale-PR close policies age-gate on the live item's created_at (60 days).
+// Keep these fixtures young so only the promotion logic under test decides.
+const RECENT_ITEM_CREATED_AT = new Date(Date.now() - 20 * 24 * 60 * 60 * 1000).toISOString();
+
 test("apply-decisions does not promote PRs superseded by PRs already proposed for close", () => {
   const root = mkdtempSync(tmpPrefix);
   try {
@@ -207,7 +211,7 @@ test("apply-decisions does not promote unrelated linked open PRs", () => {
       promotionGhMock({
         number: 333,
         title: "Related activity PR",
-        itemCreatedAt: "2026-05-20T00:00:00Z",
+        itemCreatedAt: RECENT_ITEM_CREATED_AT,
         comment: synced.comment,
         linkedPulls: {
           401: {
@@ -275,7 +279,7 @@ test("apply-decisions does not promote unrelated linked merged PRs", () => {
       promotionGhMock({
         number: 334,
         title: "Related merged activity PR",
-        itemCreatedAt: "2026-05-20T00:00:00Z",
+        itemCreatedAt: RECENT_ITEM_CREATED_AT,
         comment: synced.comment,
         linkedPulls: {
           402: {
