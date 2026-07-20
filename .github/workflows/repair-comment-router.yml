@@ -147,7 +147,7 @@ jobs:
         with:
           client-id: ${{ env.CLAWSWEEPER_APP_CLIENT_ID }}
           private-key: ${{ secrets.CLAWSWEEPER_APP_PRIVATE_KEY }}
-          owner: openclaw
+          owner: ${{ github.repository_owner }}
           repositories: clawsweeper
           permission-actions: write
           permission-contents: write
