@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-14T11:29:02.581Z",
-  "updatedAt": "2026-08-14T11:03:29Z",
+  "generatedAt": "2026-08-24T17:11:44.548Z",
+  "updatedAt": "2026-08-24T17:02:43Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -12,46 +12,50 @@
     "labels": [
       "size/XXL",
       "business-logic",
-      "rating: 🥉 bronze",
-      "status: 📣 needs proof",
       "P2",
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 automation",
       "merge-risk: 🚨 security-boundary",
-      "merge-risk: 🚨 automation"
+      "rating: 🥉 bronze"
     ],
     "createdAt": "2026-08-13T06:07:34Z",
-    "updatedAt": "2026-08-14T11:03:29Z",
-    "headSha": "9e699987edb168cc3871d503851383a2db777cb3"
+    "updatedAt": "2026-08-24T17:02:43Z",
+    "headSha": "43f5f84841c47096f0d7bd491aadabba87d4edd2"
   },
-  "lane": "product_direction",
-  "priority": "P2",
-  "question": "¿Qué retención y presupuesto operativo debe asumir `bl_telemetry.bl_events` antes de activar esta telemetría?",
-  "rationale": "La tabla se crea con expiración de 90 días, pero el propio PR describe 30 frente a 90 días como una decisión abierta con impacto mensual relevante.",
+  "lane": "release_inclusion",
+  "priority": "P1",
+  "question": "¿Se aprueba provisionar BigQuery antes del merge a `dev`, o se prefiere mantener una lectura compatible del dashboard hasta completar el cutover?",
+  "rationale": "La rama cambia una consulta desplegada desde `dev`, pero la infraestructura versionada se aplica únicamente desde `master`; el orden correcto exige una decisión operativa explícita.",
   "options": [
     {
-      "title": "Definir 90 días",
-      "body": "Mantener la expiración actual y aprobar explícitamente su coste y periodo de investigación disponible.",
+      "title": "Provisionar antes del merge",
+      "body": "Crear y comprobar la tabla y la scheduled query v2 antes de desplegar el dashboard actualizado.",
+      "recommended": true
+    },
+    {
+      "title": "Añadir compatibilidad temporal",
+      "body": "Mantener una lectura legacy segura hasta que el agregado v2 esté disponible y validado.",
       "recommended": false
     },
     {
-      "title": "Reducir a 30 días",
-      "body": "Ajustar esquema, documentación y estimación para priorizar el coste, conservando el agregado diario como fuente del dashboard.",
-      "recommended": true
+      "title": "Separar el cutover",
+      "body": "Pausar la parte de dashboard y datos hasta acordar un rollout coordinado.",
+      "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Reducir a 30 días",
-    "body": "Ajustar esquema, documentación y estimación para priorizar el coste, conservando el agregado diario como fuente del dashboard.",
+    "title": "Provisionar antes del merge",
+    "body": "Crear y comprobar la tabla y la scheduled query v2 antes de desplegar el dashboard actualizado.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "danielmenchen-hamelyn",
-    "reason": "Su historial reciente cubre la semántica y el coste de la instrumentación BL.",
-    "confidence": "high"
+    "person": "MiguelHamelyn",
+    "reason": "La decisión afecta directamente a la consulta y al despliegue actual del dashboard.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8422.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8422#issuecomment-5276693528",
-    "reviewedAt": "2026-08-14T11:29:02.581Z",
-    "mainSha": "f3c860bc9305bae2d8015ef4eb1dec557d43f877"
+    "reviewedAt": "2026-08-24T17:11:44.548Z",
+    "mainSha": "bd1b326cac9bc4c1113f4fea817be527e0a87f79"
   }
 }
