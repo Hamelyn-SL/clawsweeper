@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-24T14:03:46.696Z",
-  "updatedAt": "2026-08-24T13:12:43Z",
+  "generatedAt": "2026-08-24T17:07:06.270Z",
+  "updatedAt": "2026-08-24T16:57:43Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,46 +14,45 @@
       "feature",
       "reporter:marcos",
       "triage:done",
-      "P2",
       "impact:other",
-      "issue-rating: ➖ n/a",
-      "clawsweeper:linked-pr-open",
       "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:linked-pr-open",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-08-21T10:43:04Z",
-    "updatedAt": "2026-08-24T13:12:43Z"
+    "updatedAt": "2026-08-24T16:57:43Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se acepta que F1 y el piloto F2 de Discogs aterricen juntos en una PR amplia, o debe separarse primero el núcleo MarketplaceManager?",
-  "rationale": "La implementación candidata combina una base arquitectónica genérica y una migración de marketplace activo; el orden de entrega define el riesgo y el alcance de revisión.",
+  "question": "¿Debe esta fase F2 activar ya `/api/discogsV2` como cron principal o conservar la V2 sin schedule hasta un cambio de switchover separado?",
+  "rationale": "La aceptación pide explícitamente no tocar `vercel.json`, pero la PR abierta mueve el cron principal y exige preparación manual de índices Atlas.",
   "options": [
     {
-      "title": "Revisar la entrega apilada",
-      "body": "Mantener la PR actual como una única entrega, con revisión explícita de F1 y de la convivencia V1/V2 antes de integrarla.",
+      "title": "Separar el switchover",
+      "body": "Mantener la V2 sin schedule en esta migración y abrir un cambio posterior con los índices Atlas verificados.",
       "recommended": true
     },
     {
-      "title": "Separar F1 de Discogs",
-      "body": "Pedir una PR base para MarketplaceManager y dejar Discogs como una migración posterior y más acotada.",
+      "title": "Aprobar el switchover ahora",
+      "body": "Aceptar el cambio de schedule solo tras confirmar la creación de índices y la reversión operativa documentada.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Revisar la entrega apilada",
-    "body": "Mantener la PR actual como una única entrega, con revisión explícita de F1 y de la convivencia V1/V2 antes de integrarla.",
+    "title": "Separar el switchover",
+    "body": "Mantener la V2 sin schedule en esta migración y abrir un cambio posterior con los índices Atlas verificados.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Es la persona asignada y autora de la propuesta que plantea la decisión de alcance.",
+    "reason": "Es la persona asignada y quien mantiene la PR que materializa ambas alternativas.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8626.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8626#issuecomment-5370332561",
-    "reviewedAt": "2026-08-24T14:03:46.696Z",
+    "reviewedAt": "2026-08-24T17:07:06.270Z",
     "mainSha": "bd1b326cac9bc4c1113f4fea817be527e0a87f79"
   }
 }
