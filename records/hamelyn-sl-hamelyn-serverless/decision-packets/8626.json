@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-24T17:07:06.270Z",
+  "generatedAt": "2026-08-24T17:11:58.745Z",
   "updatedAt": "2026-08-24T16:57:43Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -26,34 +26,34 @@
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe esta fase F2 activar ya `/api/discogsV2` como cron principal o conservar la V2 sin schedule hasta un cambio de switchover separado?",
-  "rationale": "La aceptación pide explícitamente no tocar `vercel.json`, pero la PR abierta mueve el cron principal y exige preparación manual de índices Atlas.",
+  "question": "¿Debe esta primera migración F2 activar ya `discogsV2` como cron principal, o aterrizar inicialmente sin schedule hasta completar los huecos legacy y los índices Atlas?",
+  "rationale": "La aceptación original pedía una ruta V2 sin entrada en `vercel.json`, mientras que la PR vinculada incorpora el switchover; decidirlo cambia el comportamiento de producción.",
   "options": [
     {
-      "title": "Separar el switchover",
-      "body": "Mantener la V2 sin schedule en esta migración y abrir un cambio posterior con los índices Atlas verificados.",
+      "title": "Aterrizaje gradual",
+      "body": "Fusionar la estructura V2 sin schedule principal y posponer el switchover hasta cerrar los gates operativos y funcionales.",
       "recommended": true
     },
     {
-      "title": "Aprobar el switchover ahora",
-      "body": "Aceptar el cambio de schedule solo tras confirmar la creación de índices y la reversión operativa documentada.",
+      "title": "Switchover controlado",
+      "body": "Aceptar el cron V2 principal tras confirmar índices Atlas, fallback manual y el plan para los huecos legacy documentados.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Separar el switchover",
-    "body": "Mantener la V2 sin schedule en esta migración y abrir un cambio posterior con los índices Atlas verificados.",
+    "title": "Aterrizaje gradual",
+    "body": "Fusionar la estructura V2 sin schedule principal y posponer el switchover hasta cerrar los gates operativos y funcionales.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Es la persona asignada y quien mantiene la PR que materializa ambas alternativas.",
+    "reason": "Es el assignee y autor de la propuesta que define el alcance F2 y el cambio de schedule.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8626.md",
     "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8626#issuecomment-5370332561",
-    "reviewedAt": "2026-08-24T17:07:06.270Z",
+    "reviewedAt": "2026-08-24T17:11:58.745Z",
     "mainSha": "bd1b326cac9bc4c1113f4fea817be527e0a87f79"
   }
 }
