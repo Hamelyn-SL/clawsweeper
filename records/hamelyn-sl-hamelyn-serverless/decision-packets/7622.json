@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-19T16:20:23.395Z",
+  "updatedAt": "2026-07-19T12:35:13Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7622,
+    "title": "Dependencias: actualizar majors por familias y evitar trabajo duplicado",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7622",
+    "state": "closed",
+    "labels": [
+      "priority:p2",
+      "app:infrastructure",
+      "feature",
+      "reporter:danielmenchen-hamelyn",
+      "P2",
+      "impact:other",
+      "issue-rating: ➖ n/a",
+      "clawsweeper:linked-pr-open",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-16T08:11:46Z",
+    "updatedAt": "2026-07-19T12:35:13Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué familias major deben programarse inicialmente y cuáles deben permanecer excluidas hasta contar con una migración dedicada?",
+  "rationale": "La elección define una política transversal de actualización automática, reversión y aceptación de breaking changes que no puede deducirse solo del código.",
+  "options": [
+    {
+      "title": "Activar familias curadas",
+      "body": "Programar únicamente familias con migración y prueba real, dejando `other` y las incompatibilidades conocidas fuera del schedule.",
+      "recommended": true
+    },
+    {
+      "title": "Activar todas las familias",
+      "body": "Incluir también la familia heterogénea y asumir revisión manual adicional para cada actualización incompatible.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener minor/patch",
+      "body": "Posponer las majors automáticas hasta acordar una matriz completa de exclusiones y responsables de revisión.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Activar familias curadas",
+    "body": "Programar únicamente familias con migración y prueba real, dejando `other` y las incompatibilidades conocidas fuera del schedule.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "danielmenchen-hamelyn",
+    "reason": "Tiene continuidad directa en la automatización vigente y en la propuesta de implementación vinculada.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7622.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7622#issuecomment-4989867837",
+    "reviewedAt": "2026-07-19T16:20:23.395Z",
+    "mainSha": "3e701a51783634733d86746c3425f42cce83da5a"
+  }
+}

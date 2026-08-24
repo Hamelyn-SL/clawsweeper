@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-10T11:55:06.452Z",
+  "updatedAt": "2026-08-10T11:27:38Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8073,
+    "title": "Alibris purge feed leaves withdrawn books orderable after successful uploads",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8073",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "triage:needs-info",
+      "clawsweeper:needs-live-repro",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision",
+      "issue-rating: ⚪ platinum",
+      "origin:dev",
+      "mk:alibris",
+      "P1",
+      "impact:other",
+      "clawsweeper:linked-pr-open"
+    ],
+    "createdAt": "2026-07-29T08:24:22Z",
+    "updatedAt": "2026-08-10T11:27:38Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe adoptarse el feed incremental de bajas como mitigación operativa mientras se conserva el purge diario, o debe exigirse primero una confirmación remota autoritativa del purge?",
+  "rationale": "El repositorio no puede observar hoy cómo Alibris interpreta el fichero remoto, y la alternativa incrementa la cadencia y el comportamiento operativo del canal.",
+  "options": [
+    {
+      "title": "Validar y reparar el feed incremental",
+      "body": "Resolver el conflicto del PR, probar una baja real en Seller Hub y conservar el purge diario como reconciliación.",
+      "recommended": true
+    },
+    {
+      "title": "Investigar primero el purge remoto",
+      "body": "Obtener el historial autoritativo de Alibris para el fichero original antes de cambiar la estrategia de retirada.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Validar y reparar el feed incremental",
+    "body": "Resolver el conflicto del PR, probar una baja real en Seller Hub y conservar el purge diario como reconciliación.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Es el asignado actual y ha reunido la implementación candidata y la evidencia operativa del canal.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8073.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8073#issuecomment-5115369962",
+    "reviewedAt": "2026-08-10T11:55:06.452Z",
+    "mainSha": "d5e3a1b899d7bd7c2487d30e50a8e94275ea09fe"
+  }
+}

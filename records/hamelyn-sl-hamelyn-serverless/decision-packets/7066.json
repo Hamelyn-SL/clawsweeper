@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-08T03:39:34.924Z",
+  "updatedAt": "2026-07-08T10:29:13Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7066,
+    "title": "refactor: improve error handling for Abebooks XML parser failures",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7066",
+    "state": "closed",
+    "labels": [
+      "size/L",
+      "rating: 🧂 unranked krab",
+      "status: 📣 needs proof",
+      "P1"
+    ],
+    "createdAt": "2026-07-07T06:00:33Z",
+    "updatedAt": "2026-07-08T10:29:13Z",
+    "headSha": "ea8d93833f20684f74b7ed302f35b353f7b52f0e"
+  },
+  "lane": "proof_sufficiency",
+  "priority": "P1",
+  "question": "Should this PR wait for contributor after-fix proof, or can a reviewer provide a proof override for the AbeBooks requestError path?",
+  "rationale": "The code path is plausible and already reviewed, but ClawSweeper cannot verify the contributor's runtime setup without logs, terminal output, or an explicit proof override.",
+  "options": [
+    {
+      "title": "Wait for redacted runtime proof",
+      "body": "Ask for terminal output, logs, or a short reproduced run showing a requestError response turns into `ABEBOOKS_REQUEST_ERROR_<code>` before merge.",
+      "recommended": true
+    },
+    {
+      "title": "Reviewer supplies proof override",
+      "body": "A reviewer with AbeBooks access can validate the path themselves and mark the proof gate as intentionally overridden.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Wait for redacted runtime proof",
+    "body": "Ask for terminal output, logs, or a short reproduced run showing a requestError response turns into `ABEBOOKS_REQUEST_ERROR_<code>` before merge.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Marcos was requested for this PR and has recent current-main history in the same AbeBooks API file.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7066.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7066#issuecomment-4911278757",
+    "reviewedAt": "2026-07-08T03:39:34.924Z",
+    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-05T00:34:17.997Z",
+  "updatedAt": "2026-08-04T23:49:06Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8188,
+    "title": "Amazon acumula 101078 por condición inconsistente entre marketplaces",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8188",
+    "state": "open",
+    "labels": [
+      "bug",
+      "source:admin-panel",
+      "app:marketplace",
+      "triage:no-change",
+      "reporter:JavierHamelyn",
+      "origin:panel",
+      "mk:amazon",
+      "P1",
+      "impact:other",
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-08-03T13:36:22Z",
+    "updatedAt": "2026-08-04T23:49:06Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe aprobarse primero una PR mínima que fuerce `101078 → UNKNOWN`, dejando el grafo regional y cualquier backfill para una iniciativa separada con validación humana?",
+  "rationale": "El guard es una corrección acotada, pero decidir la condición canónica, los casos FBA y cuándo autorizar escrituras masivas exige criterio de producto y operación.",
+  "options": [
+    {
+      "title": "Separar mitigación y remediación",
+      "body": "Aprobar primero el guard de clasificación con prueba de bundle mixto y diseñar aparte el resolver regional sin activar writes.",
+      "recommended": true
+    },
+    {
+      "title": "Diseñar primero el resolver completo",
+      "body": "Mantener la mitigación pendiente hasta acordar la identidad de condición, el flujo de revisión y la política de backfill.",
+      "recommended": false
+    },
+    {
+      "title": "Bloquear recovery Amazon temporalmente",
+      "body": "Aplicar una pausa más amplia si el equipo considera insuficiente el aislamiento por código mientras se investiga la causa.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Separar mitigación y remediación",
+    "body": "Aprobar primero el guard de clasificación con prueba de bundle mixto y diseñar aparte el resolver regional sin activar writes.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Está asignado a la incidencia y su historial cubre el recovery de precios que debe quedar protegido.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8188.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8188#issuecomment-5167219624",
+    "reviewedAt": "2026-08-05T00:34:17.997Z",
+    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-19T00:15:47.767Z",
+  "updatedAt": "2026-08-19T00:01:24Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7693,
+    "title": "Fnac retry loop keeps updatePipeline failures alive after fix closure",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7693",
+    "state": "closed",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "triage:done",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
+      "origin:dev",
+      "mk:fnac",
+      "P1",
+      "impact:other",
+      "issue-rating: 🥈 silver",
+      "clawsweeper:not-repro-on-main",
+      "clawsweeper:fix-shape-clear"
+    ],
+    "createdAt": "2026-07-17T07:37:46Z",
+    "updatedAt": "2026-08-19T00:01:24Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe la cohorte de 133 stocks activos ausentes en Fnac recrearse mediante el flujo normal o reclasificarse tras revisar sus seis batches?",
+  "rationale": "El código actual evita el retry inseguro, pero los datos no determinan por sí solos si cada ausencia remota exige recreación o una clasificación terminal.",
+  "options": [
+    {
+      "title": "Revisar y recrear selectivamente",
+      "body": "Validar los seis batches y recrear solo los SKUs que sigan siendo elegibles para publicación.",
+      "recommended": true
+    },
+    {
+      "title": "Reclasificar como no publicables",
+      "body": "Cerrar localmente la cohorte cuando la revisión confirme que no debe existir una oferta remota.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Revisar y recrear selectivamente",
+    "body": "Validar los seis batches y recrear solo los SKUs que sigan siendo elegibles para publicación.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Ha preparado el predicado, el dry-run y el orden operativo de la recuperación.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7693.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7693#issuecomment-5009903523",
+    "reviewedAt": "2026-08-19T00:15:47.767Z",
+    "mainSha": "c48d810626fc99fac2537fe628d12f1a18d666da"
+  }
+}

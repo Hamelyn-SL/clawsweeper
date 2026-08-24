@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-21T14:06:32.728Z",
+  "updatedAt": "2026-07-21T12:18:50Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 6623,
+    "title": "feat: agregación de tiempos y productividad (a definir con devs)",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6623",
+    "state": "open",
+    "labels": [
+      "app:admin",
+      "feature",
+      "triage:done",
+      "epic:revision-v3",
+      "P2",
+      "impact:other",
+      "issue-rating: ➖ n/a",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-06-23T17:19:08Z",
+    "updatedAt": "2026-07-21T12:18:50Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe la atribución de productividad V3 guardarse por sesión de producto o en cada `ReviewStep` antes de diseñar el agregado diario?",
+  "rationale": "La elección determina la exactitud de las métricas ante re-revisiones o intervención de varios operarios y no puede deducirse de `dev`.",
+  "options": [
+    {
+      "title": "Sellar operario por paso",
+      "body": "Persistir `reviewerEmail` en cada `ReviewStep` para que el fact diario conserve la atribución exacta.",
+      "recommended": true
+    },
+    {
+      "title": "Atribuir por sesión",
+      "body": "Guardar el operario en la sesión y aceptar que todos sus pasos pertenecen a una sola persona.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Sellar operario por paso",
+    "body": "Persistir `reviewerEmail` en cada `ReviewStep` para que el fact diario conserve la atribución exacta.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "Su trabajo relacionado definió el contrato de sesión y la persistencia de los pasos que condicionan esta decisión.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6623.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6623#issuecomment-4932689420",
+    "reviewedAt": "2026-07-21T14:06:32.728Z",
+    "mainSha": "4b46404fe05de31d1c0af23f0ddfbfc603ca14b2"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-27T13:53:31.190Z",
+  "updatedAt": "2026-07-27T12:29:58Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7978,
+    "title": "feat: deterministic pdp related & bestsellers, real urls and breadcrumb",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7978",
+    "state": "closed",
+    "labels": [
+      "size/XL",
+      "rating: 🥈 silver",
+      "status: 📣 needs proof",
+      "P2",
+      "merge-risk: 🚨 compatibility"
+    ],
+    "createdAt": "2026-07-27T07:25:29Z",
+    "updatedAt": "2026-07-27T12:29:58Z",
+    "headSha": "565c8d9efd2d60b29117946fbe33f087801dbf7e"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Relacionados debe respetar la ventana circular del ranking indicada en el feedback, o se aprueba explícitamente sustituirla por muestreo determinista del top-100 global?",
+  "rationale": "Ambas alternativas son productos de interlinking distintos y afectan a la distribución de autoridad; el diff actual no demuestra que el cambio de contrato esté aprobado.",
+  "options": [
+    {
+      "title": "Mantener vecinos circulares",
+      "body": "Implementar el ranking local circular para Relacionados y conservar el top-100 muestreado exclusivamente en Más vendidos.",
+      "recommended": true
+    },
+    {
+      "title": "Aprobar el muestreo global",
+      "body": "Aceptar explícitamente que Relacionados tome muestras del top-100 global y actualizar el contrato de producto y la documentación.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mantener vecinos circulares",
+    "body": "Implementar el ranking local circular para Relacionados y conservar el top-100 muestreado exclusivamente en Más vendidos.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "victor",
+    "reason": "El requisito de vecinos circulares procede directamente de su feedback funcional sobre la PDP.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7978.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7978#issuecomment-5089035773",
+    "reviewedAt": "2026-07-27T13:53:31.190Z",
+    "mainSha": "c3e6775d0096d857e94f60b7633176bd7450df30"
+  }
+}

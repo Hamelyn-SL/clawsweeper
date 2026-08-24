@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-18T09:24:59.980Z",
+  "updatedAt": "2026-08-18T09:12:33Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8513,
+    "title": "fix: gate ebay es mk-only mutations on live offer status",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8513",
+    "state": "open",
+    "labels": [
+      "size/L",
+      "rating: 🥈 silver",
+      "status: 📣 needs proof",
+      "P1",
+      "merge-risk: 🚨 compatibility",
+      "merge-risk: 🚨 other"
+    ],
+    "createdAt": "2026-08-18T09:07:33Z",
+    "updatedAt": "2026-08-18T09:12:33Z",
+    "headSha": "3a28cd5638ebcb8c4ad0b992fb4db3ee5d0ad6b3"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe el report diario de eBay ES retirar directamente ofertas vivas sin stock, o debe conservarse el límite actual de sembrar una señal para el flujo de retirada?",
+  "rationale": "La incidencia define el hueco de detección, pero el código actual y su documentación separan deliberadamente el report de la retirada remota; elegir el nuevo límite operativo requiere intención del equipo.",
+  "options": [
+    {
+      "title": "Mantener retirada diferida",
+      "body": "Extender el flujo de señalización para los huérfanos sin documento de stock y conservar la retirada remota fuera del report.",
+      "recommended": true
+    },
+    {
+      "title": "Autorizar retirada directa",
+      "body": "Aceptar la llamada diaria a `withdrawOffer` con los caps y la guarda de persistencia, documentando el nuevo límite de efectos.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mantener retirada diferida",
+    "body": "Extender el flujo de señalización para los huérfanos sin documento de stock y conservar la retirada remota fuera del report.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Introdujo la ruta de recuperación de eBay y es el revisor asignado para este cambio.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8513.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8513#issuecomment-5326265859",
+    "reviewedAt": "2026-08-18T09:24:59.980Z",
+    "mainSha": "d4b187272b7a496a1383733734cd9640566736a3"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-09T14:54:52.185Z",
+  "updatedAt": "2026-07-09T12:18:30Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7279,
+    "title": "refactor: add marketplace registry, derive consumers and coherence test",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7279",
+    "state": "closed",
+    "labels": [
+      "size/XXL",
+      "rating: 🧂 unranked krab",
+      "status: 📣 needs proof",
+      "P2",
+      "merge-risk: 🚨 compatibility",
+      "merge-risk: 🚨 availability"
+    ],
+    "createdAt": "2026-07-09T09:37:36Z",
+    "updatedAt": "2026-07-09T12:18:30Z",
+    "headSha": "a9c335677095c5ef8802e69794ffaa361fed54b1"
+  },
+  "lane": "release_inclusion",
+  "priority": "P2",
+  "question": "¿Debe este PR exigir la creación verificada de las tablas raw antes de mergear, o debe cambiar el código para que `bq-merge` y la scheduled query sean tolerantes a tablas ausentes durante el upgrade?",
+  "rationale": "El PR cambia un pipeline horario compartido y el propio cuerpo reconoce una acción operativa previa al deploy; esa política de release no se puede resolver con confianza solo desde el diff.",
+  "options": [
+    {
+      "title": "Hacer el upgrade seguro antes de mergear",
+      "body": "Añadir una migración/check o una degradación controlada que pruebe que las tablas raw existen antes de activar los `MERGE` nuevos.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar gate manual de release",
+      "body": "Mergear solo si una persona responsable confirma y documenta que las tres tablas raw ya existen y que el primer run de `bq-merge` fue correcto.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar el cambio de data-platform",
+      "body": "Separar el registry de runtime de la incorporación de tablas BigQuery si el equipo no quiere asumir el gate operativo en este PR.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Hacer el upgrade seguro antes de mergear",
+    "body": "Añadir una migración/check o una degradación controlada que pruebe que las tablas raw existen antes de activar los `MERGE` nuevos.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "PabloMoran34",
+    "reason": "Es la señal más reciente en el historial del fichero `bq-merge` que controla el listado de colecciones replicadas.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7279.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7279#issuecomment-4924064604",
+    "reviewedAt": "2026-07-09T14:54:52.185Z",
+    "mainSha": "8883e80d43347813e2a0696912d00d8c537ab607"
+  }
+}

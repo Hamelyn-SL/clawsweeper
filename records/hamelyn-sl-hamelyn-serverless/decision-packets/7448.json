@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-13T15:04:19.670Z",
+  "updatedAt": "2026-07-13T10:29:39Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7448,
+    "title": "Simplificar lookup de cupones: una sola búsqueda normalizada",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7448",
+    "state": "closed",
+    "labels": [
+      "bug",
+      "app:ecommerce",
+      "priority:p3",
+      "reporter:MiguelHamelyn",
+      "triage:pr-opened",
+      "P3",
+      "impact:other",
+      "issue-rating: 🦞 diamond lobster",
+      "clawsweeper:source-repro",
+      "clawsweeper:linked-pr-open",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-13T09:13:39Z",
+    "updatedAt": "2026-07-13T10:29:39Z"
+  },
+  "lane": "product_direction",
+  "priority": "P3",
+  "question": "¿Debe conservarse ` APOLOGY15` mediante una migración a un `_id` canónico o retirarse antes de mergear https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7460?",
+  "rationale": "El código puede simplificarse de forma segura, pero la decisión sobre la vigencia del cupón activo depende de negocio y condiciona la operación previa al merge.",
+  "options": [
+    {
+      "title": "Migrar el cupón activo",
+      "body": "Recrear o renombrar ` APOLOGY15` con su `_id` canónico antes del merge para mantener su vigencia hasta 2027.",
+      "recommended": true
+    },
+    {
+      "title": "Retirar el cupón activo",
+      "body": "Desactivar o eliminar el cupón legacy si ecommerce confirma que ya no debe seguir disponible.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Migrar el cupón activo",
+    "body": "Recrear o renombrar ` APOLOGY15` con su `_id` canónico antes del merge para mantener su vigencia hasta 2027.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Es el revisor solicitado y el contribuidor reciente con mayor historial directo en el bloque de cupones.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7448.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7448#issuecomment-4956992923",
+    "reviewedAt": "2026-07-13T15:04:19.670Z",
+    "mainSha": "eec119753c187dc293b087ca0f1f68aa4f1ad4f1"
+  }
+}

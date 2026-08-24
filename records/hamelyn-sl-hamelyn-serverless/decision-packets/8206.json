@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-04T07:46:59.086Z",
+  "updatedAt": "2026-08-04T07:38:28Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8206,
+    "title": "chore: upgrade Next.js to 16.3.0",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8206",
+    "state": "open",
+    "labels": [
+      "size/XL"
+    ],
+    "createdAt": "2026-08-04T07:37:52Z",
+    "updatedAt": "2026-08-04T07:38:28Z",
+    "headSha": "e169e79111ba811010b0473ad93c2972d827f981"
+  },
+  "lane": "merge_risk",
+  "priority": "P2",
+  "question": "¿Acepta el equipo el aumento de coste cold y almacenamiento de caché a cambio de la mejora warm observada con Next.js 16.3.0?",
+  "rationale": "La implementación no añade una capacidad de producto, pero el presupuesto operativo de CI/Vercel y la compensación de rendimiento requieren criterio humano antes de cambiar todas las apps.",
+  "options": [
+    {
+      "title": "Validar y adoptar el upgrade",
+      "body": "Confirmar con previews y caché real de CI/Vercel que los límites de almacenamiento y los builds cold son aceptables, y mergear el cambio coordinado.",
+      "recommended": true
+    },
+    {
+      "title": "Posponer por coste operativo",
+      "body": "Mantener Next.js 16.2.12 hasta definir un presupuesto de caché o una estrategia que reduzca la regresión cold.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Validar y adoptar el upgrade",
+    "body": "Confirmar con previews y caché real de CI/Vercel que los límites de almacenamiento y los builds cold son aceptables, y mergear el cambio coordinado.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "danielmenchen-hamelyn",
+    "reason": "Su historial y la asignación de revisión lo sitúan como la mejor ruta para decidir sobre manifests, lockfile y compatibilidad del upgrade.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8206.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8206#issuecomment-5176110633",
+    "reviewedAt": "2026-08-04T07:46:59.086Z",
+    "mainSha": "c3cb8cc2d145e01f1a2eefc2b75c980dbc40571a"
+  }
+}

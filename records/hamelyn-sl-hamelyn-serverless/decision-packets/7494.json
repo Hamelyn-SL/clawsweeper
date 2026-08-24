@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-14T10:06:00.896Z",
+  "updatedAt": "2026-07-14T09:49:59Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7494,
+    "title": "Monitorizar scraping malicioso en ecommerce y alertar por Slack",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7494",
+    "state": "closed",
+    "labels": [
+      "source:admin-panel",
+      "priority:p1",
+      "app:infrastructure",
+      "reporter:MiguelHamelyn",
+      "feature"
+    ],
+    "createdAt": "2026-07-14T06:43:16Z",
+    "updatedAt": "2026-07-14T09:49:59Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe el watcher conservar la cadencia de 15 minutos y ventana de 20 minutos definida en esta issue, o se acepta el diseño diario y la demora de detección del PR enlazado?",
+  "rationale": "La diferencia altera el objetivo operativo, el coste de BigQuery y el volumen de alertas; el código por sí solo no puede determinar qué compromiso quiere asumir el equipo.",
+  "options": [
+    {
+      "title": "Mantener detección cada 15 minutos",
+      "body": "Adaptar el PR a una ventana móvil corta, con deduplicación y límites de coste, para detectar bursts mientras siguen activos.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar ejecución diaria",
+      "body": "Actualizar explícitamente la aceptación y asumir una detección diferida después de demostrar que reduce coste y ruido sin perder incidentes relevantes.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mantener detección cada 15 minutos",
+    "body": "Adaptar el PR a una ventana móvil corta, con deduplicación y límites de coste, para detectar bursts mientras siguen activos.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es el principal responsable histórico de `apps/agents`, ha ajustado cadencias de schedules y figura como revisor solicitado del PR.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7494.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7494#issuecomment-4966273337",
+    "reviewedAt": "2026-07-14T10:06:00.896Z",
+    "mainSha": "5b08be57087cb9f43c6f9c5d83a33fbfe5c6ffb6"
+  }
+}

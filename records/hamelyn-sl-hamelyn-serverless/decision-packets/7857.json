@@ -1,0 +1,64 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-21T17:13:29.642Z",
+  "updatedAt": "2026-07-21T16:47:00Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7857,
+    "title": "Extend withdrawn-orphan recovery to Fnac, CDL, Discogs, eBay and all Amazon regions",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7857",
+    "state": "closed",
+    "labels": [
+      "app:marketplace",
+      "feature",
+      "triage:done",
+      "P1",
+      "impact:other",
+      "issue-rating: ⚪ platinum",
+      "clawsweeper:needs-live-repro",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-21T16:38:06Z",
+    "updatedAt": "2026-07-21T16:47:00Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe la primera entrega usar el lookup existente por SKU de eBay y añadir `marketplaceId` solo para Discogs, o persistir una identidad remota uniforme en todos los adaptadores?",
+  "rationale": "La decisión define el contrato duradero de la señal y el coste operativo de los adaptadores; el report de eBay expone `item_id`, mientras su retirada usa `offerId`.",
+  "options": [
+    {
+      "title": "Identidad mínima por adaptador",
+      "body": "Usar el lookup por SKU ya presente en la retirada de eBay y extender la señal con `marketplaceId` únicamente para Discogs.",
+      "recommended": true
+    },
+    {
+      "title": "Persistir identidad remota uniforme",
+      "body": "Resolver y guardar el identificador de retirada de cada proveedor antes de sembrar la señal, con mayor alcance y migración operativa.",
+      "recommended": false
+    },
+    {
+      "title": "Separar la decisión de identidad",
+      "body": "Lanzar solo el helper y los modos `DRY_RUN`, manteniendo Discogs y eBay fuera de la escritura hasta acordar el contrato.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Identidad mínima por adaptador",
+    "body": "Usar el lookup por SKU ya presente en la retirada de eBay y extender la señal con `marketplaceId` únicamente para Discogs.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Ha mantenido recientemente los reports y el endurecimiento de snapshots que determinan esta integración.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7857.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7857#issuecomment-5036923848",
+    "reviewedAt": "2026-07-21T17:13:29.642Z",
+    "mainSha": "28961cd9f75c53a05b3951bb081512652fe440ae"
+  }
+}

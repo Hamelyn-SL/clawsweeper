@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-10T10:07:34.665Z",
+  "updatedAt": "2026-07-10T10:01:32Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7342,
+    "title": "Deploy to Prod",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7342",
+    "state": "closed",
+    "labels": [
+      "size/XL"
+    ],
+    "createdAt": "2026-07-10T09:45:59Z",
+    "updatedAt": "2026-07-10T10:01:32Z",
+    "headSha": "60bf09f90f8691effb916f37e29e6ba6d23a68f6"
+  },
+  "lane": "release_inclusion",
+  "priority": "P1",
+  "question": "¿Debe desplegarse ahora a producción el lote completo de cambios acumulados en `dev`, incluyendo eDesk, ShipMatrix, Alibris y agents?",
+  "rationale": "Este PR no es una reparación de código aislada: fusionarlo dispara la promoción a `master` y por tanto la salida a producción de varios cambios ya aprobados en `dev`. Esa ventana y ese alcance son una decisión de release humana.",
+  "options": [
+    {
+      "title": "Fusionar el lote completo",
+      "body": "Promociona todos los PRs incluidos si CI/previews están verdes y el equipo acepta el riesgo operativo conjunto.",
+      "recommended": true
+    },
+    {
+      "title": "Retener el release",
+      "body": "Mantiene el PR abierto hasta revisar manualmente las rutas sensibles o esperar más señal de staging.",
+      "recommended": false
+    },
+    {
+      "title": "Preparar un hotfix parcial",
+      "body": "Si solo urge eDesk u otro fix concreto, conviene sacar una promoción más estrecha en lugar de desplegar todo `dev`.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Fusionar el lote completo",
+    "body": "Promociona todos los PRs incluidos si CI/previews están verdes y el equipo acepta el riesgo operativo conjunto.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es el autor del último merge incluido y aparece como propietario reciente de la automatización/agents que cierra el lote actual.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7342.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7342#issuecomment-4934361847",
+    "reviewedAt": "2026-07-10T10:07:34.665Z",
+    "mainSha": "60bf09f90f8691effb916f37e29e6ba6d23a68f6"
+  }
+}

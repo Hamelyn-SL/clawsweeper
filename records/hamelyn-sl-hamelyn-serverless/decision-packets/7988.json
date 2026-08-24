@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-27T12:31:04.659Z",
+  "updatedAt": "2026-07-27T12:25:40Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7988,
+    "title": "feat: export alibris inventory from bigquery stocks",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7988",
+    "state": "closed",
+    "labels": [
+      "size/L",
+      "proof: sufficient",
+      "rating: 💎 diamond",
+      "status: 👀 ready for maintainer look",
+      "P1",
+      "merge-risk: 🚨 compatibility"
+    ],
+    "createdAt": "2026-07-27T09:31:28Z",
+    "updatedAt": "2026-07-27T12:25:40Z",
+    "headSha": "f4ca9d048e23e1dd0be02945b799699171a98c2c"
+  },
+  "lane": "release_inclusion",
+  "priority": "P1",
+  "question": "¿Se aprueba integrar el código manteniendo `ALIBRIS_FORCE_MONGO_SOURCE=true` hasta completar y verificar el backfill histórico?",
+  "rationale": "La rama contiene el rollback necesario, pero decidir cuándo cambiar un export purge de producción a una réplica BigQuery depende de la validación operativa posterior al despliegue.",
+  "options": [
+    {
+      "title": "Integrar con activación diferida",
+      "body": "Aceptar la rama, conservar el schedule en Mongo y retirar el kill switch solo tras el backfill y un dry-run BigQuery validado.",
+      "recommended": true
+    },
+    {
+      "title": "Esperar al backfill",
+      "body": "Posponer el merge hasta que las columnas históricas estén rellenadas y pueda demostrarse la paridad sobre la tabla servida.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Integrar con activación diferida",
+    "body": "Aceptar la rama, conservar el schedule en Mongo y retirar el kill switch solo tras el backfill y un dry-run BigQuery validado.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es el revisor asignado y figura como principal contribuidor histórico del flujo Alibris afectado.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7988.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7988#issuecomment-5090252790",
+    "reviewedAt": "2026-07-27T12:31:04.659Z",
+    "mainSha": "e6b81a368263f75b679db21a1b01d522fcf69561"
+  }
+}

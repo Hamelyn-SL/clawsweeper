@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-21T00:45:15.836Z",
+  "updatedAt": "2026-08-20T12:27:30Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 6922,
+    "title": "BL-shipping-costs-11: la urgencia de ventas de marketplace se infiere del importe de envío y no del flag del marketplace",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6922",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "triage:needs-info",
+      "origin:bl",
+      "P2",
+      "impact:other",
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro",
+      "clawsweeper:linked-pr-open",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-06T08:48:48Z",
+    "updatedAt": "2026-08-20T12:27:30Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se aprueban los mappings operativos de eBay, Fnac y CDL propuestos, manteniendo el fallback por importe para códigos desconocidos y sin tocar Amazon en esta PR?",
+  "rationale": "La implementación cambia la prioridad que determina el tratamiento SLA; el código y el censo aportan evidencia, pero la semántica contractual de cada código requiere confirmación responsable.",
+  "options": [
+    {
+      "title": "Validar el alcance acotado",
+      "body": "Aceptar los mappings propuestos para eBay, Fnac y CDL, conservar el fallback y revisar Amazon en trabajo separado.",
+      "recommended": true
+    },
+    {
+      "title": "Pausar por semántica pendiente",
+      "body": "Retener la PR hasta confirmar los códigos Fnac o ampliar la decisión al override de Amazon.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Validar el alcance acotado",
+    "body": "Aceptar los mappings propuestos para eBay, Fnac y CDL, conservar el fallback y revisar Amazon en trabajo separado.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es el revisor asignado por experiencia directa y participó en la validación inicial de la regla de negocio.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6922.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6922#issuecomment-4911154024",
+    "reviewedAt": "2026-08-21T00:45:15.836Z",
+    "mainSha": "9612bedb37d998d20c02dd0b5d3c9cea49367ee3"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-14T15:20:52.777Z",
+  "updatedAt": "2026-07-14T12:32:08Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7307,
+    "title": "fix: use production marketplace api credentials",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7307",
+    "state": "closed",
+    "labels": [
+      "size/S",
+      "conflicts:needs-human",
+      "proof: sufficient",
+      "rating: ⚪ platinum",
+      "status: 👀 ready for maintainer look",
+      "P2",
+      "merge-risk: 🚨 auth-provider"
+    ],
+    "createdAt": "2026-07-09T19:30:45Z",
+    "updatedAt": "2026-07-14T12:32:08Z",
+    "headSha": "325dce38113204eb04eff7bd0c95d85ae945253f"
+  },
+  "lane": "merge_risk",
+  "priority": "P2",
+  "question": "¿Debe `marketplace_api` usar siempre documentos `PROD` también desde previews y ejecuciones no productivas de `apps/agents`, y se acepta validar la rotación de MercadoLibre mediante una comprobación controlada sin consumir un token live adicional?",
+  "rationale": "El PR cambia un límite operativo de credenciales y la rama conflictiva no permite que la automatización preserve con seguridad todas las defensas posteriores ni determine la política de entornos.",
+  "options": [
+    {
+      "title": "Portar y validar el contrato `PROD`",
+      "body": "Reaplicar el parche sobre `dev`, confirmar explícitamente el uso de `PROD` en agents y verificar de forma controlada la actualización de MercadoLibre.",
+      "recommended": true
+    },
+    {
+      "title": "Introducir selección por despliegue",
+      "body": "Adaptar la carga a una política de entorno explícita si previews o ejecuciones no productivas no deben acceder a credenciales `PROD`.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar la integración",
+      "body": "Mantener el PR abierto hasta que el propietario operativo confirme la política de credenciales y el método seguro de validación.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Portar y validar el contrato `PROD`",
+    "body": "Reaplicar el parche sobre `dev`, confirmar explícitamente el uso de `PROD` en agents y verificar de forma controlada la actualización de MercadoLibre.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Tiene el mayor contexto histórico del helper y es autor de los endurecimientos que deben reconciliarse.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7307.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7307#issuecomment-4930103615",
+    "reviewedAt": "2026-07-14T15:20:52.777Z",
+    "mainSha": "56aad1176fabdfe50bb963f6dbd95d1bf5fcda8b"
+  }
+}

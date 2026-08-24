@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-21T12:58:59.647Z",
+  "updatedAt": "2026-07-21T12:18:25Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7760,
+    "title": "Banner promocional editable desde Admin (i18n, rich text B/I, gradientes y preview móvil/desktop)",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7760",
+    "state": "open",
+    "labels": [
+      "app:ecommerce",
+      "app:admin",
+      "feature",
+      "reporter:miguel",
+      "triage:done",
+      "P2",
+      "impact:ux-friction",
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:needs-security-review"
+    ],
+    "createdAt": "2026-07-20T08:06:44Z",
+    "updatedAt": "2026-07-21T12:18:25Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿El banner debe derivar su contenido del cupón activo o debe existir una campaña editorial independiente vinculada explícitamente a un cupón o regla promocional?",
+  "rationale": "El modelo actual de cupones no identifica qué promoción debe anunciarse por locale ni contiene estilo editorial; elegirlo determina el contrato, la persistencia y los fallbacks.",
+  "options": [
+    {
+      "title": "Campaña vinculada al cupón",
+      "body": "Crear una configuración de campaña con textos, variante y una referencia explícita a la promoción o cupón aplicable por locale.",
+      "recommended": true
+    },
+    {
+      "title": "Copy derivado del cupón",
+      "body": "Extender el modelo de cupones para derivar automáticamente el mensaje visible y limitar la edición editorial.",
+      "recommended": false
+    },
+    {
+      "title": "Banner editorial independiente",
+      "body": "Permitir un banner autónomo asumiendo explícitamente que no valida su coherencia con los cupones activos.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Campaña vinculada al cupón",
+    "body": "Crear una configuración de campaña con textos, variante y una referencia explícita a la promoción o cupón aplicable por locale.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su historial conecta el strip actual de Ecommerce y la evolución reciente del panel de cupones de Admin.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7760.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7760#issuecomment-5022462522",
+    "reviewedAt": "2026-07-21T12:58:59.647Z",
+    "mainSha": "520a8106a8e3e44ff9895a404cc39a2ebd4bf719"
+  }
+}

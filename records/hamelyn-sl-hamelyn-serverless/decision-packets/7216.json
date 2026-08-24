@@ -1,0 +1,66 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-09T11:53:41.362Z",
+  "updatedAt": "2026-07-09T11:38:43Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7216,
+    "title": "feat: trazar reviewedAt/reviewedBy en cada revisión de producto (acepte o rechace)",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7216",
+    "state": "closed",
+    "labels": [
+      "app:admin",
+      "priority:p1",
+      "feature",
+      "epic:revision-v3",
+      "P1",
+      "impact:other",
+      "issue-rating: 🦞 diamond lobster",
+      "clawsweeper:source-repro",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:fix-shape-clear",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-08T08:32:51Z",
+    "updatedAt": "2026-07-09T11:38:43Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe resolverse esta issue aterrizando https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7288 en la rama de la épica o retargeteándolo a `dev` antes del cierre?",
+  "rationale": "La issue ya tiene un PR candidato con cierre, pero combina una decisión de base de integración con el tratamiento de históricos sin backfill; automatización no debería abrir otro fix ni cerrar la issue antes de esa decisión.",
+  "options": [
+    {
+      "title": "Revisar y aterrizar el PR candidato",
+      "body": "Mantiene una única implementación para la trazabilidad por producto y cierra esta issue cuando el PR esté validado y mergeado.",
+      "recommended": true
+    },
+    {
+      "title": "Retargetear primero a dev",
+      "body": "Alinea el trabajo con la política general de base del repo antes de completar la revisión técnica.",
+      "recommended": false
+    },
+    {
+      "title": "Descartar el PR y reabrir alcance",
+      "body": "Solo conviene si el enfoque sin backfill o la base de la épica no son aceptables para el equipo.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Revisar y aterrizar el PR candidato",
+    "body": "Mantiene una única implementación para la trazabilidad por producto y cierra esta issue cuando el PR esté validado y mergeado.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Tiene señal fuerte en las métricas afectadas y aparece como reviewer principal asignado en el PR candidato.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7216.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7216#issuecomment-4924250057",
+    "reviewedAt": "2026-07-09T11:53:41.362Z",
+    "mainSha": "499a3f88a16786ec48868f6474dc4f7582c0e2b6"
+  }
+}

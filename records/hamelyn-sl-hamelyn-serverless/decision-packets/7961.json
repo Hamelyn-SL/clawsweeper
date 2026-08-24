@@ -1,0 +1,66 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-10T20:39:39.350Z",
+  "updatedAt": "2026-08-10T20:30:53Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7961,
+    "title": "eBay: reactivar el pipeline de creación — bloqueo de cuenta 25019, variantes de política, price y throughput de la cola",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7961",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "triage:blocked",
+      "origin:dev",
+      "mk:ebay",
+      "P1",
+      "impact:other",
+      "issue-rating: ⚪ platinum",
+      "clawsweeper:needs-live-repro",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-27T05:58:02Z",
+    "updatedAt": "2026-08-10T20:30:53Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Quién autoriza la sonda posterior al desbloqueo y qué cohorte, umbral de éxito y rollback regirán la reactivación de `ebay.create()`?",
+  "rationale": "El código ya aplica la protección; decidir cuándo volver a publicar y con qué exposición depende de una cuenta externa y afecta directamente a producción.",
+  "options": [
+    {
+      "title": "Mantener la pausa hasta verificación",
+      "body": "Esperar confirmación de Seller Hub o soporte eBay y exigir una sonda positiva de diez publicaciones antes de cualquier cohorte.",
+      "recommended": true
+    },
+    {
+      "title": "Autorizar una cohorte mínima",
+      "body": "Permitir una sonda limitada con observabilidad, límite temporal y rollback inmediato si reaparece `25019`.",
+      "recommended": false
+    },
+    {
+      "title": "Seguir solo como tracker operativo",
+      "body": "No modificar el cron y actualizar esta incidencia hasta que Operaciones aporte una resolución verificable del bloqueo.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mantener la pausa hasta verificación",
+    "body": "Esperar confirmación de Seller Hub o soporte eBay y exigir una sonda positiva de diez publicaciones antes de cualquier cohorte.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Combina la autoría de la observabilidad integrada con la evidencia de la sonda que condiciona el rollout.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7961.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7961#issuecomment-5087934598",
+    "reviewedAt": "2026-08-10T20:39:39.350Z",
+    "mainSha": "fbd2a46ff14157a65375a4ca47edafed25efa011"
+  }
+}

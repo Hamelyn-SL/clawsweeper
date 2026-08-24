@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-12T12:16:15.891Z",
+  "updatedAt": "2026-07-12T11:38:27Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7394,
+    "title": "Deploy to Prod",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7394",
+    "state": "closed",
+    "labels": [
+      "size/XXL",
+      "merge-risk: 🚨 compatibility",
+      "proof: sufficient",
+      "rating: 🦐 gold shrimp",
+      "status: ⏳ waiting on author",
+      "P0"
+    ],
+    "createdAt": "2026-07-12T11:34:50Z",
+    "updatedAt": "2026-07-12T11:38:27Z",
+    "headSha": "16fef08a90ae778ae4457ed6b919fe1d3ace1a0c"
+  },
+  "lane": "release_inclusion",
+  "priority": "P0",
+  "question": "¿Debe este despliegue de producción esperar al ajuste de `cartId`/`promotionCode` vacíos, o se acepta ese riesgo para cerrar ya el bypass P0 de checkout?",
+  "rationale": "El arreglo principal cierra un vector real de manipulación de cobro, pero el bloqueo detectado puede afectar a usuarios legítimos si algún cliente envía campos opcionales como cadena vacía.",
+  "options": [
+    {
+      "title": "Corregir antes de mergear",
+      "body": "Eliminar `.min(1)` o preprocesar `\"\"` a `undefined` mantiene el hotfix de seguridad y reduce el riesgo de 400 falsos en producción.",
+      "recommended": true
+    },
+    {
+      "title": "Desplegar aceptando el riesgo",
+      "body": "Puede cerrar antes el bypass P0, pero producción podría rechazar algunos checkouts sin cupón o sin carrito hasta un follow-up inmediato.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Corregir antes de mergear",
+    "body": "Eliminar `.min(1)` o preprocesar `\"\"` a `undefined` mantiene el hotfix de seguridad y reduce el riesgo de 400 falsos en producción.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es quien introdujo el hotfix principal y tiene el contexto más directo del balance seguridad/checkout en este cambio.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7394.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7394#issuecomment-4951142163",
+    "reviewedAt": "2026-07-12T12:16:15.891Z",
+    "mainSha": "16fef08a90ae778ae4457ed6b919fe1d3ace1a0c"
+  }
+}

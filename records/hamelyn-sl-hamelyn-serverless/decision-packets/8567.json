@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-20T06:40:18.705Z",
+  "updatedAt": "2026-08-20T06:30:46Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8567,
+    "title": "Cambio en el espacio para la direccion de envío de postlibris en la etiqueta de postlibris",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8567",
+    "state": "closed",
+    "labels": [
+      "source:admin-panel",
+      "app:ecommerce",
+      "feature",
+      "triage:pr-opened",
+      "impact:other",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:source-repro",
+      "clawsweeper:linked-pr-open",
+      "clawsweeper:fix-shape-clear",
+      "issue-rating: 💎 diamond",
+      "reporter:jorgecano"
+    ],
+    "createdAt": "2026-08-19T13:24:01Z",
+    "updatedAt": "2026-08-20T06:30:46Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe Postlibri aceptar oficialmente hasta 120 caracteres y dejar de desviarse a CAINIAO por longitud, conservando los límites de pedido individual y no consolidado?",
+  "rationale": "La etiqueta puede adaptarse técnicamente, pero el máximo de 40 forma parte de la política de selección y del fallback de la matriz, con consecuencias logísticas y de factura.",
+  "options": [
+    {
+      "title": "Adoptar 120 con validación completa",
+      "body": "Aprobar el nuevo máximo tras corregir y demostrar la geometría de etiqueta, y después actualizar de forma coordinada la matriz y la salvaguarda.",
+      "recommended": true
+    },
+    {
+      "title": "Conservar el límite de 40",
+      "body": "Mantener el fallback actual a CAINIAO y no retirar la política logística aunque la etiqueta pueda mostrar más texto.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Adoptar 120 con validación completa",
+    "body": "Aprobar el nuevo máximo tras corregir y demostrar la geometría de etiqueta, y después actualizar de forma coordinada la matriz y la salvaguarda.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Es el responsable asignado actual y la decisión afecta a una configuración logística operativa.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/8567.md",
+    "reviewedAt": "2026-08-20T06:40:18.705Z",
+    "mainSha": "f53228e49ece1d528f947f9ed5dd4a99a9c9b904"
+  }
+}

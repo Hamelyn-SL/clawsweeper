@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-22T04:21:42.196Z",
+  "updatedAt": "2026-08-22T03:34:37Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8507,
+    "title": "refactor: dependency injection, domain entity id and cycle cuts across core",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8507",
+    "state": "open",
+    "labels": [
+      "size/XXL",
+      "rating: 🥈 silver",
+      "status: 📣 needs proof",
+      "P2",
+      "merge-risk: 🚨 compatibility",
+      "merge-risk: 🚨 availability",
+      "merge-risk: 🚨 automation"
+    ],
+    "createdAt": "2026-08-18T07:43:49Z",
+    "updatedAt": "2026-08-22T03:34:37Z",
+    "headSha": "c4345ff3968615fe357b91100bdc3c7c9f9bc310"
+  },
+  "lane": "merge_risk",
+  "priority": "P2",
+  "question": "¿Debe mantenerse este refactor transversal como una única PR después de resolver los conflictos, o dividirse en entregas revisables por flujo operativo?",
+  "rationale": "La rama modifica 122 archivos y varios caminos críticos; elegir una entrega única o segmentada determina la revisión y el riesgo operativo, no una corrección mecánica.",
+  "options": [
+    {
+      "title": "Integrar como una sola entrega",
+      "body": "Resolver los conflictos, completar la prueba real de los flujos críticos y revisar el resultado integrado de la rama.",
+      "recommended": true
+    },
+    {
+      "title": "Dividir por dominios operativos",
+      "body": "Separar primero composición y etiquetas, y dejar picking, almacén, ecommerce y ciclos para PRs independientes.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Integrar como una sola entrega",
+    "body": "Resolver los conflictos, completar la prueba real de los flujos críticos y revisar el resultado integrado de la rama.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "danielmenchen",
+    "reason": "Su historial reciente define el patrón de composición y DI que esta PR amplía.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8507.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8507#issuecomment-5325669862",
+    "reviewedAt": "2026-08-22T04:21:42.196Z",
+    "mainSha": "6345777ab3811f5c70fd2fd333fe42953fa00288"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-09T08:10:39.613Z",
+  "updatedAt": "2026-07-09T06:44:45Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7207,
+    "title": "fix: expose navbar_index_link as testID on supply home tab",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7207",
+    "state": "closed",
+    "labels": [
+      "size/L",
+      "rating: 🧂 unranked krab",
+      "status: 📣 needs proof",
+      "P1",
+      "merge-risk: 🚨 security-boundary",
+      "merge-risk: 🚨 automation"
+    ],
+    "createdAt": "2026-07-08T06:33:09Z",
+    "updatedAt": "2026-07-09T06:44:45Z",
+    "headSha": "7a94f9aae9c782c2176b3cddfed3b58d84635cb0"
+  },
+  "lane": "security_boundary",
+  "priority": "P1",
+  "question": "¿Qué frontera de credenciales acepta el equipo para autenticar Supply E2E sin conducir la UI de Auth0?",
+  "rationale": "El PR necesita decidir si ROPC dentro de la app E2E es aceptable o si el token debe generarse fuera del bundle; esa elección afecta a secretos, Auth0 y CI, no solo a una línea de código.",
+  "options": [
+    {
+      "title": "Token fuera del bundle",
+      "body": "Generar o entregar el token E2E desde CI/infra de test sin publicar la contraseña como `EXPO_PUBLIC_*`, manteniendo la app sin secretos de usuario empaquetados.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar ROPC en bundle E2E",
+      "body": "Permitir esta ruta solo si el equipo documenta que el usuario y secreto E2E son desechables y los artefactos no exponen el bundle fuera del entorno controlado.",
+      "recommended": false
+    },
+    {
+      "title": "Volver a login UI corregido",
+      "body": "Reparar el flow Auth0 de Maestro sin introducir una vía ROPC nueva, aceptando más fragilidad en la navegación web.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Token fuera del bundle",
+    "body": "Generar o entregar el token E2E desde CI/infra de test sin publicar la contraseña como `EXPO_PUBLIC_*`, manteniendo la app sin secretos de usuario empaquetados.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Es el revisor asignado y tiene señales directas en Supply E2E/Auth según el historial del área.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7207.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7207#issuecomment-4916319410",
+    "reviewedAt": "2026-07-09T08:10:39.613Z",
+    "mainSha": "1586c4457b8fe2cc43a825bb413529c12042355a"
+  }
+}

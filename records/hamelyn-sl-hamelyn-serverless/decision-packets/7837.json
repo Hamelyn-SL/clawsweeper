@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-22T11:46:29.845Z",
+  "updatedAt": "2026-07-22T11:31:58Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7837,
+    "title": "fix: recover mercadolibre item id by seller_sku on withdraw",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7837",
+    "state": "closed",
+    "labels": [
+      "size/M",
+      "rating: 🥈 silver",
+      "status: 📣 needs proof",
+      "P1",
+      "merge-risk: 🚨 other"
+    ],
+    "createdAt": "2026-07-21T12:00:24Z",
+    "updatedAt": "2026-07-22T11:31:58Z",
+    "headSha": "a8be26e7fc8291588de2a061d2f9082effa179d6"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "Cuando la búsqueda por `seller_sku` funciona pero devuelve cero listings activos y no existe `marketplaceId`, ¿debe la retirada reconciliarse como éxito o quedar en `SYNC_ERROR`?",
+  "rationale": "Ambas opciones alteran el estado operativo: una evita reintentos ruidosos y la otra conserva visibilidad ante una posible pérdida de identidad remota.",
+  "options": [
+    {
+      "title": "Reconciliar cero resultados como éxito",
+      "body": "Cuando la búsqueda exitosa no encuentra listings activos, tratar el stock como ya retirado y evitar un error reintentable indefinido.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener el error visible",
+      "body": "Conservar `SYNC_ERROR` para exigir investigación manual cuando no haya identidad local ni listing activo.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Reconciliar cero resultados como éxito",
+    "body": "Cuando la búsqueda exitosa no encuentra listings activos, tratar el stock como ya retirado y evitar un error reintentable indefinido.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Su revisión formula exactamente la alternativa operativa que debe quedar definida.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7837.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7837#issuecomment-5033828660",
+    "reviewedAt": "2026-07-22T11:46:29.845Z",
+    "mainSha": "00352b6ac84cadb225e9d68f8a8260ae555966f3"
+  }
+}

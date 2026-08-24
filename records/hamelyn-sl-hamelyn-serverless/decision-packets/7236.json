@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-19T16:22:10.917Z",
+  "updatedAt": "2026-07-19T13:26:45Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7236,
+    "title": "Revisión V3: product rejection + ratio de progreso al cerrar lote (nuevo diseño, mismo backend)",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7236",
+    "state": "closed",
+    "labels": [
+      "app:admin",
+      "priority:p1",
+      "reporter:banosdavidhamelyn",
+      "feature",
+      "epic:revision-v3",
+      "P2",
+      "impact:other",
+      "issue-rating: ➖ n/a",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-08T10:11:57Z",
+    "updatedAt": "2026-07-19T13:26:45Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe Revisión V3 conservar el diálogo de cierre con ratio para cualquier lote pendiente, incluido QA, y limitar solo la obligatoriedad de motivos al umbral B2C del 10%?",
+  "rationale": "El criterio de aceptación pide ratio universal, pero el PR fusionado convirtió el umbral de motivos en el gate completo del diálogo y añadió una ruta de persistencia distinta a la descrita.",
+  "options": [
+    {
+      "title": "Completar el contrato de la issue",
+      "body": "Mostrar siempre el diálogo de progreso con pendientes y exigir motivos solo cuando aplique el predicado canónico.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar el alcance reducido",
+      "body": "Mantener el diálogo solo para B2C no-QA desde el 10% y actualizar explícitamente la issue para retirar ratio universal y QA.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Completar el contrato de la issue",
+    "body": "Mostrar siempre el diálogo de progreso con pendientes y exigir motivos solo cuando aplique el predicado canónico.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "Su historial conecta tanto la regla de dominio como el PR parcial de cierre V3.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7236.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7236#issuecomment-4916399745",
+    "reviewedAt": "2026-07-19T16:22:10.917Z",
+    "mainSha": "3e701a51783634733d86746c3425f42cce83da5a"
+  }
+}

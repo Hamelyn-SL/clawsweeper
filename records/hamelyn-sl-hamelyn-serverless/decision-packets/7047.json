@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-08T03:44:31.083Z",
+  "updatedAt": "2026-07-07T00:28:29Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7047,
+    "title": "eBay ES: 86k own listings live in snapshot without stocks_marketplace row",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7047",
+    "state": "open",
+    "labels": [
+      "bug",
+      "priority:p2",
+      "app:marketplace",
+      "triage:done",
+      "P2",
+      "impact:other",
+      "issue-rating: 🦞 diamond lobster",
+      "clawsweeper:source-repro",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-06T23:05:41Z",
+    "updatedAt": "2026-07-07T00:28:29Z"
+  },
+  "lane": "manual_review",
+  "priority": "P2",
+  "question": "Should the marketplace/data team run the eBay ES backfill now for only the `Happ-*` orphan listings with `quantity > 0`, and defer `quantity=0/null` rows to a separate cleanup decision?",
+  "rationale": "The fix is a mass data mutation touching far more than 10 rows, so repository policy requires a dry-run, exact count, samples, literal filter, and explicit human approval before execution.",
+  "options": [
+    {
+      "title": "Backfill sellable orphan rows first",
+      "body": "Run the dry-run/backfill for the 1,731 positive-quantity own orphan listings, then reconcile withdrawals and track the zero-quantity population separately.",
+      "recommended": true
+    },
+    {
+      "title": "Broaden the backfill scope",
+      "body": "Include `quantity=0/null` orphan listings in the same operation, accepting a larger review and rollback surface before execution.",
+      "recommended": false
+    },
+    {
+      "title": "Pause for more investigation",
+      "body": "Leave the issue open while marketplace/data validates whether the remote zero-quantity population needs any local representation.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Backfill sellable orphan rows first",
+    "body": "Run the dry-run/backfill for the 1,731 positive-quantity own orphan listings, then reconcile withdrawals and track the zero-quantity population separately.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Most directly connected to the eBay ES report path and the posted evidence for this issue.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7047.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7047#issuecomment-4911275739",
+    "reviewedAt": "2026-07-08T03:44:31.083Z",
+    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+  }
+}

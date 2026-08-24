@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-30T09:34:01.375Z",
+  "updatedAt": "2026-07-30T09:24:40Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8071,
+    "title": "feat: trigger bq fleet crons via cloud scheduler dispatch",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8071",
+    "state": "closed",
+    "labels": [
+      "size/XL",
+      "P1",
+      "merge-risk: 🚨 compatibility",
+      "merge-risk: 🚨 security-boundary",
+      "merge-risk: 🚨 availability",
+      "proof: sufficient",
+      "status: ⏳ waiting on author",
+      "rating: 🥈 silver"
+    ],
+    "createdAt": "2026-07-29T08:22:39Z",
+    "updatedAt": "2026-07-30T09:24:40Z",
+    "headSha": "bb3c9bf219947624837ed5afcae819490ab44b62"
+  },
+  "lane": "merge_risk",
+  "priority": "P1",
+  "question": "¿Se acepta un corte operativo manual tras el merge o se exige un despliegue escalonado que mantenga los triggers existentes hasta verificar Cloud Scheduler?",
+  "rationale": "La elección determina si ocho tareas recurrentes pueden quedar temporalmente sin ejecución; no es una corrección mecánica que deba decidir la automatización.",
+  "options": [
+    {
+      "title": "Despliegue escalonado",
+      "body": "Crear y verificar los jobs de Cloud Scheduler antes de retirar los triggers actuales, dejando una transición explícita y reversible.",
+      "recommended": true
+    },
+    {
+      "title": "Corte manual coordinado",
+      "body": "Aceptar el riesgo y fusionar solo con una persona responsable preparada para ejecutar y verificar `[Deploy] Data Platform` inmediatamente.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Despliegue escalonado",
+    "body": "Crear y verificar los jobs de Cloud Scheduler antes de retirar los triggers actuales, dejando una transición explícita y reversible.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su historial del monitor de crons y de los workflows afectados le sitúa como mejor responsable para validar el plan de corte.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/8071.md",
+    "reviewedAt": "2026-07-30T09:34:01.375Z",
+    "mainSha": "397a69300315a73b6042ec31fd98ba59917f8897"
+  }
+}

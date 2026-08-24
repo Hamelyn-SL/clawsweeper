@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-07T10:42:28.935Z",
+  "updatedAt": "2026-08-07T10:31:05Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8291,
+    "title": "Amazon crons never run errorRecoveryWithdraw and withdrawn-master sync errors pile up",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8291",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "triage:done",
+      "impact:other",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "P2",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond"
+    ],
+    "createdAt": "2026-08-06T12:35:20Z",
+    "updatedAt": "2026-08-07T10:31:05Z"
+  },
+  "lane": "manual_review",
+  "priority": "P1",
+  "question": "¿Qué límite inicial de `errorRecoveryWithdraw` se aprueba por región tras incorporar la revalidación del maestro?",
+  "rationale": "El valor vive en configuración operativa de producción y debe equilibrar el drenaje del backlog con la capacidad real de Amazon.",
+  "options": [
+    {
+      "title": "Despliegue gradual",
+      "body": "Corregir el guard, fijar un batch conservador explícito por región y aumentarlo solo con telemetría estable.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener el mínimo actual",
+      "body": "Dejar el default de 1 hasta obtener datos de rate limit, aceptando un drenaje mucho más lento.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Despliegue gradual",
+    "body": "Corregir el guard, fijar un batch conservador explícito por región y aumentarlo solo con telemetría estable.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Es la persona asignada y el contribuidor más reciente del controlador Amazon y de la PR candidata.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8291.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8291#issuecomment-5204893160",
+    "reviewedAt": "2026-08-07T10:42:28.935Z",
+    "mainSha": "d61a6efd2550ead883c4b8c93469be811580c61a"
+  }
+}

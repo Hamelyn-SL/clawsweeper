@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-29T02:03:11.770Z",
+  "updatedAt": "2026-07-29T00:43:09Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7994,
+    "title": "fix: harden PR proof evidence gate",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7994",
+    "state": "closed",
+    "labels": [
+      "size/XXL",
+      "rating: 🥈 silver",
+      "status: 📣 needs proof",
+      "P1",
+      "merge-risk: 🚨 security-boundary",
+      "merge-risk: 🚨 availability",
+      "merge-risk: 🚨 automation"
+    ],
+    "createdAt": "2026-07-27T10:56:00Z",
+    "updatedAt": "2026-07-29T00:43:09Z",
+    "headSha": "6cf6187898bf09b5b2ee65520f04f7d87994d966"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe Hamelyn conservar PR Proof v3 como señal no bloqueante o recuperar un gate obligatorio v2 para bloquear merges?",
+  "rationale": "La PR propone exactamente el contrato que `dev` retiró y documentó como no bloqueante; no es una decisión mecánica de corrección.",
+  "options": [
+    {
+      "title": "Conservar PR Proof v3",
+      "body": "Mantener el comentario y status como evidencia informativa, y cerrar o reencuadrar esta PR fuera del flujo de merge.",
+      "recommended": true
+    },
+    {
+      "title": "Aprobar un gate obligatorio",
+      "body": "Patrocinar una propuesta nueva y acotada con revisión de permisos, rollout gradual, rollback y prueba end-to-end del flujo requerido.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Conservar PR Proof v3",
+    "body": "Mantener el comentario y status como evidencia informativa, y cerrar o reencuadrar esta PR fuera del flujo de merge.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es el principal autor del contrato v3 actualmente desplegado y de sus correcciones posteriores.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7994.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7994#issuecomment-5091264459",
+    "reviewedAt": "2026-07-29T02:03:11.770Z",
+    "mainSha": "b3f48ada4c58ede7dde46b70646fb15465375dd0"
+  }
+}

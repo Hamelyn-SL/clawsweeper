@@ -1,0 +1,66 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-21T12:12:15.736Z",
+  "updatedAt": "2026-07-21T12:05:23Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7838,
+    "title": "Amazon ES needs recurring recovery for withdrawn buyable listings without mk rows",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7838",
+    "state": "open",
+    "labels": [
+      "bug",
+      "priority:p1",
+      "app:marketplace",
+      "triage:running",
+      "P1",
+      "impact:other",
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro",
+      "clawsweeper:linked-pr-open",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-21T12:01:51Z",
+    "updatedAt": "2026-07-21T12:05:23Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe Marketplace adoptar una reconciliación recurrente por snapshot→Mongo o una retirada directa por SP-API para los huérfanos confirmados sin `mk_amazonEs`?",
+  "rationale": "Ambas rutas afectan datos operativos y ofertas externas; el código actual solo documenta la recuperación puntual, no la política continua ni sus límites.",
+  "options": [
+    {
+      "title": "Reconciliación canónica recurrente",
+      "body": "Crear candidatos desde el snapshot, rehidratar únicamente los confirmados y dejar que el withdraw existente procese y audite cada retirada.",
+      "recommended": true
+    },
+    {
+      "title": "Cierre directo por SP-API",
+      "body": "Retirar directamente los candidatos sin fila y conservar una ruta separada para los SKUs que carezcan de documento maestro.",
+      "recommended": false
+    },
+    {
+      "title": "Garantizar la fila-señal",
+      "body": "Investigar y corregir el origen de la pérdida de filas antes de automatizar una recuperación externa recurrente.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Reconciliación canónica recurrente",
+    "body": "Crear candidatos desde el snapshot, rehidratar únicamente los confirmados y dejar que el withdraw existente procese y audite cada retirada.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Llevó la remediación y la documentación de la cohorte anterior, incluida la delimitación entre siembra canónica y SP-API directo.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7838.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7838#issuecomment-5033831900",
+    "reviewedAt": "2026-07-21T12:12:15.736Z",
+    "mainSha": "9663897f95b7e0526b73f4bc0777dd5b57aad412"
+  }
+}

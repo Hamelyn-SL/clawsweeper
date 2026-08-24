@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-12T16:08:24.667Z",
+  "updatedAt": "2026-07-12T15:41:48Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7406,
+    "title": "fix: repair silent failing crons and add slack alerts",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7406",
+    "state": "closed",
+    "labels": [
+      "size/L",
+      "proof: sufficient",
+      "rating: 🦐 gold shrimp",
+      "status: ⏳ waiting on author",
+      "P1",
+      "merge-risk: 🚨 compatibility",
+      "merge-risk: 🚨 availability",
+      "merge-risk: 🚨 automation"
+    ],
+    "createdAt": "2026-07-12T15:23:55Z",
+    "updatedAt": "2026-07-12T15:41:48Z",
+    "headSha": "d9c42274fdaeecdb3bd112306a7797862d5f6d53"
+  },
+  "lane": "merge_risk",
+  "priority": "P1",
+  "question": "¿MiguelHamelyn acepta el nuevo contrato operativo del export de Products y del dead man's switch, o debe ajustarse antes de mergear esta PR?",
+  "rationale": "La corrección principal es necesaria, pero cambiar formato/campos del export y el comportamiento global de alertas de crons afecta a consumidores y operación; eso requiere validación humana aunque los defectos mecánicos sean reparables.",
+  "options": [
+    {
+      "title": "Corregir antes de mergear",
+      "body": "Reparar el orden de subida/borrado y la paginación de `cron-health`, y dejar explícita la validación del nuevo CSV antes de pedir aprobación final.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar el riesgo operativo",
+      "body": "Mergear asumiendo que no hay consumidores sensibles al CSV antiguo y que los falsos positivos de `cron-health` son aceptables temporalmente.",
+      "recommended": false
+    },
+    {
+      "title": "Partir la PR",
+      "body": "Separar streaming de Products, secrets KV y observabilidad de crons si el cambio conjunto es demasiado grande para validar de una vez.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Corregir antes de mergear",
+    "body": "Reparar el orden de subida/borrado y la paginación de `cron-health`, y dejar explícita la validación del nuevo CSV antes de pedir aprobación final.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Es el revisor solicitado y el comentario de asignación lo identifica como la persona con experiencia directa en los archivos tocados.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7406.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7406#issuecomment-4951858112",
+    "reviewedAt": "2026-07-12T16:08:24.667Z",
+    "mainSha": "2c99c92624003a8a11306f66bf6efb6d2e2af0fc"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-09T12:09:29.104Z",
+  "updatedAt": "2026-07-09T12:04:09Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7255,
+    "title": "fix: requeue amazon price mismatch updates",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7255",
+    "state": "closed",
+    "labels": [
+      "size/M",
+      "proof: sufficient",
+      "rating: 🐚 platinum hermit",
+      "status: 👀 ready for maintainer look",
+      "P2",
+      "merge-risk: 🚨 other"
+    ],
+    "createdAt": "2026-07-08T19:29:26Z",
+    "updatedAt": "2026-07-09T12:04:09Z",
+    "headSha": "1aba41d2647c6ce142ff6281519e9c2b9099ee98"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Aceptamos que `PRICE_MISMATCH` se limpie al enviar el feed batch de Amazon, con el watcher re-marcándolo si el precio sigue descuadrado?",
+  "rationale": "La decisión afecta a la observabilidad temporal de miles de SKUs y no se puede resolver solo con tipos, lint o la validación de la query.",
+  "options": [
+    {
+      "title": "Aceptar limpieza al submit",
+      "body": "Aterriza el PR como está y asume que el siguiente snapshot volverá a marcar los casos que Amazon no aplique.",
+      "recommended": true
+    },
+    {
+      "title": "Limpiar solo tras confirmación",
+      "body": "Pediría rediseñar el flujo para esperar evidencia posterior de Amazon, con más latencia y complejidad operativa.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aceptar limpieza al submit",
+    "body": "Aterriza el PR como está y asume que el siguiente snapshot volverá a marcar los casos que Amazon no aplique.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "alexcanHamelyn",
+    "reason": "Ya está solicitado como reviewer para esta superficie y aparece como la persona propuesta para validar el cambio de marketplaces/Amazon.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7255.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7255#issuecomment-4919347766",
+    "reviewedAt": "2026-07-09T12:09:29.104Z",
+    "mainSha": "499a3f88a16786ec48868f6474dc4f7582c0e2b6"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-08T03:21:19.750Z",
+  "updatedAt": "2026-07-07T22:11:09Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 6891,
+    "title": "fix: stop retrying stale mercadolibre price updates",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/6891",
+    "state": "open",
+    "labels": [
+      "size/L",
+      "rating: 🦪 silver shellfish",
+      "status: 📣 needs proof",
+      "P1",
+      "merge-risk: 🚨 compatibility",
+      "merge-risk: 🚨 availability"
+    ],
+    "createdAt": "2026-07-05T14:29:47Z",
+    "updatedAt": "2026-07-07T22:11:09Z",
+    "headSha": "a2638d2437f10f1cea998380f1e75ec23d87aebd"
+  },
+  "lane": "merge_risk",
+  "priority": "P1",
+  "question": "Should this PR land with the global `MARK_INACTIVE` retry-field cleanup and per-failed-price-update MercadoLibre status lookup, or should it be narrowed or proven further first?",
+  "rationale": "The code path is a high-volume marketplace cron and the PR changes persisted marketplace state; automation cannot decide the acceptable rollout risk without owner intent and real operational proof.",
+  "options": [
+    {
+      "title": "Require proof and owner approval",
+      "body": "Ask for a redacted live run/log showing stale listings becoming `INACTIVE`, then let the MercadoLibre owner approve the global state mutation before merge.",
+      "recommended": true
+    },
+    {
+      "title": "Accept monitored rollout",
+      "body": "Merge with explicit owner sign-off and monitor MercadoLibre cron duration, API errors, and remaining `UPDATING_PRICE` rows without requiring more contributor proof.",
+      "recommended": false
+    },
+    {
+      "title": "Narrow before merge",
+      "body": "Change the implementation so retry-field cleanup is scoped to the MercadoLibre stale-listing path instead of changing all `MARK_INACTIVE` callers.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Require proof and owner approval",
+    "body": "Ask for a redacted live run/log showing stale listings becoming `INACTIVE`, then let the MercadoLibre owner approve the global state mutation before merge.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Marcos has the strongest recent MercadoLibre hardening history and was explicitly requested for this review in the PR discussion.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6891.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/6891#issuecomment-4911146285",
+    "reviewedAt": "2026-07-08T03:21:19.750Z",
+    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+  }
+}

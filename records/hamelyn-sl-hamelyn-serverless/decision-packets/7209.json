@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-16T12:17:43.280Z",
+  "updatedAt": "2026-07-16T12:01:11Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7209,
+    "title": "Amazon ES price-threshold DB_ONLY_WITH_DETAILS errors persist despite recovery",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7209",
+    "state": "closed",
+    "labels": [
+      "bug",
+      "priority:p2",
+      "app:marketplace",
+      "triage:done",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:source-repro",
+      "P2",
+      "impact:other",
+      "issue-rating: 💎 diamond",
+      "clawsweeper:linked-pr-open"
+    ],
+    "createdAt": "2026-07-08T06:37:14Z",
+    "updatedAt": "2026-07-16T12:01:11Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué `minimum_seller_allowed_price` y `maximum_seller_allowed_price` debe enviar Amazon ES para `optimo`, `atascado`, `eliminado` y `sin_grupo`, y debe mantenerse omitido `pricingRuleId`?",
+  "rationale": "La causa técnica está confirmada, pero los rangos permitidos y la activación de pricing automático son decisiones comerciales que no pueden deducirse con seguridad del código actual.",
+  "options": [
+    {
+      "title": "Umbrales sin regla automática",
+      "body": "Enviar un rango protector que contenga `stock.price` y mantener omitida la regla automática para estos grupos.",
+      "recommended": true
+    },
+    {
+      "title": "Ampliar la regla automática",
+      "body": "Aprobar una regla automática y rangos específicos para estos grupos, enviando ambos en el mismo payload.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Umbrales sin regla automática",
+    "body": "Enviar un rango protector que contenga `stock.price` y mantener omitida la regla automática para estos grupos.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Tiene la issue asignada y condujo el recovery anterior que ahora necesita completar la política de umbrales.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7209.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7209#issuecomment-4919253706",
+    "reviewedAt": "2026-07-16T12:17:43.280Z",
+    "mainSha": "55416ee8b319e79052441cf60e5c2e193e546f6f"
+  }
+}

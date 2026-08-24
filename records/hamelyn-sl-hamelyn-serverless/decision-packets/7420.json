@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-13T08:01:43.404Z",
+  "updatedAt": "2026-07-13T07:56:34Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7420,
+    "title": "Deploy to Prod",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7420",
+    "state": "closed",
+    "labels": [
+      "size/XXL"
+    ],
+    "createdAt": "2026-07-13T06:43:52Z",
+    "updatedAt": "2026-07-13T07:56:34Z",
+    "headSha": "3507f660b3c32cda93c23d3a81815c97a689226e"
+  },
+  "lane": "release_inclusion",
+  "priority": "P1",
+  "question": "¿Debe promocionarse ahora a producción todo el lote `dev` → `master` incluido en este PR, con la nueva automatización de Dependabot/autofix y los cambios operacionales listados?",
+  "rationale": "La revisión puede comprobar el diff y los riesgos, pero no puede decidir la ventana de release ni aceptar por el equipo la exposición de secretos/permisos y cambios operacionales en producción.",
+  "options": [
+    {
+      "title": "Mergear tras checklist de release",
+      "body": "Confirmar checks, Vercel, notas de Skill Guardian y vigilancia post-release, y promocionar el lote completo a `master`.",
+      "recommended": true
+    },
+    {
+      "title": "Aplazar el deploy",
+      "body": "Mantener el PR abierto hasta completar documentación operativa o una validación adicional de la automatización/autenticación afectada.",
+      "recommended": false
+    },
+    {
+      "title": "Dividir el release",
+      "body": "Preparar un deploy más pequeño si algún cambio incluido no debe llegar aún a producción.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mergear tras checklist de release",
+    "body": "Confirmar checks, Vercel, notas de Skill Guardian y vigilancia post-release, y promocionar el lote completo a `master`.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "HamelynDev",
+    "reason": "Es el autor del PR de despliegue y quien aparece coordinando el vehículo `dev` → `master`; la decisión final puede requerir apoyo de los owners de CI, pricing y Supply listados.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7420.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7420#issuecomment-4955985194",
+    "reviewedAt": "2026-07-13T08:01:43.404Z",
+    "mainSha": "3507f660b3c32cda93c23d3a81815c97a689226e"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-29T01:34:50.676Z",
+  "updatedAt": "2026-07-29T01:14:24Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8047,
+    "title": "fix: demote amazon report-inactive skus in reconciliation",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8047",
+    "state": "open",
+    "labels": [
+      "size/L",
+      "proof: sufficient",
+      "rating: 🥇 gold",
+      "status: ⏳ waiting on author",
+      "P1",
+      "merge-risk: 🚨 compatibility"
+    ],
+    "createdAt": "2026-07-28T22:45:47Z",
+    "updatedAt": "2026-07-29T01:14:24Z",
+    "headSha": "4b01b56c6d64393790684f8fd820e39bf42ebb07"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Se aprueba que los listings Amazon presentes pero no vendibles se persistan masivamente como `SYNC_ERROR` con `RetryPolicy.PERMANENT` en la próxima reconciliación programada?",
+  "rationale": "La implementación cambia de forma intencionada el significado operativo de grandes cohortes existentes y desactiva su recuperación genérica; el código no puede decidir por sí solo esa política.",
+  "options": [
+    {
+      "title": "Ajustar y aprobar antes del merge",
+      "body": "Retirar el gate y el fixture locales, completar la documentación del valor persistido y aprobar explícitamente la transición masiva con monitorización de la primera ejecución.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar el cambio tal como está",
+      "body": "Mantener la política permanente y asumir el cambio de métricas y colas, dejando constancia operativa antes de programar el merge.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar la democión permanente",
+      "body": "Mantener abierta la incidencia canónica hasta acordar una política de readmisión o una clasificación menos terminal.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Ajustar y aprobar antes del merge",
+    "body": "Retirar el gate y el fixture locales, completar la documentación del valor persistido y aprobar explícitamente la transición masiva con monitorización de la primera ejecución.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "HamelynDev",
+    "reason": "Introdujo la semántica de presencia total y puede evaluar si la nueva clasificación conserva la frontera diseñada para `DB_ONLY`.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8047.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8047#issuecomment-5110815271",
+    "reviewedAt": "2026-07-29T01:34:50.676Z",
+    "mainSha": "d11d46521e4b6b56b9f2ea06c01f89ef555261e9"
+  }
+}

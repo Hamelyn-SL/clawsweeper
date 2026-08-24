@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-04T23:24:25.954Z",
+  "updatedAt": "2026-08-04T23:09:09Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 6462,
+    "title": "Base de datos dev ligera con sandboxes desechables",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6462",
+    "state": "closed",
+    "labels": [
+      "source:admin-panel",
+      "app:infrastructure",
+      "feature",
+      "reporter:javier",
+      "triage:done",
+      "origin:panel",
+      "P2",
+      "impact:security",
+      "issue-rating: ➖ n/a",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:needs-security-review"
+    ],
+    "createdAt": "2026-06-16T21:39:40Z",
+    "updatedAt": "2026-08-04T23:09:09Z"
+  },
+  "lane": "security_boundary",
+  "priority": "P2",
+  "question": "¿Debe el primer hito usar cohorts reales anonimizados en Atlas o limitarse a fixtures sintéticas hasta aprobar el modelo de acceso y anonimización?",
+  "rationale": "La elección decide exposición de PII, permisos de base de datos, operaciones destructivas y responsabilidad operativa; no puede resolverse de forma segura solo desde el código actual.",
+  "options": [
+    {
+      "title": "Atlas con cohorts anonimizados",
+      "body": "Aprobar un contrato de anonimización, cuentas con privilegios mínimos y refresh controlado antes de implementar los comandos.",
+      "recommended": true
+    },
+    {
+      "title": "Fixtures sintéticas primero",
+      "body": "Entregar sandboxes aisladas sin datos reales y posponer la fidelidad basada en cohorts hasta completar la revisión de seguridad.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Atlas con cohorts anonimizados",
+    "body": "Aprobar un contrato de anonimización, cuentas con privilegios mínimos y refresh controlado antes de implementar los comandos.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Ha definido el objetivo y también introdujo el único patrón de sandbox comparable en el repositorio.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/6462.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6462#issuecomment-4909962993",
+    "reviewedAt": "2026-08-04T23:24:25.954Z",
+    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
+  }
+}

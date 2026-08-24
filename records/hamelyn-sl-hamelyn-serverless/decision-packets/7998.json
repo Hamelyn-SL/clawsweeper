@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-05T00:42:46.446Z",
+  "updatedAt": "2026-08-04T23:46:14Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7998,
+    "title": "Increase Amazon SE listing creation throughput for the persistent backlog",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7998",
+    "state": "closed",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "triage:done",
+      "origin:dev",
+      "mk:amazon",
+      "P2",
+      "impact:other",
+      "issue-rating: ⚪ platinum",
+      "clawsweeper:needs-live-repro",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-27T11:39:40Z",
+    "updatedAt": "2026-08-04T23:46:14Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe Amazon SE priorizar instrumentar la conversión seller antes de modificar el lote o la frecuencia del cron?",
+  "rationale": "Las correcciones integradas eliminan dos causas de lectura engañosa, pero no identifican si la limitación restante es latencia, restricciones de catálogo o pacing.",
+  "options": [
+    {
+      "title": "Instrumentar antes de acelerar",
+      "body": "Definir y medir una cohorte seller por ejecución antes de modificar la configuración productiva.",
+      "recommended": true
+    },
+    {
+      "title": "Acelerar con riesgo aceptado",
+      "body": "Aumentar lote o cadencia ahora y asumir explícitamente el riesgo de más solape y timeout mientras se observa producción.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Instrumentar antes de acelerar",
+    "body": "Definir y medir una cohorte seller por ejecución antes de modificar la configuración productiva.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Su corrección integrada cubre la reconciliación seller que debe informar la decisión de pacing.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7998.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7998#issuecomment-5091241221",
+    "reviewedAt": "2026-08-05T00:42:46.446Z",
+    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
+  }
+}

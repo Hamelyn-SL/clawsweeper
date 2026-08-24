@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-13T20:27:33.833Z",
+  "updatedAt": "2026-07-13T15:14:54Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7467,
+    "title": "feat: add buy price ab test with deterministic ean buckets",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7467",
+    "state": "open",
+    "labels": [
+      "size/L",
+      "rating: 🧂 unranked krab",
+      "status: 📣 needs proof",
+      "P2",
+      "merge-risk: 🚨 compatibility"
+    ],
+    "createdAt": "2026-07-13T10:51:46Z",
+    "updatedAt": "2026-07-13T15:14:54Z",
+    "headSha": "bc42452e3a3fa861577177a4f9d5a2e68445c684"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿El precio final de un producto `featured` en `up100` debe limitarse a `PBMax × 2` (6 € con la configuración prevista) o puede alcanzar `PBMax × 2 + featuredPriceIncrement` (9 €)?",
+  "rationale": "La solicitud, el cuerpo de la PR y una sección de la spec fijan 6 €, pero otra sección de la spec y el código permiten 9 €; no es seguro resolver esa diferencia de política comercial únicamente desde el parche.",
+  "options": [
+    {
+      "title": "Mantener el máximo de 6 €",
+      "body": "Aplicar el techo después del incremento `featured` o ajustar el tratamiento para que ningún precio final supere `PBMax × 2`.",
+      "recommended": true
+    },
+    {
+      "title": "Autorizar hasta 9 €",
+      "body": "Confirmar explícitamente la excepción comercial y actualizar la solicitud, el cuerpo, la spec, los tests y la prueba de rollout con ese máximo.",
+      "recommended": false
+    },
+    {
+      "title": "Excluir productos featured",
+      "body": "Dejar `featured` fuera del experimento para conservar su comportamiento actual sin introducir una política de techo adicional.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mantener el máximo de 6 €",
+    "body": "Aplicar el techo después del incremento `featured` o ajustar el tratamiento para que ningún precio final supere `PBMax × 2`.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "PabloMoran34",
+    "reason": "Es el propietario técnico visible del flujo y quien ha coordinado en GitHub las decisiones del experimento, aunque la aprobación comercial final debe confirmarse con el owner de negocio.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7467.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7467#issuecomment-4957350292",
+    "reviewedAt": "2026-07-13T20:27:33.833Z",
+    "mainSha": "288257a8db9236bc80539882a62b0ed2c7ff00df"
+  }
+}

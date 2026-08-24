@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-04T23:22:30.705Z",
+  "updatedAt": "2026-08-04T23:11:41Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 6632,
+    "title": "marketplace-crons: Discogs falla al marcar pedidos como enviados",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6632",
+    "state": "open",
+    "labels": [
+      "codex",
+      "bug",
+      "app:marketplace",
+      "triage:done",
+      "origin:watcher",
+      "mk:discogs",
+      "P1",
+      "impact:other",
+      "issue-rating: ⚪ platinum",
+      "clawsweeper:needs-live-repro",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-06-23T20:34:10Z",
+    "updatedAt": "2026-08-04T23:11:41Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Qué respuestas de Discogs deben considerarse terminales y cuáles deben reintentarse antes de devolver el pedido a `PENDING`?",
+  "rationale": "La fuente confirma que hoy se pierde la causa remota, pero no permite decidir con seguridad si el rechazo observado era permanente o transitorio.",
+  "options": [
+    {
+      "title": "Clasificación basada en evidencia",
+      "body": "Guardar el motivo redacted, reintentar únicamente errores transitorios conocidos y mantener los demás en `SYNC_ERROR` para revisión.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener el retry genérico",
+      "body": "Conservar la ventana actual de cuatro días y aceptar que los rechazos persistentes seguirán reintentándose hasta que caduquen.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Clasificación basada en evidencia",
+    "body": "Guardar el motivo redacted, reintentar únicamente errores transitorios conocidos y mantener los demás en `SYNC_ERROR` para revisión.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es la persona con mayor continuidad reciente en los flujos y commits de Discogs y recovery disponibles.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6632.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6632#issuecomment-4969107983",
+    "reviewedAt": "2026-08-04T23:22:30.705Z",
+    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
+  }
+}

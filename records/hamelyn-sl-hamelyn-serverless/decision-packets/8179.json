@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-03T12:12:31.769Z",
+  "updatedAt": "2026-08-03T10:27:49Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8179,
+    "title": "Documentos mk_* sin productType: upserts de MARK_SYNC_ERROR y MARK_ACTIVE con undefined",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8179",
+    "state": "closed",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "triage:done",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:source-repro",
+      "clawsweeper:linked-pr-open",
+      "issue-rating: 💎 diamond",
+      "P2",
+      "impact:data-loss",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-08-03T08:56:04Z",
+    "updatedAt": "2026-08-03T10:27:49Z"
+  },
+  "lane": "merge_risk",
+  "priority": "P2",
+  "question": "¿Debe la reparación conservar un diagnóstico persistente o explícitamente observable cuando un error de sincronización llega sin fila `mk_*` existente?",
+  "rationale": "Eliminar el upsert evita corrupción, pero la alternativa de observabilidad determina si un fallo de sincronización queda investigable sin recrear un documento inválido.",
+  "options": [
+    {
+      "title": "Conservar señal sin crear fila",
+      "body": "Mantener el no-upsert y devolver o registrar un resultado explícito de fila ausente para que el error no se pierda.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar ausencia de diagnóstico",
+      "body": "Mantener el no-upsert actual y asumir que los llamadores ya poseen suficiente telemetría fuera de la colección `mk_*`.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Conservar señal sin crear fila",
+    "body": "Mantener el no-upsert y devolver o registrar un resultado explícito de fila ausente para que el error no se pierda.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "La revisión asignada y sus cambios recientes en reconciliación le dan el mejor contexto para decidir el contrato de diagnóstico.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/8179.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8179#issuecomment-5165121680",
+    "reviewedAt": "2026-08-03T12:12:31.769Z",
+    "mainSha": "fca62647712a88d5fb10cf80d0ced1d3fb0ebc2b"
+  }
+}

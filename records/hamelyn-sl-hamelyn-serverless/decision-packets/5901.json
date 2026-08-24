@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-14T22:00:50.024Z",
+  "updatedAt": "2026-07-08T10:26:32Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 5901,
+    "title": "marketplace-crons: Fnac devuelve 500 en pedidos y batch",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5901",
+    "state": "open",
+    "labels": [
+      "marketplace-crons",
+      "codex",
+      "bug",
+      "priority:p1",
+      "app:marketplace",
+      "triage:done",
+      "triage:confirmed-live",
+      "area:marketplace-orders",
+      "P1",
+      "impact:other",
+      "issue-rating: 🐚 platinum hermit",
+      "clawsweeper:needs-live-repro",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-05-19T00:34:22Z",
+    "updatedAt": "2026-07-08T10:26:32Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Qué contrato de recuperación debe adoptar Fnac para HTTP 5xx en operaciones con efecto, especialmente `offers_update`: reconciliar el batch remoto antes de repetir o reactivar el recovery genérico de `SYNC_ERROR`?",
+  "rationale": "La elección determina si una respuesta perdida puede provocar un batch duplicado y cómo se recuperan unidades ya persistidas como `SYNC_ERROR`; el código y la discusión no fijan una política segura única.",
+  "options": [
+    {
+      "title": "Reconciliar antes de repetir",
+      "body": "Registrar la solicitud y consultar el batch o estado remoto antes de reenviar una operación con efecto; usar retry directo solo para llamadas idempotentes.",
+      "recommended": true
+    },
+    {
+      "title": "Reactivar recovery genérico",
+      "body": "Volver a procesar automáticamente los `SYNC_ERROR` con el mecanismo existente y añadir defensas específicas contra duplicados.",
+      "recommended": false
+    },
+    {
+      "title": "Recuperación manual asistida",
+      "body": "No repetir automáticamente POST con efecto y ofrecer diagnóstico y acción operativa explícita para cada error pendiente.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Reconciliar antes de repetir",
+    "body": "Registrar la solicitud y consultar el batch o estado remoto antes de reenviar una operación con efecto; usar retry directo solo para llamadas idempotentes.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "alexcanHamelyn",
+    "reason": "Tiene la mayor trayectoria histórica en el controlador Fnac y en la arquitectura de retirada afectada, por lo que es el mejor candidato para decidir el contrato junto con los contribuidores recientes.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5901.md",
+    "reviewedAt": "2026-07-14T22:00:50.024Z",
+    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
+  }
+}

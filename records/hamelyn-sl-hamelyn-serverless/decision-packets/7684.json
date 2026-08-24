@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-19T17:02:37.783Z",
+  "updatedAt": "2026-07-19T13:16:44Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7684,
+    "title": "chore: update other major dependencies",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7684",
+    "state": "closed",
+    "labels": [
+      "size/XXL",
+      "merge-risk: 🚨 compatibility",
+      "proof: sufficient",
+      "proof: 📸 screenshot",
+      "rating: ⚪ platinum",
+      "status: 👀 ready for maintainer look",
+      "P2",
+      "merge-risk: 🚨 auth-provider",
+      "merge-risk: 🚨 availability"
+    ],
+    "createdAt": "2026-07-17T06:21:40Z",
+    "updatedAt": "2026-07-19T13:16:44Z",
+    "headSha": "88d828449a80a92270005c2e3b4ea4950cccc85c"
+  },
+  "lane": "merge_risk",
+  "priority": "P2",
+  "question": "¿Se acepta esta familia de dependencias major tras actualizar la rama y revisar los flujos de alto impacto, o se divide para reducir el radio de compatibilidad?",
+  "rationale": "La evidencia descarta varios fallos concretos, pero decidir el riesgo aceptable de una actualización simultánea de múltiples integraciones requiere criterio de producto y operación.",
+  "options": [
+    {
+      "title": "Revisar e integrar como familia",
+      "body": "Actualizar contra `dev`, confirmar CI y hacer smoke de los flujos de pagos, subida, correo y crons antes del merge.",
+      "recommended": true
+    },
+    {
+      "title": "Dividir la actualización",
+      "body": "Separar las dependencias de mayor impacto operativo si la revisión conjunta no puede demostrar compatibilidad suficiente.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Revisar e integrar como familia",
+    "body": "Actualizar contra `dev`, confirmar CI y hacer smoke de los flujos de pagos, subida, correo y crons antes del merge.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Fue solicitado como revisor para este alcance transversal y aparece como el candidato principal en la discusión.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7684.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7684#issuecomment-5000015865",
+    "reviewedAt": "2026-07-19T17:02:37.783Z",
+    "mainSha": "e11c80449ab8402b18a1e3a4d8986a08770c6ec4"
+  }
+}

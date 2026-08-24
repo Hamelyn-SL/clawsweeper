@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-05T07:03:28.786Z",
+  "updatedAt": "2026-08-05T06:54:55Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8233,
+    "title": "BL-ecommerce-product: specs reference dead ProductPageC while the live A/B variant is ProductPageD",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8233",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:ecommerce",
+      "triage:queued",
+      "business-logic",
+      "P2",
+      "impact:other",
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-08-05T06:54:36Z",
+    "updatedAt": "2026-08-05T06:54:55Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe esta issue limitarse a corregir las specs o incluir la retirada coordinada de `ProductPageC` y del valor analítico `c`?",
+  "rationale": "La ruta de usuario ya no alcanza C, pero el valor permanece permitido y persistido para telemetría; su eliminación implica una política de compatibilidad histórica.",
+  "options": [
+    {
+      "title": "Corregir las specs ahora",
+      "body": "Sustituir las referencias B/C por B/D y conservar C y su telemetría hasta definir una limpieza específica.",
+      "recommended": true
+    },
+    {
+      "title": "Retirar C coordinadamente",
+      "body": "Eliminar el componente y normalizar o migrar los valores analíticos `c` con una decisión explícita de compatibilidad.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Corregir las specs ahora",
+    "body": "Sustituir las referencias B/C por B/D y conservar C y su telemetría hasta definir una limpieza específica.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Introdujo la variante D que sustituyó a C en la ruta activa.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8233.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8233#issuecomment-5188661505",
+    "reviewedAt": "2026-08-05T07:03:28.786Z",
+    "mainSha": "77078f2e2804724ba1bb6b3709ec514090b10c4f"
+  }
+}

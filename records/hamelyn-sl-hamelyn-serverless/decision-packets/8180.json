@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-03T10:21:08.432Z",
+  "updatedAt": "2026-08-03T10:14:45Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8180,
+    "title": "fix: prevent mk docs without productType on upsert",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8180",
+    "state": "open",
+    "labels": [
+      "size/M",
+      "rating: 🥇 gold",
+      "status: 📣 needs proof",
+      "P1",
+      "merge-risk: 🚨 compatibility"
+    ],
+    "createdAt": "2026-08-03T09:07:12Z",
+    "updatedAt": "2026-08-03T10:14:45Z",
+    "headSha": "6aab3c31494d749a0ea0b7413dfc09d276c4ffe2"
+  },
+  "lane": "merge_risk",
+  "priority": "P1",
+  "question": "¿Debe conservarse el diagnóstico de sync-error sembrando una fila válida antes de marcarla, o aceptar que las filas ausentes se omitan?",
+  "rationale": "El upsert previo sugiere que algunos flujos podían usar el error como primera persistencia; el PR documenta el nuevo fallo, pero no define qué comportamiento es permanente.",
+  "options": [
+    {
+      "title": "Sembrar antes de marcar",
+      "body": "Añadir una siembra explícita y validada en los flujos que puedan recibir una fila `mk_*` ausente, conservando el diagnóstico sin crear documentos incompletos.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar la omisión",
+      "body": "Mantener el comportamiento update-only y documentar que los errores sobre filas ausentes no se persisten ni se reintentan desde ese estado.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar el cambio de contrato",
+      "body": "Separar el guard de `productType` y posponer la retirada del upsert hasta acordar la semántica de recuperación.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Sembrar antes de marcar",
+    "body": "Añadir una siembra explícita y validada en los flujos que puedan recibir una fila `mk_*` ausente, conservando el diagnóstico sin crear documentos incompletos.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su trabajo reciente cubre la fábrica de mutaciones, el repositorio y las rutas de sincronización afectadas.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8180.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8180#issuecomment-5165150263",
+    "reviewedAt": "2026-08-03T10:21:08.432Z",
+    "mainSha": "9f8bd42efa2ff65dfd01b18e7cce3ba44b86647f"
+  }
+}

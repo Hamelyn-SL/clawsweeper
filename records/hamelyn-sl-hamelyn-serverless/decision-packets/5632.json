@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-04T23:19:06.335Z",
+  "updatedAt": "2026-08-04T22:59:26Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 5632,
+    "title": "marketplace-crons: Amazon COM agota el límite de Vercel tras 800s",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5632",
+    "state": "closed",
+    "labels": [
+      "codex",
+      "bug",
+      "app:marketplace",
+      "triage:no-change",
+      "origin:watcher",
+      "mk:amazon",
+      "P1",
+      "impact:crash-loop",
+      "issue-rating: ⚪ platinum",
+      "clawsweeper:needs-live-repro",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-05-03T01:34:14Z",
+    "updatedAt": "2026-08-04T22:59:26Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Qué política debe aplicar Amazon COM al agotar su presupuesto: abortar todas las fases, conservar las ya iniciadas y reintentar, o dividir el trabajo en ejecuciones más pequeñas?",
+  "rationale": "El código puede imponer un límite, pero solo el equipo puede decidir la semántica segura de operaciones parciales y su recuperación.",
+  "options": [
+    {
+      "title": "Presupuesto compartido con reintento",
+      "body": "Añadir un deadline abortable común y reencolar únicamente fases no terminadas con métricas de presupuesto restante.",
+      "recommended": true
+    },
+    {
+      "title": "Dividir el cron",
+      "body": "Separar las fases pesadas en rutas o colas con presupuestos independientes para reducir el radio de una ejecución retenida.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener el comportamiento",
+      "body": "Conservar las fases paralelas actuales y aceptar el riesgo residual mientras se recoge nueva evidencia de producción.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Presupuesto compartido con reintento",
+    "body": "Añadir un deadline abortable común y reencolar únicamente fases no terminadas con métricas de presupuesto restante.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Ya documentó que la solución debe vivir en la capa común y conoce la normalización de las rutas Amazon.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/5632.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5632#issuecomment-4971269470",
+    "reviewedAt": "2026-08-04T23:19:06.335Z",
+    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
+  }
+}

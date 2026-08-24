@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-08T14:56:12.473Z",
+  "updatedAt": "2026-07-08T14:48:06Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7249,
+    "title": "feat: badge wishlist status as slack root reaction",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7249",
+    "state": "closed",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-07-08T14:46:24Z",
+    "updatedAt": "2026-07-08T14:48:06Z",
+    "headSha": "3630c9dfd2879d0a21973ef9ad5217e3a02919e3"
+  },
+  "lane": "security_boundary",
+  "priority": "P2",
+  "question": "¿Debe aprobarse que la Slack app `lyno` amplíe permisos con `reactions:write` para que este badge funcione en producción?",
+  "rationale": "El PR requiere una operación externa de permisos sobre Slack que amplía lo que el bot puede hacer y no puede decidirse solo desde el diff o CI.",
+  "options": [
+    {
+      "title": "Aprobar scope con prueba real",
+      "body": "Corregir el retorno temprano, aprobar `reactions:write`, reinstalar `lyno` y exigir evidencia real de los cuatro estados antes de merge.",
+      "recommended": true
+    },
+    {
+      "title": "Pausar el badge",
+      "body": "Dejar el PR en espera si el equipo no quiere ampliar permisos de Slack ahora.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar scope con prueba real",
+    "body": "Corregir el retorno temprano, aprobar `reactions:write`, reinstalar `lyno` y exigir evidencia real de los cuatro estados antes de merge.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "danielmenchen-hamelyn",
+    "reason": "Es el revisor solicitado para este PR y puede coordinar la decisión de permisos con quien administre la Slack app.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7249.md",
+    "reviewedAt": "2026-07-08T14:56:12.473Z",
+    "mainSha": "67b565af615e40c42050f54c8bed15ddf24089cd"
+  }
+}

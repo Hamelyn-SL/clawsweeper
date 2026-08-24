@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-07T22:45:49.960Z",
+  "updatedAt": "2026-07-08T10:26:31Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 5822,
+    "title": "Productividad: separar los tipos de operación de Picking y Packing en subtipos",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5822",
+    "state": "closed",
+    "labels": [
+      "source:admin-panel",
+      "app:admin",
+      "priority:p2",
+      "reporter:banosdavidhamelyn",
+      "feature",
+      "triage:needs-info",
+      "P2",
+      "impact:other",
+      "issue-rating: 🌊 off-meta tidepool",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:fix-shape-clear",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-05-13T05:44:42Z",
+    "updatedAt": "2026-07-08T10:26:31Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "Should Picking/Packing subtypes be implemented as derived visuals only, persisted `metadata.operationSubtype`, or new `operationType` enum values with migration/backfill implications?",
+  "rationale": "The code can infer some subtype signals, but the latest human comment asks for options that avoid schema work, so implementation would otherwise lock in a product and data-model choice before it is confirmed.",
+  "options": [
+    {
+      "title": "Persist subtype metadata",
+      "body": "Keep `operationType` as `PICKING`/`PACKING`, store `metadata.operationSubtype`, and add derived fallback for historical rows when source metadata is available.",
+      "recommended": true
+    },
+    {
+      "title": "Visual-only derivation",
+      "body": "Compute subtype groupings in the productivity API/dashboard without persisting a new field, accepting weaker filtering and historical accuracy.",
+      "recommended": false
+    },
+    {
+      "title": "New operation types",
+      "body": "Add enum values such as `PACKING_MULTIPLE` and `PICKING_SKYPOD`, then explicitly handle compatibility and historical migration/backfill.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Persist subtype metadata",
+    "body": "Keep `operationType` as `PICKING`/`PACKING`, store `metadata.operationSubtype`, and add derived fallback for historical rows when source metadata is available.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "This person authored the current productivity model and the latest Auto-Packing productivity extension, and is also the operational requester asking to choose among implementation options.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/5822.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5822#issuecomment-4909754083",
+    "reviewedAt": "2026-07-07T22:45:49.960Z",
+    "mainSha": "22201b3382325cc80747a08a1e49a425cfc04d7a"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-21T12:51:07.949Z",
+  "updatedAt": "2026-07-21T12:44:32Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7843,
+    "title": "chore: update eslint to v10",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7843",
+    "state": "closed",
+    "labels": [
+      "size/XL",
+      "rating: 🥉 bronze",
+      "status: 📣 needs proof",
+      "P2",
+      "merge-risk: 🚨 compatibility"
+    ],
+    "createdAt": "2026-07-21T12:42:44Z",
+    "updatedAt": "2026-07-21T12:44:32Z",
+    "headSha": "8baffb2477e1190713b6292c9a9a60df7db60ca6"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe esta PR adoptar `eslint-plugin-react-hooks` 7.1.1 compatible con ESLint 10 y controlar temporalmente sus diagnósticos nuevos, o aplazar la actualización de ESLint hasta definir esa política?",
+  "rationale": "La elección determina qué reglas del compiler pasan a formar parte del baseline del monorepo y no puede resolverse de forma segura solo con un cambio mecánico.",
+  "options": [
+    {
+      "title": "Alinear el peer con ESLint 10",
+      "body": "Usar una versión de React Hooks que declare soporte para ESLint 10 y desactivar o triar de forma explícita los diagnósticos nuevos hasta su migración.",
+      "recommended": true
+    },
+    {
+      "title": "Aplazar la migración",
+      "body": "Mantener ESLint 9 hasta que exista una decisión separada sobre los diagnósticos introducidos por React Hooks 7.1.1.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Alinear el peer con ESLint 10",
+    "body": "Usar una versión de React Hooks que declare soporte para ESLint 10 y desactivar o triar de forma explícita los diagnósticos nuevos hasta su migración.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es el autor histórico de la configuración compartida de Next afectada por el shim y las reglas de React Hooks.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7843.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7843#issuecomment-5034252828",
+    "reviewedAt": "2026-07-21T12:51:07.949Z",
+    "mainSha": "520a8106a8e3e44ff9895a404cc39a2ebd4bf719"
+  }
+}

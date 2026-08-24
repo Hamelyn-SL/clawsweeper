@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-21T13:08:30.048Z",
+  "updatedAt": "2026-07-21T12:18:24Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7759,
+    "title": "Discogs withdrawals skip listings stuck in UPDATING_PRICE sync error",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7759",
+    "state": "closed",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "triage:pr-opened",
+      "P1",
+      "impact:other",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:source-repro",
+      "clawsweeper:linked-pr-open",
+      "issue-rating: 💎 diamond"
+    ],
+    "createdAt": "2026-07-20T07:58:22Z",
+    "updatedAt": "2026-07-21T12:18:24Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe mantenerse la selección genérica de `UPDATING_PRICE` o limitarse explícitamente a reintentos no permanentes antes de cerrar la PR enlazada?",
+  "rationale": "`dev` ya resuelve el caso reportado, pero la PR propone una restricción que hoy no tiene efecto por el criterio genérico existente.",
+  "options": [
+    {
+      "title": "Cerrar la PR redundante",
+      "body": "Mantener el selector actual, respaldado por un test que incluye errores terminales de precio, y cerrar después esta incidencia.",
+      "recommended": true
+    },
+    {
+      "title": "Restringir el selector compartido",
+      "body": "Modificar explícitamente el criterio actual para excluir `retryPolicy: PERMANENT` si esa es la política deseada para todos los marketplaces.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Cerrar la PR redundante",
+    "body": "Mantener el selector actual, respaldado por un test que incluye errores terminales de precio, y cerrar después esta incidencia.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su commit introdujo el comportamiento actual y es la mejor referencia para aclarar la política de errores terminales.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7759.md",
+    "reviewedAt": "2026-07-21T13:08:30.048Z",
+    "mainSha": "520a8106a8e3e44ff9895a404cc39a2ebd4bf719"
+  }
+}

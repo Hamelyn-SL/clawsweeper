@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-09T08:36:25.266Z",
+  "updatedAt": "2026-07-09T08:31:58Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7273,
+    "title": "feat: add skill install command to seed local agents",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7273",
+    "state": "closed",
+    "labels": [
+      "size/L",
+      "rating: 🦪 silver shellfish",
+      "status: 📣 needs proof",
+      "P2"
+    ],
+    "createdAt": "2026-07-09T08:30:42Z",
+    "updatedAt": "2026-07-09T08:31:58Z",
+    "headSha": "0fa13204462f2aa44cf892e32b5ee1015b001c73"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe el CLI oficial `hamelyn` asumir la instalación y sobrescritura de la skill local `hamelyn-cli` en agentes como Claude Code y Codex?",
+  "rationale": "El diff añade una nueva superficie de producto que escribe en directorios de usuario fuera del propio CLI; el código parece razonable, pero la aceptación de esa responsabilidad debe venir de revisión humana.",
+  "options": [
+    {
+      "title": "Aceptar tras prueba real",
+      "body": "Mantener esta dirección, pedir evidencia real de instalación/upgrade y mergear si el reviewer valida el comportamiento.",
+      "recommended": true
+    },
+    {
+      "title": "Limitar destinos",
+      "body": "Ajustar el comando para requerir `--dir` o una confirmación explícita antes de tocar agentes detectados automáticamente.",
+      "recommended": false
+    },
+    {
+      "title": "Cerrar o rediseñar",
+      "body": "No incorporar instalación de skills al CLI hasta tener una política más amplia de distribución de skills locales.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aceptar tras prueba real",
+    "body": "Mantener esta dirección, pedir evidencia real de instalación/upgrade y mergear si el reviewer valida el comportamiento.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "alexcanHamelyn",
+    "reason": "Es el reviewer solicitado en el PR y puede decidir si esta nueva superficie encaja con el CLI antes del merge.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7273.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7273#issuecomment-4923221662",
+    "reviewedAt": "2026-07-09T08:36:25.266Z",
+    "mainSha": "4b7ad0813396f813822d90a8451b556e31b523cf"
+  }
+}

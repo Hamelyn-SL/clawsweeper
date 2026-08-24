@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-13T06:03:42.566Z",
+  "updatedAt": "2026-07-13T05:54:58Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7414,
+    "title": "chore: always serve product page b without vercel flags",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7414",
+    "state": "closed",
+    "labels": [
+      "size/M",
+      "rating: 🧂 unranked krab",
+      "status: 📣 needs proof",
+      "P2",
+      "merge-risk: 🚨 compatibility"
+    ],
+    "createdAt": "2026-07-13T05:53:39Z",
+    "updatedAt": "2026-07-13T05:54:58Z",
+    "headSha": "644eb14fdfed6a4d16537c3bb16d9b2f8586101a"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Está confirmado que `ProductPageC` y el override `productPageVariant=c` pueden retirarse de todos los entornos y flujos de QA?",
+  "rationale": "El código y la spec BL actuales tratan `ProductPageC` como una variante activa servida a usuarios reales; automatización no puede confirmar si la desactivación por CLI ya sustituye a esa capacidad en todos los entornos.",
+  "options": [
+    {
+      "title": "Retirar C con limpieza completa",
+      "body": "Aprobar la dirección del PR, pero exigir actualización de BL docs, eliminación de atribución y prueba real de que ecommerce sirve B sin Flag Requests.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener el código y solo desactivar en Vercel",
+      "body": "Dejar el fallback/override en código y controlar el coste desde Vercel hasta que producto cierre formalmente el experimento.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar la retirada",
+      "body": "Esperar a una decisión de producto/analytics sobre `ProductPageC` antes de eliminar la variante y sus entradas de medición.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Retirar C con limpieza completa",
+    "body": "Aprobar la dirección del PR, pero exigir actualización de BL docs, eliminación de atribución y prueba real de que ecommerce sirve B sin Flag Requests.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Es quien aparece en la historia como introductor/mantenedor principal de la variante C y de la spec BL relacionada.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7414.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7414#issuecomment-4954917793",
+    "reviewedAt": "2026-07-13T06:03:42.566Z",
+    "mainSha": "fb7384330fc78b73a5fb40058023be0075c3b9b1"
+  }
+}

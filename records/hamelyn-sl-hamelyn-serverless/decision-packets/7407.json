@@ -1,0 +1,66 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-12T19:19:40.802Z",
+  "updatedAt": "2026-07-12T18:16:01Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7407,
+    "title": "MercadoLibre sold listings remain active after withdrawal state is recorded",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7407",
+    "state": "open",
+    "labels": [
+      "bug",
+      "priority:p1",
+      "app:marketplace",
+      "triage:done",
+      "P1",
+      "impact:other",
+      "issue-rating: 🦞 diamond lobster",
+      "clawsweeper:source-repro",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:fix-shape-clear",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-12T18:02:13Z",
+    "updatedAt": "2026-07-12T18:16:01Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe el equipo Marketplace consolidar esta evidencia fresca en https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7178 como trabajo canónico de reconciliación, o mantener ambas issues abiertas hasta aprobar el dry-run/backfill?",
+  "rationale": "La solución toca listados externos comprables y puede requerir rehidratación o cierre masivo de datos; ClawSweeper no debe decidir esa consolidación ni el alcance del backfill sin intención humana.",
+  "options": [
+    {
+      "title": "Usar la issue canónica",
+      "body": "Encaminar la implementación por https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7178 y cerrar o enlazar manualmente esta issue cuando se preserve su evidencia del 2026-07-10.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener ambas abiertas",
+      "body": "Conservar las dos issues mientras se valida el alcance exacto de huérfanos, `DB_ONLY`, `UPDATING_PRICE` y filas sin `marketplaceId`.",
+      "recommended": false
+    },
+    {
+      "title": "Separar subproblemas",
+      "body": "Tratar esta issue como subcaso específico de `SOLD/SOLD_AS_ALTERNATIVE` con `marketplaceId` ausente y dejar la issue canónica para la reconciliación general.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Usar la issue canónica",
+    "body": "Encaminar la implementación por https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7178 y cerrar o enlazar manualmente esta issue cuando se preserve su evidencia del 2026-07-10.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Es la persona con señal más fuerte de historial reciente en la ruta de retirada y selectors de marketplace afectados.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7407.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7407#issuecomment-4952220070",
+    "reviewedAt": "2026-07-12T19:19:40.802Z",
+    "mainSha": "2c99c92624003a8a11306f66bf6efb6d2e2af0fc"
+  }
+}

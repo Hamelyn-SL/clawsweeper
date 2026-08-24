@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-13T20:14:38.431Z",
+  "updatedAt": "2026-07-13T15:15:00Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7471,
+    "title": "Error de vista en los to cancel del ecommerce ",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7471",
+    "state": "closed",
+    "labels": [
+      "bug",
+      "source:admin-panel",
+      "app:ecommerce",
+      "priority:p1",
+      "triage:pr-opened",
+      "reporter:irenegarcia",
+      "P2",
+      "impact:ux-friction",
+      "issue-rating: 🦀 challenger crab",
+      "clawsweeper:current-main-repro",
+      "clawsweeper:linked-pr-open",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-13T11:47:30Z",
+    "updatedAt": "2026-07-13T15:15:00Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe la solución corregir también la visualización de los pedidos ya creados, o se acepta que el cambio sea únicamente prospectivo?",
+  "rationale": "La PR abierta corrige la causa para pedidos nuevos, pero no los pedidos existentes que sirven como reproducción; esa diferencia de alcance determina si la issue puede cerrarse al fusionarla.",
+  "options": [
+    {
+      "title": "Cubrir nuevos e históricos",
+      "body": "Mantener la PR prospectiva y añadir una solución segura para que los pedidos existentes recuperen un título legible sin un backfill destructivo.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar solo pedidos nuevos",
+      "body": "Fusionar la PR actual y dejar documentado que los pedidos históricos conservarán el marcador técnico.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Cubrir nuevos e históricos",
+    "body": "Mantener la PR prospectiva y añadir una solución segura para que los pedidos existentes recuperen un título legible sin un backfill destructivo.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "alexcanHamelyn",
+    "reason": "Es el revisor solicitado y tiene historial reciente en la superficie de OrderSells de Admin donde debe evaluarse el alcance visual.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7471.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7471#issuecomment-4959373522",
+    "reviewedAt": "2026-07-13T20:14:38.431Z",
+    "mainSha": "eec119753c187dc293b087ca0f1f68aa4f1ad4f1"
+  }
+}

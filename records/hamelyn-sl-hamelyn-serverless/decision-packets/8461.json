@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-17T23:34:31.362Z",
+  "updatedAt": "2026-08-17T22:17:09Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8461,
+    "title": "chore: replace eslint and prettier with biome and upgrade to typescript 7",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8461",
+    "state": "closed",
+    "labels": [
+      "size/L",
+      "proof: sufficient",
+      "rating: 🥇 gold",
+      "status: ⏳ waiting on author",
+      "P2",
+      "merge-risk: 🚨 compatibility",
+      "merge-risk: 🚨 automation"
+    ],
+    "createdAt": "2026-08-14T11:14:49Z",
+    "updatedAt": "2026-08-17T22:17:09Z",
+    "headSha": "42dab4e89a7de7fcf5757a56d58ceb66606f4c28"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe el repositorio mantener formato automático para Markdown, YAML, SCSS y HTML tras adoptar Biome?",
+  "rationale": "Biome no cubre esas extensiones y el PR elimina la única herramienta configurada que hoy las formatea en pre-commit.",
+  "options": [
+    {
+      "title": "Conservar la cobertura actual",
+      "body": "Mantener Prettier u otra herramienta equivalente para esas extensiones mientras Biome gestiona los formatos que soporta.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar la retirada",
+      "body": "Eliminar deliberadamente el formato automático de esas extensiones y actualizar de forma coherente la política, los scripts y la documentación.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Conservar la cobertura actual",
+    "body": "Mantener Prettier u otra herramienta equivalente para esas extensiones mientras Biome gestiona los formatos que soporta.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Miguel Angel Hernández Perdomo",
+    "reason": "El historial vincula directamente su trabajo con la configuración de pre-commit que define la garantía afectada.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/8461.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8461#issuecomment-5292731136",
+    "reviewedAt": "2026-08-17T23:34:31.362Z",
+    "mainSha": "fc7c48dd1ecff251de1b9d9537476384cbf58f6a"
+  }
+}

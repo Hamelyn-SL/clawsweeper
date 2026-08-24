@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-10T13:37:43.199Z",
+  "updatedAt": "2026-07-10T12:49:35Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7241,
+    "title": "fix: align catalog page cap and drop dead search handler",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7241",
+    "state": "closed",
+    "labels": [
+      "size/L",
+      "rating: 🦪 silver shellfish",
+      "status: 📣 needs proof",
+      "P2",
+      "merge-risk: 🚨 compatibility"
+    ],
+    "createdAt": "2026-07-08T12:12:51Z",
+    "updatedAt": "2026-07-10T12:49:35Z",
+    "headSha": "835d563644683f2a8bc903784e99e52ed2145b0a"
+  },
+  "lane": "merge_risk",
+  "priority": "P2",
+  "question": "¿Debe el catálogo cambiar ya el comportamiento de páginas fuera de la ventana real de 500 resultados de 200 vacío a error para clientes existentes?",
+  "rationale": "El diff implementa la decisión funcional, pero el propio issue relacionado pedía valorar impacto SEO/clientes y el cambio puede afectar llamadas existentes sin una migración técnica automática.",
+  "options": [
+    {
+      "title": "Aceptar el cambio con prueba real",
+      "body": "Mergear tras ver una ejecución real redacted del endpoint y confirmar que el nuevo error es el contrato deseado para páginas fuera de ventana.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener compatibilidad por defecto",
+      "body": "Conservar 200 vacío para clientes existentes y mover el rechazo estricto a una ruta, flag o versión de API explícita.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar hasta evaluar SEO/clientes",
+      "body": "Bloquear el PR hasta revisar logs o consumidores conocidos de páginas profundas antes de cambiar el contrato.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aceptar el cambio con prueba real",
+    "body": "Mergear tras ver una ejecución real redacted del endpoint y confirmar que el nuevo error es el contrato deseado para páginas fuera de ventana.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "PabloMoran34",
+    "reason": "Ya fue seleccionado como reviewer por expertise reciente en los ficheros de catálogo tocados y es el mejor owner visible para decidir el riesgo de compatibilidad.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7241.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7241#issuecomment-4919274806",
+    "reviewedAt": "2026-07-10T13:37:43.199Z",
+    "mainSha": "7911cda12e2f076eb3e51bbe2090b55283737e42"
+  }
+}

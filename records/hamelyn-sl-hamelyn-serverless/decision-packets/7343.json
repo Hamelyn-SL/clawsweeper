@@ -1,0 +1,69 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-10T13:41:12.989Z",
+  "updatedAt": "2026-07-10T12:50:09Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7343,
+    "title": "Eliminar la app automations (API ATC paralela) y su proyecto de Vercel",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7343",
+    "state": "closed",
+    "labels": [
+      "priority:p1",
+      "app:infrastructure",
+      "feature",
+      "reporter:javier",
+      "P1",
+      "impact:security",
+      "impact:auth-provider",
+      "issue-rating: 🦞 diamond lobster",
+      "clawsweeper:source-repro",
+      "clawsweeper:linked-pr-open",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:fix-shape-clear",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:needs-security-review"
+    ],
+    "createdAt": "2026-07-10T09:49:41Z",
+    "updatedAt": "2026-07-10T12:50:09Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Se debe migrar el flujo Auto ATC de n8n a una API canónica con scopes, apagarlo, o aceptar el corte al retirar `automations`?",
+  "rationale": "El cambio de repo está claro, pero la evidencia muestra tráfico activo externo; la automatización no puede decidir por producto/operaciones si ese flujo se conserva o se apaga.",
+  "options": [
+    {
+      "title": "Migrar Auto ATC antes de borrar",
+      "body": "Mantiene el servicio activo y permite retirar `automations` después de comprobar que ya no recibe tráfico.",
+      "recommended": true
+    },
+    {
+      "title": "Apagar Auto ATC y borrar",
+      "body": "Reduce antes la superficie sensible, pero requiere confirmación de que el proceso operativo puede dejar de existir.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar la retirada",
+      "body": "Conserva el flujo actual mientras se asigna dueño, aceptando temporalmente el riesgo de la API paralela.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Migrar Auto ATC antes de borrar",
+    "body": "Mantiene el servicio activo y permite retirar `automations` después de comprobar que ya no recibe tráfico.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "La issue está asignada a él y la PR de retirada abierta parte de su rama, así que es el mejor punto de coordinación entre producto, n8n y repo.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7343.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7343#issuecomment-4934298759",
+    "reviewedAt": "2026-07-10T13:41:12.989Z",
+    "mainSha": "7911cda12e2f076eb3e51bbe2090b55283737e42"
+  }
+}

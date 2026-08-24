@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-11T11:30:21.764Z",
+  "updatedAt": "2026-08-11T10:16:14Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8390,
+    "title": "feat: block marketplace stocks of quarantined or unreachable skypod bins",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8390",
+    "state": "closed",
+    "labels": [
+      "size/L",
+      "merge-risk: 🚨 other",
+      "rating: 🥉 bronze",
+      "status: 📣 needs proof",
+      "P1",
+      "merge-risk: 🚨 compatibility"
+    ],
+    "createdAt": "2026-08-11T10:04:27Z",
+    "updatedAt": "2026-08-11T10:16:14Z",
+    "headSha": "868c4c66db5905b00b864e9b5ea18bd0f2ac8e27"
+  },
+  "lane": "merge_risk",
+  "priority": "P1",
+  "question": "¿Debe esta primera versión bloquear toda la gaveta física y retrasar la reactivación hasta que la retirada de marketplace alcance un estado terminal?",
+  "rationale": "El contrato de recuperación define qué inventario puede volver a venderse mientras hay operaciones externas pendientes; la evidencia técnica no fija por sí sola esa política operativa.",
+  "options": [
+    {
+      "title": "Endurecer la transición antes de mergear",
+      "body": "Cubrir divisiones, reclamar eventos atómicamente y reconciliar o recrear espejos antes de permitir la republicación.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar una recuperación eventual",
+      "body": "Mantener la reactivación inmediata asumiendo que un proceso posterior reparará ofertas remotas ausentes o retiradas tardías.",
+      "recommended": false
+    },
+    {
+      "title": "Acotar la v1 a persistencia y retirada",
+      "body": "Posponer la reactivación automática hasta acordar un flujo seguro de republicación y reconciliación.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Endurecer la transición antes de mergear",
+    "body": "Cubrir divisiones, reclamar eventos atómicamente y reconciliar o recrear espejos antes de permitir la republicación.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Su historial reciente en mutaciones de stocks y su asignación explícita de revisión lo sitúan como el mejor punto de decisión técnico-operativa.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/8390.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8390#issuecomment-5251832094",
+    "reviewedAt": "2026-08-11T11:30:21.764Z",
+    "mainSha": "55bb1fe4ac6d4b790ed677dd433c72a0245a55b4"
+  }
+}

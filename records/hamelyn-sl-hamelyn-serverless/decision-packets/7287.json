@@ -1,0 +1,66 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-09T12:07:33.549Z",
+  "updatedAt": "2026-07-09T10:41:28Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7287,
+    "title": "🚀 CLI: dataset descriptions in bq tables and PATH-robust installer",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7287",
+    "state": "closed",
+    "labels": [
+      "priority:p1",
+      "app:infrastructure",
+      "reporter:JavierHamelyn",
+      "feature",
+      "triage:done",
+      "P1",
+      "impact:ux-friction",
+      "issue-rating: 🦞 diamond lobster",
+      "clawsweeper:source-repro",
+      "clawsweeper:linked-pr-open",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-09T10:22:44Z",
+    "updatedAt": "2026-07-09T10:41:28Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe `GET /v6/bq/tables` cambiar el contrato `datasets: string[]` en v6, o debe exponerse la descripción de forma compatible/aditiva?",
+  "rationale": "La issue pide una mejora clara, pero el PR candidato toca una superficie API consumible fuera del CLI; la automatización no debe decidir si una ruptura de contrato es aceptable.",
+  "options": [
+    {
+      "title": "Mantener compatibilidad",
+      "body": "Conservar `datasets` como `string[]` y añadir descripciones en un campo nuevo o una superficie compatible antes de mergear.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar la ruptura",
+      "body": "Mergear el cambio de contrato solo si el equipo confirma que no hay consumidores afectados o que están coordinados.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar hasta ownership API",
+      "body": "Dejar el PR en espera hasta que alguien con ownership de API confirme la dirección permanente del endpoint.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mantener compatibilidad",
+    "body": "Conservar `datasets` como `string[]` y añadir descripciones en un campo nuevo o una superficie compatible antes de mergear.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "Es el reviewer solicitado para el PR candidato y la decisión principal es de compatibilidad API.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7287.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7287#issuecomment-4924111544",
+    "reviewedAt": "2026-07-09T12:07:33.549Z",
+    "mainSha": "499a3f88a16786ec48868f6474dc4f7582c0e2b6"
+  }
+}

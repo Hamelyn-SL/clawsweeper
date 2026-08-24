@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-30T06:55:04.270Z",
+  "updatedAt": "2026-07-30T06:39:11Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8023,
+    "title": "fix: prevent stale Amazon candidates from starving create",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8023",
+    "state": "closed",
+    "labels": [
+      "size/S",
+      "proof: sufficient",
+      "rating: 🥇 gold",
+      "status: ⏳ waiting on author",
+      "P2",
+      "merge-risk: 🚨 availability"
+    ],
+    "createdAt": "2026-07-28T09:54:23Z",
+    "updatedAt": "2026-07-30T06:39:11Z",
+    "headSha": "652579fc1b5e04d3007d80353559a190beb6cac5"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe create de Amazon garantizar completar el lote mediante paginación acotada, o se acepta explícitamente que un margen fijo de cinco veces pueda volver a dejar la cola sin trabajo?",
+  "rationale": "La garantía de drenaje y el presupuesto de lectura por tick son una decisión operativa; el código actual no demuestra que un multiplicador fijo sea suficiente para producción.",
+  "options": [
+    {
+      "title": "Paginar con presupuesto explícito",
+      "body": "Continuar leyendo páginas hasta llenar el límite remoto o alcanzar un tope observable de trabajo por ejecución.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar la mitigación 5x",
+      "body": "Mantener el multiplicador fijo y documentar que sigue existiendo inanición cuando la cabecera stale supera ese margen.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Paginar con presupuesto explícito",
+    "body": "Continuar leyendo páginas hasta llenar el límite remoto o alcanzar un tope observable de trabajo por ejecución.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "El historial conecta su trabajo con la revalidación autoritativa que condiciona la decisión.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/8023.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8023#issuecomment-5102988496",
+    "reviewedAt": "2026-07-30T06:55:04.270Z",
+    "mainSha": "41eef5939c07bce7116c9832459978fb6d17f9e8"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-20T14:48:48.107Z",
+  "updatedAt": "2026-07-20T13:09:53Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7778,
+    "title": "fix: skip serper requests for empty queries",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7778",
+    "state": "closed",
+    "labels": [
+      "size/S",
+      "merge-risk: 🚨 security-boundary",
+      "proof: 📸 screenshot",
+      "rating: 🥈 silver",
+      "status: 📣 needs proof",
+      "P1",
+      "merge-risk: 🚨 availability"
+    ],
+    "createdAt": "2026-07-20T10:21:03Z",
+    "updatedAt": "2026-07-20T13:09:53Z",
+    "headSha": "7ad0850bbeb7ad0f45e6e56408dd3da7617e81ae"
+  },
+  "lane": "security_boundary",
+  "priority": "P1",
+  "question": "¿Debe este PR ampliarse para resolver el incidente completo antes de cerrar https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7766, o fusionarse solo como defensa separada?",
+  "rationale": "La decisión determina si un arreglo parcial puede cerrar una incidencia que también requiere una acción operativa sobre credenciales y cambios de manejo de errores.",
+  "options": [
+    {
+      "title": "Completar el tratamiento de Serper",
+      "body": "Añadir saneo de errores y clasificación de créditos, coordinar la rotación o recarga de la clave y mantener el cierre de la incidencia.",
+      "recommended": true
+    },
+    {
+      "title": "Acotar el PR defensivo",
+      "body": "Mantener solo el guard de consultas vacías, retirar el cierre automático de la incidencia y dejar su remediación operativa abierta.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar el PR",
+      "body": "Cerrar esta propuesta y abordar el guard junto al arreglo integral en una rama coordinada.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Completar el tratamiento de Serper",
+    "body": "Añadir saneo de errores y clasificación de créditos, coordinar la rotación o recarga de la clave y mantener el cierre de la incidencia.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "El historial muestra que introdujo el adaptador y el cron cuyo contrato de errores debe decidirse.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7778.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7778#issuecomment-5022595493",
+    "reviewedAt": "2026-07-20T14:48:48.107Z",
+    "mainSha": "c3e33d1b80e95363644d3ad598763dd551a72a83"
+  }
+}

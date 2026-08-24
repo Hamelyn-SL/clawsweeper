@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-05T14:53:37.799Z",
+  "updatedAt": "2026-08-05T14:49:20Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8227,
+    "title": "feat: add skypod station productivity operation type",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8227",
+    "state": "closed",
+    "labels": [
+      "size/XL",
+      "proof: 📸 screenshot",
+      "rating: 🥈 silver",
+      "status: 📣 needs proof",
+      "P2",
+      "merge-risk: 🚨 session-state"
+    ],
+    "createdAt": "2026-08-05T06:40:52Z",
+    "updatedAt": "2026-08-05T14:49:20Z",
+    "headSha": "f04aba4343ce23a09e83fc96768d5421b87cca15"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe aceptarse que un relevo en la misma estación sin cerrar la sesión atribuya todas las confirmaciones al operario que abrió la sesión?",
+  "rationale": "La petición busca métricas por operario, pero el webhook solo aporta estación y el PR documenta esta pérdida de atribución en relevos; es una decisión operativa, no un arreglo mecánico.",
+  "options": [
+    {
+      "title": "Aceptar atribución por estación",
+      "body": "Mantener el diseño actual y exigir operativamente cerrar o pausar la sesión antes de cualquier relevo.",
+      "recommended": true
+    },
+    {
+      "title": "Exigir identidad de operario",
+      "body": "Pausar esta dirección hasta disponer de una señal fiable de operario en el flujo que recibe las confirmaciones.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aceptar atribución por estación",
+    "body": "Mantener el diseño actual y exigir operativamente cerrar o pausar la sesión antes de cualquier relevo.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "Su historial cubre la identidad de estación y los flujos Skypod que determinan si puede obtenerse una atribución más precisa.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/8227.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8227#issuecomment-5188592355",
+    "reviewedAt": "2026-08-05T14:53:37.799Z",
+    "mainSha": "fae8baa08cb0b7e5090b37e37129022a75f84e6b"
+  }
+}

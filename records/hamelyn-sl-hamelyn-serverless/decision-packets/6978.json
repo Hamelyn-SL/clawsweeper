@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-04T23:45:04.703Z",
+  "updatedAt": "2026-08-04T23:17:21Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 6978,
+    "title": "BL-shipping-carrier-03: migrate shipMatrix pattern notation to standard regex",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6978",
+    "state": "open",
+    "labels": [
+      "app:admin",
+      "feature",
+      "triage:done",
+      "business-logic",
+      "origin:bl",
+      "P2",
+      "impact:other",
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-06T10:16:53Z",
+    "updatedAt": "2026-08-04T23:17:21Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué contrato de compatibilidad debe regir los patrones activos, las cuatro filas inactivas y el uso histórico de `X` antes de retirar la notación propia?",
+  "rationale": "La conversión puede alterar coincidencias, especialmente en la negación mal formada y en literales que contienen `X`; el código no puede inferir si debe preservar o corregir cada caso.",
+  "options": [
+    {
+      "title": "Preservar activos y decidir inactivos",
+      "body": "Mantener equivalencia exacta para las filas activas y retirar o corregir explícitamente las filas inactivas con una verificación documentada.",
+      "recommended": true
+    },
+    {
+      "title": "Corregir toda la intención histórica",
+      "body": "Normalizar todas las filas a la semántica pretendida, aceptando cambios de matching documentados y validados por el owner.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Preservar activos y decidir inactivos",
+    "body": "Mantener equivalencia exacta para las filas activas y retirar o corregir explícitamente las filas inactivas con una verificación documentada.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Figura como owner del bloque BL y concentra los cambios históricos de esta matriz.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6978.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6978#issuecomment-4911160747",
+    "reviewedAt": "2026-08-04T23:45:04.703Z",
+    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
+  }
+}

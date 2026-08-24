@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-08T08:53:58.062Z",
+  "updatedAt": "2026-07-07T22:10:24Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7142,
+    "title": "fix: trigger availability alert for new/dropship-only stock",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7142",
+    "state": "closed",
+    "labels": [
+      "size/L",
+      "rating: 🦪 silver shellfish",
+      "status: 📣 needs proof",
+      "P2",
+      "merge-risk: 🚨 compatibility",
+      "merge-risk: 🚨 availability"
+    ],
+    "createdAt": "2026-07-07T12:26:22Z",
+    "updatedAt": "2026-07-07T22:10:24Z",
+    "headSha": "1c3d5a3cfbc4f2604cb8c8368bc1079ca3513b61"
+  },
+  "lane": "merge_risk",
+  "priority": "P2",
+  "question": "Should the notify cron fail closed on missing stock-KV credentials, or should the PR preserve a Mongo fallback until the `crons` Vercel env is verified?",
+  "rationale": "The code direction fixes the business bug, but the new dependency can stop an existing scheduled job at runtime and the safe rollout choice depends on operational intent outside the diff.",
+  "options": [
+    {
+      "title": "Guard or prove before merge",
+      "body": "Configure and verify the `crons` KV envs before landing, or add a narrow Mongo fallback with coverage so existing deployments keep notifying while KV rollout is completed.",
+      "recommended": true
+    },
+    {
+      "title": "Accept fail-closed rollout",
+      "body": "Merge with the hard KV dependency only if the reviewer confirms the Vercel project already has the credentials and owns the rollback path.",
+      "recommended": false
+    },
+    {
+      "title": "Pick a single canonical PR",
+      "body": "If maintainers prefer the alternative candidate at https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7166, close the other branch only after the chosen PR has proof and a safe merge path.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Guard or prove before merge",
+    "body": "Configure and verify the `crons` KV envs before landing, or add a narrow Mongo fallback with coverage so existing deployments keep notifying while KV rollout is completed.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Marcos is both the requested reviewer for this PR and the strongest recent history signal for the stock availability KV area.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7142.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7142#issuecomment-4913215624",
+    "reviewedAt": "2026-07-08T08:53:58.062Z",
+    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+  }
+}

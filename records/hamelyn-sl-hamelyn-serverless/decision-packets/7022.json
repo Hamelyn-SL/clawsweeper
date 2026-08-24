@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-08T03:40:36.356Z",
+  "updatedAt": "2026-07-08T10:28:29Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7022,
+    "title": "BL-buying-cart-04: la fecha de recogida solo bloquea domingos, no festivos",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7022",
+    "state": "closed",
+    "labels": [
+      "app:supply",
+      "priority:p2",
+      "feature",
+      "triage:done",
+      "P2",
+      "impact:ux-friction",
+      "issue-rating: 🦞 diamond lobster",
+      "clawsweeper:source-repro",
+      "clawsweeper:linked-pr-open",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-06T13:06:17Z",
+    "updatedAt": "2026-07-08T10:28:29Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "Should the fix accept the open PR's calculated national-holiday model for ES/PT/IT/FR, or require a different holiday source before landing?",
+  "rationale": "The issue body explicitly lists multiple acceptable holiday-source directions, and the open PR picks one product/operations policy for a revenue checkout path.",
+  "options": [
+    {
+      "title": "Accept computed national holidays",
+      "body": "Review and land the open PR after resolving conflicts if national holidays without an external dependency are sufficient for the first backend fix.",
+      "recommended": true
+    },
+    {
+      "title": "Require richer holiday source",
+      "body": "Hold the fix until it covers the agreed carrier/local-holiday source, such as an API or maintained calendar beyond national dates.",
+      "recommended": false
+    },
+    {
+      "title": "Ship Spain-only first step",
+      "body": "Narrow the backend fix to the already-versioned Spain list and track international holiday coverage separately.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Accept computed national holidays",
+    "body": "Review and land the open PR after resolving conflicts if national holidays without an external dependency are sufficient for the first backend fix.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "alexcanHamelyn",
+    "reason": "alexcanHamelyn is the requested reviewer for the open fix PR and has recent checkout-path history.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7022.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7022#issuecomment-4911272905",
+    "reviewedAt": "2026-07-08T03:40:36.356Z",
+    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+  }
+}

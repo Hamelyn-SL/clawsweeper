@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-29T01:54:49.482Z",
+  "updatedAt": "2026-07-29T01:46:35Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8040,
+    "title": "MK Watchers derive queue metrics without executable selectors or live config",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8040",
+    "state": "closed",
+    "labels": [
+      "bug",
+      "source:admin-panel",
+      "app:marketplace",
+      "reporter:miguel",
+      "triage:done",
+      "area:marketplace-sync",
+      "clawsweeper:no-new-fix-pr",
+      "P2",
+      "impact:other",
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro",
+      "clawsweeper:linked-pr-open",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-28T20:54:34Z",
+    "updatedAt": "2026-07-29T01:46:35Z"
+  },
+  "lane": "security_boundary",
+  "priority": "P2",
+  "question": "¿Se aprueba una tool read-only limitada a `config/marketplaceBatch/PROD` para que los watchers declaren la configuración efectiva?",
+  "rationale": "La issue confirma que los defaults no bastan, pero abrir acceso a la colección `config` establece una frontera permanente de datos y permisos.",
+  "options": [
+    {
+      "title": "Aprobar acceso restringido",
+      "body": "Aceptar una tool con ruta fija, lista blanca numérica, sin parámetros de colección y pruebas explícitas de exclusión de secretos.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener valores documentados",
+      "body": "Conservar límites por skill y aceptar que los watchers no podrán afirmar que representan la configuración efectiva actual.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar acceso restringido",
+    "body": "Aceptar una tool con ruta fija, lista blanca numérica, sin parámetros de colección y pruebas explícitas de exclusión de secretos.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su historial reciente conecta directamente con la doctrina y las herramientas afectadas.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/8040.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8040#issuecomment-5110019359",
+    "reviewedAt": "2026-07-29T01:54:49.482Z",
+    "mainSha": "b3f48ada4c58ede7dde46b70646fb15465375dd0"
+  }
+}

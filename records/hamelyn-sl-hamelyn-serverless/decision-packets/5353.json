@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-21T15:51:45.384Z",
+  "updatedAt": "2026-07-21T14:49:14Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 5353,
+    "title": "marketplace-crons: eBay devuelve 400 en bulk_update_price_quantity durante updatePrice y el cron lo absorbe",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5353",
+    "state": "open",
+    "labels": [
+      "codex",
+      "bug",
+      "app:marketplace",
+      "triage:no-change",
+      "P1",
+      "impact:other",
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-04-20T08:04:44Z",
+    "updatedAt": "2026-07-21T14:49:14Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Qué contrato HTTP y señal estructurada deben usar los crons cuando hay rechazos parciales de marketplace?",
+  "rationale": "La elección afecta a varias rutas y a consumidores operativos; no es seguro imponerla desde una corrección exclusiva de eBay.",
+  "options": [
+    {
+      "title": "Primera fase compatible",
+      "body": "Mantener HTTP 200 temporalmente y añadir estado, recuentos, razones y severidad estructurados para que alertas y dashboards distingan la degradación.",
+      "recommended": true
+    },
+    {
+      "title": "Escalado selectivo",
+      "body": "Definir ahora qué rutas o fases críticas deben responder 207 o 5xx además de emitir la nueva señal.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Primera fase compatible",
+    "body": "Mantener HTTP 200 temporalmente y añadir estado, recuentos, razones y severidad estructurados para que alertas y dashboards distingan la degradación.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "El bloque actual de respuesta del handler compartido aparece en su historial reciente.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5353.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5353#issuecomment-4909521168",
+    "reviewedAt": "2026-07-21T15:51:45.384Z",
+    "mainSha": "28961cd9f75c53a05b3951bb081512652fe440ae"
+  }
+}

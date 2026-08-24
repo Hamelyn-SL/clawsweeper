@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-03T10:08:44.172Z",
+  "updatedAt": "2026-08-03T08:57:49Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8039,
+    "title": "Amazon FR marks accepted creation attempts active without seller conversion",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8039",
+    "state": "closed",
+    "labels": [
+      "bug",
+      "source:admin-panel",
+      "app:marketplace",
+      "reporter:miguel",
+      "triage:done",
+      "area:marketplace-sync",
+      "P1",
+      "impact:other",
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro",
+      "clawsweeper:linked-pr-open",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-28T20:54:32Z",
+    "updatedAt": "2026-08-03T08:57:49Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe una respuesta PUT/PATCH aceptada quedar en un estado intermedio hasta confirmar que el seller la considera `BUYABLE`?",
+  "rationale": "La reconciliación diaria puede corregir estados posteriores, pero no define el contrato de creación, recuperación y retirada del estado inicial.",
+  "options": [
+    {
+      "title": "Confirmación asíncrona obligatoria",
+      "body": "Persistir aceptación pendiente y promover a `ACTIVE` tras confirmar disponibilidad remota y `BUYABLE`.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener optimismo reconciliado",
+      "body": "Conservar `ACTIVE` inmediato y aceptar la degradación posterior basada en reportes Amazon.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Confirmación asíncrona obligatoria",
+    "body": "Persistir aceptación pendiente y promover a `ACTIVE` tras confirmar disponibilidad remota y `BUYABLE`.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Es el asignado y ya mantiene la propuesta parcial que debe alinearse con la decisión.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/8039.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8039#issuecomment-5110017260",
+    "reviewedAt": "2026-08-03T10:08:44.172Z",
+    "mainSha": "16f2f3b0a88eb376ea65e34e8978d39810c32bd0"
+  }
+}

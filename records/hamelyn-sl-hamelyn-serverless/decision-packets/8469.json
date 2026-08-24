@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-17T10:03:13.979Z",
+  "updatedAt": "2026-08-17T09:57:45Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8469,
+    "title": "PR Proof v3.2: proof card de evidencia, pruebas visuales interactivas y recalibración de veredictos",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8469",
+    "state": "closed",
+    "labels": [
+      "app:infrastructure",
+      "feature",
+      "triage:done",
+      "P2",
+      "impact:other",
+      "issue-rating: ➖ n/a",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-08-17T09:57:06Z",
+    "updatedAt": "2026-08-17T09:57:45Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué nivel de evidencia parcial permite un veredicto verde con avisos, y qué acciones de navegador quedan autorizadas dentro del sandbox?",
+  "rationale": "Esta elección cambia la confianza que los revisores depositan en el símbolo verde y el límite operativo de un agente que navega aplicaciones con datos reales.",
+  "options": [
+    {
+      "title": "Definir verde condicionado",
+      "body": "Permitir verde con caveats solo cuando la afirmación ejercitable esté demostrada y las precondiciones restantes sean explícitamente inalcanzables desde el sandbox.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener verde estricto",
+      "body": "Exigir que toda precondición del plan se observe para emitir verde, conservando ámbar para cualquier límite externo.",
+      "recommended": false
+    },
+    {
+      "title": "Separar política y navegador",
+      "body": "Aprobar primero el renderer y la política de veredictos, dejando la interacción visual para una revisión de seguridad independiente.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Definir verde condicionado",
+    "body": "Permitir verde con caveats solo cuando la afirmación ejercitable esté demostrada y las precondiciones restantes sean explícitamente inalcanzables desde el sandbox.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es el principal autor histórico del agente y del informe que aporta la auditoría de comportamiento.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/8469.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8469#issuecomment-5314637452",
+    "reviewedAt": "2026-08-17T10:03:13.979Z",
+    "mainSha": "6d5a599c409814a60bb88920a31aa82275a489c1"
+  }
+}

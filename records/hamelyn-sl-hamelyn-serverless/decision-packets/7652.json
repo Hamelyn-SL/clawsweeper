@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-16T13:35:23.640Z",
+  "updatedAt": "2026-07-16T13:20:09Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7652,
+    "title": "feat: add revision v3 defect scoring with qa selection and images",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7652",
+    "state": "closed",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-07-16T13:06:34Z",
+    "updatedAt": "2026-07-16T13:20:09Z",
+    "headSha": "a055f4c7e56f0c584017f61ebfe820de58423981"
+  },
+  "lane": "merge_risk",
+  "priority": "P1",
+  "question": "¿El aterrizaje del epic debe conservar las sesiones y baselines QA existentes con `surfaceSelections`, o está autorizado un reinicio coordinado de esos datos antes de activar el modelo nuevo?",
+  "rationale": "El código no permite determinar si existen sesiones de staging o pruebas que deban sobrevivir; esa decisión operativa define si hace falta compatibilidad o migración, o si se pueden invalidar los datos de forma coordinada.",
+  "options": [
+    {
+      "title": "Conservar y migrar",
+      "body": "Añadir lectura compatible o migración de `surfaceSelections` y pruebas de recarga y QA antes del merge.",
+      "recommended": true
+    },
+    {
+      "title": "Reinicio coordinado",
+      "body": "Documentar y ejecutar la eliminación o invalidación de sesiones y baselines antiguos antes de desplegar el nuevo modelo.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Conservar y migrar",
+    "body": "Añadir lectura compatible o migración de `surfaceSelections` y pruebas de recarga y QA antes del merge.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Ha aprobado esta PR y es el contribuidor más reciente en la integración y navegación del epic.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7652.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7652#issuecomment-4992543649",
+    "reviewedAt": "2026-07-16T13:35:23.640Z",
+    "mainSha": "2eb5565dc87dd9b711cf8ceadd0dea24ae2d1aeb"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-03T12:07:24.174Z",
+  "updatedAt": "2026-08-03T10:27:50Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8009,
+    "title": "MercadoLibre withdrawal skips sold listings when mk productType is missing",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8009",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "triage:no-change",
+      "P1",
+      "impact:other",
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro",
+      "clawsweeper:linked-pr-open",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:fix-shape-clear",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-28T06:03:52Z",
+    "updatedAt": "2026-08-03T10:27:50Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe la corrección final tolerar filas legacy sin `productType` en la selección de retirada, además de prevenir y reparar las escrituras que originan esas filas?",
+  "rationale": "La PR abierta sanea la causa de datos, mientras que el código actual conserva una precondición que bloquea la retirada; elegir la garantía permanente exige decidir el contrato de compatibilidad legacy.",
+  "options": [
+    {
+      "title": "Cubrir ambas defensas",
+      "body": "Mantener la retirada tolerante para MercadoLibre y prevenir nuevas filas sin `productType`, con prueba de los casos históricos.",
+      "recommended": true
+    },
+    {
+      "title": "Confiar en saneamiento estricto",
+      "body": "Aceptar que el backfill y los guards de escritura sustituyen la tolerancia del selector, aportando prueba operativa de los listings existentes.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Cubrir ambas defensas",
+    "body": "Mantener la retirada tolerante para MercadoLibre y prevenir nuevas filas sin `productType`, con prueba de los casos históricos.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Mantiene recientemente la capa de reconciliación y el selector donde debe definirse el contrato.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8009.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8009#issuecomment-5100825713",
+    "reviewedAt": "2026-08-03T12:07:24.174Z",
+    "mainSha": "fca62647712a88d5fb10cf80d0ced1d3fb0ebc2b"
+  }
+}

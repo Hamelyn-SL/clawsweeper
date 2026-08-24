@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-04T23:19:40.192Z",
+  "updatedAt": "2026-08-04T23:07:41Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 6338,
+    "title": "marketplace-crons: MercadoLibre create falla por shippingConfiguration internal_error",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6338",
+    "state": "closed",
+    "labels": [
+      "codex",
+      "bug",
+      "app:marketplace",
+      "triage:done",
+      "origin:watcher",
+      "mk:mercadolibre",
+      "P1",
+      "impact:other",
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-06-10T09:34:30Z",
+    "updatedAt": "2026-08-04T23:07:41Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe `shipping.default.error` reintentarse como fallo transitorio de MercadoLibre, y bajo qué código o estado HTTP verificable?",
+  "rationale": "La firma observada no incluye en la incidencia una prueba suficiente de que todos sus casos sean recuperables; ampliar la política cambia qué publicaciones se reintentan automáticamente.",
+  "options": [
+    {
+      "title": "Clasificar solo la variante demostrada",
+      "body": "Solicitar una muestra redactada con código, estado y resultado de reintento, y añadir una regla limitada con prueba de regresión.",
+      "recommended": true
+    },
+    {
+      "title": "Mantenerla fuera de recovery",
+      "body": "Conservar la clasificación actual hasta que MercadoLibre o la telemetría demuestren que esta firma es transitoria.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Clasificar solo la variante demostrada",
+    "body": "Solicitar una muestra redactada con código, estado y resultado de reintento, y añadir una regla limitada con prueba de regresión.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Implementó el recovery original y conoce el límite entre errores recuperables y permanentes de create.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/6338.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6338#issuecomment-4909866101",
+    "reviewedAt": "2026-08-04T23:19:40.192Z",
+    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
+  }
+}

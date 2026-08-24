@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-14T22:39:11.842Z",
+  "updatedAt": "2026-07-14T11:43:27Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7482,
+    "title": "refactor: remove admin dashboards and redesign home with recent pages",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7482",
+    "state": "closed",
+    "labels": [
+      "size/XXL",
+      "rating: 🥉 bronze",
+      "status: 📣 needs proof",
+      "P3",
+      "merge-risk: 🚨 compatibility"
+    ],
+    "createdAt": "2026-07-13T13:16:25Z",
+    "updatedAt": "2026-07-14T11:43:27Z",
+    "headSha": "97c774e10c1724a3f92a24fcd3eb1acb244dc0dd"
+  },
+  "lane": "product_direction",
+  "priority": "P3",
+  "question": "¿Se aprueba retirar también `/public/dashboard/{sales,stocks,supply,pricing}` y sustituir la home por páginas recientes dentro de este mismo cambio?",
+  "rationale": "La issue canónica dejó abiertas ambas decisiones y no hay aprobación humana visible ni auditoría de consumidores que permita asumir la incompatibilidad.",
+  "options": [
+    {
+      "title": "Acotar y conservar rutas",
+      "body": "Retirar las superficies internas obsoletas, mantener las rutas públicas y validar o separar el rediseño de la home.",
+      "recommended": true
+    },
+    {
+      "title": "Aprobar retirada completa",
+      "body": "Eliminar también las rutas públicas tras auditar sus consumidores y aceptar expresamente la rotura de enlaces existentes.",
+      "recommended": false
+    },
+    {
+      "title": "Separar la nueva home",
+      "body": "Completar solo la retirada acordada y mover las páginas recientes a otro PR con prueba real propia.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Acotar y conservar rutas",
+    "body": "Retirar las superficies internas obsoletas, mantener las rutas públicas y validar o separar el rediseño de la home.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "Es el revisor solicitado con mayor señal histórica reciente en los archivos y la superficie funcional afectados.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7482.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7482#issuecomment-4959512236",
+    "reviewedAt": "2026-07-14T22:39:11.842Z",
+    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-22T09:55:01.865Z",
+  "updatedAt": "2026-07-22T09:51:55Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7454,
+    "title": "Estado lote ",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7454",
+    "state": "closed",
+    "labels": [
+      "bug",
+      "source:admin-panel",
+      "app:supply",
+      "reporter:arineligrigore",
+      "triage:no-change",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "P1",
+      "impact:other",
+      "issue-rating: ⚪ platinum",
+      "clawsweeper:needs-live-repro"
+    ],
+    "createdAt": "2026-07-13T09:48:16Z",
+    "updatedAt": "2026-07-22T09:51:55Z"
+  },
+  "lane": "manual_review",
+  "priority": "P1",
+  "question": "¿Confirma Finanzas el abono IBAN de 20,45 € del lote antes de autorizar su reconciliación?",
+  "rationale": "El repositorio acredita recepción y señales de pago legacy, pero no puede demostrar por sí solo que el ingreso externo se ejecutó.",
+  "options": [
+    {
+      "title": "Verificar y reconciliar",
+      "body": "Comprobar el abono y, si consta, dejar el lote en `PAID` con la recepción del 07/05 y sin metadatos de cancelación.",
+      "recommended": true
+    },
+    {
+      "title": "Investigar pago pendiente",
+      "body": "Si no consta el abono, conservar la recepción y revisar el lote como pago pendiente antes de cambiar su estado.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Verificar y reconciliar",
+    "body": "Comprobar el abono y, si consta, dejar el lote en `PAID` con la recepción del 07/05 y sin metadatos de cancelación.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Ya está asignado y su comentario reúne la evidencia operativa necesaria para coordinar Supply y Finanzas.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7454.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7454#issuecomment-4956923389",
+    "reviewedAt": "2026-07-22T09:55:01.865Z",
+    "mainSha": "26f3f8f75bbd7f4637708e4296ab4893bbe38d89"
+  }
+}

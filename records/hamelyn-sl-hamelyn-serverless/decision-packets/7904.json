@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-23T10:54:33.908Z",
+  "updatedAt": "2026-07-23T09:51:57Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7904,
+    "title": "🐛 API v6 no se despliega automáticamente desde dev ni master",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7904",
+    "state": "open",
+    "labels": [
+      "bug",
+      "source:admin-panel",
+      "app:infrastructure",
+      "reporter:javier",
+      "triage:blocked",
+      "P1",
+      "impact:auth-provider"
+    ],
+    "createdAt": "2026-07-23T09:28:42Z",
+    "updatedAt": "2026-07-23T09:51:57Z"
+  },
+  "lane": "manual_review",
+  "priority": "P1",
+  "question": "¿Qué responsable aprovisiona y valida los hooks `API_DEV` y `API_PROD` antes de abrir la PR de corrección?",
+  "rationale": "Los cambios de repositorio son mecánicos, pero los secrets y los endpoints de despliegue requieren acceso operativo a Vercel que no puede inferirse ni crearse desde el código.",
+  "options": [
+    {
+      "title": "Provisionar hooks y abrir la corrección",
+      "body": "Crear ambos hooks en Vercel, guardarlos como secrets y permitir una PR acotada con prueba dirigida en los dos branches.",
+      "recommended": true
+    },
+    {
+      "title": "Asignar la configuración a plataforma",
+      "body": "Mantener esta incidencia bloqueada hasta que el equipo con acceso a Vercel confirme los endpoints y su propietario operativo.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Provisionar hooks y abrir la corrección",
+    "body": "Crear ambos hooks en Vercel, guardarlos como secrets y permitir una PR acotada con prueba dirigida en los dos branches.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su historial conecta la base de API v6 con el diseño actual del pipeline afectado.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7904.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7904#issuecomment-5056965975",
+    "reviewedAt": "2026-07-23T10:54:33.908Z",
+    "mainSha": "eac5610f3b2419bc9f6cb3d4cc85f459a4698f4c"
+  }
+}

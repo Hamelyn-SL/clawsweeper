@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-27T07:59:41.278Z",
+  "updatedAt": "2026-07-27T07:12:34Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7813,
+    "title": "Redact AbeBooks credentials from transport error logs",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7813",
+    "state": "closed",
+    "labels": [
+      "bug",
+      "app:infrastructure",
+      "triage:pr-opened",
+      "P1",
+      "impact:security",
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro",
+      "clawsweeper:linked-pr-open",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-security-review"
+    ],
+    "createdAt": "2026-07-21T08:46:25Z",
+    "updatedAt": "2026-07-27T07:12:34Z"
+  },
+  "lane": "security_boundary",
+  "priority": "P1",
+  "question": "¿Debe resolverse e integrarse la ampliación transversal de la PR vinculada, o separarse formalmente el saneamiento de sinks upstream restantes en un seguimiento de seguridad?",
+  "rationale": "La decisión determina qué superficie de observabilidad queda cubierta por este arreglo y qué exposición residual se acepta temporalmente.",
+  "options": [
+    {
+      "title": "Resolver y completar la cobertura",
+      "body": "Actualizar la PR desde `dev`, resolver sus conflictos y confirmar con pruebas que los sinks directos y upstream de AbeBooks usan solo metadatos permitidos.",
+      "recommended": true
+    },
+    {
+      "title": "Acotar y dividir el seguimiento",
+      "body": "Integrar una corrección limitada a la integración directa y abrir un seguimiento explícito para los sinks upstream que aún puedan recibir errores de AbeBooks.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Resolver y completar la cobertura",
+    "body": "Actualizar la PR desde `dev`, resolver sus conflictos y confirmar con pruebas que los sinks directos y upstream de AbeBooks usan solo metadatos permitidos.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "danielmenchen-hamelyn",
+    "reason": "Ha aportado el análisis reciente de cobertura y la actualización de la PR vinculada.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7813.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7813#issuecomment-5032392450",
+    "reviewedAt": "2026-07-27T07:59:41.278Z",
+    "mainSha": "c172a48c32fcc505985814bd5fee713f5476e8b1"
+  }
+}

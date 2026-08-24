@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-07T13:23:06.750Z",
+  "updatedAt": "2026-08-07T12:55:53Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8314,
+    "title": "feat: add productivity tracking, pace notices and daily summary to revision v3",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8314",
+    "state": "closed",
+    "labels": [
+      "size/XXL",
+      "rating: 🥈 silver",
+      "status: 📣 needs proof",
+      "P2",
+      "merge-risk: 🚨 session-state",
+      "merge-risk: 🚨 availability"
+    ],
+    "createdAt": "2026-08-07T12:55:43Z",
+    "updatedAt": "2026-08-07T12:55:53Z",
+    "headSha": "c9001432150c63e083a31de4b44694fa670e0236"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿El objetivo de ritmo debe conservar un historial auditable de cambios o basta con sobrescribir un único valor compartido?",
+  "rationale": "La solicitud enlazada exige una configuración operativa y deja abiertos el alcance y la auditoría; el PR adopta una política irreversible sin confirmación visible.",
+  "options": [
+    {
+      "title": "Objetivo único auditable",
+      "body": "Guardar cada cambio con autor, fecha y valores anterior y nuevo, manteniendo un objetivo común para Revisión.",
+      "recommended": true
+    },
+    {
+      "title": "Valor único sin histórico",
+      "body": "Aceptar explícitamente que KV conserve solo el último objetivo y documentar que no existe trazabilidad de cambios.",
+      "recommended": false
+    },
+    {
+      "title": "Aplazar la configuración",
+      "body": "Integrar primero el agregado diario y posponer los avisos hasta cerrar el contrato de configuración.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Objetivo único auditable",
+    "body": "Guardar cada cambio con autor, fecha y valores anterior y nuevo, manteniendo un objetivo común para Revisión.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Alex Cantón",
+    "reason": "Su trabajo reciente cubre la infraestructura compartida que debe sostener el contrato elegido.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/8314.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8314#issuecomment-5217595509",
+    "reviewedAt": "2026-08-07T13:23:06.750Z",
+    "mainSha": "84541979ae8c1736bebd7d1f5851897d2cc7e0ed"
+  }
+}

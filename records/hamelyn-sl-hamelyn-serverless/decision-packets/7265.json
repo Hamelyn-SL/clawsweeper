@@ -1,0 +1,64 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-09T11:52:25.543Z",
+  "updatedAt": "2026-07-09T11:40:24Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7265,
+    "title": "📊 Migrar telemetría BL de blmetrics (Mongo) a BigQuery",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7265",
+    "state": "open",
+    "labels": [
+      "priority:p2",
+      "app:infrastructure",
+      "feature",
+      "triage:done",
+      "P2",
+      "impact:other",
+      "issue-rating: 🌊 off-meta tidepool",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-09T07:22:44Z",
+    "updatedAt": "2026-07-09T11:40:24Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe esta migración esperar a que se fusione https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7116 y usar `Vercel Log Drain → BigQuery` como ruta preferida?",
+  "rationale": "La issue pide una decisión de arquitectura de datos y la superficie que hay que migrar todavía vive en un PR abierto, no en `dev`.",
+  "options": [
+    {
+      "title": "Esperar al PR precursor y usar log drain",
+      "body": "Después de aterrizar la telemetría temporal, se implementa una tabla/vista derivada de `vercel_logs.events` y el grafo lee de BigQuery sin tocar call sites.",
+      "recommended": true
+    },
+    {
+      "title": "Implementar streaming directo desde el sink",
+      "body": "El sink escribiría directamente en BigQuery, con menor dependencia del parsing de logs pero más acoplamiento operativo en los hot paths.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar hasta cerrar el diseño del grafo",
+      "body": "Se mantiene `blmetrics` como temporal y se decide la migración cuando el dashboard ya esté estable en `dev`.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Esperar al PR precursor y usar log drain",
+    "body": "Después de aterrizar la telemetría temporal, se implementa una tabla/vista derivada de `vercel_logs.events` y el grafo lee de BigQuery sin tocar call sites.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "danielmenchen-hamelyn",
+    "reason": "Tiene asignada esta migración y abrió el PR precursor que define la superficie temporal.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7265.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7265#issuecomment-4923058510",
+    "reviewedAt": "2026-07-09T11:52:25.543Z",
+    "mainSha": "499a3f88a16786ec48868f6474dc4f7582c0e2b6"
+  }
+}

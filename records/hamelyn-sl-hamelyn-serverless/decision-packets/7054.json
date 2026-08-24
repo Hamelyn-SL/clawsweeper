@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-10T06:09:40.396Z",
+  "updatedAt": "2026-07-10T05:12:50Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7054,
+    "title": "fix: preserve amazon withdraw patch failures",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7054",
+    "state": "closed",
+    "labels": [
+      "size/L",
+      "rating: 🦪 silver shellfish",
+      "status: 📣 needs proof",
+      "P1",
+      "merge-risk: 🚨 other"
+    ],
+    "createdAt": "2026-07-06T23:48:07Z",
+    "updatedAt": "2026-07-10T05:12:50Z",
+    "headSha": "fac50b0fa7cb4466a008d2918ca21f489217dad2"
+  },
+  "lane": "proof_sufficiency",
+  "priority": "P1",
+  "question": "¿Basta la reproducción por fuente y simulación local para mergear este fix preventivo de Amazon PATCH, o hay que esperar un `fail>0` real con `request_id` y SKU?",
+  "rationale": "El parche parece correcto y ya tiene review técnica, pero el propio hilo contiene una preferencia explícita de esperar un error real y el flujo afecta a retiradas y documentos `mk_*`.",
+  "options": [
+    {
+      "title": "Esperar prueba real antes de mergear",
+      "body": "Mantiene la PR abierta hasta capturar un fallo parcial de PATCH Amazon o una ejecución controlada que demuestre que solo los SKUs confirmados borran `mk_*`.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar proof por fuente",
+      "body": "Un maintainer puede decidir que el riesgo estructural justifica mergear con simulación local, dejando documentada la aceptación de proof incompleto.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar la PR preventiva",
+      "body": "Cierra o pausa esta rama hasta que haya un caso real, asumiendo que el falso éxito actual seguirá existiendo mientras tanto.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Esperar prueba real antes de mergear",
+    "body": "Mantiene la PR abierta hasta capturar un fallo parcial de PATCH Amazon o una ejecución controlada que demuestre que solo los SKUs confirmados borran `mk_*`.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Reportó el caso y expresó el umbral operativo de esperar un fallo real antes de validar el arreglo.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7054.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7054#issuecomment-4911164727",
+    "reviewedAt": "2026-07-10T06:09:40.396Z",
+    "mainSha": "fbd4b55db934eeae5175d1c95f53b976aa46f86b"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-19T17:02:52.195Z",
+  "updatedAt": "2026-07-19T13:24:44Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7681,
+    "title": "chore: update ui major dependencies",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7681",
+    "state": "closed",
+    "labels": [
+      "size/XL",
+      "proof: 📸 screenshot",
+      "rating: 🥈 silver",
+      "status: 📣 needs proof",
+      "P2",
+      "merge-risk: 🚨 compatibility"
+    ],
+    "createdAt": "2026-07-17T06:20:47Z",
+    "updatedAt": "2026-07-19T13:24:44Z",
+    "headSha": "34fc9db6192070e9d5532da848fc072e8df32caa"
+  },
+  "lane": "merge_risk",
+  "priority": "P2",
+  "question": "¿Qué navegadores y dispositivos deben considerarse soportados antes de aceptar el salto de `swiper` 12 a 14?",
+  "rationale": "El repositorio no declara una matriz de soporte en la superficie revisada y el cambio puede afectar carruseles visibles para clientes.",
+  "options": [
+    {
+      "title": "Exigir prueba de compatibilidad",
+      "body": "Validar el carrusel en el navegador mínimo acordado y actualizar la prueba con el head final antes de fusionar.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar el riesgo acotado",
+      "body": "Fusionar tras aceptar explícitamente que la actualización puede retirar compatibilidad no cubierta por los checks actuales.",
+      "recommended": false
+    },
+    {
+      "title": "Posponer Swiper",
+      "body": "Separar o retirar el salto de Swiper hasta disponer de una política de navegadores y una prueba reproducible.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Exigir prueba de compatibilidad",
+    "body": "Validar el carrusel en el navegador mínimo acordado y actualizar la prueba con el head final antes de fusionar.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su historial reciente de fijaciones y actualizaciones de dependencias de ecommerce aporta la señal más directa para decidir la compatibilidad.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7681.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7681#issuecomment-5000011833",
+    "reviewedAt": "2026-07-19T17:02:52.195Z",
+    "mainSha": "e11c80449ab8402b18a1e3a4d8986a08770c6ec4"
+  }
+}

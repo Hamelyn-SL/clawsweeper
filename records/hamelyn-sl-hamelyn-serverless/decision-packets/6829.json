@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-04T23:28:22.320Z",
+  "updatedAt": "2026-08-04T23:13:39Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 6829,
+    "title": "Supply web: rutas localizadas por rewrites y SSR con Expo Router server output",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6829",
+    "state": "closed",
+    "labels": [
+      "app:supply",
+      "feature",
+      "reporter:miguel",
+      "triage:done",
+      "origin:dev",
+      "P2",
+      "impact:ux-friction",
+      "issue-rating: ➖ n/a",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-03T10:44:24Z",
+    "updatedAt": "2026-08-04T23:13:39Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se aprueba invertir en la migración gradual a server output de Supply, empezando por la fuente única de slugs y un PoC de staging?",
+  "rationale": "El cambio afecta el modelo de despliegue web, el comportamiento de autenticación y el coste/rendimiento por petición; el código actual no permite decidir esos compromisos de forma automática.",
+  "options": [
+    {
+      "title": "Fase 1 y PoC de staging",
+      "body": "Unificar slugs y añadir detección de colisiones; después validar rewrites, hidratación, Auth0 y TTFB con server output fuera de producción.",
+      "recommended": true
+    },
+    {
+      "title": "Estabilizar el modelo estático",
+      "body": "Mantener export estático y limitar el trabajo a reducir drift de slugs y reforzar los scripts actuales.",
+      "recommended": false
+    },
+    {
+      "title": "Posponer la migración",
+      "body": "Conservar la arquitectura actual hasta que exista una prioridad SEO o de plataforma que justifique el cambio operativo.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Fase 1 y PoC de staging",
+    "body": "Unificar slugs y añadir detección de colisiones; después validar rewrites, hidratación, Auth0 y TTFB con server output fuera de producción.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Miguel Angel Hernández Perdomo",
+    "reason": "Su trabajo reciente conecta el despliegue de Supply con la generación de sitemap y rutas por entorno.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/6829.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6829#issuecomment-4910270381",
+    "reviewedAt": "2026-08-04T23:28:22.320Z",
+    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
+  }
+}

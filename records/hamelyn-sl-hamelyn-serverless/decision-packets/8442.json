@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-14T06:12:22.725Z",
+  "updatedAt": "2026-08-14T06:01:57Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8442,
+    "title": "Spring rechaza etiquetas de consolidaciones con más de 20 kg",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8442",
+    "state": "closed",
+    "labels": [
+      "bug",
+      "source:admin-panel",
+      "app:admin",
+      "reporter:miguel",
+      "triage:running",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond",
+      "P1",
+      "impact:other",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-08-14T06:01:44Z",
+    "updatedAt": "2026-08-14T06:01:57Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Las consolidaciones Spring que superan 20 kg deben declarar un peso normalizado con margen o dividirse en varios envíos físicos?",
+  "rationale": "El código puede aplicar cualquiera de las dos rutas, pero la declaración de peso y el límite de bulto dependen de la política logística y del contrato con Spring.",
+  "options": [
+    {
+      "title": "Validar y normalizar el peso declarado",
+      "body": "Confirmar con Spring el margen permitido y limitar de forma coherente `Shipment.Weight` y `Products[].Weight`, manteniendo 0,3 kg en pedidos no afectados.",
+      "recommended": true
+    },
+    {
+      "title": "Dividir la consolidación",
+      "body": "Crear varios envíos cuando el peso estimado exceda 20 kg, preservando la restricción física del transportista.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Validar y normalizar el peso declarado",
+    "body": "Confirmar con Spring el margen permitido y limitar de forma coherente `Shipment.Weight` y `Products[].Weight`, manteniendo 0,3 kg en pedidos no afectados.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es el candidato más cercano al adaptador Spring donde debe aplicarse la política que se decida.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/8442.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8442#issuecomment-5290101809",
+    "reviewedAt": "2026-08-14T06:12:22.725Z",
+    "mainSha": "47eb34e34c0747d07851e21ca6ca182c57e0de32"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-04T12:28:51.315Z",
+  "updatedAt": "2026-08-04T10:52:14Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8192,
+    "title": "fix: requeue fnac transient batching errors for withdrawal",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8192",
+    "state": "closed",
+    "labels": [
+      "size/M",
+      "proof: sufficient",
+      "rating: 🥇 gold",
+      "status: ⏳ waiting on author",
+      "P1",
+      "merge-risk: 🚨 other"
+    ],
+    "createdAt": "2026-08-04T05:56:05Z",
+    "updatedAt": "2026-08-04T10:52:14Z",
+    "headSha": "0c4252a1f98eeb5ca0d6e6f56b9f9ef2fcc090a9"
+  },
+  "lane": "merge_risk",
+  "priority": "P1",
+  "question": "¿Se acepta el drenaje automático de toda la cohorte Fnac que cumpla `WITHDRAWN + SYNC_ERROR/BATCHING/TRANSIENT` tras el cooldown?",
+  "rationale": "El código decide una política operativa de reintentos masivos; la prueba de dos SKUs confirma el mecanismo, pero no sustituye la aceptación del alcance de producción.",
+  "options": [
+    {
+      "title": "Aceptar el drenaje acotado",
+      "body": "Aprobar la readmisión actual tras corregir la documentación, apoyándose en el cooldown y el canario productivo ya registrado.",
+      "recommended": true
+    },
+    {
+      "title": "Acotar más la cohorte",
+      "body": "Exigir un filtro adicional o una ejecución graduada si se desea limitar el número de retiradas Fnac por ciclo antes de desplegar.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aceptar el drenaje acotado",
+    "body": "Aprobar la readmisión actual tras corregir la documentación, apoyándose en el cooldown y el canario productivo ya registrado.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Está asignado para revisar precisamente la sincronización de marketplaces y la seguridad operativa del cambio.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/8192.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8192#issuecomment-5175797957",
+    "reviewedAt": "2026-08-04T12:28:51.315Z",
+    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
+  }
+}

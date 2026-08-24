@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-10T10:43:17.737Z",
+  "updatedAt": "2026-08-10T09:57:38Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8331,
+    "title": "[BL] chore: log per-item BL entries once per server instance",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8331",
+    "state": "open",
+    "labels": [
+      "size/L",
+      "business-logic",
+      "proof: sufficient",
+      "rating: 🥇 gold",
+      "status: ⏳ waiting on author",
+      "P1",
+      "merge-risk: 🚨 compatibility"
+    ],
+    "createdAt": "2026-08-10T06:54:57Z",
+    "updatedAt": "2026-08-10T09:57:38Z",
+    "headSha": "341529ccc1c9f3e71869fc55b7cc21338c06abaf"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe el dashboard sustituir el histórico de invocaciones por liveness por instancia o conservar ambas métricas con series separadas?",
+  "rationale": "La rama declara que `bl_invocations` deja de medir ejecuciones, pero el consumidor actual conserva ese significado y no puede reconciliar datos antiguos sin una decisión de producto y retención.",
+  "options": [
+    {
+      "title": "Separar liveness e histórico",
+      "body": "Añadir una versión o serie explícita para liveness por instancia y conservar el histórico de invocaciones como métrica no comparable.",
+      "recommended": true
+    },
+    {
+      "title": "Reiniciar la métrica visible",
+      "body": "Ocultar o reiniciar los acumulados previos y renombrar el dashboard para mostrar solo actividad observada por instancia.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener el contador actual",
+      "body": "Aceptar que el contador mezcla dos cardinalidades y documentarlo como señal aproximada no comparable.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Separar liveness e histórico",
+    "body": "Añadir una versión o serie explícita para liveness por instancia y conservar el histórico de invocaciones como métrica no comparable.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su historial conecta directamente la consulta, la ingesta y los textos visibles que definen el contrato de la métrica.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8331.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8331#issuecomment-5237258542",
+    "reviewedAt": "2026-08-10T10:43:17.737Z",
+    "mainSha": "a4bf504140750180abfb664053ddbfb787cf429f"
+  }
+}

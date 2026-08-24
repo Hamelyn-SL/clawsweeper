@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-12T13:24:40.810Z",
+  "updatedAt": "2026-08-12T12:52:30Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8416,
+    "title": "fix: sync productivity panel filters and metrics with backend",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8416",
+    "state": "open",
+    "labels": [
+      "size/XL",
+      "rating: 🥇 gold",
+      "status: 📣 needs proof",
+      "P2",
+      "merge-risk: 🚨 availability"
+    ],
+    "createdAt": "2026-08-12T10:54:11Z",
+    "updatedAt": "2026-08-12T12:52:30Z",
+    "headSha": "db056a86de025510b5dd0641f38221c045efb4cd"
+  },
+  "lane": "release_inclusion",
+  "priority": "P2",
+  "question": "¿Debe exigirse una verificación mantenida de los índices de Atlas antes de desplegar `productivity/summary`, o basta la confirmación manual documentada?",
+  "rationale": "El PR añade una agregación sobre todo el periodo filtrado y su propio texto reconoce que los índices deben crearse fuera del merge.",
+  "options": [
+    {
+      "title": "Verificar los índices antes del merge",
+      "body": "Incorpora una comprobación operativa o evidencia verificable de que los tres índices ya existen antes de activar el endpoint agregado.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar el runbook manual",
+      "body": "Mergear tras asignar y confirmar explícitamente la creación manual de índices en Atlas antes del despliegue.",
+      "recommended": false
+    },
+    {
+      "title": "Separar el endpoint agregado",
+      "body": "Mantener las correcciones restantes y posponer el summary hasta garantizar el estado de índices.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Verificar los índices antes del merge",
+    "body": "Incorpora una comprobación operativa o evidencia verificable de que los tres índices ya existen antes de activar el endpoint agregado.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "alexcanHamelyn",
+    "reason": "Su experiencia de área y condición de revisor solicitado lo sitúan como mejor candidato para decidir la garantía operativa.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8416.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8416#issuecomment-5266057216",
+    "reviewedAt": "2026-08-12T13:24:40.810Z",
+    "mainSha": "29303c54f26c0344c67948b5811048d49c201bdc"
+  }
+}

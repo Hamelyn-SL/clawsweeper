@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-08T21:20:53.656Z",
+  "updatedAt": "2026-07-08T20:53:15Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7259,
+    "title": "fix: persist alibris inventory export audit",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7259",
+    "state": "open",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-07-08T20:44:01Z",
+    "updatedAt": "2026-07-08T20:53:15Z",
+    "headSha": "4abd883df2e31cca51265b4b3b248a98890d26d9"
+  },
+  "lane": "merge_risk",
+  "priority": "P2",
+  "question": "¿Aceptamos que el export diario falle con exit code `3` cuando el upload termina bien pero no se puede escribir el audit en Mongo?",
+  "rationale": "Es una decisión operativa: mejora la visibilidad del watcher, pero también puede convertir un upload correcto en una Action fallida y cambiar el significado de dry-run.",
+  "options": [
+    {
+      "title": "Mantener fail-closed con prueba real",
+      "body": "Exigir evidencia redacted del documento de audit y aceptar que sin audit persistido el job debe fallar para que el watcher no lea frescura falsa.",
+      "recommended": true
+    },
+    {
+      "title": "Hacer el audit best-effort",
+      "body": "Permitir que el upload correcto devuelva éxito aunque falle la escritura del audit, a cambio de que el watcher pueda quedarse sin señal persistida.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar hasta revisión operativa",
+      "body": "Esperar a que la persona dueña del canal Alibris confirme la semántica de dry-run y el impacto de exit code `3`.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mantener fail-closed con prueba real",
+    "body": "Exigir evidencia redacted del documento de audit y aceptar que sin audit persistido el job debe fallar para que el watcher no lea frescura falsa.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es la señal de historia más fuerte para el flujo de inventario Alibris y sus guardas operativas.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7259.md",
+    "reviewedAt": "2026-07-08T21:20:53.656Z",
+    "mainSha": "54896479ce3b6f8f138ef1bf4bc0a74bd9c5d17e"
+  }
+}

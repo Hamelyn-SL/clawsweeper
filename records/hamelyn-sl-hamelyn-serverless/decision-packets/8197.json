@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-04T07:04:05.822Z",
+  "updatedAt": "2026-08-04T06:26:09Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8197,
+    "title": "fix: reconcile mercadolibre sibling listings",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8197",
+    "state": "closed",
+    "labels": [
+      "size/M",
+      "rating: 🥈 silver",
+      "status: 📣 needs proof",
+      "P1",
+      "merge-risk: 🚨 compatibility"
+    ],
+    "createdAt": "2026-08-04T06:23:18Z",
+    "updatedAt": "2026-08-04T06:26:09Z",
+    "headSha": "5e8a6265a249853a024a31f7dfb639e9e8352d6f"
+  },
+  "lane": "merge_risk",
+  "priority": "P1",
+  "question": "¿Se integra esta corrección estrecha para la incidencia enlazada o se consolida primero con https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8195, que modifica la misma reconciliación?",
+  "rationale": "Ambas ramas implementan la consulta de IDs del sheet en el mismo archivo, pero la otra añade cierres directos y guardas de coherencia; esa elección cambia el alcance operativo.",
+  "options": [
+    {
+      "title": "Fusionar la corrección estrecha",
+      "body": "Completar la guía y la prueba real de esta rama, y mantener la otra PR para su remediación más amplia.",
+      "recommended": true
+    },
+    {
+      "title": "Consolidar ambas ramas",
+      "body": "Adoptar una única implementación con las guardas necesarias y cerrar la otra rama como reemplazada cuando tenga prueba real.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar ambas revisiones",
+      "body": "Esperar una decisión explícita sobre la estrategia de retirada directa antes de cambiar el reconciliador.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Fusionar la corrección estrecha",
+    "body": "Completar la guía y la prueba real de esta rama, y mantener la otra PR para su remediación más amplia.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Introdujo el live-check del informe y ya está asignado a la revisión de esta reconciliación.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/8197.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8197#issuecomment-5175705758",
+    "reviewedAt": "2026-08-04T07:04:05.822Z",
+    "mainSha": "e2cddbf2cf3ed99478a04c4d96893f9e08d9c23b"
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-29T09:16:22.268Z",
+  "updatedAt": "2026-07-29T09:01:20Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8077,
+    "title": "chore(deps): bump pillow from 12.2.0 to 12.3.0 in /.github/scripts",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8077",
+    "state": "closed",
+    "labels": [
+      "size/XS",
+      "dependencies",
+      "python",
+      "rating: 🥉 bronze",
+      "status: 📣 needs proof",
+      "P2",
+      "merge-risk: 🚨 compatibility"
+    ],
+    "createdAt": "2026-07-29T08:58:31Z",
+    "updatedAt": "2026-07-29T09:01:20Z",
+    "headSha": "cbd4d72ac02dc096aaab9dcf66da62d471d42a2a"
+  },
+  "lane": "manual_review",
+  "priority": "P2",
+  "question": "¿Debe el equipo continuar con esta rama de Dependabot o concentrar la validación y el merge en https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8065, que ya está asociada al informe de seguridad?",
+  "rationale": "Las dos ramas contienen el mismo cambio, pero la candidata vinculada a seguridad tampoco cuenta con prueba de ejecución suficiente; elegir una requiere coordinación de revisión, no una decisión de producto.",
+  "options": [
+    {
+      "title": "Consolidar en la PR de seguridad",
+      "body": "Priorizar https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8065 por su vínculo con el informe canónico y añadir allí la prueba real con Python 3.11.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener la PR de Dependabot",
+      "body": "Usar esta rama si se prefiere el flujo de Dependabot, tras aportar la misma prueba de instalación y smoke test antes de descartar la otra.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Consolidar en la PR de seguridad",
+    "body": "Priorizar https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8065 por su vínculo con el informe canónico y añadir allí la prueba real con Python 3.11.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "alexcanHamelyn",
+    "reason": "Ya figura como revisor solicitado por experiencia en el archivo compartido y puede coordinar la elección de una única rama.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/8077.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8077#issuecomment-5115649371",
+    "reviewedAt": "2026-07-29T09:16:22.268Z",
+    "mainSha": "73ca2c54438510c3040d30da651325a0df34a594"
+  }
+}

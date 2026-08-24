@@ -1,0 +1,66 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-10T08:15:11.687Z",
+  "updatedAt": "2026-07-10T08:09:33Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7317,
+    "title": "Optimizar coste de setup de los crons: quitar build de core innecesario y acotar install",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7317",
+    "state": "open",
+    "labels": [
+      "source:admin-panel",
+      "priority:p2",
+      "app:infrastructure",
+      "feature",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "impact:other",
+      "issue-rating: 🦞 diamond lobster",
+      "clawsweeper:source-repro",
+      "clawsweeper:linked-pr-open"
+    ],
+    "createdAt": "2026-07-10T05:45:42Z",
+    "updatedAt": "2026-07-10T08:09:33Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe Infra patrocinar ahora un piloto limitado para quitar el build de `@hamelyn/core` y usar `pnpm install --frozen-lockfile --filter local...` en los crons TS de mayor coste?",
+  "rationale": "El cambio es claro, pero afecta workflows programados con acceso a producción y requiere decidir el alcance inicial y la prueba operativa aceptable antes de aplicarlo en masa.",
+  "options": [
+    {
+      "title": "Pilotar Amazon y Countries primero",
+      "body": "Actualizar solo `amazon-report.yml` y `google-merchant-countries.yml`, medir runs reales y ampliar después si no aparecen dependencias ausentes.",
+      "recommended": true
+    },
+    {
+      "title": "Aplicar a todos los crons TS locales",
+      "body": "Reduciría más setup de una vez, pero concentra más riesgo de dependencias no declaradas o diferencias de runtime en workflows productivos.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener el patrón actual por ahora",
+      "body": "Evita riesgo operativo inmediato, pero deja el coste repetido de install completo y build de core sin atacar.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Pilotar Amazon y Countries primero",
+    "body": "Actualizar solo `amazon-report.yml` y `google-merchant-countries.yml`, medir runs reales y ampliar después si no aparecen dependencias ausentes.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "danielmenchen-hamelyn",
+    "reason": "Es el assignee actual y el autor del reenfoque de la issue hacia optimización de setup en vez de cambio de runner.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7317.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7317#issuecomment-4932552214",
+    "reviewedAt": "2026-07-10T08:15:11.687Z",
+    "mainSha": "96f7ff10931c8d4d15a8cce923f72f85cb7c5f49"
+  }
+}

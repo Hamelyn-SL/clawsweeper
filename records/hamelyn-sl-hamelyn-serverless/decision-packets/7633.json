@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-16T09:04:32.963Z",
+  "updatedAt": "2026-07-16T08:56:29Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7633,
+    "title": "docs: add expected signatures list to marketplace watcher",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7633",
+    "state": "closed",
+    "labels": [
+      "size/S"
+    ],
+    "createdAt": "2026-07-16T08:42:10Z",
+    "updatedAt": "2026-07-16T08:56:29Z",
+    "headSha": "851e7837c92ab665acb3bee2cfd1af377bb2dbeb"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe `No ASIN found for this EAN` tratarse desde ahora como firma esperada global, sin nuevas issues ni follow-ups regionales, y quedar https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7599 como único seguimiento?",
+  "rationale": "El diff es técnicamente coherente, pero fusionarlo elimina una señal operativa y cierra cuatro canónicas abiertas; la issue de producto enlazada todavía conserva etiquetas de decisión y revisión humana sin una confirmación explícita.",
+  "options": [
+    {
+      "title": "Confirmar la consolidación global",
+      "body": "Aceptar la supresión en todas las regiones, mantener https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7599 como canónica y fusionar esta PR.",
+      "recommended": true
+    },
+    {
+      "title": "Conservar alguna señal agregada",
+      "body": "Ajustar el protocolo para evitar duplicados regionales pero mantener una actualización agregada y espaciada en la canónica de producto.",
+      "recommended": false
+    },
+    {
+      "title": "Esperar a la decisión de producto",
+      "body": "Mantener el watcher actual hasta que se aprueben el límite de reintentos, la cadencia de revalidación y la visibilidad del estado no listable.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Confirmar la consolidación global",
+    "body": "Aceptar la supresión en todas las regiones, mantener https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7599 como canónica y fusionar esta PR.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es la señal más fuerte de propiedad reciente sobre el protocolo del watcher y aprobó su última revisión sustancial.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7633.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7633#issuecomment-4989997465",
+    "reviewedAt": "2026-07-16T09:04:32.963Z",
+    "mainSha": "1fd632bee6900473f85e8d6beece81929b1e2d0f"
+  }
+}

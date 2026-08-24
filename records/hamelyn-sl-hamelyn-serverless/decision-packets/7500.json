@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-14T23:15:48.577Z",
+  "updatedAt": "2026-07-14T08:53:25Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7500,
+    "title": "chore: bump the npm-security group across 1 directory with 4 updates",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7500",
+    "state": "open",
+    "labels": [
+      "size/XL",
+      "dependencies",
+      "javascript",
+      "autofix-failed",
+      "rating: 🥇 gold",
+      "status: ⏳ waiting on author",
+      "P2",
+      "merge-risk: 🚨 compatibility"
+    ],
+    "createdAt": "2026-07-14T07:03:16Z",
+    "updatedAt": "2026-07-14T08:53:25Z",
+    "headSha": "405bf1a8d4239ede7872109cc160d523acbd68ee"
+  },
+  "lane": "merge_risk",
+  "priority": "P2",
+  "question": "¿Debe repararse este PR como candidato único o regenerarse la actualización en grupos separados para evitar la rebaja y el churn adicional del lockfile?",
+  "rationale": "Los dos PRs de Dependabot se solapan y ambos presentan la misma rebaja, mientras que el autofix del repositorio no puede modificar manifiestos ni lockfiles; hace falta elegir qué rama conservar y cómo agrupar las actualizaciones.",
+  "options": [
+    {
+      "title": "Regenerar por grupos compatibles",
+      "body": "Separar las actualizaciones para conservar la versión raíz vigente y validar cada salto mayor con un lockfile más acotado.",
+      "recommended": true
+    },
+    {
+      "title": "Reparar este PR manualmente",
+      "body": "Mantener este candidato, corregir sus manifiestos y lockfile y ejecutar la validación completa antes del merge.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Regenerar por grupos compatibles",
+    "body": "Separar las actualizaciones para conservar la versión raíz vigente y validar cada salto mayor con un lockfile más acotado.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "danielmenchen-hamelyn",
+    "reason": "Es la persona con el historial más directo en la configuración del updater agrupado y el workflow de autofix que condicionan esta decisión.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7500.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7500#issuecomment-4966675836",
+    "reviewedAt": "2026-07-14T23:15:48.577Z",
+    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
+  }
+}

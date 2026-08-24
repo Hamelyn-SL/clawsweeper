@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-21T15:27:59.749Z",
+  "updatedAt": "2026-07-21T14:27:12Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7852,
+    "title": "Agente diario de salud de cuentas Amazon (SP-API → Slack)",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7852",
+    "state": "closed",
+    "labels": [
+      "app:infrastructure",
+      "feature",
+      "triage:no-change",
+      "P2",
+      "impact:other",
+      "issue-rating: ➖ n/a",
+      "clawsweeper:linked-pr-open",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-21T13:31:46Z",
+    "updatedAt": "2026-07-21T14:27:12Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿El aviso debe ejecutarse a las 09:30 de Europe/Madrid durante todo el año o mantenerse a las 07:30 UTC aunque cambie la hora local?",
+  "rationale": "Un cron UTC fijo no cumple simultáneamente la hora local indicada en verano e invierno, y el repositorio necesita una expectativa operativa explícita antes del despliegue.",
+  "options": [
+    {
+      "title": "Mantener 09:30 Madrid todo el año",
+      "body": "Implementar una programación compatible con los cambios de horario para conservar la hora operativa solicitada.",
+      "recommended": true
+    },
+    {
+      "title": "Fijar 07:30 UTC",
+      "body": "Actualizar la issue y la documentación para indicar que el horario es UTC y aceptar que en invierno será 08:30 en Madrid.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mantener 09:30 Madrid todo el año",
+    "body": "Implementar una programación compatible con los cambios de horario para conservar la hora operativa solicitada.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Está asignado a la issue y mantiene recientemente la infraestructura de schedules afectada.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7852.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7852#issuecomment-5034784223",
+    "reviewedAt": "2026-07-21T15:27:59.749Z",
+    "mainSha": "4b46404fe05de31d1c0af23f0ddfbfc603ca14b2"
+  }
+}

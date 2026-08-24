@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-10T10:50:38.092Z",
+  "updatedAt": "2026-08-10T10:45:08Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8349,
+    "title": "Bifrost — acceso remoto a los puestos del almacén",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8349",
+    "state": "open",
+    "labels": [
+      "app:infrastructure",
+      "reporter:davidgonzalez",
+      "feature",
+      "triage:done",
+      "P2",
+      "impact:security",
+      "impact:other",
+      "issue-rating: ➖ n/a",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-08-10T10:38:35Z",
+    "updatedAt": "2026-08-10T10:45:08Z"
+  },
+  "lane": "security_boundary",
+  "priority": "P2",
+  "question": "¿Se limita AnyDesk desatendido al Bifrost o se acepta acceso gráfico directo a cada puesto además de SSH por LAN?",
+  "rationale": "El objetivo declara un único punto exterior, mientras una subtarea propone diez accesos remotos adicionales; el nivel de exposición requiere una decisión humana.",
+  "options": [
+    {
+      "title": "Centralizar en Bifrost",
+      "body": "Aplicar AnyDesk y Tailscale sólo al puente, manteniendo los puestos accesibles desde él por SSH y WoL.",
+      "recommended": true
+    },
+    {
+      "title": "Autorizar respaldo por puesto",
+      "body": "Permitir AnyDesk directo por puesto con controles, inventario de IDs y una política de acceso explícita.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Centralizar en Bifrost",
+    "body": "Aplicar AnyDesk y Tailscale sólo al puente, manteniendo los puestos accesibles desde él por SSH y WoL.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es la persona con la evidencia más directa de propiedad técnica sobre la base de Admin que reutilizará el epic.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8349.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8349#issuecomment-5239171569",
+    "reviewedAt": "2026-08-10T10:50:38.092Z",
+    "mainSha": "a4bf504140750180abfb664053ddbfb787cf429f"
+  }
+}

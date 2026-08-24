@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-29T13:41:00.358Z",
+  "updatedAt": "2026-07-29T13:36:01Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7926,
+    "title": "fix: secure supply carts with capability tokens",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7926",
+    "state": "closed",
+    "labels": [
+      "size/XXL",
+      "proof: sufficient",
+      "rating: ⚪ platinum",
+      "status: 👀 ready for maintainer look",
+      "P0",
+      "merge-risk: 🚨 compatibility",
+      "merge-risk: 🚨 security-boundary"
+    ],
+    "createdAt": "2026-07-24T11:00:23Z",
+    "updatedAt": "2026-07-29T13:36:01Z",
+    "headSha": "c0775ddb7bafa8468a341392f29b9b91f42c00e8"
+  },
+  "lane": "security_boundary",
+  "priority": "P0",
+  "question": "¿Se acepta mantener el acceso legacy tokenless de los carritos sin hash hasta el 24 de agosto de 2026 para compatibilizar las builds Supply ya instaladas?",
+  "rationale": "La excepción conserva el comportamiento de clientes antiguos, pero deja una frontera de autorización más débil durante el rollout; el intercambio requiere intención humana.",
+  "options": [
+    {
+      "title": "Aceptar la ventana temporal",
+      "body": "Fusionar el doble contrato hasta el deadline y programar la retirada comprobable de las rutas legacy.",
+      "recommended": true
+    },
+    {
+      "title": "Cerrar antes el legacy",
+      "body": "Retirar el acceso tokenless antes de la fecha y exigir actualización de las builds antiguas.",
+      "recommended": false
+    },
+    {
+      "title": "Aplicar gate por versión",
+      "body": "Mantener el flujo anterior únicamente para versiones de cliente conocidas y exigir capability al resto.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aceptar la ventana temporal",
+    "body": "Fusionar el doble contrato hasta el deadline y programar la retirada comprobable de las rutas legacy.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su revisión documenta el conflicto entre las builds nativas instaladas y el cierre inmediato de las rutas legacy.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7926.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7926#issuecomment-5069394639",
+    "reviewedAt": "2026-07-29T13:41:00.358Z",
+    "mainSha": "dcf997d47a1b16be43c67c4d074f4abeb40e997c"
+  }
+}

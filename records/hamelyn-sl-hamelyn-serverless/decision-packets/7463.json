@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-13T10:43:31.420Z",
+  "updatedAt": "2026-07-13T10:37:55Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7463,
+    "title": "feat: portless dev servers per worktree and node 24 migration",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7463",
+    "state": "closed",
+    "labels": [
+      "rating: 🧂 unranked krab",
+      "status: 📣 needs proof",
+      "P2",
+      "merge-risk: 🚨 compatibility",
+      "merge-risk: 🚨 automation"
+    ],
+    "createdAt": "2026-07-13T10:37:30Z",
+    "updatedAt": "2026-07-13T10:37:55Z",
+    "headSha": "096c5f0d4257ebccbed96f91f62e3765ccc81bc8"
+  },
+  "lane": "release_inclusion",
+  "priority": "P2",
+  "question": "¿Debe aterrizarse en un único PR la migración completa a Node 24 junto con portless, o conviene separar primero el cambio de runtime de los dev servers locales?",
+  "rationale": "El modelo puede señalar el riesgo, pero la decisión afecta a CI, Vercel, crons y equipos de desarrollo; requiere criterio operativo del equipo que mantiene esos despliegues.",
+  "options": [
+    {
+      "title": "Mantener unido con gates claros",
+      "body": "Corregir el helper de worktrees, añadir prueba real y mergear Node 24 + portless juntos si CI/Vercel/crons quedan validados.",
+      "recommended": true
+    },
+    {
+      "title": "Separar Node 24",
+      "body": "Extraer la migración de Node 24 a un PR propio y dejar portless en otro PR para reducir blast radius y facilitar rollback.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar el cambio de runtime",
+      "body": "Aterrizar solo el tooling local si urge el flujo de worktrees y posponer Node 24 hasta una ventana operativa acordada.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mantener unido con gates claros",
+    "body": "Corregir el helper de worktrees, añadir prueba real y mergear Node 24 + portless juntos si CI/Vercel/crons quedan validados.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es la señal más fuerte en el historial reciente de automatización de triage y workflows que este PR toca directamente.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7463.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7463#issuecomment-4957118275",
+    "reviewedAt": "2026-07-13T10:43:31.420Z",
+    "mainSha": "5ec4066ffd1101adf111edbcc6b7c3be0fc74a58"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-05T08:51:58.778Z",
+  "updatedAt": "2026-08-05T06:58:28Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8225,
+    "title": "[BL] Recolocar logs de catch genérico y añadir entryLog: error para reglas solo-error",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8225",
+    "state": "open",
+    "labels": [
+      "size/M",
+      "business-logic",
+      "rating: 🥉 bronze",
+      "status: 📣 needs proof",
+      "P3",
+      "merge-risk: 🚨 other"
+    ],
+    "createdAt": "2026-08-05T06:34:07Z",
+    "updatedAt": "2026-08-05T06:58:28Z",
+    "headSha": "6af467efa9599e01911007db2a149742f0b59bf0"
+  },
+  "lane": "product_direction",
+  "priority": "P3",
+  "question": "¿Debe `entryLog: error` quedar adoptado como estado canónico del pipeline BL, con semántica de “sin incidencias” para cero trazas?",
+  "rationale": "La PR amplía el contrato de observabilidad y la metodología compartida; la corrección técnica no decide por sí sola esa semántica operativa permanente.",
+  "options": [
+    {
+      "title": "Adoptar el tercer estado",
+      "body": "Aceptar `entryLog: error` y exigir que toda la skill, las specs y el grafo describan sus semánticas de forma coherente.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener dos estados",
+      "body": "Conservar `yes | no` y tratar las reglas solo-error mediante una clasificación distinta fuera del frontmatter.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Adoptar el tercer estado",
+    "body": "Aceptar `entryLog: error` y exigir que toda la skill, las specs y el grafo describan sus semánticas de forma coherente.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "danielmenchen-hamelyn",
+    "reason": "Su refactor introdujo la superficie de telemetría y su rama propone la ampliación del contrato.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8225.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8225#issuecomment-5188589633",
+    "reviewedAt": "2026-08-05T08:51:58.778Z",
+    "mainSha": "dde44afb92e3731ca5aa0878f3d5e5a9be9a691d"
+  }
+}

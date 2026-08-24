@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-10T18:25:52.202Z",
+  "updatedAt": "2026-07-10T13:58:18Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7346,
+    "title": "chore: remove automations app and its references",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7346",
+    "state": "closed",
+    "labels": [
+      "size/XXL",
+      "rating: 🦪 silver shellfish",
+      "status: 📣 needs proof",
+      "P1",
+      "merge-risk: 🚨 compatibility",
+      "merge-risk: 🚨 security-boundary"
+    ],
+    "createdAt": "2026-07-10T10:14:13Z",
+    "updatedAt": "2026-07-10T13:58:18Z",
+    "headSha": "830ef1d67261b47c09430ddb800e48944836a854"
+  },
+  "lane": "security_boundary",
+  "priority": "P1",
+  "question": "¿Está autorizado el corte de `apps/automations` ahora, con n8n migrado o apagado, o este PR debe esperar a esa coordinación externa?",
+  "rationale": "La issue enlazada documenta una superficie sensible con `ATC_TOKEN`, datos personales y facturas, pero también tráfico real reciente desde n8n; automatización no puede decidir el momento del corte operativo.",
+  "options": [
+    {
+      "title": "Merge tras confirmar corte",
+      "body": "Aprobar el PR cuando quede confirmada la migración o parada de n8n y el plan de retirada de Vercel/secrets.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar corte coordinado",
+      "body": "Mergear como primer paso si un maintainer asume explícitamente que el corte de n8n/Vercel se ejecuta fuera del PR en la misma ventana.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar la retirada",
+      "body": "Mantener el PR abierto hasta que haya evidencia de cero tráfico o una alternativa canónica lista.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Merge tras confirmar corte",
+    "body": "Aprobar el PR cuando quede confirmada la migración o parada de n8n y el plan de retirada de Vercel/secrets.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es el autor/asignado de la issue y del PR, y el historial lo conecta con la app que se retira.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7346.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7346#issuecomment-4936089526",
+    "reviewedAt": "2026-07-10T18:25:52.202Z",
+    "mainSha": "bdba2474cde79bb8997d7effa9430aff3f604ded"
+  }
+}

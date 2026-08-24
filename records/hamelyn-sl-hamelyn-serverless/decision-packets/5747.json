@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-21T14:30:50.900Z",
+  "updatedAt": "2026-07-21T12:18:47Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 5747,
+    "title": "marketplace-crons: Amazon notifications-pull recibe 500 en getOrder",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5747",
+    "state": "closed",
+    "labels": [
+      "codex",
+      "bug",
+      "app:marketplace",
+      "triage:blocked",
+      "triage:confirmed-live",
+      "area:marketplace-orders",
+      "P1",
+      "impact:other",
+      "issue-rating: ⚪ platinum",
+      "clawsweeper:needs-live-repro",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-05-08T02:35:52Z",
+    "updatedAt": "2026-07-21T12:18:47Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe el cron añadir retry/backoff local específico para `getOrder` 500, o mantener exclusivamente el reintento diferido de SQS y escalar las incidencias sostenidas a Amazon?",
+  "rationale": "Ambas opciones protegen de pérdida de mensajes, pero cambian el consumo de cuota, la latencia y el riesgo de timeout; el código no puede elegir ese equilibrio por sí solo.",
+  "options": [
+    {
+      "title": "Mantener reintento SQS y observabilidad",
+      "body": "Conservar el comportamiento actual, añadir métricas o alerta para fallos sostenidos y escalar a Amazon cuando el proveedor persista.",
+      "recommended": true
+    },
+    {
+      "title": "Añadir retry local limitado",
+      "body": "Aplicar pocos reintentos con backoff y presupuesto estricto antes de devolver el mensaje a SQS.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mantener reintento SQS y observabilidad",
+    "body": "Conservar el comportamiento actual, añadir métricas o alerta para fallos sostenidos y escalar a Amazon cuando el proveedor persista.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "PabloMoran34",
+    "reason": "El historial atribuye a esta persona la ruta que decide la retención y el borrado de mensajes.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/5747.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5747#issuecomment-4971272554",
+    "reviewedAt": "2026-07-21T14:30:50.900Z",
+    "mainSha": "4b46404fe05de31d1c0af23f0ddfbfc603ca14b2"
+  }
+}

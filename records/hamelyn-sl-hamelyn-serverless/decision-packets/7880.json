@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-05T00:11:29.636Z",
+  "updatedAt": "2026-08-04T23:44:43Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7880,
+    "title": "Extend withdrawn-orphan recovery to eBay, MercadoLibre and Abebooks",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7880",
+    "state": "open",
+    "labels": [
+      "app:marketplace",
+      "feature",
+      "triage:done",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
+      "issue-rating: ➖ n/a",
+      "origin:dev",
+      "mk:mercadolibre",
+      "mk:ebay",
+      "mk:abebooks",
+      "P2",
+      "impact:other"
+    ],
+    "createdAt": "2026-07-22T10:34:30Z",
+    "updatedAt": "2026-08-04T23:44:43Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se aprueba completar los dos adaptadores pendientes como canarios operativos separados, manteniendo MercadoLibre fuera del nuevo alcance por estar ya cubierto?",
+  "rationale": "Los umbrales de integridad, el volumen aceptable y la activación de escrituras remotas requieren validación operativa que el código actual no puede decidir de forma segura.",
+  "options": [
+    {
+      "title": "Aprobar dos canarios separados",
+      "body": "Implementar eBay y AbeBooks por separado, cada uno con dry-run real, umbral explícito y activación posterior revisada.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener solo la detección",
+      "body": "Conservar los informes sin siembra automática hasta disponer de una política operativa común para snapshots semanales.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar dos canarios separados",
+    "body": "Implementar eBay y AbeBooks por separado, cada uno con dry-run real, umbral explícito y activación posterior revisada.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "El historial le vincula tanto al helper común como al endurecimiento reciente del snapshot de AbeBooks.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7880.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7880#issuecomment-5044956206",
+    "reviewedAt": "2026-08-05T00:11:29.636Z",
+    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
+  }
+}

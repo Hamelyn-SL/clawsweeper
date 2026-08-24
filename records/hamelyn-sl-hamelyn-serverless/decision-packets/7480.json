@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-13T15:03:36.226Z",
+  "updatedAt": "2026-07-13T14:16:22Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7480,
+    "title": "Review gutemberg admin-api backend mode and stale ATC_TOKEN reference",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7480",
+    "state": "open",
+    "labels": [
+      "priority:p3",
+      "app:infrastructure",
+      "question",
+      "reporter:javier",
+      "triage:needs-info",
+      "P3",
+      "issue-rating: 🌊 off-meta tidepool",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-13T13:02:51Z",
+    "updatedAt": "2026-07-13T14:16:22Z"
+  },
+  "lane": "product_direction",
+  "priority": "P3",
+  "question": "¿Sigue instalado y activo el servicio Windows Gutemberg en la máquina de packaging?",
+  "rationale": "La respuesta determina si debe conservarse y documentarse el flujo push o retirarse la integración; el repositorio y la telemetría central solo prueban la generación de documentos en Admin.",
+  "options": [
+    {
+      "title": "Mantener el flujo push",
+      "body": "Verificar una impresión real y actualizar el README para reflejar la arquitectura vigente sin `admin-api` ni `ATC_TOKEN`.",
+      "recommended": true
+    },
+    {
+      "title": "Retirar Gutemberg",
+      "body": "Si el servicio ya no está desplegado, eliminar la integración local y su documentación mediante una tarea acotada.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mantener el flujo push",
+    "body": "Verificar una impresión real y actualizar el README para reflejar la arquitectura vigente sin `admin-api` ni `ATC_TOKEN`.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Es el autor principal del flujo vigente, su contribuidor posterior y el assignee actual de la issue.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7480.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7480#issuecomment-4959509412",
+    "reviewedAt": "2026-07-13T15:03:36.226Z",
+    "mainSha": "eec119753c187dc293b087ca0f1f68aa4f1ad4f1"
+  }
+}

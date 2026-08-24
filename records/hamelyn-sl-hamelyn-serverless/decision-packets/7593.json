@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-15T11:09:57.424Z",
+  "updatedAt": "2026-07-15T10:32:02Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7593,
+    "title": "fix: drop slack alert for buyer cancel notifications",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7593",
+    "state": "closed",
+    "labels": [
+      "size/M",
+      "rating: 🥈 silver",
+      "status: 📣 needs proof",
+      "P2",
+      "merge-risk: 🚨 other"
+    ],
+    "createdAt": "2026-07-15T10:31:24Z",
+    "updatedAt": "2026-07-15T10:32:02Z",
+    "headSha": "4630e08b6be20a8101f5303ec6a318ecbf542d4c"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe una cancelación Amazon `BuyerRequestedChange` procesada correctamente dejar de generar una alerta inmediata en Slack priority y quedar únicamente en el drain de logs?",
+  "rationale": "El código puede retirar la llamada de forma segura, pero decidir qué eventos merecen una alerta inmediata es una política operacional que no queda definida por tipos, tests ni documentación existente.",
+  "options": [
+    {
+      "title": "Usar logs para los éxitos",
+      "body": "Retirar la alerta de éxito, conservar Slack priority para errores accionables y exigir prueba y documentación del nuevo circuito de auditoría.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener la alerta actual",
+      "body": "Conservar `notifyPriority` hasta que exista otra señal operacional explícitamente aprobada y accesible para el equipo.",
+      "recommended": false
+    },
+    {
+      "title": "Moverla a una señal menos ruidosa",
+      "body": "Sustituir la alerta priority por un canal no urgente, un resumen periódico o una métrica agregada.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Usar logs para los éxitos",
+    "body": "Retirar la alerta de éxito, conservar Slack priority para errores accionables y exigir prueba y documentación del nuevo circuito de auditoría.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "Es el revisor asignado específicamente a este PR y puede validar si el cambio encaja con la operativa del equipo.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7593.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7593#issuecomment-4979853091",
+    "reviewedAt": "2026-07-15T11:09:57.424Z",
+    "mainSha": "4f9c2d4d24dbe754c5c6a8521ff2d2a814cbdd85"
+  }
+}

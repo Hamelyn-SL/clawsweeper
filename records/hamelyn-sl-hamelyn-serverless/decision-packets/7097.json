@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-06T10:48:30.767Z",
+  "updatedAt": "2026-08-06T10:29:38Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7097,
+    "title": "BL-buying-account-14: address/collect-method update by index skips range validation",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7097",
+    "state": "closed",
+    "labels": [
+      "bug",
+      "app:supply",
+      "triage:done",
+      "business-logic",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond",
+      "origin:bl",
+      "P2",
+      "impact:data-loss",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-07T08:13:13Z",
+    "updatedAt": "2026-08-06T10:29:38Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Deben los PUT de dirección y método de cobro adoptar el mismo contrato recuperable de índice obsoleto que se está proponiendo para DELETE?",
+  "rationale": "La regla exige rechazar el índice, pero los dos routes actuales traducen errores de forma distinta y la elección de 400/409 y recuperación del cliente es un contrato de API.",
+  "options": [
+    {
+      "title": "Unificar como conflicto recuperable",
+      "body": "Aplicar guardas de rango y un error tipado mapeado a un 4xx común para ambos PUT, con la recarga de perfil documentada.",
+      "recommended": true
+    },
+    {
+      "title": "Limitarse a la guarda de repositorio",
+      "body": "Rechazar el índice en core y conservar temporalmente el mapeo actual de errores, aceptando respuestas genéricas hasta una mejora posterior.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Unificar como conflicto recuperable",
+    "body": "Aplicar guardas de rango y un error tipado mapeado a un 4xx común para ambos PUT, con la recarga de perfil documentada.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Figura como owner de la validación BL y está trabajando en el contrato adyacente de índices de métodos de cobro.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7097.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7097#issuecomment-4911289367",
+    "reviewedAt": "2026-08-06T10:48:30.767Z",
+    "mainSha": "a1a00fd0c62fcbb61555e8ac573566f8dbc5aa7d"
+  }
+}

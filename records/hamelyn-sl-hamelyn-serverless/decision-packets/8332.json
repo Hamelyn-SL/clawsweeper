@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-10T07:20:49.166Z",
+  "updatedAt": "2026-08-10T07:12:25Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8332,
+    "title": "Quitar ''Otros'' del formulario web supply",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8332",
+    "state": "open",
+    "labels": [
+      "source:admin-panel",
+      "app:supply",
+      "feature",
+      "reporter:arineligrigore",
+      "triage:pr-opened",
+      "P2"
+    ],
+    "createdAt": "2026-08-10T07:00:39Z",
+    "updatedAt": "2026-08-10T07:12:25Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿«Otros» debe desaparecer solo de la web de Supply o también de la app móvil y del contrato de creación de incidencias?",
+  "rationale": "El selector se comparte entre plataformas y el servidor acepta ese valor; el texto de la solicitud delimita web, pero no aclara el destino de incidencias no clasificadas.",
+  "options": [
+    {
+      "title": "Ocultarlo solo en web",
+      "body": "Filtrar la opción en la interfaz web y conservar móvil y compatibilidad del API para mantener el alcance solicitado.",
+      "recommended": true
+    },
+    {
+      "title": "Retirarlo de todo Supply",
+      "body": "Eliminar la razón de cliente y servidor, definiendo antes una alternativa para solicitudes que no encajen en envío o pago.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Ocultarlo solo en web",
+    "body": "Filtrar la opción en la interfaz web y conservar móvil y compatibilidad del API para mantener el alcance solicitado.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Introdujo las constantes compartidas que determinan la visibilidad del selector y su contrato inicial.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8332.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8332#issuecomment-5237109066",
+    "reviewedAt": "2026-08-10T07:20:49.166Z",
+    "mainSha": "e919e1c04445b0e73e426092d7ddad739c7fc6e3"
+  }
+}

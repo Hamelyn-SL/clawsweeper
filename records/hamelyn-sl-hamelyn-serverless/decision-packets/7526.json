@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-21T15:52:21.729Z",
+  "updatedAt": "2026-07-21T14:50:00Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7526,
+    "title": "🐛 Incidencias eDesk: un 429 sostenido pierde el ticket del cliente — falta cola persistente",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7526",
+    "state": "closed",
+    "labels": [
+      "bug",
+      "app:infrastructure",
+      "triage:done",
+      "P1",
+      "impact:data-loss",
+      "impact:message-loss",
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro",
+      "clawsweeper:linked-pr-open",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-14T09:48:59Z",
+    "updatedAt": "2026-07-21T14:50:00Z"
+  },
+  "lane": "merge_risk",
+  "priority": "P1",
+  "question": "¿Debe aceptarse que la cola descarte una incidencia tras cinco entregas, o debe conservarse un dead-letter durable para rescate manual?",
+  "rationale": "La discusión acordó rescate manual, mientras la PR abierta describe un descarte terminal; ambas opciones cambian la garantía de no perder tickets.",
+  "options": [
+    {
+      "title": "Exigir dead-letter durable",
+      "body": "Conservar payload y checkpoint recuperables hasta que un operador los reprocesse o cierre el caso manualmente.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar descarte terminal",
+      "body": "Mantener el máximo de cinco entregas y asumir que, tras agotarlo, el contenido solo queda en logs.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Exigir dead-letter durable",
+    "body": "Conservar payload y checkpoint recuperables hasta que un operador los reprocesse o cierre el caso manualmente.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Es el assignee de esta incidencia y el autor de la propuesta abierta que materializa la decisión.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7526.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7526#issuecomment-4968216238",
+    "reviewedAt": "2026-07-21T15:52:21.729Z",
+    "mainSha": "28961cd9f75c53a05b3951bb081512652fe440ae"
+  }
+}

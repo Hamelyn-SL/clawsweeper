@@ -1,0 +1,70 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-04T23:19:32.752Z",
+  "updatedAt": "2026-08-04T22:53:31Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 5185,
+    "title": "marketplace-crons: updatePrice de MercadoLibre falla con 400 y el cron lo absorbe",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5185",
+    "state": "closed",
+    "labels": [
+      "codex",
+      "bug",
+      "app:marketplace",
+      "triage:done",
+      "triage:confirmed-live",
+      "area:marketplace-sync",
+      "no-stale",
+      "origin:watcher",
+      "mk:mercadolibre",
+      "P1",
+      "impact:other",
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-04-13T01:26:56Z",
+    "updatedAt": "2026-08-04T22:53:31Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Qué política debe aplicarse a un HTTP 400 de `updatePrice` cuando `GET /items/{id}` confirma que el listing sigue activo pero la respuesta no permite clasificarlo automáticamente?",
+  "rationale": "La evidencia actual distingue listings stale y fallos transitorios, pero no define si un 400 activo genérico debe reintentarse, quedar para revisión o cerrarse como permanente.",
+  "options": [
+    {
+      "title": "Clasificación estructurada con cola revisable",
+      "body": "Guardar y clasificar el body por código, reintentar solo causas conocidas y mantener los 400 desconocidos en una cola observable para revisión.",
+      "recommended": true
+    },
+    {
+      "title": "Reintentar temporalmente los 400 activos",
+      "body": "Tratar los 400 activos desconocidos como transitorios con backoff, aceptando el riesgo de repetir errores permanentes.",
+      "recommended": false
+    },
+    {
+      "title": "Cerrar como permanente por defecto",
+      "body": "Detener los reintentos de 400 activos no clasificados, aceptando que algunos cambios de precio recuperables necesitarán intervención manual.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Clasificación estructurada con cola revisable",
+    "body": "Guardar y clasificar el body por código, reintentar solo causas conocidas y mantener los 400 desconocidos en una cola observable para revisión.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Figura asignado a la incidencia y está conectado al trabajo reciente de recuperación de MercadoLibre.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/5185.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5185#issuecomment-4909402137",
+    "reviewedAt": "2026-08-04T23:19:32.752Z",
+    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
+  }
+}

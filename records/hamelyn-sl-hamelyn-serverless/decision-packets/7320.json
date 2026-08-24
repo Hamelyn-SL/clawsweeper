@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-10T06:38:04.855Z",
+  "updatedAt": "2026-07-10T06:32:53Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7320,
+    "title": "chore: stop processing france and italy in amazon es sync",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7320",
+    "state": "open",
+    "labels": [
+      "size/XS",
+      "rating: 🧂 unranked krab",
+      "status: 📣 needs proof",
+      "P1",
+      "merge-risk: 🚨 compatibility",
+      "merge-risk: 🚨 message-delivery"
+    ],
+    "createdAt": "2026-07-10T06:23:16Z",
+    "updatedAt": "2026-07-10T06:32:53Z",
+    "headSha": "b0a977da8750cbc404163ef2d0edd9d7203d1ad1"
+  },
+  "lane": "merge_risk",
+  "priority": "P1",
+  "question": "¿Debe esta PR retirar solo Francia ahora, o también Italia aunque no haya sustituto `AMAZON_IT` en `dev` ni una issue equivalente localizada?",
+  "rationale": "La parte de Francia está respaldada por la issue de alta de `AMAZON_FR`, pero Italia queda sin consumidor de pedidos/notificaciones si se mergea el diff actual; esa es una decisión de operación y riesgo de canal, no un detalle de estilo.",
+  "options": [
+    {
+      "title": "Retirar solo Francia",
+      "body": "Restaurar `marketplaceIds.italy` y la documentación asociada mantiene Italia en Amazon ES mientras avanza el rollout de `AMAZON_FR`.",
+      "recommended": true
+    },
+    {
+      "title": "Aprobar FR e IT con gate operativo",
+      "body": "Aceptar el riesgo solo si Marketplace confirma por escrito cómo se procesarán los pedidos italianos desde el mismo despliegue.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar hasta el rollout completo",
+      "body": "Esperar a que la separación de Amazon FR esté lista y revisar el cambio junto al plan de activación real.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Retirar solo Francia",
+    "body": "Restaurar `marketplaceIds.italy` y la documentación asociada mantiene Italia en Amazon ES mientras avanza el rollout de `AMAZON_FR`.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "danielmenchen-hamelyn",
+    "reason": "Es el reviewer solicitado para este PR y el punto natural para validar el riesgo de despliegue antes de mergear.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7320.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7320#issuecomment-4932692627",
+    "reviewedAt": "2026-07-10T06:38:04.855Z",
+    "mainSha": "fbd4b55db934eeae5175d1c95f53b976aa46f86b"
+  }
+}

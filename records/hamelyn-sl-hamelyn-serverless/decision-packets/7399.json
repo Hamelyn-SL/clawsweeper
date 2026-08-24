@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-05T00:11:49.520Z",
+  "updatedAt": "2026-08-04T23:24:16Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7399,
+    "title": "Credenciales duplicadas como variables de repo en GitHub Actions (rotación pendiente)",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7399",
+    "state": "closed",
+    "labels": [
+      "bug",
+      "app:infrastructure",
+      "triage:blocked",
+      "origin:dev",
+      "P1",
+      "impact:security",
+      "issue-rating: ➖ n/a",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:needs-security-review"
+    ],
+    "createdAt": "2026-07-12T13:55:30Z",
+    "updatedAt": "2026-08-04T23:24:16Z"
+  },
+  "lane": "security_boundary",
+  "priority": "P1",
+  "question": "¿Se confirma la rotación y revocación externas, y se autoriza retirar los hooks duplicados tras verificar que ninguna integración externa los consume?",
+  "rationale": "El repositorio prueba el uso de secretos, pero no puede certificar el estado de una cuenta de Drive, Atlas ni integraciones externas.",
+  "options": [
+    {
+      "title": "Completar la remediación externa",
+      "body": "Rotar la clave de Drive, revocar o deshabilitar el acceso de Atlas y documentar la verificación antes de retirar variables duplicadas.",
+      "recommended": true
+    },
+    {
+      "title": "Conservar temporalmente los hooks duplicados",
+      "body": "Mantenerlos hasta contar con una confirmación operativa de que no hay consumidores externos.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Completar la remediación externa",
+    "body": "Rotar la clave de Drive, revocar o deshabilitar el acceso de Atlas y documentar la verificación antes de retirar variables duplicadas.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "Es el asignado actual y tiene historial reciente en el workflow de despliegue afectado.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7399.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7399#issuecomment-4951659866",
+    "reviewedAt": "2026-08-05T00:11:49.520Z",
+    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
+  }
+}

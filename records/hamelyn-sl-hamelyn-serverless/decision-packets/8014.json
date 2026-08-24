@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-07T09:27:58.197Z",
+  "updatedAt": "2026-08-07T09:23:14Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8014,
+    "title": "feat: productividad de Revisión V3 (sesión, productos/min y agregado diario)",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8014",
+    "state": "closed",
+    "labels": [
+      "source:admin-panel",
+      "app:admin",
+      "feature",
+      "triage:done",
+      "epic:revision-v3",
+      "reporter:daniellopez",
+      "origin:panel",
+      "P2",
+      "impact:other",
+      "issue-rating: ➖ n/a",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review"
+    ],
+    "createdAt": "2026-07-28T07:19:47Z",
+    "updatedAt": "2026-08-07T09:23:14Z"
+  },
+  "lane": "release_inclusion",
+  "priority": "P2",
+  "question": "¿Debe esta entrega coordinarse primero con la integración de Revisión V3 antes de publicar el endpoint diario en `dev`?",
+  "rationale": "La superficie consumidora no está en `dev`; el orden de integración determina si se puede validar el flujo completo sin dejar un contrato operativo aislado.",
+  "options": [
+    {
+      "title": "Entrega coordinada de V3",
+      "body": "Integrar el puesto V3 y el contrato diario en una secuencia conjunta de Admin y Core, validando recuperación, contador y agregado.",
+      "recommended": true
+    },
+    {
+      "title": "API por adelantado",
+      "body": "Publicar primero el agregado de `opProductivity`, aceptando que el consumidor V3 y la validación de kiosko lleguen después.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Entrega coordinada de V3",
+    "body": "Integrar el puesto V3 y el contrato diario en una secuencia conjunta de Admin y Core, validando recuperación, contador y agregado.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Alex Cantón",
+    "reason": "Su trabajo reciente conecta el repositorio y la API de productividad que condicionan el contrato diario.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/8014.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8014#issuecomment-5101484628",
+    "reviewedAt": "2026-08-07T09:27:58.197Z",
+    "mainSha": "b5ea1d0184d0229ee70a01d28d9e22607dd029be"
+  }
+}

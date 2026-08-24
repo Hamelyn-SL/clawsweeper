@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-30T19:37:22.051Z",
+  "updatedAt": "2026-07-30T12:22:06Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8128,
+    "title": "No mostrar opción punto recogida ecommerces internacionales. ",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8128",
+    "state": "closed",
+    "labels": [
+      "source:admin-panel",
+      "app:ecommerce",
+      "reporter:jesus",
+      "feature",
+      "triage:done",
+      "P2",
+      "impact:ux-friction",
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro",
+      "clawsweeper:linked-pr-open",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-30T09:33:37Z",
+    "updatedAt": "2026-07-30T12:22:06Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe ocultarse `pickup` únicamente cuando el dominio no habilita PUDO, o también en España cuando el carrito contiene productos nuevos?",
+  "rationale": "La regla documentada diferencia mercado y contenido del carrito, mientras que el PR enlazado usa una única señal y cambia ambas experiencias.",
+  "options": [
+    {
+      "title": "Limitar el ocultado al mercado",
+      "body": "Separar la señal de sitio PUDO y conservar el botón deshabilitado en España cuando haya productos nuevos.",
+      "recommended": true
+    },
+    {
+      "title": "Unificar toda indisponibilidad",
+      "body": "Aceptar que cualquier causa de indisponibilidad oculte la opción y actualizar la regla de negocio y la prueba de checkout.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Limitar el ocultado al mercado",
+    "body": "Separar la señal de sitio PUDO y conservar el botón deshabilitado en España cuando haya productos nuevos.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Es la persona asignada y mantiene la propuesta de implementación vinculada.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/8128.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8128#issuecomment-5129274145",
+    "reviewedAt": "2026-07-30T19:37:22.051Z",
+    "mainSha": "866567d3c9c4c61afa385bce35f238c770e8bc2e"
+  }
+}

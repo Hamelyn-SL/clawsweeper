@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-07T22:44:49.777Z",
+  "updatedAt": "2026-07-08T09:37:52Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 6007,
+    "title": "crons: /api/milanuncios-responder agota la carga de mensajes pendientes",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6007",
+    "state": "closed",
+    "labels": [
+      "crons",
+      "codex",
+      "bug",
+      "priority:p1",
+      "app:crons"
+    ],
+    "createdAt": "2026-05-22T23:43:32Z",
+    "updatedAt": "2026-07-08T09:37:52Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "Should the remaining Milanuncios pending-load work pursue guarded pagination/batching against the private `ObtenerMensajes` interface, or should the current clean-deferral behavior be treated as the intended response to provider slowness?",
+  "rationale": "The code already implements retries and safe deferral; the remaining path depends on operational tolerance and whether maintainers want to rely on undocumented Milanuncios pagination fields.",
+  "options": [
+    {
+      "title": "Investigate guarded batching",
+      "body": "Prove `vermas` or date filters against real Milanuncios behavior, then implement bounded pagination or reduced volume with recovery logs.",
+      "recommended": true
+    },
+    {
+      "title": "Accept clean deferral",
+      "body": "Keep the current no-archive deferral behavior and adjust watcher thresholds/runbooks so repeated provider slowness is tracked separately from a code bug.",
+      "recommended": false
+    },
+    {
+      "title": "Escalate partner API",
+      "body": "Pause code changes and seek a Milanuncios partner/API contract before expanding private-interface automation.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Investigate guarded batching",
+    "body": "Prove `vermas` or date filters against real Milanuncios behavior, then implement bounded pagination or reduced volume with recovery logs.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "This handle owns the recent merged fixes and is the current issue assignee.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/6007.md",
+    "reviewedAt": "2026-07-07T22:44:49.777Z",
+    "mainSha": "22201b3382325cc80747a08a1e49a425cfc04d7a"
+  }
+}

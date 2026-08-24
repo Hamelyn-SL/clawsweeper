@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-05T08:51:07.887Z",
+  "updatedAt": "2026-08-05T08:12:43Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8219,
+    "title": "Instrumentar entryLog en las BLs de buying, ecommerce y pricing",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8219",
+    "state": "closed",
+    "labels": [
+      "app:infrastructure",
+      "feature",
+      "triage:done",
+      "business-logic",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:linked-pr-open",
+      "issue-rating: ➖ n/a",
+      "P2",
+      "impact:other",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-08-05T05:52:16Z",
+    "updatedAt": "2026-08-05T08:12:43Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se aprueba la matriz final de reglas con `entryLog: yes/no` y la ubicación de los emisores propuesta en la PR vinculada?",
+  "rationale": "El skill requiere validación del owner para las reglas BL; escoger qué decisiones representan cada regla y qué excepciones quedan sin emisor no puede inferirse con seguridad de forma automática.",
+  "options": [
+    {
+      "title": "Aprobar la matriz propuesta",
+      "body": "Revisar la PR como la implementación canónica y mergearla si cada emisor conserva el volumen y la semántica descritos.",
+      "recommended": true
+    },
+    {
+      "title": "Ajustar reglas concretas",
+      "body": "Solicitar cambios en las decisiones `yes/no` o en los puntos de emisión antes de aprobar el conjunto.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar la matriz propuesta",
+    "body": "Revisar la PR como la implementación canónica y mergearla si cada emisor conserva el volumen y la semántica descritos.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Daniel",
+    "reason": "Introdujo el helper y el contrato de telemetría que la PR extiende.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/8219.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8219#issuecomment-5188505733",
+    "reviewedAt": "2026-08-05T08:51:07.887Z",
+    "mainSha": "dde44afb92e3731ca5aa0878f3d5e5a9be9a691d"
+  }
+}

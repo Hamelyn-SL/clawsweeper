@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-16T08:34:57.488Z",
+  "updatedAt": "2026-07-16T08:25:23Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7513,
+    "title": "Auto-resolución de conflictos de PRs contra dev con agente cloud en apps/agents",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7513",
+    "state": "closed",
+    "labels": [
+      "priority:p2",
+      "app:infrastructure",
+      "feature",
+      "reporter:danielmenchen-hamelyn",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:linked-pr-open",
+      "impact:security",
+      "clawsweeper:needs-security-review",
+      "issue-rating: ➖ n/a"
+    ],
+    "createdAt": "2026-07-14T08:32:59Z",
+    "updatedAt": "2026-07-16T08:25:23Z"
+  },
+  "lane": "security_boundary",
+  "priority": "P2",
+  "question": "¿Qué alcance de confianza y disparo debe aprobarse para la primera versión del resolutor antes de permitir que ejecute código de PRs y pushee resultados?",
+  "rationale": "El PR implementa mecanismos defensivos, pero la selección de ramas autorizadas, el acceso simultáneo a credenciales y la sustitución del cron por un trigger por push son decisiones de seguridad y operación que no deben inferirse automáticamente.",
+  "options": [
+    {
+      "title": "Versión interna restringida",
+      "body": "Aceptar inicialmente solo PRs no draft del repositorio base y actores confiables, conservar el trigger por push y mantener `dry_run` hasta demostrar un happy path completo.",
+      "recommended": true
+    },
+    {
+      "title": "Añadir barrido de respaldo",
+      "body": "Aplicar las mismas restricciones de confianza, pero restaurar además un schedule periódico para recuperar triggers perdidos o estados `UNKNOWN` prolongados.",
+      "recommended": false
+    },
+    {
+      "title": "Solo detectar y derivar",
+      "body": "Desplegar únicamente detección, comentarios y labels, sin ejecutar código ni crear pushes automáticos hasta diseñar una separación más fuerte de credenciales.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Versión interna restringida",
+    "body": "Aceptar inicialmente solo PRs no draft del repositorio base y actores confiables, conservar el trigger por push y mantener `dry_run` hasta demostrar un happy path completo.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "El historial le vincula directamente con la arquitectura y operación del runner cloud, y continúa solicitado como revisor del PR candidato.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7513.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7513#issuecomment-4967152411",
+    "reviewedAt": "2026-07-16T08:34:57.488Z",
+    "mainSha": "1724b7a415bfa70a60e3f00d68c49d44de428c71"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-15T12:26:17.484Z",
+  "updatedAt": "2026-07-15T10:40:31Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7492,
+    "title": "Trasvase: panel de inventario de gaveta de estantería con fusión a BIN de Skypod, estilo Review y Ecommerce V3",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7492",
+    "state": "closed",
+    "labels": [
+      "source:admin-panel",
+      "app:admin",
+      "priority:p1",
+      "feature",
+      "P2",
+      "impact:ux-friction",
+      "issue-rating: ➖ n/a",
+      "clawsweeper:linked-pr-open",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-14T06:20:38Z",
+    "updatedAt": "2026-07-15T10:40:31Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué contrato operativo debe garantizar el Trasvase cuando Mongo se actualiza pero la definición o el BIN IN de Skypod falla o queda en estado incierto?",
+  "rationale": "La elección determina el modelo persistente, la experiencia de recuperación y si la PR actual puede fusionarse sin exponer al almacén a estados parciales; no puede deducirse con seguridad del comportamiento legacy.",
+  "options": [
+    {
+      "title": "Persistir estado e idempotencia",
+      "body": "Exigir antes del merge un registro de trasvase con estados, clave idempotente, reintentos seguros y una ruta explícita de recuperación o conciliación.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar recuperación operativa manual",
+      "body": "Fusionar el flujo actual documentando un runbook y observabilidad suficiente para que el equipo reconcilie manualmente los fallos parciales.",
+      "recommended": false
+    },
+    {
+      "title": "Entregar primero solo inventario",
+      "body": "Limitar la primera fase al inventario y selección de stocks, y posponer la mutación de ubicaciones y el BIN IN hasta definir el contrato transaccional.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Persistir estado e idempotencia",
+    "body": "Exigir antes del merge un registro de trasvase con estados, clave idempotente, reintentos seguros y una ruta explícita de recuperación o conciliación.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "Es el propietario funcional más conectado al flujo de fusión actual y el revisor requerido con mayor experiencia histórica directa en esa superficie.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7492.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7492#issuecomment-4966435214",
+    "reviewedAt": "2026-07-15T12:26:17.484Z",
+    "mainSha": "c9c48539811bc0171e4605b5bbaf72e258ffc431"
+  }
+}

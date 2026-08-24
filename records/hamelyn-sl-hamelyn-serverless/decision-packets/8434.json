@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-18T23:03:23.799Z",
+  "updatedAt": "2026-08-18T17:11:35Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8434,
+    "title": "fix: paginate todocoleccion orders and return per-item sync results",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8434",
+    "state": "closed",
+    "labels": [
+      "size/XXL",
+      "merge-risk: 🚨 other",
+      "merge-risk: 🚨 message-delivery",
+      "rating: 🥈 silver",
+      "status: 📣 needs proof",
+      "P1"
+    ],
+    "createdAt": "2026-08-13T11:40:19Z",
+    "updatedAt": "2026-08-18T17:11:35Z",
+    "headSha": "e8eb5111072d7ccd7dc40b218d2cfa186c9bf7ee"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe un pedido de TodoColección quedar terminalmente en `SHIPPED` cuando el cambio remoto de estado funciona pero falla el mensaje al comprador?",
+  "rationale": "La rama evita mensajes duplicados, pero sustituye el reintento implícito anterior por una posible notificación perdida; el contrato deseado de comunicación con compradores requiere criterio de producto y operación.",
+  "options": [
+    {
+      "title": "Separar la recuperación del mensaje",
+      "body": "Conservar `SHIPPED` tras confirmar el envío, pero crear una vía durable y observable que reintente solo la notificación al comprador.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar el fallo terminal",
+      "body": "Aceptar que un fallo del mensaje no se reintenta y documentar el seguimiento manual necesario para estas ventas.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener el comportamiento anterior",
+      "body": "Dejar el pedido reintentable hasta que exista una solución idempotente para no duplicar mensajes ni confirmaciones.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Separar la recuperación del mensaje",
+    "body": "Conservar `SHIPPED` tras confirmar el envío, pero crear una vía durable y observable que reintente solo la notificación al comprador.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "alexcanHamelyn",
+    "reason": "Su historial cubre la semántica de errores y rate limits de TodoColección, y revisó positivamente esta cabecera.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/8434.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8434#issuecomment-5280328832",
+    "reviewedAt": "2026-08-18T23:03:23.799Z",
+    "mainSha": "c48d810626fc99fac2537fe628d12f1a18d666da"
+  }
+}

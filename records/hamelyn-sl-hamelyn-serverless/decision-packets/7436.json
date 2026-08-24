@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-14T23:35:35.278Z",
+  "updatedAt": "2026-07-14T08:30:24Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7436,
+    "title": "feat: resolve authors by canonical authorId across duplicate fichas",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7436",
+    "state": "closed",
+    "labels": [
+      "size/L",
+      "rating: 🥉 bronze",
+      "status: 📣 needs proof",
+      "P1",
+      "merge-risk: 🚨 compatibility",
+      "merge-risk: 🚨 automation"
+    ],
+    "createdAt": "2026-07-13T08:14:41Z",
+    "updatedAt": "2026-07-14T08:30:24Z",
+    "headSha": "0a8995dea9c6ffc0f900e442072e1f88b9ed0c9d"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Deben todos los enlaces internos de autor apuntar directamente al slug canónico, como pide la issue enlazada, o se acepta deliberadamente que apunten a fichas duplicadas y añadan un salto 308 hasta completar el backfill?",
+  "rationale": "El contribuidor defendió el salto adicional como una decisión de alcance, mientras que la aceptación de la issue exige enlaces directamente canónicos; el código no puede resolver esa discrepancia sin intención humana.",
+  "options": [
+    {
+      "title": "Enlaces directamente canónicos",
+      "body": "Resolver cada grupo por `authorId` en los helpers y emitir siempre el slug de la ficha canónica, evitando resultados dependientes del orden y redirects internos adicionales.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar redirects internos",
+      "body": "Mantener los helpers actuales, documentar explícitamente la excepción y aceptar los saltos 308 hasta que una fusión física retire las fichas duplicadas.",
+      "recommended": false
+    },
+    {
+      "title": "Posponer los enlaces",
+      "body": "Separar la canonicalización de página y cron de los cambios de enlaces, dejando estos últimos para un seguimiento específico.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Enlaces directamente canónicos",
+    "body": "Resolver cada grupo por `authorId` en los helpers y emitir siempre el slug de la ficha canónica, evitando resultados dependientes del orden y redirects internos adicionales.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "Es el revisor humano ya asignado y el mejor candidato disponible para confirmar el alcance SEO y de enlaces antes del merge.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7436.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7436#issuecomment-4956208146",
+    "reviewedAt": "2026-07-14T23:35:35.278Z",
+    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
+  }
+}

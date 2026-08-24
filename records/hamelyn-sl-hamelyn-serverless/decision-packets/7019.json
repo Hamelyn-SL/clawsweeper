@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-08T03:40:04.686Z",
+  "updatedAt": "2026-07-07T01:40:18Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7019,
+    "title": "Integrar API real de puntos SEUR PUDO y selección de punto por el vendedor (BL-shipping-pudo-supply-02)",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7019",
+    "state": "closed",
+    "labels": [
+      "app:supply",
+      "priority:p3",
+      "feature",
+      "triage:done",
+      "P3",
+      "issue-rating: 🌊 off-meta tidepool",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-06T13:04:06Z",
+    "updatedAt": "2026-07-07T01:40:18Z"
+  },
+  "lane": "product_direction",
+  "priority": "P3",
+  "question": "Should the team resume SEUR PUDO for Supply now, and if so what seller UI plus public API contract should carry the selected pickup point?",
+  "rationale": "The source gap is clear, but the implementation boundary depends on product timing, external SEUR API behavior, and the end-to-end seller checkout contract.",
+  "options": [
+    {
+      "title": "Keep as coordinated feature",
+      "body": "Leave this issue open for Supply/Integrations to define the API/UI contract and land the full SEUR-backed flow together.",
+      "recommended": true
+    },
+    {
+      "title": "Narrow to backend first",
+      "body": "Split a smaller backend-only task for real SEUR point lookup while deferring seller selection UI and activation.",
+      "recommended": false
+    },
+    {
+      "title": "Defer or abandon the flow",
+      "body": "Close or relabel only if maintainers decide the non-production SEUR PUDO Supply flow will not be resumed.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Keep as coordinated feature",
+    "body": "Leave this issue open for Supply/Integrations to define the API/UI contract and land the full SEUR-backed flow together.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "alexcanHamelyn",
+    "reason": "They authored the recent Supply PUDO BL extraction and partial fix that explicitly transferred this remaining work here.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7019.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7019#issuecomment-4911271923",
+    "reviewedAt": "2026-07-08T03:40:04.686Z",
+    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+  }
+}

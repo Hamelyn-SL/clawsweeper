@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-10T06:37:29.326Z",
+  "updatedAt": "2026-07-10T06:26:20Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7226,
+    "title": "feat: buscador manual y por EAN de lote en la pantalla de revisión",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7226",
+    "state": "closed",
+    "labels": [
+      "app:admin",
+      "priority:p1",
+      "feature",
+      "epic:revision-v3",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "impact:ux-friction",
+      "issue-rating: 🌊 off-meta tidepool",
+      "clawsweeper:fix-shape-clear"
+    ],
+    "createdAt": "2026-07-08T09:19:27Z",
+    "updatedAt": "2026-07-10T06:26:20Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿La PR mergeada en `EPIC/revision-v3` basta como primera fase de esta issue, o el fallback por EAN/Pedido de Compra debe implementarse antes de cerrar el requisito?",
+  "rationale": "La issue pide dos capacidades y la evidencia actual muestra una implementación parcial en una rama de epic, no en `dev`; cerrar, partir o ampliar el alcance requiere criterio del equipo de Revisión V3.",
+  "options": [
+    {
+      "title": "Mantener abierta hasta cubrir EAN",
+      "body": "La issue queda alineada con sus notas de aceptación y se cierra solo cuando el flujo principal resuelva también el caso de lote no encontrado por EAN/Pedido de Compra.",
+      "recommended": true
+    },
+    {
+      "title": "Separar el fallback EAN",
+      "body": "Se puede aceptar la entrada manual como fase ya mergeada en la rama de epic, dejando una issue explícita para integrar el buscador EAN después.",
+      "recommended": false
+    },
+    {
+      "title": "Reducir alcance del flujo",
+      "body": "Si producto decide que el buscador separado es suficiente, conviene documentar esa decisión antes de cerrar esta petición.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mantener abierta hasta cubrir EAN",
+    "body": "La issue queda alineada con sus notas de aceptación y se cierra solo cuando el flujo principal resuelva también el caso de lote no encontrado por EAN/Pedido de Compra.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "alexcanHamelyn",
+    "reason": "Es el assignee de la issue y autor de la PR relacionada que ya modifica la pantalla de escaneo en la rama de epic.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7226.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7226#issuecomment-4919262159",
+    "reviewedAt": "2026-07-10T06:37:29.326Z",
+    "mainSha": "fbd4b55db934eeae5175d1c95f53b976aa46f86b"
+  }
+}

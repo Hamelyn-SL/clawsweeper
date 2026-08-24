@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-14T11:19:20.560Z",
+  "updatedAt": "2026-07-08T09:42:23Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7177,
+    "title": "Casa del Libro keeps active Mirakl offers for withdrawn stocks",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7177",
+    "state": "closed",
+    "labels": [
+      "bug",
+      "priority:p1",
+      "app:marketplace",
+      "triage:done",
+      "P1",
+      "impact:other",
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-07T21:34:11Z",
+    "updatedAt": "2026-07-08T09:42:23Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Qué política debe usar CDL para recuperar ofertas activas sin `mk_casaDelLibro`: snapshot con verificación API, rehidratación directa desde snapshot o barrido completo de la API?",
+  "rationale": "La elección define el equilibrio entre cobertura, falsas detecciones, volumen de escrituras y rate limits de Mirakl; el comportamiento canónico no puede deducirse con seguridad del código actual.",
+  "options": [
+    {
+      "title": "Snapshot más API viva",
+      "body": "Usar el snapshot para descubrir candidatos y verificar cada oferta en Mirakl antes de rehidratarla y retirarla, limitando falsos positivos y llamadas.",
+      "recommended": true
+    },
+    {
+      "title": "Rehidratar desde snapshot",
+      "body": "Crear filas mínimas para toda la cohorte del snapshot y dejar que el cron retire, aceptando que algunas entradas puedan estar obsoletas.",
+      "recommended": false
+    },
+    {
+      "title": "Barrido completo de Mirakl",
+      "body": "Construir la reconciliación desde la API como fuente principal, con mayor coste operativo y exposición a rate limits.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Snapshot más API viva",
+    "body": "Usar el snapshot para descubrir candidatos y verificar cada oferta en Mirakl antes de rehidratarla y retirarla, limitando falsos positivos y llamadas.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es la persona con trabajo fusionado más reciente en la prevención de listings vendidos y con historial directo en la API de Casa del Libro.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7177.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7177#issuecomment-4968581285",
+    "reviewedAt": "2026-07-14T11:19:20.560Z",
+    "mainSha": "f2fce4a9343f0c2b097db6d881f2effc0aea5e13"
+  }
+}

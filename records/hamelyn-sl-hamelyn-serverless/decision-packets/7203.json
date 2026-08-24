@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-09T08:11:06.289Z",
+  "updatedAt": "2026-07-09T06:38:41Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7203,
+    "title": "fix: generate supply sitemap from deploy env",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7203",
+    "state": "closed",
+    "labels": [
+      "size/XXL",
+      "proof: sufficient",
+      "rating: 🧂 unranked krab",
+      "status: ⏳ waiting on author",
+      "P2",
+      "merge-risk: 🚨 compatibility",
+      "merge-risk: 🚨 security-boundary",
+      "merge-risk: 🚨 automation"
+    ],
+    "createdAt": "2026-07-08T05:44:06Z",
+    "updatedAt": "2026-07-09T06:38:41Z",
+    "headSha": "d6fad59ca525019579538dafbead07422f2c0602"
+  },
+  "lane": "merge_risk",
+  "priority": "P2",
+  "question": "¿Debe este PR reducirse al fix de sitemap de Supply o se quiere revisar explícitamente aquí el borrado de `apps/agents` y el cambio de endpoint del reviewer?",
+  "rationale": "La parte de sitemap tiene buena señal, pero el head actual mezcla cambios de producto, automatización y seguridad que no están explicados por el objetivo ni por la evidencia del PR.",
+  "options": [
+    {
+      "title": "Reducir al fix de Supply",
+      "body": "Restaurar `apps/agents`, workflows, core y BL docs/tests no relacionados, dejando solo sitemap/localized routes/vercel docs para review y merge.",
+      "recommended": true
+    },
+    {
+      "title": "Revisar como cambio amplio",
+      "body": "Tratar el PR como una eliminación/migración explícita de agentes y automatización, con aprobación de owners, pruebas de upgrade y explicación de seguridad antes de mergear.",
+      "recommended": false
+    },
+    {
+      "title": "Cerrar y reabrir estrecho",
+      "body": "Cerrar esta rama si la limpieza manual es más costosa que abrir un PR nuevo que reaplique solo el arreglo de sitemap probado.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Reducir al fix de Supply",
+    "body": "Restaurar `apps/agents`, workflows, core y BL docs/tests no relacionados, dejando solo sitemap/localized routes/vercel docs para review y merge.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es la señal más fuerte en `apps/agents` y en el workflow de reviewer que el PR actual modifica de forma riesgosa.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7203.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7203#issuecomment-4919246643",
+    "reviewedAt": "2026-07-09T08:11:06.289Z",
+    "mainSha": "1586c4457b8fe2cc43a825bb413529c12042355a"
+  }
+}

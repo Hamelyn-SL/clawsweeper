@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-13T08:00:22.043Z",
+  "updatedAt": "2026-07-13T07:46:40Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7299,
+    "title": "feat: unify group price floors into PMin and drop PMaxMalvendido",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7299",
+    "state": "closed",
+    "labels": [
+      "size/L",
+      "rating: 🦪 silver shellfish",
+      "status: 📣 needs proof",
+      "P2",
+      "merge-risk: 🚨 compatibility"
+    ],
+    "createdAt": "2026-07-09T11:53:03Z",
+    "updatedAt": "2026-07-13T07:46:40Z",
+    "headSha": "866304f1815990ee583de857e74603d9062d1c16"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe este PR cambiar también los artefactos BL aislados y sus tests para que `MALVENDIDO` use `PMin`/`PMax`, o esos artefactos deben quedar como contrato histórico separado?",
+  "rationale": "La PR cambia comportamiento productivo validado en un bloque BL y toca configuración externa; automatización no debe decidir si el contrato BL probado se reescribe, se excluye o se migra en otra PR.",
+  "options": [
+    {
+      "title": "Sincronizar BL en esta PR",
+      "body": "Actualizar la función pura, specs y tests de `BL-pricing-groups` para reflejar `PMin`/`PMax` antes de mergear.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener BL fuera de alcance",
+      "body": "Documentar explícitamente por qué esos artefactos no representan el contrato vigente de este cambio y abrir seguimiento humano si hace falta.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar hasta rollout de Mongo",
+      "body": "Esperar a que la query externa y una prueba de producción/staging demuestren que los límites globales son los esperados.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Sincronizar BL en esta PR",
+    "body": "Actualizar la función pura, specs y tests de `BL-pricing-groups` para reflejar `PMin`/`PMax` antes de mergear.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "PabloMoran34",
+    "reason": "Figura como owner del bloque BL relacionado y autor del cambio de pricing/configuración.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7299.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7299#issuecomment-4924832969",
+    "reviewedAt": "2026-07-13T08:00:22.043Z",
+    "mainSha": "3507f660b3c32cda93c23d3a81815c97a689226e"
+  }
+}

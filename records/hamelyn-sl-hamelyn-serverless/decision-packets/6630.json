@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-07T23:41:30.264Z",
+  "updatedAt": "2026-07-08T09:38:45Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 6630,
+    "title": "chore: provisionar mini PC + kiosk Windows (autologin, Chrome kiosk, recuperación) + runbook",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6630",
+    "state": "closed",
+    "labels": [
+      "priority:p1",
+      "app:infrastructure",
+      "feature",
+      "triage:blocked",
+      "epic:revision-v3"
+    ],
+    "createdAt": "2026-06-23T17:19:19Z",
+    "updatedAt": "2026-07-08T09:38:45Z"
+  },
+  "lane": "product_direction",
+  "priority": "P0",
+  "question": "Should this issue remain as the coordination tracker for both external Windows provisioning and in-repo admin station support, or should maintainers split those into separate owners/repositories?",
+  "rationale": "Current source can cover only admin station and heartbeat support; Windows autologin, Chrome kiosk launch, watchdog, USB scanner setup, and local camera-agent packaging are not present in this monorepo.",
+  "options": [
+    {
+      "title": "Split into two deliverables",
+      "body": "Track Windows provisioning/camera-agent runbook ownership outside this monorepo and keep only a narrow admin-station follow-up here.",
+      "recommended": true
+    },
+    {
+      "title": "Keep as cross-repo tracker",
+      "body": "Use this issue as the coordination item and avoid queueing an autonomous in-repo PR until the external artifact location and owner are known.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Split into two deliverables",
+    "body": "Track Windows provisioning/camera-agent runbook ownership outside this monorepo and keep only a narrow admin-station follow-up here.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Javier provided the operational scope and current blocked triage note, so he is the best available owner for deciding how to split or coordinate the external provisioning path.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/6630.md",
+    "reviewedAt": "2026-07-07T23:41:30.264Z",
+    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+  }
+}

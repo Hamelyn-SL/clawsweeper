@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-10T12:31:03.254Z",
+  "updatedAt": "2026-08-10T12:00:59Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8353,
+    "title": "Bifrost · Montar el PC puente en sala de servidores (Tailscale Standard)",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8353",
+    "state": "closed",
+    "labels": [
+      "app:infrastructure",
+      "reporter:davidgonzalez",
+      "feature",
+      "triage:done",
+      "P2",
+      "impact:security",
+      "issue-rating: ➖ n/a",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:needs-security-review"
+    ],
+    "createdAt": "2026-08-10T10:38:52Z",
+    "updatedAt": "2026-08-10T12:00:59Z"
+  },
+  "lane": "security_boundary",
+  "priority": "P2",
+  "question": "¿Qué ACL, aprobación de dispositivo y política de caducidad de claves deben aprobarse para Bifrost antes de habilitarlo como único acceso remoto?",
+  "rationale": "La arquitectura está decidida, pero los controles de identidad y autorización no están concretados y determinan la seguridad del despliegue.",
+  "options": [
+    {
+      "title": "Aprobar controles mínimos",
+      "body": "Definir ACL de mínimo privilegio, aprobar el dispositivo y documentar la caducidad de claves antes de habilitar el acceso externo.",
+      "recommended": true
+    },
+    {
+      "title": "Montar sin acceso externo",
+      "body": "Preparar el equipo y aplazar Tailscale y AnyDesk hasta que exista una política de acceso aprobada.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar controles mínimos",
+    "body": "Definir ACL de mínimo privilegio, aprobar el dispositivo y documentar la caducidad de claves antes de habilitar el acceso externo.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "Es autor y asignado del epic que establece el perímetro de acceso remoto.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/8353.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8353#issuecomment-5239446852",
+    "reviewedAt": "2026-08-10T12:31:03.254Z",
+    "mainSha": "df8da352886a77d07fef0ccfd54f0687177453b0"
+  }
+}

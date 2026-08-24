@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-04T23:20:44.501Z",
+  "updatedAt": "2026-08-04T22:56:55Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 5456,
+    "title": "marketplace-crons: TodoColeccion entra en rate limit en create y el circuit breaker corta el lote",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5456",
+    "state": "closed",
+    "labels": [
+      "codex",
+      "bug",
+      "app:marketplace",
+      "triage:done",
+      "triage:confirmed-live",
+      "area:marketplace-sync",
+      "origin:watcher",
+      "mk:todocoleccion",
+      "P2",
+      "impact:other",
+      "issue-rating: 🥈 silver",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-04-24T08:37:28Z",
+    "updatedAt": "2026-08-04T22:56:55Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe `create` mantener el corte del lote de `products` ante rate limit, o adoptar una reanudación con backoff y límites definidos por TodoColeccion?",
+  "rationale": "El código actual evita la cascada entre familias, pero la política restante depende de la tolerancia del proveedor y no existe una incidencia reciente para calibrarla.",
+  "options": [
+    {
+      "title": "Conservar el corte protector",
+      "body": "Mantener el comportamiento actual y cerrar la incidencia como mitigada mientras no reaparezca una señal causal de rate limit.",
+      "recommended": true
+    },
+    {
+      "title": "Definir reanudación limitada",
+      "body": "Acordar cuota, espera, máximo de reintentos y señal de recuperación antes de implementar una reanudación del lote `products`.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Conservar el corte protector",
+    "body": "Mantener el comportamiento actual y cerrar la incidencia como mitigada mientras no reaparezca una señal causal de rate limit.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "HamelynDev",
+    "reason": "Está asignado a la incidencia y su historial incluye la mitigación fusionada del breaker.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/5456.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5456#issuecomment-4909522195",
+    "reviewedAt": "2026-08-04T23:20:44.501Z",
+    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
+  }
+}

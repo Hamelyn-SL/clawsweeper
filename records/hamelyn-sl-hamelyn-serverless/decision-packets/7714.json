@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-19T12:14:06.242Z",
+  "updatedAt": "2026-07-18T09:26:24Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7714,
+    "title": "Fnac Price undefined batch contamination regresses after issue closure",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7714",
+    "state": "closed",
+    "labels": [
+      "bug",
+      "priority:p2",
+      "app:marketplace",
+      "triage:done",
+      "P2",
+      "impact:other",
+      "issue-rating: 🥈 silver",
+      "clawsweeper:not-repro-on-main",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-18T07:37:33Z",
+    "updatedAt": "2026-07-18T09:26:24Z"
+  },
+  "lane": "manual_review",
+  "priority": "P2",
+  "question": "¿Se autoriza un dry-run de recuperación de los 1.459 candidatos Fnac históricos y, si sus muestras son correctas, la mutación canónica seguida de su reintroducción controlada?",
+  "rationale": "La evidencia actual descarta una regresión de código, pero la recuperación modifica datos productivos y exige decidir el subconjunto, las salvaguardas y la autorización de ejecución.",
+  "options": [
+    {
+      "title": "Autorizar dry-run y recuperación acotada",
+      "body": "Validar el filtro con tres muestras y aplicar la mutación canónica solo si el dry-run confirma que los listings se pueden recuperar sin reactivar retirados.",
+      "recommended": true
+    },
+    {
+      "title": "Conservar la cohorte y mejorar solo la detección",
+      "body": "Cambiar el watcher para contar escrituras CDC de la firma de error y aplazar la reconciliación de datos hasta disponer de otra ventana operativa.",
+      "recommended": false
+    },
+    {
+      "title": "Revisar primero la PR amplia relacionada",
+      "body": "Evaluar https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7686 como trabajo separado, sin asumir que sustituye el plan de recuperación histórica.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Autorizar dry-run y recuperación acotada",
+    "body": "Validar el filtro con tres muestras y aplicar la mutación canónica solo si el dry-run confirma que los listings se pueden recuperar sin reactivar retirados.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "HamelynDev",
+    "reason": "Es la persona más conectada tanto con el aislamiento ya desplegado en `dev` como con el diagnóstico CDC y el procedimiento de recuperación propuesto.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7714.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7714#issuecomment-5010473513",
+    "reviewedAt": "2026-07-19T12:14:06.242Z",
+    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-21T14:53:57.691Z",
+  "updatedAt": "2026-07-21T14:49:42Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7319,
+    "title": "Preparar release de Supply con los últimos cambios + bump de versión",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7319",
+    "state": "closed",
+    "labels": [
+      "app:supply",
+      "feature",
+      "reporter:miguel",
+      "triage:done",
+      "impact:other",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:linked-pr-open",
+      "issue-rating: ➖ n/a"
+    ],
+    "createdAt": "2026-07-10T06:23:02Z",
+    "updatedAt": "2026-07-21T14:49:42Z"
+  },
+  "lane": "release_inclusion",
+  "priority": "P2",
+  "question": "¿Debe la PR vinculada ser el vehículo final de `2.6.04` con sus cambios de layout, o conviene separar esos cambios y publicar solo el bump tras confirmar las stores?",
+  "rationale": "La publicación externa y el alcance adicional no pueden confirmarse desde el código; decidirlos evita anunciar una versión que los usuarios aún no pueden instalar.",
+  "options": [
+    {
+      "title": "Esperar stores y revisar el alcance",
+      "body": "Confirmar los binarios live, decidir si el layout entra en la release y mergear únicamente después de ambas comprobaciones.",
+      "recommended": true
+    },
+    {
+      "title": "Separar el layout",
+      "body": "Abrir o mantener una PR independiente para Mis ventas y dejar en la PR de release solo las fuentes de versión necesarias.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Esperar stores y revisar el alcance",
+    "body": "Confirmar los binarios live, decidir si el layout entra en la release y mergear únicamente después de ambas comprobaciones.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Está asignado a la issue, definió la secuencia de publicación y gestiona la PR que la referencia.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7319.md",
+    "reviewedAt": "2026-07-21T14:53:57.691Z",
+    "mainSha": "4b46404fe05de31d1c0af23f0ddfbfc603ca14b2"
+  }
+}

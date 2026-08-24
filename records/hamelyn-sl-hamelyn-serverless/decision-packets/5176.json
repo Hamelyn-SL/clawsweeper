@@ -1,0 +1,69 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-08T16:20:35.566Z",
+  "updatedAt": "2026-07-08T10:25:33Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 5176,
+    "title": "marketplace-crons: MercadoLibre degrada listings por image-validator-404 en Bunny CDN",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5176",
+    "state": "closed",
+    "labels": [
+      "marketplace-crons",
+      "codex",
+      "bug",
+      "priority:p1",
+      "app:marketplace",
+      "triage:done",
+      "triage:confirmed-live",
+      "area:marketplace-sync",
+      "P1",
+      "impact:other",
+      "issue-rating: 🐚 platinum hermit",
+      "clawsweeper:needs-live-repro",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-04-12T13:24:14Z",
+    "updatedAt": "2026-07-08T10:25:33Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿El equipo acepta que los nuevos stocks no aptos por imagen falten una vez en `create` con HTTP agregado 200, o debe implementarse una compuerta previa/backfill que los excluya antes del cron?",
+  "rationale": "El código actual ya separa clasificación, transitorios y criterios de aceptación, pero la decisión restante es operativa: aceptar la señal controlada o invertir en una exclusión previa más estricta.",
+  "options": [
+    {
+      "title": "Verificar producción antes de cerrar",
+      "body": "Ejecutar la consulta de BigQuery posterior al último despliegue y cerrar solo si `IMAGE_NOT_FOUND` ya no reentra en `create` para stocks seleccionados.",
+      "recommended": true
+    },
+    {
+      "title": "Implementar preflight/backfill",
+      "body": "Si la señal sigue activa, añadir o ejecutar una ruta estrecha que marque como no aptos los stocks con imagen faltante antes de que los descubra `/api/mercadolibre`.",
+      "recommended": false
+    },
+    {
+      "title": "Aceptar descarte controlado",
+      "body": "Si operaciones considera correcto que los stocks nuevos no aptos se descarten una vez con señal agregada, documentar el límite y cerrar con esa evidencia.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Verificar producción antes de cerrar",
+    "body": "Ejecutar la consulta de BigQuery posterior al último despliegue y cerrar solo si `IMAGE_NOT_FOUND` ya no reentra en `create` para stocks seleccionados.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Es el assignee actual y está ligado a las correcciones formales previas de la misma issue.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/5176.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5176#issuecomment-4909401181",
+    "reviewedAt": "2026-07-08T16:20:35.566Z",
+    "mainSha": "54896479ce3b6f8f138ef1bf4bc0a74bd9c5d17e"
+  }
+}

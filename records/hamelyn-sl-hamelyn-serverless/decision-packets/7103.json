@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-08T15:11:03.810Z",
+  "updatedAt": "2026-07-08T11:05:10Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7103,
+    "title": "BL-ecommerce-coupons: Coupons & Promotions — specs, aislamiento y tests",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7103",
+    "state": "open",
+    "labels": [
+      "app:ecommerce",
+      "priority:p1",
+      "feature",
+      "business-logic",
+      "hackathon",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision",
+      "issue-rating: 🌊 off-meta tidepool",
+      "P2",
+      "clawsweeper:linked-pr-open"
+    ],
+    "createdAt": "2026-07-07T09:14:32Z",
+    "updatedAt": "2026-07-08T11:05:10Z"
+  },
+  "lane": "manual_review",
+  "priority": "P2",
+  "question": "¿Debe continuar el bloque completo de 28 reglas por https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7237 tras resolver conflictos, o conviene dividirlo antes de mergear?",
+  "rationale": "La automatización no debe decidir el tamaño final ni validar negocio de un bloque BL payment-adjacent; el owner ya lo agrupó, pero la PR sigue conflictiva y requiere revisión humana.",
+  "options": [
+    {
+      "title": "Actualizar y revisar la PR enlazada",
+      "body": "Resolver conflictos, revisar los comentarios de bots/reviewer y fusionar el bloque único si mantiene comportamiento.",
+      "recommended": true
+    },
+    {
+      "title": "Dividir el bloque",
+      "body": "Partir las 28 reglas en bloques menores si el reviewer considera que el tamaño impide una revisión fiable.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Actualizar y revisar la PR enlazada",
+    "body": "Resolver conflictos, revisar los comentarios de bots/reviewer y fusionar el bloque único si mantiene comportamiento.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Es el owner asignado del bloque y autor de la PR enlazada que debe actualizarse o dividirse.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7103.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7103#issuecomment-4916281148",
+    "reviewedAt": "2026-07-08T15:11:03.810Z",
+    "mainSha": "baa2b7603288f1c3d110ad76cf314d7ceb3766c2"
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-20T23:04:30.101Z",
+  "updatedAt": "2026-08-20T12:02:32Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8601,
+    "title": "Segunda pasada BP-NE-EX para no encontrados de Skypod en pedidos B2B",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8601",
+    "state": "closed",
+    "labels": [
+      "app:admin",
+      "reporter:davidgonzalez",
+      "feature",
+      "triage:done",
+      "P3",
+      "issue-rating: ➖ n/a",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-08-20T09:57:07Z",
+    "updatedAt": "2026-08-20T12:02:32Z"
+  },
+  "lane": "product_direction",
+  "priority": "P3",
+  "question": "¿Se mantiene la receta manual B2B hasta disponer de una alternativa de Astar, o se financia un nuevo flujo de segunda pasada que no modifique solicitudes ya iniciadas?",
+  "rationale": "La propuesta depende de cancelar líneas tras el inicio de estación, comportamiento que el commit actual documenta como rechazado por Astar.",
+  "options": [
+    {
+      "title": "Mantener el flujo manual",
+      "body": "Conservar `BP-NOT-FOUND-*` para Skypod hasta validar una API u operación física que permita un segundo repaso sin modificar la solicitud iniciada.",
+      "recommended": true
+    },
+    {
+      "title": "Rediseñar la segunda pasada",
+      "body": "Abrir una iniciativa acotada para investigar un contrato alternativo de Astar y, si funciona, extender ledger, CSV y reconciliación B2B.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mantener el flujo manual",
+    "body": "Conservar `BP-NOT-FOUND-*` para Skypod hasta validar una API u operación física que permita un segundo repaso sin modificar la solicitud iniciada.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es la persona con historial directo sobre el watcher, el ledger y la entrega B2B.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/8601.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8601#issuecomment-5363182900",
+    "reviewedAt": "2026-08-20T23:04:30.101Z",
+    "mainSha": "9612bedb37d998d20c02dd0b5d3c9cea49367ee3"
+  }
+}

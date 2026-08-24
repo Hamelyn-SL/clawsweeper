@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-14T11:09:55.412Z",
+  "updatedAt": "2026-07-14T09:24:44Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7512,
+    "title": "CI: saltar el gate lint+typecheck en cambios que solo tocan documentación",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7512",
+    "state": "closed",
+    "labels": [
+      "priority:p2",
+      "app:infrastructure",
+      "feature",
+      "triage:blocked",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond",
+      "P2",
+      "impact:other",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-14T08:32:18Z",
+    "updatedAt": "2026-07-14T09:24:44Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe la primera versión limitar el skip a directorios documentales explícitos, excluyendo `skills/**`, Markdown usado por automatizaciones y assets dentro de apps o paquetes?",
+  "rationale": "El ahorro y la forma general están bien demostrados, pero el repositorio contiene archivos aparentemente documentales que participan en ejecución; el equipo responsable debe fijar la política permanente de clasificación antes de modificar el required check.",
+  "options": [
+    {
+      "title": "Allowlist mínima",
+      "body": "Saltar únicamente paths documentales explícitos y ejecutar el gate para cualquier skill, asset de producto, Markdown operativo o archivo desconocido.",
+      "recommended": true
+    },
+    {
+      "title": "Clasificador amplio",
+      "body": "Aceptar más extensiones y directorios con excepciones explícitas para cada entrada operativa, asumiendo un coste mayor de mantenimiento y riesgo de deriva.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener el gate completo",
+      "body": "Conservar el comportamiento actual y asumir el coste de runners para no introducir una política de clasificación de archivos.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Allowlist mínima",
+    "body": "Saltar únicamente paths documentales explícitos y ejecutar el gate para cualquier skill, asset de producto, Markdown operativo o archivo desconocido.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es la persona asignada y quien definió recientemente el propósito de caché, push a `dev` y typecheck incremental del gate afectado.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7512.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7512#issuecomment-4967405620",
+    "reviewedAt": "2026-07-14T11:09:55.412Z",
+    "mainSha": "abd96c9f88d629a968b107b58b23955f6c6011e2"
+  }
+}

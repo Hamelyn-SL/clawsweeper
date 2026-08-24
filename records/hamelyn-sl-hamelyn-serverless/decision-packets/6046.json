@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-04T23:10:02.870Z",
+  "updatedAt": "2026-08-04T23:04:18Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 6046,
+    "title": "marketplace-crons: eBay create falla porque falta price",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6046",
+    "state": "closed",
+    "labels": [
+      "codex",
+      "bug",
+      "app:marketplace",
+      "triage:confirmed-live",
+      "area:marketplace-sync",
+      "origin:watcher",
+      "mk:ebay",
+      "P1",
+      "impact:other",
+      "issue-rating: ⚪ platinum",
+      "clawsweeper:needs-live-repro",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-05-25T20:33:08Z",
+    "updatedAt": "2026-08-04T23:04:18Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Qué señal y qué umbral de la sonda autorizan reactivar `ebay.create()` tras la incidencia de publicación masiva?",
+  "rationale": "El manejo de precios ausentes ya está resuelto, pero elegir la tolerancia operativa y el criterio de reactivación no es una reparación mecánica.",
+  "options": [
+    {
+      "title": "Sonda antes de reactivar",
+      "body": "Completar la observabilidad, probar una cohorte limitada y reactivar solo si conserva errores por oferta y demuestra publicaciones remotas correctas.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener la pausa",
+      "body": "Conservar `ebay.create()` desactivado hasta que el equipo priorice una recuperación o resincronización separada.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Sonda antes de reactivar",
+    "body": "Completar la observabilidad, probar una cohorte limitada y reactivar solo si conserva errores por oferta y demuestra publicaciones remotas correctas.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Su hotfix introdujo la contención que ahora requiere una decisión explícita de retirada.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/6046.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6046#issuecomment-4974262910",
+    "reviewedAt": "2026-08-04T23:10:02.870Z",
+    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
+  }
+}

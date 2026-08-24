@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-28T23:23:07.260Z",
+  "updatedAt": "2026-07-28T23:17:53Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8051,
+    "title": "feat: give proof agent real data access and structured findings",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8051",
+    "state": "closed",
+    "labels": [
+      "size/XXL",
+      "proof: 📸 screenshot",
+      "rating: 🥉 bronze",
+      "status: 📣 needs proof",
+      "P1",
+      "merge-risk: 🚨 security-boundary",
+      "merge-risk: 🚨 availability"
+    ],
+    "createdAt": "2026-07-28T23:01:43Z",
+    "updatedAt": "2026-07-28T23:17:53Z",
+    "headSha": "0b685982556093688871d9b21ae12c6077f18a58"
+  },
+  "lane": "security_boundary",
+  "priority": "P1",
+  "question": "¿Debe Proof v3.1 permitir que código de una PR arranque con acceso RW a Atlas de producción, o debe limitarse a una frontera de datos con permisos mínimos?",
+  "rationale": "La respuesta cambia intencionadamente el límite de seguridad y no puede inferirse de una afirmación del autor sin una decisión visible de quien posee el riesgo operativo.",
+  "options": [
+    {
+      "title": "Broker de solo lectura",
+      "body": "Mantener las mediciones reales mediante un usuario o servicio limitado, con proyecciones seguras, sin exponer credenciales de producción al sandbox.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar el acceso RW",
+      "body": "Documentar una aprobación explícita del responsable de seguridad y el alcance de las PRs autorizadas, asumiendo el riesgo de ejecución de código.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Broker de solo lectura",
+    "body": "Mantener las mediciones reales mediante un usuario o servicio limitado, con proyecciones seguras, sin exponer credenciales de producción al sandbox.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su historial concentra la reconstrucción y las correcciones recientes del subsistema Proof.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/8051.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8051#issuecomment-5110820970",
+    "reviewedAt": "2026-07-28T23:23:07.260Z",
+    "mainSha": "de70ead7c6486659f479623aa4b7547c13881346"
+  }
+}

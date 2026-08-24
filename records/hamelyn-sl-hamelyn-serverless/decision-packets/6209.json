@@ -1,0 +1,64 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-04T23:26:12.422Z",
+  "updatedAt": "2026-08-04T23:06:15Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 6209,
+    "title": "marketplace-crons: Feltrinelli marca stocks como SYNC_ERROR sin causa visible",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6209",
+    "state": "closed",
+    "labels": [
+      "codex",
+      "bug",
+      "app:marketplace",
+      "triage:done",
+      "triage:confirmed-live",
+      "area:marketplace-sync",
+      "origin:watcher",
+      "mk:feltrinelli",
+      "P2",
+      "impact:other",
+      "issue-rating: ⚪ platinum",
+      "clawsweeper:needs-live-repro",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-06-02T15:35:06Z",
+    "updatedAt": "2026-08-04T23:06:15Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué campos de diagnóstico puede publicar el `catch` global de withdraw batch sin exponer payloads sensibles ni romper los límites de logs?",
+  "rationale": "La ruta individual ya limita y serializa errores, pero la política del evento agregado determina la implementación segura y estable.",
+  "options": [
+    {
+      "title": "Log estructurado redactado",
+      "body": "Registrar marketplace, `errorType`, una lista acotada de SKUs y una causa serializada con límite de tamaño.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener solo persistencia",
+      "body": "Conservar `errorDetails` únicamente en `mk_feltrinelli` y documentar la consulta operativa de correlación.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Log estructurado redactado",
+    "body": "Registrar marketplace, `errorType`, una lista acotada de SKUs y una causa serializada con límite de tamaño.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Es el responsable asignado y está vinculado al mantenimiento reciente de las mutaciones de marketplace.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/6209.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6209#issuecomment-4909862960",
+    "reviewedAt": "2026-08-04T23:26:12.422Z",
+    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
+  }
+}

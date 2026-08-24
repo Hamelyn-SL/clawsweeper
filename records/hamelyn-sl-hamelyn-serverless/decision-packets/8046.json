@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-30T22:48:04.814Z",
+  "updatedAt": "2026-07-30T19:52:30Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8046,
+    "title": "fix: stop untracked batch outcomes from stranding rows in batch",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8046",
+    "state": "closed",
+    "labels": [
+      "size/L",
+      "rating: 🥈 silver",
+      "status: 📣 needs proof",
+      "P1",
+      "merge-risk: 🚨 availability"
+    ],
+    "createdAt": "2026-07-28T22:45:44Z",
+    "updatedAt": "2026-07-30T19:52:30Z",
+    "headSha": "04d9e1d8b79562bb46a5735474413cbaf4e9999e"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Qué política debe aplicar el polling cuando el batch más antiguo no aporta ningún outcome rastreado: ceder temporalmente su turno o conservar prioridad absoluta?",
+  "rationale": "Cambiar el timestamp, introducir backoff o mantener reintentos inmediatos altera la equidad y la latencia de recuperación de batches existentes.",
+  "options": [
+    {
+      "title": "Aplicar backoff al batch sin progreso",
+      "body": "Registrar o derivar una elegibilidad temporal para que ese batch pueda reintentarse sin bloquear los demás batches pendientes.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener prioridad absoluta",
+      "body": "Aceptar que un batch sin outcomes rastreados se consulte en cada ventana hasta recibir evidencia terminal.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aplicar backoff al batch sin progreso",
+    "body": "Registrar o derivar una elegibilidad temporal para que ese batch pueda reintentarse sin bloquear los demás batches pendientes.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su cambio reciente define el aislamiento y la recuperación del loop de batches afectado.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/8046.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8046#issuecomment-5110894660",
+    "reviewedAt": "2026-07-30T22:48:04.814Z",
+    "mainSha": "866567d3c9c4c61afa385bce35f238c770e8bc2e"
+  }
+}

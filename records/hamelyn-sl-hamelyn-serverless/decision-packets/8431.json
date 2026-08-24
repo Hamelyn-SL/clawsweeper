@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-13T09:51:38.042Z",
+  "updatedAt": "2026-08-13T09:43:06Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8431,
+    "title": "fix: prevent order search native submit and audit productivity closes",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8431",
+    "state": "open",
+    "labels": [
+      "size/L",
+      "rating: 🥇 gold",
+      "status: 📣 needs proof",
+      "P2",
+      "merge-risk: 🚨 compatibility"
+    ],
+    "createdAt": "2026-08-13T09:26:03Z",
+    "updatedAt": "2026-08-13T09:43:06Z",
+    "headSha": "665494cc2347876e4bf8cc81eb82d0814ca83f9e"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe un supervisor poder finalizar sesiones ajenas solo en las rutas operativas enumeradas por este PR, o debe conservarse una vía explícita fuera de ellas?",
+  "rationale": "El parche limita una capacidad existente de cierre de sesiones ajenas mediante una lista de rutas; el código no puede decidir por sí solo qué flujos de supervisión deben permanecer autorizados.",
+  "options": [
+    {
+      "title": "Confirmar la restricción por rutas",
+      "body": "Mantener el bloqueo fuera de paneles operativos tras verificar que la lista cubre todos los flujos de supervisión vigentes.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener una vía supervisora explícita",
+      "body": "Permitir el cierre ajeno mediante una regla de rol o una acción diferenciada, evitando depender de rutas codificadas.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Confirmar la restricción por rutas",
+    "body": "Mantener el bloqueo fuera de paneles operativos tras verificar que la lista cubre todos los flujos de supervisión vigentes.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Alex Cantón",
+    "reason": "Su historial reciente cubre la semántica de sesiones compartidas y cierres concurrentes.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8431.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8431#issuecomment-5278760881",
+    "reviewedAt": "2026-08-13T09:51:38.042Z",
+    "mainSha": "f6b32e417dfa693e426c6a80a3cc9bf49bb41738"
+  }
+}

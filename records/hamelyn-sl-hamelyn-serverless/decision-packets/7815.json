@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-21T15:52:20.555Z",
+  "updatedAt": "2026-07-21T14:14:32Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7815,
+    "title": "Core: purga de código muerto (fase 0 de la escisión en subpaquetes)",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7815",
+    "state": "closed",
+    "labels": [
+      "app:infrastructure",
+      "feature",
+      "triage:done",
+      "reporter:alejandro",
+      "P2",
+      "impact:other",
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-21T09:19:32Z",
+    "updatedAt": "2026-07-21T14:14:32Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe esta fase limitarse a borrados verificados y a la higiene de configuración, dejando la propiedad definitiva de `low-demand` para un cambio BL separado?",
+  "rationale": "La documentación Buying declara una propiedad distinta de la ruta que usa producción; elegir qué copia sobrevive fija un límite de dominio que el análisis estático no puede decidir.",
+  "options": [
+    {
+      "title": "Acotar la fase 0",
+      "body": "Eliminar solo candidatos sin consumidores confirmados, separar la configuración rota y abrir una decisión BL específica para `low-demand`.",
+      "recommended": true
+    },
+    {
+      "title": "Resolver primero la propiedad BL",
+      "body": "Confirmar Buying o Ecommerce como dueño de `low-demand` y ejecutar después una purga única que incluya su código, pruebas y documentación.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Acotar la fase 0",
+    "body": "Eliminar solo candidatos sin consumidores confirmados, separar la configuración rota y abrir una decisión BL específica para `low-demand`.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "La historia reciente le conecta con la extracción y documentación de la implementación Ecommerce que entra en conflicto.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7815.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7815#issuecomment-5032618973",
+    "reviewedAt": "2026-07-21T15:52:20.555Z",
+    "mainSha": "28961cd9f75c53a05b3951bb081512652fe440ae"
+  }
+}

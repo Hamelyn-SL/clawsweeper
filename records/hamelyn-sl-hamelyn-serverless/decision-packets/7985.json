@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-27T10:33:16.906Z",
+  "updatedAt": "2026-07-27T10:28:17Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7985,
+    "title": "ci: require authoritative PR proof evidence",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7985",
+    "state": "closed",
+    "labels": [],
+    "createdAt": "2026-07-27T09:06:42Z",
+    "updatedAt": "2026-07-27T10:28:17Z",
+    "headSha": "bae5eaaf84fc9ec305439453f666995d59b451d5"
+  },
+  "lane": "security_boundary",
+  "priority": "P1",
+  "question": "¿Se autoriza desplegar el controlador `pull_request_target` en staging tras corregir los bloqueadores y antes de convertir `proof-evidence` en obligatorio?",
+  "rationale": "La rama modifica un workflow privilegiado y depende de credenciales externas de una GitHub App; la aceptación del riesgo y la secuencia de rollout requieren intención explícita.",
+  "options": [
+    {
+      "title": "Desplegar en staging tras los fixes",
+      "body": "Corregir los hallazgos, ejecutar el canario de Actions con la App dedicada y mantener el check no obligatorio durante la observación inicial.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener el flujo actual",
+      "body": "Posponer la migración hasta disponer de una validación operativa y una decisión de seguridad sobre el trigger privilegiado.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Desplegar en staging tras los fixes",
+    "body": "Corregir los hallazgos, ejecutar el canario de Actions con la App dedicada y mantener el check no obligatorio durante la observación inicial.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es el principal autor del contrato v2 y de la configuración operativa descrita por la rama.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7985.md",
+    "reviewedAt": "2026-07-27T10:33:16.906Z",
+    "mainSha": "a8dc6aa6e2c4a83966482486233fda1331467aa9"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-14T08:21:08.788Z",
+  "updatedAt": "2026-08-14T08:06:28Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8432,
+    "title": "fix: self-heal stale productivity sessions on start and back unique active index",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8432",
+    "state": "closed",
+    "labels": [
+      "size/L",
+      "proof: sufficient",
+      "rating: 🥇 gold",
+      "status: ⏳ waiting on author",
+      "P2",
+      "merge-risk: 🚨 compatibility",
+      "merge-risk: 🚨 session-state"
+    ],
+    "createdAt": "2026-08-13T10:06:18Z",
+    "updatedAt": "2026-08-14T08:06:28Z",
+    "headSha": "78443c428e1134202251e82b65ccdbd6b0190f81"
+  },
+  "lane": "release_inclusion",
+  "priority": "P2",
+  "question": "¿Se puede exigir y ejecutar la creación verificada de `uniq_active_session` antes del despliegue de esta PR?",
+  "rationale": "La corrección de concurrencia depende de una operación Atlas fuera del diff y el orden post-despliegue propuesto deja una ventana que el código no puede cerrar.",
+  "options": [
+    {
+      "title": "Provisionar antes del rollout",
+      "body": "Ejecutar limpieza, comprobación de duplicados y `createIndex` con éxito antes de activar la rama en producción.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar la ventana post-despliegue",
+      "body": "Fusionar con la receta manual actual y asumir que cualquier duplicado de la ventana se reparará antes de reintentar el índice.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar la PR",
+      "body": "Esperar a disponer de un mecanismo de despliegue que haga verificable esta precondición de base de datos.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Provisionar antes del rollout",
+    "body": "Ejecutar limpieza, comprobación de duplicados y `createIndex` con éxito antes de activar la rama en producción.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "alexcanHamelyn",
+    "reason": "Su historial en la semántica de sesiones por estación y su revisión solicitada le sitúan cerca de la decisión de compatibilidad.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/8432.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8432#issuecomment-5279070176",
+    "reviewedAt": "2026-08-14T08:21:08.788Z",
+    "mainSha": "ffd78ccb132412f49fc7a27695113cadad5b00cd"
+  }
+}

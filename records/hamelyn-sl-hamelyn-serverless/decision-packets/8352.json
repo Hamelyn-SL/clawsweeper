@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-18T11:24:34.918Z",
+  "updatedAt": "2026-08-18T09:07:52Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8352,
+    "title": "Bifrost · AnyDesk desatendido en cada puesto",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8352",
+    "state": "open",
+    "labels": [
+      "app:infrastructure",
+      "reporter:davidgonzalez",
+      "feature",
+      "triage:needs-info",
+      "P2",
+      "impact:security",
+      "issue-rating: ➖ n/a",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:needs-security-review"
+    ],
+    "createdAt": "2026-08-10T10:38:50Z",
+    "updatedAt": "2026-08-18T09:07:52Z"
+  },
+  "lane": "security_boundary",
+  "priority": "P2",
+  "question": "¿Debe mantenerse AnyDesk únicamente en Bifrost o se autoriza acceso desatendido directo en cada puesto?",
+  "rationale": "Ambas opciones cambian de forma material la superficie de acceso remoto y requieren controles operativos fuera del repositorio.",
+  "options": [
+    {
+      "title": "Centralizar en Bifrost",
+      "body": "Conservar un único punto de acceso exterior y llegar a los puestos desde Bifrost por la LAN.",
+      "recommended": true
+    },
+    {
+      "title": "Autorizar acceso por puesto",
+      "body": "Aprobar AnyDesk directo solo con contraseñas únicas, ACL, inventario de IDs y un proceso de rotación documentado.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Centralizar en Bifrost",
+    "body": "Conservar un único punto de acceso exterior y llegar a los puestos desde Bifrost por la LAN.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "HamelynDev",
+    "reason": "Su triage existente establece el conflicto de perímetro que debe resolverse.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8352.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8352#issuecomment-5239446616",
+    "reviewedAt": "2026-08-18T11:24:34.918Z",
+    "mainSha": "5306ae067c234979d9abf2167b48653d8640f167"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-19T16:21:00.429Z",
+  "updatedAt": "2026-07-19T13:27:54Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7501,
+    "title": "chore: bump the npm-security group across 1 directory with 3 updates",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7501",
+    "state": "closed",
+    "labels": [
+      "size/XL",
+      "dependencies",
+      "javascript",
+      "autofix-failed",
+      "rating: 🥈 silver",
+      "status: ⏳ waiting on author",
+      "P2",
+      "merge-risk: 🚨 compatibility",
+      "merge-risk: 🚨 security-boundary"
+    ],
+    "createdAt": "2026-07-14T07:06:21Z",
+    "updatedAt": "2026-07-19T13:27:54Z",
+    "headSha": "79e549f6bd646b57f6c00ae7703bb3b8bf247261"
+  },
+  "lane": "merge_risk",
+  "priority": "P2",
+  "question": "¿Qué candidatura debe convertirse en la actualización de seguridad consolidada contra `dev` actual?",
+  "rationale": "Hay dos PR solapados y ambos cambian dependencias major; escoger rama y compatibilidad objetivo requiere criterio de propiedad del monorepo.",
+  "options": [
+    {
+      "title": "Consolidar una candidatura",
+      "body": "Actualizar una sola rama desde `dev`, corregir las dos incompatibilidades y cerrar la candidatura redundante después de validar consumidores.",
+      "recommended": true
+    },
+    {
+      "title": "Separar los upgrades major",
+      "body": "Dividir XML, UUID y correo si las validaciones dirigidas no permiten demostrar compatibilidad conjunta.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Consolidar una candidatura",
+    "body": "Actualizar una sola rama desde `dev`, corregir las dos incompatibilidades y cerrar la candidatura redundante después de validar consumidores.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "danielmenchen-hamelyn",
+    "reason": "Su historial reciente cubre el lote transversal de manifests y lockfile que habría que consolidar.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7501.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7501#issuecomment-4974937602",
+    "reviewedAt": "2026-07-19T16:21:00.429Z",
+    "mainSha": "3e701a51783634733d86746c3425f42cce83da5a"
+  }
+}

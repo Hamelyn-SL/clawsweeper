@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-21T22:34:23.937Z",
+  "updatedAt": "2026-08-21T16:43:23Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8626,
+    "title": "Migrar Discogs al MarketplaceManager (piloto F2 de la épica)",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8626",
+    "state": "open",
+    "labels": [
+      "app:marketplace",
+      "feature",
+      "reporter:marcos",
+      "triage:done",
+      "P2",
+      "impact:other",
+      "issue-rating: ➖ n/a",
+      "clawsweeper:linked-pr-open",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-08-21T10:43:04Z",
+    "updatedAt": "2026-08-21T16:43:23Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se aprueba Discogs como piloto que fija el contrato, las mutaciones de estado y los runners compartidos de MarketplaceManager para los siguientes marketplaces?",
+  "rationale": "La implementación propuesta define infraestructura transversal y persistencia que condicionarán migraciones posteriores; no es una decisión que deba resolver un carril automático.",
+  "options": [
+    {
+      "title": "Patrocinar el piloto en la PR abierta",
+      "body": "Revisar la paridad V1/V2 y aceptar Discogs como referencia para la fase F3, manteniendo el switchover separado.",
+      "recommended": true
+    },
+    {
+      "title": "Separar el alcance base",
+      "body": "Pedir que F1 y los runners genéricos aterricen antes en una PR menor, dejando el adaptador Discogs como continuación.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Patrocinar el piloto en la PR abierta",
+    "body": "Revisar la paridad V1/V2 y aceptar Discogs como referencia para la fase F3, manteniendo el switchover separado.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Es el responsable asignado y ha concentrado la propuesta técnica en la PR vinculada.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8626.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8626#issuecomment-5370332561",
+    "reviewedAt": "2026-08-21T22:34:23.937Z",
+    "mainSha": "6345777ab3811f5c70fd2fd333fe42953fa00288"
+  }
+}

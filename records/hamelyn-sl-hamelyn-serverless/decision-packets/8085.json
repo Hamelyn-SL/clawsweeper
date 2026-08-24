@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-13T09:11:44.373Z",
+  "updatedAt": "2026-08-13T08:34:39Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8085,
+    "title": "Ingestar en BigQuery los webhooks de Mandrill para trazar el ciclo de vida de cada email",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8085",
+    "state": "open",
+    "labels": [
+      "feature",
+      "reporter:javier",
+      "triage:needs-info",
+      "app:data",
+      "origin:dev",
+      "P2",
+      "impact:security",
+      "impact:other",
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-29T10:14:09Z",
+    "updatedAt": "2026-08-13T08:34:39Z"
+  },
+  "lane": "security_boundary",
+  "priority": "P2",
+  "question": "¿Qué campos personales, plazo de retención y garantía de persistencia se aprueban para los eventos de Mandrill antes de exponer el receptor?",
+  "rationale": "La elección define el límite de privacidad y si el sistema puede reconocer eventos antes de persistirlos de forma duradera.",
+  "options": [
+    {
+      "title": "Minimizar y encolar duraderamente",
+      "body": "Guardar solo campos aprobados con retención definida y devolver éxito únicamente tras persistir el lote en una cola durable.",
+      "recommended": true
+    },
+    {
+      "title": "Ingesta directa documentada",
+      "body": "Insertar directamente en BigQuery y aceptar explícitamente el riesgo de pérdida o bloqueo ante una incidencia del almacén.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Minimizar y encolar duraderamente",
+    "body": "Guardar solo campos aprobados con retención definida y devolver éxito únicamente tras persistir el lote en una cola durable.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "Su historial reciente cubre el payload de Mandrill que debe instrumentarse para esta trazabilidad.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8085.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8085#issuecomment-5116438979",
+    "reviewedAt": "2026-08-13T09:11:44.373Z",
+    "mainSha": "f6b32e417dfa693e426c6a80a3cc9bf49bb41738"
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-21T00:46:05.677Z",
+  "updatedAt": "2026-08-20T12:29:14Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8543,
+    "title": "fix: move sitemap lastmod only on real product changes",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8543",
+    "state": "open",
+    "labels": [
+      "size/L",
+      "rating: 🥇 gold",
+      "status: 📣 needs proof",
+      "P1",
+      "merge-risk: 🚨 compatibility"
+    ],
+    "createdAt": "2026-08-19T08:23:09Z",
+    "updatedAt": "2026-08-20T12:29:14Z",
+    "headSha": "cf26cfa3deff11ff991a0dbfa78721f9e3fe07ec"
+  },
+  "lane": "release_inclusion",
+  "priority": "P1",
+  "question": "¿Se exige el aprovisionamiento y la frescura verificable de `ecommerce_seo_lastmod` antes de publicar sitemaps, o se acepta explícitamente una fase con `lastmod` ausente o retrasado?",
+  "rationale": "La rama escoge disponibilidad frente a precisión cuando falta la tabla, pero el despliegue de data-platform y la compuerta diaria no garantizan el estado que se va a publicar.",
+  "options": [
+    {
+      "title": "Aprovisionar y bloquear por frescura",
+      "body": "Crear o validar la tabla antes del consumidor y esperar su materialización diaria antes de actualizar el índice público.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar una degradación temporal",
+      "body": "Mantener el fallback actual y asumir explícitamente que el catálogo pueda salir sin `lastmod` durante la coordinación operativa.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar el merge",
+      "body": "Esperar a definir un despliegue coordinado entre data-platform y ecommerce antes de introducir esta dependencia.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprovisionar y bloquear por frescura",
+    "body": "Crear o validar la tabla antes del consumidor y esperar su materialización diaria antes de actualizar el índice público.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es el revisor solicitado con experiencia declarada en el área y puede validar el contrato operativo con los autores de las rutas actuales.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8543.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8543#issuecomment-5346807704",
+    "reviewedAt": "2026-08-21T00:46:05.677Z",
+    "mainSha": "9612bedb37d998d20c02dd0b5d3c9cea49367ee3"
+  }
+}

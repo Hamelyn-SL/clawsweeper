@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-09T22:24:31.163Z",
+  "updatedAt": "2026-07-09T20:28:03Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7308,
+    "title": "Casa del Libro withdrawals leave active offers orphaned without mk rows",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7308",
+    "state": "open",
+    "labels": [
+      "bug",
+      "priority:p1",
+      "app:marketplace",
+      "triage:done",
+      "P1",
+      "impact:other",
+      "issue-rating: 🐚 platinum hermit",
+      "clawsweeper:needs-live-repro",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review"
+    ],
+    "createdAt": "2026-07-09T19:30:49Z",
+    "updatedAt": "2026-07-09T20:28:03Z"
+  },
+  "lane": "proof_sufficiency",
+  "priority": "P1",
+  "question": "¿Debe el equipo ejecutar una remediación operativa CDL snapshot/API → `mk_casaDelLibro` para sembrar retiradas confirmadas vivas antes de automatizar el recovery recurrente?",
+  "rationale": "El fix toca datos de producción y potencialmente más de 10 filas; la política del repo exige dry-run, muestras y confirmación humana antes de ejecutar la mutación.",
+  "options": [
+    {
+      "title": "Primero dry-run operativo",
+      "body": "Preparar un sweep con conteo exacto, tres muestras y validación Mirakl viva antes de hacer upsert de filas `WITHDRAWN/ACTIVE`.",
+      "recommended": true
+    },
+    {
+      "title": "Solo PR de pipeline",
+      "body": "Implementar el mecanismo recurrente sin ejecutar remediación histórica todavía, aceptando que los huérfanos actuales seguirán vivos hasta intervención manual.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Primero dry-run operativo",
+    "body": "Preparar un sweep con conteo exacto, tres muestras y validación Mirakl viva antes de hacer upsert de filas `WITHDRAWN/ACTIVE`.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Aparece en la autoría disponible del flujo compartido de retirada y además el reporte aporta el contexto operativo CDL.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7308.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7308#issuecomment-4930096628",
+    "reviewedAt": "2026-07-09T22:24:31.163Z",
+    "mainSha": "8883e80d43347813e2a0696912d00d8c537ab607"
+  }
+}

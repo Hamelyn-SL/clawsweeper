@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-08T08:55:21.098Z",
+  "updatedAt": "2026-07-07T22:10:28Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7128,
+    "title": "feat: add daily change history for config collection",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7128",
+    "state": "closed",
+    "labels": [
+      "size/M",
+      "proof: sufficient",
+      "rating: 🦪 silver shellfish",
+      "status: ⏳ waiting on author",
+      "P1",
+      "merge-risk: 🚨 security-boundary"
+    ],
+    "createdAt": "2026-07-07T12:10:00Z",
+    "updatedAt": "2026-07-07T22:10:28Z",
+    "headSha": "9c822973c267b40e3e4f9fc3812f326771cd1204"
+  },
+  "lane": "security_boundary",
+  "priority": "P1",
+  "question": "Should `mongodata.config_historic` snapshot every `config` document that may contain credentials, and if so what retention or access boundary should it enforce?",
+  "rationale": "The PR intentionally expands current-secret mirroring into historical retention of rotated credential values, which is a security/data-governance choice rather than a purely mechanical implementation detail.",
+  "options": [
+    {
+      "title": "Limit or expire secret history",
+      "body": "Keep the history feature but exclude known credential documents or add explicit partition expiration/access controls before merge.",
+      "recommended": true
+    },
+    {
+      "title": "Approve full credential history",
+      "body": "Merge full-collection history only if maintainers intentionally accept historical retention under the existing BigQuery access boundary.",
+      "recommended": false
+    },
+    {
+      "title": "Split mirror fix from history",
+      "body": "Merge only the `MERGE_COLLECTIONS` repair now and revisit historical config snapshots in a separate security-reviewed PR.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Limit or expire secret history",
+    "body": "Keep the history feature but exclude known credential documents or add explicit partition expiration/access controls before merge.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "The PR discussion already routes this sensitive data-platform review to MiguelHamelyn.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7128.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7128#issuecomment-4913204274",
+    "reviewedAt": "2026-07-08T08:55:21.098Z",
+    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+  }
+}

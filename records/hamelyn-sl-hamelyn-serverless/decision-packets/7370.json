@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-17T06:55:46.120Z",
+  "updatedAt": "2026-07-17T06:30:09Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7370,
+    "title": "fix: derive amazon batch withdraw regions",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7370",
+    "state": "closed",
+    "labels": [
+      "size/L",
+      "conflicts:needs-human",
+      "rating: 🥉 bronze",
+      "status: 📣 needs proof",
+      "P2",
+      "merge-risk: 🚨 compatibility",
+      "merge-risk: 🚨 availability"
+    ],
+    "createdAt": "2026-07-10T13:57:09Z",
+    "updatedAt": "2026-07-17T06:30:09Z",
+    "headSha": "1685d10ad267724a0cade5b34dd1d81b8ad8abc4"
+  },
+  "lane": "merge_risk",
+  "priority": "P2",
+  "question": "¿Debe adoptarse el mapa tipado del PR como fuente canónica al resolver los conflictos, incorporando FR e IT y definiendo explícitamente qué regiones participan en error recovery?",
+  "rationale": "Los conflictos afectan exactamente a la configuración y al controller que gobiernan regiones productivas; resolverlos exige escoger el diseño permanente y preservar deliberadamente la semántica operativa.",
+  "options": [
+    {
+      "title": "Adoptar el mapa tipado",
+      "body": "Integrar ES, COM, SE, MX, FR e IT en el diseño del PR, modelar por capacidad las excepciones de error recovery y añadir cobertura de regresión.",
+      "recommended": true
+    },
+    {
+      "title": "Reimplementar desde dev",
+      "body": "Cerrar este candidato y preparar un cambio nuevo y estrecho desde `dev` si reconciliar su estructura resulta más arriesgado que rehacer los dos archivos.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Adoptar el mapa tipado",
+    "body": "Integrar ES, COM, SE, MX, FR e IT en el diseño del PR, modelar por capacidad las excepciones de error recovery y añadir cobertura de regresión.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Es quien más ha mantenido recientemente el registry, la configuración regional y el controller Amazon, además de estar solicitado como revisor.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7370.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7370#issuecomment-4938362263",
+    "reviewedAt": "2026-07-17T06:55:46.120Z",
+    "mainSha": "6488cd8832a287efe2570d6a12f65e121f77401e"
+  }
+}

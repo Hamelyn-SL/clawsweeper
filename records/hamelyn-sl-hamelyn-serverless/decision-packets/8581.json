@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-21T00:46:13.538Z",
+  "updatedAt": "2026-08-20T08:40:03Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8581,
+    "title": "feat: use abebooks searchOrders for cancellations and v1.3 speed",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8581",
+    "state": "open",
+    "labels": [
+      "size/L",
+      "rating: 🥉 bronze",
+      "status: 📣 needs proof",
+      "P1",
+      "merge-risk: 🚨 other"
+    ],
+    "createdAt": "2026-08-20T08:39:54Z",
+    "updatedAt": "2026-08-20T08:40:03Z",
+    "headSha": "037384e87d58648e32aef993ae385b45c537563c"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe `speed=PRIORITY` de AbeBooks convertirse en una señal permanente de `ShipPriority.URGENT` además de los umbrales por coste?",
+  "rationale": "La especificación vigente registra el nivel de servicio como comportamiento deseado pendiente, pero no confirma esta semántica específica ni su alcance para AbeBooks.",
+  "options": [
+    {
+      "title": "Adoptar la señal de servicio",
+      "body": "Aceptar PRIORITY como elevación a URGENT, actualizar la regla BL y añadir cobertura canónica sin degradar los umbrales actuales.",
+      "recommended": true
+    },
+    {
+      "title": "Separar la actualización v1.3",
+      "body": "Mantener la mejora de cancelaciones y retirar temporalmente el cambio de prioridad hasta validar la regla con su owner.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Adoptar la señal de servicio",
+    "body": "Aceptar PRIORITY como elevación a URGENT, actualizar la regla BL y añadir cobertura canónica sin degradar los umbrales actuales.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "PabloMoran34",
+    "reason": "Es el contribuidor histórico de la regla de prioridad de envío y de su especificación actual.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8581.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8581#issuecomment-5363888107",
+    "reviewedAt": "2026-08-21T00:46:13.538Z",
+    "mainSha": "9612bedb37d998d20c02dd0b5d3c9cea49367ee3"
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-28T22:10:09.741Z",
+  "updatedAt": "2026-07-28T22:05:51Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8044,
+    "title": "fix: validate live ebay offers before db-only errors",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8044",
+    "state": "open",
+    "labels": [
+      "size/L",
+      "rating: 🥉 bronze",
+      "status: 📣 needs proof",
+      "P2",
+      "merge-risk: 🚨 other"
+    ],
+    "createdAt": "2026-07-28T22:04:57Z",
+    "updatedAt": "2026-07-28T22:05:51Z",
+    "headSha": "679df18e81b1f90ac437b3dc5c6f4d738b2955dc"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe una respuesta `404` o una oferta no publicable de Inventory API seguir clasificándose como `DB_ONLY` en la reconciliación eBay ES?",
+  "rationale": "El parche resuelve las ofertas vivas, pero fija una política operativa para ausencias y estados no publicables que el informe de origen no demuestra por sí sola.",
+  "options": [
+    {
+      "title": "Confirmar `DB_ONLY` para ausentes",
+      "body": "Mantener la semántica actual para `404` y ofertas no vivas, usando la consulta remota solo para excluir listings realmente activos.",
+      "recommended": true
+    },
+    {
+      "title": "Separar estado recuperable",
+      "body": "Crear una categoría reintentable o informativa para `404` y estados no publicables antes de marcar un error definitivo.",
+      "recommended": false
+    },
+    {
+      "title": "Limitar la primera entrega",
+      "body": "Conservar solo las ofertas `PUBLISHED` o `ACTIVE` y posponer cualquier cambio de clasificación para el resto.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Confirmar `DB_ONLY` para ausentes",
+    "body": "Mantener la semántica actual para `404` y ofertas no vivas, usando la consulta remota solo para excluir listings realmente activos.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es la señal histórica más sólida en el script y workflow de reconciliación afectados.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8044.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8044#issuecomment-5110214903",
+    "reviewedAt": "2026-07-28T22:10:09.741Z",
+    "mainSha": "de70ead7c6486659f479623aa4b7547c13881346"
+  }
+}

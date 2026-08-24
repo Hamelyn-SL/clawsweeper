@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-27T12:15:37.456Z",
+  "updatedAt": "2026-07-27T12:12:40Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7999,
+    "title": "Error web ecommerce ",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7999",
+    "state": "open",
+    "labels": [
+      "bug",
+      "source:admin-panel",
+      "app:ecommerce",
+      "triage:running",
+      "reporter:irenegarcia",
+      "clawsweeper:needs-live-repro",
+      "issue-rating: ⚪ platinum",
+      "P0",
+      "impact:ux-release-blocker"
+    ],
+    "createdAt": "2026-07-27T11:56:55Z",
+    "updatedAt": "2026-07-27T12:12:40Z"
+  },
+  "lane": "proof_sufficiency",
+  "priority": "P0",
+  "question": "¿Debe priorizarse una comprobación en producción o preview para aislar la regla que oculta `desktopContent` antes de cambiar la cabecera?",
+  "rationale": "La captura acredita el impacto, pero el código esperado sigue presente y no permite distinguir con seguridad entre CSS emitido, hidratación o estilos externos.",
+  "options": [
+    {
+      "title": "Aislar primero el CSS efectivo",
+      "body": "Inspeccionar DOM y estilos calculados en escritorio y corregir únicamente la regla responsable.",
+      "recommended": true
+    },
+    {
+      "title": "Revertir el cambio de cabecera",
+      "body": "Revertir temporalmente la integración reciente si la comprobación confirma que ha introducido la desaparición.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aislar primero el CSS efectivo",
+    "body": "Inspeccionar DOM y estilos calculados en escritorio y corregir únicamente la regla responsable.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Está asignado actualmente y su historial reciente cubre la integración más próxima de esta cabecera.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7999.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7999#issuecomment-5091063584",
+    "reviewedAt": "2026-07-27T12:15:37.456Z",
+    "mainSha": "e6b81a368263f75b679db21a1b01d522fcf69561"
+  }
+}

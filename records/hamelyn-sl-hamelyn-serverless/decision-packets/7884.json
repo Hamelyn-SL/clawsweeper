@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-22T15:52:34.030Z",
+  "updatedAt": "2026-07-22T14:41:31Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7884,
+    "title": "fix: run amazon returns sync on every trigger",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7884",
+    "state": "closed",
+    "labels": [
+      "size/M",
+      "rating: 🥈 silver",
+      "status: 📣 needs proof",
+      "P1",
+      "merge-risk: 🚨 availability"
+    ],
+    "createdAt": "2026-07-22T13:00:50Z",
+    "updatedAt": "2026-07-22T14:41:31Z",
+    "headSha": "5e9dfdc307532ee7f461795619c821792b906378"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Se acepta que la sincronización diaria se ejecute a las 05:00 UTC, es decir, a las 07:00 durante CEST?",
+  "rationale": "Eliminar el gate es mecánico, pero la hora fija cambia el momento operativo de verano y afecta a la gestión diaria de devoluciones.",
+  "options": [
+    {
+      "title": "Aceptar 05:00 UTC",
+      "body": "Integrar el cron único y priorizar una ejecución diaria fiable aunque en verano ocurra a las 07:00 locales.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener 06:00 Madrid",
+      "body": "Ajustar la solución para conservar las 06:00 locales sin reintroducir una igualdad horaria frágil dentro del script.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aceptar 05:00 UTC",
+    "body": "Integrar el cron único y priorizar una ejecución diaria fiable aunque en verano ocurra a las 07:00 locales.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Ha revisado el head y su historial reciente muestra conocimiento directo del workflow afectado.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7884.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7884#issuecomment-5046528285",
+    "reviewedAt": "2026-07-22T15:52:34.030Z",
+    "mainSha": "dc339efb37ef7634c3e8283b8feca9d42ae17532"
+  }
+}

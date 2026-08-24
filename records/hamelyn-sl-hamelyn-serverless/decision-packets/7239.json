@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-08T21:02:35.940Z",
+  "updatedAt": "2026-07-08T11:35:59Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7239,
+    "title": "fix: include discogs in marketplace bq materialization",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7239",
+    "state": "closed",
+    "labels": [
+      "size/M",
+      "proof: sufficient",
+      "rating: 🐚 platinum hermit",
+      "status: 👀 ready for maintainer look",
+      "P2",
+      "merge-risk: 🚨 other"
+    ],
+    "createdAt": "2026-07-08T11:29:04Z",
+    "updatedAt": "2026-07-08T11:35:59Z",
+    "headSha": "72a1599850d4270339b635ff97ba539b29d914bc"
+  },
+  "lane": "release_inclusion",
+  "priority": "P2",
+  "question": "¿Quién debe ejecutar y verificar el backfill operativo de `mk_discogs` después de desplegar este PR?",
+  "rationale": "La patch corrige el código, pero la completitud histórica de Discogs depende de una acción operativa fuera del diff que no puede validarse solo con CI.",
+  "options": [
+    {
+      "title": "Mergear con backfill asignado",
+      "body": "Aprobar el PR cuando `MarcosTerroso` u otra persona de data-platform confirme el responsable y la verificación posterior del backfill.",
+      "recommended": true
+    },
+    {
+      "title": "Pedir runbook mínimo en el PR",
+      "body": "Retener el merge hasta que el cuerpo del PR deje un checklist de despliegue, backfill y query de comprobación final.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar hasta ventana operativa",
+      "body": "Esperar a una ventana donde se pueda desplegar y ejecutar el backfill seguido para evitar datos parciales prolongados.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mergear con backfill asignado",
+    "body": "Aprobar el PR cuando `MarcosTerroso` u otra persona de data-platform confirme el responsable y la verificación posterior del backfill.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Tiene la señal más directa en los ficheros de data-platform tocados y ya aparece como reviewer asignado para este PR.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7239.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7239#issuecomment-4919271305",
+    "reviewedAt": "2026-07-08T21:02:35.940Z",
+    "mainSha": "54896479ce3b6f8f138ef1bf4bc0a74bd9c5d17e"
+  }
+}

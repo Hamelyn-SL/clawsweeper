@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-14T11:29:02.581Z",
+  "updatedAt": "2026-08-14T11:03:29Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8422,
+    "title": "feat: BL telemetry straight to BigQuery + CI guardian against loop instrumentation",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8422",
+    "state": "open",
+    "labels": [
+      "size/XXL",
+      "business-logic",
+      "rating: 🥉 bronze",
+      "status: 📣 needs proof",
+      "P2",
+      "merge-risk: 🚨 security-boundary",
+      "merge-risk: 🚨 automation"
+    ],
+    "createdAt": "2026-08-13T06:07:34Z",
+    "updatedAt": "2026-08-14T11:03:29Z",
+    "headSha": "9e699987edb168cc3871d503851383a2db777cb3"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué retención y presupuesto operativo debe asumir `bl_telemetry.bl_events` antes de activar esta telemetría?",
+  "rationale": "La tabla se crea con expiración de 90 días, pero el propio PR describe 30 frente a 90 días como una decisión abierta con impacto mensual relevante.",
+  "options": [
+    {
+      "title": "Definir 90 días",
+      "body": "Mantener la expiración actual y aprobar explícitamente su coste y periodo de investigación disponible.",
+      "recommended": false
+    },
+    {
+      "title": "Reducir a 30 días",
+      "body": "Ajustar esquema, documentación y estimación para priorizar el coste, conservando el agregado diario como fuente del dashboard.",
+      "recommended": true
+    }
+  ],
+  "recommendation": {
+    "title": "Reducir a 30 días",
+    "body": "Ajustar esquema, documentación y estimación para priorizar el coste, conservando el agregado diario como fuente del dashboard.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "danielmenchen-hamelyn",
+    "reason": "Su historial reciente cubre la semántica y el coste de la instrumentación BL.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8422.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8422#issuecomment-5276693528",
+    "reviewedAt": "2026-08-14T11:29:02.581Z",
+    "mainSha": "f3c860bc9305bae2d8015ef4eb1dec557d43f877"
+  }
+}

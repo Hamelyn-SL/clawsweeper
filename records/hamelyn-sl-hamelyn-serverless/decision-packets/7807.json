@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-21T07:50:58.590Z",
+  "updatedAt": "2026-07-21T07:42:37Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7807,
+    "title": "Fnac price updater retries active offers in repeated HTTP 500 batches",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7807",
+    "state": "open",
+    "labels": [
+      "bug",
+      "priority:p1",
+      "app:marketplace",
+      "triage:running",
+      "P1",
+      "impact:other",
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-21T07:38:20Z",
+    "updatedAt": "2026-07-21T07:42:37Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Qué fuente autoritativa debe decidir si un lote Fnac con HTTP 500 se aceptó parcialmente antes de limpiar `needsUpdatePrice`?",
+  "rationale": "El fallo no aporta `batch_id`; escoger entre consulta oficial de oferta, estado de lote o snapshot cambia el contrato de corrección y el riesgo de ocultar precios pendientes.",
+  "options": [
+    {
+      "title": "Confirmación oficial por oferta o lote",
+      "body": "Usar una consulta autoritativa de Fnac para confirmar únicamente los SKU con el precio esperado y conservar el retry de los no confirmados.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener reintentos con backoff",
+      "body": "Conservar la semántica actual, añadiendo límites y alertas, sin limpiar ofertas cuya aceptación sea ambigua.",
+      "recommended": false
+    },
+    {
+      "title": "Reconciliar desde el snapshot",
+      "body": "Usar el snapshot de listings como señal diferida, aceptando su latencia y definiendo explícitamente cuándo puede cerrar la cola.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Confirmación oficial por oferta o lote",
+    "body": "Usar una consulta autoritativa de Fnac para confirmar únicamente los SKU con el precio esperado y conservar el retry de los no confirmados.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su cambio reciente concentra la política de recuperación de precios y su reporte aporta la evidencia operativa de la cohorte.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7807.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7807#issuecomment-5031473600",
+    "reviewedAt": "2026-07-21T07:50:58.590Z",
+    "mainSha": "bc68a8cead61fe465728282e40142e082ed32cce"
+  }
+}

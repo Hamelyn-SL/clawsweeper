@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-22T11:46:59.083Z",
+  "updatedAt": "2026-07-22T10:06:32Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7870,
+    "title": "fix: close public availability endpoint",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7870",
+    "state": "open",
+    "labels": [
+      "size/L",
+      "merge-risk: 🚨 compatibility",
+      "proof: sufficient",
+      "rating: ⚪ platinum",
+      "status: 👀 ready for maintainer look",
+      "P1"
+    ],
+    "createdAt": "2026-07-22T09:05:54Z",
+    "updatedAt": "2026-07-22T10:06:32Z",
+    "headSha": "8d4048bef5c11156a4e6b0c44f7b3cf044d80c8b"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Se aprueba retirar definitivamente el contrato GET público de disponibilidad en lugar de mantenerlo firmado y limitado, como planteaba la issue relacionada?",
+  "rationale": "El parche es consistente y probado, pero pasar de un endpoint público a 405 es una decisión de contrato y compatibilidad que no puede inferirse solo del código.",
+  "options": [
+    {
+      "title": "Aprobar la retirada",
+      "body": "Aceptar el 405 como contrato definitivo, dado que la investigación descarta partners y el prescriptor conserva la información pública necesaria.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener un GET firmado",
+      "body": "Conservar la ruta con firma de origen y rate limit si todavía debe existir un acceso directo de frontend o terceros controlados.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar la retirada",
+    "body": "Aceptar el 405 como contrato definitivo, dado que la investigación descarta partners y el prescriptor conserva la información pública necesaria.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su historial cubre el endurecimiento previo de estos datos públicos y el contexto lo señala como revisor con experiencia directa.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7870.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7870#issuecomment-5044386990",
+    "reviewedAt": "2026-07-22T11:46:59.083Z",
+    "mainSha": "00352b6ac84cadb225e9d68f8a8260ae555966f3"
+  }
+}

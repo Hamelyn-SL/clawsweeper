@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-18T06:27:48.546Z",
+  "updatedAt": "2026-08-18T06:12:39Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8490,
+    "title": "Aumentar la prioridad de picking de los marketplaces con métricas de plazos",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8490",
+    "state": "closed",
+    "labels": [
+      "source:admin-panel",
+      "app:infrastructure",
+      "feature",
+      "triage:pr-opened",
+      "reporter:jorgecano",
+      "P2",
+      "impact:other",
+      "issue-rating: ➖ n/a",
+      "clawsweeper:linked-pr-open",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-08-17T14:39:17Z",
+    "updatedAt": "2026-08-18T06:12:39Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿La política de picking debe aplicarse también cuando no se indican límites de productos, manteniendo `AMAZON_SE` en el nivel 5 junto a Amazon MX, FR e IT?",
+  "rationale": "El código actual solo activa la priorización en rutas limitadas; decidir si el alcance debe cubrir toda generación cambia el comportamiento operativo de picking.",
+  "options": [
+    {
+      "title": "Aplicar la política en toda generación",
+      "body": "Completar la PR para ordenar siempre y confirmar `AMAZON_SE: 5` como parte de la política operativa.",
+      "recommended": true
+    },
+    {
+      "title": "Limitar el cambio a selecciones con límite",
+      "body": "Aceptar el ajuste de una línea, dejando explícito que las ejecuciones sin límites no usan prioridades.",
+      "recommended": false
+    },
+    {
+      "title": "Redefinir la matriz completa",
+      "body": "Pausar la PR hasta documentar qué métricas y niveles corresponden a cada marketplace.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aplicar la política en toda generación",
+    "body": "Completar la PR para ordenar siempre y confirmar `AMAZON_SE: 5` como parte de la política operativa.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Mantiene el registro actual donde se define la prioridad y puede coordinar la decisión con el historial de Picking V3.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/8490.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8490#issuecomment-5317171362",
+    "reviewedAt": "2026-08-18T06:27:48.546Z",
+    "mainSha": "f06b3958ba613cf707b6b2dccdc02d22e6229af2"
+  }
+}

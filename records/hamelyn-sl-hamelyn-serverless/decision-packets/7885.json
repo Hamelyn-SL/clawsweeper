@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-23T08:52:27.807Z",
+  "updatedAt": "2026-07-23T07:42:47Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7885,
+    "title": "Cupón N-ésima unidad descuenta el más barato de cada grupo en vez de las N más baratas del carrito",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7885",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:ecommerce",
+      "reporter:miguel",
+      "triage:done",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:source-repro",
+      "clawsweeper:linked-pr-open",
+      "issue-rating: 💎 diamond",
+      "P1",
+      "impact:other",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-22T13:03:27Z",
+    "updatedAt": "2026-07-23T07:42:47Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe `secondUnitPercentage` cambiar de una unidad más barata por bloque a las N unidades más baratas del carrito completo?",
+  "rationale": "El código, la BL y las pruebas actuales documentan el comportamiento por bloques, mientras que la incidencia y la PR solicitan una política de precios distinta.",
+  "options": [
+    {
+      "title": "Adoptar selección global",
+      "body": "Aprobar la regla de las N unidades globalmente más baratas y mergear la PR vinculada tras confirmar su efecto sobre promociones activas.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener selección por bloques",
+      "body": "Conservar el contrato BL actual y cerrar la PR candidata si la segmentación por grupos es la política comercial intencionada.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Adoptar selección global",
+    "body": "Aprobar la regla de las N unidades globalmente más baratas y mergear la PR vinculada tras confirmar su efecto sobre promociones activas.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Es el autor de la BL de cupones, la incidencia y la propuesta concreta de cambio.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7885.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7885#issuecomment-5046529002",
+    "reviewedAt": "2026-07-23T08:52:27.807Z",
+    "mainSha": "e9f37693091b2ec22737d422d27c57db642842dc"
+  }
+}

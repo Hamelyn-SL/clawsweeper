@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-10T08:52:25.463Z",
+  "updatedAt": "2026-07-10T08:30:36Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7303,
+    "title": "Cron notify-availability falla por variables STOCK_KV ausentes",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7303",
+    "state": "closed",
+    "labels": [
+      "crons",
+      "codex",
+      "bug",
+      "priority:p1",
+      "triage:done",
+      "app:crons",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "issue-rating: 🦞 diamond lobster",
+      "clawsweeper:source-repro",
+      "clawsweeper:fix-shape-clear",
+      "P1",
+      "impact:message-loss",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-09T13:43:18Z",
+    "updatedAt": "2026-07-10T08:30:36Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe resolverse esta incidencia solo con configuración de Vercel en `crons`, o queréis cambiar el contrato del cron para tolerar la ausencia de KV con un fallback de código?",
+  "rationale": "El código actual hace fail-fast si falta KV y el PR que introdujo la lectura desde KV avisó de ese prerrequisito; cambiarlo a fallback puede aumentar carga en Mongo y revertir una decisión reciente.",
+  "options": [
+    {
+      "title": "Configurar KV en `crons`",
+      "body": "Añadir las dos variables en Vercel y reintentar el cron mantiene el diseño actual y es la reparación mínima.",
+      "recommended": true
+    },
+    {
+      "title": "Añadir fallback explícito",
+      "body": "Implementar fallback a Mongo o degradación controlada reduciría dependencia operativa, pero requiere validar carga y comportamiento de avisos.",
+      "recommended": false
+    },
+    {
+      "title": "Documentar como prerrequisito operativo",
+      "body": "Dejar el código igual y reforzar runbook/deploy checks evita ambigüedad futura, pero no corrige el entorno actual por sí solo.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Configurar KV en `crons`",
+    "body": "Añadir las dos variables en Vercel y reintentar el cron mantiene el diseño actual y es la reparación mínima.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "La issue ya está asignada a Alex y la decisión inmediata parece de Infra/Operaciones sobre configuración de Vercel.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7303.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7303#issuecomment-4926410224",
+    "reviewedAt": "2026-07-10T08:52:25.463Z",
+    "mainSha": "4dc837dfb762ea520de6797ac2ab3fb3f44063d1"
+  }
+}

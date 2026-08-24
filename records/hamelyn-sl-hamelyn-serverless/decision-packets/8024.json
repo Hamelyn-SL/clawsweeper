@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-28T13:42:19.517Z",
+  "updatedAt": "2026-07-28T13:27:27Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8024,
+    "title": "fix: log ebay publish error ids and flag fully failed batches",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8024",
+    "state": "open",
+    "labels": [
+      "size/M",
+      "P1",
+      "status: 📣 needs proof",
+      "rating: 🥈 silver"
+    ],
+    "createdAt": "2026-07-28T10:02:17Z",
+    "updatedAt": "2026-07-28T13:27:27Z",
+    "headSha": "fa5209a4c1b37c107bb48d7dbed98c4c91225cec"
+  },
+  "lane": "proof_sufficiency",
+  "priority": "P1",
+  "question": "¿Se autoriza una sonda controlada de eBay para obtener evidencia real del comportamiento antes de mergear?",
+  "rationale": "La única prueba publicada usa simulaciones, mientras que el flujo create permanece desactivado y una ejecución real puede tener impacto operativo.",
+  "options": [
+    {
+      "title": "Autorizar una sonda controlada",
+      "body": "Ejecutar una muestra limitada y redactada que confirme `topErrors`, el error de lote completo y el valor persistido en `errorDetails`.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener el bloqueo de prueba",
+      "body": "No mergear hasta disponer de una ventana operativa o sandbox que permita observar el flujo posterior al cambio.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Autorizar una sonda controlada",
+    "body": "Ejecutar una muestra limitada y redactada que confirme `topErrors`, el error de lote completo y el valor persistido en `errorDetails`.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Daniel",
+    "reason": "Es la persona más vinculada en el historial al manejo actual de respuestas parciales de eBay.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8024.md",
+    "reviewedAt": "2026-07-28T13:42:19.517Z",
+    "mainSha": "b51990706ed92bd6e079838b426e85028efe087e"
+  }
+}

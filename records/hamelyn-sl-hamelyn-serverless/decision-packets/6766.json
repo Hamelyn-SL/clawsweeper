@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-13T08:01:00.996Z",
+  "updatedAt": "2026-07-13T07:50:37Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 6766,
+    "title": "chore: enable major dependabot updates grouped by family",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/6766",
+    "state": "closed",
+    "labels": [
+      "size/M",
+      "rating: 🦪 silver shellfish",
+      "status: 📣 needs proof",
+      "P2",
+      "merge-risk: 🚨 automation"
+    ],
+    "createdAt": "2026-07-01T11:58:22Z",
+    "updatedAt": "2026-07-13T07:50:37Z",
+    "headSha": "4a891e9d4a7c97614c99a1c5ded3619a96b909f8"
+  },
+  "lane": "manual_review",
+  "priority": "P2",
+  "question": "¿Cuándo se considera seguro activar los PRs major agrupados de Dependabot en `dev`?",
+  "rationale": "El propio PR declara que antes de mergear hay que poner al día manualmente las majors actuales; esa preparación externa y el tamaño aceptable de la primera oleada no se pueden decidir solo desde el diff.",
+  "options": [
+    {
+      "title": "Mantener draft hasta limpiar majors",
+      "body": "Esperar a que las majors pendientes estén actualizadas manualmente, resolver la rama `DIRTY` y entonces revisar el primer comportamiento de Dependabot.",
+      "recommended": true
+    },
+    {
+      "title": "Activar con riesgo asumido",
+      "body": "Mergear tras resolver la rama aunque aún queden majors pendientes, aceptando más PRs automáticos y posible ruido de CI/autofix.",
+      "recommended": false
+    },
+    {
+      "title": "Cerrar y reabrir cuando toque",
+      "body": "Cerrar este intento si la activación no es prioritaria ahora y abrir un PR fresco cuando el backlog de majors esté preparado.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mantener draft hasta limpiar majors",
+    "body": "Esperar a que las majors pendientes estén actualizadas manualmente, resolver la rama `DIRTY` y entonces revisar el primer comportamiento de Dependabot.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Es la persona solicitada para revisar este PR y la decisión pendiente es de readiness operativa, no solo de autoría del fichero.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/6766.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/6766#issuecomment-4910266043",
+    "reviewedAt": "2026-07-13T08:01:00.996Z",
+    "mainSha": "3507f660b3c32cda93c23d3a81815c97a689226e"
+  }
+}

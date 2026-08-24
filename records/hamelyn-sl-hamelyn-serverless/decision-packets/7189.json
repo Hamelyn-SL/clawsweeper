@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-08T00:03:35.105Z",
+  "updatedAt": "2026-07-07T23:48:47Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7189,
+    "title": "fix: remove legacy profile details route",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7189",
+    "state": "closed",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-07-07T23:42:27Z",
+    "updatedAt": "2026-07-07T23:48:47Z",
+    "headSha": "510d10f74a4ed0fafaaa2cfd8177bede189cd0c0"
+  },
+  "lane": "merge_risk",
+  "priority": "P3",
+  "question": "Should old `/profile/details` and localized detail URLs intentionally 404 after this cleanup, or should they redirect to `/profile/settings` for bookmarked users?",
+  "rationale": "The code deletion is coherent, but changing an existing reachable profile URL into a 404 is a user-visible compatibility decision that maintainers should explicitly accept before merge.",
+  "options": [
+    {
+      "title": "Accept the intentional 404",
+      "body": "Merge after real behavior proof if the team wants the legacy URL fully removed as requested by the linked issue.",
+      "recommended": true
+    },
+    {
+      "title": "Redirect to settings",
+      "body": "Keep the duplicate form deleted but add redirects from the old localized URLs to `/profile/settings` to preserve bookmarked entry points.",
+      "recommended": false
+    },
+    {
+      "title": "Pause route removal",
+      "body": "Hold the PR if profile route compatibility needs product review beyond the linked issue's cleanup decision.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Accept the intentional 404",
+    "body": "Merge after real behavior proof if the team wants the legacy URL fully removed as requested by the linked issue.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "This reviewer was explicitly requested for profile/routing expertise and has recent profile-area history.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7189.md",
+    "reviewedAt": "2026-07-08T00:03:35.105Z",
+    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+  }
+}

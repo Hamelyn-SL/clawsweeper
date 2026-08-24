@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-08T03:26:30.864Z",
+  "updatedAt": "2026-07-06T13:56:45Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 6960,
+    "title": "supply-e2e: workflow roto por Node 20 sin WebSocket nativo en el CLI de Device Cloud",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6960",
+    "state": "closed",
+    "labels": [
+      "bug",
+      "priority:p1",
+      "app:infrastructure",
+      "triage:done",
+      "P1",
+      "impact:other",
+      "issue-rating: 🦞 diamond lobster",
+      "clawsweeper:source-repro",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review"
+    ],
+    "createdAt": "2026-07-06T10:09:56Z",
+    "updatedAt": "2026-07-06T13:56:45Z"
+  },
+  "lane": "manual_review",
+  "priority": "P1",
+  "question": "Should maintainers leave this assigned Supply E2E workflow bug with the current assignee, or explicitly authorize an automated repair to take it over?",
+  "rationale": "The fix direction is clear, but AGENTS.md coordination says agents should stop before code work when an issue is already assigned to another person unless a human confirms the takeover.",
+  "options": [
+    {
+      "title": "Leave with assigned owner",
+      "body": "Keep the issue assigned and let the current owner or infrastructure team make the small workflow change.",
+      "recommended": true
+    },
+    {
+      "title": "Authorize automated repair",
+      "body": "A maintainer can explicitly authorize automation to patch only `.github/workflows/supply-e2e.yml` and validate the workflow path.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Leave with assigned owner",
+    "body": "Keep the issue assigned and let the current owner or infrastructure team make the small workflow change.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Most of the merged Supply E2E workflow history routes through this person, including the Device Cloud workflow build work.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/6960.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6960#issuecomment-4911158285",
+    "reviewedAt": "2026-07-08T03:26:30.864Z",
+    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+  }
+}

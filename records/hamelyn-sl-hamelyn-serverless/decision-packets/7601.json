@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-21T16:23:26.714Z",
+  "updatedAt": "2026-07-21T16:17:17Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7601,
+    "title": "Variable ECOMMERCE_POST_OFFICE en emails de Postlibris",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7601",
+    "state": "open",
+    "labels": [
+      "source:admin-panel",
+      "app:ecommerce",
+      "feature",
+      "reporter:blanca",
+      "triage:needs-info",
+      "P2",
+      "impact:ux-friction",
+      "issue-rating: ➖ n/a",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-15T12:58:18Z",
+    "updatedAt": "2026-07-21T16:17:17Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe Ecommerce usar el fichero adjunto como asignación autorizada de oficina responsable de Postlibri para cada código postal?",
+  "rationale": "El código puede consumir un lookup, pero no puede decidir si la columna identifica la oficina responsable de no entregados o la ubicación física de una oficina.",
+  "options": [
+    {
+      "title": "Validar con Correos",
+      "body": "Confirmar formalmente la semántica y la cobertura de la tabla antes de comunicar una dirección al cliente.",
+      "recommended": true
+    },
+    {
+      "title": "Mantenerlo interno",
+      "body": "No mostrar una oficina al cliente hasta disponer de una fuente autorizada para esa asignación.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Validar con Correos",
+    "body": "Confirmar formalmente la semántica y la cobertura de la tabla antes de comunicar una dirección al cliente.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Alex Cantón",
+    "reason": "Su historial conecta la normalización postal de Postlibri con el detalle de pedidos usado por eDesk.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7601.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7601#issuecomment-4980998565",
+    "reviewedAt": "2026-07-21T16:23:26.714Z",
+    "mainSha": "28961cd9f75c53a05b3951bb081512652fe440ae"
+  }
+}

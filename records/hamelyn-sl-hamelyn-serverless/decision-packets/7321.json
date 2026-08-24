@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-14T21:50:16.263Z",
+  "updatedAt": "2026-07-10T08:17:32Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7321,
+    "title": "Amazon ES listings snapshot has not refreshed since July 7",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7321",
+    "state": "open",
+    "labels": [
+      "bug",
+      "priority:p2",
+      "app:marketplace",
+      "triage:done",
+      "clawsweeper:needs-live-repro",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "P2",
+      "impact:other",
+      "issue-rating: ⚪ platinum"
+    ],
+    "createdAt": "2026-07-10T06:38:35Z",
+    "updatedAt": "2026-07-10T08:17:32Z"
+  },
+  "lane": "proof_sufficiency",
+  "priority": "P2",
+  "question": "¿Confirman BigQuery y GitHub Actions que `amazon_es` volvió a avanzar después de `2026-07-11T05:19:17.985Z`, o la siguiente ejecución volvió a abortar por un report parcial?",
+  "rationale": "La respuesta determina si esta issue ya es un incidente operativo recuperado o si existe una recurrencia suficiente para justificar un cambio de código.",
+  "options": [
+    {
+      "title": "Verificar y cerrar si avanzó",
+      "body": "Comprobar el último `snapshot_at` y cerrar la issue si la ejecución posterior publicó un report completo.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener y capturar recurrencia",
+      "body": "Si sigue stale, adjuntar el ID y logs del último run parcial para diseñar un retry acotado antes del abort.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Verificar y cerrar si avanzó",
+    "body": "Comprobar el último `snapshot_at` y cerrar la issue si la ejecución posterior publicó un report completo.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Tiene el historial reciente más directo en el guardrail, los umbrales y las subidas BigQuery del script afectado.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7321.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7321#issuecomment-4932739287",
+    "reviewedAt": "2026-07-14T21:50:16.263Z",
+    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
+  }
+}

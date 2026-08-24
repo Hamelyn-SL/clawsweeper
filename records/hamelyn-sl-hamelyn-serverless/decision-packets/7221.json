@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-19T17:42:26.928Z",
+  "updatedAt": "2026-07-19T13:30:50Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7221,
+    "title": "Reestructurar sitemaps ecommerce venta",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7221",
+    "state": "closed",
+    "labels": [
+      "source:admin-panel",
+      "app:ecommerce",
+      "priority:p1",
+      "feature",
+      "reporter:victor",
+      "P2",
+      "impact:other",
+      "issue-rating: ➖ n/a",
+      "clawsweeper:linked-pr-open",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-08T09:00:53Z",
+    "updatedAt": "2026-07-19T13:30:50Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se acepta esta primera entrega sin `lastmod` veraz ni clasificación de agotados por proyección de restock, o deben incorporarse esas señales antes de publicar los nuevos sitemaps?",
+  "rationale": "El contrato de Victor exige esas reglas, pero la PR documenta que el modelo actual no conserva las señales necesarias; no es una decisión que pueda resolver automáticamente una revisión.",
+  "options": [
+    {
+      "title": "Publicar por fases",
+      "body": "Aceptar la nueva estructura de sitemaps sin `lastmod` y con la clasificación disponible, dejando las señales de datos como seguimiento explícito.",
+      "recommended": true
+    },
+    {
+      "title": "Completar el contrato antes",
+      "body": "Pausar el merge hasta añadir trazabilidad de cambios y una fuente fiable de proyección de restock para cumplir toda la especificación.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Publicar por fases",
+    "body": "Aceptar la nueva estructura de sitemaps sin `lastmod` y con la clasificación disponible, dejando las señales de datos como seguimiento explícito.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "victor",
+    "reason": "Definió los requisitos operativos y las excepciones SEO que delimitan la aceptación del resultado.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7221.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7221#issuecomment-4959487465",
+    "reviewedAt": "2026-07-19T17:42:26.928Z",
+    "mainSha": "a211664717be7c381973ac1a2f20bc5ec16d7799"
+  }
+}

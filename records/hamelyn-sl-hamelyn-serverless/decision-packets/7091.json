@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-08T00:05:13.297Z",
+  "updatedAt": "2026-07-07T22:40:58Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7091,
+    "title": "BL-buying-account-10: profile picture upload failure is silently discarded",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7091",
+    "state": "open",
+    "labels": [
+      "bug",
+      "priority:p2",
+      "app:infrastructure",
+      "triage:done",
+      "business-logic"
+    ],
+    "createdAt": "2026-07-07T07:56:17Z",
+    "updatedAt": "2026-07-07T22:40:58Z"
+  },
+  "lane": "manual_review",
+  "priority": "P2",
+  "question": "Should the explicit profile-picture upload failure fix be applied inside https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7100, or should this issue wait for that PR to merge before a narrow bugfix PR updates the new BL spec/test on dev?",
+  "rationale": "The source bug is clear, but current dev does not yet contain the requested profile-photo BL spec/test target, so automation should not choose the branch sequencing alone.",
+  "options": [
+    {
+      "title": "Fix inside BL PR",
+      "body": "Apply the endpoint error and the matching BL spec/test changes on the open buying/account PR branch before it lands.",
+      "recommended": true
+    },
+    {
+      "title": "Fix after BL PR lands",
+      "body": "Keep this issue open until the BL extraction merges, then create a narrow bugfix PR against dev with the code and BL test/spec update.",
+      "recommended": false
+    },
+    {
+      "title": "Split code first",
+      "body": "Patch the endpoint on dev now and accept a short-lived follow-up for the BL spec/test once the extraction branch lands.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Fix inside BL PR",
+    "body": "Apply the endpoint error and the matching BL spec/test changes on the open buying/account PR branch before it lands.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "MarcosTerroso owns the open BL branch where the requested spec/test currently live.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7091.md",
+    "reviewedAt": "2026-07-08T00:05:13.297Z",
+    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-14T22:40:43.595Z",
+  "updatedAt": "2026-07-13T23:47:25Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 5781,
+    "title": "marketplace-crons: ship bloqueado por pedidos PICKED_UP sin datos de envío",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5781",
+    "state": "open",
+    "labels": [
+      "marketplace-crons",
+      "codex",
+      "bug",
+      "priority:p1",
+      "app:marketplace",
+      "triage:no-change",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:source-repro",
+      "clawsweeper:fix-shape-clear",
+      "P1",
+      "impact:other",
+      "issue-rating: 💎 diamond"
+    ],
+    "createdAt": "2026-05-09T12:34:10Z",
+    "updatedAt": "2026-07-13T23:47:25Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Qué tratamiento permanente deben recibir los pedidos Amazon Buy Shipping sin tracking local: marcarlos como `SHIPPED` sin llamar a `confirmShipment`, recuperar obligatoriamente el tracking o mantenerlos en una cola operativa de bloqueo?",
+  "rationale": "Los casos anteriores se cerraron manualmente como `SHIPPED`, pero el flujo versionado exige tracking; elegir la regla permanente afecta al contrato con Amazon, a la trazabilidad y al significado de `marketplaceData.status`.",
+  "options": [
+    {
+      "title": "Excepción Buy Shipping",
+      "body": "Detectar de forma fiable las etiquetas compradas mediante Amazon y marcarlas internamente como `SHIPPED` sin ejecutar una confirmación redundante.",
+      "recommended": true
+    },
+    {
+      "title": "Recuperar tracking siempre",
+      "body": "Corregir el pipeline de etiquetas para persistir tracking antes de `PICKED_UP` y conservar un único flujo de `confirmShipment`.",
+      "recommended": false
+    },
+    {
+      "title": "Cola operativa explícita",
+      "body": "Separar estos pedidos del reintento periódico y dejarlos en un estado bloqueado accionable hasta su resolución manual.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Excepción Buy Shipping",
+    "body": "Detectar de forma fiable las etiquetas compradas mediante Amazon y marcarlas internamente como `SHIPPED` sin ejecutar una confirmación redundante.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Es el asignado actual y ya verificó operativamente los casos Buy Shipping, además de conocer la propagación de datos de shipment.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5781.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5781#issuecomment-4963939856",
+    "reviewedAt": "2026-07-14T22:40:43.595Z",
+    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-21T06:04:01.783Z",
+  "updatedAt": "2026-07-21T05:58:06Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7682,
+    "title": "chore: migrate supply to expo sdk 57",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7682",
+    "state": "closed",
+    "labels": [
+      "size/M",
+      "proof: 📸 screenshot",
+      "rating: 🥈 silver",
+      "status: 📣 needs proof",
+      "P1",
+      "merge-risk: 🚨 compatibility",
+      "merge-risk: 🚨 availability"
+    ],
+    "createdAt": "2026-07-17T06:21:06Z",
+    "updatedAt": "2026-07-21T05:58:06Z",
+    "headSha": "f831c901d1980973a22b1bb65fd10025eda68263"
+  },
+  "lane": "release_inclusion",
+  "priority": "P1",
+  "question": "¿Qué `runtimeVersion` y secuencia de publicación deben aislar las OTA de SDK 57 respecto de los binarios SDK 55 ya distribuidos?",
+  "rationale": "La corrección mecánica no determina por sí sola el identificador ni el orden seguro de release para la flota instalada.",
+  "options": [
+    {
+      "title": "Versionar el runtime antes del build",
+      "body": "Asignar un nuevo `runtimeVersion`, publicar primero los binarios SDK 57 y habilitar sus OTA únicamente tras verificar ambos sistemas.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener el runtime compartido",
+      "body": "Aceptar explícitamente que binarios SDK 55 y 57 consuman el mismo canal, con el riesgo de incompatibilidad nativa.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Versionar el runtime antes del build",
+    "body": "Asignar un nuevo `runtimeVersion`, publicar primero los binarios SDK 57 y habilitar sus OTA únicamente tras verificar ambos sistemas.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Su historial reciente incluye el versionado y la configuración de build de Supply.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7682.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7682#issuecomment-5000013759",
+    "reviewedAt": "2026-07-21T06:04:01.783Z",
+    "mainSha": "0c2f6b169118753b42cccca6ed0f42092f5c3267"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-12T11:03:12.763Z",
+  "updatedAt": "2026-07-12T10:56:18Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7374,
+    "title": "Deploy to Prod",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7374",
+    "state": "closed",
+    "labels": [
+      "size/L",
+      "rating: 🦪 silver shellfish",
+      "status: 📣 needs proof",
+      "P2",
+      "merge-risk: 🚨 automation",
+      "merge-risk: 🚨 other"
+    ],
+    "createdAt": "2026-07-10T14:57:18Z",
+    "updatedAt": "2026-07-12T10:56:18Z",
+    "headSha": "718f4e9f22f4f0ac08777c591b1162452e319430"
+  },
+  "lane": "release_inclusion",
+  "priority": "P2",
+  "question": "¿Se debe mergear ahora esta promoción `dev` -> `master` o esperar a prueba real adicional y al ajuste de versión de `hamelyn-knowledge`?",
+  "rationale": "La PR publica producción y agrupa cambios de pago, UX visible y automatizaciones; aceptar esa ventana de release y su vigilancia posterior requiere criterio humano.",
+  "options": [
+    {
+      "title": "Esperar prueba y ajuste menor",
+      "body": "Pedir evidencia real redactada y sincronizar `SKILL.md` a `v1.6.30` antes de mergear a `master`.",
+      "recommended": true
+    },
+    {
+      "title": "Mergear con vigilancia",
+      "body": "Un maintainer puede aceptar el riesgo de publicar ahora y monitorizar checkout, Stripe MP, Admin users y watchers tras el deploy.",
+      "recommended": false
+    },
+    {
+      "title": "Dividir la promoción",
+      "body": "Preparar una promoción más estrecha si se quiere publicar solo los fixes urgentes y dejar automatizaciones o checkout para otra ventana.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Esperar prueba y ajuste menor",
+    "body": "Pedir evidencia real redactada y sincronizar `SKILL.md` a `v1.6.30` antes de mergear a `master`.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es quien concentra más cambios incluidos en esta promoción y la historia reciente de automatizaciones, Admin y Stripe MP.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7374.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7374#issuecomment-4938365934",
+    "reviewedAt": "2026-07-12T11:03:12.763Z",
+    "mainSha": "718f4e9f22f4f0ac08777c591b1162452e319430"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-14T06:03:41.086Z",
+  "updatedAt": "2026-07-14T05:35:10Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7488,
+    "title": "🤖 Proof-agent: evidencia automática del cambio en cada PR (GIF + proof card en Vercel Sandbox)",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7488",
+    "state": "closed",
+    "labels": [
+      "priority:p2",
+      "app:infrastructure",
+      "feature",
+      "P2",
+      "impact:security",
+      "issue-rating: 🌊 off-meta tidepool",
+      "clawsweeper:linked-pr-open",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:needs-security-review"
+    ],
+    "createdAt": "2026-07-13T21:37:33Z",
+    "updatedAt": "2026-07-14T05:35:10Z"
+  },
+  "lane": "security_boundary",
+  "priority": "P2",
+  "question": "¿Debe aprobarse el proof-agent con ejecución de código de PRs en Vercel Sandbox y publicación automática de artefactos mediante las credenciales actuales de `apps/agents`?",
+  "rationale": "La elección fija una frontera privilegiada entre código no confiable, credenciales de publicación, coste recurrente y automatización aplicada a todos los PRs; no puede resolverse como una reparación mecánica.",
+  "options": [
+    {
+      "title": "Aprobar un piloto acotado",
+      "body": "Empezar con invocación manual y modos limitados, promoviendo la activación automática solo después de demostrar aislamiento, utilidad y coste real.",
+      "recommended": true
+    },
+    {
+      "title": "Aprobar la F1 completa",
+      "body": "Aceptar el alcance integral del PR enlazado una vez resueltas sus revisiones y aportada una ejecución real end-to-end sobre un PR representativo.",
+      "recommended": false
+    },
+    {
+      "title": "No adoptar la iniciativa",
+      "body": "Cerrar el candidato si el riesgo de seguridad, coste y mantenimiento supera el beneficio esperado para las revisiones.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar un piloto acotado",
+    "body": "Empezar con invocación manual y modos limitados, promoviendo la activación automática solo después de demostrar aislamiento, utilidad y coste real.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Es uno de los revisores expresamente solicitados para el candidato de infraestructura sensible y está mejor situado para confirmar o rechazar esta frontera operativa.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7488.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7488#issuecomment-4963247077",
+    "reviewedAt": "2026-07-14T06:03:41.086Z",
+    "mainSha": "b8486cd6b87737a1d38a35e9292f9a19a643604a"
+  }
+}

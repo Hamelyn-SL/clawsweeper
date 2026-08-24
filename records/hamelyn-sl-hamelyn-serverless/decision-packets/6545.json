@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-18T09:01:14.059Z",
+  "updatedAt": "2026-08-18T08:57:18Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 6545,
+    "title": "Regenerar feeds de Merchant Center (multi-país): metadata completa + correcciones de mapeo",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6545",
+    "state": "closed",
+    "labels": [
+      "source:admin-panel",
+      "app:ecommerce",
+      "reporter:jesus",
+      "feature",
+      "triage:blocked",
+      "P1",
+      "impact:other",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond",
+      "origin:panel"
+    ],
+    "createdAt": "2026-06-18T13:56:43Z",
+    "updatedAt": "2026-08-18T08:57:18Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Se aprueba el piloto de MX y el despliegue multipaís condicionado a completar o aceptar el backfill de metadata histórica?",
+  "rationale": "La elección afecta al orden contractual de Merchant Center y a la calidad de feeds existentes mientras el catálogo histórico no tenga las nuevas columnas rellenadas.",
+  "options": [
+    {
+      "title": "Pilotar MX y ejecutar backfill",
+      "body": "Validar nomenclaturas, columnas y orden con Jesús en MX, completar el backfill y después habilitar el resto de merchants.",
+      "recommended": true
+    },
+    {
+      "title": "Pilotar MX con metadata parcial",
+      "body": "Permitir el piloto antes del backfill aceptando que los productos históricos pueden publicar columnas nuevas vacías temporalmente.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar el despliegue multipaís",
+      "body": "Mantener el feed actual hasta que se confirme el contrato de ficheros y exista ventana operativa para el backfill.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Pilotar MX y ejecutar backfill",
+    "body": "Validar nomenclaturas, columnas y orden con Jesús en MX, completar el backfill y después habilitar el resto de merchants.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Es el asignado de la implementación vinculada y concentra el historial reciente del flujo de Merchant.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/6545.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6545#issuecomment-4910065638",
+    "reviewedAt": "2026-08-18T09:01:14.059Z",
+    "mainSha": "8b36b2185371a7482fa7dc98032eca80a97ae219"
+  }
+}

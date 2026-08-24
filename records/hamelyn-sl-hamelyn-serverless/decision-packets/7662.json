@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-16T22:11:36.668Z",
+  "updatedAt": "2026-07-16T22:04:55Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7662,
+    "title": "PR Proof: publicar vídeo WebM e imágenes como adjuntos nativos de GitHub",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7662",
+    "state": "closed",
+    "labels": [
+      "source:admin-panel",
+      "priority:p1",
+      "app:infrastructure",
+      "feature",
+      "triage:no-change",
+      "P2",
+      "impact:security",
+      "issue-rating: ➖ n/a",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:needs-security-review"
+    ],
+    "createdAt": "2026-07-16T21:44:11Z",
+    "updatedAt": "2026-07-16T22:04:55Z"
+  },
+  "lane": "security_boundary",
+  "priority": "P2",
+  "question": "¿Autorizamos que Marketplace Agents mantenga una sesión dedicada de GitHub para subir adjuntos mediante una interfaz no documentada, bajo aislamiento server-only y fallback a Vercel Blob?",
+  "rationale": "La implementación exige custodiar una credencial de sesión potencialmente amplia y asumir la estabilidad operativa de un mecanismo sin contrato REST público; el código no puede decidir ese límite de seguridad y soporte por sí solo.",
+  "options": [
+    {
+      "title": "Piloto aislado y reversible",
+      "body": "Autorizar una cuenta dedicada y un adaptador opt-in con privilegios mínimos, rotación, health-check, alertas y fallback inmediato a Blob.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener únicamente Blob",
+      "body": "Generar WebM para reducir peso, pero conservar Vercel Blob como único transporte hasta disponer de una API oficial estable.",
+      "recommended": false
+    },
+    {
+      "title": "Esperar soporte oficial",
+      "body": "Pausar la subida nativa y reevaluar la mejora cuando GitHub publique un endpoint soportado para adjuntos.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Piloto aislado y reversible",
+    "body": "Autorizar una cuenta dedicada y un adaptador opt-in con privilegios mínimos, rotación, health-check, alertas y fallback inmediato a Blob.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es la persona asignada, autora de PR Proof y de las mejoras recientes de seguridad de esta superficie.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7662.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7662#issuecomment-4997081494",
+    "reviewedAt": "2026-07-16T22:11:36.668Z",
+    "mainSha": "b940fef7bbdae42f945b301f2a0f528d9d1ba1d1"
+  }
+}

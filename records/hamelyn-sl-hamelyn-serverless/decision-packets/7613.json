@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-21T12:40:06.532Z",
+  "updatedAt": "2026-07-21T12:18:30Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7613,
+    "title": "[SECURITY-ALERT] xlsx: prototype pollution al leer archivos XLSX",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7613",
+    "state": "closed",
+    "labels": [
+      "bug",
+      "app:infrastructure",
+      "triage:done",
+      "security-alert",
+      "P2",
+      "impact:security",
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:needs-security-review"
+    ],
+    "createdAt": "2026-07-16T06:09:31Z",
+    "updatedAt": "2026-07-21T12:18:30Z"
+  },
+  "lane": "security_boundary",
+  "priority": "P2",
+  "question": "¿Se aprueba usar un tarball oficial e inmutable de SheetJS desde `cdn.sheetjs.com` como dependencia runtime para sustituir `xlsx@0.18.5`?",
+  "rationale": "La remediación disponible cambia el origen de la dependencia fuera de npm; aceptar su procedencia, integridad y mantenimiento requiere criterio humano de seguridad.",
+  "options": [
+    {
+      "title": "Aprobar el tarball oficial",
+      "body": "Fijar la versión corregida con integridad verificable en Admin y Core, regenerar el lockfile y validar los flujos XLSX compartidos.",
+      "recommended": true
+    },
+    {
+      "title": "Elegir otra vía de suministro",
+      "body": "Definir una alternativa aprobada o una migración de librería y mantener ambas alertas abiertas hasta disponer de una corrección equivalente.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar el tarball oficial",
+    "body": "Fijar la versión corregida con integridad verificable en Admin y Core, regenerar el lockfile y validar los flujos XLSX compartidos.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Introdujo el helper compartido y la ruta de carga que constituyen la superficie principal de esta alerta.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7613.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7613#issuecomment-4989020624",
+    "reviewedAt": "2026-07-21T12:40:06.532Z",
+    "mainSha": "f15fefc29ac97b7c29d8b1f9c080a156899c7f97"
+  }
+}

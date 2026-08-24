@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-21T13:34:52.471Z",
+  "updatedAt": "2026-07-21T13:25:22Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7804,
+    "title": "Amazon COM reconciliation marks live listings as DB_ONLY after snapshot ingestion",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7804",
+    "state": "closed",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "triage:pr-opened",
+      "P1",
+      "impact:other",
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro",
+      "clawsweeper:linked-pr-open",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-21T07:08:31Z",
+    "updatedAt": "2026-07-21T13:25:22Z"
+  },
+  "lane": "manual_review",
+  "priority": "P1",
+  "question": "¿Debe la corrección incluir una recuperación histórica verificable de los SKU ya mutados, o gestionarse como una operación separada tras fusionar la prevención?",
+  "rationale": "La lógica preventiva es concreta, pero seleccionar y restaurar la cohorte histórica exige criterio operativo sobre snapshots, estados y posibles cambios posteriores legítimos.",
+  "options": [
+    {
+      "title": "Separar recuperación operativa",
+      "body": "Fusionar la prevención tras revisión y preparar una recuperación limitada con validación de snapshots y API antes de mutar estados históricos.",
+      "recommended": true
+    },
+    {
+      "title": "Incluir recuperación en la PR",
+      "body": "Ampliar la PR con una reparación idempotente y evidencias de la población afectada antes de fusionarla.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Separar recuperación operativa",
+    "body": "Fusionar la prevención tras revisión y preparar una recuperación limitada con validación de snapshots y API antes de mutar estados históricos.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Su historial de incorporación y mantenimiento de los flujos Amazon lo sitúa como el mejor encaminador técnico para decidir el alcance operativo.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7804.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7804#issuecomment-5031235289",
+    "reviewedAt": "2026-07-21T13:34:52.471Z",
+    "mainSha": "1c9b8717c11135abed5e4be14479cf2b23da5671"
+  }
+}

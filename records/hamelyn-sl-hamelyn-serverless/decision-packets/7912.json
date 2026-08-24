@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-24T12:23:26.386Z",
+  "updatedAt": "2026-07-24T11:57:41Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7912,
+    "title": "feat: gate bq workflows on freshness markers",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7912",
+    "state": "closed",
+    "labels": [
+      "size/XXL",
+      "proof: sufficient",
+      "proof: 📸 screenshot",
+      "rating: 🥇 gold",
+      "status: ⏳ waiting on author",
+      "P1",
+      "merge-risk: 🚨 security-boundary",
+      "merge-risk: 🚨 availability"
+    ],
+    "createdAt": "2026-07-23T12:21:45Z",
+    "updatedAt": "2026-07-24T11:57:41Z",
+    "headSha": "f24debbb2fb41b5649f8fc727272d2cf62bb5056"
+  },
+  "lane": "security_boundary",
+  "priority": "P1",
+  "question": "¿Debe el token de escritura de KV aprovisionarse como secreto de GCP y dejar de viajar desde GitHub como variable de entorno de la función?",
+  "rationale": "La reparación de código es acotada, pero el nombre, propiedad, rotación y provisión del secreto pertenecen al límite operativo de credenciales.",
+  "options": [
+    {
+      "title": "Usar Secret Manager",
+      "body": "Crear o reutilizar un secreto de GCP para el token, referenciarlo con `secretEnvironmentVariables` y retirar su interpolación desde el workflow.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar la variable ordinaria",
+      "body": "Mantener el token como variable de entorno de la función asumiendo explícitamente la mayor superficie de exposición.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar el despliegue",
+      "body": "Mantener el PR sin mergear hasta que exista una ruta aprobada de provisión y rotación del secreto.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Usar Secret Manager",
+    "body": "Crear o reutilizar un secreto de GCP para el token, referenciarlo con `secretEnvironmentVariables` y retirar su interpolación desde el workflow.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su historial reciente de despliegue de Data Platform y su solicitud de revisión lo sitúan como mejor punto de decisión para el límite de credenciales.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7912.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7912#issuecomment-5058411752",
+    "reviewedAt": "2026-07-24T12:23:26.386Z",
+    "mainSha": "91e58ae7051a9c48e457b151a14d8cb9821488eb"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-17T06:34:11.492Z",
+  "updatedAt": "2026-07-17T06:05:22Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7367,
+    "title": "Marketplace: derivar la retirada masiva de Amazon del factory común",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7367",
+    "state": "closed",
+    "labels": [
+      "source:admin-panel",
+      "priority:p2",
+      "app:marketplace",
+      "reporter:JavierHamelyn",
+      "feature",
+      "triage:queued",
+      "impact:other",
+      "clawsweeper:no-new-fix-pr",
+      "P2",
+      "clawsweeper:source-repro",
+      "clawsweeper:linked-pr-open",
+      "issue-rating: 💎 diamond"
+    ],
+    "createdAt": "2026-07-10T13:37:02Z",
+    "updatedAt": "2026-07-17T06:05:22Z"
+  },
+  "lane": "merge_risk",
+  "priority": "P2",
+  "question": "¿Debe actualizarse https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7370 sobre el `dev` actual, preservando FR e IT y su comportamiento operativo, o conviene sustituirlo por una implementación nueva desde `dev`?",
+  "rationale": "Los conflictos afectan exactamente a la configuración y al controlador que definen el comportamiento regional; resolverlos implica decidir cómo integrar las regiones nuevas y la propagación de errores, no solo escoger líneas mecánicamente.",
+  "options": [
+    {
+      "title": "Actualizar el PR vinculado",
+      "body": "Resolver los conflictos incorporando FR e IT al registro exhaustivo, conservar el contrato operativo actual y añadir cobertura y prueba real antes del merge.",
+      "recommended": true
+    },
+    {
+      "title": "Reimplementar desde dev",
+      "body": "Cerrar el candidato actual y abrir un PR nuevo y acotado desde `dev` si preservar su estructura y semántica de errores resulta más arriesgado que rehacer los dos archivos.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Actualizar el PR vinculado",
+    "body": "Resolver los conflictos incorporando FR e IT al registro exhaustivo, conservar el contrato operativo actual y añadir cobertura y prueba real antes del merge.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Es el principal contribuidor reciente de la configuración Amazon, introdujo el registry, añadió FR e IT y está solicitado como revisor del candidato.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7367.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7367#issuecomment-4935999249",
+    "reviewedAt": "2026-07-17T06:34:11.492Z",
+    "mainSha": "6488cd8832a287efe2570d6a12f65e121f77401e"
+  }
+}

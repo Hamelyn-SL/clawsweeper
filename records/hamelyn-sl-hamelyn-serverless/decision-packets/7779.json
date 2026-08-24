@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-20T14:47:13.849Z",
+  "updatedAt": "2026-07-20T13:09:59Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7779,
+    "title": "fix: ack mercado pago legacy ipn notifications without processing",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7779",
+    "state": "open",
+    "labels": [
+      "size/XS",
+      "rating: 🥈 silver",
+      "status: 📣 needs proof",
+      "P1",
+      "merge-risk: 🚨 message-delivery",
+      "merge-risk: 🚨 security-boundary"
+    ],
+    "createdAt": "2026-07-20T10:21:07Z",
+    "updatedAt": "2026-07-20T13:09:59Z",
+    "headSha": "019d9ca7b69ca30f374bd19c5583f1c56172b08e"
+  },
+  "lane": "security_boundary",
+  "priority": "P1",
+  "question": "¿Debe el webhook reconocer como IPN legacy cualquier callback con `topic` e `id`, aunque incluya una `x-signature` inválida?",
+  "rationale": "La respuesta define una excepción de autenticación en un endpoint de pagos; el código y la prueba muestran alternativas válidas con consecuencias distintas.",
+  "options": [
+    {
+      "title": "Limitar el ACK a callbacks sin firma",
+      "body": "Responder `200` solo a la forma legacy sin `x-signature` y conservar `401` para cualquier firma inválida.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar la forma legacy firmada",
+      "body": "Mantener el `200` con firma inválida y aprobar explícitamente esa excepción, con documentación y evidencia operativa.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Limitar el ACK a callbacks sin firma",
+    "body": "Responder `200` solo a la forma legacy sin `x-signature` y conservar `401` para cualquier firma inválida.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es quien introdujo el flujo de verificación y rechazo que se está excepcionando.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7779.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7779#issuecomment-5022598683",
+    "reviewedAt": "2026-07-20T14:47:13.849Z",
+    "mainSha": "c3e33d1b80e95363644d3ad598763dd551a72a83"
+  }
+}

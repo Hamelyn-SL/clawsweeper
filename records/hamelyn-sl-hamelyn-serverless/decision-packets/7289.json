@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-09T10:39:35.754Z",
+  "updatedAt": "2026-07-09T10:33:15Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7289,
+    "title": "feat: expose bigquery descriptions and harden installer path",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7289",
+    "state": "closed",
+    "labels": [
+      "size/M",
+      "rating: 🧂 unranked krab",
+      "status: 📣 needs proof",
+      "P1",
+      "merge-risk: 🚨 compatibility"
+    ],
+    "createdAt": "2026-07-09T10:25:49Z",
+    "updatedAt": "2026-07-09T10:33:15Z",
+    "headSha": "c9cafe4276a85614e70cb055a04c003e50e3235a"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe `GET /v6/bq/tables` romper ahora el contrato `datasets: string[]` en v6, o debe exponerse la descripción de forma compatible/aditiva?",
+  "rationale": "El cambio solicitado mejora el CLI, pero el endpoint y OpenAPI son superficie de API; la automatización no debe decidir por el equipo si una ruptura de contrato es aceptable.",
+  "options": [
+    {
+      "title": "Mantener compatibilidad",
+      "body": "Conservar `datasets` como `string[]` y añadir la metadata en un campo nuevo o una ruta/versión compatible antes de mergear.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar la ruptura",
+      "body": "Mergear el cambio de forma intencional solo con aprobación de ownership API y una nota clara para consumidores.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar el PR",
+      "body": "Dejar el PR en espera hasta confirmar quién consume este endpoint fuera del CLI.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mantener compatibilidad",
+    "body": "Conservar `datasets` como `string[]` y añadir la metadata en un campo nuevo o una ruta/versión compatible antes de mergear.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "Es el reviewer solicitado para decidir si el contrato API puede cambiar o debe mantenerse compatible.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7289.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7289#issuecomment-4924181502",
+    "reviewedAt": "2026-07-09T10:39:35.754Z",
+    "mainSha": "041bf27bd20f293dfcff578800215d4e71bf8a01"
+  }
+}

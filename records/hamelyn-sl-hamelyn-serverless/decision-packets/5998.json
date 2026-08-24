@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-19T13:34:44.093Z",
+  "updatedAt": "2026-07-14T21:42:56Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 5998,
+    "title": "marketplace-crons: eBay withdrawOffer falla porque listingId llega undefined",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5998",
+    "state": "open",
+    "labels": [
+      "marketplace-crons",
+      "codex",
+      "bug",
+      "priority:p1",
+      "app:marketplace",
+      "triage:confirmed-live",
+      "area:marketplace-sync",
+      "P1",
+      "impact:other",
+      "issue-rating: 🥈 silver",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review"
+    ],
+    "createdAt": "2026-05-22T12:34:19Z",
+    "updatedAt": "2026-07-14T21:42:56Z"
+  },
+  "lane": "release_inclusion",
+  "priority": "P1",
+  "question": "¿El deployment activo de `marketplace-crons` incorporaba la reconciliación de `withdrawOffer` cuando se observaron las recurrencias posteriores al 2 de junio de 2026?",
+  "rationale": "El código y el historial prueban que la corrección está en `dev`, pero solo quien puede correlacionar deployments y observabilidad puede distinguir un despliegue atrasado de un fallo funcional restante.",
+  "options": [
+    {
+      "title": "Verificar deployment y logs",
+      "body": "Correlacionar el SHA desplegado con una ventana posterior de BigQuery y cerrar únicamente si la firma dejó de aparecer.",
+      "recommended": true
+    },
+    {
+      "title": "Investigar la recurrencia activa",
+      "body": "Si el SHA ya incluía la reconciliación y la firma persiste, capturar un ejemplo redaccionado del estado de la oferta y abrir un seguimiento técnico acotado.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Verificar deployment y logs",
+    "body": "Correlacionar el SHA desplegado con una ventana posterior de BigQuery y cerrar únicamente si la firma dejó de aparecer.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es la persona asignada y quien introdujo la corrección y la instrumentación del flujo afectado.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5998.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5998#issuecomment-4974261231",
+    "reviewedAt": "2026-07-19T13:34:44.093Z",
+    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
+  }
+}

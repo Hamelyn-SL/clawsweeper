@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-21T09:26:32.640Z",
+  "updatedAt": "2026-07-21T08:49:57Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7808,
+    "title": "chore: migrate scanner to vision camera 5",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7808",
+    "state": "open",
+    "labels": [
+      "size/XL",
+      "visual"
+    ],
+    "createdAt": "2026-07-21T07:54:06Z",
+    "updatedAt": "2026-07-21T08:49:57Z",
+    "headSha": "c49521c124fa16064d8fb544278022984b1e00dc"
+  },
+  "lane": "manual_review",
+  "priority": "P2",
+  "question": "¿Se habilita una build EAS y un dispositivo físico para validar barcode y OCR antes de aceptar esta actualización major?",
+  "rationale": "La revisión estática no puede confirmar permisos, sesión de cámara, ML Kit ni la ruta de archivo nativa; el propio PR documenta que el simulador no cubre ese comportamiento.",
+  "options": [
+    {
+      "title": "Validar en dispositivo físico",
+      "body": "Ejecutar la build EAS del head actual con fixtures sintéticas y adjuntar evidencia redactada de barcode, OCR y cierre de cámara.",
+      "recommended": true
+    },
+    {
+      "title": "Pausar la migración",
+      "body": "Mantener el PR abierto hasta disponer de hardware y credenciales de build para completar la validación requerida.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Validar en dispositivo físico",
+    "body": "Ejecutar la build EAS del head actual con fixtures sintéticas y adjuntar evidencia redactada de barcode, OCR y cierre de cámara.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Está asignado específicamente por conocimiento directo del escáner de Supply.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7808.md",
+    "reviewedAt": "2026-07-21T09:26:32.640Z",
+    "mainSha": "bc68a8cead61fe465728282e40142e082ed32cce"
+  }
+}

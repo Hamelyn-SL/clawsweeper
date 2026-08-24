@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-16T11:18:54.718Z",
+  "updatedAt": "2026-07-16T11:05:18Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7644,
+    "title": "Poder adjuntar archivos .html en las wishlist",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7644",
+    "state": "closed",
+    "labels": [
+      "source:admin-panel",
+      "app:admin",
+      "priority:p1",
+      "reporter:jesus",
+      "feature",
+      "triage:pr-opened"
+    ],
+    "createdAt": "2026-07-16T10:38:04Z",
+    "updatedAt": "2026-07-16T11:05:18Z"
+  },
+  "lane": "security_boundary",
+  "priority": "P2",
+  "question": "¿Debe Wishlist admitir HTML activo como blob descargable y, en ese caso, es obligatorio forzar su descarga en lugar de permitir que el navegador lo renderice?",
+  "rationale": "Añadir `text/html` ensancha una frontera de tipos de contenido: la autenticación protege la subida, pero no determina cómo se ejecutará o servirá posteriormente el archivo al abrir su URL.",
+  "options": [
+    {
+      "title": "Admitir con descarga forzada",
+      "body": "Aceptar `.html/.htm` solo si el blob se entrega como adjunto o desde un origen aislado, con prueba real de subida, límite y descarga.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener HTML fuera de la allowlist",
+      "body": "Pedir que el contenido se adjunte como ZIP, PDF o texto cuando no pueda garantizarse una entrega que impida su ejecución navegable.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Admitir con descarga forzada",
+    "body": "Aceptar `.html/.htm` solo si el blob se entrega como adjunto o desde un origen aislado, con prueba real de subida, límite y descarga.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "alexcanHamelyn",
+    "reason": "Es el revisor solicitado del PR y aparece vinculado al mantenimiento reciente del endpoint que define la frontera de tipos permitidos.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7644.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7644#issuecomment-4991213891",
+    "reviewedAt": "2026-07-16T11:18:54.718Z",
+    "mainSha": "e24ecead4fc818bf7f21fc4d4351eba9d419a5af"
+  }
+}

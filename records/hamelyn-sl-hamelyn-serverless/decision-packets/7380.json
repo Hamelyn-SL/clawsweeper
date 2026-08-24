@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-06T08:12:00.811Z",
+  "updatedAt": "2026-08-06T08:06:53Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7380,
+    "title": "Casa del Libro: updatePipeline errors remain permanently stuck in SYNC_ERROR",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7380",
+    "state": "closed",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "triage:done",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "origin:dev",
+      "mk:casadellibro",
+      "P2",
+      "impact:other",
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-12T07:26:25Z",
+    "updatedAt": "2026-08-06T08:06:53Z"
+  },
+  "lane": "manual_review",
+  "priority": "P2",
+  "question": "¿Se aprueba un dry-run y posterior backfill limitado de las filas históricas de Casa del Libro, o se investiga primero la causa de la pérdida CDC?",
+  "rationale": "La corrección restante modifica datos productivos analíticos y exige escoger el predicado, la fuente de verdad y la tolerancia al riesgo operacional.",
+  "options": [
+    {
+      "title": "Aprobar dry-run acotado",
+      "body": "Comparar primero el conjunto literal contra Mongo vivo, revisar recuentos y muestras, y autorizar después solo las escrituras concordantes.",
+      "recommended": true
+    },
+    {
+      "title": "Investigar CDC antes del backfill",
+      "body": "Posponer la reconciliación hasta identificar por qué los cambios posteriores no llegaron a `change_events`.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar dry-run acotado",
+    "body": "Comparar primero el conjunto literal contra Mongo vivo, revisar recuentos y muestras, y autorizar después solo las escrituras concordantes.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Es el responsable asignado y contribuidor reciente del repositorio marketplace implicado.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7380.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7380#issuecomment-4950403658",
+    "reviewedAt": "2026-08-06T08:12:00.811Z",
+    "mainSha": "5012636b26b7d10c3aa3ae779d947b74e38d6bb5"
+  }
+}

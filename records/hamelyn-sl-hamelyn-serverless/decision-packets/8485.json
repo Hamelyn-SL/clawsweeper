@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-17T18:20:51.088Z",
+  "updatedAt": "2026-08-17T18:01:51Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8485,
+    "title": "Hydration mismatch (#418) en toda la tienda: el A/B de la promo strip se cachea con la variante de otro visitante",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8485",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:ecommerce",
+      "reporter:javier",
+      "triage:pr-opened",
+      "clawsweeper:needs-live-repro",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:linked-pr-open",
+      "issue-rating: ⚪ platinum",
+      "origin:dev",
+      "P2",
+      "impact:other"
+    ],
+    "createdAt": "2026-08-17T13:47:06Z",
+    "updatedAt": "2026-08-17T18:01:51Z"
+  },
+  "lane": "proof_sufficiency",
+  "priority": "P2",
+  "question": "¿Debe https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8488 aceptarse como reparación de este `#418` tras obtener una traza que vincule el error con la frontera de caché de la promo?",
+  "rationale": "La PR corrige una frontera técnicamente sensible, pero el propio reporte rectificado indica que esa hipótesis no demuestra el mismatch observado.",
+  "options": [
+    {
+      "title": "Exigir reproducción diagnóstica",
+      "body": "Validar la PR con dos visitantes y una traza de React en desarrollo que identifique el subárbol antes de decidir su fusión.",
+      "recommended": true
+    },
+    {
+      "title": "Fusionar como endurecimiento independiente",
+      "body": "Aceptar el aislamiento de caché aunque el `#418` permanezca abierto hasta localizar su causa real.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Exigir reproducción diagnóstica",
+    "body": "Validar la PR con dos visitantes y una traza de React en desarrollo que identifique el subárbol antes de decidir su fusión.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su historial reciente cubre la introducción y el ajuste de los límites de caché de este layout.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8485.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8485#issuecomment-5316980051",
+    "reviewedAt": "2026-08-17T18:20:51.088Z",
+    "mainSha": "bc2eb426fb3873d6dd7276a812c1a210914846a4"
+  }
+}

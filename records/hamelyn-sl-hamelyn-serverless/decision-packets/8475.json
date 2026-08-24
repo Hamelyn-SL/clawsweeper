@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-18T08:44:00.135Z",
+  "updatedAt": "2026-08-18T08:32:51Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8475,
+    "title": "fix: align discogs client with the real rate limit and recover frozen prices",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8475",
+    "state": "open",
+    "labels": [
+      "size/XL",
+      "rating: 🥈 silver",
+      "status: 📣 needs proof",
+      "P1",
+      "merge-risk: 🚨 compatibility",
+      "merge-risk: 🚨 availability"
+    ],
+    "createdAt": "2026-08-17T12:05:40Z",
+    "updatedAt": "2026-08-18T08:32:51Z",
+    "headSha": "8a9ae1d75b69a3282a556e43f8ab979639a445cf"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Está garantizado operativamente que Discogs nunca cancela pedidos creados hace más de 90 días?",
+  "rationale": "La respuesta decide si el filtro por creación es una optimización segura o un cambio de comportamiento que puede impedir recuperar stock y pedidos locales.",
+  "options": [
+    {
+      "title": "Preservar cancelaciones históricas",
+      "body": "Eliminar el filtro por fecha de creación o sustituirlo por un cursor de actividad que no descarte cambios de estado tardíos.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar la ventana de 90 días",
+      "body": "Mantenerla solo si existe una garantía operativa verificable de que ninguna cancelación relevante puede llegar fuera de esa ventana.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Preservar cancelaciones históricas",
+    "body": "Eliminar el filtro por fecha de creación o sustituirlo por un cursor de actividad que no descarte cambios de estado tardíos.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Fue asignado por su experiencia específica en la integración y puede confirmar el contrato operativo de cancelaciones.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8475.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8475#issuecomment-5319140518",
+    "reviewedAt": "2026-08-18T08:44:00.135Z",
+    "mainSha": "8b36b2185371a7482fa7dc98032eca80a97ae219"
+  }
+}

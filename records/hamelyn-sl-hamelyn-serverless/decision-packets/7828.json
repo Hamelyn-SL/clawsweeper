@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-21T10:53:11.092Z",
+  "updatedAt": "2026-07-21T10:45:24Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7828,
+    "title": "feat: include shipping costs in sales invoices",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7828",
+    "state": "closed",
+    "labels": [
+      "size/M"
+    ],
+    "createdAt": "2026-07-21T10:42:59Z",
+    "updatedAt": "2026-07-21T10:45:24Z",
+    "headSha": "78cd8f8e3e48be001fac2c8f06396da51860713f"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe el gasto de envío mantenerse fuera de la base imponible y del IVA del desglose español, como propone esta rama?",
+  "rationale": "La petición exige mostrar el envío, pero no define su tratamiento fiscal; el código actual aplica una decisión visible en un documento económico.",
+  "options": [
+    {
+      "title": "Confirmar envío separado",
+      "body": "Mantener la base e IVA de productos y mostrar el envío como línea separada antes del total final.",
+      "recommended": true
+    },
+    {
+      "title": "Incluir envío en la base",
+      "body": "Recalcular la base e IVA españoles incluyendo el gasto de envío y cubrir ambos importes con pruebas específicas.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Confirmar envío separado",
+    "body": "Mantener la base e IVA de productos y mostrar el envío como línea separada antes del total final.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Su historial concentra la lógica vigente de moneda y las reglas de facturas comerciales.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7828.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7828#issuecomment-5033093776",
+    "reviewedAt": "2026-07-21T10:53:11.092Z",
+    "mainSha": "81a98a89b76e6e926ca00071a05628190e6ef557"
+  }
+}

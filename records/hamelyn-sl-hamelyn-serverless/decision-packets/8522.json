@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-18T22:41:13.218Z",
+  "updatedAt": "2026-08-18T16:56:07Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8522,
+    "title": "fix: bucket new visitors into the promo strip AB split",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8522",
+    "state": "open",
+    "labels": [
+      "size/M",
+      "rating: 🥈 silver",
+      "status: 📣 needs proof",
+      "P2",
+      "merge-risk: 🚨 other"
+    ],
+    "createdAt": "2026-08-18T10:47:05Z",
+    "updatedAt": "2026-08-18T16:56:07Z",
+    "headSha": "4ed64674d3f90a12c370be1a8bb293b5f65c370a"
+  },
+  "lane": "release_inclusion",
+  "priority": "P2",
+  "question": "¿Debe desplegarse el cambio reiniciando o segmentando explícitamente la línea base del experimento de promo strip?",
+  "rationale": "El código corrige un sesgo, pero la interpretación de datos ya recogidos requiere que quien gestiona el experimento decida cómo preservar su validez.",
+  "options": [
+    {
+      "title": "Reiniciar la línea base",
+      "body": "Desplegar tras registrar que las métricas previas no son comparables y comenzar una nueva medición con reparto corregido.",
+      "recommended": true
+    },
+    {
+      "title": "Segmentar el histórico",
+      "body": "Conservar los datos anteriores solo como cohorte separada, sin mezclarlos con conversiones posteriores al cambio.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Reiniciar la línea base",
+    "body": "Desplegar tras registrar que las métricas previas no son comparables y comenzar una nueva medición con reparto corregido.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Su historial conecta con la política anterior de la promo strip y con el contexto del experimento.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8522.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8522#issuecomment-5327623011",
+    "reviewedAt": "2026-08-18T22:41:13.218Z",
+    "mainSha": "c48d810626fc99fac2537fe628d12f1a18d666da"
+  }
+}

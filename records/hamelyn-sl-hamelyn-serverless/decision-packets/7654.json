@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-19T15:59:15.186Z",
+  "updatedAt": "2026-07-19T12:42:14Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7654,
+    "title": "fix: reprogramar recogida moves canceled zero-product orders to payment_pending",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7654",
+    "state": "closed",
+    "labels": [
+      "bug",
+      "app:supply",
+      "priority:p1",
+      "triage:done",
+      "no-stale",
+      "reporter:alexcanHamelyn",
+      "P1",
+      "impact:other",
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-16T13:51:13Z",
+    "updatedAt": "2026-07-19T12:42:14Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿La exclusión debe aplicarse a todo pedido `cancelledByReschedule`, a cualquier pedido sin productos, o solo a la combinación de ambos?",
+  "rationale": "La política actual permite revivir pedidos cancelados como excepción explícita; distinguir el residuo legacy de una recogida física válida exige criterio operativo antes de endurecer las transiciones.",
+  "options": [
+    {
+      "title": "Bloquear el caso legacy combinado",
+      "body": "Excluir de recepción y cron únicamente los pedidos `cancelledByReschedule` sin productos, manteniendo las demás reactivaciones canceladas.",
+      "recommended": true
+    },
+    {
+      "title": "Bloquear cualquier pedido reprogramado",
+      "body": "Tratar todo `cancelledByReschedule` como terminal, aunque conserve productos o tracking utilizable.",
+      "recommended": false
+    },
+    {
+      "title": "Bloquear cualquier lote vacío",
+      "body": "Impedir automatismos para cualquier pedido sin productos, independientemente de su origen de cancelación.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Bloquear el caso legacy combinado",
+    "body": "Excluir de recepción y cron únicamente los pedidos `cancelledByReschedule` sin productos, manteniendo las demás reactivaciones canceladas.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "alexcanHamelyn",
+    "reason": "Es la persona asignada y la principal autora reciente de la política de transiciones afectada.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7654.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7654#issuecomment-4993135343",
+    "reviewedAt": "2026-07-19T15:59:15.186Z",
+    "mainSha": "597e9d3a43298d8c41ed5c2f58ff656d2627d7ee"
+  }
+}

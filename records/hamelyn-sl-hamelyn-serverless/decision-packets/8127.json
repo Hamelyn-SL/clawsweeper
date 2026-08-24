@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-05T00:56:24.219Z",
+  "updatedAt": "2026-08-04T23:48:15Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8127,
+    "title": "Rediseño de correos SUPPLY V2 (ES y INT) -> Cuando se lance supply v2",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8127",
+    "state": "open",
+    "labels": [
+      "source:admin-panel",
+      "app:supply",
+      "reporter:marta",
+      "feature",
+      "triage:blocked",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
+      "issue-rating: ➖ n/a",
+      "origin:panel",
+      "P2",
+      "impact:other",
+      "clawsweeper:fix-shape-clear"
+    ],
+    "createdAt": "2026-07-30T09:23:51Z",
+    "updatedAt": "2026-08-04T23:48:15Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué señal de activación separará los correos de Supply V2 de los de V1 y cuál es el contrato definitivo de variables y plantillas?",
+  "rationale": "El código no ofrece hoy un límite de versión seguro, y el PDF no resuelve las discrepancias de variables ni el caso de modificación de dirección.",
+  "options": [
+    {
+      "title": "Aprobar corte y contrato V2",
+      "body": "Fijar fecha o señal de activación, matriz de slugs y variables canónicas para preparar una migración versionada.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener V1 hasta una especificación cerrada",
+      "body": "Conservar los correos actuales y reabrir la implementación cuando Supply V2 disponga de una activación coordinada.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar corte y contrato V2",
+    "body": "Fijar fecha o señal de activación, matriz de slugs y variables canónicas para preparar una migración versionada.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "alexcanHamelyn",
+    "reason": "Conoce el flujo integrado de Celeritas y los handlers de correo que deben compatibilizarse durante el corte.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8127.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8127#issuecomment-5129139177",
+    "reviewedAt": "2026-08-05T00:56:24.219Z",
+    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
+  }
+}

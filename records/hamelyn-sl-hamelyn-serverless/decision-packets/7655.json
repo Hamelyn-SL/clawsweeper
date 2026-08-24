@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-16T14:45:40.583Z",
+  "updatedAt": "2026-07-16T14:07:46Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7655,
+    "title": "fix: restore agents cron registration",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7655",
+    "state": "open",
+    "labels": [
+      "size/M",
+      "proof: 📸 screenshot",
+      "rating: 🥉 bronze",
+      "status: 📣 needs proof",
+      "P1",
+      "merge-risk: 🚨 compatibility",
+      "merge-risk: 🚨 automation"
+    ],
+    "createdAt": "2026-07-16T14:04:31Z",
+    "updatedAt": "2026-07-16T14:07:46Z",
+    "headSha": "8cc069f04b4715e4268bcec8bfaa8519557ae4ca"
+  },
+  "lane": "proof_sufficiency",
+  "priority": "P1",
+  "question": "¿Debe aceptarse este rollback urgente con la reproducción previa y la inspección del paquete, o se exige evidencia after-fix de Vercel antes de fusionar?",
+  "rationale": "El resultado central solo puede confirmarse con acceso al proyecto Vercel y Observability, y la captura actual no demuestra que los cron jobs hayan vuelto a registrarse o ejecutarse.",
+  "options": [
+    {
+      "title": "Exigir prueba after-fix",
+      "body": "Realizar un build y deployment controlado y adjuntar el `config.json`, `vercel crons list` y al menos un tick redaccionado antes del merge.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar rollback urgente",
+      "body": "Fusionar el pin como mitigación basada en la reproducción y comprobar inmediatamente los cron jobs tras el siguiente deployment.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Exigir prueba after-fix",
+    "body": "Realizar un build y deployment controlado y adjuntar el `config.json`, `vercel crons list` y al menos un tick redaccionado antes del merge.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Es el revisor solicitado para este PR y la persona mejor situada para decidir si la evidencia operativa disponible basta para el merge.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7655.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7655#issuecomment-4993252931",
+    "reviewedAt": "2026-07-16T14:45:40.583Z",
+    "mainSha": "2eb5565dc87dd9b711cf8ceadd0dea24ae2d1aeb"
+  }
+}

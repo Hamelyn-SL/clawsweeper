@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-28T15:14:07.186Z",
+  "updatedAt": "2026-07-28T14:21:09Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8033,
+    "title": "ftp.service: propagar errores tipados en vez de tragarlos y devolver éxito vacío",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8033",
+    "state": "closed",
+    "labels": [
+      "app:infrastructure",
+      "feature",
+      "triage:pr-opened",
+      "P1",
+      "impact:other",
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro",
+      "clawsweeper:linked-pr-open",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-28T13:43:06Z",
+    "updatedAt": "2026-07-28T14:21:09Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe `FTP` dejar de representar fallos globales de transporte como resultados vacíos para todos sus consumidores?",
+  "rationale": "La propuesta es acotada, pero convierte un contrato tolerante compartido en rechazos visibles de cron y puede alterar automatizaciones que dependen de valores vacíos.",
+  "options": [
+    {
+      "title": "Propagar los fallos globales",
+      "body": "Aceptar `FtpOperationError` para accesos, listados y transferencias globalmente fallidos, manteniendo solo la tolerancia por fichero.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener el contrato vacío",
+      "body": "Conservar los valores vacíos del servicio y resolver la observabilidad de FTP en consumidores o crons específicos.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Propagar los fallos globales",
+    "body": "Aceptar `FtpOperationError` para accesos, listados y transferencias globalmente fallidos, manteniendo solo la tolerancia por fichero.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "La historia de `ftp.service.ts` y de la integración Alibris concentra en esta persona la mayor señal sobre el contrato existente.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/8033.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8033#issuecomment-5105132582",
+    "reviewedAt": "2026-07-28T15:14:07.186Z",
+    "mainSha": "b51990706ed92bd6e079838b426e85028efe087e"
+  }
+}

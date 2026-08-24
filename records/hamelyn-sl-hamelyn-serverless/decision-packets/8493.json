@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-17T17:57:20.873Z",
+  "updatedAt": "2026-08-17T17:52:14Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8493,
+    "title": "🤖 B2B orders agent (eve): autonomous intake and execution in #b2b-orders",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8493",
+    "state": "closed",
+    "labels": [
+      "app:infrastructure",
+      "feature",
+      "reporter:javier",
+      "triage:done",
+      "P1"
+    ],
+    "createdAt": "2026-08-17T17:04:55Z",
+    "updatedAt": "2026-08-17T17:52:14Z"
+  },
+  "lane": "merge_risk",
+  "priority": "P1",
+  "question": "¿Debe autorizarse la ejecución autónoma solo cuando la PR demuestre recuperación segura de cada estado parcial de B2B?",
+  "rationale": "La elección define la garantía operativa para mutaciones de pedidos, picking y stock; no puede deducirse de la intención funcional descrita.",
+  "options": [
+    {
+      "title": "Exigir saga reanudable",
+      "body": "Hacer que el ledger continúe de forma idempotente desde cada write confirmado y cubrir cada interrupción con pruebas inyectadas.",
+      "recommended": true
+    },
+    {
+      "title": "Añadir compensación explícita",
+      "body": "Revertir de forma segura las escrituras ya realizadas cuando falle un paso posterior antes de permitir otro intento.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener ejecución manual",
+      "body": "Dejar el watcher limitado a dry-run y escalado hasta acordar otra garantía transaccional.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Exigir saga reanudable",
+    "body": "Hacer que el ledger continúe de forma idempotente desde cada write confirmado y cubrir cada interrupción con pruebas inyectadas.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su historial conecta tanto el contrato operativo B2B como la infraestructura de agentes que implementa la propuesta.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/8493.md",
+    "reviewedAt": "2026-08-17T17:57:20.873Z",
+    "mainSha": "b642104cd119deeb2f0c57e31ed21a54fc3d9a0b"
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-08T03:50:14.670Z",
+  "updatedAt": "2026-07-08T10:29:42Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7105,
+    "title": "BL-ecommerce-catalog: Public Catalog — specs, aislamiento y tests",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7105",
+    "state": "closed",
+    "labels": [
+      "app:ecommerce",
+      "priority:p1",
+      "feature",
+      "triage:done",
+      "business-logic",
+      "hackathon",
+      "P2",
+      "issue-rating: 🌊 off-meta tidepool",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-07T09:14:41Z",
+    "updatedAt": "2026-07-08T10:29:42Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "Should Public Catalog F1 include constants/categories/SEO, or should that surface be moved to the separate BL-ecommerce-seo block before validation?",
+  "rationale": "The code shows SEO category data still has active consumers, but the issue and triage both identify its domain boundary as unresolved; automation should not decide that BL ownership before F2.",
+  "options": [
+    {
+      "title": "Validate boundary during F2",
+      "body": "Proceed with F1 after correcting the known seed values and present constants/categories/SEO as an explicit owner flag before isolation or tests.",
+      "recommended": true
+    },
+    {
+      "title": "Move SEO categories to SEO block",
+      "body": "Keep this block focused on catalog listing/search behavior and handle constants/categories/SEO under https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7104 if the owner classifies it as SEO routing/content.",
+      "recommended": false
+    },
+    {
+      "title": "Pause until child cleanups land",
+      "body": "Wait for the child cleanup PRs linked from https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7131 and https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7132 before isolating affected rules.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Validate boundary during F2",
+    "body": "Proceed with F1 after correcting the known seed values and present constants/categories/SEO as an explicit owner flag before isolation or tests.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "AlexDiaz-Hamelyn is the named and assigned owner for this BL block and opened the related child catalog issues from the extraction pass.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7105.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7105#issuecomment-4911294433",
+    "reviewedAt": "2026-07-08T03:50:14.670Z",
+    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+  }
+}

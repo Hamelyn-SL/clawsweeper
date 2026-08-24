@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-15T12:29:03.393Z",
+  "updatedAt": "2026-07-15T12:07:16Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7379,
+    "title": "Amazon ES withdrawal misses active listings without mk row",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7379",
+    "state": "closed",
+    "labels": [
+      "bug",
+      "priority:p1",
+      "app:marketplace",
+      "triage:done",
+      "P1",
+      "impact:other",
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review"
+    ],
+    "createdAt": "2026-07-11T18:32:34Z",
+    "updatedAt": "2026-07-15T12:07:16Z"
+  },
+  "lane": "proof_sufficiency",
+  "priority": "P1",
+  "question": "¿Autoriza el responsable de Marketplace ejecutar la remediación canónica por rehidratación mínima sobre una cohorte fresca, comenzando con una muestra end-to-end y continuando en lotes de 200–500 SKUs?",
+  "rationale": "La dirección técnica ya está definida por el playbook, pero una operación sobre Mongo y ofertas externas exige confirmar que el nuevo dry-run conserva únicamente listings realmente huérfanos y vendidos.",
+  "options": [
+    {
+      "title": "Aprobar ejecución escalonada",
+      "body": "Revalidar tres muestras, retirar una de extremo a extremo y continuar por lotes auditados solo si SP-API y el snapshot confirman el resultado.",
+      "recommended": true
+    },
+    {
+      "title": "Pausar para nueva medición",
+      "body": "No escribir datos hasta disponer de un snapshot Amazon ES fresco y un recuento actualizado de Mongo y SP-API.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar ejecución escalonada",
+    "body": "Revalidar tres muestras, retirar una de extremo a extremo y continuar por lotes auditados solo si SP-API y el snapshot confirman el resultado.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Es la persona asignada tanto a esta incidencia como a la cohorte equivalente de Amazon COM y tiene el historial más amplio en el pipeline Amazon actual.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7379.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7379#issuecomment-4948332519",
+    "reviewedAt": "2026-07-15T12:29:03.393Z",
+    "mainSha": "c9c48539811bc0171e4605b5bbaf72e258ffc431"
+  }
+}

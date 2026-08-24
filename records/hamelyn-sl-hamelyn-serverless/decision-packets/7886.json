@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-23T08:59:33.956Z",
+  "updatedAt": "2026-07-23T08:53:46Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7886,
+    "title": "fix: discount cheapest units for nth-unit coupons",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7886",
+    "state": "closed",
+    "labels": [
+      "size/M",
+      "rating: 🥈 silver",
+      "status: 📣 needs proof",
+      "P1",
+      "merge-risk: 🚨 compatibility"
+    ],
+    "createdAt": "2026-07-22T13:08:23Z",
+    "updatedAt": "2026-07-23T08:53:46Z",
+    "headSha": "40f13a7c379674e790b68305c8e8eefdef942d38"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Los cupones `secondUnitPercentage` deben conservar una unidad descontada por bloque o pasar a descontar globalmente las `applications` unidades más baratas?",
+  "rationale": "El código, la tabla BL específica y las pruebas actuales establecen bloques; la PR sustituye ese comportamiento por una regla comercial distinta que afecta importes en checkout.",
+  "options": [
+    {
+      "title": "Mantener la semántica por bloques",
+      "body": "Pausar o cerrar esta PR y conservar el contrato vigente hasta que exista una decisión comercial distinta.",
+      "recommended": true
+    },
+    {
+      "title": "Aprobar las N unidades globales",
+      "body": "Aceptar el cambio de contrato, comunicar su efecto sobre cupones existentes y exigir prueba de checkout del nuevo cálculo.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mantener la semántica por bloques",
+    "body": "Pausar o cerrar esta PR y conservar el contrato vigente hasta que exista una decisión comercial distinta.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "alexcanHamelyn",
+    "reason": "Es el contribuidor reciente del estimador y el revisor asignado para la lógica sensible de ecommerce/cupones.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7886.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7886#issuecomment-5046533760",
+    "reviewedAt": "2026-07-23T08:59:33.956Z",
+    "mainSha": "e9f37693091b2ec22737d422d27c57db642842dc"
+  }
+}

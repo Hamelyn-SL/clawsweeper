@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-14T21:22:08.591Z",
+  "updatedAt": "2026-07-14T15:59:24Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 5598,
+    "title": "marketplace-crons: Amazon ES create falla cuando no encuentra ASIN para el EAN",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5598",
+    "state": "closed",
+    "labels": [
+      "marketplace-crons",
+      "codex",
+      "bug",
+      "priority:p1",
+      "app:marketplace",
+      "triage:confirmed-live",
+      "area:marketplace-sync",
+      "P1",
+      "impact:other",
+      "issue-rating: 🥈 silver",
+      "clawsweeper:not-repro-on-main",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:fix-shape-clear",
+      "clawsweeper:needs-maintainer-review"
+    ],
+    "createdAt": "2026-04-30T01:34:27Z",
+    "updatedAt": "2026-07-14T15:59:24Z"
+  },
+  "lane": "proof_sufficiency",
+  "priority": "P1",
+  "question": "¿Exigimos una correlación por SKU que demuestre un retry anticipado o ausente antes de tratar esta señal como un bug residual de código?",
+  "rationale": "La implementación actual cumple el contrato de cooldown en fuente, mientras que los datos publicados solo prueban que la firma sigue apareciendo en producción y no que falle la recuperación del mismo stock.",
+  "options": [
+    {
+      "title": "Correlacionar por SKU",
+      "body": "Mantener abierta la canónica y obtener para varios SKU `lastUpdatedTimestamp`, intentos de `recover` y resultado después de 24 horas antes de autorizar código nuevo.",
+      "recommended": true
+    },
+    {
+      "title": "Tratar la firma como esperada",
+      "body": "Confirmar que los primeros fallos de EAN sin ASIN son comportamiento de catálogo esperado y limitar el seguimiento a reincidencias que incumplan el cooldown.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Correlacionar por SKU",
+    "body": "Mantener abierta la canónica y obtener para varios SKU `lastUpdatedTimestamp`, intentos de `recover` y resultado después de 24 horas antes de autorizar código nuevo.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su historial cubre la clasificación `STALE`, la concurrencia y las consultas que determinan cuándo un stock vuelve a ser elegible.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/5598.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5598#issuecomment-4909648222",
+    "reviewedAt": "2026-07-14T21:22:08.591Z",
+    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
+  }
+}

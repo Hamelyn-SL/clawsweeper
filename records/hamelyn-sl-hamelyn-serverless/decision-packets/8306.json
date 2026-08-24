@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-07T12:11:53.176Z",
+  "updatedAt": "2026-08-07T12:04:29Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8306,
+    "title": "feat: allow seur to fedex multi-box carrier switch in packing",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8306",
+    "state": "open",
+    "labels": [
+      "size/M",
+      "rating: 🥈 silver",
+      "status: 📣 needs proof",
+      "P2",
+      "merge-risk: 🚨 other"
+    ],
+    "createdAt": "2026-08-07T09:45:50Z",
+    "updatedAt": "2026-08-07T12:04:29Z",
+    "headSha": "28d67d559c1956a950ea6e4b04efae6c4a46f1f1"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿La transición SEUR → FedEx debe cancelar obligatoriamente el envío SEUR remoto, o está aprobada una expiración sin cancelación bajo condiciones concretas?",
+  "rationale": "El código dispone de cancelación remota, pero el PR opta por no usarla basándose en una confirmación no verificable en la discusión pública; la elección afecta a costes y a expediciones activas.",
+  "options": [
+    {
+      "title": "Cancelar SEUR antes del cambio",
+      "body": "Cancelar remotamente el envío SEUR y detener el cambio si la cancelación falla para evitar dos expediciones activas.",
+      "recommended": true
+    },
+    {
+      "title": "Ratificar la expiración controlada",
+      "body": "Mantener el envío SEUR sin cancelar solo con una decisión pública del responsable, límites operativos y prueba de que no genera coste ni entrega duplicada.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Cancelar SEUR antes del cambio",
+    "body": "Cancelar remotamente el envío SEUR y detener el cambio si la cancelación falla para evitar dos expediciones activas.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "alexcanHamelyn",
+    "reason": "Su historial conecta tanto la política de cambio como el servicio de SEUR afectado.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8306.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8306#issuecomment-5215700869",
+    "reviewedAt": "2026-08-07T12:11:53.176Z",
+    "mainSha": "67cdf9ac43ba0afc130d11ca698d71b023d06c67"
+  }
+}

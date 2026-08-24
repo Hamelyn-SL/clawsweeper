@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-04T08:51:20.529Z",
+  "updatedAt": "2026-08-04T08:05:31Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8198,
+    "title": "fix: migrate xlsx to SheetJS CDN tarball 0.20.3 (security)",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8198",
+    "state": "closed",
+    "labels": [
+      "size/L",
+      "P2"
+    ],
+    "createdAt": "2026-08-04T06:24:00Z",
+    "updatedAt": "2026-08-04T08:05:31Z",
+    "headSha": "4bc0117413b4716793c051e288086feb4915a55f"
+  },
+  "lane": "security_boundary",
+  "priority": "P2",
+  "question": "¿Se aprueba `cdn.sheetjs.com` como origen de suministro para la dependencia parcheada, con el SHA-512 fijado en el lockfile?",
+  "rationale": "La corrección elimina vulnerabilidades alcanzables, pero cambia el origen de distribución de todas las instalaciones del monorepo y requiere una decisión explícita sobre esa cadena de suministro.",
+  "options": [
+    {
+      "title": "Aprobar el CDN oficial con prueba",
+      "body": "Aceptar el tarball oficial fijado por checksum después de adjuntar una instalación limpia y una ejecución real del parser.",
+      "recommended": true
+    },
+    {
+      "title": "Elegir otra distribución",
+      "body": "Pausar esta PR y definir una fuente aprobada alternativa que ofrezca una versión no vulnerable de SheetJS.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar el CDN oficial con prueba",
+    "body": "Aceptar el tarball oficial fijado por checksum después de adjuntar una instalación limpia y una ejecución real del parser.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su trabajo reciente mantiene los manifiestos y el lockfile afectados, y ya revisó la propuesta anterior.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/8198.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8198#issuecomment-5175568642",
+    "reviewedAt": "2026-08-04T08:51:20.529Z",
+    "mainSha": "24dc2085c43a7e52aca9cb61514d75963320c217"
+  }
+}

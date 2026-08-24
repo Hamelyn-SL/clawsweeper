@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-22T11:46:44.217Z",
+  "updatedAt": "2026-07-22T10:03:04Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7775,
+    "title": "fix: redact sensitive Azeta dropshipping errors",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7775",
+    "state": "closed",
+    "labels": [
+      "size/L",
+      "proof: sufficient",
+      "rating: ⚪ platinum",
+      "status: 👀 ready for maintainer look",
+      "P1",
+      "merge-risk: 🚨 other"
+    ],
+    "createdAt": "2026-07-20T10:12:15Z",
+    "updatedAt": "2026-07-22T10:03:04Z",
+    "headSha": "52c1b9f287280fd5c080fd137ccbca5d19b7d7f4"
+  },
+  "lane": "security_boundary",
+  "priority": "P1",
+  "question": "¿Debe esta PR cerrar automáticamente la incidencia vinculada antes de que exista un seguimiento asignado para rotar la credencial y tratar los logs históricos?",
+  "rationale": "El parche corta la exposición futura, pero no puede revocar un secreto ya registrado ni eliminar los datos previamente replicados.",
+  "options": [
+    {
+      "title": "Separar la contención operativa",
+      "body": "Crear y asignar un seguimiento de seguridad para rotación y saneamiento, y conservar allí esas obligaciones antes de permitir el cierre automático.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener la incidencia abierta",
+      "body": "Retirar el cierre automático y cerrar la incidencia solo cuando la contención operativa esté documentada como completada.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar la integración",
+      "body": "No integrar hasta que una persona responsable acepte explícitamente la titularidad de las dos acciones operativas.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Separar la contención operativa",
+    "body": "Crear y asignar un seguimiento de seguridad para rotación y saneamiento, y conservar allí esas obligaciones antes de permitir el cierre automático.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Figura asignado a la incidencia canónica y dejó documentado el alcance operativo que el parche no puede completar.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7775.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7775#issuecomment-5022592194",
+    "reviewedAt": "2026-07-22T11:46:44.217Z",
+    "mainSha": "00352b6ac84cadb225e9d68f8a8260ae555966f3"
+  }
+}

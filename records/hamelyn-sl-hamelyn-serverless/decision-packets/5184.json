@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-04T23:21:15.203Z",
+  "updatedAt": "2026-08-04T22:53:28Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 5184,
+    "title": "marketplace-crons: eBay falla al publicar ofertas en bulkPublishOffer y el cron lo absorbe",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5184",
+    "state": "closed",
+    "labels": [
+      "codex",
+      "bug",
+      "app:marketplace",
+      "triage:done",
+      "triage:confirmed-live",
+      "area:marketplace-sync",
+      "origin:watcher",
+      "mk:ebay",
+      "P1",
+      "impact:other",
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro",
+      "clawsweeper:linked-pr-open",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-04-13T00:24:51Z",
+    "updatedAt": "2026-08-04T22:53:28Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "Tras integrar la observabilidad, ¿debe reactivarse create mediante una sonda limitada o mantenerse pausado hasta resolver el rechazo de política con eBay?",
+  "rationale": "El código puede capturar la causa remota, pero no permite decidir por sí solo qué volumen es seguro reintentar ni si el rechazo sigue vigente.",
+  "options": [
+    {
+      "title": "Ejecutar una sonda limitada",
+      "body": "Reactivar temporalmente un lote fijo y pequeño para capturar `errorId`, resultados por oferta y causas recuperables antes de cualquier backfill.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener create pausado",
+      "body": "Conservar la pausa hasta recibir confirmación de eBay o corregir el catálogo que dispara el rechazo.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Ejecutar una sonda limitada",
+    "body": "Reactivar temporalmente un lote fijo y pequeño para capturar `errorId`, resultados por oferta y causas recuperables antes de cualquier backfill.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Ha investigado la causa, propuso la sonda y conduce la PR de observabilidad relacionada.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/5184.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5184#issuecomment-4909401385",
+    "reviewedAt": "2026-08-04T23:21:15.203Z",
+    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-11T13:44:18.185Z",
+  "updatedAt": "2026-08-11T13:38:42Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8220,
+    "title": "feat: detect disabled, silent and streak-failing crons in cron-health",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8220",
+    "state": "closed",
+    "labels": [
+      "size/XL",
+      "proof: sufficient",
+      "rating: 🥈 silver",
+      "status: ⏳ waiting on author",
+      "P2",
+      "merge-risk: 🚨 automation"
+    ],
+    "createdAt": "2026-08-05T05:53:52Z",
+    "updatedAt": "2026-08-11T13:38:42Z",
+    "headSha": "a5b408cb7270a08aef01f049bdf53f6214c6b742"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué tolerancia de ausencia debe aceptar `cron-health` para un cron diario antes de alertar sin normalizar retrasos conocidos de GitHub?",
+  "rationale": "El historial compartido muestra huecos diarios de hasta 97 horas; elegir entre detección rápida y alertas fiables es una política operativa que el código no puede deducir por sí solo.",
+  "options": [
+    {
+      "title": "Calibrar con margen histórico",
+      "body": "Usar un límite diario que cubra los retrasos observados y añadir casos de regresión para los workflows afectados.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener detección agresiva",
+      "body": "Conservar 26 horas y aceptar alertas repetidas como señal deliberadamente sensible para intervención humana.",
+      "recommended": false
+    },
+    {
+      "title": "Excluir la detección diaria",
+      "body": "Aplicar `missing` solo a cadencias menos afectadas hasta contar con una estrategia de tolerancia acordada.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Calibrar con margen histórico",
+    "body": "Usar un límite diario que cubra los retrasos observados y añadir casos de regresión para los workflows afectados.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Está solicitado para revisar este cambio de infraestructura y la discusión lo identifica como la referencia más experimentada en estos archivos.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/8220.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8220#issuecomment-5188586361",
+    "reviewedAt": "2026-08-11T13:44:18.185Z",
+    "mainSha": "6de191fdb2799f55c03bd7ea87b95b387c193cff"
+  }
+}

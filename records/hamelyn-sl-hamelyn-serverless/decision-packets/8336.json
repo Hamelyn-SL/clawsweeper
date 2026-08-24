@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-10T09:41:51.561Z",
+  "updatedAt": "2026-08-10T08:31:13Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8336,
+    "title": "fix: scan a single daily partition in the scraping precheck",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8336",
+    "state": "closed",
+    "labels": [
+      "size/M",
+      "rating: 🥈 silver",
+      "status: 📣 needs proof",
+      "P2",
+      "merge-risk: 🚨 message-delivery"
+    ],
+    "createdAt": "2026-08-10T07:58:42Z",
+    "updatedAt": "2026-08-10T08:31:13Z",
+    "headSha": "08bde7f405b20a0052c416ed7cf2e519b6dbab06"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Aceptamos que el precheck diario de las 07:00 UTC notifique sobre el día natural anterior en lugar de las últimas 24 horas?",
+  "rationale": "La modificación reduce el coste, pero altera deliberadamente la frescura de las señales; el código no puede decidir el equilibrio operativo adecuado.",
+  "options": [
+    {
+      "title": "Aceptar el día natural anterior",
+      "body": "Mantener la partición única y documentar que las alertas pueden tener hasta siete horas adicionales de retraso.",
+      "recommended": true
+    },
+    {
+      "title": "Conservar la ventana reciente",
+      "body": "Mantener una ventana rodante o reprogramar el watcher si la detección de las primeras horas del día debe ser inmediata.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aceptar el día natural anterior",
+    "body": "Mantener la partición única y documentar que las alertas pueden tener hasta siete horas adicionales de retraso.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "danielmenchen-hamelyn",
+    "reason": "Es el revisor solicitado para valorar la operativa de scraping e infraestructura.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/8336.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8336#issuecomment-5238624325",
+    "reviewedAt": "2026-08-10T09:41:51.561Z",
+    "mainSha": "a4bf504140750180abfb664053ddbfb787cf429f"
+  }
+}

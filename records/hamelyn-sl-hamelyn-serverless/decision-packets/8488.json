@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-17T21:34:59.699Z",
+  "updatedAt": "2026-08-17T20:38:06Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8488,
+    "title": "fix: isolate promo strip assignment from cached shell",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8488",
+    "state": "open",
+    "labels": [
+      "rating: 🥉 bronze",
+      "status: 📣 needs proof",
+      "P2",
+      "merge-risk: 🚨 compatibility"
+    ],
+    "createdAt": "2026-08-17T14:10:17Z",
+    "updatedAt": "2026-08-17T20:38:06Z",
+    "headSha": "5600b24bef9dc643523241e341a56ecac769ec23"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe esta PR continuar como hardening independiente de Cache Components, sin presentarse como la corrección del `#418` de Ecommerce?",
+  "rationale": "La incidencia vinculada invalida la causa atribuida, pero el desplazamiento de la lectura por visitante podría seguir ser una mejora intencional que requiere confirmación del responsable del área.",
+  "options": [
+    {
+      "title": "Separar y validar el hardening",
+      "body": "Eliminar el cierre de la incidencia, describir el objetivo de caché independiente y aportar una prueba real de variantes por visitante.",
+      "recommended": true
+    },
+    {
+      "title": "Pausar hasta aislar el mismatch",
+      "body": "Mantener la PR sin merge hasta que una reproducción en desarrollo conecte este cambio con el `#418` observado.",
+      "recommended": false
+    },
+    {
+      "title": "Descartar el cambio",
+      "body": "Cerrar la PR si no existe una necesidad independiente de reforzar esa frontera de caché.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Separar y validar el hardening",
+    "body": "Eliminar el cierre de la incidencia, describir el objetivo de caché independiente y aportar una prueba real de variantes por visitante.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su historial concentra la introducción y la revisión posterior de las fronteras Cache Components afectadas.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8488.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8488#issuecomment-5319904383",
+    "reviewedAt": "2026-08-17T21:34:59.699Z",
+    "mainSha": "fc7c48dd1ecff251de1b9d9537476384cbf58f6a"
+  }
+}

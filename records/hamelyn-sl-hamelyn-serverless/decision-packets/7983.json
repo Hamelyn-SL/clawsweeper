@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-27T08:47:14.305Z",
+  "updatedAt": "2026-07-27T08:42:16Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7983,
+    "title": "fix: require causal PR proof evidence",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7983",
+    "state": "closed",
+    "labels": [
+      "size/XXL"
+    ],
+    "createdAt": "2026-07-27T08:41:55Z",
+    "updatedAt": "2026-07-27T08:42:16Z",
+    "headSha": "a8bf367c6f055af0d997f1f6c401bafd78cead11"
+  },
+  "lane": "release_inclusion",
+  "priority": "P1",
+  "question": "¿Debe esta primera fase conservar el endpoint legacy hasta activar el workflow v2, o se quiere desplegar y activar la migración completa en el mismo cambio?",
+  "rationale": "El body declara un rollout sin workflow autoritativo, pero el endpoint elimina ya la compatibilidad con el invocador desplegado; la política de despliegue necesita una decisión explícita.",
+  "options": [
+    {
+      "title": "Mantener compatibilidad v1 temporal",
+      "body": "Aceptar el payload actual mientras el workflow v2 se prepara y se valida de extremo a extremo.",
+      "recommended": true
+    },
+    {
+      "title": "Activar la migración completa",
+      "body": "Actualizar el workflow para enviar la identidad v2 y esperar el resultado terminal antes de desplegar el endpoint estricto.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mantener compatibilidad v1 temporal",
+    "body": "Aceptar el payload actual mientras el workflow v2 se prepara y se valida de extremo a extremo.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es la persona con el historial más amplio en el endpoint y el contrato de PR Proof.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7983.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7983#issuecomment-5089223648",
+    "reviewedAt": "2026-07-27T08:47:14.305Z",
+    "mainSha": "d48cfba074a6a05ffbdd8aa49e43dfec467fe8e8"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-13T20:24:46.603Z",
+  "updatedAt": "2026-07-13T15:15:25Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7474,
+    "title": "ci: automate grouped dependency updates",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7474",
+    "state": "open",
+    "labels": [
+      "size/L",
+      "rating: 🧂 unranked krab",
+      "status: 📣 needs proof",
+      "P2",
+      "merge-risk: 🚨 security-boundary",
+      "merge-risk: 🚨 automation"
+    ],
+    "createdAt": "2026-07-13T12:25:11Z",
+    "updatedAt": "2026-07-13T15:15:25Z",
+    "headSha": "c27fc9f9196ed2768f99576dc80c4161d013aae0"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe este updater agrupado sustituir definitivamente los updates npm de versión de Dependabot una vez corregidos los bloqueos y aportada la prueba real?",
+  "rationale": "La propuesta cambia la política de mantenimiento de dependencias y añade una automatización con PAT y force-push; la aceptación permanente requiere intención humana del área.",
+  "options": [
+    {
+      "title": "Adoptar tras correcciones",
+      "body": "Aceptar el reemplazo cuando use Node 24, preserve la rama, aísle las credenciales y tenga prueba real del ciclo completo.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener Dependabot",
+      "body": "Conservar la automatización actual y rediseñar o cerrar esta propuesta si el coste operativo y de seguridad no compensa.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Adoptar tras correcciones",
+    "body": "Aceptar el reemplazo cuando use Node 24, preserve la rama, aísle las credenciales y tenga prueba real del ciclo completo.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "danielmenchen-hamelyn",
+    "reason": "Es el propietario funcional reciente del flujo actual y la persona asignada a la issue canónica.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7474.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7474#issuecomment-4959508302",
+    "reviewedAt": "2026-07-13T20:24:46.603Z",
+    "mainSha": "288257a8db9236bc80539882a62b0ed2c7ff00df"
+  }
+}

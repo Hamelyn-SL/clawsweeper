@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-08T09:14:52.839Z",
+  "updatedAt": "2026-07-07T22:09:50Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7166,
+    "title": "fix: notify availability for new stock",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7166",
+    "state": "closed",
+    "labels": [
+      "size/XS"
+    ],
+    "createdAt": "2026-07-07T19:26:41Z",
+    "updatedAt": "2026-07-07T22:09:50Z",
+    "headSha": "dc7ae105386ac49b28d0ce84b3145e8f3ebcdf50"
+  },
+  "lane": "merge_risk",
+  "priority": "P2",
+  "question": "Should `notifyAvailability` hard-depend on the stock KV in the crons deployment, or should this fix preserve the existing Mongo availability path as the default or fallback?",
+  "rationale": "The source change fixes the linked bug directionally but introduces an operational prerequisite that current code does not need, and local source inspection cannot prove the Vercel crons environment is already configured.",
+  "options": [
+    {
+      "title": "Preserve the existing fallback",
+      "body": "Keep or add the Mongo availability path as the default/fallback while adding `\"-1\"` selection for the notification use case.",
+      "recommended": true
+    },
+    {
+      "title": "Approve the hard KV cutover",
+      "body": "Merge the KV-only cron path only after confirming the crons Vercel env vars and adding redacted live cron/KV proof.",
+      "recommended": false
+    },
+    {
+      "title": "Pick the broader BL PR",
+      "body": "If maintainers prefer the BL-scoped helper and tests in https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7142, pause this PR and land one canonical fix.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Preserve the existing fallback",
+    "body": "Keep or add the Mongo availability path as the default/fallback while adding `\"-1\"` selection for the notification use case.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "They are tied to the current cron implementation by blame and are the requested reviewer for this PR.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7166.md",
+    "reviewedAt": "2026-07-08T09:14:52.839Z",
+    "mainSha": "26c3284211c5bc7d6b5463029b4c22f350436c14"
+  }
+}

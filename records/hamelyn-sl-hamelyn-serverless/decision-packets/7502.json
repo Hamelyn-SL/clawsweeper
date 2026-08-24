@@ -1,0 +1,64 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-19T15:07:10.989Z",
+  "updatedAt": "2026-07-19T12:08:37Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7502,
+    "title": "🐞 Dependency update: el autofix de CI falló en dependabot/npm_and_yarn/npm-security-c502f8b4cf",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7502",
+    "state": "open",
+    "labels": [
+      "bug",
+      "priority:p2",
+      "app:infrastructure",
+      "P2",
+      "impact:security",
+      "issue-rating: ⚪ platinum",
+      "clawsweeper:needs-live-repro",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-security-review"
+    ],
+    "createdAt": "2026-07-14T07:09:57Z",
+    "updatedAt": "2026-07-19T12:08:37Z"
+  },
+  "lane": "security_boundary",
+  "priority": "P2",
+  "question": "¿Qué candidatura debe convertirse en la actualización de seguridad consolidada y validada contra `dev` actual?",
+  "rationale": "Los dos PR abiertos se solapan y las dependencias incluyen cambios major en rutas de XML, correo e identificadores; escoger la rama y el alcance de compatibilidad requiere responsabilidad mantenedora.",
+  "options": [
+    {
+      "title": "Reparar y consolidar el PR más amplio",
+      "body": "Actualizar el PR de cuatro paquetes sobre `dev`, preservar las resoluciones actuales y validar los consumidores directos del core antes de fusionarlo.",
+      "recommended": true
+    },
+    {
+      "title": "Adoptar el PR alternativo",
+      "body": "Reparar el PR de tres paquetes si su diff actualizado demuestra menor riesgo y cerrar la candidatura redundante después.",
+      "recommended": false
+    },
+    {
+      "title": "Separar los upgrades incompatibles",
+      "body": "Dividir los cambios major en PRs focalizados si la validación conjunta no permite aislar con seguridad el comportamiento afectado.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Reparar y consolidar el PR más amplio",
+    "body": "Actualizar el PR de cuatro paquetes sobre `dev`, preservar las resoluciones actuales y validar los consumidores directos del core antes de fusionarlo.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Sus cambios recientes conectan directamente las dependencias sensibles con los flujos XML y de correo que deben validarse.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7502.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7502#issuecomment-4966677639",
+    "reviewedAt": "2026-07-19T15:07:10.989Z",
+    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-20T12:44:52.515Z",
+  "updatedAt": "2026-07-20T12:27:38Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7787,
+    "title": "feat: assign issue to HamelynDev when triage agent opens a PR",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7787",
+    "state": "closed",
+    "labels": [
+      "priority:p2",
+      "app:infrastructure",
+      "feature",
+      "triage:done",
+      "P3",
+      "impact:other",
+      "issue-rating: ➖ n/a",
+      "clawsweeper:linked-pr-open",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-20T10:59:51Z",
+    "updatedAt": "2026-07-20T12:27:38Z"
+  },
+  "lane": "product_direction",
+  "priority": "P3",
+  "question": "¿Debe `HamelynDev` autoasignarse únicamente cuando el triage abra una PR y la issue siga abierta sin responsables?",
+  "rationale": "La política actual solo contempla la excepción P0, así que ampliar la asignación autónoma exige una decisión explícita aunque la implementación sea acotada.",
+  "options": [
+    {
+      "title": "Aprobar la excepción `pr-opened`",
+      "body": "Permitir la asignación condicionada propuesta, sin sobrescribir responsables humanos ni la asignación P0.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener solo la excepción P0",
+      "body": "Conservar la política actual y usar exclusivamente `triage:pr-opened` como señal de que existe trabajo en curso.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar la excepción `pr-opened`",
+    "body": "Permitir la asignación condicionada propuesta, sin sobrescribir responsables humanos ni la asignación P0.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su historial reciente cubre el script y el workflow de eventos afectados.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7787.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7787#issuecomment-5022380672",
+    "reviewedAt": "2026-07-20T12:44:52.515Z",
+    "mainSha": "002ed05570d3a62b65a6347b7e023057f60d8a38"
+  }
+}

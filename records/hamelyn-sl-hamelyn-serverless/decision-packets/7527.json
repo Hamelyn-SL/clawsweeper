@@ -1,0 +1,64 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-17T06:45:48.734Z",
+  "updatedAt": "2026-07-17T06:20:09Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7527,
+    "title": "🐛 Dropshipping: un fallo de parseo de azeta/arnoia marca el OrderSell como TO_CANCEL",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7527",
+    "state": "closed",
+    "labels": [
+      "bug",
+      "app:ecommerce",
+      "priority:p2",
+      "P2",
+      "impact:data-loss",
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro",
+      "clawsweeper:linked-pr-open",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-14T09:49:02Z",
+    "updatedAt": "2026-07-17T06:20:09Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe una confirmación todavía ambigua autocancelarse a las 48 horas o permanecer pendiente hasta reconciliación o revisión manual?",
+  "rationale": "La respuesta define el ciclo de vida persistido y la experiencia de cancelación; automatizar cualquiera de las dos direcciones sin conocer si existe un pedido externo puede causar una venta duplicada o cancelar una venta válida.",
+  "options": [
+    {
+      "title": "Mantener pendiente hasta reconciliar",
+      "body": "Eliminar la autocancelación de resultados ambiguos y exigir revisión manual o consulta fiable al proveedor antes de cancelar o reintentar.",
+      "recommended": true
+    },
+    {
+      "title": "Aprobar autocancelación a 48h",
+      "body": "Aceptar el SLA actual con un runbook, responsable operativo y prueba de cómo detectar y resolver pedidos que sí existan en el proveedor.",
+      "recommended": false
+    },
+    {
+      "title": "Reducir el alcance inicial",
+      "body": "Integrar solo la clasificación y el estado pendiente, dejando recordatorios, cancelación y retry para una segunda fase con contrato de proveedor confirmado.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mantener pendiente hasta reconciliar",
+    "body": "Eliminar la autocancelación de resultados ambiguos y exigir revisión manual o consulta fiable al proveedor antes de cancelar o reintentar.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Es el asignado actual y responsable del flujo candidato donde debe materializarse la decisión, coordinado con los revisores de ecommerce.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7527.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7527#issuecomment-4968441443",
+    "reviewedAt": "2026-07-17T06:45:48.734Z",
+    "mainSha": "6488cd8832a287efe2570d6a12f65e121f77401e"
+  }
+}

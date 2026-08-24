@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-10T22:39:51.644Z",
+  "updatedAt": "2026-08-10T22:30:42Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8369,
+    "title": "AÑADIR EN REPORTE DIARIO (CANAL SLACK) EL PICKIGNB2B",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8369",
+    "state": "closed",
+    "labels": [
+      "source:admin-panel",
+      "app:supply",
+      "feature",
+      "triage:pr-opened",
+      "reporter:daniellopez",
+      "issue-rating: ➖ n/a",
+      "P2",
+      "impact:other",
+      "clawsweeper:linked-pr-open",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-08-10T20:51:46Z",
+    "updatedAt": "2026-08-10T22:30:42Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Deben «No encontrados» y «Picking Skypod» conservar como denominador el picking B2C cuando el total visible pasa a incluir B2B?",
+  "rationale": "La solicitud define el nuevo total y desglose, pero no especifica la semántica de esos dos KPIs derivados que el PR ajusta.",
+  "options": [
+    {
+      "title": "Mantener denominador B2C",
+      "body": "Conserva la comparabilidad histórica de ambos indicadores con el flujo operativo B2C.",
+      "recommended": true
+    },
+    {
+      "title": "Usar el total B2C+B2B",
+      "body": "Hace que ambos porcentajes reflejen el total mostrado de Picking, cambiando su significado operativo.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mantener denominador B2C",
+    "body": "Conserva la comparabilidad histórica de ambos indicadores con el flujo operativo B2C.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "El historial le vincula con la definición y las correcciones previas del reporte diario.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/8369.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8369#issuecomment-5246249347",
+    "reviewedAt": "2026-08-10T22:39:51.644Z",
+    "mainSha": "af062ab5ca208015cd59b1b4b7988882a3ba5dd4"
+  }
+}

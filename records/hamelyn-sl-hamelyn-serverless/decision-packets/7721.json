@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-28T23:48:58.863Z",
+  "updatedAt": "2026-07-28T22:05:36Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7721,
+    "title": "eBay ES reconciliation marks live on-hold listings as DB_ONLY",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7721",
+    "state": "closed",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "triage:pr-opened",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond",
+      "P2",
+      "impact:other",
+      "clawsweeper:linked-pr-open"
+    ],
+    "createdAt": "2026-07-19T12:20:01Z",
+    "updatedAt": "2026-07-28T22:05:36Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe aprobarse ahora solo la prevención para snapshots futuros, dejando la cohorte histórica `DB_ONLY` para una resincronización separada?",
+  "rationale": "La PR preserva explícitamente el backlog histórico; reinterpretarlo o recrearlo requiere definir una cohorte estable y una política operativa por respuesta remota.",
+  "options": [
+    {
+      "title": "Limitar la PR a futuros candidatos",
+      "body": "Integrar la prevención de nuevos falsos `DB_ONLY` y abrir una intervención separada, auditada y estable para el backlog histórico.",
+      "recommended": true
+    },
+    {
+      "title": "Añadir resincronización histórica",
+      "body": "Extender el trabajo solo tras definir respuestas para `404`, ofertas on-hold y stocks no activos sobre el universo completo.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Limitar la PR a futuros candidatos",
+    "body": "Integrar la prevención de nuevos falsos `DB_ONLY` y abrir una intervención separada, auditada y estable para el backlog histórico.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su historial reciente conecta directamente con el extractor y la política de reconciliación afectada.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7721.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7721#issuecomment-5015714604",
+    "reviewedAt": "2026-07-28T23:48:58.863Z",
+    "mainSha": "de70ead7c6486659f479623aa4b7547c13881346"
+  }
+}

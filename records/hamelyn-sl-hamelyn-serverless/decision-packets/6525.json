@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-08T20:57:06.528Z",
+  "updatedAt": "2026-07-08T16:33:56Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 6525,
+    "title": "ci: add weekly dependabot updates and CI autofix workflow",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/6525",
+    "state": "closed",
+    "labels": [
+      "size/XL",
+      "rating: 🧂 unranked krab",
+      "status: 📣 needs proof",
+      "P1",
+      "merge-risk: 🚨 security-boundary",
+      "merge-risk: 🚨 automation"
+    ],
+    "createdAt": "2026-06-18T08:56:16Z",
+    "updatedAt": "2026-07-08T16:33:56Z",
+    "headSha": "15191468990a7671a7fa8bde906e66b546f7bf20"
+  },
+  "lane": "security_boundary",
+  "priority": "P1",
+  "question": "¿Acepta el equipo de CI/seguridad activar este workflow con `PAT_TOKEN` y un agente de código sobre PRs de Dependabot una vez haya prueba real y el conflicto con `dev` esté resuelto?",
+  "rationale": "El cambio introduce automatización con permisos de escritura y secretos; la lectura del diff puede revisar guardas, pero no sustituye la decisión de operar ese flujo en la rama por defecto.",
+  "options": [
+    {
+      "title": "Aprobar tras prueba real",
+      "body": "Mantener el diseño actual, resolver conflictos y mergear solo cuando Javier/David validen logs redacted del flujo completo y los permisos esperados.",
+      "recommended": true
+    },
+    {
+      "title": "Reducir privilegios o alcance",
+      "body": "Limitar el workflow a comentario/issue sin push automático, o separar el push con `PAT_TOKEN` en un flujo manual hasta ganar confianza operativa.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar el PR",
+      "body": "Cerrar o aparcar esta automatización si el equipo no quiere mantener un agente con permisos de escritura sobre PRs de dependencias.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar tras prueba real",
+    "body": "Mantener el diseño actual, resolver conflictos y mergear solo cuando Javier/David validen logs redacted del flujo completo y los permisos esperados.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Tiene la señal técnica más clara en los comentarios bloqueantes de auth/CI y en el área de workflows.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/6525.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/6525#issuecomment-4917012839",
+    "reviewedAt": "2026-07-08T20:57:06.528Z",
+    "mainSha": "54896479ce3b6f8f138ef1bf4bc0a74bd9c5d17e"
+  }
+}

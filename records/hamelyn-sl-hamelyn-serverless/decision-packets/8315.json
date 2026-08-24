@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-10T11:40:34.408Z",
+  "updatedAt": "2026-08-10T11:34:33Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8315,
+    "title": "Ecommerce: migrar a Cache Components (Next 16.3) con navegaciones instantáneas en todas las rutas",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8315",
+    "state": "closed",
+    "labels": [
+      "app:ecommerce",
+      "feature",
+      "triage:queued",
+      "P2",
+      "impact:ux-friction",
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro",
+      "clawsweeper:linked-pr-open",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-08-08T17:42:39Z",
+    "updatedAt": "2026-08-10T11:34:33Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se acepta la migración global como una única entrega, o se exige dividirla en PRs por shell/i18n, catálogo-PDP y rutas autenticadas?",
+  "rationale": "El alcance cubre rutas públicas, datos comerciales en vivo y trece storefronts; la frontera entre cacheado y dinámico requiere una decisión explícita de riesgo y entrega.",
+  "options": [
+    {
+      "title": "Dividir por fronteras de caché",
+      "body": "Aprobar entregas secuenciales con invariantes de dominio y preview real antes de ampliar la cobertura.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar una entrega única",
+      "body": "Mantener la PR actual como migración integral si se acepta su tamaño y se completa la validación de todos los storefronts.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Dividir por fronteras de caché",
+    "body": "Aprobar entregas secuenciales con invariantes de dominio y preview real antes de ampliar la cobertura.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Su historial reciente en la promo dinámica y su revisión aprobatoria lo sitúan cerca de los límites de caché implicados.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/8315.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8315#issuecomment-5227367831",
+    "reviewedAt": "2026-08-10T11:40:34.408Z",
+    "mainSha": "d5e3a1b899d7bd7c2487d30e50a8e94275ea09fe"
+  }
+}

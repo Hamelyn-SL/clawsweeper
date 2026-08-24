@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-15T10:40:50.204Z",
+  "updatedAt": "2026-07-15T09:25:10Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7339,
+    "title": "fix: reconcile live todocoleccion upload errors",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7339",
+    "state": "open",
+    "labels": [
+      "size/L",
+      "P2",
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 other",
+      "conflicts:needs-human",
+      "rating: 🥉 bronze"
+    ],
+    "createdAt": "2026-07-10T09:30:33Z",
+    "updatedAt": "2026-07-15T09:25:10Z",
+    "headSha": "843ed7382f33911fb3fdcabcbd2692deac38e907"
+  },
+  "lane": "merge_risk",
+  "priority": "P2",
+  "question": "¿Se aprueba integrar esta reconciliación para stocks maestros `ACTIVE` manteniendo separada la retirada ya fusionada para stocks `WITHDRAWN`?",
+  "rationale": "Las cohortes son compatibles, pero los conflictos impiden una fusión automática y la resolución debe preservar cambios recientes de `dev` en el mismo registro y documentación.",
+  "options": [
+    {
+      "title": "Integrar ambas cohortes",
+      "body": "Resolver los conflictos conservando `marketplaceUpdatePriceRetry`, el withdraw de stocks `WITHDRAWN` y la nueva reconciliación exclusiva de stocks `ACTIVE`.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener solo withdraw",
+      "body": "No incorporar la reconciliación y dejar que los mk docs con stock maestro `ACTIVE` continúen en error hasta definir otra política.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Integrar ambas cohortes",
+    "body": "Resolver los conflictos conservando `marketplaceUpdatePriceRetry`, el withdraw de stocks `WITHDRAWN` y la nueva reconciliación exclusiva de stocks `ACTIVE`.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Es el revisor solicitado y tiene el historial más directo sobre la API y los recoveries recientes de TodoColeccion.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7339.md",
+    "reviewedAt": "2026-07-15T10:40:50.204Z",
+    "mainSha": "d6056b9e41980dfde228a296c634eb8d02004dc5"
+  }
+}

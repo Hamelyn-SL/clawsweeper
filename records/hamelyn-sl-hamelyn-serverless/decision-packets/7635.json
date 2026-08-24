@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-17T06:51:28.372Z",
+  "updatedAt": "2026-07-17T06:19:13Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7635,
+    "title": "fix: avoid cancelling dropshipping orders on ambiguous confirmation",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7635",
+    "state": "closed",
+    "labels": [
+      "size/XL",
+      "proof: 📸 screenshot",
+      "rating: 🥉 bronze",
+      "status: 📣 needs proof",
+      "P2",
+      "merge-risk: 🚨 compatibility",
+      "merge-risk: 🚨 message-delivery",
+      "merge-risk: 🚨 other"
+    ],
+    "createdAt": "2026-07-16T08:43:28Z",
+    "updatedAt": "2026-07-17T06:19:13Z",
+    "headSha": "d4eb569b88b6fc5a6766ead375c4c3ba220a3570"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe un pedido cuya creación en el proveedor sigue siendo ambigua autocancelarse a las 48 horas y dejar de ser cancelable por el cliente mientras espera reconciliación?",
+  "rationale": "El sistema no puede saber si el proveedor creó el pedido; elegir el SLA y quién puede cancelar afecta dinero, experiencia del cliente y conciliación operativa, por lo que requiere una política explícita.",
+  "options": [
+    {
+      "title": "Reconciliar sin autocancelar",
+      "body": "Mantener el pedido pendiente, escalar alertas y exigir comprobación del proveedor antes de cancelar o reintentar.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar el SLA de 48 horas",
+      "body": "Autocancelar tras 48 horas con un runbook probado para localizar y anular o conciliar pedidos existentes en proveedor.",
+      "recommended": false
+    },
+    {
+      "title": "Definir reglas por proveedor",
+      "body": "Aplicar SLA, reintento y cancelación según las garantías reales de consulta, borrado e idempotencia de cada proveedor.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Reconciliar sin autocancelar",
+    "body": "Mantener el pedido pendiente, escalar alertas y exigir comprobación del proveedor antes de cancelar o reintentar.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "alexcanHamelyn",
+    "reason": "Es el revisor con señal humana más reciente sobre el head y fue seleccionado por experiencia directa en el área.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7635.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7635#issuecomment-4990592518",
+    "reviewedAt": "2026-07-17T06:51:28.372Z",
+    "mainSha": "6488cd8832a287efe2570d6a12f65e121f77401e"
+  }
+}

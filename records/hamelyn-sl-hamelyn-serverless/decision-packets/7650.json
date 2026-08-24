@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-17T06:44:33.270Z",
+  "updatedAt": "2026-07-17T05:46:38Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7650,
+    "title": "fix: send amazon price thresholds for optimo and atascado groups",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7650",
+    "state": "closed",
+    "labels": [
+      "size/L",
+      "rating: 🥉 bronze",
+      "status: 📣 needs proof",
+      "P1",
+      "merge-risk: 🚨 compatibility"
+    ],
+    "createdAt": "2026-07-16T12:15:19Z",
+    "updatedAt": "2026-07-17T05:46:38Z",
+    "headSha": "11adf93265057591076fa493244cb2437eaa2b30"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Aprueba Marketplace/Pricing que `OPTIMO` y `ATASCADO` usen rangos basados en `PMin`/`PMax` y que cualquier `automated_pricing_merchandising_rule_plan` previo se elimine en creación y actualizaciones Amazon?",
+  "rationale": "El código puede implementar esta separación, pero el rango permitido y la retirada del repricing automático son una política comercial que las issues enlazadas dejaron expresamente pendiente de aprobación.",
+  "options": [
+    {
+      "title": "Aprobar tras prueba real",
+      "body": "Mantener el diseño del PR y autorizar el merge cuando una ejecución redactada confirme los payloads y la desaparición de 18155 en una muestra.",
+      "recommended": true
+    },
+    {
+      "title": "Recalibrar los rangos",
+      "body": "Pedir a Pricing otros límites o grupos antes de fusionar, manteniendo la separación técnica entre umbrales y regla automática.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener la política actual",
+      "body": "No activar umbrales para estos grupos y cerrar o replantear el PR si el riesgo comercial supera el beneficio operativo.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar tras prueba real",
+    "body": "Mantener el diseño del PR y autorizar el merge cuando una ejecución redactada confirme los payloads y la desaparición de 18155 en una muestra.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "PabloMoran34",
+    "reason": "Su historial concentra la definición y evolución de rangos por grupo y de la regla automática Amazon.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7650.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7650#issuecomment-4991808339",
+    "reviewedAt": "2026-07-17T06:44:33.270Z",
+    "mainSha": "6488cd8832a287efe2570d6a12f65e121f77401e"
+  }
+}

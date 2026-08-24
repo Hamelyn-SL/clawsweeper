@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-16T09:43:53.788Z",
+  "updatedAt": "2026-07-16T09:35:50Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7528,
+    "title": "🐛 increment-visit agota los 300s de maxDuration — un contador no puede tardar 5 minutos",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7528",
+    "state": "closed",
+    "labels": [
+      "bug",
+      "app:ecommerce",
+      "priority:p2",
+      "triage:done",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond",
+      "P2",
+      "impact:data-loss",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-14T09:49:05Z",
+    "updatedAt": "2026-07-16T09:35:50Z"
+  },
+  "lane": "manual_review",
+  "priority": "P2",
+  "question": "¿Debe el deadline aplicarse globalmente en la conexión Mongo, mediante un helper opt-in para operaciones interactivas o únicamente en `incrementEcommerceVisits`?",
+  "rationale": "La causa está confirmada, pero el alcance modifica el contrato operativo de una conexión compartida por múltiples aplicaciones y procesos con duraciones muy distintas.",
+  "options": [
+    {
+      "title": "Helper opt-in interactivo",
+      "body": "Crear un helper reutilizable con un deadline corto para escrituras HTTP y migrar primero `increment-visit` y otras rutas interactivas comparables.",
+      "recommended": true
+    },
+    {
+      "title": "Timeout global",
+      "body": "Configurar el timeout en la conexión compartida después de demostrar que no interrumpe consultas o escrituras largas legítimas.",
+      "recommended": false
+    },
+    {
+      "title": "Parche local",
+      "body": "Acotar exclusivamente `incrementEcommerceVisits` para mitigar el incidente inmediato, aceptando que el riesgo transversal seguirá abierto.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Helper opt-in interactivo",
+    "body": "Crear un helper reutilizable con un deadline corto para escrituras HTTP y migrar primero `increment-visit` y otras rutas interactivas comparables.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Es el asignado actual y su historial reciente cubre específicamente el reciclado y la estabilidad del pool Mongo compartido.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7528.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7528#issuecomment-4968295575",
+    "reviewedAt": "2026-07-16T09:43:53.788Z",
+    "mainSha": "ff4f28cc338780e8524835196ca6ffcd1429b8d0"
+  }
+}

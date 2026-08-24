@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-10T06:18:53.549Z",
+  "updatedAt": "2026-07-10T06:11:33Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7318,
+    "title": "Alta marketplace Amazon Francia (AMAZON_FR)",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7318",
+    "state": "closed",
+    "labels": [
+      "priority:p2",
+      "app:marketplace",
+      "feature",
+      "triage:done",
+      "P2",
+      "impact:other",
+      "issue-rating: 🌊 off-meta tidepool",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:fix-shape-clear",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-10T06:02:47Z",
+    "updatedAt": "2026-07-10T06:11:33Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe el equipo Marketplace ejecutar ahora el alta completa de `AMAZON_FR`, o conviene posponerla hasta que estén preparados los gates operativos de datos/config?",
+  "rationale": "La parte de código es localizable, pero activar un marketplace nuevo cambia canales de venta, métricas, pricing y operación; hace falta una decisión de coordinación antes de lanzar pedidos reales.",
+  "options": [
+    {
+      "title": "Planificar alta coordinada",
+      "body": "Mantener esta issue abierta como canonical y ejecutar el alta con PR más checklist operativo previo a producción.",
+      "recommended": true
+    },
+    {
+      "title": "Preparar código sin pedidos",
+      "body": "Implementar enums, registry y capa de datos, pero dejar `processOrders` y cron desactivados hasta completar los gates externos.",
+      "recommended": false
+    },
+    {
+      "title": "Posponer el canal",
+      "body": "No tocar código todavía y revisar más adelante cuando Marketplace confirme prioridad y capacidad operativa.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Planificar alta coordinada",
+    "body": "Mantener esta issue abierta como canonical y ejecutar el alta con PR más checklist operativo previo a producción.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Ya aparece asignado en la issue y el historial local lo vincula con el alta equivalente de Amazon MX y el registry.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7318.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7318#issuecomment-4932553920",
+    "reviewedAt": "2026-07-10T06:18:53.549Z",
+    "mainSha": "fbd4b55db934eeae5175d1c95f53b976aa46f86b"
+  }
+}

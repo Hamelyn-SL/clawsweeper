@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-13T08:46:56.201Z",
+  "updatedAt": "2026-07-13T07:59:56Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 6515,
+    "title": "Páginas de autor publican texto de Wikipedia (CC BY-SA) e imágenes de Commons sin atribución",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6515",
+    "state": "closed",
+    "labels": [
+      "bug",
+      "priority:p2",
+      "app:infrastructure",
+      "reporter:PabloMoran34",
+      "triage:done",
+      "P2",
+      "impact:other",
+      "issue-rating: 🦞 diamond lobster",
+      "clawsweeper:source-repro",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:fix-shape-clear",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-06-18T06:45:23Z",
+    "updatedAt": "2026-07-13T07:59:56Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe Hamelyn resolver las páginas de autor evitando texto/imágenes con obligaciones de licencia, o manteniéndolos con un modelo completo de atribución?",
+  "rationale": "Las dos opciones tienen consecuencias legales, de contenido, esquema, UI, JSON-LD y limpieza de datos ya publicados; automatizar esa elección sería una decisión de producto/legal, no solo técnica.",
+  "options": [
+    {
+      "title": "Evitar contenido licenciado",
+      "body": "Generar biografías solo desde hechos CC0 y descartar o sustituir imágenes que no sean dominio público/CC0, reduciendo la carga permanente de atribución.",
+      "recommended": true
+    },
+    {
+      "title": "Añadir atribución completa",
+      "body": "Conservar Wikipedia/Commons solo si la ingesta guarda fuente, autor, licencia, URL de licencia y estado de cambios, y el storefront/JSON-LD lo muestran correctamente.",
+      "recommended": false
+    },
+    {
+      "title": "Contención antes de decisión final",
+      "body": "Ocultar temporalmente `author.description` e `author.imageUrl` en la ficha pública hasta que se cierre la decisión de contenido definitiva.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Evitar contenido licenciado",
+    "body": "Generar biografías solo desde hechos CC0 y descartar o sustituir imágenes que no sean dominio público/CC0, reduciendo la carga permanente de atribución.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Ya validó el problema y formuló el paso siguiente como decisión entre contención y remediación definitiva.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/6515.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6515#issuecomment-4909968694",
+    "reviewedAt": "2026-07-13T08:46:56.201Z",
+    "mainSha": "0b64e702d77acd62d6705b5cfd1b3420ad3408ef"
+  }
+}

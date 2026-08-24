@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-18T07:26:15.199Z",
+  "updatedAt": "2026-08-18T06:27:05Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8460,
+    "title": "feat: wire decathlon update phase and label p41 global rejections",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8460",
+    "state": "open",
+    "labels": [
+      "size/M",
+      "P1"
+    ],
+    "createdAt": "2026-08-14T11:11:57Z",
+    "updatedAt": "2026-08-18T06:27:05Z",
+    "headSha": "dab2fd687a4f3f500b2c204367b10b8b5991a0f6"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe un OK global de Mirakl confirmar la recreación completa del lote para las integraciones compartidas?",
+  "rationale": "Cambiar esa semántica afecta al runner común de CDL, Feltrinelli y Decathlon; no es seguro elegirla solo desde este PR.",
+  "options": [
+    {
+      "title": "Separar el etiquetado P41",
+      "body": "Mantener el trabajo autónomo de P41 y retirar temporalmente la fase `update()` hasta acordar el contrato compartido.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar OK global como lote completo",
+      "body": "Cambiar el runner común para recrear todo `stockData`, con pruebas de regresión para las tres integraciones.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Separar el etiquetado P41",
+    "body": "Mantener el trabajo autónomo de P41 y retirar temporalmente la fase `update()` hasta acordar el contrato compartido.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Miguel Angel Hernández Perdomo",
+    "reason": "Su trabajo reciente mantiene el adaptador Mirakl que produce el resultado global que el runner debe interpretar.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8460.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8460#issuecomment-5292730509",
+    "reviewedAt": "2026-08-18T07:26:15.199Z",
+    "mainSha": "1e92b1c282002f43e0ee8916cae95aa3bcd0e2e9"
+  }
+}

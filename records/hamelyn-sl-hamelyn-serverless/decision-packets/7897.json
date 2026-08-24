@@ -1,0 +1,64 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-24T08:39:45.782Z",
+  "updatedAt": "2026-07-24T08:27:20Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7897,
+    "title": "Gestionar la promoStrip del ecommerce desde Admin vía KV con reparto proporcional",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7897",
+    "state": "closed",
+    "labels": [
+      "app:ecommerce",
+      "feature",
+      "reporter:miguel",
+      "triage:no-change",
+      "P2",
+      "impact:ux-friction",
+      "issue-rating: ➖ n/a",
+      "clawsweeper:linked-pr-open",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-23T07:02:17Z",
+    "updatedAt": "2026-07-24T08:27:20Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿La promoStrip debe ser una campaña editorial independiente o debe vincularse explícitamente al cupón o regla promocional que anuncia?",
+  "rationale": "El flujo actual obtiene copy y cupón desde i18n, mientras la PR introduce contenido editorial configurable por KV. La seguridad funcional no determina qué contrato comercial debe prevalecer.",
+  "options": [
+    {
+      "title": "Campaña editorial independiente",
+      "body": "Aceptar KV como fuente de copy y exigir que el contenido no prometa condiciones de un cupón no modelado.",
+      "recommended": false
+    },
+    {
+      "title": "Vincular la campaña a una promoción",
+      "body": "Extender el contrato para referenciar un cupón o regla promocional y evitar desalineación entre banner y descuento.",
+      "recommended": true
+    },
+    {
+      "title": "Acotar el alcance inicial",
+      "body": "Integrar solo edición localizada sin variantes hasta acordar el vínculo comercial.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Vincular la campaña a una promoción",
+    "body": "Extender el contrato para referenciar un cupón o regla promocional y evitar desalineación entre banner y descuento.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Combina conocimiento del reparto por visitante con una aprobación previa de la PR vinculada.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7897.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7897#issuecomment-5056296710",
+    "reviewedAt": "2026-07-24T08:39:45.782Z",
+    "mainSha": "6f2d5b6cd8cb5e775f0c4374b48e574806554a4e"
+  }
+}

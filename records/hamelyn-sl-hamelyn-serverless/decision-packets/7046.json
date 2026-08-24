@@ -1,0 +1,66 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-19T16:32:08.076Z",
+  "updatedAt": "2026-07-19T16:26:40Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7046,
+    "title": "BL-shipping-carrier: atomic claim on carrier switch to avoid duplicate shipments",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7046",
+    "state": "open",
+    "labels": [
+      "bug",
+      "priority:p2",
+      "app:infrastructure",
+      "triage:done",
+      "business-logic",
+      "P2",
+      "impact:other",
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-06T23:03:40Z",
+    "updatedAt": "2026-07-19T16:26:40Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué semántica de recuperación debe tener el claim persistente cuando el proceso falla o termina después de crear el envío externo?",
+  "rationale": "La exclusión mutua es necesaria, pero el tiempo de expiración y la recuperación determinan si se bloquean reintentos válidos o se reabren duplicados.",
+  "options": [
+    {
+      "title": "Claim con propietario y expiración",
+      "body": "Persistir un token y fecha de claim, rechazar competidores y permitir recuperación auditada tras una caducidad definida.",
+      "recommended": true
+    },
+    {
+      "title": "Claim sin recuperación automática",
+      "body": "Mantener el pedido bloqueado hasta una intervención operativa explícita tras una caída.",
+      "recommended": false
+    },
+    {
+      "title": "Delegar idempotencia al carrier",
+      "body": "Usar una clave idempotente del carrier cuando todos los proveedores implicados la soporten de forma uniforme.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Claim con propietario y expiración",
+    "body": "Persistir un token y fecha de claim, rechazar competidores y permitir recuperación auditada tras una caducidad definida.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Concentró la introducción y el endurecimiento previo de las rutas de cambio manual afectadas.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7046.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7046#issuecomment-4911274738",
+    "reviewedAt": "2026-07-19T16:32:08.076Z",
+    "mainSha": "df9d41a6bd442a1dd046b2592aad65025f23b7d5"
+  }
+}

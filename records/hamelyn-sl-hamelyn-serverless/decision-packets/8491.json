@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-17T17:05:06.616Z",
+  "updatedAt": "2026-08-17T16:16:26Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8491,
+    "title": "feat: prioritize Amazon Sweden picking orders",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8491",
+    "state": "closed",
+    "labels": [],
+    "createdAt": "2026-08-17T14:47:48Z",
+    "updatedAt": "2026-08-17T16:16:26Z",
+    "headSha": "e39bde2e4484e38ef3bc549f7314b153b708cc6b"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe la prioridad por marketplace aplicarse solo en la selección limitada de Picking V3 o también en ejecuciones sin límite?",
+  "rationale": "El comparador actual solo se usa en la ruta limitada; decidir si ampliar esa política altera el comportamiento operativo global de picking.",
+  "options": [
+    {
+      "title": "Mantener alcance limitado",
+      "body": "Mergear únicamente el ajuste de Amazon Suecia tras demostrar el flujo con límite y conservar la revisión global como trabajo abierto.",
+      "recommended": true
+    },
+    {
+      "title": "Priorizar siempre",
+      "body": "Ampliar el selector para ordenar también las ejecuciones sin límite y validar el impacto operativo antes de cerrar la petición amplia.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mantener alcance limitado",
+    "body": "Mergear únicamente el ajuste de Amazon Suecia tras demostrar el flujo con límite y conservar la revisión global como trabajo abierto.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Introdujo el registro central cuya política de prioridad debe conservar una semántica coherente.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/8491.md",
+    "reviewedAt": "2026-08-17T17:05:06.616Z",
+    "mainSha": "b642104cd119deeb2f0c57e31ed21a54fc3d9a0b"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-09T10:10:10.945Z",
+  "updatedAt": "2026-07-09T09:36:08Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7143,
+    "title": "fix: reject availability alert signups for unknown products",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7143",
+    "state": "open",
+    "labels": [
+      "size/M",
+      "proof: sufficient",
+      "rating: 🐚 platinum hermit",
+      "status: 👀 ready for maintainer look",
+      "P3",
+      "merge-risk: 🚨 other"
+    ],
+    "createdAt": "2026-07-07T12:35:59Z",
+    "updatedAt": "2026-07-09T09:36:08Z",
+    "headSha": "e86d87c515402964a34130192aab6eb5077a0b8b"
+  },
+  "lane": "product_direction",
+  "priority": "P3",
+  "question": "¿Aceptamos como solución final validar solo el alta y no marcar ni borrar en el cron las solicitudes cuyo producto desaparece después?",
+  "rationale": "El código es acotado, pero la diferencia entre preservar avisos de productos retirados o cerrarlos como terminales es una política de negocio que no puede decidirse solo por el diff.",
+  "options": [
+    {
+      "title": "Confirmar ruta acotada",
+      "body": "Mergear el PR como arreglo canónico y conservar indefinidamente las solicitudes de productos retirados por la deduplicación de por vida.",
+      "recommended": true
+    },
+    {
+      "title": "Ampliar al cron",
+      "body": "Pedir un cambio adicional para marcar o limpiar huérfanos en el cron, asumiendo que productos que vuelvan al catálogo podrían perder el aviso previo.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar la política",
+      "body": "Dejar el PR abierto hasta que negocio confirme cómo debe tratarse la retención de avisos tras eliminar un producto.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Confirmar ruta acotada",
+    "body": "Mergear el PR como arreglo canónico y conservar indefinidamente las solicitudes de productos retirados por la deduplicación de por vida.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es el reviewer solicitado y tiene historial reciente en el endpoint que valida email/Zod.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7143.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7143#issuecomment-4913218226",
+    "reviewedAt": "2026-07-09T10:10:10.945Z",
+    "mainSha": "041bf27bd20f293dfcff578800215d4e71bf8a01"
+  }
+}

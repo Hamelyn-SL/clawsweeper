@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-22T15:26:14.150Z",
+  "updatedAt": "2026-07-22T14:50:08Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7748,
+    "title": "Cron de Amazon Returns Pendings en no-op silencioso desde su creación: el gate de hora exacta nunca se cumple",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7748",
+    "state": "closed",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "P1",
+      "impact:other",
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro",
+      "clawsweeper:linked-pr-open",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-19T23:49:57Z",
+    "updatedAt": "2026-07-22T14:50:08Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe aceptarse un único disparo a las 05:00 UTC, aunque en CEST ejecute la sincronización a las 07:00 de Madrid?",
+  "rationale": "Eliminar el gate resuelve el no-op, pero la frecuencia y la hora de operación diaria afectan al proceso de devoluciones.",
+  "options": [
+    {
+      "title": "Aceptar 05:00 UTC",
+      "body": "Integrar la PR actual y priorizar una ejecución diaria fiable sobre mantener exactamente las 06:00 locales en verano.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener 06:00 Madrid",
+      "body": "Ajustar la solución para preservar la hora local deseada sin volver a depender de la puntualidad del runner.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aceptar 05:00 UTC",
+    "body": "Integrar la PR actual y priorizar una ejecución diaria fiable sobre mantener exactamente las 06:00 locales en verano.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Es la persona asignada y ha preparado la propuesta que concreta esta decisión.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7748.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7748#issuecomment-5022274434",
+    "reviewedAt": "2026-07-22T15:26:14.150Z",
+    "mainSha": "dc339efb37ef7634c3e8283b8feca9d42ae17532"
+  }
+}

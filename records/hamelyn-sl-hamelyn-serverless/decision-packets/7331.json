@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-15T09:32:14.777Z",
+  "updatedAt": "2026-07-15T09:25:21Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7331,
+    "title": "TodoColeccion live listings stuck as empty UPLOADING_ERROR",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7331",
+    "state": "open",
+    "labels": [
+      "bug",
+      "priority:p2",
+      "app:marketplace",
+      "impact:other",
+      "clawsweeper:needs-live-repro",
+      "clawsweeper:no-new-fix-pr",
+      "P2",
+      "clawsweeper:linked-pr-open",
+      "issue-rating: ⚪ platinum"
+    ],
+    "createdAt": "2026-07-10T07:52:31Z",
+    "updatedAt": "2026-07-15T09:25:21Z"
+  },
+  "lane": "merge_risk",
+  "priority": "P2",
+  "question": "¿Debe resolverse la PR enlazada conservando dos rutas explícitas: reconciliar a `ACTIVE` esta cohorte activa y mantener la retirada normal para la cohorte `WITHDRAWN` añadida después a `dev`?",
+  "rationale": "Los conflictos mezclan reglas de recuperación con destinos opuestos; la separación parece correcta por los filtros de estado, pero requiere confirmación humana antes de integrar mutaciones de marketplace.",
+  "options": [
+    {
+      "title": "Separar las cohortes",
+      "body": "Mantener la reconciliación remota solo para stocks activos y conservar intacta la retirada de stocks retirados.",
+      "recommended": true
+    },
+    {
+      "title": "Rediseñar el recovery común",
+      "body": "Unificar ambas rutas bajo una política nueva, revisando primero precedencia, transiciones y pruebas operativas.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar la implementación",
+      "body": "Mantener la issue abierta y sustituir la PR por una propuesta actualizada si los conflictos no pueden resolverse sin ambigüedad.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Separar las cohortes",
+    "body": "Mantener la reconciliación remota solo para stocks activos y conservar intacta la retirada de stocks retirados.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Tiene historial reciente en el recovery de TodoColeccion y ya está solicitado como revisor de la implementación candidata.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7331.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7331#issuecomment-4933329153",
+    "reviewedAt": "2026-07-15T09:32:14.777Z",
+    "mainSha": "a116b3d5c7a86c831075a9f57c371b579ef1da1b"
+  }
+}

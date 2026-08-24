@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-19T16:23:32.346Z",
+  "updatedAt": "2026-07-19T12:42:03Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7632,
+    "title": "feat: add family-based major dependency updates",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7632",
+    "state": "closed",
+    "labels": [
+      "size/XL",
+      "proof: sufficient",
+      "rating: 🥇 gold",
+      "status: ⏳ waiting on author",
+      "P2",
+      "merge-risk: 🚨 compatibility",
+      "merge-risk: 🚨 security-boundary",
+      "merge-risk: 🚨 automation"
+    ],
+    "createdAt": "2026-07-16T08:41:26Z",
+    "updatedAt": "2026-07-19T12:42:03Z",
+    "headSha": "6b514627ecce42245f02d0b9b6c65a9f49265ea5"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe `other` quedar excluida permanentemente del schedule semanal y permitirse solo mediante una ejecución manual con revisión explícita?",
+  "rationale": "La corrección mecánica puede excluirla, pero decidir el contrato permanente de esa bolsa heterogénea exige una política de mantenimiento y riesgo.",
+  "options": [
+    {
+      "title": "Excluir `other` del schedule",
+      "body": "Programar solo familias curadas y conservar `other` para ejecuciones manuales revisadas.",
+      "recommended": true
+    },
+    {
+      "title": "Dividir `other` en familias",
+      "body": "Clasificar sus dependencias en grupos compatibles antes de automatizar sus actualizaciones major.",
+      "recommended": false
+    },
+    {
+      "title": "Aceptar el lote heterogéneo",
+      "body": "Conservar `other` programada asumiendo una PR amplia y una validación manual reforzada.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Excluir `other` del schedule",
+    "body": "Programar solo familias curadas y conservar `other` para ejecuciones manuales revisadas.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "danielmenchen-hamelyn",
+    "reason": "Es la persona mejor situada para concretar el contrato de familias que introduce la propuesta.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7632.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7632#issuecomment-4990693709",
+    "reviewedAt": "2026-07-19T16:23:32.346Z",
+    "mainSha": "3e701a51783634733d86746c3425f42cce83da5a"
+  }
+}

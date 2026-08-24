@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-08T09:08:46.839Z",
+  "updatedAt": "2026-07-08T01:13:48Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7138,
+    "title": "BL-ecommerce-coupons-28: stripe bypass uses exact equality without rounding tolerance",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7138",
+    "state": "closed",
+    "labels": [
+      "app:ecommerce",
+      "priority:p3",
+      "feature",
+      "triage:pr-opened",
+      "business-logic"
+    ],
+    "createdAt": "2026-07-07T12:13:58Z",
+    "updatedAt": "2026-07-08T01:13:48Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "Should ecommerce coupon checkout waive a residual payable amount up to 0.01 EUR and make that bypass decision authoritative through checkout?",
+  "rationale": "The code fix is small, but the threshold changes payment behavior by writing off a residual amount and must be consistent between validation and the client checkout flow.",
+  "options": [
+    {
+      "title": "Waive up to one cent",
+      "body": "Adopt the linked PR direction, ensure CheckoutContext consumes the same bypass rule, and document the coupon tolerance as business logic.",
+      "recommended": true
+    },
+    {
+      "title": "Keep exact payment accounting",
+      "body": "Reject the tolerance and instead require Stripe/payment handling for any positive residual amount, even one cent.",
+      "recommended": false
+    },
+    {
+      "title": "Choose a different threshold",
+      "body": "Ask for a revised PR with the exact finance-approved tolerance and tests for the chosen boundary.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Waive up to one cent",
+    "body": "Adopt the linked PR direction, ensure CheckoutContext consumes the same bypass rule, and document the coupon tolerance as business logic.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "MiguelHamelyn introduced the related coupon behavior and reported this BL divergence, so they are the best available business/code owner for the tolerance decision.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7138.md",
+    "reviewedAt": "2026-07-08T09:08:46.839Z",
+    "mainSha": "26c3284211c5bc7d6b5463029b4c22f350436c14"
+  }
+}

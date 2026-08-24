@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-09T15:00:58.217Z",
+  "updatedAt": "2026-07-09T12:34:20Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7288,
+    "title": "feat: trace product review with reviewedBy/reviewedAt on accept and reject",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7288",
+    "state": "open",
+    "labels": [
+      "size/L",
+      "rating: 🧂 unranked krab",
+      "status: 📣 needs proof",
+      "P2",
+      "merge-risk: 🚨 compatibility"
+    ],
+    "createdAt": "2026-07-09T10:25:01Z",
+    "updatedAt": "2026-07-09T12:34:20Z",
+    "headSha": "69dd66b81fb710f0c596b687c4a92c346dfc0e24"
+  },
+  "lane": "merge_risk",
+  "priority": "P2",
+  "question": "¿Este PR debe mantenerse contra `EPIC/revision-v3` como excepción de la épica o retargetearse a `dev` antes de mergear el cambio de trazabilidad persistida?",
+  "rationale": "`AGENTS.md` fija `dev` como base general, pero el trabajo pertenece a Revision V3 y toca datos persistidos/reporting; automatización no debería decidir sola la rama ni el tratamiento final de compatibilidad.",
+  "options": [
+    {
+      "title": "Retargetear a dev",
+      "body": "Alinea el PR con la política general del repositorio y obliga a validar el merge real contra la rama estándar.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener la rama épica",
+      "body": "Permite integrar dentro de `EPIC/revision-v3`, pero debe quedar aprobado explícitamente por la persona responsable de la épica.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar hasta cerrar reporting",
+      "body": "Mantiene el PR abierto sin merge hasta resolver el conteo de rechazos y adjuntar prueba real.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Retargetear a dev",
+    "body": "Alinea el PR con la política general del repositorio y obliga a validar el merge real contra la rama estándar.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Tiene señal directa en el reporting afectado y fue asignado como reviewer principal para este PR.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7288.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7288#issuecomment-4924178891",
+    "reviewedAt": "2026-07-09T15:00:58.217Z",
+    "mainSha": "8883e80d43347813e2a0696912d00d8c537ab607"
+  }
+}

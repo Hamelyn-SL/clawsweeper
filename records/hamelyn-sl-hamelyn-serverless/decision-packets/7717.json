@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-05T01:11:22.504Z",
+  "updatedAt": "2026-08-04T23:42:15Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7717,
+    "title": "MercadoLibre duplicate-listing promotion regresses after #7567 closure",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7717",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "triage:needs-info",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "origin:dev",
+      "mk:mercadolibre",
+      "P2",
+      "impact:other",
+      "issue-rating: 🥈 silver",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-19T06:03:20Z",
+    "updatedAt": "2026-08-04T23:42:15Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe priorizarse primero una medición productiva de la cohorte causal o autorizar una resincronización remota limitada de los EAN históricos?",
+  "rationale": "La corrección preventiva ya está integrada, pero elegir una mutación sobre listings históricos exige decidir el umbral de evidencia y el riesgo operativo aceptable.",
+  "options": [
+    {
+      "title": "Medir antes de mutar",
+      "body": "Revisar logs y snapshots remotos posteriores al despliegue antes de autorizar cualquier cambio sobre la cohorte histórica.",
+      "recommended": true
+    },
+    {
+      "title": "Resincronizar la cohorte causal",
+      "body": "Autorizar una operación limitada por EAN que consulte el estado remoto, actúe solo sobre duplicados confirmados y compruebe el resultado.",
+      "recommended": false
+    },
+    {
+      "title": "Cerrar como corrección preventiva",
+      "body": "Aceptar que la carrera futura queda resuelta y dejar la cohorte histórica fuera de seguimiento técnico.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Medir antes de mutar",
+    "body": "Revisar logs y snapshots remotos posteriores al despliegue antes de autorizar cualquier cambio sobre la cohorte histórica.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Es la persona con la trazabilidad más directa sobre la corrección integrada y la evidencia causal posterior.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7717.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7717#issuecomment-5014691650",
+    "reviewedAt": "2026-08-05T01:11:22.504Z",
+    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
+  }
+}

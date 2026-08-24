@@ -1,0 +1,66 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-14T09:54:51.282Z",
+  "updatedAt": "2026-07-14T08:07:45Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7178,
+    "title": "MercadoLibre keeps active listings for stocks withdrawn before snapshot",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7178",
+    "state": "closed",
+    "labels": [
+      "bug",
+      "priority:p1",
+      "app:marketplace",
+      "triage:done",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:source-repro",
+      "clawsweeper:fix-shape-clear",
+      "issue-rating: 💎 diamond",
+      "P1",
+      "impact:other",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-07T21:34:11Z",
+    "updatedAt": "2026-07-14T08:07:45Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Qué reglas y fuente de verdad deben autorizar la rehidratación o retirada de `item_id` huérfanos de MercadoLibre?",
+  "rationale": "El estado local ya no conserva identidad suficiente para la mayoría de casos y una asociación incorrecta puede cerrar listings válidos; esta política operativa no puede decidirse solo desde el código actual.",
+  "options": [
+    {
+      "title": "Snapshot más API viva",
+      "body": "Usar el snapshot para descubrir candidatos y confirmar SKU, estado e `item_id` con la API viva antes de rehidratar o retirar.",
+      "recommended": true
+    },
+    {
+      "title": "Solo snapshot controlado",
+      "body": "Operar desde el último snapshot con umbrales estrictos de antigüedad y muestras, aceptando mayor riesgo de obsolescencia.",
+      "recommended": false
+    },
+    {
+      "title": "Solo API viva",
+      "body": "Reconstruir íntegramente desde la API para máxima frescura, asumiendo mayor coste, límites y complejidad de exploración.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Snapshot más API viva",
+    "body": "Usar el snapshot para descubrir candidatos y confirmar SKU, estado e `item_id` con la API viva antes de rehidratar o retirar.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Es la persona asignada y el principal contribuidor reciente de las rutas de MercadoLibre afectadas.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7178.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7178#issuecomment-4966493325",
+    "reviewedAt": "2026-07-14T09:54:51.282Z",
+    "mainSha": "0969519c14acc6d65fa272019b7fe211c7087a2e"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-14T12:29:09.468Z",
+  "updatedAt": "2026-07-14T12:20:08Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7509,
+    "title": "SOSPECHOSO=INCIDENCIA",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7509",
+    "state": "closed",
+    "labels": [
+      "bug",
+      "source:admin-panel",
+      "app:supply",
+      "priority:p1",
+      "reporter:arineligrigore",
+      "P1",
+      "impact:ux-friction",
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro",
+      "clawsweeper:linked-pr-open",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-14T08:14:46Z",
+    "updatedAt": "2026-07-14T12:20:08Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe `BL-buying-account-19` priorizar `suspiciousReason` para decidir el estado visible (`LOST_BY_CARRIER` → `IN_TRANSIT`, `LOST_BY_HAMELYN` → `PICKED_UP`) y usar `pickedUpDate` solo como fallback?",
+  "rationale": "La issue confirma que `SUSPICIOUS` no debe exponerse, pero la regla vigente fue validada únicamente por `pickedUpDate`; cambiar la semántica permanente por motivo requiere confirmación del responsable de negocio.",
+  "options": [
+    {
+      "title": "Mapear por motivo y fallback",
+      "body": "Aprobar el criterio de la PR canónica, revalidar la spec y cubrir motivos conocidos, fraude, ausencia de motivo y fechas vacías.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener la regla por fecha",
+      "body": "Limitar la corrección a aplicar la regla vigente en los serializers, sin introducir una nueva prioridad basada en `suspiciousReason`.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mapear por motivo y fallback",
+    "body": "Aprobar el criterio de la PR canónica, revalidar la spec y cubrir motivos conocidos, fraude, ausencia de motivo y fechas vacías.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "Es el revisor solicitado en la PR canónica para la modificación de esta regla BL.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7509.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7509#issuecomment-4967822902",
+    "reviewedAt": "2026-07-14T12:29:09.468Z",
+    "mainSha": "c0e80c75b583e1109ef670df534480c921a86adb"
+  }
+}

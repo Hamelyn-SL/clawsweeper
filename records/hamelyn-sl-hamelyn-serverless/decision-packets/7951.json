@@ -1,0 +1,64 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-05T00:19:50.066Z",
+  "updatedAt": "2026-08-04T23:45:33Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7951,
+    "title": "PR Proof publica evidencia sin trazabilidad y no espera el veredicto",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7951",
+    "state": "open",
+    "labels": [
+      "bug",
+      "source:admin-panel",
+      "triage:done",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:needs-security-review",
+      "reporter:JavierHamelyn",
+      "app:agents",
+      "origin:panel",
+      "P1",
+      "impact:security",
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro",
+      "clawsweeper:fix-shape-clear"
+    ],
+    "createdAt": "2026-07-27T00:01:13Z",
+    "updatedAt": "2026-08-04T23:45:33Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe PR Proof conservar el contrato no bloqueante actual o volver a ser una autoridad de merge con espera y evidencia durable?",
+  "rationale": "`AGENTS.md` y `CHARTER.md` fijan intencionadamente el modelo no bloqueante, mientras esta incidencia solicita el modelo retirado de gate autoritativo.",
+  "options": [
+    {
+      "title": "Mantener feedback y aclarar señales",
+      "body": "Conservar Proof como ayuda no bloqueante, pero renombrar o diferenciar el éxito del despacho del veredicto terminal.",
+      "recommended": true
+    },
+    {
+      "title": "Restaurar un gate autoritativo",
+      "body": "Reintroducir identidad durable, espera terminal y evidencia verificable como requisito de merge, aceptando mayor coste operativo.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mantener feedback y aclarar señales",
+    "body": "Conservar Proof como ayuda no bloqueante, pero renombrar o diferenciar el éxito del despacho del veredicto terminal.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "El historial le vincula directamente al reemplazo del protocolo autoritativo por el contrato actual.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7951.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7951#issuecomment-5086112215",
+    "reviewedAt": "2026-08-05T00:19:50.066Z",
+    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
+  }
+}

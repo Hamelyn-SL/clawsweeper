@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-21T14:14:22.505Z",
+  "updatedAt": "2026-07-21T13:08:13Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7710,
+    "title": "feat: trigger flash offers after bigquery refresh",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7710",
+    "state": "open",
+    "labels": [
+      "size/XXL",
+      "rating: 🥈 silver",
+      "status: 📣 needs proof",
+      "P1",
+      "merge-risk: 🚨 availability"
+    ],
+    "createdAt": "2026-07-17T12:31:12Z",
+    "updatedAt": "2026-07-21T13:08:13Z",
+    "headSha": "86ce0624ba56f28faaa94f0e4e0d1817fb86da2b"
+  },
+  "lane": "merge_risk",
+  "priority": "P1",
+  "question": "¿Debe exigirse una prueba controlada del recorrido BigQuery→Pub/Sub→GitHub→KV antes de retirar el cron fijo en producción?",
+  "rationale": "La decisión afecta a la estrategia de despliegue y al riesgo operativo de sustituir el único disparador periódico; el código no puede demostrar por sí solo los permisos y la entrega entre servicios.",
+  "options": [
+    {
+      "title": "Exigir prueba controlada antes de integrar",
+      "body": "Aportar una ejecución redaccionada que muestre el dispatch automático, la rotación KV y el skip idempotente del segundo evento.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar el rollout con riesgo explícito",
+      "body": "Integrar con el rollback manual `source=mongo` preparado y monitorizar inmediatamente la primera materialización en producción.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener una red de seguridad temporal",
+      "body": "Pausar el merge hasta definir un watchdog de frescura que no cause rotaciones adicionales fuera del bucket.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Exigir prueba controlada antes de integrar",
+    "body": "Aportar una ejecución redaccionada que muestre el dispatch automático, la rotación KV y el skip idempotente del segundo evento.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su historial cubre el workflow de rotación y el impacto operativo de sustituir el cron existente.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7710.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7710#issuecomment-5009905122",
+    "reviewedAt": "2026-07-21T14:14:22.505Z",
+    "mainSha": "4b46404fe05de31d1c0af23f0ddfbfc603ca14b2"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-17T18:37:46.325Z",
+  "updatedAt": "2026-08-17T17:58:50Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8484,
+    "title": "fix: repair German canonical, es-AR metadata and Supply analytics CORS",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8484",
+    "state": "closed",
+    "labels": [
+      "size/L",
+      "proof: sufficient",
+      "rating: 🥇 gold",
+      "status: ⏳ waiting on author",
+      "P1",
+      "merge-risk: 🚨 compatibility",
+      "merge-risk: 🚨 security-boundary"
+    ],
+    "createdAt": "2026-08-17T13:41:25Z",
+    "updatedAt": "2026-08-17T17:58:50Z",
+    "headSha": "e4a7f938e2ff245d092c3365700c7ad54b67ef0d"
+  },
+  "lane": "security_boundary",
+  "priority": "P1",
+  "question": "¿Qué orígenes HTTPS de Supply deben conservar compatibilidad contractual antes de reemplazar el comodín histórico de subdominios `hamelyn.com`?",
+  "rationale": "El cambio reduce la superficie CORS de forma razonable, pero el repositorio no documenta en el diff si existen despliegues legítimos fuera de los tres subdominios enumerados.",
+  "options": [
+    {
+      "title": "Auditar y enumerar los orígenes activos",
+      "body": "Confirmar los hosts reales de Supply, añadirlos a la allowlist y cubrir cada uno con una prueba de regresión antes de fusionar.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar el recorte de compatibilidad",
+      "body": "Fusionar la allowlist limitada asumiendo que cualquier despliegue no enumerado debe dejar de enviar analítica.",
+      "recommended": false
+    },
+    {
+      "title": "Separar el endurecimiento CORS",
+      "body": "Fusionar primero SEO y los tests, y dejar la política CORS para un PR respaldado por un inventario de despliegues.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Auditar y enumerar los orígenes activos",
+    "body": "Confirmar los hosts reales de Supply, añadirlos a la allowlist y cubrir cada uno con una prueba de regresión antes de fusionar.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "danielmenchen-hamelyn",
+    "reason": "Está asignado para revisar precisamente las áreas de SEO y seguridad CORS afectadas.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/8484.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8484#issuecomment-5318714591",
+    "reviewedAt": "2026-08-17T18:37:46.325Z",
+    "mainSha": "bc2eb426fb3873d6dd7276a812c1a210914846a4"
+  }
+}

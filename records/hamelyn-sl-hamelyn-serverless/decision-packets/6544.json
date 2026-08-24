@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-19T16:17:17.555Z",
+  "updatedAt": "2026-07-19T13:24:35Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 6544,
+    "title": "feat: add supply eas deploy workflow with version bump selector",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/6544",
+    "state": "closed",
+    "labels": [
+      "size/L",
+      "rating: 🥉 bronze",
+      "status: 📣 needs proof",
+      "P2",
+      "merge-risk: 🚨 compatibility",
+      "merge-risk: 🚨 security-boundary",
+      "merge-risk: 🚨 automation"
+    ],
+    "createdAt": "2026-06-18T13:37:49Z",
+    "updatedAt": "2026-07-19T13:24:35Z",
+    "headSha": "a524ce984491f7a816a1bab600f40b5bb17f55e9"
+  },
+  "lane": "security_boundary",
+  "priority": "P2",
+  "question": "¿Qué frontera permanente debe tener el workflow para crear versiones y enviar binarios a stores: una rama de release dedicada con push condicionado, o bumps preparados mediante PR separado?",
+  "rationale": "La decisión determina quién puede activar credenciales de publicación, qué refs pueden recibir commits automáticos y si un fallo de EAS puede consumir una versión.",
+  "options": [
+    {
+      "title": "Rama de release con push posterior",
+      "body": "Restringir el dispatch a una rama de release aprobada y empujar el bump únicamente cuando la build y el submit beta hayan terminado correctamente.",
+      "recommended": true
+    },
+    {
+      "title": "Separar el bump en un PR",
+      "body": "Mantener el workflow con permisos de lectura y exigir que cada cambio de versión llegue previamente mediante un PR revisado.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener el flujo manual actual",
+      "body": "Pausar este workflow hasta que exista una política de release y de acceso a stores acordada.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Rama de release con push posterior",
+    "body": "Restringir el dispatch a una rama de release aprobada y empujar el bump únicamente cuando la build y el submit beta hayan terminado correctamente.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Es el revisor asignado y el contribuidor con señales recientes más directas en versiones y builds de Supply.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/6544.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/6544#issuecomment-4917015129",
+    "reviewedAt": "2026-07-19T16:17:17.555Z",
+    "mainSha": "3e701a51783634733d86746c3425f42cce83da5a"
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-12T13:42:12.055Z",
+  "updatedAt": "2026-07-12T12:20:30Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7397,
+    "title": "fix: guard marketplace upload pipeline against sold stocks",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7397",
+    "state": "closed",
+    "labels": [
+      "size/M",
+      "rating: 🦪 silver shellfish",
+      "status: 📣 needs proof",
+      "P1",
+      "merge-risk: 🚨 other"
+    ],
+    "createdAt": "2026-07-12T11:47:06Z",
+    "updatedAt": "2026-07-12T12:20:30Z",
+    "headSha": "80c9759149379277d42b67747283b26086175150"
+  },
+  "lane": "merge_risk",
+  "priority": "P1",
+  "question": "¿Acepta el revisor de marketplaces el handoff `setStockAsActive` → `markWithdrawnAsStock` sin transacción como solución para la carrera create/update-price, una vez añadida prueba real del flujo?",
+  "rationale": "El código parece resolver los blockers previos, pero la decisión de aceptar un estado temporal `ACTIVE/ACTIVE` si falla la segunda escritura es un trade-off operativo en el pipeline de marketplaces que no se puede cerrar solo con lectura estática.",
+  "options": [
+    {
+      "title": "Exigir proof y aprobar el handoff",
+      "body": "Pedir logs o transcript redacted que muestren la revalidación y retirada, y aprobar si el revisor acepta el riesgo temporal documentado.",
+      "recommended": true
+    },
+    {
+      "title": "Endurecer la transición antes de mergear",
+      "body": "Requerir una mutación más atómica o una recuperación inmediata si el equipo no quiere depender de reconciliación para el fallo de la segunda escritura.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar este PR",
+      "body": "Dejar el corte de entrada para una alternativa más amplia si el equipo decide que el patrón de dos escrituras no es aceptable en este camino.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Exigir proof y aprobar el handoff",
+    "body": "Pedir logs o transcript redacted que muestren la revalidación y retirada, y aprobar si el revisor acepta el riesgo temporal documentado.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "Es el reviewer solicitado para este PR y el propio bot de asignación lo vinculó con experiencia directa en stocks y marketplaces.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7397.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7397#issuecomment-4951142679",
+    "reviewedAt": "2026-07-12T13:42:12.055Z",
+    "mainSha": "16fef08a90ae778ae4457ed6b919fe1d3ace1a0c"
+  }
+}

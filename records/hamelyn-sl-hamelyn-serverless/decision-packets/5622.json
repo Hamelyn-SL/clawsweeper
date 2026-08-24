@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-10T13:37:09.159Z",
+  "updatedAt": "2026-08-10T13:12:42Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 5622,
+    "title": "core: el cron-handler devuelve 200 en fallos parciales y oculta degradaciones operativas",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5622",
+    "state": "closed",
+    "labels": [
+      "bug",
+      "app:infrastructure",
+      "triage:needs-info",
+      "triage:confirmed-live",
+      "area:cron-reliability",
+      "origin:dev",
+      "P1",
+      "impact:other",
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro",
+      "clawsweeper:linked-pr-open",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-05-01T08:13:47Z",
+    "updatedAt": "2026-08-10T13:12:42Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Se acepta HTTP 500 como comportamiento por defecto para cualquier cron sin métodos cumplidos, dejando `failurePolicy` solo para excepciones explícitas por ruta?",
+  "rationale": "El cambio afecta a numerosas rutas compartidas y puede transformar fallos antes tolerados en alertas y reintentos operativos.",
+  "options": [
+    {
+      "title": "Aceptar el default 500",
+      "body": "Fusionar la política propuesta y añadir `failurePolicy: { failedHttpStatus: 200 }` únicamente donde el negocio tolere el fallo total.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener 200 temporalmente",
+      "body": "Conservar HTTP 200 para fallo total mientras se inventarían rutas, usando primero la señal estructurada para decidir la política definitiva.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aceptar el default 500",
+    "body": "Fusionar la política propuesta y añadir `failurePolicy: { failedHttpStatus: 200 }` únicamente donde el negocio tolere el fallo total.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Es la persona asignada y responsable de la implementación abierta que materializa esta decisión.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/5622.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5622#issuecomment-4909652118",
+    "reviewedAt": "2026-08-10T13:37:09.159Z",
+    "mainSha": "df8da352886a77d07fef0ccfd54f0687177453b0"
+  }
+}

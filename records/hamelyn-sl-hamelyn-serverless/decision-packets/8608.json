@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-21T00:52:07.696Z",
+  "updatedAt": "2026-08-20T12:17:44Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8608,
+    "title": "fix: derive marketplace ship priority from service code",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8608",
+    "state": "open",
+    "labels": [
+      "size/L",
+      "rating: 🥈 silver",
+      "status: 📣 needs proof",
+      "P2",
+      "merge-risk: 🚨 compatibility"
+    ],
+    "createdAt": "2026-08-20T12:10:08Z",
+    "updatedAt": "2026-08-20T12:17:44Z",
+    "headSha": "2ba89ca3605ba29e23215801398c8af437346247"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se confirma que Fnac `20` y `21` son NORMAL y `22` es URGENT para los pedidos importados?",
+  "rationale": "La discusión relacionada dejó expresamente esta semántica pendiente y el PR cambia prioridades operativas basándose en ella.",
+  "options": [
+    {
+      "title": "Confirmar el mapeo propuesto",
+      "body": "Mantener `20` y `21` como NORMAL, `22` como URGENT, y añadir pruebas versionadas por código.",
+      "recommended": true
+    },
+    {
+      "title": "Conservar el fallback de Fnac",
+      "body": "Aplicar solo los mapeos ya confirmados y mantener Fnac por importe hasta disponer de evidencia contractual.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Confirmar el mapeo propuesto",
+    "body": "Mantener `20` y `21` como NORMAL, `22` como URGENT, y añadir pruebas versionadas por código.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Está asignado como revisor por experiencia directa en los formatters de marketplace y shipping.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8608.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8608#issuecomment-5363901004",
+    "reviewedAt": "2026-08-21T00:52:07.696Z",
+    "mainSha": "9612bedb37d998d20c02dd0b5d3c9cea49367ee3"
+  }
+}

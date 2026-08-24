@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-14T16:28:51.063Z",
+  "updatedAt": "2026-07-14T10:57:14Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7524,
+    "title": "🐛 Admin: handlers devuelven 500 fijo ignorando el status de BaseError (auth 401/403, Skypod 400)",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7524",
+    "state": "closed",
+    "labels": [
+      "bug",
+      "app:admin",
+      "priority:p2",
+      "P2",
+      "impact:other",
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro",
+      "clawsweeper:linked-pr-open",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-14T09:48:21Z",
+    "updatedAt": "2026-07-14T10:57:14Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe el mapeo de Skypod distinguir los conflictos de estado como 409 de las entradas inválidas como 422, o devolver 422 para cualquier respuesta 400 del proveedor?",
+  "rationale": "El código confirma que los 500 actuales son incorrectos, pero el contrato HTTP definitivo afecta a los consumidores de Admin y depende de la semántica operativa del flujo físico de Exotec.",
+  "options": [
+    {
+      "title": "Distinguir 409 y 422",
+      "body": "Clasificar los conflictos por estado del bin como 409 y reservar 422 para datos de entrada inválidos, preservando `ErrCode` y `ErrDetail` de forma estructurada.",
+      "recommended": true
+    },
+    {
+      "title": "Unificar todos en 422",
+      "body": "Mapear cualquier respuesta 400 de Skypod a 422, con una implementación más sencilla pero perdiendo la distinción entre conflicto y validación.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Distinguir 409 y 422",
+    "body": "Clasificar los conflictos por estado del bin como 409 y reservar 422 para datos de entrada inválidos, preservando `ErrCode` y `ErrDetail` de forma estructurada.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "Es el revisor solicitado y su historial incluye trabajo directo en el flujo de bins y errores de Exotec.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7524.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7524#issuecomment-4968076865",
+    "reviewedAt": "2026-07-14T16:28:51.063Z",
+    "mainSha": "56aad1176fabdfe50bb963f6dbd95d1bf5fcda8b"
+  }
+}

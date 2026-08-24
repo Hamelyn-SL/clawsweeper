@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-19T17:33:59.767Z",
+  "updatedAt": "2026-07-19T13:24:36Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 6859,
+    "title": "MercadoLibre listings sold in Hamelyn remain live and purchasable",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6859",
+    "state": "closed",
+    "labels": [
+      "bug",
+      "priority:p2",
+      "app:marketplace",
+      "triage:done",
+      "P1",
+      "impact:other",
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review"
+    ],
+    "createdAt": "2026-07-04T13:53:13Z",
+    "updatedAt": "2026-07-19T13:24:36Z"
+  },
+  "lane": "manual_review",
+  "priority": "P1",
+  "question": "¿Se autoriza la mutación controlada de las 670 filas sembradas para normalizar `marketplaceId` con `MLM` y reencolar las retiradas fallidas?",
+  "rationale": "La corrección inmediata toca datos de producción y requiere revisar la cohorte, el dry-run y los resultados remotos antes de mutar estados de retirada.",
+  "options": [
+    {
+      "title": "Autorizar dry-run y reencolado",
+      "body": "Validar la cohorte, anteponer `MLM` solo a IDs numéricos confirmados y reencolar los errores antes de medir el drenaje.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener la cola detenida",
+      "body": "No mutar datos hasta disponer de una muestra adicional que confirme la correspondencia entre cada ID y su listing remoto.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Autorizar dry-run y reencolado",
+    "body": "Validar la cohorte, anteponer `MLM` solo a IDs numéricos confirmados y reencolar los errores antes de medir el drenaje.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Está asignado a esta incidencia y documentó la cohorte concreta, el fallo de formato y la operación pendiente.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/6859.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6859#issuecomment-4911140355",
+    "reviewedAt": "2026-07-19T17:33:59.767Z",
+    "mainSha": "50ecfced2ccb61fda78d4164715a4fcf47c93671"
+  }
+}

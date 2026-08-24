@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-24T12:54:34.702Z",
+  "updatedAt": "2026-07-24T12:46:32Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7890,
+    "title": "Ecommerce: capability token para el carrito web (mismo patrón que supply)",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7890",
+    "state": "closed",
+    "labels": [
+      "app:ecommerce",
+      "feature",
+      "reporter:javier",
+      "triage:queued",
+      "P0",
+      "impact:security",
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro",
+      "clawsweeper:linked-pr-open",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:needs-security-review"
+    ],
+    "createdAt": "2026-07-22T21:49:56Z",
+    "updatedAt": "2026-07-24T12:46:32Z"
+  },
+  "lane": "security_boundary",
+  "priority": "P0",
+  "question": "¿Qué política de transición debe aplicarse a los carritos legacy sin `accessSecretHash` antes de exigir capability en todas las rutas?",
+  "rationale": "La fecha y el comportamiento de compatibilidad determinan el equilibrio entre impedir el IDOR de inmediato y evitar que carritos anónimos legítimos queden inutilizados.",
+  "options": [
+    {
+      "title": "Ventana corta con corte explícito",
+      "body": "Mantener acceso legacy solo hasta una fecha cercana, instrumentar el uso y exigir capability después del corte.",
+      "recommended": true
+    },
+    {
+      "title": "Corte inmediato",
+      "body": "Exigir capability desde el despliegue y aceptar la recreación de carritos anónimos que aún no tengan secreto.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Ventana corta con corte explícito",
+    "body": "Mantener acceso legacy solo hasta una fecha cercana, instrumentar el uso y exigir capability después del corte.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Es la persona asignada a la PR que implementa el comportamiento de transición y puede concretar sus consecuencias técnicas.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7890.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7890#issuecomment-5056363795",
+    "reviewedAt": "2026-07-24T12:54:34.702Z",
+    "mainSha": "918fe7df4751bef0d3105032bee4c43de2955fc5"
+  }
+}

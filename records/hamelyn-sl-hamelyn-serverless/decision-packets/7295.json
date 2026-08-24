@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-09T11:56:57.278Z",
+  "updatedAt": "2026-07-09T11:02:55Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7295,
+    "title": "fix: clean invalid HTML nesting causing hydration errors",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7295",
+    "state": "closed",
+    "labels": [
+      "size/L",
+      "rating: 🦪 silver shellfish",
+      "status: 📣 needs proof",
+      "P2",
+      "merge-risk: 🚨 other"
+    ],
+    "createdAt": "2026-07-09T11:00:51Z",
+    "updatedAt": "2026-07-09T11:02:55Z",
+    "headSha": "ed6335f430a566ce2871793a6be2698aabebd7c9"
+  },
+  "lane": "merge_risk",
+  "priority": "P2",
+  "question": "¿Debe este PR cerrar la issue amplia vinculada o debe mantenerse como arreglo parcial con seguimiento separado para los casos restantes?",
+  "rationale": "El diff corrige varios patrones reales, pero la issue vinculada pide un barrido más amplio y el propio PR declara fuera de alcance un caso conocido; cerrar automáticamente puede perder el seguimiento restante.",
+  "options": [
+    {
+      "title": "Mantener la issue abierta",
+      "body": "Cambiar el `Closes` por una referencia no cerradora y dejar que la issue siga agrupando `OrderEdit`/`OrderItems`, `PublicDashboardLayout` y el resto del barrido.",
+      "recommended": true
+    },
+    {
+      "title": "Crear seguimiento antes de merge",
+      "body": "Abrir o enlazar una issue concreta para lo que queda, y entonces permitir que este PR cierre la issue amplia si el equipo acepta dividir el alcance.",
+      "recommended": false
+    },
+    {
+      "title": "Aceptar el cierre parcial",
+      "body": "Fusionar tal cual y asumir manualmente que el trabajo restante se reabrirá si vuelve a molestar, con riesgo de perder contexto.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mantener la issue abierta",
+    "body": "Cambiar el `Closes` por una referencia no cerradora y dejar que la issue siga agrupando `OrderEdit`/`OrderItems`, `PublicDashboardLayout` y el resto del barrido.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Ya revisó y aprobó este PR, y aparece como la persona asignada por señales del área para decidir el cierre del ciclo.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7295.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7295#issuecomment-4924891873",
+    "reviewedAt": "2026-07-09T11:56:57.278Z",
+    "mainSha": "499a3f88a16786ec48868f6474dc4f7582c0e2b6"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-09T21:12:06.242Z",
+  "updatedAt": "2026-08-09T20:46:54Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8300,
+    "title": "feat: show gift panel in multiple packing",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8300",
+    "state": "open",
+    "labels": [
+      "size/L",
+      "rating: 🥈 silver",
+      "status: 📣 needs proof",
+      "P2",
+      "merge-risk: 🚨 compatibility"
+    ],
+    "createdAt": "2026-08-07T06:50:59Z",
+    "updatedAt": "2026-08-09T20:46:54Z",
+    "headSha": "c3a61f70e9a58eabc79fbc8ba7b32836230ad646"
+  },
+  "lane": "manual_review",
+  "priority": "P2",
+  "question": "¿Confirma una persona responsable de Packing que la columna ampliada conserva un layout utilizable con pedidos reales en la resolución de almacén?",
+  "rationale": "Las pruebas estáticas confirman el dato y el componente, pero no pueden resolver el riesgo visual introducido por los 80px adicionales de columna.",
+  "options": [
+    {
+      "title": "Validar el layout real antes de fusionar",
+      "body": "Comprobar en staging o local autenticado un pedido múltiple con regalo y adjuntar evidencia anonimizada del panel y del área de productos.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar el riesgo de layout",
+      "body": "Fusionar con la comprobación visual pendiente, asumiendo una posible pérdida de espacio para productos en puestos estrechos.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Validar el layout real antes de fusionar",
+    "body": "Comprobar en staging o local autenticado un pedido múltiple con regalo y adjuntar evidencia anonimizada del panel y del área de productos.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Es el revisor solicitado y el autor de la funcionalidad de Auto Packing que esta PR reutiliza.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8300.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8300#issuecomment-5213758827",
+    "reviewedAt": "2026-08-09T21:12:06.242Z",
+    "mainSha": "73d5a8224e83db604a611699fd035bacaa9ff683"
+  }
+}

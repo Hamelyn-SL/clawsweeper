@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-19T07:02:01.432Z",
+  "updatedAt": "2026-08-19T06:41:10Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 6658,
+    "title": "Cron amazon-notifications-pull falla por stock inexistente",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6658",
+    "state": "closed",
+    "labels": [
+      "codex",
+      "bug",
+      "app:marketplace",
+      "triage:done",
+      "impact:other",
+      "clawsweeper:needs-live-repro",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "issue-rating: ⚪ platinum",
+      "origin:agent",
+      "mk:amazon"
+    ],
+    "createdAt": "2026-06-24T22:50:08Z",
+    "updatedAt": "2026-08-19T06:41:10Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué condiciones deben permitir borrar definitivamente un `ORDER_CHANGE` Amazon sin atributos formateables?",
+  "rationale": "La señal actual no diferencia ausencia permanente de stock de errores recuperables, y la decisión afecta a la posible pérdida temporal de procesamiento de ventas.",
+  "options": [
+    {
+      "title": "Distinguir causas terminales",
+      "body": "Devolver un resultado tipado del formatter y borrar únicamente los casos confirmados sin líneas activas o sin stock definitivo.",
+      "recommended": true
+    },
+    {
+      "title": "Conservar todos los reintentos",
+      "body": "Mantener la retención actual hasta definir una fuente fiable que clasifique los pedidos huérfanos.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Distinguir causas terminales",
+    "body": "Devolver un resultado tipado del formatter y borrar únicamente los casos confirmados sin líneas activas o sin stock definitivo.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Daniel Menchen",
+    "reason": "Introdujo conjuntamente el procesador de notificaciones y la recuperación diaria cuyo contrato debe mantenerse coherente.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/6658.md",
+    "reviewedAt": "2026-08-19T07:02:01.432Z",
+    "mainSha": "6f042209b6be7522c0e9eff5558e2b5d0ddfcad9"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-12T11:41:53.222Z",
+  "updatedAt": "2026-08-12T10:51:35Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8407,
+    "title": "feat: move sitemap lastmod on real product changes only",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8407",
+    "state": "closed",
+    "labels": [
+      "size/L",
+      "rating: 🥇 gold",
+      "status: 📣 needs proof",
+      "P2",
+      "merge-risk: 🚨 compatibility"
+    ],
+    "createdAt": "2026-08-12T08:29:20Z",
+    "updatedAt": "2026-08-12T10:51:35Z",
+    "headSha": "f42d06430a4f5829fbfef06d27e0a6db82910d81"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se acepta como solución permanente usar el `timestamp` general del producto aunque no implemente todos los disparadores SEO definidos para precio, disponibilidad y contenido?",
+  "rationale": "La aproximación reduce el ruido de recrawl, pero modifica deliberadamente el contrato solicitado y puede perder cambios de precio que viven fuera del documento de producto.",
+  "options": [
+    {
+      "title": "Aceptar la aproximación",
+      "body": "Integrar la fecha general de producto como mejora inmediata y dejar los criterios exactos para una iniciativa separada.",
+      "recommended": true
+    },
+    {
+      "title": "Exigir criterios exactos",
+      "body": "Mantener la rama en pausa hasta disponer de una fuente histórica que cubra `stocks` y filtre cambios no visibles.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aceptar la aproximación",
+    "body": "Integrar la fecha general de producto como mejora inmediata y dejar los criterios exactos para una iniciativa separada.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "alexcanHamelyn",
+    "reason": "Conoce el comportamiento previo, elaboró la alternativa técnica y está conectado con la incidencia canónica.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/8407.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8407#issuecomment-5264556027",
+    "reviewedAt": "2026-08-12T11:41:53.222Z",
+    "mainSha": "4a340c538ced99f682e386d9b0700ad0c277066b"
+  }
+}

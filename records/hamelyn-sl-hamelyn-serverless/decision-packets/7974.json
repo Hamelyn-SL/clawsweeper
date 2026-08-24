@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-27T10:32:15.044Z",
+  "updatedAt": "2026-07-27T08:27:35Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7974,
+    "title": "feat: migrate monthly ordersell exports to bigquery source",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7974",
+    "state": "closed",
+    "labels": [
+      "app:infrastructure",
+      "feature",
+      "triage:pr-opened",
+      "reporter:alejandrodiaz",
+      "P2",
+      "impact:other",
+      "issue-rating: ➖ n/a",
+      "clawsweeper:linked-pr-open",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-27T06:40:39Z",
+    "updatedAt": "2026-07-27T08:27:35Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe aprobarse BigQuery como fuente predeterminada de ambos exports mensuales, aceptando el gate blando y el rollback manual a Mongo?",
+  "rationale": "La implementación está acotada y probada, pero la política ante datos BigQuery retrasados cambia el comportamiento operativo de exports financieros.",
+  "options": [
+    {
+      "title": "Aprobar BigQuery por defecto",
+      "body": "Integrar la PR con el rollback `source=mongo` y el gate actual para retirar los aggregates mensuales del primario.",
+      "recommended": true
+    },
+    {
+      "title": "Conservar Mongo por defecto",
+      "body": "Pedir que BigQuery quede como modo opt-in hasta definir una política más estricta ante frescura insuficiente.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar BigQuery por defecto",
+    "body": "Integrar la PR con el rollback `source=mongo` y el gate actual para retirar los aggregates mensuales del primario.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "La iniciativa paraguas de reducción de lecturas pesadas en Mongo parte de su issue y define el objetivo operativo.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7974.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7974#issuecomment-5088895430",
+    "reviewedAt": "2026-07-27T10:32:15.044Z",
+    "mainSha": "a8dc6aa6e2c4a83966482486233fda1331467aa9"
+  }
+}

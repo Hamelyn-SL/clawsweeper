@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-29T11:04:17.972Z",
+  "updatedAt": "2026-07-29T09:46:34Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8075,
+    "title": "Station reinicia los contadores M al activar multiestación con un picking abierto",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8075",
+    "state": "closed",
+    "labels": [
+      "bug",
+      "source:admin-panel",
+      "app:admin",
+      "reporter:davidgonzalez",
+      "triage:done",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond",
+      "P1",
+      "impact:other",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-29T08:43:46Z",
+    "updatedAt": "2026-07-29T09:46:34Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe la transición usar un asignador global atómico de bloques `M-` o rangos fijos documentados para cada estación?",
+  "rationale": "El código actual mantiene contadores independientes por estación pero no codifica rangos distintos; esa elección determina la compatibilidad de pickings nuevos y en curso.",
+  "options": [
+    {
+      "title": "Asignador global atómico",
+      "body": "Reservar cada bloque `M-` desde una única secuencia garantiza ausencia de colisiones durante la transición y en operación multiestación.",
+      "recommended": true
+    },
+    {
+      "title": "Rangos fijos por estación",
+      "body": "Conservar contadores independientes exige documentar y aplicar una partición estable de rangos para todas las estaciones configuradas.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Asignador global atómico",
+    "body": "Reservar cada bloque `M-` desde una única secuencia garantiza ausencia de colisiones durante la transición y en operación multiestación.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "Introdujo y ha actualizado recientemente la ruta de contadores y numeración multiestación.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/8075.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8075#issuecomment-5115371985",
+    "reviewedAt": "2026-07-29T11:04:17.972Z",
+    "mainSha": "5923ef4817c38f4dce478a7c2727104c5962c895"
+  }
+}

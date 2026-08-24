@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-19T15:46:04.467Z",
+  "updatedAt": "2026-07-19T15:39:11Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7733,
+    "title": "Add Fnac listings snapshot to BigQuery via offers_query full scan",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7733",
+    "state": "open",
+    "labels": [
+      "priority:p1",
+      "app:marketplace",
+      "reporter:JavierHamelyn",
+      "feature",
+      "triage:queued",
+      "P2",
+      "issue-rating: ➖ n/a",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-19T15:38:53Z",
+    "updatedAt": "2026-07-19T15:39:11Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se aprueba el escaneo completo bianual de Fnac como fuente operativa de reconciliación, inicialmente sin cambiar estados Mongo?",
+  "rationale": "La capacidad está claramente ausente, pero incorpora una carga externa sostenida y una nueva fuente analítica que conviene aceptar explícitamente antes de programarla.",
+  "options": [
+    {
+      "title": "Aprobar snapshot-only",
+      "body": "Implementar el scan con los límites indicados y mantener desactivadas las mutaciones de estado hasta contrastar varias ejecuciones.",
+      "recommended": true
+    },
+    {
+      "title": "Posponer la programación",
+      "body": "Conservar la investigación y reabrir la implementación cuando haya una ventana operativa para validar coste y estabilidad del endpoint.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar snapshot-only",
+    "body": "Implementar el scan con los límites indicados y mantener desactivadas las mutaciones de estado hasta contrastar varias ejecuciones.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es el asignado actual y el historial disponible lo sitúa en la integración Fnac y los snapshots.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7733.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7733#issuecomment-5016352779",
+    "reviewedAt": "2026-07-19T15:46:04.467Z",
+    "mainSha": "9d51092df1746f4eb40871505f40e101c5767705"
+  }
+}

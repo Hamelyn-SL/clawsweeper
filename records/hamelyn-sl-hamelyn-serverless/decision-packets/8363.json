@@ -1,0 +1,66 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-10T22:01:42.563Z",
+  "updatedAt": "2026-08-10T21:57:22Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8363,
+    "title": "El aviso de envío gratis de la ficha muestra el umbral en euros en las tiendas no euro",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8363",
+    "state": "closed",
+    "labels": [
+      "bug",
+      "app:ecommerce",
+      "reporter:miguel",
+      "triage:pr-opened",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:source-repro",
+      "clawsweeper:linked-pr-open",
+      "impact:ux-friction",
+      "issue-rating: 💎 diamond"
+    ],
+    "createdAt": "2026-08-10T20:00:17Z",
+    "updatedAt": "2026-08-10T21:57:22Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe mantenerse y explicarse el recargo de productos Nuevos, o debe retirarse junto con el aviso de la ficha?",
+  "rationale": "El comentario pide eliminar el mensaje, pero código, pruebas y especificación siguen aplicando un recargo bajo el umbral; no es una decisión que pueda inferirse solo desde la interfaz.",
+  "options": [
+    {
+      "title": "Confirmar el recargo y reformular el aviso",
+      "body": "Mantener una comunicación localizada y veraz sobre el coste por proveedor, sin fijar un importe o moneda incorrectos.",
+      "recommended": true
+    },
+    {
+      "title": "Eliminar la regla y el aviso",
+      "body": "Retirar el recargo por proveedor de carrito, checkout y servidor, y después eliminar las traducciones y el bloque visual.",
+      "recommended": false
+    },
+    {
+      "title": "Ocultar solo el aviso temporalmente",
+      "body": "Eliminar el texto de la ficha mientras se decide la política, asumiendo que el checkout seguirá mostrando el coste aplicable.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Confirmar el recargo y reformular el aviso",
+    "body": "Mantener una comunicación localizada y veraz sobre el coste por proveedor, sin fijar un importe o moneda incorrectos.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Es la persona con mayor historial reciente en la interacción entre la promoción y las superficies de ecommerce afectadas.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/8363.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8363#issuecomment-5245478033",
+    "reviewedAt": "2026-08-10T22:01:42.563Z",
+    "mainSha": "af062ab5ca208015cd59b1b4b7988882a3ba5dd4"
+  }
+}

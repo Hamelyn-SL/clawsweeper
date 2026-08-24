@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-15T10:40:46.102Z",
+  "updatedAt": "2026-07-15T09:00:10Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7412,
+    "title": "Alta marketplace Amazon Italia (AMAZON_IT)",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7412",
+    "state": "closed",
+    "labels": [
+      "priority:p2",
+      "app:marketplace",
+      "feature",
+      "triage:done",
+      "impact:other",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:linked-pr-open",
+      "issue-rating: ➖ n/a"
+    ],
+    "createdAt": "2026-07-13T05:31:29Z",
+    "updatedAt": "2026-07-15T09:00:10Z"
+  },
+  "lane": "release_inclusion",
+  "priority": "P2",
+  "question": "¿Debe activarse Amazon Italia en la próxima ventana de despliegue una vez resueltos los conflictos y completados los gates operativos?",
+  "rationale": "El diseño técnico está definido, pero habilitar un canal comercial real sobre credenciales y rate limit compartidos requiere que una persona confirme la ventana, la supervisión y la preparación operativa.",
+  "options": [
+    {
+      "title": "Activar tras los gates",
+      "body": "Actualizar el PR, aportar prueba real, completar Atlas, Mongo, ShipMatrix y Seller Central, y desplegar con vigilancia del primer ciclo.",
+      "recommended": true
+    },
+    {
+      "title": "Mergear sin activar",
+      "body": "Aterrizar el wiring manteniendo precios o cron desactivados hasta una ventana operativa posterior claramente documentada.",
+      "recommended": false
+    },
+    {
+      "title": "Posponer el canal",
+      "body": "Mantener issue y PR abiertos hasta disponer de capacidad para supervisar el primer sync y resolver el solape de batch withdraw.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Activar tras los gates",
+    "body": "Actualizar el PR, aportar prueba real, completar Atlas, Mongo, ShipMatrix y Seller Central, y desplegar con vigilancia del primer ciclo.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Es el responsable asignado, autor del PR canónico y propietario histórico de las altas regionales de Amazon.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7412.md",
+    "reviewedAt": "2026-07-15T10:40:46.102Z",
+    "mainSha": "d6056b9e41980dfde228a296c634eb8d02004dc5"
+  }
+}

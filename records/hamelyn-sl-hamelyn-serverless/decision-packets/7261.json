@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-08T22:42:01.688Z",
+  "updatedAt": "2026-07-08T22:37:07Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7261,
+    "title": "feat: add agent usage telemetry sink and self-reporters",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7261",
+    "state": "closed",
+    "labels": [
+      "size/XL",
+      "rating: 🦪 silver shellfish",
+      "status: 📣 needs proof",
+      "P2",
+      "merge-risk: 🚨 automation"
+    ],
+    "createdAt": "2026-07-08T22:36:29Z",
+    "updatedAt": "2026-07-08T22:37:07Z",
+    "headSha": "0d0e49304e6b1d711f94b5e1642737e513a8c076"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Aceptamos que la telemetría de consumo de agentes viva como colección Mongo `agentUsage` con lectura por staff/bearer y posterior sync a BigQuery?",
+  "rationale": "El PR añade una API y un modelo persistente nuevos para observabilidad interna; la dirección parece razonable, pero la aceptación de esa superficie de datos y acceso debe quedar confirmada por los reviewers humanos.",
+  "options": [
+    {
+      "title": "Aceptar Mongo tras fixes",
+      "body": "Mantener `agentUsage` en Mongo, corregir fiabilidad/concurrencia y pedir prueba real antes de merge.",
+      "recommended": true
+    },
+    {
+      "title": "Mover a warehouse",
+      "body": "Pausar el PR y rediseñar el sink para escribir directamente en la plataforma analítica cuando exista el permiso/IAM adecuado.",
+      "recommended": false
+    },
+    {
+      "title": "Limitar a contrato externo",
+      "body": "Dejar solo el contrato o documentación y aplazar los auto-reporters hasta cerrar la decisión de almacenamiento.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aceptar Mongo tras fixes",
+    "body": "Mantener `agentUsage` en Mongo, corregir fiabilidad/concurrencia y pedir prueba real antes de merge.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Está pedido como reviewer para este PR XL y puede validar la decisión de API/Mongo/auth antes del merge.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7261.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7261#issuecomment-4919853960",
+    "reviewedAt": "2026-07-08T22:42:01.688Z",
+    "mainSha": "7548fb4ad390552b154194922a127b2a4d6072a8"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-17T14:30:51.515Z",
+  "updatedAt": "2026-08-17T12:57:46Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8437,
+    "title": "[SPIKE] Sustituir ESLint + Prettier por Biome en todo el monorepo",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8437",
+    "state": "closed",
+    "labels": [
+      "app:infrastructure",
+      "feature",
+      "triage:done",
+      "P2",
+      "impact:other",
+      "issue-rating: ➖ n/a",
+      "clawsweeper:linked-pr-open",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-08-13T12:23:15Z",
+    "updatedAt": "2026-08-17T12:57:46Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe aprobarse una migración conjunta de Biome y TypeScript 7 que deja deuda de `admin` como `info`, o separar TypeScript y exigir la paridad/gate previstos antes de mergear?",
+  "rationale": "La issue define prerequisitos y garantías de lint, pero la PR abierta amplía el cambio a TypeScript 7 y plantea una política distinta para la deuda existente.",
+  "options": [
+    {
+      "title": "Separar el upgrade de TypeScript 7",
+      "body": "Mantener esta migración centrada en Biome y exigir una decisión explícita sobre la paridad de reglas y los avisos de `admin`.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar el alcance conjunto",
+      "body": "Aprobar expresamente TypeScript 7 y los diagnósticos `info`, documentando el cambio de política de calidad y su seguimiento.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Separar el upgrade de TypeScript 7",
+    "body": "Mantener esta migración centrada en Biome y exigir una decisión explícita sobre la paridad de reglas y los avisos de `admin`.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su historial conecta el hook y el gate de CI afectados por la decisión de plataforma.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/8437.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8437#issuecomment-5280888464",
+    "reviewedAt": "2026-08-17T14:30:51.515Z",
+    "mainSha": "b642104cd119deeb2f0c57e31ed21a54fc3d9a0b"
+  }
+}

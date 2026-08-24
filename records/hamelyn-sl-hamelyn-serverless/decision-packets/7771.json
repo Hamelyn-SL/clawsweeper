@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-22T08:22:14.015Z",
+  "updatedAt": "2026-07-22T07:57:14Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7771,
+    "title": "🐛 Ecommerce: los errores de dropshipping registran credenciales y PII en logs",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7771",
+    "state": "closed",
+    "labels": [
+      "bug",
+      "source:admin-panel",
+      "app:ecommerce",
+      "reporter:miguel",
+      "triage:pr-opened",
+      "P1",
+      "impact:security",
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro",
+      "clawsweeper:linked-pr-open",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:needs-security-review"
+    ],
+    "createdAt": "2026-07-20T09:55:41Z",
+    "updatedAt": "2026-07-22T07:57:14Z"
+  },
+  "lane": "security_boundary",
+  "priority": "P1",
+  "question": "¿Debe esta incidencia permanecer como seguimiento de contención hasta completar rotación y tratamiento de logs, o separarse formalmente esa operación antes de integrar la PR vinculada?",
+  "rationale": "La PR resuelve la exposición futura en código, pero no puede rotar un secreto ni modificar retención o borrado de observabilidad; decidir la trazabilidad de esas obligaciones requiere autoridad operativa.",
+  "options": [
+    {
+      "title": "Separar la contención operativa",
+      "body": "Crear un seguimiento de seguridad enlazado, retirar el cierre automático de la PR y mantener la evidencia de rotación y retención en un trabajo operativo separado.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener un único seguimiento",
+      "body": "Conservar esta incidencia abierta tras integrar el código hasta documentar la rotación de Azeta y el tratamiento de los eventos históricos.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Separar la contención operativa",
+    "body": "Crear un seguimiento de seguridad enlazado, retirar el cierre automático de la PR y mantener la evidencia de rotación y retención en un trabajo operativo separado.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Es el asignado actual y ya documentó el límite entre la corrección de código y la contención operativa.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7771.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7771#issuecomment-5022470902",
+    "reviewedAt": "2026-07-22T08:22:14.015Z",
+    "mainSha": "855a534703be43af6705255c2dff909ab5a9ae31"
+  }
+}

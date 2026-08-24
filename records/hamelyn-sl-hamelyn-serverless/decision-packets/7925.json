@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-24T11:37:36.584Z",
+  "updatedAt": "2026-07-24T09:51:23Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7925,
+    "title": "Infra: reducir LABEL_ISSUE recurrentes por CP/dirección que almacén no puede resolver",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7925",
+    "state": "closed",
+    "labels": [
+      "app:infrastructure",
+      "feature",
+      "triage:done",
+      "P2",
+      "impact:other",
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-24T09:27:25Z",
+    "updatedAt": "2026-07-24T09:51:23Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué campos de dirección, PUDO o carrier puede modificar automáticamente el sistema y bajo qué evidencia por país y proveedor?",
+  "rationale": "La implementación afecta datos de entrega y la elección de mensajera; el código no puede decidir por sí solo el límite aceptable de automatización.",
+  "options": [
+    {
+      "title": "Despliegue gradual por categoría",
+      "body": "Separar métrica y error estructurado, aplicar normalización determinista de dirección y dejar PUDO/carrier para una política posterior.",
+      "recommended": true
+    },
+    {
+      "title": "Automatización amplia inmediata",
+      "body": "Permitir cambios de ciudad, provincia, PUDO y carrier desde el primer arreglo, aceptando mayor riesgo de entrega incorrecta.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Despliegue gradual por categoría",
+    "body": "Separar métrica y error estructurado, aplicar normalización determinista de dirección y dejar PUDO/carrier para una política posterior.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "alexcanHamelyn",
+    "reason": "Está asignado y ha reunido los casos operativos que deben fijar la política de automatización.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7925.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7925#issuecomment-5068447341",
+    "reviewedAt": "2026-07-24T11:37:36.584Z",
+    "mainSha": "e25e85331b56c86b2de77ee3749a0186258df42f"
+  }
+}

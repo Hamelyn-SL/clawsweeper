@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-04T23:47:23.548Z",
+  "updatedAt": "2026-08-04T23:19:40Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7115,
+    "title": "BL-ecommerce-search-03: searchProducts legacy engine has no live callers",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7115",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:ecommerce",
+      "triage:done",
+      "business-logic",
+      "origin:bl",
+      "P3",
+      "impact:other",
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-07T10:01:02Z",
+    "updatedAt": "2026-08-04T23:19:40Z"
+  },
+  "lane": "product_direction",
+  "priority": "P3",
+  "question": "¿Se autoriza retirar el export legado `searchProducts` tras el barrido interno, aceptando que cualquier consumidor externo debe migrar a los motores soportados?",
+  "rationale": "El repositorio prueba que no hay callers internos, pero el barrel de `@hamelyn/core` puede representar una superficie consumida fuera de este checkout.",
+  "options": [
+    {
+      "title": "Confirmar retirada acotada",
+      "body": "Validar que no existen consumidores externos y eliminar el motor legado, manteniendo `buildSearchStage` para prescriptores.",
+      "recommended": true
+    },
+    {
+      "title": "Conservar temporalmente el export",
+      "body": "Mantenerlo hasta localizar o descartar formalmente consumidores ajenos al monorepo.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Confirmar retirada acotada",
+    "body": "Validar que no existen consumidores externos y eliminar el motor legado, manteniendo `buildSearchStage` para prescriptores.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es la persona con mantenimiento funcional más reciente sobre el repositorio de búsqueda afectado.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7115.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7115#issuecomment-4913176651",
+    "reviewedAt": "2026-08-04T23:47:23.548Z",
+    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
+  }
+}

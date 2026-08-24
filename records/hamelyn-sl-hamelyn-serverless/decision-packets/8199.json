@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-05T00:33:42.875Z",
+  "updatedAt": "2026-08-04T23:49:13Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8199,
+    "title": "chore: revisar periódicamente la versión de xlsx (tarball CDN SheetJS, fuera del alcance del bot de deps)",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8199",
+    "state": "open",
+    "labels": [
+      "triage:blocked",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
+      "issue-rating: ➖ n/a",
+      "app:agents",
+      "origin:dev",
+      "P3",
+      "impact:security"
+    ],
+    "createdAt": "2026-08-04T06:38:56Z",
+    "updatedAt": "2026-08-04T23:49:13Z"
+  },
+  "lane": "product_direction",
+  "priority": "P3",
+  "question": "¿Debe el repositorio automatizar la comprobación de `xlsx.lst` en `[Deps] Grouped` o mantener una revisión manual periódica con responsable definido?",
+  "rationale": "Ambas vías resuelven el seguimiento, pero difieren en permisos del token, mantenimiento del workflow y responsabilidad operativa.",
+  "options": [
+    {
+      "title": "Automatizar en el workflow",
+      "body": "Leer el listado oficial, detectar una versión superior y abrir la actualización agrupada sólo tras verificar el tarball.",
+      "recommended": true
+    },
+    {
+      "title": "Revisión periódica manual",
+      "body": "Mantener el workflow actual y calendarizar una revisión trimestral documentada del CDN de SheetJS.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Automatizar en el workflow",
+    "body": "Leer el listado oficial, detectar una versión superior y abrir la actualización agrupada sólo tras verificar el tarball.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Daniel",
+    "reason": "Su historial concentra la creación y evolución del workflow afectado.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8199.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8199#issuecomment-5175570287",
+    "reviewedAt": "2026-08-05T00:33:42.875Z",
+    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
+  }
+}

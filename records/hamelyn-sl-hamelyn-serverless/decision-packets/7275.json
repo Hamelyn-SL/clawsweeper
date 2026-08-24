@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-09T11:52:05.164Z",
+  "updatedAt": "2026-07-09T11:30:03Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7275,
+    "title": "Creación de drive con pedidos diarios de Buscalibre",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7275",
+    "state": "open",
+    "labels": [
+      "source:admin-panel",
+      "priority:p2",
+      "app:marketplace",
+      "feature",
+      "reporter:rubenmorueco",
+      "triage:pr-opened",
+      "P2",
+      "impact:other",
+      "issue-rating: 🌊 off-meta tidepool",
+      "clawsweeper:linked-pr-open",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-09T09:05:02Z",
+    "updatedAt": "2026-07-09T11:30:03Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿La copia diaria del CSV de Buscalibre debe guardarse en la carpeta Drive compartida `AdminFiles` o en una carpeta específica de Buscalibre?",
+  "rationale": "La implementación candidata ya existe, pero el destino Drive es una decisión operativa que el código no puede inferir con seguridad a partir del reporte.",
+  "options": [
+    {
+      "title": "Aceptar `AdminFiles`",
+      "body": "Mergear la PR candidata manteniendo el destino compartido actual y documentando ese comportamiento operativo.",
+      "recommended": true
+    },
+    {
+      "title": "Pedir carpeta específica",
+      "body": "Solicitar una carpeta Drive dedicada de Buscalibre y ajustar la PR antes de mergear.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aceptar `AdminFiles`",
+    "body": "Mergear la PR candidata manteniendo el destino compartido actual y documentando ese comportamiento operativo.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Es la persona con señal reciente más fuerte sobre el cron de Buscalibre y fue propuesto como revisor del cambio asociado.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7275.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7275#issuecomment-4924059891",
+    "reviewedAt": "2026-07-09T11:52:05.164Z",
+    "mainSha": "499a3f88a16786ec48868f6474dc4f7582c0e2b6"
+  }
+}

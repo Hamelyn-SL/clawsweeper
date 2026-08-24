@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-13T10:35:57.892Z",
+  "updatedAt": "2026-07-13T10:30:24Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7456,
+    "title": "Deploy to Prod",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7456",
+    "state": "closed",
+    "labels": [
+      "size/XL",
+      "rating: 🦪 silver shellfish",
+      "status: ⏳ waiting on author",
+      "P1",
+      "merge-risk: 🚨 compatibility",
+      "merge-risk: 🚨 availability",
+      "merge-risk: 🚨 automation"
+    ],
+    "createdAt": "2026-07-13T09:56:43Z",
+    "updatedAt": "2026-07-13T10:30:24Z",
+    "headSha": "5ec4066ffd1101adf111edbcc6b7c3be0fc74a58"
+  },
+  "lane": "merge_risk",
+  "priority": "P1",
+  "question": "¿Debe bloquearse este despliegue a producción hasta corregir el comentario de Gemini y confirmar los gates operativos de Amazon FR?",
+  "rationale": "La corrección de Skill Guardian es mecánica, pero la promoción a `master` también depende de preparación operativa externa y de una decisión humana sobre metadata de commits ya integrada en `dev`.",
+  "options": [
+    {
+      "title": "Corregir antes de mergear",
+      "body": "Aplicar el `try/catch`, cubrir el caso de `git log` fallido y dejar constancia de que BQ/Mongo/backfill de Amazon FR están listos antes del merge a `master`.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar el riesgo de release",
+      "body": "Mergear a `master` asumiendo que los gates de Amazon FR ya están resueltos fuera de GitHub y que el fallo de Skill Guardian no bloquea producción.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar el release train",
+      "body": "Cerrar o dejar en espera este PR hasta preparar un nuevo `dev` más limpio si la metadata prohibida o los gates externos no son aceptables.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Corregir antes de mergear",
+    "body": "Aplicar el `try/catch`, cubrir el caso de `git log` fallido y dejar constancia de que BQ/Mongo/backfill de Amazon FR están listos antes del merge a `master`.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es el mejor punto de coordinación por historial en workflows de deploy y automatización, aunque la reparación concreta de Skill Guardian probablemente recaiga en MiguelHamelyn.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7456.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7456#issuecomment-4957057585",
+    "reviewedAt": "2026-07-13T10:35:57.892Z",
+    "mainSha": "5ec4066ffd1101adf111edbcc6b7c3be0fc74a58"
+  }
+}

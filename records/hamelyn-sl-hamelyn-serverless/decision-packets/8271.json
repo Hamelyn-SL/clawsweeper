@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-06T06:08:42.593Z",
+  "updatedAt": "2026-08-06T06:04:54Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8271,
+    "title": "fix: classify fnac product not found as permanent",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8271",
+    "state": "open",
+    "labels": [
+      "size/M"
+    ],
+    "createdAt": "2026-08-06T05:58:30Z",
+    "updatedAt": "2026-08-06T06:04:54Z",
+    "headSha": "9e7492b35820b3adc0f77611ef318f8220d469a5"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe `Product not found` ser `PERMANENT` para todas las fases de Fnac, incluido `UPDATING_PRICE`, o solo para creación y batching?",
+  "rationale": "La incidencia aporta evidencia de una cohorte de batching, mientras que el clasificador compartido y la prueba modificada cambian también el contrato de recuperación de precio.",
+  "options": [
+    {
+      "title": "Acotar por fase",
+      "body": "Mantener `PERMANENT` solo en creación y batching, conservando la recuperación de precio hasta disponer de evidencia específica.",
+      "recommended": true
+    },
+    {
+      "title": "Aprobar permanencia global",
+      "body": "Aceptar que la ficha ausente nunca es recuperable en precio y documentar la decisión operativa antes de fusionar.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Acotar por fase",
+    "body": "Mantener `PERMANENT` solo en creación y batching, conservando la recuperación de precio hasta disponer de evidencia específica.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Su cambio anterior delimitó la recuperación de precio Fnac y es el antecedente técnico más directo.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8271.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8271#issuecomment-5201004007",
+    "reviewedAt": "2026-08-06T06:08:42.593Z",
+    "mainSha": "31659c2f069896afd6fec6aa7203e5d1a88413a1"
+  }
+}

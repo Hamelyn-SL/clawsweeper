@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-14T17:03:55.653Z",
+  "updatedAt": "2026-07-14T13:24:50Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7551,
+    "title": "fix: map suspicious sale status by reason for sellers",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7551",
+    "state": "closed",
+    "labels": [
+      "size/M",
+      "merge-risk: 🚨 other",
+      "rating: 🥉 bronze",
+      "status: 📣 needs proof",
+      "P1",
+      "merge-risk: 🚨 compatibility"
+    ],
+    "createdAt": "2026-07-14T11:47:52Z",
+    "updatedAt": "2026-07-14T13:24:50Z",
+    "headSha": "26a0be28871e6fdb283d184dd2cda3ab7bb90309"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Se valida que `BL-buying-account-19` priorice `suspiciousReason`, usando `LOST_BY_CARRIER` → `IN_TRANSIT` y `LOST_BY_HAMELYN` → `PICKED_UP`, con `pickedUpDate` solo como fallback?",
+  "rationale": "La regla vigente se validó con un criterio basado únicamente en `pickedUpDate`; decidir qué fase logística comunicar según la responsabilidad de la pérdida es una decisión de negocio que no puede deducirse del código.",
+  "options": [
+    {
+      "title": "Validar el criterio por motivo",
+      "body": "Aceptar el mapeo propuesto y exigir que spec, tests, guía operativa y prueba real queden alineados.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener el criterio por fecha",
+      "body": "Conservar la regla vigente y limitar la corrección a aplicar ese mapeo existente en los serializers.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Validar el criterio por motivo",
+    "body": "Aceptar el mapeo propuesto y exigir que spec, tests, guía operativa y prueba real queden alineados.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Aprobó la extracción y validación original de la regla en el PR 7100, por lo que dispone de la señal histórica más directa para confirmar o derivar el cambio de criterio.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7551.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7551#issuecomment-4969253308",
+    "reviewedAt": "2026-07-14T17:03:55.653Z",
+    "mainSha": "56aad1176fabdfe50bb963f6dbd95d1bf5fcda8b"
+  }
+}

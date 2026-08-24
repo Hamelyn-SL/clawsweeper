@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-14T22:52:45.677Z",
+  "updatedAt": "2026-07-14T10:56:40Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7539,
+    "title": "fix: respect BaseError status in admin route catches",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7539",
+    "state": "closed",
+    "labels": [
+      "size/L",
+      "rating: 🥉 bronze",
+      "status: 📣 needs proof",
+      "P2",
+      "merge-risk: 🚨 compatibility",
+      "merge-risk: 🚨 security-boundary"
+    ],
+    "createdAt": "2026-07-14T10:26:24Z",
+    "updatedAt": "2026-07-14T10:56:40Z",
+    "headSha": "e4cd525e47f5ebe26f962ebf4d4a97fab3c33ccf"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué contrato HTTP debe exponer Admin para los rechazos semánticos de Skypod: conservar 400, distinguir conflictos como 409 y validaciones como 400/422, o usar 422 para todos?",
+  "rationale": "La issue exige un 4xx, la discusión recomienda distinguir 400/409 y esta PR adopta 422 universal; no existe aún una política canónica para clasificar esos `ErrCode` y `ErrDetail`.",
+  "options": [
+    {
+      "title": "Distinguir validación y conflicto",
+      "body": "Mapear las validaciones a 400 o 422 y los conflictos operativos conocidos a 409, manteniendo transporte y 5xx como 502/500.",
+      "recommended": true
+    },
+    {
+      "title": "Conservar el 400 upstream",
+      "body": "Propagar un 400 sanitizado para todos los rechazos semánticos y evitar una taxonomía local adicional.",
+      "recommended": false
+    },
+    {
+      "title": "Adoptar 422 universal",
+      "body": "Mantener la propuesta actual y documentar que todo 400 de Skypod se convierte en 422, incluidos los conflictos.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Distinguir validación y conflicto",
+    "body": "Mapear las validaciones a 400 o 422 y los conflictos operativos conocidos a 409, manteniendo transporte y 5xx como 502/500.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "Es el revisor solicitado con mayor historial directo en el flujo de bins y errores de Skypod.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7539.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7539#issuecomment-4974775870",
+    "reviewedAt": "2026-07-14T22:52:45.677Z",
+    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-12T12:32:55.332Z",
+  "updatedAt": "2026-08-12T12:27:39Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8406,
+    "title": "Move sitemap lastmod on real product changes only",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8406",
+    "state": "closed",
+    "labels": [
+      "source:admin-panel",
+      "app:ecommerce",
+      "feature",
+      "triage:done",
+      "P2",
+      "impact:other",
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro",
+      "clawsweeper:linked-pr-open",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-08-12T08:28:24Z",
+    "updatedAt": "2026-08-12T12:27:39Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se exige el contrato completo de cambios SEO de esta incidencia, o se acepta permanentemente la aproximación parcial basada en el timestamp del documento?",
+  "rationale": "La PR enlazada reconoce que su solución reduce el ruido, pero no implementa el umbral de precio, disponibilidad ni todos los cambios definidos.",
+  "options": [
+    {
+      "title": "Exigir el contrato completo",
+      "body": "Ampliar la PR para mantener el estado comparativo necesario y actualizar `lastmod` solo con los cambios SEO definidos.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar la mejora parcial",
+      "body": "Integrar el timestamp por documento y crear una incidencia explícita para precio y disponibilidad basados en estado.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Exigir el contrato completo",
+    "body": "Ampliar la PR para mantener el estado comparativo necesario y actualizar `lastmod` solo con los cambios SEO definidos.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "alexcanHamelyn",
+    "reason": "Es el assignee y está llevando la propuesta técnica abierta.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/8406.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8406#issuecomment-5264555207",
+    "reviewedAt": "2026-08-12T12:32:55.332Z",
+    "mainSha": "320947721add5b7daa77d67cc9f56ada2daa7a5d"
+  }
+}

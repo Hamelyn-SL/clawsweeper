@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-10T08:10:02.290Z",
+  "updatedAt": "2026-07-10T08:03:07Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7332,
+    "title": "fix: preserve international postal code formats",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7332",
+    "state": "closed",
+    "labels": [
+      "size/M",
+      "rating: 🦪 silver shellfish",
+      "status: 📣 needs proof",
+      "P1",
+      "merge-risk: 🚨 compatibility"
+    ],
+    "createdAt": "2026-07-10T07:54:22Z",
+    "updatedAt": "2026-07-10T08:03:07Z",
+    "headSha": "180e7d5c46c5fe9f11545f952c5d7ba3709777f3"
+  },
+  "lane": "merge_risk",
+  "priority": "P1",
+  "question": "¿Debe ShipMatrix conservar el `padStart(5, \"0\")` para todos los países durante la comparación o debe alinearse con persistencia ES-only antes de merge?",
+  "rationale": "La opción actual protege reglas históricas posiblemente rellenadas, pero mantiene una fuente de confusión para reglas internacionales canónicas; cambiarlo puede requerir migración de filas de ShipMatrix.",
+  "options": [
+    {
+      "title": "Conservar compatibilidad y documentar",
+      "body": "Mantener el padding global en matching, responder el comentario de Gemini con la razón operativa y exigir prueba real del write-path corregido.",
+      "recommended": true
+    },
+    {
+      "title": "Alinear matching con persistencia",
+      "body": "Cambiar el matching a ES-only y revisar o migrar reglas internacionales de ShipMatrix que dependan de valores rellenados.",
+      "recommended": false
+    },
+    {
+      "title": "Separar backfill operativo",
+      "body": "Mergear solo el fix de futuro si existe una tarea o runbook aparte para corregir y reprocesar los pedidos ya dañados.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Conservar compatibilidad y documentar",
+    "body": "Mantener el padding global en matching, responder el comentario de Gemini con la razón operativa y exigir prueba real del write-path corregido.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es quien introdujo la normalización centralizada y tiene el historial más fuerte en la selección de carrier/ShipMatrix.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7332.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7332#issuecomment-4933403172",
+    "reviewedAt": "2026-07-10T08:10:02.290Z",
+    "mainSha": "219124864d44219ad43d9810e111a90ffd8e3fd1"
+  }
+}

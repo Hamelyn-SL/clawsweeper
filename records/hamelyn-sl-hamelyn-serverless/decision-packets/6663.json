@@ -1,0 +1,64 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-10T22:17:25.625Z",
+  "updatedAt": "2026-08-10T21:44:15Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 6663,
+    "title": "feat: migrate google merchant feeds to bigquery source",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6663",
+    "state": "closed",
+    "labels": [
+      "reporter:pablo",
+      "feature",
+      "triage:no-change",
+      "app:data",
+      "origin:dev",
+      "P2",
+      "impact:other",
+      "issue-rating: ➖ n/a",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-06-25T07:29:25Z",
+    "updatedAt": "2026-08-10T21:44:15Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué garantía de frescura se exige para `mongodata.products` antes de activar BigQuery como fuente predeterminada de los feeds usados?",
+  "rationale": "La PR vinculada declara hasta 24 horas de retraso de metadatos, mientras la iniciativa de reducción de carga establece una tolerancia de hasta una hora para estas migraciones.",
+  "options": [
+    {
+      "title": "Exigir productos frescos",
+      "body": "Añadir un gate o marcador de frescura para productos y repetir la comparación completa antes de activar BigQuery por defecto.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar el retraso diario",
+      "body": "Aprobar explícitamente el retraso de hasta 24 horas y documentar sus efectos sobre elegibilidad, idioma, títulos e imágenes.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener Mongo para metadatos",
+      "body": "Usar BigQuery solo para disponibilidad hasta disponer de una materialización de productos con la frescura requerida.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Exigir productos frescos",
+    "body": "Añadir un gate o marcador de frescura para productos y repetir la comparación completa antes de activar BigQuery por defecto.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Ha definido el enfoque por fases y el seguimiento técnico de la migración y de la PR abierta.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/6663.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6663#issuecomment-4971283237",
+    "reviewedAt": "2026-08-10T22:17:25.625Z",
+    "mainSha": "af062ab5ca208015cd59b1b4b7988882a3ba5dd4"
+  }
+}

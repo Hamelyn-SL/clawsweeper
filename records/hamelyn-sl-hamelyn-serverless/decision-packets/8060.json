@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-29T06:55:43.512Z",
+  "updatedAt": "2026-07-29T06:49:11Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8060,
+    "title": "feat: add per-station cart labels and station identity for multi-station picking",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8060",
+    "state": "open",
+    "labels": [
+      "size/XL"
+    ],
+    "createdAt": "2026-07-29T06:27:56Z",
+    "updatedAt": "2026-07-29T06:49:11Z",
+    "headSha": "252b12d308007da1086038a528bac54ccc572166"
+  },
+  "lane": "release_inclusion",
+  "priority": "P1",
+  "question": "¿Se autoriza el cambio de numeración multiestación para operación de almacén tras corregir los fallos y demostrar un picking controlado con dos estaciones?",
+  "rationale": "La fórmula y el corte de despliegue cambian un flujo físico de packing; la evidencia actual no permite decidir la activación operativa solo desde código.",
+  "options": [
+    {
+      "title": "Autorizar tras prueba controlada",
+      "body": "Corregir los bloqueos P1 y validar Station0001 y Station0003 con KV, Mongo y packing antes de activar ambas estaciones.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener una sola estación",
+      "body": "Posponer el cambio y seguir con la operativa monoes­tación hasta contar con una validación de almacén reproducible.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Autorizar tras prueba controlada",
+    "body": "Corregir los bloqueos P1 y validar Station0001 y Station0003 con KV, Mongo y packing antes de activar ambas estaciones.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "alexcanHamelyn",
+    "reason": "Combina autoría del helper de navegación afectado y asignación explícita de revisión del PR.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8060.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8060#issuecomment-5114241076",
+    "reviewedAt": "2026-07-29T06:55:43.512Z",
+    "mainSha": "2675559da67f4c0a1fa68f23271c9de307b28638"
+  }
+}

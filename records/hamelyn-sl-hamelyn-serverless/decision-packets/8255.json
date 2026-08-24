@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-05T10:19:04.669Z",
+  "updatedAt": "2026-08-05T10:07:07Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8255,
+    "title": "Supply acepta productos caducados/low demand en escaneos sin carrito",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8255",
+    "state": "closed",
+    "labels": [
+      "bug",
+      "app:supply",
+      "triage:queued",
+      "P2",
+      "impact:other",
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro",
+      "clawsweeper:linked-pr-open",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-08-05T10:06:55Z",
+    "updatedAt": "2026-08-05T10:07:07Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe la política de compra rechazar siempre los productos low demand en Supply, incluso antes de crear un carrito, conservando solo la excepción de revisión administrativa?",
+  "rationale": "La documentación vigente describe la permisividad sin carrito, mientras que la propuesta cambia una regla de negocio central y añade una excepción explícita.",
+  "options": [
+    {
+      "title": "Confirmar rechazo sin carrito",
+      "body": "Alinear Supply con el rechazo de baja demanda y limitar `allowLowDemand` a la revisión de pedidos físicamente recibidos.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener consulta informativa",
+      "body": "Conservar el lookup sin carrito y separar cualquier restricción posterior de la decisión de compra.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Confirmar rechazo sin carrito",
+    "body": "Alinear Supply con el rechazo de baja demanda y limitar `allowLowDemand` a la revisión de pedidos físicamente recibidos.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Figura como revisor asignado por experiencia directa en la lógica de Supply y pricing.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/8255.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8255#issuecomment-5190535495",
+    "reviewedAt": "2026-08-05T10:19:04.669Z",
+    "mainSha": "51159adb4a14c06c241c85de71f19899bb3a6af8"
+  }
+}

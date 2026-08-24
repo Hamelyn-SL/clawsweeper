@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-13T08:33:07.966Z",
+  "updatedAt": "2026-07-13T07:12:01Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7137,
+    "title": "BL-ecommerce-coupons-14: coupon validation trusts client-sent shipping cost and regional surplus",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7137",
+    "state": "closed",
+    "labels": [
+      "bug",
+      "app:ecommerce",
+      "priority:p2",
+      "business-logic",
+      "P2",
+      "impact:security",
+      "issue-rating: 🦞 diamond lobster",
+      "clawsweeper:source-repro",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:fix-shape-clear",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:needs-security-review"
+    ],
+    "createdAt": "2026-07-07T12:13:30Z",
+    "updatedAt": "2026-07-13T07:12:01Z"
+  },
+  "lane": "security_boundary",
+  "priority": "P2",
+  "question": "¿Debe la corrección canónica aterrizar revisando la PR abierta https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7422 tal como está apilada, o conviene pedir una PR estrecha que solo toque la prevalidación de cupones y sus pruebas?",
+  "rationale": "El bug está confirmado, pero el fix afecta a una frontera de confianza económica y la PR abierta mezcla la corrección con mucho cambio ajeno y conflictos; automatización no debería decidir esa ruta de aterrizaje.",
+  "options": [
+    {
+      "title": "Pedir PR estrecha",
+      "body": "Separar el fix de cupones y sus tests de los cambios no relacionados reduce el riesgo de revisión y facilita validar la frontera de seguridad.",
+      "recommended": true
+    },
+    {
+      "title": "Revisar la PR abierta",
+      "body": "Mantener https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7422 como ruta canónica conserva el WIP ya publicado, pero exige resolver conflictos y auditar el alcance completo.",
+      "recommended": false
+    },
+    {
+      "title": "Esperar al bloque BL",
+      "body": "Aplazar la corrección hasta que https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7237 aterrice evita rebase apilado, pero deja más tiempo abierta la prevalidación manipulable.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Pedir PR estrecha",
+    "body": "Separar el fix de cupones y sus tests de los cambios no relacionados reduce el riesgo de revisión y facilita validar la frontera de seguridad.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Está asignado a la issue, figura como owner del bloque BL de cupones y abrió la PR candidata para este arreglo.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7137.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7137#issuecomment-4913339931",
+    "reviewedAt": "2026-07-13T08:33:07.966Z",
+    "mainSha": "fb3f98beface316ca6aa33cd919e812c379b841e"
+  }
+}

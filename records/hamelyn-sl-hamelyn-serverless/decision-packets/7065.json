@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-09T10:09:38.254Z",
+  "updatedAt": "2026-07-09T08:49:43Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7065,
+    "title": "[BL] chore: extract offer pricing business logic into specs and services",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7065",
+    "state": "open",
+    "labels": [
+      "size/XXL",
+      "business-logic",
+      "rating: 🦪 silver shellfish",
+      "status: 📣 needs proof",
+      "P2",
+      "merge-risk: 🚨 compatibility"
+    ],
+    "createdAt": "2026-07-07T05:54:46Z",
+    "updatedAt": "2026-07-09T08:49:43Z",
+    "headSha": "38368c1332fe8b6ca7f48d8de1c86b7ddd8856aa"
+  },
+  "lane": "manual_review",
+  "priority": "P2",
+  "question": "¿Puede aprobarse este refactor BL de Offer Pricing con la evidencia actual, o debe exigirse prueba real adicional de equivalencia sobre un cálculo representativo antes de mergear?",
+  "rationale": "El patch parece coherente y cubierto por tests, pero afecta pricing core y marketplaces; la decisión de aceptar tests unitarios más revisión humana o pedir una prueba real de flujo depende del umbral operativo del equipo.",
+  "options": [
+    {
+      "title": "Pedir prueba real antes de merge",
+      "body": "Solicitar un transcript o captura de terminal redacted que compare uno o varios EAN representativos antes/después y confirme priceSell, priceBuy y marcado de marketplaces esperados.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar con revisión humana",
+      "body": "Permitir que JavierHamelyn o el reviewer de pricing cierre el bloqueo si consideran suficientes los 98 tests BL y la comparación de código ya hecha.",
+      "recommended": false
+    },
+    {
+      "title": "Dividir propagación",
+      "body": "Separar o retrasar la parte BL-14 si el equipo quiere validar la orquestación transaccional con una capa de integración propia.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Pedir prueba real antes de merge",
+    "body": "Solicitar un transcript o captura de terminal redacted que compare uno o varios EAN representativos antes/después y confirme priceSell, priceBuy y marcado de marketplaces esperados.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Sigue solicitado como reviewer y el reparto automático lo identificó como reviewer explícito para este bloque de pricing.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7065.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7065#issuecomment-4911278003",
+    "reviewedAt": "2026-07-09T10:09:38.254Z",
+    "mainSha": "041bf27bd20f293dfcff578800215d4e71bf8a01"
+  }
+}

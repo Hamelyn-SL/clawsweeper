@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-13T20:29:17.794Z",
+  "updatedAt": "2026-07-13T20:01:34Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7486,
+    "title": "fix: preserve product titles in refund orders",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7486",
+    "state": "closed",
+    "labels": [
+      "size/XS",
+      "rating: 🦪 silver shellfish",
+      "status: 📣 needs proof",
+      "P2",
+      "merge-risk: 🚨 compatibility"
+    ],
+    "createdAt": "2026-07-13T15:04:29Z",
+    "updatedAt": "2026-07-13T20:01:34Z",
+    "headSha": "52482704eafa49ea665888722d505a50d7d81365"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe este PR resolver también la visualización de los pedidos históricos afectados, o se acepta una corrección únicamente para pedidos nuevos?",
+  "rationale": "El cambio corrige la causa para futuros placeholders, pero no los pedidos usados como reproducción; esa elección de alcance determina si la issue enlazada puede cerrarse al fusionarlo.",
+  "options": [
+    {
+      "title": "Cubrir nuevos e históricos",
+      "body": "Mantener el arreglo prospectivo con fallback y añadir una recuperación segura del título para registros ya persistidos, sin un backfill destructivo.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar solo pedidos nuevos",
+      "body": "Fusionar el arreglo prospectivo, pero mantener abierta o acotar la issue enlazada para que el alcance histórico no se dé por resuelto.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Cubrir nuevos e históricos",
+    "body": "Mantener el arreglo prospectivo con fallback y añadir una recuperación segura del título para registros ya persistidos, sin un backfill destructivo.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "alexcanHamelyn",
+    "reason": "Es el revisor solicitado y conoce la superficie visible de OrderSells en Admin donde debe validarse el alcance para datos históricos.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7486.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7486#issuecomment-4962384544",
+    "reviewedAt": "2026-07-13T20:29:17.794Z",
+    "mainSha": "288257a8db9236bc80539882a62b0ed2c7ff00df"
+  }
+}

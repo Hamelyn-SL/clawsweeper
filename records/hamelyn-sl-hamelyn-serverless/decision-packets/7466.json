@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-13T11:21:07.733Z",
+  "updatedAt": "2026-07-13T10:50:41Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7466,
+    "title": "chore: bump mongodb from 7.4.0 to 7.5.0 in /apps/data-platform/services/mongo-cdc-stream/source in the minor-and-patch group across 1 directory",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7466",
+    "state": "closed",
+    "labels": [
+      "size/XS",
+      "dependencies",
+      "javascript",
+      "rating: 🐚 platinum hermit",
+      "status: 👀 ready for maintainer look",
+      "P2",
+      "merge-risk: 🚨 compatibility"
+    ],
+    "createdAt": "2026-07-13T10:50:21Z",
+    "updatedAt": "2026-07-13T10:50:41Z",
+    "headSha": "1dc7909700811b5887989910436c619890ebe538"
+  },
+  "lane": "merge_risk",
+  "priority": "P2",
+  "question": "¿Mantenemos este salto directo del driver `mongodb` a v7 en el servicio `hamelyn-mongo-cdc-stream` o preferimos una migración más controlada con staging proof antes de mergear?",
+  "rationale": "El parche es de Dependabot y no cambia código, pero toca una dependencia directa de un servicio CDC crítico y el salto efectivo en este paquete cruza una versión mayor con breaking changes upstream.",
+  "options": [
+    {
+      "title": "Validar y mergear el bump",
+      "body": "Ejecutar el servicio en staging con `mongodb@7.5.0`, comprobar el flujo CDC completo y mergear si el comportamiento coincide con el README.",
+      "recommended": true
+    },
+    {
+      "title": "Pausar el salto a v7",
+      "body": "Cerrar o ignorar temporalmente esta actualización hasta tener una ventana de migración controlada del driver.",
+      "recommended": false
+    },
+    {
+      "title": "Añadir pin/lock de despliegue",
+      "body": "Mantener el bump pero añadir una estrategia explícita para fijar el árbol npm que se construye en Cloud Run antes del merge.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Validar y mergear el bump",
+    "body": "Ejecutar el servicio en staging con `mongodb@7.5.0`, comprobar el flujo CDC completo y mergear si el comportamiento coincide con el README.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Introdujo el servicio y es quien mejor puede confirmar si el flujo CDC actual tolera el driver v7 sin cambios adicionales.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7466.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7466#issuecomment-4957420461",
+    "reviewedAt": "2026-07-13T11:21:07.733Z",
+    "mainSha": "17a4a6b6ca2fd73d5d0aa9b04dbf01ae937203df"
+  }
+}

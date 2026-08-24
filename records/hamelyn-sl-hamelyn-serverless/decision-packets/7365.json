@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-13T21:12:10.139Z",
+  "updatedAt": "2026-07-13T20:53:33Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7365,
+    "title": "[BL] chore: relocate ecommerce checkout shipping cost rules",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7365",
+    "state": "open",
+    "labels": [
+      "size/XXL",
+      "business-logic",
+      "rating: 🧂 unranked krab",
+      "status: 📣 needs proof",
+      "P2",
+      "merge-risk: 🚨 compatibility"
+    ],
+    "createdAt": "2026-07-10T12:47:14Z",
+    "updatedAt": "2026-07-13T20:53:33Z",
+    "headSha": "62cabf26c7452eb06cdc4a5841bbdd6b52d9e8d6"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿La tarifa por país debe usar como multiplicador todos los productos disponibles cuando el carrito contiene usados, o contar únicamente los productos usados?",
+  "rationale": "La spec validada BL-23 dice que solo los usados devengan esa tarifa, mientras que cliente y servidor cuentan `products.length`; el pipeline BL exige resolver esta divergencia con el owner antes de documentar o modificar comportamiento.",
+  "options": [
+    {
+      "title": "Documentar el comportamiento vigente",
+      "body": "Aclarar que la presencia de usados activa la tarifa por país y que el multiplicador cuenta todos los productos disponibles, manteniendo el código sin cambios.",
+      "recommended": true
+    },
+    {
+      "title": "Registrar una divergencia BL",
+      "body": "Mantener la regla de negocio de solo usados, abrir la issue de divergencia correspondiente y dejar este PR sin corregir el comportamiento inline.",
+      "recommended": false
+    },
+    {
+      "title": "Autorizar un cambio de cálculo",
+      "body": "Cambiar cliente y servidor para contar solo usados requeriría ampliar explícitamente el alcance más allá de una extracción neutral.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Documentar el comportamiento vigente",
+    "body": "Aclarar que la presencia de usados activa la tarifa por país y que el multiplicador cuenta todos los productos disponibles, manteniendo el código sin cambios.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "PabloMoran34",
+    "reason": "Figura como owner del bloque en la issue madre y está conectado a la extracción histórica de estas reglas.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7365.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7365#issuecomment-4936105436",
+    "reviewedAt": "2026-07-13T21:12:10.139Z",
+    "mainSha": "ffd19259d46b4fbea2147915367bb8c5b69308cb"
+  }
+}

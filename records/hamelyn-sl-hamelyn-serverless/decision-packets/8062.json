@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-29T11:03:51.336Z",
+  "updatedAt": "2026-07-29T10:59:31Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8062,
+    "title": "Quitar el tope de 15€ para los pedidos de postlibri en ecommerce",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8062",
+    "state": "open",
+    "labels": [
+      "source:admin-panel",
+      "app:ecommerce",
+      "feature",
+      "triage:needs-info",
+      "reporter:jorgecano",
+      "P2",
+      "impact:other",
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-29T06:42:59Z",
+    "updatedAt": "2026-07-29T10:59:31Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Los pedidos de al menos 15 € deben pasar a mostrarse y guardarse como envío económico gratuito para cursarse por Postlibri, o conservar la promesa de envío urgente gratis?",
+  "rationale": "Ambas alternativas eliminan el efecto del importe, pero una cambia la experiencia comercial y la otra exige desacoplar semántica comercial y selección logística.",
+  "options": [
+    {
+      "title": "Convertir la promoción a económico",
+      "body": "Mostrar y persistir envío económico gratuito cuando aplique Postlibri, manteniendo los urgentes de pago fuera de esa ruta.",
+      "recommended": true
+    },
+    {
+      "title": "Conservar la promesa urgente",
+      "body": "Mantener `URGENT` para el cliente y añadir un criterio logístico separado que permita Postlibri sin reutilizar esa prioridad.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Convertir la promoción a económico",
+    "body": "Mostrar y persistir envío económico gratuito cuando aplique Postlibri, manteniendo los urgentes de pago fuera de esa ruta.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su historial reciente cubre el umbral comercial y la validación de checkout afectados por la decisión.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8062.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8062#issuecomment-5114228409",
+    "reviewedAt": "2026-07-29T11:03:51.336Z",
+    "mainSha": "5923ef4817c38f4dce478a7c2727104c5962c895"
+  }
+}

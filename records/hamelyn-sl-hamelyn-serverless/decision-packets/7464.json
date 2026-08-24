@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-14T10:25:12.694Z",
+  "updatedAt": "2026-07-14T10:12:15Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7464,
+    "title": "Test A/B de precio de compra por buckets sobre RCV en óptimos y malvendidos",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7464",
+    "state": "open",
+    "labels": [
+      "app:supply",
+      "priority:p1",
+      "feature",
+      "triage:queued",
+      "impact:other",
+      "clawsweeper:no-new-fix-pr",
+      "P2",
+      "clawsweeper:linked-pr-open",
+      "issue-rating: 🌊 off-meta tidepool"
+    ],
+    "createdAt": "2026-07-13T10:38:55Z",
+    "updatedAt": "2026-07-14T10:12:15Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿El techo final de un producto `featured` tratado debe seguir siendo `PBMax × 2` —6 € con la configuración prevista— o puede sumar además `featuredPriceIncrement`?",
+  "rationale": "La issue define un techo absoluto de `PBMax × 2`, pero la implementación y su discusión han contemplado una excepción `featured`; esa elección cambia el gasto máximo y la interpretación del experimento.",
+  "options": [
+    {
+      "title": "Mantener el techo absoluto",
+      "body": "Limitar el resultado final a `PBMax × 2`, incluido `featured`, y alinear la PR con el criterio de aceptación publicado.",
+      "recommended": true
+    },
+    {
+      "title": "Aprobar la excepción featured",
+      "body": "Permitir `PBMax × 2 + featuredPriceIncrement` y actualizar explícitamente la issue, la spec, la auditoría y el análisis para reflejar ese tratamiento distinto.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mantener el techo absoluto",
+    "body": "Limitar el resultado final a `PBMax × 2`, incluido `featured`, y alinear la PR con el criterio de aceptación publicado.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "PabloMoran34",
+    "reason": "Es el responsable asignado, autor de la implementación candidata y principal propietario reciente del flujo de pricing afectado; puede recabar y dejar registrada la decisión de negocio.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7464.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7464#issuecomment-4957204041",
+    "reviewedAt": "2026-07-14T10:25:12.694Z",
+    "mainSha": "4c4a8ab30b3f67ec20f74e724a70d50341a05083"
+  }
+}

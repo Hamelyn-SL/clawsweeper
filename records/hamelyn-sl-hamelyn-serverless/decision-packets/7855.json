@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-29T02:50:48.647Z",
+  "updatedAt": "2026-07-29T01:29:00Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7855,
+    "title": "fix: normalize ordersell shipPrice to EUR in factory",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7855",
+    "state": "open",
+    "labels": [
+      "size/M",
+      "rating: 🥈 silver",
+      "status: 📣 needs proof",
+      "P2",
+      "merge-risk: 🚨 compatibility"
+    ],
+    "createdAt": "2026-07-21T15:53:50Z",
+    "updatedAt": "2026-07-29T01:29:00Z",
+    "headSha": "7adee31fcc212f101144f7464827bac60e0e4095"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Las vistas y exportaciones administrativas deben mostrar el envío original junto a `currency`, el importe normalizado en EUR, o ambos valores etiquetados?",
+  "rationale": "El PR modifica la semántica persistida de un campo que ya consume Admin; escoger la presentación financiera correcta exige intención de producto, no solo una corrección mecánica.",
+  "options": [
+    {
+      "title": "Mostrar el importe original con la moneda del pedido",
+      "body": "Usar `originalShipPrice` en las columnas y exportaciones asociadas a `currency`, conservando `shipPrice` en EUR para métricas internas.",
+      "recommended": true
+    },
+    {
+      "title": "Exponer ambos importes con etiquetas explícitas",
+      "body": "Mantener el importe normalizado para análisis y añadir el original con su moneda para operaciones y exportación.",
+      "recommended": false
+    },
+    {
+      "title": "Mostrar únicamente EUR",
+      "body": "Renombrar y documentar todas las superficies administrativas para que `shipPrice` se interprete siempre como EUR.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mostrar el importe original con la moneda del pedido",
+    "body": "Usar `originalShipPrice` en las columnas y exportaciones asociadas a `currency`, conservando `shipPrice` en EUR para métricas internas.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Su historial reciente conecta los flujos de checkout y marketplace con la superficie afectada, y ya fue seleccionado como revisor por este conocimiento.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7855.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7855#issuecomment-5036457262",
+    "reviewedAt": "2026-07-29T02:50:48.647Z",
+    "mainSha": "b3f48ada4c58ede7dde46b70646fb15465375dd0"
+  }
+}

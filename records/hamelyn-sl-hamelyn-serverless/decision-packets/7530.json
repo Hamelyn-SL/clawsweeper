@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-05T00:11:17.458Z",
+  "updatedAt": "2026-08-04T23:26:23Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7530,
+    "title": "❓ Verificar si los 501 Not Implemented de public/admin vienen de clientes vivos",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7530",
+    "state": "closed",
+    "labels": [
+      "app:ecommerce",
+      "question",
+      "triage:done",
+      "origin:dev",
+      "P1",
+      "impact:other",
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-14T09:49:10Z",
+    "updatedAt": "2026-08-04T23:26:23Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Qué respuesta HTTP y política de reintento debe aplicar Supply cuando Celeritas devuelve 2xx sin `results[0].label.url`?",
+  "rationale": "El código evita el `TypeError` y conserva evidencia, pero no permite saber si el proveedor creó una etiqueta parcial; esa semántica no puede deducirse de forma segura del repositorio.",
+  "options": [
+    {
+      "title": "Decidir con payload correlacionado",
+      "body": "Mantener el guard actual, capturar una respuesta saneada de Celeritas y abrir una canónica estrecha que fije status e idempotencia.",
+      "recommended": true
+    },
+    {
+      "title": "Fallo controlado sin reintento",
+      "body": "Mapear ya el contrato inválido a un error de integración explícito, asumiendo que no se intentará recuperar una posible etiqueta parcial.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Decidir con payload correlacionado",
+    "body": "Mantener el guard actual, capturar una respuesta saneada de Celeritas y abrir una canónica estrecha que fije status e idempotencia.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Ha llevado los cambios que exponen el contrato anómalo y está asignado a la coordinación de esta investigación.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7530.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7530#issuecomment-4968442778",
+    "reviewedAt": "2026-08-05T00:11:17.458Z",
+    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
+  }
+}

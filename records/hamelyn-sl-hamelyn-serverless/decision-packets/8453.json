@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-17T07:20:15.476Z",
+  "updatedAt": "2026-08-17T06:57:45Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8453,
+    "title": "Capa de obra layout (piloto)",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8453",
+    "state": "open",
+    "labels": [
+      "source:admin-panel",
+      "app:ecommerce",
+      "feature",
+      "triage:done",
+      "reporter:victor",
+      "P2",
+      "impact:other",
+      "issue-rating: ➖ n/a",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-08-14T10:31:35Z",
+    "updatedAt": "2026-08-17T06:57:45Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué patrón de URL canónica de obra, alcance regional y criterio de activación se aprueban para el piloto MX antes de crear redirects, sitemap y `hreflang`?",
+  "rationale": "La implementación cambia la arquitectura SEO pública y depende de una cohorte de datos aún abierta; el código actual no determina una dirección de producto segura.",
+  "options": [
+    {
+      "title": "Aprobar contrato MX acotado",
+      "body": "Fijar la URL de obra, limitarla a libros españoles del piloto y bloquear producción hasta validar la cohorte relacionada.",
+      "recommended": true
+    },
+    {
+      "title": "Diseñar una ruta multirregional",
+      "body": "Definir desde ahora rutas, `hreflang` y reglas de indexación para todos los mercados antes de implementar el piloto.",
+      "recommended": false
+    },
+    {
+      "title": "Posponer la superficie pública",
+      "body": "Cerrar primero la validación durable de `workId` y reabrir el layout cuando la identidad de obra sea estable.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar contrato MX acotado",
+    "body": "Fijar la URL de obra, limitarla a libros españoles del piloto y bloquear producción hasta validar la cohorte relacionada.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Alex Cantón",
+    "reason": "Es el candidato más cercano en el historial de la PDP y del uso de `workId` que deberá integrarse con la nueva ruta.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8453.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8453#issuecomment-5292626162",
+    "reviewedAt": "2026-08-17T07:20:15.476Z",
+    "mainSha": "f3c860bc9305bae2d8015ef4eb1dec557d43f877"
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-09T10:18:05.414Z",
+  "updatedAt": "2026-07-09T09:57:19Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7281,
+    "title": "Deploy to Prod",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7281",
+    "state": "closed",
+    "labels": [
+      "size/L",
+      "rating: 🦪 silver shellfish",
+      "status: 📣 needs proof",
+      "P2",
+      "merge-risk: 🚨 other"
+    ],
+    "createdAt": "2026-07-09T09:53:04Z",
+    "updatedAt": "2026-07-09T09:57:19Z",
+    "headSha": "041bf27bd20f293dfcff578800215d4e71bf8a01"
+  },
+  "lane": "release_inclusion",
+  "priority": "P2",
+  "question": "¿Debe desplegarse ahora a producción la unificación de etiquetas de condición de producto incluida desde `dev`?",
+  "rationale": "Es un PR de release contra `master`: el código parece coherente, pero decidir ventana, alcance de producción y suficiencia de prueba runtime no es una decisión segura para automatizar.",
+  "options": [
+    {
+      "title": "Desplegar con prueba runtime",
+      "body": "Pedir o adjuntar una captura/grabación/log del flujo producto → carrito → checkout → pedido/historial y, si encaja con la ventana de release, aprobar el merge a `master`.",
+      "recommended": true
+    },
+    {
+      "title": "Pausar la promoción",
+      "body": "Mantener el PR abierto hasta que haya una validación visible suficiente o hasta una ventana de producción más adecuada.",
+      "recommended": false
+    },
+    {
+      "title": "Reabrir el cambio en `dev`",
+      "body": "Si el equipo quiere copy distinto por pantalla o locale, revertir o ajustar en `dev` antes de volver a promocionar a producción.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Desplegar con prueba runtime",
+    "body": "Pedir o adjuntar una captura/grabación/log del flujo producto → carrito → checkout → pedido/historial y, si encaja con la ventana de release, aprobar el merge a `master`.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es el autor del cambio funcional que este PR promociona y quien mejor puede confirmar el comportamiento esperado de las etiquetas.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7281.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7281#issuecomment-4924066242",
+    "reviewedAt": "2026-07-09T10:18:05.414Z",
+    "mainSha": "041bf27bd20f293dfcff578800215d4e71bf8a01"
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-08T03:41:34.774Z",
+  "updatedAt": "2026-07-08T10:32:53Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7014,
+    "title": "BL-pricing-offers-07: first-hand reference drops shipping before cascade",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7014",
+    "state": "closed",
+    "labels": [
+      "bug",
+      "priority:p2",
+      "app:infrastructure",
+      "business-logic",
+      "P2",
+      "impact:other",
+      "issue-rating: 🦞 diamond lobster",
+      "clawsweeper:source-repro",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-06T12:50:08Z",
+    "updatedAt": "2026-07-08T10:32:53Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "Should first-hand reference pricing use item-plus-shipping as the canonical basis for `priceNew`, `firstHandMinPrice`, and the `MIN_1_HAND` cascade?",
+  "rationale": "Current source reproduces the inconsistency, but historical PR context shows `priceNew` without shipping was once intentional, so maintainer intent is required before a price-changing fix lands.",
+  "options": [
+    {
+      "title": "Use total first-hand price",
+      "body": "Preserve shipping by basing `priceNew`, `firstHandMinPrice`, and the cascade reference on `totalPrice`, ideally without mutating the saved offer snapshot.",
+      "recommended": true
+    },
+    {
+      "title": "Keep item-only `priceNew`",
+      "body": "Document that `priceNew` intentionally excludes shipping and adjust the cascade/reference fields so comparisons are explicit rather than accidentally mixed.",
+      "recommended": false
+    },
+    {
+      "title": "Defer until BL extraction merges",
+      "body": "Wait for the Offer Pricing refactor to land, then apply the confirmed pricing-basis decision in the extracted service with regression coverage.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Use total first-hand price",
+    "body": "Preserve shipping by basing `priceNew`, `firstHandMinPrice`, and the cascade reference on `totalPrice`, ideally without mutating the saved offer snapshot.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "PabloMoran34",
+    "reason": "Pablo appears in the merged first-hand pricing history and is named as the Offer Pricing BL owner.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7014.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7014#issuecomment-4911271169",
+    "reviewedAt": "2026-07-08T03:41:34.774Z",
+    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+  }
+}

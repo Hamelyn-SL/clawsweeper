@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-20T14:44:15.324Z",
+  "updatedAt": "2026-07-20T12:55:27Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7766,
+    "title": "🐛 Serper: queries vacías generan ~13.7k AxiosError 400 en 72h y abortan el cron de imágenes",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7766",
+    "state": "closed",
+    "labels": [
+      "bug",
+      "priority:p1",
+      "app:infrastructure",
+      "triage:done",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:linked-pr-open",
+      "clawsweeper:needs-security-review",
+      "P1",
+      "impact:security",
+      "impact:other",
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-20T09:42:22Z",
+    "updatedAt": "2026-07-20T12:55:27Z"
+  },
+  "lane": "security_boundary",
+  "priority": "P1",
+  "question": "¿Debe fusionarse el guard como defensa parcial sin cerrar este seguimiento, o exigirse primero el saneo de logs y la política explícita para errores `400`?",
+  "rationale": "La rotación de una credencial potencialmente expuesta y la semántica de abortar un batch requieren una decisión humana además del cambio mecánico.",
+  "options": [
+    {
+      "title": "Separar el guard defensivo",
+      "body": "Permitir un PR limitado que no cierre esta incidencia y conservar aquí el trabajo de créditos, logs y clasificación.",
+      "recommended": true
+    },
+    {
+      "title": "Ampliar la corrección",
+      "body": "Exigir que la rama sanee los errores y clasifique los `400`, coordinando la rotación y recarga de la credencial aparte.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar el cambio",
+      "body": "No fusionar ni cerrar hasta acordar el tratamiento de credenciales y del abortado del cron.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Separar el guard defensivo",
+    "body": "Permitir un PR limitado que no cierre esta incidencia y conservar aquí el trabajo de créditos, logs y clasificación.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su cambio introdujo el adaptador y el manejo de errores que delimitan la decisión.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7766.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7766#issuecomment-5022466066",
+    "reviewedAt": "2026-07-20T14:44:15.324Z",
+    "mainSha": "c3e33d1b80e95363644d3ad598763dd551a72a83"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-16T10:22:55.032Z",
+  "updatedAt": "2026-07-16T08:48:23Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7631,
+    "title": "feat: auto-seed mongo baselines for new bq-merge collections",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7631",
+    "state": "closed",
+    "labels": [
+      "size/L",
+      "proof: 📸 screenshot",
+      "rating: 🥉 bronze",
+      "status: 📣 needs proof",
+      "P2",
+      "merge-risk: 🚨 security-boundary",
+      "merge-risk: 🚨 automation"
+    ],
+    "createdAt": "2026-07-16T08:28:00Z",
+    "updatedAt": "2026-07-16T08:48:23Z",
+    "headSha": "b0544398b75e2089fb7c57290d09b632498281c1"
+  },
+  "lane": "security_boundary",
+  "priority": "P2",
+  "question": "¿Debe el workflow de despliegue leer `mongo-cdc-readonly-url` y actuar como el service account de cómputo actual, o debe utilizar una identidad dedicada de mínimo privilegio?",
+  "rationale": "La funcionalidad depende de ampliar manualmente una frontera IAM sensible que el código no puede aprobar en nombre del equipo.",
+  "options": [
+    {
+      "title": "Identidad dedicada",
+      "body": "Crear un service account específico para el seed con solo los permisos de Secret Manager, Dataflow, BigQuery y staging necesarios.",
+      "recommended": true
+    },
+    {
+      "title": "Reutilizar compute SA",
+      "body": "Aceptar y documentar explícitamente los bindings propuestos sobre el service account de cómputo actual.",
+      "recommended": false
+    },
+    {
+      "title": "Seed manual temporal",
+      "body": "Mantener el backfill fuera del deploy hasta disponer de una identidad y una prueba operativa seguras.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Identidad dedicada",
+    "body": "Crear un service account específico para el seed con solo los permisos de Secret Manager, Dataflow, BigQuery y staging necesarios.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Es el revisor asignado por experiencia directa en el pipeline y la superficie de despliegue afectada.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7631.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7631#issuecomment-4990770022",
+    "reviewedAt": "2026-07-16T10:22:55.032Z",
+    "mainSha": "e24ecead4fc818bf7f21fc4d4351eba9d419a5af"
+  }
+}

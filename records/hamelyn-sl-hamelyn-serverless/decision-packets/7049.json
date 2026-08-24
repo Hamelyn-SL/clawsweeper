@@ -1,0 +1,66 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-10T05:48:57.590Z",
+  "updatedAt": "2026-07-10T05:20:09Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7049,
+    "title": "Amazon: withdrawAmazonProduct marca WITHDRAWN todo el lote aunque el PATCH falle por sku",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7049",
+    "state": "closed",
+    "labels": [
+      "bug",
+      "priority:p1",
+      "app:marketplace",
+      "P1",
+      "impact:data-loss",
+      "impact:other",
+      "issue-rating: 🦞 diamond lobster",
+      "clawsweeper:source-repro",
+      "clawsweeper:linked-pr-open",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:fix-shape-clear",
+      "clawsweeper:needs-maintainer-review"
+    ],
+    "createdAt": "2026-07-06T23:14:05Z",
+    "updatedAt": "2026-07-10T05:20:09Z"
+  },
+  "lane": "proof_sufficiency",
+  "priority": "P1",
+  "question": "¿Debe aterrizarse la PR preventiva de Amazon PATCH ahora, o mantenerla en espera hasta capturar un `fail>0` real con `request_id` y SKU?",
+  "rationale": "La fuente actual confirma el riesgo estructural, pero hay una señal humana explícita de esperar evidencia operativa real antes de cerrar o mergear el cambio.",
+  "options": [
+    {
+      "title": "Esperar prueba real manteniendo la PR viva",
+      "body": "Mantiene esta issue y la PR vinculada abiertas hasta capturar un fallo de PATCH Amazon real que valide el caso extremo antes del merge.",
+      "recommended": true
+    },
+    {
+      "title": "Mergear el fix preventivo tras review",
+      "body": "Asume que la reproducción por código basta por el impacto de pérdida de docs mk y cierra la ventana antes de que aparezca el siguiente fallo parcial.",
+      "recommended": false
+    },
+    {
+      "title": "Cerrar la PR y reabrir cuando haya caso real",
+      "body": "Reduce ruido de cola, pero deja el riesgo estructural activo y obligaría a repetir el trabajo cuando aparezca evidencia.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Esperar prueba real manteniendo la PR viva",
+    "body": "Mantiene esta issue y la PR vinculada abiertas hasta capturar un fallo de PATCH Amazon real que valide el caso extremo antes del merge.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es quien reportó el hallazgo, pidió esperar a un error real y tiene la señal más clara sobre el umbral operativo de proof.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7049.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7049#issuecomment-4911276926",
+    "reviewedAt": "2026-07-10T05:48:57.590Z",
+    "mainSha": "720eeb540098d88e49a4be3e5b02cf7d06a51012"
+  }
+}

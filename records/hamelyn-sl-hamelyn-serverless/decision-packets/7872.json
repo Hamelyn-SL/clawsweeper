@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-05T00:18:51.364Z",
+  "updatedAt": "2026-08-05T00:14:01Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7872,
+    "title": "Add infrastructure and MongoDB Atlas watcher to Eve",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7872",
+    "state": "open",
+    "labels": [
+      "source:admin-panel",
+      "feature",
+      "triage:done",
+      "app:agents",
+      "origin:panel",
+      "P2",
+      "impact:other",
+      "issue-rating: ➖ n/a",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-22T09:41:56Z",
+    "updatedAt": "2026-08-05T00:14:01Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe Eve operar un watcher de infraestructura con acceso separado a Atlas y MongoDB, y qué señales pueden escalar automáticamente?",
+  "rationale": "La implementación crea acceso operativo nuevo y define una política de alertas e issues; el código actual no determina esos límites de producto ni de seguridad.",
+  "options": [
+    {
+      "title": "Patrocinar un diseño por fases",
+      "body": "Definir primero credenciales, señales, retención y escalado; después dividir collector, evaluación y entrega en PRs acotadas.",
+      "recommended": true
+    },
+    {
+      "title": "Limitarlo a observabilidad pasiva",
+      "body": "Aprobar sólo snapshots y alertas de Slack sin creación automática de issues hasta validar ruido y umbrales.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener la observabilidad fuera de Eve",
+      "body": "Resolver la necesidad mediante la plataforma de monitorización de Atlas y conservar Eve sin nuevas credenciales de infraestructura.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Patrocinar un diseño por fases",
+    "body": "Definir primero credenciales, señales, retención y escalado; después dividir collector, evaluación y entrega en PRs acotadas.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "El historial muestra que inició el armazón Eve de watchers y ya figura como responsable del contexto funcional.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7872.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7872#issuecomment-5044367604",
+    "reviewedAt": "2026-08-05T00:18:51.364Z",
+    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
+  }
+}

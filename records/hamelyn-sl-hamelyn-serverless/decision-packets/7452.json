@@ -1,0 +1,64 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-15T08:30:02.648Z",
+  "updatedAt": "2026-07-15T08:05:12Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7452,
+    "title": "Admin: eliminar \"Panel de control\" y \"Gráficos\" del menú, borrar sus dashboards y limpiar código muerto",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7452",
+    "state": "closed",
+    "labels": [
+      "app:admin",
+      "priority:p3",
+      "feature",
+      "reporter:AlexDiaz-Hamelyn",
+      "P3",
+      "impact:ux-friction",
+      "issue-rating: ➖ n/a",
+      "clawsweeper:linked-pr-open",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-13T09:44:03Z",
+    "updatedAt": "2026-07-15T08:05:12Z"
+  },
+  "lane": "product_direction",
+  "priority": "P3",
+  "question": "¿Deben retirarse también `/public/dashboard/{sales,stocks,supply,pricing}` y debe incluirse la home de páginas recientes en este mismo cambio?",
+  "rationale": "La issue deja ambas decisiones abiertas y el PR amplía la limpieza interna con una retirada pública incompatible y una experiencia de aterrizaje nueva; la aprobación existente es una señal positiva, pero no documenta una auditoría de consumidores.",
+  "options": [
+    {
+      "title": "Conservar rutas y acotar",
+      "body": "Retirar los dashboards internos y el código muerto, pero mantener o reubicar los paneles públicos y separar la nueva home.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar el alcance completo",
+      "body": "Eliminar también las rutas públicas y adoptar la home de páginas recientes tras auditar consumidores y aportar prueba real.",
+      "recommended": false
+    },
+    {
+      "title": "Separar la nueva home",
+      "body": "Resolver primero la retirada acordada y mover el rediseño de inicio a otro PR con validación propia.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Conservar rutas y acotar",
+    "body": "Retirar los dashboards internos y el código muerto, pero mantener o reubicar los paneles públicos y separar la nueva home.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Introdujo parte central de la superficie, mantiene historial reciente en el layout y ya revisó y aprobó el head actual.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7452.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7452#issuecomment-4957054247",
+    "reviewedAt": "2026-07-15T08:30:02.648Z",
+    "mainSha": "21a3196498c9682880dc37d729419d200a2435e2"
+  }
+}

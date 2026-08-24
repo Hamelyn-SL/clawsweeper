@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-13T13:20:13.828Z",
+  "updatedAt": "2026-08-13T13:12:10Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8401,
+    "title": "Panel de productividad: filtros y métricas desincronizados (sort roto, chip estación, timezone, unidades Buscalibre) + robustez endpoints",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8401",
+    "state": "closed",
+    "labels": [
+      "bug",
+      "app:admin",
+      "reporter:davidgonzalez",
+      "triage:done",
+      "P2",
+      "impact:other",
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro",
+      "clawsweeper:linked-pr-open",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-08-12T05:40:54Z",
+    "updatedAt": "2026-08-13T13:12:10Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿El dashboard debe conservar un total agregado de unidades o separarlo por la unidad propia de cada operación?",
+  "rationale": "Productos, cubetas y gavetas ya se modelan con unidades distintas, y el código no puede decidir una equivalencia de negocio.",
+  "options": [
+    {
+      "title": "Separar por unidad",
+      "body": "Mostrar subtotales por operación o unidad para no presentar una suma heterogénea como una métrica única.",
+      "recommended": true
+    },
+    {
+      "title": "Definir unidad canónica",
+      "body": "Mantener un total general solo tras acordar y documentar una conversión de negocio entre las unidades.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Separar por unidad",
+    "body": "Mostrar subtotales por operación o unidad para no presentar una suma heterogénea como una métrica única.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Es el contribuidor reciente de la implementación y de la PR que continúa el arreglo técnico.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/8401.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8401#issuecomment-5263046254",
+    "reviewedAt": "2026-08-13T13:20:13.828Z",
+    "mainSha": "7873d5474c9c077a6980c1850d580cbc69a53c53"
+  }
+}

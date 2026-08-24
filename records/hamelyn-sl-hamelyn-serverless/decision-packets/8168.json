@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-03T06:47:55.011Z",
+  "updatedAt": "2026-08-03T06:42:48Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8168,
+    "title": "CI: eliminar workflow [Supply] Cainiao Addresses roto y redundante con el Vercel cron",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8168",
+    "state": "closed",
+    "labels": [
+      "bug",
+      "app:infrastructure",
+      "triage:done",
+      "P2"
+    ],
+    "createdAt": "2026-08-03T06:37:54Z",
+    "updatedAt": "2026-08-03T06:42:48Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe retirarse también la única vía manual con `limit`, `dry_run` y `order_ids`, o se necesita conservar una alternativa operativa equivalente?",
+  "rationale": "El cron demuestra cobertura programada, pero no ofrece los parámetros de ejecución manual que expone el workflow actual.",
+  "options": [
+    {
+      "title": "Retirar la vía antigua",
+      "body": "Confirmar que no hay uso operativo de los parámetros manuales y eliminar workflow y script, dejando Vercel como único programador.",
+      "recommended": true
+    },
+    {
+      "title": "Conservar una vía manual",
+      "body": "Mantener o rediseñar una ejecución manual segura antes de retirar la automatización rota.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Retirar la vía antigua",
+    "body": "Confirmar que no hay uso operativo de los parámetros manuales y eliminar workflow y script, dejando Vercel como único programador.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "alexcanHamelyn",
+    "reason": "Es la persona más vinculada al cron sustituto y al refactor que dejó obsoleta la importación.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/8168.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8168#issuecomment-5163199335",
+    "reviewedAt": "2026-08-03T06:47:55.011Z",
+    "mainSha": "bfacb8b53100c460060ef40a65a4459f4fce8f52"
+  }
+}

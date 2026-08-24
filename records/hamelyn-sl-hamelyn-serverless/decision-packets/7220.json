@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-08T09:06:46.399Z",
+  "updatedAt": "2026-07-08T12:02:56Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7220,
+    "title": "fix: stop retrying nonexistent amazon order items",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7220",
+    "state": "closed",
+    "labels": [
+      "size/XS"
+    ],
+    "createdAt": "2026-07-08T08:56:45Z",
+    "updatedAt": "2026-07-08T12:02:56Z",
+    "headSha": "88b880ba9d0f5e542c5e360ae2e06e88734e8e43"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "Should Amazon shipment `NonexistentOrderItem` failures be terminal/manual for both OrderSell recovery crons?",
+  "rationale": "The code change is small, but it changes operational recovery semantics in a way CI cannot validate: matching orders will no longer be reopened automatically.",
+  "options": [
+    {
+      "title": "Accept terminal/manual behavior",
+      "body": "Merge the current approach so permanent Amazon rejections stop burning retries and remain documented for operators.",
+      "recommended": true
+    },
+    {
+      "title": "Narrow the exclusion",
+      "body": "Limit the behavior to a more specific marketplace or reason format if maintainers think other matching cases should still auto-retry.",
+      "recommended": false
+    },
+    {
+      "title": "Use capped retry instead",
+      "body": "Keep automatic recovery but add a retry cap or manual-action marker before excluding the order permanently.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Accept terminal/manual behavior",
+    "body": "Merge the current approach so permanent Amazon rejections stop burning retries and remain documented for operators.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Marcos is the requested reviewer and has the strongest visible prior signal on the related Amazon NonexistentOrderItem flow.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7220.md",
+    "reviewedAt": "2026-07-08T09:06:46.399Z",
+    "mainSha": "26c3284211c5bc7d6b5463029b4c22f350436c14"
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-14T10:29:57.527Z",
+  "updatedAt": "2026-07-14T09:43:33Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7172,
+    "title": "AbeBooks withdrawal recovery misses live listings when mk row is absent",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7172",
+    "state": "closed",
+    "labels": [
+      "bug",
+      "priority:p2",
+      "app:marketplace",
+      "triage:done",
+      "P2",
+      "impact:other",
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-07T20:13:50Z",
+    "updatedAt": "2026-07-14T09:43:33Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe la recuperación de listings vivos sin fila `mk_abebooks` convertirse en un reconciliador recurrente de AbeBooks o limitarse a una operación puntual sobre la cohorte acumulada?",
+  "rationale": "Ambas vías requieren escrituras persistentes y criterios operativos distintos; el código no establece todavía quién autoriza la siembra ni si el snapshot semanal debe mutar automáticamente la BBDD.",
+  "options": [
+    {
+      "title": "Reconciliador recurrente",
+      "body": "Añadir un flujo específico con dry-run, límites, muestras y aplicación controlada para corregir también futuras pérdidas de filas.",
+      "recommended": true
+    },
+    {
+      "title": "Backfill puntual",
+      "body": "Limpiar la cohorte actual mediante un script one-time no versionado y confiar en las defensas preventivas ya mergeadas.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Reconciliador recurrente",
+    "body": "Añadir un flujo específico con dry-run, límites, muestras y aplicación controlada para corregir también futuras pérdidas de filas.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es quien ha investigado recientemente esta clase de listings huérfanos y aterrizó la defensa preventiva que delimita qué parte sigue pendiente.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7172.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7172#issuecomment-4967670834",
+    "reviewedAt": "2026-07-14T10:29:57.527Z",
+    "mainSha": "4c4a8ab30b3f67ec20f74e724a70d50341a05083"
+  }
+}

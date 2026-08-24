@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-23T08:48:02.817Z",
+  "updatedAt": "2026-07-22T23:22:13Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7891,
+    "title": "chore(deps): bump next from 16.2.10 to 16.2.11 in /apps/admin",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7891",
+    "state": "open",
+    "labels": [
+      "size/XS",
+      "dependencies",
+      "javascript",
+      "rating: ⚪ platinum",
+      "status: 👀 ready for maintainer look",
+      "P1",
+      "merge-risk: 🚨 compatibility"
+    ],
+    "createdAt": "2026-07-22T23:18:49Z",
+    "updatedAt": "2026-07-22T23:22:13Z",
+    "headSha": "e904667840584b84090407bdc3791b093deeb4bc"
+  },
+  "lane": "merge_risk",
+  "priority": "P1",
+  "question": "¿Conviene integrar el bump limitado de Admin o consolidar la actualización de seguridad en https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7892, que cubre todos los runtimes Next?",
+  "rationale": "Ambos PRs actualizan la misma dependencia en Admin, pero el segundo amplía el alcance y todavía no hay evidencia suficiente para tratarlo como sustituto automático.",
+  "options": [
+    {
+      "title": "Validar y fusionar el alcance limitado",
+      "body": "Mantiene el cambio acotado a Admin tras confirmar CI, build y una ruta autenticada de la aplicación.",
+      "recommended": false
+    },
+    {
+      "title": "Consolidar la actualización global",
+      "body": "Prioriza https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7892 si supera la validación de sus once superficies Next, evitando actualizaciones duplicadas.",
+      "recommended": true
+    }
+  ],
+  "recommendation": {
+    "title": "Consolidar la actualización global",
+    "body": "Prioriza https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7892 si supera la validación de sus once superficies Next, evitando actualizaciones duplicadas.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Daniel",
+    "reason": "El historial reciente le vincula con los cambios de dependencias y tooling de Admin.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7891.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7891#issuecomment-5056369439",
+    "reviewedAt": "2026-07-23T08:48:02.817Z",
+    "mainSha": "e9f37693091b2ec22737d422d27c57db642842dc"
+  }
+}

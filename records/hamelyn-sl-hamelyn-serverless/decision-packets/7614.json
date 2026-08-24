@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-21T12:32:47.549Z",
+  "updatedAt": "2026-07-21T12:18:30Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7614,
+    "title": "[SECURITY-ALERT] xlsx: ReDoS al procesar archivos XLSX",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7614",
+    "state": "closed",
+    "labels": [
+      "bug",
+      "app:infrastructure",
+      "triage:done",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:source-repro",
+      "clawsweeper:needs-security-review",
+      "issue-rating: 💎 diamond",
+      "security-alert",
+      "P2",
+      "impact:security",
+      "clawsweeper:needs-maintainer-review"
+    ],
+    "createdAt": "2026-07-16T06:09:56Z",
+    "updatedAt": "2026-07-21T12:18:30Z"
+  },
+  "lane": "security_boundary",
+  "priority": "P2",
+  "question": "¿Aprueba el equipo de seguridad usar un tarball inmutable y verificado de SheetJS como nueva fuente de `xlsx` para remediar ambas alertas?",
+  "rationale": "La solución elimina una vulnerabilidad conocida, pero desplaza la dependencia desde npm a una fuente externa que requiere una decisión explícita de procedencia e integridad.",
+  "options": [
+    {
+      "title": "Aprobar tarball verificado",
+      "body": "Fijar una versión exacta con integridad comprobada y validar los flujos XLSX de Admin y Core.",
+      "recommended": true
+    },
+    {
+      "title": "Definir otra fuente aprobada",
+      "body": "Mantener la alerta abierta hasta acordar una alternativa de distribución auditada.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar tarball verificado",
+    "body": "Fijar una versión exacta con integridad comprobada y validar los flujos XLSX de Admin y Core.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Alex Cantón",
+    "reason": "Su historial reciente abarca la ruta de parsing y el endpoint que determinan la compatibilidad funcional.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7614.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7614#issuecomment-4988995600",
+    "reviewedAt": "2026-07-21T12:32:47.549Z",
+    "mainSha": "03444d8f705e99bf18d93596b754c654bcdec4f2"
+  }
+}

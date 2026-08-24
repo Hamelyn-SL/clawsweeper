@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-27T08:19:36.676Z",
+  "updatedAt": "2026-07-27T07:05:56Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7820,
+    "title": "fix: redact abebooks transport errors",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7820",
+    "state": "open",
+    "labels": [
+      "size/M",
+      "proof: sufficient",
+      "proof: 📸 screenshot",
+      "rating: ⚪ platinum",
+      "status: 👀 ready for maintainer look",
+      "P1",
+      "merge-risk: 🚨 security-boundary"
+    ],
+    "createdAt": "2026-07-21T09:49:32Z",
+    "updatedAt": "2026-07-27T07:05:56Z",
+    "headSha": "6141bea4851d1b185b93cd2739f4e1dfa2668256"
+  },
+  "lane": "security_boundary",
+  "priority": "P1",
+  "question": "¿Aceptamos que las alertas y logs de transporte conserven solo los metadatos permitidos, priorizando la no exposición de secretos frente a detalles de respuesta?",
+  "rationale": "El código puede verificar la ausencia de payloads, pero el nivel mínimo de diagnóstico operativo para AbeBooks es una decisión del equipo responsable de la integración.",
+  "options": [
+    {
+      "title": "Mantener la lista permitida",
+      "body": "Integrar `dev`, resolver los conflictos y conservar únicamente metadatos de transporte no sensibles tras repetir la prueba de redacción.",
+      "recommended": true
+    },
+    {
+      "title": "Añadir campos operativos seguros",
+      "body": "Definir explícitamente campos adicionales permitidos antes del merge, sin volver a registrar XML, cuerpos, cabeceras ni URLs sensibles.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mantener la lista permitida",
+    "body": "Integrar `dev`, resolver los conflictos y conservar únicamente metadatos de transporte no sensibles tras repetir la prueba de redacción.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "danielmenchen-hamelyn",
+    "reason": "Está asignado como revisor por experiencia directa en la integración y ha contribuido al endurecimiento final del digest.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7820.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7820#issuecomment-5033396121",
+    "reviewedAt": "2026-07-27T08:19:36.676Z",
+    "mainSha": "c172a48c32fcc505985814bd5fee713f5476e8b1"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-18T10:02:52.420Z",
+  "updatedAt": "2026-08-18T09:49:45Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8514,
+    "title": "Etiquetas SEO en el <head> como reglas del sistema",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8514",
+    "state": "open",
+    "labels": [
+      "bug",
+      "source:admin-panel",
+      "app:ecommerce",
+      "triage:pr-opened",
+      "reporter:victor",
+      "P1",
+      "impact:other",
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro",
+      "clawsweeper:linked-pr-open",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-08-18T09:33:46Z",
+    "updatedAt": "2026-08-18T09:49:45Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe el ecommerce bloquear metadata para todos los clientes o preservar la caché de navegadores y limitar el bloqueo a rastreadores HTML?",
+  "rationale": "La PR plantea un intercambio global entre señales SEO correctas y el rendimiento de la caché pública que requiere preferencia explícita del producto.",
+  "options": [
+    {
+      "title": "Limitar el bloqueo a rastreadores",
+      "body": "Aplicar una configuración específica para bots HTML y demostrar metadata en `<head>` sin perder la caché de navegación pública.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar el bloqueo global",
+      "body": "Mantener `htmlLimitedBots: /.*/` asumiendo de forma consciente la pérdida de caché y el posible aumento de latencia.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Limitar el bloqueo a rastreadores",
+    "body": "Aplicar una configuración específica para bots HTML y demostrar metadata en `<head>` sin perder la caché de navegación pública.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su trabajo reciente introdujo el mecanismo de caché afectado en la misma configuración.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8514.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8514#issuecomment-5326461617",
+    "reviewedAt": "2026-08-18T10:02:52.420Z",
+    "mainSha": "fc781f418ce4ac69777a414f62c0e7a3b0df4d1b"
+  }
+}

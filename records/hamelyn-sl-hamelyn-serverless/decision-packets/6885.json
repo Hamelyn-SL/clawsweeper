@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-08T16:22:33.704Z",
+  "updatedAt": "2026-07-08T10:07:38Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 6885,
+    "title": "Admin: vista Data/Gráficas rota — dashboard de MongoDB Charts inexistente (error code 2)",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6885",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:admin",
+      "priority:p3",
+      "triage:needs-info",
+      "P2",
+      "impact:ux-friction",
+      "issue-rating: 🦞 diamond lobster",
+      "clawsweeper:source-repro",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:fix-shape-clear",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-05T10:46:42Z",
+    "updatedAt": "2026-07-08T10:07:38Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe conservarse Admin Data/Gráficas con un dashboard de MongoDB Charts válido, o debe eliminarse la vista del admin?",
+  "rationale": "Los dos arreglos son mutuamente excluyentes y dependen de propiedad externa de Atlas y de uso de producto, no de una inferencia fiable desde el código.",
+  "options": [
+    {
+      "title": "Restaurar el dashboard",
+      "body": "Proporcionar o recrear un dashboard ID válido, habilitar embedding y actualizar `Charts.tsx` manteniendo la ruta actual.",
+      "recommended": true
+    },
+    {
+      "title": "Eliminar la vista",
+      "body": "Borrar `Charts.tsx` y desregistrar `v4/admin/data/graphs` si el dashboard ya no forma parte del producto admin.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Restaurar el dashboard",
+    "body": "Proporcionar o recrear un dashboard ID válido, habilitar embedding y actualizar `Charts.tsx` manteniendo la ruta actual.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es la mejor señal histórica disponible para la línea actual y el merge reciente de admin, aunque la decisión puede requerir al equipo de datos/admin.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6885.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6885#issuecomment-4911142703",
+    "reviewedAt": "2026-07-08T16:22:33.704Z",
+    "mainSha": "54896479ce3b6f8f138ef1bf4bc0a74bd9c5d17e"
+  }
+}

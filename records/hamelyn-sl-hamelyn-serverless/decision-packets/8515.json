@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-18T11:32:37.764Z",
+  "updatedAt": "2026-08-18T09:52:32Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8515,
+    "title": "fix: render ecommerce metadata in document head",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8515",
+    "state": "open",
+    "labels": [
+      "size/XS",
+      "proof: sufficient",
+      "rating: 🥇 gold",
+      "status: 👀 ready for maintainer look",
+      "P2",
+      "merge-risk: 🚨 compatibility"
+    ],
+    "createdAt": "2026-08-18T09:48:45Z",
+    "updatedAt": "2026-08-18T09:52:32Z",
+    "headSha": "e862a338c30f6efa59489d1fabaffaf7ede8b282"
+  },
+  "lane": "merge_risk",
+  "priority": "P2",
+  "question": "¿Debe el ecommerce aplicar metadata bloqueante a todos los clientes si la verificación confirma que no se pierde la caché pública esperada?",
+  "rationale": "El cambio soluciona el SEO, pero su alcance global se cruza con una arquitectura de caché introducida recientemente en el mismo archivo.",
+  "options": [
+    {
+      "title": "Validar y conservar la regla global",
+      "body": "Medir cabeceras de caché, PPR y TTFB en una ruta cacheada y fusionar si el comportamiento sigue siendo aceptable.",
+      "recommended": true
+    },
+    {
+      "title": "Restringir los agentes coincidentes",
+      "body": "Usar una expresión dirigida a los rastreadores si la prueba revela que bloquear todos los clientes perjudica la caché o la latencia.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Validar y conservar la regla global",
+    "body": "Medir cabeceras de caché, PPR y TTFB en una ruta cacheada y fusionar si el comportamiento sigue siendo aceptable.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su historial reciente introdujo la configuración de caché que debe mantenerse compatible.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8515.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8515#issuecomment-5327615609",
+    "reviewedAt": "2026-08-18T11:32:37.764Z",
+    "mainSha": "5306ae067c234979d9abf2167b48653d8640f167"
+  }
+}

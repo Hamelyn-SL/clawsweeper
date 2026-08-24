@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-08T21:21:50.031Z",
+  "updatedAt": "2026-07-08T20:44:04Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7251,
+    "title": "feat: add agents app to the monorepo",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7251",
+    "state": "closed",
+    "labels": [
+      "size/XXL",
+      "P2"
+    ],
+    "createdAt": "2026-07-08T15:39:39Z",
+    "updatedAt": "2026-07-08T20:44:04Z",
+    "headSha": "1204f9dfde1b23d306cf46bcbeabaa39597e63c7"
+  },
+  "lane": "security_boundary",
+  "priority": "P1",
+  "question": "¿Debe `apps/agents` entrar en `dev` con capacidad de mutar Mongo/marketplaces mediante `mongo_script`, o hay que exigir primero aislamiento de ejecución y una política de activación más estrecha?",
+  "rationale": "La decisión no es solo mecánica: afecta al límite aceptado entre aprobación humana, ejecución de código arbitrario, secretos de producción y operación de marketplaces en Vercel.",
+  "options": [
+    {
+      "title": "Exigir aislamiento antes de merge",
+      "body": "Bloquea el merge hasta mover `mongo_script` a un worker/child process o sustituirlo por operaciones acotadas con permisos explícitos y timeout cancelable.",
+      "recommended": true
+    },
+    {
+      "title": "Mergear con feature gate operativo",
+      "body": "Permite integrar la app, pero deja desactivadas las herramientas de escritura y crons sensibles hasta cerrar la hardening list.",
+      "recommended": false
+    },
+    {
+      "title": "Aceptar el riesgo actual",
+      "body": "Asume que aprobación humana y entorno privado son suficientes, con el coste de que un script aprobado puede tocar secretos o seguir ejecutándose tras timeout.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Exigir aislamiento antes de merge",
+    "body": "Bloquea el merge hasta mover `mongo_script` a un worker/child process o sustituirlo por operaciones acotadas con permisos explícitos y timeout cancelable.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es el autor del PR y quien tiene más contexto sobre la intención operativa de Horus y el despliegue manual previo.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7251.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7251#issuecomment-4917064465",
+    "reviewedAt": "2026-07-08T21:21:50.031Z",
+    "mainSha": "54896479ce3b6f8f138ef1bf4bc0a74bd9c5d17e"
+  }
+}

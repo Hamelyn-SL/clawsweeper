@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-07T23:56:43.888Z",
+  "updatedAt": "2026-07-08T09:41:44Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7150,
+    "title": "BL-ecommerce-catalog-13: lower max page hard cap to match the 500-result search window",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7150",
+    "state": "closed",
+    "labels": [
+      "app:ecommerce",
+      "priority:p3",
+      "feature",
+      "triage:done",
+      "business-logic"
+    ],
+    "createdAt": "2026-07-07T12:58:27Z",
+    "updatedAt": "2026-07-08T09:41:44Z"
+  },
+  "lane": "product_direction",
+  "priority": "P3",
+  "question": "Should the ecommerce catalog keep the current 500-result window and reject pages beyond `ceil(500 / perPage)`, or should the P1 SEO request to expand the window supersede this cap-lowering issue?",
+  "rationale": "Both directions are open and affect SEO/client response behavior, so automation should not choose the permanent catalog pagination policy silently.",
+  "options": [
+    {
+      "title": "Reconcile before implementation",
+      "body": "Pause code changes until Alex confirms whether this issue or https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6604 owns the intended page-window behavior.",
+      "recommended": true
+    },
+    {
+      "title": "Keep 500-result window",
+      "body": "Implement this issue as written, update the ecommerce catalog BL spec/test, and retarget the SEO expansion request accordingly.",
+      "recommended": false
+    },
+    {
+      "title": "Expand for SEO",
+      "body": "Treat this issue as superseded by the 30,000-result SEO phase and update or close it after the expansion plan is accepted.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Reconcile before implementation",
+    "body": "Pause code changes until Alex confirms whether this issue or https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6604 owns the intended page-window behavior.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "The parent BL catalog issue names Alex as owner, and this issue was created from the BL validation path.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7150.md",
+    "reviewedAt": "2026-07-07T23:56:43.888Z",
+    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+  }
+}

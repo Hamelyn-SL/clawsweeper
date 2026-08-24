@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-30T06:06:30.150Z",
+  "updatedAt": "2026-07-30T05:44:18Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8088,
+    "title": "Productos erróneos y prohibidos subidos a Decathlon",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8088",
+    "state": "closed",
+    "labels": [
+      "source:admin-panel",
+      "app:marketplace",
+      "feature",
+      "reporter:rubenmorueco",
+      "triage:done",
+      "P1",
+      "impact:other",
+      "issue-rating: ⚪ platinum",
+      "clawsweeper:needs-live-repro",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-29T11:17:54Z",
+    "updatedAt": "2026-07-30T05:44:18Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe el equipo ejecutar una retirada confirmada contra catálogo vivo y convertir la elegibilidad en una reconciliación periódica, o limitarse a una limpieza puntual?",
+  "rationale": "La evidencia separa ofertas locales heredadas de posibles fichas remotas huérfanas; elegir el alcance y la política de retirada requiere acceso operativo y criterio de Marketplace.",
+  "options": [
+    {
+      "title": "Reconciliar y retirar con dry-run",
+      "body": "Cruzar export o API viva con `mk_decathlon`, retirar los casos confirmados y añadir una reconciliación idempotente de elegibilidad.",
+      "recommended": true
+    },
+    {
+      "title": "Hacer solo limpieza puntual",
+      "body": "Retirar las ofertas confirmadas en esta revisión y abrir un seguimiento separado para automatizar la reconciliación periódica.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Reconciliar y retirar con dry-run",
+    "body": "Cruzar export o API viva con `mk_decathlon`, retirar los casos confirmados y añadir una reconciliación idempotente de elegibilidad.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Es la persona actualmente asignada y debe coordinar el acceso al catálogo remoto y el alcance de la retirada.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/8088.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8088#issuecomment-5117207880",
+    "reviewedAt": "2026-07-30T06:06:30.150Z",
+    "mainSha": "af8c40861c3e409044aa65dc68a7431aff98eea9"
+  }
+}

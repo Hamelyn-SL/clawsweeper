@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-05T11:08:01.915Z",
+  "updatedAt": "2026-08-05T10:25:46Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8218,
+    "title": "Feature/issue 8016 supervisor quality audit",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8218",
+    "state": "closed",
+    "labels": [
+      "size/XXL",
+      "proof: 📸 screenshot",
+      "rating: 🥈 silver",
+      "status: 📣 needs proof",
+      "P2",
+      "merge-risk: 🚨 compatibility",
+      "merge-risk: 🚨 availability"
+    ],
+    "createdAt": "2026-08-05T05:47:43Z",
+    "updatedAt": "2026-08-05T10:25:46Z",
+    "headSha": "f30fb9578a16cac23e2a93d339736bb8c389d809"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe esta funcionalidad QA integrarse temporalmente en `EPIC/revision-v3` con el switch hard-coded desactivado, o prepararse para la rama `dev` conforme a la política del repositorio?",
+  "rationale": "La elección determina la ruta de integración, el gate de CI aplicable y cuándo podrá activarse un cambio persistente del flujo de almacén.",
+  "options": [
+    {
+      "title": "Retargetear a `dev`",
+      "body": "Adaptar e integrar el cambio mediante la rama base obligatoria, manteniendo el rollout desactivado hasta la aprobación operativa.",
+      "recommended": true
+    },
+    {
+      "title": "Autorizar la integración en el epic",
+      "body": "Documentar una excepción explícita para `EPIC/revision-v3` y revisar después su promoción a `dev`.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Retargetear a `dev`",
+    "body": "Adaptar e integrar el cambio mediante la rama base obligatoria, manteniendo el rollout desactivado hasta la aprobación operativa.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "Su historial contiene la implementación QA original y el epic de Revision V3.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/8218.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8218#issuecomment-5188583506",
+    "reviewedAt": "2026-08-05T11:08:01.915Z",
+    "mainSha": "1e35c3ad5828923a73f643ac6608b5cee541f182"
+  }
+}

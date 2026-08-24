@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-10T17:10:01.199Z",
+  "updatedAt": "2026-08-10T17:00:36Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8357,
+    "title": "feat: migrate shipMatrix pattern notation to standard regex",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8357",
+    "state": "open",
+    "labels": [
+      "size/XL",
+      "P1",
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 compatibility",
+      "rating: 🥈 silver"
+    ],
+    "createdAt": "2026-08-10T11:08:46Z",
+    "updatedAt": "2026-08-10T17:00:36Z",
+    "headSha": "718d8d41625166e6d4a0dae143b41eafd1274ec6"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe aceptarse la ventana deploy→migración que puede dejar temporalmente la matriz de transportistas incompleta, o se exige una transición sin esa interrupción?",
+  "rationale": "La rama declara una decisión de owner, pero la evidencia disponible no muestra confirmación del responsable de shipping ni una ejecución aplicada y recuperable sobre los datos persistidos.",
+  "options": [
+    {
+      "title": "Exigir transición sin matriz parcial",
+      "body": "Migrar antes del runtime nuevo o conservar lectura compatible hasta comprobar la conversión y el recargo completo de caché.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar la ventana nocturna",
+      "body": "Registrar la aprobación del responsable de shipping y aportar salida redaccionada de `--apply`, verificación persistida y recuperación antes de considerar el PR listo.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Exigir transición sin matriz parcial",
+    "body": "Migrar antes del runtime nuevo o conservar lectura compatible hasta comprobar la conversión y el recargo completo de caché.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Originó el bloque de negocio y la issue canónica que define esta migración.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8357.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8357#issuecomment-5239449156",
+    "reviewedAt": "2026-08-10T17:10:01.199Z",
+    "mainSha": "a0d9558917d6831bfb9b76e368738c46b86d6cce"
+  }
+}

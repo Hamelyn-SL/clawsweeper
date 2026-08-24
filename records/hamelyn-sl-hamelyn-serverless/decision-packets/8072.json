@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-29T10:57:47.148Z",
+  "updatedAt": "2026-07-29T09:00:12Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8072,
+    "title": "fix: run mercadolibre requeue before create within the same cron cycle",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8072",
+    "state": "closed",
+    "labels": [
+      "size/S",
+      "rating: 🥈 silver",
+      "status: 📣 needs proof",
+      "P2",
+      "merge-risk: 🚨 availability"
+    ],
+    "createdAt": "2026-07-29T08:23:32Z",
+    "updatedAt": "2026-07-29T09:00:12Z",
+    "headSha": "df6cce55be217e74ad75f3024aebcdc7712d6a79"
+  },
+  "lane": "merge_risk",
+  "priority": "P2",
+  "question": "¿Qué presupuesto de espera debe tener `requeueDuplicates` antes de continuar con `create` en el cron de MercadoLibre?",
+  "rationale": "Debe preservarse la publicación en el mismo ciclo sin convertir una espera de datos o red en un bloqueo completo de la creación.",
+  "options": [
+    {
+      "title": "Añadir espera acotada",
+      "body": "Aplicar un timeout operativo al reencolado, continuar con `create` al agotarse y propagar o registrar el error de fase.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar bloqueo hasta final",
+      "body": "Mantener la espera ilimitada y asumir que un reencolado atascado puede retrasar la creación durante toda la ejecución.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Añadir espera acotada",
+    "body": "Aplicar un timeout operativo al reencolado, continuar con `create` al agotarse y propagar o registrar el error de fase.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Está asignado para revisar este flujo concreto y la discusión le atribuye experiencia directa en el controller.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/8072.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8072#issuecomment-5115413176",
+    "reviewedAt": "2026-07-29T10:57:47.148Z",
+    "mainSha": "5923ef4817c38f4dce478a7c2727104c5962c895"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-21T13:35:00.033Z",
+  "updatedAt": "2026-07-21T12:14:51Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7795,
+    "title": "feat: queue edesk incident creation through vercel queue",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7795",
+    "state": "closed",
+    "labels": [
+      "size/XL",
+      "proof: 📸 screenshot",
+      "rating: 🥉 bronze",
+      "status: 📣 needs proof",
+      "P1",
+      "merge-risk: 🚨 compatibility",
+      "merge-risk: 🚨 message-delivery",
+      "merge-risk: 🚨 session-state"
+    ],
+    "createdAt": "2026-07-20T18:38:29Z",
+    "updatedAt": "2026-07-21T12:14:51Z",
+    "headSha": "2be30584b0244a10d44e323cad0026ecfbf8700b"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Qué arquitectura aprobamos para una cola única de incidencias cuando Ecommerce, Public y Admin son proyectos Vercel separados?",
+  "rationale": "La corrección exige elegir entre centralizar las rutas productoras, usar una capacidad de cola compartida o aceptar límites independientes; el código no puede decidir ese contrato operativo.",
+  "options": [
+    {
+      "title": "Centralizar en un solo proyecto",
+      "body": "Enrutar la publicación de incidencias y el consumidor por un mismo proyecto Vercel para mantener una cola y límite globales.",
+      "recommended": true
+    },
+    {
+      "title": "Separar consumidores por proyecto",
+      "body": "Configurar consumidores en Ecommerce y Public, aceptando y rediseñando el control de tasa global de eDesk.",
+      "recommended": false
+    },
+    {
+      "title": "Usar una durabilidad externa",
+      "body": "Volver a una outbox o cola compartida fuera del aislamiento por proyecto de Vercel.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Centralizar en un solo proyecto",
+    "body": "Enrutar la publicación de incidencias y el consumidor por un mismo proyecto Vercel para mantener una cola y límite globales.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "PabloMoran34",
+    "reason": "Es la persona con mayor trazabilidad en la infraestructura de colas compartida.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7795.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7795#issuecomment-5025985772",
+    "reviewedAt": "2026-07-21T13:35:00.033Z",
+    "mainSha": "1c9b8717c11135abed5e4be14479cf2b23da5671"
+  }
+}

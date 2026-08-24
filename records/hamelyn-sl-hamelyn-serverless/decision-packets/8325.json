@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-10T05:26:34.193Z",
+  "updatedAt": "2026-08-10T05:18:18Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8325,
+    "title": "fix: keep admin hash routing synchronous so browser back renders",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8325",
+    "state": "open",
+    "labels": [
+      "size/S"
+    ],
+    "createdAt": "2026-08-10T05:17:52Z",
+    "updatedAt": "2026-08-10T05:18:18Z",
+    "headSha": "1cd19fa96397ead135c7aa9f2fa57a9eeb121a15"
+  },
+  "lane": "merge_risk",
+  "priority": "P1",
+  "question": "¿Aceptamos sustituir el data router interno de react-admin por un `HashRouter` declarativo para resolver la regresión de `popstate`?",
+  "rationale": "La corrección es global para el Admin y renuncia a una capacidad de react-admin aunque hoy no haya consumidores locales; esa compatibilidad futura requiere aceptación explícita.",
+  "options": [
+    {
+      "title": "Aceptar tras prueba funcional",
+      "body": "Fusionar tras aportar evidencia real de Atrás, edición, filtros y navegación, asumiendo explícitamente que no se habilitarán guardas de cambios sin revisar el router.",
+      "recommended": true
+    },
+    {
+      "title": "Conservar el data router",
+      "body": "Pausar el PR y buscar un ajuste que desactive transiciones sin sacar al Admin del router de datos de react-admin.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aceptar tras prueba funcional",
+    "body": "Fusionar tras aportar evidencia real de Atrás, edición, filtros y navegación, asumiendo explícitamente que no se habilitarán guardas de cambios sin revisar el router.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Introdujo la configuración de React Router vigente en el mismo punto de entrada y puede valorar la compatibilidad de la sustitución.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8325.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8325#issuecomment-5236249850",
+    "reviewedAt": "2026-08-10T05:26:34.193Z",
+    "mainSha": "60737ae7e66e94087b1e3a200facd54d7576affb"
+  }
+}

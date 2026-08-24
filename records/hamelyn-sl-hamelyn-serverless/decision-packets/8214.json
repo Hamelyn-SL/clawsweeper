@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-05T10:50:09.105Z",
+  "updatedAt": "2026-08-05T10:01:44Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8214,
+    "title": "mercadolibre-report: la guarda sheet-id se calibra sobre la población patológica y desarma el cierre de zombis",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8214",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "triage:no-change",
+      "origin:dev",
+      "mk:mercadolibre",
+      "P1",
+      "impact:other",
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro",
+      "clawsweeper:linked-pr-open",
+      "clawsweeper:no-new-fix-pr"
+    ],
+    "createdAt": "2026-08-04T13:00:09Z",
+    "updatedAt": "2026-08-05T10:01:44Z"
+  },
+  "lane": "merge_risk",
+  "priority": "P1",
+  "question": "¿Debe resolverse esta incidencia con la PR enfocada https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8216 o mediante la PR amplia https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8262?",
+  "rationale": "Ambas PR implementan la misma recalibración, pero la segunda añade drenajes de recuperación independientes que modifican el alcance y la validación necesarios.",
+  "options": [
+    {
+      "title": "Integrar la corrección enfocada",
+      "body": "Revisar e integrar https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8216 y dejar los drenajes de recuperación en su propio ciclo.",
+      "recommended": true
+    },
+    {
+      "title": "Patrocinar la PR amplia",
+      "body": "Mantener https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8262 como vía única si también se acepta revisar y probar sus recuperaciones adicionales.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Integrar la corrección enfocada",
+    "body": "Revisar e integrar https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8216 y dejar los drenajes de recuperación en su propio ciclo.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Su historial concentra la implementación vigente del informe y la reconstrucción de IDs afectada.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8214.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8214#issuecomment-5179695757",
+    "reviewedAt": "2026-08-05T10:50:09.105Z",
+    "mainSha": "51159adb4a14c06c241c85de71f19899bb3a6af8"
+  }
+}

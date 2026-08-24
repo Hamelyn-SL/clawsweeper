@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-04T08:59:45.192Z",
+  "updatedAt": "2026-08-04T07:24:10Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8034,
+    "title": "feat: add order ingestion silence signal to alibris watcher",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8034",
+    "state": "closed",
+    "labels": [
+      "size/L",
+      "proof: 📸 screenshot",
+      "rating: 🥈 silver",
+      "status: 📣 needs proof",
+      "P1",
+      "merge-risk: 🚨 other"
+    ],
+    "createdAt": "2026-07-28T13:45:23Z",
+    "updatedAt": "2026-08-04T07:24:10Z",
+    "headSha": "d56783ec38235b754435fdd2daeab80c8de6c0a4"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe una pausa temporal de Alibris, como vacaciones, suprimir permanentemente `sales.order_ingestion_silent` o solo quedar registrada con una recomprobación obligatoria?",
+  "rationale": "La implementación actual documenta un dismiss para vacaciones, mientras el almacén de decisiones no ofrece expiración ni undismiss; elegir la semántica permanente afecta futuras incidencias.",
+  "options": [
+    {
+      "title": "Recomprobación temporal",
+      "body": "Registrar la pausa como nota o comprobación acotada y reservar el dismiss para un cierre definitivo del canal.",
+      "recommended": true
+    },
+    {
+      "title": "Añadir expiración explícita",
+      "body": "Extender el contrato de decisiones con vencimiento o reactivación antes de permitir dismiss para pausas temporales.",
+      "recommended": false
+    },
+    {
+      "title": "Aceptar supresión permanente",
+      "body": "Permitir el dismiss actual asumiendo que la reactivación del canal requerirá intervención manual.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Recomprobación temporal",
+    "body": "Registrar la pausa como nota o comprobación acotada y reservar el dismiss para un cierre definitivo del canal.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su historial actual conecta la semántica de decisiones y la emisión de findings del watcher.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/8034.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8034#issuecomment-5105133994",
+    "reviewedAt": "2026-08-04T08:59:45.192Z",
+    "mainSha": "24dc2085c43a7e52aca9cb61514d75963320c217"
+  }
+}

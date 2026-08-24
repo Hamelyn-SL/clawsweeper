@@ -1,0 +1,66 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-19T16:18:51.450Z",
+  "updatedAt": "2026-07-19T14:02:06Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 6310,
+    "title": "Multibulto FEDEX para consolidados pesados (prep-centers tipo ZoomBooks)",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6310",
+    "state": "closed",
+    "labels": [
+      "priority:p3",
+      "app:infrastructure",
+      "feature",
+      "reporter:rubenmorueco",
+      "triage:done",
+      "P2",
+      "impact:ux-friction",
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-06-09T12:17:30Z",
+    "updatedAt": "2026-07-19T14:02:06Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe el routing por destinatario crear un nuevo estado de consolidado pendiente de cajas, o mantenerse como cambio manual desde Spring cuando packing detecte el grupo?",
+  "rationale": "La elección define el contrato persistido, cuándo el batch debe omitir etiquetas y la política de regeneración de expediciones ya creadas.",
+  "options": [
+    {
+      "title": "Routing directo con estado pendiente",
+      "body": "Añadir el criterio por destinatario y aplazar la etiqueta FEDEX hasta que packing indique las cajas, conservando una única expedición por consolidado.",
+      "recommended": true
+    },
+    {
+      "title": "Conservar el switch manual",
+      "body": "Mantener Spring como routing inicial y usar el switch actual a FEDEX sólo tras un fallo o intervención del operario.",
+      "recommended": false
+    },
+    {
+      "title": "Limitarlo a una lista operativa",
+      "body": "Resolver los prep-centers mediante procedimiento de almacén sin ampliar ShipMatrix ni el ciclo automático de etiquetas.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Routing directo con estado pendiente",
+    "body": "Añadir el criterio por destinatario y aplazar la etiqueta FEDEX hasta que packing indique las cajas, conservando una única expedición por consolidado.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su trabajo reciente define la resolución y persistencia de carrier que condicionan ambas alternativas.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/6310.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6310#issuecomment-4909866015",
+    "reviewedAt": "2026-07-19T16:18:51.450Z",
+    "mainSha": "3e701a51783634733d86746c3425f42cce83da5a"
+  }
+}

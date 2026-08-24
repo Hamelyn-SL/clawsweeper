@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-11T11:17:44.154Z",
+  "updatedAt": "2026-08-11T11:05:32Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8265,
+    "title": "Filtro de demanda no probada para productos nuevos en compra",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8265",
+    "state": "closed",
+    "labels": [
+      "app:supply",
+      "feature",
+      "triage:done",
+      "P2",
+      "impact:other",
+      "issue-rating: ➖ n/a",
+      "clawsweeper:linked-pr-open",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-08-05T13:02:06Z",
+    "updatedAt": "2026-08-11T11:05:32Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Una señal de Amazon, editorial o autor ausente debe impedir el rechazo, o debe contar como evidencia de demanda insuficiente?",
+  "rationale": "El backtest y la seguridad comercial del filtro dependen de esta semántica; el código no puede inferirla sin una decisión explícita.",
+  "options": [
+    {
+      "title": "Tratar ausencia como desconocida",
+      "body": "Rechazar solo cuando las tres señales disponibles demuestren baja demanda y conservar la aceptación ante cobertura insuficiente.",
+      "recommended": true
+    },
+    {
+      "title": "Tratar ausencia como baja demanda",
+      "body": "Mantener el enfoque estricto, documentar el backtest correspondiente y exigir backfill y cron completados antes de activar el flag.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Tratar ausencia como desconocida",
+    "body": "Rechazar solo cuando las tres señales disponibles demuestren baja demanda y conservar la aceptación ante cobertura insuficiente.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Es el asignado actual y la decisión afecta la política de compra, no solo la implementación.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/8265.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8265#issuecomment-5192287822",
+    "reviewedAt": "2026-08-11T11:17:44.154Z",
+    "mainSha": "55bb1fe4ac6d4b790ed677dd433c72a0245a55b4"
+  }
+}

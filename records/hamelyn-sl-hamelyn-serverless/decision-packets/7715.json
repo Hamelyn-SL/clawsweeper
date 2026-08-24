@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-20T14:43:20.628Z",
+  "updatedAt": "2026-07-20T13:12:38Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7715,
+    "title": "TodoColeccion withdrawn UPDATING_PRICE leak recurs after issue #7310 closure",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7715",
+    "state": "open",
+    "labels": [
+      "bug",
+      "priority:p1",
+      "app:marketplace",
+      "triage:done",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:linked-pr-open",
+      "P1",
+      "impact:other",
+      "issue-rating: ⚪ platinum",
+      "clawsweeper:needs-live-repro",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-18T07:48:37Z",
+    "updatedAt": "2026-07-20T13:12:38Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe TodoColeccion recuperar automáticamente `ambiguous_reference` reasignando referencias temporales y retirando listings, o conservar la resolución manual actual?",
+  "rationale": "La propuesta modifica listings remotos ante referencias duplicadas; el código actual trata ese 401 como permanente y pide intervención manual.",
+  "options": [
+    {
+      "title": "Aprobar recuperación acotada",
+      "body": "Revisar y completar la prueba real redactada de la PR, manteniendo sus filtros exactos por EAN y SKU antes de integrarla.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener intervención manual",
+      "body": "Cerrar o reformular la PR y conservar `ambiguous_reference` como error permanente hasta definir otra operación segura.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar recuperación acotada",
+    "body": "Revisar y completar la prueba real redactada de la PR, manteniendo sus filtros exactos por EAN y SKU antes de integrarla.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "Está asignado a la revisión de la única PR abierta que implementa el residual.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7715.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7715#issuecomment-5010525782",
+    "reviewedAt": "2026-07-20T14:43:20.628Z",
+    "mainSha": "c3e33d1b80e95363644d3ad598763dd551a72a83"
+  }
+}

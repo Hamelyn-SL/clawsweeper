@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-15T12:15:56.434Z",
+  "updatedAt": "2026-07-15T12:07:19Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7210,
+    "title": "Amazon COM withdrawal misses orphan active listings without mk row",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7210",
+    "state": "closed",
+    "labels": [
+      "bug",
+      "priority:p1",
+      "app:marketplace",
+      "triage:done",
+      "P1",
+      "impact:other",
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-08T07:12:19Z",
+    "updatedAt": "2026-07-15T12:07:19Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe la solución canónica rehidratar filas `mk_amazonCom` para reutilizar el pipeline de retirada o enviar cantidad cero directamente desde la reconciliación externa?",
+  "rationale": "La elección define la fuente de verdad, la trazabilidad, los reintentos y si el patrón podrá extenderse de forma coherente a Amazon ES y otros canales con listings huérfanos.",
+  "options": [
+    {
+      "title": "Rehidratar y retirar",
+      "body": "Crear filas internas mínimas y auditables permite reutilizar el pipeline canónico de retirada, errores y reintentos.",
+      "recommended": true
+    },
+    {
+      "title": "Retirada externa directa",
+      "body": "Enviar cantidad cero desde snapshot/SP-API evita restaurar filas, pero crea una segunda ruta de retirada y seguimiento operativo.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Rehidratar y retirar",
+    "body": "Crear filas internas mínimas y auditables permite reutilizar el pipeline canónico de retirada, errores y reintentos.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Está asignado a esta issue y su historial reciente incluye reconciliación de huérfanos y mantenimiento del núcleo marketplace.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7210.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7210#issuecomment-4919255280",
+    "reviewedAt": "2026-07-15T12:15:56.434Z",
+    "mainSha": "c9c48539811bc0171e4605b5bbaf72e258ffc431"
+  }
+}

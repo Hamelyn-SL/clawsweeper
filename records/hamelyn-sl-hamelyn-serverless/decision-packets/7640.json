@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-19T15:39:02.641Z",
+  "updatedAt": "2026-07-19T14:01:07Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7640,
+    "title": "feat: surface free coupon item in ecommerce edesk tickets",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7640",
+    "state": "closed",
+    "labels": [
+      "size/L",
+      "proof: 📸 screenshot",
+      "rating: 🥈 silver",
+      "status: 📣 needs proof",
+      "P2",
+      "merge-risk: 🚨 other"
+    ],
+    "createdAt": "2026-07-16T09:56:43Z",
+    "updatedAt": "2026-07-19T14:01:07Z",
+    "headSha": "8670362c36a3281986569c9ebe6ca144632721cc"
+  },
+  "lane": "manual_review",
+  "priority": "P2",
+  "question": "¿Se aprueba ampliar el checkout para persistir la atribución exacta por línea de `FREE_UNITS` y dejar sin etiqueta los pedidos históricos que carezcan de ella?",
+  "rationale": "La corrección requiere incorporar datos persistidos y definir explícitamente la compatibilidad de pedidos existentes antes de cambiar el contrato de checkout.",
+  "options": [
+    {
+      "title": "Persistir la asignación canónica",
+      "body": "Guardar el reparto por línea durante el cálculo original, usarlo en eDesk y cubrir la colisión de precios convertidos.",
+      "recommended": true
+    },
+    {
+      "title": "Posponer la información exacta",
+      "body": "No fusionar esta aproximación si no se desea ampliar el modelo persistido del checkout en este ciclo.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Persistir la asignación canónica",
+    "body": "Guardar el reparto por línea durante el cálculo original, usarlo en eDesk y cubrir la colisión de precios convertidos.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Su historial reciente cubre la regla canónica cuyo resultado debe persistirse.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7640.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7640#issuecomment-4990694609",
+    "reviewedAt": "2026-07-19T15:39:02.641Z",
+    "mainSha": "9d51092df1746f4eb40871505f40e101c5767705"
+  }
+}

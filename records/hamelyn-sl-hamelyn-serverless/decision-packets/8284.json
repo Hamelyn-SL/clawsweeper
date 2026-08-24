@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-06T11:13:30.511Z",
+  "updatedAt": "2026-08-06T11:02:41Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8284,
+    "title": "eBay ES bloquea la publicación de listings nuevos con errorId 25019 (política de cuenta)",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8284",
+    "state": "closed",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "triage:blocked",
+      "P1",
+      "origin:dev",
+      "mk:ebay"
+    ],
+    "createdAt": "2026-08-06T10:44:35Z",
+    "updatedAt": "2026-08-06T11:02:41Z"
+  },
+  "lane": "manual_review",
+  "priority": "P1",
+  "question": "¿Qué evidencia operativa debe aprobar el equipo Marketplace antes de reactivar `ebay.create()` para eBay ES?",
+  "rationale": "La corrección necesaria depende de restricciones y soporte de una cuenta externa; el repositorio solo puede aplicar una reanudación cuando exista confirmación operativa verificable.",
+  "options": [
+    {
+      "title": "Mantener la pausa hasta validación externa",
+      "body": "Esperar la confirmación de Seller Hub o soporte eBay y exigir una sonda de 10 SKUs con publicaciones remotas correctas antes de un rollout gradual.",
+      "recommended": true
+    },
+    {
+      "title": "Reanudar con cohorte controlada",
+      "body": "Autorizar una cohorte muy pequeña solo si el responsable de eBay acepta explícitamente el riesgo y define umbrales de rollback.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mantener la pausa hasta validación externa",
+    "body": "Esperar la confirmación de Seller Hub o soporte eBay y exigir una sonda de 10 SKUs con publicaciones remotas correctas antes de un rollout gradual.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Introdujo la contención vigente en el cron y es la mejor ruta histórica para decidir su retirada segura.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/8284.md",
+    "reviewedAt": "2026-08-06T11:13:30.511Z",
+    "mainSha": "a1a00fd0c62fcbb61555e8ac573566f8dbc5aa7d"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-28T05:52:22.942Z",
+  "updatedAt": "2026-07-28T05:38:29Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8000,
+    "title": "feat: recover cainiao province and city on address retry",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8000",
+    "state": "open",
+    "labels": [
+      "size/XXL",
+      "P2"
+    ],
+    "createdAt": "2026-07-27T12:00:38Z",
+    "updatedAt": "2026-07-28T05:38:29Z",
+    "headSha": "4bc369a47ca110092ff9dae01e6d815bb8edfc63"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe esta primera fase modificar automáticamente provincia y municipio de pedidos españoles para todos los carriers, además del CP, antes de crear una etiqueta?",
+  "rationale": "La solicitud relacionada deja la cobertura fuera de Cainiao como decisión a evaluar, y este PR introduce escrituras automáticas persistentes y llamadas proactivas a Google en toda la cola ES.",
+  "options": [
+    {
+      "title": "Validar la entrega multi-carrier ES",
+      "body": "Mantener el alcance propuesto tras añadir auditoría, backoff y prueba real de recuperación de etiqueta para los carriers representativos.",
+      "recommended": true
+    },
+    {
+      "title": "Acotar a Cainiao reactivo",
+      "body": "Limitar esta fase al caso de error Cainiao ya conocido y dejar el cron y la ampliación global para una fase posterior.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Validar la entrega multi-carrier ES",
+    "body": "Mantener el alcance propuesto tras añadir auditoría, backoff y prueba real de recuperación de etiqueta para los carriers representativos.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Su historial conecta directamente con la política actual de reintentos y notificación de etiquetas.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8000.md",
+    "reviewedAt": "2026-07-28T05:52:22.942Z",
+    "mainSha": "9dbd0a5effbbb8512a6a2f6bab94ed9585096a8d"
+  }
+}

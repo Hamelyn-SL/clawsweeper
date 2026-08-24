@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-28T17:57:13.765Z",
+  "updatedAt": "2026-07-28T17:45:28Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8036,
+    "title": "🧪 PR Proof v3: evidencia simple con semáforo en comentario del PR",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8036",
+    "state": "closed",
+    "labels": [
+      "app:infrastructure",
+      "feature",
+      "reporter:javier",
+      "triage:queued",
+      "P1"
+    ],
+    "createdAt": "2026-07-28T17:45:18Z",
+    "updatedAt": "2026-07-28T17:45:28Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe PR Proof dejar de ser un gate fail-closed y convertirse en una señal informativa no bloqueante para todas las PR contra `dev`?",
+  "rationale": "La propuesta cambia la función de control del sistema vigente y entra en conflicto directo con el endurecimiento v2 que sigue abierto.",
+  "options": [
+    {
+      "title": "Aprobar un v3 informativo",
+      "body": "Autorizar una sustitución no bloqueante con límites explícitos de retención, reintentos, alertas y trazabilidad.",
+      "recommended": true
+    },
+    {
+      "title": "Conservar el gate v2",
+      "body": "Resolver la fiabilidad del controlador actual sin relajar el requisito de evidencia autoritativa antes del merge.",
+      "recommended": false
+    },
+    {
+      "title": "Decidir tras la PR v2",
+      "body": "Esperar la resolución de la PR de endurecimiento para comparar datos operativos antes de cambiar el contrato.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar un v3 informativo",
+    "body": "Autorizar una sustitución no bloqueante con límites explícitos de retención, reintentos, alertas y trazabilidad.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "El historial muestra que ha dirigido los cambios recientes de contrato y seguridad del subsistema.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/8036.md",
+    "reviewedAt": "2026-07-28T17:57:13.765Z",
+    "mainSha": "b51990706ed92bd6e079838b426e85028efe087e"
+  }
+}

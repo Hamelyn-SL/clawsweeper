@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-05T10:51:48.307Z",
+  "updatedAt": "2026-08-05T10:13:05Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8257,
+    "title": "fix: stop closing shared mongo connection on warm probe failure",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8257",
+    "state": "closed",
+    "labels": [
+      "size/M",
+      "rating: 🥈 silver",
+      "status: 📣 needs proof",
+      "P0",
+      "merge-risk: 🚨 compatibility"
+    ],
+    "createdAt": "2026-08-05T10:09:35Z",
+    "updatedAt": "2026-08-05T10:13:05Z",
+    "headSha": "b352d2349eb4b58197b0e2725139f43eb1cb7709"
+  },
+  "lane": "product_direction",
+  "priority": "P0",
+  "question": "¿Debe una instancia warm seguir recargando la configuración de Mongo, o se acepta congelarla hasta un nuevo arranque?",
+  "rationale": "La base actual actualiza `ConfigService` en cada ruta warm, mientras el PR elimina esa conducta explícitamente; decidir el contrato operativo excede un arreglo mecánico.",
+  "options": [
+    {
+      "title": "Preservar recarga segura",
+      "body": "Mantener una recarga con single-flight o intervalo, aislando sus fallos para que nunca invalide ni cierre Mongo.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar configuración por arranque",
+      "body": "Documentar que los cambios de configuración requieren reciclado o redeploy de las instancias warm.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Preservar recarga segura",
+    "body": "Mantener una recarga con single-flight o intervalo, aislando sus fallos para que nunca invalide ni cierre Mongo.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "La incidencia canónica está asignada a esta persona y su historial toca el cliente ecommerce afectado.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/8257.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8257#issuecomment-5190859014",
+    "reviewedAt": "2026-08-05T10:51:48.307Z",
+    "mainSha": "51159adb4a14c06c241c85de71f19899bb3a6af8"
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-05T08:55:12.631Z",
+  "updatedAt": "2026-08-05T08:04:35Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8241,
+    "title": "fix: stop skipping reviewer assignment on business-logic PRs",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8241",
+    "state": "closed",
+    "labels": [
+      "size/M",
+      "proof: sufficient",
+      "rating: 🥇 gold",
+      "status: 👀 ready for maintainer look",
+      "P2",
+      "merge-risk: 🚨 compatibility",
+      "merge-risk: 🚨 automation"
+    ],
+    "createdAt": "2026-08-05T07:56:24Z",
+    "updatedAt": "2026-08-05T08:04:35Z",
+    "headSha": "a2ddacf532128b261a9025ee5fa0a5d72268478e"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe el label `business-logic` dejar de excluir al agente de reviewer cuando aún no hay ningún reviewer solicitado?",
+  "rationale": "El código actual define ese label como flujo de reviewer fijado manualmente; el parche cambia deliberadamente ese contrato operativo aunque los casos citados muestran que puede dejar PRs sin revisión.",
+  "options": [
+    {
+      "title": "Adoptar asignación automática",
+      "body": "Eliminar el gate del label y conservar la protección por reviewer solicitado, de modo que una PR BL sin responsable no quede esperando.",
+      "recommended": true
+    },
+    {
+      "title": "Conservar la exclusión del label",
+      "body": "Mantener el flujo manual y añadir una señal o guardia visible para detectar PRs BL sin reviewer.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Adoptar asignación automática",
+    "body": "Eliminar el gate del label y conservar la protección por reviewer solicitado, de modo que una PR BL sin responsable no quede esperando.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Introdujo el gate actual y es la mejor referencia histórica para decidir si su semántica operativa debe cambiar.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/8241.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8241#issuecomment-5189763079",
+    "reviewedAt": "2026-08-05T08:55:12.631Z",
+    "mainSha": "dde44afb92e3731ca5aa0878f3d5e5a9be9a691d"
+  }
+}

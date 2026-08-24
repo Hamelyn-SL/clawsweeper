@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-14T11:54:29.321Z",
+  "updatedAt": "2026-07-14T11:21:38Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7262,
+    "title": "marketplace-crons: Amazon MX create falla cuando no encuentra ASIN para el EAN",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7262",
+    "state": "closed",
+    "labels": [
+      "marketplace-crons",
+      "codex",
+      "bug",
+      "priority:p1",
+      "app:marketplace",
+      "triage:queued",
+      "area:marketplace-sync",
+      "P1",
+      "impact:other",
+      "issue-rating: 🐚 platinum hermit",
+      "clawsweeper:needs-live-repro",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:fix-shape-clear"
+    ],
+    "createdAt": "2026-07-09T00:35:21Z",
+    "updatedAt": "2026-07-14T11:21:38Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué política debe aplicar Amazon MX cuando un EAN no tiene ASIN resoluble en su catálogo regional?",
+  "rationale": "El código ya implementa correctamente la detección, persistencia y recuperación; elegir entre esperar, enriquecer o excluir determina cobertura comercial, carga operativa y semántica del alertado, y no puede deducirse únicamente del código.",
+  "options": [
+    {
+      "title": "Mantener STALE y ajustar alertas",
+      "body": "Conservar el cooldown de 24 horas y tratar el volumen base como esperado, alertando solo por desviaciones o fallos de recuperación.",
+      "recommended": true
+    },
+    {
+      "title": "Enriquecer antes de publicar",
+      "body": "Añadir una etapa previa que resuelva o valide el ASIN regional antes de incluir el stock en la cola de creación de Amazon MX.",
+      "recommended": false
+    },
+    {
+      "title": "Marcar como no elegible",
+      "body": "Excluir de Amazon MX los EAN confirmados sin catálogo regional, definiendo además cuándo y cómo se revisa esa decisión.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mantener STALE y ajustar alertas",
+    "body": "Conservar el cooldown de 24 horas y tratar el volumen base como esperado, alertando solo por desviaciones o fallos de recuperación.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Introdujo el runtime independiente de Amazon MX y ha formulado la decisión operativa pendiente con mayor contexto del área.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7262.md",
+    "reviewedAt": "2026-07-14T11:54:29.321Z",
+    "mainSha": "c0e80c75b583e1109ef670df534480c921a86adb"
+  }
+}

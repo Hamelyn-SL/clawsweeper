@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-19T17:23:45.992Z",
+  "updatedAt": "2026-07-19T12:56:06Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7706,
+    "title": "feat: add product page d ab test variant",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7706",
+    "state": "closed",
+    "labels": [
+      "size/XXL",
+      "proof: sufficient",
+      "proof: 📸 screenshot",
+      "rating: ⚪ platinum",
+      "status: 👀 ready for maintainer look",
+      "P2",
+      "merge-risk: 🚨 compatibility"
+    ],
+    "createdAt": "2026-07-17T10:56:42Z",
+    "updatedAt": "2026-07-19T12:56:06Z",
+    "headSha": "bc6db0b3394e568c49cc743241afe93ca4d4e0d0"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe integrarse ya la variante D con el override público y el coste potencial de evaluación de Vercel Flags, o mantenerse en borrador hasta cerrar el contrato del experimento?",
+  "rationale": "El código preserva B por defecto, pero la decisión de activar, medir y asumir el coste operativo no puede resolverse solo mediante revisión técnica.",
+  "options": [
+    {
+      "title": "Cerrar primero el contrato del experimento",
+      "body": "Mantener el PR en borrador hasta acordar reparto, métrica primaria, duración, responsable y procedimiento de activación.",
+      "recommended": true
+    },
+    {
+      "title": "Integrar la preparación inactiva",
+      "body": "Aceptar que D quede accesible por override y que `FLAGS` se configure únicamente cuando Ecommerce active el test.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Cerrar primero el contrato del experimento",
+    "body": "Mantener el PR en borrador hasta acordar reparto, métrica primaria, duración, responsable y procedimiento de activación.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Su cambio reciente estableció la política actual de servir B sin evaluaciones de flags.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7706.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7706#issuecomment-5009904470",
+    "reviewedAt": "2026-07-19T17:23:45.992Z",
+    "mainSha": "50ecfced2ccb61fda78d4164715a4fcf47c93671"
+  }
+}

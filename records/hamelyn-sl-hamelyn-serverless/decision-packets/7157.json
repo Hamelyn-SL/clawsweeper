@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-10T13:38:52.745Z",
+  "updatedAt": "2026-07-10T12:43:31Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7157,
+    "title": "fix: reconcile checkout coupon discounts server-side",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7157",
+    "state": "closed",
+    "labels": [
+      "size/S",
+      "rating: 🦪 silver shellfish",
+      "status: 📣 needs proof",
+      "P2",
+      "merge-risk: 🚨 other"
+    ],
+    "createdAt": "2026-07-07T17:13:36Z",
+    "updatedAt": "2026-07-10T12:43:31Z",
+    "headSha": "6dd81ab99f6aa01c3362044c6ea7acec118f095b"
+  },
+  "lane": "proof_sufficiency",
+  "priority": "P2",
+  "question": "¿Debe este PR esperar prueba real del flujo de checkout con cupones no `FREE_UNITS`, o MarcosTerroso puede aceptar explícitamente la inspección de código y tests como prueba suficiente?",
+  "rationale": "El parche parece estrecho y aprobado, pero la política de PRs externos exige prueba real para una ruta sensible de precios salvo override mantenedor.",
+  "options": [
+    {
+      "title": "Pedir prueba real antes de mergear",
+      "body": "Solicitar salida redactada de staging/local que enseñe el checkout persistido y el `PaymentIntent` calculado desde el descuento servidor para al menos un cupón no `FREE_UNITS`.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar override de prueba",
+      "body": "Un mantenedor puede documentar que la inspección del diff, los tests de cupones y la aprobación humana bastan para este cambio XS de precios.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Pedir prueba real antes de mergear",
+    "body": "Solicitar salida redactada de staging/local que enseñe el checkout persistido y el `PaymentIntent` calculado desde el descuento servidor para al menos un cupón no `FREE_UNITS`.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Es el revisor aprobado del head actual y fue asignado por experiencia en el fichero de checkout tocado.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7157.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7157#issuecomment-4913365717",
+    "reviewedAt": "2026-07-10T13:38:52.745Z",
+    "mainSha": "7911cda12e2f076eb3e51bbe2090b55283737e42"
+  }
+}

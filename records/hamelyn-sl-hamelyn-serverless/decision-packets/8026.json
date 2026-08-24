@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-28T12:26:08.991Z",
+  "updatedAt": "2026-07-28T12:21:10Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8026,
+    "title": "🚨 Pedidos de Alibris no entran en Admin desde el 21-jul (PASV rechazado tras bump basic-ftp 6)",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8026",
+    "state": "closed",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "triage:queued",
+      "P0"
+    ],
+    "createdAt": "2026-07-28T12:20:53Z",
+    "updatedAt": "2026-07-28T12:21:10Z"
+  },
+  "lane": "security_boundary",
+  "priority": "P0",
+  "question": "¿Se acepta restaurar para Alibris la compatibilidad PASV previa mediante `allowSeparateTransferHost: true`, limitada a este endpoint legado?",
+  "rationale": "El arreglo recupera pedidos urgentes, pero relaja una protección introducida por `basic-ftp` frente a hosts PASV distintos.",
+  "options": [
+    {
+      "title": "Compatibilidad limitada para Alibris",
+      "body": "Aceptar la opción solo en el cliente FTPS de Alibris, sin modificar el comportamiento de otros consumidores FTP.",
+      "recommended": true
+    },
+    {
+      "title": "Adaptador PASV más estricto",
+      "body": "Implementar una estrategia específica que solo sustituya direcciones privadas anunciadas por la IP de control.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Compatibilidad limitada para Alibris",
+    "body": "Aceptar la opción solo en el cliente FTPS de Alibris, sin modificar el comportamiento de otros consumidores FTP.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Ha mantenido directamente la integración FTPS heredada y puede valorar el contrato operativo de Alibris.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/8026.md",
+    "reviewedAt": "2026-07-28T12:26:08.991Z",
+    "mainSha": "1a31ab714322a908a1b413bab44e2e22afa6950c"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-08T03:51:30.973Z",
+  "updatedAt": "2026-07-07T15:09:47Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7102,
+    "title": "BL-ecommerce-checkout: Cart & Checkout — specs, aislamiento y tests",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7102",
+    "state": "closed",
+    "labels": [
+      "app:ecommerce",
+      "priority:p1",
+      "feature",
+      "triage:done",
+      "business-logic",
+      "hackathon",
+      "P2",
+      "impact:other",
+      "issue-rating: 🌊 off-meta tidepool",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:fix-shape-clear",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-07T09:14:28Z",
+    "updatedAt": "2026-07-07T15:09:47Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "Should the checkout BL block proceed as one owner-reviewed F1-F5 spin, or be split before extraction starts?",
+  "rationale": "The BL workflow makes owner validation blocking, and the issue warns that the rule count may grow beyond the healthy block size.",
+  "options": [
+    {
+      "title": "Proceed as one block",
+      "body": "Run F1 over cart and checkout, then have the owner validate all flags and rules before any isolation or tests.",
+      "recommended": true
+    },
+    {
+      "title": "Split before F1",
+      "body": "Have the owner define narrower checkout sub-blocks first if the extracted rule count is likely to exceed a manageable F2 batch.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Proceed as one block",
+    "body": "Run F1 over cart and checkout, then have the owner validate all flags and rules before any isolation or tests.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "This handle is both the named BL owner and current assignee.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7102.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7102#issuecomment-4911291410",
+    "reviewedAt": "2026-07-08T03:51:30.973Z",
+    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+  }
+}

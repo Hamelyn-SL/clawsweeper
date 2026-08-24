@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-09T06:22:10.329Z",
+  "updatedAt": "2026-07-09T06:02:33Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7238,
+    "title": "Deploy to Prod",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7238",
+    "state": "closed",
+    "labels": [
+      "size/XXL",
+      "rating: 🧂 unranked krab",
+      "status: 📣 needs proof",
+      "P1",
+      "merge-risk: 🚨 compatibility",
+      "merge-risk: 🚨 security-boundary",
+      "merge-risk: 🚨 availability"
+    ],
+    "createdAt": "2026-07-08T11:07:56Z",
+    "updatedAt": "2026-07-09T06:02:33Z",
+    "headSha": "412ac0da1a6c2f6e4e71ed23da5de4fecc58afc9"
+  },
+  "lane": "release_inclusion",
+  "priority": "P1",
+  "question": "¿Debe promoverse este lote completo de `dev` a `master` ahora, con `apps/agents` y sus credenciales/cron incluidos, o conviene partir o retrasar el release hasta tener prueba real y configuración validada?",
+  "rationale": "La PR no es un cambio de implementación aislado: es el release a producción de 280 ficheros con superficie de credenciales, marketplace y disponibilidad que no puede resolverse con una reparación automática ni solo con lectura de código.",
+  "options": [
+    {
+      "title": "Esperar prueba y validar release",
+      "body": "Mantener la PR abierta hasta añadir logs o salida redaccionada de deploy/runtime, confirmar secretos y resolver el fallo de Vercel antes de mergear a `master`.",
+      "recommended": true
+    },
+    {
+      "title": "Partir el release",
+      "body": "Sacar de este release la parte de `apps/agents` o cualquier cambio no validado y desplegar solo los fixes ya probados que el equipo quiera promover ahora.",
+      "recommended": false
+    },
+    {
+      "title": "Aceptar el riesgo operativo",
+      "body": "Mergear el release completo asumiendo manualmente el riesgo de credenciales, cron y disponibilidad, con vigilancia posterior explícita.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Esperar prueba y validar release",
+    "body": "Mantener la PR abierta hasta añadir logs o salida redaccionada de deploy/runtime, confirmar secretos y resolver el fallo de Vercel antes de mergear a `master`.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es quien más aparece en el historial de `apps/agents`, que concentra la decisión de release más sensible en esta PR.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7238.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7238#issuecomment-4916230372",
+    "reviewedAt": "2026-07-09T06:22:10.329Z",
+    "mainSha": "412ac0da1a6c2f6e4e71ed23da5de4fecc58afc9"
+  }
+}

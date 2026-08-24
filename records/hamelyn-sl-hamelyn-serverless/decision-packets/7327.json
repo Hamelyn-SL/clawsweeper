@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-12T07:48:18.277Z",
+  "updatedAt": "2026-07-12T07:35:37Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7327,
+    "title": "fix: use canonical category hub links",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7327",
+    "state": "closed",
+    "labels": [
+      "size/XS",
+      "proof: sufficient",
+      "proof: 🎥 video",
+      "rating: 🐚 platinum hermit",
+      "status: 👀 ready for maintainer look",
+      "P2",
+      "merge-risk: 🚨 other"
+    ],
+    "createdAt": "2026-07-10T07:42:05Z",
+    "updatedAt": "2026-07-12T07:35:37Z",
+    "headSha": "574d51428a92d56d66894a4e8f4b37236014146b"
+  },
+  "lane": "merge_risk",
+  "priority": "P2",
+  "question": "¿Debe este PR cerrar automáticamente la issue amplia de minihomes o debe quedar como arreglo parcial enlazado sin `Closes`?",
+  "rationale": "La implementación corrige el subcaso de las bolitas, pero la issue enlazada incluye hero, buscador, catálogo, beneficios, SEO e interlinking; decidir la trazabilidad no es una reparación mecánica del diff.",
+  "options": [
+    {
+      "title": "Cambiar a referencia parcial",
+      "body": "Reemplazar el cierre automático por una referencia a https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7117 y dejar esa issue abierta para el rediseño pendiente.",
+      "recommended": true
+    },
+    {
+      "title": "Cerrar la issue amplia con este PR",
+      "body": "Aceptar que el alcance restante se abandona o se gestionará fuera de esa issue, asumiendo la pérdida de trazabilidad del rediseño completo.",
+      "recommended": false
+    },
+    {
+      "title": "Abrir seguimientos antes del merge",
+      "body": "Dividir hero, catálogo, beneficios, SEO/interlinking y caché en tareas concretas y entonces permitir que este PR cierre solo el subcaso cubierto.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Cambiar a referencia parcial",
+    "body": "Reemplazar el cierre automático por una referencia a https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7117 y dejar esa issue abierta para el rediseño pendiente.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "danielmenchen-hamelyn",
+    "reason": "Es el revisor solicitado del PR y está mejor situado para decidir la trazabilidad inmediata antes de mergear.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7327.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7327#issuecomment-4933397725",
+    "reviewedAt": "2026-07-12T07:48:18.277Z",
+    "mainSha": "bdba2474cde79bb8997d7effa9430aff3f604ded"
+  }
+}

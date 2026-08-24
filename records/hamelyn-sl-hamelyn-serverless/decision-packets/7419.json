@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-05T00:10:25.657Z",
+  "updatedAt": "2026-08-05T00:05:47Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7419,
+    "title": "Cron semanal de autores (Wikidata) falla por timeout y duplicados de authorId sin índice único",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7419",
+    "state": "open",
+    "labels": [
+      "bug",
+      "triage:done",
+      "app:data",
+      "origin:dev",
+      "P1",
+      "impact:other",
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-13T06:38:18Z",
+    "updatedAt": "2026-08-05T00:05:47Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Qué política de conservación debe aplicarse a slugs, enlaces y metadatos de fichas no canónicas al fusionar cada grupo por `authorId` en producción?",
+  "rationale": "El código puede elegir una ficha técnica canónica, pero decidir qué URL y campos históricos sobreviven es una mutación de datos con impacto de producto y SEO.",
+  "options": [
+    {
+      "title": "Conservar canónica y redirigir legacy",
+      "body": "Elegir una ficha por regla determinista, mover datos necesarios y preservar los slugs retirados mediante una ruta legacy o redirección.",
+      "recommended": true
+    },
+    {
+      "title": "Conservar solo la ficha canónica",
+      "body": "Fusionar los grupos y retirar los slugs no canónicos, aceptando explícitamente el cambio de URLs históricas.",
+      "recommended": false
+    },
+    {
+      "title": "Aplazar la fusión física",
+      "body": "Mantener la mitigación de lectura y limitar el trabajo inmediato a propagar fallos reales del cron hasta acordar la política de datos.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Conservar canónica y redirigir legacy",
+    "body": "Elegir una ficha por regla determinista, mover datos necesarios y preservar los slugs retirados mediante una ruta legacy o redirección.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "PabloMoran34",
+    "reason": "Está asignado a la issue y su historial conecta el cron original con la mitigación canónica integrada.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7419.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7419#issuecomment-4955179633",
+    "reviewedAt": "2026-08-05T00:10:25.657Z",
+    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
+  }
+}

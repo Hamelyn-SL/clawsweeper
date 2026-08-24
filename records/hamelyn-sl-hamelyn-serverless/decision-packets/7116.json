@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-13T08:17:39.897Z",
+  "updatedAt": "2026-07-13T08:11:30Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7116,
+    "title": "feat: add BL invocation logging and business-logic graph dashboard",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7116",
+    "state": "open",
+    "labels": [
+      "size/XXL",
+      "merge-risk: 🚨 compatibility",
+      "proof: 📸 screenshot",
+      "rating: 🦪 silver shellfish",
+      "status: 📣 needs proof",
+      "P2",
+      "merge-risk: 🚨 automation"
+    ],
+    "createdAt": "2026-07-07T10:01:49Z",
+    "updatedAt": "2026-07-13T08:11:30Z",
+    "headSha": "7f2dcf302a1abd0d057b0951c492aba174de5622"
+  },
+  "lane": "merge_risk",
+  "priority": "P2",
+  "question": "¿Debe esta PR aterrizar con la scheduled query actual como append incremental no idempotente entre runs solapados, o debe reforzarse/documentarse antes de merge?",
+  "rationale": "Es una decisión operativa de data-platform: el SQL puede ser aceptable si se asume que no habrá ejecuciones solapadas, pero la skill no puede prometer una garantía que la tabla no implementa.",
+  "options": [
+    {
+      "title": "Corregir documentación antes de merge",
+      "body": "Mantiene el SQL actual y documenta explícitamente que la deduplicación solo ocurre dentro de una ejecución, sin garantía entre runs solapados.",
+      "recommended": true
+    },
+    {
+      "title": "Hacer la query idempotente",
+      "body": "Cambia el `INSERT` por una forma con `MERGE` o anti-join contra destino para que la promesa de deduplicación global sea real.",
+      "recommended": false
+    },
+    {
+      "title": "Aceptar el riesgo operativo",
+      "body": "Permite mergear con la discrepancia conocida, dejando que data-platform asuma posibles duplicados por ejecuciones concurrentes.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Corregir documentación antes de merge",
+    "body": "Mantiene el SQL actual y documenta explícitamente que la deduplicación solo ocurre dentro de una ejecución, sin garantía entre runs solapados.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "PabloMoran34",
+    "reason": "Es el candidato más cercano al diseño de scheduled queries y tablas Vercel/BigQuery en el historial reciente.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7116.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7116#issuecomment-4911295695",
+    "reviewedAt": "2026-07-13T08:17:39.897Z",
+    "mainSha": "3507f660b3c32cda93c23d3a81815c97a689226e"
+  }
+}

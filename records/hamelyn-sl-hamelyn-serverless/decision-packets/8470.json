@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-17T20:26:43.686Z",
+  "updatedAt": "2026-08-17T12:21:59Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8470,
+    "title": "refactor: apply v2 rewrite findings to shared amazon integration",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8470",
+    "state": "open",
+    "labels": [
+      "size/XL",
+      "rating: 🥈 silver",
+      "status: 📣 needs proof",
+      "P1",
+      "merge-risk: 🚨 compatibility",
+      "merge-risk: 🚨 availability"
+    ],
+    "createdAt": "2026-08-17T10:21:30Z",
+    "updatedAt": "2026-08-17T12:21:59Z",
+    "headSha": "077155b38d50122276277b49093d7c6794f949dc"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Qué transición de `OrderSell` debe aplicarse cuando Amazon comunica una cancelación ejecutada de un pedido ya importado?",
+  "rationale": "La rama convierte las actualizaciones remotas en parte del flujo, pero el contrato actual solo evita duplicados y no define cómo reconciliar stock, picking y estados ya persistidos.",
+  "options": [
+    {
+      "title": "Añadir reconciliación antes de integrar",
+      "body": "Definir y probar una ruta Amazon que actualice de forma segura los pedidos ya importados y sus líneas canceladas.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener solo importación inicial",
+      "body": "Conservar el filtro de pedidos existentes y no cambiar a `lastUpdatedAfter` hasta disponer de la reconciliación.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Añadir reconciliación antes de integrar",
+    "body": "Definir y probar una ruta Amazon que actualice de forma segura los pedidos ya importados y sus líneas canceladas.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Su historial está ligado al flujo de importación de pedidos que define el contrato existente.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8470.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8470#issuecomment-5314930018",
+    "reviewedAt": "2026-08-17T20:36:22.790Z",
+    "mainSha": "fc7c48dd1ecff251de1b9d9537476384cbf58f6a"
+  }
+}

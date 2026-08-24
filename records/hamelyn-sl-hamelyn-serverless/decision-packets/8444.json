@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-14T06:29:05.409Z",
+  "updatedAt": "2026-08-14T06:23:39Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8444,
+    "title": "fix: cap Spring consolidated shipment weight",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8444",
+    "state": "closed",
+    "labels": [
+      "size/S",
+      "rating: 🥈 silver",
+      "status: 📣 needs proof",
+      "P1",
+      "merge-risk: 🚨 other"
+    ],
+    "createdAt": "2026-08-14T06:21:20Z",
+    "updatedAt": "2026-08-14T06:23:39Z",
+    "headSha": "bb8b7b489b02a4da37eb045d2d2b74891c4fd990"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Se aprueba normalizar el peso declarado de consolidaciones Spring a 19,5 kg en vez de dividir físicamente los envíos que superan 20 kg?",
+  "rationale": "La corrección técnica refleja el resultado esperado, pero la declaración de peso y la posible división de bultos son una decisión logística y contractual que el código no puede resolver por sí solo.",
+  "options": [
+    {
+      "title": "Aprobar la normalización declarada",
+      "body": "Confirmar que 19,5 kg es un margen permitido por Spring y mantener el cálculo propuesto para consolidaciones grandes.",
+      "recommended": true
+    },
+    {
+      "title": "Dividir por bultos",
+      "body": "Sustituir el límite declarado por una división de la consolidación en envíos físicos compatibles con el máximo de Spring.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar la normalización declarada",
+    "body": "Confirmar que 19,5 kg es un margen permitido por Spring y mantener el cálculo propuesto para consolidaciones grandes.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Es el revisor solicitado con experiencia directa en el adaptador Spring y fallos de creación de etiquetas.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/8444.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8444#issuecomment-5290262174",
+    "reviewedAt": "2026-08-14T06:29:05.409Z",
+    "mainSha": "47eb34e34c0747d07851e21ca6ca182c57e0de32"
+  }
+}

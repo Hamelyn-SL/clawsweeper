@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-08T09:22:16.524Z",
+  "updatedAt": "2026-07-08T09:14:51Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7161,
+    "title": "PDFs de admin con PII en stores públicos de Vercel Blob con pathnames predecibles",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7161",
+    "state": "closed",
+    "labels": [
+      "bug",
+      "priority:p1",
+      "app:infrastructure",
+      "triage:pr-opened"
+    ],
+    "createdAt": "2026-07-07T18:54:16Z",
+    "updatedAt": "2026-07-08T09:14:51Z"
+  },
+  "lane": "security_boundary",
+  "priority": "P0",
+  "question": "For these admin PII exports, is randomizing public Blob pathnames an acceptable fix for this issue, or must the exports move to private/authenticated reads before closure?",
+  "rationale": "The source-confirmed bug is public predictable paths; the open PR fixes predictability but intentionally leaves public direct URL access, which is a security-boundary choice automation should not settle.",
+  "options": [
+    {
+      "title": "Land random suffix mitigation now",
+      "body": "Repair and merge the linked PR as the immediate fix, then open or keep separate work for private authenticated reads if needed.",
+      "recommended": true
+    },
+    {
+      "title": "Require private authenticated reads",
+      "body": "Hold the issue open until these admin exports use a private Blob store or authenticated proxy instead of public URLs.",
+      "recommended": false
+    },
+    {
+      "title": "Split mitigation and full hardening",
+      "body": "Close this issue only after the randomization PR lands and create a narrower follow-up for direct-URL public access.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Land random suffix mitigation now",
+    "body": "Repair and merge the linked PR as the immediate fix, then open or keep separate work for private authenticated reads if needed.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "alexcanHamelyn",
+    "reason": "The linked PR discussion already routes review to alexcanHamelyn for touched-file expertise.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7161.md",
+    "reviewedAt": "2026-07-08T09:22:16.524Z",
+    "mainSha": "c9a20cd1c5fd8faded07fb9eae57516cc2f49d3e"
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-07T08:21:36.586Z",
+  "updatedAt": "2026-08-07T08:05:02Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8302,
+    "title": "Envíos MRW multibulto de DecoHamelyn salen con Urgente 19 en vez de Urgente 19 Expedición",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8302",
+    "state": "closed",
+    "labels": [
+      "bug",
+      "app:admin",
+      "triage:queued",
+      "P1"
+    ],
+    "createdAt": "2026-08-07T08:04:42Z",
+    "updatedAt": "2026-08-07T08:05:02Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿El servicio `0205` del abonado `007659` debe usarse únicamente en las etiquetas Deco/influencer multibulto o también en todos los cambios Cainiao→MRW multibulto?",
+  "rationale": "El código permite un arreglo pequeño, pero la issue identifica una tarifa ligada a DecoHamelyn y pide expresamente confirmar si el alcance excede ese flujo.",
+  "options": [
+    {
+      "title": "Confirmar y limitar a Deco/influencer",
+      "body": "Validar con MRW/Blanca que la tarifa es exclusiva de DecoHamelyn y cambiar solo el flujo Deco/influencer para más de un bulto.",
+      "recommended": true
+    },
+    {
+      "title": "Aplicar a todos los multibulto MRW",
+      "body": "Confirmar que el abonado y la tarifa cubren también Cainiao→MRW antes de actualizar ambos constructores multibulto.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener `0200` hasta aclaración",
+      "body": "No modificar la selección de servicio si MRW no puede confirmar el alcance contractual de `0205`.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Confirmar y limitar a Deco/influencer",
+    "body": "Validar con MRW/Blanca que la tarifa es exclusiva de DecoHamelyn y cambiar solo el flujo Deco/influencer para más de un bulto.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Alex Cantón",
+    "reason": "Es la persona con mayor conexión reciente al código que creó el desglose multibulto en ambos recorridos.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/8302.md",
+    "reviewedAt": "2026-08-07T08:21:36.586Z",
+    "mainSha": "4f882a4f8358d32cc03823405e14ed0da948fe4d"
+  }
+}

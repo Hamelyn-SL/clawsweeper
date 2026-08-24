@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-10T13:39:03.898Z",
+  "updatedAt": "2026-07-10T13:14:38Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7363,
+    "title": "feat: add skypod-only single-product picking mode to picking v3",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7363",
+    "state": "closed",
+    "labels": [
+      "size/L",
+      "rating: 🦪 silver shellfish",
+      "status: 📣 needs proof",
+      "P2",
+      "merge-risk: 🚨 other"
+    ],
+    "createdAt": "2026-07-10T12:29:25Z",
+    "updatedAt": "2026-07-10T13:14:38Z",
+    "headSha": "205802cc14fc8b6de9a7238d2852bba2043e1604"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe aceptarse este modo operativo de Picking V3 con la regla actual de excluir direcciones consolidables y conservar el límite Skypod existente?",
+  "rationale": "El PR elige comportamiento de almacén nuevo, no solo una corrección técnica, y la issue enlazada conserva señales de decisión de producto/operaciones.",
+  "options": [
+    {
+      "title": "Aceptar con prueba operativa",
+      "body": "Mantener el diseño actual del modo opt-in, corregir el texto del resumen y mergear solo con evidencia real de una tanda Skypod monobulto.",
+      "recommended": true
+    },
+    {
+      "title": "Ajustar reglas antes de mergear",
+      "body": "Cambiar la convivencia con `exotecProductLimit` o la exclusión por consolidación si operaciones quiere otra semántica permanente.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar el modo",
+      "body": "Dejar la issue abierta si todavía no hay consenso operativo sobre separar Skypod monobulto del picking completo.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aceptar con prueba operativa",
+    "body": "Mantener el diseño actual del modo opt-in, corregir el texto del resumen y mergear solo con evidencia real de una tanda Skypod monobulto.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Es el revisor asignado y ya dejó aprobación en este head, por lo que es el mejor punto de coordinación visible para cerrar la decisión operativa.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7363.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7363#issuecomment-4936101218",
+    "reviewedAt": "2026-07-10T13:39:03.898Z",
+    "mainSha": "7911cda12e2f076eb3e51bbe2090b55283737e42"
+  }
+}

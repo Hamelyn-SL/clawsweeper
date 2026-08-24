@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-13T06:09:27.670Z",
+  "updatedAt": "2026-07-13T05:46:38Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7411,
+    "title": "Deploy to Prod",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7411",
+    "state": "closed",
+    "labels": [
+      "size/XXL",
+      "P1"
+    ],
+    "createdAt": "2026-07-13T05:21:12Z",
+    "updatedAt": "2026-07-13T05:46:38Z",
+    "headSha": "fb7384330fc78b73a5fb40058023be0075c3b9b1"
+  },
+  "lane": "security_boundary",
+  "priority": "P1",
+  "question": "¿Debe esta release a `master` esperar a que se demuestre o implemente la protección de rate limit/firewall de `/api/v5/order-sell/cancel/guest`, o el equipo acepta desplegarla así?",
+  "rationale": "La PR mueve a producción una ruta sin sesión que muta pedidos y stock; esta revisión puede señalar el riesgo, pero no puede verificar la regla externa de Vercel ni decidir la política de seguridad aceptable.",
+  "options": [
+    {
+      "title": "Bloquear hasta cerrar protección",
+      "body": "Aportar prueba redactada de la regla de firewall/rate limit o añadir un limiter server-side, y corregir la skill antes de mergear a `master`.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar riesgo de release",
+      "body": "Un responsable confirma fuera del diff que la protección externa cubre la ruta y acepta desplegar mientras se corrige la documentación en un seguimiento inmediato.",
+      "recommended": false
+    },
+    {
+      "title": "Partir la release",
+      "body": "Sacar de la promoción a producción la cancelación guest y desplegar solo los cambios no bloqueados si la urgencia del resto de la release lo justifica.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Bloquear hasta cerrar protección",
+    "body": "Aportar prueba redactada de la regla de firewall/rate limit o añadir un limiter server-side, y corregir la skill antes de mergear a `master`.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Es el propietario histórico más claro de la ruta guest que define el riesgo principal de seguridad y operación en esta release.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7411.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7411#issuecomment-4954915448",
+    "reviewedAt": "2026-07-13T06:09:27.670Z",
+    "mainSha": "fb7384330fc78b73a5fb40058023be0075c3b9b1"
+  }
+}

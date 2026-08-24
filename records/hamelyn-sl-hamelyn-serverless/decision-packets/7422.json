@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-13T11:02:08.262Z",
+  "updatedAt": "2026-07-13T07:44:16Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7422,
+    "title": "fix: recalculate shipping server-side in coupon validation",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7422",
+    "state": "closed",
+    "labels": [
+      "size/L",
+      "P1"
+    ],
+    "createdAt": "2026-07-13T06:49:04Z",
+    "updatedAt": "2026-07-13T07:44:16Z",
+    "headSha": "89447dcb62d2b114e01c587cc6233f4d69147dfe"
+  },
+  "lane": "merge_risk",
+  "priority": "P1",
+  "question": "¿Debe mantenerse este PR como rama apilada amplia o pedir una versión estrecha centrada en la corrección de cupones después de resolver la base del bloque BL?",
+  "rationale": "La corrección central es válida, pero el diff mezcla superficies operativas y de seguridad no necesarias para cerrar la manipulación del cupón; esa separación de alcance necesita criterio de ownership antes de invertir más reparación automática.",
+  "options": [
+    {
+      "title": "Pedir PR estrecho de cupón",
+      "body": "Recomendar una rama nueva o depurada que contenga solo endpoint, cliente ecommerce, specs/tests de cupones y las correcciones mínimas asociadas.",
+      "recommended": true
+    },
+    {
+      "title": "Mantenerlo apilado y reparar",
+      "body": "Permitir que siga sobre la base actual, pero exigiendo retirar el secreto público, corregir packing, limpiar atribución y aportar prueba de las superficies laterales.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar hasta mergear la base",
+      "body": "Esperar a que el PR del bloque BL aterrice en `dev` y re-evaluar el diff real contra la rama base definitiva.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Pedir PR estrecho de cupón",
+    "body": "Recomendar una rama nueva o depurada que contenga solo endpoint, cliente ecommerce, specs/tests de cupones y las correcciones mínimas asociadas.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Tiene historial reciente en checkout server-side y en las automatizaciones tocadas, así que es buen punto de decisión para separar alcance técnico y riesgo operacional.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7422.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7422#issuecomment-4955988283",
+    "reviewedAt": "2026-07-13T11:02:08.262Z",
+    "mainSha": "17a4a6b6ca2fd73d5d0aa9b04dbf01ae937203df"
+  }
+}

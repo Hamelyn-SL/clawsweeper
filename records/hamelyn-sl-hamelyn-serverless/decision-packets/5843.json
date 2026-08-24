@@ -1,0 +1,69 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-04T23:19:41.182Z",
+  "updatedAt": "2026-08-04T23:01:55Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 5843,
+    "title": "[V3.5] Data ficha producto adaptada por idioma del dominio",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5843",
+    "state": "open",
+    "labels": [
+      "size/L",
+      "app:ecommerce",
+      "feature",
+      "reporter:javier",
+      "triage:no-change",
+      "surface:pdp",
+      "epic:v3.5-features",
+      "origin:dev",
+      "P2",
+      "impact:other",
+      "issue-rating: ➖ n/a",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:fix-shape-clear",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-05-13T22:17:19Z",
+    "updatedAt": "2026-08-04T23:01:55Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué contrato de datos y política editorial deben regir las traducciones persistidas de ficha antes de lanzar un pipeline sobre el catálogo?",
+  "rationale": "La elección de proveedor, idiomas, sufijos, fallback, regeneración y override manual determina una migración de datos y comportamiento comercial duradero.",
+  "options": [
+    {
+      "title": "Aprobar contrato y piloto",
+      "body": "Definir locales, esquema, reglas de título, fallback y un piloto acotado antes del batch completo.",
+      "recommended": true
+    },
+    {
+      "title": "Limitar el alcance inicial",
+      "body": "Implementar solo lectura de traducciones manuales existentes por locale y posponer generación automática y adaptación regional.",
+      "recommended": false
+    },
+    {
+      "title": "Posponer la iniciativa",
+      "body": "Mantener la PDP con datos originales hasta disponer de benchmark y responsable editorial.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar contrato y piloto",
+    "body": "Definir locales, esquema, reglas de título, fallback y un piloto acotado antes del batch completo.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Su historial reciente conecta la composición activa de PDP con las actualizaciones de localización necesarias para aterrizar la decisión.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5843.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5843#issuecomment-4909754959",
+    "reviewedAt": "2026-08-04T23:19:41.182Z",
+    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
+  }
+}

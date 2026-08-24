@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-18T11:26:09.187Z",
+  "updatedAt": "2026-08-18T10:16:43Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8419,
+    "title": "feat: rewrite abebooks integration with batched api client",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8419",
+    "state": "open",
+    "labels": [
+      "size/XXL",
+      "rating: 🥈 silver",
+      "status: 📣 needs proof",
+      "P1",
+      "merge-risk: 🚨 compatibility",
+      "merge-risk: 🚨 security-boundary",
+      "merge-risk: 🚨 availability"
+    ],
+    "createdAt": "2026-08-12T12:25:24Z",
+    "updatedAt": "2026-08-18T10:16:43Z",
+    "headSha": "fb7ae04a5d7cb4e05cdbb09f32fa21d392bf40be"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "Cuando AbeBooks responde 504 y la relectura del pedido falla, ¿debe el cron diferir la ingesta o crear igualmente el pedido local?",
+  "rationale": "La elección intercambia el riesgo de perder temporalmente una ingesta contra reservar y preparar un pedido remoto que podría estar cancelado.",
+  "options": [
+    {
+      "title": "Diferir hasta verificar",
+      "body": "Devolver el pedido como no procesado para que AbeBooks lo exponga en un ciclo posterior cuando se pueda confirmar su estado.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener fail-open",
+      "body": "Aceptar el pedido local aunque no se pueda verificar y asumir corrección posterior por la comprobación de cancelaciones.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Diferir hasta verificar",
+    "body": "Devolver el pedido como no procesado para que AbeBooks lo exponga en un ciclo posterior cuando se pueda confirmar su estado.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "HamelynDev",
+    "reason": "Su historial incluye la recuperación transitoria y la redacción de fallos de transporte que condicionan esta política.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8419.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8419#issuecomment-5267303526",
+    "reviewedAt": "2026-08-18T11:26:09.187Z",
+    "mainSha": "5306ae067c234979d9abf2167b48653d8640f167"
+  }
+}

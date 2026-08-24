@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-07T22:15:22.881Z",
+  "updatedAt": "2026-06-29T21:12:20Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 5618,
+    "title": "marketplace-crons: Fnac devuelve 400 al marcar pedidos como enviados",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5618",
+    "state": "open",
+    "labels": [
+      "marketplace-crons",
+      "codex",
+      "bug",
+      "priority:p1",
+      "app:marketplace",
+      "triage:done",
+      "triage:confirmed-live",
+      "area:marketplace-orders"
+    ],
+    "createdAt": "2026-04-30T14:32:33Z",
+    "updatedAt": "2026-06-29T21:12:20Z"
+  },
+  "lane": "proof_sufficiency",
+  "priority": "P1",
+  "question": "Is the related no-recurrence evidence from https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5492 enough to close this shipment-400 issue, or should this issue stay open until the current order/panel state is checked directly?",
+  "rationale": "The code path is still present and this issue has confirmed-live labeling, but the latest same-signature discussion says the June production burst self-resolved, so only a maintainer with current production access can decide whether cleanup is safe.",
+  "options": [
+    {
+      "title": "Verify live recurrence first",
+      "body": "Check current BigQuery for `FNAC API SET ORDERS AS SHIPPED` 400s and the affected Fnac order state, then either close as self-resolved or keep this as the active canonical.",
+      "recommended": true
+    },
+    {
+      "title": "Close as transient provider state",
+      "body": "If current production has no recent occurrences and the orders are no longer actionable, close this issue as the same self-limiting mechanism documented in the older closed report.",
+      "recommended": false
+    },
+    {
+      "title": "Authorize a diagnostic fix",
+      "body": "If failures still recur, sponsor a narrow PR that logs sanitized Fnac response details per order and adds reconciliation only for confirmed rejected states.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Verify live recurrence first",
+    "body": "Check current BigQuery for `FNAC API SET ORDERS AS SHIPPED` 400s and the affected Fnac order state, then either close as self-resolved or keep this as the active canonical.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "He has the strongest recent code-history signal on the shared shipping/recovery path and applied the confirmed-live marketplace-orders labels.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5618.md",
+    "reviewedAt": "2026-07-07T22:15:22.881Z",
+    "mainSha": "3842c1e6c854cdda44736d8aba388698896fc2f7"
+  }
+}

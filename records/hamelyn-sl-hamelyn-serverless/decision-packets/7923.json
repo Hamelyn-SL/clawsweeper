@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-24T13:26:13.531Z",
+  "updatedAt": "2026-07-24T13:05:44Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7923,
+    "title": "fix: secure ecommerce carts with capability tokens",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7923",
+    "state": "closed",
+    "labels": [
+      "size/XL",
+      "merge-risk: 🚨 compatibility",
+      "P0",
+      "merge-risk: 🚨 security-boundary",
+      "proof: sufficient",
+      "status: ⏳ waiting on author",
+      "rating: 🥇 gold"
+    ],
+    "createdAt": "2026-07-24T09:11:49Z",
+    "updatedAt": "2026-07-24T13:05:44Z",
+    "headSha": "d1318ebe3dca45b76910fb89e5b0c5c17cad735f"
+  },
+  "lane": "security_boundary",
+  "priority": "P0",
+  "question": "¿Se acepta mantener la ventana legacy hasta el 24 de agosto de 2026, sabiendo que conserva temporalmente el acceso por `cartId` y que después reinicia carritos legacy sin capability?",
+  "rationale": "El código puede aplicar cualquiera de los límites, pero elegir la ventana de exposición y el comportamiento de corte afecta a sesiones reales y requiere responsabilidad de producto y seguridad.",
+  "options": [
+    {
+      "title": "Mantener la ventana propuesta",
+      "body": "Conservar el corte configurado y exigir prueba real de creación, migración legacy, merge y recuperación antes de pasar a revisión final.",
+      "recommended": true
+    },
+    {
+      "title": "Acortar o desactivar la ventana",
+      "body": "Configurar una fecha de corte más temprana o fail-closed inmediato a cambio de que algunos carritos legacy dejen de recuperarse.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mantener la ventana propuesta",
+    "body": "Conservar el corte configurado y exigir prueba real de creación, migración legacy, merge y recuperación antes de pasar a revisión final.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "alexcanHamelyn",
+    "reason": "Ya revisó y aprobó el diseño de autorización y fue seleccionado por experiencia directa en ecommerce y Auth0.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7923.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7923#issuecomment-5068447091",
+    "reviewedAt": "2026-07-24T13:26:13.531Z",
+    "mainSha": "918fe7df4751bef0d3105032bee4c43de2955fc5"
+  }
+}

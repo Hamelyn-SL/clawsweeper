@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-14T06:06:32.341Z",
+  "updatedAt": "2026-07-14T05:54:39Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7485,
+    "title": "Deploy to Prod",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7485",
+    "state": "closed",
+    "labels": [
+      "size/XXL",
+      "P1"
+    ],
+    "createdAt": "2026-07-13T14:17:35Z",
+    "updatedAt": "2026-07-14T05:54:39Z",
+    "headSha": "b8486cd6b87737a1d38a35e9292f9a19a643604a"
+  },
+  "lane": "release_inclusion",
+  "priority": "P1",
+  "question": "¿Debe promoverse este lote completo a `master` sin una verificación final de consumidores `atctoken` y del procedimiento de recuperación OAuth?",
+  "rationale": "La retirada del bypass y el modelo single-rotator son cambios deliberados con impacto operativo que no puede resolverse solo mediante revisión estática ni CI; el responsable del release debe aceptar o reducir ese riesgo.",
+  "options": [
+    {
+      "title": "Pausar y verificar el release",
+      "body": "Corregir los tres defectos del workflow y aportar prueba real de Slack, migración de auth, rotación/re-seed OAuth y los demás flujos críticos antes del merge.",
+      "recommended": true
+    },
+    {
+      "title": "Separar los cambios sensibles",
+      "body": "Retirar temporalmente de la promoción los cambios de auth/OAuth que no tengan prueba de upgrade y desplegar primero el resto del lote validado.",
+      "recommended": false
+    },
+    {
+      "title": "Aceptar el riesgo operativo",
+      "body": "Promover el lote completo tras las correcciones del workflow, asumiendo explícitamente posibles cortes de consumidores legacy o de agentes y preparando rollback y re-seed.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Pausar y verificar el release",
+    "body": "Corregir los tres defectos del workflow y aportar prueba real de Slack, migración de auth, rotación/re-seed OAuth y los demás flujos críticos antes del merge.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es el contribuidor reciente común a la integración del workflow y a las dos superficies sensibles de autenticación y OAuth.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7485.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7485#issuecomment-4959516050",
+    "reviewedAt": "2026-07-14T06:06:32.341Z",
+    "mainSha": "b8486cd6b87737a1d38a35e9292f9a19a643604a"
+  }
+}

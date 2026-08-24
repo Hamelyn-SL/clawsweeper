@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-29T02:56:24.945Z",
+  "updatedAt": "2026-07-29T01:29:30Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8050,
+    "title": "fix: readmit aged todocoleccion reconciliation diagnoses",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8050",
+    "state": "closed",
+    "labels": [
+      "size/M",
+      "rating: 🥈 silver",
+      "status: 📣 needs proof",
+      "P2",
+      "merge-risk: 🚨 availability"
+    ],
+    "createdAt": "2026-07-28T22:45:53Z",
+    "updatedAt": "2026-07-29T01:29:30Z",
+    "headSha": "d09fb3e91931e58ae14c367a90427ad61f8694d3"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe el cron readmitir solo la cohorte histórica `status=0 stock=null` o todos los motivos `Reconciliation skipped:` tras siete días?",
+  "rationale": "El código actual usa el mismo prefijo para causas recuperables y estados remotos que pueden ser permanentes; elegir el alcance es una política operativa, no una corrección mecánica.",
+  "options": [
+    {
+      "title": "Limitar a la cohorte `stock=null`",
+      "body": "Restringir el filtro al diagnóstico histórico confirmado y probar que los demás motivos siguen fuera del cron.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar reintentos amplios",
+      "body": "Mantener el prefijo genérico, documentar los motivos incluidos y asumir el tráfico remoto periódico para estados no comprables.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Limitar a la cohorte `stock=null`",
+    "body": "Restringir el filtro al diagnóstico histórico confirmado y probar que los demás motivos siguen fuera del cron.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Es el revisor asignado con experiencia directa en la reconciliación de TodoColección y puede validar el alcance operativo.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/8050.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8050#issuecomment-5110817660",
+    "reviewedAt": "2026-07-29T02:56:24.945Z",
+    "mainSha": "b3f48ada4c58ede7dde46b70646fb15465375dd0"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-14T23:00:43.045Z",
+  "updatedAt": "2026-07-14T10:07:07Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7531,
+    "title": "feat: inject per-checkout portless urls in dev:run",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7531",
+    "state": "open",
+    "labels": [
+      "size/L",
+      "rating: 🥇 gold",
+      "status: 📣 needs proof",
+      "P3",
+      "merge-risk: 🚨 compatibility"
+    ],
+    "createdAt": "2026-07-14T09:54:08Z",
+    "updatedAt": "2026-07-14T10:07:07Z",
+    "headSha": "d76ac16f74ec1abd65518cc0d47322acb3027c74"
+  },
+  "lane": "merge_risk",
+  "priority": "P3",
+  "question": "¿Debe `pnpm dev:run` convertirse en la única ruta autosuficiente soportada para supply y ecommerce, dejando `pnpm exec portless run` como flujo manual que requiere exportar las URLs?",
+  "rationale": "La eliminación de los rewrites corrige slugs y puertos de proxy, pero también retira una compatibilidad existente y puede hacer que un desarrollador conecte su app al backend de otro checkout sin un fallo visible.",
+  "options": [
+    {
+      "title": "Adoptar `dev:run` como flujo canónico",
+      "body": "Aceptar el nuevo contrato, conservar el aviso explícito en la skill y exigir prueba real del flujo antes del merge.",
+      "recommended": true
+    },
+    {
+      "title": "Conservar un fallback compatible",
+      "body": "Mantener o rediseñar una inicialización de entorno para que el arranque directo continúe apuntando al mismo worktree sin depender de variables manuales.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Adoptar `dev:run` como flujo canónico",
+    "body": "Aceptar el nuevo contrato, conservar el aviso explícito en la skill y exigir prueba real del flujo antes del merge.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "Introdujo el contrato actual de los scripts y tiene el historial más directo sobre la experiencia de desarrollo que cambia este PR.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7531.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7531#issuecomment-4974815831",
+    "reviewedAt": "2026-07-14T23:00:43.045Z",
+    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
+  }
+}

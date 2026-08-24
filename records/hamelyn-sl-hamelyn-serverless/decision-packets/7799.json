@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-22T11:39:01.057Z",
+  "updatedAt": "2026-07-22T11:35:11Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7799,
+    "title": "MercadoLibre sold listings remain purchasable after withdrawal remediation",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7799",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:source-repro",
+      "clawsweeper:linked-pr-open",
+      "issue-rating: 💎 diamond",
+      "P1",
+      "impact:other",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-21T06:02:25Z",
+    "updatedAt": "2026-07-22T11:35:11Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Una búsqueda correcta por `seller_sku` sin IDs activos debe reconciliarse como retirada ya completada o mantenerse como `SYNC_ERROR` reintentable?",
+  "rationale": "Ambas opciones cambian la señal operativa: una evita ruido de reintentos y la otra conserva visibilidad ante identidades remotas inesperadas.",
+  "options": [
+    {
+      "title": "Reconciliar como éxito",
+      "body": "Tras una búsqueda correcta sin listings activos ni ID local, tratar el stock como ya retirado para evitar reintentos indefinidos.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener el error visible",
+      "body": "Conservar `SYNC_ERROR` sin objetivo remoto para priorizar la investigación de identidades locales perdidas.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Reconciliar como éxito",
+    "body": "Tras una búsqueda correcta sin listings activos ni ID local, tratar el stock como ya retirado para evitar reintentos indefinidos.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "La revisión asignada ya identifica este límite operativo concreto en la PR candidata.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7799.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7799#issuecomment-5030937752",
+    "reviewedAt": "2026-07-22T11:39:01.057Z",
+    "mainSha": "00352b6ac84cadb225e9d68f8a8260ae555966f3"
+  }
+}

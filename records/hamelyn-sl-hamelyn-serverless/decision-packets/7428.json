@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-13T08:22:28.916Z",
+  "updatedAt": "2026-07-13T07:37:40Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7428,
+    "title": "marketplace-agents se despliega en cada push del monorepo sin filtrar cambios",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7428",
+    "state": "closed",
+    "labels": [
+      "bug",
+      "priority:p2",
+      "app:infrastructure",
+      "reporter:miguel",
+      "triage:queued",
+      "clawsweeper:no-new-fix-pr",
+      "issue-rating: 🦞 diamond lobster",
+      "clawsweeper:source-repro",
+      "clawsweeper:linked-pr-open",
+      "P2",
+      "impact:other",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-13T07:37:27Z",
+    "updatedAt": "2026-07-13T07:37:40Z"
+  },
+  "lane": "manual_review",
+  "priority": "P2",
+  "question": "¿Ya existen los deploy hooks y secrets externos que permiten migrar `marketplace-agents` desde Vercel Git nativo al dispatcher del monorepo sin cortar despliegues?",
+  "rationale": "El repositorio puede cambiar `vercel.json`, el mapping y el workflow, pero la disponibilidad de hooks/secrets de Vercel y GitHub es una decisión/acción operativa externa que no se puede probar solo con el checkout.",
+  "options": [
+    {
+      "title": "Crear hooks y migrar",
+      "body": "Crear `MARKETPLACE_AGENTS_DEV` y `MARKETPLACE_AGENTS_PROD`, añadir el target al dispatcher y desactivar el despliegue Git nativo en el mismo PR.",
+      "recommended": true
+    },
+    {
+      "title": "Preparar código sin activar",
+      "body": "Añadir el mapping y workflow dejando documentado que `git.deploymentEnabled` se cambia cuando los secrets estén listos.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener integración nativa",
+      "body": "Aceptar el coste de deployments extra por ahora si no hay capacidad operativa para crear y validar los hooks.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Crear hooks y migrar",
+    "body": "Crear `MARKETPLACE_AGENTS_DEV` y `MARKETPLACE_AGENTS_PROD`, añadir el target al dispatcher y desactivar el despliegue Git nativo en el mismo PR.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "El issue está reportado y aparentemente asignado a Miguel, y la decisión principal es operativa sobre hooks/secrets de Vercel y GitHub.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7428.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7428#issuecomment-4955914661",
+    "reviewedAt": "2026-07-13T08:22:28.916Z",
+    "mainSha": "3507f660b3c32cda93c23d3a81815c97a689226e"
+  }
+}

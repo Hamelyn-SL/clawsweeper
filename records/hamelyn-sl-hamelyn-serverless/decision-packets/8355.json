@@ -1,0 +1,66 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-18T11:24:37.117Z",
+  "updatedAt": "2026-08-18T11:12:17Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8355,
+    "title": "Bifrost · Panel de puestos del almacén en admin",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8355",
+    "state": "closed",
+    "labels": [
+      "app:admin",
+      "reporter:davidgonzalez",
+      "feature",
+      "triage:done",
+      "P2",
+      "impact:security",
+      "impact:other",
+      "issue-rating: ➖ n/a",
+      "clawsweeper:linked-pr-open",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-08-10T10:38:58Z",
+    "updatedAt": "2026-08-18T11:12:17Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe aceptarse que el panel Bifrost salga de Admin y se despliegue como aplicación independiente, aunque la solicitud original pide una superficie dentro de Admin?",
+  "rationale": "La implementación abierta cambia el destino del producto y combina visibilidad operativa con accesos remotos; esa dirección no se resuelve de forma segura sólo desde el código actual.",
+  "options": [
+    {
+      "title": "Aceptar la aplicación independiente",
+      "body": "Patrocinar la PR abierta si se confirma que su autenticación, despliegue y controles remotos forman parte del producto Bifrost.",
+      "recommended": true
+    },
+    {
+      "title": "Mantenerlo dentro de Admin",
+      "body": "Pedir una revisión de alcance que conserve el panel y sus permisos dentro de la aplicación Admin.",
+      "recommended": false
+    },
+    {
+      "title": "Separar observabilidad y controles",
+      "body": "Aterrizar primero el mapa de estado y dejar AnyDesk, SSH y WoL en una entrega posterior con contrato de seguridad propio.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aceptar la aplicación independiente",
+    "body": "Patrocinar la PR abierta si se confirma que su autenticación, despliegue y controles remotos forman parte del producto Bifrost.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Está asignado a la solicitud y mantiene la superficie actual de presencia sobre la que se apoya la decisión.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/8355.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8355#issuecomment-5239578669",
+    "reviewedAt": "2026-08-18T11:24:37.117Z",
+    "mainSha": "5306ae067c234979d9abf2167b48653d8640f167"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-12T15:14:35.280Z",
+  "updatedAt": "2026-07-12T14:48:29Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7405,
+    "title": "Deploy to Prod",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7405",
+    "state": "closed",
+    "labels": [
+      "size/XL",
+      "proof: sufficient",
+      "rating: 🦐 gold shrimp",
+      "status: ⏳ waiting on author",
+      "P1",
+      "merge-risk: 🚨 security-boundary",
+      "merge-risk: 🚨 availability",
+      "merge-risk: 🚨 automation"
+    ],
+    "createdAt": "2026-07-12T14:44:54Z",
+    "updatedAt": "2026-07-12T14:48:29Z",
+    "headSha": "2c99c92624003a8a11306f66bf6efb6d2e2af0fc"
+  },
+  "lane": "merge_risk",
+  "priority": "P1",
+  "question": "¿Debe desplegarse ahora a producción el runner cloud de issue-triage, o se exige primero un fix-forward en `dev` para los riesgos de robustez y documentación?",
+  "rationale": "El PR cambia una frontera operacional y de credenciales en producción; la corrección técnica no sustituye la decisión de aceptar o no ese riesgo antes del merge a `master`.",
+  "options": [
+    {
+      "title": "Fix-forward antes de desplegar",
+      "body": "Corregir en `dev` la clasificación por item, la documentación de Slack y la descripción de follow-ups, y después actualizar o recrear el deploy PR.",
+      "recommended": true
+    },
+    {
+      "title": "Desplegar aceptando el riesgo",
+      "body": "Mergear ahora a `master` asumiendo que los fallos se tratarán como incidencias operativas posteriores al cutover.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar el despliegue",
+      "body": "Mantener el cambio solo en `dev` hasta que haya una prueba real más explícita del runner y una revisión de seguridad/operación.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Fix-forward antes de desplegar",
+    "body": "Corregir en `dev` la clasificación por item, la documentación de Slack y la descripción de follow-ups, y después actualizar o recrear el deploy PR.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es quien introdujo y corrigió la funcionalidad principal del runner cloud y conoce la frontera de `apps/agents` y el cutover desde el Mac mini.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7405.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7405#issuecomment-4951683252",
+    "reviewedAt": "2026-07-12T15:14:35.280Z",
+    "mainSha": "2c99c92624003a8a11306f66bf6efb6d2e2af0fc"
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-08T04:03:48.815Z",
+  "updatedAt": "2026-07-08T03:45:28Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7094,
+    "title": "BL-buying-account-11: province value is wiped for DE/FR addresses instead of stored when provided",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7094",
+    "state": "open",
+    "labels": [
+      "bug",
+      "priority:p2",
+      "app:infrastructure",
+      "triage:done",
+      "business-logic"
+    ],
+    "createdAt": "2026-07-07T08:03:11Z",
+    "updatedAt": "2026-07-08T03:45:28Z"
+  },
+  "lane": "manual_review",
+  "priority": "P2",
+  "question": "Should the DE/FR province fix be amended into the open buying/account BL PR, or held for a follow-up after that PR lands?",
+  "rationale": "The behavior contract is already owner-validated, but the required BL spec/test artifacts are not cleanly available on dev and the linked PR is conflicting, so automation should not choose the integration surface alone.",
+  "options": [
+    {
+      "title": "Amend the BL PR",
+      "body": "Update the open buying/account PR to fix resolveAddressProvince and flip the BL-11 tests/spec in the same branch.",
+      "recommended": true
+    },
+    {
+      "title": "Wait for BL PR merge",
+      "body": "Land the extraction first, then open a narrow follow-up fix against dev once the BL artifacts exist there.",
+      "recommended": false
+    },
+    {
+      "title": "Split a standalone code fix",
+      "body": "Fix only the current dev profile controller now and accept that the BL spec/test update must be reconciled separately.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Amend the BL PR",
+    "body": "Update the open buying/account PR to fix resolveAddressProvince and flip the BL-11 tests/spec in the same branch.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "MiguelHamelyn is named as the Seller Account BL owner and already reviewed the linked extraction PR.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7094.md",
+    "reviewedAt": "2026-07-08T04:03:48.815Z",
+    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+  }
+}

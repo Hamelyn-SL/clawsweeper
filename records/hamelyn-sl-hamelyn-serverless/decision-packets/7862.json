@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-05T00:02:50.700Z",
+  "updatedAt": "2026-08-04T23:44:28Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7862,
+    "title": "Infraestructura: evitar reconexiones masivas al refrescar config de Mongo",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7862",
+    "state": "open",
+    "labels": [
+      "bug",
+      "source:admin-panel",
+      "app:infrastructure",
+      "triage:done",
+      "reporter:danielmenchen-hamelyn",
+      "origin:panel",
+      "P1",
+      "impact:other",
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-22T06:41:29Z",
+    "updatedAt": "2026-08-04T23:44:28Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe Supply Analytics conservar `mongo_user_id` resuelto dentro de la petición autenticada o migrar ese enriquecimiento a un proceso posterior?",
+  "rationale": "La ruta actual consulta y puede sincronizar usuarios Mongo; eliminar esa dependencia sin fijar el contrato cambiaría la semántica de los eventos analíticos.",
+  "options": [
+    {
+      "title": "Preservar el contrato actual",
+      "body": "Limitar la reparación inmediata al refresco de configuración y mantener el enriquecimiento síncrono hasta contar con un reemplazo probado.",
+      "recommended": true
+    },
+    {
+      "title": "Mover el enriquecimiento fuera de la ruta",
+      "body": "Conservar `auth0_user_id` en la petición y resolver `mongo_user_id` posteriormente mediante un flujo asíncrono definido.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Preservar el contrato actual",
+    "body": "Limitar la reparación inmediata al refresco de configuración y mantener el enriquecimiento síncrono hasta contar con un reemplazo probado.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "El historial vincula su trabajo con la construcción del contexto autenticado que condiciona esta decisión.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7862.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7862#issuecomment-5043656384",
+    "reviewedAt": "2026-08-05T00:02:50.700Z",
+    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
+  }
+}

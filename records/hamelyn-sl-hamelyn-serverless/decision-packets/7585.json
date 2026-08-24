@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-20T12:46:59.054Z",
+  "updatedAt": "2026-07-20T12:17:30Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7585,
+    "title": "Incluir info pedido consolidado eDesk ",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7585",
+    "state": "open",
+    "labels": [
+      "bug",
+      "source:admin-panel",
+      "app:ecommerce",
+      "priority:p0",
+      "triage:done",
+      "reporter:irenegarcia",
+      "P2",
+      "impact:ux-friction",
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-15T09:46:05Z",
+    "updatedAt": "2026-07-20T12:17:30Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué campo personalizado de eDesk y qué disparador deben mantener la relación de pedidos consolidados en tickets importados de marketplaces?",
+  "rationale": "El repositorio puede crear información para Ecommerce, pero no define el nombre ni el ciclo de vida de tickets externos necesarios para cumplir toda la solicitud.",
+  "options": [
+    {
+      "title": "Acordar contrato único y sincronización",
+      "body": "Definir el campo visible y un flujo idempotente de webhook, automatización o sincronización para Ecommerce y marketplaces.",
+      "recommended": true
+    },
+    {
+      "title": "Limitar el alcance a Ecommerce",
+      "body": "Añadir solo el aviso al mensaje de incidencias Ecommerce y registrar los marketplaces como trabajo posterior.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener la información fuera de eDesk",
+      "body": "Conservar la consolidación únicamente en Hamelyn y no introducir sincronización de tickets externos.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Acordar contrato único y sincronización",
+    "body": "Definir el campo visible y un flujo idempotente de webhook, automatización o sincronización para Ecommerce y marketplaces.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "HamelynDev",
+    "reason": "Es el contribuidor reciente más cercano al flujo de incidencias Ecommerce donde se debe aterrizar el contrato.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7585.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7585#issuecomment-4979728447",
+    "reviewedAt": "2026-07-20T12:46:59.054Z",
+    "mainSha": "002ed05570d3a62b65a6347b7e023057f60d8a38"
+  }
+}

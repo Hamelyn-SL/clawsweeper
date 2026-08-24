@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-03T10:18:32.745Z",
+  "updatedAt": "2026-08-03T08:36:15Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8172,
+    "title": "🐞 Dependency update: el autofix de CI falló en chore/grouped-dependency-updates",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8172",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:infrastructure",
+      "triage:pr-opened",
+      "P2",
+      "impact:other",
+      "issue-rating: ⚪ platinum",
+      "clawsweeper:needs-live-repro",
+      "clawsweeper:linked-pr-open",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review"
+    ],
+    "createdAt": "2026-08-03T07:17:29Z",
+    "updatedAt": "2026-08-03T08:36:15Z"
+  },
+  "lane": "manual_review",
+  "priority": "P2",
+  "question": "¿Debe cerrarse la PR https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8178 como redundante frente a la corrección ya fusionada en https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8163?",
+  "rationale": "La incidencia no debe cerrarse mientras una PR abierta la declara como cierre, pero el código actual ya aplica una solución centralizada y más mantenible.",
+  "options": [
+    {
+      "title": "Cerrar la PR redundante",
+      "body": "Cerrar la PR abierta y permitir el cierre posterior de esta incidencia, porque `dev` ya contiene la compatibilidad de tipos mediante una configuración compartida.",
+      "recommended": true
+    },
+    {
+      "title": "Conservar solo una diferencia comprobable",
+      "body": "Mantener la PR únicamente si se demuestra una corrección funcional que no esté cubierta por `streamdown-plugins.ts`.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Cerrar la PR redundante",
+    "body": "Cerrar la PR abierta y permitir el cierre posterior de esta incidencia, porque `dev` ya contiene la compatibilidad de tipos mediante una configuración compartida.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "HamelynDev",
+    "reason": "Ha participado tanto en la corrección integrada como en la PR abierta relacionada.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8172.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8172#issuecomment-5163999334",
+    "reviewedAt": "2026-08-03T10:18:32.745Z",
+    "mainSha": "9f8bd42efa2ff65dfd01b18e7cce3ba44b86647f"
+  }
+}

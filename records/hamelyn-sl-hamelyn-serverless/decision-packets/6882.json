@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-04T23:28:07.887Z",
+  "updatedAt": "2026-08-04T23:14:24Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 6882,
+    "title": "🐛 Producción: batería de errores recurrentes en logs de Vercel (admin 500 users, incidents 502, Serper 400, sharp, Amazon 429/confirmShipment, crons)",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6882",
+    "state": "closed",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "reporter:javier",
+      "triage:done",
+      "origin:dev",
+      "mk:amazon",
+      "P2",
+      "impact:data-loss",
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-05T01:57:06Z",
+    "updatedAt": "2026-08-04T23:14:24Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe el historial conservar como válidas las transiciones sin `supplyTrackingNumber`, y cómo deben consultarse esos registros?",
+  "rationale": "La solución modifica el contrato semántico de una colección de auditoría y su índice actual; el código vigente pierde esos eventos silenciosamente.",
+  "options": [
+    {
+      "title": "Permitir tracking ausente",
+      "body": "Hacer opcional el campo y adaptar las consultas para conservar toda transición válida aunque el pedido no tenga tracking.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener el requisito",
+      "body": "Bloquear la transición hasta disponer de un tracking válido para no introducir registros de auditoría incompletos.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Permitir tracking ausente",
+    "body": "Hacer opcional el campo y adaptar las consultas para conservar toda transición válida aunque el pedido no tenga tracking.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Introdujo la ruta actual y es el candidato con más contexto sobre su semántica de negocio.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/6882.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6882#issuecomment-4911141701",
+    "reviewedAt": "2026-08-04T23:28:07.887Z",
+    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-10T10:29:01.194Z",
+  "updatedAt": "2026-08-10T10:00:36Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8266,
+    "title": "feat: add unproven demand filter for new products",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8266",
+    "state": "closed",
+    "labels": [
+      "size/L",
+      "rating: 🥈 silver",
+      "status: 📣 needs proof",
+      "P2",
+      "merge-risk: 🚨 compatibility"
+    ],
+    "createdAt": "2026-08-05T13:02:51Z",
+    "updatedAt": "2026-08-10T10:00:36Z",
+    "headSha": "b053cfaee3cc5e9ea2d44cf97cd9da811c411f6d"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿La ausencia de señal de editorial o autor debe rechazar una compra o tratarse como desconocida hasta disponer de una medición fiable?",
+  "rationale": "La cobertura documentada de autores no representa toda la población del backtest; elegir entre rechazo preventivo y aceptación conserva una política comercial distinta.",
+  "options": [
+    {
+      "title": "Tratar ausencia como desconocida",
+      "body": "No rechazar por una señal `null`; mantener el interruptor apagado hasta tener cobertura y prueba de rollout suficientes.",
+      "recommended": true
+    },
+    {
+      "title": "Tratar ausencia como baja demanda",
+      "body": "Mantener el rechazo actual y aceptar explícitamente que la falta de enlace o sincronización clasifique productos sin ratio medido.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Tratar ausencia como desconocida",
+    "body": "No rechazar por una señal `null`; mantener el interruptor apagado hasta tener cobertura y prueba de rollout suficientes.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "alexcanHamelyn",
+    "reason": "Es el revisor activo que ya documentó los riesgos concretos de esta política en el HEAD actual.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/8266.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8266#issuecomment-5192382898",
+    "reviewedAt": "2026-08-10T10:29:01.194Z",
+    "mainSha": "a4bf504140750180abfb664053ddbfb787cf429f"
+  }
+}

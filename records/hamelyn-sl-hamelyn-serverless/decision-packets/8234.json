@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-19T11:47:58.028Z",
+  "updatedAt": "2026-08-19T08:13:07Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8234,
+    "title": "BL specs: stale code references and resolved-divergence notes found while adding entry logs",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8234",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:infrastructure",
+      "triage:needs-info",
+      "business-logic",
+      "P3",
+      "impact:other",
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-08-05T06:55:07Z",
+    "updatedAt": "2026-08-19T08:13:07Z"
+  },
+  "lane": "product_direction",
+  "priority": "P3",
+  "question": "¿Debe `countCouponUsage` conservar una sola spec canónica en coupons, con referencias cruzadas desde checkout y los demás subdominios compartidos?",
+  "rationale": "La elección modifica la titularidad semántica de las reglas y el grafo BL; el protocolo F2 reserva esta decisión al owner.",
+  "options": [
+    {
+      "title": "Una spec canónica por regla",
+      "body": "Mantener `BL-ecommerce-coupons-13` para `countCouponUsage` y sustituir la duplicación de checkout por una referencia cruzada.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener titularidades paralelas",
+      "body": "Conservar ambos BL-ID para reflejar responsabilidades separadas, documentando explícitamente por qué comparten la misma función.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Una spec canónica por regla",
+    "body": "Mantener `BL-ecommerce-coupons-13` para `countCouponUsage` y sustituir la duplicación de checkout por una referencia cruzada.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "danielmenchen-hamelyn",
+    "reason": "Es el contribuidor que documentó la divergencia y fusionó la instrumentación que expuso el solapamiento.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8234.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8234#issuecomment-5188663433",
+    "reviewedAt": "2026-08-19T11:47:58.028Z",
+    "mainSha": "f741fa90256ae2a1d0b3a619d7816d81a43cee8f"
+  }
+}

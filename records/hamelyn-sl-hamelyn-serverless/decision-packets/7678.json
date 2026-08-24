@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-19T17:32:34.727Z",
+  "updatedAt": "2026-07-19T12:35:23Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7678,
+    "title": "chore: update service-sdks major dependencies",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7678",
+    "state": "closed",
+    "labels": [
+      "size/XXL",
+      "proof: 📸 screenshot",
+      "rating: 🥈 silver",
+      "status: 📣 needs proof",
+      "P2",
+      "merge-risk: 🚨 compatibility",
+      "merge-risk: 🚨 availability"
+    ],
+    "createdAt": "2026-07-17T06:20:03Z",
+    "updatedAt": "2026-07-19T12:35:23Z",
+    "headSha": "7d65ebe03de0e225dbd40bda8cdaa6f63c2693eb"
+  },
+  "lane": "release_inclusion",
+  "priority": "P2",
+  "question": "¿Debe incluirse `@sentry/react-native` 8 en este PR de SDKs o aplazarse hasta una release nativa coordinada de Supply?",
+  "rationale": "La decisión define la compatibilidad entre actualizaciones OTA existentes y el código nativo distribuido; un typecheck no puede resolver esa política de release.",
+  "options": [
+    {
+      "title": "Separar Sentry 8",
+      "body": "Mantener los SDKs de servidor y mover Sentry React Native a un PR con build EAS y prueba runtime en dispositivo.",
+      "recommended": true
+    },
+    {
+      "title": "Incluirlo con release nativa",
+      "body": "Conservar el bump solo si se programa una build nueva y se adjunta evidencia redactada de Sentry, checkout y webhook.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Separar Sentry 8",
+    "body": "Mantener los SDKs de servidor y mover Sentry React Native a un PR con build EAS y prueba runtime en dispositivo.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Es el contribuidor reciente del arranque de Supply donde se inicializa el SDK nativo afectado.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7678.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7678#issuecomment-5000006491",
+    "reviewedAt": "2026-07-19T17:32:34.727Z",
+    "mainSha": "50ecfced2ccb61fda78d4164715a4fcf47c93671"
+  }
+}

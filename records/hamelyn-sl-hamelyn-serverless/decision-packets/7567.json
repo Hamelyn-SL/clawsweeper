@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-14T21:20:54.375Z",
+  "updatedAt": "2026-07-14T18:10:35Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7567,
+    "title": "MercadoLibre duplicate-listing reconciliation leaves active stock unpublished",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7567",
+    "state": "open",
+    "labels": [
+      "bug",
+      "priority:p1",
+      "app:marketplace",
+      "triage:done",
+      "P1",
+      "impact:other",
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-14T18:02:41Z",
+    "updatedAt": "2026-07-14T18:10:35Z"
+  },
+  "lane": "manual_review",
+  "priority": "P1",
+  "question": "¿La promoción debe crear inmediatamente un listing nuevo para el stock sustituto tras confirmar el cierre remoto, o reutilizar el listing existente reasignando su identidad al nuevo SKU?",
+  "rationale": "Ambas opciones eliminan el retraso, pero tienen consecuencias distintas sobre la trazabilidad de pedidos, la identidad remota y el riesgo de sobreventa; el código actual no define ese contrato y la documentación disponible no confirma que MercadoLibre admita una reasignación segura.",
+  "options": [
+    {
+      "title": "Recrear tras cierre confirmado",
+      "body": "Confirmar el estado terminal remoto, adquirir un lock por EAN y crear exactamente un listing nuevo para una única candidata, conservando sin cambios las demás copias.",
+      "recommended": true
+    },
+    {
+      "title": "Reasignar el listing existente",
+      "body": "Actualizar la identidad local y el SKU vendedor del listing remoto solo si una prueba de API demuestra que mantiene correctamente la atribución de pedidos y el historial.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Recrear tras cierre confirmado",
+    "body": "Confirmar el estado terminal remoto, adquirir un lock por EAN y crear exactamente un listing nuevo para una única candidata, conservando sin cambios las demás copias.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Es quien introdujo el contrato actual de deduplicación y cooldown y conoce mejor la intención de autorrecuperación del PR 6503.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7567.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7567#issuecomment-4974115142",
+    "reviewedAt": "2026-07-14T21:20:54.375Z",
+    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
+  }
+}

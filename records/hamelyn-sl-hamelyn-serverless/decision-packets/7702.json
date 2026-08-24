@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-21T13:32:31.432Z",
+  "updatedAt": "2026-07-21T13:12:52Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7702,
+    "title": "feat: migrate rotate-flash-offers sampling to bigquery source",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7702",
+    "state": "closed",
+    "labels": [
+      "app:infrastructure",
+      "feature",
+      "triage:done",
+      "reporter:alejandrodiaz",
+      "P1",
+      "impact:other",
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro",
+      "clawsweeper:linked-pr-open",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-17T09:42:19Z",
+    "updatedAt": "2026-07-21T13:12:52Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Se aprueba que la rotación dependa del evento de materialización BigQuery mediante Pub/Sub→GitHub, sustituyendo el cron fijo actual?",
+  "rationale": "La PR vinculada amplía el corte de fuente de datos hacia una nueva ruta operativa entre GCP, GitHub Actions y KV; la aceptación del cambio de disponibilidad requiere intención humana.",
+  "options": [
+    {
+      "title": "Aprobar la arquitectura de eventos",
+      "body": "Revisar la PR vinculada y exigir prueba del primer recorrido completo antes de integrarla.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener el cron como ruta principal",
+      "body": "Pedir una migración limitada al sampler BigQuery y conservar el schedule hasta validar el disparador por eventos.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar la arquitectura de eventos",
+    "body": "Revisar la PR vinculada y exigir prueba del primer recorrido completo antes de integrarla.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su historial reciente cubre el workflow operativo que la decisión sustituye.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7702.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7702#issuecomment-5009832139",
+    "reviewedAt": "2026-07-21T13:32:31.432Z",
+    "mainSha": "1c9b8717c11135abed5e4be14479cf2b23da5671"
+  }
+}

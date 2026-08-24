@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-12T20:17:54.897Z",
+  "updatedAt": "2026-07-12T19:37:32Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7130,
+    "title": "BL-ecommerce-product-06: product page missing x1.37 reference price fallback when new price is unknown",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7130",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:ecommerce",
+      "priority:p2",
+      "triage:queued",
+      "business-logic",
+      "P2",
+      "impact:ux-friction",
+      "issue-rating: 🦞 diamond lobster",
+      "clawsweeper:source-repro",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:fix-shape-clear",
+      "clawsweeper:needs-maintainer-review"
+    ],
+    "createdAt": "2026-07-07T12:10:45Z",
+    "updatedAt": "2026-07-12T19:37:32Z"
+  },
+  "lane": "manual_review",
+  "priority": "P2",
+  "question": "¿Debe ClawSweeper esperar a que se publique el WIP de `bugfix/issue-7130-product-page-price-fallback` o preparar una nueva PR de reparación desde `dev`?",
+  "rationale": "La divergencia sigue abierta, pero el comentario más reciente indica trabajo local pendiente por la persona asignada, así que automatizar sin coordinación puede duplicar implementación.",
+  "options": [
+    {
+      "title": "Esperar al WIP existente",
+      "body": "Mantiene una sola línea de trabajo y evita que dos ramas corrijan la misma regla BL en paralelo.",
+      "recommended": true
+    },
+    {
+      "title": "Autorizar nueva PR automática",
+      "body": "Permitiría resolver desde `dev` si el WIP local no va a publicarse, pero puede duplicar el trabajo preparado.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Esperar al WIP existente",
+    "body": "Mantiene una sola línea de trabajo y evita que dos ramas corrijan la misma regla BL en paralelo.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Es la persona asignada y quien dejó el comentario de WIP para esta corrección concreta.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7130.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7130#issuecomment-4913207949",
+    "reviewedAt": "2026-07-12T20:17:54.897Z",
+    "mainSha": "2c99c92624003a8a11306f66bf6efb6d2e2af0fc"
+  }
+}

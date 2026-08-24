@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-21T14:25:50.940Z",
+  "updatedAt": "2026-07-21T14:18:15Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7535,
+    "title": "chore: bump Supply to 2.6.04 and improve mobile sales layout",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7535",
+    "state": "closed",
+    "labels": [
+      "size/XL",
+      "proof: 📸 screenshot",
+      "rating: 🥈 silver",
+      "status: 📣 needs proof",
+      "P2",
+      "merge-risk: 🚨 compatibility",
+      "merge-risk: 🚨 availability"
+    ],
+    "createdAt": "2026-07-14T09:58:53Z",
+    "updatedAt": "2026-07-21T14:18:15Z",
+    "headSha": "d9c823d5f0a6ff9b53334e296e19341cfadfe515"
+  },
+  "lane": "release_inclusion",
+  "priority": "P2",
+  "question": "¿Debe mantenerse `2.6.04` como candidata de release tras regenerar y validar iOS, o separarse el ajuste de Mis ventas para publicar la versión en una PR posterior?",
+  "rationale": "La issue vinculada condiciona el merge a la publicación en stores, y la rama necesita un artefacto nativo válido antes de elegir esa secuencia.",
+  "options": [
+    {
+      "title": "Regenerar y validar la candidata",
+      "body": "Actualizar los artefactos iOS con Expo 57/RN 0.86, adjuntar evidencia de build y mantener el merge bloqueado hasta la confirmación de stores.",
+      "recommended": true
+    },
+    {
+      "title": "Separar el ajuste visual",
+      "body": "Extraer el layout de Mis ventas a una PR independiente y recrear el bump cuando la candidata nativa esté validada.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Regenerar y validar la candidata",
+    "body": "Actualizar los artefactos iOS con Expo 57/RN 0.86, adjuntar evidencia de build y mantener el merge bloqueado hasta la confirmación de stores.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Es la persona asignada a la issue de release y con historial directo en los bumps de versión de Supply.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7535.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7535#issuecomment-4974770967",
+    "reviewedAt": "2026-07-21T14:25:50.940Z",
+    "mainSha": "4b46404fe05de31d1c0af23f0ddfbfc603ca14b2"
+  }
+}

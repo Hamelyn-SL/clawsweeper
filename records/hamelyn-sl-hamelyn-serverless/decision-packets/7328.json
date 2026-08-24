@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-06T06:03:50.334Z",
+  "updatedAt": "2026-08-06T05:53:29Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7328,
+    "title": "Fnac batch retries Product not found as BATCHING_TO_MARKETPLACE",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7328",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "triage:no-change",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond",
+      "origin:dev",
+      "mk:fnac",
+      "P2",
+      "impact:other",
+      "clawsweeper:linked-pr-open"
+    ],
+    "createdAt": "2026-07-10T07:44:41Z",
+    "updatedAt": "2026-08-06T05:53:29Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe `Product not found` ser `PERMANENT` en cualquier fase Fnac o únicamente en creación y batching, que es el alcance acreditado por esta incidencia?",
+  "rationale": "La regla compartida no discrimina por fase y la PR propuesta también terminaliza errores de precio; esa semántica requiere intención explícita antes de aterrizarla.",
+  "options": [
+    {
+      "title": "Acotar la regla a creación y batching",
+      "body": "Mantener el cambio terminal solo donde la ausencia de ficha Fnac está demostrada y conservar la semántica de precio hasta contar con evidencia específica.",
+      "recommended": true
+    },
+    {
+      "title": "Aprobar permanencia global",
+      "body": "Confirmar que la misma firma nunca es recuperable en precio y aceptar `PERMANENT` para todas las fases que usan el clasificador.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Acotar la regla a creación y batching",
+    "body": "Mantener el cambio terminal solo donde la ausencia de ficha Fnac está demostrada y conservar la semántica de precio hasta contar con evidencia específica.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Tiene asignada la incidencia y su PR abierta es la candidata directa para materializar la decisión.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7328.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7328#issuecomment-4933398860",
+    "reviewedAt": "2026-08-06T06:03:50.334Z",
+    "mainSha": "31659c2f069896afd6fec6aa7203e5d1a88413a1"
+  }
+}

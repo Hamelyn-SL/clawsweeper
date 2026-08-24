@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-13T12:59:21.638Z",
+  "updatedAt": "2026-08-13T12:30:46Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8204,
+    "title": "Evaluar la adopción del CLI nativo de TypeScript 7",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8204",
+    "state": "open",
+    "labels": [
+      "source:admin-panel",
+      "feature",
+      "triage:done",
+      "reporter:JavierHamelyn",
+      "app:agents",
+      "origin:panel",
+      "P2",
+      "issue-rating: ➖ n/a",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-08-04T06:52:29Z",
+    "updatedAt": "2026-08-13T12:30:46Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se aprueba invertir ahora en un canario de TypeScript 7 con coexistencia TypeScript 6, o se pospone hasta contar con compatibilidad directa de Next.js y ESLint?",
+  "rationale": "El código confirma que el canario no existe, pero no puede determinar por sí solo el presupuesto, el umbral de diagnósticos equivalentes ni cuándo asumir el coste operativo.",
+  "options": [
+    {
+      "title": "Aprobar un canario aislado",
+      "body": "Conservar TypeScript 6 como gate y validar TypeScript 7 mediante aliases, caches separadas y la matriz completa de builds.",
+      "recommended": true
+    },
+    {
+      "title": "Posponer la transición",
+      "body": "Mantener el baseline actual hasta que el ecosistema elimine la incompatibilidad de coexistencia.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar un canario aislado",
+    "body": "Conservar TypeScript 6 como gate y validar TypeScript 7 mediante aliases, caches separadas y la matriz completa de builds.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "alexcanHamelyn",
+    "reason": "Figura como la persona asignada y puede coordinar la decisión de plataforma con los autores del tooling.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8204.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8204#issuecomment-5175710792",
+    "reviewedAt": "2026-08-13T12:59:21.638Z",
+    "mainSha": "7873d5474c9c077a6980c1850d580cbc69a53c53"
+  }
+}

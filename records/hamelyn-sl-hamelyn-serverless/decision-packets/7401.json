@@ -1,0 +1,64 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-04T23:40:28.650Z",
+  "updatedAt": "2026-08-04T23:24:20Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7401,
+    "title": "Prune products catalog: 95% of 30M docs have no commercial activity (48GB)",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7401",
+    "state": "closed",
+    "labels": [
+      "feature",
+      "triage:done",
+      "app:data",
+      "origin:dev",
+      "P2",
+      "impact:other",
+      "issue-rating: ➖ n/a",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-12T13:55:52Z",
+    "updatedAt": "2026-08-04T23:24:20Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué contrato de retención debe regir los productos sin actividad antes de modificar o eliminar datos persistentes de producción?",
+  "rationale": "Los umbrales, las referencias históricas y la recuperabilidad son reglas de negocio; el código actual no permite inferirlas de forma segura.",
+  "options": [
+    {
+      "title": "Retención por fases",
+      "body": "Condicionar nuevas altas, ejecutar primero una poda reversible medida y aplazar la purga hasta completar anti-joins y recuperación.",
+      "recommended": true
+    },
+    {
+      "title": "Solo poda reversible",
+      "body": "Eliminar campos pesados en candidatos seguros y mantener todos los documentos hasta aprobar la conservación histórica.",
+      "recommended": false
+    },
+    {
+      "title": "Conservar el catálogo",
+      "body": "Mantener los documentos y limitar el alcance a optimizar exportaciones y consultas, asumiendo el coste operativo.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Retención por fases",
+    "body": "Condicionar nuevas altas, ejecutar primero una poda reversible medida y aplazar la purga hasta completar anti-joins y recuperación.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "PabloMoran34",
+    "reason": "Su cambio reciente en la materialización de productos es central para definir una eliminación consistente entre MongoDB y BigQuery.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7401.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7401#issuecomment-4951680394",
+    "reviewedAt": "2026-08-04T23:40:28.650Z",
+    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
+  }
+}

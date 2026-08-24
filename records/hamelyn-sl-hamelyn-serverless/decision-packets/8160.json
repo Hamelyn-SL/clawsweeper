@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-31T19:43:58.128Z",
+  "updatedAt": "2026-07-31T12:37:01Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8160,
+    "title": "fix: prevent empty Exotec containers after item filtering",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8160",
+    "state": "open",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-07-31T12:08:04Z",
+    "updatedAt": "2026-07-31T12:37:01Z",
+    "headSha": "8510f95f958a6a68981badf2a52782e4ae7edce5"
+  },
+  "lane": "proof_sufficiency",
+  "priority": "P1",
+  "question": "¿Se acepta el cambio con la verificación operativa declarada o se exige una ejecución completa antes de fusionarlo?",
+  "rationale": "El intento de prueba publicado terminó antes de observar los artefactos, estados y resultados de packing que cambian con esta PR.",
+  "options": [
+    {
+      "title": "Exigir prueba completa",
+      "body": "Solicitar una ejecución real y redactada que demuestre generación consecutiva, `PENDING_PICKING`, contenedor vacío y fallback legacy.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar la evidencia actual",
+      "body": "Fusionar basándose en el análisis de producción y la revisión de código, asumiendo el riesgo residual de la ruta no ejercitada.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Exigir prueba completa",
+    "body": "Solicitar una ejecución real y redactada que demuestre generación consecutiva, `PENDING_PICKING`, contenedor vacío y fallback legacy.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Es el revisor solicitado con conocimiento señalado del flujo sensible de Picking V3.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8160.md",
+    "reviewedAt": "2026-07-31T19:43:58.128Z",
+    "mainSha": "81bcf5289f60bffbc3c83ef3784aa65e463ea2da"
+  }
+}

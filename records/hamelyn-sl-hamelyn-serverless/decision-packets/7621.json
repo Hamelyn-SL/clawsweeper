@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-19T16:36:25.138Z",
+  "updatedAt": "2026-07-19T16:27:44Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7621,
+    "title": "docs: add linked PR pre-check to issue workflow skill",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7621",
+    "state": "open",
+    "labels": [
+      "size/M",
+      "rating: 🥉 bronze",
+      "status: 📣 needs proof",
+      "P3",
+      "merge-risk: 🚨 automation"
+    ],
+    "createdAt": "2026-07-16T08:07:06Z",
+    "updatedAt": "2026-07-19T16:27:44Z",
+    "headSha": "e3def366c6b1d3592b8139f5a2918d164ebe8c15"
+  },
+  "lane": "product_direction",
+  "priority": "P3",
+  "question": "¿El pre-check debe detener el flujo únicamente para autores con asociación interna verificable, o también para PRs externas que mencionen la issue?",
+  "rationale": "La rama propone una política nueva de coordinación y no puede inferir de `author.login` quién pertenece al equipo ni qué referencias externas deben bloquear trabajo.",
+  "options": [
+    {
+      "title": "Limitar la parada a asociación interna",
+      "body": "Consultar `authorAssociation` y pedir confirmación solo para autores internos; las PRs externas seguirían el flujo normal salvo un vínculo de cierre verificable.",
+      "recommended": true
+    },
+    {
+      "title": "Bloquear ante cualquier autor",
+      "body": "Mantener la parada para toda PR relacionada, aceptando más interrupciones en análisis de issues con referencias externas.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Limitar la parada a asociación interna",
+    "body": "Consultar `authorAssociation` y pedir confirmación solo para autores internos; las PRs externas seguirían el flujo normal salvo un vínculo de cierre verificable.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su historial reciente concentra las reglas de coordinación de esta skill.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7621.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7621#issuecomment-4990858663",
+    "reviewedAt": "2026-07-19T16:36:25.138Z",
+    "mainSha": "df9d41a6bd442a1dd046b2592aad65025f23b7d5"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-16T10:37:08.734Z",
+  "updatedAt": "2026-07-16T08:35:05Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7532,
+    "title": "feat: add pr conflict auto-resolver cloud agent",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7532",
+    "state": "closed",
+    "labels": [
+      "size/XL",
+      "rating: 🥈 silver",
+      "status: 📣 needs proof",
+      "P1",
+      "merge-risk: 🚨 security-boundary",
+      "merge-risk: 🚨 automation"
+    ],
+    "createdAt": "2026-07-14T09:55:19Z",
+    "updatedAt": "2026-07-16T08:35:05Z",
+    "headSha": "32930bfdb30860d685ee9b2ed917fd83a373d550"
+  },
+  "lane": "security_boundary",
+  "priority": "P1",
+  "question": "¿Debe el resolver rediseñarse para que la fase que procesa contenido de la pull request no tenga acceso a ninguna credencial capaz de pushear o mutar GitHub?",
+  "rationale": "La respuesta define la frontera permanente de confianza del agente y el nivel de riesgo aceptable para ramas y credenciales; no es una decisión mecánica que pueda resolver la automatización.",
+  "options": [
+    {
+      "title": "Separar credenciales",
+      "body": "Ejecutar Codex y las validaciones sin token mutable y aplicar el parche verificado desde un controlador privilegiado aislado.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar custodia conjunta",
+      "body": "Mantener el token dentro del sandbox y asumir explícitamente que contenido controlado por pull requests comparte la frontera privilegiada.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Separar credenciales",
+    "body": "Ejecutar Codex y las validaciones sin token mutable y aplicar el parche verificado desde un controlador privilegiado aislado.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es quien presenta la señal histórica más fuerte sobre el runtime de sandboxes, la custodia de Codex y el endurecimiento de `apps/agents`.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7532.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7532#issuecomment-4968078149",
+    "reviewedAt": "2026-07-16T10:37:08.734Z",
+    "mainSha": "e24ecead4fc818bf7f21fc4d4351eba9d419a5af"
+  }
+}

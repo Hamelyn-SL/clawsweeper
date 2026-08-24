@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-13T11:20:58.414Z",
+  "updatedAt": "2026-07-13T10:29:12Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7460,
+    "title": "fix: use normalized coupon codes for database lookups",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7460",
+    "state": "closed",
+    "labels": [
+      "size/M",
+      "rating: 🦪 silver shellfish",
+      "status: 📣 needs proof",
+      "P3",
+      "merge-risk: 🚨 compatibility"
+    ],
+    "createdAt": "2026-07-13T10:18:37Z",
+    "updatedAt": "2026-07-13T10:29:12Z",
+    "headSha": "00358003e716e6270255bf80355c92726748b9f5"
+  },
+  "lane": "product_direction",
+  "priority": "P3",
+  "question": "¿Debe migrarse el cupón activo ` APOLOGY15` a `_id` canónico antes de mergear, retirarse explícitamente, o mantenerse compatibilidad temporal con el lookup literal?",
+  "rationale": "El código es estrecho, pero la decisión cambia el tratamiento de un cupón activo de producción y requiere intención operativa fuera de la diff.",
+  "options": [
+    {
+      "title": "Migrar antes del merge",
+      "body": "Renombrar o recrear el cupón activo con `_id` canónico permite conservar el nuevo contrato sin romper a usuarios que aún puedan usarlo.",
+      "recommended": true
+    },
+    {
+      "title": "Retirar el cupón legacy",
+      "body": "Desactivar o deprecar el cupón evita migración, pero acepta que ese código deje de funcionar de forma deliberada.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener fallback temporal",
+      "body": "Preservar el lookup literal hasta completar la limpieza de datos evita la rotura, pero pospone la simplificación que motivó la issue.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Migrar antes del merge",
+    "body": "Renombrar o recrear el cupón activo con `_id` canónico permite conservar el nuevo contrato sin romper a usuarios que aún puedan usarlo.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Ya aparece como revisor solicitado y con contexto directo sobre `coupon.repository.ts` y la decisión de cupones legacy.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7460.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7460#issuecomment-4957418504",
+    "reviewedAt": "2026-07-13T11:20:58.414Z",
+    "mainSha": "17a4a6b6ca2fd73d5d0aa9b04dbf01ae937203df"
+  }
+}

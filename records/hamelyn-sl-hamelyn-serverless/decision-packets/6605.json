@@ -1,0 +1,66 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-19T17:52:36.101Z",
+  "updatedAt": "2026-07-19T17:47:13Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 6605,
+    "title": "Automatizar correo Meli",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6605",
+    "state": "closed",
+    "labels": [
+      "source:admin-panel",
+      "priority:p2",
+      "app:marketplace",
+      "feature",
+      "reporter:rubenmorueco",
+      "triage:blocked",
+      "P2",
+      "impact:other",
+      "issue-rating: ➖ n/a",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-06-23T10:23:55Z",
+    "updatedAt": "2026-07-19T17:47:13Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué estado interno identifica exactamente las etiquetas Meli finales de cada día y cuál es la política de reenvío cuando el correo o una etiqueta falla?",
+  "rationale": "El código aporta etiquetas persistidas y SMTP, pero no puede inferir con seguridad el corte diario, las exclusiones ni la responsabilidad ante reintentos.",
+  "options": [
+    {
+      "title": "Lote interno idempotente",
+      "body": "Definir pedidos Meli con etiqueta final creada, no cancelados y una clave de entrega diaria antes de implementar el cron.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener operación manual",
+      "body": "No automatizar el envío mientras la fuente interna y la política de reintentos no estén acordadas.",
+      "recommended": false
+    },
+    {
+      "title": "Aportar fuente contractual",
+      "body": "Si el lote debe reflejar una vista externa concreta, acordar una API o exportación estable en lugar de automatizar el navegador.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Lote interno idempotente",
+    "body": "Definir pedidos Meli con etiqueta final creada, no cancelados y una clave de entrega diaria antes de implementar el cron.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "La discusión y el mantenimiento reciente le vinculan tanto al límite operativo como al flujo Meli actual.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/6605.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6605#issuecomment-4910070807",
+    "reviewedAt": "2026-07-19T17:52:36.101Z",
+    "mainSha": "a211664717be7c381973ac1a2f20bc5ec16d7799"
+  }
+}

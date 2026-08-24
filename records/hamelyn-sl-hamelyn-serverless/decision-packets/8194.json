@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-11T07:43:27.786Z",
+  "updatedAt": "2026-08-11T07:35:46Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8194,
+    "title": "feat: source google merchant used feeds from bigquery",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8194",
+    "state": "closed",
+    "labels": [
+      "size/XL",
+      "P1",
+      "merge-risk: 🚨 compatibility",
+      "merge-risk: 🚨 availability",
+      "proof: sufficient",
+      "status: ⏳ waiting on author",
+      "rating: 🥇 gold"
+    ],
+    "createdAt": "2026-08-04T05:59:29Z",
+    "updatedAt": "2026-08-11T07:35:46Z",
+    "headSha": "180a40c46b9b96fb8a359fa31f8409e85f01e444"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Se acepta que los feeds de usado publiquen metadata de `mongodata.products` con hasta un día de retraso, o deben esperar un snapshot diario fresco y usar Mongo como fallback?",
+  "rationale": "La rama cambia una lectura viva de Mongo por una réplica diaria para campos que alteran inclusión y contenido del feed; el límite aceptable no se deduce de código ni de la prueba.",
+  "options": [
+    {
+      "title": "Exigir productos frescos",
+      "body": "Añadir una guarda de `mongodata.products` y una salida segura a Mongo o abortar antes de publicar si el snapshot diario no está disponible.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar el retraso diario",
+      "body": "Aprobar expresamente la divergencia y mantener el gate actual de stocks, asumiendo cambios de metadata hasta el siguiente snapshot.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Exigir productos frescos",
+    "body": "Añadir una guarda de `mongodata.products` y una salida segura a Mongo o abortar antes de publicar si el snapshot diario no está disponible.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es el contribuidor más recurrente del workflow que debe mantener la política operativa del feed.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/8194.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8194#issuecomment-5175801557",
+    "reviewedAt": "2026-08-11T07:43:27.786Z",
+    "mainSha": "b510790cfb53a80e063b40d5dda8d57a42eb518f"
+  }
+}

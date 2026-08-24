@@ -1,0 +1,64 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-15T09:02:21.185Z",
+  "updatedAt": "2026-07-15T08:50:51Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7432,
+    "title": "Ecommerce: resolver autores por authorId canónico gestionando fichas duplicadas",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7432",
+    "state": "closed",
+    "labels": [
+      "app:ecommerce",
+      "priority:p1",
+      "feature",
+      "P1",
+      "impact:other",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:source-repro",
+      "clawsweeper:linked-pr-open",
+      "issue-rating: 💎 diamond"
+    ],
+    "createdAt": "2026-07-13T08:05:07Z",
+    "updatedAt": "2026-07-15T08:50:51Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe la implementación respetar la regla de completitud más antigüedad y los redirects de esta issue, o adoptar la simplificación del PR basada solo en antigüedad junto con su política de 308/404 y backfill?",
+  "rationale": "La elección modifica el contrato de identidad de autores, las URLs indexadas y la frontera con la fusión física de duplicados; no puede deducirse con seguridad solo del código porque la aceptación y el PR describen comportamientos distintos.",
+  "options": [
+    {
+      "title": "Alinear con la aceptación",
+      "body": "Usar completitud más antigüedad, preservar el fallback legacy y redirigir las fichas duplicadas sin depender de una fusión física dentro de este cambio.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar el contrato del PR",
+      "body": "Formalizar la ficha más antigua y la política 308/404 con backfill como nuevo comportamiento, actualizando expresamente la aceptación y la documentación SEO.",
+      "recommended": false
+    },
+    {
+      "title": "Separar el alcance adicional",
+      "body": "Aterrizar primero la resolución canónica y mover `nonPerson`, backfill y ajustes largos del workflow a cambios independientes con prueba propia.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Alinear con la aceptación",
+    "body": "Usar completitud más antigüedad, preservar el fallback legacy y redirigir las fichas duplicadas sin depender de una fusión física dentro de este cambio.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "Es el aprobador humano del head actual y la mejor señal disponible para confirmar si las desviaciones de aceptación son deliberadas.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7432.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7432#issuecomment-4956045560",
+    "reviewedAt": "2026-07-15T09:02:21.185Z",
+    "mainSha": "7b87c7a57e2a55b4bba1ebda5cac5ecec09abc90"
+  }
+}

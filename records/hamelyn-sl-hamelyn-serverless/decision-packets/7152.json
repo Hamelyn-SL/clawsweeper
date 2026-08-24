@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-09T15:09:17.986Z",
+  "updatedAt": "2026-07-09T15:02:29Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7152,
+    "title": "[BL] chore: extract ecommerce SEO business logic block",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7152",
+    "state": "closed",
+    "labels": [
+      "size/XXL",
+      "business-logic",
+      "rating: 🧂 unranked krab",
+      "status: 📣 needs proof",
+      "P2",
+      "merge-risk: 🚨 compatibility"
+    ],
+    "createdAt": "2026-07-07T13:32:10Z",
+    "updatedAt": "2026-07-09T15:02:29Z",
+    "headSha": "8bf2be58a576e317373c7ee97a47d3e3b878f00d"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "Para `BL-ecommerce-seo-sitemaps-04`, ¿el contrato validado debe aceptar uno o más dígitos como hace el código actual, o exigir exactamente tres dígitos?",
+  "rationale": "Este PR declara que no cambia comportamiento, pero la spec añadida describe un contrato más estricto que el validador actual; automatización no debe decidir si documentar el comportamiento existente o convertirlo en cambio intencionado.",
+  "options": [
+    {
+      "title": "Documentar `\\d+` actual",
+      "body": "Actualizar spec y tests para decir que el chunk acepta uno o más dígitos preserva el objetivo de no cambiar comportamiento.",
+      "recommended": true
+    },
+    {
+      "title": "Endurecer a tres dígitos",
+      "body": "Cambiar el validador a exactamente tres dígitos requiere tratarlo como decisión de comportamiento o divergencia explícita.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Documentar `\\d+` actual",
+    "body": "Actualizar spec y tests para decir que el chunk acepta uno o más dígitos preserva el objetivo de no cambiar comportamiento.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "alexcanHamelyn",
+    "reason": "Es el owner nombrado para el bloque SEO y tiene historial reciente en la superficie SEO afectada.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7152.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7152#issuecomment-4913221956",
+    "reviewedAt": "2026-07-09T15:09:17.986Z",
+    "mainSha": "8883e80d43347813e2a0696912d00d8c537ab607"
+  }
+}

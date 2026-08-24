@@ -1,0 +1,69 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-09T09:41:09.266Z",
+  "updatedAt": "2026-07-09T09:36:18Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7125,
+    "title": "BL-ecommerce-engagement-01: notify requests with unknown EANs are retried forever and never cleaned up",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7125",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:ecommerce",
+      "priority:p3",
+      "triage:queued",
+      "business-logic",
+      "reporter:danielmenchen-hamelyn",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision",
+      "issue-rating: 🦞 diamond lobster",
+      "clawsweeper:source-repro",
+      "clawsweeper:linked-pr-open",
+      "P3",
+      "impact:other",
+      "clawsweeper:fix-shape-clear",
+      "clawsweeper:needs-maintainer-review"
+    ],
+    "createdAt": "2026-07-07T11:45:46Z",
+    "updatedAt": "2026-07-09T09:36:18Z"
+  },
+  "lane": "product_direction",
+  "priority": "P3",
+  "question": "¿Debe la solución conservar indefinidamente las solicitudes de productos que desaparecen después del alta, o debe cerrarlas como terminales en el cron?",
+  "rationale": "La PR abierta elige validar solo las altas nuevas y preservar solicitudes antiguas por una regla de deduplicación de por vida; cerrar huérfanos en el cron sería otra política de negocio.",
+  "options": [
+    {
+      "title": "Mergear la PR acotada",
+      "body": "Aceptar `https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7143` y corregir solo nuevas altas con productos inexistentes, conservando las solicitudes de productos retirados.",
+      "recommended": true
+    },
+    {
+      "title": "Pedir limpieza en cron",
+      "body": "Reabrir o rehacer la ruta más amplia si negocio prefiere marcar como terminales las solicitudes cuyo producto ya no existe.",
+      "recommended": false
+    },
+    {
+      "title": "Dejarlo pendiente",
+      "body": "Mantener el comportamiento actual hasta que el owner confirme la política de retención, asumiendo el coste operativo diario.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mergear la PR acotada",
+    "body": "Aceptar `https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7143` y corregir solo nuevas altas con productos inexistentes, conservando las solicitudes de productos retirados.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "danielmenchen-hamelyn",
+    "reason": "Es el reporter, autor de la PR de cierre abierta y quien documenta la decisión de owner en la spec BL.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7125.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7125#issuecomment-4913194076",
+    "reviewedAt": "2026-07-09T10:46:54.546Z",
+    "mainSha": "041bf27bd20f293dfcff578800215d4e71bf8a01"
+  }
+}

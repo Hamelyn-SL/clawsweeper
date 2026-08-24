@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-14T10:42:46.606Z",
+  "updatedAt": "2026-07-14T10:35:25Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7543,
+    "title": "Slack notifica al autor al mergear su propia PR",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7543",
+    "state": "closed",
+    "labels": [
+      "bug",
+      "source:admin-panel",
+      "priority:p3",
+      "app:infrastructure",
+      "reporter:MiguelHamelyn",
+      "triage:queued",
+      "P3",
+      "impact:ux-friction",
+      "issue-rating: ➖ n/a",
+      "clawsweeper:linked-pr-open",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-14T10:35:01Z",
+    "updatedAt": "2026-07-14T10:35:25Z"
+  },
+  "lane": "product_direction",
+  "priority": "P3",
+  "question": "¿Debe un merge dejar de publicar una respuesta en el hilo de Slack y limitarse a actualizar la reacción del mensaje raíz?",
+  "rationale": "El comportamiento actual fue introducido expresamente para publicar eventos de merge, por lo que suprimirlos cambia la política operativa de notificaciones y requiere confirmación humana aunque el cambio técnico sea pequeño.",
+  "options": [
+    {
+      "title": "Solo actualizar el estado",
+      "body": "Los merges no publican respuesta y únicamente actualizan la reacción del mensaje raíz, reduciendo el ruido sin perder el estado final.",
+      "recommended": true
+    },
+    {
+      "title": "Conservar la respuesta de merge",
+      "body": "Se mantiene la notificación actual porque el historial del hilo debe registrar explícitamente cada merge.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Solo actualizar el estado",
+    "body": "Los merges no publican respuesta y únicamente actualizan la reacción del mensaje raíz, reduciendo el ruido sin perder el estado final.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Introdujo y fusionó el comportamiento actual, por lo que dispone del contexto más directo sobre la política original del workflow.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7543.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7543#issuecomment-4968297308",
+    "reviewedAt": "2026-07-14T10:42:46.606Z",
+    "mainSha": "abd96c9f88d629a968b107b58b23955f6c6011e2"
+  }
+}

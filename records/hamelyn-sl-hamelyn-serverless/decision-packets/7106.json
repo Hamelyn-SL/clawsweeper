@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-08T04:10:21.931Z",
+  "updatedAt": "2026-07-08T03:45:57Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7106,
+    "title": "BL-ecommerce-product: Product Page — specs, aislamiento y tests",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7106",
+    "state": "open",
+    "labels": [
+      "app:ecommerce",
+      "priority:p1",
+      "feature",
+      "triage:done",
+      "business-logic",
+      "hackathon"
+    ],
+    "createdAt": "2026-07-07T09:14:45Z",
+    "updatedAt": "2026-07-08T03:45:57Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "Should the Product Page BL block proceed through MiguelHamelyn's F2 validation before any isolation or tests are merged?",
+  "rationale": "The repository BL pipeline makes owner validation blocking, and this block spans multiple live product-page business rules plus already-open divergence issues.",
+  "options": [
+    {
+      "title": "Continue owner-led BL pipeline",
+      "body": "Keep this issue open for MiguelHamelyn to validate the extracted rules, then land one BL PR with specs, isolations, tests, and linked divergence handling.",
+      "recommended": true
+    },
+    {
+      "title": "Narrow the block before F1/F2",
+      "body": "Reduce scope if extraction shows more than a healthy block size, but keep the remaining Product Page BL work tracked explicitly.",
+      "recommended": false
+    },
+    {
+      "title": "Defer Product Page BL extraction",
+      "body": "Leave the live product page rules undocumented for now and rely on narrower bug issues, accepting continued BL coverage gaps.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Continue owner-led BL pipeline",
+    "body": "Keep this issue open for MiguelHamelyn to validate the extracted rules, then land one BL PR with specs, isolations, tests, and linked divergence handling.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "He is the assigned issue owner, named BL owner, and recent feature-history owner for the Product Page implementation.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7106.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7106#issuecomment-4911347866",
+    "reviewedAt": "2026-07-08T04:10:21.931Z",
+    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+  }
+}

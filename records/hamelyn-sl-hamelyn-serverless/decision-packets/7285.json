@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-09T10:29:49.157Z",
+  "updatedAt": "2026-07-09T10:23:48Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7285,
+    "title": "feat: mint read:bq by default for cli logins",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7285",
+    "state": "closed",
+    "labels": [
+      "size/M"
+    ],
+    "createdAt": "2026-07-09T10:19:13Z",
+    "updatedAt": "2026-07-09T10:23:48Z",
+    "headSha": "56b5494d8c01dfdc052c27c950f4b7b9a871dfba"
+  },
+  "lane": "security_boundary",
+  "priority": "P1",
+  "question": "¿Debe `read:bq` mintarse por defecto para todos los usuarios con acceso CLI, incluidos los PAT de no-admins, en este rollout?",
+  "rationale": "El cambio es deliberado y útil para onboarding, pero amplía acceso analítico por defecto y afecta a la política de autorización; ClawSweeper puede señalar el riesgo, no decidir la frontera de datos por el equipo.",
+  "options": [
+    {
+      "title": "Aprobar rollout con correcciones",
+      "body": "Mantener `read:bq` por defecto, pero exigir scopes aditivos, actualización de `hamelyn-knowledge` y prueba real antes del merge.",
+      "recommended": true
+    },
+    {
+      "title": "Reducir a admin-user",
+      "body": "Limitar el cambio a `admin-user` o a un flujo explícito si el equipo no quiere ampliar BigQuery a todos los usuarios CLI todavía.",
+      "recommended": false
+    },
+    {
+      "title": "Aplazar el cambio",
+      "body": "Cerrar o pausar el PR hasta que haya una decisión de autorización documentada fuera del comentario de código.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar rollout con correcciones",
+    "body": "Mantener `read:bq` por defecto, pero exigir scopes aditivos, actualización de `hamelyn-knowledge` y prueba real antes del merge.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "alexcanHamelyn",
+    "reason": "Es el reviewer asignado en el PR para esta decisión de auth/CLI y puede confirmar la frontera antes de merge.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7285.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7285#issuecomment-4924109168",
+    "reviewedAt": "2026-07-09T10:29:49.157Z",
+    "mainSha": "041bf27bd20f293dfcff578800215d4e71bf8a01"
+  }
+}

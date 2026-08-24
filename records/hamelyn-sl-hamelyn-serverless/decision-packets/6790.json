@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-04T23:26:10.666Z",
+  "updatedAt": "2026-08-04T23:13:09Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 6790,
+    "title": "🐛 stocks: 734k unidades vendidas con soldAt vacío (histórico 2021-2025 + goteo residual)",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6790",
+    "state": "open",
+    "labels": [
+      "bug",
+      "reporter:pablo",
+      "triage:done",
+      "app:data",
+      "origin:dev",
+      "P2",
+      "impact:data-loss",
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-02T10:21:44Z",
+    "updatedAt": "2026-08-04T23:13:09Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe `soldAt` de una retirada `SOLD_AS_ALTERNATIVE` heredar el marketplace del pedido original o mantenerse vacío para distinguir una sustitución?",
+  "rationale": "El código puede aplicar cualquiera de las dos opciones, pero ambas producen lecturas analíticas distintas y el informe reconoce esa ambigüedad.",
+  "options": [
+    {
+      "title": "Mantener vacío en sustituciones",
+      "body": "Conservar `soldAt` para ventas directas y documentar `withdrawalReason` como la señal de sustitución.",
+      "recommended": true
+    },
+    {
+      "title": "Heredar marketplace del pedido",
+      "body": "Rellenar `soldAt` desde el pedido asociado y añadir una señal explícita que preserve que fue una sustitución.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mantener vacío en sustituciones",
+    "body": "Conservar `soldAt` para ventas directas y documentar `withdrawalReason` como la señal de sustitución.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Ya realizó el análisis técnico de los caminos de retirada y tiene historial reciente en la mutación afectada.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6790.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6790#issuecomment-4910268218",
+    "reviewedAt": "2026-08-04T23:26:10.666Z",
+    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
+  }
+}

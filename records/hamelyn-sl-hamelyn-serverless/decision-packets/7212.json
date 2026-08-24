@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-19T17:22:19.987Z",
+  "updatedAt": "2026-07-19T13:24:39Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7212,
+    "title": "eBay ES leaves sold orphan listings live when mk row is missing",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7212",
+    "state": "closed",
+    "labels": [
+      "bug",
+      "priority:p1",
+      "app:marketplace",
+      "triage:no-change",
+      "P1",
+      "impact:other",
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-08T07:31:00Z",
+    "updatedAt": "2026-07-19T13:24:39Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe la detección de vendidos eBay ES sin `mk_ebayEs` quedar como reconciliación recurrente o mantenerse como remediación operativa excepcional?",
+  "rationale": "El código actual permite drenar documentos sembrados, pero decidir un proceso recurrente implica llamadas de retirada reales y criterios permanentes sobre datos externos.",
+  "options": [
+    {
+      "title": "Reconciliación periódica acotada",
+      "body": "Implementar un job con dry-run, criterios de venta confirmada, límite de lote y métricas de cero huérfanos tras cada ejecución.",
+      "recommended": true
+    },
+    {
+      "title": "Runbook operativo bajo demanda",
+      "body": "Mantener la siembra controlada como procedimiento manual cuando el watcher detecte una cohorte confirmada.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Reconciliación periódica acotada",
+    "body": "Implementar un job con dry-run, criterios de venta confirmada, límite de lote y métricas de cero huérfanos tras cada ejecución.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Es la persona con evidencia directa de la operación de drenaje y de sus controles actuales.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7212.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7212#issuecomment-4919259558",
+    "reviewedAt": "2026-07-19T17:22:19.987Z",
+    "mainSha": "50ecfced2ccb61fda78d4164715a4fcf47c93671"
+  }
+}

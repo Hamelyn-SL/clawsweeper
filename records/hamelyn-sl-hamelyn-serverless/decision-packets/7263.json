@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-17T06:45:16.448Z",
+  "updatedAt": "2026-07-17T05:50:10Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7263,
+    "title": "Amazon COM price-threshold issue 18155 errors persist after recovery",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7263",
+    "state": "closed",
+    "labels": [
+      "bug",
+      "priority:p2",
+      "app:marketplace",
+      "P1",
+      "impact:other",
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro",
+      "clawsweeper:linked-pr-open",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-09T07:11:39Z",
+    "updatedAt": "2026-07-17T05:50:10Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Se aprueba que `optimo` y `atascado` reciban umbrales Amazon derivados de `PMin`/`PMax` mientras se elimina cualquier `pricingRuleId` automático previo?",
+  "rationale": "La solución corrige el retry ineficaz, pero también fija una política comercial para grupos que actualmente no envían rango y afecta a creación, PATCH individual y feed batch.",
+  "options": [
+    {
+      "title": "Umbrales sin repricing",
+      "body": "Enviar límites que contengan el precio actual, retirar cualquier regla automática previa y exigir prueba real antes del merge.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener la política actual",
+      "body": "No añadir umbrales a estos grupos y buscar otra recuperación para `18155` que no cambie su configuración comercial.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Umbrales sin repricing",
+    "body": "Enviar límites que contengan el precio actual, retirar cualquier regla automática previa y exigir prueba real antes del merge.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "PabloMoran34",
+    "reason": "Su historial reciente cubre `PMin`, suelos y reglas automáticas, y figura como revisor solicitado de la PR.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7263.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7263#issuecomment-4923055294",
+    "reviewedAt": "2026-07-17T06:45:16.448Z",
+    "mainSha": "6488cd8832a287efe2570d6a12f65e121f77401e"
+  }
+}

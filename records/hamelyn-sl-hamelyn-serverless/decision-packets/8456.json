@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-18T18:19:30.434Z",
+  "updatedAt": "2026-08-18T17:11:43Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8456,
+    "title": "Decathlon: needsUpdateData stocks never republish and P41 batches without report reject good lines",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8456",
+    "state": "closed",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "triage:no-change",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:source-repro",
+      "clawsweeper:linked-pr-open",
+      "issue-rating: 💎 diamond",
+      "P2",
+      "impact:other"
+    ],
+    "createdAt": "2026-08-14T10:44:03Z",
+    "updatedAt": "2026-08-18T17:11:43Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe el flujo P41 sin informe por línea mantener el rechazo global o rescatar automáticamente las líneas potencialmente correctas?",
+  "rationale": "Mirakl no identifica qué SKU fallaron; rescatar todos cambia la política de reintentos y puede volver a publicar rechazos reales.",
+  "options": [
+    {
+      "title": "Integrar diagnóstico y abrir seguimiento",
+      "body": "Mantener el rechazo global por ahora, integrar la corrección de `update` y los mensajes diferenciados, y diseñar después un rescate con límites explícitos.",
+      "recommended": true
+    },
+    {
+      "title": "Rescatar las líneas de inmediato",
+      "body": "Avanzar las líneas del lote sin informe hacia oferta, aceptando el riesgo de reintentos sobre rechazos reales no identificados.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Integrar diagnóstico y abrir seguimiento",
+    "body": "Mantener el rechazo global por ahora, integrar la corrección de `update` y los mensajes diferenciados, y diseñar después un rescate con límites explícitos.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "La PR vinculada y su investigación del OK global de Mirakl le sitúan cerca de la decisión operativa.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/8456.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8456#issuecomment-5292727802",
+    "reviewedAt": "2026-08-18T18:19:30.434Z",
+    "mainSha": "c48d810626fc99fac2537fe628d12f1a18d666da"
+  }
+}

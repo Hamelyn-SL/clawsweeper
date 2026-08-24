@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-29T01:44:49.428Z",
+  "updatedAt": "2026-07-29T01:36:33Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8035,
+    "title": "fix: propagate typed ftp operation errors",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8035",
+    "state": "open",
+    "labels": [
+      "size/M",
+      "rating: 🥈 silver",
+      "status: 📣 needs proof",
+      "P1",
+      "merge-risk: 🚨 compatibility"
+    ],
+    "createdAt": "2026-07-28T14:20:17Z",
+    "updatedAt": "2026-07-29T01:36:33Z",
+    "headSha": "fd466a760c95a91bb5227c667175ef9d5d78a278"
+  },
+  "lane": "merge_risk",
+  "priority": "P1",
+  "question": "¿Debe `FTP` convertir por defecto todos los fallos globales de transporte en rechazos para sus cuatro métodos, incluido el cron de Alibris?",
+  "rationale": "El PR modifica el contrato observable de un servicio compartido: un flujo que antes seguía con un valor vacío pasará a rechazar su fase.",
+  "options": [
+    {
+      "title": "Aceptar el contrato de rechazo",
+      "body": "Aprobar la nueva semántica tras comprobar un fallo real de FTPS y su reflejo en el resumen del cron.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener compatibilidad explícita",
+      "body": "Conservar el comportamiento vacío como predeterminado y añadir una vía estricta solo si algún consumidor necesita seguir tolerando fallos globales.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aceptar el contrato de rechazo",
+    "body": "Aprobar la nueva semántica tras comprobar un fallo real de FTPS y su reflejo en el resumen del cron.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su historial concentra la implementación y los ajustes operativos recientes de la integración FTP de Alibris.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8035.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8035#issuecomment-5105651159",
+    "reviewedAt": "2026-07-29T01:44:49.428Z",
+    "mainSha": "d11d46521e4b6b56b9f2ea06c01f89ef555261e9"
+  }
+}

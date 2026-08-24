@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-07T22:49:24.858Z",
+  "updatedAt": "2026-07-07T22:40:19Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 5919,
+    "title": "[V3.5] Cron de materialización de rating Rainforest a products.attributes",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5919",
+    "state": "open",
+    "labels": [
+      "size/S",
+      "source:admin-panel",
+      "app:ecommerce",
+      "priority:p2",
+      "feature",
+      "triage:done",
+      "reporter:alejandrodiaz",
+      "epic:v3.5-features"
+    ],
+    "createdAt": "2026-05-19T09:54:32Z",
+    "updatedAt": "2026-07-07T22:40:19Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "Should the Rainforest materializer target the current ecommerce resolver path `attributes.providersRatings.amazon`, or should it align the resolver with the newer `attributes.ratings.rainforest_es`/root rating model first?",
+  "rationale": "The original issue and triage target `providersRatings`, but later merged provider work introduced `attributes.ratings` and moved source data from `productdataraw` to `provider_records`; choosing the permanent contract affects the implementation boundary.",
+  "options": [
+    {
+      "title": "Populate `providersRatings.amazon` now",
+      "body": "Read Rainforest from `provider_records`, write only `attributes.providersRatings.amazon`, and leave a later unification for the newer rating model.",
+      "recommended": true
+    },
+    {
+      "title": "Unify on `attributes.ratings` first",
+      "body": "Update the resolver to consume `attributes.ratings`/root rating, then materialize Rainforest as `rainforest_es`, which is cleaner but broader.",
+      "recommended": false
+    },
+    {
+      "title": "Pause until rating model is settled",
+      "body": "Keep the issue assigned while maintainers decide whether Rainforest, Keepa, and social-books should share one canonical product rating contract.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Populate `providersRatings.amazon` now",
+    "body": "Read Rainforest from `provider_records`, write only `attributes.providersRatings.amazon`, and leave a later unification for the newer rating model.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "PabloMoran34",
+    "reason": "He is assigned and authored the most recent merged rating/provider storage changes.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5919.md",
+    "reviewedAt": "2026-07-07T22:49:24.858Z",
+    "mainSha": "22201b3382325cc80747a08a1e49a425cfc04d7a"
+  }
+}

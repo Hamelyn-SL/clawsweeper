@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-20T01:10:53.150Z",
+  "updatedAt": "2026-08-20T01:01:53Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8572,
+    "title": "Rotación automática del secreto Atlas de agents-observability como schedule de Eve",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8572",
+    "state": "closed",
+    "labels": [
+      "app:infrastructure",
+      "feature",
+      "reporter:javier",
+      "triage:done",
+      "P2",
+      "impact:security",
+      "issue-rating: ➖ n/a",
+      "clawsweeper:linked-pr-open",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:needs-security-review"
+    ],
+    "createdAt": "2026-08-19T22:19:12Z",
+    "updatedAt": "2026-08-20T01:01:53Z"
+  },
+  "lane": "security_boundary",
+  "priority": "P2",
+  "question": "¿Qué evidencia y garantías deben exigirse antes de permitir `ATLAS_ROTATION_MODE=enforce` para una cuenta de servicio de Atlas?",
+  "rationale": "La decisión activa mutaciones irreversibles sobre credenciales de producción; los tests actuales no sustituyen una validación controlada de los servicios reales.",
+  "options": [
+    {
+      "title": "Mantener audit y corregir la PR",
+      "body": "Resolver los tres hallazgos, ejecutar un ciclo real no mutante y revisar evidencia redacted antes de habilitar `enforce`.",
+      "recommended": true
+    },
+    {
+      "title": "Autorizar enforce con riesgo aceptado",
+      "body": "Habilitar mutaciones tras la revisión actual, aceptando explícitamente la cobertura incompleta y los riesgos abiertos.",
+      "recommended": false
+    },
+    {
+      "title": "Rediseñar la política",
+      "body": "Pausar la PR y redefinir el contrato de ownership, TTL legacy y configuración degradada antes de continuar.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mantener audit y corregir la PR",
+    "body": "Resolver los tres hallazgos, ejecutar un ciclo real no mutante y revisar evidencia redacted antes de habilitar `enforce`.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Es revisor solicitado de la implementación que incorpora el límite de seguridad a decidir.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/8572.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8572#issuecomment-5348925787",
+    "reviewedAt": "2026-08-20T01:10:53.150Z",
+    "mainSha": "f53228e49ece1d528f947f9ed5dd4a99a9c9b904"
+  }
+}

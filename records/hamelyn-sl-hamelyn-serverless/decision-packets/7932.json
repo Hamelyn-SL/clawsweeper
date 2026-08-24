@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-27T08:18:52.173Z",
+  "updatedAt": "2026-07-27T06:41:31Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7932,
+    "title": "feat: generate ecommerce sitemaps from bigquery products",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7932",
+    "state": "closed",
+    "labels": [
+      "size/XL",
+      "rating: 🥈 silver",
+      "status: 📣 needs proof",
+      "P2",
+      "merge-risk: 🚨 compatibility"
+    ],
+    "createdAt": "2026-07-24T11:49:11Z",
+    "updatedAt": "2026-07-27T06:41:31Z",
+    "headSha": "043345945380f0184149fb01bdbc749f862a20ac"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe el cron diario de sitemaps publicar con la última tabla disponible tras 20 minutos de espera, o debe omitir la publicación cuando la materialización diaria no esté fresca?",
+  "rationale": "El código mantiene deliberadamente un fallback stale, pero su impacto SEO y la reducción de frecuencia requieren una aceptación explícita más allá de la corrección técnica.",
+  "options": [
+    {
+      "title": "Aceptar fallback stale monitorizado",
+      "body": "Mantener la continuación no bloqueante con aviso Slack, dado el rollback Mongo manual y la prioridad de no dejar el sitemap sin publicación.",
+      "recommended": true
+    },
+    {
+      "title": "Omitir publicación cuando esté stale",
+      "body": "Hacer que el workflow preserve el sitemap actual y falle o termine sin publicar cuando no llegue la materialización diaria.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aceptar fallback stale monitorizado",
+    "body": "Mantener la continuación no bloqueante con aviso Slack, dado el rollback Mongo manual y la prioridad de no dejar el sitemap sin publicación.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es el autor de la iniciativa que define la tolerancia de frescura para estas migraciones y figura como revisor solicitado.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7932.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7932#issuecomment-5069824078",
+    "reviewedAt": "2026-07-27T08:18:52.173Z",
+    "mainSha": "c172a48c32fcc505985814bd5fee713f5476e8b1"
+  }
+}

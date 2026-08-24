@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-10T11:46:33.409Z",
+  "updatedAt": "2026-08-10T11:20:31Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8307,
+    "title": "Error ADMIN",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8307",
+    "state": "closed",
+    "labels": [
+      "bug",
+      "source:admin-panel",
+      "app:admin",
+      "triage:no-change",
+      "reporter:irenegarcia",
+      "P1",
+      "impact:ux-friction",
+      "issue-rating: ⚪ platinum",
+      "clawsweeper:needs-live-repro",
+      "clawsweeper:linked-pr-open",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-08-07T10:12:51Z",
+    "updatedAt": "2026-08-10T11:20:31Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Se acepta sustituir el data router interno de react-admin por `HashRouter useTransitions={false}` para preservar la navegación Atrás en Next 16.3.0?",
+  "rationale": "La solución toca el router global de Admin y cambia la disponibilidad potencial de protecciones del data router; requiere aceptación explícita tras una prueba operativa amplia.",
+  "options": [
+    {
+      "title": "Validar y aceptar el router declarativo",
+      "body": "Probar Atrás, filtros, pestañas y edición en Next 16.3.0 y fusionar la PR si no se observa regresión.",
+      "recommended": true
+    },
+    {
+      "title": "Conservar el data router",
+      "body": "Rechazar esta dirección y buscar una solución que mantenga la propiedad del router en react-admin.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Validar y aceptar el router declarativo",
+    "body": "Probar Atrás, filtros, pestañas y edición en Next 16.3.0 y fusionar la PR si no se observa regresión.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Su trabajo reciente en la instancia de router del mismo punto de entrada aporta el contexto técnico más directo.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/8307.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8307#issuecomment-5215785636",
+    "reviewedAt": "2026-08-10T11:46:33.409Z",
+    "mainSha": "d5e3a1b899d7bd7c2487d30e50a8e94275ea09fe"
+  }
+}

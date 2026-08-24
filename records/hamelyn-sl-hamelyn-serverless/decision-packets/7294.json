@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-09T12:00:22.712Z",
+  "updatedAt": "2026-07-09T11:13:23Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7294,
+    "title": "feat: archive buscalibre stock csv in drive",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7294",
+    "state": "open",
+    "labels": [
+      "size/M",
+      "rating: 🦪 silver shellfish",
+      "status: 📣 needs proof",
+      "P2",
+      "merge-risk: 🚨 availability"
+    ],
+    "createdAt": "2026-07-09T10:57:41Z",
+    "updatedAt": "2026-07-09T11:13:23Z",
+    "headSha": "e377532c1b335a272c0ece2ff5b03779b0d10cb5"
+  },
+  "lane": "merge_risk",
+  "priority": "P2",
+  "question": "¿Debe aceptarse `AdminFiles` como destino Drive compartido y aterrizar el archivado best-effort después de prueba real del cron?",
+  "rationale": "El código es acotado, pero la elección de carpeta y el riesgo de latencia en un cron pesado son decisiones operativas que CI no valida.",
+  "options": [
+    {
+      "title": "Aceptar `AdminFiles` con prueba real",
+      "body": "Resolver el conflicto, añadir evidencia redacted de una ejecución SFTP + Drive y mergear si MarcosTerroso valida el destino compartido.",
+      "recommended": true
+    },
+    {
+      "title": "Pedir carpeta dedicada",
+      "body": "Bloquear el merge hasta configurar una carpeta específica de Buscalibre y cambiar el `folder_key` o helper correspondiente.",
+      "recommended": false
+    },
+    {
+      "title": "Aparcar el archivado",
+      "body": "Mantener solo SFTP por ahora si el equipo no quiere añadir otra llamada externa al cron diario hasta medir runtime.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aceptar `AdminFiles` con prueba real",
+    "body": "Resolver el conflicto, añadir evidencia redacted de una ejecución SFTP + Drive y mergear si MarcosTerroso valida el destino compartido.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Es quien concentra el historial reciente del cron y ya fue solicitado para revisar este PR.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7294.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7294#issuecomment-4924889939",
+    "reviewedAt": "2026-07-09T12:00:22.712Z",
+    "mainSha": "499a3f88a16786ec48868f6474dc4f7582c0e2b6"
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-09T08:15:02.682Z",
+  "updatedAt": "2026-07-09T07:43:56Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7266,
+    "title": "Casa del Libro orphan live offers are not withdrawn when mk row is missing",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7266",
+    "state": "open",
+    "labels": [
+      "bug",
+      "priority:p1",
+      "app:marketplace",
+      "triage:done",
+      "P1",
+      "impact:other",
+      "issue-rating: 🦞 diamond lobster",
+      "clawsweeper:source-repro",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:fix-shape-clear",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-09T07:32:48Z",
+    "updatedAt": "2026-07-09T07:43:56Z"
+  },
+  "lane": "manual_review",
+  "priority": "P1",
+  "question": "¿Debe Marketplace/Data resolver esta cohorte rehidratando docs mínimos `mk_casaDelLibro` para que el cron los retire, o retirando directamente desde snapshot/API antes de añadir recovery permanente?",
+  "rationale": "La elección afecta a datos vivos de Mirakl y a cientos de registros; la política de Hamelyn exige gate operativo para mutaciones masivas y ClawSweeper no debe escoger ni ejecutar esa estrategia sin intención humana.",
+  "options": [
+    {
+      "title": "Dry-run de rehidratación y recovery permanente",
+      "body": "Rehidratar docs mínimos con dry-run, 3 muestras y confirmación, dejar que el cron retire, y añadir reconciliación snapshot/API para nuevos huérfanos.",
+      "recommended": true
+    },
+    {
+      "title": "Retirada directa desde snapshot/API",
+      "body": "Usar los IDs vivos de Mirakl para cerrar ofertas sin depender de recrear `mk_*`, asumiendo más responsabilidad sobre rate limits y evidencia live.",
+      "recommended": false
+    },
+    {
+      "title": "Consolidar primero con el informe CDL amplio",
+      "body": "Unificar el diseño con https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7177 antes de ejecutar backfill o cambiar el cron.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Dry-run de rehidratación y recovery permanente",
+    "body": "Rehidratar docs mínimos con dry-run, 3 muestras y confirmación, dejar que el cron retire, y añadir reconciliación snapshot/API para nuevos huérfanos.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es la señal más fuerte en el flujo CDL actual y en los informes operacionales recientes sobre la retirada Mirakl.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7266.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7266#issuecomment-4923060481",
+    "reviewedAt": "2026-07-09T08:15:02.682Z",
+    "mainSha": "1586c4457b8fe2cc43a825bb413529c12042355a"
+  }
+}

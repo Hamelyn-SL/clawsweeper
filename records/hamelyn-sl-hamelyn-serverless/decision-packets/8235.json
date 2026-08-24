@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-05T13:30:17.820Z",
+  "updatedAt": "2026-08-05T13:23:57Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8235,
+    "title": "[BL] chore: instrument entry logs across buying, ecommerce and pricing",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8235",
+    "state": "open",
+    "labels": [
+      "size/L",
+      "business-logic",
+      "proof: sufficient",
+      "rating: ⚪ platinum",
+      "status: 👀 ready for maintainer look",
+      "P2",
+      "merge-risk: 🚨 other"
+    ],
+    "createdAt": "2026-08-05T07:04:30Z",
+    "updatedAt": "2026-08-05T13:23:57Z",
+    "headSha": "94a670cbcb1917546c2c40361201c357485d6f3c"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se acepta desplegar ahora la instrumentación completa de 419 emisores, con su volumen de logs y los casos que no llegan a `bl_invocations`?",
+  "rationale": "La corrección mecánica de conflictos no decide el coste operativo ni la política de observabilidad que implica esta cobertura global.",
+  "options": [
+    {
+      "title": "Aceptar la cobertura completa",
+      "body": "Tras resolver conflictos y limpiar el cuerpo del PR, aceptar los emisores y sus excepciones documentadas como estándar de observabilidad BL.",
+      "recommended": true
+    },
+    {
+      "title": "Desplegar por fases",
+      "body": "Integrar primero dominios o rutas de menor volumen y mantener el resto en una propuesta separada con medición operativa.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aceptar la cobertura completa",
+    "body": "Tras resolver conflictos y limpiar el cuerpo del PR, aceptar los emisores y sus excepciones documentadas como estándar de observabilidad BL.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "danielmenchen-hamelyn",
+    "reason": "Ha trabajado recientemente en el helper compartido y en la propuesta de instrumentación que define la cobertura.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8235.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8235#issuecomment-5188888202",
+    "reviewedAt": "2026-08-05T13:30:17.820Z",
+    "mainSha": "bfe1b66a19fbde783adc16e066f4d1d9fef99281"
+  }
+}

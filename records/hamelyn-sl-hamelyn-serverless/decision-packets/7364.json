@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-10T13:44:24.829Z",
+  "updatedAt": "2026-07-10T13:30:08Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7364,
+    "title": "Deploy to Prod",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7364",
+    "state": "closed",
+    "labels": [
+      "size/XXL"
+    ],
+    "createdAt": "2026-07-10T12:44:42Z",
+    "updatedAt": "2026-07-10T13:30:08Z",
+    "headSha": "7911cda12e2f076eb3e51bbe2090b55283737e42"
+  },
+  "lane": "release_inclusion",
+  "priority": "P2",
+  "question": "¿Debe bloquearse este despliegue a producción hasta corregir `resolveRequestedPerPage` y limpiar la atribución prohibida del commit de cabeza?",
+  "rationale": "La decisión mezcla un bloqueo técnico pequeño con política de commits y calendario de release a `master`, así que necesita criterio de release owner antes de publicar producción.",
+  "options": [
+    {
+      "title": "Corregir antes de mergear",
+      "body": "Actualizar la validación de `perPage`, reemplazar o reescribir el commit con atribución prohibida y volver a revisar el despliegue.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar el riesgo de release",
+      "body": "Mergear ahora asumiendo el riesgo de paginación no entera y el incumplimiento de política de commit para corregirlo después.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar el despliegue",
+      "body": "Cerrar o dejar en espera este PR y preparar un nuevo PR de producción con un conjunto de commits limpio.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Corregir antes de mergear",
+    "body": "Actualizar la validación de `perPage`, reemplazar o reescribir el commit con atribución prohibida y volver a revisar el despliegue.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "HamelynDev",
+    "reason": "Figura como autor del PR de despliegue y de parte del lote de release, aunque la corrección técnica concreta está en el área de AlexDiaz-Hamelyn.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7364.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7364#issuecomment-4936102741",
+    "reviewedAt": "2026-07-10T13:44:24.829Z",
+    "mainSha": "7911cda12e2f076eb3e51bbe2090b55283737e42"
+  }
+}

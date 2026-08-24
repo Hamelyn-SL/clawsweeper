@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-12T07:15:04.531Z",
+  "updatedAt": "2026-08-12T06:52:42Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8395,
+    "title": "feat: add review supervisor dashboard and kiosk incident events",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8395",
+    "state": "open",
+    "labels": [
+      "size/XXL",
+      "rating: 🥈 silver",
+      "status: 📣 needs proof",
+      "P2",
+      "merge-risk: 🚨 compatibility"
+    ],
+    "createdAt": "2026-08-11T13:17:40Z",
+    "updatedAt": "2026-08-12T06:52:42Z",
+    "headSha": "f7494ad2cdfb94f880cd8f343083e75ff3e38041"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se aprueba ubicar el panel de supervisor en `data-dashboards` y exponer los rankings nominales a los roles autorizados de esa aplicación?",
+  "rationale": "La incidencia canónica dejó abierta la ubicación del panel y la política de visibilidad; el diff adopta una alternativa que afecta al acceso y al mantenimiento futuro.",
+  "options": [
+    {
+      "title": "Aprobar `data-dashboards`",
+      "body": "Mantener la ruta nueva con el modelo de autorización existente y documentar el alcance de los roles que pueden consultar métricas nominales.",
+      "recommended": true
+    },
+    {
+      "title": "Mantenerlo en Admin",
+      "body": "Mover la interfaz y la API al área administrativa si la supervisión debe compartir su perímetro de acceso y operación.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar `data-dashboards`",
+    "body": "Mantener la ruta nueva con el modelo de autorización existente y documentar el alcance de los roles que pueden consultar métricas nominales.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Ya revisa la combinación de dashboard, agregación MongoDB y telemetría, y puede encauzar la decisión con los responsables del área.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8395.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8395#issuecomment-5253805672",
+    "reviewedAt": "2026-08-12T07:15:04.531Z",
+    "mainSha": "8187dea1a4558d9f5937e63f77edf956c899e77f"
+  }
+}

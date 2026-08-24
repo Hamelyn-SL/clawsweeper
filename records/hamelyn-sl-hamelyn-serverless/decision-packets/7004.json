@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-10T13:35:46.522Z",
+  "updatedAt": "2026-07-10T12:47:36Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7004,
+    "title": "refactor: extract ecommerce checkout shipping cost business rules into bl specs with tests",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7004",
+    "state": "closed",
+    "labels": [
+      "size/XXL",
+      "rating: 🧂 unranked krab",
+      "status: 📣 needs proof",
+      "P2",
+      "merge-risk: 🚨 session-state"
+    ],
+    "createdAt": "2026-07-06T12:26:53Z",
+    "updatedAt": "2026-07-10T12:47:36Z",
+    "headSha": "770a4f3154ac6114b83e590f34978f6bc7172670"
+  },
+  "lane": "manual_review",
+  "priority": "P2",
+  "question": "¿Se debe cerrar esta PR ya en favor de https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7365, o esperar a que la sustituta tenga prueba/revisión suficiente o esté mergeada?",
+  "rationale": "La sustitución parece intencional y corrige los bloqueos conocidos, pero sigue abierta, con preview fallido y sin proof positivo visible; la política de limpieza conservadora no permite cerrarla automáticamente como superseded todavía.",
+  "options": [
+    {
+      "title": "Esperar a que la sustituta sea segura",
+      "body": "Mantener esta PR abierta como contexto hasta que https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7365 esté probada y lista o mergeada, y entonces cerrar esta como sustituida.",
+      "recommended": true
+    },
+    {
+      "title": "Cerrar manualmente ahora",
+      "body": "Un maintainer puede cerrar esta PR si acepta que la sustituta ya es la única rama canónica aunque aún falten checks o prueba real.",
+      "recommended": false
+    },
+    {
+      "title": "Reparar esta rama",
+      "body": "Si la sustituta se descarta, habría que restaurar `cartId`, alinear los artefactos BL y aportar proof real en esta PR.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Esperar a que la sustituta sea segura",
+    "body": "Mantener esta PR abierta como contexto hasta que https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7365 esté probada y lista o mergeada, y entonces cerrar esta como sustituida.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "PabloMoran34",
+    "reason": "Figura como owner del bloque y publicó el comentario que declara la sustitución por https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7365.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7004.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7004#issuecomment-4911163862",
+    "reviewedAt": "2026-07-10T13:35:46.522Z",
+    "mainSha": "7911cda12e2f076eb3e51bbe2090b55283737e42"
+  }
+}

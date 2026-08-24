@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-10T18:26:26.130Z",
+  "updatedAt": "2026-07-10T11:40:33Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7329,
+    "title": "feat: add guest order cancellation to ecommerce help center",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7329",
+    "state": "closed",
+    "labels": [
+      "size/XL",
+      "proof: 📸 screenshot",
+      "rating: 🦪 silver shellfish",
+      "status: 📣 needs proof",
+      "P2",
+      "merge-risk: 🚨 security-boundary"
+    ],
+    "createdAt": "2026-07-10T07:44:52Z",
+    "updatedAt": "2026-07-10T11:40:33Z",
+    "headSha": "78413058f6c012fc31abbf503f0a9c12986b9b47"
+  },
+  "lane": "security_boundary",
+  "priority": "P2",
+  "question": "¿Debe `/api/v5/order-sell/cancel/guest` depender de una regla externa de firewall/rate limit de Vercel demostrada, o debe añadirse un limiter en código antes de mergear?",
+  "rationale": "El PR introduce una ruta sin sesión que cambia estado de pedidos y stock; ClawSweeper puede detectar el riesgo, pero no puede verificar por sí solo la configuración operativa externa ni decidir la política de seguridad aceptable.",
+  "options": [
+    {
+      "title": "Exigir prueba de firewall/rate limit",
+      "body": "Antes de mergear, aportar evidencia redactada de que Vercel cubre explícitamente `/api/v5/order-sell/cancel/guest` y mantener el código como está salvo la corrección documental.",
+      "recommended": true
+    },
+    {
+      "title": "Añadir rate limit en código",
+      "body": "Implementar un limiter server-side para esta ruta guest y validarlo junto con el flujo de cancelación real, reduciendo dependencia de configuración externa.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar la feature guest",
+      "body": "Dejar fuera la ruta guest destructiva y mantener solo refactor/UI no destructiva hasta que el equipo cierre la política de protección.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Exigir prueba de firewall/rate limit",
+    "body": "Antes de mergear, aportar evidencia redactada de que Vercel cubre explícitamente `/api/v5/order-sell/cancel/guest` y mantener el código como está salvo la corrección documental.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "alexcanHamelyn",
+    "reason": "Ya revisó el PR y formuló el bloqueo de rate limit específico que falta cerrar.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7329.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7329#issuecomment-4933399394",
+    "reviewedAt": "2026-07-10T18:26:26.130Z",
+    "mainSha": "bdba2474cde79bb8997d7effa9430aff3f604ded"
+  }
+}

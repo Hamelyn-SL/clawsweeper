@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-11T09:44:23.020Z",
+  "updatedAt": "2026-08-11T09:30:29Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8387,
+    "title": "Bloquear en marketplaces los stocks de gavetas Skypod en Quarantine/Unreachable/Outside",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8387",
+    "state": "open",
+    "labels": [
+      "app:marketplace",
+      "feature",
+      "triage:running",
+      "P1"
+    ],
+    "createdAt": "2026-08-11T09:30:06Z",
+    "updatedAt": "2026-08-11T09:30:29Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Qué duración exacta de debounce para `Outside` con contenido y qué tratamiento operativo deben tener los bloqueos `BIN_BLOCKED` en reporting y alertas?",
+  "rationale": "La dirección técnica es viable, pero esos valores determinan cuándo se retiran ofertas reales y cómo se interpreta la operación en los equipos afectados.",
+  "options": [
+    {
+      "title": "Aprobar política conservadora",
+      "body": "Bloquear `Quarantine` e `Unreachable` inmediatamente y usar un debounce documentado para `Outside`, excluyendo `BIN_BLOCKED` de bajas definitivas.",
+      "recommended": true
+    },
+    {
+      "title": "Limitar la primera fase",
+      "body": "Persistir y auditar estados primero, dejando la retirada automática y el cron de reconciliación para una segunda decisión basada en datos reales.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener retirada manual",
+      "body": "No automatizar cambios de estado hasta acordar el umbral, las alertas y la semántica de reporting.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar política conservadora",
+    "body": "Bloquear `Quarantine` e `Unreachable` inmediatamente y usar un debounce documentado para `Outside`, excluyendo `BIN_BLOCKED` de bajas definitivas.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "El reporte aporta casos reales y la opción de diseño, y su historial reciente cubre un flujo Exotec relacionado.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8387.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8387#issuecomment-5251538345",
+    "reviewedAt": "2026-08-11T09:44:23.020Z",
+    "mainSha": "850560fc8a8ddb70dea6b0953901d2c12730aea5"
+  }
+}

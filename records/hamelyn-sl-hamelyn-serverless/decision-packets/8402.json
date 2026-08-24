@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-12T12:02:25.422Z",
+  "updatedAt": "2026-08-12T11:54:34Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8402,
+    "title": "fix: extend decathlon blocked-content regex with seller-reported words",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8402",
+    "state": "closed",
+    "labels": [
+      "size/S",
+      "proof: sufficient",
+      "rating: 🥇 gold",
+      "status: ⏳ waiting on author",
+      "P1",
+      "merge-risk: 🚨 compatibility"
+    ],
+    "createdAt": "2026-08-12T06:04:02Z",
+    "updatedAt": "2026-08-12T11:54:34Z",
+    "headSha": "97b3f5bfe504dd3a8a42d83a061450c999e8c29d"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe Decathlon vetar literalmente traducciones inglesas genéricas del listado del seller aunque bloqueen títulos legítimos, o limitar el gate a términos inequívocos y contextuales?",
+  "rationale": "La fuente del seller aporta señal, pero el gate descarta productos de forma irreversible antes de crear la oferta y la política aceptable de falsos positivos requiere criterio de negocio.",
+  "options": [
+    {
+      "title": "Aplicar veto semántico acotado",
+      "body": "Retirar tokens genéricos y tratar `coño` sin convertir `cono` en un veto, conservando únicamente términos inequívocos.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar el veto literal",
+      "body": "Mantener todas las traducciones del seller y asumir explícitamente la posible exclusión de catálogo válido en inglés.",
+      "recommended": false
+    },
+    {
+      "title": "Pedir aclaración al seller",
+      "body": "Solicitar ejemplos rechazados y términos exactos antes de ampliar el contrato de elegibilidad.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aplicar veto semántico acotado",
+    "body": "Retirar tokens genéricos y tratar `coño` sin convertir `cono` en un veto, conservando únicamente términos inequívocos.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Introdujo el gate actual y conoce la procedencia del listado y su integración.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/8402.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8402#issuecomment-5263096630",
+    "reviewedAt": "2026-08-12T12:02:25.422Z",
+    "mainSha": "4a340c538ced99f682e386d9b0700ad0c277066b"
+  }
+}

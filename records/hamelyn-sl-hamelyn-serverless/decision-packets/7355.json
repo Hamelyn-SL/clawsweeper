@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-14T17:00:08.717Z",
+  "updatedAt": "2026-07-13T10:36:43Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7355,
+    "title": "LOTES CELERITAS QUE COMPARTEN NUMERO DE LOTE",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7355",
+    "state": "closed",
+    "labels": [
+      "bug",
+      "source:admin-panel",
+      "app:supply",
+      "priority:p1",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:source-repro",
+      "reporter:daniellopez",
+      "P1",
+      "impact:data-loss",
+      "issue-rating: 💎 diamond"
+    ],
+    "createdAt": "2026-07-10T11:43:55Z",
+    "updatedAt": "2026-07-13T10:36:43Z"
+  },
+  "lane": "release_inclusion",
+  "priority": "P1",
+  "question": "¿Debe hacerse un backport estrecho y corregido de https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7446 a `dev`, o se resolverá esta incidencia mediante la integración completa de `EPIC/revision-v3`?",
+  "rationale": "El arreglo está implementado pero no pertenece a la rama canónica, la rama épica está muy divergida y el PR mergeado mantiene un hilo lógico pendiente; hace falta decidir la vía de entrega antes de considerar resuelta la incidencia.",
+  "options": [
+    {
+      "title": "Backport corregido a dev",
+      "body": "Portar únicamente la coincidencia exacta, la guardia de unicidad y las pruebas, resolviendo también la lógica del aviso de coincidencia parcial.",
+      "recommended": true
+    },
+    {
+      "title": "Esperar la integración épica",
+      "body": "Mantener la incidencia abierta hasta integrar `EPIC/revision-v3` en `dev` y verificar allí el caso real y el aviso de ambigüedad.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Backport corregido a dev",
+    "body": "Portar únicamente la coincidencia exacta, la guardia de unicidad y las pruebas, resolviendo también la lógica del aviso de coincidencia parcial.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Tiene asignada la incidencia y escribió el arreglo específico, por lo que dispone del contexto más directo para preparar el backport o confirmar la integración de la épica.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7355.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7355#issuecomment-4936092401",
+    "reviewedAt": "2026-07-14T17:00:08.717Z",
+    "mainSha": "56aad1176fabdfe50bb963f6dbd95d1bf5fcda8b"
+  }
+}

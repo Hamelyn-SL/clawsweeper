@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-10T13:34:38.584Z",
+  "updatedAt": "2026-07-10T12:50:11Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7325,
+    "title": "Picking Skypod: modo solo monobultos (solo EXOTEC, pedidos de 1 producto)",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7325",
+    "state": "closed",
+    "labels": [
+      "app:admin",
+      "priority:p1",
+      "feature",
+      "P2",
+      "impact:ux-friction",
+      "issue-rating: 🌊 off-meta tidepool",
+      "clawsweeper:linked-pr-open",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-10T07:36:09Z",
+    "updatedAt": "2026-07-10T12:50:11Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿El modo “Solo Skypod · monobultos” debe aceptarse con la semántica propuesta por la PR abierta: selector de modo explícito, `workers=1`, filtro de `products.length === 1` + drawer EXOTEC y composición con `exotecProductLimit`?",
+  "rationale": "La implementación es viable, pero decide cómo se lanzarán tandas reales de almacén y qué pedidos quedan fuera por consolidación o límite Skypod.",
+  "options": [
+    {
+      "title": "Aceptar la semántica de la PR",
+      "body": "Revisar la PR abierta como solución canónica y exigir prueba operativa suficiente antes de mergear.",
+      "recommended": true
+    },
+    {
+      "title": "Ajustar la semántica antes del merge",
+      "body": "Pedir cambios en la PR si el límite Skypod, `workers=1` o la exclusión por dirección no reflejan el flujo operativo deseado.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar hasta confirmación de operaciones",
+      "body": "Mantener issue y PR abiertas hasta que operaciones confirme volumen esperado y reglas exactas de exclusión.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aceptar la semántica de la PR",
+    "body": "Revisar la PR abierta como solución canónica y exigir prueba operativa suficiente antes de mergear.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "Es el asignado de la issue y autor de la PR candidata que fija la semántica propuesta.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7325.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7325#issuecomment-4933397063",
+    "reviewedAt": "2026-07-10T13:34:38.584Z",
+    "mainSha": "7911cda12e2f076eb3e51bbe2090b55283737e42"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-27T12:17:40.124Z",
+  "updatedAt": "2026-07-27T11:57:39Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7970,
+    "title": "feat: migrate alibris inventory export to bigquery source",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7970",
+    "state": "closed",
+    "labels": [
+      "app:infrastructure",
+      "feature",
+      "triage:blocked",
+      "reporter:alejandrodiaz",
+      "P2",
+      "impact:other",
+      "issue-rating: ➖ n/a",
+      "clawsweeper:linked-pr-open",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-27T06:40:32Z",
+    "updatedAt": "2026-07-27T11:57:39Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué debe hacer el cron purge de Alibris cuando `bq-freshness-gate` agote su espera sin un snapshot fresco?",
+  "rationale": "La elección cambia la exactitud del catálogo y la carga sobre MongoDB; el código compartido permite continuar con datos stale, pero no define la política segura para este export.",
+  "options": [
+    {
+      "title": "Abortar ante datos stale",
+      "body": "Fallar el run antes de generar el catálogo y conservar `source=mongo` como rollback manual mientras no haya frescura.",
+      "recommended": true
+    },
+    {
+      "title": "Publicar el snapshot stale",
+      "body": "Aceptar explícitamente que el export diario puede sustituirse con el último snapshot disponible tras avisar por Slack.",
+      "recommended": false
+    },
+    {
+      "title": "Cambiar automáticamente a Mongo",
+      "body": "Usar MongoDB al vencer el gate, asumiendo carga adicional sobre el primario durante incidencias de frescura.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Abortar ante datos stale",
+    "body": "Fallar el run antes de generar el catálogo y conservar `source=mongo` como rollback manual mientras no haya frescura.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su historial cubre el diseño y las protecciones operativas del export, y ya figura como revisor solicitado de la PR.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7970.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7970#issuecomment-5088194594",
+    "reviewedAt": "2026-07-27T12:17:40.124Z",
+    "mainSha": "e6b81a368263f75b679db21a1b01d522fcf69561"
+  }
+}

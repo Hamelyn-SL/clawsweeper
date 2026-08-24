@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-04T23:26:01.465Z",
+  "updatedAt": "2026-08-04T23:12:46Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 6763,
+    "title": "Añadir hreflang/alternate en páginas de categoría (todas las tiendas) + integrar Brasil (pt-br) en el clúster",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6763",
+    "state": "open",
+    "labels": [
+      "bug",
+      "source:admin-panel",
+      "app:ecommerce",
+      "triage:done",
+      "reporter:victor",
+      "origin:panel",
+      "P2",
+      "impact:other",
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-01T10:05:41Z",
+    "updatedAt": "2026-08-04T23:12:46Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe `SearchPage` generar hreflang únicamente para aliases públicos de categoría/subcategoría, o deben migrarse esas rutas a una superficie SEO dedicada?",
+  "rationale": "El mismo componente atiende búsquedas libres y rutas SEO; la decisión define qué URLs pueden declararse equivalentes internacionalmente sin crear alternates inválidos.",
+  "options": [
+    {
+      "title": "Limitar por ruta de origen",
+      "body": "Usar el pathname de origen del proxy para generar alternates solo en aliases de categoría y subcategoría; es la opción recomendada.",
+      "recommended": true
+    },
+    {
+      "title": "Separar las rutas SEO",
+      "body": "Crear una superficie dedicada para categorías y subcategorías y dejar `SearchPage` sin idiomas para consultas genéricas.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Limitar por ruta de origen",
+    "body": "Usar el pathname de origen del proxy para generar alternates solo en aliases de categoría y subcategoría; es la opción recomendada.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Su historial cubre el flujo de búsqueda, los aliases de categoría y la metadata SEO que requiere esta delimitación.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6763.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6763#issuecomment-4910174262",
+    "reviewedAt": "2026-08-04T23:26:01.465Z",
+    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
+  }
+}

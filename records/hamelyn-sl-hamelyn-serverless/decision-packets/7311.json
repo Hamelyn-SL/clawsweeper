@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-09T22:23:36.101Z",
+  "updatedAt": "2026-07-09T20:05:00Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7311,
+    "title": "fix: route todocoleccion price errors to withdraw",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7311",
+    "state": "open",
+    "labels": [
+      "size/S",
+      "rating: 🦪 silver shellfish",
+      "status: 📣 needs proof",
+      "P1"
+    ],
+    "createdAt": "2026-07-09T19:57:46Z",
+    "updatedAt": "2026-07-09T20:05:00Z",
+    "headSha": "284e421e2018d6cdf3338dacc5c1a23d4ac7f55a"
+  },
+  "lane": "proof_sufficiency",
+  "priority": "P1",
+  "question": "¿Debe exigirse prueba real post-cambio de la ruta de withdraw de TodoColeccion antes de mergear este PR?",
+  "rationale": "La lógica del patch parece correcta por fuente, pero ClawSweeper no puede sustituir una ejecución real del flujo de marketplace ni decidir si el equipo acepta un override de prueba.",
+  "options": [
+    {
+      "title": "Pedir prueba de ejecución",
+      "body": "Solicitar un log o salida redactada donde el selector incluya al menos un caso `UPDATING_PRICE` y lo entregue al withdraw antes de mergear.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar override manual",
+      "body": "Un maintainer de marketplace puede aceptar el riesgo si considera suficiente la evidencia de fuente y los counts vivos ya aportados.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Pedir prueba de ejecución",
+    "body": "Solicitar un log o salida redactada donde el selector incluya al menos un caso `UPDATING_PRICE` y lo entregue al withdraw antes de mergear.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "Está pedido como reviewer y el bot de asignación lo identificó con señales directas en queries de stocks/marketplaces.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7311.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7311#issuecomment-4930106773",
+    "reviewedAt": "2026-07-09T22:23:36.101Z",
+    "mainSha": "8883e80d43347813e2a0696912d00d8c537ab607"
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-10T15:24:46.616Z",
+  "updatedAt": "2026-08-10T13:37:16Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8272,
+    "title": "fix: return 500 on total cron failure and emit structured run summary",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8272",
+    "state": "closed",
+    "labels": [
+      "size/L",
+      "proof: 📸 screenshot",
+      "rating: 🥇 gold",
+      "status: 📣 needs proof",
+      "P1",
+      "merge-risk: 🚨 compatibility",
+      "merge-risk: 🚨 availability"
+    ],
+    "createdAt": "2026-08-06T06:37:35Z",
+    "updatedAt": "2026-08-10T13:37:16Z",
+    "headSha": "635f8cdb8ce18588337b3b179a86ae32078f4896"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Qué rutas cron existentes deben conservar HTTP 200 cuando todas sus operaciones fallen?",
+  "rationale": "El PR añade una excepción por ruta, pero no identifica ningún consumidor que deba mantener el contrato anterior ni existe una política aprobada para esa clasificación.",
+  "options": [
+    {
+      "title": "Auditar y declarar excepciones",
+      "body": "Revisar los consumidores y añadir `failurePolicy` únicamente en las rutas cuyo proceso tolere explícitamente un fallo total.",
+      "recommended": true
+    },
+    {
+      "title": "Adoptar 500 universal",
+      "body": "Aceptar HTTP 500 para todos los fallos totales y asumir los cambios de alertas y reintentos que produzca.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Auditar y declarar excepciones",
+    "body": "Revisar los consumidores y añadir `failurePolicy` únicamente en las rutas cuyo proceso tolere explícitamente un fallo total.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "HamelynDev",
+    "reason": "Introdujo los handlers compartidos cuyo contrato HTTP cambia.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/8272.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8272#issuecomment-5201950848",
+    "reviewedAt": "2026-08-10T15:24:46.616Z",
+    "mainSha": "df8da352886a77d07fef0ccfd54f0687177453b0"
+  }
+}

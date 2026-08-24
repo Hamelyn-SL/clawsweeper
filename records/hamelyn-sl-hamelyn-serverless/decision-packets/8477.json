@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-18T10:19:53.015Z",
+  "updatedAt": "2026-08-18T10:15:50Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8477,
+    "title": "Auditar y corregir roles del admin: pasar usuarios de admin-user a admin-logistic y revisar paneles por rol",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8477",
+    "state": "open",
+    "labels": [
+      "app:admin",
+      "reporter:davidgonzalez",
+      "feature",
+      "triage:needs-info",
+      "P1",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:source-repro",
+      "impact:security",
+      "clawsweeper:needs-security-review",
+      "issue-rating: 💎 diamond",
+      "origin:dev"
+    ],
+    "createdAt": "2026-08-17T12:20:51Z",
+    "updatedAt": "2026-08-18T10:15:50Z"
+  },
+  "lane": "security_boundary",
+  "priority": "P1",
+  "question": "¿La gestión de Usuarios —lectura, creación y edición de roles— debe quedar íntegramente reservada a `admin-user`, y qué cuentas concretas conservan esa excepción?",
+  "rationale": "La fuente demuestra el desajuste, pero no puede inferir qué responsabilidades operativas necesitan acceso a Usuarios ni qué roster es autorizado.",
+  "options": [
+    {
+      "title": "Reservar Usuarios a administradores",
+      "body": "Limitar todas las rutas de Usuarios a `admin-user` y aprobar el roster de excepciones antes de retirar permisos.",
+      "recommended": true
+    },
+    {
+      "title": "Separar lectura y escritura",
+      "body": "Permitir una lectura logística explícita, pero restringir creación y cambios de roles a `admin-user` con una política documentada.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener la frontera actual",
+      "body": "Conservar `admin-logistic` en las APIs de Usuarios aceptando el riesgo de que el menú no represente el permiso efectivo.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Reservar Usuarios a administradores",
+    "body": "Limitar todas las rutas de Usuarios a `admin-user` y aprobar el roster de excepciones antes de retirar permisos.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "Su cambio integrado trata directamente la frontera de paneles de `admin-logistic` y aporta el mejor contexto reciente para la decisión.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8477.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8477#issuecomment-5316131600",
+    "reviewedAt": "2026-08-18T10:19:53.015Z",
+    "mainSha": "df9a298bd1d92c25844d4ffc01d648cb4f5d784b"
+  }
+}

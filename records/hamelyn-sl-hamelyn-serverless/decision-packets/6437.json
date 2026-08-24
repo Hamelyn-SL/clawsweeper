@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-20T14:45:20.615Z",
+  "updatedAt": "2026-07-20T12:53:08Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 6437,
+    "title": "Tracking de entrega para SEUR, FEDEX y CORREOS en ordersells.trackingEvents",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6437",
+    "state": "closed",
+    "labels": [
+      "source:admin-panel",
+      "app:ecommerce",
+      "priority:p1",
+      "reporter:marta",
+      "feature",
+      "triage:done",
+      "P2",
+      "impact:other",
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-06-16T10:30:04Z",
+    "updatedAt": "2026-07-20T12:53:08Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe ampliarse el cron existente de admin para sincronizar `OrderSell`, o conviene operar un job independiente con sus propios límites y cadencia?",
+  "rationale": "Ambas opciones reutilizan piezas existentes, pero cambian la carga operativa, las cuotas de carrier y el aislamiento ante fallos; el código no fija esa política.",
+  "options": [
+    {
+      "title": "Ampliar el cron existente",
+      "body": "Añadir selección y persistencia de `OrderSell` al cron actual, con límites separados por carrier y entidad.",
+      "recommended": true
+    },
+    {
+      "title": "Crear un job independiente",
+      "body": "Mantener el cron de `Order` intacto y operar la sincronización de marketplace con cadencia y observabilidad propias.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Ampliar el cron existente",
+    "body": "Añadir selección y persistencia de `OrderSell` al cron actual, con límites separados por carrier y entidad.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su historial reciente y su diagnóstico conectan directamente con el cron y las decisiones de sincronización.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/6437.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6437#issuecomment-4969101903",
+    "reviewedAt": "2026-07-20T14:45:20.615Z",
+    "mainSha": "c3e33d1b80e95363644d3ad598763dd551a72a83"
+  }
+}

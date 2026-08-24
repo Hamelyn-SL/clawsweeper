@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-10T08:13:13.004Z",
+  "updatedAt": "2026-07-10T07:19:57Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7068,
+    "title": "chore: extract group pricing business logic into specs and services",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7068",
+    "state": "closed",
+    "labels": [
+      "size/XXL",
+      "rating: 🧂 unranked krab",
+      "status: 📣 needs proof",
+      "P2",
+      "merge-risk: 🚨 compatibility"
+    ],
+    "createdAt": "2026-07-07T06:23:18Z",
+    "updatedAt": "2026-07-10T07:19:57Z",
+    "headSha": "73ac8737f1cf8aa283425eabb46c238d1c82cc99"
+  },
+  "lane": "merge_risk",
+  "priority": "P2",
+  "question": "¿La revisión de pricing acepta fusionar esta extracción del batch de Group Pricing una vez corregido el contrato BL y aportada prueba real/dry-run redactada?",
+  "rationale": "El PR toca una ruta que persiste grupos y precios; los hallazgos mecánicos son reparables, pero aceptar la equivalencia de comportamiento del batch requiere criterio del área.",
+  "options": [
+    {
+      "title": "Corregir contrato BL y exigir prueba real",
+      "body": "Normalizar `isolated`, renombrar los tests BL y añadir salida redactada de una ejecución representativa antes de completar la revisión de pricing.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar riesgo con revisión de pricing",
+      "body": "Los reviewers pueden fusionar si asumen explícitamente que la aprobación humana y la cobertura de tests bastan para este batch.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar hasta validación operativa",
+      "body": "Mantener el PR bloqueado si no hay capacidad para revisar la equivalencia con datos representativos.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Corregir contrato BL y exigir prueba real",
+    "body": "Normalizar `isolated`, renombrar los tests BL y añadir salida redactada de una ejecución representativa antes de completar la revisión de pricing.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Ya aprobó el head actual y fue asignado por experiencia fuerte en pricing/product groups.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7068.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7068#issuecomment-4911339082",
+    "reviewedAt": "2026-07-10T08:13:13.004Z",
+    "mainSha": "219124864d44219ad43d9810e111a90ffd8e3fd1"
+  }
+}

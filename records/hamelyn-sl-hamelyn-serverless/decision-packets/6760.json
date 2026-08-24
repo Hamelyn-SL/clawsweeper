@@ -1,0 +1,64 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-10T20:23:33.251Z",
+  "updatedAt": "2026-08-10T20:14:00Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 6760,
+    "title": "Overflow en móvil - Pagina de categoria/subcategoria y catalogo",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6760",
+    "state": "closed",
+    "labels": [
+      "bug",
+      "source:admin-panel",
+      "app:ecommerce",
+      "triage:queued",
+      "reporter:victor",
+      "clawsweeper:source-repro",
+      "good first issue",
+      "issue-rating: 💎 diamond",
+      "origin:panel",
+      "P2",
+      "impact:ux-friction",
+      "clawsweeper:linked-pr-open",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-01T08:49:02Z",
+    "updatedAt": "2026-08-10T20:14:00Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe exigirse que esta incidencia incluya también `PromoStrip` para eliminar cualquier overflow a 360 px, o separarlo como seguimiento global antes de permitir que la PR cierre la incidencia?",
+  "rationale": "La PR cubre la causa raíz acordada, pero su propia medición mantiene un residual global cuyo tratamiento requiere elegir entre wrap, truncado u otra política visual.",
+  "options": [
+    {
+      "title": "Separar el banner global",
+      "body": "Mantener la PR acotada y abrir una incidencia enlazada para definir el comportamiento responsive de `PromoStrip`.",
+      "recommended": true
+    },
+    {
+      "title": "Ampliar esta incidencia",
+      "body": "Pedir que la PR incluya una solución responsive de `PromoStrip` y vuelva a demostrar cero overflow a 360 px.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Separar el banner global",
+    "body": "Mantener la PR acotada y abrir una incidencia enlazada para definir el comportamiento responsive de `PromoStrip`.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Documentó el alcance vigente de la PR y el hallazgo residual que requiere decidir la frontera del trabajo.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/6760.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6760#issuecomment-4910173563",
+    "reviewedAt": "2026-08-10T20:23:33.251Z",
+    "mainSha": "dccdc27e3972f7571ec54f323d2183dbfdc2f74b"
+  }
+}

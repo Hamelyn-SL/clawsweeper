@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-17T14:14:06.677Z",
+  "updatedAt": "2026-08-17T12:03:49Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8473,
+    "title": "Discogs: precios congelados, pacing por encima del cupo real y errores sin clasificar",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8473",
+    "state": "open",
+    "labels": [
+      "bug",
+      "source:admin-panel",
+      "app:marketplace",
+      "triage:done",
+      "P1",
+      "impact:other",
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro",
+      "clawsweeper:linked-pr-open",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-08-17T11:44:59Z",
+    "updatedAt": "2026-08-17T12:03:49Z"
+  },
+  "lane": "manual_review",
+  "priority": "P1",
+  "question": "¿Se aprueba el procedimiento de recuperación productiva para los listings bloqueados tras validar la PR enlazada?",
+  "rationale": "La corrección de código no determina por sí sola qué documentos reintentar, retirar o conservar; la operación modifica datos de marketplace y requiere un criterio explícito.",
+  "options": [
+    {
+      "title": "Recuperación acotada tras dry-run",
+      "body": "Aprobar un dry-run con conteos y muestras, reintentar solo errores transitorios y reconciliar por separado los 404 y 422.",
+      "recommended": true
+    },
+    {
+      "title": "Revisión manual ampliada",
+      "body": "Pausar la mutación hasta revisar una muestra mayor y el impacto comercial de cada cohorte de error.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Recuperación acotada tras dry-run",
+    "body": "Aprobar un dry-run con conteos y muestras, reintentar solo errores transitorios y reconciliar por separado los 404 y 422.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Ya tiene contexto de la incidencia, trabajo previo en Discogs y la PR candidata enlazada.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8473.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8473#issuecomment-5315727733",
+    "reviewedAt": "2026-08-17T14:14:06.677Z",
+    "mainSha": "b642104cd119deeb2f0c57e31ed21a54fc3d9a0b"
+  }
+}

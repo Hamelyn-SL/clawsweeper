@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-09T10:09:31.130Z",
+  "updatedAt": "2026-07-09T09:52:20Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7188,
+    "title": "feat: run skill guardian on gpt-5.5 via codex subscription",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7188",
+    "state": "closed",
+    "labels": [
+      "size/XL",
+      "proof: sufficient",
+      "rating: 🧂 unranked krab",
+      "status: ⏳ waiting on author",
+      "P1",
+      "merge-risk: 🚨 security-boundary",
+      "merge-risk: 🚨 automation"
+    ],
+    "createdAt": "2026-07-07T23:18:08Z",
+    "updatedAt": "2026-07-09T09:52:20Z",
+    "headSha": "1cbab5a5933a36b5fb638c9412469aaa3a07d829"
+  },
+  "lane": "security_boundary",
+  "priority": "P1",
+  "question": "¿Debe el Skill Guardian recibir el store Codex compartido dentro de un workflow `pull_request` que ejecuta el código de `.github/skill-guardian` del propio PR?",
+  "rationale": "El cambio reutiliza la infraestructura de agentes existente, pero amplía el valor de los secrets expuestos a este workflow y la decisión de frontera no se puede cerrar solo con un parche mecánico.",
+  "options": [
+    {
+      "title": "Mover el acceso Codex a una ruta confiable",
+      "body": "Usar código de base/trusted wrapper, `workflow_dispatch` restringido o un servicio intermedio para que el PR no pueda ejecutar código arbitrario con `BLOB_READ_WRITE_TOKEN` y `CODEX_TOKEN_KEY`.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar exposición en ramas internas",
+      "body": "Mantener el diseño actual como política explícita para ramas no-fork, asumiendo que los secretos del repo pueden llegar a código modificado en el PR.",
+      "recommended": false
+    },
+    {
+      "title": "Usar credencial menos privilegiada",
+      "body": "Proveer al guardian un token de solo lectura o broker limitado que no pueda reescribir el store compartido ni reutilizarse fuera del flujo de revisión.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mover el acceso Codex a una ruta confiable",
+    "body": "Usar código de base/trusted wrapper, `workflow_dispatch` restringido o un servicio intermedio para que el PR no pueda ejecutar código arbitrario con `BLOB_READ_WRITE_TOKEN` y `CODEX_TOKEN_KEY`.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es quien más historial tiene en Skill Guardian y en la evolución reciente del workflow/modelo afectado.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7188.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7188#issuecomment-4923131813",
+    "reviewedAt": "2026-07-09T10:09:31.130Z",
+    "mainSha": "041bf27bd20f293dfcff578800215d4e71bf8a01"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-18T11:24:19.744Z",
+  "updatedAt": "2026-08-18T11:09:05Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8482,
+    "title": "feat: standalone bifrost warehouse panel app",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8482",
+    "state": "open",
+    "labels": [
+      "size/XXL",
+      "P1"
+    ],
+    "createdAt": "2026-08-17T13:20:53Z",
+    "updatedAt": "2026-08-18T11:09:05Z",
+    "headSha": "d68ad3b06a583d5ba8c8e180cd0f181fa8166fa1"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe Bifrost consolidarse como aplicación Vercel independiente en lugar de permanecer como panel dentro de `admin`?",
+  "rationale": "La issue vinculada describe el panel en `admin`, mientras que este PR introduce una nueva superficie de despliegue, Auth0, secretos y operación del ancla.",
+  "options": [
+    {
+      "title": "Confirmar la app independiente",
+      "body": "Aceptar Bifrost como superficie operativa separada y exigir los ajustes y la prueba de producción antes de mergear.",
+      "recommended": true
+    },
+    {
+      "title": "Mantenerlo dentro de admin",
+      "body": "Devolver el panel al contrato de la issue y evitar un proyecto, configuración Auth0 y despliegue adicionales.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Confirmar la app independiente",
+    "body": "Aceptar Bifrost como superficie operativa separada y exigir los ajustes y la prueba de producción antes de mergear.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Su asignación y revisión se basan específicamente en los cambios de Auth0, KV, endpoints y despliegue que determinan esta frontera.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8482.md",
+    "reviewedAt": "2026-08-18T11:24:19.744Z",
+    "mainSha": "5306ae067c234979d9abf2167b48653d8640f167"
+  }
+}

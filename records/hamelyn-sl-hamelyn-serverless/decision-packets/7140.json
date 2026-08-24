@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-19T16:20:39.141Z",
+  "updatedAt": "2026-07-19T13:27:09Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7140,
+    "title": "BL-ecommerce-coupons: static promo banner hardcodes 5% discount copy",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7140",
+    "state": "closed",
+    "labels": [
+      "app:ecommerce",
+      "priority:p3",
+      "feature",
+      "triage:done",
+      "business-logic",
+      "P3",
+      "impact:ux-friction",
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-07T12:14:01Z",
+    "updatedAt": "2026-07-19T13:27:09Z"
+  },
+  "lane": "product_direction",
+  "priority": "P3",
+  "question": "¿La fuente de verdad de la campaña visible debe ampliarse en los cupones existentes o vivir como una configuración promocional separada por locale?",
+  "rationale": "Los cupones actuales expresan cálculo y vigencia, pero no la selección comercial ni el texto localizado que debe aparecer en la cabecera.",
+  "options": [
+    {
+      "title": "Configurar promociones separadas",
+      "body": "Crear una configuración de campaña por locale que referencie el cupón aplicable y contenga copy, prioridad y ventana de publicación.",
+      "recommended": true
+    },
+    {
+      "title": "Extender el modelo de cupón",
+      "body": "Añadir metadatos de visibilidad, locale y copy a los cupones, asumiendo que un cupón puede ser directamente una campaña pública.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Configurar promociones separadas",
+    "body": "Crear una configuración de campaña por locale que referencie el cupón aplicable y contenga copy, prioridad y ventana de publicación.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Es el owner documentado del bloque Coupons & Promotions y puede fijar la frontera funcional con Ecommerce.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7140.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7140#issuecomment-4913348731",
+    "reviewedAt": "2026-07-19T16:20:39.141Z",
+    "mainSha": "3e701a51783634733d86746c3425f42cce83da5a"
+  }
+}

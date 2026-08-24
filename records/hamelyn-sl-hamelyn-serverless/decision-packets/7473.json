@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-19T16:19:27.081Z",
+  "updatedAt": "2026-07-19T13:27:24Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7473,
+    "title": "feat: redesign ecommerce sitemaps (vertical x state, gz, recientes)",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7473",
+    "state": "closed",
+    "labels": [
+      "size/XXL",
+      "conflicts:needs-human",
+      "proof: 🎥 video",
+      "rating: 🥈 silver",
+      "status: 📣 needs proof",
+      "P2",
+      "merge-risk: 🚨 compatibility",
+      "merge-risk: 🚨 availability"
+    ],
+    "createdAt": "2026-07-13T12:23:30Z",
+    "updatedAt": "2026-07-19T13:27:24Z",
+    "headSha": "347d94b44cc88adeddfe476fd5e91fdaeb0abf96"
+  },
+  "lane": "release_inclusion",
+  "priority": "P2",
+  "question": "¿Se acepta el corte v2 condicionado a una operación manual inmediata del cron, sin `lastmod` veraz, o debe automatizarse la transición antes de fusionar?",
+  "rationale": "La rama documenta una ventana de índices vacíos y difiere un requisito del alcance original; elegir entre operación manual, compatibilidad temporal o despliegue en dos fases requiere intención de producto y lanzamiento.",
+  "options": [
+    {
+      "title": "Automatizar la transición v2",
+      "body": "Publicar y comprobar el manifest v2 antes de activar `robots.txt` y las rutas nuevas, con una prueba real por host.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar un corte operado",
+      "body": "Fusionar con un runbook aprobado, ejecución manual inmediata del cron y monitorización explícita de los seis índices.",
+      "recommended": false
+    },
+    {
+      "title": "Separar el alcance pendiente",
+      "body": "Mantener esta rama abierta hasta acordar qué trabajo restante de `lastmod` y transición pertenece al cambio actual.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Automatizar la transición v2",
+    "body": "Publicar y comprobar el manifest v2 antes de activar `robots.txt` y las rutas nuevas, con una prueba real por host.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "alexcanHamelyn",
+    "reason": "Su historial integrado en la lógica SEO y el generador lo sitúa como el mejor punto de partida técnico para concretar la transición.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7473.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7473#issuecomment-4959505792",
+    "reviewedAt": "2026-07-19T16:19:27.081Z",
+    "mainSha": "3e701a51783634733d86746c3425f42cce83da5a"
+  }
+}

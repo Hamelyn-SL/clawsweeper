@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-04T23:19:13.319Z",
+  "updatedAt": "2026-08-04T23:00:58Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 5778,
+    "title": "marketplace-crons: eBay rechaza creates por política de título o descripción",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5778",
+    "state": "closed",
+    "labels": [
+      "codex",
+      "bug",
+      "app:marketplace",
+      "triage:confirmed-live",
+      "area:marketplace-sync",
+      "origin:watcher",
+      "mk:ebay",
+      "P1",
+      "impact:other",
+      "issue-rating: 🥈 silver",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-05-09T06:34:37Z",
+    "updatedAt": "2026-08-04T23:00:58Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Qué política operativa debe aplicarse a los rechazos `Issue_172_Block`, cuenta limitada y falsificaciones antes de reactivar la creación de eBay?",
+  "rationale": "El código puede reconocer firmas, pero no puede decidir si una restricción de cuenta es terminal, recuperable tras intervención externa o requiere reencolar stock existente.",
+  "options": [
+    {
+      "title": "Mantener create pausado y clasificar por código",
+      "body": "Conservar la pausa, añadir clasificación explícita y reactivar solo después de confirmar con eBay que la cuenta puede publicar.",
+      "recommended": true
+    },
+    {
+      "title": "Tratar toda variante como permanente",
+      "body": "Evita reintentos, pero exige un procedimiento manual documentado para revisar y reencolar casos recuperables.",
+      "recommended": false
+    },
+    {
+      "title": "Reactivar sin nueva clasificación",
+      "body": "Recupera publicaciones potenciales, pero puede reintroducir los rechazos masivos observados.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mantener create pausado y clasificar por código",
+    "body": "Conservar la pausa, añadir clasificación explícita y reactivar solo después de confirmar con eBay que la cuenta puede publicar.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "El historial actual del controlador y la coordinación reciente lo conectan con la decisión de reactivación del cron.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/5778.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5778#issuecomment-4909751684",
+    "reviewedAt": "2026-08-04T23:19:13.319Z",
+    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
+  }
+}

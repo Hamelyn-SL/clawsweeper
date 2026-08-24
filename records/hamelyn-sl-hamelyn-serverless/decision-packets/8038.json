@@ -1,0 +1,64 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-05T09:14:12.412Z",
+  "updatedAt": "2026-08-05T08:59:52Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8038,
+    "title": "Amazon IT catalog collapses under restriction 18076",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8038",
+    "state": "closed",
+    "labels": [
+      "bug",
+      "source:admin-panel",
+      "app:marketplace",
+      "reporter:miguel",
+      "triage:needs-info",
+      "area:marketplace-sync",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
+      "origin:panel",
+      "mk:amazon",
+      "P0",
+      "impact:other",
+      "issue-rating: 🥇 gold",
+      "clawsweeper:needs-info"
+    ],
+    "createdAt": "2026-07-28T20:53:55Z",
+    "updatedAt": "2026-08-05T08:59:52Z"
+  },
+  "lane": "product_direction",
+  "priority": "P0",
+  "question": "¿Debe el equipo mantener la monitorización sin mutaciones hasta recibir la causa de Amazon, o aprobar una recuperación limitada a listings que hayan vuelto a `BUYABLE`?",
+  "rationale": "La implementación actual puede reconciliar y observar estados, pero no puede determinar la causa externa ni la política segura de reenvío de cohortes.",
+  "options": [
+    {
+      "title": "Esperar confirmación Amazon",
+      "body": "Mantener los monitores y no mutar listings hasta obtener el enforcement y la acción correctiva desde Seller Central o Seller Support.",
+      "recommended": true
+    },
+    {
+      "title": "Aprobar recuperación controlada",
+      "body": "Definir una política auditable que procese solo lotes con `BUYABLE` confirmado y valide el resultado seller-side.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Esperar confirmación Amazon",
+    "body": "Mantener los monitores y no mutar listings hasta obtener el enforcement y la acción correctiva desde Seller Central o Seller Support.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Está asignado en la discusión, planteó la hipótesis de Account Health y figura en la historia reciente de watchers y reconciliación.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/8038.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8038#issuecomment-5109943437",
+    "reviewedAt": "2026-08-05T09:14:12.412Z",
+    "mainSha": "ee46b80b8ededa9eb3fd36b55bb15b743f7c1f64"
+  }
+}

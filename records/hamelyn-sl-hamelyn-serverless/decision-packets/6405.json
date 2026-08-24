@@ -1,0 +1,66 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-14T22:52:06.060Z",
+  "updatedAt": "2026-07-09T01:05:34Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 6405,
+    "title": "marketplace-crons: Amazon SE create falla cuando no encuentra ASIN para el EAN",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6405",
+    "state": "closed",
+    "labels": [
+      "marketplace-crons",
+      "codex",
+      "bug",
+      "priority:p1",
+      "app:marketplace",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "impact:other",
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro"
+    ],
+    "createdAt": "2026-06-13T04:37:33Z",
+    "updatedAt": "2026-07-09T01:05:34Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Amazon SE debe conservar `No ASIN found for this EAN` como `STALE` recuperable cada 24 horas, o debe tratar esos stocks como no elegibles o terminales hasta que exista un ASIN?",
+  "rationale": "Ambas conductas son técnicamente coherentes pero tienen consecuencias operativas opuestas: reintentar permite recuperar listings futuros y genera ruido recurrente; excluir reduce errores pero puede impedir altas posteriores. Los datos disponibles todavía no demuestran una fuga del cooldown.",
+  "options": [
+    {
+      "title": "Mantener retry y afinar alertado",
+      "body": "Verificar la cadencia por SKU, conservar el cooldown de 24 horas y hacer que el watcher solo abra o reabra ante reintentos prematuros o un umbral operativo anómalo.",
+      "recommended": true
+    },
+    {
+      "title": "Marcar como no elegible",
+      "body": "Persistir el caso sin ASIN como exclusión terminal y exigir una reactivación explícita o automática cuando el catálogo obtenga un ASIN.",
+      "recommended": false
+    },
+    {
+      "title": "Añadir enriquecimiento previo",
+      "body": "Desviar estos stocks a un flujo de enriquecimiento de ASIN antes de permitir un nuevo intento de creación, asumiendo mayor complejidad operativa.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mantener retry y afinar alertado",
+    "body": "Verificar la cadencia por SKU, conservar el cooldown de 24 horas y hacer que el watcher solo abra o reabra ante reintentos prematuros o un umbral operativo anómalo.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su historial cubre la política `retryPolicy`, el barrido `STALE` y las garantías de concurrencia que deben calibrarse para esta decisión.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/6405.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6405#issuecomment-4920563891",
+    "reviewedAt": "2026-07-14T22:52:06.060Z",
+    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
+  }
+}

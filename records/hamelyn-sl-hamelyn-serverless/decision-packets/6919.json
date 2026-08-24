@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-21T13:36:06.583Z",
+  "updatedAt": "2026-07-21T12:18:21Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 6919,
+    "title": "BL-shipping-costs-02: patrones de differentShippingCosts mal escapados en countries",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6919",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:ecommerce",
+      "triage:done",
+      "P3",
+      "impact:other",
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review"
+    ],
+    "createdAt": "2026-07-06T08:48:03Z",
+    "updatedAt": "2026-07-21T12:18:21Z"
+  },
+  "lane": "manual_review",
+  "priority": "P3",
+  "question": "¿Autoriza el equipo ecommerce la escritura controlada en producción para corregir el patrón afectado y su verificación antes de retirar la compatibilidad?",
+  "rationale": "La corrección requiere modificar una fuente de datos operativa fuera del checkout y el repositorio no acredita que el documento vivo ya esté saneado.",
+  "options": [
+    {
+      "title": "Sanear y retirar compatibilidad",
+      "body": "Aplicar el cambio de datos con dry-run y comprobación posterior, y después eliminar el fallback, su test y la nota de divergencia.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener compatibilidad temporal",
+      "body": "Conservar el workaround mientras se programa una corrección de datos con acceso y trazabilidad operativos.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Sanear y retirar compatibilidad",
+    "body": "Aplicar el cambio de datos con dry-run y comprobación posterior, y después eliminar el fallback, su test y la nota de divergencia.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Integró la ruta actual y es el candidato histórico más cercano para coordinar la retirada segura de la compatibilidad.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6919.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6919#issuecomment-4911150620",
+    "reviewedAt": "2026-07-21T13:36:06.583Z",
+    "mainSha": "1c9b8717c11135abed5e4be14479cf2b23da5671"
+  }
+}

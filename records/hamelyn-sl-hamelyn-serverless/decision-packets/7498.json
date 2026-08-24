@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-14T23:05:07.943Z",
+  "updatedAt": "2026-07-14T09:59:53Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7498,
+    "title": "feat: add ecommerce scraping investigator",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7498",
+    "state": "closed",
+    "labels": [
+      "size/XL",
+      "rating: 🥉 bronze",
+      "status: 📣 needs proof",
+      "P1",
+      "merge-risk: 🚨 compatibility",
+      "merge-risk: 🚨 automation",
+      "merge-risk: 🚨 other"
+    ],
+    "createdAt": "2026-07-14T06:57:33Z",
+    "updatedAt": "2026-07-14T09:59:53Z",
+    "headSha": "7b28863270fd4aa308ae5d5befe080200486f63d"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe el watcher conservar la detección casi en tiempo real cada 15 minutos o se acepta explícitamente una única investigación diaria?",
+  "rationale": "La PR cambia de forma material la latencia, el coste y el ruido frente al contrato de la issue, y esa preferencia operativa no puede deducirse de forma segura solo desde el código.",
+  "options": [
+    {
+      "title": "Precheck cada 15 minutos",
+      "body": "Mantener la aceptación original con ventanas acotadas y deduplicación, reservando el modelo para las cohortes que superen el score.",
+      "recommended": true
+    },
+    {
+      "title": "Investigación diaria",
+      "body": "Aceptar deliberadamente una latencia de hasta 24 horas y actualizar la issue, los umbrales y la documentación operativa antes del merge.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Precheck cada 15 minutos",
+    "body": "Mantener la aceptación original con ventanas acotadas y deduplicación, reservando el modelo para las cohortes que superen el score.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es la persona con mayor historial sobre la arquitectura, los schedules y las guardas operativas de `apps/agents`, además de ser revisor solicitado.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7498.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7498#issuecomment-4974850195",
+    "reviewedAt": "2026-07-14T23:05:07.943Z",
+    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-12T17:08:00.917Z",
+  "updatedAt": "2026-07-12T16:12:15Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7398,
+    "title": "GitHub Actions: Upload Products, Sync Azeta y Sync Arnoia llevan meses fallando sin alertar",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7398",
+    "state": "closed",
+    "labels": [
+      "bug",
+      "priority:p1",
+      "app:infrastructure",
+      "P1",
+      "impact:other",
+      "issue-rating: 🦞 diamond lobster",
+      "clawsweeper:source-repro",
+      "clawsweeper:linked-pr-open",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:fix-shape-clear",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-07-12T12:59:16Z",
+    "updatedAt": "2026-07-12T16:12:15Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe aceptarse `https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7406` como solución completa para esta incidencia, incluido el export recortado y el dead man's switch semanal?",
+  "rationale": "La reproducción es clara y la PR ya existe, pero el cambio combina recuperación de crons productivos, contrato de export y observabilidad común; cerrar o automatizar más trabajo antes de la revisión humana saltaría una decisión operativa real.",
+  "options": [
+    {
+      "title": "Revisar y mergear la PR candidata",
+      "body": "Si MiguelHamelyn valida el contrato del CSV, los secrets y la alerta Slack, esta issue debería cerrarse al merge de la PR abierta.",
+      "recommended": true
+    },
+    {
+      "title": "Partir la solución en PRs más pequeñas",
+      "body": "Separar streaming de `products.py`, secrets KV y supervisor de crons reduce riesgo si el cambio conjunto es demasiado amplio.",
+      "recommended": false
+    },
+    {
+      "title": "Cerrar la PR y mantener esta issue",
+      "body": "Si el enfoque de dead man's switch o export recortado no es aceptable, esta issue debe seguir abierta con un diseño operativo nuevo.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Revisar y mergear la PR candidata",
+    "body": "Si MiguelHamelyn valida el contrato del CSV, los secrets y la alerta Slack, esta issue debería cerrarse al merge de la PR abierta.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Es el revisor solicitado en la PR candidata y el comentario de asignación lo identifica por experiencia directa en los archivos tocados.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7398.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7398#issuecomment-4951319129",
+    "reviewedAt": "2026-07-12T17:08:00.917Z",
+    "mainSha": "2c99c92624003a8a11306f66bf6efb6d2e2af0fc"
+  }
+}

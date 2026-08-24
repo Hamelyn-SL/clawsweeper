@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-17T14:37:55.467Z",
+  "updatedAt": "2026-08-17T14:32:49Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8455,
+    "title": "Mirakl engine: floating acceptOrder, broken WRONG_PRICE pattern and unclassified provider errors",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8455",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "triage:done",
+      "P1",
+      "impact:other",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:source-repro",
+      "clawsweeper:linked-pr-open",
+      "issue-rating: 💎 diamond"
+    ],
+    "createdAt": "2026-08-14T10:43:55Z",
+    "updatedAt": "2026-08-17T14:32:49Z"
+  },
+  "lane": "release_inclusion",
+  "priority": "P1",
+  "question": "¿Debe la PR de endurecimiento aterrizar como corrección de futuro mientras la reclasificación histórica se ejecuta como operación controlada y mantiene esta incidencia abierta?",
+  "rationale": "La decisión determina cuándo puede considerarse resuelto el impacto histórico, mientras que el código nuevo evita que se sigan creando filas sin clasificar.",
+  "options": [
+    {
+      "title": "Separar corrección y backfill",
+      "body": "Resolver el conflicto, integrar el endurecimiento y mantener esta incidencia abierta hasta completar y verificar la reclasificación histórica.",
+      "recommended": true
+    },
+    {
+      "title": "Exigir una operación previa",
+      "body": "No aprobar la PR hasta disponer de un dry-run validado y un plan operativo ejecutable para reclasificar la cohorte existente.",
+      "recommended": false
+    },
+    {
+      "title": "Limitar el alcance al futuro",
+      "body": "Aceptar que la PR cierre solo los errores nuevos y abrir un seguimiento explícito para la cohorte histórica.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Separar corrección y backfill",
+    "body": "Resolver el conflicto, integrar el endurecimiento y mantener esta incidencia abierta hasta completar y verificar la reclasificación histórica.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Es la persona asignada a la incidencia y quien mantiene la PR candidata con la evidencia técnica más reciente.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8455.md",
+    "reviewedAt": "2026-08-17T14:37:55.467Z",
+    "mainSha": "b642104cd119deeb2f0c57e31ed21a54fc3d9a0b"
+  }
+}

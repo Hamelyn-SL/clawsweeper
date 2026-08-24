@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-17T01:51:46.687Z",
+  "updatedAt": "2026-07-17T01:43:30Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7641,
+    "title": "feat: show free coupon items in edesk tickets",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7641",
+    "state": "closed",
+    "labels": [
+      "size/M",
+      "proof: sufficient",
+      "rating: 🥇 gold",
+      "status: ⏳ waiting on author",
+      "P2",
+      "merge-risk: 🚨 other"
+    ],
+    "createdAt": "2026-07-16T09:57:54Z",
+    "updatedAt": "2026-07-17T01:43:30Z",
+    "headSha": "00f0997d809307ae47e6aecb52ded241fd3ed0d3"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe garantizarse la identidad exacta de la línea gratuita persistiendo la asignación del checkout, o se acepta una reconstrucción aproximada para soporte?",
+  "rationale": "`unitsGranted` solo conserva la cantidad total y los precios de las líneas se persisten después de conversión y redondeo, por lo que no siempre permiten recuperar la selección EUR original.",
+  "options": [
+    {
+      "title": "Persistir la asignación exacta",
+      "body": "Añadir un campo opcional escrito al aplicar el cupón y usarlo en eDesk, sin inferir los pedidos históricos.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar reconstrucción aproximada",
+      "body": "Mantener esta implementación documentando que algunos pedidos multimoneda pueden mostrar una línea distinta de la seleccionada originalmente.",
+      "recommended": false
+    },
+    {
+      "title": "Elegir la otra candidata",
+      "body": "Comparar esta PR con https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7640 y conservar una sola implementación y superficie de eDesk.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Persistir la asignación exacta",
+    "body": "Añadir un campo opcional escrito al aplicar el cupón y usarlo en eDesk, sin inferir los pedidos históricos.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Tiene la señal histórica más directa sobre la regla canónica de cupones y figura como revisor solicitado.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7641.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7641#issuecomment-4990695620",
+    "reviewedAt": "2026-07-17T01:51:46.687Z",
+    "mainSha": "86cdf7fcafe5d04dac6981fb6383791e7bd4b0bf"
+  }
+}

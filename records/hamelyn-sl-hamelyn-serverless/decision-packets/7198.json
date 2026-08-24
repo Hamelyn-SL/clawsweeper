@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-08T22:55:11.886Z",
+  "updatedAt": "2026-07-08T21:10:13Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7198,
+    "title": "fix: reject orphan product notify requests",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7198",
+    "state": "closed",
+    "labels": [
+      "size/S",
+      "rating: 🧂 unranked krab",
+      "status: 📣 needs proof",
+      "P3",
+      "merge-risk: 🚨 compatibility",
+      "merge-risk: 🚨 message-delivery"
+    ],
+    "createdAt": "2026-07-08T04:27:03Z",
+    "updatedAt": "2026-07-08T21:10:13Z",
+    "headSha": "c7fe7647c1a684ca575ac98b1e2d7d3c2f58d354"
+  },
+  "lane": "product_direction",
+  "priority": "P3",
+  "question": "¿Debe el cron marcar como notificadas las solicitudes cuyo producto ya no está en catálogo, o deben quedar pendientes para que el aviso sobreviva si el producto vuelve?",
+  "rationale": "Las dos PRs abiertas resuelven el mismo issue con políticas de retención incompatibles, y esa decisión afecta a si un cliente puede perder un aviso futuro.",
+  "options": [
+    {
+      "title": "Conservar pendientes tras eliminación",
+      "body": "Retirar el cambio del cron de esta PR y limitar el arreglo a validar/canonicalizar las altas nuevas contra catálogo.",
+      "recommended": true
+    },
+    {
+      "title": "Cerrar huérfanas en el cron",
+      "body": "Mantener esta PR como vía canónica si el propietario acepta que una retirada temporal del catálogo cierre definitivamente el aviso existente.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar ambas PRs",
+      "body": "Dejar ambas ramas en espera hasta que el propietario de BL confirme la política de retención y se elija una única implementación.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Conservar pendientes tras eliminación",
+    "body": "Retirar el cambio del cron de esta PR y limitar el arreglo a validar/canonicalizar las altas nuevas contra catálogo.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "danielmenchen-hamelyn",
+    "reason": "Tiene el contexto más directo del issue canónico y de la PR alternativa que documenta la decisión de retención.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7198.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7198#issuecomment-4919242072",
+    "reviewedAt": "2026-07-08T22:55:11.886Z",
+    "mainSha": "5841c4c58c71675185066a63205984fa2de43f0e"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-21T00:44:25.084Z",
+  "updatedAt": "2026-08-20T11:24:34Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8215,
+    "title": "feat: turn the reception panel v2 prototype into a working panel",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8215",
+    "state": "open",
+    "labels": [
+      "size/XXL",
+      "rating: 🥉 bronze",
+      "status: 📣 needs proof",
+      "P1",
+      "merge-risk: 🚨 message-delivery"
+    ],
+    "createdAt": "2026-08-04T13:06:12Z",
+    "updatedAt": "2026-08-20T11:24:34Z",
+    "headSha": "a4c844a647b46086e2ba0cb0018f5b11be39cd68"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe el panel permitir cancelar en el muelle todos los estados que el grafo acepte, incluido `SUSPICIOUS`, con las notificaciones estándar de cancelación?",
+  "rationale": "El propio PR identifica esa frontera operativa como pendiente; el código puede preservar el contrato actual, pero no decidir por sí solo la política de almacén.",
+  "options": [
+    {
+      "title": "Mantener la cancelación con contrato estándar",
+      "body": "Conservar la acción para los estados permitidos por el grafo y ejecutar siempre el despacho estándar de transiciones.",
+      "recommended": true
+    },
+    {
+      "title": "Restringir temporalmente la acción",
+      "body": "Ocultar o limitar la cancelación hasta que Operaciones defina expresamente los estados y comunicaciones permitidos.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mantener la cancelación con contrato estándar",
+    "body": "Conservar la acción para los estados permitidos por el grafo y ejecutar siempre el despacho estándar de transiciones.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "alexcanHamelyn",
+    "reason": "Es el contacto técnico con historial directo en la ruta de recepción y en la implementación candidata.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8215.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8215#issuecomment-5179898457",
+    "reviewedAt": "2026-08-21T00:44:25.084Z",
+    "mainSha": "9612bedb37d998d20c02dd0b5d3c9cea49367ee3"
+  }
+}

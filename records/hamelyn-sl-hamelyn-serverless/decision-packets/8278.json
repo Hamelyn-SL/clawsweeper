@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-06T11:48:51.717Z",
+  "updatedAt": "2026-08-06T10:05:20Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8278,
+    "title": "Admin: Revision V3 puede cerrar lotes antes de persistir la revisión",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8278",
+    "state": "closed",
+    "labels": [
+      "bug",
+      "source:admin-panel",
+      "app:admin",
+      "triage:done",
+      "epic:revision-v3",
+      "reporter:danielmenchen-hamelyn",
+      "P1",
+      "impact:session-state",
+      "issue-rating: ⚪ platinum",
+      "clawsweeper:needs-live-repro",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
+    ],
+    "createdAt": "2026-08-06T09:31:12Z",
+    "updatedAt": "2026-08-06T10:05:20Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe Revision V3 adoptar un cierre autoritativo e idempotente en servidor, manteniendo una barrera cliente solo como ayuda de UX?",
+  "rationale": "El arreglo cruza estado local, cola offline, persistencia de productos, transición de pedido y efectos posteriores; elegir solo una espera cliente dejaría rutas de recuperación sin contrato autoritativo.",
+  "options": [
+    {
+      "title": "Cierre confirmado por servidor",
+      "body": "Crear una operación idempotente que valide todas las invariantes, transicione a `REVIEWED` y devuelva un resultado recuperable; el cliente espera sus mutaciones antes de invocarla.",
+      "recommended": true
+    },
+    {
+      "title": "Barrera únicamente en cliente",
+      "body": "Esperar las promesas locales antes de transicionar, aceptando que recargas y pérdida de red queden fuera de la garantía.",
+      "recommended": false
+    },
+    {
+      "title": "Aplazar hasta definir la integración de la épica",
+      "body": "No cambiar el flujo hasta acordar cómo se integrará Revision V3 desde la rama de la épica hacia `dev`.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Cierre confirmado por servidor",
+    "body": "Crear una operación idempotente que valide todas las invariantes, transicione a `REVIEWED` y devuelva un resultado recuperable; el cliente espera sus mutaciones antes de invocarla.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Combina la asignación actual de la incidencia con contribuciones recientes en los flujos de persistencia de Revision V3.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/8278.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8278#issuecomment-5203066406",
+    "reviewedAt": "2026-08-06T11:48:51.717Z",
+    "mainSha": "4761f3592a88703faae3814d832155e390995221"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-17T06:13:58.389Z",
+  "updatedAt": "2026-08-17T05:48:47Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8463,
+    "title": "feat: add bifrost warehouse stations panel in admin",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8463",
+    "state": "closed",
+    "labels": [
+      "size/XL",
+      "proof: 📸 screenshot",
+      "rating: 🥈 silver",
+      "status: 📣 needs proof",
+      "P2",
+      "merge-risk: 🚨 security-boundary"
+    ],
+    "createdAt": "2026-08-14T13:07:52Z",
+    "updatedAt": "2026-08-17T05:48:47Z",
+    "headSha": "783e45a62e699104b70430408d28502913557e94"
+  },
+  "lane": "security_boundary",
+  "priority": "P2",
+  "question": "¿Qué credencial o relación gestionada por servidor debe vincular cada puesto Bifrost con el navegador autorizado para impedir que otro usuario autenticado suplante su presencia?",
+  "rationale": "El parámetro de URL y `localStorage` identifican el puesto en el cliente, pero no constituyen una frontera de autorización suficiente para datos operativos mostrados a administradores.",
+  "options": [
+    {
+      "title": "Vinculación verificable por servidor",
+      "body": "Exigir una credencial o asignación de puesto validada en backend y restringir el emisor al rol operativo correspondiente.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar observabilidad no fiable temporal",
+      "body": "Mantener el emisor para cualquier usuario autenticado, asumiendo explícitamente que el panel puede contener presencia falsificada.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar la presencia hasta cerrar el contrato",
+      "body": "Dejar fuera el beacon y el panel de presencia hasta acordar el contrato Admin↔Bifrost.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Vinculación verificable por servidor",
+    "body": "Exigir una credencial o asignación de puesto validada en backend y restringir el emisor al rol operativo correspondiente.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Mantiene la base de heartbeats y está asignado a la issue canónica.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/8463.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8463#issuecomment-5293792929",
+    "reviewedAt": "2026-08-17T06:13:58.389Z",
+    "mainSha": "f3c860bc9305bae2d8015ef4eb1dec557d43f877"
+  }
+}

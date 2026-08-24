@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-13T08:06:16.318Z",
+  "updatedAt": "2026-07-13T07:00:15Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7423,
+    "title": "fix: keep author pages resolvable after authorId merges",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7423",
+    "state": "closed",
+    "labels": [
+      "size/M",
+      "rating: 🦪 silver shellfish",
+      "status: 📣 needs proof",
+      "P2",
+      "merge-risk: 🚨 compatibility"
+    ],
+    "createdAt": "2026-07-13T06:56:23Z",
+    "updatedAt": "2026-07-13T07:00:15Z",
+    "headSha": "5f43bfb6bc01305fa8d093e48c24fa573169f1a7"
+  },
+  "lane": "merge_risk",
+  "priority": "P2",
+  "question": "¿Debe este PR aterrizar ya como compatibilidad read-side para fusiones de autores, o debe esperar al plan/dry-run completo de consolidación de `authorId` duplicados?",
+  "rationale": "El código parece una parte razonable del arreglo, pero depende de una mutación de datos de producción y de una política de slug canónico que no queda probada por lint/typecheck.",
+  "options": [
+    {
+      "title": "Exigir prueba de upgrade antes de merge",
+      "body": "Mantener el PR en draft hasta aportar dry-run o transcript real con `legacySeoSlugs`, redirect 301, enlaces de producto y libros agregados por todos los IDs.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar la capa read-side primero",
+      "body": "Mergear solo esta compatibilidad antes de la migración reduce riesgo de URLs rotas, pero deja sin validar cómo se poblarán aliases y cómo se resolverán colisiones.",
+      "recommended": false
+    },
+    {
+      "title": "Fusionarlo con el PR de migración",
+      "body": "Esperar a una rama que incluya backfill, verificación de índice y prueba ecommerce da más seguridad, a costa de retrasar esta preparación parcial.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Exigir prueba de upgrade antes de merge",
+    "body": "Mantener el PR en draft hasta aportar dry-run o transcript real con `legacySeoSlugs`, redirect 301, enlaces de producto y libros agregados por todos los IDs.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "PabloMoran34",
+    "reason": "Es quien tiene el contexto más directo del cron, del modelo de identidad de autores y del PR actual.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7423.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7423#issuecomment-4955990062",
+    "reviewedAt": "2026-07-13T08:06:16.318Z",
+    "mainSha": "3507f660b3c32cda93c23d3a81815c97a689226e"
+  }
+}

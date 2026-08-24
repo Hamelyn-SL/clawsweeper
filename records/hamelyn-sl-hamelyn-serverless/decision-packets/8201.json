@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-04T07:01:44.076Z",
+  "updatedAt": "2026-08-04T06:57:46Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8201,
+    "title": "Actualizar las aplicaciones Next.js a 16.3.0",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8201",
+    "state": "closed",
+    "labels": [
+      "source:admin-panel",
+      "app:infrastructure",
+      "feature",
+      "triage:done",
+      "P2",
+      "reporter:JavierHamelyn"
+    ],
+    "createdAt": "2026-08-04T06:51:18Z",
+    "updatedAt": "2026-08-04T06:57:46Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se aprueba actualizar Next.js a 16.3.0 manteniendo TypeScript 6 pese al posible coste en builds cold y caché?",
+  "rationale": "El cambio es técnicamente acotable, pero el propio informe presenta una compensación de rendimiento y consumo que no puede resolverse de forma segura sin criterio del equipo.",
+  "options": [
+    {
+      "title": "Adoptar Next 16.3 con TypeScript 6",
+      "body": "Ejecutar el upgrade aislado, medir de nuevo con una metodología controlada y conservar TypeScript 7 como seguimiento separado.",
+      "recommended": true
+    },
+    {
+      "title": "Aplazar por coste operativo",
+      "body": "Mantener 16.2.12 hasta acordar límites aceptables de build cold y almacenamiento de caché en CI.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Adoptar Next 16.3 con TypeScript 6",
+    "body": "Ejecutar el upgrade aislado, medir de nuevo con una metodología controlada y conservar TypeScript 7 como seguimiento separado.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "HamelynDev",
+    "reason": "Condujo la actualización agrupada más reciente que fijó las versiones actuales del workspace.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/8201.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8201#issuecomment-5175705930",
+    "reviewedAt": "2026-08-04T07:01:44.076Z",
+    "mainSha": "e2cddbf2cf3ed99478a04c4d96893f9e08d9c23b"
+  }
+}

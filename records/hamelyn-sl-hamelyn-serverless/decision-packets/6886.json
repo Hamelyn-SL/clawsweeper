@@ -1,0 +1,64 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-09T10:01:59.999Z",
+  "updatedAt": "2026-07-09T09:37:00Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 6886,
+    "title": "Limpiar HTML inválido que causará hydration errors (nesting de DOM) en todo el monorepo",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6886",
+    "state": "open",
+    "labels": [
+      "bug",
+      "priority:p3",
+      "app:infrastructure",
+      "triage:done",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "issue-rating: 🦞 diamond lobster",
+      "clawsweeper:source-repro",
+      "P2",
+      "impact:other"
+    ],
+    "createdAt": "2026-07-05T10:56:20Z",
+    "updatedAt": "2026-07-09T09:37:00Z"
+  },
+  "lane": "manual_review",
+  "priority": "P2",
+  "question": "¿Debe el equipo abordar esta issue como barrido L transversal ahora o partirla en PRs más pequeños por patrón/app?",
+  "rationale": "La reproducción fuente es clara, pero el alcance cruza varias apps y requiere validación visual/browser que no encaja bien en un fix automático único.",
+  "options": [
+    {
+      "title": "Barrido transversal coordinado",
+      "body": "Un equipo frontend/admin corrige los patrones por familia y valida las rutas principales del monorepo en navegador.",
+      "recommended": true
+    },
+    {
+      "title": "Partir por patrón",
+      "body": "Crear issues/PRs separados para `DialogContentText`, dashboards, forms anidados y Tabs, reduciendo riesgo por PR pero alargando el cierre completo.",
+      "recommended": false
+    },
+    {
+      "title": "Solo hotfix admin",
+      "body": "Corregir primero las vistas admin confirmadas y dejar el resto del monorepo para un seguimiento explícito.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Barrido transversal coordinado",
+    "body": "Un equipo frontend/admin corrige los patrones por familia y valida las rutas principales del monorepo en navegador.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "Es quien aportó el smoke test completo y el contexto más concreto de aceptación del barrido.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6886.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6886#issuecomment-4911143556",
+    "reviewedAt": "2026-07-09T10:01:59.999Z",
+    "mainSha": "041bf27bd20f293dfcff578800215d4e71bf8a01"
+  }
+}

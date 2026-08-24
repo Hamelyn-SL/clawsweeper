@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-22T10:04:16.311Z",
+  "updatedAt": "2026-07-22T09:57:59Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7806,
+    "title": "fix: prevent false Amazon DB_ONLY reconciliation",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7806",
+    "state": "closed",
+    "labels": [
+      "size/M",
+      "rating: 🥈 silver",
+      "status: 📣 needs proof",
+      "P1",
+      "merge-risk: 🚨 other"
+    ],
+    "createdAt": "2026-07-21T07:21:51Z",
+    "updatedAt": "2026-07-22T09:57:59Z",
+    "headSha": "f847d2d4bc78c35fca1ad9a35d368c17d448f06c"
+  },
+  "lane": "manual_review",
+  "priority": "P1",
+  "question": "¿Qué criterio y alcance debe aprobarse para recuperar los SKU Amazon COM ya persistidos como `DB_ONLY` antes de integrar la prevención?",
+  "rationale": "Restaurar estados productivos requiere decidir la fuente de verdad, el periodo afectado y cómo evitar reactivar SKU realmente ausentes.",
+  "options": [
+    {
+      "title": "Aprobar recuperación acotada",
+      "body": "Añadir una recuperación idempotente basada en el snapshot afectado y validar sus resultados antes de integrar la prevención.",
+      "recommended": true
+    },
+    {
+      "title": "Separar la recuperación",
+      "body": "Integrar solo la prevención y abrir trabajo explícito con el criterio de recuperación aprobado por el área de marketplaces.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar recuperación acotada",
+    "body": "Añadir una recuperación idempotente basada en el snapshot afectado y validar sus resultados antes de integrar la prevención.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su trabajo reciente y la revisión solicitada lo conectan directamente con el flujo de informes Amazon.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7806.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7806#issuecomment-5031471728",
+    "reviewedAt": "2026-07-22T10:04:16.311Z",
+    "mainSha": "26f3f8f75bbd7f4637708e4296ab4893bbe38d89"
+  }
+}
