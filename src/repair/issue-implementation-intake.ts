@@ -1048,7 +1048,10 @@ function displayTitle(value: string) {
 }
 
 function reportBranch(reportRepo: string) {
-  return reportRepo.trim().toLowerCase().endsWith("/clawsweeper-state") ? "state" : "main";
+  const normalized = reportRepo.trim().toLowerCase();
+  return normalized.endsWith("/clawsweeper-state") || normalized === "hamelyn-sl/clawsweeper"
+    ? "state"
+    : "main";
 }
 
 function stripQuotes(value: string) {

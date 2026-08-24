@@ -15,7 +15,7 @@
 >   (auth-mode `subscription` en `setup-codex`; sin API key).
 > - **Identidad**: GitHub App `clawsweeper-hamelyn`; comenta como
 >   `clawsweeper-hamelyn[bot]` y responde a `@clawsweeper …`.
-> - **Estado auditable**: [Hamelyn-SL/clawsweeper-state](https://github.com/Hamelyn-SL/clawsweeper-state)
+> - **Estado auditable**: [rama `state`](https://github.com/Hamelyn-SL/clawsweeper/tree/state)
 >   (rama `state`) + digest diario en Slack (#github-noty).
 > - **Cómo usarlo desde un PR/issue**: `@clawsweeper status | review | ask …`
 >   (autofix/automerge: fase 2, opt-in). Para pararlo en un item:

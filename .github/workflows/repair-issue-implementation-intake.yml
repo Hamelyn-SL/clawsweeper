@@ -27,7 +27,7 @@ on:
       report_repo:
         description: "Repository containing the ClawSweeper report"
         required: false
-        default: "Hamelyn-SL/clawsweeper-state"
+        default: "Hamelyn-SL/clawsweeper"
         type: string
       report_path:
         description: "Path to the ClawSweeper report"
@@ -176,7 +176,7 @@ jobs:
           TARGET_REPO: ${{ github.event.inputs.target_repo || github.event.client_payload.target_repo || 'Hamelyn-SL/hamelyn-serverless' }}
           ITEM_NUMBER: ${{ github.event.inputs.item_number || github.event.client_payload.item_number }}
           CANDIDATE_KIND: ${{ github.event.inputs.candidate_kind || github.event.client_payload.candidate_kind || 'strict_bug' }}
-          REPORT_REPO: ${{ github.event.inputs.report_repo || github.event.client_payload.report_repo || 'Hamelyn-SL/clawsweeper-state' }}
+          REPORT_REPO: ${{ github.event.inputs.report_repo || github.event.client_payload.report_repo || 'Hamelyn-SL/clawsweeper' }}
           REPORT_PATH: ${{ github.event.inputs.report_path || github.event.client_payload.report_path }}
           REPORT_URL: ${{ github.event.inputs.report_url || github.event.client_payload.report_url }}
         run: |

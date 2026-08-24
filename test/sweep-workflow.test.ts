@@ -970,7 +970,7 @@ test("setup-state defaults to an auth-safe shallow checkout", () => {
   assert.match(action, /sparse-checkout: \$\{\{ inputs\.sparse-checkout \}\}/);
   assert.doesNotMatch(action, /state-repository:/);
   assert.doesNotMatch(action, /state-ref:/);
-  assert.match(action, /repository: Hamelyn-SL\/clawsweeper-state/);
+  assert.match(action, /repository: Hamelyn-SL\/clawsweeper/);
   assert.match(action, /ref: state/);
 });
 
