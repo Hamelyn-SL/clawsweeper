@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-24T12:40:02.717Z",
-  "updatedAt": "2026-08-24T12:27:42Z",
+  "generatedAt": "2026-08-24T14:03:46.696Z",
+  "updatedAt": "2026-08-24T13:12:43Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,46 +14,45 @@
       "feature",
       "reporter:marcos",
       "triage:done",
-      "P2",
       "impact:other",
-      "issue-rating: ➖ n/a",
-      "clawsweeper:linked-pr-open",
       "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:linked-pr-open",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-08-21T10:43:04Z",
-    "updatedAt": "2026-08-24T12:27:42Z"
+    "updatedAt": "2026-08-24T13:12:43Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se aprueba que el piloto F2 aterrice junto con el esqueleto F1 en la misma PR, o debe separarse antes de integrar?",
-  "rationale": "La issue solicita una nueva arquitectura transversal y la PR combina F1, Discogs, persistencia y cron; decidir el corte de producto y revisión no es mecánico.",
+  "question": "¿Se acepta que F1 y el piloto F2 de Discogs aterricen juntos en una PR amplia, o debe separarse primero el núcleo MarketplaceManager?",
+  "rationale": "La implementación candidata combina una base arquitectónica genérica y una migración de marketplace activo; el orden de entrega define el riesgo y el alcance de revisión.",
   "options": [
     {
-      "title": "Revisar la PR apilada",
-      "body": "Mantener F1 y el piloto Discogs juntos si se confirma que sus invariantes, pruebas reales y plan de switchover son revisables en una sola entrega.",
+      "title": "Revisar la entrega apilada",
+      "body": "Mantener la PR actual como una única entrega, con revisión explícita de F1 y de la convivencia V1/V2 antes de integrarla.",
       "recommended": true
     },
     {
       "title": "Separar F1 de Discogs",
-      "body": "Extraer primero el núcleo genérico y revisar el adapter y cron de Discogs en una segunda PR más acotada.",
+      "body": "Pedir una PR base para MarketplaceManager y dejar Discogs como una migración posterior y más acotada.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Revisar la PR apilada",
-    "body": "Mantener F1 y el piloto Discogs juntos si se confirma que sus invariantes, pruebas reales y plan de switchover son revisables en una sola entrega.",
+    "title": "Revisar la entrega apilada",
+    "body": "Mantener la PR actual como una única entrega, con revisión explícita de F1 y de la convivencia V1/V2 antes de integrarla.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Es la persona asignada y proponente de la implementación abierta que determina el alcance técnico del piloto.",
+    "reason": "Es la persona asignada y autora de la propuesta que plantea la decisión de alcance.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8626.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8626#issuecomment-5370332561",
-    "reviewedAt": "2026-08-24T12:40:02.717Z",
-    "mainSha": "f1e458f4624b4c88a46572d745714645c4a54055"
+    "reviewedAt": "2026-08-24T14:03:46.696Z",
+    "mainSha": "bd1b326cac9bc4c1113f4fea817be527e0a87f79"
   }
 }
