@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-24T12:08:58.542Z",
+  "updatedAt": "2026-08-24T11:06:01Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8641,
+    "title": "feat: cap public catalog rate limit and cache its responses",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8641",
+    "state": "open",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-08-23T17:38:22Z",
+    "updatedAt": "2026-08-24T11:06:01Z",
+    "headSha": "3f39d5ee604f62df8fa7c44d8c34ebb124212fd0"
+  },
+  "lane": "merge_risk",
+  "priority": "P1",
+  "question": "¿Debe conservarse el límite de 60 por IP también en los aciertos de CDN, y qué mecanismo de borde aprobado lo garantizará?",
+  "rationale": "El código actual solo limita solicitudes que alcanzan el handler, mientras que la caché compartida puede responder antes; elegir la infraestructura de borde o renunciar a la caché requiere intención operativa.",
+  "options": [
+    {
+      "title": "Aplicar límite antes de la caché",
+      "body": "Implementar un control por IP en el borde antes del lookup de CDN y aportar prueba de HIT, 429 y recuperación de cuota.",
+      "recommended": true
+    },
+    {
+      "title": "Retirar la caché compartida",
+      "body": "Conservar el límite actual de aplicación y eliminar `s-maxage` si no existe una vía de borde fiable para contarlo.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aplicar límite antes de la caché",
+    "body": "Implementar un control por IP en el borde antes del lookup de CDN y aportar prueba de HIT, 429 y recuperación de cuota.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "Es el revisor asignado que aprobó el PR y puede encauzar la decisión de despliegue con el responsable del área.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8641.md",
+    "reviewedAt": "2026-08-24T12:08:58.542Z",
+    "mainSha": "f1e458f4624b4c88a46572d745714645c4a54055"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-24T12:11:53.555Z",
+  "updatedAt": "2026-08-23T19:38:44Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8645,
+    "title": "fix: stop retrying Discogs withdrawals without IDs",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8645",
+    "state": "open",
+    "labels": [
+      "size/XS"
+    ],
+    "createdAt": "2026-08-23T19:36:28Z",
+    "updatedAt": "2026-08-23T19:38:44Z",
+    "headSha": "bdcf81ca29e73323721edf6fd6117d401ec95c48"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe esta PR resolver solo el bucle de reintentos o también cerrar el trabajo de reconciliar listings sin ID y alertar los vendidos no retirados?",
+  "rationale": "La incidencia enlazada solicita tres resultados y la propuesta implementa únicamente el primero; cerrar la incidencia sin decidir el destino de los otros dos perdería el seguimiento del riesgo operativo.",
+  "options": [
+    {
+      "title": "Mantener el arreglo acotado",
+      "body": "Conservar el cambio a `PERMANENT`, retirar el cierre automático y abrir o enlazar seguimiento específico para reconciliación y alerta.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar el cierre completo",
+      "body": "Cerrar todo el alcance solo si se confirma explícitamente que la comprobación manual actual sustituye permanentemente la reconciliación y la alerta.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mantener el arreglo acotado",
+    "body": "Conservar el cambio a `PERMANENT`, retirar el cierre automático y abrir o enlazar seguimiento específico para reconciliación y alerta.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "HamelynDev",
+    "reason": "El historial conecta este perfil con la introducción del comportamiento actual de retirada sin identificador.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8645.md",
+    "reviewedAt": "2026-08-24T12:11:53.555Z",
+    "mainSha": "f1e458f4624b4c88a46572d745714645c4a54055"
+  }
+}
