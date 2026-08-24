@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-22T03:59:14.860Z",
-  "updatedAt": "2026-08-22T02:57:47Z",
+  "generatedAt": "2026-08-24T13:28:27.456Z",
+  "updatedAt": "2026-08-24T12:14:44Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,46 +11,45 @@
     "state": "open",
     "labels": [
       "size/XXL",
-      "rating: 🥈 silver",
-      "status: 📣 needs proof",
       "P2",
+      "status: 📣 needs proof",
       "merge-risk: 🚨 compatibility",
-      "merge-risk: 🚨 availability"
+      "merge-risk: 🚨 availability",
+      "rating: 🥈 silver"
     ],
     "createdAt": "2026-08-21T12:53:14Z",
-    "updatedAt": "2026-08-22T02:57:47Z",
-    "headSha": "c66f475efc9edf7bc61d1285c79b2daf4afecc2e"
+    "updatedAt": "2026-08-24T12:14:44Z",
+    "headSha": "d25951c0342f2b02d8a110781acee61b5a07a475"
   },
   "lane": "product_direction",
-  "priority": "P2",
-  "question": "¿Se aprueba un piloto limitado de visión tras corregir el ciclo de vida y demostrarlo en una estación real, pese al coste recurrente y al recall observado del 53,8 %?",
-  "rationale": "La corrección técnica no decide por sí sola qué estaciones asumen cámara, coste del gateway y una ayuda visual que puede no localizar cerca de la mitad de productos.",
+  "priority": "P1",
+  "question": "¿Se aprueba un piloto de visión de gavetas con captura archivada, consumo de gateway y cambio coordinado de atajos físicos en los puestos?",
+  "rationale": "El código introduce una capacidad operativa nueva con coste, captura de imágenes y dependencia de configuración física externa que no puede decidirse solo desde el diff.",
   "options": [
     {
-      "title": "Piloto limitado con prueba real",
-      "body": "Corregir los dos bloqueadores, aislar presupuesto y activar la función solo después de una evidencia redactada de cámara, escáner, prefetch y fallback.",
+      "title": "Aprobar piloto coordinado",
+      "body": "Resolver la integración, actualizar Stream Deck y validar el flujo completo en una estación antes de ampliar el despliegue.",
       "recommended": true
     },
     {
-      "title": "Mantener en draft",
-      "body": "Posponer la integración hasta disponer de presupuesto propio y una evaluación operativa que justifique el recall.",
+      "title": "Separar el piloto",
+      "body": "Mantener fuera de esta PR la visión y conservar los atajos actuales hasta que exista un plan operativo aprobado.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Piloto limitado con prueba real",
-    "body": "Corregir los dos bloqueadores, aislar presupuesto y activar la función solo después de una evidencia redactada de cámara, escáner, prefetch y fallback.",
+    "title": "Aprobar piloto coordinado",
+    "body": "Resolver la integración, actualizar Stream Deck y validar el flujo completo en una estación antes de ampliar el despliegue.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "HamelynDev",
-    "reason": "Su trabajo reciente de estabilidad en estación le sitúa cerca de la decisión de integración operativa.",
-    "confidence": "medium"
+    "person": "banosdavidhamelyn",
+    "reason": "Su revisión ya identifica la dependencia de Stream Deck y su historial reciente está centrado en los flujos de estación.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8629.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8629#issuecomment-5377146536",
-    "reviewedAt": "2026-08-22T03:59:14.860Z",
-    "mainSha": "6345777ab3811f5c70fd2fd333fe42953fa00288"
+    "reviewedAt": "2026-08-24T13:28:27.456Z",
+    "mainSha": "bd1b326cac9bc4c1113f4fea817be527e0a87f79"
   }
 }
