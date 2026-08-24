@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-24T13:20:49.724Z",
+  "updatedAt": "2026-08-24T13:05:14Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8662,
+    "title": "feat: deploy online demand model v2",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8662",
+    "state": "open",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-08-24T12:45:31Z",
+    "updatedAt": "2026-08-24T13:05:14Z",
+    "headSha": "7e63c2c784344372f1e440c6705d34e6f1863d22"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe activarse el experimento `new-product-demand-v3` con el nuevo 40% de rechazo tras verificar la foto congelada y el modelo v2?",
+  "rationale": "El cambio altera decisiones de aceptación de producto y el código fail-open evita daños técnicos, pero no decide si el experimento debe entrar en producción con esta calibración.",
+  "options": [
+    {
+      "title": "Activar tras validación escalonada",
+      "body": "Integrar la dependencia, retargetear a `dev` y desplegar únicamente tras adjuntar evidencia redacted del marcador, la respuesta v2 y el fallback.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener v2 mientras se recalibra",
+      "body": "Conservar el experimento actual hasta revisar métricas adicionales de cobertura y rechazo antes de cambiar la población expuesta.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Activar tras validación escalonada",
+    "body": "Integrar la dependencia, retargetear a `dev` y desplegar únicamente tras adjuntar evidencia redacted del marcador, la respuesta v2 y el fallback.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "PabloMoran34",
+    "reason": "Es la persona con mayor continuidad demostrable en la implementación y calibración reciente de esta ruta.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8662.md",
+    "reviewedAt": "2026-08-24T13:20:49.724Z",
+    "mainSha": "bd1b326cac9bc4c1113f4fea817be527e0a87f79"
+  }
+}
