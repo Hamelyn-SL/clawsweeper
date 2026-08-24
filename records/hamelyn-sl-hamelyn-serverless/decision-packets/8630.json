@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-22T01:43:06.730Z",
-  "updatedAt": "2026-08-21T13:19:23Z",
+  "generatedAt": "2026-08-24T13:13:04.621Z",
+  "updatedAt": "2026-08-24T13:05:26Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,51 +11,50 @@
     "state": "open",
     "labels": [
       "size/XXL",
-      "merge-risk: 🚨 availability",
-      "rating: 🥈 silver",
-      "status: 📣 needs proof",
       "P2",
-      "merge-risk: 🚨 compatibility"
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 compatibility",
+      "merge-risk: 🚨 availability",
+      "rating: 🥈 silver"
     ],
     "createdAt": "2026-08-21T13:19:11Z",
-    "updatedAt": "2026-08-21T13:19:23Z",
-    "headSha": "9c5b4a7aad065a316a31ed22fc88f1a74e2427eb"
+    "updatedAt": "2026-08-24T13:05:26Z",
+    "headSha": "272692347ce98015bca2b1f278f873cdd54332cc"
   },
-  "lane": "product_direction",
+  "lane": "merge_risk",
   "priority": "P2",
-  "question": "¿Se aprueba introducir `MarketplaceManager` y su modelo persistido como base común en este mismo piloto de Discogs, con el switchover y los índices Atlas como gates posteriores?",
-  "rationale": "El diff crea una nueva abstracción pública y estado duradero para futuros marketplaces; corregir los defectos no decide por sí solo si ese contrato debe convertirse en la dirección F1/F2.",
+  "question": "¿Debe el piloto bloquear indefinidamente y reconciliar un publish remoto sin persistencia, o se acepta que el barrido de seis horas pueda volver a publicar el SKU?",
+  "rationale": "La rama reconoce el residual, pero elegir entre recuperación automática, reconciliación remota o bloqueo operativo define el contrato de seguridad frente a listings duplicados.",
   "options": [
     {
-      "title": "Aprobar el piloto acotado",
-      "body": "Aceptar la dirección F1/F2, corregir los bloqueos técnicos y mantener V2 sin schedule hasta validar los índices y el switchover.",
+      "title": "Reconciliar antes de reintentar",
+      "body": "Persistir un estado no reintentable o una marca de reconciliación y exigir comprobación remota antes de otro create.",
       "recommended": true
     },
     {
-      "title": "Separar el núcleo F1",
-      "body": "Pedir una PR menor para el contrato y estado comunes antes de revisar el adaptador y cron de Discogs.",
+      "title": "Aceptar el riesgo operativo",
+      "body": "Mantener el barrido actual y asumir que una caída total de Mongo tras un publish remoto puede requerir limpieza manual de duplicados.",
       "recommended": false
     },
     {
-      "title": "Mantener el flujo legacy",
-      "body": "No adoptar todavía el nuevo contrato y cerrar o replantear el piloto fuera de esta migración.",
+      "title": "Pausar el piloto",
+      "body": "Mantener la ruta V2 sin uso hasta definir y probar una política de recuperación para este caso.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar el piloto acotado",
-    "body": "Aceptar la dirección F1/F2, corregir los bloqueos técnicos y mantener V2 sin schedule hasta validar los índices y el switchover.",
+    "title": "Reconciliar antes de reintentar",
+    "body": "Persistir un estado no reintentable o una marca de reconciliación y exigir comprobación remota antes de otro create.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MarcosTerroso",
-    "reason": "Su historial reciente de marketplace y la propuesta F1/F2 le sitúan como la mejor persona para concretar el alcance técnico tras la decisión.",
-    "confidence": "medium"
+    "person": "MiguelHamelyn",
+    "reason": "Su trabajo reciente mantiene tanto el cron Discogs en `dev` como los últimos cambios de recuperación y rate limiting del piloto.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8630.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8630#issuecomment-5377147739",
-    "reviewedAt": "2026-08-22T01:43:06.730Z",
-    "mainSha": "6345777ab3811f5c70fd2fd333fe42953fa00288"
+    "reviewedAt": "2026-08-24T13:13:04.621Z",
+    "mainSha": "bd1b326cac9bc4c1113f4fea817be527e0a87f79"
   }
 }
