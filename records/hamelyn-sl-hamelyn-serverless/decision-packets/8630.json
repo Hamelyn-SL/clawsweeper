@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-24T16:24:09.650Z",
-  "updatedAt": "2026-08-24T16:03:16Z",
+  "generatedAt": "2026-08-24T17:44:33.939Z",
+  "updatedAt": "2026-08-24T16:58:20Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,50 +11,49 @@
     "state": "open",
     "labels": [
       "size/XXL",
-      "rating: 🥈 silver",
-      "status: 📣 needs proof",
       "P2",
-      "merge-risk: 🚨 other"
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 other",
+      "rating: 🥈 silver"
     ],
     "createdAt": "2026-08-21T13:19:11Z",
-    "updatedAt": "2026-08-24T16:03:16Z",
-    "headSha": "272692347ce98015bca2b1f278f873cdd54332cc"
+    "updatedAt": "2026-08-24T16:58:20Z",
+    "headSha": "7f5c5d3c3b567fbb407e6c7db663a428f2146a21"
   },
-  "lane": "product_direction",
-  "priority": "P2",
-  "question": "¿Debe aceptarse `MarketplaceManager` como contrato piloto para futuras migraciones de marketplaces una vez se aporte la prueba integrada y se confirmen los gates de Atlas?",
-  "rationale": "El PR crea una nueva abstracción pública y un modelo persistido que condicionan la migración posterior de otros marketplaces; la corrección técnica no decide por sí sola esa dirección.",
+  "lane": "release_inclusion",
+  "priority": "P1",
+  "question": "¿Debe activarse el schedule V2 antes de portar o conservar automáticamente las fases legacy `update` y `recover`?",
+  "rationale": "El PR reconoce ambos huecos, pero el cambio de schedule los convierte en una regresión de producción para trabajo ya existente.",
   "options": [
     {
-      "title": "Aceptar el piloto con gates",
-      "body": "Requerir evidencia integrada redactada y confirmación de índices/TTL antes de integrar este contrato como base de F3.",
+      "title": "Mantener V1 programado",
+      "body": "Dejar `/api/discogs` como cron principal hasta que las fases faltantes tengan paridad V2 y prueba de upgrade.",
       "recommended": true
     },
     {
-      "title": "Limitar el piloto",
-      "body": "Mantener Discogs como experimento aislado y no adoptar todavía el contrato como patrón para otros marketplaces.",
+      "title": "Componer las fases legacy en V2",
+      "body": "Programar V2 solo si ejecuta `update` y `recover` bajo el lock compartido y prueba que no duplica trabajo.",
       "recommended": false
     },
     {
-      "title": "Aplazar la migración",
-      "body": "Cerrar o dividir la propuesta si el equipo no quiere introducir aún el modelo persistido paralelo.",
+      "title": "Aceptar intervención manual",
+      "body": "Activar V2 aceptando que los huecos F3 se resuelvan manualmente hasta una migración posterior.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aceptar el piloto con gates",
-    "body": "Requerir evidencia integrada redactada y confirmación de índices/TTL antes de integrar este contrato como base de F3.",
+    "title": "Mantener V1 programado",
+    "body": "Dejar `/api/discogs` como cron principal hasta que las fases faltantes tengan paridad V2 y prueba de upgrade.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Su historial reciente cubre el comportamiento legacy que debe coexistir con el piloto y ya ha intervenido en la revisión técnica.",
+    "reason": "El commit de switchover y la documentación de sus huecos concentran la decisión de activación.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8630.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8630#issuecomment-5377147739",
-    "reviewedAt": "2026-08-24T16:24:09.650Z",
-    "mainSha": "bd1b326cac9bc4c1113f4fea817be527e0a87f79"
+    "reviewedAt": "2026-08-24T17:44:33.939Z",
+    "mainSha": "4a6caa7ce12e5d98deb79bcf9e979f320a191f21"
   }
 }
