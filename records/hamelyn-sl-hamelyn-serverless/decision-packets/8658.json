@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-24T12:29:45.759Z",
-  "updatedAt": "2026-08-24T12:22:02Z",
+  "generatedAt": "2026-08-24T13:37:15.352Z",
+  "updatedAt": "2026-08-24T13:23:50Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,46 +11,45 @@
     "state": "open",
     "labels": [
       "size/L",
-      "proof: sufficient",
-      "rating: ⚪ platinum",
-      "status: 👀 ready for maintainer look",
       "P2",
-      "merge-risk: 🚨 compatibility"
+      "status: 👀 ready for maintainer look",
+      "merge-risk: 🚨 compatibility",
+      "proof: sufficient",
+      "rating: ⚪ platinum"
     ],
     "createdAt": "2026-08-24T08:48:52Z",
-    "updatedAt": "2026-08-24T12:22:02Z",
-    "headSha": "43258dd286c92d1b135ffd2ac428d4dfa48ae0fe"
+    "updatedAt": "2026-08-24T13:23:50Z",
+    "headSha": "b2801b7dfebd87ceb5eafa00b258ee569a93c49d"
   },
   "lane": "release_inclusion",
   "priority": "P2",
-  "question": "¿Se integra la infraestructura con la flag apagada ahora, o se espera a tener cerrada la recalibración del modelo 98 antes de fusionar?",
-  "rationale": "La corrección técnica no determina por sí sola cuándo es seguro cambiar las señales de entrada de una decisión de aceptación.",
+  "question": "¿Se aprueba fusionar ahora manteniendo `DEMAND_CANONICAL_AUTHOR_FEATURES_ENABLED` desactivada hasta validar cobertura y recalibrar o confirmar el cutoff del modelo 98?",
+  "rationale": "La rama conserva el comportamiento previo por defecto, pero la activación posterior cambia señales que afectan decisiones de aceptación y rechazo.",
   "options": [
     {
-      "title": "Fusionar con la flag apagada",
-      "body": "Resolver el conflicto, repetir la prueba sobre el nuevo head e integrar sin modificar el comportamiento online hasta la recalibración.",
+      "title": "Fusionar con activación diferida",
+      "body": "Integrar las señales y mantener la flag apagada hasta completar la validación operativa y del cutoff.",
       "recommended": true
     },
     {
-      "title": "Esperar a la recalibración",
-      "body": "Mantener la PR abierta hasta disponer de cobertura y cutoff validados para tratar código y activación como una única entrega.",
+      "title": "Pausar hasta validar el modelo",
+      "body": "Esperar a cerrar la cobertura y la recalibración antes de incorporar la infraestructura.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Fusionar con la flag apagada",
-    "body": "Resolver el conflicto, repetir la prueba sobre el nuevo head e integrar sin modificar el comportamiento online hasta la recalibración.",
+    "title": "Fusionar con activación diferida",
+    "body": "Integrar las señales y mantener la flag apagada hasta completar la validación operativa y del cutoff.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Es el revisor asignado específicamente por experiencia en el flujo de demand y el modelo 98.",
+    "reason": "Es el revisor asignado específicamente por su experiencia en la superficie técnica y del modelo afectada.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8658.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8658#issuecomment-5395116920",
-    "reviewedAt": "2026-08-24T12:29:45.759Z",
-    "mainSha": "f1e458f4624b4c88a46572d745714645c4a54055"
+    "reviewedAt": "2026-08-24T13:37:15.352Z",
+    "mainSha": "bd1b326cac9bc4c1113f4fea817be527e0a87f79"
   }
 }

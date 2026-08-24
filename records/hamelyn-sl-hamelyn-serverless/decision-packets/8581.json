@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-21T00:46:13.538Z",
-  "updatedAt": "2026-08-20T08:40:03Z",
+  "generatedAt": "2026-08-24T13:36:59.218Z",
+  "updatedAt": "2026-08-24T11:07:41Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,45 +11,44 @@
     "state": "open",
     "labels": [
       "size/L",
-      "rating: 🥉 bronze",
-      "status: 📣 needs proof",
       "P1",
-      "merge-risk: 🚨 other"
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 other",
+      "rating: 🥉 bronze"
     ],
     "createdAt": "2026-08-20T08:39:54Z",
-    "updatedAt": "2026-08-20T08:40:03Z",
-    "headSha": "037384e87d58648e32aef993ae385b45c537563c"
+    "updatedAt": "2026-08-24T11:07:41Z",
+    "headSha": "56f895de2c87894137b005bcd250351bbded80ce"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe `speed=PRIORITY` de AbeBooks convertirse en una señal permanente de `ShipPriority.URGENT` además de los umbrales por coste?",
-  "rationale": "La especificación vigente registra el nivel de servicio como comportamiento deseado pendiente, pero no confirma esta semántica específica ni su alcance para AbeBooks.",
+  "question": "¿Debe este PR incluir ahora la regla de negocio `shipping.speed === PRIORITY` → `ShipPriority.URGENT`, o limitarse a la reconciliación de cancelaciones?",
+  "rationale": "El propio PR presenta el cambio de prioridad v1.3 como opcional y modifica la política operativa de expedición, no solo el transporte XML.",
   "options": [
     {
-      "title": "Adoptar la señal de servicio",
-      "body": "Aceptar PRIORITY como elevación a URGENT, actualizar la regla BL y añadir cobertura canónica sin degradar los umbrales actuales.",
+      "title": "Separar la prioridad v1.3",
+      "body": "Mantener el objetivo de cancelaciones en una propuesta corregida y dejar la nueva regla de prioridad para una decisión y prueba independientes.",
       "recommended": true
     },
     {
-      "title": "Separar la actualización v1.3",
-      "body": "Mantener la mejora de cancelaciones y retirar temporalmente el cambio de prioridad hasta validar la regla con su owner.",
+      "title": "Aprobar la regla v1.3",
+      "body": "Confirmar que PRIORITY debe forzar URGENT y exigir pruebas de compatibilidad para todas las acciones de Order Update.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Adoptar la señal de servicio",
-    "body": "Aceptar PRIORITY como elevación a URGENT, actualizar la regla BL y añadir cobertura canónica sin degradar los umbrales actuales.",
+    "title": "Separar la prioridad v1.3",
+    "body": "Mantener el objetivo de cancelaciones en una propuesta corregida y dejar la nueva regla de prioridad para una decisión y prueba independientes.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "PabloMoran34",
-    "reason": "Es el contribuidor histórico de la regla de prioridad de envío y de su especificación actual.",
+    "person": "banosdavidhamelyn",
+    "reason": "Es el revisor asignado por experiencia en sincronización de marketplaces y puede encauzar la decisión.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8581.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8581#issuecomment-5363888107",
-    "reviewedAt": "2026-08-21T00:46:13.538Z",
-    "mainSha": "9612bedb37d998d20c02dd0b5d3c9cea49367ee3"
+    "reviewedAt": "2026-08-24T13:36:59.218Z",
+    "mainSha": "bd1b326cac9bc4c1113f4fea817be527e0a87f79"
   }
 }
