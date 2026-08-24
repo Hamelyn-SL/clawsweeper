@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-24T16:40:16.442Z",
-  "updatedAt": "2026-08-24T16:34:36Z",
+  "generatedAt": "2026-08-24T17:56:45.106Z",
+  "updatedAt": "2026-08-24T16:42:41Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,49 +13,48 @@
       "bug",
       "source:admin-panel",
       "app:ecommerce",
-      "triage:queued",
+      "triage:done",
       "reporter:victor",
       "P1",
       "impact:other",
-      "issue-rating: 💎 diamond",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision",
       "clawsweeper:source-repro",
       "clawsweeper:linked-pr-open",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-product-decision"
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-08-18T12:55:12Z",
-    "updatedAt": "2026-08-24T16:34:36Z"
+    "updatedAt": "2026-08-24T16:42:41Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe aceptarse la solución integral de la PR abierta —estado semántico, publicación transaccional y rollback— o dividirse en entregas más pequeñas antes de desplegarla?",
-  "rationale": "El umbral semántico y el rollout entre BigQuery, Blob y los 13 storefronts fijan una política operativa que no puede inferirse con seguridad solo desde el código actual.",
+  "question": "¿Se aprueba que la corrección incluya el estado semántico en BigQuery y el cambio coordinado de publicación de los 13 storefronts, en lugar de limitarse a ampliar la caché?",
+  "rationale": "El umbral de cambio visible, el comportamiento de arranque y el fail-closed de publicación definen la política SEO y operativa duradera.",
   "options": [
     {
-      "title": "Patrocinar la solución integral",
-      "body": "Revisar la PR abierta como la vía única, exigiendo evidencia de despliegue coordinado y recuperación antes del merge.",
+      "title": "Patrocinar la reparación completa",
+      "body": "Revisar y aterrizar la PR vinculada con despliegue coordinado de la scheduled query, el scheduler y la publicación de sitemaps.",
       "recommended": true
     },
     {
-      "title": "Dividir el despliegue",
-      "body": "Separar primero la corrección semántica de `lastmod` y después el cambio transaccional de publicación si se prefiere reducir el riesgo operativo.",
+      "title": "Acotar a mitigación temporal",
+      "body": "Aplicar únicamente una política de caché compatible y mantener el estado semántico como trabajo posterior separado.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Patrocinar la solución integral",
-    "body": "Revisar la PR abierta como la vía única, exigiendo evidencia de despliegue coordinado y recuperación antes del merge.",
+    "title": "Patrocinar la reparación completa",
+    "body": "Revisar y aterrizar la PR vinculada con despliegue coordinado de la scheduled query, el scheduler y la publicación de sitemaps.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "alexcanHamelyn",
-    "reason": "Conoce tanto la implementación previa que originó el comportamiento como la propuesta abierta que lo sustituye.",
+    "reason": "Conectado tanto con la implementación base como con la propuesta abierta que concreta las decisiones de comportamiento.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8531.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8531#issuecomment-5328938892",
-    "reviewedAt": "2026-08-24T16:40:16.442Z",
-    "mainSha": "bd1b326cac9bc4c1113f4fea817be527e0a87f79"
+    "reviewedAt": "2026-08-24T17:56:45.106Z",
+    "mainSha": "4a6caa7ce12e5d98deb79bcf9e979f320a191f21"
   }
 }
