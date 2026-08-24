@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-21T22:34:23.937Z",
-  "updatedAt": "2026-08-21T16:43:23Z",
+  "generatedAt": "2026-08-24T12:40:02.717Z",
+  "updatedAt": "2026-08-24T12:27:42Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,46 +14,45 @@
       "feature",
       "reporter:marcos",
       "triage:done",
-      "P2",
       "impact:other",
-      "issue-rating: ➖ n/a",
-      "clawsweeper:linked-pr-open",
       "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:linked-pr-open",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-08-21T10:43:04Z",
-    "updatedAt": "2026-08-21T16:43:23Z"
+    "updatedAt": "2026-08-24T12:27:42Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se aprueba Discogs como piloto que fija el contrato, las mutaciones de estado y los runners compartidos de MarketplaceManager para los siguientes marketplaces?",
-  "rationale": "La implementación propuesta define infraestructura transversal y persistencia que condicionarán migraciones posteriores; no es una decisión que deba resolver un carril automático.",
+  "question": "¿Se aprueba que el piloto F2 aterrice junto con el esqueleto F1 en la misma PR, o debe separarse antes de integrar?",
+  "rationale": "La issue solicita una nueva arquitectura transversal y la PR combina F1, Discogs, persistencia y cron; decidir el corte de producto y revisión no es mecánico.",
   "options": [
     {
-      "title": "Patrocinar el piloto en la PR abierta",
-      "body": "Revisar la paridad V1/V2 y aceptar Discogs como referencia para la fase F3, manteniendo el switchover separado.",
+      "title": "Revisar la PR apilada",
+      "body": "Mantener F1 y el piloto Discogs juntos si se confirma que sus invariantes, pruebas reales y plan de switchover son revisables en una sola entrega.",
       "recommended": true
     },
     {
-      "title": "Separar el alcance base",
-      "body": "Pedir que F1 y los runners genéricos aterricen antes en una PR menor, dejando el adaptador Discogs como continuación.",
+      "title": "Separar F1 de Discogs",
+      "body": "Extraer primero el núcleo genérico y revisar el adapter y cron de Discogs en una segunda PR más acotada.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Patrocinar el piloto en la PR abierta",
-    "body": "Revisar la paridad V1/V2 y aceptar Discogs como referencia para la fase F3, manteniendo el switchover separado.",
+    "title": "Revisar la PR apilada",
+    "body": "Mantener F1 y el piloto Discogs juntos si se confirma que sus invariantes, pruebas reales y plan de switchover son revisables en una sola entrega.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Es el responsable asignado y ha concentrado la propuesta técnica en la PR vinculada.",
+    "reason": "Es la persona asignada y proponente de la implementación abierta que determina el alcance técnico del piloto.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8626.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8626#issuecomment-5370332561",
-    "reviewedAt": "2026-08-21T22:34:23.937Z",
-    "mainSha": "6345777ab3811f5c70fd2fd333fe42953fa00288"
+    "reviewedAt": "2026-08-24T12:40:02.717Z",
+    "mainSha": "f1e458f4624b4c88a46572d745714645c4a54055"
   }
 }
