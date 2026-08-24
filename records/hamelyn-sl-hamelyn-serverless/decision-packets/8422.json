@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-24T17:09:12.784Z",
+  "generatedAt": "2026-08-24T17:11:44.548Z",
   "updatedAt": "2026-08-24T17:02:43Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -12,45 +12,52 @@
     "labels": [
       "size/XXL",
       "business-logic",
-      "P2",
-      "status: 📣 needs proof",
       "merge-risk: 🚨 automation",
       "merge-risk: 🚨 security-boundary",
-      "rating: 🥉 bronze"
+      "rating: 🥈 silver",
+      "status: 📣 needs proof",
+      "P1",
+      "merge-risk: 🚨 compatibility"
     ],
     "createdAt": "2026-08-13T06:07:34Z",
     "updatedAt": "2026-08-24T17:02:43Z",
     "headSha": "43f5f84841c47096f0d7bd491aadabba87d4edd2"
   },
   "lane": "release_inclusion",
-  "priority": "P2",
-  "question": "¿Autoriza el equipo una smoke test controlada con credenciales y un destino BigQuery antes de fusionar este cambio de telemetría?",
-  "rationale": "La prueba debe usar recursos y permisos operativos que el análisis estático y los tests aislados no pueden sustituir.",
+  "priority": "P1",
+  "question": "¿Se aprueba provisionar BigQuery antes del merge a `dev`, o se prefiere mantener una lectura compatible del dashboard hasta completar el cutover?",
+  "rationale": "La rama cambia una consulta desplegada desde `dev`, pero la infraestructura versionada se aplica únicamente desde `master`; el orden correcto exige una decisión operativa explícita.",
   "options": [
     {
-      "title": "Exigir smoke test real",
-      "body": "Ejecutar el writer contra un destino aislado, publicar salida redactada de filas, deduplicación y cierre, y revisar de nuevo.",
+      "title": "Provisionar antes del merge",
+      "body": "Crear y comprobar la tabla y la scheduled query v2 antes de desplegar el dashboard actualizado.",
       "recommended": true
     },
     {
-      "title": "Aceptar el riesgo de rollout",
-      "body": "Fusionar con el writer desactivado y asumir que la primera activación será la validación operativa.",
+      "title": "Añadir compatibilidad temporal",
+      "body": "Mantener una lectura legacy segura hasta que el agregado v2 esté disponible y validado.",
+      "recommended": false
+    },
+    {
+      "title": "Separar el cutover",
+      "body": "Pausar la parte de dashboard y datos hasta acordar un rollout coordinado.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Exigir smoke test real",
-    "body": "Ejecutar el writer contra un destino aislado, publicar salida redactada de filas, deduplicación y cierre, y revisar de nuevo.",
+    "title": "Provisionar antes del merge",
+    "body": "Crear y comprobar la tabla y la scheduled query v2 antes de desplegar el dashboard actualizado.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Es quien realizó las últimas correcciones de lifecycle y actualizó la evidencia del HEAD.",
-    "confidence": "high"
+    "person": "MiguelHamelyn",
+    "reason": "La decisión afecta directamente a la consulta y al despliegue actual del dashboard.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8422.md",
-    "reviewedAt": "2026-08-24T17:09:12.784Z",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8422#issuecomment-5276693528",
+    "reviewedAt": "2026-08-24T17:11:44.548Z",
     "mainSha": "bd1b326cac9bc4c1113f4fea817be527e0a87f79"
   }
 }
