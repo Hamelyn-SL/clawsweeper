@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-24T12:18:01.110Z",
-  "updatedAt": "2026-08-24T10:06:31Z",
+  "generatedAt": "2026-08-24T12:29:45.759Z",
+  "updatedAt": "2026-08-24T12:22:02Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,46 +11,45 @@
     "state": "open",
     "labels": [
       "size/L",
-      "proof: sufficient",
-      "rating: ⚪ platinum",
-      "status: 👀 ready for maintainer look",
       "P2",
-      "merge-risk: 🚨 compatibility"
+      "status: 👀 ready for maintainer look",
+      "merge-risk: 🚨 compatibility",
+      "proof: sufficient",
+      "rating: ⚪ platinum"
     ],
     "createdAt": "2026-08-24T08:48:52Z",
-    "updatedAt": "2026-08-24T10:06:31Z",
+    "updatedAt": "2026-08-24T12:22:02Z",
     "headSha": "43258dd286c92d1b135ffd2ac428d4dfa48ae0fe"
   },
-  "lane": "product_direction",
+  "lane": "release_inclusion",
   "priority": "P2",
-  "question": "¿Se aprueba fusionar la infraestructura de señales con la flag apagada y posponer su activación hasta recalibrar el modelo 98?",
-  "rationale": "El parche es opt-in, pero la activación posterior altera las señales que determinan aceptación o rechazo y necesita criterio operativo sobre cobertura y cutoff.",
+  "question": "¿Se integra la infraestructura con la flag apagada ahora, o se espera a tener cerrada la recalibración del modelo 98 antes de fusionar?",
+  "rationale": "La corrección técnica no determina por sí sola cuándo es seguro cambiar las señales de entrada de una decisión de aceptación.",
   "options": [
     {
-      "title": "Actualizar y preparar rollout controlado",
-      "body": "Resolver el conflicto conservando los cambios actuales de Rainforest, repetir la prueba y fusionar con la flag apagada hasta completar la recalibración.",
+      "title": "Fusionar con la flag apagada",
+      "body": "Resolver el conflicto, repetir la prueba sobre el nuevo head e integrar sin modificar el comportamiento online hasta la recalibración.",
       "recommended": true
     },
     {
-      "title": "Pausar la funcionalidad",
-      "body": "No fusionar todavía si no hay capacidad para revisar cobertura, distribución y el impacto del nuevo cutoff antes de habilitarla.",
+      "title": "Esperar a la recalibración",
+      "body": "Mantener la PR abierta hasta disponer de cobertura y cutoff validados para tratar código y activación como una única entrega.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Actualizar y preparar rollout controlado",
-    "body": "Resolver el conflicto conservando los cambios actuales de Rainforest, repetir la prueba y fusionar con la flag apagada hasta completar la recalibración.",
+    "title": "Fusionar con la flag apagada",
+    "body": "Resolver el conflicto, repetir la prueba sobre el nuevo head e integrar sin modificar el comportamiento online hasta la recalibración.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Es el revisor asignado específicamente por experiencia en el área de demand y el modelo 98.",
+    "reason": "Es el revisor asignado específicamente por experiencia en el flujo de demand y el modelo 98.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8658.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8658#issuecomment-5395116920",
-    "reviewedAt": "2026-08-24T12:18:01.110Z",
+    "reviewedAt": "2026-08-24T12:29:45.759Z",
     "mainSha": "f1e458f4624b4c88a46572d745714645c4a54055"
   }
 }
