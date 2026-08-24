@@ -1,24 +1,24 @@
 {
-  "generatedAt": "2026-08-20T00:56:25.783Z",
+  "generatedAt": "2026-08-24T12:59:40.713Z",
   "targetRepo": "hamelyn-sl/hamelyn-serverless",
   "scan": {
     "complete": true,
     "pagesScanned": 1,
-    "openItemsSeen": 73
+    "openItemsSeen": 92
   },
   "counts": {
-    "itemRecords": 71,
-    "closedRecords": 1117,
-    "missingOpen": 2,
-    "missingEligibleOpen": 0,
+    "itemRecords": 81,
+    "closedRecords": 1153,
+    "missingOpen": 11,
+    "missingEligibleOpen": 1,
     "missingMaintainerOpen": 0,
     "missingProtectedOpen": 1,
-    "missingRecentOpen": 1,
+    "missingRecentOpen": 9,
     "openArchived": 0,
     "staleItemRecords": 0,
     "duplicateRecords": 0,
     "protectedProposed": 0,
-    "staleReviews": 0
+    "staleReviews": 1
   },
   "findings": {
     "missingOpen": [
@@ -40,19 +40,171 @@
         "missingReason": "protected_label"
       },
       {
-        "number": 8570,
+        "number": 8637,
+        "kind": "issue",
+        "title": "API v6: el rate limiter no cuenta el tráfico de desbordamiento en ráfagas concurrentes",
+        "labels": [
+          "bug",
+          "app:infrastructure",
+          "triage:pr-opened",
+          "P3"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-08-23T03:54:26Z",
+        "updatedAt": "2026-08-23T04:07:42Z",
+        "missingReason": "eligible"
+      },
+      {
+        "number": 8640,
+        "kind": "issue",
+        "title": "Discogs: la retirada sin marketplaceId se clasifica TRANSIENT y reintenta sin fin sobre un artículo ya vendido",
+        "labels": [
+          "bug",
+          "app:marketplace",
+          "triage:pr-opened",
+          "P2"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-08-23T17:38:19Z",
+        "updatedAt": "2026-08-23T19:37:11Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 8642,
+        "kind": "issue",
+        "title": "todoColeccion: la retirada cierra como éxito cualquier 404, sin confirmar que el anuncio ya no exista",
+        "labels": [
+          "bug",
+          "app:marketplace",
+          "triage:pr-opened",
+          "P2"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-08-23T17:40:05Z",
+        "updatedAt": "2026-08-24T11:27:44Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 8643,
+        "kind": "issue",
+        "title": "La selección batch de precio deja en limbo espejos en cola con maestro no elegible",
+        "labels": [
+          "bug",
+          "app:marketplace",
+          "reporter:javier",
+          "triage:done",
+          "P2"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-08-23T17:53:57Z",
+        "updatedAt": "2026-08-24T11:27:42Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 8651,
+        "kind": "issue",
+        "title": "fix: US NORMAL orders fall through to Spring wildcard and break on Guam",
+        "labels": [
+          "bug",
+          "app:infrastructure",
+          "reporter:davidgonzalez",
+          "triage:done",
+          "P2"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-08-24T06:04:50Z",
+        "updatedAt": "2026-08-24T06:17:10Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 8652,
+        "kind": "issue",
+        "title": "fix: manual carrier switch rejects LABEL_ISSUE, the state that needs it",
+        "labels": [
+          "bug",
+          "app:admin",
+          "reporter:davidgonzalez",
+          "triage:pr-opened",
+          "P1"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-08-24T06:05:14Z",
+        "updatedAt": "2026-08-24T08:25:04Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 8654,
         "kind": "pull_request",
         "title": "Deploy to Prod",
         "labels": [
-          "size/S"
+          "size/XXL"
         ],
         "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-08-19T19:27:19Z",
-        "updatedAt": "2026-08-19T19:27:41Z",
+        "createdAt": "2026-08-24T08:24:53Z",
+        "updatedAt": "2026-08-24T12:57:58Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 8655,
+        "kind": "issue",
+        "title": "🐛 Ecommerce: 500 silenciosos recurrentes en POST /api/v5/cart/{cartId}/products",
+        "labels": [
+          "bug",
+          "app:ecommerce",
+          "reporter:miguel",
+          "triage:pr-opened",
+          "P2"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-08-24T08:25:13Z",
+        "updatedAt": "2026-08-24T08:47:55Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 8660,
+        "kind": "issue",
+        "title": "Report-triggered marketplace watchers stopped emitting after August 11",
+        "labels": [
+          "bug",
+          "app:marketplace",
+          "triage:pr-opened",
+          "P1"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-08-24T09:31:17Z",
+        "updatedAt": "2026-08-24T09:59:29Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 8662,
+        "kind": "pull_request",
+        "title": "feat: deploy online demand model v2",
+        "labels": [
+          "size/L"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-08-24T12:45:31Z",
+        "updatedAt": "2026-08-24T12:47:02Z",
         "missingReason": "recently_created"
       }
     ],
-    "missingEligibleOpen": [],
+    "missingEligibleOpen": [
+      {
+        "number": 8637,
+        "kind": "issue",
+        "title": "API v6: el rate limiter no cuenta el tráfico de desbordamiento en ráfagas concurrentes",
+        "labels": [
+          "bug",
+          "app:infrastructure",
+          "triage:pr-opened",
+          "P3"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-08-23T03:54:26Z",
+        "updatedAt": "2026-08-23T04:07:42Z",
+        "missingReason": "eligible"
+      }
+    ],
     "missingMaintainerOpen": [],
     "missingProtectedOpen": [
       {
@@ -75,15 +227,136 @@
     ],
     "missingRecentOpen": [
       {
-        "number": 8570,
+        "number": 8640,
+        "kind": "issue",
+        "title": "Discogs: la retirada sin marketplaceId se clasifica TRANSIENT y reintenta sin fin sobre un artículo ya vendido",
+        "labels": [
+          "bug",
+          "app:marketplace",
+          "triage:pr-opened",
+          "P2"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-08-23T17:38:19Z",
+        "updatedAt": "2026-08-23T19:37:11Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 8642,
+        "kind": "issue",
+        "title": "todoColeccion: la retirada cierra como éxito cualquier 404, sin confirmar que el anuncio ya no exista",
+        "labels": [
+          "bug",
+          "app:marketplace",
+          "triage:pr-opened",
+          "P2"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-08-23T17:40:05Z",
+        "updatedAt": "2026-08-24T11:27:44Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 8643,
+        "kind": "issue",
+        "title": "La selección batch de precio deja en limbo espejos en cola con maestro no elegible",
+        "labels": [
+          "bug",
+          "app:marketplace",
+          "reporter:javier",
+          "triage:done",
+          "P2"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-08-23T17:53:57Z",
+        "updatedAt": "2026-08-24T11:27:42Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 8651,
+        "kind": "issue",
+        "title": "fix: US NORMAL orders fall through to Spring wildcard and break on Guam",
+        "labels": [
+          "bug",
+          "app:infrastructure",
+          "reporter:davidgonzalez",
+          "triage:done",
+          "P2"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-08-24T06:04:50Z",
+        "updatedAt": "2026-08-24T06:17:10Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 8652,
+        "kind": "issue",
+        "title": "fix: manual carrier switch rejects LABEL_ISSUE, the state that needs it",
+        "labels": [
+          "bug",
+          "app:admin",
+          "reporter:davidgonzalez",
+          "triage:pr-opened",
+          "P1"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-08-24T06:05:14Z",
+        "updatedAt": "2026-08-24T08:25:04Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 8654,
         "kind": "pull_request",
         "title": "Deploy to Prod",
         "labels": [
-          "size/S"
+          "size/XXL"
         ],
         "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-08-19T19:27:19Z",
-        "updatedAt": "2026-08-19T19:27:41Z",
+        "createdAt": "2026-08-24T08:24:53Z",
+        "updatedAt": "2026-08-24T12:57:58Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 8655,
+        "kind": "issue",
+        "title": "🐛 Ecommerce: 500 silenciosos recurrentes en POST /api/v5/cart/{cartId}/products",
+        "labels": [
+          "bug",
+          "app:ecommerce",
+          "reporter:miguel",
+          "triage:pr-opened",
+          "P2"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-08-24T08:25:13Z",
+        "updatedAt": "2026-08-24T08:47:55Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 8660,
+        "kind": "issue",
+        "title": "Report-triggered marketplace watchers stopped emitting after August 11",
+        "labels": [
+          "bug",
+          "app:marketplace",
+          "triage:pr-opened",
+          "P1"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-08-24T09:31:17Z",
+        "updatedAt": "2026-08-24T09:59:29Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 8662,
+        "kind": "pull_request",
+        "title": "feat: deploy online demand model v2",
+        "labels": [
+          "size/L"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-08-24T12:45:31Z",
+        "updatedAt": "2026-08-24T12:47:02Z",
         "missingReason": "recently_created"
       }
     ],
@@ -91,6 +364,31 @@
     "staleItemRecords": [],
     "duplicateRecords": [],
     "protectedProposed": [],
-    "staleReviews": []
+    "staleReviews": [
+      {
+        "number": 8574,
+        "kind": "issue",
+        "title": "PEDIDOS DE COMPRA CELERITAS EN DOCUMENTO \\\"PEDIDOS PENDIENTES DE RECOGER\\",
+        "labels": [
+          "bug",
+          "source:admin-panel",
+          "app:supply",
+          "triage:pr-opened",
+          "reporter:daniellopez",
+          "P2",
+          "impact:other",
+          "issue-rating: 💎 diamond",
+          "clawsweeper:source-repro",
+          "clawsweeper:linked-pr-open",
+          "clawsweeper:no-new-fix-pr"
+        ],
+        "action": "kept_open",
+        "decision": "keep_open",
+        "closeReason": "none",
+        "reviewStatus": "stale_reopened",
+        "currentState": "open",
+        "itemPath": "records/hamelyn-sl-hamelyn-serverless/items/8574.md"
+      }
+    ]
   }
 }
