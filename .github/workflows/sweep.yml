@@ -645,7 +645,7 @@ jobs:
             --candidate-kind viable \
             --target-repo "$TARGET_REPO" \
             --artifact-dir artifacts/event \
-            --report-repo Hamelyn-SL/clawsweeper-state)"
+            --report-repo Hamelyn-SL/clawsweeper)"
           echo "$candidate_output"
           CANDIDATE_OUTPUT="$candidate_output" node <<'NODE' > /tmp/viable-event-candidate.tsv
           const output = JSON.parse(process.env.CANDIDATE_OUTPUT || "{}");
@@ -665,7 +665,7 @@ jobs:
             -f target_repo="$TARGET_REPO" \
             -f item_number="$item_number" \
             -f candidate_kind=viable \
-            -f report_repo=Hamelyn-SL/clawsweeper-state \
+            -f report_repo=Hamelyn-SL/clawsweeper \
             -f report_path="$report_path" \
             -f report_url="$report_url" \
             -f model=internal
@@ -1776,7 +1776,7 @@ jobs:
             --target-repo "$TARGET_REPO" \
             --artifact-dir artifacts \
             --report-dir "records/$target_slug/items" \
-            --report-repo Hamelyn-SL/clawsweeper-state)"
+            --report-repo Hamelyn-SL/clawsweeper)"
           echo "$candidate_output"
           CANDIDATE_OUTPUT="$candidate_output" MAX_DISPATCH="$MAX_DISPATCH" node <<'NODE' > /tmp/viable-implementation-candidates.tsv
           const output = JSON.parse(process.env.CANDIDATE_OUTPUT || "{}");
@@ -1797,7 +1797,7 @@ jobs:
               -f target_repo="$TARGET_REPO" \
               -f item_number="$item_number" \
               -f candidate_kind=viable \
-              -f report_repo=Hamelyn-SL/clawsweeper-state \
+              -f report_repo=Hamelyn-SL/clawsweeper \
               -f report_path="$report_path" \
               -f report_url="$report_url" \
               -f model=internal
@@ -2257,7 +2257,7 @@ jobs:
           GH_TOKEN: ${{ steps.state-token.outputs.token }}
         run: |
           gh workflow run dashboard.yml \
-            --repo Hamelyn-SL/clawsweeper-state \
+            --repo Hamelyn-SL/clawsweeper \
             --ref main || echo "Best-effort dashboard refresh dispatch failed; scheduled state dashboard will retry."
 
   apply-existing:

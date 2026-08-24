@@ -2093,7 +2093,7 @@ test("reviewed viable issues dispatch generated PRs and backfill durable open re
   assert.match(eventDispatch, /\/tmp\/viable-event-candidate\.tsv/);
   assert.match(eventDispatch, /repair-issue-implementation-intake\.yml/);
   assert.match(eventDispatch, /-f candidate_kind=viable/);
-  assert.match(eventDispatch, /-f report_repo=Hamelyn-SL\/clawsweeper-state/);
+  assert.match(eventDispatch, /-f report_repo=Hamelyn-SL\/clawsweeper/);
   assert.match(
     eventDispatch,
     /steps\.target\.outputs\.target_repo != 'Hamelyn-SL\/hamelyn-serverless'/,

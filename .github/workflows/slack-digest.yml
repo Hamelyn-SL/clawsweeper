@@ -29,12 +29,12 @@ jobs:
           client-id: ${{ vars.CLAWSWEEPER_APP_CLIENT_ID }}
           private-key: ${{ secrets.CLAWSWEEPER_APP_PRIVATE_KEY }}
           owner: Hamelyn-SL
-          repositories: clawsweeper-state
+          repositories: clawsweeper
           permission-contents: read
 
       - uses: actions/checkout@v7
         with:
-          repository: Hamelyn-SL/clawsweeper-state
+          repository: Hamelyn-SL/clawsweeper
           ref: state
           path: clawsweeper-state
           token: ${{ steps.state-token.outputs.token }}
