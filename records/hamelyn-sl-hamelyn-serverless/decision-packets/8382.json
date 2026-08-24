@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-18T09:23:20.253Z",
-  "updatedAt": "2026-08-18T08:24:41Z",
+  "generatedAt": "2026-08-24T19:13:06.825Z",
+  "updatedAt": "2026-08-24T18:27:42Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,53 +13,52 @@
       "bug",
       "app:marketplace",
       "triage:done",
-      "mk:ebay",
       "P1",
       "impact:other",
-      "issue-rating: 💎 diamond",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision",
       "clawsweeper:source-repro",
       "clawsweeper:linked-pr-open",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-product-decision"
+      "issue-rating: 💎 diamond",
+      "mk:ebay"
     ],
     "createdAt": "2026-08-11T07:23:35Z",
-    "updatedAt": "2026-08-18T08:24:41Z"
+    "updatedAt": "2026-08-24T18:27:42Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué condición de `LISTING_ON_HOLD` debe impedir que el cron trate el snapshot LMS como apto para mutaciones?",
-  "rationale": "El código puede contar y persistir las exclusiones, pero el umbral o la política de bloqueo determina el equilibrio entre seguridad operativa y continuidad del cron.",
+  "question": "¿Qué umbral de `LISTING_ON_HOLD` debe hacer que una ejecución del LMS de eBay ES quede solo para diagnóstico y no pueda mutar inventario?",
+  "rationale": "El código puede contar y persistir las exclusiones, pero decidir entre un umbral relativo, absoluto o una fase observacional afecta la continuidad operativa del marketplace.",
   "options": [
     {
       "title": "Guard relativo y fail-closed",
-      "body": "Bloquear mutaciones cuando las exclusiones superen un porcentaje acordado del inventario esperado, conservando el snapshot para diagnóstico.",
+      "body": "Bloquear mutaciones cuando las exclusiones superen una proporción acordada del inventario esperado, preservando el snapshot para análisis.",
       "recommended": true
     },
     {
-      "title": "Solo observabilidad inicial",
-      "body": "Registrar y alertar durante un período acotado antes de activar un bloqueo automático con datos reales.",
+      "title": "Observabilidad temporal",
+      "body": "Registrar y alertar los avisos durante un período acotado antes de activar un bloqueo automático con datos reales.",
       "recommended": false
     },
     {
       "title": "Umbral absoluto",
-      "body": "Bloquear a partir de un número fijo de exclusiones, con revisión periódica cuando cambie el tamaño del catálogo.",
+      "body": "Bloquear a partir de un número fijo de exclusiones y revisarlo cuando cambie el volumen del catálogo.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Guard relativo y fail-closed",
-    "body": "Bloquear mutaciones cuando las exclusiones superen un porcentaje acordado del inventario esperado, conservando el snapshot para diagnóstico.",
+    "body": "Bloquear mutaciones cuando las exclusiones superen una proporción acordada del inventario esperado, preservando el snapshot para análisis.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Está asignado a la issue, propuso la implementación y ya trabajó en los guards de reportes relacionados.",
+    "reason": "Es el asignado actual y autor de la PR que materializa la política de reconciliación.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8382.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8382#issuecomment-5250282627",
-    "reviewedAt": "2026-08-18T09:23:20.253Z",
-    "mainSha": "d4b187272b7a496a1383733734cd9640566736a3"
+    "reviewedAt": "2026-08-24T19:13:06.825Z",
+    "mainSha": "4a6caa7ce12e5d98deb79bcf9e979f320a191f21"
   }
 }
