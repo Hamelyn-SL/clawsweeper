@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-24T19:12:16.235Z",
+  "generatedAt": "2026-08-24T19:15:47.534Z",
   "updatedAt": "2026-08-24T18:16:29Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -12,11 +12,12 @@
     "labels": [
       "size/XXL",
       "business-logic",
-      "merge-risk: 🚨 compatibility",
-      "rating: 🥈 silver",
-      "status: 📣 needs proof",
       "P1",
-      "merge-risk: 🚨 availability"
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 automation",
+      "merge-risk: 🚨 compatibility",
+      "merge-risk: 🚨 security-boundary",
+      "rating: 🥈 silver"
     ],
     "createdAt": "2026-08-13T06:07:34Z",
     "updatedAt": "2026-08-24T18:16:29Z",
@@ -24,34 +25,33 @@
   },
   "lane": "release_inclusion",
   "priority": "P1",
-  "question": "¿Se aprueba un rollout previo que cree y compruebe `bl_invocations_v2` antes de desplegar el corte del dashboard desde `dev`?",
-  "rationale": "La ruta actual de data platform solo aplica scheduled queries en `master`; decidir entre provisión previa, cambio de pipeline o aplazar el corte es una elección operativa de mantenimiento.",
+  "question": "¿Debe este PR incluir una migración de datos ordenada antes del cambio del dashboard, o separar el cutover del dashboard en un PR posterior al aprovisionamiento?",
+  "rationale": "El orden entre recursos BigQuery, scheduled query y despliegue de aplicación no se puede resolver con seguridad solo desde el diff; determina si usuarios verán un fallo de dashboard durante el rollout.",
   "options": [
     {
-      "title": "Provisionar antes del corte",
-      "body": "Crear y comprobar la tabla y la scheduled query en el entorno objetivo antes de fusionar el cambio de dashboard.",
+      "title": "Añadir provisión previa",
+      "body": "Crear y verificar las tablas y ejecutar el agregado antes de que el dashboard consulte `bl_invocations_v2`.",
       "recommended": true
     },
     {
-      "title": "Separar el corte del dashboard",
-      "body": "Mantener el dashboard en la tabla legacy y aterrizar el writer y la infraestructura en una fase previa verificable.",
+      "title": "Separar el cutover",
+      "body": "Mantener el dashboard en la fuente legacy y aterrizar su cambio cuando el nuevo agregado ya exista y tenga un smoke válido.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Provisionar antes del corte",
-    "body": "Crear y comprobar la tabla y la scheduled query en el entorno objetivo antes de fusionar el cambio de dashboard.",
+    "title": "Añadir provisión previa",
+    "body": "Crear y verificar las tablas y ejecutar el agregado antes de que el dashboard consulte `bl_invocations_v2`.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "HamelynDev",
-    "reason": "Figura como origen de la configuración actual que separa el despliegue de data platform del de staging.",
-    "confidence": "medium"
+    "reason": "Es la persona con el rastro más directo en la consulta de métricas BL que cambia el contrato.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8422.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8422#issuecomment-5276693528",
-    "reviewedAt": "2026-08-24T19:12:16.235Z",
+    "reviewedAt": "2026-08-24T19:15:47.534Z",
     "mainSha": "4a6caa7ce12e5d98deb79bcf9e979f320a191f21"
   }
 }

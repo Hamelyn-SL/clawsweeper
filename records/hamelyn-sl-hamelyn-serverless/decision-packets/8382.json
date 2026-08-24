@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-24T19:13:06.825Z",
+  "generatedAt": "2026-08-24T19:11:07.561Z",
   "updatedAt": "2026-08-24T18:27:42Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -13,53 +13,52 @@
       "bug",
       "app:marketplace",
       "triage:done",
+      "P1",
+      "impact:other",
       "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision",
       "clawsweeper:source-repro",
       "clawsweeper:linked-pr-open",
       "issue-rating: 💎 diamond",
-      "mk:ebay",
-      "P1",
-      "impact:other",
-      "clawsweeper:needs-product-decision"
+      "mk:ebay"
     ],
     "createdAt": "2026-08-11T07:23:35Z",
     "updatedAt": "2026-08-24T18:27:42Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué umbral de `LISTING_ON_HOLD` debe hacer que una ejecución del LMS de eBay ES quede solo para diagnóstico y no pueda mutar inventario?",
-  "rationale": "El código puede contar y persistir las exclusiones, pero decidir entre un umbral relativo, absoluto o una fase observacional afecta la continuidad operativa del marketplace.",
+  "question": "¿Debe el flujo bloquear todas las mutaciones ante avisos `LISTING_ON_HOLD`, o limitar inicialmente el cambio a observabilidad y al gate de reactivación `PUBLISHED`?",
+  "rationale": "El código puede contar los avisos, pero el grado de fail-closed condiciona continuidad operativa, inventario y recuperación ante bloqueos parciales de eBay.",
   "options": [
     {
-      "title": "Guard relativo y fail-closed",
-      "body": "Bloquear mutaciones cuando las exclusiones superen una proporción acordada del inventario esperado, preservando el snapshot para análisis.",
+      "title": "Gate de mutaciones con observabilidad",
+      "body": "Mantener el snapshot para diagnóstico, registrar el volumen de holds y bloquear las mutaciones de reconciliación cuando la señal de degradación sea concluyente.",
       "recommended": true
     },
     {
-      "title": "Observabilidad temporal",
-      "body": "Registrar y alertar los avisos durante un período acotado antes de activar un bloqueo automático con datos reales.",
+      "title": "Solo gate de reactivación",
+      "body": "Integrar primero `offer_status` y reactivar únicamente `PUBLISHED`, dejando `LISTING_ON_HOLD` como métrica hasta observar varios ciclos.",
       "recommended": false
     },
     {
-      "title": "Umbral absoluto",
-      "body": "Bloquear a partir de un número fijo de exclusiones y revisarlo cuando cambie el volumen del catálogo.",
+      "title": "Observabilidad sin bloqueo",
+      "body": "Registrar y alertar sobre los holds sin alterar todavía las mutaciones automáticas, aceptando el riesgo actual temporalmente.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Guard relativo y fail-closed",
-    "body": "Bloquear mutaciones cuando las exclusiones superen una proporción acordada del inventario esperado, preservando el snapshot para análisis.",
+    "title": "Gate de mutaciones con observabilidad",
+    "body": "Mantener el snapshot para diagnóstico, registrar el volumen de holds y bloquear las mutaciones de reconciliación cuando la señal de degradación sea concluyente.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Es el asignado actual y autor de la PR que materializa la política de reconciliación.",
+    "reason": "Está asignado a la incidencia, trabaja en los guards del report y es el autor de la PR que propone la política operativa.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8382.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8382#issuecomment-5250282627",
-    "reviewedAt": "2026-08-24T19:13:06.825Z",
+    "reviewedAt": "2026-08-24T19:11:07.561Z",
     "mainSha": "4a6caa7ce12e5d98deb79bcf9e979f320a191f21"
   }
 }
