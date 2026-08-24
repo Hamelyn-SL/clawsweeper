@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-24T15:03:14.481Z",
+  "generatedAt": "2026-08-24T15:04:33.281Z",
   "updatedAt": "2026-08-24T13:40:35Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -11,12 +11,7 @@
     "state": "open",
     "labels": [
       "size/L",
-      "rating: 🥉 bronze",
-      "status: 📣 needs proof",
-      "P1",
-      "merge-risk: 🚨 compatibility",
-      "merge-risk: 🚨 availability",
-      "merge-risk: 🚨 other"
+      "P1"
     ],
     "createdAt": "2026-08-20T08:39:54Z",
     "updatedAt": "2026-08-24T13:40:35Z",
@@ -24,39 +19,33 @@
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe `shipping.speed === \"PRIORITY\"` forzar `ShipPriority.URGENT` y aplicarse v1.3 a todas las acciones de Order Update?",
-  "rationale": "La rama cambia una regla operativa de priorización y el protocolo de todas las llamadas; la corrección mecánica no decide esa política permanente.",
+  "question": "¿Debe formar parte de esta integración el aumento automático a `ShipPriority.URGENT` desde `shipping.speed`, o conviene limitar esta entrega a la conciliación de cancelaciones?",
+  "rationale": "La regla altera el orden operativo de preparación y el propio autor la presenta como un commit opcional; el código no puede decidir esa política de almacén.",
   "options": [
     {
-      "title": "Aprobar la política tras corregir",
-      "body": "Mantener el ascenso a `URGENT`, pero exigir recuperación de cancelaciones, compatibilidad y prueba real antes de integrar.",
+      "title": "Separar la prioridad de envío",
+      "body": "Corregir primero la conciliación de cancelaciones y dejar `shipping.speed` en una propuesta validada con Operaciones.",
       "recommended": true
     },
     {
-      "title": "Limitar el cambio de prioridad",
-      "body": "Usar v1.3 para la búsqueda necesaria, pero conservar `getShippingType` hasta acordar la regla de `speed`.",
-      "recommended": false
-    },
-    {
-      "title": "Pausar la ampliación",
-      "body": "Separar la mejora de cancelaciones de la nueva regla de prioridad para reducir el cambio operativo.",
+      "title": "Mantener ambas partes",
+      "body": "Validar con Operaciones el criterio `PRIORITY → URGENT` y exigir pruebas completas de las acciones v1.3 antes de integrar.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar la política tras corregir",
-    "body": "Mantener el ascenso a `URGENT`, pero exigir recuperación de cancelaciones, compatibilidad y prueba real antes de integrar.",
+    "title": "Separar la prioridad de envío",
+    "body": "Corregir primero la conciliación de cancelaciones y dejar `shipping.speed` en una propuesta validada con Operaciones.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MarcosTerroso",
-    "reason": "Es la persona con mayor continuidad comprobable en la integración y los límites de AbeBooks.",
-    "confidence": "high"
+    "person": "banosdavidhamelyn",
+    "reason": "Está asignado como revisor por experiencia acreditada en sincronización de marketplaces y puede coordinar la decisión operativa.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8581.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8581#issuecomment-5363888107",
-    "reviewedAt": "2026-08-24T15:03:14.481Z",
+    "reviewedAt": "2026-08-24T15:04:33.281Z",
     "mainSha": "bd1b326cac9bc4c1113f4fea817be527e0a87f79"
   }
 }
