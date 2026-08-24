@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-24T17:09:12.784Z",
-  "updatedAt": "2026-08-24T17:02:43Z",
+  "generatedAt": "2026-08-24T19:12:16.235Z",
+  "updatedAt": "2026-08-24T18:16:29Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -12,45 +12,46 @@
     "labels": [
       "size/XXL",
       "business-logic",
-      "P2",
+      "P1",
       "status: 📣 needs proof",
       "merge-risk: 🚨 automation",
+      "merge-risk: 🚨 compatibility",
       "merge-risk: 🚨 security-boundary",
-      "rating: 🥉 bronze"
+      "rating: 🥈 silver"
     ],
     "createdAt": "2026-08-13T06:07:34Z",
-    "updatedAt": "2026-08-24T17:02:43Z",
-    "headSha": "43f5f84841c47096f0d7bd491aadabba87d4edd2"
+    "updatedAt": "2026-08-24T18:16:29Z",
+    "headSha": "09c201cc5ac4aa8b65567ddff2d15c1c9570c13b"
   },
   "lane": "release_inclusion",
-  "priority": "P2",
-  "question": "¿Autoriza el equipo una smoke test controlada con credenciales y un destino BigQuery antes de fusionar este cambio de telemetría?",
-  "rationale": "La prueba debe usar recursos y permisos operativos que el análisis estático y los tests aislados no pueden sustituir.",
+  "priority": "P1",
+  "question": "¿Se aprueba un rollout previo que cree y compruebe `bl_invocations_v2` antes de desplegar el corte del dashboard desde `dev`?",
+  "rationale": "La ruta actual de data platform solo aplica scheduled queries en `master`; decidir entre provisión previa, cambio de pipeline o aplazar el corte es una elección operativa de mantenimiento.",
   "options": [
     {
-      "title": "Exigir smoke test real",
-      "body": "Ejecutar el writer contra un destino aislado, publicar salida redactada de filas, deduplicación y cierre, y revisar de nuevo.",
+      "title": "Provisionar antes del corte",
+      "body": "Crear y comprobar la tabla y la scheduled query en el entorno objetivo antes de fusionar el cambio de dashboard.",
       "recommended": true
     },
     {
-      "title": "Aceptar el riesgo de rollout",
-      "body": "Fusionar con el writer desactivado y asumir que la primera activación será la validación operativa.",
+      "title": "Separar el corte del dashboard",
+      "body": "Mantener el dashboard en la tabla legacy y aterrizar el writer y la infraestructura en una fase previa verificable.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Exigir smoke test real",
-    "body": "Ejecutar el writer contra un destino aislado, publicar salida redactada de filas, deduplicación y cierre, y revisar de nuevo.",
+    "title": "Provisionar antes del corte",
+    "body": "Crear y comprobar la tabla y la scheduled query en el entorno objetivo antes de fusionar el cambio de dashboard.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Es quien realizó las últimas correcciones de lifecycle y actualizó la evidencia del HEAD.",
-    "confidence": "high"
+    "person": "HamelynDev",
+    "reason": "Figura como origen de la configuración actual que separa el despliegue de data platform del de staging.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8422.md",
-    "reviewedAt": "2026-08-24T17:09:12.784Z",
-    "mainSha": "bd1b326cac9bc4c1113f4fea817be527e0a87f79"
+    "reviewedAt": "2026-08-24T19:12:16.235Z",
+    "mainSha": "4a6caa7ce12e5d98deb79bcf9e979f320a191f21"
   }
 }
