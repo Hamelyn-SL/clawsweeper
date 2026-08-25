@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-25T10:33:24.241Z",
-  "updatedAt": "2026-08-25T10:21:46Z",
+  "generatedAt": "2026-08-25T14:11:02.787Z",
+  "updatedAt": "2026-08-25T13:58:52Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,50 +11,49 @@
     "state": "open",
     "labels": [
       "size/XXL",
-      "rating: 🥉 bronze",
-      "status: 📣 needs proof",
       "P2",
-      "merge-risk: 🚨 other"
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 other",
+      "rating: 🥉 bronze"
     ],
     "createdAt": "2026-08-25T10:21:36Z",
-    "updatedAt": "2026-08-25T10:21:46Z",
-    "headSha": "8e06fca203afefa97818d24085efbda3d96e812a"
+    "updatedAt": "2026-08-25T13:58:52Z",
+    "headSha": "67a3caf788ebe7acbb6f83b82e2998e1574afdd6"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe este motor configurado convertirse ya en la arquitectura común de dashboards, y en qué orden debe integrarse respecto a https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8599?",
-  "rationale": "La corrección del enlace de pestañas es mecánica, pero decidir si esta nueva capa sustituye la estructura actual y cómo combinar dos refactorizaciones solapadas requiere criterio de arquitectura del equipo.",
+  "question": "¿Debe adoptarse ahora esta arquitectura configurada como base común de dashboards y en qué orden se integra respecto a https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8599?",
+  "rationale": "La corrección de URL y la retirada de artefactos son mecánicas, pero decidir la arquitectura común y coordinar dos refactorizaciones XXL requiere criterio del equipo.",
   "options": [
     {
-      "title": "Aprobar la dirección y coordinar la integración",
-      "body": "Corregir la sincronización de URL, aportar prueba visual y elegir explícitamente cuál de los dos PRs se integra primero.",
+      "title": "Aprobar y coordinar la arquitectura",
+      "body": "Corregir los bloqueos, aportar prueba real y acordar explícitamente qué PR aterriza primero.",
       "recommended": true
     },
     {
       "title": "Aterrizar primero la deduplicación",
-      "body": "Fusionar primero el refactor de componentes compartidos y rehacer este PR sobre esa base para evitar dos abstracciones concurrentes.",
+      "body": "Integrar antes el refactor de componentes compartidos y reconstruir esta capa sobre esa base.",
       "recommended": false
     },
     {
-      "title": "Limitar este PR a pestañas y navegación",
-      "body": "Reducir el cambio a carga por pestaña y URLs, dejando el registro de charts para un PR posterior más pequeño.",
+      "title": "Reducir el alcance",
+      "body": "Separar tabs y navegación de los cambios analíticos y visuales para revisar una migración más acotada.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar la dirección y coordinar la integración",
-    "body": "Corregir la sincronización de URL, aportar prueba visual y elegir explícitamente cuál de los dos PRs se integra primero.",
+    "title": "Aprobar y coordinar la arquitectura",
+    "body": "Corregir los bloqueos, aportar prueba real y acordar explícitamente qué PR aterriza primero.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "PabloMoran34",
-    "reason": "Es el revisor solicitado del refactor solapado y puede ayudar a decidir la integración entre ambas arquitecturas.",
-    "confidence": "medium"
+    "reason": "Su historial reciente y la integración de logística en esta misma cabeza le sitúan mejor para resolver la convivencia técnica.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8689.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8689#issuecomment-5409158999",
-    "reviewedAt": "2026-08-25T10:33:24.241Z",
-    "mainSha": "ca2c5906a8d0b6606a750d691ec92ab92b267ca3"
+    "reviewedAt": "2026-08-25T14:11:02.787Z",
+    "mainSha": "bf619d23e24d4c32e99302617faa174eeb0de787"
   }
 }
