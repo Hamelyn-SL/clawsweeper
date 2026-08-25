@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-25T13:16:59.655Z",
-  "updatedAt": "2026-08-25T13:03:28Z",
+  "generatedAt": "2026-08-25T13:21:29.622Z",
+  "updatedAt": "2026-08-25T13:17:53Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,52 +14,46 @@
       "app:marketplace",
       "reporter:javier",
       "triage:needs-info",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review",
-      "clawsweeper:source-repro",
-      "issue-rating: 💎 diamond",
       "P1",
       "impact:other",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-08-25T11:13:55Z",
-    "updatedAt": "2026-08-25T13:03:28Z"
+    "updatedAt": "2026-08-25T13:17:53Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué política operativa aprobamos para los códigos Amazon FR/IT/SE, especialmente `8057`, y qué cohorte histórica se reclasificará tras validarla?",
-  "rationale": "El código puede clasificar por identificadores estables, pero decidir qué códigos se reintentan o provocan retirada afecta ofertas reales y más de medio millón de espejos históricos.",
+  "question": "¿Se aprueba clasificar catálogo/compliance/marca como `PERMANENT`, tratar `8005` como candidato recuperable y mantener `8057` fuera del retry hasta validación SP-API viva?",
+  "rationale": "La fuente confirma el hueco técnico, pero la política de cada código cambia operaciones sobre ofertas existentes y no puede inferirse con seguridad solo desde patrones de texto.",
   "options": [
     {
-      "title": "Catálogo seguro por código",
-      "body": "Clasificar catálogo, compliance y marca como `PERMANENT`, permitir `8005` en la ruta existente y mantener `8057` fuera hasta validación SP-API viva.",
+      "title": "Aprobar matriz conservadora",
+      "body": "Clasificar códigos estructurales como `PERMANENT`, habilitar solo `8005` tras prueba focalizada y excluir `8057` hasta validación viva.",
       "recommended": true
     },
     {
-      "title": "Activar ambos códigos",
-      "body": "Marcar `8005` y `8057` como recuperables tras aceptar explícitamente el riesgo de retirada y recreación de ofertas activas.",
-      "recommended": false
-    },
-    {
-      "title": "Solo observabilidad primero",
-      "body": "Persistir metadatos y publicar distribución por código antes de cambiar cualquier política o reclasificar históricos.",
+      "title": "Mantener pausa operativa",
+      "body": "Conservar `UNKNOWN` para estos códigos mientras Marketplace recopila evidencia SP-API adicional antes de cambiar recovery.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Catálogo seguro por código",
-    "body": "Clasificar catálogo, compliance y marca como `PERMANENT`, permitir `8005` en la ruta existente y mantener `8057` fuera hasta validación SP-API viva.",
+    "title": "Aprobar matriz conservadora",
+    "body": "Clasificar códigos estructurales como `PERMANENT`, habilitar solo `8005` tras prueba focalizada y excluir `8057` hasta validación viva.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MarcosTerroso",
-    "reason": "Su historial reciente cubre la operación de recovery Amazon en las seis regiones y puede coordinar la validación del flujo.",
-    "confidence": "medium"
+    "person": "MiguelHamelyn",
+    "reason": "Su historial reciente concentra la política de retry y la recuperación Amazon relacionada.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8699.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8699#issuecomment-5410239741",
-    "reviewedAt": "2026-08-25T13:16:59.655Z",
+    "reviewedAt": "2026-08-25T13:21:29.622Z",
     "mainSha": "f567bf2a2a258bcea3458fbb91d5c7cc46be8013"
   }
 }
