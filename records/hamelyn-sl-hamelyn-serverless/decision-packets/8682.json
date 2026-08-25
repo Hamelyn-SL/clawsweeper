@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-25T10:33:05.398Z",
-  "updatedAt": "2026-08-25T09:36:58Z",
+  "generatedAt": "2026-08-25T12:12:31.884Z",
+  "updatedAt": "2026-08-25T11:47:06Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,49 +12,48 @@
     "labels": [
       "app:marketplace",
       "feature",
-      "triage:queued",
+      "triage:blocked",
       "area:marketplace-sync",
-      "mk:fnac",
-      "marketplace-v2",
-      "P2",
       "impact:other",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review"
+      "clawsweeper:needs-maintainer-review",
+      "P2",
+      "issue-rating: ➖ n/a",
+      "mk:fnac",
+      "marketplace-v2"
     ],
     "createdAt": "2026-08-25T09:36:44Z",
-    "updatedAt": "2026-08-25T09:36:58Z"
+    "updatedAt": "2026-08-25T11:47:06Z"
   },
   "lane": "manual_review",
   "priority": "P2",
-  "question": "¿Debe la migración esperar y adoptar el contrato de tombstone e índices propuesto en https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8687?",
-  "rationale": "La implementación pendiente redefine el campo persistido y el TTL compartido; elegir antes de integrarlo en Fnac evitará una segunda migración incompatible.",
+  "question": "¿Qué responsable de Marketplace asumirá la validación autorizada de Fnac y Atlas necesaria para desbloquear esta migración?",
+  "rationale": "El código fija el diseño F3, pero el requisito de E2E vivo e índices reales depende de credenciales, datos e infraestructura que no están disponibles en esta revisión.",
   "options": [
     {
-      "title": "Resolver primero la base común",
-      "body": "Revisar y aterrizar o ajustar la PR enlazada antes de iniciar Fnac, usando después su contrato definitivo.",
+      "title": "Asignar validación autorizada",
+      "body": "Designar a un responsable con acceso a Fnac y Atlas para implementar y demostrar los gates definidos antes de abrir la pull request.",
       "recommended": true
     },
     {
-      "title": "Mantener el contrato actual",
-      "body": "Conservar `withdrawnAt` para Fnac y separar explícitamente cualquier cambio de tombstone e índices en otra decisión técnica.",
+      "title": "Mantener el bloqueo operativo",
+      "body": "Conservar la issue bloqueada hasta que exista una ventana segura de credenciales, índices y prueba E2E.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Resolver primero la base común",
-    "body": "Revisar y aterrizar o ajustar la PR enlazada antes de iniciar Fnac, usando después su contrato definitivo.",
+    "title": "Asignar validación autorizada",
+    "body": "Designar a un responsable con acceso a Fnac y Atlas para implementar y demostrar los gates definidos antes de abrir la pull request.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Está conectado con el piloto V2 integrado y con la PR abierta que redefine el contrato compartido.",
+    "reason": "Su historial reciente conecta el contrato V2 definitivo con las correcciones operativas de Fnac.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8682.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8682#issuecomment-5409154886",
-    "reviewedAt": "2026-08-25T10:33:05.398Z",
-    "mainSha": "ca2c5906a8d0b6606a750d691ec92ab92b267ca3"
+    "reviewedAt": "2026-08-25T12:12:31.884Z",
+    "mainSha": "39e6afb5a79d6a71528815703c97eaa376c98feb"
   }
 }
