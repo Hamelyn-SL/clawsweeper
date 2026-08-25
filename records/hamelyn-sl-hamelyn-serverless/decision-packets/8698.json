@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-25T12:07:04.925Z",
-  "updatedAt": "2026-08-25T11:13:56Z",
+  "generatedAt": "2026-08-25T13:12:37.962Z",
+  "updatedAt": "2026-08-25T12:46:43Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,48 +13,47 @@
       "bug",
       "app:admin",
       "reporter:javier",
-      "triage:queued",
+      "triage:needs-info",
       "P1",
-      "impact:data-loss",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:source-repro",
+      "impact:data-loss",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-08-25T11:13:44Z",
-    "updatedAt": "2026-08-25T11:13:56Z"
+    "updatedAt": "2026-08-25T12:46:43Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe una sustitución por unidad no encontrada registrar el original como `INVENTORIED` o crear la razón específica `LOST_AT_PICKING` antes de corregir y backfillear los datos?",
-  "rationale": "Ambas opciones eliminan el falso positivo de venta, pero difieren en la trazabilidad contable y en los consumidores históricos que habrá que adaptar.",
+  "question": "¿Debe el original no encontrado en una sustitución usar la razón existente `INVENTORIED` o una nueva razón persistente `LOST_AT_PICKING`?",
+  "rationale": "Ambas eliminan el falso conteo, pero difieren en la trazabilidad contable, las consultas históricas y el alcance del backfill.",
   "options": [
     {
       "title": "Crear `LOST_AT_PICKING`",
-      "body": "Conserva una señal explícita de merma de picking y obliga a ajustar los consumidores que interpreten causas de retirada.",
+      "body": "Distingue explícitamente una pérdida física durante picking y exige adaptar los consumidores que interpretan motivos de retirada.",
       "recommended": true
     },
     {
       "title": "Reutilizar `INVENTORIED`",
-      "body": "Minimiza el cambio de modelo, pero agrupa esta merma con los ajustes de inventario existentes.",
+      "body": "Reduce el cambio de modelo, pero agrupa esta pérdida con ajustes de inventario de otra naturaleza.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Crear `LOST_AT_PICKING`",
-    "body": "Conserva una señal explícita de merma de picking y obliga a ajustar los consumidores que interpreten causas de retirada.",
+    "body": "Distingue explícitamente una pérdida física durante picking y exige adaptar los consumidores que interpretan motivos de retirada.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "danielmenchen",
-    "reason": "Su historial toca la escritura de sustitución que deberá adoptar la semántica escogida.",
-    "confidence": "medium"
+    "person": "banosdavidhamelyn",
+    "reason": "Su historial reciente conecta las rutas de sustitución afectadas y la ampliación de operaciones `S-`.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8698.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8698#issuecomment-5410237677",
-    "reviewedAt": "2026-08-25T12:07:04.925Z",
-    "mainSha": "251c3a996909dfa5231f7a50261b746195d9177c"
+    "reviewedAt": "2026-08-25T13:12:37.962Z",
+    "mainSha": "f567bf2a2a258bcea3458fbb91d5c7cc46be8013"
   }
 }

@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-25T12:06:33.144Z",
-  "updatedAt": "2026-08-25T10:46:18Z",
+  "generatedAt": "2026-08-25T13:12:13.768Z",
+  "updatedAt": "2026-08-25T12:15:38Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,44 +15,46 @@
       "triage:done",
       "area:marketplace-sync",
       "impact:other",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
       "P2",
       "issue-rating: ➖ n/a",
       "mk:ebay",
       "marketplace-v2"
     ],
     "createdAt": "2026-08-25T09:36:32Z",
-    "updatedAt": "2026-08-25T10:46:18Z"
+    "updatedAt": "2026-08-25T12:15:38Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe la reconciliación LMS de eBay ser una capability/fase explícita de V2 o permanecer temporalmente en una ruta separada durante F3?",
-  "rationale": "El runner genérico solo expresa fases estándar y ambas opciones determinan el contrato permanente y la convivencia segura con el cron legacy.",
+  "question": "¿Debe la reconciliación LMS de eBay ser una capability/fase explícita de V2 o mantenerse temporalmente en una ruta separada durante F3?",
+  "rationale": "El runner genérico solo expresa fases estándar; la elección fija el contrato permanente y determina cómo convivir sin carreras con el cron legacy.",
   "options": [
     {
       "title": "Fase LMS explícita",
-      "body": "Extender V2 con una capability de reconciliación dedicada que drene señales durables bajo el lock compartido.",
+      "body": "Extender V2 con una capability dedicada que drene señales durables bajo el mismo lock de eBay.",
       "recommended": true
     },
     {
       "title": "Ruta separada temporal",
-      "body": "Migrar las fases estándar a `ebayV2` y conservar el drenaje LMS en una ruta coordinada hasta definir la capability.",
+      "body": "Migrar las fases estándar a `ebayV2` y conservar temporalmente el drenaje LMS en una ruta coordinada.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Fase LMS explícita",
-    "body": "Extender V2 con una capability de reconciliación dedicada que drene señales durables bajo el lock compartido.",
+    "body": "Extender V2 con una capability dedicada que drene señales durables bajo el mismo lock de eBay.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Conoce el piloto F2 y planteó la migración F3 con los requisitos de convivencia.",
+    "reason": "Conoce el piloto F2 y formuló los requisitos de migración F3 y convivencia.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8681.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8681#issuecomment-5409229838",
-    "reviewedAt": "2026-08-25T12:06:33.144Z",
-    "mainSha": "251c3a996909dfa5231f7a50261b746195d9177c"
+    "reviewedAt": "2026-08-25T13:12:13.768Z",
+    "mainSha": "f567bf2a2a258bcea3458fbb91d5c7cc46be8013"
   }
 }

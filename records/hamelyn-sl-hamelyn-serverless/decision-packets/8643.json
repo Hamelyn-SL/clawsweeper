@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-25T13:12:43.230Z",
+  "updatedAt": "2026-08-25T12:57:07Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8643,
+    "title": "La selección batch de precio deja en limbo espejos en cola con maestro no elegible",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8643",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "reporter:javier",
+      "triage:done",
+      "impact:other",
+      "clawsweeper:no-new-fix-pr",
+      "P2",
+      "clawsweeper:source-repro",
+      "clawsweeper:linked-pr-open",
+      "issue-rating: 💎 diamond"
+    ],
+    "createdAt": "2026-08-23T17:53:57Z",
+    "updatedAt": "2026-08-25T12:57:07Z"
+  },
+  "lane": "manual_review",
+  "priority": "P2",
+  "question": "¿Debe la PR vinculada limitarse al drenaje definido para esta incidencia y dejar los huérfanos fuera de ventana para seguimiento, o ampliar su alcance antes de integrarse?",
+  "rationale": "La discusión de la PR identifica un compromiso operativo entre convergencia y coste del escaneo que no queda resuelto por el contrato actual.",
+  "options": [
+    {
+      "title": "Separar el alcance adicional",
+      "body": "Integrar la corrección del limbo descrito y registrar los huérfanos fuera de ventana como seguimiento acotado.",
+      "recommended": true
+    },
+    {
+      "title": "Ampliar la reconciliación",
+      "body": "Extender la PR para cubrir también los huérfanos fuera de ventana y aportar prueba de coste y convergencia.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Separar el alcance adicional",
+    "body": "Integrar la corrección del limbo descrito y registrar los huérfanos fuera de ventana como seguimiento acotado.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Está asignado a esta incidencia, ha trabajado recientemente en la ruta y mantiene la PR candidata.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8643.md",
+    "reviewedAt": "2026-08-25T13:12:43.230Z",
+    "mainSha": "f567bf2a2a258bcea3458fbb91d5c7cc46be8013"
+  }
+}
