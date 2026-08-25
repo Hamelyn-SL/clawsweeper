@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-25T10:33:24.241Z",
+  "updatedAt": "2026-08-25T10:21:46Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8689,
+    "title": "feat: config-driven dashboards with tabs and chart registry",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8689",
+    "state": "open",
+    "labels": [
+      "size/XXL"
+    ],
+    "createdAt": "2026-08-25T10:21:36Z",
+    "updatedAt": "2026-08-25T10:21:46Z",
+    "headSha": "8e06fca203afefa97818d24085efbda3d96e812a"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe este motor configurado convertirse ya en la arquitectura común de dashboards, y en qué orden debe integrarse respecto a https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8599?",
+  "rationale": "La corrección del enlace de pestañas es mecánica, pero decidir si esta nueva capa sustituye la estructura actual y cómo combinar dos refactorizaciones solapadas requiere criterio de arquitectura del equipo.",
+  "options": [
+    {
+      "title": "Aprobar la dirección y coordinar la integración",
+      "body": "Corregir la sincronización de URL, aportar prueba visual y elegir explícitamente cuál de los dos PRs se integra primero.",
+      "recommended": true
+    },
+    {
+      "title": "Aterrizar primero la deduplicación",
+      "body": "Fusionar primero el refactor de componentes compartidos y rehacer este PR sobre esa base para evitar dos abstracciones concurrentes.",
+      "recommended": false
+    },
+    {
+      "title": "Limitar este PR a pestañas y navegación",
+      "body": "Reducir el cambio a carga por pestaña y URLs, dejando el registro de charts para un PR posterior más pequeño.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar la dirección y coordinar la integración",
+    "body": "Corregir la sincronización de URL, aportar prueba visual y elegir explícitamente cuál de los dos PRs se integra primero.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "PabloMoran34",
+    "reason": "Es el revisor solicitado del refactor solapado y puede ayudar a decidir la integración entre ambas arquitecturas.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8689.md",
+    "reviewedAt": "2026-08-25T10:33:24.241Z",
+    "mainSha": "ca2c5906a8d0b6606a750d691ec92ab92b267ca3"
+  }
+}

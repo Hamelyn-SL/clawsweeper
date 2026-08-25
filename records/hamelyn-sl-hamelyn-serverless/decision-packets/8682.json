@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-25T10:33:05.398Z",
+  "updatedAt": "2026-08-25T09:36:58Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8682,
+    "title": "Migrar Fnac a MarketplaceManager V2 (primer marketplace batch)",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8682",
+    "state": "open",
+    "labels": [
+      "app:marketplace",
+      "feature",
+      "triage:queued",
+      "area:marketplace-sync",
+      "P2",
+      "mk:fnac",
+      "marketplace-v2"
+    ],
+    "createdAt": "2026-08-25T09:36:44Z",
+    "updatedAt": "2026-08-25T09:36:58Z"
+  },
+  "lane": "manual_review",
+  "priority": "P2",
+  "question": "¿Debe la migración esperar y adoptar el contrato de tombstone e índices propuesto en https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8687?",
+  "rationale": "La implementación pendiente redefine el campo persistido y el TTL compartido; elegir antes de integrarlo en Fnac evitará una segunda migración incompatible.",
+  "options": [
+    {
+      "title": "Resolver primero la base común",
+      "body": "Revisar y aterrizar o ajustar la PR enlazada antes de iniciar Fnac, usando después su contrato definitivo.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener el contrato actual",
+      "body": "Conservar `withdrawnAt` para Fnac y separar explícitamente cualquier cambio de tombstone e índices en otra decisión técnica.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Resolver primero la base común",
+    "body": "Revisar y aterrizar o ajustar la PR enlazada antes de iniciar Fnac, usando después su contrato definitivo.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Está conectado con el piloto V2 integrado y con la PR abierta que redefine el contrato compartido.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8682.md",
+    "reviewedAt": "2026-08-25T10:33:05.398Z",
+    "mainSha": "ca2c5906a8d0b6606a750d691ec92ab92b267ca3"
+  }
+}
