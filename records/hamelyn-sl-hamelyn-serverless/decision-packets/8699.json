@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-25T12:07:50.009Z",
-  "updatedAt": "2026-08-25T11:14:08Z",
+  "generatedAt": "2026-08-25T13:16:59.655Z",
+  "updatedAt": "2026-08-25T13:03:28Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,52 +13,51 @@
       "bug",
       "app:marketplace",
       "reporter:javier",
-      "triage:queued",
+      "triage:needs-info",
       "P1",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review"
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-08-25T11:13:55Z",
-    "updatedAt": "2026-08-25T11:14:08Z"
+    "updatedAt": "2026-08-25T13:03:28Z"
   },
-  "lane": "manual_review",
+  "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué códigos SP-API y qué política de reintento se aprueban para la reclasificación y recuperación de los aproximadamente 537k registros históricos?",
-  "rationale": "La implementación es acotable, pero asignar políticas a códigos y reactivar una cola masiva requiere validar la semántica operativa de los errores reales.",
+  "question": "¿Qué política operativa aprobamos para los códigos Amazon FR/IT/SE, especialmente `8057`, y qué cohorte histórica se reclasificará tras validarla?",
+  "rationale": "El código puede clasificar por identificadores estables, pero decidir qué códigos se reintentan o provocan retirada afecta ofertas reales y más de medio millón de espejos históricos.",
   "options": [
     {
-      "title": "Validar códigos y desplegar por lotes",
-      "body": "Confirmar una muestra de códigos, añadir reglas estructuradas y reclasificar por lotes monitorizados antes de habilitar toda la recuperación.",
+      "title": "Catálogo seguro por código",
+      "body": "Clasificar catálogo, compliance y marca como `PERMANENT`, permitir `8005` en la ruta existente y mantener `8057` fuera hasta validación SP-API viva.",
       "recommended": true
     },
     {
-      "title": "Aplicar solo 8057/8005",
-      "body": "Reactivar primero la vía de retirada y recreación para esos dos códigos, dejando el resto de errores localizados para una segunda fase.",
+      "title": "Activar ambos códigos",
+      "body": "Marcar `8005` y `8057` como recuperables tras aceptar explícitamente el riesgo de retirada y recreación de ofertas activas.",
       "recommended": false
     },
     {
-      "title": "Mantener la cola congelada",
-      "body": "No modificar políticas ni históricos hasta disponer de una taxonomía completa de códigos de Amazon por región.",
+      "title": "Solo observabilidad primero",
+      "body": "Persistir metadatos y publicar distribución por código antes de cambiar cualquier política o reclasificar históricos.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Validar códigos y desplegar por lotes",
-    "body": "Confirmar una muestra de códigos, añadir reglas estructuradas y reclasificar por lotes monitorizados antes de habilitar toda la recuperación.",
+    "title": "Catálogo seguro por código",
+    "body": "Clasificar catálogo, compliance y marca como `PERMANENT`, permitir `8005` en la ruta existente y mantener `8057` fuera hasta validación SP-API viva.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Aportó la observación de producción y el historial muestra que ha mantenido la recuperación exacta por códigos.",
-    "confidence": "high"
+    "person": "MarcosTerroso",
+    "reason": "Su historial reciente cubre la operación de recovery Amazon en las seis regiones y puede coordinar la validación del flujo.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8699.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8699#issuecomment-5410239741",
-    "reviewedAt": "2026-08-25T12:07:50.009Z",
-    "mainSha": "251c3a996909dfa5231f7a50261b746195d9177c"
+    "reviewedAt": "2026-08-25T13:16:59.655Z",
+    "mainSha": "f567bf2a2a258bcea3458fbb91d5c7cc46be8013"
   }
 }
