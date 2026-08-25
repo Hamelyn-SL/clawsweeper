@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-24T17:11:58.745Z",
-  "updatedAt": "2026-08-24T16:57:43Z",
+  "generatedAt": "2026-08-25T07:40:18.757Z",
+  "updatedAt": "2026-08-25T07:27:42Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,46 +14,45 @@
       "feature",
       "reporter:marcos",
       "triage:done",
-      "P2",
       "impact:other",
-      "issue-rating: ➖ n/a",
-      "clawsweeper:linked-pr-open",
       "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:linked-pr-open",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-08-21T10:43:04Z",
-    "updatedAt": "2026-08-24T16:57:43Z"
+    "updatedAt": "2026-08-25T07:27:42Z"
   },
-  "lane": "product_direction",
+  "lane": "release_inclusion",
   "priority": "P2",
-  "question": "¿Debe esta primera migración F2 activar ya `discogsV2` como cron principal, o aterrizar inicialmente sin schedule hasta completar los huecos legacy y los índices Atlas?",
-  "rationale": "La aceptación original pedía una ruta V2 sin entrada en `vercel.json`, mientras que la PR vinculada incorpora el switchover; decidirlo cambia el comportamiento de producción.",
+  "question": "¿Debe aprobarse el switchover del cron principal de Discogs en la misma entrega que `MarketplaceManager` tras confirmar los índices Atlas requeridos?",
+  "rationale": "La PR cambia tráfico programado de una integración de producción y documenta una preparación operativa manual previa; esa aceptación no puede inferirse solo del código.",
   "options": [
     {
-      "title": "Aterrizaje gradual",
-      "body": "Fusionar la estructura V2 sin schedule principal y posponer el switchover hasta cerrar los gates operativos y funcionales.",
+      "title": "Aprobar con gate operativo",
+      "body": "Confirmar la creación de los índices Atlas y revisar la PR como la entrega única de la migración, manteniendo el fallback legacy.",
       "recommended": true
     },
     {
-      "title": "Switchover controlado",
-      "body": "Aceptar el cron V2 principal tras confirmar índices Atlas, fallback manual y el plan para los huecos legacy documentados.",
+      "title": "Separar el switchover",
+      "body": "Aterrizar primero la infraestructura V2 sin mover el schedule y planificar el corte de tráfico en una PR operativa posterior.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aterrizaje gradual",
-    "body": "Fusionar la estructura V2 sin schedule principal y posponer el switchover hasta cerrar los gates operativos y funcionales.",
+    "title": "Aprobar con gate operativo",
+    "body": "Confirmar la creación de los índices Atlas y revisar la PR como la entrega única de la migración, manteniendo el fallback legacy.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MarcosTerroso",
-    "reason": "Es el assignee y autor de la propuesta que define el alcance F2 y el cambio de schedule.",
+    "person": "MiguelHamelyn",
+    "reason": "Es assignee de la PR y ha mantenido recientemente los controles de rate limit y los endurecimientos del flujo.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8626.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8626#issuecomment-5370332561",
-    "reviewedAt": "2026-08-24T17:11:58.745Z",
-    "mainSha": "bd1b326cac9bc4c1113f4fea817be527e0a87f79"
+    "reviewedAt": "2026-08-25T07:40:18.757Z",
+    "mainSha": "bdcc13830c3ece3c0a8dc83f37b44a6237181e67"
   }
 }
