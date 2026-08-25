@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-25T10:40:57.274Z",
-  "updatedAt": "2026-08-25T09:36:21Z",
+  "generatedAt": "2026-08-25T12:05:55.297Z",
+  "updatedAt": "2026-08-25T11:57:08Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,44 +12,49 @@
     "labels": [
       "app:marketplace",
       "feature",
-      "triage:queued",
+      "triage:running",
       "area:marketplace-sync",
+      "impact:other",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
       "P2",
+      "issue-rating: ➖ n/a",
       "mk:alibris",
       "marketplace-v2"
     ],
     "createdAt": "2026-08-25T09:36:12Z",
-    "updatedAt": "2026-08-25T09:36:21Z"
+    "updatedAt": "2026-08-25T11:57:08Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe MarketplaceManager V2 incorporar un modo de exportación declarativa FTPS para Alibris, o debe seguir fuera del manager?",
-  "rationale": "El contrato actual organiza selecciones y operaciones por stock, mientras Alibris publica snapshots de gran volumen con protecciones operativas distintas.",
+  "question": "¿Debe MarketplaceManager V2 admitir integraciones solo de pedidos, sin capacidades `create`, `withdraw` ni `updatePrice`?",
+  "rationale": "Alibris ya publica inventario mediante un flujo FTPS con protecciones propias; mantener no-op o resultados ficticios contradice el contrato V2.",
   "options": [
     {
-      "title": "Extender V2 para exportaciones",
-      "body": "Definir una capacidad declarativa que preserve las guardas FTPS y resolver primero los contratos genéricos pendientes.",
+      "title": "Admitir managers solo de pedidos",
+      "body": "Relajar la invariante con tests y migrar solo `process` y `ship`, preservando FTPS como flujo independiente.",
       "recommended": true
     },
     {
-      "title": "Mantener el exportador separado",
-      "body": "Conservar el inventario FTPS actual y aplicar V2 sólo a pedidos y expediciones si reduce complejidad real.",
+      "title": "Mantener la invariante de stock",
+      "body": "Conservar Alibris fuera de V2 hasta que exista una capacidad explícita de inventario declarativo.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Extender V2 para exportaciones",
-    "body": "Definir una capacidad declarativa que preserve las guardas FTPS y resolver primero los contratos genéricos pendientes.",
+    "title": "Admitir managers solo de pedidos",
+    "body": "Relajar la invariante con tests y migrar solo `process` y `ship`, preservando FTPS como flujo independiente.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Combina trabajo reciente en Alibris con la responsabilidad visible de endurecer la base V2 previa.",
+    "reason": "Su historial cubre tanto el flujo FTPS de Alibris como el endurecimiento reciente del contrato V2.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8680.md",
-    "reviewedAt": "2026-08-25T10:40:57.274Z",
-    "mainSha": "ca2c5906a8d0b6606a750d691ec92ab92b267ca3"
+    "reviewedAt": "2026-08-25T12:05:55.297Z",
+    "mainSha": "1ad18a8b1dab0d538a6ad7702eb6ce9bf1057a26"
   }
 }
