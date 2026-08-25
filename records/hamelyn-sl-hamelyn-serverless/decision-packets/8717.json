@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-25T16:44:52.426Z",
+  "updatedAt": "2026-08-25T15:20:17Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8717,
+    "title": "docs: add n8n operations skill",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8717",
+    "state": "open",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-08-25T15:01:52Z",
+    "updatedAt": "2026-08-25T15:20:17Z",
+    "headSha": "1fdb60ee4e4aecc1227aec92c75658012c775bc4"
+  },
+  "lane": "security_boundary",
+  "priority": "P2",
+  "question": "¿La operación de n8n debe restringirse oficialmente al control plane personal documentado o disponer de una ruta gestionada para varios operadores autorizados?",
+  "rationale": "El PR convierte una restricción de acceso personal en la política operativa de una infraestructura compartida, y el historial disponible no demuestra una aprobación de esa frontera.",
+  "options": [
+    {
+      "title": "Definir acceso gestionado",
+      "body": "Documentar un mecanismo aprobado y auditable para operadores autorizados, sin copiar secretos a entornos de agentes.",
+      "recommended": true
+    },
+    {
+      "title": "Aprobar restricción personal",
+      "body": "Mantener el control plane único, pero dejar constancia visible de que es una decisión de seguridad y de su responsable operativo.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Definir acceso gestionado",
+    "body": "Documentar un mecanismo aprobado y auditable para operadores autorizados, sin copiar secretos a entornos de agentes.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "La ruta propuesta depende de su control plane y su historial introdujo la skill operativa relacionada.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8717.md",
+    "reviewedAt": "2026-08-25T16:44:52.426Z",
+    "mainSha": "d26a9601ec9aa843e20ee53dcaf943a2ec5e21ac"
+  }
+}
