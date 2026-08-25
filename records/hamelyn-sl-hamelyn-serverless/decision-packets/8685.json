@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-25T11:56:41.054Z",
+  "updatedAt": "2026-08-25T11:09:29Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8685,
+    "title": "Migrar la familia Amazon (ES, COM, SE, MX, FR, IT) a MarketplaceManager V2",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8685",
+    "state": "open",
+    "labels": [
+      "app:marketplace",
+      "feature",
+      "triage:done",
+      "area:marketplace-sync",
+      "P2",
+      "issue-rating: ➖ n/a",
+      "mk:amazon",
+      "marketplace-v2"
+    ],
+    "createdAt": "2026-08-25T09:37:42Z",
+    "updatedAt": "2026-08-25T11:09:29Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe la migración Amazon esperar a que Fnac o Mirakl validen primero el precedente batch F3 antes de iniciar su entrega?",
+  "rationale": "La decisión determina el orden de validación del protocolo batch compartido y el riesgo operativo de seis sincronizaciones productivas.",
+  "options": [
+    {
+      "title": "Esperar al precedente batch",
+      "body": "Completar primero una migración batch menor y reutilizar su evidencia operativa para Amazon.",
+      "recommended": true
+    },
+    {
+      "title": "Avanzar en paralelo",
+      "body": "Iniciar Amazon antes, asumiendo coordinación adicional de pruebas reales, índices Atlas y compatibilidad legacy.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Esperar al precedente batch",
+    "body": "Completar primero una migración batch menor y reutilizar su evidencia operativa para Amazon.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Su historial conecta tanto la integración Amazon compartida como la implantación inicial de MarketplaceManager V2.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8685.md",
+    "reviewedAt": "2026-08-25T11:56:41.054Z",
+    "mainSha": "1ad18a8b1dab0d538a6ad7702eb6ce9bf1057a26"
+  }
+}
