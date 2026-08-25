@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-25T19:36:01.687Z",
-  "updatedAt": "2026-08-25T18:25:33Z",
+  "generatedAt": "2026-08-25T20:54:08.602Z",
+  "updatedAt": "2026-08-25T19:37:01Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -17,41 +17,40 @@
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
-      "P2",
-      "clawsweeper:needs-security-review"
+      "P2"
     ],
     "createdAt": "2026-08-22T18:12:42Z",
-    "updatedAt": "2026-08-25T18:25:33Z"
+    "updatedAt": "2026-08-25T19:37:01Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe el catálogo público exponer ofertas y estados de conservación, o debe limitarse al precio mínimo actual tras cerrar los defectos de descubrimiento?",
-  "rationale": "La implementación actual limita deliberadamente los datos a una proyección pública y al precio mínimo; publicar un desglose crea una superficie API persistente con implicaciones de producto y abuso.",
+  "question": "¿Debe la API pública de catálogo exponer el desglose de ofertas y estados de conservación, además del precio mínimo actual?",
+  "rationale": "La fuente actual define intencionadamente un precio mínimo; ampliar la respuesta afectaría al contrato público, a la caché y a la política de exposición de datos.",
   "options": [
     {
-      "title": "Mantener el catálogo mínimo",
-      "body": "Corregir las respuestas web y enlaces de descubrimiento sin ampliar el contrato público de catálogo.",
+      "title": "Mantener el contrato mínimo",
+      "body": "Cerrar la issue de agent-readiness con el soft-404 y la descubribilidad, sin añadir campos de oferta al endpoint público.",
       "recommended": true
     },
     {
       "title": "Diseñar un desglose público",
-      "body": "Abrir un trabajo acotado para definir campos, caché, límite de tasa y garantía de compatibilidad del nuevo contrato.",
+      "body": "Abrir una propuesta específica que defina campos permitidos, límites, caché, documentación y pruebas de compatibilidad antes de ampliar el endpoint.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mantener el catálogo mínimo",
-    "body": "Corregir las respuestas web y enlaces de descubrimiento sin ampliar el contrato público de catálogo.",
+    "title": "Mantener el contrato mínimo",
+    "body": "Cerrar la issue de agent-readiness con el soft-404 y la descubribilidad, sin añadir campos de oferta al endpoint público.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Ha implementado y mantenido las superficies de descubrimiento y el catálogo público relacionadas.",
+    "reason": "Está asignado a esta issue y concentra la autoría reciente de las superficies implicadas.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8631.md",
-    "reviewedAt": "2026-08-25T19:36:01.687Z",
+    "reviewedAt": "2026-08-25T20:54:08.602Z",
     "mainSha": "c52d2964fe17abd41272c3621d61660e7a3eeb4a"
   }
 }
