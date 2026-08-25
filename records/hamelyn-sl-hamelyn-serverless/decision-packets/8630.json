@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-25T05:41:06.767Z",
-  "updatedAt": "2026-08-25T05:35:34Z",
+  "generatedAt": "2026-08-25T07:23:42.595Z",
+  "updatedAt": "2026-08-25T06:07:31Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -18,44 +18,38 @@
       "rating: 🥈 silver"
     ],
     "createdAt": "2026-08-21T13:19:11Z",
-    "updatedAt": "2026-08-25T05:35:34Z",
-    "headSha": "27533517a4481ae712bb3722d5ec49259fa81f02"
+    "updatedAt": "2026-08-25T06:07:31Z",
+    "headSha": "c9c7d0222ac91eafaf8f2efb30705836e089b193"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Acepta el equipo que Discogs deje de actualizar `needsUpdateData` y recuperar la mayoría de `SYNC_ERROR` automáticamente al activar V2, o debe retrasarse el switchover?",
-  "rationale": "La rama documenta que ambas capacidades quedan fuera del cron principal; decidir si ese deterioro temporal es aceptable exige intención operativa y de producto, no solo una corrección mecánica.",
+  "question": "¿Se acepta que el cron principal V2 deje `needsUpdateData` y los errores V1 sin tratamiento automático hasta F3?",
+  "rationale": "La ruta legacy actual ofrece esas fases y el PR las elimina del schedule, mientras su propia documentación las reconoce como huecos pendientes.",
   "options": [
     {
-      "title": "Aplazar el switchover",
-      "body": "Mantener `/api/discogs` como cron principal hasta añadir las fases V2 o un bridge equivalente para los estados legacy.",
+      "title": "Mantener cobertura automática",
+      "body": "Conservar esas fases legacy bajo el lock compartido o implementar sus equivalentes V2 antes de activar el schedule.",
       "recommended": true
     },
     {
-      "title": "Aceptar el hueco temporal",
-      "body": "Programar V2 asumiendo una operación manual periódica de V1 y un plan explícito para tratar `needsUpdateData` y `SYNC_ERROR`.",
-      "recommended": false
-    },
-    {
-      "title": "Separar las fases restantes",
-      "body": "Conservar un schedule limitado de la ruta legacy para `update` y `recover` mientras V2 cubre create, withdraw y precio.",
+      "title": "Aceptar gestión manual temporal",
+      "body": "Autorizar expresamente que esos casos se resuelvan manualmente hasta que F3 complete las capacidades faltantes.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aplazar el switchover",
-    "body": "Mantener `/api/discogs` como cron principal hasta añadir las fases V2 o un bridge equivalente para los estados legacy.",
+    "title": "Mantener cobertura automática",
+    "body": "Conservar esas fases legacy bajo el lock compartido o implementar sus equivalentes V2 antes de activar el schedule.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "Es la persona con evidencia más directa tanto en el controlador legacy como en el commit de switchover.",
-    "confidence": "high"
+    "person": "JavierHamelyn",
+    "reason": "Es el revisor solicitado de la propuesta y la decisión afecta al comportamiento operativo que se programa.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8630.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8630#issuecomment-5377147739",
-    "reviewedAt": "2026-08-25T05:41:06.767Z",
-    "mainSha": "92a0553005fa0a7784c86e4b0deadb2f75e313d7"
+    "reviewedAt": "2026-08-25T07:23:42.595Z",
+    "mainSha": "bdcc13830c3ece3c0a8dc83f37b44a6237181e67"
   }
 }
