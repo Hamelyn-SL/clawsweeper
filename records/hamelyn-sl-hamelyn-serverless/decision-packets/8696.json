@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-25T13:42:51.407Z",
+  "updatedAt": "2026-08-25T12:15:55Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8696,
+    "title": "feat: type the api error model and document deprecation policy",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8696",
+    "state": "open",
+    "labels": [
+      "size/XXL",
+      "P2",
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 compatibility",
+      "rating: 🥇 gold"
+    ],
+    "createdAt": "2026-08-25T11:10:05Z",
+    "updatedAt": "2026-08-25T12:15:55Z",
+    "headSha": "9b8159a86d655fd79c1994cbcb9633b5e5b39976"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe retirarse `data.cli` del índice público y cuál es el contrato permanente de fechas para `Deprecation` y `Sunset`?",
+  "rationale": "El parche modifica una superficie pública existente y publica una política temporal verificable; corregir los detalles técnicos exige saber qué compatibilidad y semántica de fechas quiere mantener la API.",
+  "options": [
+    {
+      "title": "Mantener compatibilidad y definir el contrato",
+      "body": "Conservar `data.cli` o deprecarlo explícitamente, y añadir fechas separadas de anuncio y retirada con validación y pruebas.",
+      "recommended": true
+    },
+    {
+      "title": "Retirar el CLI ahora",
+      "body": "Aceptar la ruptura de discovery y documentarla como un cambio intencional de versión o de política pública.",
+      "recommended": false
+    },
+    {
+      "title": "Limitar este PR a ApiError",
+      "body": "Extraer la política de retirada a una propuesta específica antes de exponer un contrato público nuevo.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mantener compatibilidad y definir el contrato",
+    "body": "Conservar `data.cli` o deprecarlo explícitamente, y añadir fechas separadas de anuncio y retirada con validación y pruebas.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es quien introdujo el área de discovery y concentra el historial reciente del contrato de API.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8696.md",
+    "reviewedAt": "2026-08-25T13:42:51.407Z",
+    "mainSha": "f567bf2a2a258bcea3458fbb91d5c7cc46be8013"
+  }
+}
