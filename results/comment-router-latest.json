@@ -1,10 +1,10 @@
 {
   "status": "dry_run",
-  "generated_at": "2026-08-25T07:53:19.286Z",
+  "generated_at": "2026-08-25T08:15:16.351Z",
   "repo": "Hamelyn-SL/hamelyn-serverless",
   "repair_repo": "Hamelyn-SL/clawsweeper",
   "review_repo": "Hamelyn-SL/clawsweeper",
-  "since": "2026-08-25T04:53:17.948Z",
+  "since": "2026-08-25T05:15:13.384Z",
   "execute": false,
   "force_reprocess": false,
   "max_comments": 100,
@@ -12,8 +12,8 @@
   "comment_ids": [],
   "status_comment_id": null,
   "max_autoclose_targets": 8,
-  "scanned_comments": 47,
-  "commands_seen": 0,
+  "scanned_comments": 56,
+  "commands_seen": 1,
   "actionable": 0,
   "trusted_bots": [
     "clawsweeper[bot]",
@@ -27,17 +27,59 @@
   "max_auto_repairs_per_head": 2,
   "max_auto_repairs_per_pr": 10,
   "lookup_concurrency": 8,
-  "commands": [],
+  "commands": [
+    {
+      "idempotency_key": "comment-router:Hamelyn-SL/hamelyn-serverless:8634:5395088729:2026-08-25T08:02:00Z:automerge",
+      "comment_id": "5395088729",
+      "comment_version_key": "5395088729:2026-08-25T08:02:00Z",
+      "comment_url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8634#issuecomment-5395088729",
+      "repo": "Hamelyn-SL/hamelyn-serverless",
+      "target_branch": null,
+      "issue_number": 8634,
+      "author": "clawsweeper-hamelyn[bot]",
+      "author_id": 301054459,
+      "author_association": "NONE",
+      "comment_created_at": "2026-08-24T12:19:24Z",
+      "comment_updated_at": "2026-08-25T08:02:00Z",
+      "status_comment_id": null,
+      "trigger": "mention",
+      "command": "automerge",
+      "intent": "automerge",
+      "autoclose_message": null,
+      "implementation_prompt": null,
+      "operator_override": null,
+      "trusted_bot": false,
+      "trusted_bot_author": null,
+      "automation_source": null,
+      "repair_reason": null,
+      "review_summary": "El PR añade negociación Markdown para la portada, `llms.txt`, `index.md`, 404 negociado, alias localizados y ajustes semánticos de encabezados en `apps/hamelyn-ecommerce`.\n\nReproducibility: Sí, para el bloqueo del PR: la prueba real con `next start` sobre el head actual muestra que HTML omite `Accept` en `Vary`, y el código establece esa cabecera en una capa que Next reemplaza.",
+      "review_followup": "- [P1] Existe un arreglo mecánico y localizado para preservar la variante de caché; después seguirá siendo imprescindible una prueba HTTP real aportada por la persona contribuidora.",
+      "freeform_prompt": null,
+      "visual_lens": null,
+      "expected_head_sha": null,
+      "close_reason": null,
+      "close_confidence": null,
+      "close_action_taken": null,
+      "reviewed_at": null,
+      "expected_item_updated_at": null,
+      "expected_source_revision": null,
+      "finding_id": null,
+      "status": "waiting",
+      "actions": [],
+      "author_repository_permission": "none",
+      "reason": "GitHub lookup failed; will retry later: GraphQL: Resource not accessible by integration (repository.pullRequest.statusCheckRollup.nodes.0.commit.statusCheckRollup) Command failed: gh pr view 8634 --repo Hamelyn-SL/hamelyn-serverless --json additions,headRefName,headRefOid,author,"
+    }
+  ],
   "timings": {
-    "total_ms": 1338,
+    "total_ms": 2968,
     "phases": [
       {
         "name": "list_candidate_comments",
-        "ms": 1331
+        "ms": 1523
       },
       {
         "name": "prehydrate_comment_commands",
-        "ms": 0
+        "ms": 1438
       },
       {
         "name": "classify_comment_commands",
