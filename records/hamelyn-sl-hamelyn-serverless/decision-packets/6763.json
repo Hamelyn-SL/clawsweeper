@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-25T10:25:41.511Z",
+  "generatedAt": "2026-08-25T10:23:19.764Z",
   "updatedAt": "2026-08-25T10:12:24Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -27,34 +27,33 @@
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Deben los aliases públicos de categoría y subcategoría ser una excepción indexable con hreflang, manteniendo las búsquedas genéricas sin alternates?",
-  "rationale": "BL-16 documenta la ausencia de hreflang en búsqueda como intencional, mientras que los aliases SEO se ejecutan precisamente en ese flujo y requieren una frontera explícita.",
+  "question": "¿Deben los aliases públicos de categoría y subcategoría tener `hreflang` aunque compartan `SearchPage` con búsquedas genéricas?",
+  "rationale": "La norma actual excluye alternates para búsqueda/catálogo por decisión del owner, pero el reporte propone una excepción SEO para rutas públicas reescritas.",
   "options": [
     {
-      "title": "Excepción para aliases SEO",
-      "body": "Emitir hreflang únicamente cuando `x-hamelyn-source-pathname` identifica un alias localizado de categoría o subcategoría, y mantener las búsquedas genéricas sin alternates.",
+      "title": "Excepción solo para aliases SEO",
+      "body": "Emitir alternates únicamente para categorías y subcategorías públicas con equivalentes localizados, conservando las búsquedas genéricas sin clúster.",
       "recommended": true
     },
     {
       "title": "Mantener la política actual",
-      "body": "Conservar la exclusión de hreflang en todo el catálogo/buscador y documentar que las categorías reescritas no forman clúster internacional.",
+      "body": "Conservar sin alternates todas las rutas que resuelven por búsqueda/catálogo y limitar la corrección a `pt-BR` en páginas ya compatibles.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Excepción para aliases SEO",
-    "body": "Emitir hreflang únicamente cuando `x-hamelyn-source-pathname` identifica un alias localizado de categoría o subcategoría, y mantener las búsquedas genéricas sin alternates.",
+    "title": "Excepción solo para aliases SEO",
+    "body": "Emitir alternates únicamente para categorías y subcategorías públicas con equivalentes localizados, conservando las búsquedas genéricas sin clúster.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "Es el contribuidor reciente de la metadata de storefront y del punto de integración en `SearchPage`.",
+    "person": "JavierHamelyn",
+    "reason": "Es el contribuidor más reciente del componente que tendría que distinguir aliases SEO de búsquedas genéricas.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6763.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6763#issuecomment-4910174262",
-    "reviewedAt": "2026-08-25T10:25:41.511Z",
+    "reviewedAt": "2026-08-25T10:23:19.764Z",
     "mainSha": "8fa150949f170ce84039d2a080ff9b9931ea2a22"
   }
 }
