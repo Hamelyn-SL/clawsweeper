@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-25T10:40:22.037Z",
+  "updatedAt": "2026-08-25T09:36:46Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8681,
+    "title": "Migrar eBay ES a MarketplaceManager V2",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8681",
+    "state": "open",
+    "labels": [
+      "app:marketplace",
+      "feature",
+      "triage:queued",
+      "area:marketplace-sync",
+      "P2",
+      "mk:ebay",
+      "marketplace-v2"
+    ],
+    "createdAt": "2026-08-25T09:36:32Z",
+    "updatedAt": "2026-08-25T09:36:46Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe el flujo LMS report-driven de eBay ES permanecer como ruta legacy durante F3 o modelarse ya como capacidad explícita de MarketplaceManager V2?",
+  "rationale": "La ficha solicitada debe definir criteria, fases y huecos LMS; esa decisión condiciona el adapter y no es una reparación mecánica.",
+  "options": [
+    {
+      "title": "Definir el contrato LMS antes de migrar",
+      "body": "Acordar criteria, fases y huecos del flujo report-driven en la ficha V2 antes de implementar el adapter.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener LMS fuera de V2 temporalmente",
+      "body": "Migrar solo las fases compatibles y documentar LMS como ruta legacy manual hasta un diseño posterior.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Definir el contrato LMS antes de migrar",
+    "body": "Acordar criteria, fases y huecos del flujo report-driven en la ficha V2 antes de implementar el adapter.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Ha llevado el piloto Discogs y el alcance de las migraciones F3 en el historial revisado.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8681.md",
+    "reviewedAt": "2026-08-25T10:40:22.037Z",
+    "mainSha": "ca2c5906a8d0b6606a750d691ec92ab92b267ca3"
+  }
+}

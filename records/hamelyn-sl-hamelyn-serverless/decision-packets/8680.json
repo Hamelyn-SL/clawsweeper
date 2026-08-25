@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-25T10:40:57.274Z",
+  "updatedAt": "2026-08-25T09:36:21Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8680,
+    "title": "Migrar Alibris a MarketplaceManager V2",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8680",
+    "state": "open",
+    "labels": [
+      "app:marketplace",
+      "feature",
+      "triage:queued",
+      "area:marketplace-sync",
+      "P2",
+      "mk:alibris",
+      "marketplace-v2"
+    ],
+    "createdAt": "2026-08-25T09:36:12Z",
+    "updatedAt": "2026-08-25T09:36:21Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe MarketplaceManager V2 incorporar un modo de exportación declarativa FTPS para Alibris, o debe seguir fuera del manager?",
+  "rationale": "El contrato actual organiza selecciones y operaciones por stock, mientras Alibris publica snapshots de gran volumen con protecciones operativas distintas.",
+  "options": [
+    {
+      "title": "Extender V2 para exportaciones",
+      "body": "Definir una capacidad declarativa que preserve las guardas FTPS y resolver primero los contratos genéricos pendientes.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener el exportador separado",
+      "body": "Conservar el inventario FTPS actual y aplicar V2 sólo a pedidos y expediciones si reduce complejidad real.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Extender V2 para exportaciones",
+    "body": "Definir una capacidad declarativa que preserve las guardas FTPS y resolver primero los contratos genéricos pendientes.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Combina trabajo reciente en Alibris con la responsabilidad visible de endurecer la base V2 previa.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8680.md",
+    "reviewedAt": "2026-08-25T10:40:57.274Z",
+    "mainSha": "ca2c5906a8d0b6606a750d691ec92ab92b267ca3"
+  }
+}
