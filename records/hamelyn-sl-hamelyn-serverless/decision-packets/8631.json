@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-22T21:14:30.608Z",
-  "updatedAt": "2026-08-22T18:39:16Z",
+  "generatedAt": "2026-08-25T18:23:00.948Z",
+  "updatedAt": "2026-08-25T18:17:06Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,47 +13,51 @@
       "app:infrastructure",
       "feature",
       "triage:done",
-      "P2",
       "impact:other",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
-      "clawsweeper:needs-security-review"
+      "P2",
+      "clawsweeper:needs-security-review",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-08-22T18:12:42Z",
-    "updatedAt": "2026-08-22T18:39:16Z"
+    "updatedAt": "2026-08-25T18:17:06Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se aprueba una primera fase web acotada y se difiere cualquier onboarding, claves o metadata OAuth pública hasta reescanear ambos dominios?",
-  "rationale": "La parte web tiene fallos observables y acotables, mientras que el objetivo completo decide si Hamelyn ofrece una integración API pública y cómo se autentica.",
+  "question": "¿Debe el catálogo público incorporar desglose de ofertas y estado de conservación, o mantenerse limitado al mejor precio visible?",
+  "rationale": "El código actual limita deliberadamente la respuesta a datos mínimos; ampliar el contrato afecta a exposición pública, caché y expectativas de consumidores.",
   "options": [
     {
-      "title": "Aprobar fase web acotada",
-      "body": "Corregir Supply y ecommerce, preservar deep links, desplegar y reevaluar los checks API con resultados nuevos.",
+      "title": "Mantener el contrato mínimo",
+      "body": "Corregir el soft-404 y el descubrimiento sin añadir datos de oferta adicionales al endpoint público.",
       "recommended": true
     },
     {
-      "title": "Abrir programa API público",
-      "body": "Definir primero propietarios, autenticación, scopes, soporte y seguridad antes de publicar recursos de onboarding o descubrimiento.",
+      "title": "Diseñar un desglose público",
+      "body": "Definir campos permitidos, límites de caché y compatibilidad antes de ampliar la respuesta del catálogo.",
+      "recommended": false
+    },
+    {
+      "title": "Cerrar el alcance en el scanner",
+      "body": "Tratar el desglose como una mejora futura independiente y cerrar esta issue tras validar los dos dominios.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar fase web acotada",
-    "body": "Corregir Supply y ecommerce, preservar deep links, desplegar y reevaluar los checks API con resultados nuevos.",
+    "title": "Mantener el contrato mínimo",
+    "body": "Corregir el soft-404 y el descubrimiento sin añadir datos de oferta adicionales al endpoint público.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Está asignado a la issue y su historial conecta con la base API que condiciona la decisión.",
+    "reason": "Es el contribuidor con mayor trazabilidad en la API pública y las superficies de agent readiness de esta issue.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8631.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8631#issuecomment-5381981715",
-    "reviewedAt": "2026-08-22T21:14:30.608Z",
-    "mainSha": "6345777ab3811f5c70fd2fd333fe42953fa00288"
+    "reviewedAt": "2026-08-25T18:23:00.948Z",
+    "mainSha": "c52d2964fe17abd41272c3621d61660e7a3eeb4a"
   }
 }
