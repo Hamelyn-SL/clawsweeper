@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-25T13:31:23.915Z",
+  "updatedAt": "2026-08-25T12:49:45Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8646,
+    "title": "fix: drain batch price candidates whose master is no longer eligible",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8646",
+    "state": "open",
+    "labels": [
+      "size/XL",
+      "P2",
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 availability",
+      "rating: 🥈 silver"
+    ],
+    "createdAt": "2026-08-23T20:34:29Z",
+    "updatedAt": "2026-08-25T12:49:45Z",
+    "headSha": "c2bc0f06b163ba9ee48b83c95878d3592dd69b74"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe este PR excluir también del feed batch los huérfanos fuera de la ventana de drenaje, o se acepta mantener ese comportamiento preexistente en un seguimiento separado?",
+  "rationale": "La rama ya declara que el límite de lectura es deliberado; decidir si se cambia el comportamiento del feed para garantizar convergencia completa requiere aceptar el alcance operativo de la retirada.",
+  "options": [
+    {
+      "title": "Completar la convergencia en este PR",
+      "body": "Excluir los huérfanos del feed igual que los `productType` desajustados y cubrir el caso de backlog antes de integrar.",
+      "recommended": true
+    },
+    {
+      "title": "Integrar y abrir seguimiento acotado",
+      "body": "Aceptar temporalmente el comportamiento existente fuera de ventana y crear un seguimiento explícito para los huérfanos con backlog grande.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Completar la convergencia en este PR",
+    "body": "Excluir los huérfanos del feed igual que los `productType` desajustados y cubrir el caso de backlog antes de integrar.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Su historial conecta el drenaje no-batch existente con la semántica de selección que este PR amplía.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8646.md",
+    "reviewedAt": "2026-08-25T13:31:23.915Z",
+    "mainSha": "f567bf2a2a258bcea3458fbb91d5c7cc46be8013"
+  }
+}

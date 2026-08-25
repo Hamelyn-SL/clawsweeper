@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-25T11:53:42.055Z",
-  "updatedAt": "2026-08-25T11:48:51Z",
+  "generatedAt": "2026-08-25T13:31:37.762Z",
+  "updatedAt": "2026-08-25T12:12:08Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,49 +13,48 @@
       "bug",
       "source:admin-panel",
       "app:ecommerce",
-      "triage:queued",
+      "triage:done",
       "reporter:victor",
       "P1",
       "impact:other",
-      "issue-rating: 💎 diamond",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision",
       "clawsweeper:source-repro",
       "clawsweeper:linked-pr-open",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-product-decision"
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-08-18T12:55:12Z",
-    "updatedAt": "2026-08-25T11:48:51Z"
+    "updatedAt": "2026-08-25T12:12:08Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Se patrocina la PR integral como resolución única, con despliegue coordinado de Data Platform y Ecommerce, o se divide el cambio en fases operativas más pequeñas?",
-  "rationale": "La solución cambia estado SEO persistido, condiciones de publicación y comportamiento ante fallos de una ruta de producción; el alcance y el orden de rollout requieren decisión humana.",
+  "question": "¿Se aprueba la estrategia transversal de la PR vinculada para sustituir el comportamiento actual de `lastmod` y publicación de sitemaps?",
+  "rationale": "La corrección decide semántica SEO, disponibilidad de la flota y comportamiento de rollback entre Data Platform y Ecommerce; no es una elección mecánica de código.",
   "options": [
     {
-      "title": "Patrocinar la PR integral",
-      "body": "Revisar la propuesta vinculada como resolución canónica y acordar el despliegue coordinado de la scheduled query, el workflow y el serving.",
+      "title": "Revisar y fusionar la PR vinculada",
+      "body": "Aceptar la solución integral tras confirmar su validación de BigQuery, despliegue coordinado y recuperación de publicación.",
       "recommended": true
     },
     {
-      "title": "Dividir el rollout",
-      "body": "Separar una mejora segura de caché del cambio de estado semántico, manteniendo el contrato actual hasta validar la migración de datos.",
+      "title": "Dividir el alcance",
+      "body": "Mantener esta incidencia abierta y separar una mitigación de caché del cambio semántico si se prefiere reducir el riesgo de despliegue.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Patrocinar la PR integral",
-    "body": "Revisar la propuesta vinculada como resolución canónica y acordar el despliegue coordinado de la scheduled query, el workflow y el serving.",
+    "title": "Revisar y fusionar la PR vinculada",
+    "body": "Aceptar la solución integral tras confirmar su validación de BigQuery, despliegue coordinado y recuperación de publicación.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "alexcanHamelyn",
-    "reason": "Está asignado a la incidencia y concentra tanto el antecedente fusionado como la implementación candidata actual.",
+    "reason": "Es la persona asignada y enlaza la mejora previa de `lastmod` con la reparación actualmente propuesta.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8531.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8531#issuecomment-5328938892",
-    "reviewedAt": "2026-08-25T11:53:42.055Z",
-    "mainSha": "1ad18a8b1dab0d538a6ad7702eb6ce9bf1057a26"
+    "reviewedAt": "2026-08-25T13:31:37.762Z",
+    "mainSha": "f567bf2a2a258bcea3458fbb91d5c7cc46be8013"
   }
 }
