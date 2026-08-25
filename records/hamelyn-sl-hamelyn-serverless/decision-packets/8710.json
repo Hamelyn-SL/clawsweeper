@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-25T14:11:12.934Z",
+  "generatedAt": "2026-08-25T14:13:07.748Z",
   "updatedAt": "2026-08-25T13:35:31Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -14,47 +14,46 @@
       "app:supply",
       "feature",
       "triage:pr-opened",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-product-decision",
-      "reporter:daniellopez",
-      "issue-rating: ➖ n/a",
-      "P2",
       "impact:other",
-      "clawsweeper:linked-pr-open"
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "reporter:daniellopez",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-08-25T13:00:32Z",
     "updatedAt": "2026-08-25T13:35:31Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se confirma que 350 debe ser el tamaño objetivo para todas las OPs Exotec, manteniendo indivisibles las gavetas que lo superen?",
-  "rationale": "El código demuestra cómo aplicar el límite, pero no puede decidir por sí solo la capacidad operativa adecuada ni la excepción de gavetas indivisibles.",
+  "question": "¿Confirma Operaciones que el objetivo de 350 artículos compensa el aumento de OPs frente al adelanto del desglose y packing?",
+  "rationale": "El código y la prueba validan el comportamiento, pero no pueden resolver por sí solos el coste operativo del nuevo tamaño de lote.",
   "options": [
     {
-      "title": "Confirmar 350 y aterrizar la PR",
-      "body": "Aceptar el objetivo de 350 para todas las variantes Exotec y fusionar la PR tras la revisión solicitada.",
+      "title": "Aprobar 350 y fusionar",
+      "body": "Validar el objetivo operativo y permitir que la PR enlazada aplique el ajuste coherente en Core y Admin.",
       "recommended": true
     },
     {
-      "title": "Ajustar el umbral antes de integrar",
-      "body": "Pedir un valor distinto o un alcance por tipo de OP antes de modificar el límite compartido.",
+      "title": "Mantener 450",
+      "body": "Conservar el tamaño actual si el aumento de OPs no compensa el adelanto previsto del desglose.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Confirmar 350 y aterrizar la PR",
-    "body": "Aceptar el objetivo de 350 para todas las variantes Exotec y fusionar la PR tras la revisión solicitada.",
+    "title": "Aprobar 350 y fusionar",
+    "body": "Validar el objetivo operativo y permitir que la PR enlazada aplique el ajuste coherente en Core y Admin.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Es el revisor solicitado de la PR y está vinculado al cálculo visible de operaciones en Admin.",
+    "reason": "Está asignado para revisar este ajuste y la discusión lo identifica por experiencia directa en el flujo de picking.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8710.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8710#issuecomment-5410812178",
-    "reviewedAt": "2026-08-25T14:11:12.934Z",
+    "reviewedAt": "2026-08-25T14:13:07.748Z",
     "mainSha": "bf619d23e24d4c32e99302617faa174eeb0de787"
   }
 }
