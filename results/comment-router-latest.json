@@ -1,10 +1,10 @@
 {
   "status": "dry_run",
-  "generated_at": "2026-08-25T05:25:32.017Z",
+  "generated_at": "2026-08-25T05:45:02.115Z",
   "repo": "Hamelyn-SL/hamelyn-serverless",
   "repair_repo": "Hamelyn-SL/clawsweeper",
   "review_repo": "Hamelyn-SL/clawsweeper",
-  "since": "2026-08-25T02:25:31.070Z",
+  "since": "2026-08-25T02:44:59.714Z",
   "execute": false,
   "force_reprocess": false,
   "max_comments": 100,
@@ -12,8 +12,8 @@
   "comment_ids": [],
   "status_comment_id": null,
   "max_autoclose_targets": 8,
-  "scanned_comments": 1,
-  "commands_seen": 0,
+  "scanned_comments": 3,
+  "commands_seen": 1,
   "actionable": 0,
   "trusted_bots": [
     "clawsweeper[bot]",
@@ -27,21 +27,63 @@
   "max_auto_repairs_per_head": 2,
   "max_auto_repairs_per_pr": 10,
   "lookup_concurrency": 8,
-  "commands": [],
+  "commands": [
+    {
+      "idempotency_key": "comment-router:Hamelyn-SL/hamelyn-serverless:8630:5377147739:2026-08-25T05:42:01Z:automerge",
+      "comment_id": "5377147739",
+      "comment_version_key": "5377147739:2026-08-25T05:42:01Z",
+      "comment_url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8630#issuecomment-5377147739",
+      "repo": "Hamelyn-SL/hamelyn-serverless",
+      "target_branch": null,
+      "issue_number": 8630,
+      "author": "clawsweeper-hamelyn[bot]",
+      "author_id": 301054459,
+      "author_association": "NONE",
+      "comment_created_at": "2026-08-22T01:38:48Z",
+      "comment_updated_at": "2026-08-25T05:42:01Z",
+      "status_comment_id": null,
+      "trigger": "mention",
+      "command": "automerge",
+      "intent": "automerge",
+      "autoclose_message": null,
+      "implementation_prompt": null,
+      "operator_override": null,
+      "trusted_bot": false,
+      "trusted_bot_author": null,
+      "automation_source": null,
+      "repair_reason": null,
+      "review_summary": "El PR incorpora `MarketplaceManager` V2 para Discogs, sus runners y adaptador, y mueve el cron principal de `/api/discogs` a `/api/discogsV2`.\n\nReproducibility: no. aplica como bug aislado. El riesgo se verifica por inspección: `dev` ejecuta `update` y `recover`, mientras el schedule propuesto activa una ruta que no declara esas capacidades.",
+      "review_followup": "- [P1] Se necesita una decisión operativa sobre si se admite una ventana sin actualización de datos ni recovery V1; el repair exacto depende de esa dirección.",
+      "freeform_prompt": null,
+      "visual_lens": null,
+      "expected_head_sha": null,
+      "close_reason": null,
+      "close_confidence": null,
+      "close_action_taken": null,
+      "reviewed_at": null,
+      "expected_item_updated_at": null,
+      "expected_source_revision": null,
+      "finding_id": null,
+      "status": "waiting",
+      "actions": [],
+      "author_repository_permission": "none",
+      "reason": "GitHub lookup failed; will retry later: GraphQL: Resource not accessible by integration (repository.pullRequest.statusCheckRollup.nodes.0.commit.statusCheckRollup) Command failed: gh pr view 8630 --repo Hamelyn-SL/hamelyn-serverless --json additions,headRefName,headRefOid,author,"
+    }
+  ],
   "timings": {
-    "total_ms": 947,
+    "total_ms": 2401,
     "phases": [
       {
         "name": "list_candidate_comments",
-        "ms": 945
+        "ms": 1145
       },
       {
         "name": "prehydrate_comment_commands",
-        "ms": 0
+        "ms": 1251
       },
       {
         "name": "classify_comment_commands",
-        "ms": 0
+        "ms": 1
       },
       {
         "name": "prehydrate_repair_loop_sweeps",
