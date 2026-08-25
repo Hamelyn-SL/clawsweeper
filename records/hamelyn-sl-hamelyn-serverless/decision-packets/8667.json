@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-25T07:32:42.242Z",
+  "updatedAt": "2026-08-25T07:24:26Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8667,
+    "title": "feat: evaluate legacy purchase formats by demand",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8667",
+    "state": "open",
+    "labels": [
+      "size/L",
+      "P2",
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 other",
+      "rating: 🥉 bronze"
+    ],
+    "createdAt": "2026-08-25T06:57:48Z",
+    "updatedAt": "2026-08-25T07:24:26Z",
+    "headSha": "2f8eea5df68193793c03c776ac2085d3c1e90a6c"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe el POST directo de carrito quedar sujeto a la misma decisión de demanda que el flujo de lookup de Supply?",
+  "rationale": "La rama cambia una política de compra y declara explícitamente que los callers directos no se revalidan; ese límite decide si la nueva aceptación es coherente en todas las entradas.",
+  "options": [
+    {
+      "title": "Compartir la política de demanda",
+      "body": "Aplicar la misma comprobación de demanda antes de persistir cualquier producto añadido directamente al carrito.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener una vía directa excepcional",
+      "body": "Aceptar el bypass solo si se documenta como contrato explícito, se restringe a callers autorizados y se asume su riesgo operativo.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Compartir la política de demanda",
+    "body": "Aplicar la misma comprobación de demanda antes de persistir cualquier producto añadido directamente al carrito.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "Está asignado como revisor por experiencia indicada en la política de demanda de Supply.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8667.md",
+    "reviewedAt": "2026-08-25T07:32:42.242Z",
+    "mainSha": "bdcc13830c3ece3c0a8dc83f37b44a6237181e67"
+  }
+}
