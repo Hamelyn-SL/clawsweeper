@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-04T23:26:01.465Z",
-  "updatedAt": "2026-08-04T23:12:46Z",
+  "generatedAt": "2026-08-25T10:23:19.764Z",
+  "updatedAt": "2026-08-25T10:12:24Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,48 +15,47 @@
       "app:ecommerce",
       "triage:done",
       "reporter:victor",
-      "origin:panel",
-      "P2",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond",
+      "origin:panel"
     ],
     "createdAt": "2026-07-01T10:05:41Z",
-    "updatedAt": "2026-08-04T23:12:46Z"
+    "updatedAt": "2026-08-25T10:12:24Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe `SearchPage` generar hreflang únicamente para aliases públicos de categoría/subcategoría, o deben migrarse esas rutas a una superficie SEO dedicada?",
-  "rationale": "El mismo componente atiende búsquedas libres y rutas SEO; la decisión define qué URLs pueden declararse equivalentes internacionalmente sin crear alternates inválidos.",
+  "question": "¿Deben los aliases públicos de categoría y subcategoría tener `hreflang` aunque compartan `SearchPage` con búsquedas genéricas?",
+  "rationale": "La norma actual excluye alternates para búsqueda/catálogo por decisión del owner, pero el reporte propone una excepción SEO para rutas públicas reescritas.",
   "options": [
     {
-      "title": "Limitar por ruta de origen",
-      "body": "Usar el pathname de origen del proxy para generar alternates solo en aliases de categoría y subcategoría; es la opción recomendada.",
+      "title": "Excepción solo para aliases SEO",
+      "body": "Emitir alternates únicamente para categorías y subcategorías públicas con equivalentes localizados, conservando las búsquedas genéricas sin clúster.",
       "recommended": true
     },
     {
-      "title": "Separar las rutas SEO",
-      "body": "Crear una superficie dedicada para categorías y subcategorías y dejar `SearchPage` sin idiomas para consultas genéricas.",
+      "title": "Mantener la política actual",
+      "body": "Conservar sin alternates todas las rutas que resuelven por búsqueda/catálogo y limitar la corrección a `pt-BR` en páginas ya compatibles.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Limitar por ruta de origen",
-    "body": "Usar el pathname de origen del proxy para generar alternates solo en aliases de categoría y subcategoría; es la opción recomendada.",
+    "title": "Excepción solo para aliases SEO",
+    "body": "Emitir alternates únicamente para categorías y subcategorías públicas con equivalentes localizados, conservando las búsquedas genéricas sin clúster.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "Su historial cubre el flujo de búsqueda, los aliases de categoría y la metadata SEO que requiere esta delimitación.",
+    "person": "JavierHamelyn",
+    "reason": "Es el contribuidor más reciente del componente que tendría que distinguir aliases SEO de búsquedas genéricas.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6763.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6763#issuecomment-4910174262",
-    "reviewedAt": "2026-08-04T23:26:01.465Z",
-    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
+    "reviewedAt": "2026-08-25T10:23:19.764Z",
+    "mainSha": "8fa150949f170ce84039d2a080ff9b9931ea2a22"
   }
 }
