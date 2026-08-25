@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-25T09:10:51.396Z",
+  "updatedAt": "2026-08-25T09:01:53Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8673,
+    "title": "fix: move bin readiness check into retryable bin-creation job",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8673",
+    "state": "open",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-08-25T08:45:00Z",
+    "updatedAt": "2026-08-25T09:01:53Z",
+    "headSha": "b19b3a2070670edf7d6a77672dd6f0155fe4d772"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Los estados no permitidos permanentes, como `CANCELLED`, deben reintentarse durante horas o deben dejar un `warn` y terminar el job?",
+  "rationale": "El texto del PR, la documentación añadida y el comportamiento actual discrepan, y la elección define la carga operativa y el estado futuro de stocks bloqueados.",
+  "options": [
+    {
+      "title": "Reintentar solo estados transitorios",
+      "body": "Mantener reintentos para `REVIEWED` y `REVIEW_IN_PROGRESS`, y registrar `warn` con ACK para estados permanentemente no admitidos.",
+      "recommended": true
+    },
+    {
+      "title": "Reintentar cualquier estado no permitido",
+      "body": "Conservar el código actual, actualizar la documentación y definir una recuperación operativa para estados permanentes.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar hasta revisar estados",
+      "body": "No fusionar hasta acordar una tabla de estados y acciones de recuperación para bin creation.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Reintentar solo estados transitorios",
+    "body": "Mantener reintentos para `REVIEWED` y `REVIEW_IN_PROGRESS`, y registrar `warn` con ACK para estados permanentemente no admitidos.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Es el revisor solicitado por experiencia directa en Exotec/bin-creation y puede validar la política operativa del flujo.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8673.md",
+    "reviewedAt": "2026-08-25T09:10:51.396Z",
+    "mainSha": "8fa150949f170ce84039d2a080ff9b9931ea2a22"
+  }
+}
