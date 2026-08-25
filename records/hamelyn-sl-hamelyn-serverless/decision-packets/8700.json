@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-25T11:21:47.151Z",
+  "updatedAt": "2026-08-25T11:14:09Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8700,
+    "title": "PENDING_SKYPOD: cohorte >30 días sin recuperación automática ni visibilidad en el panel (12h)",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8700",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:infrastructure",
+      "reporter:javier",
+      "triage:queued",
+      "P2"
+    ],
+    "createdAt": "2026-08-25T11:13:59Z",
+    "updatedAt": "2026-08-25T11:14:09Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe la cohorte `PENDING_SKYPOD` de más de doce horas reintentarse automáticamente hasta un límite operativo, o pasar a revisión física con alerta tras el backoff?",
+  "rationale": "El código distingue estados de pedido, pero no puede inferir si una cubeta antigua sigue físicamente disponible para una inducción segura.",
+  "options": [
+    {
+      "title": "Backoff acotado y escalado manual",
+      "body": "Reintentar solo causas transitorias durante una ventana definida y alertar con una vista de recuperación cuando se agote.",
+      "recommended": true
+    },
+    {
+      "title": "Reintento continuo",
+      "body": "Mantener reintentos automáticos para toda la cohorte, aceptando un mayor riesgo de operaciones sobre cubetas ya retiradas.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Backoff acotado y escalado manual",
+    "body": "Reintentar solo causas transitorias durante una ventana definida y alertar con una vista de recuperación cuando se agote.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "Su historial conecta directamente con la política de reintento y el endpoint de recuperación existente.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8700.md",
+    "reviewedAt": "2026-08-25T11:21:47.151Z",
+    "mainSha": "aea6ee97d46ed6c45738a3a4bfd56d838b392634"
+  }
+}
