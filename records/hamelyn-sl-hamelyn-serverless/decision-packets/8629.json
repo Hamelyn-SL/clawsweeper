@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-25T06:05:41.037Z",
-  "updatedAt": "2026-08-25T05:55:37Z",
+  "generatedAt": "2026-08-25T09:12:54.632Z",
+  "updatedAt": "2026-08-25T08:58:24Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,46 +11,45 @@
     "state": "open",
     "labels": [
       "size/XXL",
-      "rating: 🥈 silver",
-      "status: 📣 needs proof",
       "P1",
+      "status: 📣 needs proof",
       "merge-risk: 🚨 compatibility",
-      "merge-risk: 🚨 availability"
+      "merge-risk: 🚨 availability",
+      "rating: 🥈 silver"
     ],
     "createdAt": "2026-08-21T12:53:14Z",
-    "updatedAt": "2026-08-25T05:55:37Z",
-    "headSha": "3b042ca554016e10829ec865641f92629bf29570"
+    "updatedAt": "2026-08-25T08:58:24Z",
+    "headSha": "f54fd45660e1081da94b5ba85790032ff75b67bc"
   },
-  "lane": "product_direction",
+  "lane": "manual_review",
   "priority": "P1",
-  "question": "¿Se aprueba un piloto limitado de visión de gavetas una vez restringida la cámara y confirmada la actualización de Stream Deck, o debe quedar fuera del flujo de estación por ahora?",
-  "rationale": "La aceptación depende de la tolerancia operativa al uso continuo de cámara, al gasto del modelo y a coordinar hardware externo; el código no puede resolver esa política de despliegue por sí solo.",
+  "question": "¿Se aprueba el piloto físico tras corregir la activación de cámara y actualizar Stream Deck, o se mantiene el comportamiento actual hasta completar esa coordinación?",
+  "rationale": "El cambio altera hardware y atajos configurados fuera del repositorio; el código no puede demostrar por sí solo la compatibilidad del puesto.",
   "options": [
     {
-      "title": "Pilotar con guardas operativas",
-      "body": "Restringir la cámara al modo de preparación, actualizar Stream Deck y exigir prueba real antes de desplegar en una estación piloto.",
+      "title": "Corregir y validar el piloto",
+      "body": "Limitar la cámara a preparación, actualizar Stream Deck y aportar una prueba física redactada antes de integrar.",
       "recommended": true
     },
     {
-      "title": "Aplazar la funcionalidad",
-      "body": "Cerrar o pausar el piloto hasta disponer de una decisión operativa sobre cámaras, costes y soporte de los puestos.",
+      "title": "Pausar el despliegue físico",
+      "body": "Mantener el PR abierto sin fusionar hasta que haya disponibilidad de un puesto y responsable para validar el piloto.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Pilotar con guardas operativas",
-    "body": "Restringir la cámara al modo de preparación, actualizar Stream Deck y exigir prueba real antes de desplegar en una estación piloto.",
+    "title": "Corregir y validar el piloto",
+    "body": "Limitar la cámara a preparación, actualizar Stream Deck y aportar una prueba física redactada antes de integrar.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "banosdavidhamelyn",
-    "reason": "Es el revisor con conocimiento directo de estación, picking y la dependencia externa de Stream Deck.",
+    "reason": "Conoce el flujo de estación y señaló la dependencia concreta de Stream Deck.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8629.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8629#issuecomment-5377146536",
-    "reviewedAt": "2026-08-25T07:22:15.130Z",
-    "mainSha": "bdcc13830c3ece3c0a8dc83f37b44a6237181e67"
+    "reviewedAt": "2026-08-25T09:12:54.632Z",
+    "mainSha": "8fa150949f170ce84039d2a080ff9b9931ea2a22"
   }
 }

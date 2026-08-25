@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-25T09:11:05.423Z",
+  "updatedAt": "2026-08-25T08:45:33Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8634,
+    "title": "feat: add storefront agent readiness with markdown negotiation",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8634",
+    "state": "open",
+    "labels": [
+      "size/XL",
+      "P2",
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 compatibility",
+      "rating: 🥉 bronze"
+    ],
+    "createdAt": "2026-08-22T23:39:15Z",
+    "updatedAt": "2026-08-25T08:45:33Z",
+    "headSha": "1ae0f1cc6146bd400af030de8ddcb37fbe8a55af"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe ecommerce adoptar de forma permanente la negociación Markdown y los alias públicos localizados como parte del contrato de storefront?",
+  "rationale": "El PR añade una nueva representación pública, redirecciones 301 y reglas de caché; resolver el encabezado es mecánico, pero aceptar ese contrato externo requiere intención de producto.",
+  "options": [
+    {
+      "title": "Aprobar el contrato y corregir la caché",
+      "body": "Mantener la funcionalidad propuesta, reparar el `Vary` final y exigir prueba HTTP real de ambas variantes antes del merge.",
+      "recommended": true
+    },
+    {
+      "title": "Reducir el alcance",
+      "body": "Conservar solo los documentos explícitos y posponer negociación y aliases hasta acordar su contrato de compatibilidad.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar el contrato y corregir la caché",
+    "body": "Mantener la funcionalidad propuesta, reparar el `Vary` final y exigir prueba HTTP real de ambas variantes antes del merge.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "Fue solicitado específicamente para revisar el proxy, la negociación HTTP y las rutas localizadas de ecommerce.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8634.md",
+    "reviewedAt": "2026-08-25T09:11:05.423Z",
+    "mainSha": "8fa150949f170ce84039d2a080ff9b9931ea2a22"
+  }
+}
