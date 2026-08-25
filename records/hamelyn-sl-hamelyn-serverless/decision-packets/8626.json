@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-25T07:40:18.757Z",
+  "generatedAt": "2026-08-25T07:40:50.418Z",
   "updatedAt": "2026-08-25T07:27:42Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -13,7 +13,7 @@
       "app:marketplace",
       "feature",
       "reporter:marcos",
-      "triage:queued",
+      "triage:done",
       "impact:other",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-product-decision",
@@ -26,34 +26,33 @@
   },
   "lane": "release_inclusion",
   "priority": "P2",
-  "question": "¿Debe aprobarse el switchover del cron principal de Discogs en la misma entrega que `MarketplaceManager` tras confirmar los índices Atlas requeridos?",
-  "rationale": "La PR cambia tráfico programado de una integración de producción y documenta una preparación operativa manual previa; esa aceptación no puede inferirse solo del código.",
+  "question": "¿Debe el switchover programado de Discogs a `discogsV2` entrar en la misma entrega que el `MarketplaceManager`, o activarse tras una fase sin schedule?",
+  "rationale": "La decisión cambia cuándo una nueva orquestación toma tráfico de producción y requiere aceptación operativa explícita.",
   "options": [
     {
-      "title": "Aprobar con gate operativo",
-      "body": "Confirmar la creación de los índices Atlas y revisar la PR como la entrega única de la migración, manteniendo el fallback legacy.",
+      "title": "Separar activación y migración",
+      "body": "Integrar primero la ruta V2 sin schedule y activar el cron después de comprobar índices, lock compartido y rollback.",
       "recommended": true
     },
     {
-      "title": "Separar el switchover",
-      "body": "Aterrizar primero la infraestructura V2 sin mover el schedule y planificar el corte de tráfico en una PR operativa posterior.",
+      "title": "Mantener el switchover conjunto",
+      "body": "Aceptar el cambio de cron en la misma entrega con una checklist de despliegue y reversión aprobada.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar con gate operativo",
-    "body": "Confirmar la creación de los índices Atlas y revisar la PR como la entrega única de la migración, manteniendo el fallback legacy.",
+    "title": "Separar activación y migración",
+    "body": "Integrar primero la ruta V2 sin schedule y activar el cron después de comprobar índices, lock compartido y rollback.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Es assignee de la PR y ha mantenido recientemente los controles de rate limit y los endurecimientos del flujo.",
+    "reason": "Es assignee de la PR y el contribuidor más reciente del comportamiento legacy de Discogs que debe mantenerse compatible.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8626.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8626#issuecomment-5370332561",
-    "reviewedAt": "2026-08-25T07:40:18.757Z",
+    "reviewedAt": "2026-08-25T07:40:50.418Z",
     "mainSha": "bdcc13830c3ece3c0a8dc83f37b44a6237181e67"
   }
 }
