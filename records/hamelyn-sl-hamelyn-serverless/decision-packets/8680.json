@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-25T12:05:55.297Z",
-  "updatedAt": "2026-08-25T11:57:08Z",
+  "generatedAt": "2026-08-25T12:07:40.344Z",
+  "updatedAt": "2026-08-25T12:01:38Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -24,38 +24,37 @@
       "marketplace-v2"
     ],
     "createdAt": "2026-08-25T09:36:12Z",
-    "updatedAt": "2026-08-25T11:57:08Z"
+    "updatedAt": "2026-08-25T12:01:38Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe MarketplaceManager V2 admitir integraciones solo de pedidos, sin capacidades `create`, `withdraw` ni `updatePrice`?",
-  "rationale": "Alibris ya publica inventario mediante un flujo FTPS con protecciones propias; mantener no-op o resultados ficticios contradice el contrato V2.",
+  "question": "¿Debe `MarketplaceManager` permitir integraciones con `processOrders` y `setAsShipped` sin ninguna operación de inventario?",
+  "rationale": "Es una decisión de contrato compartido: mantener la restricción excluye Alibris V2, mientras relajarla fija nuevas invariantes para futuras migraciones.",
   "options": [
     {
-      "title": "Admitir managers solo de pedidos",
-      "body": "Relajar la invariante con tests y migrar solo `process` y `ship`, preservando FTPS como flujo independiente.",
+      "title": "Admitir managers solo-pedidos",
+      "body": "Autorizar el perfil sin inventario, añadir pruebas de capacidades y migrar Alibris sin tocar el exportador FTPS.",
       "recommended": true
     },
     {
-      "title": "Mantener la invariante de stock",
-      "body": "Conservar Alibris fuera de V2 hasta que exista una capacidad explícita de inventario declarativo.",
+      "title": "Mantener inventario obligatorio",
+      "body": "Conservar el contrato y retirar o replantear esta migración hasta contar con una abstracción aprobada para pedidos.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Admitir managers solo de pedidos",
-    "body": "Relajar la invariante con tests y migrar solo `process` y `ship`, preservando FTPS como flujo independiente.",
+    "title": "Admitir managers solo-pedidos",
+    "body": "Autorizar el perfil sin inventario, añadir pruebas de capacidades y migrar Alibris sin tocar el exportador FTPS.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "Su historial cubre tanto el flujo FTPS de Alibris como el endurecimiento reciente del contrato V2.",
+    "person": "MarcosTerroso",
+    "reason": "Impulsó el piloto V2 y la secuencia de migraciones que define el alcance del contrato.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8680.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8680#issuecomment-5409229633",
-    "reviewedAt": "2026-08-25T12:05:55.297Z",
-    "mainSha": "1ad18a8b1dab0d538a6ad7702eb6ce9bf1057a26"
+    "reviewedAt": "2026-08-25T12:07:40.344Z",
+    "mainSha": "251c3a996909dfa5231f7a50261b746195d9177c"
   }
 }
