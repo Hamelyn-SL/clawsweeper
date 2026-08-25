@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-25T11:21:47.151Z",
-  "updatedAt": "2026-08-25T11:14:09Z",
+  "generatedAt": "2026-08-25T12:44:27.103Z",
+  "updatedAt": "2026-08-25T12:32:55Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,48 +13,47 @@
       "bug",
       "app:infrastructure",
       "reporter:javier",
-      "triage:queued",
-      "P2",
+      "triage:needs-info",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-08-25T11:13:59Z",
-    "updatedAt": "2026-08-25T11:14:09Z"
+    "updatedAt": "2026-08-25T12:32:55Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe la cohorte `PENDING_SKYPOD` de más de doce horas reintentarse automáticamente hasta un límite operativo, o pasar a revisión física con alerta tras el backoff?",
-  "rationale": "El código distingue estados de pedido, pero no puede inferir si una cubeta antigua sigue físicamente disponible para una inducción segura.",
+  "question": "¿Las cubetas `PENDING_SKYPOD` antiguas deben mostrarse solo para revisión manual, o se permite reencolarlas tras una confirmación operativa explícita?",
+  "rationale": "La aplicación no comprueba que la cubeta siga físicamente disponible, por lo que el código no puede decidir de forma segura la política de recuperación histórica.",
   "options": [
     {
-      "title": "Backoff acotado y escalado manual",
-      "body": "Reintentar solo causas transitorias durante una ventana definida y alertar con una vista de recuperación cuando se agote.",
+      "title": "Revisión manual confirmada",
+      "body": "Exponer la cohorte histórica y permitir reencolar una cubeta solo después de que Operaciones confirme su presencia física.",
       "recommended": true
     },
     {
-      "title": "Reintento continuo",
-      "body": "Mantener reintentos automáticos para toda la cohorte, aceptando un mayor riesgo de operaciones sobre cubetas ya retiradas.",
+      "title": "Reencolado masivo",
+      "body": "Reencolar toda la cohorte asumiendo disponibilidad física, aceptando el riesgo de desalineación entre Skypod y el muelle.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Backoff acotado y escalado manual",
-    "body": "Reintentar solo causas transitorias durante una ventana definida y alertar con una vista de recuperación cuando se agote.",
+    "title": "Revisión manual confirmada",
+    "body": "Exponer la cohorte histórica y permitir reencolar una cubeta solo después de que Operaciones confirme su presencia física.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "banosdavidhamelyn",
-    "reason": "Su historial conecta directamente con la política de reintento y el endpoint de recuperación existente.",
+    "reason": "La corrección reciente le da el contexto técnico más directo sobre la cola y sus límites de recuperación.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8700.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8700#issuecomment-5409648772",
-    "reviewedAt": "2026-08-25T11:21:47.151Z",
-    "mainSha": "aea6ee97d46ed6c45738a3a4bfd56d838b392634"
+    "reviewedAt": "2026-08-25T12:44:27.103Z",
+    "mainSha": "f567bf2a2a258bcea3458fbb91d5c7cc46be8013"
   }
 }
