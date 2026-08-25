@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-24T13:37:15.352Z",
-  "updatedAt": "2026-08-24T13:23:50Z",
+  "generatedAt": "2026-08-25T10:48:35.552Z",
+  "updatedAt": "2026-08-25T09:42:32Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,46 +11,45 @@
     "state": "open",
     "labels": [
       "size/L",
-      "proof: sufficient",
-      "rating: ⚪ platinum",
-      "status: 👀 ready for maintainer look",
       "P2",
-      "merge-risk: 🚨 compatibility"
+      "status: 👀 ready for maintainer look",
+      "merge-risk: 🚨 compatibility",
+      "proof: sufficient",
+      "rating: ⚪ platinum"
     ],
     "createdAt": "2026-08-24T08:48:52Z",
-    "updatedAt": "2026-08-24T13:23:50Z",
+    "updatedAt": "2026-08-25T09:42:32Z",
     "headSha": "b2801b7dfebd87ceb5eafa00b258ee569a93c49d"
   },
-  "lane": "release_inclusion",
+  "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se aprueba fusionar ahora manteniendo `DEMAND_CANONICAL_AUTHOR_FEATURES_ENABLED` desactivada hasta validar cobertura y recalibrar o confirmar el cutoff del modelo 98?",
-  "rationale": "La rama conserva el comportamiento previo por defecto, pero la activación posterior cambia señales que afectan decisiones de aceptación y rechazo.",
+  "question": "¿Se aprueba integrar ahora la infraestructura con la flag apagada y reservar la activación para un rollout medido del modelo 98?",
+  "rationale": "La corrección técnica está revisada, pero decidir cuándo exponer nuevas features al modelo y aceptar su distribución de rechazos requiere criterio operativo humano.",
   "options": [
     {
-      "title": "Fusionar con activación diferida",
-      "body": "Integrar las señales y mantener la flag apagada hasta completar la validación operativa y del cutoff.",
+      "title": "Integrar con activación diferida",
+      "body": "Mergear la PR manteniendo la flag apagada y exigir estadísticas, cobertura y recalibración antes de habilitarla en Public/Supply.",
       "recommended": true
     },
     {
-      "title": "Pausar hasta validar el modelo",
-      "body": "Esperar a cerrar la cobertura y la recalibración antes de incorporar la infraestructura.",
+      "title": "Pausar hasta validar el cutoff",
+      "body": "Mantener la PR abierta hasta disponer de una validación operativa del 40 % de rechazo con señales canónicas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Fusionar con activación diferida",
-    "body": "Integrar las señales y mantener la flag apagada hasta completar la validación operativa y del cutoff.",
+    "title": "Integrar con activación diferida",
+    "body": "Mergear la PR manteniendo la flag apagada y exigir estadísticas, cobertura y recalibración antes de habilitarla en Public/Supply.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Es el revisor asignado específicamente por su experiencia en la superficie técnica y del modelo afectada.",
+    "reason": "Ha revisado y aprobado la implementación actual del área de demand.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8658.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8658#issuecomment-5395116920",
-    "reviewedAt": "2026-08-24T13:37:15.352Z",
-    "mainSha": "bd1b326cac9bc4c1113f4fea817be527e0a87f79"
+    "reviewedAt": "2026-08-25T10:48:35.552Z",
+    "mainSha": "f86b73fe7c4ecfd4d20d691cf3d2249f4f3f1d9b"
   }
 }
