@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-25T14:11:02.787Z",
+  "generatedAt": "2026-08-25T14:11:57.774Z",
   "updatedAt": "2026-08-25T13:58:52Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -11,10 +11,10 @@
     "state": "open",
     "labels": [
       "size/XXL",
-      "rating: 🥉 bronze",
-      "status: 📣 needs proof",
       "P2",
-      "merge-risk: 🚨 compatibility"
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 other",
+      "rating: 🥉 bronze"
     ],
     "createdAt": "2026-08-25T10:21:36Z",
     "updatedAt": "2026-08-25T13:58:52Z",
@@ -22,39 +22,38 @@
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe adoptarse ahora esta arquitectura configurada como base común de dashboards y en qué orden se integra respecto a https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8599?",
-  "rationale": "La corrección de URL y la retirada de artefactos son mecánicas, pero decidir la arquitectura común y coordinar dos refactorizaciones XXL requiere criterio del equipo.",
+  "question": "¿Debe adoptarse ahora `DashboardDef` como arquitectura común y qué PR debe establecer primero el shell compartido frente a https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8599?",
+  "rationale": "La corrección de URL es mecánica, pero decidir la arquitectura dominante y el orden de integración entre dos refactors solapados requiere criterio del equipo.",
   "options": [
     {
-      "title": "Aprobar y coordinar la arquitectura",
-      "body": "Corregir los bloqueos, aportar prueba real y acordar explícitamente qué PR aterriza primero.",
+      "title": "Aprobar y coordinar la integración",
+      "body": "Corregir la navegación, aportar prueba real y decidir explícitamente el orden de aterrizaje de ambos refactors.",
       "recommended": true
     },
     {
       "title": "Aterrizar primero la deduplicación",
-      "body": "Integrar antes el refactor de componentes compartidos y reconstruir esta capa sobre esa base.",
+      "body": "Integrar antes el refactor compartido y rehacer esta rama sobre esa base para evitar capas paralelas.",
       "recommended": false
     },
     {
       "title": "Reducir el alcance",
-      "body": "Separar tabs y navegación de los cambios analíticos y visuales para revisar una migración más acotada.",
+      "body": "Separar tabs y navegación de la migración completa de charts para validar la nueva arquitectura en pasos más pequeños.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar y coordinar la arquitectura",
-    "body": "Corregir los bloqueos, aportar prueba real y acordar explícitamente qué PR aterriza primero.",
+    "title": "Aprobar y coordinar la integración",
+    "body": "Corregir la navegación, aportar prueba real y decidir explícitamente el orden de aterrizaje de ambos refactors.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "PabloMoran34",
-    "reason": "Su historial reciente y la integración de logística en esta misma cabeza le sitúan mejor para resolver la convivencia técnica.",
-    "confidence": "high"
+    "reason": "Su trabajo reciente integra el lote de logística sobre esta base y le sitúa cerca de la decisión entre ambas arquitecturas.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8689.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8689#issuecomment-5409158999",
-    "reviewedAt": "2026-08-25T14:11:02.787Z",
+    "reviewedAt": "2026-08-25T14:11:57.774Z",
     "mainSha": "bf619d23e24d4c32e99302617faa174eeb0de787"
   }
 }
