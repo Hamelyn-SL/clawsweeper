@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-25T12:07:40.344Z",
-  "updatedAt": "2026-08-25T12:01:38Z",
+  "generatedAt": "2026-08-25T12:04:49.740Z",
+  "updatedAt": "2026-08-25T11:57:08Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,51 +12,49 @@
     "labels": [
       "app:marketplace",
       "feature",
-      "triage:blocked",
+      "triage:running",
       "area:marketplace-sync",
+      "impact:other",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
-      "mk:alibris",
-      "marketplace-v2",
       "P2",
-      "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro"
+      "issue-rating: ➖ n/a",
+      "mk:alibris",
+      "marketplace-v2"
     ],
     "createdAt": "2026-08-25T09:36:12Z",
-    "updatedAt": "2026-08-25T12:01:38Z"
+    "updatedAt": "2026-08-25T11:57:08Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe `MarketplaceManager` permitir integraciones con `processOrders` y `setAsShipped` sin ninguna operación de inventario?",
-  "rationale": "Es una decisión de contrato compartido: mantener la restricción excluye Alibris V2, mientras relajarla fija nuevas invariantes para futuras migraciones.",
+  "question": "¿Debe MarketplaceManager V2 incorporar una capacidad de exportación declarativa FTPS para Alibris, o debe conservarse el exportador de inventario como flujo especializado fuera del manager?",
+  "rationale": "El contrato V2 actual orquesta operaciones por stock, mientras que Alibris publica snapshots masivos con protección de catálogo y cursores de recuperación propios.",
   "options": [
     {
-      "title": "Admitir managers solo-pedidos",
-      "body": "Autorizar el perfil sin inventario, añadir pruebas de capacidades y migrar Alibris sin tocar el exportador FTPS.",
+      "title": "Mantener el exportador especializado",
+      "body": "Conservar el flujo FTPS de inventario y limitar una futura migración V2 a pedidos y expediciones si aporta una reducción de complejidad verificable.",
       "recommended": true
     },
     {
-      "title": "Mantener inventario obligatorio",
-      "body": "Conservar el contrato y retirar o replantear esta migración hasta contar con una abstracción aprobada para pedidos.",
+      "title": "Extender V2 para snapshots",
+      "body": "Diseñar una capacidad declarativa de exportación por fichero antes de migrar, preservando el purge, los umbrales, el cursor y la auditoría existentes.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Admitir managers solo-pedidos",
-    "body": "Autorizar el perfil sin inventario, añadir pruebas de capacidades y migrar Alibris sin tocar el exportador FTPS.",
+    "title": "Mantener el exportador especializado",
+    "body": "Conservar el flujo FTPS de inventario y limitar una futura migración V2 a pedidos y expediciones si aporta una reducción de complejidad verificable.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MarcosTerroso",
-    "reason": "Impulsó el piloto V2 y la secuencia de migraciones que define el alcance del contrato.",
+    "person": "MiguelHamelyn",
+    "reason": "Su historial conecta el endurecimiento del exportador Alibris con la base V2 recién integrada.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8680.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8680#issuecomment-5409229633",
-    "reviewedAt": "2026-08-25T12:07:40.344Z",
+    "reviewedAt": "2026-08-25T12:04:49.740Z",
     "mainSha": "251c3a996909dfa5231f7a50261b746195d9177c"
   }
 }

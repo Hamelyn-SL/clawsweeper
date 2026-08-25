@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-25T12:06:58.988Z",
+  "updatedAt": "2026-08-25T11:53:41Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8663,
+    "title": "fix: keep a stalled reception from emailing the seller twice",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8663",
+    "state": "open",
+    "labels": [
+      "size/XL",
+      "P1",
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 message-delivery",
+      "rating: 🥉 bronze"
+    ],
+    "createdAt": "2026-08-24T13:28:42Z",
+    "updatedAt": "2026-08-25T11:53:41Z",
+    "headSha": "4cc293c9dabf96a6bb789b3d832c5ddab4cceddc"
+  },
+  "lane": "merge_risk",
+  "priority": "P1",
+  "question": "¿Debe la recepción priorizar entrega recuperable del correo mediante un outbox o estado persistido, o aceptar explícitamente la pérdida del correo tras un fallo de proveedor?",
+  "rationale": "El parche resuelve el duplicado a costa de una ventana en la que no queda estado para reintentar; escoger la semántica de entrega es una decisión operativa.",
+  "options": [
+    {
+      "title": "Persistir la intención de notificación",
+      "body": "Guardar un estado u outbox recuperable antes del envío para reintentar sin reabrir la carrera.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar entrega como mejor esfuerzo",
+      "body": "Mantener el consumo actual y documentar que un fallo del proveedor puede omitir el correo.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Persistir la intención de notificación",
+    "body": "Guardar un estado u outbox recuperable antes del envío para reintentar sin reabrir la carrera.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "alexcanHamelyn",
+    "reason": "Es la persona con mayor continuidad en el diseño del claim y del endpoint de recepción.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8663.md",
+    "reviewedAt": "2026-08-25T12:06:58.988Z",
+    "mainSha": "3e330ef629d38d30607d5541f9cfe4ef02366f25"
+  }
+}

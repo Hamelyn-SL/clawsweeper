@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-25T12:07:50.009Z",
+  "updatedAt": "2026-08-25T11:14:08Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8699,
+    "title": "amazonFr: errores localizados caen a retryPolicy UNKNOWN terminal (537k DB_ONLY_WITH_DETAILS sin salida)",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8699",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "reporter:javier",
+      "triage:queued",
+      "P1"
+    ],
+    "createdAt": "2026-08-25T11:13:55Z",
+    "updatedAt": "2026-08-25T11:14:08Z"
+  },
+  "lane": "manual_review",
+  "priority": "P1",
+  "question": "¿Qué códigos SP-API y qué política de reintento se aprueban para la reclasificación y recuperación de los aproximadamente 537k registros históricos?",
+  "rationale": "La implementación es acotable, pero asignar políticas a códigos y reactivar una cola masiva requiere validar la semántica operativa de los errores reales.",
+  "options": [
+    {
+      "title": "Validar códigos y desplegar por lotes",
+      "body": "Confirmar una muestra de códigos, añadir reglas estructuradas y reclasificar por lotes monitorizados antes de habilitar toda la recuperación.",
+      "recommended": true
+    },
+    {
+      "title": "Aplicar solo 8057/8005",
+      "body": "Reactivar primero la vía de retirada y recreación para esos dos códigos, dejando el resto de errores localizados para una segunda fase.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener la cola congelada",
+      "body": "No modificar políticas ni históricos hasta disponer de una taxonomía completa de códigos de Amazon por región.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Validar códigos y desplegar por lotes",
+    "body": "Confirmar una muestra de códigos, añadir reglas estructuradas y reclasificar por lotes monitorizados antes de habilitar toda la recuperación.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Aportó la observación de producción y el historial muestra que ha mantenido la recuperación exacta por códigos.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8699.md",
+    "reviewedAt": "2026-08-25T12:07:50.009Z",
+    "mainSha": "251c3a996909dfa5231f7a50261b746195d9177c"
+  }
+}

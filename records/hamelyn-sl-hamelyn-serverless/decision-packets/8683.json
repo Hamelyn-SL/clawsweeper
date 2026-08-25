@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-25T12:09:34.585Z",
+  "updatedAt": "2026-08-25T11:16:48Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8683,
+    "title": "Migrar la familia Mirakl (CDL, Feltrinelli, Decathlon) a MarketplaceManager V2",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8683",
+    "state": "open",
+    "labels": [
+      "app:marketplace",
+      "feature",
+      "triage:done",
+      "area:marketplace-sync",
+      "impact:other",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "P2",
+      "issue-rating: ➖ n/a",
+      "mk:casadellibro",
+      "mk:feltrinelli",
+      "marketplace-v2"
+    ],
+    "createdAt": "2026-08-25T09:37:09Z",
+    "updatedAt": "2026-08-25T11:16:48Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe el equipo completar primero la validación batch de Fnac y después secuenciar Mirakl en cambios separados?",
+  "rationale": "La familia Mirakl comparte el protocolo batch pendiente de validar en vivo, pero añade un flujo PRODUCT→OFFER y tres gates operativos que no conviene mezclar en una sola PR.",
+  "options": [
+    {
+      "title": "Secuenciar tras Fnac",
+      "body": "Validar primero el primer marketplace batch y abrir después cambios separados para contrato, adaptador y cada tienda Mirakl.",
+      "recommended": true
+    },
+    {
+      "title": "Priorizar Mirakl ahora",
+      "body": "Reordenar la hoja de ruta y asumir dentro de esta familia la validación batch, los índices Atlas y los tres E2E.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Secuenciar tras Fnac",
+    "body": "Validar primero el primer marketplace batch y abrir después cambios separados para contrato, adaptador y cada tienda Mirakl.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Está conectado con el piloto V2, la propuesta de migración y el flujo especial de Decathlon.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8683.md",
+    "reviewedAt": "2026-08-25T12:09:34.585Z",
+    "mainSha": "251c3a996909dfa5231f7a50261b746195d9177c"
+  }
+}

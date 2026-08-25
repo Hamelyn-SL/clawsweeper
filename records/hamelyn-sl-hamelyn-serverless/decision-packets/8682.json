@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-25T12:12:31.884Z",
+  "generatedAt": "2026-08-25T12:03:42.777Z",
   "updatedAt": "2026-08-25T11:47:06Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -25,35 +25,35 @@
     "createdAt": "2026-08-25T09:36:44Z",
     "updatedAt": "2026-08-25T11:47:06Z"
   },
-  "lane": "manual_review",
+  "lane": "release_inclusion",
   "priority": "P2",
-  "question": "¿Qué responsable de Marketplace asumirá la validación autorizada de Fnac y Atlas necesaria para desbloquear esta migración?",
-  "rationale": "El código fija el diseño F3, pero el requisito de E2E vivo e índices reales depende de credenciales, datos e infraestructura que no están disponibles en esta revisión.",
+  "question": "¿Quién asumirá el acceso a Atlas y a la cuenta Fnac para ejecutar los gates obligatorios antes de abrir la PR?",
+  "rationale": "El código puede seguir el patrón F3, pero la aceptación exige operaciones reales que no pueden verificarse desde el checkout ni sustituirse por mocks.",
   "options": [
     {
-      "title": "Asignar validación autorizada",
-      "body": "Designar a un responsable con acceso a Fnac y Atlas para implementar y demostrar los gates definidos antes de abrir la pull request.",
+      "title": "Asignar validación operativa",
+      "body": "Asignar a una persona con acceso Fnac y Atlas para acompañar el E2E real y verificar los índices antes de revisar una PR.",
       "recommended": true
     },
     {
-      "title": "Mantener el bloqueo operativo",
-      "body": "Conservar la issue bloqueada hasta que exista una ventana segura de credenciales, índices y prueba E2E.",
+      "title": "Posponer la migración",
+      "body": "Mantenerla bloqueada hasta disponer de credenciales y una ventana segura para comprobar el ciclo batch en vivo.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Asignar validación autorizada",
-    "body": "Designar a un responsable con acceso a Fnac y Atlas para implementar y demostrar los gates definidos antes de abrir la pull request.",
+    "title": "Asignar validación operativa",
+    "body": "Asignar a una persona con acceso Fnac y Atlas para acompañar el E2E real y verificar los índices antes de revisar una PR.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "Su historial reciente conecta el contrato V2 definitivo con las correcciones operativas de Fnac.",
+    "person": "MarcosTerroso",
+    "reason": "Su historial en el piloto y en la definición de la migración ofrece la ruta más directa para coordinar el patrón y sus pruebas operativas.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8682.md",
-    "reviewedAt": "2026-08-25T12:12:31.884Z",
-    "mainSha": "39e6afb5a79d6a71528815703c97eaa376c98feb"
+    "reviewedAt": "2026-08-25T12:03:42.777Z",
+    "mainSha": "251c3a996909dfa5231f7a50261b746195d9177c"
   }
 }

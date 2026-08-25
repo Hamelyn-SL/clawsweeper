@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-24T14:40:52.943Z",
-  "updatedAt": "2026-08-24T13:22:45Z",
+  "generatedAt": "2026-08-25T12:07:57.014Z",
+  "updatedAt": "2026-08-25T11:03:30Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,51 +11,45 @@
     "state": "open",
     "labels": [
       "size/L",
-      "rating: 🥈 silver",
-      "status: 📣 needs proof",
       "P1",
+      "status: 📣 needs proof",
       "merge-risk: 🚨 compatibility",
-      "merge-risk: 🚨 security-boundary"
+      "merge-risk: 🚨 security-boundary",
+      "rating: 🥈 silver"
     ],
     "createdAt": "2026-08-24T12:45:31Z",
-    "updatedAt": "2026-08-24T13:22:45Z",
-    "headSha": "2ab7b0c379882b201437e10093ca29c850de7974"
+    "updatedAt": "2026-08-25T11:03:30Z",
+    "headSha": "fd77d58e5d7a23dc5e9b905c2216f340c937181b"
   },
   "lane": "security_boundary",
   "priority": "P1",
-  "question": "¿Se acepta desplegar `model-online-v2.joblib` como artefacto serializado en el repositorio o debe exigirse una procedencia reproducible y verificable antes de cargarlo con `joblib`?",
-  "rationale": "La decisión determina la frontera de confianza del código que se deserializa al iniciar una función productiva; no puede resolverse de forma segura solo con revisión estática.",
+  "question": "¿Qué fuente de confianza aprobada debe autorizar el artefacto `model-online-v2.joblib` antes de deserializarlo en CI y producción?",
+  "rationale": "Una suma incluida junto al binario no establece procedencia independiente; decidir entre artefacto firmado, registro confiable o excepción es una frontera de seguridad del equipo.",
   "options": [
     {
-      "title": "Exigir procedencia verificable",
-      "body": "Mantener el rollout, pero aportar un proceso reproducible o una validación independiente del artefacto antes de integrarlo.",
+      "title": "Exigir artefacto verificable",
+      "body": "Publicar el modelo desde una fuente inmutable y confiable, verificando firma o identidad antes de cargarlo.",
       "recommended": true
     },
     {
-      "title": "Aceptar el artefacto revisado",
-      "body": "Aceptar explícitamente el riesgo tras una revisión humana del origen, entrenamiento y contenido del modelo binario.",
-      "recommended": false
-    },
-    {
-      "title": "Separar el despliegue",
-      "body": "Pausar esta PR y preparar una ruta de distribución de modelos que no cargue un binario opaco desde el código fuente.",
+      "title": "Aprobar una excepción acotada",
+      "body": "Aceptar temporalmente el binario en el repositorio con una justificación explícita de procedencia y revisión de seguridad.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Exigir procedencia verificable",
-    "body": "Mantener el rollout, pero aportar un proceso reproducible o una validación independiente del artefacto antes de integrarlo.",
+    "title": "Exigir artefacto verificable",
+    "body": "Publicar el modelo desde una fuente inmutable y confiable, verificando firma o identidad antes de cargarlo.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "PabloMoran34",
-    "reason": "Es la persona con mayor continuidad en la implementación y el despliegue del experimento de demanda.",
-    "confidence": "medium"
+    "person": "MiguelHamelyn",
+    "reason": "Es el revisor asignado y ya ha señalado los riesgos de ejecución y rollout de esta ruta.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8662.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8662#issuecomment-5395812108",
-    "reviewedAt": "2026-08-24T14:40:52.943Z",
-    "mainSha": "bd1b326cac9bc4c1113f4fea817be527e0a87f79"
+    "reviewedAt": "2026-08-25T12:07:57.014Z",
+    "mainSha": "251c3a996909dfa5231f7a50261b746195d9177c"
   }
 }

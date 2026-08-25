@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-25T12:07:04.925Z",
+  "updatedAt": "2026-08-25T11:13:56Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8698,
+    "title": "Sustituciones de picking: huérfanas SOLD sin ordersell y doble conteo de ventas en analítica",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8698",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:admin",
+      "reporter:javier",
+      "triage:queued",
+      "P1"
+    ],
+    "createdAt": "2026-08-25T11:13:44Z",
+    "updatedAt": "2026-08-25T11:13:56Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe una sustitución por unidad no encontrada registrar el original como `INVENTORIED` o crear la razón específica `LOST_AT_PICKING` antes de corregir y backfillear los datos?",
+  "rationale": "Ambas opciones eliminan el falso positivo de venta, pero difieren en la trazabilidad contable y en los consumidores históricos que habrá que adaptar.",
+  "options": [
+    {
+      "title": "Crear `LOST_AT_PICKING`",
+      "body": "Conserva una señal explícita de merma de picking y obliga a ajustar los consumidores que interpreten causas de retirada.",
+      "recommended": true
+    },
+    {
+      "title": "Reutilizar `INVENTORIED`",
+      "body": "Minimiza el cambio de modelo, pero agrupa esta merma con los ajustes de inventario existentes.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Crear `LOST_AT_PICKING`",
+    "body": "Conserva una señal explícita de merma de picking y obliga a ajustar los consumidores que interpreten causas de retirada.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "danielmenchen",
+    "reason": "Su historial toca la escritura de sustitución que deberá adoptar la semántica escogida.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8698.md",
+    "reviewedAt": "2026-08-25T12:07:04.925Z",
+    "mainSha": "251c3a996909dfa5231f7a50261b746195d9177c"
+  }
+}
