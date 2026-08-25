@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-25T13:31:23.915Z",
-  "updatedAt": "2026-08-25T12:49:45Z",
+  "generatedAt": "2026-08-25T15:30:16.393Z",
+  "updatedAt": "2026-08-25T15:21:58Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,45 +11,44 @@
     "state": "open",
     "labels": [
       "size/XL",
-      "rating: 🥈 silver",
-      "status: 📣 needs proof",
       "P2",
-      "merge-risk: 🚨 availability"
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 availability",
+      "rating: 🥈 silver"
     ],
     "createdAt": "2026-08-23T20:34:29Z",
-    "updatedAt": "2026-08-25T12:49:45Z",
-    "headSha": "c2bc0f06b163ba9ee48b83c95878d3592dd69b74"
+    "updatedAt": "2026-08-25T15:21:58Z",
+    "headSha": "6b4e0db5f490f1fced0726cfb3a5b5cf025a205d"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe este PR excluir también del feed batch los huérfanos fuera de la ventana de drenaje, o se acepta mantener ese comportamiento preexistente en un seguimiento separado?",
-  "rationale": "La rama ya declara que el límite de lectura es deliberado; decidir si se cambia el comportamiento del feed para garantizar convergencia completa requiere aceptar el alcance operativo de la retirada.",
+  "question": "¿Debe este PR cambiar ya el comportamiento histórico de huérfanos para excluirlos del feed fuera de la ventana de drenaje, o se acepta explícitamente ese caso como seguimiento?",
+  "rationale": "La corrección mecánica altera una rama preexistente de selección y el autor la dejó abierta para decisión humana tras agotar el ciclo de bots.",
   "options": [
     {
-      "title": "Completar la convergencia en este PR",
-      "body": "Excluir los huérfanos del feed igual que los `productType` desajustados y cubrir el caso de backlog antes de integrar.",
+      "title": "Corregir los huérfanos ahora",
+      "body": "Excluir los huérfanos del feed, dejarlos anclados para el drenaje y añadir una prueba con una cola mayor que `batchLimit`.",
       "recommended": true
     },
     {
-      "title": "Integrar y abrir seguimiento acotado",
-      "body": "Aceptar temporalmente el comportamiento existente fuera de ventana y crear un seguimiento explícito para los huérfanos con backlog grande.",
+      "title": "Mergear con seguimiento explícito",
+      "body": "Aceptar que el caso fuera de ventana conserva el comportamiento anterior y abrir un seguimiento antes de integrar esta cobertura parcial.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Completar la convergencia en este PR",
-    "body": "Excluir los huérfanos del feed igual que los `productType` desajustados y cubrir el caso de backlog antes de integrar.",
+    "title": "Corregir los huérfanos ahora",
+    "body": "Excluir los huérfanos del feed, dejarlos anclados para el drenaje y añadir una prueba con una cola mayor que `batchLimit`.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Su historial conecta el drenaje no-batch existente con la semántica de selección que este PR amplía.",
+    "reason": "Es el revisor solicitado con historial reciente en el flujo batch afectado.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8646.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8646#issuecomment-5395103869",
-    "reviewedAt": "2026-08-25T13:31:23.915Z",
-    "mainSha": "f567bf2a2a258bcea3458fbb91d5c7cc46be8013"
+    "reviewedAt": "2026-08-25T15:30:16.393Z",
+    "mainSha": "d26a9601ec9aa843e20ee53dcaf943a2ec5e21ac"
   }
 }
