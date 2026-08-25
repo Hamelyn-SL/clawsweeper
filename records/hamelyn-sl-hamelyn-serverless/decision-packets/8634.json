@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-25T09:11:05.423Z",
+  "generatedAt": "2026-08-25T09:18:16.429Z",
   "updatedAt": "2026-08-25T08:45:33Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -11,45 +11,44 @@
     "state": "open",
     "labels": [
       "size/XL",
-      "rating: 🥉 bronze",
-      "status: 📣 needs proof",
       "P2",
-      "merge-risk: 🚨 compatibility"
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 compatibility",
+      "rating: 🥉 bronze"
     ],
     "createdAt": "2026-08-22T23:39:15Z",
     "updatedAt": "2026-08-25T08:45:33Z",
     "headSha": "1ae0f1cc6146bd400af030de8ddcb37fbe8a55af"
   },
-  "lane": "product_direction",
+  "lane": "merge_risk",
   "priority": "P2",
-  "question": "¿Debe ecommerce adoptar de forma permanente la negociación Markdown y los alias públicos localizados como parte del contrato de storefront?",
-  "rationale": "El PR añade una nueva representación pública, redirecciones 301 y reglas de caché; resolver el encabezado es mecánico, pero aceptar ese contrato externo requiere intención de producto.",
+  "question": "¿Se bloquea la fusión hasta disponer de una solución que preserve `Vary: Accept` en la respuesta HTML final, o se acepta explícitamente el riesgo de caché compartida?",
+  "rationale": "La ejecución real del head contradice el contrato declarado y no hay preview de Vercel que demuestre una semántica distinta antes de fusionar.",
   "options": [
     {
-      "title": "Aprobar el contrato y corregir la caché",
-      "body": "Mantener la funcionalidad propuesta, reparar el `Vary` final y exigir prueba HTTP real de ambas variantes antes del merge.",
+      "title": "Bloquear y corregir",
+      "body": "Mantener el PR abierto hasta que una capa compatible preserve `Vary: Accept` y una prueba HTTP posterior confirme ambas representaciones.",
       "recommended": true
     },
     {
-      "title": "Reducir el alcance",
-      "body": "Conservar solo los documentos explícitos y posponer negociación y aliases hasta acordar su contrato de compatibilidad.",
+      "title": "Aceptar el riesgo de plataforma",
+      "body": "Fusionar confiando en una diferencia de Vercel no demostrada, asumiendo la posible mezcla de respuestas en caché.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar el contrato y corregir la caché",
-    "body": "Mantener la funcionalidad propuesta, reparar el `Vary` final y exigir prueba HTTP real de ambas variantes antes del merge.",
+    "title": "Bloquear y corregir",
+    "body": "Mantener el PR abierto hasta que una capa compatible preserve `Vary: Accept` y una prueba HTTP posterior confirme ambas representaciones.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "banosdavidhamelyn",
-    "reason": "Fue solicitado específicamente para revisar el proxy, la negociación HTTP y las rutas localizadas de ecommerce.",
+    "reason": "Su revisión fue solicitada específicamente por experiencia en los archivos de ecommerce y el proxy afectado.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8634.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8634#issuecomment-5395088729",
-    "reviewedAt": "2026-08-25T09:11:05.423Z",
+    "reviewedAt": "2026-08-25T09:18:16.429Z",
     "mainSha": "8fa150949f170ce84039d2a080ff9b9931ea2a22"
   }
 }
