@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-26T16:43:31.827Z",
+  "updatedAt": "2026-08-26T16:39:22Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8762,
+    "title": "Amazon SE: el watcher de conciliación falla tras un report correcto",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8762",
+    "state": "open",
+    "labels": [
+      "bug",
+      "source:admin-panel",
+      "app:marketplace",
+      "triage:done",
+      "area:cron-reliability",
+      "P1",
+      "impact:other",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond",
+      "reporter:JavierHamelyn",
+      "origin:dev",
+      "mk:amazon"
+    ],
+    "createdAt": "2026-08-26T14:38:59Z",
+    "updatedAt": "2026-08-26T16:39:22Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe resolverse primero la fiabilidad de deploy y alerta, dejando las nuevas señales BATCH/FBA para una incidencia o PR de observabilidad acotado?",
+  "rationale": "La reparación de entrega está bien delimitada, pero la semántica y el umbral de las señales nuevas cambian la política operativa del watcher.",
+  "options": [
+    {
+      "title": "Separar fiabilidad y métricas",
+      "body": "Corregir promoción M2M y etiqueta `P1` primero, y definir después las señales BATCH >1 día y FBA vendible con ejemplos de salida.",
+      "recommended": true
+    },
+    {
+      "title": "Implementar el paquete completo",
+      "body": "Mantener un cambio transversal que incluya despliegue, alerta y métricas, con revisión conjunta del contrato operativo.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Separar fiabilidad y métricas",
+    "body": "Corregir promoción M2M y etiqueta `P1` primero, y definir después las señales BATCH >1 día y FBA vendible con ejemplos de salida.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es la persona asignada y está vinculada al merge del arreglo anterior en este mismo flujo.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8762.md",
+    "reviewedAt": "2026-08-26T16:43:31.827Z",
+    "mainSha": "e1a5299a04a34e1460aa4f2d85d69ee05bdf5570"
+  }
+}

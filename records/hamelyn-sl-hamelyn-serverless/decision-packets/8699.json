@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-26T16:35:54.757Z",
-  "updatedAt": "2026-08-26T14:39:25Z",
+  "generatedAt": "2026-08-26T16:43:48.152Z",
+  "updatedAt": "2026-08-26T16:38:43Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -23,37 +23,42 @@
       "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-08-25T11:13:55Z",
-    "updatedAt": "2026-08-26T14:39:25Z"
+    "updatedAt": "2026-08-26T16:38:43Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué códigos SP-API deben quedar como `PERMANENT`, cuáles pueden ser `TRANSIENT` y debe `8057` permanecer excluido hasta una comprobación viva?",
-  "rationale": "La fuente confirma el hueco técnico, pero la política determina si se reintentan bloqueos o se retiran ofertas, con impacto operativo masivo.",
+  "question": "¿Debe Marketplace aprobar `PERMANENT` para catálogo/compliance/marca, `TRANSIENT` para `8005` y mantener `8057` fuera de la recuperación hasta validarlo en SP-API viva?",
+  "rationale": "El código permite implementar la tabla, pero decidir qué códigos pueden desencadenar retirada y recreación afecta a ofertas reales y no se deduce con seguridad de los textos localizados.",
   "options": [
     {
-      "title": "Aprobar una matriz conservadora",
-      "body": "Clasificar catálogo, compliance y marca como `PERMANENT`, permitir `8005` con recuperación controlada y mantener `8057` fuera hasta validarlo.",
+      "title": "Aprobar matriz conservadora",
+      "body": "Clasificar códigos estructurales como `PERMANENT`, activar únicamente `8005` tras prueba focalizada y conservar `8057` fuera del retry.",
       "recommended": true
     },
     {
-      "title": "Validar ambos códigos antes",
-      "body": "No habilitar retirada y recreación hasta obtener muestras SP-API vivas que distingan con seguridad `8005` y `8057`.",
+      "title": "Validar ambos códigos primero",
+      "body": "Posponer cualquier recuperación de `8005` y `8057` hasta reunir respuestas SP-API vivas representativas.",
+      "recommended": false
+    },
+    {
+      "title": "Tratar toda la cohorte como reintentable",
+      "body": "Reactivar todos los `UNKNOWN`, aceptando el riesgo de repetir bloqueos permanentes o retirar ofertas válidas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar una matriz conservadora",
-    "body": "Clasificar catálogo, compliance y marca como `PERMANENT`, permitir `8005` con recuperación controlada y mantener `8057` fuera hasta validarlo.",
+    "title": "Aprobar matriz conservadora",
+    "body": "Clasificar códigos estructurales como `PERMANENT`, activar únicamente `8005` tras prueba focalizada y conservar `8057` fuera del retry.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "HamelynDev",
-    "reason": "Introdujo el método de recuperación Amazon cuya semántica de códigos debe quedar alineada con la política.",
-    "confidence": "medium"
+    "person": "MiguelHamelyn",
+    "reason": "Su historial reciente sobre la clasificación de reintentos le conecta directamente con la matriz de políticas propuesta.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8699.md",
-    "reviewedAt": "2026-08-26T16:35:54.757Z",
+    "reviewedAt": "2026-08-26T16:43:48.152Z",
     "mainSha": "e1a5299a04a34e1460aa4f2d85d69ee05bdf5570"
   }
 }

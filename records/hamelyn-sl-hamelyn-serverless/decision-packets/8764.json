@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-26T16:37:01.166Z",
+  "generatedAt": "2026-08-26T16:43:52.884Z",
   "updatedAt": "2026-08-26T15:57:39Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -22,38 +22,33 @@
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se aprueba convertir Fix Your Products en un programa operativo por fases, empezando sin mutaciones con observación y dry-run para las seis regiones?",
-  "rationale": "La decisión determina el ámbito regional, el umbral de autorización y qué categorías pueden modificarse automáticamente en cuentas de producción.",
+  "question": "¿Debe priorizarse este programa amplio por fases y bajo qué autorización se permitirán las primeras mutaciones FYP en cada cuenta?",
+  "rationale": "La decisión define política operativa, cobertura regional, límites por cuenta y el umbral de autorización; no puede inferirse de la infraestructura existente.",
   "options": [
     {
-      "title": "Aprobar una primera fase de observación",
-      "body": "Persistir y clasificar FYP para las seis regiones, con recuento y muestras, sin aplicar PATCH automático.",
+      "title": "Planificar entregas acotadas",
+      "body": "Aprobar observación, dry-run, remediadores por tipo y verificación como entregas separadas, exigiendo `go` antes de la primera mutación masiva.",
       "recommended": true
     },
     {
-      "title": "Acotar a COM y MX",
-      "body": "Validar primero la telemetría y el dry-run en las regiones con mayor evidencia antes de extender la cobertura.",
-      "recommended": false
-    },
-    {
-      "title": "Mantener la operación manual",
-      "body": "Conservar los one-shots y posponer el flujo recurrente hasta definir la política de mutaciones.",
+      "title": "Mantener el proceso manual",
+      "body": "Conservar los one-shots y posponer la automatización hasta disponer de capacidad para operar y supervisar el nuevo flujo.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar una primera fase de observación",
-    "body": "Persistir y clasificar FYP para las seis regiones, con recuento y muestras, sin aplicar PATCH automático.",
+    "title": "Planificar entregas acotadas",
+    "body": "Aprobar observación, dry-run, remediadores por tipo y verificación como entregas separadas, exigiendo `go` antes de la primera mutación masiva.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su historial reciente contiene el diagnóstico FYP y las restricciones operativas que condicionan el alcance inicial.",
+    "reason": "Está asignado y su trabajo fusionado contiene el diagnóstico operativo que define los límites de la solución.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8764.md",
-    "reviewedAt": "2026-08-26T16:37:01.166Z",
+    "reviewedAt": "2026-08-26T16:43:52.884Z",
     "mainSha": "e1a5299a04a34e1460aa4f2d85d69ee05bdf5570"
   }
 }
