@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-26T22:45:00.044Z",
+  "updatedAt": "2026-08-26T22:27:33Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8781,
+    "title": "AbeBooks: 424 pedidos sin confirmar envio y 3 recogidos despues de estar cancelados",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8781",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "triage:running",
+      "P2"
+    ],
+    "createdAt": "2026-08-26T22:21:58Z",
+    "updatedAt": "2026-08-26T22:27:33Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Qué estado operativo y ruta de intervención deben recibir los pedidos cancelados después de emitir etiqueta, antes de excluirlos definitivamente de picking y confirmación?",
+  "rationale": "La exclusión técnica es clara, pero la mercancía ya etiquetada puede exigir interceptación, reposición o conciliación que el código no puede decidir por sí solo.",
+  "options": [
+    {
+      "title": "Bloquear y señalar",
+      "body": "Excluirlos de envío automático y crear una señal operativa explícita para que almacén valore interceptación y conciliación.",
+      "recommended": true
+    },
+    {
+      "title": "Cancelar automáticamente",
+      "body": "Moverlos a un estado terminal automático, aceptando que los paquetes ya emitidos se gestionen fuera del flujo.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener reintento controlado",
+      "body": "Conservarlos en una cola separada de revisión con reintentos limitados y telemetría completa.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Bloquear y señalar",
+    "body": "Excluirlos de envío automático y crear una señal operativa explícita para que almacén valore interceptación y conciliación.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Su trabajo reciente conecta el adaptador AbeBooks, su comprobación de cancelaciones y el recorrido V2.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8781.md",
+    "reviewedAt": "2026-08-26T22:45:00.044Z",
+    "mainSha": "ea47b23c33b6f3ba0382c266f0de4e90e4c355af"
+  }
+}
