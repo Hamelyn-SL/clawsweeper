@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-26T16:36:38.091Z",
+  "updatedAt": "2026-08-26T15:57:39Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8766,
+    "title": "[Infrastructure] Atlas primary had sustained CPU pressure during the last 6 hours",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8766",
+    "state": "open",
+    "labels": [
+      "bug",
+      "source:admin-panel",
+      "app:infrastructure",
+      "triage:done",
+      "P1",
+      "impact:other",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "issue-rating: 🥈 silver"
+    ],
+    "createdAt": "2026-08-26T14:58:15Z",
+    "updatedAt": "2026-08-26T15:57:39Z"
+  },
+  "lane": "manual_review",
+  "priority": "P1",
+  "question": "¿Confirma Infraestructura, con la siguiente ventana de Atlas, que bajaron CPU, targeting y frecuencia de los dos shapes corregidos?",
+  "rationale": "La fuente de verdad para la eficacia operativa es telemetría viva, que el checkout no contiene.",
+  "options": [
+    {
+      "title": "Validar y cerrar",
+      "body": "Revisar la próxima ventana de Atlas y cerrar si las métricas muestran la reducción esperada.",
+      "recommended": true
+    },
+    {
+      "title": "Investigar carga residual",
+      "body": "Mantener abierta e identificar otro shape si persiste la presión tras el despliegue.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Validar y cerrar",
+    "body": "Revisar la próxima ventana de Atlas y cerrar si las métricas muestran la reducción esperada.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su historial conecta directamente con las dos optimizaciones ya desplegadas.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8766.md",
+    "reviewedAt": "2026-08-26T16:36:38.091Z",
+    "mainSha": "e1a5299a04a34e1460aa4f2d85d69ee05bdf5570"
+  }
+}

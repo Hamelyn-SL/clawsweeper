@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-26T16:37:01.166Z",
+  "updatedAt": "2026-08-26T15:57:39Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8764,
+    "title": "Amazon: automatizar la remediación recurrente de Fix Your Products",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8764",
+    "state": "open",
+    "labels": [
+      "source:admin-panel",
+      "app:marketplace",
+      "feature",
+      "triage:done",
+      "P1",
+      "reporter:JavierHamelyn"
+    ],
+    "createdAt": "2026-08-26T14:39:23Z",
+    "updatedAt": "2026-08-26T15:57:39Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se aprueba convertir Fix Your Products en un programa operativo por fases, empezando sin mutaciones con observación y dry-run para las seis regiones?",
+  "rationale": "La decisión determina el ámbito regional, el umbral de autorización y qué categorías pueden modificarse automáticamente en cuentas de producción.",
+  "options": [
+    {
+      "title": "Aprobar una primera fase de observación",
+      "body": "Persistir y clasificar FYP para las seis regiones, con recuento y muestras, sin aplicar PATCH automático.",
+      "recommended": true
+    },
+    {
+      "title": "Acotar a COM y MX",
+      "body": "Validar primero la telemetría y el dry-run en las regiones con mayor evidencia antes de extender la cobertura.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener la operación manual",
+      "body": "Conservar los one-shots y posponer el flujo recurrente hasta definir la política de mutaciones.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar una primera fase de observación",
+    "body": "Persistir y clasificar FYP para las seis regiones, con recuento y muestras, sin aplicar PATCH automático.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su historial reciente contiene el diagnóstico FYP y las restricciones operativas que condicionan el alcance inicial.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8764.md",
+    "reviewedAt": "2026-08-26T16:37:01.166Z",
+    "mainSha": "e1a5299a04a34e1460aa4f2d85d69ee05bdf5570"
+  }
+}
