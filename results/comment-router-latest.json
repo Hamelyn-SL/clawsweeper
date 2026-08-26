@@ -1,10 +1,10 @@
 {
   "status": "dry_run",
-  "generated_at": "2026-08-26T12:27:59.477Z",
+  "generated_at": "2026-08-26T12:53:25.438Z",
   "repo": "Hamelyn-SL/hamelyn-serverless",
   "repair_repo": "Hamelyn-SL/clawsweeper",
   "review_repo": "Hamelyn-SL/clawsweeper",
-  "since": "2026-08-26T09:27:55.920Z",
+  "since": "2026-08-26T09:53:22.986Z",
   "execute": false,
   "force_reprocess": false,
   "max_comments": 100,
@@ -12,8 +12,8 @@
   "comment_ids": [],
   "status_comment_id": null,
   "max_autoclose_targets": 8,
-  "scanned_comments": 81,
-  "commands_seen": 2,
+  "scanned_comments": 95,
+  "commands_seen": 1,
   "actionable": 0,
   "trusted_bots": [
     "clawsweeper[bot]",
@@ -68,59 +68,18 @@
       "actions": [],
       "author_repository_permission": "none",
       "reason": "GitHub lookup failed; will retry later: GraphQL: Resource not accessible by integration (repository.pullRequest.statusCheckRollup.nodes.0.commit.statusCheckRollup) Command failed: gh pr view 8689 --repo Hamelyn-SL/hamelyn-serverless --json additions,headRefName,headRefOid,author,"
-    },
-    {
-      "idempotency_key": "comment-router:Hamelyn-SL/hamelyn-serverless:8727:5422485467:2026-08-26T09:28:02Z:automerge",
-      "comment_id": "5422485467",
-      "comment_version_key": "5422485467:2026-08-26T09:28:02Z",
-      "comment_url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8727#issuecomment-5422485467",
-      "repo": "Hamelyn-SL/hamelyn-serverless",
-      "target_branch": null,
-      "issue_number": 8727,
-      "author": "clawsweeper-hamelyn[bot]",
-      "author_id": 301054459,
-      "author_association": "NONE",
-      "comment_created_at": "2026-08-26T08:12:33Z",
-      "comment_updated_at": "2026-08-26T09:28:02Z",
-      "status_comment_id": null,
-      "trigger": "mention",
-      "command": "automerge",
-      "intent": "automerge",
-      "autoclose_message": null,
-      "implementation_prompt": null,
-      "operator_override": null,
-      "trusted_bot": false,
-      "trusted_bot_author": null,
-      "automation_source": null,
-      "repair_reason": null,
-      "review_summary": "El PR relaja la validación del webhook Exotec de estado de línea, avisa de payloads inválidos y mueve el marcado de procesado tras parte de la persistencia.\n\nReproducibility: Sí, por fuente: basta forzar un error tras la línea 275 en la rama de errores y reenviar el mismo webhook; la clave de procesado desvía el reintento antes de las operaciones pendientes.",
-      "review_followup": "- [P1] Hay una reparación mecánica y acotada en la ruta del webhook: conservar el reintento hasta completar cada recorrido de error.",
-      "freeform_prompt": null,
-      "visual_lens": null,
-      "expected_head_sha": null,
-      "close_reason": null,
-      "close_confidence": null,
-      "close_action_taken": null,
-      "reviewed_at": null,
-      "expected_item_updated_at": null,
-      "expected_source_revision": null,
-      "finding_id": null,
-      "status": "waiting",
-      "actions": [],
-      "author_repository_permission": "none",
-      "reason": "GitHub lookup failed; will retry later: GraphQL: Resource not accessible by integration (repository.pullRequest.statusCheckRollup.nodes.0.commit.statusCheckRollup) Command failed: gh pr view 8727 --repo Hamelyn-SL/hamelyn-serverless --json additions,headRefName,headRefOid,author,"
     }
   ],
   "timings": {
-    "total_ms": 3557,
+    "total_ms": 2452,
     "phases": [
       {
         "name": "list_candidate_comments",
-        "ms": 2201
+        "ms": 1246
       },
       {
         "name": "prehydrate_comment_commands",
-        "ms": 1350
+        "ms": 1196
       },
       {
         "name": "classify_comment_commands",
