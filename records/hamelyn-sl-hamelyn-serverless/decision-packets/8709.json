@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-26T07:15:31.231Z",
+  "updatedAt": "2026-08-26T06:10:13Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8709,
+    "title": "feat: migrate todocoleccion to the marketplace manager",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8709",
+    "state": "open",
+    "labels": [
+      "size/XXL",
+      "P2",
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 other",
+      "rating: 🥉 bronze"
+    ],
+    "createdAt": "2026-08-25T12:55:49Z",
+    "updatedAt": "2026-08-26T06:10:13Z",
+    "headSha": "e718e8e692e7924be46e302d5b8a016a69d6fbaf"
+  },
+  "lane": "release_inclusion",
+  "priority": "P1",
+  "question": "¿Debe este PR incluir ahora el switchover del cron de TodoColección aunque V2 no ejecuta `needsUpdateData` ni el error recovery legacy?",
+  "rationale": "La rama altera un flujo periódico existente y la issue canónica pedía aplazar ese cambio; decidir si se acepta la pérdida de automatización restante requiere intención operativa explícita.",
+  "options": [
+    {
+      "title": "Separar el switchover",
+      "body": "Conservar `/api/todoColeccion` como cron principal y dejar V2 sin schedule hasta cerrar la paridad y los gates operativos.",
+      "recommended": true
+    },
+    {
+      "title": "Patrocinar el switchover",
+      "body": "Aceptar V2 como cron principal solo tras decidir que las fases legacy omitidas no son necesarias y aportar prueba real junto con los prerrequisitos Atlas.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar la migración",
+      "body": "Mantener la PR sin merge hasta que se defina el alcance permanente de las fases no migradas.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Separar el switchover",
+    "body": "Conservar `/api/todoColeccion` como cron principal y dejar V2 sin schedule hasta cerrar la paridad y los gates operativos.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Es el autor de la issue canónica y del piloto V2 que define el patrón de switchover.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8709.md",
+    "reviewedAt": "2026-08-26T07:15:31.231Z",
+    "mainSha": "5558d7011908b4ab4cf7a45c0e563e95a02f9f1e"
+  }
+}
