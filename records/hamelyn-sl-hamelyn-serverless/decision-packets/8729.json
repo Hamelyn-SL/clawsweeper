@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-26T09:58:00.721Z",
+  "generatedAt": "2026-08-26T10:01:19.417Z",
   "updatedAt": "2026-08-26T08:48:02Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -15,52 +15,47 @@
       "feature",
       "triage:done",
       "reporter:victor",
+      "P1",
+      "impact:other",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
-      "P2",
+      "clawsweeper:source-repro",
       "impact:ux-friction",
-      "impact:other",
-      "issue-rating: ➖ n/a"
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-08-26T08:14:18Z",
     "updatedAt": "2026-08-26T08:48:02Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué contrato HTTP y ciclo de regeneración deben aplicarse a los hubs de autor que bajen de tres ISBN activos?",
-  "rationale": "La petición exige retirada de URLs sin redirección, pero el App Router actual solo expresa el caso ausente mediante `notFound()` y la elección afecta SEO, cachés y sitemap.",
+  "question": "¿Debe la despublicación de autores no elegibles responder explícitamente HTTP 410, pese a que la ruta actual solo usa `notFound()` para el contenido ausente?",
+  "rationale": "La solicitud fija el objetivo SEO, pero el mecanismo de App Router determina el contrato HTTP y afecta a rutas indexadas existentes.",
   "options": [
     {
-      "title": "Adoptar 410 con fuente única",
-      "body": "Definir una respuesta 410 compatible con App Router y regenerar sitemap y enlaces desde la misma elegibilidad.",
+      "title": "Conservar HTTP 410 explícito",
+      "body": "Definir una respuesta específica para autores no elegibles y aplicarla de forma coherente en todas las superficies.",
       "recommended": true
     },
     {
-      "title": "Usar 404 consistente",
-      "body": "Mantener `notFound()` para autores no elegibles y documentar que la retirada no requiere semántica 410.",
-      "recommended": false
-    },
-    {
-      "title": "Separar la retirada del catálogo",
-      "body": "Lanzar primero el catálogo paginado y abrir una decisión SEO específica para la despublicación.",
+      "title": "Aceptar 404 como contrato",
+      "body": "Cambiar el alcance SEO para usar el comportamiento estándar de `notFound()` y documentar la decisión.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Adoptar 410 con fuente única",
-    "body": "Definir una respuesta 410 compatible con App Router y regenerar sitemap y enlaces desde la misma elegibilidad.",
+    "title": "Conservar HTTP 410 explícito",
+    "body": "Definir una respuesta específica para autores no elegibles y aplicarla de forma coherente en todas las superficies.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "alexcanHamelyn",
-    "reason": "El rediseño fusionado de la ficha y sus datos de catálogo parte de su trabajo previo.",
-    "confidence": "high"
+    "person": "MiguelHamelyn",
+    "reason": "Su historial reciente en el componente de detalle lo sitúa cerca del cambio de ruta y presentación.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8729.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8729#issuecomment-5422668926",
-    "reviewedAt": "2026-08-26T09:58:00.721Z",
+    "reviewedAt": "2026-08-26T10:01:19.417Z",
     "mainSha": "82bdece35dd3b3ed50b5a02eecae0fdf2e9c684b"
   }
 }
