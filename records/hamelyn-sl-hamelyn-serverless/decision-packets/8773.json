@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-26T17:06:55.466Z",
-  "updatedAt": "2026-08-26T16:57:39Z",
+  "generatedAt": "2026-08-26T18:29:37.290Z",
+  "updatedAt": "2026-08-26T17:24:10Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,47 +12,51 @@
     "labels": [
       "app:admin",
       "feature",
-      "triage:queued",
-      "P2",
+      "triage:done",
       "impact:other",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-08-26T16:52:52Z",
-    "updatedAt": "2026-08-26T16:57:39Z"
+    "updatedAt": "2026-08-26T17:24:10Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se aprueba que la revisión turbo sea un modo operativo separado que asigne Muy Bueno automáticamente y quede excluido de las métricas de calidad de Revisión V3?",
-  "rationale": "La petición cambia deliberadamente el criterio de calidad, la trazabilidad y la política futura de acceso; el código actual no define ese contrato ni puede inferirlo sin una decisión de producto.",
+  "question": "¿Se aprueba que Turbo Revisión quede restringido técnicamente a lotes B2C y que sus cierres queden fuera del QA normal con métricas propias?",
+  "rationale": "La propuesta persiste una modalidad operativa nueva y altera el alcance de QA y productividad; esas fronteras no se pueden deducir con seguridad solo del código existente.",
   "options": [
     {
-      "title": "Aprobar el modo separado",
-      "body": "Definir un contrato persistido para turbo, una ruta B2C independiente y métricas de productos/minuto separadas de la calidad normal.",
+      "title": "Aprobar el contrato B2C separado",
+      "body": "Mantener el panel y productividad independientes, rechazar INVENTORY en servidor y documentar la exclusión de QA.",
       "recommended": true
     },
     {
-      "title": "Mantener el flujo actual",
-      "body": "Conservar Revisión V3 como única vía hasta que roles y métricas tengan un diseño conjunto aprobado.",
+      "title": "Incluir QA turbo",
+      "body": "Conservar la modalidad rápida, pero diseñar una muestra o auditoría específica antes de permitir su cierre.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar el alcance",
+      "body": "Separar la interfaz de drenaje de atasco de las decisiones persistidas de QA y productividad para una propuesta posterior.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar el modo separado",
-    "body": "Definir un contrato persistido para turbo, una ruta B2C independiente y métricas de productos/minuto separadas de la calidad normal.",
+    "title": "Aprobar el contrato B2C separado",
+    "body": "Mantener el panel y productividad independientes, rechazar INVENTORY en servidor y documentar la exclusión de QA.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "AlexDiaz-Hamelyn",
-    "reason": "Su historial reciente cubre el kiosco y la productividad que el nuevo modo debe reutilizar sin contaminar.",
+    "person": "JavierHamelyn",
+    "reason": "Es el asignado y ha plasmado el contrato operativo en la PR vinculada.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8773.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8773#issuecomment-5428492553",
-    "reviewedAt": "2026-08-26T17:06:55.466Z",
+    "reviewedAt": "2026-08-26T18:29:37.290Z",
     "mainSha": "e1a5299a04a34e1460aa4f2d85d69ee05bdf5570"
   }
 }
