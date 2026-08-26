@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-26T18:30:28.030Z",
+  "generatedAt": "2026-08-26T18:38:14.337Z",
   "updatedAt": "2026-08-26T16:38:50Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -11,12 +11,12 @@
     "state": "open",
     "labels": [
       "size/XXL",
-      "rating: 🥈 silver",
-      "status: 📣 needs proof",
       "P1",
+      "status: 📣 needs proof",
       "merge-risk: 🚨 compatibility",
+      "merge-risk: 🚨 availability",
       "merge-risk: 🚨 message-delivery",
-      "merge-risk: 🚨 availability"
+      "rating: 🥈 silver"
     ],
     "createdAt": "2026-08-26T10:26:46Z",
     "updatedAt": "2026-08-26T16:38:50Z",
@@ -24,34 +24,38 @@
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Se autoriza el switchover horario de Alibris después de actualizar la rama y demostrar en una ejecución controlada el FTPS real y el lock compartido?",
-  "rationale": "El PR cambia la ruta de producción que ingiere pedidos y confirma envíos; las pruebas actuales validan la lógica, pero no la integración ni el comportamiento de recuperación real.",
+  "question": "¿Debe un pedido Alibris sin `marketplaceData.orderId` quedar terminalmente apartado de la cola, en vez de volver automáticamente a `PENDING` y bloquear confirmaciones posteriores?",
+  "rationale": "El código y la ficha reconocen el atasco, pero elegir entre una exclusión terminal, una cola manual o una política de reintento cambia la recuperación operativa de pedidos.",
   "options": [
     {
-      "title": "Exigir prueba operativa antes del merge",
-      "body": "Resolver el estado `dirty` y adjuntar trazas saneadas de FTPS, dos ticks V2 y exclusión mutua legacy/V2 antes de cambiar el schedule.",
+      "title": "Apartar el error no recuperable",
+      "body": "Clasificar o excluir el `orderId` ausente de los crons de recuperación y dejar una señal operativa para su corrección manual.",
       "recommended": true
     },
     {
-      "title": "Separar el switchover",
-      "body": "Mantener la ruta V2 sin schedule y conservar el cron legacy hasta disponer de una ventana de validación operativa.",
+      "title": "Aceptar el reintento actual",
+      "body": "Mantener el ping-pong a `PENDING` y asumir que el límite de envío o la intervención manual evitarán el bloqueo.",
+      "recommended": false
+    },
+    {
+      "title": "Definir una cola específica",
+      "body": "Crear una ruta de recuperación separada para pedidos sin identificador remoto, sin competir con confirmaciones válidas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Exigir prueba operativa antes del merge",
-    "body": "Resolver el estado `dirty` y adjuntar trazas saneadas de FTPS, dos ticks V2 y exclusión mutua legacy/V2 antes de cambiar el schedule.",
+    "title": "Apartar el error no recuperable",
+    "body": "Clasificar o excluir el `orderId` ausente de los crons de recuperación y dejar una señal operativa para su corrección manual.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Su historial concentra el contrato de MarketplaceManager y los pilotos de migración que definen el patrón técnico.",
+    "reason": "Su historial cubre el contrato de manager y la arquitectura de fases afectada por la decisión.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8737.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8737#issuecomment-5424440962",
-    "reviewedAt": "2026-08-26T18:30:28.030Z",
+    "reviewedAt": "2026-08-26T18:38:14.337Z",
     "mainSha": "e1a5299a04a34e1460aa4f2d85d69ee05bdf5570"
   }
 }
