@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-26T08:09:56.434Z",
-  "updatedAt": "2026-08-26T07:47:22Z",
+  "generatedAt": "2026-08-26T09:26:53.330Z",
+  "updatedAt": "2026-08-26T09:22:02Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,46 +11,45 @@
     "state": "open",
     "labels": [
       "size/XXL",
-      "rating: 🥉 bronze",
-      "status: 📣 needs proof",
       "P2",
+      "status: 📣 needs proof",
       "merge-risk: 🚨 compatibility",
-      "merge-risk: 🚨 availability"
+      "merge-risk: 🚨 availability",
+      "rating: 🥉 bronze"
     ],
     "createdAt": "2026-08-26T05:12:44Z",
-    "updatedAt": "2026-08-26T07:47:22Z",
-    "headSha": "249694afd53ea2f4fd930d6f271aaec37ce65d68"
+    "updatedAt": "2026-08-26T09:22:02Z",
+    "headSha": "dd9519e5ea7127afa7e129945b76085da173e4d4"
   },
-  "lane": "release_inclusion",
+  "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe activarse ahora el cron V2 de AbeBooks, aun con índices Atlas pendientes y fases legacy que dejarán de ejecutarse automáticamente?",
-  "rationale": "El código puede conservar la migración V2 sin activar producción; elegir el momento del switchover y aceptar sus huecos operativos requiere responsabilidad de plataforma.",
+  "question": "¿Debe el cron principal pasar ya a V2 aunque `needsUpdateData` y la recuperación legacy de AbeBooks queden solo como fallback manual?",
+  "rationale": "La rama cambia un comportamiento automático existente y el código no ofrece un equivalente V2; decidir qué garantía operativa conservar requiere intención de producto y operación.",
   "options": [
     {
-      "title": "Separar el switchover",
-      "body": "Mantener el cron legacy y dejar V2 invocable manualmente hasta completar los gates y la cobertura operativa.",
+      "title": "Preservar las fases pendientes",
+      "body": "Mantenerlas programadas mediante una ruta acotada o añadir sus equivalentes V2 antes del switchover.",
       "recommended": true
     },
     {
-      "title": "Activar V2 tras los gates",
-      "body": "Provisionar primero los índices, adjuntar evidencia de dos ticks y aceptar explícitamente las fases legacy no programadas.",
+      "title": "Aceptar el fallback manual",
+      "body": "Integrar el switchover aceptando que esas fases no se ejecuten automáticamente hasta una migración posterior.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Separar el switchover",
-    "body": "Mantener el cron legacy y dejar V2 invocable manualmente hasta completar los gates y la cobertura operativa.",
+    "title": "Preservar las fases pendientes",
+    "body": "Mantenerlas programadas mediante una ruta acotada o añadir sus equivalentes V2 antes del switchover.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "Su historial cubre el contrato V2 compartido y el precedente operativo de Discogs.",
+    "person": "Miguel Angel Hernández Perdomo",
+    "reason": "Su commit de Discogs establece el precedente de switchover V2 relevante para decidir esta compatibilidad.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8721.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8721#issuecomment-5421128798",
-    "reviewedAt": "2026-08-26T08:09:56.434Z",
-    "mainSha": "5558d7011908b4ab4cf7a45c0e563e95a02f9f1e"
+    "reviewedAt": "2026-08-26T09:26:53.330Z",
+    "mainSha": "82bdece35dd3b3ed50b5a02eecae0fdf2e9c684b"
   }
 }
