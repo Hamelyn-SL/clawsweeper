@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-26T10:08:18.955Z",
-  "updatedAt": "2026-08-26T09:59:01Z",
+  "generatedAt": "2026-08-26T13:14:09.326Z",
+  "updatedAt": "2026-08-26T12:42:20Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,47 +13,46 @@
       "app:admin",
       "feature",
       "triage:done",
-      "P2",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-08-26T08:09:30Z",
-    "updatedAt": "2026-08-26T09:59:01Z"
+    "updatedAt": "2026-08-26T12:42:20Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe adoptarse el contrato de validación por cubeta propuesto, permitiendo stocks y declaración Skypod parciales mientras el lote permanece en `REVIEWED` hasta su última gaveta?",
-  "rationale": "La propuesta cambia una invariancia operativa entre creación de stocks, estado del lote, pagos y Skypod; el código actual implementa explícitamente el comportamiento por lote completo.",
+  "question": "¿Se aprueba que el escaneo de una cubeta adelante la creación de stocks y la declaración Skypod, manteniendo el pago y cierre económico para la última gaveta del lote?",
+  "rationale": "La propuesta cambia el contrato operativo entre inventario físico, Skypod y pago; el código actual no define todavía esa separación y el cambio afecta datos persistidos y colas.",
   "options": [
     {
-      "title": "Adoptar validación por cubeta",
-      "body": "Confirmar stocks y declaración Skypod por cubeta con idempotencia, manteniendo el cierre del lote únicamente en su última gaveta.",
+      "title": "Aceptar validación por cubeta",
+      "body": "Revisar y completar el PR con prueba de entorno dev que cubra stocks, Skypod, reescaneo y recuperación tras despliegue.",
       "recommended": true
     },
     {
-      "title": "Mantener validación por lote",
-      "body": "Conservar el cierre y la creación de stocks actuales y abordar los reintentos de Skypod mediante otro flujo operativo.",
+      "title": "Mantener cierre por lote",
+      "body": "Cerrar o reconducir el PR y conservar la creación de stocks únicamente al completar todas las gavetas del lote.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Adoptar validación por cubeta",
-    "body": "Confirmar stocks y declaración Skypod por cubeta con idempotencia, manteniendo el cierre del lote únicamente en su última gaveta.",
+    "title": "Aceptar validación por cubeta",
+    "body": "Revisar y completar el PR con prueba de entorno dev que cubra stocks, Skypod, reescaneo y recuperación tras despliegue.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "banosdavidhamelyn",
-    "reason": "Es la persona asignada y ha definido las condiciones de aceptación operativas de la propuesta.",
+    "reason": "La issue está asignada a esta persona y su historial reciente cubre la declaración de cubetas y los reintentos de Skypod.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8728.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8728#issuecomment-5422665830",
-    "reviewedAt": "2026-08-26T10:08:18.955Z",
-    "mainSha": "82bdece35dd3b3ed50b5a02eecae0fdf2e9c684b"
+    "reviewedAt": "2026-08-26T13:14:09.326Z",
+    "mainSha": "91d39388aad37d7cd6ab244ed9e87c9079da1abd"
   }
 }

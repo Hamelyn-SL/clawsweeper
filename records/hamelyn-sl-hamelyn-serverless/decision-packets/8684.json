@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-26T13:12:30.563Z",
+  "generatedAt": "2026-08-26T13:14:17.700Z",
   "updatedAt": "2026-08-26T13:03:41Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -14,48 +14,46 @@
       "feature",
       "triage:done",
       "area:marketplace-sync",
+      "impact:other",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
+      "P2",
       "issue-rating: ➖ n/a",
       "mk:mercadolibre",
-      "marketplace-v2",
-      "P2",
-      "impact:other",
-      "clawsweeper:needs-product-decision"
+      "marketplace-v2"
     ],
     "createdAt": "2026-08-25T09:37:21Z",
     "updatedAt": "2026-08-26T13:03:41Z"
   },
-  "lane": "product_direction",
+  "lane": "release_inclusion",
   "priority": "P2",
-  "question": "¿Debe el equipo priorizar ahora la migración completa de MercadoLibre V2, incluido el switchover de producción, después de cerrar la observabilidad de retirada compartida?",
-  "rationale": "La decisión implica capacidad del equipo, un cambio de schedule activo y verificaciones de Atlas y API viva que no se pueden deducir ni ejecutar desde código estático.",
+  "question": "¿Autoriza el equipo Marketplace ejecutar esta migración grande y el switchover de MercadoLibre solo después de validar índices Atlas, E2E vivo y ticks V2?",
+  "rationale": "El código puede seguir el patrón F3, pero la activación modifica un cron productivo y exige comprobar infraestructura y comportamiento remoto fuera del repositorio.",
   "options": [
     {
-      "title": "Priorizar tras los gates compartidos",
-      "body": "Planificar la migración F3 cuando la corrección de telemetría V2 esté integrada y exista ventana para índices, E2E y supervisión del switchover.",
+      "title": "Planificar migración con gates",
+      "body": "Implementar la capa V2 y cambiar el schedule únicamente tras cerrar la telemetría común y completar los gates operativos.",
       "recommended": true
     },
     {
-      "title": "Mantener el legacy temporalmente",
-      "body": "Conservar `/api/mercadolibre` programado y reabrir la migración cuando haya capacidad operativa para sus validaciones de producción.",
+      "title": "Mantener el runner legacy",
+      "body": "Posponer la migración y conservar el cron actual hasta disponer de ventana operativa y validación de Atlas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Priorizar tras los gates compartidos",
-    "body": "Planificar la migración F3 cuando la corrección de telemetría V2 esté integrada y exista ventana para índices, E2E y supervisión del switchover.",
+    "title": "Planificar migración con gates",
+    "body": "Implementar la capa V2 y cambiar el schedule únicamente tras cerrar la telemetría común y completar los gates operativos.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "Su historial reciente concentra el contrato V2, la composición y la última migración F3 integrada.",
+    "person": "MarcosTerroso",
+    "reason": "Su trabajo reciente conecta el flujo local de MercadoLibre con la plantilla de migraciones V2.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8684.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8684#issuecomment-5409003232",
-    "reviewedAt": "2026-08-26T13:12:30.563Z",
+    "reviewedAt": "2026-08-26T13:14:17.700Z",
     "mainSha": "91d39388aad37d7cd6ab244ed9e87c9079da1abd"
   }
 }

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-26T13:12:10.633Z",
+  "generatedAt": "2026-08-26T13:13:30.205Z",
   "updatedAt": "2026-08-26T13:00:27Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -12,7 +12,7 @@
     "labels": [
       "app:marketplace",
       "feature",
-      "triage:done",
+      "triage:queued",
       "area:marketplace-sync",
       "impact:other",
       "clawsweeper:no-new-fix-pr",
@@ -28,34 +28,33 @@
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe el switchover de eBay mantener temporalmente `update` y la recuperación V1 en un cron separado, o se acepta dejarlas como huecos F3 documentados?",
-  "rationale": "La PR candidata cambia un flujo programado de producción y las fases V1 restantes no tienen equivalente V2; el código no puede decidir por sí solo la tolerancia operativa.",
+  "question": "¿Se acepta para eBay ES el switchover F3 con `update` y recuperación legacy solo como fallback manual, o deben conservarse como flujos programados antes de activar `/api/ebayV2`?",
+  "rationale": "La PR adopta el precedente F3 de Discogs, pero el cambio sustituye el cron principal de una integración de producción y decide qué garantías legacy permanecen automáticas.",
   "options": [
     {
-      "title": "Conservar las fases V1 temporalmente",
-      "body": "Mantener `update` y recuperación en una ruta programada protegida por lock hasta que existan equivalentes V2.",
+      "title": "Mantener los huecos F3 documentados",
+      "body": "Aceptar el patrón de fallback manual tras corregir la PR y aportar las pruebas operativas del schedule.",
       "recommended": true
     },
     {
-      "title": "Aceptar los huecos F3",
-      "body": "Autorizar el switchover con fallback manual y documentar que esas dos fases no se ejecutarán automáticamente.",
+      "title": "Conservar fases legacy programadas",
+      "body": "Diseñar rutas o capabilities separadas para `update` y recuperación antes de cambiar el cron principal.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Conservar las fases V1 temporalmente",
-    "body": "Mantener `update` y recuperación en una ruta programada protegida por lock hasta que existan equivalentes V2.",
+    "title": "Mantener los huecos F3 documentados",
+    "body": "Aceptar el patrón de fallback manual tras corregir la PR y aportar las pruebas operativas del schedule.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Su trabajo reciente cubre las invariantes LMS y el comportamiento operativo de eBay que condicionan esta decisión.",
-    "confidence": "high"
+    "person": "MiguelHamelyn",
+    "reason": "Es revisor solicitado y contribuidor reciente del wiring V2 compartido.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8681.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8681#issuecomment-5409229838",
-    "reviewedAt": "2026-08-26T13:12:10.633Z",
+    "reviewedAt": "2026-08-26T13:13:30.205Z",
     "mainSha": "91d39388aad37d7cd6ab244ed9e87c9079da1abd"
   }
 }
