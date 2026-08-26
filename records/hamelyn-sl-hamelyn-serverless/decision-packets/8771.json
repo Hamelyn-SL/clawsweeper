@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-26T16:36:15.859Z",
+  "updatedAt": "2026-08-26T16:19:07Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8771,
+    "title": "La búsqueda de usuarios por nombre y email del admin hace COLLSCAN completo de users en cada tecleo",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8771",
+    "state": "open",
+    "labels": [
+      "bug",
+      "source:admin-panel",
+      "app:infrastructure",
+      "triage:queued",
+      "P1"
+    ],
+    "createdAt": "2026-08-26T15:59:12Z",
+    "updatedAt": "2026-08-26T16:19:07Z"
+  },
+  "lane": "release_inclusion",
+  "priority": "P1",
+  "question": "¿Se aprueba provisionar y validar `users_search` en Atlas antes de desplegar el cambio de código que lo exige?",
+  "rationale": "El índice de Atlas es una dependencia externa al checkout y el orden de despliegue determina si los filtros continúan disponibles.",
+  "options": [
+    {
+      "title": "Provisionar antes del código",
+      "body": "Crear el índice, esperar a que esté consultable y validar equivalencia y latencia antes de desplegar las nuevas consultas.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener fallback temporal",
+      "body": "Conservar las consultas actuales hasta que el índice esté listo, aceptando el coste temporal mientras se prepara la migración.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Provisionar antes del código",
+    "body": "Crear el índice, esperar a que esté consultable y validar equivalencia y latencia antes de desplegar las nuevas consultas.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Ha investigado la degradación y modificó recientemente el repositorio de usuarios adyacente.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8771.md",
+    "reviewedAt": "2026-08-26T16:36:15.859Z",
+    "mainSha": "e1a5299a04a34e1460aa4f2d85d69ee05bdf5570"
+  }
+}
