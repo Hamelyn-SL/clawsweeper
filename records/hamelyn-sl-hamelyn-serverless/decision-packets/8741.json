@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-26T11:08:04.614Z",
+  "updatedAt": "2026-08-26T10:59:09Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8741,
+    "title": "feat: migrate ebay es to marketplace manager v2",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8741",
+    "state": "open",
+    "labels": [
+      "size/XXL"
+    ],
+    "createdAt": "2026-08-26T10:58:56Z",
+    "updatedAt": "2026-08-26T10:59:09Z",
+    "headSha": "cb4db7bf8ab2d00403d855b060063f66f9efc6a1"
+  },
+  "lane": "merge_risk",
+  "priority": "P1",
+  "question": "¿Debe la reconciliación LMS conservar el lock compartido `marketplace:ebayEs`, o se aprueba formalmente la concurrencia con un lock independiente respaldada por los guards CAS?",
+  "rationale": "El triage previo pedía una fase específica bajo el lock compartido, mientras que esta rama adopta un lock independiente y documenta una interpretación distinta de las invariantes.",
+  "options": [
+    {
+      "title": "Conservar exclusión mutua",
+      "body": "Usar el lock compartido o integrar la reconciliación en una fase que no pueda solaparse con el tick V2.",
+      "recommended": true
+    },
+    {
+      "title": "Aprobar concurrencia CAS",
+      "body": "Aceptar el lock independiente solo con evidencia operativa de que los guards cubren todas las carreras entre ambas rutas.",
+      "recommended": false
+    },
+    {
+      "title": "Posponer el switchover",
+      "body": "Mantener el schedule legacy hasta acordar el contrato de concurrencia y completar las pruebas de producción.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Conservar exclusión mutua",
+    "body": "Usar el lock compartido o integrar la reconciliación en una fase que no pueda solaparse con el tick V2.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "El historial reciente le vincula a los guards e invariantes de reconciliación que condicionan esta decisión.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8741.md",
+    "reviewedAt": "2026-08-26T11:08:04.614Z",
+    "mainSha": "e23f711c24b52ebbe3ba97a7ad85eca846aad257"
+  }
+}
