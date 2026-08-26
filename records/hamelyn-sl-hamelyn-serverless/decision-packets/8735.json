@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-26T10:58:09.689Z",
+  "updatedAt": "2026-08-26T10:14:18Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8735,
+    "title": "chore(deps): bump protobufjs from 7.5.5 to 7.6.5 in /packages/core",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8735",
+    "state": "open",
+    "labels": [
+      "size/XS",
+      "dependencies",
+      "javascript"
+    ],
+    "createdAt": "2026-08-26T10:10:30Z",
+    "updatedAt": "2026-08-26T10:14:18Z",
+    "headSha": "c21e0dd94781fd0970c71bc3189b9ccdc7da9325"
+  },
+  "lane": "merge_risk",
+  "priority": "P2",
+  "question": "¿Debe mantenerse esta subida de `protobufjs` junto con una actualización compatible de BigQuery Storage, o conservar la versión actual hasta disponer de soporte peer explícito?",
+  "rationale": "El lockfile se puede corregir mecánicamente, pero aceptar una combinación fuera del rango peer de la dependencia que opera la telemetría requiere decidir la política de compatibilidad.",
+  "options": [
+    {
+      "title": "Actualizar el par compatible",
+      "body": "Elevar BigQuery Storage a una versión que admita `protobufjs@7.6.5`, sincronizar el lockfile y validar la telemetría.",
+      "recommended": true
+    },
+    {
+      "title": "Aplazar protobufjs",
+      "body": "Mantener `protobufjs@7.5.5` hasta que exista una versión de BigQuery Storage compatible.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Actualizar el par compatible",
+    "body": "Elevar BigQuery Storage a una versión que admita `protobufjs@7.6.5`, sincronizar el lockfile y validar la telemetría.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su trabajo reciente cubre la ruta de BigQuery Storage que asumiría el riesgo de compatibilidad.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8735.md",
+    "reviewedAt": "2026-08-26T10:58:09.689Z",
+    "mainSha": "5d7e369d82025865ed18ab08e80eaabfa8b25f90"
+  }
+}
