@@ -1,10 +1,10 @@
 {
   "status": "dry_run",
-  "generated_at": "2026-08-26T14:30:53.014Z",
+  "generated_at": "2026-08-26T14:55:13.390Z",
   "repo": "Hamelyn-SL/hamelyn-serverless",
   "repair_repo": "Hamelyn-SL/clawsweeper",
   "review_repo": "Hamelyn-SL/clawsweeper",
-  "since": "2026-08-26T11:30:50.268Z",
+  "since": "2026-08-26T11:55:10.718Z",
   "execute": false,
   "force_reprocess": false,
   "max_comments": 100,
@@ -12,8 +12,8 @@
   "comment_ids": [],
   "status_comment_id": null,
   "max_autoclose_targets": 8,
-  "scanned_comments": 83,
-  "commands_seen": 4,
+  "scanned_comments": 90,
+  "commands_seen": 5,
   "actionable": 0,
   "trusted_bots": [
     "clawsweeper[bot]",
@@ -28,6 +28,47 @@
   "max_auto_repairs_per_pr": 10,
   "lookup_concurrency": 8,
   "commands": [
+    {
+      "idempotency_key": "comment-router:Hamelyn-SL/hamelyn-serverless:8739:5424448357:2026-08-26T14:33:48Z:automerge",
+      "comment_id": "5424448357",
+      "comment_version_key": "5424448357:2026-08-26T14:33:48Z",
+      "comment_url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8739#issuecomment-5424448357",
+      "repo": "Hamelyn-SL/hamelyn-serverless",
+      "target_branch": null,
+      "issue_number": 8739,
+      "author": "clawsweeper-hamelyn[bot]",
+      "author_id": 301054459,
+      "author_association": "NONE",
+      "comment_created_at": "2026-08-26T11:11:18Z",
+      "comment_updated_at": "2026-08-26T14:33:48Z",
+      "status_comment_id": null,
+      "trigger": "mention",
+      "command": "automerge",
+      "intent": "automerge",
+      "autoclose_message": null,
+      "implementation_prompt": null,
+      "operator_override": null,
+      "trusted_bot": false,
+      "trusted_bot_author": null,
+      "automation_source": null,
+      "repair_reason": null,
+      "review_summary": "El PR crea stocks al escanear cada gaveta, encola su entrada en Skypod y cambia el cierre del lote para que solo compruebe stocks ya creados.\n\nReproducibility: Sí, desde código: escanear un código base Exotec con productos solo en `A` o `C` crea stocks pero no encuentra la orden para encolarla al cierre. También es reproducible con un bin compartido que supere el presupuesto HTTP.",
+      "review_followup": "- [P1] Los defectos son concretos, pero el PR necesita además una prueba real verificable del entorno del contribuidor antes de que un responsable pueda valorar su integración.",
+      "freeform_prompt": null,
+      "visual_lens": null,
+      "expected_head_sha": null,
+      "close_reason": null,
+      "close_confidence": null,
+      "close_action_taken": null,
+      "reviewed_at": null,
+      "expected_item_updated_at": null,
+      "expected_source_revision": null,
+      "finding_id": null,
+      "status": "waiting",
+      "actions": [],
+      "author_repository_permission": "none",
+      "reason": "GitHub lookup failed; will retry later: GraphQL: Resource not accessible by integration (repository.pullRequest.statusCheckRollup.nodes.0.commit.statusCheckRollup) Command failed: gh pr view 8739 --repo Hamelyn-SL/hamelyn-serverless --json additions,headRefName,headRefOid,author,"
+    },
     {
       "idempotency_key": "comment-router:Hamelyn-SL/hamelyn-serverless:8753:5425878181:2026-08-26T13:17:22Z:automerge",
       "comment_id": "5425878181",
@@ -194,15 +235,15 @@
     }
   ],
   "timings": {
-    "total_ms": 2745,
+    "total_ms": 2671,
     "phases": [
       {
         "name": "list_candidate_comments",
-        "ms": 1234
+        "ms": 1253
       },
       {
         "name": "prehydrate_comment_commands",
-        "ms": 1504
+        "ms": 1412
       },
       {
         "name": "classify_comment_commands",
