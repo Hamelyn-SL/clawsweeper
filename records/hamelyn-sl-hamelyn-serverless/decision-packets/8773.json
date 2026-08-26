@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-26T17:06:55.466Z",
+  "updatedAt": "2026-08-26T16:57:39Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8773,
+    "title": "⚡ Panel Turbo Revisión: aceptar productos escaneados como Muy Bueno sin revisar estados",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8773",
+    "state": "open",
+    "labels": [
+      "app:admin",
+      "feature",
+      "triage:queued",
+      "P1"
+    ],
+    "createdAt": "2026-08-26T16:52:52Z",
+    "updatedAt": "2026-08-26T16:57:39Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se aprueba que la revisión turbo sea un modo operativo separado que asigne Muy Bueno automáticamente y quede excluido de las métricas de calidad de Revisión V3?",
+  "rationale": "La petición cambia deliberadamente el criterio de calidad, la trazabilidad y la política futura de acceso; el código actual no define ese contrato ni puede inferirlo sin una decisión de producto.",
+  "options": [
+    {
+      "title": "Aprobar el modo separado",
+      "body": "Definir un contrato persistido para turbo, una ruta B2C independiente y métricas de productos/minuto separadas de la calidad normal.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener el flujo actual",
+      "body": "Conservar Revisión V3 como única vía hasta que roles y métricas tengan un diseño conjunto aprobado.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar el modo separado",
+    "body": "Definir un contrato persistido para turbo, una ruta B2C independiente y métricas de productos/minuto separadas de la calidad normal.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Su historial reciente cubre el kiosco y la productividad que el nuevo modo debe reutilizar sin contaminar.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8773.md",
+    "reviewedAt": "2026-08-26T17:06:55.466Z",
+    "mainSha": "e1a5299a04a34e1460aa4f2d85d69ee05bdf5570"
+  }
+}
