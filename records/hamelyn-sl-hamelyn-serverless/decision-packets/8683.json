@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-25T13:22:20.696Z",
-  "updatedAt": "2026-08-25T12:15:46Z",
+  "generatedAt": "2026-08-26T08:18:13.356Z",
+  "updatedAt": "2026-08-26T08:12:17Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,54 +14,48 @@
       "feature",
       "triage:done",
       "area:marketplace-sync",
-      "mk:casadellibro",
-      "mk:feltrinelli",
-      "marketplace-v2",
-      "P2",
       "impact:other",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "issue-rating: ➖ n/a",
+      "mk:casadellibro",
+      "mk:feltrinelli",
+      "marketplace-v2"
     ],
     "createdAt": "2026-08-25T09:37:09Z",
-    "updatedAt": "2026-08-25T12:15:46Z"
+    "updatedAt": "2026-08-26T08:12:17Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se aprueba ejecutar esta familia Mirakl después del piloto batch de Fnac, dividida en una base compartida y migraciones por tienda con Decathlon como entrega separada?",
-  "rationale": "La elección determina el orden de inversión, la frontera del adapter compartido y los gates operativos que no se pueden validar desde una revisión estática.",
+  "question": "¿Se patrocina la migración Mirakl como una secuencia de entregas por tienda, empezando tras la validación batch de Fnac, o se pospone hasta disponer de una ventana operativa para los tres operadores?",
+  "rationale": "La elección afecta al orden de despliegue, al acceso a credenciales y a los gates Atlas que el código no puede validar por sí solo.",
   "options": [
     {
-      "title": "Secuenciar tras Fnac",
-      "body": "Completar primero la validación batch de Fnac y después abrir entregas separadas para base Mirakl, CDL/Feltrinelli y Decathlon.",
+      "title": "Secuenciar por marketplace",
+      "body": "Crear la abstracción compartida y cerrar CDL, Feltrinelli y Decathlon en entregas separadas con E2E, índices y switchover individual.",
       "recommended": true
     },
     {
-      "title": "Priorizar Mirakl",
-      "body": "Iniciar la base Mirakl antes de Fnac, asumiendo que el equipo validará el comportamiento batch directamente con estos tres operadores.",
-      "recommended": false
-    },
-    {
-      "title": "Reducir alcance",
-      "body": "Mantener las integraciones legacy y limitar por ahora el trabajo a documentar los requisitos comunes y los gates de Atlas.",
+      "title": "Posponer la familia Mirakl",
+      "body": "Mantener los crons legacy hasta disponer de capacidad operativa para validar los tres contratos Mirakl.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Secuenciar tras Fnac",
-    "body": "Completar primero la validación batch de Fnac y después abrir entregas separadas para base Mirakl, CDL/Feltrinelli y Decathlon.",
+    "title": "Secuenciar por marketplace",
+    "body": "Crear la abstracción compartida y cerrar CDL, Feltrinelli y Decathlon en entregas separadas con E2E, índices y switchover individual.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MarcosTerroso",
-    "reason": "Ha definido el alcance y concentra el historial más directo del piloto V2 y la integración Decathlon.",
+    "person": "MiguelHamelyn",
+    "reason": "Su trabajo reciente define el contrato V2 y el patrón de switchover que condicionan esta decisión.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8683.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8683#issuecomment-5409002865",
-    "reviewedAt": "2026-08-25T13:22:20.696Z",
-    "mainSha": "f567bf2a2a258bcea3458fbb91d5c7cc46be8013"
+    "reviewedAt": "2026-08-26T08:18:13.356Z",
+    "mainSha": "5558d7011908b4ab4cf7a45c0e563e95a02f9f1e"
   }
 }

@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-25T13:12:11.366Z",
-  "updatedAt": "2026-08-25T12:15:39Z",
+  "generatedAt": "2026-08-26T08:18:05.827Z",
+  "updatedAt": "2026-08-26T08:12:15Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,48 +14,47 @@
       "feature",
       "triage:blocked",
       "area:marketplace-sync",
+      "impact:other",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
+      "P2",
       "issue-rating: ➖ n/a",
       "mk:fnac",
-      "marketplace-v2",
-      "P2",
-      "impact:other",
-      "clawsweeper:needs-product-decision"
+      "marketplace-v2"
     ],
     "createdAt": "2026-08-25T09:36:44Z",
-    "updatedAt": "2026-08-25T12:15:39Z"
+    "updatedAt": "2026-08-26T08:12:15Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Quién asume la validación con credenciales Fnac y Atlas y patrocina la migración V2 antes de cualquier switchover del cron?",
-  "rationale": "El código delimita la migración, pero los criterios de aceptación exigen pruebas e índices sobre servicios externos que no pueden inferirse ni verificarse desde el checkout.",
+  "question": "¿Debe Fnac ser el siguiente switchover V2 antes de cerrar la telemetría de retirada indicada en https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8719?",
+  "rationale": "El cambio desplaza un cron productivo y reutiliza un runner V2 con un hueco de observabilidad abierto; decidir el orden de despliegue exige aceptar o bloquear ese riesgo operativo.",
   "options": [
     {
-      "title": "Patrocinar la migración controlada",
-      "body": "Asignar un responsable con acceso Fnac y Atlas para implementar V2 sin schedule y completar los gates antes del switchover.",
+      "title": "Resolver primero la telemetría V2",
+      "body": "Mantener Fnac en V1 hasta que el runner común restaure la señal por SKU y distinga `gone` de `ok`.",
       "recommended": true
     },
     {
-      "title": "Posponer el batch Fnac",
-      "body": "Mantener el flujo legacy hasta disponer de credenciales y una ventana operativa para validar el protocolo diferido.",
+      "title": "Patrocinar Fnac con riesgo explícito",
+      "body": "Permitir la migración solo si se acepta documentadamente la observabilidad reducida y se aportan gates operativos completos.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Patrocinar la migración controlada",
-    "body": "Asignar un responsable con acceso Fnac y Atlas para implementar V2 sin schedule y completar los gates antes del switchover.",
+    "title": "Resolver primero la telemetría V2",
+    "body": "Mantener Fnac en V1 hasta que el runner común restaure la señal por SKU y distinga `gone` de `ok`.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MarcosTerroso",
-    "reason": "Su historial reúne el piloto V2, el contexto de esta migración y cambios recientes relacionados con Fnac.",
-    "confidence": "medium"
+    "person": "MiguelHamelyn",
+    "reason": "Su historial reciente concentra el contrato V2 y los hardenings que condicionan el switchover.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8682.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8682#issuecomment-5409154886",
-    "reviewedAt": "2026-08-25T13:12:11.366Z",
-    "mainSha": "f567bf2a2a258bcea3458fbb91d5c7cc46be8013"
+    "reviewedAt": "2026-08-26T08:18:05.827Z",
+    "mainSha": "5558d7011908b4ab4cf7a45c0e563e95a02f9f1e"
   }
 }

@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-25T13:12:13.768Z",
-  "updatedAt": "2026-08-25T12:15:38Z",
+  "generatedAt": "2026-08-26T08:19:15.857Z",
+  "updatedAt": "2026-08-26T08:12:13Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,48 +14,52 @@
       "feature",
       "triage:done",
       "area:marketplace-sync",
-      "mk:ebay",
-      "marketplace-v2",
-      "P2",
       "impact:other",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "issue-rating: ➖ n/a",
+      "mk:ebay",
+      "marketplace-v2"
     ],
     "createdAt": "2026-08-25T09:36:32Z",
-    "updatedAt": "2026-08-25T12:15:38Z"
+    "updatedAt": "2026-08-26T08:12:13Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe la reconciliación LMS de eBay ser una capability/fase explícita de V2 o mantenerse temporalmente en una ruta separada durante F3?",
-  "rationale": "El runner genérico solo expresa fases estándar; la elección fija el contrato permanente y determina cómo convivir sin carreras con el cron legacy.",
+  "question": "¿Debe la reconciliación LMS de eBay ES vivir como fase explícita del cron V2 bajo el lock compartido, o mantenerse temporalmente en una ruta separada durante la convivencia con V1?",
+  "rationale": "El runner V2 actual no expresa esta reconciliación y la elección determina cómo evitar dos orquestadores completos compitiendo durante el switchover.",
   "options": [
     {
-      "title": "Fase LMS explícita",
-      "body": "Extender V2 con una capability dedicada que drene señales durables bajo el mismo lock de eBay.",
+      "title": "Fase LMS explícita en V2",
+      "body": "Incorporar una fase específica de reconciliación LMS al flujo V2 y mantenerla bajo el mismo lock antes de mover el schedule.",
       "recommended": true
     },
     {
-      "title": "Ruta separada temporal",
-      "body": "Migrar las fases estándar a `ebayV2` y conservar temporalmente el drenaje LMS en una ruta coordinada.",
+      "title": "Ruta LMS separada temporal",
+      "body": "Conservar la reconciliación en una ruta dedicada y programarla de forma compatible mientras V2 asume solo las fases estándar.",
+      "recommended": false
+    },
+    {
+      "title": "Aplazar el switchover",
+      "body": "Mantener el cron legacy hasta que exista un contrato V2 revisado para el drenaje LMS y sus pruebas live.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Fase LMS explícita",
-    "body": "Extender V2 con una capability dedicada que drene señales durables bajo el mismo lock de eBay.",
+    "title": "Fase LMS explícita en V2",
+    "body": "Incorporar una fase específica de reconciliación LMS al flujo V2 y mantenerla bajo el mismo lock antes de mover el schedule.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Conoce el piloto F2 y formuló los requisitos de migración F3 y convivencia.",
+    "reason": "Es el principal autor de la base MarketplaceManager y del piloto F2 que define la forma de las migraciones F3.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8681.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8681#issuecomment-5409229838",
-    "reviewedAt": "2026-08-25T13:12:13.768Z",
-    "mainSha": "f567bf2a2a258bcea3458fbb91d5c7cc46be8013"
+    "reviewedAt": "2026-08-26T08:19:15.857Z",
+    "mainSha": "5558d7011908b4ab4cf7a45c0e563e95a02f9f1e"
   }
 }

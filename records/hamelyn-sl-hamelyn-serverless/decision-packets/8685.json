@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-25T11:56:41.054Z",
-  "updatedAt": "2026-08-25T11:09:29Z",
+  "generatedAt": "2026-08-26T08:17:50.183Z",
+  "updatedAt": "2026-08-26T08:12:21Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,48 +14,47 @@
       "feature",
       "triage:done",
       "area:marketplace-sync",
-      "issue-rating: ➖ n/a",
-      "mk:amazon",
-      "marketplace-v2",
-      "P2",
       "impact:other",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "issue-rating: ➖ n/a",
+      "mk:amazon",
+      "marketplace-v2"
     ],
     "createdAt": "2026-08-25T09:37:42Z",
-    "updatedAt": "2026-08-25T11:09:29Z"
+    "updatedAt": "2026-08-26T08:12:21Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe la migración Amazon esperar a que Fnac o Mirakl validen primero el precedente batch F3 antes de iniciar su entrega?",
-  "rationale": "La decisión determina el orden de validación del protocolo batch compartido y el riesgo operativo de seis sincronizaciones productivas.",
+  "question": "¿Debe esta familia arrancar como una entrega F3 propia ahora, o esperar a que Fnac o Mirakl demuestren primero el flujo batch en producción?",
+  "rationale": "El código confirma que la plataforma V2 está lista, pero no determina la secuencia aceptable de despliegue ni quién asume los gates Atlas y la activación de seis schedules.",
   "options": [
     {
-      "title": "Esperar al precedente batch",
-      "body": "Completar primero una migración batch menor y reutilizar su evidencia operativa para Amazon.",
+      "title": "Autorizar Amazon como F3 independiente",
+      "body": "Implementar el adaptador de familia y desplegar por regiones con pruebas EU/NA e índices Atlas verificados antes de cada switchover.",
       "recommended": true
     },
     {
-      "title": "Avanzar en paralelo",
-      "body": "Iniciar Amazon antes, asumiendo coordinación adicional de pruebas reales, índices Atlas y compatibilidad legacy.",
+      "title": "Esperar un precedente batch",
+      "body": "Posponer el inicio hasta que la migración de Fnac o Mirakl valide en producción el polling batch reutilizable.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Esperar al precedente batch",
-    "body": "Completar primero una migración batch menor y reutilizar su evidencia operativa para Amazon.",
+    "title": "Autorizar Amazon como F3 independiente",
+    "body": "Implementar el adaptador de familia y desplegar por regiones con pruebas EU/NA e índices Atlas verificados antes de cada switchover.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Su historial conecta tanto la integración Amazon compartida como la implantación inicial de MarketplaceManager V2.",
+    "reason": "Su historial cubre tanto el piloto V2 como el trabajo previo sobre la integración Amazon.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8685.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8685#issuecomment-5408547344",
-    "reviewedAt": "2026-08-25T11:56:41.054Z",
-    "mainSha": "1ad18a8b1dab0d538a6ad7702eb6ce9bf1057a26"
+    "reviewedAt": "2026-08-26T08:17:50.183Z",
+    "mainSha": "5558d7011908b4ab4cf7a45c0e563e95a02f9f1e"
   }
 }

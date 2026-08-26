@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-26T08:18:20.060Z",
+  "updatedAt": "2026-08-26T08:12:19Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8684,
+    "title": "Migrar MercadoLibre a MarketplaceManager V2",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8684",
+    "state": "open",
+    "labels": [
+      "app:marketplace",
+      "feature",
+      "triage:done",
+      "area:marketplace-sync",
+      "impact:other",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "P2",
+      "issue-rating: ➖ n/a",
+      "mk:mercadolibre",
+      "marketplace-v2"
+    ],
+    "createdAt": "2026-08-25T09:37:21Z",
+    "updatedAt": "2026-08-26T08:12:19Z"
+  },
+  "lane": "release_inclusion",
+  "priority": "P2",
+  "question": "¿Debe el equipo Marketplace priorizar ahora esta migración F3 completa, incluyendo sus validaciones de Atlas y API viva antes del switchover?",
+  "rationale": "El código confirma una migración grande y viable, pero su activación requiere operaciones externas y decisión de secuenciación del equipo.",
+  "options": [
+    {
+      "title": "Planificar la migración completa",
+      "body": "Abrir trabajo dedicado que incluya implementación, gates de Atlas, E2E real y switchover supervisado.",
+      "recommended": true
+    },
+    {
+      "title": "Posponer el switchover",
+      "body": "Mantener MercadoLibre en legacy hasta disponer de ventana operativa y resolver la telemetría transversal de V2.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Planificar la migración completa",
+    "body": "Abrir trabajo dedicado que incluya implementación, gates de Atlas, E2E real y switchover supervisado.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Define el alcance de F3 y aporta la mayor parte de la historia de MercadoLibre y del diseño inicial de V2.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8684.md",
+    "reviewedAt": "2026-08-26T08:18:20.060Z",
+    "mainSha": "5558d7011908b4ab4cf7a45c0e563e95a02f9f1e"
+  }
+}
