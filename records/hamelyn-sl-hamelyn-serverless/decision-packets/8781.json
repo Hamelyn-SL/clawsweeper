@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-26T22:45:00.044Z",
+  "generatedAt": "2026-08-26T22:44:34.525Z",
   "updatedAt": "2026-08-26T22:27:33Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -27,39 +27,38 @@
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué estado operativo y ruta de intervención deben recibir los pedidos cancelados después de emitir etiqueta, antes de excluirlos definitivamente de picking y confirmación?",
-  "rationale": "La exclusión técnica es clara, pero la mercancía ya etiquetada puede exigir interceptación, reposición o conciliación que el código no puede decidir por sí solo.",
+  "question": "¿Debe una cancelación posterior a la etiqueta bloquear siempre una nueva recogida, o permitir solo registrar una recogida física ya ocurrida con un estado de intervención manual?",
+  "rationale": "El código actual admite algunos casos de recepción cancelada y la evidencia no distingue de forma automática una salida nueva de una confirmación física tardía.",
   "options": [
     {
-      "title": "Bloquear y señalar",
-      "body": "Excluirlos de envío automático y crear una señal operativa explícita para que almacén valore interceptación y conciliación.",
+      "title": "Bloqueo con excepción auditada",
+      "body": "Bloquear la transición y el envío de pedidos cancelados, permitiendo solo una ruta explícita de recepción tardía que cree una alerta operativa.",
       "recommended": true
     },
     {
-      "title": "Cancelar automáticamente",
-      "body": "Moverlos a un estado terminal automático, aceptando que los paquetes ya emitidos se gestionen fuera del flujo.",
+      "title": "Bloqueo absoluto",
+      "body": "Impedir cualquier recogida o confirmación posterior a `cancelledDate`, asumiendo que los paquetes ya entregados se reconciliarán fuera del flujo.",
       "recommended": false
     },
     {
-      "title": "Mantener reintento controlado",
-      "body": "Conservarlos en una cola separada de revisión con reintentos limitados y telemetría completa.",
+      "title": "Mantener recepción tardía",
+      "body": "Conservar la recepción posterior a cancelación y limitar la corrección a observabilidad y capacidad de la cola.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Bloquear y señalar",
-    "body": "Excluirlos de envío automático y crear una señal operativa explícita para que almacén valore interceptación y conciliación.",
+    "title": "Bloqueo con excepción auditada",
+    "body": "Bloquear la transición y el envío de pedidos cancelados, permitiendo solo una ruta explícita de recepción tardía que cree una alerta operativa.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Su trabajo reciente conecta el adaptador AbeBooks, su comprobación de cancelaciones y el recorrido V2.",
+    "reason": "La decisión afecta directamente al adaptador AbeBooks y al gestor V2 que introdujo recientemente.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8781.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8781#issuecomment-5431979827",
-    "reviewedAt": "2026-08-26T22:45:00.044Z",
+    "reviewedAt": "2026-08-26T22:44:34.525Z",
     "mainSha": "ea47b23c33b6f3ba0382c266f0de4e90e4c355af"
   }
 }
