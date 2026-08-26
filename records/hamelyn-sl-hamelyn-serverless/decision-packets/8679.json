@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-26T09:11:48.884Z",
+  "updatedAt": "2026-08-26T08:57:07Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8679,
+    "title": "Migrar AbeBooks a MarketplaceManager V2",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8679",
+    "state": "open",
+    "labels": [
+      "app:marketplace",
+      "feature",
+      "triage:blocked",
+      "area:marketplace-sync",
+      "impact:other",
+      "clawsweeper:no-new-fix-pr",
+      "P2",
+      "clawsweeper:linked-pr-open",
+      "issue-rating: ➖ n/a",
+      "mk:abebooks",
+      "marketplace-v2"
+    ],
+    "createdAt": "2026-08-25T09:36:06Z",
+    "updatedAt": "2026-08-26T08:57:07Z"
+  },
+  "lane": "release_inclusion",
+  "priority": "P2",
+  "question": "¿Debe autorizarse el switchover programado de AbeBooks antes de resolver la brecha de observabilidad V2 señalada en https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8719?",
+  "rationale": "La decisión combina exposición operativa del cron, fases legacy sin equivalente y telemetría transversal; el código no puede determinar por sí solo el nivel aceptable de riesgo.",
+  "options": [
+    {
+      "title": "Bloquear el switchover hasta recuperar telemetría",
+      "body": "Completar primero la señal por SKU y la distinción `ok`/`gone` del runner V2, y después activar el cron de AbeBooks.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar el alcance F3 documentado",
+      "body": "Autorizar el switchover con los huecos conocidos, dejando métricas y recuperación legacy como seguimiento operativo explícito.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Bloquear el switchover hasta recuperar telemetría",
+    "body": "Completar primero la señal por SKU y la distinción `ok`/`gone` del runner V2, y después activar el cron de AbeBooks.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Su historial reciente endureciendo el contrato V2 y su aprobación de la PR candidata le sitúan cerca de la decisión de compatibilidad operativa.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8679.md",
+    "reviewedAt": "2026-08-26T09:11:48.884Z",
+    "mainSha": "d37bbf453e5d9ee5c74afb6e574940e658c8ff42"
+  }
+}
