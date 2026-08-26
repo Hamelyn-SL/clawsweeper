@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-26T16:18:33.422Z",
-  "updatedAt": "2026-08-26T16:12:39Z",
+  "generatedAt": "2026-08-26T18:21:36.251Z",
+  "updatedAt": "2026-08-26T16:39:05Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,48 +13,43 @@
       "source:admin-panel",
       "app:infrastructure",
       "feature",
+      "triage:done",
       "P2",
       "reporter:JavierHamelyn",
       "origin:dev"
     ],
     "createdAt": "2026-08-26T15:23:20Z",
-    "updatedAt": "2026-08-26T16:12:39Z"
+    "updatedAt": "2026-08-26T16:39:05Z"
   },
   "lane": "security_boundary",
   "priority": "P2",
-  "question": "¿Qué contrato de seguridad y severidad debe aprobarse para que Fallow pueda bloquear hallazgos nuevos sin ejecutar código de PR con permisos de comentario?",
-  "rationale": "La solicitud fija el objetivo, pero no el límite operativo entre ejecución no confiable, transferencia de resultados y política de fallo que afectará a todos los PRs.",
+  "question": "¿Qué reglas de Fallow pueden bloquear únicamente hallazgos nuevos y qué workflow aislado debe poseer el permiso de actualizar el comentario del PR?",
+  "rationale": "La definición de reglas de alta confianza y la frontera entre ejecución de código del PR y escritura en GitHub determinan la política de calidad y seguridad del repositorio.",
   "options": [
     {
-      "title": "Dos flujos aislados",
-      "body": "Ejecutar Fallow con `contents: read`, publicar un artefacto validado y actualizar el comentario desde un flujo basado en la rama base; bloquear solo resultados aprobados de alta confianza.",
+      "title": "Aprobar gate mínimo aislado",
+      "body": "Fijar un conjunto pequeño de reglas de alta confianza como `error`, usar `new-only` y publicar mediante un workflow posterior sin checkout del PR.",
       "recommended": true
     },
     {
-      "title": "Modo informativo inicial",
-      "body": "Publicar el informe incremental sin bloquear durante una fase de calibración antes de convertir hallazgos nuevos en gate.",
-      "recommended": false
-    },
-    {
-      "title": "Mantener auditoría manual",
-      "body": "Conservar `ts-prune` como herramienta local hasta disponer de una política y un diseño de ejecución aislada.",
+      "title": "Empezar solo informativo",
+      "body": "Mantener todos los hallazgos como aviso consolidado hasta disponer de datos suficientes para promover reglas a bloqueo.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Dos flujos aislados",
-    "body": "Ejecutar Fallow con `contents: read`, publicar un artefacto validado y actualizar el comentario desde un flujo basado en la rama base; bloquear solo resultados aprobados de alta confianza.",
+    "title": "Aprobar gate mínimo aislado",
+    "body": "Fijar un conjunto pequeño de reglas de alta confianza como `error`, usar `new-only` y publicar mediante un workflow posterior sin checkout del PR.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es el asignado actual y ha cambiado recientemente el gate central de CI.",
+    "reason": "Está asignado a esta mejora y ha mantenido recientemente los gates de CI relacionados.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8768.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8768#issuecomment-5427946474",
-    "reviewedAt": "2026-08-26T16:18:33.422Z",
-    "mainSha": "21009d2f060033e60934ea16627dd1306c129b97"
+    "reviewedAt": "2026-08-26T18:21:36.251Z",
+    "mainSha": "e1a5299a04a34e1460aa4f2d85d69ee05bdf5570"
   }
 }
