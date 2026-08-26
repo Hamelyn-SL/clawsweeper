@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-26T14:12:52.117Z",
+  "generatedAt": "2026-08-26T14:12:50.225Z",
   "updatedAt": "2026-08-26T14:09:01Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -21,38 +21,33 @@
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué cuenta debe conservarse y cómo se deben reasignar pedidos, carritos y notificaciones para cada colisión de email normalizado?",
-  "rationale": "La corrección de código es clara, pero la fusión o eliminación de identidades persistidas define una política de datos con efectos históricos.",
+  "question": "¿Qué criterio debe conservarse al fusionar cada grupo de cuentas cuyo email coincide tras normalizarlo?",
+  "rationale": "El código puede impedir nuevos duplicados, pero elegir la cuenta canónica y reasignar datos históricos requiere una política de negocio verificable.",
   "options": [
     {
       "title": "Aprobar el playbook de deduplicación",
-      "body": "Validar una regla de cuenta canónica, reasignaciones y reversibilidad antes de ejecutar una migración controlada.",
+      "body": "Definir una cuenta canónica y reglas de reasignación antes de ejecutar la migración de los grupos históricos.",
       "recommended": true
     },
     {
-      "title": "Corregir solo las nuevas escrituras",
-      "body": "Normalizar y hacer exactas las búsquedas sin tocar duplicados históricos, manteniendo una excepción temporal para las colisiones existentes.",
-      "recommended": false
-    },
-    {
-      "title": "Mantener revisión manual por colisión",
-      "body": "Resolver cada grupo de cuentas duplicadas mediante revisión operativa antes de aplicar la normalización global.",
+      "title": "Corregir solo altas nuevas",
+      "body": "Aplicar la normalización y el lookup exacto, dejando los duplicados históricos para una incidencia de migración separada.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Aprobar el playbook de deduplicación",
-    "body": "Validar una regla de cuenta canónica, reasignaciones y reversibilidad antes de ejecutar una migración controlada.",
+    "body": "Definir una cuenta canónica y reglas de reasignación antes de ejecutar la migración de los grupos históricos.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "banosdavidhamelyn",
-    "reason": "Su historial reciente en el área de usuarios lo sitúa como la mejor ruta inicial para validar el cambio junto con quien aprobó el playbook de datos.",
+    "person": "Miguel Angel Hernández Perdomo",
+    "reason": "Su historial disponible conecta con las consultas y el esquema centrales de usuarios.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8755.md",
-    "reviewedAt": "2026-08-26T14:12:52.117Z",
+    "reviewedAt": "2026-08-26T14:12:50.225Z",
     "mainSha": "52a6b3e71466d85519c5e6a32b688ed3cbcb3eae"
   }
 }
