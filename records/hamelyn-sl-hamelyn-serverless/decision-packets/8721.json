@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-26T08:09:56.434Z",
+  "updatedAt": "2026-08-26T07:47:22Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8721,
+    "title": "feat: migrate abebooks to marketplace manager v2",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8721",
+    "state": "open",
+    "labels": [
+      "size/XXL"
+    ],
+    "createdAt": "2026-08-26T05:12:44Z",
+    "updatedAt": "2026-08-26T07:47:22Z",
+    "headSha": "249694afd53ea2f4fd930d6f271aaec37ce65d68"
+  },
+  "lane": "release_inclusion",
+  "priority": "P2",
+  "question": "¿Debe activarse ahora el cron V2 de AbeBooks, aun con índices Atlas pendientes y fases legacy que dejarán de ejecutarse automáticamente?",
+  "rationale": "El código puede conservar la migración V2 sin activar producción; elegir el momento del switchover y aceptar sus huecos operativos requiere responsabilidad de plataforma.",
+  "options": [
+    {
+      "title": "Separar el switchover",
+      "body": "Mantener el cron legacy y dejar V2 invocable manualmente hasta completar los gates y la cobertura operativa.",
+      "recommended": true
+    },
+    {
+      "title": "Activar V2 tras los gates",
+      "body": "Provisionar primero los índices, adjuntar evidencia de dos ticks y aceptar explícitamente las fases legacy no programadas.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Separar el switchover",
+    "body": "Mantener el cron legacy y dejar V2 invocable manualmente hasta completar los gates y la cobertura operativa.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Su historial cubre el contrato V2 compartido y el precedente operativo de Discogs.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8721.md",
+    "reviewedAt": "2026-08-26T08:09:56.434Z",
+    "mainSha": "5558d7011908b4ab4cf7a45c0e563e95a02f9f1e"
+  }
+}
