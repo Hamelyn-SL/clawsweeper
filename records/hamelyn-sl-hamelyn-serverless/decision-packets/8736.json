@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-26T12:20:14.447Z",
+  "generatedAt": "2026-08-26T12:21:44.149Z",
   "updatedAt": "2026-08-26T10:30:58Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -15,45 +15,49 @@
       "triage:needs-info",
       "P1",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-08-26T10:18:17Z",
     "updatedAt": "2026-08-26T10:30:58Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Se aprueba que un batch Fnac sin outcomes de sus `pendingSkus` durante 24 horas desde `lastUpdatedTimestamp` pase a `SYNC_ERROR/BATCHING_TO_MARKETPLACE`, aplicando la misma regla a las 29 filas bloqueadas?",
-  "rationale": "El filtro de outcomes es una corrección mecánica, pero el plazo terminal y la mutación de filas de producción definen la política ante retrasos reales del proveedor.",
+  "question": "¿Qué umbral y qué estado terminal debe usar Fnac cuando un batch deja de recibir outcomes para sus SKUs pendientes, y debe aplicarse también a las 29 filas ya bloqueadas?",
+  "rationale": "La corrección del falso progreso es concreta, pero convertir retrasos reales de Fnac en `SYNC_ERROR` y modificar filas de producción requiere una política operativa de Marketplace.",
   "options": [
     {
-      "title": "Aprobar corte a 24 horas",
-      "body": "Tras 24 horas sin evidencia para ninguna fila pendiente, marcar el batch como recuperable y aplicar una recuperación auditada a las 29 filas actuales.",
+      "title": "Aprobar 24 horas y recuperación",
+      "body": "Tras 24 horas sin outcomes para filas pendientes, moverlas a `SYNC_ERROR` y aplicar el mismo criterio a las 29 filas bloqueadas.",
       "recommended": true
     },
     {
-      "title": "Mantener reintentos abiertos",
-      "body": "Corregir solo el falso progreso y conservar las filas en `BATCH`, aceptando que el cron siga reintentando hasta una decisión posterior.",
+      "title": "Aprobar otro umbral",
+      "body": "Mantener la transición propuesta, pero fijar una antigüedad distinta según la tolerancia operativa de Fnac.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener intervención manual",
+      "body": "No automatizar la terminación y resolver batches bloqueados mediante una operación supervisada.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar corte a 24 horas",
-    "body": "Tras 24 horas sin evidencia para ninguna fila pendiente, marcar el batch como recuperable y aplicar una recuperación auditada a las 29 filas actuales.",
+    "title": "Aprobar 24 horas y recuperación",
+    "body": "Tras 24 horas sin outcomes para filas pendientes, moverlas a `SYNC_ERROR` y aplicar el mismo criterio a las 29 filas bloqueadas.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "La PR anterior de este mismo flujo muestra conocimiento directo de la compatibilidad de reintentos que debe preservarse.",
-    "confidence": "high"
+    "reason": "Su trabajo reciente conecta el flujo de Fnac y la corrección previa de batches bloqueados.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8736.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8736#issuecomment-5423965306",
-    "reviewedAt": "2026-08-26T12:20:14.447Z",
+    "reviewedAt": "2026-08-26T12:21:44.149Z",
     "mainSha": "8e76b28155ea42e4fb55b7bcbddcf29550b86716"
   }
 }
