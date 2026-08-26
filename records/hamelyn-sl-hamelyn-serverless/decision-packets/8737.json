@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-26T16:36:55.014Z",
-  "updatedAt": "2026-08-26T13:27:45Z",
+  "generatedAt": "2026-08-26T18:30:28.030Z",
+  "updatedAt": "2026-08-26T16:38:50Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -19,38 +19,38 @@
       "rating: 🥈 silver"
     ],
     "createdAt": "2026-08-26T10:26:46Z",
-    "updatedAt": "2026-08-26T13:27:45Z",
+    "updatedAt": "2026-08-26T16:38:50Z",
     "headSha": "355f8cc43d1ccc2569304e7a53922bafedb721cb"
   },
-  "lane": "release_inclusion",
+  "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Se autoriza activar en `dev` el switchover horario de Alibris después de resolver el conflicto y demostrar FTPS y lock distribuidos reales?",
-  "rationale": "La modificación cambia la ruta de producción que procesa pedidos y confirma envíos; las pruebas actuales solo cubren transporte simulado y configuración estática.",
+  "question": "¿Se autoriza el switchover horario de Alibris después de actualizar la rama y demostrar en una ejecución controlada el FTPS real y el lock compartido?",
+  "rationale": "El PR cambia la ruta de producción que ingiere pedidos y confirma envíos; las pruebas actuales validan la lógica, pero no la integración ni el comportamiento de recuperación real.",
   "options": [
     {
       "title": "Exigir prueba operativa antes del merge",
-      "body": "Resolver `DIRTY` y adjuntar evidencia redacted de FTPS, dos ticks V2 y exclusión mutua V1/V2 antes de activar el schedule.",
+      "body": "Resolver el estado `dirty` y adjuntar trazas saneadas de FTPS, dos ticks V2 y exclusión mutua legacy/V2 antes de cambiar el schedule.",
       "recommended": true
     },
     {
-      "title": "Aplazar el switchover",
-      "body": "Mantener la ruta V2 sin schedule hasta que exista una ventana controlada para probar la integración real.",
+      "title": "Separar el switchover",
+      "body": "Mantener la ruta V2 sin schedule y conservar el cron legacy hasta disponer de una ventana de validación operativa.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Exigir prueba operativa antes del merge",
-    "body": "Resolver `DIRTY` y adjuntar evidencia redacted de FTPS, dos ticks V2 y exclusión mutua V1/V2 antes de activar el schedule.",
+    "body": "Resolver el estado `dirty` y adjuntar trazas saneadas de FTPS, dos ticks V2 y exclusión mutua legacy/V2 antes de cambiar el schedule.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Su historial en MarketplaceManager y su revisión solicitada le sitúan cerca de la decisión de compatibilidad del flujo V2.",
+    "reason": "Su historial concentra el contrato de MarketplaceManager y los pilotos de migración que definen el patrón técnico.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8737.md",
-    "reviewedAt": "2026-08-26T16:36:55.014Z",
+    "reviewedAt": "2026-08-26T18:30:28.030Z",
     "mainSha": "e1a5299a04a34e1460aa4f2d85d69ee05bdf5570"
   }
 }

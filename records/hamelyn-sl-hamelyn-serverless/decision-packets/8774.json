@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-26T18:30:11.667Z",
+  "updatedAt": "2026-08-26T17:42:17Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8774,
+    "title": "fix: replace user search regex with atlas search index",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8774",
+    "state": "open",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-08-26T17:12:32Z",
+    "updatedAt": "2026-08-26T17:42:17Z",
+    "headSha": "a0fda2310efc9750767e7cdbcfeeec571015218e"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe el límite fijo de 10.000 resultados sustituir la búsqueda amplia existente para todos los usuarios del panel de pedidos?",
+  "rationale": "El umbral evita consultas costosas, pero transforma una búsqueda antes permitida en un rechazo HTTP 400 y requiere aceptar ese cambio de experiencia.",
+  "options": [
+    {
+      "title": "Mantener el límite con aviso visible",
+      "body": "Conservar el tope para proteger el servicio, propagando el mensaje a la interfaz y documentando la recuperación para quien necesite acotar el filtro.",
+      "recommended": true
+    },
+    {
+      "title": "Conservar la búsqueda amplia",
+      "body": "Evitar el rechazo nuevo y asumir el coste de las consultas amplias hasta contar con otra estrategia de paginación o refinamiento.",
+      "recommended": false
+    },
+    {
+      "title": "Definir una alternativa acotada",
+      "body": "Acordar un flujo específico para búsquedas masivas antes de introducir un límite global que corte filtros existentes.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mantener el límite con aviso visible",
+    "body": "Conservar el tope para proteger el servicio, propagando el mensaje a la interfaz y documentando la recuperación para quien necesite acotar el filtro.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "Es la persona solicitada para revisar este cambio sensible de filtros y consultas de usuarios.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8774.md",
+    "reviewedAt": "2026-08-26T18:30:11.667Z",
+    "mainSha": "e1a5299a04a34e1460aa4f2d85d69ee05bdf5570"
+  }
+}
