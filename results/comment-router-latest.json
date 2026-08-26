@@ -1,10 +1,10 @@
 {
   "status": "dry_run",
-  "generated_at": "2026-08-26T09:02:11.186Z",
+  "generated_at": "2026-08-26T09:23:51.699Z",
   "repo": "Hamelyn-SL/hamelyn-serverless",
   "repair_repo": "Hamelyn-SL/clawsweeper",
   "review_repo": "Hamelyn-SL/clawsweeper",
-  "since": "2026-08-26T06:02:08.018Z",
+  "since": "2026-08-26T06:23:49.358Z",
   "execute": false,
   "force_reprocess": false,
   "max_comments": 100,
@@ -12,8 +12,8 @@
   "comment_ids": [],
   "status_comment_id": null,
   "max_autoclose_targets": 8,
-  "scanned_comments": 65,
-  "commands_seen": 2,
+  "scanned_comments": 68,
+  "commands_seen": 3,
   "actionable": 0,
   "trusted_bots": [
     "clawsweeper[bot]",
@@ -28,6 +28,47 @@
   "max_auto_repairs_per_pr": 10,
   "lookup_concurrency": 8,
   "commands": [
+    {
+      "idempotency_key": "comment-router:Hamelyn-SL/hamelyn-serverless:8731:5423146847:2026-08-26T09:20:19Z:automerge",
+      "comment_id": "5423146847",
+      "comment_version_key": "5423146847:2026-08-26T09:20:19Z",
+      "comment_url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8731#issuecomment-5423146847",
+      "repo": "Hamelyn-SL/hamelyn-serverless",
+      "target_branch": null,
+      "issue_number": 8731,
+      "author": "clawsweeper-hamelyn[bot]",
+      "author_id": 301054459,
+      "author_association": "NONE",
+      "comment_created_at": "2026-08-26T09:14:27Z",
+      "comment_updated_at": "2026-08-26T09:20:19Z",
+      "status_comment_id": null,
+      "trigger": "mention",
+      "command": "automerge",
+      "intent": "automerge",
+      "autoclose_message": null,
+      "implementation_prompt": null,
+      "operator_override": null,
+      "trusted_bot": false,
+      "trusted_bot_author": null,
+      "automation_source": null,
+      "repair_reason": null,
+      "review_summary": "El PR normaliza el TXT de Postlibri, filtra códigos postales inválidos y añade una alerta Slack configurable para los pedidos excluidos.\n\nReproducibility: Sí, con alta confianza por código: generar un lote con un CP válido y `53000` deja ambos con `labelFile=POSTLIBRI`, pero el TXT solo contiene el válido; `labelsv4` devuelve `409` al faltar la etiqueta excluida.",
+      "review_followup": "- [P1] Hay dos reparaciones mecánicas y acotadas en el flujo actual; el PR necesita corregirlas antes de revisión de integración.",
+      "freeform_prompt": null,
+      "visual_lens": null,
+      "expected_head_sha": null,
+      "close_reason": null,
+      "close_confidence": null,
+      "close_action_taken": null,
+      "reviewed_at": null,
+      "expected_item_updated_at": null,
+      "expected_source_revision": null,
+      "finding_id": null,
+      "status": "waiting",
+      "actions": [],
+      "author_repository_permission": "none",
+      "reason": "GitHub lookup failed; will retry later: GraphQL: Resource not accessible by integration (repository.pullRequest.statusCheckRollup.nodes.0.commit.statusCheckRollup) Command failed: gh pr view 8731 --repo Hamelyn-SL/hamelyn-serverless --json additions,headRefName,headRefOid,author,"
+    },
     {
       "idempotency_key": "comment-router:Hamelyn-SL/hamelyn-serverless:8727:5422485467:2026-08-26T08:12:33Z:automerge",
       "comment_id": "5422485467",
@@ -112,19 +153,19 @@
     }
   ],
   "timings": {
-    "total_ms": 3167,
+    "total_ms": 2340,
     "phases": [
       {
         "name": "list_candidate_comments",
-        "ms": 1561
+        "ms": 1140
       },
       {
         "name": "prehydrate_comment_commands",
-        "ms": 1598
+        "ms": 1192
       },
       {
         "name": "classify_comment_commands",
-        "ms": 1
+        "ms": 0
       },
       {
         "name": "prehydrate_repair_loop_sweeps",
