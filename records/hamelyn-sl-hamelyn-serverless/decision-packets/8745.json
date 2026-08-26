@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-26T12:13:08.011Z",
+  "updatedAt": "2026-08-26T11:47:05Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8745,
+    "title": "Fnac: el recovery barre 722k PERMANENT irrecuperables por pasada y 131k UNKNOWN con firma conocida no se reciclan",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8745",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "triage:done",
+      "P2"
+    ],
+    "createdAt": "2026-08-26T11:23:10Z",
+    "updatedAt": "2026-08-26T11:47:05Z"
+  },
+  "lane": "manual_review",
+  "priority": "P2",
+  "question": "¿Se autoriza la reclasificación histórica de `UNKNOWN` tras validar un canario y sus conteos, o se despliega primero solo la corrección de código?",
+  "rationale": "La corrección de código es acotada, pero la escritura masiva sobre el histórico requiere una decisión operativa y una validación de datos en producción.",
+  "options": [
+    {
+      "title": "Desplegar y reclasificar con canario",
+      "body": "Aplicar la corrección, validar muestras y conteos, y autorizar después una reclasificación por lotes con trazabilidad.",
+      "recommended": true
+    },
+    {
+      "title": "Desplegar solo el código",
+      "body": "Detener el crecimiento de `UNKNOWN` y dejar que el recovery drene el histórico según su límite actual antes de una operación posterior.",
+      "recommended": false
+    },
+    {
+      "title": "Posponer la operación histórica",
+      "body": "Corregir los selectores y mantener el histórico sin escribir hasta que exista una ventana operativa específica.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Desplegar y reclasificar con canario",
+    "body": "Aplicar la corrección, validar muestras y conteos, y autorizar después una reclasificación por lotes con trazabilidad.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es la persona asignada y ha aportado la auditoría de datos y el contexto del selector afectado.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8745.md",
+    "reviewedAt": "2026-08-26T12:13:08.011Z",
+    "mainSha": "8e76b28155ea42e4fb55b7bcbddcf29550b86716"
+  }
+}
