@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-26T11:07:16.479Z",
+  "updatedAt": "2026-08-26T10:31:52Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8738,
+    "title": "chore: bump protobufjs from 7.5.5 to 7.6.5 in the npm-security group across 1 directory",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8738",
+    "state": "open",
+    "labels": [
+      "size/XXL",
+      "dependencies",
+      "javascript"
+    ],
+    "createdAt": "2026-08-26T10:27:58Z",
+    "updatedAt": "2026-08-26T10:31:52Z",
+    "headSha": "482c05deb9b4d7fc84f3d43c4cd02d9284d11e7a"
+  },
+  "lane": "merge_risk",
+  "priority": "P2",
+  "question": "¿Debe este PR esperar a una versión de BigQuery Storage que admita `protobufjs` 7.6.x, o se acepta explícitamente esa combinación fuera de rango?",
+  "rationale": "La versión publicada más reciente de BigQuery Storage sigue declarando `~7.5.5`, por lo que la compatibilidad no puede demostrarse solo con el lockfile.",
+  "options": [
+    {
+      "title": "Esperar soporte compatible",
+      "body": "Mantener `protobufjs` 7.5.5 y recrear la actualización cuando el cliente de BigQuery admita 7.6.x.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar la excepción con prueba",
+      "body": "Autorizar el peer fuera de rango solo tras ejecutar y documentar el flujo real de BigQuery Storage Write con la resolución propuesta.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Esperar soporte compatible",
+    "body": "Mantener `protobufjs` 7.5.5 y recrear la actualización cuando el cliente de BigQuery admita 7.6.x.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es la persona más vinculada al endurecimiento reciente de la ruta de telemetría afectada.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8738.md",
+    "reviewedAt": "2026-08-26T11:07:16.479Z",
+    "mainSha": "e23f711c24b52ebbe3ba97a7ad85eca846aad257"
+  }
+}

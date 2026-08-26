@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-26T11:06:52.763Z",
+  "updatedAt": "2026-08-26T10:57:52Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8739,
+    "title": "feat: create stocks per drawer scan and close lots without generating",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8739",
+    "state": "open",
+    "labels": [
+      "size/XXL"
+    ],
+    "createdAt": "2026-08-26T10:51:48Z",
+    "updatedAt": "2026-08-26T10:57:52Z",
+    "headSha": "a71a8d5413876171f032e978c04dc5f9d5dba735"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se aprueba que crear un stock por gaveta convierta la orden `REVIEWED` en parcialmente irreversible antes de su cierre y pago?",
+  "rationale": "La propuesta altera la frontera operativa entre inventario físico y cierre económico; las pruebas no pueden decidir si ese contrato y su recuperación por reescaneo son aceptables.",
+  "options": [
+    {
+      "title": "Aprobar el flujo por gaveta",
+      "body": "Aceptar la creación anticipada de stock y exigir prueba integrada más documentación de la recuperación de carros a medio validar.",
+      "recommended": true
+    },
+    {
+      "title": "Conservar el cierre por lote",
+      "body": "Mantener la creación de stocks al cierre y resolver los reintentos de Skypod sin introducir estados parciales persistentes.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar el flujo por gaveta",
+    "body": "Aceptar la creación anticipada de stock y exigir prueba integrada más documentación de la recuperación de carros a medio validar.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es revisor asignado y tiene historial reciente en las invariantes de stocks que condicionan esta decisión.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8739.md",
+    "reviewedAt": "2026-08-26T11:06:52.763Z",
+    "mainSha": "e23f711c24b52ebbe3ba97a7ad85eca846aad257"
+  }
+}

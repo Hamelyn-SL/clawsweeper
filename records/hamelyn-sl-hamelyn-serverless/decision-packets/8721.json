@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-26T09:26:53.330Z",
-  "updatedAt": "2026-08-26T09:22:02Z",
+  "generatedAt": "2026-08-26T11:06:54.609Z",
+  "updatedAt": "2026-08-26T10:34:17Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -18,39 +18,43 @@
       "rating: 🥉 bronze"
     ],
     "createdAt": "2026-08-26T05:12:44Z",
-    "updatedAt": "2026-08-26T09:22:02Z",
-    "headSha": "dd9519e5ea7127afa7e129945b76085da173e4d4"
+    "updatedAt": "2026-08-26T10:34:17Z",
+    "headSha": "cd959c3aa7e7deead96119c63298e41d5432c4e8"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe el cron principal pasar ya a V2 aunque `needsUpdateData` y la recuperación legacy de AbeBooks queden solo como fallback manual?",
-  "rationale": "La rama cambia un comportamiento automático existente y el código no ofrece un equivalente V2; decidir qué garantía operativa conservar requiere intención de producto y operación.",
+  "question": "¿Debe el switchover conservar temporalmente la actualización de datos y las recuperaciones legacy, o se acepta explícitamente su retirada operativa?",
+  "rationale": "La documentación reconoce ambas fases como huecos F3, pero escoger una ruta programada temporal o completar V2 cambia el contrato operativo de AbeBooks.",
   "options": [
     {
-      "title": "Preservar las fases pendientes",
-      "body": "Mantenerlas programadas mediante una ruta acotada o añadir sus equivalentes V2 antes del switchover.",
+      "title": "Mantener mantenimiento legacy",
+      "body": "Programar una ruta aislada para `needsUpdateData` y recuperación hasta que el manager V2 cubra esas fases.",
       "recommended": true
     },
     {
-      "title": "Aceptar el fallback manual",
-      "body": "Integrar el switchover aceptando que esas fases no se ejecuten automáticamente hasta una migración posterior.",
+      "title": "Completar V2 antes del swap",
+      "body": "Extender el contrato y el runner V2 para ejecutar esas fases con la misma semántica antes de mover el cron.",
+      "recommended": false
+    },
+    {
+      "title": "Aceptar la retirada temporal",
+      "body": "Mantener el swap actual con una decisión explícita y un plan operativo para los listings y errores pendientes.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Preservar las fases pendientes",
-    "body": "Mantenerlas programadas mediante una ruta acotada o añadir sus equivalentes V2 antes del switchover.",
+    "title": "Mantener mantenimiento legacy",
+    "body": "Programar una ruta aislada para `needsUpdateData` y recuperación hasta que el manager V2 cubra esas fases.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "Miguel Angel Hernández Perdomo",
-    "reason": "Su commit de Discogs establece el precedente de switchover V2 relevante para decidir esta compatibilidad.",
-    "confidence": "high"
+    "person": "MiguelHamelyn",
+    "reason": "Su historial de actualización de marketplaces y su revisión asignada le sitúan cerca de la decisión de compatibilidad.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8721.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8721#issuecomment-5421128798",
-    "reviewedAt": "2026-08-26T09:26:53.330Z",
-    "mainSha": "82bdece35dd3b3ed50b5a02eecae0fdf2e9c684b"
+    "reviewedAt": "2026-08-26T11:06:54.609Z",
+    "mainSha": "e23f711c24b52ebbe3ba97a7ad85eca846aad257"
   }
 }

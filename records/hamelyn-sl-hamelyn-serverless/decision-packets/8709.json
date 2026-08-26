@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-26T07:16:29.381Z",
-  "updatedAt": "2026-08-26T06:10:13Z",
+  "generatedAt": "2026-08-26T11:07:08.120Z",
+  "updatedAt": "2026-08-26T10:25:36Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,46 +11,50 @@
     "state": "open",
     "labels": [
       "size/XXL",
-      "merge-risk: 🚨 compatibility",
-      "rating: 🥉 bronze",
-      "status: 📣 needs proof",
       "P2",
-      "merge-risk: 🚨 other"
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 compatibility",
+      "merge-risk: 🚨 other",
+      "rating: 🥈 silver"
     ],
     "createdAt": "2026-08-25T12:55:49Z",
-    "updatedAt": "2026-08-26T06:10:13Z",
+    "updatedAt": "2026-08-26T10:25:36Z",
     "headSha": "e718e8e692e7924be46e302d5b8a016a69d6fbaf"
   },
-  "lane": "product_direction",
-  "priority": "P2",
-  "question": "¿Debe este PR activar ya el cron V2 de TodoColección pese a que la aceptación canónica reservaba el switchover para un cambio posterior?",
-  "rationale": "La rama mezcla una migración aditiva con un cambio operativo que reemplaza el sync productivo y deja fases legacy solo accesibles manualmente.",
+  "lane": "release_inclusion",
+  "priority": "P1",
+  "question": "¿Debe este PR activar ya el cron V2 en `dev`, o debe separarse el switchover hasta completar los gates operativos y la prueba real?",
+  "rationale": "La issue admite el switchover, pero elegir entre despliegue inmediato y activación posterior requiere asumir riesgo operativo sobre listings y fases aún ausentes.",
   "options": [
     {
-      "title": "Posponer el switchover",
-      "body": "Conservar `/api/todoColeccion` programada y dejar V2 disponible manualmente hasta completar los gates y la prueba real.",
+      "title": "Separar el switchover",
+      "body": "Mantener V2 desplegable sin schedule y abrir o conservar un cambio posterior para activarlo tras verificar gates y E2E.",
       "recommended": true
     },
     {
-      "title": "Aprobar el switchover ahora",
-      "body": "Aceptar explícitamente el cambio operativo tras demostrar V2 contra la API, dos ticks locales y los prerrequisitos de Atlas.",
+      "title": "Activar tras verificación operativa",
+      "body": "Conservar el schedule solo si se aporta evidencia saneada de Atlas, configuración, E2E y ticks V2 sobre la integración resultante.",
+      "recommended": false
+    },
+    {
+      "title": "Aceptar el riesgo actual",
+      "body": "Aprobar el schedule actual asumiendo que las fases legacy ausentes y los gates manuales se controlarán fuera del repositorio.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Posponer el switchover",
-    "body": "Conservar `/api/todoColeccion` programada y dejar V2 disponible manualmente hasta completar los gates y la prueba real.",
+    "title": "Separar el switchover",
+    "body": "Mantener V2 desplegable sin schedule y abrir o conservar un cambio posterior para activarlo tras verificar gates y E2E.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "Su historial contiene el precedente de switchover y trabajo reciente sobre el flujo afectado.",
+    "person": "MarcosTerroso",
+    "reason": "Su historial cubre el contrato V2 y el precedente Discogs usado para calibrar el switchover.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8709.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8709#issuecomment-5410938928",
-    "reviewedAt": "2026-08-26T07:16:29.381Z",
-    "mainSha": "5558d7011908b4ab4cf7a45c0e563e95a02f9f1e"
+    "reviewedAt": "2026-08-26T11:07:08.120Z",
+    "mainSha": "e23f711c24b52ebbe3ba97a7ad85eca846aad257"
   }
 }
