@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-26T12:21:00.346Z",
+  "updatedAt": "2026-08-26T12:10:51Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8747,
+    "title": "feat: migrate fnac to the marketplace manager",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8747",
+    "state": "open",
+    "labels": [
+      "size/XXL"
+    ],
+    "createdAt": "2026-08-26T12:10:41Z",
+    "updatedAt": "2026-08-26T12:10:51Z",
+    "headSha": "f53908fca55c477f83597944aa189a374b55d254"
+  },
+  "lane": "release_inclusion",
+  "priority": "P1",
+  "question": "¿Se autoriza activar `/api/fnacV2` en el schedule en esta entrega, o debe permanecer desplegada sin schedule hasta validar Atlas, backfill y E2E vivo?",
+  "rationale": "La elección modifica tráfico operativo de Fnac y depende de recursos externos que el diff y las pruebas mockeadas no pueden verificar.",
+  "options": [
+    {
+      "title": "Activación condicionada",
+      "body": "Mantener el switchover solo tras adjuntar evidencia redacted de índices, backfill, drenaje V1, tick real y ciclo batch completo.",
+      "recommended": true
+    },
+    {
+      "title": "Despliegue sin schedule",
+      "body": "Conservar `/api/fnacV2` como ruta manual y aplazar el cambio de `vercel.json` a una entrega operativa posterior.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Activación condicionada",
+    "body": "Mantener el switchover solo tras adjuntar evidencia redacted de índices, backfill, drenaje V1, tick real y ciclo batch completo.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Su historial une el controlador Fnac existente con el contrato V2 y los requisitos de operación de la migración.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8747.md",
+    "reviewedAt": "2026-08-26T12:21:00.346Z",
+    "mainSha": "8e76b28155ea42e4fb55b7bcbddcf29550b86716"
+  }
+}

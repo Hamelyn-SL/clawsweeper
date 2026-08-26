@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-26T10:22:45.143Z",
-  "updatedAt": "2026-08-26T10:18:34Z",
+  "generatedAt": "2026-08-26T12:20:14.447Z",
+  "updatedAt": "2026-08-26T10:30:58Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,48 +12,47 @@
     "labels": [
       "bug",
       "app:marketplace",
-      "triage:queued",
+      "triage:needs-info",
       "P1",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-08-26T10:18:17Z",
-    "updatedAt": "2026-08-26T10:18:34Z"
+    "updatedAt": "2026-08-26T10:30:58Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué límite de antigüedad o reintentos debe convertir un batch Fnac sin outcomes pendientes en `SYNC_ERROR`, y cómo se recuperará la cohorte ya bloqueada?",
-  "rationale": "El defecto de clasificación es mecánico, pero la transición terminal y la reparación de datos activos determinan el comportamiento operativo ante retrasos reales del proveedor.",
+  "question": "¿Se aprueba que un batch Fnac sin outcomes de sus `pendingSkus` durante 24 horas desde `lastUpdatedTimestamp` pase a `SYNC_ERROR/BATCHING_TO_MARKETPLACE`, aplicando la misma regla a las 29 filas bloqueadas?",
+  "rationale": "El filtro de outcomes es una corrección mecánica, pero el plazo terminal y la mutación de filas de producción definen la política ante retrasos reales del proveedor.",
   "options": [
     {
-      "title": "Caducidad explícita y recuperación controlada",
-      "body": "Definir un umbral observable, pasar las filas sin evidencia a `SYNC_ERROR` y ejecutar una recuperación acotada para la cohorte existente.",
+      "title": "Aprobar corte a 24 horas",
+      "body": "Tras 24 horas sin evidencia para ninguna fila pendiente, marcar el batch como recuperable y aplicar una recuperación auditada a las 29 filas actuales.",
       "recommended": true
     },
     {
-      "title": "Mantener BATCH indefinidamente",
-      "body": "Conservar el comportamiento actual evita falsos errores, pero mantiene el riesgo de reprocesado y filas bloqueadas.",
+      "title": "Mantener reintentos abiertos",
+      "body": "Corregir solo el falso progreso y conservar las filas en `BATCH`, aceptando que el cron siga reintentando hasta una decisión posterior.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Caducidad explícita y recuperación controlada",
-    "body": "Definir un umbral observable, pasar las filas sin evidencia a `SYNC_ERROR` y ejecutar una recuperación acotada para la cohorte existente.",
+    "title": "Aprobar corte a 24 horas",
+    "body": "Tras 24 horas sin evidencia para ninguna fila pendiente, marcar el batch como recuperable y aplicar una recuperación auditada a las 29 filas actuales.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "La corrección anterior y el historial de la misma ruta le sitúan como el mejor punto de partida técnico para concretar la política.",
+    "reason": "La PR anterior de este mismo flujo muestra conocimiento directo de la compatibilidad de reintentos que debe preservarse.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8736.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8736#issuecomment-5423965306",
-    "reviewedAt": "2026-08-26T10:22:45.143Z",
-    "mainSha": "20ad77036584248a632b29207330c839269659c7"
+    "reviewedAt": "2026-08-26T12:20:14.447Z",
+    "mainSha": "8e76b28155ea42e4fb55b7bcbddcf29550b86716"
   }
 }
