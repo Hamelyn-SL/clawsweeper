@@ -1,10 +1,10 @@
 {
   "status": "dry_run",
-  "generated_at": "2026-08-26T08:17:20.640Z",
+  "generated_at": "2026-08-26T08:38:27.954Z",
   "repo": "Hamelyn-SL/hamelyn-serverless",
   "repair_repo": "Hamelyn-SL/clawsweeper",
   "review_repo": "Hamelyn-SL/clawsweeper",
-  "since": "2026-08-26T05:17:17.781Z",
+  "since": "2026-08-26T05:38:23.848Z",
   "execute": false,
   "force_reprocess": false,
   "max_comments": 100,
@@ -12,8 +12,8 @@
   "comment_ids": [],
   "status_comment_id": null,
   "max_autoclose_targets": 8,
-  "scanned_comments": 39,
-  "commands_seen": 3,
+  "scanned_comments": 47,
+  "commands_seen": 2,
   "actionable": 0,
   "trusted_bots": [
     "clawsweeper[bot]",
@@ -109,63 +109,22 @@
       "actions": [],
       "author_repository_permission": "none",
       "reason": "GitHub lookup failed; will retry later: GraphQL: Resource not accessible by integration (repository.pullRequest.statusCheckRollup.nodes.0.commit.statusCheckRollup) Command failed: gh pr view 8721 --repo Hamelyn-SL/hamelyn-serverless --json additions,headRefName,headRefOid,author,"
-    },
-    {
-      "idempotency_key": "comment-router:Hamelyn-SL/hamelyn-serverless:8709:5410938928:2026-08-26T07:17:37Z:automerge",
-      "comment_id": "5410938928",
-      "comment_version_key": "5410938928:2026-08-26T07:17:37Z",
-      "comment_url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8709#issuecomment-5410938928",
-      "repo": "Hamelyn-SL/hamelyn-serverless",
-      "target_branch": null,
-      "issue_number": 8709,
-      "author": "clawsweeper-hamelyn[bot]",
-      "author_id": 301054459,
-      "author_association": "NONE",
-      "comment_created_at": "2026-08-25T13:16:53Z",
-      "comment_updated_at": "2026-08-26T07:17:37Z",
-      "status_comment_id": null,
-      "trigger": "mention",
-      "command": "automerge",
-      "intent": "automerge",
-      "autoclose_message": null,
-      "implementation_prompt": null,
-      "operator_override": null,
-      "trusted_bot": false,
-      "trusted_bot_author": null,
-      "automation_source": null,
-      "repair_reason": null,
-      "review_summary": "La rama añade el adaptador V2 de TodoColección, su ruta de cron, pruebas y documentación, y mueve el schedule `*/10` a `/api/todoColeccionV2`.\n\nReproducibility: Sí, por fuente: el diff de `vercel.json` mueve el único schedule `*/10` desde V1 a V2. La ejecución remota sigue pendiente de una cuenta y datos controlados.",
-      "review_followup": "- [P1] La discrepancia de schedule tiene una reparación mecánica y acotada, aunque la decisión de adelantar el switchover sigue requiriendo confirmación humana.",
-      "freeform_prompt": null,
-      "visual_lens": null,
-      "expected_head_sha": null,
-      "close_reason": null,
-      "close_confidence": null,
-      "close_action_taken": null,
-      "reviewed_at": null,
-      "expected_item_updated_at": null,
-      "expected_source_revision": null,
-      "finding_id": null,
-      "status": "waiting",
-      "actions": [],
-      "author_repository_permission": "none",
-      "reason": "GitHub lookup failed; will retry later: GraphQL: Resource not accessible by integration (repository.pullRequest.statusCheckRollup.nodes.0.commit.statusCheckRollup) Command failed: gh pr view 8709 --repo Hamelyn-SL/hamelyn-serverless --json additions,headRefName,headRefOid,author,"
     }
   ],
   "timings": {
-    "total_ms": 2859,
+    "total_ms": 4106,
     "phases": [
       {
         "name": "list_candidate_comments",
-        "ms": 1283
+        "ms": 2782
       },
       {
         "name": "prehydrate_comment_commands",
-        "ms": 1569
+        "ms": 1317
       },
       {
         "name": "classify_comment_commands",
-        "ms": 1
+        "ms": 0
       },
       {
         "name": "prehydrate_repair_loop_sweeps",
