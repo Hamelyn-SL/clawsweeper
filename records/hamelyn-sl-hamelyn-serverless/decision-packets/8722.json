@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-26T06:26:26.491Z",
+  "updatedAt": "2026-08-26T06:18:03Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8722,
+    "title": "Discogs: la rotación de anuncios reencola sin fin 11 listings que fallan y quema el 44% de cada pasada",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8722",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "triage:queued",
+      "P2",
+      "marketplace-v2"
+    ],
+    "createdAt": "2026-08-26T06:17:51Z",
+    "updatedAt": "2026-08-26T06:18:03Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué política debe aplicar Discogs tras fallos repetidos de rotación que no permiten confirmar el estado remoto?",
+  "rationale": "La política vigente prioriza no ocultar un anuncio potencialmente inseguro; introducir contador, cuarentena o backoff modifica ese contrato operativo y exige fijar umbral y visibilidad.",
+  "options": [
+    {
+      "title": "Cuarentena con revisión",
+      "body": "Mantener el primer fallo inseguro visible y apartar el listing tras N repeticiones, guardando motivo y señal de reconciliación.",
+      "recommended": true
+    },
+    {
+      "title": "Reintento ilimitado",
+      "body": "Conservar la política actual para maximizar la detección inmediata, aceptando que los errores persistentes consuman capacidad.",
+      "recommended": false
+    },
+    {
+      "title": "Avanzar siempre",
+      "body": "Actualizar la posición tras todo fallo para proteger el throughput, asumiendo el riesgo de ocultar estados remotos inciertos.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Cuarentena con revisión",
+    "body": "Mantener el primer fallo inseguro visible y apartar el listing tras N repeticiones, guardando motivo y señal de reconciliación.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Definió la semántica original de avance seguro y el flujo de rotación de Discogs.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8722.md",
+    "reviewedAt": "2026-08-26T06:26:26.491Z",
+    "mainSha": "5558d7011908b4ab4cf7a45c0e563e95a02f9f1e"
+  }
+}
