@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-26T14:12:52.117Z",
+  "updatedAt": "2026-08-26T14:09:01Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8755,
+    "title": "userFindByEmail scans the whole email index and resolves case-insensitive duplicates arbitrarily",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8755",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:infrastructure",
+      "reporter:javier",
+      "triage:queued",
+      "P1"
+    ],
+    "createdAt": "2026-08-26T14:06:29Z",
+    "updatedAt": "2026-08-26T14:09:01Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Qué cuenta debe conservarse y cómo se deben reasignar pedidos, carritos y notificaciones para cada colisión de email normalizado?",
+  "rationale": "La corrección de código es clara, pero la fusión o eliminación de identidades persistidas define una política de datos con efectos históricos.",
+  "options": [
+    {
+      "title": "Aprobar el playbook de deduplicación",
+      "body": "Validar una regla de cuenta canónica, reasignaciones y reversibilidad antes de ejecutar una migración controlada.",
+      "recommended": true
+    },
+    {
+      "title": "Corregir solo las nuevas escrituras",
+      "body": "Normalizar y hacer exactas las búsquedas sin tocar duplicados históricos, manteniendo una excepción temporal para las colisiones existentes.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener revisión manual por colisión",
+      "body": "Resolver cada grupo de cuentas duplicadas mediante revisión operativa antes de aplicar la normalización global.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar el playbook de deduplicación",
+    "body": "Validar una regla de cuenta canónica, reasignaciones y reversibilidad antes de ejecutar una migración controlada.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "Su historial reciente en el área de usuarios lo sitúa como la mejor ruta inicial para validar el cambio junto con quien aprobó el playbook de datos.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8755.md",
+    "reviewedAt": "2026-08-26T14:12:52.117Z",
+    "mainSha": "52a6b3e71466d85519c5e6a32b688ed3cbcb3eae"
+  }
+}
