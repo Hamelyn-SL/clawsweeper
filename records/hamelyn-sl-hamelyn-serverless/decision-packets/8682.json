@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-26T12:11:39.343Z",
-  "updatedAt": "2026-08-26T11:31:06Z",
+  "generatedAt": "2026-08-26T13:18:56.471Z",
+  "updatedAt": "2026-08-26T13:12:20Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,49 +14,48 @@
       "feature",
       "triage:blocked",
       "area:marketplace-sync",
+      "impact:other",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:linked-pr-open",
       "issue-rating: ➖ n/a",
       "mk:fnac",
-      "marketplace-v2",
-      "P2",
-      "impact:other",
-      "clawsweeper:linked-pr-open"
+      "marketplace-v2"
     ],
     "createdAt": "2026-08-25T09:36:44Z",
-    "updatedAt": "2026-08-26T11:31:06Z"
+    "updatedAt": "2026-08-26T13:12:20Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se autoriza mantener el switchover de `/api/fnac` a `/api/fnacV2` dentro de la misma entrega, condicionado a los gates de Atlas y a la prueba real contra Fnac?",
-  "rationale": "La guía permite el switchover en una migración solicitada, pero la activación modifica tráfico de producción y requiere credenciales, índices y validación operativa que el repositorio no puede demostrar.",
+  "question": "¿Debe esta entrega activar ya `/api/fnacV2` en el schedule productivo, o desplegar primero la ruta sin schedule hasta comprobar Atlas, backfill y E2E vivo?",
+  "rationale": "La elección cambia el tráfico de publicación, precio y retirada de Fnac y depende de recursos operativos que el código y las pruebas mockeadas no pueden validar.",
   "options": [
     {
-      "title": "Switchover condicionado",
-      "body": "Implementar V2 y mover el schedule solo después de acreditar índices Atlas, lock compartido, E2E batch y ticks completos.",
+      "title": "Separar activación del schedule",
+      "body": "Mantener la ruta V2 desplegada sin cron hasta acreditar índices, backfill, drenaje de batches y un ciclo vivo completo.",
       "recommended": true
     },
     {
-      "title": "Despliegue V2 sin schedule",
-      "body": "Publicar la ruta V2 como fallback manual y aplazar la activación programada a una entrega operativa posterior.",
+      "title": "Activar con gates verificados",
+      "body": "Autorizar el switchover solo después de registrar evidencia redacted de los gates de Atlas y del E2E contra Fnac.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Switchover condicionado",
-    "body": "Implementar V2 y mover el schedule solo después de acreditar índices Atlas, lock compartido, E2E batch y ticks completos.",
+    "title": "Separar activación del schedule",
+    "body": "Mantener la ruta V2 desplegada sin cron hasta acreditar índices, backfill, drenaje de batches y un ciclo vivo completo.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Su historial conecta el controlador Fnac actual con el endurecimiento del contrato V2 que condiciona el despliegue.",
-    "confidence": "medium"
+    "reason": "Es el asignado actual y su historial conecta el controlador Fnac existente, el contrato V2 y la PR de migración.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8682.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8682#issuecomment-5409154886",
-    "reviewedAt": "2026-08-26T12:11:39.343Z",
-    "mainSha": "8e76b28155ea42e4fb55b7bcbddcf29550b86716"
+    "reviewedAt": "2026-08-26T13:18:56.471Z",
+    "mainSha": "91d39388aad37d7cd6ab244ed9e87c9079da1abd"
   }
 }
