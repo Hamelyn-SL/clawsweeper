@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-26T08:25:06.158Z",
+  "updatedAt": "2026-08-26T08:16:09Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8728,
+    "title": "Validar por cubeta: el escaneo de gaveta dispara la validación de sus lotes completos",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8728",
+    "state": "open",
+    "labels": [
+      "app:admin",
+      "feature",
+      "triage:done",
+      "P2"
+    ],
+    "createdAt": "2026-08-26T08:09:30Z",
+    "updatedAt": "2026-08-26T08:16:09Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe el escaneo de cualquier gaveta en modo validación encolar automáticamente todos los lotes completos, sin confirmación adicional?",
+  "rationale": "La issue solicita explícitamente aplicar el cambio a todas las gavetas y eliminar una interacción existente; el código permite ambas rutas, pero la política operativa y el feedback de kiosco requieren aceptación humana.",
+  "options": [
+    {
+      "title": "Automatizar para todas las gavetas",
+      "body": "Centralizar el encolado tras cada escaneo y conservar `validate` únicamente como reintento manual.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener confirmación selectiva",
+      "body": "Conservar una confirmación explícita para flujos o tipos de gaveta que el equipo considere sensibles.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Automatizar para todas las gavetas",
+    "body": "Centralizar el encolado tras cada escaneo y conservar `validate` únicamente como reintento manual.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "Es la persona asignada y quien aportó la justificación operativa y los criterios de aceptación.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8728.md",
+    "reviewedAt": "2026-08-26T08:25:06.158Z",
+    "mainSha": "5558d7011908b4ab4cf7a45c0e563e95a02f9f1e"
+  }
+}

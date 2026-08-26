@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-25T12:04:49.740Z",
-  "updatedAt": "2026-08-25T11:57:08Z",
+  "generatedAt": "2026-08-26T08:25:50.205Z",
+  "updatedAt": "2026-08-26T08:15:26Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -24,38 +24,37 @@
       "marketplace-v2"
     ],
     "createdAt": "2026-08-25T09:36:12Z",
-    "updatedAt": "2026-08-25T11:57:08Z"
+    "updatedAt": "2026-08-26T08:15:26Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe MarketplaceManager V2 incorporar una capacidad de exportación declarativa FTPS para Alibris, o debe conservarse el exportador de inventario como flujo especializado fuera del manager?",
-  "rationale": "El contrato V2 actual orquesta operaciones por stock, mientras que Alibris publica snapshots masivos con protección de catálogo y cursores de recuperación propios.",
+  "question": "¿Debe `MarketplaceManager` admitir oficialmente integraciones solo-pedidos como Alibris, manteniendo el inventario en un flujo externo FTPS?",
+  "rationale": "El orquestador puede ejecutar `process` y `ship` sin capacidades de stock, pero el builder lo prohíbe mediante una invariante testeada; cambiarla define el contrato reusable de las migraciones F3.",
   "options": [
     {
-      "title": "Mantener el exportador especializado",
-      "body": "Conservar el flujo FTPS de inventario y limitar una futura migración V2 a pedidos y expediciones si aporta una reducción de complejidad verificable.",
+      "title": "Admitir perfil solo-pedidos",
+      "body": "Permitir explícitamente managers con `processOrders` y `setAsShipped` sin operaciones de stock, con test de construcción y cron V2 limitado a esas fases.",
       "recommended": true
     },
     {
-      "title": "Extender V2 para snapshots",
-      "body": "Diseñar una capacidad declarativa de exportación por fichero antes de migrar, preservando el purge, los umbrales, el cursor y la auditoría existentes.",
+      "title": "Mantener el contrato actual",
+      "body": "Conservar la obligación de inventario y dejar Alibris en el cron EDI Lite actual hasta disponer de una operación V2 real que no invada FTPS.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mantener el exportador especializado",
-    "body": "Conservar el flujo FTPS de inventario y limitar una futura migración V2 a pedidos y expediciones si aporta una reducción de complejidad verificable.",
+    "title": "Admitir perfil solo-pedidos",
+    "body": "Permitir explícitamente managers con `processOrders` y `setAsShipped` sin operaciones de stock, con test de construcción y cron V2 limitado a esas fases.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "Su historial conecta el endurecimiento del exportador Alibris con la base V2 recién integrada.",
+    "person": "MarcosTerroso",
+    "reason": "Introdujo la base V2 y el piloto que establecieron la invariante que ahora debe evolucionar o mantenerse.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8680.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8680#issuecomment-5409229633",
-    "reviewedAt": "2026-08-25T12:04:49.740Z",
-    "mainSha": "251c3a996909dfa5231f7a50261b746195d9177c"
+    "reviewedAt": "2026-08-26T08:25:50.205Z",
+    "mainSha": "5558d7011908b4ab4cf7a45c0e563e95a02f9f1e"
   }
 }
