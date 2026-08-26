@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-26T12:04:48.181Z",
+  "updatedAt": "2026-08-26T11:57:21Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8744,
+    "title": "Fnac: decidir archivado o reintento a muy largo plazo de los 722k 'Product not found' PERMANENT",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8744",
+    "state": "open",
+    "labels": [
+      "app:marketplace",
+      "question",
+      "triage:running",
+      "P3"
+    ],
+    "createdAt": "2026-08-26T11:22:40Z",
+    "updatedAt": "2026-08-26T11:57:21Z"
+  },
+  "lane": "product_direction",
+  "priority": "P3",
+  "question": "¿Debe Fnac conservar los errores `PERMANENT` activos, archivar los retirados sin consumidor y evitar reintentos, o financiar un reintento excepcional acotado?",
+  "rationale": "El código confirma la clasificación técnica, pero no puede determinar el valor comercial, la retención exigida ni la probabilidad útil de que FNAC incorpore nuevos EAN.",
+  "options": [
+    {
+      "title": "Archivado selectivo",
+      "body": "Conservar los `ACTIVE` para trazabilidad y reconciliar los `WITHDRAWN` inertes a un estado archivado con retención definida.",
+      "recommended": true
+    },
+    {
+      "title": "Reintento acotado",
+      "body": "Crear un job mensual o trimestral, con presupuesto y criterios de publicabilidad, solo para `ACTIVE` `Product not found`.",
+      "recommended": false
+    },
+    {
+      "title": "Statu quo documentado",
+      "body": "Mantener los registros sin mutarlos y documentar que no participan en recovery ordinario.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Archivado selectivo",
+    "body": "Conservar los `ACTIVE` para trazabilidad y reconciliar los `WITHDRAWN` inertes a un estado archivado con retención definida.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "La auditoría y los cambios recientes del área le sitúan mejor para concretar el impacto operativo antes de implementar.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8744.md",
+    "reviewedAt": "2026-08-26T12:04:48.181Z",
+    "mainSha": "8e76b28155ea42e4fb55b7bcbddcf29550b86716"
+  }
+}
