@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-26T12:04:48.181Z",
+  "generatedAt": "2026-08-26T12:05:04.701Z",
   "updatedAt": "2026-08-26T11:57:21Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -12,7 +12,7 @@
     "labels": [
       "app:marketplace",
       "question",
-      "triage:done",
+      "triage:running",
       "P3"
     ],
     "createdAt": "2026-08-26T11:22:40Z",
@@ -20,39 +20,38 @@
   },
   "lane": "product_direction",
   "priority": "P3",
-  "question": "¿Debe Fnac conservar los errores `PERMANENT` activos, archivar los retirados sin consumidor y evitar reintentos, o financiar un reintento excepcional acotado?",
-  "rationale": "El código confirma la clasificación técnica, pero no puede determinar el valor comercial, la retención exigida ni la probabilidad útil de que FNAC incorpore nuevos EAN.",
+  "question": "¿Qué política permanente debe aplicar Marketplace al pool FNAC `Product not found`: archivado conservador, sondeo limitado de EAN activos o statu quo documentado?",
+  "rationale": "El código confirma que el error no es recuperable por reenvío normal, pero no puede decidir el valor comercial, la retención de datos ni el presupuesto operativo de comprobar catálogos futuros.",
   "options": [
     {
-      "title": "Archivado selectivo",
-      "body": "Conservar los `ACTIVE` para trazabilidad y reconciliar los `WITHDRAWN` inertes a un estado archivado con retención definida.",
+      "title": "Política híbrida conservadora",
+      "body": "Tras https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8745, archivar retirados sin purgar espejos y usar un canario trimestral limitado para EAN activos.",
       "recommended": true
     },
     {
-      "title": "Reintento acotado",
-      "body": "Crear un job mensual o trimestral, con presupuesto y criterios de publicabilidad, solo para `ACTIVE` `Product not found`.",
+      "title": "Statu quo documentado",
+      "body": "Mantener todos los espejos terminales y registrar que no habrá sondeo hasta que aparezca una necesidad comercial verificable.",
       "recommended": false
     },
     {
-      "title": "Statu quo documentado",
-      "body": "Mantener los registros sin mutarlos y documentar que no participan en recovery ordinario.",
+      "title": "Reintento periódico amplio",
+      "body": "Crear un job mensual o trimestral para activos publicables, aceptando su coste y definiendo métricas de recuperación y un corte explícito.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Archivado selectivo",
-    "body": "Conservar los `ACTIVE` para trazabilidad y reconciliar los `WITHDRAWN` inertes a un estado archivado con retención definida.",
+    "title": "Política híbrida conservadora",
+    "body": "Tras https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8745, archivar retirados sin purgar espejos y usar un canario trimestral limitado para EAN activos.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "La auditoría y los cambios recientes del área le sitúan mejor para concretar el impacto operativo antes de implementar.",
-    "confidence": "medium"
+    "person": "MiguelHamelyn",
+    "reason": "Su historial concentra la clasificación y los límites de recuperación FNAC que condicionan las tres opciones.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8744.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8744#issuecomment-5425005324",
-    "reviewedAt": "2026-08-26T12:04:48.181Z",
+    "reviewedAt": "2026-08-26T12:05:04.701Z",
     "mainSha": "8e76b28155ea42e4fb55b7bcbddcf29550b86716"
   }
 }
