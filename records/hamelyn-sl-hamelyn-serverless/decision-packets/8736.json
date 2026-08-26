@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-26T10:22:45.143Z",
+  "updatedAt": "2026-08-26T10:18:34Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8736,
+    "title": "Fnac: 21 batches se reprocesan cada 5 minutos desde el 14-ago sin completar ningun stock",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8736",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "triage:queued",
+      "P2"
+    ],
+    "createdAt": "2026-08-26T10:18:17Z",
+    "updatedAt": "2026-08-26T10:18:34Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Qué límite de antigüedad o reintentos debe convertir un batch Fnac sin outcomes pendientes en `SYNC_ERROR`, y cómo se recuperará la cohorte ya bloqueada?",
+  "rationale": "El defecto de clasificación es mecánico, pero la transición terminal y la reparación de datos activos determinan el comportamiento operativo ante retrasos reales del proveedor.",
+  "options": [
+    {
+      "title": "Caducidad explícita y recuperación controlada",
+      "body": "Definir un umbral observable, pasar las filas sin evidencia a `SYNC_ERROR` y ejecutar una recuperación acotada para la cohorte existente.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener BATCH indefinidamente",
+      "body": "Conservar el comportamiento actual evita falsos errores, pero mantiene el riesgo de reprocesado y filas bloqueadas.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Caducidad explícita y recuperación controlada",
+    "body": "Definir un umbral observable, pasar las filas sin evidencia a `SYNC_ERROR` y ejecutar una recuperación acotada para la cohorte existente.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "La corrección anterior y el historial de la misma ruta le sitúan como el mejor punto de partida técnico para concretar la política.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8736.md",
+    "reviewedAt": "2026-08-26T10:22:45.143Z",
+    "mainSha": "20ad77036584248a632b29207330c839269659c7"
+  }
+}
