@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-26T11:16:36.293Z",
+  "updatedAt": "2026-08-26T11:10:50Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8737,
+    "title": "feat: migrate alibris to the marketplace manager",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8737",
+    "state": "open",
+    "labels": [
+      "size/XXL",
+      "P2",
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 compatibility",
+      "rating: 🥉 bronze"
+    ],
+    "createdAt": "2026-08-26T10:26:46Z",
+    "updatedAt": "2026-08-26T11:10:50Z",
+    "headSha": "355f8cc43d1ccc2569304e7a53922bafedb721cb"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe `MarketplaceManager` admitir permanentemente integraciones solo-pedidos mediante `withOrdersOnly()` y activar Alibris V2 tras la prueba operativa?",
+  "rationale": "La issue vinculada identificó esta ampliación del contrato como una decisión del equipo Marketplace y no hay aprobación humana visible en la discusión.",
+  "options": [
+    {
+      "title": "Aprobar contrato y exigir prueba",
+      "body": "Aceptar `withOrdersOnly()` como capacidad compartida, sin retirar el borrador ni activar el schedule hasta aportar evidencia real redactada.",
+      "recommended": true
+    },
+    {
+      "title": "Limitar la migración",
+      "body": "Mantener el flujo legacy y rediseñar la adaptación para evitar ampliar el contrato compartido.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar contrato y exigir prueba",
+    "body": "Aceptar `withOrdersOnly()` como capacidad compartida, sin retirar el borrador ni activar el schedule hasta aportar evidencia real redactada.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Su historial introdujo la base V2 que define el contrato a ampliar.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8737.md",
+    "reviewedAt": "2026-08-26T11:16:36.293Z",
+    "mainSha": "e23f711c24b52ebbe3ba97a7ad85eca846aad257"
+  }
+}

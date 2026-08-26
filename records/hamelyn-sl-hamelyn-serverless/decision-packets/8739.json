@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-26T11:06:52.763Z",
+  "generatedAt": "2026-08-26T11:16:25.809Z",
   "updatedAt": "2026-08-26T10:57:52Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -10,12 +10,7 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8739",
     "state": "open",
     "labels": [
-      "size/XXL",
-      "merge-risk: 🚨 compatibility",
-      "rating: 🥈 silver",
-      "status: 📣 needs proof",
-      "P2",
-      "merge-risk: 🚨 availability"
+      "size/XXL"
     ],
     "createdAt": "2026-08-26T10:51:48Z",
     "updatedAt": "2026-08-26T10:57:52Z",
@@ -23,34 +18,33 @@
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se aprueba que crear un stock por gaveta convierta la orden `REVIEWED` en parcialmente irreversible antes de su cierre y pago?",
-  "rationale": "La propuesta altera la frontera operativa entre inventario físico y cierre económico; las pruebas no pueden decidir si ese contrato y su recuperación por reescaneo son aceptables.",
+  "question": "¿Debe mantenerse sin excepción la nueva regla que impide reabrir, cancelar o fusionar un lote desde `REVIEWED` cuando ya existe algún `products[].stock`?",
+  "rationale": "La regla cambia las vías de recuperación de pedidos ya escaneados y el diff no aporta una alternativa operativa ni evidencia de actualización segura.",
   "options": [
     {
-      "title": "Aprobar el flujo por gaveta",
-      "body": "Aceptar la creación anticipada de stock y exigir prueba integrada más documentación de la recuperación de carros a medio validar.",
+      "title": "Mantener el invariante y documentar recuperación",
+      "body": "Aceptar la restricción y definir un procedimiento visible para los casos de corrección, cancelación o fusión posteriores al escaneo.",
       "recommended": true
     },
     {
-      "title": "Conservar el cierre por lote",
-      "body": "Mantener la creación de stocks al cierre y resolver los reintentos de Skypod sin introducir estados parciales persistentes.",
+      "title": "Conservar una recuperación controlada",
+      "body": "Introducir una vía explícita y auditada para deshacer o tratar pedidos escaneados antes de bloquear esas operaciones.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar el flujo por gaveta",
-    "body": "Aceptar la creación anticipada de stock y exigir prueba integrada más documentación de la recuperación de carros a medio validar.",
+    "title": "Mantener el invariante y documentar recuperación",
+    "body": "Aceptar la restricción y definir un procedimiento visible para los casos de corrección, cancelación o fusión posteriores al escaneo.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es revisor asignado y tiene historial reciente en las invariantes de stocks que condicionan esta decisión.",
+    "reason": "Su historial reciente cubre las invariantes de validación y está solicitado como revisor del cambio.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8739.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8739#issuecomment-5424448357",
-    "reviewedAt": "2026-08-26T11:06:52.763Z",
+    "reviewedAt": "2026-08-26T11:16:25.809Z",
     "mainSha": "e23f711c24b52ebbe3ba97a7ad85eca846aad257"
   }
 }
