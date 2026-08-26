@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-26T08:26:55.444Z",
-  "updatedAt": "2026-08-26T08:14:32Z",
+  "generatedAt": "2026-08-26T09:58:00.721Z",
+  "updatedAt": "2026-08-26T08:48:02Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,50 +13,54 @@
       "source:admin-panel",
       "app:ecommerce",
       "feature",
-      "triage:queued",
+      "triage:done",
       "reporter:victor",
       "P1",
-      "impact:ux-friction",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:source-repro",
+      "impact:ux-friction",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-08-26T08:14:18Z",
-    "updatedAt": "2026-08-26T08:14:32Z"
+    "updatedAt": "2026-08-26T08:48:02Z"
   },
   "lane": "product_direction",
-  "priority": "P1",
-  "question": "¿Las tres pestañas de la página de autor deben reutilizar exactamente el contrato de ordenación ya existente para categorías?",
-  "rationale": "La solicitud enumera las pestañas, pero no define con precisión la métrica de ventas, la fecha ni los filtros de precio que deben prevalecer.",
+  "priority": "P2",
+  "question": "¿Qué contrato HTTP y ciclo de regeneración deben aplicarse a los hubs de autor que bajen de tres ISBN activos?",
+  "rationale": "La petición exige retirada de URLs sin redirección, pero el App Router actual solo expresa el caso ausente mediante `notFound()` y la elección afecta SEO, cachés y sitemap.",
   "options": [
     {
-      "title": "Reutilizar el catálogo de categorías",
-      "body": "Aplicar al catálogo de autor las mismas ordenaciones, filtros y convenciones del catálogo general.",
+      "title": "Adoptar 410 con fuente única",
+      "body": "Definir una respuesta 410 compatible con App Router y regenerar sitemap y enlaces desde la misma elegibilidad.",
       "recommended": true
     },
     {
-      "title": "Definir ordenaciones específicas",
-      "body": "Acordar primero métricas y contratos propios para las tres pestañas de autor.",
+      "title": "Usar 404 consistente",
+      "body": "Mantener `notFound()` para autores no elegibles y documentar que la retirada no requiere semántica 410.",
+      "recommended": false
+    },
+    {
+      "title": "Separar la retirada del catálogo",
+      "body": "Lanzar primero el catálogo paginado y abrir una decisión SEO específica para la despublicación.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Reutilizar el catálogo de categorías",
-    "body": "Aplicar al catálogo de autor las mismas ordenaciones, filtros y convenciones del catálogo general.",
+    "title": "Adoptar 410 con fuente única",
+    "body": "Definir una respuesta 410 compatible con App Router y regenerar sitemap y enlaces desde la misma elegibilidad.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "Su historial reciente conecta directamente con la página y su comportamiento SEO.",
-    "confidence": "medium"
+    "person": "alexcanHamelyn",
+    "reason": "El rediseño fusionado de la ficha y sus datos de catálogo parte de su trabajo previo.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8729.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8729#issuecomment-5422668926",
-    "reviewedAt": "2026-08-26T08:26:55.444Z",
-    "mainSha": "5558d7011908b4ab4cf7a45c0e563e95a02f9f1e"
+    "reviewedAt": "2026-08-26T09:58:00.721Z",
+    "mainSha": "82bdece35dd3b3ed50b5a02eecae0fdf2e9c684b"
   }
 }
