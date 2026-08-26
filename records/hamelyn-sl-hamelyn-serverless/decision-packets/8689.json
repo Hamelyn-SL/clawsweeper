@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-25T14:11:57.774Z",
-  "updatedAt": "2026-08-25T13:58:52Z",
+  "generatedAt": "2026-08-26T10:09:02.994Z",
+  "updatedAt": "2026-08-26T09:53:00Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,51 +11,50 @@
     "state": "open",
     "labels": [
       "size/XXL",
-      "rating: 🥈 silver",
-      "status: 📣 needs proof",
       "P2",
+      "status: 📣 needs proof",
       "merge-risk: 🚨 compatibility",
-      "merge-risk: 🚨 other"
+      "merge-risk: 🚨 other",
+      "rating: 🥈 silver"
     ],
     "createdAt": "2026-08-25T10:21:36Z",
-    "updatedAt": "2026-08-25T13:58:52Z",
-    "headSha": "67a3caf788ebe7acbb6f83b82e2998e1574afdd6"
+    "updatedAt": "2026-08-26T09:53:00Z",
+    "headSha": "9c30e923ba69d34cd5d9550c38293c84e55b00a7"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe adoptarse ahora `DashboardDef` como arquitectura común y qué PR debe establecer primero el shell compartido frente a https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8599?",
-  "rationale": "La corrección de URL es mecánica, pero decidir la arquitectura dominante y el orden de integración entre dos refactors solapados requiere criterio del equipo.",
+  "question": "¿Debe adoptarse `DashboardDef` junto con la auditoría de métricas en esta misma integración, y en qué orden debe aterrizar respecto a https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8599?",
+  "rationale": "El arreglo de URL es mecánico, pero elegir la arquitectura dominante y aceptar cambios semánticos de analítica requiere criterio operativo del equipo.",
   "options": [
     {
-      "title": "Aprobar y coordinar la integración",
-      "body": "Corregir la navegación, aportar prueba real y decidir explícitamente el orden de aterrizaje de ambos refactors.",
+      "title": "Aprobar una integración coordinada",
+      "body": "Corregir los bloqueos, publicar prueba real y acordar explícitamente qué PR establece primero shell y primitivas compartidas.",
       "recommended": true
     },
     {
-      "title": "Aterrizar primero la deduplicación",
-      "body": "Integrar antes el refactor compartido y rehacer esta rama sobre esa base para evitar capas paralelas.",
+      "title": "Aterrizar antes la deduplicación",
+      "body": "Integrar primero https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8599 y rebasar esta propuesta sobre las abstracciones resultantes.",
       "recommended": false
     },
     {
-      "title": "Reducir el alcance",
-      "body": "Separar tabs y navegación de la migración completa de charts para validar la nueva arquitectura en pasos más pequeños.",
+      "title": "Separar arquitectura y métricas",
+      "body": "Dividir la migración de tabs/configuración de los cambios de consultas y definiciones operativas para reducir el riesgo de validación.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar y coordinar la integración",
-    "body": "Corregir la navegación, aportar prueba real y decidir explícitamente el orden de aterrizaje de ambos refactors.",
+    "title": "Aprobar una integración coordinada",
+    "body": "Corregir los bloqueos, publicar prueba real y acordar explícitamente qué PR establece primero shell y primitivas compartidas.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "PabloMoran34",
-    "reason": "Su trabajo reciente integra el lote de logística sobre esta base y le sitúa cerca de la decisión entre ambas arquitecturas.",
-    "confidence": "medium"
+    "reason": "Su historial reciente cubre los endpoints, Supply y la ampliación analítica que esta rama incorpora.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8689.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8689#issuecomment-5409158999",
-    "reviewedAt": "2026-08-25T14:11:57.774Z",
-    "mainSha": "bf619d23e24d4c32e99302617faa174eeb0de787"
+    "reviewedAt": "2026-08-26T10:09:02.994Z",
+    "mainSha": "82bdece35dd3b3ed50b5a02eecae0fdf2e9c684b"
   }
 }
