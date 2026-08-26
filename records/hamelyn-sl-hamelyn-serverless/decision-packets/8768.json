@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-26T16:18:33.422Z",
+  "updatedAt": "2026-08-26T16:12:39Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8768,
+    "title": "Añadir auditoría incremental de código muerto en pre-PR y CI",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8768",
+    "state": "open",
+    "labels": [
+      "source:admin-panel",
+      "app:infrastructure",
+      "feature",
+      "triage:running",
+      "P2",
+      "reporter:JavierHamelyn",
+      "origin:dev"
+    ],
+    "createdAt": "2026-08-26T15:23:20Z",
+    "updatedAt": "2026-08-26T16:12:39Z"
+  },
+  "lane": "security_boundary",
+  "priority": "P2",
+  "question": "¿Qué contrato de seguridad y severidad debe aprobarse para que Fallow pueda bloquear hallazgos nuevos sin ejecutar código de PR con permisos de comentario?",
+  "rationale": "La solicitud fija el objetivo, pero no el límite operativo entre ejecución no confiable, transferencia de resultados y política de fallo que afectará a todos los PRs.",
+  "options": [
+    {
+      "title": "Dos flujos aislados",
+      "body": "Ejecutar Fallow con `contents: read`, publicar un artefacto validado y actualizar el comentario desde un flujo basado en la rama base; bloquear solo resultados aprobados de alta confianza.",
+      "recommended": true
+    },
+    {
+      "title": "Modo informativo inicial",
+      "body": "Publicar el informe incremental sin bloquear durante una fase de calibración antes de convertir hallazgos nuevos en gate.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener auditoría manual",
+      "body": "Conservar `ts-prune` como herramienta local hasta disponer de una política y un diseño de ejecución aislada.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Dos flujos aislados",
+    "body": "Ejecutar Fallow con `contents: read`, publicar un artefacto validado y actualizar el comentario desde un flujo basado en la rama base; bloquear solo resultados aprobados de alta confianza.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es el asignado actual y ha cambiado recientemente el gate central de CI.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8768.md",
+    "reviewedAt": "2026-08-26T16:18:33.422Z",
+    "mainSha": "21009d2f060033e60934ea16627dd1306c129b97"
+  }
+}
