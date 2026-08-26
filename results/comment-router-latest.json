@@ -1,10 +1,10 @@
 {
   "status": "dry_run",
-  "generated_at": "2026-08-26T14:55:13.390Z",
+  "generated_at": "2026-08-26T15:51:00.869Z",
   "repo": "Hamelyn-SL/hamelyn-serverless",
   "repair_repo": "Hamelyn-SL/clawsweeper",
   "review_repo": "Hamelyn-SL/clawsweeper",
-  "since": "2026-08-26T11:55:10.718Z",
+  "since": "2026-08-26T12:50:57.748Z",
   "execute": false,
   "force_reprocess": false,
   "max_comments": 100,
@@ -12,7 +12,7 @@
   "comment_ids": [],
   "status_comment_id": null,
   "max_autoclose_targets": 8,
-  "scanned_comments": 90,
+  "scanned_comments": 64,
   "commands_seen": 5,
   "actionable": 0,
   "trusted_bots": [
@@ -228,22 +228,125 @@
       "expected_item_updated_at": null,
       "expected_source_revision": null,
       "finding_id": null,
-      "status": "waiting",
+      "status": "ignored",
       "actions": [],
       "author_repository_permission": "none",
-      "reason": "GitHub lookup failed; will retry later: GraphQL: Resource not accessible by integration (repository.pullRequest.statusCheckRollup.nodes.0.commit.statusCheckRollup) Command failed: gh pr view 8675 --repo Hamelyn-SL/hamelyn-serverless --json additions,headRefName,headRefOid,author,"
+      "target": {
+        "kind": "pull_request",
+        "title": "fix: filter overpriced products from homepage",
+        "body": "<!-- hamelyn-issue-triage-pr:v1 actor=issue-triage kind=pull-request issue=8674 run=20260825T085708Z -->\r\n\r\n## Qué hace este PR\r\n\r\nExcluye de los grills y del carrusel principal de la home los productos cuyo precio mínimo de segunda mano no es competitivo frente al precio nuevo, sin cambiar el comportamiento del resto de consumidores de productos populares.\r\n\r\n## Cambios principales\r\n\r\n- Añade una guarda opcional que compara en céntimos el mínimo de los estados usados `0`-`3` después del recargo regional: exige que sea menor que el precio nuevo recargado o, si no hay precio nuevo válido, que no supere 30 EUR.\r\n- Activa la guarda únicamente desde la home y amplía solo en ese modo el pool inicial de 15 a 50 candidatos antes del muestreo final de 10, excluyendo en cada lote los IDs ya vistos.\r\n- Conserva el pool ya reunido cuando un lote posterior agota el timeout, en vez de devolver la home vacía.\r\n- Pre-filtra en Mongo con `buildHomePriceGuardFilter`, que compara `priceSell` menos `ECOMMERCE_BASE_PRICE_DISCOUNT` (el precio de escaparate) contra `priceNew`. Es solo un descarte barato: la decisión final la sigue tomando `meetsHomePriceGuard` en memoria, porque el precio mostrado sale de las disponibilidades vivas de `stocks` y puede discrepar de `priceSell`.\r\n- No añade índice: la query la sirve `featuredEcommerce_1_normalizedCategory_1_productType_1_activeUnits_1`, que ya existía. Un índice terminado en `priceSell` no vale aquí, porque la query usa `find().limit()` sin `sort` y el planner lo recorrería en orden ascendente de precio, dejando el pool de la home reducido a los productos más baratos.\r\n- Mueve la traza `BL-ecommerce-home-01` al call site por request (`findPopularProductsServerSide`). Estaba en la query del repositorio, así que el batching la convertía en una entrada por lote en vez de por request. Ponerla en `getPopularProductsPoolData` tampoco servía: la ruta de recomendados llega a ese helper desde dentro de un `products.map`, y eso cambiaba la huella de una violación que ya estaba en la baseline del guardian. La ruta de recomendados conserva su propia traza `BL-ecommerce-recommendations-07`, y se retira la entrada de baseline que queda obsoleta.\r\n- Añade `test:infra` en `@hamelyn/core` y su paso en CI: los tests de `src/infrastructure` no los ejecutaba ningún script, así que el test del filtro no habría corrido nunca.\r\n\r\n## Cómo probarlo\r\n\r\nComprobado contra el catálogo de producción, con el índice `idx_ecommerce_home_price_guard` ya retirado de Atlas:\r\n\r\n| productType | plan elegido | docs examinados | ms | precios distintos en los 15 primeros |\r\n|---|---|---|---|---|\r\n| `book` | `featuredEcommerce_1_normalizedCategory_1_productType_1_activeUnits_1` | 49 | 4 | 14 / 15 |\r\n| `movie` | idem | 17 | 1 | 11 / 15 |\r\n| `music` | idem | 17 | 1 | 10 / 15 |\r\n\r\nCon el índice terminado en `priceSell` el mismo caso de `book` devolvía **1 precio distinto de 15** (los quince a 5,99 EUR).\r\n\r\nSelectividad del pre-filtro en `book`: pasan 870 candidatos con el descuento aplicado frente a 856 comparando `priceSell` en bruto; la diferencia son exactamente los 14 productos de la banda `priceNew <= priceSell < priceNew + 0,20`, que la guarda acepta y el pre-filtro anterior descartaba.\r\n\r\nChecks locales:\r\n\r\n- `pnpm --filter @hamelyn/core test:infra`: 232 pass, 0 fail.\r\n- `pnpm --filter @hamelyn/core exec tsc --noEmit`: correcto.\r\n- `pnpm --filter ecommerce exec next typegen && tsc --noEmit`: correcto.\r\n- `biome check` sobre los archivos tocados: correcto.\r\n\r\n## Riesgos / límites\r\n\r\n- El índice `idx_ecommerce_home_price_guard` estaba creado a mano en Atlas (`autoIndex` está en `false`) y ya se ha borrado, porque mientras existiera el planner lo seguiría eligiendo. Si hubiera que revertir: claves `{ productType: 1, hasBunnyImage: 1, featuredEcommerce: 1, priceSell: 1 }` con `partialFilterExpression: { activeUnits: { $gt: 0 } }`.\r\n- No se ha comprobado visualmente la home renderizada ni la conversión de divisa en tienda no-ES; la verificación es a nivel de query y de la función de guarda.\r\n\r\nCloses #8674\r\nIssue: https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8674\r\n\r\n<!-- CURSOR_SUMMARY -->\r\n---\r\n\r\n> [!NOTE]\r\n> **Medium Risk**\r\n> Changes homepage merchandising and product query paths (batched Mongo reads + price logic); scope is limited to home when the flag is set, but wrong guard logic could empty sections or show uncompetitive prices.\r\n> \r\n> **Overview**\r\n> Adds an **optional home-only price guard** so homepage carousels and grills stop surfacing used offers that are not price-competitive.\r\n> \r\n> **Home activation:** `HomePage` passes `enforceHomePriceGuard: true` through `findPopularProductsServerSide` → `getPopularProductsData` → `getPopularProductsPoolData`. Other popular-product consumers are unchanged (single batch of 15, no guard).\r\n> \r\n> **Rules (`meetsHomePriceGuard`):** After regional shipping surplus, the minimum valid used price across conditions `0`–`3` must be **strictly below** `priceNew + surplus`, or if there is no valid `priceNew`, the minimum must be **≤ 30 EUR**. Failures clear availability so the product drops out of the pool.\r\n> \r\n> **Fetching:** With the guard on, the pool loops in batches of 15 (up to 50 candidates), excluding already-seen IDs, until 10 valid products or exhaustion. Timeouts can return partial batches when some products were already loaded.\r\n> \r\n> **Mongo pre-filter:** `queryPopularProductsEcommerce` gains `excludedProductIds` and `homePriceGuardMaxWithoutNew`; `buildHomePriceGuardFilter` approximates the guard on `priceSell` / `priceNew` (final decision stays in app code). `getPopularProductsEcommerce` remains as a thin wrapper with BL logging.\r\n> \r\n> **CI / tests:** New `@hamelyn/core` `test:infra` script and CI step; unit test for `buildHomePriceGuardFilter`. Internal docs updated for home selection and indexing notes.\r\n> \r\n> <sup>Reviewed by [Cursor Bugbot](https://cursor.com/bugbot) for commit 04875bd7be8e178cd0411ad536e0cdcaede18fa3. Configure [here](https://www.cursor.com/dashboard/bugbot).</sup>\r\n<!-- /CURSOR_SUMMARY -->\r\n\r\n",
+        "branch": "bugfix/issue-8674-home-price-guard",
+        "head_sha": "3203b36c62184bd11a6a70015dde466c7d446d12",
+        "author": "hamelyndev",
+        "labels": [
+          "size/L",
+          "P2",
+          "status: 📣 needs proof",
+          "merge-risk: 🚨 availability",
+          "proof: 📸 screenshot",
+          "rating: 🥉 bronze"
+        ],
+        "files": [
+          {
+            "path": ".github/bl-guardian-baseline.json",
+            "additions": 0,
+            "deletions": 1,
+            "changeType": "MODIFIED"
+          },
+          {
+            "path": ".github/workflows/ci.yml",
+            "additions": 6,
+            "deletions": 0,
+            "changeType": "MODIFIED"
+          },
+          {
+            "path": "apps/hamelyn-ecommerce/components/home/HomePage.tsx",
+            "additions": 4,
+            "deletions": 1,
+            "changeType": "MODIFIED"
+          },
+          {
+            "path": "apps/hamelyn-ecommerce/controllers/product/popular.ts",
+            "additions": 198,
+            "deletions": 83,
+            "changeType": "MODIFIED"
+          },
+          {
+            "path": "apps/hamelyn-ecommerce/libs/products.ts",
+            "additions": 4,
+            "deletions": 1,
+            "changeType": "MODIFIED"
+          },
+          {
+            "path": "packages/core/package.json",
+            "additions": 1,
+            "deletions": 0,
+            "changeType": "MODIFIED"
+          },
+          {
+            "path": "packages/core/src/infrastructure/database/repositories/product.repository/queries.test.ts",
+            "additions": 40,
+            "deletions": 0,
+            "changeType": "ADDED"
+          },
+          {
+            "path": "packages/core/src/infrastructure/database/repositories/product.repository/queries.ts",
+            "additions": 81,
+            "deletions": 18,
+            "changeType": "MODIFIED"
+          },
+          {
+            "path": "skills/hamelyn-knowledge/catalog/06-data-model.md",
+            "additions": 1,
+            "deletions": 0,
+            "changeType": "MODIFIED"
+          },
+          {
+            "path": "skills/hamelyn-knowledge/ecommerce/01-store-architecture.md",
+            "additions": 15,
+            "deletions": 0,
+            "changeType": "MODIFIED"
+          }
+        ],
+        "changedFiles": 10,
+        "additions": 350,
+        "deletions": 104,
+        "is_clawsweeper_pr": false,
+        "cluster_id": null,
+        "job_path": null,
+        "source_job_path": null,
+        "has_automerge_job": false,
+        "automerge_cluster_id": "automerge-hamelyn-sl-hamelyn-serverless-8675",
+        "automerge_job_path": "jobs/Hamelyn-SL/inbox/automerge-hamelyn-sl-hamelyn-serverless-8675.md",
+        "mode": "autonomous",
+        "mergeable": "MERGEABLE",
+        "merge_state_status": "BLOCKED",
+        "review_decision": "REVIEW_REQUIRED",
+        "checks": {
+          "total": 0,
+          "gatingTotal": 0,
+          "counts": {},
+          "blockers": [],
+          "pending": [],
+          "terminalBlockers": [],
+          "externalBlockers": []
+        }
+      },
+      "maintainer_authorized": false,
+      "author_readonly_authorized": false,
+      "reason": "author association NONE and repository permission none are not allowed"
     }
   ],
   "timings": {
-    "total_ms": 2671,
+    "total_ms": 3121,
     "phases": [
       {
         "name": "list_candidate_comments",
-        "ms": 1253
+        "ms": 1527
       },
       {
         "name": "prehydrate_comment_commands",
-        "ms": 1412
+        "ms": 1584
       },
       {
         "name": "classify_comment_commands",
