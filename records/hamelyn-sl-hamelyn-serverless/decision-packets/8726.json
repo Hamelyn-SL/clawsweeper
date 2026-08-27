@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-27T07:12:42.336Z",
-  "updatedAt": "2026-08-27T07:04:18Z",
+  "generatedAt": "2026-08-27T07:31:59.766Z",
+  "updatedAt": "2026-08-27T07:25:31Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,52 +13,46 @@
       "bug",
       "app:admin",
       "triage:done",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:source-repro",
-      "clawsweeper:linked-pr-open",
-      "issue-rating: 💎 diamond",
       "P1",
       "impact:other",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:source-repro",
+      "clawsweeper:linked-pr-open",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-08-26T07:56:18Z",
-    "updatedAt": "2026-08-27T07:04:18Z"
+    "updatedAt": "2026-08-27T07:25:31Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe la resolución exigir ahora la detección de CP con formato válido pero incoherente, como `21030`, o aceptarse el filtrado sintáctico como una primera fase separada?",
-  "rationale": "La PR vinculada resuelve el formato y los CP malformados, pero declara que no cubre el ejemplo operativo central de la incidencia; escoger la fuente y regla de coherencia excede una corrección mecánica.",
+  "question": "¿Debe el gate bloquear también CP españoles con sintaxis válida cuando no son coherentes con provincia o municipio, incluido el caso `21030`?",
+  "rationale": "El PR enlazado resuelve el formato y los CP estructuralmente inválidos, pero declara expresamente que no cubre el incidente de CP válido pero inexistente; la fuente de verdad aceptable requiere criterio operativo.",
   "options": [
     {
-      "title": "Exigir coherencia antes de cerrar",
-      "body": "Ampliar la PR o sustituirla por una solución que detecte el CP válido pero incoherente y mantenga la misma partición en todos los ficheros.",
+      "title": "Exigir coherencia geográfica",
+      "body": "Completar el PR con una regla local y explicable de CP/provincia/municipio antes de considerarlo solución de la incidencia.",
       "recommended": true
     },
     {
-      "title": "Dividir el alcance explícitamente",
-      "body": "Integrar el filtrado sintáctico como mitigación y abrir una incidencia canónica separada para la coherencia CP-provincia-municipio.",
-      "recommended": false
-    },
-    {
-      "title": "Revisar la regla operativa",
-      "body": "Cambiar el contrato de la incidencia si Correos acepta una validación sintáctica suficiente y el caso `21030` debe tratarse fuera del generador.",
+      "title": "Aceptar validación sintáctica",
+      "body": "Limitar el alcance al formato nacional y documentar que Correos puede seguir rechazar CP formalmente válidos.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Exigir coherencia antes de cerrar",
-    "body": "Ampliar la PR o sustituirla por una solución que detecte el CP válido pero incoherente y mantenga la misma partición en todos los ficheros.",
+    "title": "Exigir coherencia geográfica",
+    "body": "Completar el PR con una regla local y explicable de CP/provincia/municipio antes de considerarlo solución de la incidencia.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Introdujo el comportamiento actual del generador y tiene la señal histórica más directa sobre el cambio de contrato.",
+    "reason": "El historial lo vincula al flujo original de generación Postlibri y al normalizador usado por la carga de etiquetas.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8726.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8726#issuecomment-5422479513",
-    "reviewedAt": "2026-08-27T07:12:42.336Z",
+    "reviewedAt": "2026-08-27T07:31:59.766Z",
     "mainSha": "09771789563a741f93ea1c87cd388aae69877178"
   }
 }
