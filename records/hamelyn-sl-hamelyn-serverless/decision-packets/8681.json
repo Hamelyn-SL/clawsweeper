@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-27T07:19:31.858Z",
-  "updatedAt": "2026-08-27T07:13:33Z",
+  "generatedAt": "2026-08-27T08:11:35.124Z",
+  "updatedAt": "2026-08-27T08:05:49Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,49 +14,47 @@
       "feature",
       "triage:done",
       "area:marketplace-sync",
+      "impact:other",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-product-decision",
+      "P2",
       "clawsweeper:linked-pr-open",
       "issue-rating: ➖ n/a",
       "mk:ebay",
-      "marketplace-v2",
-      "P2",
-      "impact:other",
-      "clawsweeper:needs-maintainer-review"
+      "marketplace-v2"
     ],
     "createdAt": "2026-08-25T09:36:32Z",
-    "updatedAt": "2026-08-27T07:13:33Z"
+    "updatedAt": "2026-08-27T08:05:49Z"
   },
-  "lane": "product_direction",
+  "lane": "release_inclusion",
   "priority": "P2",
-  "question": "¿Debe autorizarse el switchover de eBay ES al cron V2 en esta entrega, manteniendo el drenaje LMS separado y el legacy como fallback manual?",
-  "rationale": "La elección determina el comportamiento operativo de producción y la convivencia de rutas; los checks locales no sustituyen la aprobación del despliegue ni los gates manuales de Atlas.",
+  "question": "¿Se autoriza el switchover del schedule de eBay ES solo después de resolver los cambios solicitados y publicar los gates Atlas, E2E mutador y dos ticks V2?",
+  "rationale": "La decisión activa un flujo de producción y depende de evidencia operativa que no puede establecerse mediante inspección estática.",
   "options": [
     {
-      "title": "Autorizar tras los gates operativos",
-      "body": "Mantener el alcance actual y permitir el schedule sólo cuando índices, E2E mutador y dos ticks completos estén documentados.",
+      "title": "Exigir todos los gates",
+      "body": "Mantener el schedule legacy hasta que la PR corrija los hallazgos y aporte evidencia operativa redactada.",
       "recommended": true
     },
     {
-      "title": "Separar el switchover",
-      "body": "Fusionar únicamente la capa V2 y dejar el cambio de schedule para una PR posterior con observación de producción.",
+      "title": "Separar el schedule",
+      "body": "Integrar el código V2 sin programarlo y activar el switchover en una entrega posterior validada.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Autorizar tras los gates operativos",
-    "body": "Mantener el alcance actual y permitir el schedule sólo cuando índices, E2E mutador y dos ticks completos estén documentados.",
+    "title": "Exigir todos los gates",
+    "body": "Mantener el schedule legacy hasta que la PR corrija los hallazgos y aporte evidencia operativa redactada.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Su historial reciente cubre las invariantes LMS que condicionan la seguridad del switchover.",
-    "confidence": "medium"
+    "person": "MiguelHamelyn",
+    "reason": "Combina trabajo reciente sobre el contrato V2 con una solicitud de cambios activa en la PR vinculada.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8681.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8681#issuecomment-5409229838",
-    "reviewedAt": "2026-08-27T07:19:31.858Z",
+    "reviewedAt": "2026-08-27T08:11:35.124Z",
     "mainSha": "09771789563a741f93ea1c87cd388aae69877178"
   }
 }
