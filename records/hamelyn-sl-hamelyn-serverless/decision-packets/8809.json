@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-27T13:01:00.847Z",
-  "updatedAt": "2026-08-27T12:55:13Z",
+  "generatedAt": "2026-08-27T13:39:14.536Z",
+  "updatedAt": "2026-08-27T13:02:25Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,51 +11,45 @@
     "state": "open",
     "labels": [
       "size/XXL",
-      "rating: 🥉 bronze",
-      "status: 📣 needs proof",
       "P1",
+      "status: 📣 needs proof",
       "merge-risk: 🚨 compatibility",
-      "merge-risk: 🚨 availability"
+      "merge-risk: 🚨 availability",
+      "rating: 🥉 bronze"
     ],
     "createdAt": "2026-08-27T11:36:04Z",
-    "updatedAt": "2026-08-27T12:55:13Z",
+    "updatedAt": "2026-08-27T13:02:25Z",
     "headSha": "ad3f7bb8511afec398dbca46d14491e9e16ce2d0"
   },
   "lane": "release_inclusion",
   "priority": "P1",
-  "question": "¿Se autoriza el switchover de los tres cron V2 en este despliegue tras completar y registrar los índices y backfill de producción?",
-  "rationale": "El PR activa tráfico productivo sobre datos legacy cuya migración y volumen no están verificados; esa aceptación operativa no puede inferirse del código.",
+  "question": "¿Se debe separar el switchover de schedules de esta migración hasta completar en producción los índices, el backfill y una prueba real por cada tienda?",
+  "rationale": "La rama cambia tráfico de producción para tres integraciones y los prerrequisitos documentados no se pueden demostrar ni ejecutar de forma segura desde la revisión del código.",
   "options": [
     {
-      "title": "Completar gates y conservar el switchover",
-      "body": "Ejecutar y verificar el backfill e índices, corregir P41 y adjuntar prueba real antes de fusionar el schedule V2.",
+      "title": "Separar la activación",
+      "body": "Mantener los schedules legacy en este PR o en un PR posterior hasta completar los gates y aportar evidencia operativa por tienda.",
       "recommended": true
     },
     {
-      "title": "Separar el corte de schedules",
-      "body": "Fusionar únicamente la implementación V2 tras corregirla y dejar las rutas legacy programadas hasta una ventana operativa aprobada.",
-      "recommended": false
-    },
-    {
-      "title": "Pausar la migración",
-      "body": "No activar esta familia hasta contar con una estrategia aprobada para las filas legacy y sus operaciones pendientes.",
+      "title": "Autorizar activación controlada",
+      "body": "Aceptar el cambio de schedules solo tras confirmar los índices, el backfill y los ticks reales con monitorización y reversión preparada.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Completar gates y conservar el switchover",
-    "body": "Ejecutar y verificar el backfill e índices, corregir P41 y adjuntar prueba real antes de fusionar el schedule V2.",
+    "title": "Separar la activación",
+    "body": "Mantener los schedules legacy en este PR o en un PR posterior hasta completar los gates y aportar evidencia operativa por tienda.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "La issue canónica define explícitamente el switchover y MarcosTerroso es además uno de los revisores solicitados.",
+    "reason": "Su historial conecta directamente el contrato `MarketplaceManager` y la secuenciación actual de fases V2.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8809.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8809#issuecomment-5439436816",
-    "reviewedAt": "2026-08-27T13:01:00.847Z",
-    "mainSha": "bc255b52de9a2f1775b875f5ad8ea5ad6057268e"
+    "reviewedAt": "2026-08-27T13:39:14.536Z",
+    "mainSha": "7af611302ff3b8e05c5c121b223fa36fcef5d851"
   }
 }

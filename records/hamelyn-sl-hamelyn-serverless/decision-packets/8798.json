@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-27T13:41:16.970Z",
+  "updatedAt": "2026-08-27T13:15:24Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8798,
+    "title": "feat: migrate mercadolibre to marketplace manager v2",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8798",
+    "state": "open",
+    "labels": [
+      "size/XXL"
+    ],
+    "createdAt": "2026-08-27T09:04:38Z",
+    "updatedAt": "2026-08-27T13:15:24Z",
+    "headSha": "416289c84b8416474459892b120b6d8b47645660"
+  },
+  "lane": "release_inclusion",
+  "priority": "P1",
+  "question": "¿Debe activarse el switchover de MercadoLibre en esta entrega antes de resolver los riesgos de retirada, lock e índice y completar la prueba real?",
+  "rationale": "La decisión combina cambio operativo de cron, capacidad de Atlas y compatibilidad con listings existentes; no puede resolverse con pruebas unitarias únicamente.",
+  "options": [
+    {
+      "title": "Aplazar el switchover",
+      "body": "Mantener el schedule legacy hasta corregir los bloqueantes, desplegar el índice acordado y publicar evidencia redaccionada del flujo V2.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar el riesgo operativo",
+      "body": "Activar V2 con los riesgos documentados y un plan explícito de monitorización y reversión manual.",
+      "recommended": false
+    },
+    {
+      "title": "Separar la migración",
+      "body": "Aterrizar únicamente las piezas no programadas y abrir una PR posterior para el cambio de cron una vez completados los gates.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aplazar el switchover",
+    "body": "Mantener el schedule legacy hasta corregir los bloqueantes, desplegar el índice acordado y publicar evidencia redaccionada del flujo V2.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Su historial reciente cubre los contratos compartidos de retirada, locks y presupuestos que determinan la seguridad del cambio.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8798.md",
+    "reviewedAt": "2026-08-27T13:41:16.970Z",
+    "mainSha": "7af611302ff3b8e05c5c121b223fa36fcef5d851"
+  }
+}
