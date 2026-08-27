@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-27T13:32:42.459Z",
+  "updatedAt": "2026-08-27T13:26:13Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8817,
+    "title": "Supply: la app móvil no puede añadir productos al carrito tras el cutoff legacy",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8817",
+    "state": "open",
+    "labels": [
+      "bug",
+      "source:admin-panel",
+      "app:supply",
+      "triage:queued",
+      "reporter:alejandrodiaz",
+      "P1"
+    ],
+    "createdAt": "2026-08-27T13:03:45Z",
+    "updatedAt": "2026-08-27T13:26:13Z"
+  },
+  "lane": "release_inclusion",
+  "priority": "P1",
+  "question": "¿Se aprueba liberar una build de Supply con el capability flow actual y qué política de recuperación se aplicará a los carritos protegidos creados por `2.6.04`?",
+  "rationale": "El código de `dev` cubre el contrato nuevo, pero la resolución depende de distribución móvil, validación en dispositivos reales y una decisión explícita sobre datos de carritos afectados.",
+  "options": [
+    {
+      "title": "Publicar y validar la build compatible",
+      "body": "Liberar una versión posterior a `2.6.04`, probar el ciclo completo en iOS y Android y conservar la ventana legacy solo hasta confirmar adopción.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener la mitigación temporal",
+      "body": "Conservar el deadline extendido mientras se prepara la distribución, aceptando temporalmente el acceso legacy acotado.",
+      "recommended": false
+    },
+    {
+      "title": "Definir recuperación acotada antes del release",
+      "body": "Aprobar un dry-run para identificar carritos anónimos afectados y decidir si se regeneran solo los que estén vacíos.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Publicar y validar la build compatible",
+    "body": "Liberar una versión posterior a `2.6.04`, probar el ciclo completo en iOS y Android y conservar la ventana legacy solo hasta confirmar adopción.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Su historial reúne la implementación de capability tokens y las decisiones de compatibilidad del carrito Supply.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8817.md",
+    "reviewedAt": "2026-08-27T13:32:42.459Z",
+    "mainSha": "bc255b52de9a2f1775b875f5ad8ea5ad6057268e"
+  }
+}
