@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-27T13:01:00.847Z",
+  "updatedAt": "2026-08-27T12:55:13Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8809,
+    "title": "feat: migrate the mirakl family to the marketplace manager",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8809",
+    "state": "open",
+    "labels": [
+      "size/XXL"
+    ],
+    "createdAt": "2026-08-27T11:36:04Z",
+    "updatedAt": "2026-08-27T12:55:13Z",
+    "headSha": "ad3f7bb8511afec398dbca46d14491e9e16ce2d0"
+  },
+  "lane": "release_inclusion",
+  "priority": "P1",
+  "question": "¿Se autoriza el switchover de los tres cron V2 en este despliegue tras completar y registrar los índices y backfill de producción?",
+  "rationale": "El PR activa tráfico productivo sobre datos legacy cuya migración y volumen no están verificados; esa aceptación operativa no puede inferirse del código.",
+  "options": [
+    {
+      "title": "Completar gates y conservar el switchover",
+      "body": "Ejecutar y verificar el backfill e índices, corregir P41 y adjuntar prueba real antes de fusionar el schedule V2.",
+      "recommended": true
+    },
+    {
+      "title": "Separar el corte de schedules",
+      "body": "Fusionar únicamente la implementación V2 tras corregirla y dejar las rutas legacy programadas hasta una ventana operativa aprobada.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar la migración",
+      "body": "No activar esta familia hasta contar con una estrategia aprobada para las filas legacy y sus operaciones pendientes.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Completar gates y conservar el switchover",
+    "body": "Ejecutar y verificar el backfill e índices, corregir P41 y adjuntar prueba real antes de fusionar el schedule V2.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "La issue canónica define explícitamente el switchover y MarcosTerroso es además uno de los revisores solicitados.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8809.md",
+    "reviewedAt": "2026-08-27T13:01:00.847Z",
+    "mainSha": "bc255b52de9a2f1775b875f5ad8ea5ad6057268e"
+  }
+}
