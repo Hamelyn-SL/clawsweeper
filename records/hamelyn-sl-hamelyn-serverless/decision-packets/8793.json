@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-27T09:00:36.832Z",
+  "updatedAt": "2026-08-27T08:55:01Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8793,
+    "title": "Estado de lote ",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8793",
+    "state": "open",
+    "labels": [
+      "bug",
+      "source:admin-panel",
+      "app:supply",
+      "reporter:arineligrigore",
+      "triage:blocked",
+      "clawsweeper:needs-live-repro",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "P2",
+      "impact:ux-friction",
+      "issue-rating: ⚪ platinum"
+    ],
+    "createdAt": "2026-08-27T07:21:28Z",
+    "updatedAt": "2026-08-27T08:55:01Z"
+  },
+  "lane": "manual_review",
+  "priority": "P2",
+  "question": "¿Debe Operaciones corregir `652VA` tras confirmar con MRW que el evento de recogida fue erróneo, o mantener el estado actual?",
+  "rationale": "El código refleja una señal externa que no puede verificarse desde el checkout; la reversión puede afectar una recogida real.",
+  "options": [
+    {
+      "title": "Validar y corregir si procede",
+      "body": "Solicitar confirmación de MRW y revertir operativamente a `PENDING` solo con evidencia de escaneo erróneo.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener el estado",
+      "body": "Conservar `IN_TRANSIT` si MRW confirma que la recogida ocurrió o no puede desmentirla.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Validar y corregir si procede",
+    "body": "Solicitar confirmación de MRW y revertir operativamente a `PENDING` solo con evidencia de escaneo erróneo.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Miguel Angel Hernández Perdomo",
+    "reason": "Introdujo el mapeo actual que convierte la señal de recogida de MRW en custodia del transportista.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8793.md",
+    "reviewedAt": "2026-08-27T09:00:36.832Z",
+    "mainSha": "7faade181291262ca4e27c575b2dd5d95e0d8109"
+  }
+}
