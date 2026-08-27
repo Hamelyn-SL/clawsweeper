@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-27T15:27:04.671Z",
+  "updatedAt": "2026-08-27T14:58:46Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8821,
+    "title": "fix: drain duplicate Discogs listing withdrawals",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8821",
+    "state": "open",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-08-27T14:47:01Z",
+    "updatedAt": "2026-08-27T14:58:46Z",
+    "headSha": "1bfae524bb6becbdacc5b76b0ca5153b616026ef"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "Cuando un `listing_id` histórico de Discogs falla permanentemente, ¿debe bloquear la cola completa o deben retirarse los IDs posteriores conservando el fallo para reintento o diagnóstico?",
+  "rationale": "La rama necesita decidir cómo preservar un fallo no reintentable sin abandonar listings independientes que todavía están a la venta.",
+  "options": [
+    {
+      "title": "Drenar posteriores y conservar el fallo",
+      "body": "Avanzar a los IDs posteriores, manteniendo el ID fallido y su error en un estado recuperable y observable.",
+      "recommended": true
+    },
+    {
+      "title": "Bloquear toda la cola",
+      "body": "Conservar el comportamiento actual y requerir intervención manual antes de intentar cualquier listing posterior.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Drenar posteriores y conservar el fallo",
+    "body": "Avanzar a los IDs posteriores, manteniendo el ID fallido y su error en un estado recuperable y observable.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Es el autor de la migración de Discogs al manager y el revisor solicitado para esta reconciliación.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8821.md",
+    "reviewedAt": "2026-08-27T15:27:04.671Z",
+    "mainSha": "7af611302ff3b8e05c5c121b223fa36fcef5d851"
+  }
+}

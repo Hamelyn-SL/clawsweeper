@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-27T13:32:42.459Z",
-  "updatedAt": "2026-08-27T13:26:13Z",
+  "generatedAt": "2026-08-27T15:24:58.524Z",
+  "updatedAt": "2026-08-27T14:02:00Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,55 +13,54 @@
       "bug",
       "source:admin-panel",
       "app:supply",
-      "triage:queued",
+      "triage:done",
       "reporter:alejandrodiaz",
       "P1",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
-      "clawsweeper:needs-security-review"
+      "clawsweeper:source-repro",
+      "clawsweeper:needs-security-review",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-08-27T13:03:45Z",
-    "updatedAt": "2026-08-27T13:26:13Z"
+    "updatedAt": "2026-08-27T14:02:00Z"
   },
   "lane": "release_inclusion",
-  "priority": "P1",
-  "question": "¿Se aprueba liberar una build de Supply con el capability flow actual y qué política de recuperación se aplicará a los carritos protegidos creados por `2.6.04`?",
-  "rationale": "El código de `dev` cubre el contrato nuevo, pero la resolución depende de distribución móvil, validación en dispositivos reales y una decisión explícita sobre datos de carritos afectados.",
+  "priority": "P0",
+  "question": "¿Qué canal y umbral de adopción autorizan para distribuir la build capability-aware y retirar `SUPPLY_CART_LEGACY_ACCESS_DEADLINE` sin reabrir el bloqueo ni prolongar el riesgo de IDOR?",
+  "rationale": "La corrección de código ya existe; elegir la ventana de compatibilidad y el criterio de retirada equilibra continuidad de usuarios instalados frente a una frontera de seguridad temporal.",
   "options": [
     {
-      "title": "Publicar y validar la build compatible",
-      "body": "Liberar una versión posterior a `2.6.04`, probar el ciclo completo en iOS y Android y conservar la ventana legacy solo hasta confirmar adopción.",
+      "title": "Publicar y retirar con adopción medida",
+      "body": "Publicar una versión superior a `2.6.04`, validar ambos sistemas y retirar la ventana cuando telemetría confirme el umbral acordado.",
       "recommended": true
     },
     {
-      "title": "Mantener la mitigación temporal",
-      "body": "Conservar el deadline extendido mientras se prepara la distribución, aceptando temporalmente el acceso legacy acotado.",
+      "title": "Mantener la extensión con revisión fechada",
+      "body": "Conservar el deadline temporal sólo con un propietario, fecha de revisión y seguimiento explícito de adopción y carritos afectados.",
       "recommended": false
     },
     {
-      "title": "Definir recuperación acotada antes del release",
-      "body": "Aprobar un dry-run para identificar carritos anónimos afectados y decidir si se regeneran solo los que estén vacíos.",
+      "title": "Cerrar antes por prioridad de seguridad",
+      "body": "Retirar la compatibilidad legacy antes de completar la adopción y aceptar recuperación manual para instalaciones antiguas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Publicar y validar la build compatible",
-    "body": "Liberar una versión posterior a `2.6.04`, probar el ciclo completo en iOS y Android y conservar la ventana legacy solo hasta confirmar adopción.",
+    "title": "Publicar y retirar con adopción medida",
+    "body": "Publicar una versión superior a `2.6.04`, validar ambos sistemas y retirar la ventana cuando telemetría confirme el umbral acordado.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Su historial reúne la implementación de capability tokens y las decisiones de compatibilidad del carrito Supply.",
+    "reason": "El historial disponible le vincula directamente al flujo de capability y recuperación que condiciona la release.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8817.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8817#issuecomment-5439653228",
-    "reviewedAt": "2026-08-27T13:32:42.459Z",
-    "mainSha": "bc255b52de9a2f1775b875f5ad8ea5ad6057268e"
+    "reviewedAt": "2026-08-27T15:24:58.524Z",
+    "mainSha": "7af611302ff3b8e05c5c121b223fa36fcef5d851"
   }
 }

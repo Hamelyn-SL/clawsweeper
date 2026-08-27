@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-27T14:45:50.048Z",
-  "updatedAt": "2026-08-27T14:39:47Z",
+  "generatedAt": "2026-08-27T15:24:57.602Z",
+  "updatedAt": "2026-08-27T15:11:54Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,47 +13,46 @@
       "bug",
       "app:infrastructure",
       "triage:done",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:linked-pr-open",
-      "P2",
       "impact:other",
-      "issue-rating: 💎 diamond",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision",
+      "P2",
       "clawsweeper:source-repro",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:linked-pr-open",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-08-27T10:40:05Z",
-    "updatedAt": "2026-08-27T14:39:47Z"
+    "updatedAt": "2026-08-27T15:11:54Z"
   },
   "lane": "security_boundary",
   "priority": "P2",
-  "question": "¿Debe el pipeline fallar cuando falta `VERCEL_TOKEN` o se acepta conservar temporalmente un alias potencialmente desactualizado?",
-  "rationale": "La decisión afecta a la fiabilidad del staging y al alcance operativo de una credencial de Vercel; el código no puede elegir esa política por sí solo.",
+  "question": "¿Debe el deploy de staging fallar si falta `VERCEL_TOKEN`, o se acepta explícitamente conservar el alias anterior durante la transición?",
+  "rationale": "La elección determina si staging puede seguir validando código obsoleto y requiere aprobar el uso operativo de una credencial de Vercel.",
   "options": [
     {
-      "title": "Exigir el token y fallar",
-      "body": "Provisionar un token de Vercel con privilegio mínimo y fallar el job si no puede confirmar la promoción del alias.",
+      "title": "Exigir sincronización",
+      "body": "Provisionar un token de alcance mínimo y fallar el job de Agents cuando no pueda seleccionar y promover el deployment exacto.",
       "recommended": true
     },
     {
-      "title": "Mantener el modo degradado",
-      "body": "Permitir el warning sin token, documentando que el alias puede seguir sirviendo un build anterior.",
+      "title": "Mantener transición temporal",
+      "body": "Permitir el warning solo con una fecha de retirada y monitorización explícita del alias obsoleto.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Exigir el token y fallar",
-    "body": "Provisionar un token de Vercel con privilegio mínimo y fallar el job si no puede confirmar la promoción del alias.",
+    "title": "Exigir sincronización",
+    "body": "Provisionar un token de alcance mínimo y fallar el job de Agents cuando no pueda seleccionar y promover el deployment exacto.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Su historial reúne la orquestación de deploy y las alertas operativas afectadas.",
+    "person": "MarcosTerroso",
+    "reason": "Está coordinando la PR y la comprobación real del alias descritas en la discusión.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8804.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8804#issuecomment-5438049219",
-    "reviewedAt": "2026-08-27T14:45:50.048Z",
+    "reviewedAt": "2026-08-27T15:24:57.602Z",
     "mainSha": "7af611302ff3b8e05c5c121b223fa36fcef5d851"
   }
 }
