@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-27T08:11:35.124Z",
+  "generatedAt": "2026-08-27T08:12:50.215Z",
   "updatedAt": "2026-08-27T08:05:49Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -14,48 +14,47 @@
       "feature",
       "triage:done",
       "area:marketplace-sync",
-      "mk:ebay",
-      "marketplace-v2",
-      "P2",
       "impact:other",
-      "issue-rating: ➖ n/a",
-      "clawsweeper:linked-pr-open",
       "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:linked-pr-open",
+      "issue-rating: ➖ n/a",
+      "mk:ebay",
+      "marketplace-v2"
     ],
     "createdAt": "2026-08-25T09:36:32Z",
     "updatedAt": "2026-08-27T08:05:49Z"
   },
   "lane": "release_inclusion",
   "priority": "P2",
-  "question": "¿Se autoriza el switchover del schedule de eBay ES solo después de resolver los cambios solicitados y publicar los gates Atlas, E2E mutador y dos ticks V2?",
-  "rationale": "La decisión activa un flujo de producción y depende de evidencia operativa que no puede establecerse mediante inspección estática.",
+  "question": "¿Se autoriza el switchover programado de eBay ES cuando el PR aporte evidencia de los índices Atlas, un E2E mutador y dos ticks completos de V2?",
+  "rationale": "El cambio sustituye el cron operativo de un marketplace; la suficiencia depende de infraestructura y comportamiento vivo que no se deduce solo del código.",
   "options": [
     {
-      "title": "Exigir todos los gates",
-      "body": "Mantener el schedule legacy hasta que la PR corrija los hallazgos y aporte evidencia operativa redactada.",
+      "title": "Autorizar tras los gates",
+      "body": "Permitir el switchover cuando estén verificadas las precondiciones Atlas y las ejecuciones reales de V2.",
       "recommended": true
     },
     {
-      "title": "Separar el schedule",
-      "body": "Integrar el código V2 sin programarlo y activar el switchover en una entrega posterior validada.",
+      "title": "Mantener V1 programado",
+      "body": "Conservar `/api/ebay` como cron principal hasta reunir evidencia operacional adicional de V2.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Exigir todos los gates",
-    "body": "Mantener el schedule legacy hasta que la PR corrija los hallazgos y aporte evidencia operativa redactada.",
+    "title": "Autorizar tras los gates",
+    "body": "Permitir el switchover cuando estén verificadas las precondiciones Atlas y las ejecuciones reales de V2.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Combina trabajo reciente sobre el contrato V2 con una solicitud de cambios activa en la PR vinculada.",
-    "confidence": "high"
+    "reason": "Ha solicitado cambios en el PR y su historial está ligado a las migraciones V2 adyacentes.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8681.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8681#issuecomment-5409229838",
-    "reviewedAt": "2026-08-27T08:11:35.124Z",
+    "reviewedAt": "2026-08-27T08:12:50.215Z",
     "mainSha": "09771789563a741f93ea1c87cd388aae69877178"
   }
 }
