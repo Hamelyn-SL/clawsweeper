@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-27T12:37:39.738Z",
-  "updatedAt": "2026-08-27T12:32:25Z",
+  "generatedAt": "2026-08-27T14:45:50.048Z",
+  "updatedAt": "2026-08-27T14:39:47Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,47 +12,46 @@
     "labels": [
       "bug",
       "app:infrastructure",
-      "triage:queued",
-      "P2",
+      "triage:done",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
+      "clawsweeper:needs-live-repro",
+      "clawsweeper:no-new-fix-pr",
+      "P2",
       "clawsweeper:linked-pr-open",
-      "clawsweeper:no-new-fix-pr"
+      "issue-rating: ⚪ platinum"
     ],
     "createdAt": "2026-08-27T10:40:05Z",
-    "updatedAt": "2026-08-27T12:32:25Z"
+    "updatedAt": "2026-08-27T14:39:47Z"
   },
   "lane": "security_boundary",
   "priority": "P2",
-  "question": "¿Se aprueba aprovisionar `VERCEL_TOKEN` con permisos mínimos para asignar el alias y fallar el sync cuando el secreto no esté disponible?",
-  "rationale": "La alternativa actual de no-op preserva el pipeline pero no cumple el resultado esperado, y el alcance de una credencial externa requiere decisión humana.",
+  "question": "¿Debe el pipeline fallar cuando falta `VERCEL_TOKEN` o se acepta conservar temporalmente un alias potencialmente desactualizado?",
+  "rationale": "La decisión afecta a la fiabilidad del staging y al alcance operativo de una credencial de Vercel; el código no puede elegir esa política por sí solo.",
   "options": [
     {
-      "title": "Aprovisionar token mínimo y exigir sincronización",
-      "body": "Crear el secreto con permisos limitados de Vercel y hacer fallar la promoción de Agents si no puede confirmar el alias.",
+      "title": "Exigir el token y fallar",
+      "body": "Provisionar un token de Vercel con privilegio mínimo y fallar el job si no puede confirmar la promoción del alias.",
       "recommended": true
     },
     {
-      "title": "Mantener el no-op temporal",
-      "body": "Conservar el deploy aunque falte el token, aceptando que el alias pueda seguir desactualizado hasta una reasignación manual.",
+      "title": "Mantener el modo degradado",
+      "body": "Permitir el warning sin token, documentando que el alias puede seguir sirviendo un build anterior.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprovisionar token mínimo y exigir sincronización",
-    "body": "Crear el secreto con permisos limitados de Vercel y hacer fallar la promoción de Agents si no puede confirmar el alias.",
+    "title": "Exigir el token y fallar",
+    "body": "Provisionar un token de Vercel con privilegio mínimo y fallar el job si no puede confirmar la promoción del alias.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "banosdavidhamelyn",
-    "reason": "Es el candidato más cercano por trabajo reciente en el pipeline de despliegue afectado.",
-    "confidence": "medium"
+    "person": "JavierHamelyn",
+    "reason": "Su historial reúne la orquestación de deploy y las alertas operativas afectadas.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8804.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8804#issuecomment-5438049219",
-    "reviewedAt": "2026-08-27T12:37:39.738Z",
-    "mainSha": "bc255b52de9a2f1775b875f5ad8ea5ad6057268e"
+    "reviewedAt": "2026-08-27T14:45:50.048Z",
+    "mainSha": "7af611302ff3b8e05c5c121b223fa36fcef5d851"
   }
 }
