@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-27T14:11:50.929Z",
+  "updatedAt": "2026-08-27T14:02:28Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8805,
+    "title": "Discogs duplicate listings survive withdrawal after marketplaceId replacement",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8805",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "triage:queued",
+      "P1",
+      "impact:other",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:source-repro",
+      "clawsweeper:fix-shape-clear",
+      "issue-rating: 💎 diamond"
+    ],
+    "createdAt": "2026-08-27T10:53:47Z",
+    "updatedAt": "2026-08-27T14:02:28Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Qué contrato permanente debe usar Discogs para conservar y retirar varios `listing_id` históricos asociados al mismo SKU?",
+  "rationale": "El modelo actual guarda una sola identidad por SKU; elegir entre una cola durable, un historial embebido u otra reconciliación condiciona compatibilidad, recuperación y migración de datos existentes.",
+  "options": [
+    {
+      "title": "Cola durable de retiradas",
+      "body": "Persistir IDs históricos pendientes y drenarlos con CAS e idempotencia, sin sobrescribir el mirror principal.",
+      "recommended": true
+    },
+    {
+      "title": "Historial embebido en el mirror",
+      "body": "Guardar una lista de IDs pendientes dentro del documento `mk_discogs` y adaptar el runner de retirada.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Cola durable de retiradas",
+    "body": "Persistir IDs históricos pendientes y drenarlos con CAS e idempotencia, sin sobrescribir el mirror principal.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Su migración F2 introdujo el manager de Discogs que deberá respetar el contrato elegido.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8805.md",
+    "reviewedAt": "2026-08-27T14:11:50.929Z",
+    "mainSha": "7af611302ff3b8e05c5c121b223fa36fcef5d851"
+  }
+}
