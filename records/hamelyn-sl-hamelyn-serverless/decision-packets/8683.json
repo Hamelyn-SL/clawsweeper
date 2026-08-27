@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-26T08:18:13.356Z",
-  "updatedAt": "2026-08-26T08:12:17Z",
+  "generatedAt": "2026-08-27T13:30:53.915Z",
+  "updatedAt": "2026-08-27T13:25:09Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,49 +14,48 @@
       "feature",
       "triage:done",
       "area:marketplace-sync",
-      "mk:casadellibro",
-      "mk:feltrinelli",
-      "marketplace-v2",
-      "P2",
       "impact:other",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "issue-rating: ➖ n/a",
+      "mk:casadellibro",
+      "mk:feltrinelli",
+      "marketplace-v2"
     ],
     "createdAt": "2026-08-25T09:37:09Z",
-    "updatedAt": "2026-08-26T08:12:17Z"
+    "updatedAt": "2026-08-27T13:25:09Z"
   },
-  "lane": "product_direction",
+  "lane": "release_inclusion",
   "priority": "P2",
-  "question": "¿Se patrocina la migración Mirakl como una secuencia de entregas por tienda, empezando tras la validación batch de Fnac, o se pospone hasta disponer de una ventana operativa para los tres operadores?",
-  "rationale": "La elección afecta al orden de despliegue, al acceso a credenciales y a los gates Atlas que el código no puede validar por sí solo.",
+  "question": "¿Autoriza el equipo el switchover de CDL, Feltrinelli y Decathlon después de verificar el backfill, los índices Atlas y las pruebas reales por tienda?",
+  "rationale": "El cambio afecta crons de producción y sus prerequisitos operativos quedan fuera del diff propuesto.",
   "options": [
     {
-      "title": "Secuenciar por marketplace",
-      "body": "Crear la abstracción compartida y cerrar CDL, Feltrinelli y Decathlon en entregas separadas con E2E, índices y switchover individual.",
+      "title": "Exigir los gates antes del switchover",
+      "body": "Mantener los schedules legacy hasta que cada marketplace tenga backfill, índices y validación real acreditados.",
       "recommended": true
     },
     {
-      "title": "Posponer la familia Mirakl",
-      "body": "Mantener los crons legacy hasta disponer de capacidad operativa para validar los tres contratos Mirakl.",
+      "title": "Aceptar el riesgo operativo",
+      "body": "Permitir el switchover con los prerequisitos aún pendientes y asumir una recuperación manual si se bloquean retiradas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Secuenciar por marketplace",
-    "body": "Crear la abstracción compartida y cerrar CDL, Feltrinelli y Decathlon en entregas separadas con E2E, índices y switchover individual.",
+    "title": "Exigir los gates antes del switchover",
+    "body": "Mantener los schedules legacy hasta que cada marketplace tenga backfill, índices y validación real acreditados.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Su trabajo reciente define el contrato V2 y el patrón de switchover que condicionan esta decisión.",
+    "reason": "Está asignado a la issue y su PR concentra la implementación y los prerequisitos documentados.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8683.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8683#issuecomment-5409002865",
-    "reviewedAt": "2026-08-26T08:18:13.356Z",
-    "mainSha": "5558d7011908b4ab4cf7a45c0e563e95a02f9f1e"
+    "reviewedAt": "2026-08-27T13:30:53.915Z",
+    "mainSha": "bc255b52de9a2f1775b875f5ad8ea5ad6057268e"
   }
 }
