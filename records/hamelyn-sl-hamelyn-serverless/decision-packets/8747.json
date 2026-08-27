@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-26T13:25:50.682Z",
-  "updatedAt": "2026-08-26T12:59:12Z",
+  "generatedAt": "2026-08-27T08:18:41.373Z",
+  "updatedAt": "2026-08-27T08:13:46Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,46 +11,50 @@
     "state": "open",
     "labels": [
       "size/XXL",
-      "rating: 🥈 silver",
-      "status: 📣 needs proof",
       "P1",
+      "status: 📣 needs proof",
       "merge-risk: 🚨 compatibility",
-      "merge-risk: 🚨 availability"
+      "merge-risk: 🚨 availability",
+      "rating: 🥉 bronze"
     ],
     "createdAt": "2026-08-26T12:10:41Z",
-    "updatedAt": "2026-08-26T12:59:12Z",
-    "headSha": "b43369d7209e03dd10ecc23d66829a1bf64d0bea"
+    "updatedAt": "2026-08-27T08:13:46Z",
+    "headSha": "e88ce3ca06b2a9f58e6ace20584d1d858c4dc97d"
   },
   "lane": "release_inclusion",
   "priority": "P1",
-  "question": "¿Debe conservarse el switchover programado en esta entrega una vez se acrediten los gates, o separarse en una activación operativa posterior?",
-  "rationale": "La elección cambia el tráfico productivo de Fnac y exige validar recursos y datos externos que el diff no puede demostrar.",
+  "question": "¿Debe esta PR separar el adapter V2 del switchover del cron hasta que estén completados los gates de Atlas, el drenaje legacy y la prueba real?",
+  "rationale": "La ficha identifica gates externos aún incompletos, mientras el diff programa inmediatamente la nueva ruta; decidir el momento de activación es una responsabilidad operativa de producto.",
   "options": [
     {
-      "title": "Activación condicionada",
-      "body": "Conservar el cambio de cron solo tras adjuntar evidencia redacted de índices, backfill, drenaje V1, dos ticks V2 y un ciclo batch real.",
+      "title": "Aplazar el switchover",
+      "body": "Mantener `/api/fnac` como cron y dejar `/api/fnacV2` invocable manualmente hasta completar y acreditar todos los gates.",
       "recommended": true
     },
     {
-      "title": "Separar el tráfico",
-      "body": "Fusionar la ruta V2 sin schedule y mover el cambio de `vercel.json` a una entrega operativa posterior.",
+      "title": "Activar con aceptación explícita",
+      "body": "Conservar el cambio de schedule aceptando el riesgo operativo y registrando quién asume la recuperación de filas legacy.",
+      "recommended": false
+    },
+    {
+      "title": "Separar la PR",
+      "body": "Mergear el adapter tras corregir la retirada y abrir una PR posterior, limitada al switchover con prueba operativa.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Activación condicionada",
-    "body": "Conservar el cambio de cron solo tras adjuntar evidencia redacted de índices, backfill, drenaje V1, dos ticks V2 y un ciclo batch real.",
+    "title": "Aplazar el switchover",
+    "body": "Mantener `/api/fnac` como cron y dejar `/api/fnacV2` invocable manualmente hasta completar y acreditar todos los gates.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "Su historial combina el controlador Fnac existente, las recuperaciones operativas y la propuesta de migración.",
+    "person": "MarcosTerroso",
+    "reason": "Su historial concentra el contrato de `MarketplaceManager` y las migraciones V2 que establecen el patrón de switchover.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8747.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8747#issuecomment-5425202286",
-    "reviewedAt": "2026-08-26T13:25:50.682Z",
-    "mainSha": "91d39388aad37d7cd6ab244ed9e87c9079da1abd"
+    "reviewedAt": "2026-08-27T08:18:41.373Z",
+    "mainSha": "09771789563a741f93ea1c87cd388aae69877178"
   }
 }
