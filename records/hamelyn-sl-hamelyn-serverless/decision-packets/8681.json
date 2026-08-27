@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-26T13:13:30.205Z",
-  "updatedAt": "2026-08-26T13:00:27Z",
+  "generatedAt": "2026-08-27T07:19:31.858Z",
+  "updatedAt": "2026-08-27T07:13:33Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,48 +14,47 @@
       "feature",
       "triage:done",
       "area:marketplace-sync",
-      "mk:ebay",
-      "marketplace-v2",
-      "P2",
       "impact:other",
-      "issue-rating: ➖ n/a",
-      "clawsweeper:linked-pr-open",
       "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:linked-pr-open",
+      "issue-rating: ➖ n/a",
+      "mk:ebay",
+      "marketplace-v2"
     ],
     "createdAt": "2026-08-25T09:36:32Z",
-    "updatedAt": "2026-08-26T13:00:27Z"
+    "updatedAt": "2026-08-27T07:13:33Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se acepta para eBay ES el switchover F3 con `update` y recuperación legacy solo como fallback manual, o deben conservarse como flujos programados antes de activar `/api/ebayV2`?",
-  "rationale": "La PR adopta el precedente F3 de Discogs, pero el cambio sustituye el cron principal de una integración de producción y decide qué garantías legacy permanecen automáticas.",
+  "question": "¿Debe autorizarse el switchover de eBay ES al cron V2 en esta entrega, manteniendo el drenaje LMS separado y el legacy como fallback manual?",
+  "rationale": "La elección determina el comportamiento operativo de producción y la convivencia de rutas; los checks locales no sustituyen la aprobación del despliegue ni los gates manuales de Atlas.",
   "options": [
     {
-      "title": "Mantener los huecos F3 documentados",
-      "body": "Aceptar el patrón de fallback manual tras corregir la PR y aportar las pruebas operativas del schedule.",
+      "title": "Autorizar tras los gates operativos",
+      "body": "Mantener el alcance actual y permitir el schedule sólo cuando índices, E2E mutador y dos ticks completos estén documentados.",
       "recommended": true
     },
     {
-      "title": "Conservar fases legacy programadas",
-      "body": "Diseñar rutas o capabilities separadas para `update` y recuperación antes de cambiar el cron principal.",
+      "title": "Separar el switchover",
+      "body": "Fusionar únicamente la capa V2 y dejar el cambio de schedule para una PR posterior con observación de producción.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mantener los huecos F3 documentados",
-    "body": "Aceptar el patrón de fallback manual tras corregir la PR y aportar las pruebas operativas del schedule.",
+    "title": "Autorizar tras los gates operativos",
+    "body": "Mantener el alcance actual y permitir el schedule sólo cuando índices, E2E mutador y dos ticks completos estén documentados.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "Es revisor solicitado y contribuidor reciente del wiring V2 compartido.",
+    "person": "JavierHamelyn",
+    "reason": "Su historial reciente cubre las invariantes LMS que condicionan la seguridad del switchover.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8681.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8681#issuecomment-5409229838",
-    "reviewedAt": "2026-08-26T13:13:30.205Z",
-    "mainSha": "91d39388aad37d7cd6ab244ed9e87c9079da1abd"
+    "reviewedAt": "2026-08-27T07:19:31.858Z",
+    "mainSha": "09771789563a741f93ea1c87cd388aae69877178"
   }
 }
