@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-27T08:49:49.626Z",
-  "updatedAt": "2026-08-27T08:45:18Z",
+  "generatedAt": "2026-08-27T13:06:34.743Z",
+  "updatedAt": "2026-08-27T13:02:23Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,50 +15,49 @@
       "triage:done",
       "P1",
       "impact:other",
-      "issue-rating: 💎 diamond",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision",
       "clawsweeper:source-repro",
       "clawsweeper:linked-pr-open",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-product-decision"
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-08-26T07:56:18Z",
-    "updatedAt": "2026-08-27T08:45:18Z"
+    "updatedAt": "2026-08-27T13:02:23Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe el arreglo bloquear también CPs con cinco dígitos pero incoherentes o inexistentes, como `21030`, antes de considerar resuelta esta incidencia?",
-  "rationale": "La PR abierta cubre formato y CPs malformados, pero reconoce explícitamente que no puede detectar el caso real de cinco dígitos; elegir la fuente de verdad y el comportamiento operativo requiere criterio de producto.",
+  "question": "¿Debe el gate bloquear también CP españoles con sintaxis válida pero incoherentes o inexistentes, como `21030`, y con qué fuente de verdad mantenible?",
+  "rationale": "La PR abierta cubre formato y CP malformados, pero reconoce que no detecta el caso operativo central de un CP formalmente válido e inexistente.",
   "options": [
     {
-      "title": "Completar la validación de coherencia",
-      "body": "Ampliar la PR con una regla o fuente de datos mantenible que identifique el caso `21030` sin excluir CPs institucionales válidos.",
+      "title": "Definir validación de coherencia",
+      "body": "Aprobar una fuente curada o regla territorial que descarte CP válidos en forma pero incompatibles con el destino, preservando excepciones institucionales.",
       "recommended": true
     },
     {
-      "title": "Aceptar validación de forma",
-      "body": "Fusionar el gate sintáctico y abrir un seguimiento específico para CPs existentes pero geográficamente incoherentes.",
+      "title": "Aceptar validación de formato como fase inicial",
+      "body": "Fusionar solo el gate de formato y asumir que los CP inexistentes seguirán requiriendo intervención operativa en Correos.",
       "recommended": false
     },
     {
-      "title": "Mantener recuperación operativa",
-      "body": "No bloquear por coherencia y documentar la corrección manual en Correos mientras se evalúa una fuente de validación fiable.",
+      "title": "Separar el alcance",
+      "body": "Fusionar el formato y la partición, y abrir trabajo específico para una fuente fiable de coherencia postal.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Completar la validación de coherencia",
-    "body": "Ampliar la PR con una regla o fuente de datos mantenible que identifique el caso `21030` sin excluir CPs institucionales válidos.",
+    "title": "Definir validación de coherencia",
+    "body": "Aprobar una fuente curada o regla territorial que descarte CP válidos en forma pero incompatibles con el destino, preservando excepciones institucionales.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "Miguel Angel Hernández Perdomo",
-    "reason": "Su historial conecta tanto el generador actual como el flujo de packing donde debe preservarse la coherencia del conjunto.",
+    "person": "Alex Cantón",
+    "reason": "Su historial conecta el generador original y la ruta de carga afectada, por lo que puede orientar el límite técnico del gate.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8726.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8726#issuecomment-5422479513",
-    "reviewedAt": "2026-08-27T08:49:49.626Z",
-    "mainSha": "7faade181291262ca4e27c575b2dd5d95e0d8109"
+    "reviewedAt": "2026-08-27T13:06:34.743Z",
+    "mainSha": "bc255b52de9a2f1775b875f5ad8ea5ad6057268e"
   }
 }
