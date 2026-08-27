@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-27T12:37:39.738Z",
+  "updatedAt": "2026-08-27T12:32:25Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8804,
+    "title": "Deploy staging no actualiza el alias agents-git-dev y la alerta de watcher usa label legacy",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8804",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:infrastructure",
+      "triage:queued",
+      "P2"
+    ],
+    "createdAt": "2026-08-27T10:40:05Z",
+    "updatedAt": "2026-08-27T12:32:25Z"
+  },
+  "lane": "security_boundary",
+  "priority": "P2",
+  "question": "¿Se aprueba aprovisionar `VERCEL_TOKEN` con permisos mínimos para asignar el alias y fallar el sync cuando el secreto no esté disponible?",
+  "rationale": "La alternativa actual de no-op preserva el pipeline pero no cumple el resultado esperado, y el alcance de una credencial externa requiere decisión humana.",
+  "options": [
+    {
+      "title": "Aprovisionar token mínimo y exigir sincronización",
+      "body": "Crear el secreto con permisos limitados de Vercel y hacer fallar la promoción de Agents si no puede confirmar el alias.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener el no-op temporal",
+      "body": "Conservar el deploy aunque falte el token, aceptando que el alias pueda seguir desactualizado hasta una reasignación manual.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprovisionar token mínimo y exigir sincronización",
+    "body": "Crear el secreto con permisos limitados de Vercel y hacer fallar la promoción de Agents si no puede confirmar el alias.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "Es el candidato más cercano por trabajo reciente en el pipeline de despliegue afectado.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8804.md",
+    "reviewedAt": "2026-08-27T12:37:39.738Z",
+    "mainSha": "bc255b52de9a2f1775b875f5ad8ea5ad6057268e"
+  }
+}
