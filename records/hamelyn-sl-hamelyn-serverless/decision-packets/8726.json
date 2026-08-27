@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-27T07:31:59.766Z",
-  "updatedAt": "2026-08-27T07:25:31Z",
+  "generatedAt": "2026-08-27T08:49:49.626Z",
+  "updatedAt": "2026-08-27T08:45:18Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,45 +15,49 @@
       "triage:done",
       "P1",
       "impact:other",
-      "issue-rating: 💎 diamond",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision",
       "clawsweeper:source-repro",
       "clawsweeper:linked-pr-open",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-product-decision"
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-08-26T07:56:18Z",
-    "updatedAt": "2026-08-27T07:25:31Z"
+    "updatedAt": "2026-08-27T08:45:18Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe el gate bloquear también CP españoles con sintaxis válida cuando no son coherentes con provincia o municipio, incluido el caso `21030`?",
-  "rationale": "El PR enlazado resuelve el formato y los CP estructuralmente inválidos, pero declara expresamente que no cubre el incidente de CP válido pero inexistente; la fuente de verdad aceptable requiere criterio operativo.",
+  "question": "¿Debe el arreglo bloquear también CPs con cinco dígitos pero incoherentes o inexistentes, como `21030`, antes de considerar resuelta esta incidencia?",
+  "rationale": "La PR abierta cubre formato y CPs malformados, pero reconoce explícitamente que no puede detectar el caso real de cinco dígitos; elegir la fuente de verdad y el comportamiento operativo requiere criterio de producto.",
   "options": [
     {
-      "title": "Exigir coherencia geográfica",
-      "body": "Completar el PR con una regla local y explicable de CP/provincia/municipio antes de considerarlo solución de la incidencia.",
+      "title": "Completar la validación de coherencia",
+      "body": "Ampliar la PR con una regla o fuente de datos mantenible que identifique el caso `21030` sin excluir CPs institucionales válidos.",
       "recommended": true
     },
     {
-      "title": "Aceptar validación sintáctica",
-      "body": "Limitar el alcance al formato nacional y documentar que Correos puede seguir rechazar CP formalmente válidos.",
+      "title": "Aceptar validación de forma",
+      "body": "Fusionar el gate sintáctico y abrir un seguimiento específico para CPs existentes pero geográficamente incoherentes.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener recuperación operativa",
+      "body": "No bloquear por coherencia y documentar la corrección manual en Correos mientras se evalúa una fuente de validación fiable.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Exigir coherencia geográfica",
-    "body": "Completar el PR con una regla local y explicable de CP/provincia/municipio antes de considerarlo solución de la incidencia.",
+    "title": "Completar la validación de coherencia",
+    "body": "Ampliar la PR con una regla o fuente de datos mantenible que identifique el caso `21030` sin excluir CPs institucionales válidos.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "El historial lo vincula al flujo original de generación Postlibri y al normalizador usado por la carga de etiquetas.",
+    "person": "Miguel Angel Hernández Perdomo",
+    "reason": "Su historial conecta tanto el generador actual como el flujo de packing donde debe preservarse la coherencia del conjunto.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8726.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8726#issuecomment-5422479513",
-    "reviewedAt": "2026-08-27T07:31:59.766Z",
-    "mainSha": "09771789563a741f93ea1c87cd388aae69877178"
+    "reviewedAt": "2026-08-27T08:49:49.626Z",
+    "mainSha": "7faade181291262ca4e27c575b2dd5d95e0d8109"
   }
 }
