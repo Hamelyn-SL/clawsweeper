@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-26T22:44:34.525Z",
-  "updatedAt": "2026-08-26T22:27:33Z",
+  "generatedAt": "2026-08-27T01:05:21.462Z",
+  "updatedAt": "2026-08-27T00:20:44Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,53 +12,47 @@
     "labels": [
       "bug",
       "app:marketplace",
-      "triage:running",
+      "triage:needs-info",
+      "P1",
+      "impact:other",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
       "clawsweeper:source-repro",
-      "issue-rating: 💎 diamond",
-      "P1",
-      "impact:other"
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-08-26T22:21:58Z",
-    "updatedAt": "2026-08-26T22:27:33Z"
+    "updatedAt": "2026-08-27T00:20:44Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe una cancelación posterior a la etiqueta bloquear siempre una nueva recogida, o permitir solo registrar una recogida física ya ocurrida con un estado de intervención manual?",
-  "rationale": "El código actual admite algunos casos de recepción cancelada y la evidencia no distingue de forma automática una salida nueva de una confirmación física tardía.",
+  "question": "¿Debe prohibirse siempre `CANCELLED → PICKED_UP`, o debe existir una acción auditada de recogida tardía que mantenga el pedido cancelado y requiera intervención manual?",
+  "rationale": "La evidencia confirma la transición y el bucle, pero la política correcta para paquetes físicamente recogidos determina si la guarda puede ser estricta o necesita un flujo operativo separado.",
   "options": [
     {
-      "title": "Bloqueo con excepción auditada",
-      "body": "Bloquear la transición y el envío de pedidos cancelados, permitiendo solo una ruta explícita de recepción tardía que cree una alerta operativa.",
+      "title": "Bloquear la transición",
+      "body": "Rechazar cualquier paso de `CANCELLED` a `PICKED_UP` y exigir gestión manual fuera del flujo normal.",
+      "recommended": false
+    },
+    {
+      "title": "Recogida tardía auditada",
+      "body": "Mantener el pedido cancelado y registrar la recogida física mediante una acción separada, visible para Almacén y Marketplace.",
       "recommended": true
-    },
-    {
-      "title": "Bloqueo absoluto",
-      "body": "Impedir cualquier recogida o confirmación posterior a `cancelledDate`, asumiendo que los paquetes ya entregados se reconciliarán fuera del flujo.",
-      "recommended": false
-    },
-    {
-      "title": "Mantener recepción tardía",
-      "body": "Conservar la recepción posterior a cancelación y limitar la corrección a observabilidad y capacidad de la cola.",
-      "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Bloqueo con excepción auditada",
-    "body": "Bloquear la transición y el envío de pedidos cancelados, permitiendo solo una ruta explícita de recepción tardía que cree una alerta operativa.",
+    "title": "Recogida tardía auditada",
+    "body": "Mantener el pedido cancelado y registrar la recogida física mediante una acción separada, visible para Almacén y Marketplace.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MarcosTerroso",
-    "reason": "La decisión afecta directamente al adaptador AbeBooks y al gestor V2 que introdujo recientemente.",
-    "confidence": "high"
+    "person": "Miguel Angel Hernández Perdomo",
+    "reason": "Su historial conecta los mecanismos de recovery y envío que deben acomodar la decisión operativa.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8781.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8781#issuecomment-5431979827",
-    "reviewedAt": "2026-08-26T22:44:34.525Z",
+    "reviewedAt": "2026-08-27T01:05:21.462Z",
     "mainSha": "ea47b23c33b6f3ba0382c266f0de4e90e4c355af"
   }
 }
