@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-26T18:32:15.158Z",
-  "updatedAt": "2026-08-26T17:37:51Z",
+  "generatedAt": "2026-08-27T14:33:16.274Z",
+  "updatedAt": "2026-08-27T14:18:51Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,51 +11,44 @@
     "state": "open",
     "labels": [
       "size/XXL",
-      "rating: 🥉 bronze",
-      "status: 📣 needs proof",
       "P2",
       "merge-risk: 🚨 compatibility",
+      "merge-risk: 🚨 availability",
       "merge-risk: 🚨 session-state"
     ],
     "createdAt": "2026-08-26T17:25:42Z",
-    "updatedAt": "2026-08-26T17:37:51Z",
+    "updatedAt": "2026-08-27T14:18:51Z",
     "headSha": "8fca32a109429bbe27807a0023308ae9f4afcc6f"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe cualquier lote con `turboReview: true` omitir QA, incluso si contiene productos revisados previamente por el flujo clásico?",
-  "rationale": "El PR convierte una aceptación turbo parcial en una exclusión de QA a nivel de pedido, pero la issue enlazada no fija esa política para lotes mixtos.",
+  "question": "¿Debe Turbo Revisión excluir por completo a los lotes de QA cuando `REVISION_V3_QA_ENABLED` esté activo?",
+  "rationale": "El diff codifica una exclusión persistente de QA para un nuevo proceso operativo; esa política de control de calidad requiere confirmación humana antes de consolidarla.",
   "options": [
     {
-      "title": "Conservar QA en lotes mixtos",
-      "body": "Omitir QA solo cuando el lote se haya procesado íntegramente en turbo, preservando el control existente para unidades clásicas.",
+      "title": "Mantener la exclusión de QA",
+      "body": "Conservar el salto de QA para los lotes turbo y documentar la decisión como excepción operativa de drenaje.",
       "recommended": true
     },
     {
-      "title": "Aceptar la exclusión por lote",
-      "body": "Mantener `turboReview` como señal suficiente para excluir todo el pedido de QA, documentando explícitamente el riesgo de calidad.",
-      "recommended": false
-    },
-    {
-      "title": "Separar la política de QA",
-      "body": "Posponer la exclusión de QA y dejar que Turbo Revisión use temporalmente el proceso de QA actual hasta definir su muestreo propio.",
+      "title": "Aplicar QA también a Turbo Revisión",
+      "body": "Eliminar la excepción o definir un muestreo específico antes de habilitar el cierre turbo.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Conservar QA en lotes mixtos",
-    "body": "Omitir QA solo cuando el lote se haya procesado íntegramente en turbo, preservando el control existente para unidades clásicas.",
+    "title": "Mantener la exclusión de QA",
+    "body": "Conservar el salto de QA para los lotes turbo y documentar la decisión como excepción operativa de drenaje.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Su historial reciente cubre el cierre, la espera de escrituras y el flujo de QA/Revisión V3 afectado.",
-    "confidence": "high"
+    "reason": "Su historial reciente en productividad y su solicitud como revisor le sitúan cerca de la decisión operativa.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8775.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8775#issuecomment-5429500499",
-    "reviewedAt": "2026-08-26T18:32:15.158Z",
-    "mainSha": "e1a5299a04a34e1460aa4f2d85d69ee05bdf5570"
+    "reviewedAt": "2026-08-27T14:33:16.274Z",
+    "mainSha": "7af611302ff3b8e05c5c121b223fa36fcef5d851"
   }
 }
