@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-28T06:26:09.439Z",
+  "updatedAt": "2026-08-28T06:12:42Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8826,
+    "title": "feat: select the local database with a dev:run flag instead of editing .env lines",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8826",
+    "state": "open",
+    "labels": [
+      "app:infrastructure",
+      "reporter:davidgonzalez",
+      "feature",
+      "triage:running",
+      "P2"
+    ],
+    "createdAt": "2026-08-28T05:59:13Z",
+    "updatedAt": "2026-08-28T06:12:42Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe `dev:run` usar producción por defecto y exigir `--db=dev`, o debe priorizar un modo local seguro distinto?",
+  "rationale": "La elección cambia el destino por defecto de comandos con capacidad de escritura y el contrato de configuración local compartida.",
+  "options": [
+    {
+      "title": "Producción explícita por defecto",
+      "body": "Mantener `pnpm dev:run admin` para `Hamelyn` y habilitar `--db=dev` como solicita la issue, con destino impreso.",
+      "recommended": false
+    },
+    {
+      "title": "Modo seguro por defecto",
+      "body": "Usar `Hamelyn_DEV` por defecto y requerir una confirmación o flag explícito para producción.",
+      "recommended": true
+    }
+  ],
+  "recommendation": {
+    "title": "Modo seguro por defecto",
+    "body": "Usar `Hamelyn_DEV` por defecto y requerir una confirmación o flag explícito para producción.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Introdujo el runner y el mecanismo de copia de runtime files que definen el comportamiento actual.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8826.md",
+    "reviewedAt": "2026-08-28T06:26:09.439Z",
+    "mainSha": "7af611302ff3b8e05c5c121b223fa36fcef5d851"
+  }
+}
