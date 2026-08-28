@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-28T05:39:10.445Z",
+  "updatedAt": "2026-08-28T02:45:08Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8824,
+    "title": "fix: pace Amazon batch withdrawal feeds",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8824",
+    "state": "open",
+    "labels": [
+      "size/M"
+    ],
+    "createdAt": "2026-08-28T02:42:50Z",
+    "updatedAt": "2026-08-28T02:45:08Z",
+    "headSha": "277ecff83f9535f02de8b931b186a20c6307800a"
+  },
+  "lane": "merge_risk",
+  "priority": "P1",
+  "question": "¿Debe la cuota de feeds coordinarse mediante un límite compartido por cuenta para retirada masiva y actualización de precios, o se acepta explícitamente el alcance local de este cron?",
+  "rationale": "El contrato de cuota afecta a más de un productor; escoger el alcance y el estado compartido supera una corrección mecánica aislada.",
+  "options": [
+    {
+      "title": "Coordinar la cuota por cuenta",
+      "body": "Mover o reutilizar el control en el límite común de envío para que precios y retiradas no compitan por la misma cuota.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar el límite local",
+      "body": "Mantener este guardado solo para batch withdraw y documentar que aún puede haber 429 por otros productores.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Coordinar la cuota por cuenta",
+    "body": "Mover o reutilizar el control en el límite común de envío para que precios y retiradas no compitan por la misma cuota.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Es el revisor solicitado y aparece en el historial reciente del controlador afectado.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8824.md",
+    "reviewedAt": "2026-08-28T05:39:10.445Z",
+    "mainSha": "7af611302ff3b8e05c5c121b223fa36fcef5d851"
+  }
+}
