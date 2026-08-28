@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-28T12:44:42.278Z",
+  "updatedAt": "2026-08-28T12:23:09Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8783,
+    "title": "fix: recover Amazon 8057 listing errors",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8783",
+    "state": "open",
+    "labels": [
+      "size/XXL",
+      "P1",
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 compatibility",
+      "rating: 🥈 silver"
+    ],
+    "createdAt": "2026-08-26T22:56:26Z",
+    "updatedAt": "2026-08-28T12:23:09Z",
+    "headSha": "a6c5c15b67f8526dc084ee6fb645d7d30b045b23"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe activarse ya la recuperación automática 8057 para todos los marketplaces Amazon tras corregir los bloqueos técnicos, o mantenerse limitada hasta una prueba SP-API viva representativa?",
+  "rationale": "La ruta puede retirar y recrear ofertas reales; la matriz operativa para 8057 no se deduce únicamente de tests locales y la issue paraguas mantiene esta decisión pendiente.",
+  "options": [
+    {
+      "title": "Validar y habilitar 8057 acotado",
+      "body": "Corregir la implementación y aprobar la activación solo tras una prueba viva saneada que cubra listing BUYABLE, ausente y no comprable.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener 8057 desactivado",
+      "body": "Conservar la clasificación y la recuperación actual hasta disponer de más muestras SP-API o una política Amazon revisada.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Validar y habilitar 8057 acotado",
+    "body": "Corregir la implementación y aprobar la activación solo tras una prueba viva saneada que cubra listing BUYABLE, ausente y no comprable.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Su trabajo reciente sobre `retry-policy.ts` le sitúa cerca de la matriz de clasificación que determina si 8057 es recuperable.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8783.md",
+    "reviewedAt": "2026-08-28T12:44:42.278Z",
+    "mainSha": "eebbda54a20bf1b79b6c28b0351f5a3f94d3277d"
+  }
+}

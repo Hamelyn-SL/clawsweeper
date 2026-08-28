@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-28T08:58:20.666Z",
-  "updatedAt": "2026-08-28T08:51:59Z",
+  "generatedAt": "2026-08-28T12:43:41.169Z",
+  "updatedAt": "2026-08-28T09:15:31Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,43 +12,42 @@
     "labels": [
       "app:infrastructure",
       "feature",
-      "triage:queued",
+      "triage:needs-info",
       "P3",
       "fallow:2026-08"
     ],
     "createdAt": "2026-08-28T08:51:47Z",
-    "updatedAt": "2026-08-28T08:51:59Z"
+    "updatedAt": "2026-08-28T09:15:31Z"
   },
   "lane": "product_direction",
   "priority": "P3",
-  "question": "¿Debe `apps/public` conservar el 404 por defecto eliminando `_not-found.tsx`, o activar su diseño existente renombrándolo a `not-found.tsx`?",
-  "rationale": "Ambas opciones cierran el hallazgo técnico, pero una cambia la experiencia de rutas inexistentes y no hay contrato actual que determine cuál es la intención.",
+  "question": "¿Debe `apps/public` conservar el 404 actual eliminando `_not-found.tsx`, o renombrar el archivo a `not-found.tsx` para activar su diseño?",
+  "rationale": "Ambas opciones cierran el archivo inactivo, pero una conserva la experiencia actual y la otra introduce una interfaz visible nueva.",
   "options": [
     {
-      "title": "Conservar el 404 por defecto",
-      "body": "Eliminar `_not-found.tsx` y mantener el comportamiento estándar actual de Next.",
+      "title": "Conservar el 404 actual",
+      "body": "Eliminar `_not-found.tsx` y mantener la respuesta 404 predeterminada mientras se limpia el resto de candidatos.",
       "recommended": true
     },
     {
-      "title": "Activar el 404 diseñado",
-      "body": "Renombrar el archivo a `not-found.tsx` y validar visualmente la nueva respuesta 404.",
+      "title": "Activar el diseño existente",
+      "body": "Renombrar `_not-found.tsx` a `not-found.tsx` y validar explícitamente la nueva experiencia para rutas inexistentes.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Conservar el 404 por defecto",
-    "body": "Eliminar `_not-found.tsx` y mantener el comportamiento estándar actual de Next.",
+    "title": "Conservar el 404 actual",
+    "body": "Eliminar `_not-found.tsx` y mantener la respuesta 404 predeterminada mientras se limpia el resto de candidatos.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "Miguel Angel Hernández Perdomo",
-    "reason": "Su commit introdujo el archivo y la mayor parte del bloque funcional relacionado.",
+    "person": "Alex Cantón",
+    "reason": "El historial reciente conecta su trabajo con la ruta y con los candidatos de `apps/public`.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8844.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8844#issuecomment-5450546640",
-    "reviewedAt": "2026-08-28T08:58:20.666Z",
-    "mainSha": "bb11af762e5eb1f77b725b757cbed7daac8d7f43"
+    "reviewedAt": "2026-08-28T12:43:41.169Z",
+    "mainSha": "eebbda54a20bf1b79b6c28b0351f5a3f94d3277d"
   }
 }

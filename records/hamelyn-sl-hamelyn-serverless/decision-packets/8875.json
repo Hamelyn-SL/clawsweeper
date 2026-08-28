@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-28T12:50:56.590Z",
-  "updatedAt": "2026-08-28T12:42:38Z",
+  "generatedAt": "2026-08-28T12:47:58.364Z",
+  "updatedAt": "2026-08-28T11:10:12Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,48 +13,42 @@
       "source:admin-panel",
       "app:supply",
       "feature",
-      "triage:done",
+      "triage:queued",
       "P1",
       "reporter:daniellopez"
     ],
     "createdAt": "2026-08-28T11:10:00Z",
-    "updatedAt": "2026-08-28T12:42:38Z"
+    "updatedAt": "2026-08-28T11:10:12Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe Recepción eliminar por completo la cancelación y mantener los lotes con bultos faltantes abiertos hasta una nueva recepción, sin cierre automático?",
-  "rationale": "La decisión cambia un flujo ya implementado de transición a `CANCELLED` y define responsabilidades entre operador y revisor; el código no puede inferir esa política.",
+  "question": "¿Qué roles pueden cerrar un lote con bultos faltantes y debe existir alguna resolución automática tras el plazo operativo?",
+  "rationale": "La issue deja la caducidad pendiente y cambia transiciones persistentes, permisos operativos y la opción de cancelación ya existente.",
   "options": [
     {
-      "title": "Aplicar la política solicitada",
-      "body": "Eliminar la acción de cancelar y bloquear el cierre de lotes incompletos hasta que se recepcionen los bultos pendientes.",
+      "title": "Mantener incompletos abiertos",
+      "body": "Impedir el cierre por operario y permitir al revisor cerrar únicamente tras recepcionar los bultos pendientes, sin automatismo temporal.",
       "recommended": true
     },
     {
-      "title": "Mantener cancelación restringida",
-      "body": "Conservar la cancelación solo para un rol supervisor y documentar el criterio operativo excepcional.",
-      "recommended": false
-    },
-    {
-      "title": "Separar la política del arreglo técnico",
-      "body": "Resolver primero las búsquedas con casos reproducibles y abrir una decisión específica para los cambios de estados.",
+      "title": "Añadir resolución temporal",
+      "body": "Definir un plazo, un responsable y el efecto exacto de una caducidad automática para los lotes incompletos.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aplicar la política solicitada",
-    "body": "Eliminar la acción de cancelar y bloquear el cierre de lotes incompletos hasta que se recepcionen los bultos pendientes.",
+    "title": "Mantener incompletos abiertos",
+    "body": "Impedir el cierre por operario y permitir al revisor cerrar únicamente tras recepcionar los bultos pendientes, sin automatismo temporal.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "alexcanHamelyn",
-    "reason": "Es el principal autor histórico del flujo y figura asignado en la iniciativa relacionada.",
+    "reason": "Su historial reúne la implementación de Recepción V2 y la decisión técnica previa sobre cancelación.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8875.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8875#issuecomment-5452723258",
-    "reviewedAt": "2026-08-28T12:50:56.590Z",
-    "mainSha": "f1b6fa49dad0ac302bda86d07a1759473540587f"
+    "reviewedAt": "2026-08-28T12:47:58.364Z",
+    "mainSha": "eebbda54a20bf1b79b6c28b0351f5a3f94d3277d"
   }
 }
