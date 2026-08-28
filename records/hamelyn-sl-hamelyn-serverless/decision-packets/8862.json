@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-28T16:59:55.302Z",
+  "generatedAt": "2026-08-28T17:00:32.095Z",
   "updatedAt": "2026-08-28T12:57:42Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -15,45 +15,42 @@
       "triage:blocked",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "issue-rating: ➖ n/a",
       "P3",
       "impact:security",
-      "clawsweeper:fix-shape-clear",
-      "clawsweeper:needs-security-review"
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-08-28T10:06:14Z",
     "updatedAt": "2026-08-28T12:57:42Z"
   },
-  "lane": "manual_review",
+  "lane": "release_inclusion",
   "priority": "P3",
-  "question": "¿Quién autoriza y observa el deployment de validación necesario antes de eliminar el parche de Eve?",
-  "rationale": "La única condición decisiva es la propagación real de crons desde el Build Output de servicio a Vercel; no puede probarse de forma fiable solo con código local.",
+  "question": "¿Se autoriza un despliegue controlado de `apps/agents` para validar el registro y la ejecución real de los schedules antes de retirar el parche de Eve?",
+  "rationale": "La evidencia decisiva depende de la configuración ensamblada por Vercel y no puede obtenerse de forma fiable con comprobaciones locales.",
   "options": [
     {
-      "title": "Validar en deployment controlado",
-      "body": "Aplicar el bump mínimo compatible y comprobar en Vercel que aparecen y se disparan los quince schedules.",
+      "title": "Autorizar validación de despliegue",
+      "body": "Preparar el cambio acotado y verificar en producción o staging equivalente que los schedules quedan registrados y se ejecutan.",
       "recommended": true
     },
     {
-      "title": "Mantener el parche temporalmente",
-      "body": "Conservar Eve 0.25.3 y la ruta fija hasta disponer de una ventana de validación operativa.",
+      "title": "Posponer la retirada",
+      "body": "Mantener Eve `0.25.3` y su parche hasta disponer de una ventana de despliegue con observabilidad de los watchers.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Validar en deployment controlado",
-    "body": "Aplicar el bump mínimo compatible y comprobar en Vercel que aparecen y se disparan los quince schedules.",
+    "title": "Autorizar validación de despliegue",
+    "body": "Preparar el cambio acotado y verificar en producción o staging equivalente que los schedules quedan registrados y se ejecutan.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "El contexto, el bisect y las restricciones de compatibilidad actuales del salto de Eve proceden de su trabajo reciente.",
-    "confidence": "high"
+    "person": "banosdavidhamelyn",
+    "reason": "Fusionó la base de dependencias actual y puede coordinar la validación del despliegue sobre esa línea.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8862.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8862#issuecomment-5452776893",
-    "reviewedAt": "2026-08-28T16:59:55.302Z",
+    "reviewedAt": "2026-08-28T17:00:32.095Z",
     "mainSha": "88131d9715961366e30ac7cb24d4062674169031"
   }
 }

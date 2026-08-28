@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-28T12:43:41.169Z",
-  "updatedAt": "2026-08-28T09:15:31Z",
+  "generatedAt": "2026-08-28T17:00:45.378Z",
+  "updatedAt": "2026-08-28T12:56:56Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,46 +13,45 @@
       "app:infrastructure",
       "feature",
       "triage:needs-info",
-      "fallow:2026-08",
-      "P3",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P3",
+      "issue-rating: ➖ n/a",
+      "fallow:2026-08"
     ],
     "createdAt": "2026-08-28T08:51:47Z",
-    "updatedAt": "2026-08-28T09:15:31Z"
+    "updatedAt": "2026-08-28T12:56:56Z"
   },
   "lane": "product_direction",
   "priority": "P3",
-  "question": "¿Debe `apps/public` conservar el 404 actual eliminando `_not-found.tsx`, o renombrar el archivo a `not-found.tsx` para activar su diseño?",
-  "rationale": "Ambas opciones cierran el archivo inactivo, pero una conserva la experiencia actual y la otra introduce una interfaz visible nueva.",
+  "question": "¿Debe `apps/public/src/app/_not-found.tsx` eliminarse para conservar el 404 actual o renombrarse a `not-found.tsx` para activar su diseño?",
+  "rationale": "Ambas opciones limpian un archivo no registrado, pero una preserva el comportamiento actual y la otra introduce una página 404 visible.",
   "options": [
     {
-      "title": "Conservar el 404 actual",
-      "body": "Eliminar `_not-found.tsx` y mantener la respuesta 404 predeterminada mientras se limpia el resto de candidatos.",
+      "title": "Conservar el fallback actual",
+      "body": "Eliminar `_not-found.tsx` evita cambiar la interfaz servida para rutas inexistentes.",
       "recommended": true
     },
     {
       "title": "Activar el diseño existente",
-      "body": "Renombrar `_not-found.tsx` a `not-found.tsx` y validar explícitamente la nueva experiencia para rutas inexistentes.",
+      "body": "Renombrar el archivo a `not-found.tsx` publica la página 404 ya implementada.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Conservar el 404 actual",
-    "body": "Eliminar `_not-found.tsx` y mantener la respuesta 404 predeterminada mientras se limpia el resto de candidatos.",
+    "title": "Conservar el fallback actual",
+    "body": "Eliminar `_not-found.tsx` evita cambiar la interfaz servida para rutas inexistentes.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "Alex Cantón",
-    "reason": "El historial reciente conecta su trabajo con la ruta y con los candidatos de `apps/public`.",
-    "confidence": "medium"
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "La propia especificación de la issue identifica esta elección y su criterio de aceptación.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8844.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8844#issuecomment-5450546640",
-    "reviewedAt": "2026-08-28T12:43:41.169Z",
-    "mainSha": "eebbda54a20bf1b79b6c28b0351f5a3f94d3277d"
+    "reviewedAt": "2026-08-28T17:00:45.378Z",
+    "mainSha": "88131d9715961366e30ac7cb24d4062674169031"
   }
 }
