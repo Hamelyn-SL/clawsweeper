@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-27T13:41:16.970Z",
-  "updatedAt": "2026-08-27T13:15:24Z",
+  "generatedAt": "2026-08-28T08:44:34.402Z",
+  "updatedAt": "2026-08-28T08:39:45Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,51 +11,45 @@
     "state": "open",
     "labels": [
       "size/XXL",
-      "rating: 🥉 bronze",
-      "status: 📣 needs proof",
       "P1",
+      "status: 📣 needs proof",
       "merge-risk: 🚨 compatibility",
-      "merge-risk: 🚨 availability"
+      "merge-risk: 🚨 availability",
+      "rating: 🥉 bronze"
     ],
     "createdAt": "2026-08-27T09:04:38Z",
-    "updatedAt": "2026-08-27T13:15:24Z",
-    "headSha": "416289c84b8416474459892b120b6d8b47645660"
+    "updatedAt": "2026-08-28T08:39:45Z",
+    "headSha": "13a6f1311c79d4938a141dac8b110b08e7504f9c"
   },
-  "lane": "release_inclusion",
+  "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe activarse el switchover de MercadoLibre en esta entrega antes de resolver los riesgos de retirada, lock e índice y completar la prueba real?",
-  "rationale": "La decisión combina cambio operativo de cron, capacidad de Atlas y compatibilidad con listings existentes; no puede resolverse con pruebas unitarias únicamente.",
+  "question": "¿Debe conservarse una ejecución programada del recovery legacy mientras MercadoLibre V2 no procesa `SYNC_ERROR` y los métodos de recovery existentes?",
+  "rationale": "El diff convierte una recuperación automática existente en fallback manual; decidir aceptarla o preservar compatibilidad requiere intención explícita del equipo Marketplace.",
   "options": [
     {
-      "title": "Aplazar el switchover",
-      "body": "Mantener el schedule legacy hasta corregir los bloqueantes, desplegar el índice acordado y publicar evidencia redaccionada del flujo V2.",
+      "title": "Conservar recovery durante la transición",
+      "body": "Mantener una ruta o fase programada y acotada para el recovery legacy hasta migrar sus equivalentes V2.",
       "recommended": true
     },
     {
-      "title": "Aceptar el riesgo operativo",
-      "body": "Activar V2 con los riesgos documentados y un plan explícito de monitorización y reversión manual.",
-      "recommended": false
-    },
-    {
-      "title": "Separar la migración",
-      "body": "Aterrizar únicamente las piezas no programadas y abrir una PR posterior para el cambio de cron una vez completados los gates.",
+      "title": "Aceptar la retirada temporal",
+      "body": "Autorizar expresamente que las filas legacy queden sin recovery automático y documentar el procedimiento operativo de seguimiento.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aplazar el switchover",
-    "body": "Mantener el schedule legacy hasta corregir los bloqueantes, desplegar el índice acordado y publicar evidencia redaccionada del flujo V2.",
+    "title": "Conservar recovery durante la transición",
+    "body": "Mantener una ruta o fase programada y acotada para el recovery legacy hasta migrar sus equivalentes V2.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "Su historial reciente cubre los contratos compartidos de retirada, locks y presupuestos que determinan la seguridad del cambio.",
+    "person": "MarcosTerroso",
+    "reason": "Su historial cubre el diseño del manager y el flujo MercadoLibre que define la transición.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8798.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8798#issuecomment-5438096279",
-    "reviewedAt": "2026-08-27T13:41:16.970Z",
-    "mainSha": "7af611302ff3b8e05c5c121b223fa36fcef5d851"
+    "reviewedAt": "2026-08-28T08:44:34.402Z",
+    "mainSha": "bb11af762e5eb1f77b725b757cbed7daac8d7f43"
   }
 }

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-28T08:42:43.637Z",
+  "generatedAt": "2026-08-28T08:45:05.377Z",
   "updatedAt": "2026-08-28T08:36:02Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -12,7 +12,7 @@
     "labels": [
       "bug",
       "app:admin",
-      "triage:done",
+      "triage:queued",
       "P1",
       "impact:other",
       "clawsweeper:no-new-fix-pr",
@@ -26,34 +26,33 @@
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe Postlibri aceptar el gate de ShipMatrix como límite operativo o exigir una validación adicional para detectar CP existentes pero incoherentes como `21030`?",
-  "rationale": "No hay en `dev` una fuente canónica de CP reales; escoger entre una política de coherencia, una lista curada o el fallback operativo cambia qué pedidos se excluyen.",
+  "question": "¿Debe exigirse ahora la detección de CP españoles inexistentes, o se limita esta entrega a formato y elegibilidad de ShipMatrix mientras se define una fuente postal fiable?",
+  "rationale": "La PR abierta mejora la robustez mecánica, pero reconoce que no detecta el caso `21030`; la fuente de verdad y la política de exclusión requieren intención de producto.",
   "options": [
     {
-      "title": "Definir validación de coherencia",
-      "body": "Exigir una regla mantenible que rechace y explique CP incoherentes, además del formato y la selección de carrier.",
+      "title": "Separar la validación semántica",
+      "body": "Fusionar la corrección de formato y partición segura, y abrir seguimiento específico para una fuente postal mantenida que cubra CP inexistentes.",
       "recommended": true
     },
     {
-      "title": "Aceptar el límite de ShipMatrix",
-      "body": "Resolver solo formato y carrier, documentando que los typos de cinco cifras se corrigen mediante el aviso operativo.",
+      "title": "Esperar una fuente postal fiable",
+      "body": "Mantener la PR abierta hasta añadir una validación de existencia con cobertura demostrada para los CP Postlibri.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Definir validación de coherencia",
-    "body": "Exigir una regla mantenible que rechace y explique CP incoherentes, además del formato y la selección de carrier.",
+    "title": "Separar la validación semántica",
+    "body": "Fusionar la corrección de formato y partición segura, y abrir seguimiento específico para una fuente postal mantenida que cubra CP inexistentes.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "Introdujo el generador actual y mantiene recientemente el pipeline de etiquetas afectado.",
+    "person": "banosdavidhamelyn",
+    "reason": "Está asignado a la incidencia y lleva la implementación candidata vinculada.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8726.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8726#issuecomment-5422479513",
-    "reviewedAt": "2026-08-28T08:42:43.637Z",
+    "reviewedAt": "2026-08-28T08:45:05.377Z",
     "mainSha": "bb11af762e5eb1f77b725b757cbed7daac8d7f43"
   }
 }

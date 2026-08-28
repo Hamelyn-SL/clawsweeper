@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-28T06:26:09.439Z",
-  "updatedAt": "2026-08-28T06:12:42Z",
+  "generatedAt": "2026-08-28T08:44:13.916Z",
+  "updatedAt": "2026-08-28T06:27:25Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,48 +13,47 @@
       "app:infrastructure",
       "reporter:davidgonzalez",
       "feature",
-      "triage:running",
-      "P2",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
-      "clawsweeper:linked-pr-open",
+      "triage:pr-opened",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:source-repro",
+      "clawsweeper:linked-pr-open",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-08-28T05:59:13Z",
-    "updatedAt": "2026-08-28T06:12:42Z"
+    "updatedAt": "2026-08-28T06:27:25Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe `dev:run` usar producción por defecto y exigir `--db=dev`, o debe priorizar un modo local seguro distinto?",
-  "rationale": "La elección cambia el destino por defecto de comandos con capacidad de escritura y el contrato de configuración local compartida.",
+  "question": "¿Se aprueba producción como valor por defecto y se exige migrar los entornos locales a `MONGO_URL_PROD` y `MONGO_URL_DEV`?",
+  "rationale": "La implementación modifica el contrato operativo de todos los entornos locales y puede interrumpir checkouts con la configuración anterior.",
   "options": [
     {
-      "title": "Producción explícita por defecto",
-      "body": "Mantener `pnpm dev:run admin` para `Hamelyn` y habilitar `--db=dev` como solicita la issue, con destino impreso.",
-      "recommended": false
+      "title": "Aprobar el contrato explícito",
+      "body": "Mantener producción por defecto, reservar `--db=dev` para desarrollo y comunicar la migración de las dos credenciales nombradas.",
+      "recommended": true
     },
     {
-      "title": "Modo seguro por defecto",
-      "body": "Usar `Hamelyn_DEV` por defecto y requerir una confirmación o flag explícito para producción.",
-      "recommended": true
+      "title": "Conservar compatibilidad temporal",
+      "body": "Aceptar también `MONGO_URL` durante una transición documentada antes de hacer obligatorias las variables nombradas.",
+      "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Modo seguro por defecto",
-    "body": "Usar `Hamelyn_DEV` por defecto y requerir una confirmación o flag explícito para producción.",
+    "title": "Aprobar el contrato explícito",
+    "body": "Mantener producción por defecto, reservar `--db=dev` para desarrollo y comunicar la migración de las dos credenciales nombradas.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "Introdujo el runner y el mecanismo de copia de runtime files que definen el comportamiento actual.",
-    "confidence": "high"
+    "person": "HamelynDev",
+    "reason": "Ha mantenido recientemente el lanzador afectado y está asociado a la PR abierta que implementa el nuevo flujo.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8826.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8826#issuecomment-5449219580",
-    "reviewedAt": "2026-08-28T06:26:09.439Z",
-    "mainSha": "7af611302ff3b8e05c5c121b223fa36fcef5d851"
+    "reviewedAt": "2026-08-28T08:44:13.916Z",
+    "mainSha": "bb11af762e5eb1f77b725b757cbed7daac8d7f43"
   }
 }

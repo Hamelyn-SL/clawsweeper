@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-28T08:45:55.094Z",
+  "updatedAt": "2026-08-28T07:30:23Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8829,
+    "title": "feat: add explicit local database selection",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8829",
+    "state": "open",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-08-28T06:26:20Z",
+    "updatedAt": "2026-08-28T07:30:23Z",
+    "headSha": "d2374c11a649fa0a9659deede7e5beb202406c1d"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe el selector conservar durante la migración el destino definido por los `.env` existentes, o puede sustituirlo por producción por defecto?",
+  "rationale": "La elección determina a qué base apuntan comandos locales con capacidad de escritura; el código no puede decidir con seguridad entre compatibilidad y un cambio de política.",
+  "options": [
+    {
+      "title": "Migración compatible",
+      "body": "Mantener una ruta heredada controlada mientras se trasladan las credenciales y se confirma la selección explícita.",
+      "recommended": true
+    },
+    {
+      "title": "Cambio inmediato a producción",
+      "body": "Exigir las dos variables raíz y asumir el corte, coordinando previamente la migración de todos los checkouts.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Migración compatible",
+    "body": "Mantener una ruta heredada controlada mientras se trasladan las credenciales y se confirma la selección explícita.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Su historial define el contrato de arranque que cambia la nueva política de selección.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8829.md",
+    "reviewedAt": "2026-08-28T08:45:55.094Z",
+    "mainSha": "bb11af762e5eb1f77b725b757cbed7daac8d7f43"
+  }
+}
