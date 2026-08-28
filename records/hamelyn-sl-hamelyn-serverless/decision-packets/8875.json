@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-28T12:50:56.590Z",
+  "updatedAt": "2026-08-28T12:42:38Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8875,
+    "title": "Cambios recepción V2",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8875",
+    "state": "open",
+    "labels": [
+      "source:admin-panel",
+      "app:supply",
+      "feature",
+      "triage:running",
+      "P1",
+      "reporter:daniellopez"
+    ],
+    "createdAt": "2026-08-28T11:10:00Z",
+    "updatedAt": "2026-08-28T12:42:38Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe Recepción eliminar por completo la cancelación y mantener los lotes con bultos faltantes abiertos hasta una nueva recepción, sin cierre automático?",
+  "rationale": "La decisión cambia un flujo ya implementado de transición a `CANCELLED` y define responsabilidades entre operador y revisor; el código no puede inferir esa política.",
+  "options": [
+    {
+      "title": "Aplicar la política solicitada",
+      "body": "Eliminar la acción de cancelar y bloquear el cierre de lotes incompletos hasta que se recepcionen los bultos pendientes.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener cancelación restringida",
+      "body": "Conservar la cancelación solo para un rol supervisor y documentar el criterio operativo excepcional.",
+      "recommended": false
+    },
+    {
+      "title": "Separar la política del arreglo técnico",
+      "body": "Resolver primero las búsquedas con casos reproducibles y abrir una decisión específica para los cambios de estados.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aplicar la política solicitada",
+    "body": "Eliminar la acción de cancelar y bloquear el cierre de lotes incompletos hasta que se recepcionen los bultos pendientes.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "alexcanHamelyn",
+    "reason": "Es el principal autor histórico del flujo y figura asignado en la iniciativa relacionada.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8875.md",
+    "reviewedAt": "2026-08-28T12:50:56.590Z",
+    "mainSha": "f1b6fa49dad0ac302bda86d07a1759473540587f"
+  }
+}
