@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-28T09:06:29.534Z",
+  "updatedAt": "2026-08-28T08:57:14Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8841,
+    "title": "MCP de MongoDB compartido por HTTP para los agentes locales del equipo",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8841",
+    "state": "open",
+    "labels": [
+      "app:infrastructure",
+      "feature",
+      "triage:running",
+      "P2"
+    ],
+    "createdAt": "2026-08-28T08:50:57Z",
+    "updatedAt": "2026-08-28T08:57:14Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe el repositorio mantener un `LaunchAgent` de macOS y el ciclo de vida de un servidor MCP local compartido para todo el equipo?",
+  "rationale": "El código actual muestra clientes MCP HTTP y gestión de procesos de desarrollo, pero no establece quién mantiene una dependencia externa, sus actualizaciones ni la recuperación compartida.",
+  "options": [
+    {
+      "title": "Aprobar el setup versionado de macOS",
+      "body": "Mantener el instalador y la guía en el repositorio con un propietario claro para actualizaciones, soporte y retirada.",
+      "recommended": true
+    },
+    {
+      "title": "Mantenerlo como configuración local",
+      "body": "Conservar el patrón fuera del repositorio y publicar solo pautas de seguridad para cada desarrollador.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar el setup versionado de macOS",
+    "body": "Mantener el instalador y la guía en el repositorio con un propietario claro para actualizaciones, soporte y retirada.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "HamelynDev",
+    "reason": "Su historial enlaza la documentación MCP soportada y el ciclo de vida reciente de procesos de desarrollo.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8841.md",
+    "reviewedAt": "2026-08-28T09:06:29.534Z",
+    "mainSha": "d8167eb6061ab380ee0ecd6752c323e664569610"
+  }
+}

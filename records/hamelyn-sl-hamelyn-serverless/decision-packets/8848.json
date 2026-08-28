@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-28T09:06:46.215Z",
+  "updatedAt": "2026-08-28T08:57:25Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8848,
+    "title": "feat: migrate the amazon family to marketplace manager v2",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8848",
+    "state": "open",
+    "labels": [
+      "size/XXL"
+    ],
+    "createdAt": "2026-08-28T08:57:16Z",
+    "updatedAt": "2026-08-28T08:57:25Z",
+    "headSha": "37e93d684bed5bc4e3be311028cca8b2fc9e2e5f"
+  },
+  "lane": "release_inclusion",
+  "priority": "P1",
+  "question": "¿Debe activarse el switchover de los seis crons en este PR o separarse hasta que se completen los gates Atlas, el lock compartido y las fases legacy pendientes?",
+  "rationale": "La elección activa o difiere tráfico productivo de seis marketplaces y requiere confirmar cambios externos y recuperación operativa que el código no puede garantizar por sí solo.",
+  "options": [
+    {
+      "title": "Separar el switchover",
+      "body": "Conservar las rutas V2 sin schedule y abrir la activación para cuando las pruebas y gates operativos estén cerrados.",
+      "recommended": true
+    },
+    {
+      "title": "Activar con aceptación explícita",
+      "body": "Aceptar temporalmente los huecos y riesgos de operación, dejando un plan y responsable de recuperación antes del despliegue.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Separar el switchover",
+    "body": "Conservar las rutas V2 sin schedule y abrir la activación para cuando las pruebas y gates operativos estén cerrados.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Su historial incluye el piloto V2 y la recuperación Amazon que quedaría afectada por el cambio de schedule.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8848.md",
+    "reviewedAt": "2026-08-28T09:06:46.215Z",
+    "mainSha": "d8167eb6061ab380ee0ecd6752c323e664569610"
+  }
+}
