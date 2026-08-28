@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-28T16:59:55.302Z",
+  "updatedAt": "2026-08-28T12:57:42Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8862,
+    "title": "Retirar el parche de eve y los 15 crons manuales de agents apoyándose en normalizeVercelServiceCrons",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8862",
+    "state": "open",
+    "labels": [
+      "app:infrastructure",
+      "feature",
+      "triage:blocked",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "P3",
+      "impact:security",
+      "issue-rating: ➖ n/a"
+    ],
+    "createdAt": "2026-08-28T10:06:14Z",
+    "updatedAt": "2026-08-28T12:57:42Z"
+  },
+  "lane": "manual_review",
+  "priority": "P3",
+  "question": "¿Quién autoriza y observa el deployment de validación necesario antes de eliminar el parche de Eve?",
+  "rationale": "La única condición decisiva es la propagación real de crons desde el Build Output de servicio a Vercel; no puede probarse de forma fiable solo con código local.",
+  "options": [
+    {
+      "title": "Validar en deployment controlado",
+      "body": "Aplicar el bump mínimo compatible y comprobar en Vercel que aparecen y se disparan los quince schedules.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener el parche temporalmente",
+      "body": "Conservar Eve 0.25.3 y la ruta fija hasta disponer de una ventana de validación operativa.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Validar en deployment controlado",
+    "body": "Aplicar el bump mínimo compatible y comprobar en Vercel que aparecen y se disparan los quince schedules.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "El contexto, el bisect y las restricciones de compatibilidad actuales del salto de Eve proceden de su trabajo reciente.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8862.md",
+    "reviewedAt": "2026-08-28T16:59:55.302Z",
+    "mainSha": "88131d9715961366e30ac7cb24d4062674169031"
+  }
+}
