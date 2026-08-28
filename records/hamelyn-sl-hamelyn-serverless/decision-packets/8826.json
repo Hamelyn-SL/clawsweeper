@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-28T08:44:13.916Z",
+  "generatedAt": "2026-08-28T08:50:38.203Z",
   "updatedAt": "2026-08-28T06:27:25Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -14,47 +14,51 @@
       "reporter:davidgonzalez",
       "feature",
       "triage:pr-opened",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
       "P2",
-      "impact:ux-friction",
-      "issue-rating: 💎 diamond",
       "clawsweeper:source-repro",
       "clawsweeper:linked-pr-open",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-product-decision"
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-08-28T05:59:13Z",
     "updatedAt": "2026-08-28T06:27:25Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se aprueba producción como valor por defecto y se exige migrar los entornos locales a `MONGO_URL_PROD` y `MONGO_URL_DEV`?",
-  "rationale": "La implementación modifica el contrato operativo de todos los entornos locales y puede interrumpir checkouts con la configuración anterior.",
+  "question": "¿Debe aceptarse producción como destino por defecto para `dev:run` y `local:run`, exigiendo `--db=dev` para cualquier ejecución contra desarrollo?",
+  "rationale": "El valor por defecto cambia el contrato operativo de todos los entornos locales y requiere una migración visible de credenciales fuera de Git.",
   "options": [
     {
-      "title": "Aprobar el contrato explícito",
-      "body": "Mantener producción por defecto, reservar `--db=dev` para desarrollo y comunicar la migración de las dos credenciales nombradas.",
+      "title": "Mantener producción por defecto",
+      "body": "Aceptar el contrato descrito en la issue y exigir `--db=dev`, con guía de migración y prueba de ambos runners.",
       "recommended": true
     },
     {
-      "title": "Conservar compatibilidad temporal",
-      "body": "Aceptar también `MONGO_URL` durante una transición documentada antes de hacer obligatorias las variables nombradas.",
+      "title": "Exigir selector explícito",
+      "body": "Hacer obligatorio `--db=prod|dev` para reducir el riesgo de conectar a producción por omisión.",
+      "recommended": false
+    },
+    {
+      "title": "Conservar el modelo actual",
+      "body": "No introducir selector compartido y seguir permitiendo que cada app cargue su propio `.env`.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar el contrato explícito",
-    "body": "Mantener producción por defecto, reservar `--db=dev` para desarrollo y comunicar la migración de las dos credenciales nombradas.",
+    "title": "Mantener producción por defecto",
+    "body": "Aceptar el contrato descrito en la issue y exigir `--db=dev`, con guía de migración y prueba de ambos runners.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "HamelynDev",
-    "reason": "Ha mantenido recientemente el lanzador afectado y está asociado a la PR abierta que implementa el nuevo flujo.",
-    "confidence": "medium"
+    "reason": "Es la persona asignada a la PR abierta y su historial reciente toca el runner afectado.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8826.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8826#issuecomment-5449219580",
-    "reviewedAt": "2026-08-28T08:44:13.916Z",
+    "reviewedAt": "2026-08-28T08:50:38.203Z",
     "mainSha": "bb11af762e5eb1f77b725b757cbed7daac8d7f43"
   }
 }

@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-28T08:44:34.402Z",
-  "updatedAt": "2026-08-28T08:39:45Z",
+  "generatedAt": "2026-08-28T08:51:53.347Z",
+  "updatedAt": "2026-08-28T08:47:23Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,46 +11,45 @@
     "state": "open",
     "labels": [
       "size/XXL",
-      "rating: 🥈 silver",
-      "status: 📣 needs proof",
       "P1",
+      "status: 📣 needs proof",
       "merge-risk: 🚨 compatibility",
-      "merge-risk: 🚨 availability"
+      "merge-risk: 🚨 availability",
+      "rating: 🥉 bronze"
     ],
     "createdAt": "2026-08-27T09:04:38Z",
-    "updatedAt": "2026-08-28T08:39:45Z",
+    "updatedAt": "2026-08-28T08:47:23Z",
     "headSha": "13a6f1311c79d4938a141dac8b110b08e7504f9c"
   },
-  "lane": "product_direction",
+  "lane": "release_inclusion",
   "priority": "P1",
-  "question": "¿Debe conservarse una ejecución programada del recovery legacy mientras MercadoLibre V2 no procesa `SYNC_ERROR` y los métodos de recovery existentes?",
-  "rationale": "El diff convierte una recuperación automática existente en fallback manual; decidir aceptarla o preservar compatibilidad requiere intención explícita del equipo Marketplace.",
+  "question": "¿Debe activarse el switchover de `/api/mercadolibreV2` antes de provisionar los índices Atlas y de conservar una recuperación programada para los estados legacy?",
+  "rationale": "La rama cambia un cron productivo y los requisitos pendientes requieren una decisión operativa sobre rendimiento, recuperación y exposición al riesgo.",
   "options": [
     {
-      "title": "Conservar recovery durante la transición",
-      "body": "Mantener una ruta o fase programada y acotada para el recovery legacy hasta migrar sus equivalentes V2.",
+      "title": "Aplazar el switchover",
+      "body": "Mantener la ruta legacy programada hasta completar índices, recuperación equivalente y prueba real integral.",
       "recommended": true
     },
     {
-      "title": "Aceptar la retirada temporal",
-      "body": "Autorizar expresamente que las filas legacy queden sin recovery automático y documentar el procedimiento operativo de seguimiento.",
+      "title": "Aceptar el riesgo operativo",
+      "body": "Activar V2 asumiendo temporalmente la ausencia de recuperación programada y los gates Atlas no verificados.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Conservar recovery durante la transición",
-    "body": "Mantener una ruta o fase programada y acotada para el recovery legacy hasta migrar sus equivalentes V2.",
+    "title": "Aplazar el switchover",
+    "body": "Mantener la ruta legacy programada hasta completar índices, recuperación equivalente y prueba real integral.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MarcosTerroso",
-    "reason": "Su historial cubre el diseño del manager y el flujo MercadoLibre que define la transición.",
+    "person": "MiguelHamelyn",
+    "reason": "Su migración V2 reciente y la asignación de revisión le conectan directamente con el contrato común y el criterio de corte.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8798.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8798#issuecomment-5438096279",
-    "reviewedAt": "2026-08-28T08:44:34.402Z",
+    "reviewedAt": "2026-08-28T08:51:53.347Z",
     "mainSha": "bb11af762e5eb1f77b725b757cbed7daac8d7f43"
   }
 }
