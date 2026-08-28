@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-28T08:44:13.433Z",
-  "updatedAt": "2026-08-28T08:37:12Z",
+  "generatedAt": "2026-08-28T10:00:03.617Z",
+  "updatedAt": "2026-08-28T09:51:04Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,50 +12,49 @@
     "labels": [
       "app:marketplace",
       "feature",
-      "triage:done",
+      "triage:queued",
       "area:marketplace-sync",
-      "mk:mercadolibre",
-      "marketplace-v2",
-      "P2",
       "impact:other",
-      "issue-rating: ➖ n/a",
-      "clawsweeper:linked-pr-open",
       "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:linked-pr-open",
+      "issue-rating: ➖ n/a",
+      "mk:mercadolibre",
+      "marketplace-v2"
     ],
     "createdAt": "2026-08-25T09:37:21Z",
-    "updatedAt": "2026-08-28T08:37:12Z"
+    "updatedAt": "2026-08-28T09:51:04Z"
   },
-  "lane": "release_inclusion",
+  "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se autoriza cambiar el schedule de producción a MercadoLibre V2 después de crear los índices de Atlas y aceptar los huecos F3 documentados?",
-  "rationale": "El cambio altera el flujo programado de inventario y pedidos, mientras que los índices y parte de la recuperación operativa no se pueden validar únicamente desde el código.",
+  "question": "¿Se autoriza mover el schedule principal a MercadoLibre V2 tras crear los índices de Atlas y aceptar los huecos F3 documentados?",
+  "rationale": "El cambio altera el flujo programado de inventario y pedidos, mientras que los índices y parte de la recuperación operativa no se validan solo desde el código.",
   "options": [
     {
       "title": "Activar tras los gates operativos",
-      "body": "Crear los índices, validar ticks y observabilidad en vivo, y entonces programar la ruta V2 conservando la V1 como fallback manual.",
+      "body": "Crear los índices, verificar ticks y observabilidad en vivo, y entonces programar V2 conservando V1 como fallback manual.",
       "recommended": true
     },
     {
       "title": "Aplazar el switchover",
-      "body": "Mantener el cron V1 mientras se cierran los huecos F3 y dejar la ruta V2 sin schedule para validación dirigida.",
+      "body": "Mantener V1 programado mientras se cierran los huecos F3 y usar V2 solo para validación dirigida.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Activar tras los gates operativos",
-    "body": "Crear los índices, validar ticks y observabilidad en vivo, y entonces programar la ruta V2 conservando la V1 como fallback manual.",
+    "body": "Crear los índices, verificar ticks y observabilidad en vivo, y entonces programar V2 conservando V1 como fallback manual.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Es el principal autor del modelo V2 y de la implementación candidata enlazada.",
+    "reason": "Ha propuesto la migración candidata y tiene historial reciente en la adopción de MarketplaceManager V2.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8684.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8684#issuecomment-5409003232",
-    "reviewedAt": "2026-08-28T08:44:13.433Z",
-    "mainSha": "bb11af762e5eb1f77b725b757cbed7daac8d7f43"
+    "reviewedAt": "2026-08-28T10:00:03.617Z",
+    "mainSha": "ec45937f0c458b3811de2d4bb4079185bf5e44e4"
   }
 }
