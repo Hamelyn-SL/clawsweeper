@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-28T08:58:11.613Z",
+  "updatedAt": "2026-08-28T08:52:28Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8847,
+    "title": "Limpieza de código muerto y duplicado detectado por fallow (agosto 2026)",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8847",
+    "state": "open",
+    "labels": [
+      "app:infrastructure",
+      "feature",
+      "triage:queued",
+      "P3"
+    ],
+    "createdAt": "2026-08-28T08:52:16Z",
+    "updatedAt": "2026-08-28T08:52:28Z"
+  },
+  "lane": "product_direction",
+  "priority": "P3",
+  "question": "¿Debe la subissue de `drawer-position-index` crear una superficie de core consumible por agents o conservar la copia con prueba de paridad como excepción explícita?",
+  "rationale": "El código actual documenta que importar core en agents arrastra dependencias de build; eliminar la copia exige elegir una frontera permanente, no solo aplicar una limpieza.",
+  "options": [
+    {
+      "title": "Mantenerla como decisión de frontera",
+      "body": "Conservar la subissue abierta y resolver primero una API de core que no añada dependencias de build a agents.",
+      "recommended": true
+    },
+    {
+      "title": "Documentar la excepción",
+      "body": "Retirar esa subissue del lote de deduplicación y mantener la copia con su prueba de paridad como mecanismo deliberado.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mantenerla como decisión de frontera",
+    "body": "Conservar la subissue abierta y resolver primero una API de core que no añada dependencias de build a agents.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Introdujo la integración de agents y documentó el motivo técnico de mantener la copia.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8847.md",
+    "reviewedAt": "2026-08-28T08:58:11.613Z",
+    "mainSha": "bb11af762e5eb1f77b725b757cbed7daac8d7f43"
+  }
+}

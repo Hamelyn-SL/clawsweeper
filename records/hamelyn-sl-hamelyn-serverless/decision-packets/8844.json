@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-28T08:58:20.666Z",
+  "updatedAt": "2026-08-28T08:51:59Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8844,
+    "title": "Eliminar restos de código muerto en admin, data-dashboards, data-crons, public, agents, bifrost y ui",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8844",
+    "state": "open",
+    "labels": [
+      "app:infrastructure",
+      "feature",
+      "triage:queued",
+      "P3"
+    ],
+    "createdAt": "2026-08-28T08:51:47Z",
+    "updatedAt": "2026-08-28T08:51:59Z"
+  },
+  "lane": "product_direction",
+  "priority": "P3",
+  "question": "¿Debe `apps/public` conservar el 404 por defecto eliminando `_not-found.tsx`, o activar su diseño existente renombrándolo a `not-found.tsx`?",
+  "rationale": "Ambas opciones cierran el hallazgo técnico, pero una cambia la experiencia de rutas inexistentes y no hay contrato actual que determine cuál es la intención.",
+  "options": [
+    {
+      "title": "Conservar el 404 por defecto",
+      "body": "Eliminar `_not-found.tsx` y mantener el comportamiento estándar actual de Next.",
+      "recommended": true
+    },
+    {
+      "title": "Activar el 404 diseñado",
+      "body": "Renombrar el archivo a `not-found.tsx` y validar visualmente la nueva respuesta 404.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Conservar el 404 por defecto",
+    "body": "Eliminar `_not-found.tsx` y mantener el comportamiento estándar actual de Next.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Miguel Angel Hernández Perdomo",
+    "reason": "Su commit introdujo el archivo y la mayor parte del bloque funcional relacionado.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8844.md",
+    "reviewedAt": "2026-08-28T08:58:20.666Z",
+    "mainSha": "bb11af762e5eb1f77b725b757cbed7daac8d7f43"
+  }
+}

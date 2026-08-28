@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-26T18:21:36.251Z",
-  "updatedAt": "2026-08-26T16:39:05Z",
+  "generatedAt": "2026-08-28T08:58:44.628Z",
+  "updatedAt": "2026-08-28T08:54:11Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,49 +13,48 @@
       "source:admin-panel",
       "app:infrastructure",
       "feature",
-      "triage:done",
-      "reporter:JavierHamelyn",
-      "origin:dev",
-      "P2",
+      "triage:queued",
       "impact:other",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "issue-rating: ➖ n/a",
+      "reporter:JavierHamelyn",
+      "origin:dev"
     ],
     "createdAt": "2026-08-26T15:23:20Z",
-    "updatedAt": "2026-08-26T16:39:05Z"
+    "updatedAt": "2026-08-28T08:54:11Z"
   },
-  "lane": "security_boundary",
+  "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué reglas de Fallow pueden bloquear únicamente hallazgos nuevos y qué workflow aislado debe poseer el permiso de actualizar el comentario del PR?",
-  "rationale": "La definición de reglas de alta confianza y la frontera entre ejecución de código del PR y escritura en GitHub determinan la política de calidad y seguridad del repositorio.",
+  "question": "¿Se aprueba el contrato permanente de Fallow: reglas bloqueantes, reglas informativas y publicación diferida del comentario desde un workflow con permisos separados?",
+  "rationale": "La selección de severidades y la frontera entre ejecutar código de PR y comentar en GitHub determinan una política compartida de CI, no solo una implementación mecánica.",
   "options": [
     {
-      "title": "Aprobar gate mínimo aislado",
-      "body": "Fijar un conjunto pequeño de reglas de alta confianza como `error`, usar `new-only` y publicar mediante un workflow posterior sin checkout del PR.",
+      "title": "Aprobar el contrato incremental",
+      "body": "Mantener el enfoque de la PR: bloquear únicamente hallazgos nuevos configurados como `error` y publicar el resultado desde un workflow aislado.",
       "recommended": true
     },
     {
-      "title": "Empezar solo informativo",
-      "body": "Mantener todos los hallazgos como aviso consolidado hasta disponer de datos suficientes para promover reglas a bloqueo.",
+      "title": "Acotar primero la política",
+      "body": "Definir las reglas y severidades permitidas antes de continuar la revisión técnica de la PR.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar gate mínimo aislado",
-    "body": "Fijar un conjunto pequeño de reglas de alta confianza como `error`, usar `new-only` y publicar mediante un workflow posterior sin checkout del PR.",
+    "title": "Aprobar el contrato incremental",
+    "body": "Mantener el enfoque de la PR: bloquear únicamente hallazgos nuevos configurados como `error` y publicar el resultado desde un workflow aislado.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Está asignado a esta mejora y ha mantenido recientemente los gates de CI relacionados.",
+    "reason": "Figura asignado a la issue y ha propuesto la implementación concreta en la PR vinculada.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8768.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8768#issuecomment-5427946474",
-    "reviewedAt": "2026-08-26T18:21:36.251Z",
-    "mainSha": "e1a5299a04a34e1460aa4f2d85d69ee05bdf5570"
+    "reviewedAt": "2026-08-28T08:58:44.628Z",
+    "mainSha": "bb11af762e5eb1f77b725b757cbed7daac8d7f43"
   }
 }
