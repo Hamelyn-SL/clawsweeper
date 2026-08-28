@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-27T15:24:57.602Z",
-  "updatedAt": "2026-08-27T15:11:54Z",
+  "generatedAt": "2026-08-28T09:16:12.477Z",
+  "updatedAt": "2026-08-28T09:09:01Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,48 +12,47 @@
     "labels": [
       "bug",
       "app:infrastructure",
-      "triage:done",
-      "P2",
+      "triage:queued",
       "impact:other",
-      "issue-rating: 💎 diamond",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision",
+      "P2",
       "clawsweeper:source-repro",
       "clawsweeper:linked-pr-open",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-product-decision"
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-08-27T10:40:05Z",
-    "updatedAt": "2026-08-27T15:11:54Z"
+    "updatedAt": "2026-08-28T09:09:01Z"
   },
-  "lane": "security_boundary",
+  "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe el deploy de staging fallar si falta `VERCEL_TOKEN`, o se acepta explícitamente conservar el alias anterior durante la transición?",
-  "rationale": "La elección determina si staging puede seguir validando código obsoleto y requiere aprobar el uso operativo de una credencial de Vercel.",
+  "question": "¿Debe el staging fallar obligatoriamente si no existe `VERCEL_TOKEN` o si no se puede confirmar la promoción del alias de Agents?",
+  "rationale": "La expectativa de alias siempre actualizado entra en conflicto con la compatibilidad actual de continuar el deploy con un warning cuando falta la credencial.",
   "options": [
     {
-      "title": "Exigir sincronización",
-      "body": "Provisionar un token de alcance mínimo y fallar el job de Agents cuando no pueda seleccionar y promover el deployment exacto.",
+      "title": "Hacer obligatorio el sync del alias",
+      "body": "Provisionar un token de alcance mínimo y fallar staging si no puede confirmar el alias del deployment correspondiente al SHA.",
       "recommended": true
     },
     {
-      "title": "Mantener transición temporal",
-      "body": "Permitir el warning solo con una fecha de retirada y monitorización explícita del alias obsoleto.",
+      "title": "Mantener degradación con warning",
+      "body": "Permitir que staging continúe sin token, aceptando que el alias puede seguir sirviendo un build anterior.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Exigir sincronización",
-    "body": "Provisionar un token de alcance mínimo y fallar el job de Agents cuando no pueda seleccionar y promover el deployment exacto.",
+    "title": "Hacer obligatorio el sync del alias",
+    "body": "Provisionar un token de alcance mínimo y fallar staging si no puede confirmar el alias del deployment correspondiente al SHA.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MarcosTerroso",
-    "reason": "Está coordinando la PR y la comprobación real del alias descritas en la discusión.",
+    "person": "JavierHamelyn",
+    "reason": "El historial lo vincula con la estrategia de despliegue de Agents y su integración de Vercel.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8804.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8804#issuecomment-5438049219",
-    "reviewedAt": "2026-08-27T15:24:57.602Z",
-    "mainSha": "7af611302ff3b8e05c5c121b223fa36fcef5d851"
+    "reviewedAt": "2026-08-28T09:16:12.477Z",
+    "mainSha": "d8167eb6061ab380ee0ecd6752c323e664569610"
   }
 }

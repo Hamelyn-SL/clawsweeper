@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-28T09:15:29.504Z",
+  "updatedAt": "2026-08-28T09:03:03Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8851,
+    "title": "Scraping watcher: un solo mensaje diario con todos los sitios y el detalle en el hilo",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8851",
+    "state": "open",
+    "labels": [
+      "source:admin-panel",
+      "app:infrastructure",
+      "feature",
+      "triage:queued",
+      "P2"
+    ],
+    "createdAt": "2026-08-28T09:02:51Z",
+    "updatedAt": "2026-08-28T09:03:03Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se aprueba que el watcher cambie de una alerta por detección a un único resumen diario con investigaciones encadenadas en su hilo, incluyendo `supply` como superficie monitorizada?",
+  "rationale": "La incidencia define el resultado deseado, pero el flujo actual usa recepciones Slack durables independientes y no documenta el contrato de hilo ni la semántica de cobertura para `supply`.",
+  "options": [
+    {
+      "title": "Adoptar el resumen diario con hilo",
+      "body": "Aprobar un mensaje raíz actualizable y una respuesta por proyecto, preservando la clasificación y los umbrales existentes.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener alertas independientes",
+      "body": "Conservar el flujo actual y limitar cualquier mejora a acortar el contenido de cada alerta.",
+      "recommended": false
+    },
+    {
+      "title": "Separar primero la cobertura de `supply`",
+      "body": "Validar el modelo de tráfico de `supply` antes de combinarlo con el rediseño de entrega en Slack.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Adoptar el resumen diario con hilo",
+    "body": "Aprobar un mensaje raíz actualizable y una respuesta por proyecto, preservando la clasificación y los umbrales existentes.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "HamelynDev",
+    "reason": "Es la persona vinculada por historial al schedule que tendría que cambiar su modelo de entrega.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8851.md",
+    "reviewedAt": "2026-08-28T09:15:29.504Z",
+    "mainSha": "d8167eb6061ab380ee0ecd6752c323e664569610"
+  }
+}
