@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-29T01:09:16.238Z",
+  "updatedAt": "2026-08-29T00:49:56Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8892,
+    "title": "fix: read ecommerce carts from primary",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8892",
+    "state": "open",
+    "labels": [
+      "size/S"
+    ],
+    "createdAt": "2026-08-29T00:40:17Z",
+    "updatedAt": "2026-08-29T00:49:56Z",
+    "headSha": "e7a204601fda9deda5c5d8b4ac5dd949d6cb4f39"
+  },
+  "lane": "merge_risk",
+  "priority": "P1",
+  "question": "¿Debe `findCartById` usar el primario globalmente o solo deben hacerlo los flujos ecommerce que requieren read-after-write?",
+  "rationale": "El diff corrige el flujo afectado, pero cambia la política de lectura de consumidores adicionales como la validación de cupones; la capacidad y el contrato de consistencia requieren intención del área.",
+  "options": [
+    {
+      "title": "Acotar la lectura consistente",
+      "body": "Añadir una ruta de repositorio explícita para create→read y adición de productos, dejando la consulta compartida con su política actual.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar la política global",
+      "body": "Mantener `primary` en `findCartById` tras confirmar que la carga adicional del primario es aceptable para todos sus consumidores.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Acotar la lectura consistente",
+    "body": "Añadir una ruta de repositorio explícita para create→read y adición de productos, dejando la consulta compartida con su política actual.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Miguel Angel Hernández Perdomo",
+    "reason": "Su commit introdujo la implementación de repositorio cuya política de lectura cambia.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8892.md",
+    "reviewedAt": "2026-08-29T01:09:16.238Z",
+    "mainSha": "88131d9715961366e30ac7cb24d4062674169031"
+  }
+}
