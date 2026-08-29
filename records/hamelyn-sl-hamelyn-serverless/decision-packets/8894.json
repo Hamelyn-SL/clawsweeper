@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-29T08:58:44.710Z",
+  "updatedAt": "2026-08-29T08:44:28Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8894,
+    "title": "Amazon IT creation queue is undercounted by the BigQuery marketplace mirror",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8894",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "triage:queued",
+      "P2"
+    ],
+    "createdAt": "2026-08-29T08:44:17Z",
+    "updatedAt": "2026-08-29T08:44:28Z"
+  },
+  "lane": "manual_review",
+  "priority": "P2",
+  "question": "¿Se autoriza ejecutar la re-sincronización productiva de `mk_amazonIt` y validar el selector antes de abrir un cambio de código adicional?",
+  "rationale": "La reparación inmediata escribe datos existentes en BigQuery y necesita una comprobación post-ejecución con Mongo y BigQuery vivos; el checkout no puede demostrar la causa operativa exacta.",
+  "options": [
+    {
+      "title": "Re-sincronizar y medir",
+      "body": "Ejecutar la reconciliación idempotente de `mk_amazonIt`, esperar el materialize y contrastar el umbral de diferencia indicado.",
+      "recommended": true
+    },
+    {
+      "title": "Investigar antes de escribir",
+      "body": "Revisar logs, `change_events` y runs del scheduler para aislar el fallo de propagación antes de aplicar el backfill.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Re-sincronizar y medir",
+    "body": "Ejecutar la reconciliación idempotente de `mk_amazonIt`, esperar el materialize y contrastar el umbral de diferencia indicado.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Miguel Angel Hernández Perdomo",
+    "reason": "El mecanismo de baseline y reconciliación actual figura en su historial reciente.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8894.md",
+    "reviewedAt": "2026-08-29T08:58:44.710Z",
+    "mainSha": "d15ecbfb02062c49ecb1004d4caf6712b4a499e0"
+  }
+}
