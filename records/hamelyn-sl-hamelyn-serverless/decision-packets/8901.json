@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-30T10:33:18.124Z",
+  "updatedAt": "2026-08-30T10:27:02Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8901,
+    "title": "[Infrastructure] Un POST a la portada falló tras superar 2 GB de memoria",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8901",
+    "state": "open",
+    "labels": [
+      "bug",
+      "source:admin-panel",
+      "app:infrastructure",
+      "triage:running",
+      "P1"
+    ],
+    "createdAt": "2026-08-30T06:19:55Z",
+    "updatedAt": "2026-08-30T10:27:02Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "Si la señal persiste tras desplegar la optimización de consultas, ¿se prioriza instrumentar un perfil de heap o ampliar temporalmente la memoria de la función de la portada?",
+  "rationale": "La elección afecta coste y operación de Vercel; la evidencia actual no identifica una asignación concreta que permita escogerla automáticamente.",
+  "options": [
+    {
+      "title": "Perfilar antes de ampliar",
+      "body": "Capturar telemetría de asignaciones en una regeneración representativa y ajustar el origen del working set con datos.",
+      "recommended": true
+    },
+    {
+      "title": "Ampliar memoria temporalmente",
+      "body": "Elevar el límite como mitigación operativa mientras se programa un perfilado posterior.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Perfilar antes de ampliar",
+    "body": "Capturar telemetría de asignaciones en una regeneración representativa y ajustar el origen del working set con datos.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Miguel Angel Hernández Perdomo",
+    "reason": "Es el contribuidor más reciente de la ruta que reúne y procesa los pools de productos de la portada.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8901.md",
+    "reviewedAt": "2026-08-30T10:33:18.124Z",
+    "mainSha": "11f10ecd49b9e7680b12b3b3d4473d7cbfd4944e"
+  }
+}
