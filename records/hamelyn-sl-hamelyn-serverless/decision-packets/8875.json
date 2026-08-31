@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-31T05:47:29.965Z",
+  "generatedAt": "2026-08-31T05:50:53.802Z",
   "updatedAt": "2026-08-31T05:35:41Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -14,53 +14,51 @@
       "app:supply",
       "feature",
       "triage:done",
+      "P1",
+      "impact:other",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
       "reporter:daniellopez",
-      "P1",
-      "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro"
+      "issue-rating: 🥈 silver"
     ],
     "createdAt": "2026-08-28T11:10:00Z",
     "updatedAt": "2026-08-31T05:35:41Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe un lote con bultos faltantes poder entrar en revisión antes de completar todos sus bultos y qué rol puede cerrarlo?",
-  "rationale": "La implementación vigente bloquea esa transición; habilitarla exige definir permisos, trazabilidad y la relación entre artículos revisados y bultos pendientes.",
+  "question": "¿Debe un lote con bultos faltantes pasar a revisión parcial, qué rol puede cerrarlo y qué evidencia vincula los artículos revisados con los bultos pendientes?",
+  "rationale": "El código actual preserva que el lote incompleto no entre en revisión; la petición cambia ese contrato operativo y no puede resolverse de forma segura solo con una corrección técnica.",
   "options": [
     {
-      "title": "Conservar el bloqueo actual",
-      "body": "Mantener el lote fuera de revisión hasta escanear todos los bultos y entregar por separado las correcciones mecánicas.",
+      "title": "Preservar el bloqueo y reparar fallos",
+      "body": "Corregir búsquedas, datos de MRW y UI por separado, dejando los lotes incompletos fuera de revisión hasta definir el flujo.",
       "recommended": true
     },
     {
-      "title": "Permitir revisión parcial",
-      "body": "Definir estados, permisos de operario y revisor, auditoría y pruebas para revisar lo recibido sin permitir cierres indebidos.",
+      "title": "Diseñar revisión parcial auditada",
+      "body": "Definir transiciones, permisos de operario y revisor, trazabilidad artículo-bulto y condiciones de cierre antes de implementar el nuevo flujo.",
       "recommended": false
     },
     {
-      "title": "Añadir cierre temporal",
-      "body": "Definir un plazo, responsable y trazabilidad antes de automatizar cualquier cierre de lote incompleto.",
+      "title": "Permitir cierre manual excepcional",
+      "body": "Crear un cierre de supervisor con motivo y auditoría, sin introducir todavía revisión parcial.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Conservar el bloqueo actual",
-    "body": "Mantener el lote fuera de revisión hasta escanear todos los bultos y entregar por separado las correcciones mecánicas.",
+    "title": "Preservar el bloqueo y reparar fallos",
+    "body": "Corregir búsquedas, datos de MRW y UI por separado, dejando los lotes incompletos fuera de revisión hasta definir el flujo.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "banosdavidhamelyn",
-    "reason": "Es el asignado actual y ha mantenido recientemente el flujo de recepción afectado.",
+    "person": "alexcanHamelyn",
+    "reason": "El historial muestra que concentra la implementación de Recepción V2 y sus contratos operativos actuales.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8875.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8875#issuecomment-5452723258",
-    "reviewedAt": "2026-08-31T05:47:29.965Z",
-    "mainSha": "11f10ecd49b9e7680b12b3b3d4473d7cbfd4944e"
+    "reviewedAt": "2026-08-31T05:50:53.802Z",
+    "mainSha": "2d6ac3e98d608063a4fbd4337db8d08fc703feb3"
   }
 }
