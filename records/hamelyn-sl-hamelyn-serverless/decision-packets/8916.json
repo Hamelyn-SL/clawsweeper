@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-31T06:49:58.166Z",
+  "updatedAt": "2026-08-31T06:42:01Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8916,
+    "title": "Amazon COM: el cron de retiradas agota los 800 s y devuelve 504 en episodios recurrentes desde el 24-ago",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8916",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "triage:running",
+      "P2"
+    ],
+    "createdAt": "2026-08-31T06:17:48Z",
+    "updatedAt": "2026-08-31T06:42:01Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe Amazon COM priorizar terminar cada tick dentro de presupuesto mediante un límite conservador, aunque la cola tarde más en vaciarse durante un pico?",
+  "rationale": "El tamaño del presupuesto y la política de solapamiento determinan el compromiso entre coste, disponibilidad del cron y latencia de despublicación.",
+  "options": [
+    {
+      "title": "Presupuesto por pasada",
+      "body": "Limitar y reclamar retiradas por tick, registrar backlog y mantener la cadencia de cinco minutos.",
+      "recommended": true
+    },
+    {
+      "title": "Lock de retirada",
+      "body": "Serializar la fase completa de retirada y aceptar que algunos ticks se omitan mientras siga viva la ejecución anterior.",
+      "recommended": false
+    },
+    {
+      "title": "Cambiar la cadencia",
+      "body": "Separar la frecuencia del cron de la duración de picos tras medir una cota estable de trabajo.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Presupuesto por pasada",
+    "body": "Limitar y reclamar retiradas por tick, registrar backlog y mantener la cadencia de cinco minutos.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Su cambio reciente regula tiempos y cuota en el mismo controlador de Amazon.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8916.md",
+    "reviewedAt": "2026-08-31T06:49:58.166Z",
+    "mainSha": "d0d89bb68be49128f565509594d4b3b13a392ff5"
+  }
+}
