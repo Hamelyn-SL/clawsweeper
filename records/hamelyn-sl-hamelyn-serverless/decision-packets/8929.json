@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-31T10:29:15.628Z",
-  "updatedAt": "2026-08-31T10:15:03Z",
+  "generatedAt": "2026-08-31T11:35:24.961Z",
+  "updatedAt": "2026-08-31T10:36:12Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,48 +13,42 @@
       "source:admin-panel",
       "app:supply",
       "feature",
-      "triage:running",
+      "triage:needs-info",
       "P2",
       "reporter:daniellopez"
     ],
     "createdAt": "2026-08-31T10:14:50Z",
-    "updatedAt": "2026-08-31T10:15:03Z"
+    "updatedAt": "2026-08-31T10:36:12Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué reglas y excepciones deben decidir automáticamente la gaveta destino, especialmente para caja de granel y capacidad disponible?",
-  "rationale": "El código actual acepta una gaveta ya elegida; convertirlo en una decisión automática requiere acordar reglas de almacén antes de implementarlas.",
+  "question": "¿Qué señales asignan un artículo a `REVISAR`, `GRANEL`, `RECICLAR` o `INIDENTIFICABLE`, y una caja `G-*` reutiliza `INVENTORY` o mantiene su propio ciclo persistido?",
+  "rationale": "El código actual no define esas reglas ni el modelo de caja; elegirlas cambia el comportamiento operativo y el almacenamiento.",
   "options": [
     {
-      "title": "Matriz explícita con anulación manual",
-      "body": "Definir por escrito prioridades, destino de granel, límites de capacidad y una corrección manual del operario.",
+      "title": "Definir matriz y reutilizar `INVENTORY`",
+      "body": "Mantiene una sola entidad de orden y añade únicamente los campos y transiciones estrictamente necesarios.",
       "recommended": true
     },
     {
-      "title": "Automatización mínima",
-      "body": "Aplicar una sola regla para granel y mantener el resto del flujo actual basado en la gaveta activa.",
-      "recommended": false
-    },
-    {
-      "title": "Mantener selección manual",
-      "body": "No añadir decisión automática hasta disponer de métricas y reglas operativas suficientes.",
+      "title": "Definir un ciclo propio para `G-*`",
+      "body": "Permite apertura, cierre, conteo y correcciones explícitas, pero requiere diseñar su compatibilidad y persistencia.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Matriz explícita con anulación manual",
-    "body": "Definir por escrito prioridades, destino de granel, límites de capacidad y una corrección manual del operario.",
+    "title": "Definir matriz y reutilizar `INVENTORY`",
+    "body": "Mantiene una sola entidad de orden y añade únicamente los campos y transiciones estrictamente necesarios.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Su trabajo reciente concentra el flujo de kiosco y asignación de gavetas que tendría que integrar la decisión.",
-    "confidence": "high"
+    "person": "banosdavidhamelyn",
+    "reason": "Es la señal histórica más directa sobre el panel y las órdenes de entrada actuales.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8929.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8929#issuecomment-5477054382",
-    "reviewedAt": "2026-08-31T10:29:15.628Z",
+    "reviewedAt": "2026-08-31T11:35:24.961Z",
     "mainSha": "3f3adacf9260ddb6525787337ef242095663ad47"
   }
 }
