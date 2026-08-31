@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-31T07:22:50.058Z",
-  "updatedAt": "2026-08-31T07:18:03Z",
+  "generatedAt": "2026-08-31T10:49:34.733Z",
+  "updatedAt": "2026-08-31T10:40:27Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,46 +11,50 @@
     "state": "open",
     "labels": [
       "size/XXL",
-      "rating: 🥈 silver",
-      "status: 📣 needs proof",
       "P1",
+      "status: 📣 needs proof",
       "merge-risk: 🚨 compatibility",
-      "merge-risk: 🚨 availability"
+      "merge-risk: 🚨 availability",
+      "rating: 🥈 silver"
     ],
     "createdAt": "2026-08-28T08:57:16Z",
-    "updatedAt": "2026-08-31T07:18:03Z",
-    "headSha": "4f6c657e3edee3f3113ed114dcb10a7f5d9333b3"
+    "updatedAt": "2026-08-31T10:40:27Z",
+    "headSha": "b04bbf67c3233ce2607cb6ef797d790d5c8c91a5"
   },
-  "lane": "product_direction",
+  "lane": "release_inclusion",
   "priority": "P1",
-  "question": "¿Las fases legacy `update`, `recover` y `recoverWithdraw` deben seguir programadas durante F3, o se aprueba retirarlas antes de tener equivalentes V2?",
-  "rationale": "La documentación señala los huecos, pero cambiar el schedule convierte esa decisión en una interrupción operativa permanente y no puede resolverse sólo con tests unitarios.",
+  "question": "¿Debe este PR activar ya los seis schedules V2 aunque `update`, `recover` y `recoverWithdraw` no tengan paridad automática y los gates externos sigan pendientes?",
+  "rationale": "El código puede preservar temporalmente V1 o ampliar V2, pero escoger un corte operativo de seis sincronizaciones requiere aceptar explícitamente el impacto y la preparación externa.",
   "options": [
     {
-      "title": "Mantener cobertura legacy",
-      "body": "Conservar schedules o encadenar explícitamente esas fases bajo el lock común hasta que V2 tenga equivalentes.",
+      "title": "Conservar V1 programado temporalmente",
+      "body": "Mantener los schedules legacy mientras V2 se despliega sin schedule y se completan paridad, backfill, índices y prueba real.",
       "recommended": true
     },
     {
-      "title": "Aprobar retirada de fases",
-      "body": "Aceptar que esas fases dejen de ejecutarse y documentar la recuperación operativa y el riesgo asumido.",
+      "title": "Completar paridad V2 antes del corte",
+      "body": "Añadir equivalentes seguros para las fases pendientes y aportar la evidencia operativa antes de mover los seis schedules.",
+      "recommended": false
+    },
+    {
+      "title": "Aceptar el fallback manual",
+      "body": "Activar V2 aceptando que las fases legacy restantes se ejecutarán solo manualmente hasta una entrega posterior.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mantener cobertura legacy",
-    "body": "Conservar schedules o encadenar explícitamente esas fases bajo el lock común hasta que V2 tenga equivalentes.",
+    "title": "Conservar V1 programado temporalmente",
+    "body": "Mantener los schedules legacy mientras V2 se despliega sin schedule y se completan paridad, backfill, índices y prueba real.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Su historial conecta el runner V2, las migraciones de referencia y el ritmo de feeds Amazon.",
+    "reason": "Su historial reciente cubre la arquitectura V2 y la operación de sincronización Amazon afectada.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8848.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8848#issuecomment-5450632813",
-    "reviewedAt": "2026-08-31T07:22:50.058Z",
-    "mainSha": "d0d89bb68be49128f565509594d4b3b13a392ff5"
+    "reviewedAt": "2026-08-31T10:49:34.733Z",
+    "mainSha": "3f3adacf9260ddb6525787337ef242095663ad47"
   }
 }
