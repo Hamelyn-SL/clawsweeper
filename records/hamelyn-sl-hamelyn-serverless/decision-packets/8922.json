@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-31T10:58:35.217Z",
+  "updatedAt": "2026-08-31T10:52:20Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8922,
+    "title": "fix: retry sitemap public prewarm until edge cache converges",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8922",
+    "state": "open",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-08-31T08:05:55Z",
+    "updatedAt": "2026-08-31T10:52:20Z",
+    "headSha": "29c8d424cbc53ed62ba5014d98bad3c79f4e60db"
+  },
+  "lane": "merge_risk",
+  "priority": "P1",
+  "question": "¿Se acepta el TTL canónico de cinco minutos tras verificar en una publicación controlada que no degrada el storefront ni deja la flota anterior visible?",
+  "rationale": "El cambio reduce deliberadamente la frescura de caché pública y sus efectos de carga y propagación no quedan demostrados por los tests aislados.",
+  "options": [
+    {
+      "title": "Exigir prueba integrada y métricas",
+      "body": "Corregir la documentación y aportar una ejecución redactada con los headers canónicos, el run nuevo y la duración antes de mergear.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar el riesgo de caché",
+      "body": "Mergear el TTL de cinco minutos asumiendo el incremento de revalidaciones y vigilar el cron y la disponibilidad de las rutas.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Exigir prueba integrada y métricas",
+    "body": "Corregir la documentación y aportar una ejecución redactada con los headers canónicos, el run nuevo y la duración antes de mergear.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es el historial más directo de endurecimiento reciente de la publicación y rollback de sitemaps.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8922.md",
+    "reviewedAt": "2026-08-31T10:58:35.217Z",
+    "mainSha": "3f3adacf9260ddb6525787337ef242095663ad47"
+  }
+}
