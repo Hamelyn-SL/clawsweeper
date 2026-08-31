@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-28T08:37:02.273Z",
-  "updatedAt": "2026-08-28T07:33:28Z",
+  "generatedAt": "2026-08-31T06:04:39.490Z",
+  "updatedAt": "2026-08-31T05:57:02Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,53 +14,47 @@
       "feature",
       "triage:done",
       "area:marketplace-sync",
-      "mk:amazon",
-      "marketplace-v2",
-      "P2",
       "impact:other",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "issue-rating: ➖ n/a",
+      "mk:amazon",
+      "marketplace-v2"
     ],
     "createdAt": "2026-08-25T09:37:42Z",
-    "updatedAt": "2026-08-28T07:33:28Z"
+    "updatedAt": "2026-08-31T05:57:02Z"
   },
-  "lane": "product_direction",
+  "lane": "release_inclusion",
   "priority": "P2",
-  "question": "¿Debe Amazon entregarse como una única migración familiar con switchover coordinado, o dividirse por regiones para reducir el riesgo operativo?",
-  "rationale": "El código V2 ya soporta el patrón batch, pero decidir el tamaño de despliegue y el momento de conmutar seis crons productivos exige responsabilidad operativa humana.",
+  "question": "¿Debe el switchover de los seis schedules Amazon entrar en la PR actual o separarse hasta cerrar los gates Atlas, el lock compartido y las fases legacy sin equivalente V2?",
+  "rationale": "La elección dirige tráfico productivo de seis regiones y depende de operaciones externas y de cobertura funcional que el código de la rama no puede acreditar por sí solo.",
   "options": [
     {
-      "title": "Migración familiar escalonada",
-      "body": "Crear el adapter común y activar primero una región EU y una NA con gates completos antes de conmutar las cuatro restantes.",
+      "title": "Separar el switchover",
+      "body": "Mantener V1 programado y dejar V2 sin schedule hasta completar los gates operativos y la cobertura de recuperación.",
       "recommended": true
     },
     {
-      "title": "Switchover único",
-      "body": "Mantener una entrega única para las seis regiones, asumiendo una ventana de validación y rollback más amplia.",
-      "recommended": false
-    },
-    {
-      "title": "Posponer la familia",
-      "body": "Resolver primero el incidente de confirmación de envíos de Amazon y retomar la migración después.",
+      "title": "Activar con aceptación explícita",
+      "body": "Aprobar el cambio de cron con un responsable, plan de reversión y aceptación expresa de las fases legacy aún no migradas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Migración familiar escalonada",
-    "body": "Crear el adapter común y activar primero una región EU y una NA con gates completos antes de conmutar las cuatro restantes.",
+    "title": "Separar el switchover",
+    "body": "Mantener V1 programado y dejar V2 sin schedule hasta completar los gates operativos y la cobertura de recuperación.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Es el asignado actual y su historial cubre tanto la configuración Amazon como la migración batch de referencia.",
+    "reason": "Es la persona asignada y el autor de la candidata de implementación, además de figurar en el historial del wiring Amazon.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8685.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8685#issuecomment-5408547344",
-    "reviewedAt": "2026-08-28T08:37:02.273Z",
-    "mainSha": "bb11af762e5eb1f77b725b757cbed7daac8d7f43"
+    "reviewedAt": "2026-08-31T06:04:39.490Z",
+    "mainSha": "2d6ac3e98d608063a4fbd4337db8d08fc703feb3"
   }
 }

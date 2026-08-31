@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-28T09:06:46.215Z",
-  "updatedAt": "2026-08-28T08:57:25Z",
+  "generatedAt": "2026-08-31T06:05:55.112Z",
+  "updatedAt": "2026-08-31T05:55:36Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,46 +11,45 @@
     "state": "open",
     "labels": [
       "size/XXL",
-      "rating: 🥉 bronze",
-      "status: 📣 needs proof",
       "P1",
+      "status: 📣 needs proof",
       "merge-risk: 🚨 compatibility",
-      "merge-risk: 🚨 availability"
+      "merge-risk: 🚨 availability",
+      "rating: 🥉 bronze"
     ],
     "createdAt": "2026-08-28T08:57:16Z",
-    "updatedAt": "2026-08-28T08:57:25Z",
-    "headSha": "37e93d684bed5bc4e3be311028cca8b2fc9e2e5f"
+    "updatedAt": "2026-08-31T05:55:36Z",
+    "headSha": "bc9f7fa489a3c95cea16bc54faa7eb90a7816f59"
   },
   "lane": "release_inclusion",
   "priority": "P1",
-  "question": "¿Debe activarse el switchover de los seis crons en este PR o separarse hasta que se completen los gates Atlas, el lock compartido y las fases legacy pendientes?",
-  "rationale": "La elección activa o difiere tráfico productivo de seis marketplaces y requiere confirmar cambios externos y recuperación operativa que el código no puede garantizar por sí solo.",
+  "question": "¿Se acepta retirar del schedule las fases legacy Amazon sin equivalente V2, o deben mantenerse hasta migrarlas y validar la convivencia?",
+  "rationale": "La decisión altera recuperación y actualización productivas de seis marketplaces; no puede resolverse solo con pruebas mockeadas.",
   "options": [
     {
-      "title": "Separar el switchover",
-      "body": "Conservar las rutas V2 sin schedule y abrir la activación para cuando las pruebas y gates operativos estén cerrados.",
+      "title": "Mantener V1 programado",
+      "body": "Dejar V2 desplegado para pruebas controladas y conservar las fases V1 hasta que haya equivalentes y prueba operativa.",
       "recommended": true
     },
     {
-      "title": "Activar con aceptación explícita",
-      "body": "Aceptar temporalmente los huecos y riesgos de operación, dejando un plan y responsable de recuperación antes del despliegue.",
+      "title": "Aceptar el corte",
+      "body": "Activar V2 con una aceptación explícita de los huecos F3, responsable operativo y plan de reversión.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Separar el switchover",
-    "body": "Conservar las rutas V2 sin schedule y abrir la activación para cuando las pruebas y gates operativos estén cerrados.",
+    "title": "Mantener V1 programado",
+    "body": "Dejar V2 desplegado para pruebas controladas y conservar las fases V1 hasta que haya equivalentes y prueba operativa.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Su historial incluye el piloto V2 y la recuperación Amazon que quedaría afectada por el cambio de schedule.",
+    "reason": "Su trabajo previo abarca el runner V2 y las rutas de recuperación Amazon afectadas.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8848.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8848#issuecomment-5450632813",
-    "reviewedAt": "2026-08-28T09:06:46.215Z",
-    "mainSha": "d8167eb6061ab380ee0ecd6752c323e664569610"
+    "reviewedAt": "2026-08-31T06:05:55.112Z",
+    "mainSha": "2d6ac3e98d608063a4fbd4337db8d08fc703feb3"
   }
 }
