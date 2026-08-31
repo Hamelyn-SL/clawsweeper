@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-31T09:14:30.085Z",
+  "updatedAt": "2026-08-31T09:07:02Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8925,
+    "title": "fix: make reception v2 searches find lots and refresh carrier packages",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8925",
+    "state": "open",
+    "labels": [
+      "size/XXL",
+      "P1",
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 compatibility",
+      "merge-risk: 🚨 other",
+      "rating: 🥉 bronze"
+    ],
+    "createdAt": "2026-08-31T08:38:03Z",
+    "updatedAt": "2026-08-31T09:07:02Z",
+    "headSha": "5eeb45242763a55b2c04c3cf910956125d837fd5"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe un lote con `missingPackagesIncident` abierto poder entrar en revisión antes de recibir todos los bultos, y qué bloqueo de cierre o pago debe aplicarse?",
+  "rationale": "La issue pide procesar lo recibido, pero el contrato actual evita que una recepción incompleta altere el grafo; el código necesita una regla explícita antes de fijar la implementación.",
+  "options": [
+    {
+      "title": "Revisión parcial con bloqueo final",
+      "body": "Permitir trabajo de revisión, pero impedir validación final y pago hasta resolver la incidencia.",
+      "recommended": true
+    },
+    {
+      "title": "Mantenerlo fuera de revisión",
+      "body": "Conservar el comportamiento actual y dejar el lote apartado hasta completar los bultos.",
+      "recommended": false
+    },
+    {
+      "title": "Permitir el flujo completo",
+      "body": "Aceptar revisión y pago aun con incidencia abierta, asumiendo el riesgo operativo explícitamente.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Revisión parcial con bloqueo final",
+    "body": "Permitir trabajo de revisión, pero impedir validación final y pago hasta resolver la incidencia.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "Su trabajo reciente cubre la concurrencia y los repositorios usados por esta ruta de recepción.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8925.md",
+    "reviewedAt": "2026-08-31T09:14:30.085Z",
+    "mainSha": "ee000aa08bfe5e7f506f6e8edc3852d6b48497d6"
+  }
+}
