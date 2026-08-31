@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-31T10:29:15.628Z",
+  "updatedAt": "2026-08-31T10:15:03Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8929,
+    "title": "Destino revisión automatico",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8929",
+    "state": "open",
+    "labels": [
+      "source:admin-panel",
+      "app:supply",
+      "feature",
+      "triage:queued",
+      "P2",
+      "reporter:daniellopez"
+    ],
+    "createdAt": "2026-08-31T10:14:50Z",
+    "updatedAt": "2026-08-31T10:15:03Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué reglas y excepciones deben decidir automáticamente la gaveta destino, especialmente para caja de granel y capacidad disponible?",
+  "rationale": "El código actual acepta una gaveta ya elegida; convertirlo en una decisión automática requiere acordar reglas de almacén antes de implementarlas.",
+  "options": [
+    {
+      "title": "Matriz explícita con anulación manual",
+      "body": "Definir por escrito prioridades, destino de granel, límites de capacidad y una corrección manual del operario.",
+      "recommended": true
+    },
+    {
+      "title": "Automatización mínima",
+      "body": "Aplicar una sola regla para granel y mantener el resto del flujo actual basado en la gaveta activa.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener selección manual",
+      "body": "No añadir decisión automática hasta disponer de métricas y reglas operativas suficientes.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Matriz explícita con anulación manual",
+    "body": "Definir por escrito prioridades, destino de granel, límites de capacidad y una corrección manual del operario.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su trabajo reciente concentra el flujo de kiosco y asignación de gavetas que tendría que integrar la decisión.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8929.md",
+    "reviewedAt": "2026-08-31T10:29:15.628Z",
+    "mainSha": "3f3adacf9260ddb6525787337ef242095663ad47"
+  }
+}
