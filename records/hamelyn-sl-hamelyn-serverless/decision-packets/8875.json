@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-28T12:47:58.364Z",
-  "updatedAt": "2026-08-28T11:10:12Z",
+  "generatedAt": "2026-08-31T05:47:29.965Z",
+  "updatedAt": "2026-08-31T05:35:41Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,47 +14,51 @@
       "app:supply",
       "feature",
       "triage:done",
-      "reporter:daniellopez",
       "P1",
       "impact:other",
-      "issue-rating: 🥈 silver",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "reporter:daniellopez",
+      "issue-rating: 🥈 silver"
     ],
     "createdAt": "2026-08-28T11:10:00Z",
-    "updatedAt": "2026-08-28T11:10:12Z"
+    "updatedAt": "2026-08-31T05:35:41Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué roles pueden cerrar un lote con bultos faltantes y debe existir alguna resolución automática tras el plazo operativo?",
-  "rationale": "La issue deja la caducidad pendiente y cambia transiciones persistentes, permisos operativos y la opción de cancelación ya existente.",
+  "question": "¿Debe un lote con bultos faltantes poder entrar en revisión antes de completar todos sus bultos y qué rol puede cerrarlo?",
+  "rationale": "La implementación vigente bloquea esa transición; habilitarla exige definir permisos, trazabilidad y la relación entre artículos revisados y bultos pendientes.",
   "options": [
     {
-      "title": "Mantener incompletos abiertos",
-      "body": "Impedir el cierre por operario y permitir al revisor cerrar únicamente tras recepcionar los bultos pendientes, sin automatismo temporal.",
+      "title": "Conservar el bloqueo actual",
+      "body": "Mantener el lote fuera de revisión hasta escanear todos los bultos y entregar por separado las correcciones mecánicas.",
       "recommended": true
     },
     {
-      "title": "Añadir resolución temporal",
-      "body": "Definir un plazo, un responsable y el efecto exacto de una caducidad automática para los lotes incompletos.",
+      "title": "Permitir revisión parcial",
+      "body": "Definir estados, permisos de operario y revisor, auditoría y pruebas para revisar lo recibido sin permitir cierres indebidos.",
+      "recommended": false
+    },
+    {
+      "title": "Añadir cierre temporal",
+      "body": "Definir un plazo, responsable y trazabilidad antes de automatizar cualquier cierre de lote incompleto.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mantener incompletos abiertos",
-    "body": "Impedir el cierre por operario y permitir al revisor cerrar únicamente tras recepcionar los bultos pendientes, sin automatismo temporal.",
+    "title": "Conservar el bloqueo actual",
+    "body": "Mantener el lote fuera de revisión hasta escanear todos los bultos y entregar por separado las correcciones mecánicas.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "alexcanHamelyn",
-    "reason": "Su historial reúne la implementación de Recepción V2 y la decisión técnica previa sobre cancelación.",
+    "person": "banosdavidhamelyn",
+    "reason": "Es el asignado actual y ha mantenido recientemente el flujo de recepción afectado.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8875.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8875#issuecomment-5452723258",
-    "reviewedAt": "2026-08-28T12:47:58.364Z",
-    "mainSha": "eebbda54a20bf1b79b6c28b0351f5a3f94d3277d"
+    "reviewedAt": "2026-08-31T05:47:29.965Z",
+    "mainSha": "11f10ecd49b9e7680b12b3b3d4473d7cbfd4944e"
   }
 }
