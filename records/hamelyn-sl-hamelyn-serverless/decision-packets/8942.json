@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-31T18:31:49.369Z",
+  "updatedAt": "2026-08-31T18:20:17Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8942,
+    "title": "Amazon: el código 100530 (EPR/RAP) se clasifica TRANSIENT y deja 50 altas reintentando cada 5 minutos",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8942",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "triage:queued",
+      "P2"
+    ],
+    "createdAt": "2026-08-31T18:20:02Z",
+    "updatedAt": "2026-08-31T18:20:17Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Qué umbral y qué procedimiento de reconciliación deben aplicarse a los listings `NOT_BUYABLE` sin código antes de marcarlos permanentemente?",
+  "rationale": "El arreglo de códigos conocidos es mecánico, pero elegir el máximo de intentos y actuar sobre listings potencialmente vivos cambia la recuperación operativa de producción.",
+  "options": [
+    {
+      "title": "Acotar y reconciliar",
+      "body": "Definir un máximo explícito, conservar reintentos de propagación hasta ese umbral y reconciliar por API los documentos ya afectados.",
+      "recommended": true
+    },
+    {
+      "title": "Solo códigos EPR/RAP",
+      "body": "Marcar ahora los códigos conocidos como permanentes y dejar el límite de casos sin código para una issue operativa separada.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener la recuperación actual",
+      "body": "No cambiar el umbral mientras se obtiene una muestra más amplia de respuestas sin código.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Acotar y reconciliar",
+    "body": "Definir un máximo explícito, conservar reintentos de propagación hasta ese umbral y reconciliar por API los documentos ya afectados.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su trabajo reciente introdujo la verificación y la recuperación que requieren este ajuste operativo.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8942.md",
+    "reviewedAt": "2026-08-31T18:31:49.369Z",
+    "mainSha": "5a6b2717cb63639c48c73f38b860b06330f5f9c6"
+  }
+}
