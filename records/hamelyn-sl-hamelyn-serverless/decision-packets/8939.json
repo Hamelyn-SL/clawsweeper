@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-31T14:28:40.663Z",
+  "updatedAt": "2026-08-31T14:18:16Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8939,
+    "title": "Discogs: la rotación reescribe como ACTIVE anuncios en estado terminal y deja publicado stock ya vendido",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8939",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "triage:queued",
+      "P2",
+      "mk:discogs"
+    ],
+    "createdAt": "2026-08-31T14:18:02Z",
+    "updatedAt": "2026-08-31T14:18:16Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Qué estado y circuito operativo deben recibir `Violation`, `Suspended` y `Expired` cuando el stock maestro sigue activo, distinto de la reconciliación obligatoria de `Sold`?",
+  "rationale": "El código puede evitar la reafirmación como `ACTIVE`, pero el destino persistente de anuncios no vendidos determina si se reintentan, se republican o se revisan manualmente.",
+  "options": [
+    {
+      "title": "Separar venta y terminales no vendidos",
+      "body": "Reconciliar `Sold` como venta y marcar solo `mk_discogs` no vendible para los demás estados, encaminándolos a revisión o recuperación.",
+      "recommended": true
+    },
+    {
+      "title": "Retirar todo el stock",
+      "body": "Tratar todos los terminales como retirada global, aceptando que `Violation` o `Expired` de Discogs despubliquen la unidad en todos los canales.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener la cola con reintentos",
+      "body": "Conservar `ACTIVE` y reintentar los terminales, asumiendo el riesgo actual de anuncios fantasma y consumo continuo de cuota.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Separar venta y terminales no vendidos",
+    "body": "Reconciliar `Sold` como venta y marcar solo `mk_discogs` no vendible para los demás estados, encaminándolos a revisión o recuperación.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "HamelynDev",
+    "reason": "El historial reciente y la pull request vinculada sitúan esta decisión en el cambio que clasificó esos estados como seguros.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8939.md",
+    "reviewedAt": "2026-08-31T14:28:40.663Z",
+    "mainSha": "5a6b2717cb63639c48c73f38b860b06330f5f9c6"
+  }
+}
