@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-31T07:16:11.520Z",
+  "generatedAt": "2026-08-31T07:21:28.387Z",
   "updatedAt": "2026-08-31T07:09:44Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -10,46 +10,41 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8919",
     "state": "open",
     "labels": [
-      "size/M",
-      "rating: 🥈 silver",
-      "status: 📣 needs proof",
-      "P1",
-      "merge-risk: 🚨 availability"
+      "size/M"
     ],
     "createdAt": "2026-08-31T06:59:23Z",
     "updatedAt": "2026-08-31T07:09:44Z",
     "headSha": "5f68664f5f3f5e65c6a460fc827f1ddcbae39ec7"
   },
-  "lane": "product_direction",
+  "lane": "release_inclusion",
   "priority": "P1",
-  "question": "¿Se acepta un tope fijo de 100 para Amazon COM tras validarlo con una cola alta real, o debe calibrarse o parametrizarse antes de integrarlo?",
-  "rationale": "El cambio corrige un fallo conocido, pero el valor fijo modifica el ritmo operativo de retirada y no hay una medición real posterior que confirme su equilibrio.",
+  "question": "¿Debe integrarse el tope fijo de 100 para Amazon COM tras validarlo con una cola alta real, o debe recalibrarse antes?",
+  "rationale": "El valor cambia deliberadamente el ritmo de despublicación y la evidencia disponible solo cubre un harness simulado.",
   "options": [
     {
-      "title": "Validar 100 en una ejecución real",
-      "body": "Registrar duración, ausencia de solape y evolución del backlog con una cola representativa antes de integrar el tope actual.",
+      "title": "Validar 100 en un cron real",
+      "body": "Registrar duración, segundo tick omitido y evolución del backlog en una ejecución saneada antes de integrar.",
       "recommended": true
     },
     {
-      "title": "Calibrar o parametrizar el tope",
-      "body": "Elegir un valor basado en duración observada o exponerlo como ajuste operativo si 100 no es estable entre cargas.",
+      "title": "Recalibrar el presupuesto",
+      "body": "Elegir otro cap si la observación real muestra que 100 no mantiene el backlog dentro de una latencia aceptable.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Validar 100 en una ejecución real",
-    "body": "Registrar duración, ausencia de solape y evolución del backlog con una cola representativa antes de integrar el tope actual.",
+    "title": "Validar 100 en un cron real",
+    "body": "Registrar duración, segundo tick omitido y evolución del backlog en una ejecución saneada antes de integrar.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "HamelynDev",
-    "reason": "Su cambio reciente de pacing y esta propuesta conectan directamente con la decisión de presupuesto operativo.",
+    "reason": "Su cambio reciente de pacing y la propuesta actual concentran el contexto operativo del presupuesto.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8919.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8919#issuecomment-5475074862",
-    "reviewedAt": "2026-08-31T07:16:11.520Z",
+    "reviewedAt": "2026-08-31T07:21:28.387Z",
     "mainSha": "d0d89bb68be49128f565509594d4b3b13a392ff5"
   }
 }
