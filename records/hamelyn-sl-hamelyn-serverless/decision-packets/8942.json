@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-31T18:31:49.369Z",
-  "updatedAt": "2026-08-31T18:20:17Z",
+  "generatedAt": "2026-08-31T19:48:31.873Z",
+  "updatedAt": "2026-08-31T18:59:57Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,47 +12,41 @@
     "labels": [
       "bug",
       "app:marketplace",
-      "triage:running",
+      "triage:pr-opened",
       "P2"
     ],
     "createdAt": "2026-08-31T18:20:02Z",
-    "updatedAt": "2026-08-31T18:20:17Z"
+    "updatedAt": "2026-08-31T18:59:57Z"
   },
   "lane": "product_direction",
-  "priority": "P1",
-  "question": "¿Qué umbral y qué procedimiento de reconciliación deben aplicarse a los listings `NOT_BUYABLE` sin código antes de marcarlos permanentemente?",
-  "rationale": "El arreglo de códigos conocidos es mecánico, pero elegir el máximo de intentos y actuar sobre listings potencialmente vivos cambia la recuperación operativa de producción.",
+  "priority": "P2",
+  "question": "¿Debe esta incidencia incluir un límite terminal para `NOT_BUYABLE` sin código o limitarse a los códigos normativos conocidos?",
+  "rationale": "La PR preserva los casos de propagación legítima; fijar un umbral general requiere decidir el equilibrio entre recuperación automática y parada preventiva.",
   "options": [
     {
-      "title": "Acotar y reconciliar",
-      "body": "Definir un máximo explícito, conservar reintentos de propagación hasta ese umbral y reconciliar por API los documentos ya afectados.",
+      "title": "Separar el umbral sin código",
+      "body": "Integrar primero la clasificación de códigos conocidos y abrir un seguimiento con telemetría para definir un límite seguro.",
       "recommended": true
     },
     {
-      "title": "Solo códigos EPR/RAP",
-      "body": "Marcar ahora los códigos conocidos como permanentes y dejar el límite de casos sin código para una issue operativa separada.",
-      "recommended": false
-    },
-    {
-      "title": "Mantener la recuperación actual",
-      "body": "No cambiar el umbral mientras se obtiene una muestra más amplia de respuestas sin código.",
+      "title": "Incluir un límite ahora",
+      "body": "Ampliar la PR con un contador y una transición terminal tras un umbral explícitamente acordado.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Acotar y reconciliar",
-    "body": "Definir un máximo explícito, conservar reintentos de propagación hasta ese umbral y reconciliar por API los documentos ya afectados.",
+    "title": "Separar el umbral sin código",
+    "body": "Integrar primero la clasificación de códigos conocidos y abrir un seguimiento con telemetría para definir un límite seguro.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su trabajo reciente introdujo la verificación y la recuperación que requieren este ajuste operativo.",
+    "reason": "Introdujo la recuperación y la verificación de buyability que determinan ese contrato.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8942.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8942#issuecomment-5482740371",
-    "reviewedAt": "2026-08-31T18:31:49.369Z",
+    "reviewedAt": "2026-08-31T19:48:31.873Z",
     "mainSha": "5a6b2717cb63639c48c73f38b860b06330f5f9c6"
   }
 }
