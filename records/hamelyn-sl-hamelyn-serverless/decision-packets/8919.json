@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-31T07:16:11.520Z",
+  "updatedAt": "2026-08-31T07:09:44Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8919,
+    "title": "fix: limit Amazon COM withdrawal runs",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8919",
+    "state": "open",
+    "labels": [
+      "size/M"
+    ],
+    "createdAt": "2026-08-31T06:59:23Z",
+    "updatedAt": "2026-08-31T07:09:44Z",
+    "headSha": "5f68664f5f3f5e65c6a460fc827f1ddcbae39ec7"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Se acepta un tope fijo de 100 para Amazon COM tras validarlo con una cola alta real, o debe calibrarse o parametrizarse antes de integrarlo?",
+  "rationale": "El cambio corrige un fallo conocido, pero el valor fijo modifica el ritmo operativo de retirada y no hay una medición real posterior que confirme su equilibrio.",
+  "options": [
+    {
+      "title": "Validar 100 en una ejecución real",
+      "body": "Registrar duración, ausencia de solape y evolución del backlog con una cola representativa antes de integrar el tope actual.",
+      "recommended": true
+    },
+    {
+      "title": "Calibrar o parametrizar el tope",
+      "body": "Elegir un valor basado en duración observada o exponerlo como ajuste operativo si 100 no es estable entre cargas.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Validar 100 en una ejecución real",
+    "body": "Registrar duración, ausencia de solape y evolución del backlog con una cola representativa antes de integrar el tope actual.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "HamelynDev",
+    "reason": "Su cambio reciente de pacing y esta propuesta conectan directamente con la decisión de presupuesto operativo.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8919.md",
+    "reviewedAt": "2026-08-31T07:16:11.520Z",
+    "mainSha": "d0d89bb68be49128f565509594d4b3b13a392ff5"
+  }
+}

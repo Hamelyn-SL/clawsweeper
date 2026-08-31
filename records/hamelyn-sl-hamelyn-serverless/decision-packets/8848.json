@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-31T06:05:55.112Z",
-  "updatedAt": "2026-08-31T05:55:36Z",
+  "generatedAt": "2026-08-31T07:16:37.209Z",
+  "updatedAt": "2026-08-31T06:50:31Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,46 +11,45 @@
     "state": "open",
     "labels": [
       "size/XXL",
-      "rating: 🥈 silver",
-      "status: 📣 needs proof",
       "P1",
+      "status: 📣 needs proof",
       "merge-risk: 🚨 compatibility",
-      "merge-risk: 🚨 availability"
+      "merge-risk: 🚨 availability",
+      "rating: 🥈 silver"
     ],
     "createdAt": "2026-08-28T08:57:16Z",
-    "updatedAt": "2026-08-31T05:55:36Z",
-    "headSha": "bc9f7fa489a3c95cea16bc54faa7eb90a7816f59"
+    "updatedAt": "2026-08-31T06:50:31Z",
+    "headSha": "4f6c657e3edee3f3113ed114dcb10a7f5d9333b3"
   },
   "lane": "release_inclusion",
   "priority": "P1",
-  "question": "¿Se acepta retirar del schedule las fases legacy Amazon sin equivalente V2, o deben mantenerse hasta migrarlas y validar la convivencia?",
-  "rationale": "La decisión altera recuperación y actualización productivas de seis marketplaces; no puede resolverse solo con pruebas mockeadas.",
+  "question": "¿Debe esta PR activar ahora el switchover de los seis schedules Amazon, o separar esa activación hasta completar equivalencia de fases y gates operativos?",
+  "rationale": "La decisión redirige trabajo productivo de seis regiones, cambia la recuperación existente y requiere preparación Atlas y validación contra SP-API que el diff no puede acreditar por sí solo.",
   "options": [
     {
-      "title": "Mantener V1 programado",
-      "body": "Dejar V2 desplegado para pruebas controladas y conservar las fases V1 hasta que haya equivalentes y prueba operativa.",
+      "title": "Separar el switchover",
+      "body": "Mantener los schedules V1 y dejar las rutas V2 sin schedule hasta completar equivalencias, datos operativos y pruebas reales.",
       "recommended": true
     },
     {
-      "title": "Aceptar el corte",
-      "body": "Activar V2 con una aceptación explícita de los huecos F3, responsable operativo y plan de reversión.",
+      "title": "Aprobar con riesgo explícito",
+      "body": "Activar V2 solo con aceptación documentada de las fases legacy omitidas, los gates pendientes y un plan de reversión operativo.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mantener V1 programado",
-    "body": "Dejar V2 desplegado para pruebas controladas y conservar las fases V1 hasta que haya equivalentes y prueba operativa.",
+    "title": "Separar el switchover",
+    "body": "Mantener los schedules V1 y dejar las rutas V2 sin schedule hasta completar equivalencias, datos operativos y pruebas reales.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MarcosTerroso",
-    "reason": "Su trabajo previo abarca el runner V2 y las rutas de recuperación Amazon afectadas.",
+    "person": "MiguelHamelyn",
+    "reason": "Es el contribuidor con contexto directo de la migración y de los patrones V2 integrados recientemente.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8848.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8848#issuecomment-5450632813",
-    "reviewedAt": "2026-08-31T06:05:55.112Z",
-    "mainSha": "2d6ac3e98d608063a4fbd4337db8d08fc703feb3"
+    "reviewedAt": "2026-08-31T07:16:37.209Z",
+    "mainSha": "d0d89bb68be49128f565509594d4b3b13a392ff5"
   }
 }
