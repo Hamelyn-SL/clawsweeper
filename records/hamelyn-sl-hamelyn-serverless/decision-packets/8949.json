@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-31T23:10:26.758Z",
+  "updatedAt": "2026-08-31T23:04:14Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8949,
+    "title": "AbeBooks no recibe imágenes de los productos publicados",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8949",
+    "state": "open",
+    "labels": [
+      "source:admin-panel",
+      "app:marketplace",
+      "feature",
+      "reporter:javier",
+      "triage:queued",
+      "P1"
+    ],
+    "createdAt": "2026-08-31T23:04:04Z",
+    "updatedAt": "2026-08-31T23:04:14Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué fuente o regla de autorización debe decidir que una imagen de producto puede enviarse a AbeBooks, y quién aprueba la republicación de las publicaciones activas?",
+  "rationale": "El código puede serializar URLs, pero la issue prohíbe asumir que cualquier imagen de Bunny sea reutilizable; esa política y su despliegue no se deducen del repositorio.",
+  "options": [
+    {
+      "title": "Definir elegibilidad y piloto",
+      "body": "Acordar una fuente de verdad de derechos, probar un SKU controlado y aprobar un despliegue por lotes antes de implementar la actualización masiva.",
+      "recommended": true
+    },
+    {
+      "title": "Limitarlo a imágenes propias verificadas",
+      "body": "Enviar inicialmente solo imágenes con procedencia interna verificable y dejar el resto sin imagen hasta disponer de una política más amplia.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Definir elegibilidad y piloto",
+    "body": "Acordar una fuente de verdad de derechos, probar un SKU controlado y aprobar un despliegue por lotes antes de implementar la actualización masiva.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Su historial concentra el conocimiento reciente de la integración y de sus actualizaciones de inventario.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8949.md",
+    "reviewedAt": "2026-08-31T23:10:26.758Z",
+    "mainSha": "5a6b2717cb63639c48c73f38b860b06330f5f9c6"
+  }
+}
