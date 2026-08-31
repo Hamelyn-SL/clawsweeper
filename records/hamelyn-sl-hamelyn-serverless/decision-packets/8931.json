@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-31T13:05:20.189Z",
-  "updatedAt": "2026-08-31T12:33:00Z",
+  "generatedAt": "2026-08-31T14:57:48.160Z",
+  "updatedAt": "2026-08-31T13:23:20Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,46 +11,45 @@
     "state": "open",
     "labels": [
       "size/L",
-      "rating: 🥉 bronze",
-      "status: 📣 needs proof",
       "P1",
+      "status: 📣 needs proof",
       "merge-risk: 🚨 compatibility",
-      "merge-risk: 🚨 availability"
+      "merge-risk: 🚨 availability",
+      "rating: 🥉 bronze"
     ],
     "createdAt": "2026-08-31T11:32:47Z",
-    "updatedAt": "2026-08-31T12:33:00Z",
-    "headSha": "396c2bf9dd888af6103c018cb0fe6d2843ae875e"
+    "updatedAt": "2026-08-31T13:23:20Z",
+    "headSha": "51a94b10a996231a7d6b098cef9fe868a541753d"
   },
-  "lane": "release_inclusion",
+  "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué responsable autoriza y ejecuta el DDL aditivo en BigQuery antes de activar las scheduled queries de este PR?",
-  "rationale": "La rama modifica tablas existentes que no se autoaprovisionan; la política del repositorio exige autorización explícita para esa operación persistente y la ausencia del DDL detiene el mirror.",
+  "question": "¿Debe eBay ES conservar DB_ONLY como error recuperable mientras create siga bloqueado, o existe una cola alternativa aprobada que procese esos INACTIVE?",
+  "rationale": "El manager actual declara deliberadamente que no puede crear, por lo que elegir entre conservar la señal de error y diseñar otra recuperación cambia el comportamiento operativo de listings reales.",
   "options": [
     {
-      "title": "Ejecutar el DDL preparado antes del merge",
-      "body": "Aplicar las columnas `IF NOT EXISTS`, verificar la primera ejecución y después permitir el despliegue de las queries.",
+      "title": "Conservar la recuperación actual de eBay",
+      "body": "Mantener eBay DB_ONLY fuera de INACTIVE hasta que create esté habilitado o exista un recovery dedicado.",
       "recommended": true
     },
     {
-      "title": "Autoaprovisionar desde la scheduled query",
-      "body": "Incorporar un `ALTER TABLE ... ADD COLUMN IF NOT EXISTS` multisentencia para eliminar la dependencia de orden manual.",
+      "title": "Aprobar una recuperación alternativa",
+      "body": "Definir y probar un consumidor explícito para los INACTIVE de eBay antes de borrar la señal de error.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Ejecutar el DDL preparado antes del merge",
-    "body": "Aplicar las columnas `IF NOT EXISTS`, verificar la primera ejecución y después permitir el despliegue de las queries.",
+    "title": "Conservar la recuperación actual de eBay",
+    "body": "Mantener eBay DB_ONLY fuera de INACTIVE hasta que create esté habilitado o exista un recovery dedicado.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "AlexDiaz-Hamelyn",
-    "reason": "Su trabajo reciente está ligado a la configuración y aplicación de scheduled queries de BigQuery.",
-    "confidence": "medium"
+    "person": "MarcosTerroso",
+    "reason": "Su historial merged incluye la migración V2 de eBay y sus safeguards operativos.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8931.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8931#issuecomment-5477972241",
-    "reviewedAt": "2026-08-31T13:05:20.189Z",
-    "mainSha": "0e99d149bdc825d6c5f22a00fe04228529d40f92"
+    "reviewedAt": "2026-08-31T14:57:48.160Z",
+    "mainSha": "5a6b2717cb63639c48c73f38b860b06330f5f9c6"
   }
 }
