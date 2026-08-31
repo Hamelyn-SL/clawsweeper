@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-31T07:08:06.673Z",
+  "generatedAt": "2026-08-31T07:11:05.105Z",
   "updatedAt": "2026-08-31T07:01:13Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -13,47 +13,40 @@
       "bug",
       "app:infrastructure",
       "triage:queued",
-      "P1",
-      "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "P1"
     ],
     "createdAt": "2026-08-31T07:00:54Z",
     "updatedAt": "2026-08-31T07:01:13Z"
   },
   "lane": "security_boundary",
   "priority": "P1",
-  "question": "¿Debe el despliegue validar `Actions: write` mediante un workflow de verificación aislado antes de aplicar Scheduler?",
-  "rationale": "Una consulta de lectura no acredita permiso para dispatch, mientras que disparar un workflow existente puede producir efectos operativos; hay que acordar una superficie de prueba segura.",
+  "question": "¿Debe el despliegue validar `Actions: write` disparando un workflow aislado antes de aplicar Scheduler?",
+  "rationale": "Una consulta de lectura no acredita el permiso de dispatch, mientras que invocar un workflow existente puede producir efectos operativos que requieren una superficie aprobada.",
   "options": [
     {
       "title": "Workflow de verificación aislado",
-      "body": "Añadir un workflow mínimo y sin efectos operativos, dispararlo desde el deploy y abortar antes del apply si GitHub lo rechaza.",
+      "body": "Añadir un workflow mínimo y sin efectos operativos, dispararlo antes del apply y abortar el despliegue si GitHub lo rechaza.",
       "recommended": true
     },
     {
       "title": "Comprobación de solo lectura",
-      "body": "Validar únicamente el acceso autenticado al repositorio o workflow, aceptando que no cubre el permiso real de dispatch.",
+      "body": "Validar acceso autenticado al repositorio o workflow, aceptando que no cubre el permiso real de `workflow_dispatch`.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Workflow de verificación aislado",
-    "body": "Añadir un workflow mínimo y sin efectos operativos, dispararlo desde el deploy y abortar antes del apply si GitHub lo rechaza.",
+    "body": "Añadir un workflow mínimo y sin efectos operativos, dispararlo antes del apply y abortar el despliegue si GitHub lo rechaza.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Introdujo el mecanismo compartido y es la mejor referencia histórica para decidir una comprobación segura.",
+    "reason": "Introdujo el mecanismo compartido y tiene la trazabilidad más directa sobre una comprobación segura.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8920.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8920#issuecomment-5474968333",
-    "reviewedAt": "2026-08-31T07:08:06.673Z",
+    "reviewedAt": "2026-08-31T07:11:05.105Z",
     "mainSha": "d0d89bb68be49128f565509594d4b3b13a392ff5"
   }
 }
