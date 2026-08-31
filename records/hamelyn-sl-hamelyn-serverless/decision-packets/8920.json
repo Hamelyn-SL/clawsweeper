@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-31T07:08:06.673Z",
+  "updatedAt": "2026-08-31T07:01:13Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8920,
+    "title": "Cloud Scheduler gh-dispatch: todos los crons sin disparar desde el 28-ago, GitHub rechaza el PAT con 404",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8920",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:infrastructure",
+      "triage:queued",
+      "P1"
+    ],
+    "createdAt": "2026-08-31T07:00:54Z",
+    "updatedAt": "2026-08-31T07:01:13Z"
+  },
+  "lane": "security_boundary",
+  "priority": "P1",
+  "question": "¿Debe el despliegue validar `Actions: write` mediante un workflow de verificación aislado antes de aplicar Scheduler?",
+  "rationale": "Una consulta de lectura no acredita permiso para dispatch, mientras que disparar un workflow existente puede producir efectos operativos; hay que acordar una superficie de prueba segura.",
+  "options": [
+    {
+      "title": "Workflow de verificación aislado",
+      "body": "Añadir un workflow mínimo y sin efectos operativos, dispararlo desde el deploy y abortar antes del apply si GitHub lo rechaza.",
+      "recommended": true
+    },
+    {
+      "title": "Comprobación de solo lectura",
+      "body": "Validar únicamente el acceso autenticado al repositorio o workflow, aceptando que no cubre el permiso real de dispatch.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Workflow de verificación aislado",
+    "body": "Añadir un workflow mínimo y sin efectos operativos, dispararlo desde el deploy y abortar antes del apply si GitHub lo rechaza.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Introdujo el mecanismo compartido y es la mejor referencia histórica para decidir una comprobación segura.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8920.md",
+    "reviewedAt": "2026-08-31T07:08:06.673Z",
+    "mainSha": "d0d89bb68be49128f565509594d4b3b13a392ff5"
+  }
+}
