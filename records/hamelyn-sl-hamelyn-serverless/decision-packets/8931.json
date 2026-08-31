@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-31T13:05:20.189Z",
+  "updatedAt": "2026-08-31T12:33:00Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8931,
+    "title": "fix: align mk_ reports and BQ mirror with marketplace manager state",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8931",
+    "state": "open",
+    "labels": [
+      "size/L",
+      "P1",
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 compatibility",
+      "merge-risk: 🚨 availability",
+      "rating: 🥈 silver"
+    ],
+    "createdAt": "2026-08-31T11:32:47Z",
+    "updatedAt": "2026-08-31T12:33:00Z",
+    "headSha": "396c2bf9dd888af6103c018cb0fe6d2843ae875e"
+  },
+  "lane": "release_inclusion",
+  "priority": "P1",
+  "question": "¿Qué responsable autoriza y ejecuta el DDL aditivo en BigQuery antes de activar las scheduled queries de este PR?",
+  "rationale": "La rama modifica tablas existentes que no se autoaprovisionan; la política del repositorio exige autorización explícita para esa operación persistente y la ausencia del DDL detiene el mirror.",
+  "options": [
+    {
+      "title": "Ejecutar el DDL preparado antes del merge",
+      "body": "Aplicar las columnas `IF NOT EXISTS`, verificar la primera ejecución y después permitir el despliegue de las queries.",
+      "recommended": true
+    },
+    {
+      "title": "Autoaprovisionar desde la scheduled query",
+      "body": "Incorporar un `ALTER TABLE ... ADD COLUMN IF NOT EXISTS` multisentencia para eliminar la dependencia de orden manual.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Ejecutar el DDL preparado antes del merge",
+    "body": "Aplicar las columnas `IF NOT EXISTS`, verificar la primera ejecución y después permitir el despliegue de las queries.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Su trabajo reciente está ligado a la configuración y aplicación de scheduled queries de BigQuery.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8931.md",
+    "reviewedAt": "2026-08-31T13:05:20.189Z",
+    "mainSha": "0e99d149bdc825d6c5f22a00fe04228529d40f92"
+  }
+}
