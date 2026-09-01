@@ -1,10 +1,10 @@
 {
   "status": "dry_run",
-  "generated_at": "2026-09-01T14:52:43.343Z",
+  "generated_at": "2026-09-01T15:05:26.344Z",
   "repo": "Hamelyn-SL/hamelyn-serverless",
   "repair_repo": "Hamelyn-SL/clawsweeper",
   "review_repo": "Hamelyn-SL/clawsweeper",
-  "since": "2026-09-01T11:52:39.528Z",
+  "since": "2026-09-01T12:05:21.924Z",
   "execute": false,
   "force_reprocess": false,
   "max_comments": 100,
@@ -12,8 +12,8 @@
   "comment_ids": [],
   "status_comment_id": null,
   "max_autoclose_targets": 8,
-  "scanned_comments": 54,
-  "commands_seen": 1,
+  "scanned_comments": 48,
+  "commands_seen": 0,
   "actionable": 0,
   "trusted_bots": [
     "clawsweeper[bot]",
@@ -27,63 +27,21 @@
   "max_auto_repairs_per_head": 2,
   "max_auto_repairs_per_pr": 10,
   "lookup_concurrency": 8,
-  "commands": [
-    {
-      "idempotency_key": "comment-router:Hamelyn-SL/hamelyn-serverless:8982:5493573407:2026-09-01T11:58:32Z:automerge",
-      "comment_id": "5493573407",
-      "comment_version_key": "5493573407:2026-09-01T11:58:32Z",
-      "comment_url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8982#issuecomment-5493573407",
-      "repo": "Hamelyn-SL/hamelyn-serverless",
-      "target_branch": null,
-      "issue_number": 8982,
-      "author": "clawsweeper-hamelyn[bot]",
-      "author_id": 301054459,
-      "author_association": "NONE",
-      "comment_created_at": "2026-09-01T11:58:17Z",
-      "comment_updated_at": "2026-09-01T11:58:32Z",
-      "status_comment_id": null,
-      "trigger": "mention",
-      "command": "automerge",
-      "intent": "automerge",
-      "autoclose_message": null,
-      "implementation_prompt": null,
-      "operator_override": null,
-      "trusted_bot": false,
-      "trusted_bot_author": null,
-      "automation_source": null,
-      "repair_reason": null,
-      "review_summary": "El PR convierte el reexport local de `cronHandler` de `marketplace-crons` en una fence HTTP 503 controlada por `MARKETPLACE_WRITE_FENCE` y añade `GET /api/fence-status`.\n\nReproducibility: no. aplica como reproducción de bug: es una capacidad nueva. La cobertura y el comportamiento se pueden verificar con una ruta HTTP real y el inventario estático de imports.",
-      "review_followup": "- Las correcciones necesarias son documentales y de descripción operativa, concretas y acotadas al mismo PR.",
-      "freeform_prompt": null,
-      "visual_lens": null,
-      "expected_head_sha": null,
-      "close_reason": null,
-      "close_confidence": null,
-      "close_action_taken": null,
-      "reviewed_at": null,
-      "expected_item_updated_at": null,
-      "expected_source_revision": null,
-      "finding_id": null,
-      "status": "waiting",
-      "actions": [],
-      "author_repository_permission": "none",
-      "reason": "GitHub lookup failed; will retry later: GraphQL: Resource not accessible by integration (repository.pullRequest.statusCheckRollup.nodes.0.commit.statusCheckRollup) Command failed: gh pr view 8982 --repo Hamelyn-SL/hamelyn-serverless --json additions,headRefName,headRefOid,author,"
-    }
-  ],
+  "commands": [],
   "timings": {
-    "total_ms": 3815,
+    "total_ms": 4419,
     "phases": [
       {
         "name": "list_candidate_comments",
-        "ms": 1851
+        "ms": 4413
       },
       {
         "name": "prehydrate_comment_commands",
-        "ms": 1957
+        "ms": 0
       },
       {
         "name": "classify_comment_commands",
-        "ms": 1
+        "ms": 0
       },
       {
         "name": "prehydrate_repair_loop_sweeps",
@@ -91,7 +49,7 @@
       },
       {
         "name": "classify_repair_loop_sweeps",
-        "ms": 0
+        "ms": 1
       }
     ]
   }
