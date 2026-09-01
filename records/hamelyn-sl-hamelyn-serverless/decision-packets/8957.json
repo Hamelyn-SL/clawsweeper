@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-01T08:18:28.678Z",
-  "updatedAt": "2026-09-01T07:41:48Z",
+  "generatedAt": "2026-09-01T10:02:13.921Z",
+  "updatedAt": "2026-09-01T08:49:54Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,51 +12,50 @@
     "labels": [
       "bug",
       "app:infrastructure",
-      "triage:queued",
+      "triage:done",
       "business-logic",
-      "clawsweeper:source-repro",
-      "clawsweeper:fix-shape-clear",
-      "issue-rating: 💎 diamond",
-      "P2",
       "impact:other",
-      "clawsweeper:linked-pr-open",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:source-repro",
+      "clawsweeper:linked-pr-open",
+      "clawsweeper:fix-shape-clear",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-09-01T05:45:40Z",
-    "updatedAt": "2026-09-01T07:41:48Z"
+    "updatedAt": "2026-09-01T08:49:54Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe mantenerse `BL-buying-orders-05` como contrato validado y corregirse el cron, o se aprueba explícitamente redefinir esa regla para aceptar pedidos vacíos?",
-  "rationale": "La fuente actual, la política de reactivación y la especificación validada apuntan a una corrección; la PR abierta propone la dirección opuesta mediante documentación sin cambiar el runtime.",
+  "question": "¿Debe el cron conservar la exclusión de pedidos sin productos antes de `SUSPICIOUS → PAYMENT_PENDING`, o se aprueba explícitamente cambiar la regla BL validada para permitirlos?",
+  "rationale": "Existen un comportamiento histórico de 15 días y una regla BL posterior validada; la PR abierta propone escoger el primero mediante documentación, pero esa elección requiere intención del owner.",
   "options": [
     {
-      "title": "Conservar la protección validada",
-      "body": "Aplicar `isEmptyProductsOrder` en ambos selectores del cron y mantener la regla BL como contrato operativo.",
+      "title": "Conservar la exclusión validada",
+      "body": "Aplicar `isEmptyProductsOrder` en ambos selectores y mantener la spec como contrato de negocio.",
       "recommended": true
     },
     {
-      "title": "Redefinir la regla explícitamente",
-      "body": "Aceptar el salto de pedidos vacíos solo con decisión BL documentada, revisión del impacto operativo y cierre de la discrepancia de forma deliberada.",
+      "title": "Aprobar el comportamiento actual",
+      "body": "Validar formalmente el nuevo contrato BL, incluyendo el riesgo de que pedidos vacíos lleguen a pago, antes de modificar la spec.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Conservar la protección validada",
-    "body": "Aplicar `isEmptyProductsOrder` en ambos selectores del cron y mantener la regla BL como contrato operativo.",
+    "title": "Conservar la exclusión validada",
+    "body": "Aplicar `isEmptyProductsOrder` en ambos selectores y mantener la spec como contrato de negocio.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "AlexDiaz-Hamelyn",
-    "reason": "Tiene la investigación y el cambio reciente que descubrieron la divergencia, y figura como asignado actual.",
+    "person": "alexcanHamelyn",
+    "reason": "Su historial reúne el cambio funcional que introdujo el cron activo y la validación posterior del contrato BL.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8957.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8957#issuecomment-5489595969",
-    "reviewedAt": "2026-09-01T08:18:28.678Z",
-    "mainSha": "3e0e7770ff9798e05231286356a15a488e1ab833"
+    "reviewedAt": "2026-09-01T10:02:13.921Z",
+    "mainSha": "f73be3a322eb5af0748a78ee391d35b83a64d6d0"
   }
 }

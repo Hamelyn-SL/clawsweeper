@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-01T08:18:29.294Z",
-  "updatedAt": "2026-09-01T07:41:51Z",
+  "generatedAt": "2026-09-01T10:04:30.790Z",
+  "updatedAt": "2026-09-01T09:07:39Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,55 +12,54 @@
     "labels": [
       "bug",
       "app:infrastructure",
-      "triage:queued",
+      "triage:needs-info",
       "business-logic",
+      "impact:other",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
-      "clawsweeper:source-repro",
-      "issue-rating: 💎 diamond",
       "P2",
-      "impact:other",
-      "clawsweeper:linked-pr-open"
+      "clawsweeper:source-repro",
+      "clawsweeper:linked-pr-open",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-09-01T05:45:43Z",
-    "updatedAt": "2026-09-01T07:41:51Z"
+    "updatedAt": "2026-09-01T09:07:39Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe `LOST_BY_HAMELYN` conservar cinco días hábiles en producción o restaurarse a los veinte días descritos por la regla histórica?",
-  "rationale": "El código vivo y la spec validada discrepan, y la propia spec declara esta transición fuera de su bloque; la fuente de verdad de negocio no puede inferirse solo del repositorio.",
+  "question": "¿Debe `LOST_BY_HAMELYN` pasar a `SUSPICIOUS` tras 5 días hábiles, como hace el cron, o tras 20, como conserva la spec validada?",
+  "rationale": "El código muestra el comportamiento actual, pero ni la issue ni la PR aportan la aprobación de negocio necesaria para decidir qué contrato debe prevalecer.",
   "options": [
     {
-      "title": "Confirmar veinte días",
-      "body": "Restaurar el umbral histórico de veinte días en el cron y extraer la regla de warehouse con su validación correspondiente.",
-      "recommended": true
-    },
-    {
-      "title": "Confirmar cinco días",
-      "body": "Mantener el comportamiento vivo y sustituir la mención histórica de veinte días por una regla de warehouse validada.",
+      "title": "Confirmar 5 días y formalizarlo",
+      "body": "Warehouse valida el umbral operativo actual y se crea o actualiza la spec de warehouse antes de retirar la divergencia.",
       "recommended": false
     },
     {
+      "title": "Restaurar 20 días en el cron",
+      "body": "Warehouse confirma la spec validada y se corrige el script activo con cobertura enfocada para el corte de 20 días.",
+      "recommended": true
+    },
+    {
       "title": "Definir otro umbral",
-      "body": "Establecer un plazo distinto con justificación operativa, migración documental y pruebas del nuevo límite.",
+      "body": "Warehouse establece un valor distinto y se alinea código, spec y evidencia operativa en el mismo cambio.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Confirmar veinte días",
-    "body": "Restaurar el umbral histórico de veinte días en el cron y extraer la regla de warehouse con su validación correspondiente.",
+    "title": "Restaurar 20 días en el cron",
+    "body": "Warehouse confirma la spec validada y se corrige el script activo con cobertura enfocada para el corte de 20 días.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "AlexDiaz-Hamelyn",
-    "reason": "Figura como persona asignada y reunió la evidencia que separa el cron vivo de la regla BL histórica.",
-    "confidence": "high"
+    "person": "banosdavidhamelyn",
+    "reason": "Es el único responsable de revisión explícitamente vinculado a la PR abierta que normaliza estas reglas.",
+    "confidence": "low"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8958.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8958#issuecomment-5489591899",
-    "reviewedAt": "2026-09-01T08:18:29.294Z",
-    "mainSha": "3e0e7770ff9798e05231286356a15a488e1ab833"
+    "reviewedAt": "2026-09-01T10:04:30.790Z",
+    "mainSha": "f73be3a322eb5af0748a78ee391d35b83a64d6d0"
   }
 }

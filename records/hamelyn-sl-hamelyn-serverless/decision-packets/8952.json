@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-01T09:58:53.923Z",
+  "updatedAt": "2026-09-01T08:57:24Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8952,
+    "title": "BL-buying-orders-04: live cron queries MRW twice and transitions those orders twice",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8952",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:infrastructure",
+      "triage:pr-opened",
+      "business-logic",
+      "impact:other",
+      "clawsweeper:no-new-fix-pr",
+      "P2",
+      "clawsweeper:source-repro",
+      "clawsweeper:linked-pr-open",
+      "issue-rating: 💎 diamond"
+    ],
+    "createdAt": "2026-09-01T05:38:51Z",
+    "updatedAt": "2026-09-01T08:57:24Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe conservarse el contrato BL validado de MRW a 7 días y reconducirse la PR documental, o el owner quiere revalidar explícitamente el comportamiento actual del cron?",
+  "rationale": "La incidencia está definida como divergencia contra una regla validada, mientras que la PR vinculada propone convertir el comportamiento divergente en documentación sin una validación F2 visible.",
+  "options": [
+    {
+      "title": "Conservar la regla validada",
+      "body": "Reconducir o cerrar la PR documental y aplicar una corrección estrecha del script para eliminar la consulta MRW a 14 días.",
+      "recommended": true
+    },
+    {
+      "title": "Revalidar el comportamiento actual",
+      "body": "El owner documenta y valida explícitamente que MRW debe tener ambas ventanas antes de cerrar esta divergencia como cambio de negocio.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Conservar la regla validada",
+    "body": "Reconducir o cerrar la PR documental y aplicar una corrección estrecha del script para eliminar la consulta MRW a 14 días.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Alex Cantón",
+    "reason": "El historial le vincula directamente con las reglas de tracking y umbrales que originaron el contrato validado.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8952.md",
+    "reviewedAt": "2026-09-01T09:58:53.923Z",
+    "mainSha": "f73be3a322eb5af0748a78ee391d35b83a64d6d0"
+  }
+}
