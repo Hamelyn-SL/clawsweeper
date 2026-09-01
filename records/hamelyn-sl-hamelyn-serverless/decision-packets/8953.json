@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-01T07:27:41.537Z",
-  "updatedAt": "2026-09-01T07:21:55Z",
+  "generatedAt": "2026-09-01T08:34:12.284Z",
+  "updatedAt": "2026-09-01T08:18:21Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,55 +12,47 @@
     "labels": [
       "bug",
       "app:infrastructure",
-      "triage:queued",
+      "triage:needs-info",
       "business-logic",
       "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision",
       "clawsweeper:source-repro",
+      "P3",
       "clawsweeper:linked-pr-open",
-      "issue-rating: 💎 diamond",
-      "P2",
-      "impact:other",
-      "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-09-01T05:39:02Z",
-    "updatedAt": "2026-09-01T07:21:55Z"
+    "updatedAt": "2026-09-01T08:18:21Z"
   },
   "lane": "product_direction",
-  "priority": "P2",
-  "question": "¿El plazo canónico para `SUSPICIOUS → PAYMENT_PENDING` debe seguir siendo 20 días hábiles o debe consolidarse el cambio histórico a 15 días?",
-  "rationale": "La especificación validada y una PR mergeada con aprobación humana describen contratos incompatibles; la inspección técnica no puede elegir la política de pago automática.",
+  "priority": "P3",
+  "question": "¿Debe el salto `SUSPICIOUS → PAYMENT_PENDING` conservar los 15 días de la PR #5110 o restaurarse a los 20 días de `BL-buying-orders-05` validada?",
+  "rationale": "La fuente viva y la regla BL aprobada discrepan; elegir entre ambas modifica cuándo se aceptan productos y se inicia el pago automático.",
   "options": [
     {
-      "title": "Confirmar 15 días como contrato",
-      "body": "Actualizar la documentación de forma precisa y corregir la PR relacionada para que describa el comportamiento histórico aprobado.",
+      "title": "Respetar la regla validada de 20 días",
+      "body": "Restaurar el cron a 20 días hábiles y mantener la spec actual como contrato canónico.",
       "recommended": true
     },
     {
-      "title": "Restaurar 20 días en producción",
-      "body": "Cambiar ambas consultas activas a 20 días hábiles y añadir cobertura dirigida para impedir una regresión.",
-      "recommended": false
-    },
-    {
-      "title": "Revalidar con negocio",
-      "body": "Pausar la alineación documental hasta que el owner de compras confirme el umbral y las salvaguardas asociadas.",
+      "title": "Confirmar 15 días como contrato vigente",
+      "body": "Actualizar la spec BL mediante la validación F2 del owner y ajustar la documentación asociada.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Confirmar 15 días como contrato",
-    "body": "Actualizar la documentación de forma precisa y corregir la PR relacionada para que describa el comportamiento histórico aprobado.",
+    "title": "Respetar la regla validada de 20 días",
+    "body": "Restaurar el cron a 20 días hábiles y mantener la spec actual como contrato canónico.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "alexcanHamelyn",
-    "reason": "Fue autor de la PR mergeada que estableció el umbral vivo de 15 días.",
+    "reason": "La evidencia le conecta tanto con el cambio funcional de 15 días como con la validación posterior del bloque BL.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8953.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8953#issuecomment-5489516378",
-    "reviewedAt": "2026-09-01T07:27:41.537Z",
-    "mainSha": "bc3e11abce7bacdbfbffb60faeb678ec39e18036"
+    "reviewedAt": "2026-09-01T08:34:12.284Z",
+    "mainSha": "3e0e7770ff9798e05231286356a15a488e1ab833"
   }
 }

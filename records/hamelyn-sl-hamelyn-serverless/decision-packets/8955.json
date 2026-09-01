@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-01T07:14:48.421Z",
-  "updatedAt": "2026-09-01T06:57:39Z",
+  "generatedAt": "2026-09-01T08:35:14.817Z",
+  "updatedAt": "2026-09-01T07:41:42Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,50 +12,49 @@
     "labels": [
       "bug",
       "app:infrastructure",
-      "triage:running",
+      "triage:done",
       "business-logic",
+      "impact:other",
       "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
+      "P2",
       "clawsweeper:source-repro",
       "clawsweeper:linked-pr-open",
-      "issue-rating: 💎 diamond",
-      "P2",
-      "impact:other",
-      "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-09-01T05:45:35Z",
-    "updatedAt": "2026-09-01T06:57:39Z"
+    "updatedAt": "2026-09-01T07:41:42Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe mantenerse la regla BL validada que devuelve a `PENDING` los trackings cancelados o inválidos, o aprobarse explícitamente el marcado incondicional que propone la PR enlazada?",
-  "rationale": "La implementación actual y la PR abierta representan contratos opuestos; el código no puede decidir si la validación de negocio previamente aceptada debe retirarse.",
+  "question": "¿Debe conservarse la regla BL validada que devuelve a `PENDING` los trackings cancelados o inválidos, o aprobarse formalmente el marcado incondicional del cron vivo?",
+  "rationale": "La spec está marcada como `validated`, mientras que la PR abierta propone sustituirla por el comportamiento actual; es una decisión operativa, no una corrección mecánica.",
   "options": [
     {
       "title": "Conservar la regla validada",
-      "body": "Actualizar la PR para portar la validación de tracking al cron vivo y mantener la documentación como contrato de negocio.",
+      "body": "Actualizar el script vivo para validar tracking y mantener la transición a `PENDING` en los casos cancelados o inválidos.",
       "recommended": true
     },
     {
-      "title": "Revalidar el comportamiento actual",
-      "body": "Un responsable de negocio confirma el marcado incondicional y la PR puede actualizar la spec como nuevo contrato.",
+      "title": "Revalidar el cron actual",
+      "body": "Aprobar el marcado incondicional y fusionar documentación alineada solo después de dejar constancia de que sustituye el contrato anterior.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Conservar la regla validada",
-    "body": "Actualizar la PR para portar la validación de tracking al cron vivo y mantener la documentación como contrato de negocio.",
+    "body": "Actualizar el script vivo para validar tracking y mantener la transición a `PENDING` en los casos cancelados o inválidos.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Es la persona con mayor contexto reciente sobre la spec validada, la divergencia descubierta y la alternativa propuesta.",
+    "reason": "Su cambio reciente conectó la retirada del controller muerto con esta divergencia documentada y con la dirección planteada en la PR abierta.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8955.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8955#issuecomment-5489591938",
-    "reviewedAt": "2026-09-01T07:14:48.421Z",
-    "mainSha": "c48d08aa503308db6ed7e5f427cf8c78aa5089c2"
+    "reviewedAt": "2026-09-01T08:35:14.817Z",
+    "mainSha": "3e0e7770ff9798e05231286356a15a488e1ab833"
   }
 }
