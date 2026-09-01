@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-01T05:58:04.417Z",
+  "generatedAt": "2026-09-01T05:57:40.806Z",
   "updatedAt": "2026-09-01T05:45:54Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -21,38 +21,38 @@
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe `LOST_BY_HAMELYN` conservar los veinte días documentados o aprobar formalmente los cinco días del cron vivo?",
-  "rationale": "El código ejecutado y la spec validada discrepan sobre una regla operativa; el historial disponible no prueba cuál refleja la decisión vigente de negocio.",
+  "question": "¿El contrato de negocio para `LOST_BY_HAMELYN` debe ser veinte días hábiles, como indica la spec y el controlador histórico, o cinco días, como aplica el cron vivo?",
+  "rationale": "Las dos fuentes difieren y la spec sitúa la regla fuera de su bloque actual; el código no puede resolver por sí solo cuál es el umbral de negocio autorizado.",
   "options": [
     {
-      "title": "Restaurar veinte días",
-      "body": "Cambiar el cron vivo a veinte días y mantener la spec actual como contrato de warehouse.",
+      "title": "Confirmar veinte días hábiles",
+      "body": "Alinear el cron vivo con la spec validada y con el controlador histórico, y extraer la regla a warehouse.",
       "recommended": true
     },
     {
-      "title": "Aprobar cinco días",
-      "body": "Mantener el cron y actualizar la documentación mediante una spec BL propia de warehouse.",
+      "title": "Ratificar cinco días hábiles",
+      "body": "Conservar el cron actual y corregir la documentación BL para reflejar expresamente ese contrato.",
       "recommended": false
     },
     {
-      "title": "Definir otro umbral",
-      "body": "Acordar un nuevo valor y actualizar código, spec y comprobación de regresión en la misma reparación.",
+      "title": "Aplazar hasta validar warehouse",
+      "body": "No cambiar producción y registrar la regla de warehouse como pendiente de validación del owner.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Restaurar veinte días",
-    "body": "Cambiar el cron vivo a veinte días y mantener la spec actual como contrato de warehouse.",
+    "title": "Confirmar veinte días hábiles",
+    "body": "Alinear el cron vivo con la spec validada y con el controlador histórico, y extraer la regla a warehouse.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "La discrepancia afecta a la spec BL validada que introdujo y requiere coordinar su contrato con warehouse.",
-    "confidence": "medium"
+    "person": "alexcanHamelyn",
+    "reason": "Es el owner histórico asignado al bloque BL relacionado y el autor de la ruta programada actual.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8958.md",
-    "reviewedAt": "2026-09-01T05:58:04.417Z",
+    "reviewedAt": "2026-09-01T05:57:40.806Z",
     "mainSha": "5a6b2717cb63639c48c73f38b860b06330f5f9c6"
   }
 }
