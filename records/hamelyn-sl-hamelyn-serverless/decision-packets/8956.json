@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-01T07:43:48.054Z",
+  "generatedAt": "2026-09-01T07:44:28.680Z",
   "updatedAt": "2026-09-01T07:37:23Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -27,33 +27,33 @@
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe `BL-buying-orders-05` seguir excluyendo trackings cancelados antes de `PAYMENT_PENDING`, o debe validarse formalmente el salto incondicional que propone la PR abierta?",
-  "rationale": "La especificación validada y la PR abierta sostienen reglas de negocio opuestas para una transición que acepta productos automáticamente.",
+  "question": "¿Debe `BL-buying-orders-05` mantener la exclusión de trackings cancelados antes de `PAYMENT_PENDING`, o debe validarse explícitamente el salto incondicional propuesto por https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8968?",
+  "rationale": "La regla existente fue validada por el owner, pero la PR abierta solo documenta el comportamiento divergente; el código no puede decidir ese contrato de negocio.",
   "options": [
     {
       "title": "Mantener la regla validada",
-      "body": "Corregir el script vivo para excluir trackings cancelados y conservar el tratamiento fail-open del controller retirado.",
+      "body": "Corregir el cron para excluir trackings cancelados y conservar la especificación actual.",
       "recommended": true
     },
     {
-      "title": "Aprobar el salto incondicional",
-      "body": "Actualizar la spec mediante una nueva validación F2 que deje explícito el cambio de contrato antes de fusionar documentación.",
+      "title": "Validar el salto incondicional",
+      "body": "Completar una nueva validación F2 antes de actualizar la regla para aceptar el comportamiento actual.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Mantener la regla validada",
-    "body": "Corregir el script vivo para excluir trackings cancelados y conservar el tratamiento fail-open del controller retirado.",
+    "body": "Corregir el cron para excluir trackings cancelados y conservar la especificación actual.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "alexcanHamelyn",
-    "reason": "Su historial en el bloque BL y la mención explícita en la discusión lo sitúan como la mejor persona para confirmar la regla.",
+    "reason": "El merge del bloque BL y el comentario de triage lo sitúan como la persona adecuada para confirmar el contrato.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8956.md",
-    "reviewedAt": "2026-09-01T07:43:48.054Z",
+    "reviewedAt": "2026-09-01T07:44:28.680Z",
     "mainSha": "bc3e11abce7bacdbfbffb60faeb678ec39e18036"
   }
 }
