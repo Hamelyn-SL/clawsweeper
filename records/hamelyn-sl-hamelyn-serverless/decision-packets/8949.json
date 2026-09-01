@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-01T01:11:04.903Z",
-  "updatedAt": "2026-08-31T23:48:49Z",
+  "generatedAt": "2026-09-01T09:31:12.663Z",
+  "updatedAt": "2026-09-01T09:20:12Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,47 +15,46 @@
       "feature",
       "reporter:javier",
       "triage:needs-info",
-      "P2",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-08-31T23:04:04Z",
-    "updatedAt": "2026-08-31T23:48:49Z"
+    "updatedAt": "2026-09-01T09:20:12Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué campo, fuente o regla identifica de forma verificable las imágenes autorizadas para republicarse en AbeBooks?",
-  "rationale": "El código actual conoce la URL y la disponibilidad técnica, pero no acredita derechos ni permiso específico para este marketplace.",
+  "question": "¿Qué campo, fuente o regla verificable autoriza una imagen para republicarse en AbeBooks?",
+  "rationale": "El modelo conoce disponibilidad técnica de imágenes, pero no acredita sus derechos ni permiso específico para ese marketplace.",
   "options": [
     {
-      "title": "Definir una regla de elegibilidad por fuente",
-      "body": "Aprobar una fuente de verdad auditable y un SKU piloto antes de implementar el selector y el envío.",
+      "title": "Definir autorización persistida",
+      "body": "Añadir o aprobar una señal auditable por imagen o producto y filtrar exclusivamente con ella.",
       "recommended": true
     },
     {
-      "title": "Mantener el envío sin imágenes",
-      "body": "Conservar el comportamiento actual hasta disponer de metadatos o una política de autorización fiable.",
+      "title": "Aprobar una fuente existente",
+      "body": "Documentar una fuente ya autorizada y limitar el envío de AbeBooks a imágenes procedentes de ella.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Definir una regla de elegibilidad por fuente",
-    "body": "Aprobar una fuente de verdad auditable y un SKU piloto antes de implementar el selector y el envío.",
+    "title": "Definir autorización persistida",
+    "body": "Añadir o aprobar una señal auditable por imagen o producto y filtrar exclusivamente con ella.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Su historial reciente cubre la migración y operación del flujo de inventario de AbeBooks.",
+    "reason": "Lleva el flujo reciente de AbeBooks y figura como asignado actual de esta issue.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8949.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8949#issuecomment-5486014956",
-    "reviewedAt": "2026-09-01T01:11:04.903Z",
-    "mainSha": "5a6b2717cb63639c48c73f38b860b06330f5f9c6"
+    "reviewedAt": "2026-09-01T09:31:12.663Z",
+    "mainSha": "f73be3a322eb5af0748a78ee391d35b83a64d6d0"
   }
 }
