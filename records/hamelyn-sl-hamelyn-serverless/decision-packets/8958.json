@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-01T05:58:04.417Z",
+  "updatedAt": "2026-09-01T05:45:54Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8958,
+    "title": "BL-buying-orders: LOST_BY_HAMELYN detection runs at 5 business days, not 20",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8958",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:infrastructure",
+      "triage:queued",
+      "business-logic",
+      "P2"
+    ],
+    "createdAt": "2026-09-01T05:45:43Z",
+    "updatedAt": "2026-09-01T05:45:54Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe `LOST_BY_HAMELYN` conservar los veinte días documentados o aprobar formalmente los cinco días del cron vivo?",
+  "rationale": "El código ejecutado y la spec validada discrepan sobre una regla operativa; el historial disponible no prueba cuál refleja la decisión vigente de negocio.",
+  "options": [
+    {
+      "title": "Restaurar veinte días",
+      "body": "Cambiar el cron vivo a veinte días y mantener la spec actual como contrato de warehouse.",
+      "recommended": true
+    },
+    {
+      "title": "Aprobar cinco días",
+      "body": "Mantener el cron y actualizar la documentación mediante una spec BL propia de warehouse.",
+      "recommended": false
+    },
+    {
+      "title": "Definir otro umbral",
+      "body": "Acordar un nuevo valor y actualizar código, spec y comprobación de regresión en la misma reparación.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Restaurar veinte días",
+    "body": "Cambiar el cron vivo a veinte días y mantener la spec actual como contrato de warehouse.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "La discrepancia afecta a la spec BL validada que introdujo y requiere coordinar su contrato con warehouse.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8958.md",
+    "reviewedAt": "2026-09-01T05:58:04.417Z",
+    "mainSha": "5a6b2717cb63639c48c73f38b860b06330f5f9c6"
+  }
+}
