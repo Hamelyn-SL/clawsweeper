@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-01T08:44:50.388Z",
+  "updatedAt": "2026-09-01T07:22:00Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8968,
+    "title": "docs: align suspicious-transition BL specs with the live cron",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8968",
+    "state": "open",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-09-01T07:11:25Z",
+    "updatedAt": "2026-09-01T07:22:00Z",
+    "headSha": "fb1478e92f7d75fb65f804a3fbcff3192a79e385"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe el owner validar que los umbrales, guards y cortes del cron activo sustituyen las reglas BL ya validadas, o deben seguir tratándose como divergencias a corregir?",
+  "rationale": "Que un controller histórico no se ejecutase no determina por sí solo qué comportamiento de negocio debe considerarse válido; la política BL reserva esa decisión al owner mediante F2.",
+  "options": [
+    {
+      "title": "Mantener divergencias pendientes",
+      "body": "Conservar las specs validadas y los enlaces a las incidencias hasta que el owner decida el contrato correcto.",
+      "recommended": true
+    },
+    {
+      "title": "Validar el cron como contrato",
+      "body": "Completar F2 con el owner y actualizar cada regla e incidencia con la decisión explícita de aceptar el comportamiento actual.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mantener divergencias pendientes",
+    "body": "Conservar las specs validadas y los enlaces a las incidencias hasta que el owner decida el contrato correcto.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Alex Cantón",
+    "reason": "El historial le vincula directamente con las reglas históricas de tracking y umbrales que requieren validación de negocio.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8968.md",
+    "reviewedAt": "2026-09-01T08:44:50.388Z",
+    "mainSha": "0880592c09e9389f2dc91a2cb78adacc3074bc5f"
+  }
+}
