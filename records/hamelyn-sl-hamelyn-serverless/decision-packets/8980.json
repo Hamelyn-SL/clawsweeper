@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-01T13:04:50.829Z",
+  "updatedAt": "2026-09-01T11:57:22Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8980,
+    "title": "Marketplace: write fence para la ventana de mantenimiento de la retirada V1",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8980",
+    "state": "open",
+    "labels": [
+      "app:marketplace",
+      "feature",
+      "triage:needs-info",
+      "P1",
+      "marketplace-v2"
+    ],
+    "createdAt": "2026-09-01T10:54:17Z",
+    "updatedAt": "2026-09-01T11:57:22Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿La ventana de mantenimiento exige conmutar la fence sin redeploy, o el runbook puede exigir un redeploy controlado al activar y desactivar `MARKETPLACE_WRITE_FENCE`?",
+  "rationale": "La respuesta cambia el contrato operativo y determina si basta el wrapper de la PR o se necesita una fuente de estado runtime.",
+  "options": [
+    {
+      "title": "Exigir conmutación runtime",
+      "body": "Mantener el requisito sin redeploy y rediseñar la PR para leer un control runtime ya aprobado antes de ejecutar cada ruta.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar redeploy controlado",
+      "body": "Actualizar aceptación y runbook para que el cambio de variable incluya un redeploy verificable al activar y desactivar la fence.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Exigir conmutación runtime",
+    "body": "Mantener el requisito sin redeploy y rediseñar la PR para leer un control runtime ya aprobado antes de ejecutar cada ruta.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Está asignado a la issue, propone la PR vinculada y cuenta con historial reciente en la retirada V1→V2.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8980.md",
+    "reviewedAt": "2026-09-01T13:04:50.829Z",
+    "mainSha": "c918cd8c8994ef9f6cfeaf9d735250d0849e20b1"
+  }
+}
