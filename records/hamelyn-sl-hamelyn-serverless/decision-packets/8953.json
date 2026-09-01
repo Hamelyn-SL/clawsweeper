@@ -1,0 +1,66 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-01T07:27:41.537Z",
+  "updatedAt": "2026-09-01T07:21:55Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8953,
+    "title": "BL-buying-orders-05: live cron uses a 15-business-day window instead of 20",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8953",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:infrastructure",
+      "triage:queued",
+      "business-logic",
+      "impact:other",
+      "clawsweeper:no-new-fix-pr",
+      "P2",
+      "clawsweeper:source-repro",
+      "clawsweeper:linked-pr-open",
+      "clawsweeper:fix-shape-clear",
+      "no-stale",
+      "clawsweeper:queueable-fix",
+      "issue-rating: 💎 diamond"
+    ],
+    "createdAt": "2026-09-01T05:39:02Z",
+    "updatedAt": "2026-09-01T07:21:55Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿El plazo canónico para `SUSPICIOUS → PAYMENT_PENDING` debe seguir siendo 20 días hábiles o debe consolidarse el cambio histórico a 15 días?",
+  "rationale": "La especificación validada y una PR mergeada con aprobación humana describen contratos incompatibles; la inspección técnica no puede elegir la política de pago automática.",
+  "options": [
+    {
+      "title": "Confirmar 15 días como contrato",
+      "body": "Actualizar la documentación de forma precisa y corregir la PR relacionada para que describa el comportamiento histórico aprobado.",
+      "recommended": true
+    },
+    {
+      "title": "Restaurar 20 días en producción",
+      "body": "Cambiar ambas consultas activas a 20 días hábiles y añadir cobertura dirigida para impedir una regresión.",
+      "recommended": false
+    },
+    {
+      "title": "Revalidar con negocio",
+      "body": "Pausar la alineación documental hasta que el owner de compras confirme el umbral y las salvaguardas asociadas.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Confirmar 15 días como contrato",
+    "body": "Actualizar la documentación de forma precisa y corregir la PR relacionada para que describa el comportamiento histórico aprobado.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "alexcanHamelyn",
+    "reason": "Fue autor de la PR mergeada que estableció el umbral vivo de 15 días.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8953.md",
+    "reviewedAt": "2026-09-01T07:27:41.537Z",
+    "mainSha": "bc3e11abce7bacdbfbffb60faeb678ec39e18036"
+  }
+}
