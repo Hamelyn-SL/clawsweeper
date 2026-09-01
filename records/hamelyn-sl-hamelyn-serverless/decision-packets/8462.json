@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-01T13:49:46.229Z",
-  "updatedAt": "2026-09-01T13:44:10Z",
+  "generatedAt": "2026-09-01T14:58:52.938Z",
+  "updatedAt": "2026-09-01T14:02:33Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,49 +13,53 @@
       "bug",
       "source:admin-panel",
       "app:ecommerce",
-      "triage:queued",
+      "triage:done",
       "reporter:victor",
+      "P1",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-product-decision",
       "clawsweeper:source-repro",
-      "issue-rating: 💎 diamond",
-      "P1",
+      "clawsweeper:linked-pr-open",
       "impact:ux-friction",
-      "clawsweeper:linked-pr-open"
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-08-14T12:24:24Z",
-    "updatedAt": "2026-09-01T13:44:10Z"
+    "updatedAt": "2026-09-01T14:02:33Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8801 limitarse a enlaces y píldoras validadas, dejando las nuevas migas y el H1 verde como alcance separado?",
-  "rationale": "La última actualización añade cambios visuales no incluidos en la implementación candidata, y la copy de stock requiere aprobación de producto antes de publicar cifras distintas.",
+  "question": "¿Deben los chips de categoría priorizar la navegación canónica a una única categoría, o debe conservarse la multiselección actual con una alternativa SEO compatible?",
+  "rationale": "La implementación candidata transforma una interacción de filtro combinable en navegación de ruta y altera mensajes comerciales; el código no determina por sí solo el contrato deseado.",
   "options": [
     {
-      "title": "Acotar el PR actual",
-      "body": "Resolver sus observaciones funcionales y de copy, y abrir seguimiento separado para migas y estilo del H1.",
+      "title": "Conservar multiselección y añadir SEO compatible",
+      "body": "Mantener la interacción actual y diseñar enlaces o rutas canónicas sin perder la combinación de categorías.",
       "recommended": true
     },
     {
-      "title": "Ampliar el PR actual",
-      "body": "Incluir migas y H1 solo tras definir aceptación visual, copy y prueba de las cuatro verticales.",
+      "title": "Priorizar rutas canónicas de una categoría",
+      "body": "Aceptar la sustitución de multiselección por navegación a cada categoría y documentar el nuevo comportamiento.",
+      "recommended": false
+    },
+    {
+      "title": "Separar navegación y filtrado",
+      "body": "Ofrecer enlaces SEO y un control de filtro independiente para evitar dos semánticas en el mismo chip.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Acotar el PR actual",
-    "body": "Resolver sus observaciones funcionales y de copy, y abrir seguimiento separado para migas y estilo del H1.",
+    "title": "Conservar multiselección y añadir SEO compatible",
+    "body": "Mantener la interacción actual y diseñar enlaces o rutas canónicas sin perder la combinación de categorías.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Es la persona asignada y responsable del PR que actualmente concentra la implementación pendiente.",
+    "reason": "Lleva la PR abierta y la asignación actual de esta incidencia.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8462.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8462#issuecomment-5293310157",
-    "reviewedAt": "2026-09-01T13:49:46.229Z",
-    "mainSha": "59212de95f474419a22aca9c876e5e2b9359dc17"
+    "reviewedAt": "2026-09-01T14:58:52.938Z",
+    "mainSha": "6feedad9d3b0414d0773798d2571d2aad65dac58"
   }
 }
