@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-01T07:43:48.054Z",
+  "updatedAt": "2026-09-01T07:37:23Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8956,
+    "title": "BL-buying-orders-05: live cron skips the tracking-validity check before PAYMENT_PENDING",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8956",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:infrastructure",
+      "triage:needs-info",
+      "business-logic",
+      "impact:other",
+      "P2",
+      "clawsweeper:source-repro",
+      "clawsweeper:fix-shape-clear",
+      "no-stale",
+      "clawsweeper:queueable-fix",
+      "issue-rating: 💎 diamond"
+    ],
+    "createdAt": "2026-09-01T05:45:38Z",
+    "updatedAt": "2026-09-01T07:37:23Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe `BL-buying-orders-05` seguir excluyendo trackings cancelados antes de `PAYMENT_PENDING`, o debe validarse formalmente el salto incondicional que propone la PR abierta?",
+  "rationale": "La especificación validada y la PR abierta sostienen reglas de negocio opuestas para una transición que acepta productos automáticamente.",
+  "options": [
+    {
+      "title": "Mantener la regla validada",
+      "body": "Corregir el script vivo para excluir trackings cancelados y conservar el tratamiento fail-open del controller retirado.",
+      "recommended": true
+    },
+    {
+      "title": "Aprobar el salto incondicional",
+      "body": "Actualizar la spec mediante una nueva validación F2 que deje explícito el cambio de contrato antes de fusionar documentación.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mantener la regla validada",
+    "body": "Corregir el script vivo para excluir trackings cancelados y conservar el tratamiento fail-open del controller retirado.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "alexcanHamelyn",
+    "reason": "Su historial en el bloque BL y la mención explícita en la discusión lo sitúan como la mejor persona para confirmar la regla.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8956.md",
+    "reviewedAt": "2026-09-01T07:43:48.054Z",
+    "mainSha": "bc3e11abce7bacdbfbffb60faeb678ec39e18036"
+  }
+}
