@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-01T08:28:03.826Z",
-  "updatedAt": "2026-09-01T08:21:42Z",
+  "generatedAt": "2026-09-01T09:57:34.442Z",
+  "updatedAt": "2026-09-01T09:21:26Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,50 +12,49 @@
     "labels": [
       "bug",
       "app:infrastructure",
-      "triage:queued",
+      "triage:needs-info",
       "business-logic",
+      "impact:other",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
+      "P2",
       "clawsweeper:source-repro",
       "clawsweeper:linked-pr-open",
-      "issue-rating: 💎 diamond",
-      "P2",
-      "impact:other",
-      "clawsweeper:needs-product-decision"
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-09-01T05:49:48Z",
-    "updatedAt": "2026-09-01T08:21:42Z"
+    "updatedAt": "2026-09-01T09:21:26Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿El contrato vigente debe conservar los cortes `endOfDay()` de las reglas BL validadas o aceptar deliberadamente los cortes dependientes de la hora del cron?",
-  "rationale": "La incidencia y el historial de eliminación respaldan la regla validada, pero la PR abierta propone declarar correcto el comportamiento contrario sin modificar producción.",
+  "question": "¿Debe prevalecer el contrato BL validado con corte al final del día o debe aceptarse formalmente el corte dependiente de la hora del cron?",
+  "rationale": "Ambas opciones cambian el contrato de negocio de transiciones y notificaciones; la política BL reserva esa validación al owner mediante F2.",
   "options": [
     {
-      "title": "Restaurar el corte validado",
-      "body": "Aplicar `endOfDay()` a los umbrales del cron y mantener las specs como contrato de negocio.",
+      "title": "Restaurar el cierre diario",
+      "body": "Confirmar las reglas validadas y aplicar `endOfDay()` a los cinco umbrales, con cobertura de los límites temporales.",
       "recommended": true
     },
     {
-      "title": "Aceptar el corte por hora",
-      "body": "Fusionar una decisión explícita que cambie el contrato BL y documente el impacto de las cuatro ejecuciones diarias.",
+      "title": "Aceptar el corte horario",
+      "body": "Validar explícitamente que el cron conserva su hora y actualizar las reglas BL mediante F2, sin presentar la divergencia como bug.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Restaurar el corte validado",
-    "body": "Aplicar `endOfDay()` a los umbrales del cron y mantener las specs como contrato de negocio.",
+    "title": "Restaurar el cierre diario",
+    "body": "Confirmar las reglas validadas y aplicar `endOfDay()` a los cinco umbrales, con cobertura de los límites temporales.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "alexcanHamelyn",
-    "reason": "Su historial conecta tanto las reglas BL de compras como los cambios funcionales previos del cron.",
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Ha aportado el análisis de la divergencia y el cambio reciente que la dejó documentada.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8959.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8959#issuecomment-5489594476",
-    "reviewedAt": "2026-09-01T08:28:03.826Z",
-    "mainSha": "3e0e7770ff9798e05231286356a15a488e1ab833"
+    "reviewedAt": "2026-09-01T09:57:34.442Z",
+    "mainSha": "f73be3a322eb5af0748a78ee391d35b83a64d6d0"
   }
 }
