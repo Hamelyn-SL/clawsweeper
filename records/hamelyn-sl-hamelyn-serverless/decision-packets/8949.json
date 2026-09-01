@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-31T23:10:26.758Z",
-  "updatedAt": "2026-08-31T23:04:14Z",
+  "generatedAt": "2026-09-01T01:11:04.903Z",
+  "updatedAt": "2026-08-31T23:48:49Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,48 +14,47 @@
       "app:marketplace",
       "feature",
       "reporter:javier",
-      "triage:queued",
-      "P2",
+      "triage:needs-info",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-08-31T23:04:04Z",
-    "updatedAt": "2026-08-31T23:04:14Z"
+    "updatedAt": "2026-08-31T23:48:49Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué fuente o regla de autorización debe decidir que una imagen de producto puede enviarse a AbeBooks, y quién aprueba la republicación de las publicaciones activas?",
-  "rationale": "El código puede serializar URLs, pero la issue prohíbe asumir que cualquier imagen de Bunny sea reutilizable; esa política y su despliegue no se deducen del repositorio.",
+  "question": "¿Qué campo, fuente o regla identifica de forma verificable las imágenes autorizadas para republicarse en AbeBooks?",
+  "rationale": "El código actual conoce la URL y la disponibilidad técnica, pero no acredita derechos ni permiso específico para este marketplace.",
   "options": [
     {
-      "title": "Definir elegibilidad y piloto",
-      "body": "Acordar una fuente de verdad de derechos, probar un SKU controlado y aprobar un despliegue por lotes antes de implementar la actualización masiva.",
+      "title": "Definir una regla de elegibilidad por fuente",
+      "body": "Aprobar una fuente de verdad auditable y un SKU piloto antes de implementar el selector y el envío.",
       "recommended": true
     },
     {
-      "title": "Limitarlo a imágenes propias verificadas",
-      "body": "Enviar inicialmente solo imágenes con procedencia interna verificable y dejar el resto sin imagen hasta disponer de una política más amplia.",
+      "title": "Mantener el envío sin imágenes",
+      "body": "Conservar el comportamiento actual hasta disponer de metadatos o una política de autorización fiable.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Definir elegibilidad y piloto",
-    "body": "Acordar una fuente de verdad de derechos, probar un SKU controlado y aprobar un despliegue por lotes antes de implementar la actualización masiva.",
+    "title": "Definir una regla de elegibilidad por fuente",
+    "body": "Aprobar una fuente de verdad auditable y un SKU piloto antes de implementar el selector y el envío.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Su historial concentra el conocimiento reciente de la integración y de sus actualizaciones de inventario.",
+    "reason": "Su historial reciente cubre la migración y operación del flujo de inventario de AbeBooks.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8949.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8949#issuecomment-5486014956",
-    "reviewedAt": "2026-08-31T23:10:26.758Z",
+    "reviewedAt": "2026-09-01T01:11:04.903Z",
     "mainSha": "5a6b2717cb63639c48c73f38b860b06330f5f9c6"
   }
 }
