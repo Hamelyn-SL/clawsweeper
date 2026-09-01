@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-01T06:13:47.117Z",
+  "updatedAt": "2026-09-01T05:57:48Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8948,
+    "title": "feat: run b2b dry-runs for unregistered clients",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8948",
+    "state": "open",
+    "labels": [
+      "size/L",
+      "P2",
+      "status: 📣 needs proof",
+      "rating: 🥈 silver"
+    ],
+    "createdAt": "2026-08-31T22:52:38Z",
+    "updatedAt": "2026-09-01T05:57:48Z",
+    "headSha": "cd544abd0ad9b8daa62f493cf81894309e0ec161"
+  },
+  "lane": "security_boundary",
+  "priority": "P2",
+  "question": "¿Se acepta que un cliente identificado únicamente en el cuerpo deje de ser ejecutable automáticamente y requiera figurar en la primera línea del pedido?",
+  "rationale": "La rama reemplaza una resolución histórica sobre todo el mensaje por una ruta fail-closed; reduce la suplantación, pero cambia la compatibilidad de entradas operativas existentes.",
+  "options": [
+    {
+      "title": "Confirmar resolución por primera línea",
+      "body": "Aceptar el modo fail-closed y exigir que el alias del cliente esté en la primera línea normalizada antes de cualquier ejecución.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener compatibilidad de cuerpo",
+      "body": "Conservar una ruta explícita para pedidos antiguos con alias fuera del título, con una barrera que impida confundir menciones informativas.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Confirmar resolución por primera línea",
+    "body": "Aceptar el modo fail-closed y exigir que el alias del cliente esté en la primera línea normalizada antes de cualquier ejecución.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es el principal autor reciente del watcher B2B y está asignado a la incidencia enlazada.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8948.md",
+    "reviewedAt": "2026-09-01T06:13:47.117Z",
+    "mainSha": "36dc43d92073a786d620512a6c0f1adc00c1bb36"
+  }
+}
