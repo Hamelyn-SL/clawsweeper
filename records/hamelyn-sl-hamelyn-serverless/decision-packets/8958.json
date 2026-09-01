@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-01T10:04:30.790Z",
+  "generatedAt": "2026-09-01T10:04:12.072Z",
   "updatedAt": "2026-09-01T09:07:39Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -14,54 +14,47 @@
       "app:infrastructure",
       "triage:needs-info",
       "business-logic",
-      "P2",
       "impact:other",
-      "issue-rating: 💎 diamond",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
+      "P2",
       "clawsweeper:source-repro",
       "clawsweeper:linked-pr-open",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:fix-shape-clear",
-      "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-09-01T05:45:43Z",
     "updatedAt": "2026-09-01T09:07:39Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe `LOST_BY_HAMELYN` pasar a `SUSPICIOUS` tras 5 días hábiles, como hace el cron, o tras 20, como conserva la spec validada?",
-  "rationale": "El código muestra el comportamiento actual, pero ni la issue ni la PR aportan la aprobación de negocio necesaria para decidir qué contrato debe prevalecer.",
+  "question": "¿Debe `LOST_BY_HAMELYN` activarse tras 5 o tras 20 días hábiles para pedidos B2C en `PICKED_UP`?",
+  "rationale": "El código confirma los cinco días y la spec validada conserva veinte, pero esta última declara la transición fuera de su ámbito; ningún artefacto revisado acredita cuál es el contrato de warehouse.",
   "options": [
     {
-      "title": "Confirmar 5 días y formalizarlo",
-      "body": "Warehouse valida el umbral operativo actual y se crea o actualiza la spec de warehouse antes de retirar la divergencia.",
-      "recommended": false
-    },
-    {
-      "title": "Restaurar 20 días en el cron",
-      "body": "Warehouse confirma la spec validada y se corrige el script activo con cobertura enfocada para el corte de 20 días.",
+      "title": "Aprobar 20 días hábiles",
+      "body": "Restaurar el valor documentado en la spec validada y actualizar el cron con pruebas de frontera para `PICKED_UP`.",
       "recommended": true
     },
     {
-      "title": "Definir otro umbral",
-      "body": "Warehouse establece un valor distinto y se alinea código, spec y evidencia operativa en el mismo cambio.",
+      "title": "Aprobar 5 días hábiles",
+      "body": "Aceptar el comportamiento operativo actual y moverlo a una spec BL de warehouse con aprobación explícita.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Restaurar 20 días en el cron",
-    "body": "Warehouse confirma la spec validada y se corrige el script activo con cobertura enfocada para el corte de 20 días.",
+    "title": "Aprobar 20 días hábiles",
+    "body": "Restaurar el valor documentado en la spec validada y actualizar el cron con pruebas de frontera para `PICKED_UP`.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "banosdavidhamelyn",
-    "reason": "Es el único responsable de revisión explícitamente vinculado a la PR abierta que normaliza estas reglas.",
-    "confidence": "low"
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Es la persona asignada que conectó la divergencia con la documentación y la ruta viva; deberá canalizar la confirmación de warehouse.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8958.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8958#issuecomment-5489591899",
-    "reviewedAt": "2026-09-01T10:04:30.790Z",
+    "reviewedAt": "2026-09-01T10:04:12.072Z",
     "mainSha": "f73be3a322eb5af0748a78ee391d35b83a64d6d0"
   }
 }
