@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-01T23:45:30.405Z",
-  "updatedAt": "2026-09-01T23:34:45Z",
+  "generatedAt": "2026-09-01T23:47:21.231Z",
+  "updatedAt": "2026-09-01T23:42:21Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -17,38 +17,42 @@
       "P1"
     ],
     "createdAt": "2026-09-01T23:34:34Z",
-    "updatedAt": "2026-09-01T23:34:45Z"
+    "updatedAt": "2026-09-01T23:42:21Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué política de catálogo debe gobernar las fusiones, retiradas y nombres de skills antes de modificar el conjunto compartido?",
-  "rationale": "La issue plantea varias consolidaciones que afectan procedimientos reutilizados, pero `skills/README.md` no existe y no hay una decisión previa que fije compatibilidad, conservación y propietarios.",
+  "question": "¿Qué reglas deben bloquear commits y PRs de forma universal, y qué excepciones explícitas deben conservar los bots y flujos internos?",
+  "rationale": "La propuesta cambia política de contribución, superficie de CI y gobernanza de skills; el código no puede decidir por sí solo el nivel de enforcement ni qué skills retirar.",
   "options": [
     {
-      "title": "Aprobar catálogo y fases",
-      "body": "Definir criterios, skills de destino y contenido preservado; después ejecutar cambios en PRs acotadas.",
+      "title": "Aprobar un alcance mínimo por fases",
+      "body": "Definir primero reglas bloqueantes, excepciones y criterios de poda, y ejecutar después PRs separados con validación de cada workflow.",
       "recommended": true
     },
     {
-      "title": "Limitar el alcance inicial",
-      "body": "Implementar solo los verificadores de convenciones y dejar la poda de skills para una propuesta independiente.",
+      "title": "Limitarse a documentación y catálogo",
+      "body": "Integrar solo la compactación y la guía de skills, dejando hooks, CI y podas para decisiones posteriores.",
+      "recommended": false
+    },
+    {
+      "title": "Adoptar enforcement completo",
+      "body": "Hacer bloqueantes todos los controles solicitados en una iniciativa coordinada con validación previa de cada automatización afectada.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar catálogo y fases",
-    "body": "Definir criterios, skills de destino y contenido preservado; después ejecutar cambios en PRs acotadas.",
+    "title": "Aprobar un alcance mínimo por fases",
+    "body": "Definir primero reglas bloqueantes, excepciones y criterios de poda, y ejecutar después PRs separados con validación de cada workflow.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Ha propuesto el catálogo y mantiene historial reciente en los hooks y workflows implicados.",
+    "reason": "Su historial reciente conecta la política de agentes, el reporter de Fallow y la propuesta relacionada de compactación.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8988.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8988#issuecomment-5502149625",
-    "reviewedAt": "2026-09-01T23:45:30.405Z",
+    "reviewedAt": "2026-09-01T23:47:21.231Z",
     "mainSha": "6feedad9d3b0414d0773798d2571d2aad65dac58"
   }
 }
