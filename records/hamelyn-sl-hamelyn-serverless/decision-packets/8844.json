@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-28T17:08:08.273Z",
-  "updatedAt": "2026-08-28T12:56:56Z",
+  "generatedAt": "2026-09-01T05:49:19.099Z",
+  "updatedAt": "2026-09-01T05:24:10Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,46 +13,50 @@
       "app:infrastructure",
       "feature",
       "triage:needs-info",
-      "fallow:2026-08",
-      "P3",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P3",
+      "issue-rating: ➖ n/a",
+      "fallow:2026-08"
     ],
     "createdAt": "2026-08-28T08:51:47Z",
-    "updatedAt": "2026-08-28T12:56:56Z"
+    "updatedAt": "2026-09-01T05:24:10Z"
   },
   "lane": "product_direction",
   "priority": "P3",
-  "question": "¿Debe `apps/public/src/app/_not-found.tsx` eliminarse para conservar el 404 actual o renombrarse a `not-found.tsx` para activar ese diseño?",
-  "rationale": "Las dos vías eliminan el archivo no registrado, pero solo una conserva el comportamiento visible actual; el código no puede decidir esa intención de producto.",
+  "question": "¿Debe conservarse el 404 por defecto eliminando `_not-found.tsx`, y debe excluirse temporalmente el controlador hasta resolver las divergencias del cron vivo?",
+  "rationale": "La alternativa del 404 cambia comportamiento visible y el controlador contiene reglas documentadas que no puede perder una limpieza mecánica.",
   "options": [
     {
-      "title": "Conservar el fallback actual",
-      "body": "Eliminar `_not-found.tsx` y mantener la página 404 por defecto que sirve Next hoy.",
+      "title": "Conservar el 404 actual y acotar la limpieza",
+      "body": "Eliminar `_not-found.tsx`, aplazar el controlador hasta cerrar las divergencias del cron y revalidar los candidatos de dashboards.",
       "recommended": true
     },
     {
-      "title": "Activar el diseño existente",
-      "body": "Renombrar el archivo a `not-found.tsx` y validar visualmente la nueva página 404.",
+      "title": "Activar el 404 personalizado",
+      "body": "Renombrar el archivo a `not-found.tsx` y documentar que se adopta deliberadamente esa nueva experiencia.",
+      "recommended": false
+    },
+    {
+      "title": "Reformular como migración del cron",
+      "body": "Portar primero las reglas del controlador al script ejecutado y dejar la limpieza residual para una PR posterior.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Conservar el fallback actual",
-    "body": "Eliminar `_not-found.tsx` y mantener la página 404 por defecto que sirve Next hoy.",
+    "title": "Conservar el 404 actual y acotar la limpieza",
+    "body": "Eliminar `_not-found.tsx`, aplazar el controlador hasta cerrar las divergencias del cron y revalidar los candidatos de dashboards.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "AlexDiaz-Hamelyn",
-    "reason": "La definición de alcance y los criterios de aceptación de esta issue ya identifican expresamente esta elección funcional.",
-    "confidence": "high"
+    "person": "danielmenchen-hamelyn",
+    "reason": "Su historial está ligado al controlador que actualmente concentra las reglas de referencia afectadas.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8844.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8844#issuecomment-5450546640",
-    "reviewedAt": "2026-08-28T17:08:08.273Z",
-    "mainSha": "88131d9715961366e30ac7cb24d4062674169031"
+    "reviewedAt": "2026-09-01T05:49:19.099Z",
+    "mainSha": "5a6b2717cb63639c48c73f38b860b06330f5f9c6"
   }
 }
