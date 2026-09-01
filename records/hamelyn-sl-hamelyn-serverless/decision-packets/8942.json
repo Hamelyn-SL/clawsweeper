@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-31T19:48:31.873Z",
-  "updatedAt": "2026-08-31T18:59:57Z",
+  "generatedAt": "2026-09-01T10:14:59.234Z",
+  "updatedAt": "2026-09-01T10:01:45Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,48 +12,47 @@
     "labels": [
       "bug",
       "app:marketplace",
-      "triage:pr-opened",
+      "triage:queued",
+      "impact:other",
       "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision",
+      "P2",
       "clawsweeper:source-repro",
       "clawsweeper:linked-pr-open",
-      "issue-rating: 💎 diamond",
-      "P2",
-      "impact:other",
-      "clawsweeper:needs-product-decision"
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-08-31T18:20:02Z",
-    "updatedAt": "2026-08-31T18:59:57Z"
+    "updatedAt": "2026-09-01T10:01:45Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe esta incidencia incluir un límite terminal para `NOT_BUYABLE` sin código o limitarse a los códigos normativos conocidos?",
-  "rationale": "La PR preserva los casos de propagación legítima; fijar un umbral general requiere decidir el equilibrio entre recuperación automática y parada preventiva.",
+  "question": "¿Debe esta incidencia cerrarse al integrar la corrección de códigos EPR/GPSR y separar el límite de `NOT_BUYABLE` sin código junto con la conciliación SP-API?",
+  "rationale": "El código conocido tiene una corrección mecánica en revisión, pero elegir un umbral terminal y la política de conciliación remota cambia el comportamiento operativo.",
   "options": [
     {
-      "title": "Separar el umbral sin código",
-      "body": "Integrar primero la clasificación de códigos conocidos y abrir un seguimiento con telemetría para definir un límite seguro.",
+      "title": "Acotar y separar",
+      "body": "Integrar la corrección de códigos conocidos y crear trabajo específico para el límite de retries y la reconciliación remota.",
       "recommended": true
     },
     {
-      "title": "Incluir un límite ahora",
-      "body": "Ampliar la PR con un contador y una transición terminal tras un umbral explícitamente acordado.",
+      "title": "Ampliar la corrección",
+      "body": "Exigir que esta entrega incluya un límite definido para `NOT_BUYABLE` sin código y un procedimiento SP-API antes de cerrarla.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Separar el umbral sin código",
-    "body": "Integrar primero la clasificación de códigos conocidos y abrir un seguimiento con telemetría para definir un límite seguro.",
+    "title": "Acotar y separar",
+    "body": "Integrar la corrección de códigos conocidos y crear trabajo específico para el límite de retries y la reconciliación remota.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Introdujo la recuperación y la verificación de buyability que determinan ese contrato.",
+    "person": "MiguelHamelyn",
+    "reason": "Ha integrado recientemente la ruta Amazon V2 relacionada y está conectado con la decisión de alcance actual.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8942.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8942#issuecomment-5482740371",
-    "reviewedAt": "2026-08-31T19:48:31.873Z",
-    "mainSha": "5a6b2717cb63639c48c73f38b860b06330f5f9c6"
+    "reviewedAt": "2026-09-01T10:14:59.234Z",
+    "mainSha": "2ec011fd2d7d4076217cbdcadcdb1c9ba06c3abc"
   }
 }
