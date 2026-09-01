@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-01T09:58:54.615Z",
-  "updatedAt": "2026-09-01T09:21:26Z",
+  "generatedAt": "2026-09-01T10:13:35.975Z",
+  "updatedAt": "2026-09-01T10:06:21Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,49 +14,48 @@
       "app:infrastructure",
       "triage:needs-info",
       "business-logic",
+      "impact:other",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
+      "P2",
       "clawsweeper:source-repro",
       "clawsweeper:linked-pr-open",
-      "issue-rating: 💎 diamond",
-      "P2",
-      "impact:other",
-      "clawsweeper:fix-shape-clear"
+      "clawsweeper:fix-shape-clear",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-09-01T05:49:48Z",
-    "updatedAt": "2026-09-01T09:21:26Z"
+    "updatedAt": "2026-09-01T10:06:21Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe el cron restaurar `endOfDay()` en sus cinco umbrales o debe validarse mediante F2 que el corte dependa de la hora de ejecución?",
-  "rationale": "El código productivo y dos especificaciones BL `validated` describen comportamientos incompatibles; ambos afectan cuándo se transicionan pedidos.",
+  "question": "¿El contrato de los umbrales de días hábiles debe cerrar al final del día con `endOfDay()` o conservar la hora de cada ejecución del cron?",
+  "rationale": "Ambas opciones cambian cuándo se transicionan pedidos reales; el estado `validated` de las reglas y el comportamiento productivo discrepan, y la discusión exige validación F2 del owner.",
   "options": [
     {
-      "title": "Restaurar el cierre diario",
-      "body": "Aplicar `endOfDay()` tras cada cálculo y mantener las reglas BL validadas como contrato operativo.",
+      "title": "Conservar el contrato validado",
+      "body": "Aplicar `endOfDay()` en el cron activo y mantener las reglas BL actuales como fuente de verdad.",
       "recommended": true
     },
     {
-      "title": "Validar el corte horario",
-      "body": "Completar F2, actualizar explícitamente las dos reglas BL y ajustar la PR documental para reflejar la nueva decisión.",
+      "title": "Adoptar el corte horario",
+      "body": "Mantener el cron actual y actualizar las reglas BL mediante una validación F2 explícita.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Restaurar el cierre diario",
-    "body": "Aplicar `endOfDay()` tras cada cálculo y mantener las reglas BL validadas como contrato operativo.",
+    "title": "Conservar el contrato validado",
+    "body": "Aplicar `endOfDay()` en el cron activo y mantener las reglas BL actuales como fuente de verdad.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "Alex Cantón",
-    "reason": "El historial le atribuye el cambio que introdujo el corte al final del día y las reglas afectadas proceden de esa superficie.",
+    "reason": "Su historial concentra la extracción y la corrección anterior del bloque BL que define el contrato en disputa.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8959.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8959#issuecomment-5489594476",
-    "reviewedAt": "2026-09-01T09:58:54.615Z",
-    "mainSha": "f73be3a322eb5af0748a78ee391d35b83a64d6d0"
+    "reviewedAt": "2026-09-01T10:13:35.975Z",
+    "mainSha": "2ec011fd2d7d4076217cbdcadcdb1c9ba06c3abc"
   }
 }
