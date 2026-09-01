@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-01T09:50:51.704Z",
+  "updatedAt": "2026-09-01T09:42:22Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8975,
+    "title": "Agent runs remain stuck in running state beyond 24 hours",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8975",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "triage:running",
+      "P2"
+    ],
+    "createdAt": "2026-09-01T09:32:36Z",
+    "updatedAt": "2026-09-01T09:42:22Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debemos buscar un cierre terminal soportado por Vercel o mantener los estados del proveedor y corregir solo la interpretación local de runs antiguos?",
+  "rationale": "El código solo consume una API de lectura y la elección determina si la solución pertenece a instrumentación propia, a soporte del proveedor o al informe del supervisor.",
+  "options": [
+    {
+      "title": "Confirmar API de cierre de Vercel",
+      "body": "Validar una operación soportada y, si existe, añadir reconciliación con señales de actividad y causa preservada.",
+      "recommended": true
+    },
+    {
+      "title": "Normalizar solo el informe local",
+      "body": "Mantener inalterado el estado remoto y excluir o clasificar runs históricos en `runs-supervisor` como observabilidad no terminal.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Confirmar API de cierre de Vercel",
+    "body": "Validar una operación soportada y, si existe, añadir reconciliación con señales de actividad y causa preservada.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Ha llevado la instrumentación y el endurecimiento más reciente de la app de agentes.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8975.md",
+    "reviewedAt": "2026-09-01T09:50:51.704Z",
+    "mainSha": "f73be3a322eb5af0748a78ee391d35b83a64d6d0"
+  }
+}
