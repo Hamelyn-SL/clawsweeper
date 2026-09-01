@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-01T06:41:31.021Z",
-  "updatedAt": "2026-09-01T06:23:26Z",
+  "generatedAt": "2026-09-01T08:11:49.177Z",
+  "updatedAt": "2026-09-01T08:05:56Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,48 +12,52 @@
     "labels": [
       "bug",
       "app:marketplace",
-      "triage:queued",
-      "mk:amazon",
+      "triage:done",
       "P1",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review"
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond",
+      "mk:amazon"
     ],
     "createdAt": "2026-09-01T06:23:11Z",
-    "updatedAt": "2026-09-01T06:23:26Z"
+    "updatedAt": "2026-09-01T08:05:56Z"
   },
   "lane": "manual_review",
   "priority": "P1",
-  "question": "¿Se aprueba separar la corrección del clasificador de la reconciliación masiva y exigir verificación SP-API antes de modificar los espejos afectados?",
-  "rationale": "La corrección de código es acotada, pero la cohorte contiene miles de estados potencialmente divergentes y su reparación altera inventario publicado y colas de retirada.",
+  "question": "¿Se autoriza una reconciliación separada de la cohorte histórica tras integrar el arreglo de warnings, y con qué tamaño de canario y criterio SP-API?",
+  "rationale": "La reparación de código está en una PR abierta, pero el drenaje mutaría miles de registros persistentes y depende de estado vivo de Amazon.",
   "options": [
     {
-      "title": "Corregir y reconciliar con verificación",
-      "body": "Aplicar primero el criterio `ERROR`/`INVALID` y ejecutar después una reconciliación por lotes que consulte SP-API antes de actualizar cada espejo.",
+      "title": "Integrar y reconciliar con canario",
+      "body": "Validar primero la PR y después reconciliar un lote pequeño mediante lectura SP-API antes de ampliar gradualmente.",
       "recommended": true
     },
     {
-      "title": "Corregir sin drenaje inmediato",
-      "body": "Desplegar el cambio para detener nuevas falsas incidencias y conservar la cohorte actual hasta disponer de una operación de reconciliación aprobada.",
+      "title": "Integrar solo el arreglo",
+      "body": "Detener los falsos fallos nuevos y posponer la reconciliación hasta disponer de una ventana operativa específica.",
+      "recommended": false
+    },
+    {
+      "title": "Revisar la estrategia de atributo",
+      "body": "Definir si `purchasable_offer` debe omitirse por product type antes de iniciar el drenaje histórico.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Corregir y reconciliar con verificación",
-    "body": "Aplicar primero el criterio `ERROR`/`INVALID` y ejecutar después una reconciliación por lotes que consulte SP-API antes de actualizar cada espejo.",
+    "title": "Integrar y reconciliar con canario",
+    "body": "Validar primero la PR y después reconciliar un lote pequeño mediante lectura SP-API antes de ampliar gradualmente.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "Miguel Angel Hernández Perdomo",
-    "reason": "La decisión afecta al flujo V2 de Amazon que introdujo y a su transición operativa entre rutas legacy y V2.",
+    "person": "MiguelHamelyn",
+    "reason": "Tiene asignada la incidencia canónica y la PR que modifica el flujo de publicación afectado.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8965.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8965#issuecomment-5489976643",
-    "reviewedAt": "2026-09-01T06:41:31.021Z",
-    "mainSha": "783d89d8c6f3e969e873760cd30d829b7e2ae49a"
+    "reviewedAt": "2026-09-01T08:11:49.177Z",
+    "mainSha": "bc3e11abce7bacdbfbffb60faeb678ec39e18036"
   }
 }
