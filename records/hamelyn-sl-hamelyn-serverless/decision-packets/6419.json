@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-31T23:10:09.740Z",
-  "updatedAt": "2026-08-31T23:01:34Z",
+  "generatedAt": "2026-09-01T01:34:38.179Z",
+  "updatedAt": "2026-09-01T01:12:38Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,48 +13,47 @@
       "codex",
       "bug",
       "app:infrastructure",
-      "triage:queued",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review",
-      "origin:watcher",
+      "triage:done",
       "P1",
       "impact:other",
+      "clawsweeper:needs-live-repro",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
       "issue-rating: ⚪ platinum",
-      "clawsweeper:needs-live-repro"
+      "origin:watcher"
     ],
     "createdAt": "2026-06-15T10:44:16Z",
-    "updatedAt": "2026-08-31T23:01:34Z"
+    "updatedAt": "2026-09-01T01:12:38Z"
   },
-  "lane": "manual_review",
+  "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Se aplica ahora un corte temporal local en este cron o se incorpora primero a la solución estructural transversal del motor de sync?",
-  "rationale": "La corrección es acotada, pero la decisión previa de 10 de agosto reservó el defecto de fondo para un tratamiento estructural y la incidencia está asignada a dos responsables.",
+  "question": "¿Debe adoptarse la solución transversal con deadline, claims temporales y coordinación de escritura propuesta en https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8951, o limitarse por ahora a un corte local del cron?",
+  "rationale": "La telemetría confirma el timeout, pero el alcance de la PR supera una mitigación local y cambia la coordinación persistida entre ejecuciones.",
   "options": [
     {
-      "title": "Aplicar el corte local ahora",
-      "body": "Añadir un presupuesto temporal y actualizar intentos solo para productos despachados, conservando el límite configurado actual.",
+      "title": "Revisar la solución transversal",
+      "body": "Validar la PR abierta con pruebas de solapamiento y una ejecución real antes de integrarla.",
       "recommended": true
     },
     {
-      "title": "Esperar al motor transversal",
-      "body": "Mantener la incidencia abierta hasta que la solución compartida defina el contrato de presupuesto y reintentos para los crons.",
+      "title": "Acotar una mitigación local",
+      "body": "Aplicar únicamente un presupuesto temporal en este cron y mantener el diseño transversal como trabajo posterior.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aplicar el corte local ahora",
-    "body": "Añadir un presupuesto temporal y actualizar intentos solo para productos despachados, conservando el límite configurado actual.",
+    "title": "Revisar la solución transversal",
+    "body": "Validar la PR abierta con pruebas de solapamiento y una ejecución real antes de integrarla.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su comentario anterior define la estrategia estructural y ha reabierto recientemente la incidencia.",
+    "reason": "Está asignado al caso y ha preparado la reparación candidata con el alcance técnico concreto.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6419.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6419#issuecomment-4969100649",
-    "reviewedAt": "2026-08-31T23:10:09.740Z",
+    "reviewedAt": "2026-09-01T01:34:38.179Z",
     "mainSha": "5a6b2717cb63639c48c73f38b860b06330f5f9c6"
   }
 }
