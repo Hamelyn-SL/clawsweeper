@@ -1,10 +1,10 @@
 {
   "status": "dry_run",
-  "generated_at": "2026-09-01T01:05:16.906Z",
+  "generated_at": "2026-09-01T01:40:06.288Z",
   "repo": "Hamelyn-SL/hamelyn-serverless",
   "repair_repo": "Hamelyn-SL/clawsweeper",
   "review_repo": "Hamelyn-SL/clawsweeper",
-  "since": "2026-08-31T22:05:12.938Z",
+  "since": "2026-08-31T22:40:03.463Z",
   "execute": false,
   "force_reprocess": false,
   "max_comments": 100,
@@ -12,7 +12,7 @@
   "comment_ids": [],
   "status_comment_id": null,
   "max_autoclose_targets": 8,
-  "scanned_comments": 30,
+  "scanned_comments": 31,
   "commands_seen": 1,
   "actionable": 0,
   "trusted_bots": [
@@ -29,18 +29,18 @@
   "lookup_concurrency": 8,
   "commands": [
     {
-      "idempotency_key": "comment-router:Hamelyn-SL/hamelyn-serverless:8950:5486164576:2026-08-31T23:25:08Z:automerge",
-      "comment_id": "5486164576",
-      "comment_version_key": "5486164576:2026-08-31T23:25:08Z",
-      "comment_url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8950#issuecomment-5486164576",
+      "idempotency_key": "comment-router:Hamelyn-SL/hamelyn-serverless:8951:5487360587:2026-09-01T01:37:13Z:automerge",
+      "comment_id": "5487360587",
+      "comment_version_key": "5487360587:2026-09-01T01:37:13Z",
+      "comment_url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8951#issuecomment-5487360587",
       "repo": "Hamelyn-SL/hamelyn-serverless",
       "target_branch": null,
-      "issue_number": 8950,
+      "issue_number": 8951,
       "author": "clawsweeper-hamelyn[bot]",
       "author_id": 301054459,
       "author_association": "NONE",
-      "comment_created_at": "2026-08-31T23:25:08Z",
-      "comment_updated_at": "2026-08-31T23:25:08Z",
+      "comment_created_at": "2026-09-01T01:36:05Z",
+      "comment_updated_at": "2026-09-01T01:37:13Z",
       "status_comment_id": null,
       "trigger": "mention",
       "command": "automerge",
@@ -52,8 +52,8 @@
       "trusted_bot_author": null,
       "automation_source": null,
       "repair_reason": null,
-      "review_summary": "La rama añade el contador `batched` tras persistir la marca de operación y devuelve `PERSISTENCE_FAILED` cuando falla el aparcado de un huérfano.\n\nReproducibility: Sí, desde código: un `RECORD_ERROR` que lanza en la rama de huérfanos produce un resultado transitorio, pero el resumen sigue contando ese SKU como `orphansParked`.",
-      "review_followup": "- [P1] Hay un defecto mecánico y acotado en la rama: el contador del resumen no distingue un huérfano persistido de un fallo de persistencia.",
+      "review_summary": "El PR limita el tiempo del cron de repricing, añade leases atómicos por producto, aplica timeouts a consultas y proveedores, y conecta pruebas de Crons en CI.\n\nReproducibility: Sí, por fuente: un `attempt` que exceda el temporizador y se resuelva después sigue ejecutándose porque el wrapper solo ignora su resultado. La prueba actual cubre una promesa que nunca resuelve, no una finalización tardía con efectos laterales.",
+      "review_followup": "- [P1] El defecto de cancelación tiene un arreglo técnico concreto, pero la prueba real requerida depende de un entorno que no puede acreditar un reparador automático.",
       "freeform_prompt": null,
       "visual_lens": null,
       "expected_head_sha": null,
@@ -67,19 +67,19 @@
       "status": "waiting",
       "actions": [],
       "author_repository_permission": "none",
-      "reason": "GitHub lookup failed; will retry later: GraphQL: Resource not accessible by integration (repository.pullRequest.statusCheckRollup.nodes.0.commit.statusCheckRollup) Command failed: gh pr view 8950 --repo Hamelyn-SL/hamelyn-serverless --json additions,headRefName,headRefOid,author,"
+      "reason": "GitHub lookup failed; will retry later: GraphQL: Resource not accessible by integration (repository.pullRequest.statusCheckRollup.nodes.0.commit.statusCheckRollup) Command failed: gh pr view 8951 --repo Hamelyn-SL/hamelyn-serverless --json additions,headRefName,headRefOid,author,"
     }
   ],
   "timings": {
-    "total_ms": 3967,
+    "total_ms": 2824,
     "phases": [
       {
         "name": "list_candidate_comments",
-        "ms": 2635
+        "ms": 1475
       },
       {
         "name": "prehydrate_comment_commands",
-        "ms": 1327
+        "ms": 1340
       },
       {
         "name": "classify_comment_commands",
