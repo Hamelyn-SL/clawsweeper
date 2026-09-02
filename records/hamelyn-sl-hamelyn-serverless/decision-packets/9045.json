@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-02T17:05:55.247Z",
+  "updatedAt": "2026-09-02T16:31:34Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9045,
+    "title": "Marketplace: [fnac] shipment confirmation failed ordersellid=<id> orderid=<value> reason=request failed with status code",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9045",
+    "state": "open",
+    "labels": [
+      "codex",
+      "bug",
+      "app:marketplace",
+      "triage:queued",
+      "P1",
+      "marketplace-crons"
+    ],
+    "createdAt": "2026-09-02T16:31:34Z",
+    "updatedAt": "2026-09-02T16:31:34Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe un HTTP 400 de Fnac que devuelve `state: shipped` y estado `fatal` marcarse como envío confirmado, como rechazo terminal, o mantenerse como `SYNC_ERROR` recuperable?",
+  "rationale": "El código actual conserva el rechazo deliberadamente sin clasificarlo; elegir su estado interno afecta a la reconciliación de ventas y no puede deducirse con seguridad del fragmento de respuesta disponible.",
+  "options": [
+    {
+      "title": "Confirmar la semántica con Fnac",
+      "body": "Revisar el motivo completo o la documentación del proveedor y aplicar una clasificación explícita solo para esa firma terminal.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener `SYNC_ERROR` temporalmente",
+      "body": "Conservar el comportamiento actual hasta disponer del motivo funcional completo, evitando convertir rechazos reales en envíos confirmados.",
+      "recommended": false
+    },
+    {
+      "title": "Tratarlo como confirmado",
+      "body": "Marcarlo como enviado solo si Fnac confirma que esa combinación de estado representa una aceptación idempotente.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Confirmar la semántica con Fnac",
+    "body": "Revisar el motivo completo o la documentación del proveedor y aplicar una clasificación explícita solo para esa firma terminal.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su trabajo reciente abarca la configuración y el adaptador Fnac donde debe validarse la semántica del proveedor.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9045.md",
+    "reviewedAt": "2026-09-02T17:05:55.247Z",
+    "mainSha": "5e22d4c0088c829ca17114c2c115ec8c37b2e1a2"
+  }
+}
