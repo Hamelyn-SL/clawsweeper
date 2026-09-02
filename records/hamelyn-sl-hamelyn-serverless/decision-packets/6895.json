@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-04T23:26:52.120Z",
-  "updatedAt": "2026-08-04T23:14:38Z",
+  "generatedAt": "2026-09-02T11:04:34.495Z",
+  "updatedAt": "2026-09-02T10:55:27Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,51 +15,47 @@
       "triage:done",
       "business-logic",
       "hackathon",
-      "origin:bl",
+      "clawsweeper:needs-product-decision",
       "P3",
-      "issue-rating: ➖ n/a",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "origin:bl"
     ],
     "createdAt": "2026-07-06T06:47:16Z",
-    "updatedAt": "2026-08-04T23:14:38Z"
+    "updatedAt": "2026-09-02T10:55:27Z"
   },
   "lane": "product_direction",
   "priority": "P3",
-  "question": "¿Debe esta issue conservarse como épica de coordinación tras la redistribución a `buying`, `inbound`, `shipping` y `warehouse`, o debe sustituirse por issues residuales con ownership explícito?",
-  "rationale": "El código y las specs ya trasladan partes significativas fuera de Supply, pero no existe una fuente canónica que decida el destino de B2B y del tramo posterior a la recogida.",
+  "question": "¿Debe esta issue conservarse como paraguas actualizado del dominio Supply o reducirse al bloque B2B y crear seguimientos separados para cualquier residual fuera de `buying`?",
+  "rationale": "La extracción existente reubicó parte del alcance bajo `buying`, pero la issue conserva todos los checkboxes abiertos y no fija quién valida B2B ni qué fronteras siguen pendientes.",
   "options": [
     {
-      "title": "Reencuadrar la épica",
-      "body": "Actualizar el checklist con los bloques ya integrados y abrir o enlazar issues residuales por dominio, manteniendo esta issue como coordinación temporal.",
+      "title": "Actualizar y conservar la épica",
+      "body": "Reconciliar los checkboxes con los bloques `buying` cerrados y dejar B2B y cualquier residual explícitamente asignados aquí.",
       "recommended": true
     },
     {
-      "title": "Mantener Supply como dominio paraguas",
-      "body": "Conservar el checklist original y continuar extrayendo bajo IDs `BL-supply-*`, aceptando duplicidad de fronteras con la taxonomía ya integrada.",
+      "title": "Reducirla a B2B",
+      "body": "Cerrar el alcance ya absorbido por `buying` y renombrar esta issue para que siga únicamente la extracción B2B pendiente.",
       "recommended": false
     },
     {
-      "title": "Cerrar tras crear sucesoras",
-      "body": "Crear primero las issues canónicas de B2B y warehouse y cerrar esta épica cuando todas las referencias queden trasladadas.",
+      "title": "Dividir el residual",
+      "body": "Crear una issue canónica por B2B y otra por cualquier bloque no mapeado, dejando esta como índice histórico.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Reencuadrar la épica",
-    "body": "Actualizar el checklist con los bloques ya integrados y abrir o enlazar issues residuales por dominio, manteniendo esta issue como coordinación temporal.",
+    "title": "Actualizar y conservar la épica",
+    "body": "Reconciliar los checkboxes con los bloques `buying` cerrados y dejar B2B y cualquier residual explícitamente asignados aquí.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "La cartografía BL vigente y la issue madre proceden de su trabajo; puede confirmar las fronteras F2 pendientes.",
+    "reason": "Es quien definió el checklist original y mantiene el proceso BL relacionado.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6895.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6895#issuecomment-4911147057",
-    "reviewedAt": "2026-08-04T23:26:52.120Z",
-    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
+    "reviewedAt": "2026-09-02T11:04:34.495Z",
+    "mainSha": "9220c7fc5bd5c7e3b77dd3e4b4bd090f86f37df4"
   }
 }

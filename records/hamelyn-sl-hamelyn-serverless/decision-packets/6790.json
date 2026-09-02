@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-04T23:26:10.666Z",
-  "updatedAt": "2026-08-04T23:13:09Z",
+  "generatedAt": "2026-09-02T11:04:22.438Z",
+  "updatedAt": "2026-09-02T10:55:29Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,49 +13,43 @@
       "bug",
       "reporter:pablo",
       "triage:done",
-      "app:data",
-      "origin:dev",
+      "clawsweeper:needs-product-decision",
       "P2",
-      "impact:data-loss",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "app:data",
+      "origin:dev"
     ],
     "createdAt": "2026-07-02T10:21:44Z",
-    "updatedAt": "2026-08-04T23:13:09Z"
+    "updatedAt": "2026-09-02T10:55:29Z"
   },
-  "lane": "product_direction",
+  "lane": "manual_review",
   "priority": "P2",
-  "question": "¿Debe `soldAt` de una retirada `SOLD_AS_ALTERNATIVE` heredar el marketplace del pedido original o mantenerse vacío para distinguir una sustitución?",
-  "rationale": "El código puede aplicar cualquiera de las dos opciones, pero ambas producen lecturas analíticas distintas y el informe reconoce esa ambigüedad.",
+  "question": "¿Se aprueba un backfill masivo que complete solo los stocks cuyo pedido permita resolver unívocamente el marketplace, dejando sin modificar los casos no verificables?",
+  "rationale": "La fuga futura ya está cerrada, pero escribir cientos de miles de documentos históricos exige fijar el filtro exacto, el tratamiento del residuo y una aprobación operativa explícita.",
   "options": [
     {
-      "title": "Mantener vacío en sustituciones",
-      "body": "Conservar `soldAt` para ventas directas y documentar `withdrawalReason` como la señal de sustitución.",
+      "title": "Aprobar backfill recuperable",
+      "body": "Ejecutar primero el dry-run y después un `$set` idempotente solo para coincidencias unívocas, conservando `null` en el residuo no verificable.",
       "recommended": true
     },
     {
-      "title": "Heredar marketplace del pedido",
-      "body": "Rellenar `soldAt` desde el pedido asociado y añadir una señal explícita que preserve que fue una sustitución.",
+      "title": "Mantener solo la prevención",
+      "body": "Conservar la invariante integrada y documentar el criterio analítico robusto sin modificar el histórico hasta tener una fuente adicional.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mantener vacío en sustituciones",
-    "body": "Conservar `soldAt` para ventas directas y documentar `withdrawalReason` como la señal de sustitución.",
+    "title": "Aprobar backfill recuperable",
+    "body": "Ejecutar primero el dry-run y después un `$set` idempotente solo para coincidencias unívocas, conservando `null` en el residuo no verificable.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Ya realizó el análisis técnico de los caminos de retirada y tiene historial reciente en la mutación afectada.",
-    "confidence": "medium"
+    "reason": "Conoce la invariante integrada y el trabajo adyacente de trazabilidad de ventas.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6790.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6790#issuecomment-4910268218",
-    "reviewedAt": "2026-08-04T23:26:10.666Z",
-    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
+    "reviewedAt": "2026-09-02T11:04:22.438Z",
+    "mainSha": "a06eef5ffba50de3be7eed3d621896cc964a5abf"
   }
 }

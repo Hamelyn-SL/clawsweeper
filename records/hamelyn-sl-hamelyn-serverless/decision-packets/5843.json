@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-04T23:19:41.182Z",
-  "updatedAt": "2026-08-04T23:01:55Z",
+  "generatedAt": "2026-09-02T11:03:53.872Z",
+  "updatedAt": "2026-09-02T10:55:32Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -17,53 +17,47 @@
       "triage:no-change",
       "surface:pdp",
       "epic:v3.5-features",
-      "origin:dev",
+      "clawsweeper:needs-product-decision",
       "P2",
-      "impact:other",
-      "issue-rating: ➖ n/a",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:fix-shape-clear",
-      "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "origin:dev"
     ],
     "createdAt": "2026-05-13T22:17:19Z",
-    "updatedAt": "2026-08-04T23:01:55Z"
+    "updatedAt": "2026-09-02T10:55:32Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué contrato de datos y política editorial deben regir las traducciones persistidas de ficha antes de lanzar un pipeline sobre el catálogo?",
-  "rationale": "La elección de proveedor, idiomas, sufijos, fallback, regeneración y override manual determina una migración de datos y comportamiento comercial duradero.",
+  "question": "¿Qué contrato de traducciones, locales iniciales y política editorial se aprueban antes de generar datos persistidos para el catálogo?",
+  "rationale": "La elección determina coste, modelo de datos, regeneración, SEO y el significado del sufijo de versión; no es una decisión mecánica de implementación.",
   "options": [
     {
-      "title": "Aprobar contrato y piloto",
-      "body": "Definir locales, esquema, reglas de título, fallback y un piloto acotado antes del batch completo.",
+      "title": "Aprobar una primera fase acotada",
+      "body": "Definir un subconjunto de locales, contrato de datos y benchmark para validar coste y calidad antes del backfill completo.",
       "recommended": true
     },
     {
-      "title": "Limitar el alcance inicial",
-      "body": "Implementar solo lectura de traducciones manuales existentes por locale y posponer generación automática y adaptación regional.",
+      "title": "Implementar todo el alcance original",
+      "body": "Aprobar de una vez pipeline, backfill, sufijos, variantes hispanoamericanas y edición administrativa.",
       "recommended": false
     },
     {
-      "title": "Posponer la iniciativa",
-      "body": "Mantener la PDP con datos originales hasta disponer de benchmark y responsable editorial.",
+      "title": "Limitarse a contenido de interfaz",
+      "body": "Mantener la localización actual de SEO y copy sin introducir traducciones persistidas de producto.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar contrato y piloto",
-    "body": "Definir locales, esquema, reglas de título, fallback y un piloto acotado antes del batch completo.",
+    "title": "Aprobar una primera fase acotada",
+    "body": "Definir un subconjunto de locales, contrato de datos y benchmark para validar coste y calidad antes del backfill completo.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "AlexDiaz-Hamelyn",
-    "reason": "Su historial reciente conecta la composición activa de PDP con las actualizaciones de localización necesarias para aterrizar la decisión.",
+    "person": "MiguelHamelyn",
+    "reason": "Es la conexión histórica más directa entre la PDP activa y el trabajo reciente de contenido localizado.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5843.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5843#issuecomment-4909754959",
-    "reviewedAt": "2026-08-04T23:19:41.182Z",
-    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
+    "reviewedAt": "2026-09-02T11:03:53.872Z",
+    "mainSha": "a06eef5ffba50de3be7eed3d621896cc964a5abf"
   }
 }

@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-04T23:19:28.182Z",
-  "updatedAt": "2026-08-04T23:10:08Z",
+  "generatedAt": "2026-09-02T11:04:00.451Z",
+  "updatedAt": "2026-09-02T10:55:30Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,47 +13,47 @@
       "app:supply",
       "feature",
       "triage:done",
-      "origin:dev",
+      "clawsweeper:needs-product-decision",
       "P2",
-      "impact:other",
-      "issue-rating: ➖ n/a",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "origin:dev"
     ],
     "createdAt": "2026-06-18T12:52:26Z",
-    "updatedAt": "2026-08-04T23:10:08Z"
+    "updatedAt": "2026-09-02T10:55:30Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe descartarse formalmente el despliegue EAS por la migración a Next.js + Capacitor, o se necesita automatizar releases de Expo durante la transición?",
-  "rationale": "La respuesta determina la plataforma, credenciales, workflow y estrategia de versionado; el checkout no puede resolver esa decisión de producto y operación.",
+  "question": "¿Debe Supply mantener Expo/EAS como vía de publicación operativa y automatizarla ahora, o se debe aplazar hasta que exista una migración aprobada a Next.js + Capacitor?",
+  "rationale": "La PR previa se cerró por una migración anunciada, pero `dev` y la PR de release activa siguen usando Expo/EAS; el código no puede resolver por sí solo qué inversión de plataforma es deseada.",
   "options": [
     {
-      "title": "Confirmar la migración y sustituir la iniciativa",
-      "body": "Cerrar esta dirección de EAS y crear una iniciativa de release para Next.js + Capacitor cuando la arquitectura esté definida.",
+      "title": "Confirmar EAS transitorio",
+      "body": "Mantener Expo/EAS para las releases actuales y preparar una automatización manual con límites de permisos y publicación definidos.",
       "recommended": true
     },
     {
-      "title": "Mantener Expo durante la transición",
-      "body": "Definir un alcance temporal y seguro para automatizar EAS, incluidos permisos, versionado y responsables de publicación.",
+      "title": "Aplazar por migración",
+      "body": "No automatizar EAS y documentar el proceso manual hasta que la migración a Next.js + Capacitor esté aprobada y planificada.",
+      "recommended": false
+    },
+    {
+      "title": "Separar versiones y publicación",
+      "body": "Conservar EAS únicamente para builds mientras se decide por separado el mecanismo de submit y el control de versiones.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Confirmar la migración y sustituir la iniciativa",
-    "body": "Cerrar esta dirección de EAS y crear una iniciativa de release para Next.js + Capacitor cuando la arquitectura esté definida.",
+    "title": "Confirmar EAS transitorio",
+    "body": "Mantener Expo/EAS para las releases actuales y preparar una automatización manual con límites de permisos y publicación definidos.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "Daniel",
-    "reason": "Cerró la propuesta EAS explicando el cambio de plataforma y mantiene historial reciente en la configuración de Expo.",
+    "person": "MiguelHamelyn",
+    "reason": "Es la persona con señal más fuerte en la configuración EAS actual y en la release nativa de Supply abierta.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6539.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6539#issuecomment-4969105904",
-    "reviewedAt": "2026-08-04T23:19:28.182Z",
-    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
+    "reviewedAt": "2026-09-02T11:04:00.451Z",
+    "mainSha": "a06eef5ffba50de3be7eed3d621896cc964a5abf"
   }
 }
