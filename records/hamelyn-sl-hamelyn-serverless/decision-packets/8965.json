@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-02T12:56:07.698Z",
-  "updatedAt": "2026-09-02T10:54:51Z",
+  "generatedAt": "2026-09-01T08:11:49.177Z",
+  "updatedAt": "2026-09-01T08:05:56Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,47 +13,53 @@
       "bug",
       "app:marketplace",
       "triage:done",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond",
+      "mk:amazon",
       "P1",
-      "clawsweeper:needs-product-decision",
-      "mk:amazon"
+      "impact:other",
+      "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-09-01T06:23:11Z",
-    "updatedAt": "2026-09-02T10:54:51Z"
+    "updatedAt": "2026-09-01T08:05:56Z"
   },
-  "lane": "product_direction",
+  "lane": "manual_review",
   "priority": "P1",
-  "question": "¿Qué transiciones de mirror se autorizan automáticamente al reconciliar la cohorte histórica tras consultar SP-API?",
-  "rationale": "La corrección de código ya está integrada, pero recuperar miles de documentos persistidos exige definir la política para respuestas remotas ambiguas y el nivel de automatización aceptable.",
+  "question": "¿Se autoriza una reconciliación separada de la cohorte histórica tras integrar el arreglo de warnings, y con qué tamaño de canario y criterio SP-API?",
+  "rationale": "La reparación de código está en una PR abierta, pero el drenaje mutaría miles de registros persistentes y depende de estado vivo de Amazon.",
   "options": [
     {
-      "title": "Canario con transiciones inequívocas",
-      "body": "Validar una muestra y actualizar automáticamente solo los mirrors cuyo estado remoto permita una decisión no ambigua.",
+      "title": "Integrar y reconciliar con canario",
+      "body": "Validar primero la PR y después reconciliar un lote pequeño mediante lectura SP-API antes de ampliar gradualmente.",
       "recommended": true
     },
     {
-      "title": "Detenerse en la prevención",
-      "body": "Mantener el arreglo integrado y posponer toda mutación histórica hasta contar con telemetría adicional.",
+      "title": "Integrar solo el arreglo",
+      "body": "Detener los falsos fallos nuevos y posponer la reconciliación hasta disponer de una ventana operativa específica.",
       "recommended": false
     },
     {
-      "title": "Lotes revisados manualmente",
-      "body": "Generar un informe por SKU y ejecutar únicamente lotes aprobados por el equipo de Marketplace.",
+      "title": "Revisar la estrategia de atributo",
+      "body": "Definir si `purchasable_offer` debe omitirse por product type antes de iniciar el drenaje histórico.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Canario con transiciones inequívocas",
-    "body": "Validar una muestra y actualizar automáticamente solo los mirrors cuyo estado remoto permita una decisión no ambigua.",
+    "title": "Integrar y reconciliar con canario",
+    "body": "Validar primero la PR y después reconciliar un lote pequeño mediante lectura SP-API antes de ampliar gradualmente.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Su trabajo reciente integra la ruta Amazon V2 y la corrección que determina los estados a reconciliar.",
-    "confidence": "medium"
+    "reason": "Tiene asignada la incidencia canónica y la PR que modifica el flujo de publicación afectado.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8965.md",
-    "reviewedAt": "2026-09-02T12:56:07.698Z",
-    "mainSha": "9b525e0aae70b41daab228e22437134fc1e70b6f"
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8965#issuecomment-5489976643",
+    "reviewedAt": "2026-09-01T08:11:49.177Z",
+    "mainSha": "bc3e11abce7bacdbfbffb60faeb678ec39e18036"
   }
 }
