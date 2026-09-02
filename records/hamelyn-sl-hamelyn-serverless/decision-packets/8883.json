@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-28T14:13:10.734Z",
-  "updatedAt": "2026-08-28T13:00:48Z",
+  "generatedAt": "2026-09-02T12:57:45.963Z",
+  "updatedAt": "2026-09-02T10:54:53Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,46 +14,41 @@
       "source:admin-panel",
       "app:infrastructure",
       "triage:done",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review",
-      "issue-rating: ➖ n/a",
-      "P2",
-      "impact:other",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2"
     ],
     "createdAt": "2026-08-28T12:19:19Z",
-    "updatedAt": "2026-08-28T13:00:48Z"
+    "updatedAt": "2026-09-02T10:54:53Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe Platform conservar esta observación abierta hasta completar la revisión semanal en todos los miembros antes de decidir sobre algún índice concreto?",
-  "rationale": "La elección depende de uso real por réplica, jobs poco frecuentes y constraints que el checkout no puede verificar de forma segura.",
+  "question": "¿Debe Platform mantener esta observación hasta la revisión multinodo semanal y decidir después cada retirada por separado?",
+  "rationale": "La retirada de índices de producción exige evidencia operativa que el checkout no contiene y un criterio explícito para aceptar el riesgo residual.",
   "options": [
     {
-      "title": "Seguir observando",
-      "body": "Repetir la medición tras la ventana semanal y analizar individualmente los candidatos antes de plantear cambios.",
+      "title": "Validar antes de retirar",
+      "body": "Conservar la observación y abrir propuestas separadas solo para índices sin uso confirmado en todos los miembros.",
       "recommended": true
     },
     {
-      "title": "Convertirla en aviso externo",
-      "body": "Cerrar la incidencia solo si el equipo decide que estas señales deben gestionarse fuera de GitHub y mantenerlas en el ledger operativo.",
+      "title": "Iniciar retiradas ahora",
+      "body": "Planificar cambios antes de completar la comprobación multinodo, aceptando el riesgo de falsos positivos.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Seguir observando",
-    "body": "Repetir la medición tras la ventana semanal y analizar individualmente los candidatos antes de plantear cambios.",
+    "title": "Validar antes de retirar",
+    "body": "Conservar la observación y abrir propuestas separadas solo para índices sin uso confirmado en todos los miembros.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su historial conecta directamente la recopilación, la evaluación y el flujo de triage de esta señal.",
+    "reason": "Es la persona vinculada por el historial disponible a las alertas actuales del watcher.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8883.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8883#issuecomment-5452787658",
-    "reviewedAt": "2026-08-28T14:13:10.734Z",
-    "mainSha": "88131d9715961366e30ac7cb24d4062674169031"
+    "reviewedAt": "2026-09-02T12:57:45.963Z",
+    "mainSha": "9b525e0aae70b41daab228e22437134fc1e70b6f"
   }
 }
