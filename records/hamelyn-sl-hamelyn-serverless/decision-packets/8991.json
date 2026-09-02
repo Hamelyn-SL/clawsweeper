@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-02T03:58:10.900Z",
+  "updatedAt": "2026-09-02T03:47:48Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8991,
+    "title": "eBay: un pedido recogido lleva 11 intentos de confirmar envio con el mismo 400 y el motivo no se registra en ningun sitio",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8991",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "triage:pr-opened",
+      "impact:other",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "P2",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond"
+    ],
+    "createdAt": "2026-09-02T02:24:21Z",
+    "updatedAt": "2026-09-02T03:47:48Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué firmas de rechazo de eBay deben considerarse terminales y cuándo debe detenerse el recovery de confirmación de envío?",
+  "rationale": "El fallo de observabilidad tiene una reparación acotada, pero convertir un 400 en terminal cambia la política operativa y puede impedir recuperaciones legítimas.",
+  "options": [
+    {
+      "title": "Añadir firmas confirmadas",
+      "body": "Fusionar el diagnóstico y añadir al patrón terminal solo los `errorId/message` que eBay confirme como no recuperables.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener todos los 400 reintentables",
+      "body": "Conservar el recovery actual hasta disponer de más muestras, aceptando reintentos adicionales en casos permanentes.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Añadir firmas confirmadas",
+    "body": "Fusionar el diagnóstico y añadir al patrón terminal solo los `errorId/message` que eBay confirme como no recuperables.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "HamelynDev",
+    "reason": "La PR abierta y la corrección previa de recuperación sitúan a HamelynDev como el mejor punto de coordinación para la decisión.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8991.md",
+    "reviewedAt": "2026-09-02T03:58:10.900Z",
+    "mainSha": "6feedad9d3b0414d0773798d2571d2aad65dac58"
+  }
+}
