@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-02T18:59:21.485Z",
+  "updatedAt": "2026-09-02T18:27:50Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9042,
+    "title": "Marketplace: [marketplace ship] abebooks has 1 picked_up ordersells pending marketplace shipment but blocked by missing ",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9042",
+    "state": "open",
+    "labels": [
+      "codex",
+      "bug",
+      "app:marketplace",
+      "triage:running",
+      "P2",
+      "marketplace-crons"
+    ],
+    "createdAt": "2026-09-02T16:31:31Z",
+    "updatedAt": "2026-09-02T18:27:50Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe el flujo recuperar datos de envío desde una fuente autorizada o marcar explícitamente el pedido para intervención cuando falten carrier o tracking?",
+  "rationale": "El código no puede derivar con seguridad carrier o tracking como sí deriva una fecha desde la etiqueta; elegir una fuente o un estado operativo requiere criterio del equipo.",
+  "options": [
+    {
+      "title": "Corregir el productor y reparar el caso",
+      "body": "Trazar el pedido afectado, restaurar sus datos desde la fuente logística autorizada y corregir la transición que los omitió.",
+      "recommended": true
+    },
+    {
+      "title": "Crear estado de intervención",
+      "body": "Mantener el pedido fuera del envío automático y hacerlo visible en un estado operativo recuperable hasta completar los datos.",
+      "recommended": false
+    },
+    {
+      "title": "Permitir envío incompleto",
+      "body": "Relajar el filtro para enviar sin todos los datos, asumiendo el riesgo contractual de AbeBooks.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Corregir el productor y reparar el caso",
+    "body": "Trazar el pedido afectado, restaurar sus datos desde la fuente logística autorizada y corregir la transición que los omitió.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Su trabajo reciente cubre el ciclo de pedidos y confirmaciones de AbeBooks.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9042.md",
+    "reviewedAt": "2026-09-02T18:59:21.485Z",
+    "mainSha": "ffd90286dac2d39d356b520899b76b13f8465698"
+  }
+}
