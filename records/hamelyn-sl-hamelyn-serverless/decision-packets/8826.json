@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-28T08:50:38.203Z",
-  "updatedAt": "2026-08-28T06:27:25Z",
+  "generatedAt": "2026-09-02T12:25:05.541Z",
+  "updatedAt": "2026-09-02T10:55:00Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,52 +14,41 @@
       "reporter:davidgonzalez",
       "feature",
       "triage:pr-opened",
-      "P2",
-      "impact:ux-friction",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
-      "clawsweeper:linked-pr-open",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2"
     ],
     "createdAt": "2026-08-28T05:59:13Z",
-    "updatedAt": "2026-08-28T06:27:25Z"
+    "updatedAt": "2026-09-02T10:55:00Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe aceptarse producción como destino por defecto para `dev:run` y `local:run`, exigiendo `--db=dev` para cualquier ejecución contra desarrollo?",
-  "rationale": "El valor por defecto cambia el contrato operativo de todos los entornos locales y requiere una migración visible de credenciales fuera de Git.",
+  "question": "¿El alcance aprobado debe incluir un aviso visible en Admin al usar desarrollo, o limitarse al selector y diagnóstico de terminal?",
+  "rationale": "El selector de terminal está bien definido, pero el indicador de Admin fue solicitado como conveniencia y la PR cerrada lo dejó explícitamente fuera de alcance.",
   "options": [
     {
-      "title": "Mantener producción por defecto",
-      "body": "Aceptar el contrato descrito en la issue y exigir `--db=dev`, con guía de migración y prueba de ambos runners.",
+      "title": "Limitarse al tooling",
+      "body": "Implementar `dev:run --db=dev`, `local:run` y la salida explícita de la base, sin modificar la UI de Admin.",
       "recommended": true
     },
     {
-      "title": "Exigir selector explícito",
-      "body": "Hacer obligatorio `--db=prod|dev` para reducir el riesgo de conectar a producción por omisión.",
-      "recommended": false
-    },
-    {
-      "title": "Conservar el modelo actual",
-      "body": "No introducir selector compartido y seguir permitiendo que cada app cargue su propio `.env`.",
+      "title": "Incluir aviso en Admin",
+      "body": "Añadir además un indicador visible de entorno no productivo en Admin, con alcance y pruebas de interfaz propios.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mantener producción por defecto",
-    "body": "Aceptar el contrato descrito en la issue y exigir `--db=dev`, con guía de migración y prueba de ambos runners.",
+    "title": "Limitarse al tooling",
+    "body": "Implementar `dev:run --db=dev`, `local:run` y la salida explícita de la base, sin modificar la UI de Admin.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "HamelynDev",
-    "reason": "Es la persona asignada a la PR abierta y su historial reciente toca el runner afectado.",
-    "confidence": "high"
+    "person": "banosdavidhamelyn",
+    "reason": "Fue el revisor asignado por experiencia directa en los scripts afectados y puede concretar el alcance operativo.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8826.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8826#issuecomment-5449219580",
-    "reviewedAt": "2026-08-28T08:50:38.203Z",
-    "mainSha": "bb11af762e5eb1f77b725b757cbed7daac8d7f43"
+    "reviewedAt": "2026-09-02T12:25:05.541Z",
+    "mainSha": "9b525e0aae70b41daab228e22437134fc1e70b6f"
   }
 }
