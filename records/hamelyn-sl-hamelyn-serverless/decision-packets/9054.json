@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-02T17:33:42.847Z",
+  "updatedAt": "2026-09-02T17:29:04Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 9054,
+    "title": "chore: keep the never list in prose and move the knowledge guards to CI",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9054",
+    "state": "open",
+    "labels": [
+      "size/XL"
+    ],
+    "createdAt": "2026-09-02T17:18:39Z",
+    "updatedAt": "2026-09-02T17:29:04Z",
+    "headSha": "434ffd922dca533ccac285981a0fc6a8900de82b"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe retirarse el bloqueo local de la lista «Nunca» sin sustituirlo por un guard común a Claude y Codex?",
+  "rationale": "El PR cambia deliberadamente una defensa local reciente por normas en prosa y protección remota; esa frontera de seguridad operativa requiere una decisión explícita.",
+  "options": [
+    {
+      "title": "Conservar un guard común",
+      "body": "Mantener o sustituir el bloqueo por un único guard compatible con ambos harnesses antes de eliminar el hook actual.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar solo controles remotos",
+      "body": "Aprobar que la lista queda en prosa y protección de ramas, asumiendo que ya no se bloquean localmente esos comandos.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Conservar un guard común",
+    "body": "Mantener o sustituir el bloqueo por un único guard compatible con ambos harnesses antes de eliminar el hook actual.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es el principal autor histórico de los controles y presenta la nueva dirección en este PR.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9054.md",
+    "reviewedAt": "2026-09-02T17:33:42.847Z",
+    "mainSha": "ffd90286dac2d39d356b520899b76b13f8465698"
+  }
+}
