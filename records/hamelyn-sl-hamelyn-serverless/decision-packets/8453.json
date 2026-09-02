@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-17T07:20:15.476Z",
-  "updatedAt": "2026-08-17T06:57:45Z",
+  "generatedAt": "2026-09-02T11:42:16.954Z",
+  "updatedAt": "2026-09-02T10:55:10Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,51 +15,46 @@
       "feature",
       "triage:done",
       "reporter:victor",
-      "P2",
-      "impact:other",
-      "issue-rating: ➖ n/a",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2"
     ],
     "createdAt": "2026-08-14T10:31:35Z",
-    "updatedAt": "2026-08-17T06:57:45Z"
+    "updatedAt": "2026-09-02T10:55:10Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué patrón de URL canónica de obra, alcance regional y criterio de activación se aprueban para el piloto MX antes de crear redirects, sitemap y `hreflang`?",
-  "rationale": "La implementación cambia la arquitectura SEO pública y depende de una cohorte de datos aún abierta; el código actual no determina una dirección de producto segura.",
+  "question": "¿Qué patrón de URL canónica y alcance SEO debe adoptar la página de obra del piloto MX antes de implementar rutas y redirecciones?",
+  "rationale": "La elección condiciona canonicals, `hreflang`, sitemap, 301 de ISBN eliminados y la futura expansión regional; el código actual no establece un contrato equivalente.",
   "options": [
     {
-      "title": "Aprobar contrato MX acotado",
-      "body": "Fijar la URL de obra, limitarla a libros españoles del piloto y bloquear producción hasta validar la cohorte relacionada.",
+      "title": "Pilotar una URL de obra exclusiva en MX",
+      "body": "Definir una ruta canónica de obra, indexarla solo en MX y posponer la expansión a España hasta medir el piloto.",
       "recommended": true
     },
     {
-      "title": "Diseñar una ruta multirregional",
-      "body": "Definir desde ahora rutas, `hreflang` y reglas de indexación para todos los mercados antes de implementar el piloto.",
+      "title": "Diseñar la URL global desde el inicio",
+      "body": "Acordar un patrón multiidioma y sus `hreflang` antes del piloto para evitar una migración posterior de URLs.",
       "recommended": false
     },
     {
-      "title": "Posponer la superficie pública",
-      "body": "Cerrar primero la validación durable de `workId` y reabrir el layout cuando la identidad de obra sea estable.",
+      "title": "Posponer la superficie indexable",
+      "body": "Construir primero una agrupación interna o no indexable mientras se resuelve el contrato SEO definitivo.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar contrato MX acotado",
-    "body": "Fijar la URL de obra, limitarla a libros españoles del piloto y bloquear producción hasta validar la cohorte relacionada.",
+    "title": "Pilotar una URL de obra exclusiva en MX",
+    "body": "Definir una ruta canónica de obra, indexarla solo en MX y posponer la expansión a España hasta medir el piloto.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "Alex Cantón",
-    "reason": "Es el candidato más cercano en el historial de la PDP y del uso de `workId` que deberá integrarse con la nueva ruta.",
+    "reason": "Su historial conecta la agrupación existente por `workId` con la PDP y sus módulos de descubrimiento.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8453.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8453#issuecomment-5292626162",
-    "reviewedAt": "2026-08-17T07:20:15.476Z",
-    "mainSha": "f3c860bc9305bae2d8015ef4eb1dec557d43f877"
+    "reviewedAt": "2026-09-02T11:42:16.954Z",
+    "mainSha": "350e0bfc6a03f54c34e3afbc6a231922e06685a7"
   }
 }

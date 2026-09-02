@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-13T09:11:44.373Z",
-  "updatedAt": "2026-08-13T08:34:39Z",
+  "generatedAt": "2026-09-02T11:42:48.074Z",
+  "updatedAt": "2026-09-02T10:55:19Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,50 +13,48 @@
       "feature",
       "reporter:javier",
       "triage:needs-info",
-      "app:data",
-      "origin:dev",
+      "clawsweeper:needs-product-decision",
       "P2",
-      "impact:security",
-      "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "app:data",
+      "origin:dev"
     ],
     "createdAt": "2026-07-29T10:14:09Z",
-    "updatedAt": "2026-08-13T08:34:39Z"
+    "updatedAt": "2026-09-02T10:55:19Z"
   },
-  "lane": "security_boundary",
+  "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué campos personales, plazo de retención y garantía de persistencia se aprueban para los eventos de Mandrill antes de exponer el receptor?",
-  "rationale": "La elección define el límite de privacidad y si el sistema puede reconocer eventos antes de persistirlos de forma duradera.",
+  "question": "¿Qué campos personales, retención y mecanismo duradero de entrega se aprueban para la trazabilidad de webhooks Mandrill antes de crear las tablas y el endpoint?",
+  "rationale": "La decisión define exposición de datos personales, coste de almacenamiento, recuperación ante fallos y objetos nuevos de BigQuery, cuya creación exige autorización expresa del repositorio.",
   "options": [
     {
-      "title": "Minimizar y encolar duraderamente",
-      "body": "Guardar solo campos aprobados con retención definida y devolver éxito únicamente tras persistir el lote en una cola durable.",
+      "title": "Aprobar ingesta minimizada y duradera",
+      "body": "Guardar solo campos correlacionables aprobados, fijar retención y confirmar a Mandrill después de encolar el lote de forma durable.",
       "recommended": true
     },
     {
-      "title": "Ingesta directa documentada",
-      "body": "Insertar directamente en BigQuery y aceptar explícitamente el riesgo de pérdida o bloqueo ante una incidencia del almacén.",
+      "title": "Limitar a analítica agregada",
+      "body": "Eliminar payload bruto e identificadores de red, y materializar únicamente métricas y estados agregados con la correlación mínima necesaria.",
+      "recommended": false
+    },
+    {
+      "title": "Posponer la iniciativa",
+      "body": "Mantener el logging síncrono actual hasta contar con responsable de datos, política de retención y presupuesto de infraestructura.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Minimizar y encolar duraderamente",
-    "body": "Guardar solo campos aprobados con retención definida y devolver éxito únicamente tras persistir el lote en una cola durable.",
+    "title": "Aprobar ingesta minimizada y duradera",
+    "body": "Guardar solo campos correlacionables aprobados, fijar retención y confirmar a Mandrill después de encolar el lote de forma durable.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "banosdavidhamelyn",
-    "reason": "Su historial reciente cubre el payload de Mandrill que debe instrumentarse para esta trazabilidad.",
+    "person": "JavierHamelyn",
+    "reason": "Es quien documentó el objetivo, el esquema y los criterios de aceptación que deben concretarse con Data/Platform y privacidad.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8085.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8085#issuecomment-5116438979",
-    "reviewedAt": "2026-08-13T09:11:44.373Z",
-    "mainSha": "f6b32e417dfa693e426c6a80a3cc9bf49bb41738"
+    "reviewedAt": "2026-09-02T11:42:48.074Z",
+    "mainSha": "350e0bfc6a03f54c34e3afbc6a231922e06685a7"
   }
 }
