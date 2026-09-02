@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-02T15:29:25.042Z",
-  "updatedAt": "2026-09-02T15:22:45Z",
+  "generatedAt": "2026-09-02T17:13:03.837Z",
+  "updatedAt": "2026-09-02T15:39:20Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,49 +11,44 @@
     "state": "open",
     "labels": [
       "size/XXL",
+      "P2",
       "dependencies",
       "javascript",
-      "P2"
+      "autofix-failed"
     ],
     "createdAt": "2026-09-02T15:18:23Z",
-    "updatedAt": "2026-09-02T15:22:45Z",
+    "updatedAt": "2026-09-02T15:39:20Z",
     "headSha": "ab50ee335747a0631be25b8a5f328152f5bac728"
   },
   "lane": "merge_risk",
   "priority": "P2",
-  "question": "¿Debe esta PR incluir la migración de Functions Framework 3.x a 5.0.5 para resolver `qs`, o debe separarse en una migración con validación funcional completa?",
-  "rationale": "La elección modifica el runtime HTTP de tres funciones de datos y no puede inferirse de una PR presentada como actualización transitoria.",
+  "question": "¿Debe esta actualización de seguridad incluir también la adopción de Functions Framework v5 en las tres funciones?",
+  "rationale": "El título anuncia una actualización de `qs`, pero el parche cambia una dependencia directa mayor y la prueba publicada no cubre las rutas con BigQuery o MongoDB.",
   "options": [
     {
-      "title": "Separar la migración mayor",
-      "body": "Restaurar Functions Framework 3.x en esta PR y tratar la migración a 5.x en una PR dedicada con pruebas de los POST reales.",
+      "title": "Acotar la actualización",
+      "body": "Mantener Functions Framework 3.x y regenerar los lockfiles para resolver únicamente `qs@6.16.0`.",
       "recommended": true
     },
     {
-      "title": "Aceptar v5 con validación ampliada",
-      "body": "Mantener 5.0.5 solo tras comprobar autenticación, parsing de payload y rutas BigQuery/Mongo en las tres funciones.",
-      "recommended": false
-    },
-    {
-      "title": "Pausar la actualización",
-      "body": "Mantener las versiones actuales hasta disponer de una ruta compatible que resuelva el requisito de `qs` sin ampliar el runtime.",
+      "title": "Aprobar v5 explícitamente",
+      "body": "Conservar v5 tras validar las rutas autenticadas y los accesos reales a BigQuery y MongoDB en las tres funciones.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Separar la migración mayor",
-    "body": "Restaurar Functions Framework 3.x en esta PR y tratar la migración a 5.x en una PR dedicada con pruebas de los POST reales.",
+    "title": "Acotar la actualización",
+    "body": "Mantener Functions Framework 3.x y regenerar los lockfiles para resolver únicamente `qs@6.16.0`.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "HamelynDev",
-    "reason": "El historial local conecta este cambio con dos de las tres funciones y sus manifiestos de despliegue.",
-    "confidence": "medium"
+    "person": "banosdavidhamelyn",
+    "reason": "Introdujo las declaraciones de runtime que el parche sustituye en las tres funciones.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9032.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9032#issuecomment-5512057845",
-    "reviewedAt": "2026-09-02T15:29:25.042Z",
-    "mainSha": "2d7ca701271a4c0ee5728c4fd65e76d04dddfdd7"
+    "reviewedAt": "2026-09-02T17:13:03.837Z",
+    "mainSha": "ffd90286dac2d39d356b520899b76b13f8465698"
   }
 }

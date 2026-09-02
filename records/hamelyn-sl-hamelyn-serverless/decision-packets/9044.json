@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-02T17:14:42.975Z",
+  "updatedAt": "2026-09-02T16:31:33Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9044,
+    "title": "Marketplace: [marketplace ship] amazon_es has 1 picked_up ordersells pending marketplace shipment but blocked by missing",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9044",
+    "state": "open",
+    "labels": [
+      "codex",
+      "bug",
+      "app:marketplace",
+      "triage:queued",
+      "P2",
+      "marketplace-crons"
+    ],
+    "createdAt": "2026-09-02T16:31:33Z",
+    "updatedAt": "2026-09-02T16:31:33Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe el flujo recuperar tracking desde una fuente operativa autorizada para estos pedidos, o impedir su transición a `PICKED_UP` hasta disponer de tracking?",
+  "rationale": "El código actual protege correctamente la confirmación externa, pero no define qué sistema es la fuente de verdad para completar el tracking faltante.",
+  "options": [
+    {
+      "title": "Recuperar tracking verificable",
+      "body": "Implementar una recuperación limitada desde la fuente de etiquetas o carrier que pueda demostrar el número de seguimiento.",
+      "recommended": true
+    },
+    {
+      "title": "Bloquear la transición anterior",
+      "body": "Impedir que pedidos sin tracking alcancen `PICKED_UP` hasta que el flujo de fulfillment complete sus datos.",
+      "recommended": false
+    },
+    {
+      "title": "Resolver solo el dato operativo",
+      "body": "Corregir manualmente el pedido actual y mantener el watcher mientras se reúne evidencia sobre el origen del dato faltante.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Recuperar tracking verificable",
+    "body": "Implementar una recuperación limitada desde la fuente de etiquetas o carrier que pueda demostrar el número de seguimiento.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "HamelynDev",
+    "reason": "Su cambio reciente ya delimita la recuperación segura de datos de envío en el flujo afectado.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9044.md",
+    "reviewedAt": "2026-09-02T17:14:42.975Z",
+    "mainSha": "ffd90286dac2d39d356b520899b76b13f8465698"
+  }
+}
