@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-02T07:58:01.691Z",
+  "generatedAt": "2026-09-02T07:58:18.324Z",
   "updatedAt": "2026-09-02T07:50:46Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -14,47 +14,46 @@
       "app:supply",
       "feature",
       "triage:needs-info",
-      "reporter:daniellopez",
-      "P2",
       "impact:other",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "reporter:daniellopez",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-08-31T10:14:50Z",
     "updatedAt": "2026-09-02T07:50:46Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿La caja `G-*` debe ampliar el ciclo existente de una orden `INVENTORY` por cubeta, o necesita una entidad operativa independiente con apertura, cierre, conteo y correcciones?",
-  "rationale": "La respuesta determina el modelo persistido, las reglas de clasificación y el límite de los PRs; el código actual no define esa semántica.",
+  "question": "¿Qué señales determinan `REVISAR`, `GRANEL`, `RECICLAR` e `INIDENTIFICABLE`, y la caja `G-*` reutiliza `INVENTORY` o requiere un ciclo propio con apertura, cierre, conteo y correcciones?",
+  "rationale": "La respuesta fija semántica operativa y datos persistidos; no puede deducirse de forma segura del flujo actual ni del adjunto sin validación de Producto y Operaciones.",
   "options": [
     {
-      "title": "Extender `INVENTORY`",
-      "body": "Añadir destino y ciclo de caja al modelo existente para conservar el flujo actual por cubeta y limitar la migración.",
+      "title": "Contrato propio de caja G-*",
+      "body": "Modelar una entidad o ciclo persistido específico para apertura, conteo, cierre y correcciones de granel.",
       "recommended": true
     },
     {
-      "title": "Crear ciclo independiente",
-      "body": "Modelar una caja `G-*` separada si Operaciones requiere trazabilidad y conciliación no equivalentes a una entrada de inventario.",
+      "title": "Reutilizar INVENTORY",
+      "body": "Extender la orden `INVENTORY` existente con los campos y transiciones necesarios para expresar el nuevo destino.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Extender `INVENTORY`",
-    "body": "Añadir destino y ciclo de caja al modelo existente para conservar el flujo actual por cubeta y limitar la migración.",
+    "title": "Contrato propio de caja G-*",
+    "body": "Modelar una entidad o ciclo persistido específico para apertura, conteo, cierre y correcciones de granel.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "banosdavidhamelyn",
-    "reason": "Está asignado a la issue y ha tocado recientemente tanto la pantalla de revisión como el esquema persistido.",
+    "reason": "Está asignado actualmente y ha mantenido recientemente el flujo de revisión afectado.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8929.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8929#issuecomment-5477054382",
-    "reviewedAt": "2026-09-02T07:58:01.691Z",
+    "reviewedAt": "2026-09-02T07:58:18.324Z",
     "mainSha": "e36ff4c81e2e6a3d2b4ebffe2645d34444ad37c4"
   }
 }
