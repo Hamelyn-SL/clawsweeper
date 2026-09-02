@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-01T06:13:47.117Z",
-  "updatedAt": "2026-09-01T05:57:48Z",
+  "generatedAt": "2026-09-02T10:09:54.325Z",
+  "updatedAt": "2026-09-02T10:00:45Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -10,46 +10,46 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8948",
     "state": "open",
     "labels": [
-      "size/L",
-      "rating: 🥈 silver",
-      "status: 📣 needs proof",
+      "size/XL",
       "P2",
-      "merge-risk: 🚨 compatibility"
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 compatibility",
+      "merge-risk: 🚨 session-state",
+      "rating: 🥈 silver"
     ],
     "createdAt": "2026-08-31T22:52:38Z",
-    "updatedAt": "2026-09-01T05:57:48Z",
-    "headSha": "cd544abd0ad9b8daa62f493cf81894309e0ec161"
+    "updatedAt": "2026-09-02T10:00:45Z",
+    "headSha": "9a3037d4ee4c8eccf8a2288289795923eb6681a1"
   },
-  "lane": "security_boundary",
+  "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se acepta que un cliente identificado únicamente en el cuerpo deje de ser ejecutable automáticamente y requiera figurar en la primera línea del pedido?",
-  "rationale": "La rama reemplaza una resolución histórica sobre todo el mensaje por una ruta fail-closed; reduce la suplantación, pero cambia la compatibilidad de entradas operativas existentes.",
+  "question": "¿Debe mantenerse como política operativa que un alias fuera del inicio de la primera línea nunca autorice ejecución automática, aunque antes coincidiera por substring?",
+  "rationale": "El parche implementa de forma coherente un endurecimiento fail-closed, pero decidir la compatibilidad con formatos históricos de pedidos requiere criterio operativo del equipo.",
   "options": [
     {
-      "title": "Confirmar resolución por primera línea",
-      "body": "Aceptar el modo fail-closed y exigir que el alias del cliente esté en la primera línea normalizada antes de cualquier ejecución.",
+      "title": "Mantener el fail-closed",
+      "body": "Aceptar el alias anclado al título y escalar cualquier formato ambiguo, después de aportar prueba real saneada.",
       "recommended": true
     },
     {
-      "title": "Mantener compatibilidad de cuerpo",
-      "body": "Conservar una ruta explícita para pedidos antiguos con alias fuera del título, con una barrera que impida confundir menciones informativas.",
+      "title": "Preservar formatos heredados",
+      "body": "Definir una compatibilidad explícita y comprobada para títulos históricos que hoy se resolverían como clientes conocidos.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Confirmar resolución por primera línea",
-    "body": "Aceptar el modo fail-closed y exigir que el alias del cliente esté en la primera línea normalizada antes de cualquier ejecución.",
+    "title": "Mantener el fail-closed",
+    "body": "Aceptar el alias anclado al título y escalar cualquier formato ambiguo, después de aportar prueba real saneada.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es el principal autor reciente del watcher B2B y está asignado a la incidencia enlazada.",
-    "confidence": "high"
+    "reason": "Es el principal contribuidor reciente del watcher y puede aportar el contexto operativo y la prueba del flujo.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8948.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8948#issuecomment-5485910640",
-    "reviewedAt": "2026-09-01T06:13:47.117Z",
-    "mainSha": "36dc43d92073a786d620512a6c0f1adc00c1bb36"
+    "reviewedAt": "2026-09-02T10:09:54.325Z",
+    "mainSha": "343af4fbd157aae5d8c070a5ab98e4fa630d8368"
   }
 }
