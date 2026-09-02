@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-04T23:32:55.789Z",
-  "updatedAt": "2026-08-04T23:09:12Z",
+  "generatedAt": "2026-09-02T11:11:45.542Z",
+  "updatedAt": "2026-09-02T10:55:32Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,49 +15,43 @@
       "question",
       "reporter:javier",
       "triage:needs-info",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
-      "clawsweeper:needs-security-review",
-      "issue-rating: ➖ n/a",
-      "origin:panel",
       "P2",
-      "impact:security",
-      "clawsweeper:fix-shape-clear"
+      "clawsweeper:needs-security-review",
+      "origin:panel"
     ],
     "createdAt": "2026-06-16T21:53:49Z",
-    "updatedAt": "2026-08-04T23:09:12Z"
+    "updatedAt": "2026-09-02T10:55:32Z"
   },
   "lane": "security_boundary",
   "priority": "P2",
-  "question": "¿Qué contrato y referencia segura de credenciales debe declararse como vigente para Celeritas, y quién asume su propiedad operativa?",
-  "rationale": "El código solo permite inferir flujos internos; no puede validar documentación de proveedor, contactos externos ni la política aprobada para secretos.",
+  "question": "¿Qué contrato oficial, responsable operativo y referencia aprobada de secretos deben figurar para Celeritas, incluyendo el flujo RMA de Supply?",
+  "rationale": "El código prueba los flujos internos, pero no puede autorizar la fuente contractual externa ni la custodia de credenciales.",
   "options": [
     {
-      "title": "Validar y documentar el contrato vigente",
-      "body": "Confirmar con Operaciones y Celeritas el manual, el propietario y la referencia segura, y actualizar los tres documentos sin incluir valores sensibles.",
+      "title": "Confirmar y documentar",
+      "body": "Operaciones y seguridad validan manual, propietario y referencia segura; la ficha se actualiza separando marketplace de etiquetas RMA de Supply.",
       "recommended": true
     },
     {
-      "title": "Mantener el estado como pendiente",
-      "body": "Conservar las advertencias actuales hasta disponer de una fuente oficial y una referencia aprobada para la configuración.",
+      "title": "Limitarse al código",
+      "body": "La ficha conserva solo los hechos verificables en el repositorio y mantiene los datos externos como huecos explícitos.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Validar y documentar el contrato vigente",
-    "body": "Confirmar con Operaciones y Celeritas el manual, el propietario y la referencia segura, y actualizar los tres documentos sin incluir valores sensibles.",
+    "title": "Confirmar y documentar",
+    "body": "Operaciones y seguridad validan manual, propietario y referencia segura; la ficha se actualiza separando marketplace de etiquetas RMA de Supply.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es la persona con mayor continuidad visible en los runbooks y la migración de tracking relacionada.",
-    "confidence": "medium"
+    "reason": "Su trabajo previo reúne el contexto de los runbooks y de la migración técnica de Celeritas.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6463.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6463#issuecomment-4909963944",
-    "reviewedAt": "2026-08-04T23:32:55.789Z",
-    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
+    "reviewedAt": "2026-09-02T11:11:45.542Z",
+    "mainSha": "350e0bfc6a03f54c34e3afbc6a231922e06685a7"
   }
 }

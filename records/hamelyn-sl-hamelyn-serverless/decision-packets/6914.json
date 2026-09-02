@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-04T23:32:58.878Z",
-  "updatedAt": "2026-08-04T23:15:14Z",
+  "generatedAt": "2026-09-02T11:10:42.111Z",
+  "updatedAt": "2026-09-02T10:55:26Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,52 +15,47 @@
       "feature",
       "triage:pr-opened",
       "reporter:victor",
-      "origin:panel",
+      "clawsweeper:needs-product-decision",
       "P2",
-      "impact:other",
-      "issue-rating: ➖ n/a",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "origin:panel"
     ],
     "createdAt": "2026-07-06T08:33:34Z",
-    "updatedAt": "2026-08-04T23:15:14Z"
+    "updatedAt": "2026-09-02T10:55:26Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe la biografía extensa proceder de copy editorial independiente de Wikipedia o conservar material con licencia mediante atribución explícita?",
-  "rationale": "La PR cerrada resolvía el modelo técnico, pero no acredita una procedencia editorial segura; la incidencia de atribución ya integrada demuestra que esta elección afecta al contenido público.",
+  "question": "¿La biografía larga debe generarse exclusivamente desde hechos verificables y contenido propio, o se admite contenido derivado de Wikipedia con atribución y licencia visibles?",
+  "rationale": "La implementación técnica es acotada, pero la procedencia del copy determina la licencia, los créditos y la política editorial persistente.",
   "options": [
     {
-      "title": "Copy editorial independiente",
-      "body": "Redactar desde hechos verificables y fuentes aprobadas, guardar una `biography` localizada y evitar depender de prosa de Wikipedia.",
+      "title": "Copy propio desde hechos verificables",
+      "body": "Crear biografías originales a partir de datos verificables y mantener `biography` separada de `description`.",
       "recommended": true
     },
     {
       "title": "Contenido atribuido",
-      "body": "Permitir texto sujeto a licencia solo con fuente, licencia, atribución visible y revisión editorial documentada.",
+      "body": "Permitir una fuente derivada solo si el producto muestra atribución, licencia y enlace de origen de forma explícita.",
       "recommended": false
     },
     {
-      "title": "Mantener el resumen actual",
-      "body": "No publicar biografía larga hasta que exista contenido aprobado y localizado.",
+      "title": "Posponer la biografía larga",
+      "body": "Conservar la descripción actual hasta contar con una fuente editorial aprobada para el nuevo bloque.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Copy editorial independiente",
-    "body": "Redactar desde hechos verificables y fuentes aprobadas, guardar una `biography` localizada y evitar depender de prosa de Wikipedia.",
+    "title": "Copy propio desde hechos verificables",
+    "body": "Crear biografías originales a partir de datos verificables y mantener `biography` separada de `description`.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Su análisis previo ya encuadró la decisión entre procedencia editorial y atribución.",
+    "person": "alexcanHamelyn",
+    "reason": "Su historial conecta directamente el comportamiento visual y el modelo de vista de la página de autor.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6914.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6914#issuecomment-4911149508",
-    "reviewedAt": "2026-08-04T23:32:58.878Z",
-    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
+    "reviewedAt": "2026-09-02T11:10:42.111Z",
+    "mainSha": "350e0bfc6a03f54c34e3afbc6a231922e06685a7"
   }
 }
