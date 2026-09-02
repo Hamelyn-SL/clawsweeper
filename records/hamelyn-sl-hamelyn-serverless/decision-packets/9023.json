@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-02T12:18:56.896Z",
+  "updatedAt": "2026-09-02T11:51:59Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9023,
+    "title": "Crear un PR Command Center verificable para GitHub y Codex",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9023",
+    "state": "open",
+    "labels": [
+      "source:admin-panel",
+      "app:infrastructure",
+      "feature",
+      "triage:done",
+      "P2"
+    ],
+    "createdAt": "2026-09-02T11:24:36Z",
+    "updatedAt": "2026-09-02T11:51:59Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe el repositorio admitir una skill compartida que normalice y reconcilie tareas de Codex por pull request, o debe quedarse como un flujo personal fuera del catálogo?",
+  "rationale": "La guía del repositorio prohíbe conservar metodologías individuales como skills, pero permite herramientas compartidas con acceso o verificación determinista.",
+  "options": [
+    {
+      "title": "Adoptar un flujo compartido",
+      "body": "Crear la skill con inventario explícito, lectura de GitHub mediante `gh` y mutaciones únicamente tras confirmación.",
+      "recommended": true
+    },
+    {
+      "title": "Mantenerlo fuera del repositorio",
+      "body": "Conservar el Chief y sus tareas como convención personal de Codex sin añadir una skill del monorepo.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Adoptar un flujo compartido",
+    "body": "Crear la skill con inventario explícito, lectura de GitHub mediante `gh` y mutaciones únicamente tras confirmación.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es el responsable asignado y el autor reciente de la política que define cuándo una skill pertenece al repositorio.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9023.md",
+    "reviewedAt": "2026-09-02T12:18:56.896Z",
+    "mainSha": "9b525e0aae70b41daab228e22437134fc1e70b6f"
+  }
+}

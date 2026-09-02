@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-02T10:56:12.921Z",
-  "updatedAt": "2026-09-02T10:04:10Z",
+  "generatedAt": "2026-09-02T12:18:50.076Z",
+  "updatedAt": "2026-09-02T10:58:05Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,46 +15,41 @@
       "app:infrastructure",
       "triage:blocked",
       "P1",
-      "impact:other",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
-      "clawsweeper:source-repro",
-      "issue-rating: 💎 diamond",
       "reporter:JavierHamelyn"
     ],
     "createdAt": "2026-09-02T08:41:30Z",
-    "updatedAt": "2026-09-02T10:04:10Z"
+    "updatedAt": "2026-09-02T10:58:05Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Se conserva el contrato de firmas legadas mediante la importación completa, o se aprueba explícitamente una nueva semilla con semántica distinta?",
-  "rationale": "Ambas alternativas desbloquean el servicio, pero solo la importación conserva la identidad histórica que usa la deduplicación y la reapertura.",
+  "question": "¿Debe conservarse la memoria legacy completa mediante la importación verificada, aceptando la reapertura deliberada de canónicas si reaparecen sus firmas?",
+  "rationale": "La alternativa de sembrar solo números altera la deduplicación y el comportamiento de reapertura; requiere aceptar explícitamente ese cambio de contrato.",
   "options": [
     {
-      "title": "Importar la baseline verificada",
-      "body": "Recuperar el importador one-time, comprobar sus hashes, importar 28+6 firmas y validar los primeros runs productivos.",
+      "title": "Importar la baseline completa",
+      "body": "Recuperar el importador, verificar hashes, importar las 28+6 firmas y revalidar el estado OPEN/CLOSED antes de habilitar el primer tick escribible.",
       "recommended": true
     },
     {
-      "title": "Aprobar una semilla nueva",
-      "body": "Definir y revisar una semilla explícita que abandone la correspondencia completa con las firmas legadas.",
+      "title": "Rediseñar una semilla nueva",
+      "body": "Sustituir la memoria legacy solo tras definir y probar cómo se preservan aliases, deduplicación y el tratamiento de canónicas cerradas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Importar la baseline verificada",
-    "body": "Recuperar el importador one-time, comprobar sus hashes, importar 28+6 firmas y validar los primeros runs productivos.",
+    "title": "Importar la baseline completa",
+    "body": "Recuperar el importador, verificar hashes, importar las 28+6 firmas y revalidar el estado OPEN/CLOSED antes de habilitar el primer tick escribible.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su historial cubre la migración, el paso post-merge documentado y el dispatcher de los watchers.",
+    "reason": "Es el autor del corte que documentó el paso post-merge y de los cambios recientes del flujo de watchers.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9013.md",
-    "reviewedAt": "2026-09-02T10:56:12.921Z",
-    "mainSha": "9220c7fc5bd5c7e3b77dd3e4b4bd090f86f37df4"
+    "reviewedAt": "2026-09-02T12:18:50.076Z",
+    "mainSha": "9b525e0aae70b41daab228e22437134fc1e70b6f"
   }
 }
