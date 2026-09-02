@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-02T20:58:35.588Z",
-  "updatedAt": "2026-09-02T20:30:41Z",
+  "generatedAt": "2026-09-02T23:22:17.332Z",
+  "updatedAt": "2026-09-02T23:12:50Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,44 +13,48 @@
       "codex",
       "bug",
       "app:marketplace",
-      "triage:queued",
-      "marketplace-crons",
+      "triage:running",
+      "clawsweeper:needs-product-decision",
       "P2",
-      "clawsweeper:needs-product-decision"
+      "marketplace-crons"
     ],
     "createdAt": "2026-09-02T20:30:41Z",
-    "updatedAt": "2026-09-02T20:30:41Z"
+    "updatedAt": "2026-09-02T23:12:50Z"
   },
-  "lane": "manual_review",
+  "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe Marketplace introducir un límite exclusivo para Feltrinelli tras medir su cuota OF24, o tratar estas observaciones como una limitación temporal del operador?",
-  "rationale": "La corrección CDL demuestra que los presupuestos Mirakl se separan por tienda; el dato aportado no identifica todavía el límite sostenible de Feltrinelli.",
+  "question": "¿Qué máximo de imports OF24 por hora y qué margen operativo debe reservar Feltrinelli?",
+  "rationale": "Los registros confirman una ventana de cuota, pero no permiten inferir un límite seguro; escogerlo sin validación puede afectar publicaciones reales.",
   "options": [
     {
-      "title": "Medir y limitar Feltrinelli",
-      "body": "Recopilar volumen, ventana y `Retry-After` de Feltrinelli y aplicar una reserva exclusiva con margen conservador.",
+      "title": "Medir y fijar un límite",
+      "body": "Recopilar una ventana completa de imports y `Retry-After`, y convertir el máximo observado en una reserva con margen.",
       "recommended": true
     },
     {
-      "title": "Observar antes de cambiar",
-      "body": "Mantener la clasificación actual de 429 y abrir una corrección solo si nuevas ejecuciones confirman una cuota recurrente.",
+      "title": "Aplicar un cap temporal",
+      "body": "Aprobar explícitamente un límite conservador provisional y revisarlo tras observar su comportamiento en producción.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener observación",
+      "body": "No cambiar la cadencia hasta disponer de más muestras que distingan cuota externa y picos de tráfico.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Medir y limitar Feltrinelli",
-    "body": "Recopilar volumen, ventana y `Retry-After` de Feltrinelli y aplicar una reserva exclusiva con margen conservador.",
+    "title": "Medir y fijar un límite",
+    "body": "Recopilar una ventana completa de imports y `Retry-After`, y convertir el máximo observado en una reserva con margen.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "La decisión afecta al manager Mirakl y a su política de límites por marketplace.",
-    "confidence": "high"
+    "reason": "Su historial reciente en la migración Mirakl y en los límites de este adaptador lo conecta con la decisión técnica.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9063.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9063#issuecomment-5516322238",
-    "reviewedAt": "2026-09-02T20:58:35.588Z",
+    "reviewedAt": "2026-09-02T23:22:17.332Z",
     "mainSha": "ffd90286dac2d39d356b520899b76b13f8465698"
   }
 }
