@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-02T11:50:28.457Z",
+  "updatedAt": "2026-09-02T10:55:08Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8651,
+    "title": "fix: US NORMAL orders fall through to Spring wildcard and break on Guam",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8651",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:infrastructure",
+      "reporter:davidgonzalez",
+      "triage:done",
+      "P2"
+    ],
+    "createdAt": "2026-08-24T06:04:50Z",
+    "updatedAt": "2026-09-02T10:55:08Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe Operaciones activar ya una excepción de FedEx limitada a Guam (`96910–96932`) y mantener AS/MP fuera hasta confirmar su cobertura con Spring?",
+  "rationale": "El código permite ambas rutas, pero el repositorio no contiene la cobertura contractual ni el coste operativo necesarios para decidir qué territorios deben abandonar Spring.",
+  "options": [
+    {
+      "title": "Excepción solo para Guam",
+      "body": "Crear la fila `US`/`NORMAL`/`96910–96932` hacia FedEx por encima del comodín y validar la recarga de caché.",
+      "recommended": true
+    },
+    {
+      "title": "Esperar cobertura contractual completa",
+      "body": "No modificar la matriz hasta que Spring confirme Guam, AS y MP, aceptando mientras la recuperación manual ya disponible.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Excepción solo para Guam",
+    "body": "Crear la fila `US`/`NORMAL`/`96910–96932` hacia FedEx por encima del comodín y validar la recarga de caché.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Su historial reciente conecta la compatibilidad FedEx de territorios y el mecanismo actual de ShipMatrix.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8651.md",
+    "reviewedAt": "2026-09-02T11:50:28.457Z",
+    "mainSha": "350e0bfc6a03f54c34e3afbc6a231922e06685a7"
+  }
+}
