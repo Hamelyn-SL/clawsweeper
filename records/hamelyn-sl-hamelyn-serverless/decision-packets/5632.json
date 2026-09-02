@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-02T18:50:15.411Z",
+  "generatedAt": "2026-09-02T18:51:43.990Z",
   "updatedAt": "2026-09-02T18:30:43Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -14,44 +14,43 @@
       "bug",
       "app:marketplace",
       "triage:queued",
+      "P1",
       "clawsweeper:needs-product-decision",
       "origin:watcher",
-      "mk:amazon",
-      "P1"
+      "mk:amazon"
     ],
     "createdAt": "2026-05-03T01:34:14Z",
     "updatedAt": "2026-09-02T18:30:43Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe el motor común cortar y cancelar un cron al agotar un presupuesto previo a Vercel, aceptando y registrando estados parciales de las fases Amazon?",
-  "rationale": "La corrección afecta la completitud de sincronizaciones comerciales; los límites de conexión ya existen y el precedente de socket timeout fue descartado por no resolver esa semántica.",
+  "question": "¿Debe el motor común de crons imponer un presupuesto cancelable antes del límite de Vercel, y qué semántica de finalización parcial debe tener cada fase Amazon?",
+  "rationale": "El límite puede reducir 504, pero también interrumpir create, withdraw, pedidos o recuperación; el código actual no expresa cómo reconciliar ese estado.",
   "options": [
     {
-      "title": "Presupuesto global observable",
-      "body": "Definir un deadline común, cancelación cooperativa y un resultado de ejecución parcial por fase antes de aplicarlo a Amazon V2.",
+      "title": "Contrato común con parada segura",
+      "body": "Definir deadline, telemetría por fase e idempotencia/reintento antes de aplicarlo a las rutas Amazon V2.",
       "recommended": true
     },
     {
-      "title": "Diagnóstico por fases primero",
-      "body": "Mantener la ejecución actual mientras se obtienen trazas de fases e índices para identificar una consulta concreta antes de introducir cancelación global.",
+      "title": "Diagnóstico por fase primero",
+      "body": "Recoger duraciones y consultas vivas de Amazon V2 antes de fijar una política común de cancelación.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Presupuesto global observable",
-    "body": "Definir un deadline común, cancelación cooperativa y un resultado de ejecución parcial por fase antes de aplicarlo a Amazon V2.",
+    "title": "Contrato común con parada segura",
+    "body": "Definir deadline, telemetría por fase e idempotencia/reintento antes de aplicarlo a las rutas Amazon V2.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Sus comentarios previos fijan el enfoque transversal y su historial reciente cubre rutas y programación Amazon.",
+    "reason": "La discusión de esta issue ya le atribuye la decisión de trasladar el tratamiento a la capa común.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5632.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5632#issuecomment-4971269470",
-    "reviewedAt": "2026-09-02T18:50:15.411Z",
+    "reviewedAt": "2026-09-02T18:51:43.990Z",
     "mainSha": "ffd90286dac2d39d356b520899b76b13f8465698"
   }
 }
