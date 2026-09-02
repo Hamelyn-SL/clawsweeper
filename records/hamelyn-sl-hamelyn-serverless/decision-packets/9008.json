@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-02T08:13:26.808Z",
+  "updatedAt": "2026-09-02T08:07:40Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9008,
+    "title": "Marketplace: cutover a lectura V2 exclusiva tras el backfill V1",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9008",
+    "state": "open",
+    "labels": [
+      "app:marketplace",
+      "feature",
+      "triage:queued",
+      "P1",
+      "marketplace-v2"
+    ],
+    "createdAt": "2026-09-02T08:07:29Z",
+    "updatedAt": "2026-09-02T08:07:40Z"
+  },
+  "lane": "release_inclusion",
+  "priority": "P1",
+  "question": "¿Se autoriza el cutover V2 para todos los marketplaces tras fase B, o debe excluirse Amazon hasta completar su backfill?",
+  "rationale": "La seguridad del cambio depende del estado real de datos y de la ventana de mantenimiento, información que no consta en `dev` ni en la issue.",
+  "options": [
+    {
+      "title": "Corte tras validar fase B",
+      "body": "Confirmar cohortes migradas y retirar todos los puentes legacy en la ventana aprobada.",
+      "recommended": true
+    },
+    {
+      "title": "Corte parcial sin Amazon",
+      "body": "Eliminar los criterios legacy de los demás marketplaces y conservar temporalmente los puentes específicos de Amazon.",
+      "recommended": false
+    },
+    {
+      "title": "Posponer el corte",
+      "body": "Mantener la lectura híbrida hasta completar también el backfill de Amazon y cerrar las decisiones del fence.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Corte tras validar fase B",
+    "body": "Confirmar cohortes migradas y retirar todos los puentes legacy en la ventana aprobada.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Está asignado a esta iniciativa y es el contribuidor más reciente de las migraciones y precondiciones V2.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9008.md",
+    "reviewedAt": "2026-09-02T08:13:26.808Z",
+    "mainSha": "c9bd4f27ed5798167e468641baf51fe6950a0c4f"
+  }
+}
