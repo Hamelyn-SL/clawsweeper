@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-05T00:27:41.916Z",
-  "updatedAt": "2026-08-04T23:50:41Z",
+  "generatedAt": "2026-09-02T11:20:29.194Z",
+  "updatedAt": "2026-09-02T10:55:23Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,54 +13,48 @@
       "app:marketplace",
       "question",
       "triage:no-change",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
-      "origin:dev",
-      "mk:amazon",
       "P2",
-      "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro"
+      "origin:dev",
+      "mk:amazon"
     ],
     "createdAt": "2026-07-15T12:06:25Z",
-    "updatedAt": "2026-08-04T23:50:41Z"
+    "updatedAt": "2026-09-02T10:55:23Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué política aprobamos para un par `(EAN, región)` que sigue sin ASIN regional: duración de reintentos, estado persistido, cadencia de revalidación y superficie de visibilidad?",
-  "rationale": "El código ya ejecuta el comportamiento actual; elegir umbrales y el significado de un nuevo estado cambia el contrato operativo y el modelo persistido.",
+  "question": "¿Qué ciclo de vida deben seguir los pares `(EAN, región)` que continúan sin ASIN tras la recuperación inicial?",
+  "rationale": "El umbral, la revalidación y la visibilidad definen comportamiento de inventario y posibles datos persistidos; el código no puede deducirlos de forma segura.",
   "options": [
     {
-      "title": "Ventana limitada y revalidación",
-      "body": "Reintentar a diario durante 7 días, marcar después el par como no listable y volver a comprobarlo cada 30 días con visibilidad operativa.",
+      "title": "Ventana inicial y revalidación",
+      "body": "Reintentar cada 24 horas durante 7 días, marcar después el par como no listable y revalidarlo cada 30 días.",
       "recommended": true
     },
     {
-      "title": "Mantener el retry actual",
-      "body": "Conservar los reintentos diarios indefinidos y asumir el coste de ruido y consultas hasta que Amazon incorpore el EAN.",
+      "title": "Conservar el retry diario",
+      "body": "Mantener el comportamiento actual sin nuevo estado, aceptando consultas y ruido recurrentes.",
       "recommended": false
     },
     {
-      "title": "Retirar por región",
-      "body": "Excluir el stock de la región tras el umbral y reportarlo en una superficie operativa sin revalidación automática.",
+      "title": "Retirar y reportar",
+      "body": "Excluir el stock de esa región tras el umbral aprobado y exponerlo para seguimiento operativo.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Ventana limitada y revalidación",
-    "body": "Reintentar a diario durante 7 días, marcar después el par como no listable y volver a comprobarlo cada 30 días con visibilidad operativa.",
+    "title": "Ventana inicial y revalidación",
+    "body": "Reintentar cada 24 horas durante 7 días, marcar después el par como no listable y revalidarlo cada 30 días.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MarcosTerroso",
-    "reason": "Su historial conecta el onboarding regional y la consolidación del seguimiento de esta firma; la decisión requiere coordinación con Marketplace.",
-    "confidence": "medium"
+    "person": "JavierHamelyn",
+    "reason": "Es el candidato más cercano por cambios recientes en recovery Amazon y por su trabajo asignado sobre identidad regional.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7599.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7599#issuecomment-4980638639",
-    "reviewedAt": "2026-08-05T00:27:41.916Z",
-    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
+    "reviewedAt": "2026-09-02T11:20:29.194Z",
+    "mainSha": "350e0bfc6a03f54c34e3afbc6a231922e06685a7"
   }
 }

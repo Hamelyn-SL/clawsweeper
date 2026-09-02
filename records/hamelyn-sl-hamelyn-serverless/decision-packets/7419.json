@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-05T00:10:25.657Z",
-  "updatedAt": "2026-08-05T00:05:47Z",
+  "generatedAt": "2026-09-02T11:19:15.115Z",
+  "updatedAt": "2026-09-02T10:55:24Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,54 +12,48 @@
     "labels": [
       "bug",
       "triage:done",
-      "app:data",
-      "origin:dev",
       "P1",
-      "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "app:data",
+      "origin:dev"
     ],
     "createdAt": "2026-07-13T06:38:18Z",
-    "updatedAt": "2026-08-05T00:05:47Z"
+    "updatedAt": "2026-09-02T10:55:24Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué política de conservación debe aplicarse a slugs, enlaces y metadatos de fichas no canónicas al fusionar cada grupo por `authorId` en producción?",
-  "rationale": "El código puede elegir una ficha técnica canónica, pero decidir qué URL y campos históricos sobreviven es una mutación de datos con impacto de producto y SEO.",
+  "question": "¿Qué política debe conservar slugs, enlaces y metadatos al fusionar cada grupo duplicado por `authorId` en producción?",
+  "rationale": "La regla técnica puede elegir una ficha canónica, pero la supervivencia de URLs históricas y campos de catálogo es una decisión de datos y SEO con impacto de producto.",
   "options": [
     {
-      "title": "Conservar canónica y redirigir legacy",
-      "body": "Elegir una ficha por regla determinista, mover datos necesarios y preservar los slugs retirados mediante una ruta legacy o redirección.",
+      "title": "Conservar canónica y redirecciones legacy",
+      "body": "Fusionar por una regla determinista, preservar las URLs retiradas mediante resolución legacy o redirección y crear el índice tras validar el dry-run.",
       "recommended": true
     },
     {
-      "title": "Conservar solo la ficha canónica",
-      "body": "Fusionar los grupos y retirar los slugs no canónicos, aceptando explícitamente el cambio de URLs históricas.",
+      "title": "Retirar URLs no canónicas",
+      "body": "Fusionar los grupos conservando solo la ficha canónica y aceptar explícitamente que los slugs históricos dejen de resolver.",
       "recommended": false
     },
     {
       "title": "Aplazar la fusión física",
-      "body": "Mantener la mitigación de lectura y limitar el trabajo inmediato a propagar fallos reales del cron hasta acordar la política de datos.",
+      "body": "Mantener la mitigación de lectura y limitar el siguiente cambio a hacer fallar el job hasta que exista una política de datos aprobada.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Conservar canónica y redirigir legacy",
-    "body": "Elegir una ficha por regla determinista, mover datos necesarios y preservar los slugs retirados mediante una ruta legacy o redirección.",
+    "title": "Conservar canónica y redirecciones legacy",
+    "body": "Fusionar por una regla determinista, preservar las URLs retiradas mediante resolución legacy o redirección y crear el índice tras validar el dry-run.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "PabloMoran34",
-    "reason": "Está asignado a la issue y su historial conecta el cron original con la mitigación canónica integrada.",
+    "reason": "Está asignado y su historial conecta el cron original con la mitigación canónica ya integrada.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7419.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7419#issuecomment-4955179633",
-    "reviewedAt": "2026-08-05T00:10:25.657Z",
-    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
+    "reviewedAt": "2026-09-02T11:19:15.115Z",
+    "mainSha": "350e0bfc6a03f54c34e3afbc6a231922e06685a7"
   }
 }

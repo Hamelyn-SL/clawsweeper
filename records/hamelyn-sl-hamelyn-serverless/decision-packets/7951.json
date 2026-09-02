@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-05T00:19:50.066Z",
-  "updatedAt": "2026-08-04T23:45:33Z",
+  "generatedAt": "2026-09-02T11:20:40.323Z",
+  "updatedAt": "2026-09-02T10:55:21Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,52 +13,45 @@
       "bug",
       "source:admin-panel",
       "triage:done",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review",
+      "P1",
       "clawsweeper:needs-product-decision",
       "clawsweeper:needs-security-review",
       "reporter:JavierHamelyn",
       "app:agents",
-      "origin:panel",
-      "P1",
-      "impact:security",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
-      "clawsweeper:fix-shape-clear"
+      "origin:panel"
     ],
     "createdAt": "2026-07-27T00:01:13Z",
-    "updatedAt": "2026-08-04T23:45:33Z"
+    "updatedAt": "2026-09-02T10:55:21Z"
   },
   "lane": "product_direction",
-  "priority": "P1",
-  "question": "¿Debe PR Proof conservar el contrato no bloqueante actual o volver a ser una autoridad de merge con espera y evidencia durable?",
-  "rationale": "`AGENTS.md` y `CHARTER.md` fijan intencionadamente el modelo no bloqueante, mientras esta incidencia solicita el modelo retirado de gate autoritativo.",
+  "priority": "P2",
+  "question": "¿Debe `proof` seguir siendo una señal no bloqueante o convertirse en un gate que espera el veredicto terminal antes de permitir el merge?",
+  "rationale": "El comportamiento actual está documentado y cubierto por pruebas; convertirlo en gate cambia el contrato de merge y no es una corrección mecánica.",
   "options": [
     {
-      "title": "Mantener feedback y aclarar señales",
-      "body": "Conservar Proof como ayuda no bloqueante, pero renombrar o diferenciar el éxito del despacho del veredicto terminal.",
+      "title": "Mantenerlo no bloqueante",
+      "body": "Conservar el comentario y el estado `proof` como feedback, y reformular esta incidencia como mejora de presentación o trazabilidad.",
       "recommended": true
     },
     {
-      "title": "Restaurar un gate autoritativo",
-      "body": "Reintroducir identidad durable, espera terminal y evidencia verificable como requisito de merge, aceptando mayor coste operativo.",
+      "title": "Aprobar un gate autoritativo",
+      "body": "Reabrir el alcance como cambio de plataforma con espera por run terminal, persistencia y evidencia verificable antes de decidir el check.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mantener feedback y aclarar señales",
-    "body": "Conservar Proof como ayuda no bloqueante, pero renombrar o diferenciar el éxito del despacho del veredicto terminal.",
+    "title": "Mantenerlo no bloqueante",
+    "body": "Conservar el comentario y el estado `proof` como feedback, y reformular esta incidencia como mejora de presentación o trazabilidad.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "El historial le vincula directamente al reemplazo del protocolo autoritativo por el contrato actual.",
+    "reason": "Concentra la entrega de Proof y los endurecimientos recientes de esta superficie.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7951.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7951#issuecomment-5086112215",
-    "reviewedAt": "2026-08-05T00:19:50.066Z",
-    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
+    "reviewedAt": "2026-09-02T11:20:40.323Z",
+    "mainSha": "350e0bfc6a03f54c34e3afbc6a231922e06685a7"
   }
 }
