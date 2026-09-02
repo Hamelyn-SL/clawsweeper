@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-02T17:14:42.975Z",
-  "updatedAt": "2026-09-02T16:31:33Z",
+  "generatedAt": "2026-09-02T20:57:38.218Z",
+  "updatedAt": "2026-09-02T20:49:07Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,49 +13,48 @@
       "codex",
       "bug",
       "app:marketplace",
-      "triage:queued",
-      "marketplace-crons",
+      "triage:needs-info",
       "P1",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "marketplace-crons"
     ],
     "createdAt": "2026-09-02T16:31:33Z",
-    "updatedAt": "2026-09-02T16:31:33Z"
+    "updatedAt": "2026-09-02T20:49:07Z"
   },
-  "lane": "product_direction",
+  "lane": "manual_review",
   "priority": "P1",
-  "question": "¿Debe el flujo recuperar tracking desde una fuente operativa autorizada para estos pedidos, o impedir su transición a `PICKED_UP` hasta disponer de tracking?",
-  "rationale": "El código actual protege correctamente la confirmación externa, pero no define qué sistema es la fuente de verdad para completar el tracking faltante.",
+  "question": "¿Tras comprobar Cainiao, debe restaurarse el tracking de un envío existente o debe Operaciones reemitir o regularizar este pedido sin envío verificable?",
+  "rationale": "El repositorio no contiene una fuente segura para derivar el tracking ausente, y una reparación automática podría crear o confirmar un envío incorrecto.",
   "options": [
     {
-      "title": "Recuperar tracking verificable",
-      "body": "Implementar una recuperación limitada desde la fuente de etiquetas o carrier que pueda demostrar el número de seguimiento.",
+      "title": "Verificar y restaurar datos existentes",
+      "body": "Si Cainiao devuelve un envío real, actualizar solo los campos autoritativos y permitir que el cron complete la confirmación.",
       "recommended": true
     },
     {
-      "title": "Bloquear la transición anterior",
-      "body": "Impedir que pedidos sin tracking alcancen `PICKED_UP` hasta que el flujo de fulfillment complete sus datos.",
+      "title": "Reemitir la etiqueta",
+      "body": "Si no existe envío pero debe despacharse, crear una nueva expedición mediante el flujo operativo y conservar su tracking.",
       "recommended": false
     },
     {
-      "title": "Resolver solo el dato operativo",
-      "body": "Corregir manualmente el pedido actual y mantener el watcher mientras se reúne evidencia sobre el origen del dato faltante.",
+      "title": "Regularizar como no enviado",
+      "body": "Si no hubo envío real, revertir o cerrar el pedido según el procedimiento operativo antes de evitar una confirmación falsa.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Recuperar tracking verificable",
-    "body": "Implementar una recuperación limitada desde la fuente de etiquetas o carrier que pueda demostrar el número de seguimiento.",
+    "title": "Verificar y restaurar datos existentes",
+    "body": "Si Cainiao devuelve un envío real, actualizar solo los campos autoritativos y permitir que el cron complete la confirmación.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "HamelynDev",
-    "reason": "Su cambio reciente ya delimita la recuperación segura de datos de envío en el flujo afectado.",
+    "reason": "Es la persona vinculada en el historial a la recuperación que delimitó este caso residual.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9044.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9044#issuecomment-5513466718",
-    "reviewedAt": "2026-09-02T17:14:42.975Z",
+    "reviewedAt": "2026-09-02T20:57:38.218Z",
     "mainSha": "ffd90286dac2d39d356b520899b76b13f8465698"
   }
 }
