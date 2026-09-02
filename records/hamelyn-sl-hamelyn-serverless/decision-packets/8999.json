@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-02T07:10:52.634Z",
+  "updatedAt": "2026-09-02T06:52:42Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8999,
+    "title": "Fnac: 3 pedidos recogidos llevan 20 intentos de confirmar envío con el mismo 400 y el motivo no se registra",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8999",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "triage:pr-opened",
+      "P2"
+    ],
+    "createdAt": "2026-09-02T06:16:40Z",
+    "updatedAt": "2026-09-02T06:52:42Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué condición concreta de error de Fnac debe pasar a estado terminal y qué alerta operativa debe generarse tras observar la respuesta saneada?",
+  "rationale": "La evidencia actual confirma el bucle, pero no permite distinguir con seguridad un 400 permanente de uno recuperable ni fijar un umbral sin riesgo operativo.",
+  "options": [
+    {
+      "title": "Esperar la firma real",
+      "body": "Desplegar primero la observabilidad y convertir en terminal solo la firma exacta que Fnac confirme como no recuperable.",
+      "recommended": true
+    },
+    {
+      "title": "Aplicar un máximo genérico",
+      "body": "Detener todo error repetido tras N intentos, aceptando el riesgo de dejar sin reintento fallos recuperables.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Esperar la firma real",
+    "body": "Desplegar primero la observabilidad y convertir en terminal solo la firma exacta que Fnac confirme como no recuperable.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "HamelynDev",
+    "reason": "Ha trabajado recientemente en el recovery compartido que debe aplicar la política terminal.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8999.md",
+    "reviewedAt": "2026-09-02T07:10:52.634Z",
+    "mainSha": "c403cf0f0e23bfd0a91430c174602fa3f7fbe425"
+  }
+}

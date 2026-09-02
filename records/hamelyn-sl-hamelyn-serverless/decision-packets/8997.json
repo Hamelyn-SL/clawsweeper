@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-02T07:10:32.593Z",
+  "updatedAt": "2026-09-02T07:04:20Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8997,
+    "title": "Add product images to AbeBooks inventory updates",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8997",
+    "state": "open",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-09-02T06:06:50Z",
+    "updatedAt": "2026-09-02T07:04:20Z",
+    "headSha": "f41fbe2b965236fcfe10da53816591bf928e0d2f"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué campo, fuente o regla aprobada identifica que una imagen puede republicarse en AbeBooks?",
+  "rationale": "El modelo actual distingue disponibilidad técnica en Bunny, no derechos de redistribución; elegir una equivalencia o un nuevo dato es una decisión de Marketplace/Producto.",
+  "options": [
+    {
+      "title": "Definir una señal de elegibilidad",
+      "body": "Añadir o reutilizar una fuente de verdad aprobada y condicionar `pictureList` a ella antes de continuar con la PR.",
+      "recommended": true
+    },
+    {
+      "title": "Aprobar explícitamente Bunny como autorización",
+      "body": "Aceptar que `hasBunnyImage` implica permiso de republicación y documentar esa política junto con su alcance.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Definir una señal de elegibilidad",
+    "body": "Añadir o reutilizar una fuente de verdad aprobada y condicionar `pictureList` a ella antes de continuar con la PR.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Es la persona con el historial más directo en el flujo AbeBooks afectado y puede encauzar la decisión hacia Marketplace/Producto.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8997.md",
+    "reviewedAt": "2026-09-02T07:10:32.593Z",
+    "mainSha": "c403cf0f0e23bfd0a91430c174602fa3f7fbe425"
+  }
+}
