@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-02T13:57:23.475Z",
-  "updatedAt": "2026-09-02T10:55:15Z",
+  "generatedAt": "2026-09-02T17:44:47.260Z",
+  "updatedAt": "2026-09-02T17:11:59Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -14,44 +14,43 @@
       "P2"
     ],
     "createdAt": "2026-09-02T03:46:11Z",
-    "updatedAt": "2026-09-02T10:55:15Z",
+    "updatedAt": "2026-09-02T17:11:59Z",
     "headSha": "2951a30f6ebd5556d2301dbcd9f89b5a0961c6f8"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe esta PR cerrar la incidencia enlazada aun cuando la política para detener reintentos de rechazos eBay permanentes sigue sin decidirse?",
-  "rationale": "La extracción del motivo permite observar la firma, pero decidir entre exclusión exacta o límite genérico determina el comportamiento operativo futuro.",
+  "question": "¿Debe esta PR cerrar https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8991 aunque la política para detener reintentos de rechazos eBay permanentes aún no está definida?",
+  "rationale": "El cambio preserva el motivo del rechazo, pero decidir cuándo un 400 debe dejar de reintentarse afecta a la operación y no se deduce con seguridad de un único payload simulado.",
   "options": [
     {
       "title": "Mantener la incidencia abierta",
-      "body": "Retirar `Closes`, fusionar el diagnóstico y decidir después una firma terminal eBay basada en evidencia real.",
+      "body": "Retirar `Closes`, fusionar el diagnóstico y decidir la firma terminal tras observar un rechazo real.",
       "recommended": true
     },
     {
-      "title": "Cerrar con solo diagnóstico",
-      "body": "Aceptar que cada nuevo rechazo eBay se clasifique manualmente antes de ampliar la política terminal.",
+      "title": "Aceptar el cierre solo con diagnóstico",
+      "body": "Cerrar la incidencia asumiendo que cada rechazo futuro se clasificará manualmente antes de ampliar la recuperación.",
       "recommended": false
     },
     {
-      "title": "Añadir un límite genérico",
-      "body": "Definir un contador común de reintentos para marketplaces, con almacenamiento y operación adicionales.",
+      "title": "Definir una política común de límite",
+      "body": "Diseñar un contador o estado terminal compartido para fallos de envío antes de cerrar la incidencia.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Mantener la incidencia abierta",
-    "body": "Retirar `Closes`, fusionar el diagnóstico y decidir después una firma terminal eBay basada en evidencia real.",
+    "body": "Retirar `Closes`, fusionar el diagnóstico y decidir la firma terminal tras observar un rechazo real.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Su cambio reciente define el patrón compartido que gobierna ambos recoveries.",
-    "confidence": "high"
+    "reason": "La revisión previa lo identifica como el candidato más probable para resolver esta decisión de política.",
+    "confidence": "low"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8992.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8992#issuecomment-5504088927",
-    "reviewedAt": "2026-09-02T13:57:23.475Z",
-    "mainSha": "9b525e0aae70b41daab228e22437134fc1e70b6f"
+    "reviewedAt": "2026-09-02T17:44:47.260Z",
+    "mainSha": "ffd90286dac2d39d356b520899b76b13f8465698"
   }
 }
