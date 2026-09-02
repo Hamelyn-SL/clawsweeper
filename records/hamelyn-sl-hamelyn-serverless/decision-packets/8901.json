@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-30T10:33:18.124Z",
-  "updatedAt": "2026-08-30T10:27:02Z",
+  "generatedAt": "2026-09-02T13:34:41.038Z",
+  "updatedAt": "2026-08-30T10:33:58Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -17,38 +17,37 @@
       "P1"
     ],
     "createdAt": "2026-08-30T06:19:55Z",
-    "updatedAt": "2026-08-30T10:27:02Z"
+    "updatedAt": "2026-08-30T10:33:58Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "Si la señal persiste tras desplegar la optimización de consultas, ¿se prioriza instrumentar un perfil de heap o ampliar temporalmente la memoria de la función de la portada?",
-  "rationale": "La elección afecta coste y operación de Vercel; la evidencia actual no identifica una asignación concreta que permita escogerla automáticamente.",
+  "question": "Si la presión de memoria persiste tras integrar y medir https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8905 durante 48–72 horas, ¿se prioriza instrumentar el heap o aumentar la memoria de la función de portada?",
+  "rationale": "Las evidencias descartan las consultas concretas como explicación suficiente, pero no atribuyen las asignaciones ni permiten elegir con seguridad entre coste operativo y diagnóstico.",
   "options": [
     {
-      "title": "Perfilar antes de ampliar",
-      "body": "Capturar telemetría de asignaciones en una regeneración representativa y ajustar el origen del working set con datos.",
+      "title": "Perfilar antes de ampliar memoria",
+      "body": "Instrumentar una regeneración con datos equivalentes a producción y decidir el cambio de memoria con asignaciones observadas.",
       "recommended": true
     },
     {
-      "title": "Ampliar memoria temporalmente",
-      "body": "Elevar el límite como mitigación operativa mientras se programa un perfilado posterior.",
+      "title": "Aumentar memoria con seguimiento",
+      "body": "Configurar más memoria para la ruta de portada y vigilar 5xx, duración y consumo para aceptar explícitamente el coste.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Perfilar antes de ampliar",
-    "body": "Capturar telemetría de asignaciones en una regeneración representativa y ajustar el origen del working set con datos.",
+    "title": "Perfilar antes de ampliar memoria",
+    "body": "Instrumentar una regeneración con datos equivalentes a producción y decidir el cambio de memoria con asignaciones observadas.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "Miguel Angel Hernández Perdomo",
-    "reason": "Es el contribuidor más reciente de la ruta que reúne y procesa los pools de productos de la portada.",
-    "confidence": "medium"
+    "reason": "Su historial reciente cubre la caché, los pools y el manejo de timeout de la portada.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8901.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8901#issuecomment-5467190664",
-    "reviewedAt": "2026-08-30T10:33:18.124Z",
-    "mainSha": "11f10ecd49b9e7680b12b3b3d4473d7cbfd4944e"
+    "reviewedAt": "2026-09-02T13:34:41.038Z",
+    "mainSha": "9b525e0aae70b41daab228e22437134fc1e70b6f"
   }
 }

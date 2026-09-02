@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-02T08:53:19.491Z",
-  "updatedAt": "2026-09-02T08:21:16Z",
+  "generatedAt": "2026-09-02T13:37:20.004Z",
+  "updatedAt": "2026-09-02T13:19:24Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,48 +13,42 @@
       "bug",
       "app:admin",
       "reporter:javier",
-      "triage:needs-info",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision",
-      "clawsweeper:source-repro",
-      "impact:data-loss",
-      "issue-rating: 💎 diamond",
-      "P1"
+      "triage:no-change",
+      "P1",
+      "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-08-25T11:13:44Z",
-    "updatedAt": "2026-09-02T08:21:16Z"
+    "updatedAt": "2026-09-02T13:19:24Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe la unidad original no localizada reclasificarse como `INVENTORIED` o crear la razón específica `LOST_AT_PICKING`?",
-  "rationale": "Ambas opciones evitan el conteo como venta, pero difieren en la semántica contable persistida y en cómo se interpretará el histórico.",
+  "question": "¿La unidad original no encontrada debe persistirse como `INVENTORIED` o debe crearse `LOST_AT_PICKING` para distinguir la merma durante picking?",
+  "rationale": "La elección define el enum, la semántica contable de stocks históricos, las métricas excluidas y el filtro del backfill; el código no puede inferir esa política.",
   "options": [
     {
       "title": "Crear `LOST_AT_PICKING`",
-      "body": "Distingue explícitamente la merma física en picking de los ajustes generales de inventario y queda fuera de las métricas de ventas.",
+      "body": "Introduce un motivo no comercial específico, preserva la distinción entre merma de picking e inventariado genérico y permite excluirlo explícitamente de ventas.",
       "recommended": true
     },
     {
       "title": "Reutilizar `INVENTORIED`",
-      "body": "Evita ampliar el enum persistido y usa una razón existente que ya no se considera venta.",
+      "body": "Evita ampliar el enum, pero agrupa la merma de picking con ajustes de inventario sin una distinción posterior.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Crear `LOST_AT_PICKING`",
-    "body": "Distingue explícitamente la merma física en picking de los ajustes generales de inventario y queda fuera de las métricas de ventas.",
+    "body": "Introduce un motivo no comercial específico, preserva la distinción entre merma de picking e inventariado genérico y permite excluirlo explícitamente de ventas.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "banosdavidhamelyn",
-    "reason": "Es el colaborador reciente con mayor historial directo en las rutas de sustitución afectadas.",
+    "person": "JavierHamelyn",
+    "reason": "Conoce la evidencia operativa y mantiene la invariante actual que condiciona la reclasificación.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8698.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8698#issuecomment-5410237601",
-    "reviewedAt": "2026-09-02T08:53:19.491Z",
-    "mainSha": "c9bd4f27ed5798167e468641baf51fe6950a0c4f"
+    "reviewedAt": "2026-09-02T13:37:20.004Z",
+    "mainSha": "9b525e0aae70b41daab228e22437134fc1e70b6f"
   }
 }
