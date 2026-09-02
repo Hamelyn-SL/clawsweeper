@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-25T20:54:54.286Z",
-  "updatedAt": "2026-08-25T19:37:01Z",
+  "generatedAt": "2026-09-02T13:58:24.318Z",
+  "updatedAt": "2026-09-02T11:59:56Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,47 +13,40 @@
       "app:infrastructure",
       "feature",
       "triage:done",
-      "P2",
-      "impact:other",
-      "issue-rating: ⚪ platinum",
-      "clawsweeper:needs-live-repro",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "P2"
     ],
     "createdAt": "2026-08-22T18:12:42Z",
-    "updatedAt": "2026-08-25T19:37:01Z"
+    "updatedAt": "2026-09-02T11:59:56Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe el catálogo público exponer el desglose de ofertas y el estado de conservación, o conservar el contrato actual de precio mínimo?",
-  "rationale": "El código actual aplica deliberadamente una proyección pública mínima; ampliar campos cambia una API pública y no se deduce de la corrección de agent-readiness.",
+  "question": "¿Debe el objetivo de 100/100 incluir un desglose público de ofertas por estado de conservación en el catálogo, o mantenerse limitado a routing y descubrimiento?",
+  "rationale": "El comentario de campo separa esa ampliación de contrato público de los fallos verificables de descubrimiento, y el scanner no demuestra por sí solo qué datos comerciales deben exponerse.",
   "options": [
     {
-      "title": "Mantener el catálogo mínimo",
-      "body": "Completar solo los ajustes de descubrimiento y el soft-404, dejando precio mínimo y disponibilidad como contrato público estable.",
+      "title": "Separar el contrato de catálogo",
+      "body": "Corregir routing y enlaces de descubrimiento, reescanear y abrir una propuesta API independiente para el desglose de ofertas.",
       "recommended": true
     },
     {
-      "title": "Diseñar el desglose público",
-      "body": "Definir explícitamente campos, límites, caché y política de soporte antes de ampliar `GET /api/v6/catalog/{ean}`.",
+      "title": "Ampliar el catálogo público",
+      "body": "Aprobar explícitamente la exposición por estado de conservación y definir límites, caché, rate limit y compatibilidad del contrato.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mantener el catálogo mínimo",
-    "body": "Completar solo los ajustes de descubrimiento y el soft-404, dejando precio mínimo y disponibilidad como contrato público estable.",
+    "title": "Separar el contrato de catálogo",
+    "body": "Corregir routing y enlaces de descubrimiento, reescanear y abrir una propuesta API independiente para el desglose de ofertas.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Ha desarrollado y documentado la superficie pública de catálogo y sus límites recientes.",
+    "reason": "La asignación y los PRs fusionados sitúan esta superficie bajo su contexto técnico y de producto reciente.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8631.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8631#issuecomment-5381981715",
-    "reviewedAt": "2026-08-25T20:54:54.286Z",
-    "mainSha": "c52d2964fe17abd41272c3621d61660e7a3eeb4a"
+    "reviewedAt": "2026-09-02T13:58:24.318Z",
+    "mainSha": "9b525e0aae70b41daab228e22437134fc1e70b6f"
   }
 }

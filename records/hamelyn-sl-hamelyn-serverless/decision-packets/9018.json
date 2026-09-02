@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-02T09:59:35.982Z",
-  "updatedAt": "2026-09-02T09:49:16Z",
+  "generatedAt": "2026-09-02T14:01:46.501Z",
+  "updatedAt": "2026-09-02T10:55:10Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,45 +11,41 @@
     "state": "open",
     "labels": [
       "size/L",
-      "rating: 🥉 bronze",
-      "status: 📣 needs proof",
-      "P1",
-      "merge-risk: 🚨 compatibility"
+      "P1"
     ],
     "createdAt": "2026-09-02T09:39:33Z",
-    "updatedAt": "2026-09-02T09:49:16Z",
+    "updatedAt": "2026-09-02T10:55:10Z",
     "headSha": "9252e6f67437483b809519374bdf43cc52c35111"
   },
   "lane": "release_inclusion",
   "priority": "P1",
-  "question": "¿Debe este corte esperar a que todas las cohortes legacy, incluida Amazon, estén a cero, o se autoriza un primer despliegue parcial que preserve sus puentes?",
-  "rationale": "La elección determina qué compatibilidad de datos activos se acepta durante la ventana; el código no puede resolver por sí solo ese alcance operativo.",
+  "question": "¿Debe este corte esperar a fase B completa, incluida Amazon, o se aprueba una variante parcial que conserve sus puentes legacy?",
+  "rationale": "La elección define qué cohortes activas pueden dejar de ser seleccionables durante la ventana; no es una decisión que el código pueda inferir con seguridad.",
   "options": [
     {
       "title": "Esperar al corte completo",
-      "body": "Mantener los puentes hasta acreditar fase B a cero para todas las cohortes y mergear el corte completo después.",
+      "body": "Mantener todos los puentes hasta aportar recuentos recientes a cero y entonces integrar el cambio completo.",
       "recommended": true
     },
     {
-      "title": "Corte parcial sin Amazon",
-      "body": "Retirar solo las rutas ya drenadas y conservar temporalmente el puente Amazon con prueba específica de su cohorte.",
+      "title": "Autorizar un corte parcial",
+      "body": "Retirar únicamente las rutas acreditadas y conservar temporalmente los puentes de Amazon o de cualquier cohorte aún activa.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Esperar al corte completo",
-    "body": "Mantener los puentes hasta acreditar fase B a cero para todas las cohortes y mergear el corte completo después.",
+    "body": "Mantener todos los puentes hasta aportar recuentos recientes a cero y entonces integrar el cambio completo.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Su historial reciente conecta el backfill, los escritores V2 y los selectores que cambian en este corte.",
+    "reason": "Su historial conecta el backfill, los escritores V2 y las rutas de selección afectadas.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9018.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9018#issuecomment-5507848723",
-    "reviewedAt": "2026-09-02T09:59:35.982Z",
-    "mainSha": "c9bd4f27ed5798167e468641baf51fe6950a0c4f"
+    "reviewedAt": "2026-09-02T14:01:46.501Z",
+    "mainSha": "9b525e0aae70b41daab228e22437134fc1e70b6f"
   }
 }

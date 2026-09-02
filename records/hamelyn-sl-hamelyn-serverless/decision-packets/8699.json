@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-02T09:00:31.311Z",
-  "updatedAt": "2026-09-02T08:21:15Z",
+  "generatedAt": "2026-09-02T13:57:39.730Z",
+  "updatedAt": "2026-09-02T10:55:06Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,51 +15,45 @@
       "reporter:javier",
       "triage:needs-info",
       "P1",
-      "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-08-25T11:13:55Z",
-    "updatedAt": "2026-09-02T08:21:15Z"
+    "updatedAt": "2026-09-02T10:55:06Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué política deben tener los códigos localizados aún desconocidos y qué cohortes históricas se autorizan para backfill tras su clasificación?",
-  "rationale": "La evidencia separa errores permanentes de recuperaciones seguras, pero no permite deducir desde código qué códigos de negocio deben reintentarse ni qué volumen histórico puede mutarse.",
+  "question": "¿Qué política operativa deben recibir 18076 y 101078, y qué protocolo de backfill se autoriza para los espejos históricos sin clasificación?",
+  "rationale": "La implementación mecánica existe, pero la semántica de esos códigos y cualquier mutación masiva determinan si se reintentan, se aparcan o se reconcilian contra Amazon.",
   "options": [
     {
-      "title": "Aprobar tabla conservadora",
-      "body": "Clasificar catálogo, cumplimiento y marca como `PERMANENT`, mantener 8057 en su recuperación dedicada y posponer códigos ambiguos.",
+      "title": "Catálogo mínimo y canario",
+      "body": "Clasificar únicamente códigos verificados, mantener 101078 fuera de retry automático hasta muestreo vivo y ampliar el backfill solo tras métricas favorables.",
       "recommended": true
     },
     {
-      "title": "Validar códigos ambiguos en vivo",
-      "body": "Tomar una muestra SP-API por código antes de fijar su política y planificar después el backfill.",
+      "title": "Política terminal amplia",
+      "body": "Marcar ambos códigos como permanentes y dejar la cohorte para gestión manual, aceptando menor recuperación automática.",
       "recommended": false
     },
     {
-      "title": "Mantener UNKNOWN temporalmente",
-      "body": "No modificar la población histórica hasta disponer de taxonomía operativa y validación adicional.",
+      "title": "Posponer reclasificación histórica",
+      "body": "Conservar los registros actuales hasta reunir más muestras SP-API y decidir el catálogo completo en una revisión posterior.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar tabla conservadora",
-    "body": "Clasificar catálogo, cumplimiento y marca como `PERMANENT`, mantener 8057 en su recuperación dedicada y posponer códigos ambiguos.",
+    "title": "Catálogo mínimo y canario",
+    "body": "Clasificar únicamente códigos verificados, mantener 101078 fuera de retry automático hasta muestreo vivo y ampliar el backfill solo tras métricas favorables.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "HamelynDev",
-    "reason": "El comentario de triage solicita expresamente esta aprobación y su historial reciente cubre la política Amazon compartida.",
+    "person": "MiguelHamelyn",
+    "reason": "Su trabajo reciente conecta la ruta V2, el parseo de códigos y la operación Amazon que condicionan esta decisión.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8699.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8699#issuecomment-5410239741",
-    "reviewedAt": "2026-09-02T09:00:31.311Z",
-    "mainSha": "c9bd4f27ed5798167e468641baf51fe6950a0c4f"
+    "reviewedAt": "2026-09-02T13:57:39.730Z",
+    "mainSha": "9b525e0aae70b41daab228e22437134fc1e70b6f"
   }
 }
