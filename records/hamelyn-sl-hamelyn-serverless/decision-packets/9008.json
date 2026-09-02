@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-02T09:29:37.156Z",
-  "updatedAt": "2026-09-02T09:25:14Z",
+  "generatedAt": "2026-09-02T13:19:54.946Z",
+  "updatedAt": "2026-09-02T10:54:44Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,48 +13,42 @@
       "app:marketplace",
       "feature",
       "triage:needs-info",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision",
-      "marketplace-v2",
       "P1",
-      "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro"
+      "clawsweeper:needs-product-decision",
+      "marketplace-v2"
     ],
     "createdAt": "2026-09-02T08:07:29Z",
-    "updatedAt": "2026-09-02T09:25:14Z"
+    "updatedAt": "2026-09-02T10:54:44Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿El primer corte debe excluir temporalmente Amazon mientras exista su cohorte `REPORT_INACTIVE`, o debe esperar a que todas las cohortes legacy estén a cero?",
-  "rationale": "Ambas opciones cambian el alcance de una retirada de compatibilidad en producción; el código no puede decidir si se acepta un corte parcial.",
+  "question": "¿El primer corte V2-only debe esperar a que Amazon también llegue a cero, o debe conservar temporalmente su puente `REPORT_INACTIVE` mientras se retiran los demás?",
+  "rationale": "La decisión determina qué cohortes seguirán siendo seleccionables durante la ventana; el código no puede establecer esa tolerancia operativa.",
   "options": [
     {
-      "title": "Esperar al corte completo",
-      "body": "Mantener todos los puentes hasta que fase B deje a cero las cohortes legacy, incluida Amazon.",
+      "title": "Esperar a cero global",
+      "body": "Mantener todos los puentes hasta que fase B deje a cero las cohortes legacy de todos los marketplaces.",
       "recommended": true
     },
     {
-      "title": "Cortar sin Amazon",
-      "body": "Retirar solo los criterios de marketplaces ya drenados y conservar temporalmente el puente Amazon con una prueba específica.",
+      "title": "Corte parcial sin Amazon",
+      "body": "Retirar solo los criterios ya drenados y conservar temporalmente el puente de Amazon con cobertura específica.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Esperar al corte completo",
-    "body": "Mantener todos los puentes hasta que fase B deje a cero las cohortes legacy, incluida Amazon.",
+    "title": "Esperar a cero global",
+    "body": "Mantener todos los puentes hasta que fase B deje a cero las cohortes legacy de todos los marketplaces.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Está asignado a esta transición y su historial reciente conecta el backfill, los writers V2 y los selectores afectados.",
+    "reason": "Está asignado a la transición y su historial conecta el backfill, los writers V2 y los selectores afectados.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9008.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9008#issuecomment-5506578303",
-    "reviewedAt": "2026-09-02T09:29:37.156Z",
-    "mainSha": "c9bd4f27ed5798167e468641baf51fe6950a0c4f"
+    "reviewedAt": "2026-09-02T13:19:54.946Z",
+    "mainSha": "9b525e0aae70b41daab228e22437134fc1e70b6f"
   }
 }

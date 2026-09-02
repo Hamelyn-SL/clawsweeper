@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-02T07:58:18.324Z",
-  "updatedAt": "2026-09-02T07:50:46Z",
+  "generatedAt": "2026-09-02T13:21:27.891Z",
+  "updatedAt": "2026-09-02T10:54:47Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,47 +14,42 @@
       "app:supply",
       "feature",
       "triage:needs-info",
-      "reporter:daniellopez",
+      "clawsweeper:needs-product-decision",
       "P2",
-      "impact:other",
-      "issue-rating: ➖ n/a",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "reporter:daniellopez"
     ],
     "createdAt": "2026-08-31T10:14:50Z",
-    "updatedAt": "2026-09-02T07:50:46Z"
+    "updatedAt": "2026-09-02T10:54:47Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué señales determinan `REVISAR`, `GRANEL`, `RECICLAR` e `INIDENTIFICABLE`, y la caja `G-*` reutiliza `INVENTORY` o requiere un ciclo propio con apertura, cierre, conteo y correcciones?",
-  "rationale": "La respuesta fija semántica operativa y datos persistidos; no puede deducirse de forma segura del flujo actual ni del adjunto sin validación de Producto y Operaciones.",
+  "question": "¿Qué reglas asignan `REVISAR`, `GRANEL`, `RECICLAR` e `INIDENTIFICABLE`, y la caja `G-*` necesita un ciclo propio o extiende `INVENTORY`?",
+  "rationale": "La respuesta define semántica operativa, trazabilidad y datos persistidos; el código actual no permite deducirla sin convertir una decisión de Producto y Operaciones en comportamiento irreversible.",
   "options": [
     {
-      "title": "Contrato propio de caja G-*",
-      "body": "Modelar una entidad o ciclo persistido específico para apertura, conteo, cierre y correcciones de granel.",
+      "title": "Ciclo propio para `G-*`",
+      "body": "Modelar apertura, productos, conteo, cierre y correcciones como un ciclo persistido específico de granel.",
       "recommended": true
     },
     {
-      "title": "Reutilizar INVENTORY",
-      "body": "Extender la orden `INVENTORY` existente con los campos y transiciones necesarios para expresar el nuevo destino.",
+      "title": "Extender `INVENTORY`",
+      "body": "Reutilizar la orden existente solo si sus estados y campos pueden expresar de forma inequívoca el ciclo completo de granel.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Contrato propio de caja G-*",
-    "body": "Modelar una entidad o ciclo persistido específico para apertura, conteo, cierre y correcciones de granel.",
+    "title": "Ciclo propio para `G-*`",
+    "body": "Modelar apertura, productos, conteo, cierre y correcciones como un ciclo persistido específico de granel.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "banosdavidhamelyn",
-    "reason": "Está asignado actualmente y ha mantenido recientemente el flujo de revisión afectado.",
+    "reason": "Es el asignado actual y ha contribuido recientemente al flujo y al modelo de revisión afectados.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8929.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8929#issuecomment-5477054382",
-    "reviewedAt": "2026-09-02T07:58:18.324Z",
-    "mainSha": "e36ff4c81e2e6a3d2b4ebffe2645d34444ad37c4"
+    "reviewedAt": "2026-09-02T13:21:27.891Z",
+    "mainSha": "9b525e0aae70b41daab228e22437134fc1e70b6f"
   }
 }
