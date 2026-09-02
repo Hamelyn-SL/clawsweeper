@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-02T07:17:56.603Z",
-  "updatedAt": "2026-09-02T07:04:20Z",
+  "generatedAt": "2026-09-02T09:07:29.175Z",
+  "updatedAt": "2026-09-02T07:31:12Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -10,41 +10,45 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8997",
     "state": "open",
     "labels": [
-      "size/L"
+      "size/L",
+      "P2",
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 other",
+      "rating: 🥉 bronze"
     ],
     "createdAt": "2026-09-02T06:06:50Z",
-    "updatedAt": "2026-09-02T07:04:20Z",
+    "updatedAt": "2026-09-02T07:31:12Z",
     "headSha": "f41fbe2b965236fcfe10da53816591bf928e0d2f"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué campo o regla verificable autoriza que una imagen concreta de Bunny pueda republicarse en AbeBooks?",
-  "rationale": "El modelo actual sólo registra presencia y almacenamiento técnico; decidir qué imágenes pueden distribuirse externamente requiere criterio de Marketplace/Producto.",
+  "question": "¿Qué campo, fuente o regla debe autorizar de forma verificable que una imagen se republice en AbeBooks?",
+  "rationale": "`hasBunnyImage` demuestra disponibilidad técnica, pero los importadores actuales lo activan para imágenes de terceros y no existe una política de derechos por marketplace.",
   "options": [
     {
-      "title": "Pausar hasta definir la elegibilidad",
-      "body": "Mantener la PR en borrador y no publicar imágenes hasta acordar una fuente de verdad verificable.",
+      "title": "Definir elegibilidad explícita",
+      "body": "Aprobar una fuente de verdad persistida o una allowlist verificable y ajustar la PR para enviar imágenes solo cuando esa regla lo permita.",
       "recommended": true
     },
     {
-      "title": "Limitarla a una fuente aprobada",
-      "body": "Si existe una fuente ya autorizada, implementar una selección explícita y probada únicamente contra esa fuente.",
+      "title": "Posponer el envío de imágenes",
+      "body": "Mantener el comportamiento actual hasta que Marketplace y Producto puedan aportar una regla de autorización operativa.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Pausar hasta definir la elegibilidad",
-    "body": "Mantener la PR en borrador y no publicar imágenes hasta acordar una fuente de verdad verificable.",
+    "title": "Definir elegibilidad explícita",
+    "body": "Aprobar una fuente de verdad persistida o una allowlist verificable y ajustar la PR para enviar imágenes solo cuando esa regla lo permita.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Es el principal contribuidor reciente de la integración y puede concretar la implementación tras recibir la regla de negocio.",
+    "reason": "Es la persona más vinculada al flujo V2 de AbeBooks y puede concretar el límite técnico de la decisión.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8997.md",
-    "reviewedAt": "2026-09-02T07:17:56.603Z",
-    "mainSha": "c403cf0f0e23bfd0a91430c174602fa3f7fbe425"
+    "reviewedAt": "2026-09-02T09:07:29.175Z",
+    "mainSha": "c9bd4f27ed5798167e468641baf51fe6950a0c4f"
   }
 }

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-02T09:06:30.220Z",
+  "generatedAt": "2026-09-02T09:04:49.826Z",
   "updatedAt": "2026-09-02T08:41:43Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -14,48 +14,41 @@
       "source:admin-panel",
       "app:infrastructure",
       "triage:queued",
-      "reporter:JavierHamelyn",
       "P1",
-      "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "reporter:JavierHamelyn"
     ],
     "createdAt": "2026-09-02T08:41:30Z",
     "updatedAt": "2026-09-02T08:41:43Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe recuperarse la memoria mediante la importación legada desde Lyno o sustituirse por una semilla explícita y revisada de las canónicas actuales?",
-  "rationale": "Ambas rutas restauran las escrituras, pero difieren en qué firmas históricas se conservan y cuándo una canónica cerrada puede reabrirse.",
+  "question": "¿Debe restaurarse la baseline legada completa mediante el importador original o sustituirse por una semilla nueva que trate las canónicas históricas como cerradas?",
+  "rationale": "Ambas vías desbloquean escrituras, pero conservan políticas distintas de deduplicación y reapertura de incidencias históricas.",
   "options": [
     {
-      "title": "Importar y revalidar la baseline",
-      "body": "Ejecutar el importador idempotente existente contra producción y verificar los estados actuales antes del primer tick con acciones.",
+      "title": "Importar la baseline verificada",
+      "body": "Ejecutar el importador one-time con hashes comprobados y revisar los primeros runs antes de considerar recuperado el servicio.",
       "recommended": true
     },
     {
-      "title": "Semilla explícita revisada",
-      "body": "Implementar una semilla de producción con las firmas que deban seguir deduplicándose y con las canónicas cerradas revisadas.",
+      "title": "Sembrar un estado nuevo",
+      "body": "Versionar una semilla explícita con canónicas cerradas y aceptar que no se conserva la correspondencia completa de firmas legadas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Importar y revalidar la baseline",
-    "body": "Ejecutar el importador idempotente existente contra producción y verificar los estados actuales antes del primer tick con acciones.",
+    "title": "Importar la baseline verificada",
+    "body": "Ejecutar el importador one-time con hashes comprobados y revisar los primeros runs antes de considerar recuperado el servicio.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es el principal contribuidor histórico del watcher y documentó tanto el corte como el importador one-time.",
+    "reason": "Su historial reciente cubre la migración y el despacho de los watchers, además de haber documentado el paso operativo pendiente.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9013.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9013#issuecomment-5507208698",
-    "reviewedAt": "2026-09-02T09:06:30.220Z",
+    "reviewedAt": "2026-09-02T09:04:49.826Z",
     "mainSha": "c9bd4f27ed5798167e468641baf51fe6950a0c4f"
   }
 }

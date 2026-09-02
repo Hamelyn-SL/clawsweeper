@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-26T16:43:48.152Z",
-  "updatedAt": "2026-08-26T16:38:43Z",
+  "generatedAt": "2026-09-02T09:00:31.311Z",
+  "updatedAt": "2026-09-02T08:21:15Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -16,50 +16,49 @@
       "triage:needs-info",
       "P1",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-08-25T11:13:55Z",
-    "updatedAt": "2026-08-26T16:38:43Z"
+    "updatedAt": "2026-09-02T08:21:15Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe Marketplace aprobar `PERMANENT` para catálogo/compliance/marca, `TRANSIENT` para `8005` y mantener `8057` fuera de la recuperación hasta validarlo en SP-API viva?",
-  "rationale": "El código permite implementar la tabla, pero decidir qué códigos pueden desencadenar retirada y recreación afecta a ofertas reales y no se deduce con seguridad de los textos localizados.",
+  "question": "¿Qué política deben tener los códigos localizados aún desconocidos y qué cohortes históricas se autorizan para backfill tras su clasificación?",
+  "rationale": "La evidencia separa errores permanentes de recuperaciones seguras, pero no permite deducir desde código qué códigos de negocio deben reintentarse ni qué volumen histórico puede mutarse.",
   "options": [
     {
-      "title": "Aprobar matriz conservadora",
-      "body": "Clasificar códigos estructurales como `PERMANENT`, activar únicamente `8005` tras prueba focalizada y conservar `8057` fuera del retry.",
+      "title": "Aprobar tabla conservadora",
+      "body": "Clasificar catálogo, cumplimiento y marca como `PERMANENT`, mantener 8057 en su recuperación dedicada y posponer códigos ambiguos.",
       "recommended": true
     },
     {
-      "title": "Validar ambos códigos primero",
-      "body": "Posponer cualquier recuperación de `8005` y `8057` hasta reunir respuestas SP-API vivas representativas.",
+      "title": "Validar códigos ambiguos en vivo",
+      "body": "Tomar una muestra SP-API por código antes de fijar su política y planificar después el backfill.",
       "recommended": false
     },
     {
-      "title": "Tratar toda la cohorte como reintentable",
-      "body": "Reactivar todos los `UNKNOWN`, aceptando el riesgo de repetir bloqueos permanentes o retirar ofertas válidas.",
+      "title": "Mantener UNKNOWN temporalmente",
+      "body": "No modificar la población histórica hasta disponer de taxonomía operativa y validación adicional.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar matriz conservadora",
-    "body": "Clasificar códigos estructurales como `PERMANENT`, activar únicamente `8005` tras prueba focalizada y conservar `8057` fuera del retry.",
+    "title": "Aprobar tabla conservadora",
+    "body": "Clasificar catálogo, cumplimiento y marca como `PERMANENT`, mantener 8057 en su recuperación dedicada y posponer códigos ambiguos.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "Su historial reciente sobre la clasificación de reintentos le conecta directamente con la matriz de políticas propuesta.",
+    "person": "HamelynDev",
+    "reason": "El comentario de triage solicita expresamente esta aprobación y su historial reciente cubre la política Amazon compartida.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8699.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8699#issuecomment-5410239741",
-    "reviewedAt": "2026-08-26T16:43:48.152Z",
-    "mainSha": "e1a5299a04a34e1460aa4f2d85d69ee05bdf5570"
+    "reviewedAt": "2026-09-02T09:00:31.311Z",
+    "mainSha": "c9bd4f27ed5798167e468641baf51fe6950a0c4f"
   }
 }
