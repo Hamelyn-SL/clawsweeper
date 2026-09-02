@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-17T21:34:59.699Z",
-  "updatedAt": "2026-08-17T20:38:06Z",
+  "generatedAt": "2026-09-02T11:59:01.104Z",
+  "updatedAt": "2026-09-02T11:51:18Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -10,50 +10,41 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8488",
     "state": "open",
     "labels": [
-      "rating: 🥉 bronze",
-      "status: 📣 needs proof",
-      "P2",
-      "merge-risk: 🚨 compatibility"
+      "P2"
     ],
     "createdAt": "2026-08-17T14:10:17Z",
-    "updatedAt": "2026-08-17T20:38:06Z",
+    "updatedAt": "2026-09-02T11:51:18Z",
     "headSha": "5600b24bef9dc643523241e341a56ecac769ec23"
   },
-  "lane": "product_direction",
+  "lane": "manual_review",
   "priority": "P2",
-  "question": "¿Debe esta PR continuar como hardening independiente de Cache Components, sin presentarse como la corrección del `#418` de Ecommerce?",
-  "rationale": "La incidencia vinculada invalida la causa atribuida, pero el desplazamiento de la lectura por visitante podría seguir ser una mejora intencional que requiere confirmación del responsable del área.",
+  "question": "¿Debe mantenerse esta mejora preventiva de la frontera de caché en una rama o incidencia separada, aunque no explique el `#418` de la incidencia enlazada?",
+  "rationale": "El código vigente conserva la ruta que se quiere cambiar, pero la investigación enlazada descarta que la promo strip sea la causa del error observado.",
   "options": [
     {
-      "title": "Separar y validar el hardening",
-      "body": "Eliminar el cierre de la incidencia, describir el objetivo de caché independiente y aportar una prueba real de variantes por visitante.",
+      "title": "Separar y validar la mejora",
+      "body": "Retirar el cierre y la afirmación causal, actualizar la rama contra `dev` y demostrar con una traza por visitante que la frontera actual es incorrecta.",
       "recommended": true
     },
     {
-      "title": "Pausar hasta aislar el mismatch",
-      "body": "Mantener la PR sin merge hasta que una reproducción en desarrollo conecte este cambio con el `#418` observado.",
-      "recommended": false
-    },
-    {
-      "title": "Descartar el cambio",
-      "body": "Cerrar la PR si no existe una necesidad independiente de reforzar esa frontera de caché.",
+      "title": "Acotar la rama al bug confirmado",
+      "body": "Cerrar esta línea de trabajo y mantener la investigación de hidratación en la incidencia canónica, sin atribuirla a la promo strip.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Separar y validar el hardening",
-    "body": "Eliminar el cierre de la incidencia, describir el objetivo de caché independiente y aportar una prueba real de variantes por visitante.",
+    "title": "Separar y validar la mejora",
+    "body": "Retirar el cierre y la afirmación causal, actualizar la rama contra `dev` y demostrar con una traza por visitante que la frontera actual es incorrecta.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su historial concentra la introducción y la revisión posterior de las fronteras Cache Components afectadas.",
+    "reason": "Su historial cubre la decisión original de Cache Components y la revisión posterior de sus fronteras.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8488.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8488#issuecomment-5319904383",
-    "reviewedAt": "2026-08-17T21:34:59.699Z",
-    "mainSha": "fc7c48dd1ecff251de1b9d9537476384cbf58f6a"
+    "reviewedAt": "2026-09-02T11:59:01.104Z",
+    "mainSha": "9f2c29d350ecdeaed7d4507c3beb9e0f9f1707d0"
   }
 }
