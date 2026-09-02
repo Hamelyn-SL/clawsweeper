@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-02T03:58:10.900Z",
+  "generatedAt": "2026-09-02T03:59:16.211Z",
   "updatedAt": "2026-09-02T03:47:48Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -13,47 +13,45 @@
       "bug",
       "app:marketplace",
       "triage:pr-opened",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:source-repro",
-      "issue-rating: 💎 diamond",
-      "P2",
       "impact:other",
-      "clawsweeper:linked-pr-open",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "P2",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-09-02T02:24:21Z",
     "updatedAt": "2026-09-02T03:47:48Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué firmas de rechazo de eBay deben considerarse terminales y cuándo debe detenerse el recovery de confirmación de envío?",
-  "rationale": "El fallo de observabilidad tiene una reparación acotada, pero convertir un 400 en terminal cambia la política operativa y puede impedir recuperaciones legítimas.",
+  "question": "¿Debe esta incidencia exigir también una regla terminal exacta para eBay antes de cerrarse, o separar esa política tras observar la firma real persistida?",
+  "rationale": "Un HTTP 400 puede ser recuperable; elegir una firma o umbral terminal sin el mensaje real podría bloquear confirmaciones que aún pueden completarse.",
   "options": [
     {
-      "title": "Añadir firmas confirmadas",
-      "body": "Fusionar el diagnóstico y añadir al patrón terminal solo los `errorId/message` que eBay confirme como no recuperables.",
+      "title": "Separar la clasificación terminal",
+      "body": "Integrar primero el diagnóstico y abrir o mantener un seguimiento específico al observar la firma real de eBay.",
       "recommended": true
     },
     {
-      "title": "Mantener todos los 400 reintentables",
-      "body": "Conservar el recovery actual hasta disponer de más muestras, aceptando reintentos adicionales en casos permanentes.",
+      "title": "Definir una política preventiva",
+      "body": "Acordar ahora un umbral de reintentos para todos los 400 de eBay, aceptando el riesgo de bloquear errores recuperables.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Añadir firmas confirmadas",
-    "body": "Fusionar el diagnóstico y añadir al patrón terminal solo los `errorId/message` que eBay confirme como no recuperables.",
+    "title": "Separar la clasificación terminal",
+    "body": "Integrar primero el diagnóstico y abrir o mantener un seguimiento específico al observar la firma real de eBay.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "HamelynDev",
-    "reason": "La PR abierta y la corrección previa de recuperación sitúan a HamelynDev como el mejor punto de coordinación para la decisión.",
+    "reason": "La PR abierta y el cambio previo de recuperación terminal conectan directamente con ambas partes de la decisión.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8991.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8991#issuecomment-5503608088",
-    "reviewedAt": "2026-09-02T03:58:10.900Z",
+    "reviewedAt": "2026-09-02T03:59:16.211Z",
     "mainSha": "6feedad9d3b0414d0773798d2571d2aad65dac58"
   }
 }
