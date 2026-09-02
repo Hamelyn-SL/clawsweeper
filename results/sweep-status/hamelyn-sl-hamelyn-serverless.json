@@ -3,23 +3,97 @@
   "slug": "hamelyn-sl-hamelyn-serverless",
   "display_name": "Hamelyn Serverless",
   "target_repo": "hamelyn-sl/hamelyn-serverless",
-  "state": "Review comments checked",
-  "detail": "Checked selected durable Codex review comments and synced missing or stale comments. Synced: 11. Item numbers: 8462,8485,8486,8631,8651,8699,8914,8948,8974,8987,8992,9018,9028,9029.",
-  "run_url": "https://github.com/Hamelyn-SL/clawsweeper/actions/runs/33638351786",
-  "planned_count": 14,
-  "planned_capacity": 30,
-  "planned_shards": 10,
-  "active_codex": 0,
-  "due_backlog": 14,
-  "oldest_unreviewed_at": "2026-09-02T13:41:48Z",
-  "capacity_reason": "under capacity: due backlog below planned capacity",
+  "state": "Apply comments synced",
+  "detail": "Comment-only apply checkpoint 1 finished. Synced durable review comments: 11. Result records: 14. Item numbers: 8462,8485,8486,8631,8651,8699,8914,8948,8974,8987,8992,9018,9028,9029. Next cursor: none.",
+  "run_url": "https://github.com/Hamelyn-SL/clawsweeper/actions/runs/33639509358",
+  "planned_count": null,
+  "planned_capacity": null,
+  "planned_shards": null,
+  "active_codex": null,
+  "due_backlog": null,
+  "oldest_unreviewed_at": null,
+  "capacity_reason": null,
   "inherited_label_cleanups": null,
   "self_heal_conflict_repairs": null,
   "failed_review_retries": null,
   "failed_review_retry_exhaustions": null,
   "bot_owned_proof_decisions_requested": null,
   "bot_owned_proof_dispatches": null,
-  "apply_health": null,
+  "apply_health": {
+    "schema_version": 1,
+    "generated_at": "2026-09-02T14:04:24.893Z",
+    "target_repo": "Hamelyn-SL/hamelyn-serverless",
+    "mode": "comment_sync",
+    "status": "ok",
+    "summary": "14/1000 processed; 0 closed, 11 comments synced, 3 skipped; no cursor recorded.",
+    "processed": 14,
+    "processed_limit": 1000,
+    "close_limit": 0,
+    "closed": 0,
+    "comment_synced": 11,
+    "skipped": 3,
+    "skip_reasons": {
+      "skipped_open_closing_pr": 1,
+      "skipped_stale_review_comment_sync": 2
+    },
+    "lanes": {
+      "closure": {
+        "processed": 0,
+        "closed": 0,
+        "comment_synced": 0,
+        "skipped": 0,
+        "skip_reasons": {}
+      },
+      "comment_sync": {
+        "processed": 14,
+        "closed": 0,
+        "comment_synced": 11,
+        "skipped": 3,
+        "skip_reasons": {
+          "skipped_open_closing_pr": 1,
+          "skipped_stale_review_comment_sync": 2
+        }
+      }
+    },
+    "next_actions": [
+      {
+        "reason": "skipped_stale_review_comment_sync",
+        "count": 2,
+        "bucket": "review_refresh",
+        "owner": "clawsweeper",
+        "retryable": true,
+        "label": "Refresh review state",
+        "summary": "The durable review comment is newer than the local review report.",
+        "next_step": "Queue a fresh review instead of overwriting the newer durable comment."
+      },
+      {
+        "reason": "skipped_open_closing_pr",
+        "count": 1,
+        "bucket": "defer_until_closing_pr",
+        "owner": "github",
+        "retryable": false,
+        "label": "Wait for closing PR",
+        "summary": "The item appears covered by a pull request that is still open.",
+        "next_step": "Defer until the linked closing PR merges, closes, or changes state."
+      }
+    ],
+    "next_action_buckets": {
+      "defer_until_closing_pr": 1,
+      "review_refresh": 2
+    },
+    "cycle": {
+      "basis": "not_close_cursor",
+      "apply_ready_count": null,
+      "window_size": null,
+      "estimated_full_cycle_windows": null,
+      "estimated_full_cycle_minutes": null,
+      "scheduled_interval_minutes": null,
+      "label": "Cycle estimate is only reported for scheduled close cursor windows."
+    },
+    "attention_reasons": [],
+    "cursor_required": false,
+    "cursor": null
+  },
   "last_close_apply_health": null,
-  "updated_at": "2026-09-02T14:04:07.287Z"
+  "updated_at": "2026-09-02T14:04:25.413Z"
 }
