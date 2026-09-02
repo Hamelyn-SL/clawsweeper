@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-02T09:04:49.826Z",
-  "updatedAt": "2026-09-02T08:41:43Z",
+  "generatedAt": "2026-09-02T10:56:12.921Z",
+  "updatedAt": "2026-09-02T10:04:10Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,49 +13,48 @@
       "bug",
       "source:admin-panel",
       "app:infrastructure",
-      "triage:queued",
-      "reporter:JavierHamelyn",
+      "triage:blocked",
       "P1",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond",
+      "reporter:JavierHamelyn"
     ],
     "createdAt": "2026-09-02T08:41:30Z",
-    "updatedAt": "2026-09-02T08:41:43Z"
+    "updatedAt": "2026-09-02T10:04:10Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe restaurarse la baseline legada completa mediante el importador original o sustituirse por una semilla nueva que trate las canónicas históricas como cerradas?",
-  "rationale": "Ambas vías desbloquean escrituras, pero conservan políticas distintas de deduplicación y reapertura de incidencias históricas.",
+  "question": "¿Se conserva el contrato de firmas legadas mediante la importación completa, o se aprueba explícitamente una nueva semilla con semántica distinta?",
+  "rationale": "Ambas alternativas desbloquean el servicio, pero solo la importación conserva la identidad histórica que usa la deduplicación y la reapertura.",
   "options": [
     {
       "title": "Importar la baseline verificada",
-      "body": "Ejecutar el importador one-time con hashes comprobados y revisar los primeros runs antes de considerar recuperado el servicio.",
+      "body": "Recuperar el importador one-time, comprobar sus hashes, importar 28+6 firmas y validar los primeros runs productivos.",
       "recommended": true
     },
     {
-      "title": "Sembrar un estado nuevo",
-      "body": "Versionar una semilla explícita con canónicas cerradas y aceptar que no se conserva la correspondencia completa de firmas legadas.",
+      "title": "Aprobar una semilla nueva",
+      "body": "Definir y revisar una semilla explícita que abandone la correspondencia completa con las firmas legadas.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Importar la baseline verificada",
-    "body": "Ejecutar el importador one-time con hashes comprobados y revisar los primeros runs antes de considerar recuperado el servicio.",
+    "body": "Recuperar el importador one-time, comprobar sus hashes, importar 28+6 firmas y validar los primeros runs productivos.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su historial reciente cubre la migración y el despacho de los watchers, además de haber documentado el paso operativo pendiente.",
+    "reason": "Su historial cubre la migración, el paso post-merge documentado y el dispatcher de los watchers.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9013.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9013#issuecomment-5507208698",
-    "reviewedAt": "2026-09-02T09:04:49.826Z",
-    "mainSha": "c9bd4f27ed5798167e468641baf51fe6950a0c4f"
+    "reviewedAt": "2026-09-02T10:56:12.921Z",
+    "mainSha": "9220c7fc5bd5c7e3b77dd3e4b4bd090f86f37df4"
   }
 }
