@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-01T09:50:51.704Z",
-  "updatedAt": "2026-09-01T09:42:22Z",
+  "generatedAt": "2026-09-02T13:28:51.713Z",
+  "updatedAt": "2026-09-02T10:54:44Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,41 +12,47 @@
     "labels": [
       "bug",
       "app:marketplace",
-      "triage:running",
+      "triage:needs-info",
+      "clawsweeper:needs-product-decision",
       "P2"
     ],
     "createdAt": "2026-09-01T09:32:36Z",
-    "updatedAt": "2026-09-01T09:42:22Z"
+    "updatedAt": "2026-09-02T10:54:44Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debemos buscar un cierre terminal soportado por Vercel o mantener los estados del proveedor y corregir solo la interpretación local de runs antiguos?",
-  "rationale": "El código solo consume una API de lectura y la elección determina si la solución pertenece a instrumentación propia, a soporte del proveedor o al informe del supervisor.",
+  "question": "¿Debe la flota añadir reconciliación automática de Agent Runs antiguos o mantener el supervisor como detector hasta disponer de timelines posteriores al despliegue y un contrato de cierre remoto seguro?",
+  "rationale": "El código actual detecta estados antiguos, pero no expone una operación de cierre y tratar la edad como prueba de inactividad puede interrumpir sesiones válidas.",
   "options": [
     {
-      "title": "Confirmar API de cierre de Vercel",
-      "body": "Validar una operación soportada y, si existe, añadir reconciliación con señales de actividad y causa preservada.",
+      "title": "Validar antes de automatizar",
+      "body": "Recopilar los `wrun_…` posteriores al despliegue y sus últimos eventos antes de cambiar el comportamiento de terminalización.",
       "recommended": true
     },
     {
-      "title": "Normalizar solo el informe local",
-      "body": "Mantener inalterado el estado remoto y excluir o clasificar runs históricos en `runs-supervisor` como observabilidad no terminal.",
+      "title": "Diseñar reconciliación conservadora",
+      "body": "Patrocinar un cierre automático solo si la API remota permite comprobar actividad reciente y conservar una causa terminal auditable.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener solo observabilidad",
+      "body": "Conservar la detección y el aviso manual si no existe una operación remota segura para diferenciar sesiones activas de abandonadas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Confirmar API de cierre de Vercel",
-    "body": "Validar una operación soportada y, si existe, añadir reconciliación con señales de actividad y causa preservada.",
+    "title": "Validar antes de automatizar",
+    "body": "Recopilar los `wrun_…` posteriores al despliegue y sus últimos eventos antes de cambiar el comportamiento de terminalización.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Ha llevado la instrumentación y el endurecimiento más reciente de la app de agentes.",
+    "reason": "El historial reciente le conecta directamente con el contrato de dispatch y la auditoría de Agent Runs.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8975.md",
-    "reviewedAt": "2026-09-01T09:50:51.704Z",
-    "mainSha": "f73be3a322eb5af0748a78ee391d35b83a64d6d0"
+    "reviewedAt": "2026-09-02T13:28:51.713Z",
+    "mainSha": "9b525e0aae70b41daab228e22437134fc1e70b6f"
   }
 }
