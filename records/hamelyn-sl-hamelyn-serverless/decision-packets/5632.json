@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-04T23:19:06.335Z",
-  "updatedAt": "2026-08-04T22:59:26Z",
+  "generatedAt": "2026-09-02T18:50:15.411Z",
+  "updatedAt": "2026-09-02T18:30:43Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,55 +13,44 @@
       "codex",
       "bug",
       "app:marketplace",
-      "triage:no-change",
-      "origin:watcher",
-      "mk:amazon",
+      "triage:queued",
       "P1",
-      "impact:crash-loop",
-      "issue-rating: ⚪ platinum",
-      "clawsweeper:needs-live-repro",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "origin:watcher",
+      "mk:amazon"
     ],
     "createdAt": "2026-05-03T01:34:14Z",
-    "updatedAt": "2026-08-04T22:59:26Z"
+    "updatedAt": "2026-09-02T18:30:43Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué política debe aplicar Amazon COM al agotar su presupuesto: abortar todas las fases, conservar las ya iniciadas y reintentar, o dividir el trabajo en ejecuciones más pequeñas?",
-  "rationale": "El código puede imponer un límite, pero solo el equipo puede decidir la semántica segura de operaciones parciales y su recuperación.",
+  "question": "¿Debe el motor común cortar y cancelar un cron al agotar un presupuesto previo a Vercel, aceptando y registrando estados parciales de las fases Amazon?",
+  "rationale": "La corrección afecta la completitud de sincronizaciones comerciales; los límites de conexión ya existen y el precedente de socket timeout fue descartado por no resolver esa semántica.",
   "options": [
     {
-      "title": "Presupuesto compartido con reintento",
-      "body": "Añadir un deadline abortable común y reencolar únicamente fases no terminadas con métricas de presupuesto restante.",
+      "title": "Presupuesto global observable",
+      "body": "Definir un deadline común, cancelación cooperativa y un resultado de ejecución parcial por fase antes de aplicarlo a Amazon V2.",
       "recommended": true
     },
     {
-      "title": "Dividir el cron",
-      "body": "Separar las fases pesadas en rutas o colas con presupuestos independientes para reducir el radio de una ejecución retenida.",
-      "recommended": false
-    },
-    {
-      "title": "Mantener el comportamiento",
-      "body": "Conservar las fases paralelas actuales y aceptar el riesgo residual mientras se recoge nueva evidencia de producción.",
+      "title": "Diagnóstico por fases primero",
+      "body": "Mantener la ejecución actual mientras se obtienen trazas de fases e índices para identificar una consulta concreta antes de introducir cancelación global.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Presupuesto compartido con reintento",
-    "body": "Añadir un deadline abortable común y reencolar únicamente fases no terminadas con métricas de presupuesto restante.",
+    "title": "Presupuesto global observable",
+    "body": "Definir un deadline común, cancelación cooperativa y un resultado de ejecución parcial por fase antes de aplicarlo a Amazon V2.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Ya documentó que la solución debe vivir en la capa común y conoce la normalización de las rutas Amazon.",
-    "confidence": "medium"
+    "reason": "Sus comentarios previos fijan el enfoque transversal y su historial reciente cubre rutas y programación Amazon.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5632.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5632#issuecomment-4971269470",
-    "reviewedAt": "2026-08-04T23:19:06.335Z",
-    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
+    "reviewedAt": "2026-09-02T18:50:15.411Z",
+    "mainSha": "ffd90286dac2d39d356b520899b76b13f8465698"
   }
 }
