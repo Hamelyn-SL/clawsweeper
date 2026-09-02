@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-02T20:47:31.017Z",
-  "updatedAt": "2026-09-02T20:30:41Z",
+  "generatedAt": "2026-09-02T23:33:17.913Z",
+  "updatedAt": "2026-09-02T23:03:40Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,44 +13,43 @@
       "codex",
       "bug",
       "app:marketplace",
-      "triage:queued",
-      "marketplace-crons",
+      "triage:needs-info",
+      "clawsweeper:needs-product-decision",
       "P2",
-      "clawsweeper:needs-product-decision"
+      "marketplace-crons"
     ],
     "createdAt": "2026-09-02T20:30:41Z",
-    "updatedAt": "2026-09-02T20:30:41Z"
+    "updatedAt": "2026-09-02T23:03:40Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe TodoColección retener temporalmente los stocks sin `product.image` hasta que catálogo los enriquezca, o permitir su publicación sin foto?",
-  "rationale": "El código ya detecta el caso, pero elegir entre disponibilidad inmediata y calidad del anuncio determina el estado, el reintento y la observabilidad correctos.",
+  "question": "¿TodoColección debe retener los stocks cuyo producto no tiene `image`, o aceptar la publicación degradada sin foto?",
+  "rationale": "El código confirma ambos efectos posibles, pero no puede decidir el equilibrio comercial entre cobertura de catálogo y calidad mínima del anuncio.",
   "options": [
     {
-      "title": "Retener hasta disponer de imagen",
-      "body": "No crear el listing sin foto y reintentarlo mediante una ruta controlada cuando exista metadata de imagen.",
+      "title": "Retener hasta tener imagen",
+      "body": "Detener o aparcar solo el SKU sin `product.image` y registrar un resultado recuperable para que catálogo complete la metadata.",
       "recommended": true
     },
     {
-      "title": "Mantener publicación degradada",
-      "body": "Seguir publicando sin foto, pero rebajar el aviso a telemetría no alertable y documentar ese comportamiento.",
+      "title": "Permitir publicación degradada",
+      "body": "Mantener el alta sin foto y convertir el aviso repetitivo en telemetría agregada que no abra incidencias operativas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Retener hasta disponer de imagen",
-    "body": "No crear el listing sin foto y reintentarlo mediante una ruta controlada cuando exista metadata de imagen.",
+    "title": "Retener hasta tener imagen",
+    "body": "Detener o aparcar solo el SKU sin `product.image` y registrar un resultado recuperable para que catálogo complete la metadata.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "HamelynDev",
-    "reason": "Es la persona vinculada al cambio que definió la detección actual y su semántica.",
-    "confidence": "high"
+    "person": "MiguelHamelyn",
+    "reason": "La decisión afecta al flujo V2 que introdujo y a su clasificación de resultados de publicación.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9064.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9064#issuecomment-5516187576",
-    "reviewedAt": "2026-09-02T20:47:31.017Z",
+    "reviewedAt": "2026-09-02T23:33:17.913Z",
     "mainSha": "ffd90286dac2d39d356b520899b76b13f8465698"
   }
 }
