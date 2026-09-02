@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-02T05:00:36.657Z",
+  "updatedAt": "2026-09-02T03:58:54Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8992,
+    "title": "fix: preserve eBay shipping rejection details",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8992",
+    "state": "open",
+    "labels": [
+      "size/M"
+    ],
+    "createdAt": "2026-09-02T03:46:11Z",
+    "updatedAt": "2026-09-02T03:58:54Z",
+    "headSha": "2951a30f6ebd5556d2301dbcd9f89b5a0961c6f8"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe esta PR limitarse a conservar el diagnóstico y mantener abierta la incidencia de reintentos, o debe incluir una política terminal para los 400 permanentes antes de cerrarla?",
+  "rationale": "Elegir qué firmas de eBay son permanentes y cómo detenerlas requiere una decisión operativa basada en respuestas reales, no solo un ajuste mecánico del parser.",
+  "options": [
+    {
+      "title": "Separar diagnóstico y recuperación",
+      "body": "Retira `Closes #8991`, fusiona el diagnóstico si se aporta prueba real y deja la política de reintentos como trabajo explícito.",
+      "recommended": true
+    },
+    {
+      "title": "Completar la corrección",
+      "body": "Añade una clasificación estrecha y validada de rechazos permanentes, con límite o estado terminal y pruebas de ambos caminos.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Separar diagnóstico y recuperación",
+    "body": "Retira `Closes #8991`, fusiona el diagnóstico si se aporta prueba real y deja la política de reintentos como trabajo explícito.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Es el autor de la migración V2 y revisor solicitado de esta PR.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8992.md",
+    "reviewedAt": "2026-09-02T05:00:36.657Z",
+    "mainSha": "6feedad9d3b0414d0773798d2571d2aad65dac58"
+  }
+}
