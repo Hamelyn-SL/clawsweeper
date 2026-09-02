@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-02T10:09:54.325Z",
-  "updatedAt": "2026-09-02T10:00:45Z",
+  "generatedAt": "2026-09-02T13:52:34.210Z",
+  "updatedAt": "2026-09-02T10:55:19Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,46 +11,41 @@
     "state": "open",
     "labels": [
       "size/XL",
-      "P2",
-      "status: 📣 needs proof",
-      "merge-risk: 🚨 compatibility",
-      "merge-risk: 🚨 session-state",
-      "rating: 🥈 silver"
+      "P2"
     ],
     "createdAt": "2026-08-31T22:52:38Z",
-    "updatedAt": "2026-09-02T10:00:45Z",
+    "updatedAt": "2026-09-02T10:55:19Z",
     "headSha": "9a3037d4ee4c8eccf8a2288289795923eb6681a1"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe mantenerse como política operativa que un alias fuera del inicio de la primera línea nunca autorice ejecución automática, aunque antes coincidiera por substring?",
-  "rationale": "El parche implementa de forma coherente un endurecimiento fail-closed, pero decidir la compatibilidad con formatos históricos de pedidos requiere criterio operativo del equipo.",
+  "question": "¿Debe el watcher adoptar de forma permanente el contrato fail-closed que solo reconoce un cliente cuando su alias aparece inmediatamente después de `PEDIDO` o `PEDIDO DE`?",
+  "rationale": "La rama cambia el reconocimiento histórico por inclusión y puede convertir títulos B2B flexibles ya usados en pedidos escalados; es una decisión operativa, no un defecto mecánico.",
   "options": [
     {
-      "title": "Mantener el fail-closed",
-      "body": "Aceptar el alias anclado al título y escalar cualquier formato ambiguo, después de aportar prueba real saneada.",
+      "title": "Aprobar el contrato estricto",
+      "body": "Mantiene la identificación inicial y evita que menciones posteriores autoricen a un cliente distinto.",
       "recommended": true
     },
     {
-      "title": "Preservar formatos heredados",
-      "body": "Definir una compatibilidad explícita y comprobada para títulos históricos que hoy se resolverían como clientes conocidos.",
+      "title": "Preservar títulos flexibles",
+      "body": "Definir una alternativa segura para reconocer aliases en formatos heredados sin permitir que el cuerpo o una mención tardía habiliten ejecución.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mantener el fail-closed",
-    "body": "Aceptar el alias anclado al título y escalar cualquier formato ambiguo, después de aportar prueba real saneada.",
+    "title": "Aprobar el contrato estricto",
+    "body": "Mantiene la identificación inicial y evita que menciones posteriores autoricen a un cliente distinto.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Es el principal contribuidor reciente del watcher y puede aportar el contexto operativo y la prueba del flujo.",
+    "person": "MiguelHamelyn",
+    "reason": "Es el revisor humano al que se solicitó validar el contrato operativo después de los cambios finales.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8948.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8948#issuecomment-5485910640",
-    "reviewedAt": "2026-09-02T10:09:54.325Z",
-    "mainSha": "343af4fbd157aae5d8c070a5ab98e4fa630d8368"
+    "reviewedAt": "2026-09-02T13:52:34.210Z",
+    "mainSha": "9b525e0aae70b41daab228e22437134fc1e70b6f"
   }
 }
