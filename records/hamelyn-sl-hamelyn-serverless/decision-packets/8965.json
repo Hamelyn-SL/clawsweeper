@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-01T08:11:49.177Z",
-  "updatedAt": "2026-09-01T08:05:56Z",
+  "generatedAt": "2026-09-02T13:03:50.327Z",
+  "updatedAt": "2026-09-02T12:58:58Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,53 +13,47 @@
       "bug",
       "app:marketplace",
       "triage:done",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review",
-      "clawsweeper:source-repro",
-      "issue-rating: 💎 diamond",
-      "mk:amazon",
       "P1",
-      "impact:other",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "mk:amazon"
     ],
     "createdAt": "2026-09-01T06:23:11Z",
-    "updatedAt": "2026-09-01T08:05:56Z"
+    "updatedAt": "2026-09-02T12:58:58Z"
   },
-  "lane": "manual_review",
+  "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Se autoriza una reconciliación separada de la cohorte histórica tras integrar el arreglo de warnings, y con qué tamaño de canario y criterio SP-API?",
-  "rationale": "La reparación de código está en una PR abierta, pero el drenaje mutaría miles de registros persistentes y depende de estado vivo de Amazon.",
+  "question": "¿Debe el equipo ejecutar una reconciliación canaria de los espejos legacy `SYNC_ERROR` contra SP-API y, tras validar resultados, aplicar la corrección de estados a escala?",
+  "rationale": "El arreglo de código ya está fusionado; cambiar miles de estados históricos requiere elegir el umbral de verificación, el ritmo y el tratamiento de listings no comprables.",
   "options": [
     {
-      "title": "Integrar y reconciliar con canario",
-      "body": "Validar primero la PR y después reconciliar un lote pequeño mediante lectura SP-API antes de ampliar gradualmente.",
+      "title": "Canario y ampliación gradual",
+      "body": "Consultar una muestra por marketplace, corregir solo resultados confirmados y ampliar por lotes con métricas de discrepancia.",
       "recommended": true
     },
     {
-      "title": "Integrar solo el arreglo",
-      "body": "Detener los falsos fallos nuevos y posponer la reconciliación hasta disponer de una ventana operativa específica.",
+      "title": "Mantener la cohorte para reintentos",
+      "body": "No mutar los espejos históricos y dejar que los reintentos posteriores los procesen con el criterio corregido.",
       "recommended": false
     },
     {
-      "title": "Revisar la estrategia de atributo",
-      "body": "Definir si `purchasable_offer` debe omitirse por product type antes de iniciar el drenaje histórico.",
+      "title": "Reconciliación manual acotada",
+      "body": "Revisar únicamente los SKUs con señales comerciales o de retirada antes de cualquier cambio masivo.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Integrar y reconciliar con canario",
-    "body": "Validar primero la PR y después reconciliar un lote pequeño mediante lectura SP-API antes de ampliar gradualmente.",
+    "title": "Canario y ampliación gradual",
+    "body": "Consultar una muestra por marketplace, corregir solo resultados confirmados y ampliar por lotes con métricas de discrepancia.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Tiene asignada la incidencia canónica y la PR que modifica el flujo de publicación afectado.",
+    "reason": "Su cambio fusionado cubre el flujo de submissions y aporta el contexto técnico más directo para definir una reconciliación segura.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8965.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8965#issuecomment-5489976643",
-    "reviewedAt": "2026-09-01T08:11:49.177Z",
-    "mainSha": "bc3e11abce7bacdbfbffb60faeb678ec39e18036"
+    "reviewedAt": "2026-09-02T13:03:50.327Z",
+    "mainSha": "9b525e0aae70b41daab228e22437134fc1e70b6f"
   }
 }
