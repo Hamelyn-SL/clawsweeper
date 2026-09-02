@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-02T17:20:46.377Z",
+  "updatedAt": "2026-09-02T16:04:13Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9037,
+    "title": "🐞 Dependency update: el autofix de CI falló en dependabot/npm_and_yarn/apps/data-platform/functions/vercel-logs/source/npm-security-auxiliary-f3bc4c3126",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9037",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:infrastructure",
+      "triage:blocked",
+      "clawsweeper:needs-product-decision",
+      "P2"
+    ],
+    "createdAt": "2026-09-02T15:39:23Z",
+    "updatedAt": "2026-09-02T16:04:13Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe la actualización de seguridad de https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9032 conservar el salto a Functions Framework v5 en las tres funciones?",
+  "rationale": "La credencial de Actions requiere intervención operativa, pero el alcance permanente de la actualización v5 cambia comportamiento de dependencias y necesita una decisión explícita.",
+  "options": [
+    {
+      "title": "Acotar la actualización",
+      "body": "Mantener Functions Framework 3.x y regenerar los lockfiles para resolver únicamente `qs@6.16.0`.",
+      "recommended": true
+    },
+    {
+      "title": "Aprobar Functions Framework v5",
+      "body": "Conservar v5 después de validar las rutas autenticadas y los accesos reales a BigQuery y MongoDB en las tres funciones.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Acotar la actualización",
+    "body": "Mantener Functions Framework 3.x y regenerar los lockfiles para resolver únicamente `qs@6.16.0`.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "La revisión de la PR relacionada le señala como dueño probable de la decisión de alcance y su historial toca los workflows implicados.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9037.md",
+    "reviewedAt": "2026-09-02T17:20:46.377Z",
+    "mainSha": "ffd90286dac2d39d356b520899b76b13f8465698"
+  }
+}

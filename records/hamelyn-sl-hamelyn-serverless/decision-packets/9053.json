@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-02T17:21:38.290Z",
+  "updatedAt": "2026-09-02T17:15:40Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9053,
+    "title": "Revisión de PRs: sustituir el conector de Codex y Cursor Bug Bot por un revisor propio con las suscripciones de Codex y Grok",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9053",
+    "state": "open",
+    "labels": [
+      "app:infrastructure",
+      "feature",
+      "reporter:javier",
+      "triage:queued",
+      "P1"
+    ],
+    "createdAt": "2026-09-02T17:15:26Z",
+    "updatedAt": "2026-09-02T17:15:40Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe el revisor propio vivir en Lyno o en el sandbox del Proof Agent, y qué contrato mínimo de verificación y publicación debe sustituir a Cursor y ClawSweeper?",
+  "rationale": "Ambas plataformas ya cubren partes del objetivo, pero tienen límites de credenciales, ejecución, permisos y responsabilidad distintos; el código no determina por sí solo cuál debe ser el contrato permanente.",
+  "options": [
+    {
+      "title": "Piloto en Lyno con salida única",
+      "body": "Implementar un revisor separado en `apps/agents`, conservar los bots actuales y medir dos semanas de paridad antes de retirar integraciones.",
+      "recommended": true
+    },
+    {
+      "title": "Extender Proof Agent",
+      "body": "Reutilizar el sandbox de Vercel para revisión y prueba, aceptando que el agente asuma un alcance mayor y necesite un contrato de publicación nuevo.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener el modelo distribuido",
+      "body": "Conservar los revisores actuales y limitar el trabajo propio a métricas y normalización de resultados, sin reemplazar proveedores todavía.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Piloto en Lyno con salida única",
+    "body": "Implementar un revisor separado en `apps/agents`, conservar los bots actuales y medir dos semanas de paridad antes de retirar integraciones.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su historial reciente conecta Lyno, Codex y la propuesta de rediseño; puede preparar la decisión técnica para el equipo.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9053.md",
+    "reviewedAt": "2026-09-02T17:21:38.290Z",
+    "mainSha": "ffd90286dac2d39d356b520899b76b13f8465698"
+  }
+}
