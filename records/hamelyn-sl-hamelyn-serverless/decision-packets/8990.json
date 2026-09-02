@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-02T03:04:06.796Z",
+  "generatedAt": "2026-09-02T03:07:44.453Z",
   "updatedAt": "2026-09-02T02:57:22Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -13,46 +13,45 @@
       "bug",
       "app:marketplace",
       "triage:running",
-      "P1",
-      "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review"
+      "P1"
     ],
     "createdAt": "2026-09-02T02:23:44Z",
     "updatedAt": "2026-09-02T02:57:22Z"
   },
-  "lane": "manual_review",
+  "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe la cuota compartida persistirse mediante el mecanismo de locks existente o centralizarse en la capa común de envío de feeds?",
-  "rationale": "La elección determina la semántica de concurrencia entre Lambdas y el tiempo máximo de cron; no es seguro inferirla solo desde un `Map` local.",
+  "question": "¿Debe la cuota compartida esperar dentro del cron, diferir el mercado pendiente o aplicar ambas vías según el tiempo restante de ejecución?",
+  "rationale": "El código permite reutilizar almacenamiento de locks, pero la semántica de espera frente a disponibilidad del cron cambia el comportamiento operativo y no se resuelve solo con una corrección mecánica.",
   "options": [
     {
-      "title": "Reserva compartida en la capa de feeds",
-      "body": "Registrar atómicamente cada slot por `merchantId` antes de `createFeed` para cubrir batch withdraw y reprice V2.",
+      "title": "Reserva compartida con diferido",
+      "body": "Reservar antes del envío y diferir el mercado cuando no quede margen de ejecución, conservando el resto de la pasada.",
       "recommended": true
     },
     {
-      "title": "Coordinar solo los crons de marketplace",
-      "body": "Usar un protocolo compartido en `marketplace-crons`, dejando otros emisores Amazon fuera de la misma ventana.",
+      "title": "Esperar la ventana completa",
+      "body": "Mantener el mercado en la misma pasada hasta liberar cuota, asumiendo el aumento controlado de duración del cron.",
+      "recommended": false
+    },
+    {
+      "title": "Limitar el cambio a observabilidad",
+      "body": "Mantener el ritmo local y medir los choques antes de cambiar la política de recuperación.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Reserva compartida en la capa de feeds",
-    "body": "Registrar atómicamente cada slot por `merchantId` antes de `createFeed` para cubrir batch withdraw y reprice V2.",
+    "title": "Reserva compartida con diferido",
+    "body": "Reservar antes del envío y diferir el mercado cuando no quede margen de ejecución, conservando el resto de la pasada.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "Miguel Angel Hernández Perdomo",
-    "reason": "Su trabajo reciente conecta el manager V2, el reprice por feeds y la documentación de cuota.",
-    "confidence": "high"
+    "person": "HamelynDev",
+    "reason": "La decisión extiende directamente los límites explícitos de la corrección previa de cuota.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8990.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8990#issuecomment-5503702918",
-    "reviewedAt": "2026-09-02T03:04:06.796Z",
+    "reviewedAt": "2026-09-02T03:07:44.453Z",
     "mainSha": "6feedad9d3b0414d0773798d2571d2aad65dac58"
   }
 }
