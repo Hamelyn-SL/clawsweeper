@@ -44,6 +44,12 @@ not split reports into issue/PR subtrees.
   Preserve release-note context in PR bodies and commit messages instead.
 - When referencing GitHub issues or PRs in user-facing output, always include
   the full GitHub URL, not only `#12345`.
+- Hamelyn fork policy switches live in the `env` block of
+  `.github/workflows/sweep.yml` and are implemented in `src/review-policy.ts`:
+  signal-only comments (`CLAWSWEEPER_COMMENT_POLICY=signal`), no proof layer
+  (`CLAWSWEEPER_PROOF_GATE=off`), hot intake for new items only, and re-review
+  only after human activity. Unset them to get upstream behavior back; see
+  `docs/pr-review-comments.md#signal-only-comment-policy-hamelyn`.
 
 ## Safety Rules
 

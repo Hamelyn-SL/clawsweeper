@@ -344,6 +344,30 @@ already more than seven days old are selected first across all buckets. The
 weighted mix applies to the remaining capacity, making weekly freshness an
 enforced outer SLO instead of only a cadence hint.
 
+## Hamelyn activity policy
+
+`Hamelyn-SL/hamelyn-serverless` has no issue/PR event dispatcher (its
+`clawsweeper-dispatch.yml` only forwards `@clawsweeper` commands), so the first
+review of a new item comes from the 15-minute hot-intake fanout. The fork keeps
+that cadence and changes only what gets re-reviewed, through `sweep.yml` env:
+
+- `CLAWSWEEPER_REVIEW_ONLY_ON_ACTIVITY=1`: no daily/weekly timer; unchanged
+  items are never re-reviewed.
+- `CLAWSWEEPER_HOT_INTAKE_NEW_ONLY=1`: the hot-intake lane only selects items
+  with no complete review; re-reviews come from the hourly normal lane.
+- `CLAWSWEEPER_REVIEW_HUMAN_ACTIVITY_ONLY=1`: an already-reviewed item is due
+  only after a human comment, a human commit on the PR head, an `@clawsweeper`
+  command, or a review policy change. The planner checks this with one
+  comments call per due candidate (plus the PR head and commit list when the
+  head moved) and keeps the item due if GitHub fails.
+- `CLAWSWEEPER_ACTIVITY_IGNORED_LOGINS=HamelynDev`: automation accounts that
+  are not `[bot]` users. `[bot]` accounts and `app/*` actors never count.
+
+Bot comments (Codex connector, Vercel, github-actions, the triage bot) and
+label churn still bump `updated_at`, so such an item stays technically due and
+costs one comments call on every planner run until a person acts on it. That
+is the accepted trade-off for not spending review cycles on bot chatter.
+
 ## Planning
 
 The plan step runs:

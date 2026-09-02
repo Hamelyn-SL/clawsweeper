@@ -111,6 +111,53 @@ still read as `Codex review: passed.` in the durable review comment.
 Issues use `**Next step**` instead of the PR-specific `**Next step before
 merge**` heading. Non-PR comments are never repair triggers.
 
+## Signal-only comment policy (Hamelyn)
+
+Read when: changing what the Hamelyn fork publishes, or reverting to the
+upstream comment.
+
+`.github/workflows/sweep.yml` sets `CLAWSWEEPER_COMMENT_POLICY=signal`. Under
+that policy the durable comment contract above still holds (one marker-backed
+comment per item, edited in place, hidden markers and the review history
+ledger preserved), but the visible part changes:
+
+- Actions are silent. Priority labels (`P0`-`P3`),
+  `clawsweeper:needs-product-decision` and `clawsweeper:needs-security-review`
+  are still synced; the GitHub timeline records them, so no comment explains
+  them.
+- A comment is published only when the report carries an actionable signal:
+  a close proposal, a security review that needs attention, a P0-P2 review
+  finding with confidence at or above 0.6, a maintainer decision, or a
+  high-confidence root-cause cluster / duplicate. `needs-human` verdicts
+  without any of those are withheld (`review_comment_withheld` in the apply
+  report); the review still lands in the state repo and in the weekly digest.
+  An existing ClawSweeper comment keeps being edited in place with the short
+  body, so older long comments shrink on their next human-triggered review.
+- The body is short: the verdict line (still prefixed `Codex review:` so
+  re-review continuity keeps parsing it), a one-paragraph summary, and only
+  the sections that carry the signal (`**Hallazgos**`, `**Seguridad**`,
+  `**Decisión pendiente**`, `**Clúster de causa raíz**`, `**Cierre
+  propuesto**`). Merge readiness, rank-up moves, label changes, evidence,
+  likely related people, automerge instructions and reproduction tips are
+  not rendered.
+- No "review started" placeholder is posted.
+- When a PR head moves, the previous comment is left as is instead of being
+  rewritten as `stale review`; the human-activity re-review refreshes it and
+  the hidden `sha=` marker already keeps repair from acting on the old head.
+- `CLAWSWEEPER_PROOF_GATE=off` removes the real behavior proof layer: proof is
+  reported as not applicable, never caps the rating, never blocks merge and
+  never asks contributors for evidence. The target repository's own Proof
+  Agent owns that verdict.
+- Retired label families are neither added nor removed: `rating:*`,
+  `issue-rating:*`, `impact:*`, `merge-risk:*`, `proof:*`, `status:*`,
+  `maturity:*`, `mantis:*`, `feature: ✨ showcase`, and every other
+  `clawsweeper:*` advisory label. Delete them once in the target repository
+  with `scripts/retire-hamelyn-labels.sh --execute` after this policy is live.
+
+Revert: remove `CLAWSWEEPER_COMMENT_POLICY` and `CLAWSWEEPER_PROOF_GATE` from
+the workflow `env` block. Existing comments are rewritten to the full upstream
+shape on their next sync.
+
 ## Review History Ledger
 
 Because ClawSweeper edits one durable comment in place, each sync would

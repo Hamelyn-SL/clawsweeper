@@ -109,12 +109,14 @@ import {
 } from "./clawsweeper-args.js";
 import { escapeRegExp, safeOutputTail, trimMiddle, truncateText } from "./clawsweeper-text.js";
 import {
+  buildDecisionPacketFromReport,
   emptyMaintainerDecision,
   maintainerDecisionBlocksClose,
   maintainerDecisionFromReport,
   parseMaintainerDecision,
   renderDecisionPacketPublicBlock,
   syncDecisionPacketRecord,
+  type DecisionPacket,
   type DecisionPacketSubjectState,
   type MaintainerDecision,
 } from "./decision-packets.js";
@@ -127,6 +129,19 @@ import {
   type ReviewHistoryCycle,
   type ReviewHistoryLedger,
 } from "./review-history.js";
+import {
+  activityIgnoredLogins,
+  hasHumanCommentSince,
+  hasHumanCommitSince,
+  hotIntakeNewOnly,
+  humanActivityOnly,
+  isSignalCommentPolicy,
+  isSignalFinding,
+  proofGateEnabled,
+  reviewSignal,
+  SIGNAL_POLICY_KEPT_ADVISORY_LABELS,
+  type ReviewSignal,
+} from "./review-policy.js";
 import { trailingHtmlComments } from "./review-comment-markers.js";
 
 export {
@@ -294,6 +309,7 @@ type ActionTaken =
   | "kept_open"
   | "proposed_close"
   | "review_comment_synced"
+  | "review_comment_withheld"
   | "skipped_comment_auth"
   | "skipped_locked_conversation"
   | "skipped_changed_since_review"
@@ -361,6 +377,7 @@ interface ExistingReview {
   itemUpdatedAt: string | undefined;
   reviewCommentSyncedAt: string | undefined;
   labelsSyncedAt: string | undefined;
+  pullHeadSha: string | undefined;
   decision: string | undefined;
   reviewStatus: string | undefined;
   reviewPolicy: string | undefined;
@@ -2885,6 +2902,48 @@ const CLEAN_OPENCLAW_PR_REVIEW_NEXT_STEP =
   "Continue normal maintainer review; ClawSweeper found no patch-correctness issue.";
 
 function normalizeDecisionForItem(
+  decision: Decision,
+  item: DecisionNormalizationItem | undefined,
+): Decision {
+  return normalizeDecisionFindingsForItem(applyProofGatePolicy(decision, item), item);
+}
+
+const PROOF_GATE_DISABLED_SUMMARY =
+  "Real behavior proof is handled by the target repository's own Proof Agent; ClawSweeper does not assess it here.";
+
+function proofGateDisabledProof(): RealBehaviorProof {
+  return {
+    status: "not_applicable",
+    summary: PROOF_GATE_DISABLED_SUMMARY,
+    evidenceKind: "not_applicable",
+    needsContributorAction: false,
+  };
+}
+
+// CLAWSWEEPER_PROOF_GATE=off: the proof layer belongs to the target
+// repository's Proof Agent, so proof never caps the rating, blocks merge, or
+// asks contributors for evidence.
+function applyProofGatePolicy(
+  decision: Decision,
+  item: DecisionNormalizationItem | undefined,
+): Decision {
+  if (proofGateEnabled()) return decision;
+  const realBehaviorProof = proofGateDisabledProof();
+  return {
+    ...decision,
+    realBehaviorProof,
+    prRating: derivedPrRating({
+      isPullRequest: item?.kind === "pull_request",
+      proof: realBehaviorProof,
+      findings: decision.reviewFindings,
+      securityReview: decision.securityReview,
+      overallCorrectness: decision.overallCorrectness,
+      overallConfidenceScore: decision.overallConfidenceScore,
+    }),
+  };
+}
+
+function normalizeDecisionFindingsForItem(
   decision: Decision,
   item: DecisionNormalizationItem | undefined,
 ): Decision {
@@ -5624,6 +5683,7 @@ function existingReview(
     itemUpdatedAt: frontMatterValue(markdown, "item_updated_at"),
     reviewCommentSyncedAt: frontMatterValue(markdown, "review_comment_synced_at"),
     labelsSyncedAt: frontMatterValue(markdown, "labels_synced_at"),
+    pullHeadSha: pullHeadShaFromReport(markdown) ?? undefined,
     decision: frontMatterValue(markdown, "decision"),
     reviewStatus: effectiveReviewStatus(markdown),
     reviewPolicy: frontMatterValue(markdown, "review_policy"),
@@ -5655,6 +5715,7 @@ function buildExistingReviewIndex(itemsDir: string): ExistingReviewIndex {
       itemUpdatedAt: frontMatterValue(markdown, "item_updated_at"),
       reviewCommentSyncedAt: frontMatterValue(markdown, "review_comment_synced_at"),
       labelsSyncedAt: frontMatterValue(markdown, "labels_synced_at"),
+      pullHeadSha: pullHeadShaFromReport(markdown) ?? undefined,
       decision: frontMatterValue(markdown, "decision"),
       reviewStatus: effectiveReviewStatus(markdown),
       reviewPolicy: frontMatterValue(markdown, "review_policy"),
@@ -5894,6 +5955,85 @@ function dueCandidate(
     nextDueAt: nextReviewDueAtMs(item, review, now, reviewPolicy),
     bucket: schedulerBucket(item, review, now),
   };
+}
+
+// Hamelyn activity policy for already-reviewed items:
+// - CLAWSWEEPER_HOT_INTAKE_NEW_ONLY=1 keeps the frequent hot-intake sweep for
+//   never-reviewed items only; re-reviews come from the hourly normal lane.
+// - CLAWSWEEPER_REVIEW_HUMAN_ACTIVITY_ONLY=1 re-reviews only after a human
+//   comment, a human commit on the PR head, or a policy change. Bot comments
+//   (Codex connector, Vercel, github-actions, the triage bot) and label churn
+//   bump `updated_at` but are not a reason to spend another review.
+function dueUnderActivityPolicy(
+  due: DueCandidate[],
+  reviewPolicy: string | undefined,
+  hotIntake: boolean,
+): DueCandidate[] {
+  return due.filter((candidate) => {
+    const review = candidate.review;
+    if (!review || reviewedAtMs(review) === null) return true;
+    if (hasReviewPolicyMismatch(review, reviewPolicy)) return true;
+    if (hotIntake && hotIntakeNewOnly()) return false;
+    if (!humanActivityOnly()) return true;
+    return humanActivitySinceReview(candidate.item, review);
+  });
+}
+
+function humanActivitySinceReview(item: Item, review: ExistingReview): boolean {
+  const reviewedAt = review.reviewedAt;
+  const reviewedAtMsValue = reviewedAt ? Date.parse(reviewedAt) : Number.NaN;
+  if (!reviewedAt || !Number.isFinite(reviewedAtMsValue)) return true;
+  const ignoredLogins = activityIgnoredLogins();
+  try {
+    const comments = ghJson<unknown[]>([
+      "api",
+      `repos/${item.repo}/issues/${item.number}/comments?since=${encodeURIComponent(
+        reviewedAt,
+      )}&per_page=100`,
+      "--jq",
+      "[.[] | {authorLogin: .user.login, authorType: .user.type, createdAt: .created_at}]",
+    ]).map((entry) => {
+      const record = asRecord(entry);
+      return {
+        authorLogin: stringOrUndefined(record.authorLogin),
+        authorType: stringOrUndefined(record.authorType),
+        createdAt: stringOrUndefined(record.createdAt),
+      };
+    });
+    if (hasHumanCommentSince(comments, reviewedAtMsValue, ignoredLogins)) return true;
+    if (item.kind !== "pull_request") return false;
+    const pull = asRecord(
+      ghJson<unknown>([
+        "api",
+        `repos/${item.repo}/pulls/${item.number}`,
+        "--jq",
+        "{head: .head.sha}",
+      ]),
+    );
+    const liveHeadSha = stringOrUndefined(pull.head);
+    if (!liveHeadSha || !review.pullHeadSha || liveHeadSha === review.pullHeadSha) return false;
+    const commits = ghJson<unknown[]>([
+      "api",
+      `repos/${item.repo}/pulls/${item.number}/commits?per_page=100`,
+      "--jq",
+      "[.[] | {sha, authorLogin: (.author.login // null), committerLogin: (.committer.login // null)}]",
+    ]).map((entry) => {
+      const record = asRecord(entry);
+      return {
+        sha: stringOrUndefined(record.sha) ?? "",
+        authorLogin: stringOrUndefined(record.authorLogin),
+        committerLogin: stringOrUndefined(record.committerLogin),
+      };
+    });
+    return hasHumanCommitSince(commits, review.pullHeadSha, ignoredLogins);
+  } catch (error) {
+    console.error(
+      `[plan] activity check failed for ${item.repo}#${item.number}; keeping it due: ${
+        error instanceof Error ? error.message : String(error)
+      }`,
+    );
+    return true;
+  }
 }
 
 function reviewBackfillCandidate(
@@ -6312,7 +6452,7 @@ function selectCandidates(options: {
       if (candidate) due.push(candidate);
     }
     const candidates = selectDueCandidates(
-      due,
+      dueUnderActivityPolicy(due, options.reviewPolicy, true),
       options.batchSize,
       compareHotIntakeDueCandidates,
     ).map(({ item }) => item);
@@ -6336,7 +6476,10 @@ function selectCandidates(options: {
       if (candidate) due.push(candidate);
     }
   }
-  const candidates = selectDueCandidates(due, options.batchSize)
+  const candidates = selectDueCandidates(
+    dueUnderActivityPolicy(due, options.reviewPolicy, false),
+    options.batchSize,
+  )
     .slice(0, options.batchSize)
     .map(({ item }) => item);
   return { candidates, scannedPages };
@@ -9934,6 +10077,7 @@ function defaultRealBehaviorProof(markdown: string): RealBehaviorProof {
 }
 
 function reportRealBehaviorProof(markdown: string): RealBehaviorProof {
+  if (!proofGateEnabled()) return proofGateDisabledProof();
   const defaultProof = defaultRealBehaviorProof(markdown);
   if (defaultProof.status === "override" || isDocsOnlyPullRequestReport(markdown)) {
     return defaultProof;
@@ -12036,6 +12180,51 @@ function syncIssueAdvisoryLabels(options: {
   return { labels: syncedLabels, changed: labelsToRemove.length > 0 || added };
 }
 
+function unchangedLabelSync(labels: readonly string[]): { labels: string[]; changed: boolean } {
+  return { labels: [...labels], changed: false };
+}
+
+// Signal policy: only the advisory labels a person acts on are synced
+// (needs-product-decision, needs-security-review). Every other advisory label
+// is left untouched, so the target repository can delete those families once
+// without ClawSweeper recreating them.
+function syncKeptIssueAdvisoryLabels(options: {
+  number: number;
+  labels: readonly string[];
+  state: IssueAdvisoryLabelState;
+  dryRun: boolean;
+}): { labels: string[]; changed: boolean } {
+  const isKept = (label: string): boolean =>
+    SIGNAL_POLICY_KEPT_ADVISORY_LABELS.has(label.toLowerCase());
+  const wanted = [...wantedIssueAdvisoryLabels(options.state, options.labels)].filter(isKept);
+  const wantedKeys = new Set(wanted.map((label) => label.toLowerCase()));
+  const currentKeys = new Set(options.labels.map((label) => label.toLowerCase()));
+  const labelsToAdd = wanted.filter((label) => !currentKeys.has(label.toLowerCase()));
+  const labelsToRemove = options.labels.filter(
+    (label) => isKept(label) && !wantedKeys.has(label.toLowerCase()),
+  );
+  const nextLabels = [
+    ...options.labels.filter((label) => !labelsToRemove.includes(label)),
+    ...labelsToAdd,
+  ];
+  const changed = labelsToAdd.length > 0 || labelsToRemove.length > 0;
+  if (!changed) return { labels: nextLabels, changed };
+  if (options.dryRun) return { labels: nextLabels, changed };
+  for (const label of labelsToRemove) {
+    ghWithRetry(["issue", "edit", String(options.number), "--remove-label", label]);
+  }
+  const syncedLabels = options.labels.filter((label) => !labelsToRemove.includes(label));
+  let added = false;
+  for (const label of labelsToAdd) {
+    ensureIssueAdvisorySyncLabel(label);
+    if (tryAddOptionalLabel({ number: options.number, label, currentLabels: syncedLabels })) {
+      syncedLabels.push(label);
+      added = true;
+    }
+  }
+  return { labels: syncedLabels, changed: labelsToRemove.length > 0 || added };
+}
+
 function syncTelegramVisibleProofLabel(options: {
   number: number;
   labels: readonly string[];
@@ -12448,6 +12637,7 @@ function isExternalPullRequestReport(markdown: string): boolean {
 }
 
 function realBehaviorProofBlocksMerge(markdown: string): boolean {
+  if (!proofGateEnabled()) return false;
   if (frontMatterValue(markdown, "review_status") === "failed") return false;
   if (!isExternalPullRequestReport(markdown)) return false;
   if (frontMatterStringArray(markdown, "labels").includes(PROOF_OVERRIDE_LABEL)) return false;
@@ -12463,6 +12653,7 @@ function realBehaviorProofBlocksMerge(markdown: string): boolean {
 }
 
 function realBehaviorProofNeedsContributorNudge(markdown: string): boolean {
+  if (!proofGateEnabled()) return false;
   if (frontMatterValue(markdown, "review_status") !== "complete") return false;
   if (!isExternalPullRequestReport(markdown)) return false;
   if (frontMatterStringArray(markdown, "labels").includes(PROOF_OVERRIDE_LABEL)) return false;
@@ -12477,6 +12668,7 @@ function realBehaviorProofNeedsContributorNudge(markdown: string): boolean {
 }
 
 function realBehaviorProofBlocksBotOwnedMerge(markdown: string): boolean {
+  if (!proofGateEnabled()) return false;
   if (frontMatterValue(markdown, "review_status") !== "complete") return false;
   if (frontMatterValue(markdown, "type") !== "pull_request") return false;
   if (frontMatterStringArray(markdown, "labels").includes(PROOF_OVERRIDE_LABEL)) return false;
@@ -15602,6 +15794,227 @@ function renderKeepOpenCommentFromReport(
   return reviewHistoryBlock ? `${publicBody.trimEnd()}\n\n${reviewHistoryBlock}\n` : publicBody;
 }
 
+// ---------------------------------------------------------------------------
+// Signal-only review comments (CLAWSWEEPER_COMMENT_POLICY=signal)
+//
+// Actions (labels, priority) happen silently: the GitHub timeline records
+// them. A comment is published only when it carries something a person has to
+// act on, and then it stays short: verdict, one-paragraph summary, confident
+// P0-P2 findings, security attention, the decision to take, the root-cause
+// cluster, or the close proposal. Hidden automation markers and the review
+// history ledger are preserved because repair/apply and re-review continuity
+// depend on them.
+// ---------------------------------------------------------------------------
+
+const REVIEW_SIGNAL_SUMMARY_MAX_CHARS = 360;
+const REVIEW_SIGNAL_FINDINGS_MAX = 5;
+const REVIEW_SIGNAL_FINDING_TITLE_MAX_CHARS = 140;
+const REVIEW_SIGNAL_SECURITY_CONCERNS_MAX = 3;
+const REVIEW_SIGNAL_DECISION_QUESTION_MAX_CHARS = 280;
+const REVIEW_SIGNAL_DECISION_OPTION_TITLE_MAX_CHARS = 80;
+const REVIEW_SIGNAL_DECISION_OPTION_MAX_CHARS = 160;
+const REVIEW_SIGNAL_CLUSTER_SUMMARY_MAX_CHARS = 220;
+
+function clipReviewText(value: string, maxChars: number): string {
+  const text = value.replace(/\s+/g, " ").trim();
+  if (text.length <= maxChars) return text;
+  return `${text.slice(0, Math.max(0, maxChars - 1)).trimEnd()}…`;
+}
+
+function closeReasonSpanish(reason: CloseReason): string {
+  switch (reason) {
+    case "implemented_on_main":
+      return "ya está implementado en la rama principal";
+    case "mostly_implemented_on_main":
+      return "la parte útil ya está en la rama principal";
+    case "cannot_reproduce":
+      return "no se reproduce";
+    case "clawhub":
+      return "encaja mejor fuera de este repositorio";
+    case "duplicate_or_superseded":
+      return "duplicado o superado";
+    case "low_signal_unmergeable_pr":
+      return "la rama no es una base válida para aterrizar";
+    case "stalled_unproven_pr":
+      return "PR parada sin la prueba pedida";
+    case "abandoned_pr":
+      return "PR abandonada";
+    case "unconfirmed_product_direction":
+      return "dirección de producto sin confirmar";
+    case "not_actionable_in_repo":
+      return "no es accionable en este repositorio";
+    case "incoherent":
+      return "no hay detalle suficiente para actuar";
+    case "stale_insufficient_info":
+      return "falta información para verificarlo";
+    case "none":
+      return "sin motivo declarado";
+  }
+}
+
+export function reviewSignalFromReport(markdown: string): ReviewSignal {
+  const decision = frontMatterValue(markdown, "decision");
+  const closeReason = frontMatterValue(markdown, "close_reason");
+  let maintainerDecisionRequired = false;
+  try {
+    maintainerDecisionRequired = maintainerDecisionFromReport(markdown)?.required === true;
+  } catch {
+    maintainerDecisionRequired = true;
+  }
+  return reviewSignal({
+    isPullRequest: frontMatterValue(markdown, "type") === "pull_request",
+    reviewFailed: frontMatterValue(markdown, "review_status") === "failed",
+    closeProposal: decision === "close" && Boolean(closeReason) && closeReason !== "none",
+    findings: reportReviewFindings(markdown).map((finding) => ({
+      priority: finding.priority,
+      confidenceScore: finding.confidenceScore,
+    })),
+    securityNeedsAttention: reportSecurityReview(markdown).status === "needs_attention",
+    maintainerDecisionRequired,
+    clusterVisible: publicRootCauseClusterBlock(reportRootCauseCluster(markdown)) !== "",
+  });
+}
+
+export function signalPolicyWithholdReason(options: {
+  markdown: string;
+  hasExistingReviewComment: boolean;
+  stalePullRequestHead: boolean;
+}): string | null {
+  if (frontMatterValue(options.markdown, "review_status") === "failed") {
+    return "signal policy: review failed; keeping the last complete review comment";
+  }
+  if (options.stalePullRequestHead && options.hasExistingReviewComment) {
+    return "signal policy: PR head moved; the human-activity re-review refreshes the comment";
+  }
+  if (options.hasExistingReviewComment) return null;
+  const signal = reviewSignalFromReport(options.markdown);
+  if (signal.publish) return null;
+  return `signal policy: no actionable signal (${
+    signal.reasons.join(", ") || "keep-open without findings"
+  })`;
+}
+
+function renderSignalReviewCommentFromReport(
+  markdown: string,
+  reason: CloseReason,
+  options: ReviewCommentRenderOptions = {},
+): string {
+  const kind = (frontMatterValue(markdown, "type") as ItemKind | undefined) ?? "issue";
+  const isPullRequest = kind === "pull_request";
+  const number = Number(frontMatterValue(markdown, "number"));
+  const reviewFailed = frontMatterValue(markdown, "review_status") === "failed";
+  const isCloseProposal = frontMatterValue(markdown, "decision") === "close" && reason !== "none";
+  const findings = reportReviewFindings(markdown)
+    .filter(isSignalFinding)
+    .sort(
+      (left, right) =>
+        left.priority - right.priority || right.confidenceScore - left.confidenceScore,
+    )
+    .slice(0, REVIEW_SIGNAL_FINDINGS_MAX);
+  const securityReview = reportSecurityReview(markdown);
+  const securityNeedsAttention = securityReview.status === "needs_attention";
+  let decisionPacket: DecisionPacket | null = null;
+  try {
+    decisionPacket = buildDecisionPacketFromReport(markdown);
+  } catch {
+    decisionPacket = null;
+  }
+  const cluster = reportRootCauseCluster(markdown);
+  const clusterVisible = publicRootCauseClusterBlock(cluster) !== "";
+  const summarySource = isPullRequest
+    ? reviewSectionValue(markdown, "changeSummary") || reviewSectionValue(markdown, "summary")
+    : reviewSectionValue(markdown, "summary");
+  const summary = clipReviewText(sentence(summarySource), REVIEW_SIGNAL_SUMMARY_MAX_CHARS);
+  const verdict = reviewFailed
+    ? "Codex review: la revisión no se completó por un fallo de infraestructura."
+    : isCloseProposal
+      ? `Codex review: propone cerrar (${closeReasonSpanish(reason)}).`
+      : securityNeedsAttention
+        ? "Codex review: atención de seguridad antes del merge."
+        : isPullRequest && findings.length
+          ? "Codex review: hallazgos antes del merge."
+          : decisionPacket
+            ? "Codex review: hace falta una decisión del equipo."
+            : clusterVisible
+              ? "Codex review: posible duplicado o clúster de causa raíz."
+              : isPullRequest
+                ? "Codex review: sin hallazgos bloqueantes."
+                : "Codex review: sin acción pendiente.";
+  const lines = [`${verdict}${reviewFreshnessText(markdown)}`];
+  if (summary) lines.push("", summary);
+  if (isPullRequest && findings.length) {
+    lines.push(
+      "",
+      "**Hallazgos**",
+      ...findings.map(
+        (finding) =>
+          `- [${priorityLabel(finding.priority)}] ${clipReviewText(
+            finding.title,
+            REVIEW_SIGNAL_FINDING_TITLE_MAX_CHARS,
+          )} — \`${reviewFindingLocation(finding)}\` (confianza ${confidenceText(
+            finding.confidenceScore,
+          )})`,
+      ),
+    );
+  }
+  if (securityNeedsAttention) {
+    lines.push(
+      "",
+      "**Seguridad**",
+      clipReviewText(sentence(securityReview.summary), REVIEW_SIGNAL_SUMMARY_MAX_CHARS),
+      ...securityReview.concerns
+        .slice(0, REVIEW_SIGNAL_SECURITY_CONCERNS_MAX)
+        .map(securityConcernSummaryLine),
+    );
+  }
+  if (decisionPacket) {
+    const owner = decisionPacket.likelyOwner.person.trim();
+    lines.push(
+      "",
+      "**Decisión pendiente**",
+      `${clipReviewText(decisionPacket.question, REVIEW_SIGNAL_DECISION_QUESTION_MAX_CHARS)}${
+        owner ? ` Dueño probable: ${owner}.` : ""
+      }`,
+      ...decisionPacket.options.map(
+        (option) =>
+          `- **${clipReviewText(option.title, REVIEW_SIGNAL_DECISION_OPTION_TITLE_MAX_CHARS)}${
+            option.recommended ? " (recomendada)" : ""
+          }:** ${clipReviewText(option.body, REVIEW_SIGNAL_DECISION_OPTION_MAX_CHARS)}`,
+      ),
+    );
+  }
+  if (clusterVisible) {
+    lines.push(
+      "",
+      "**Clúster de causa raíz**",
+      `Relación \`${cluster.currentItemRelationship}\` con ${cluster.canonicalRef ?? ""}. ${clipReviewText(
+        sentence(cluster.summary),
+        REVIEW_SIGNAL_CLUSTER_SUMMARY_MAX_CHARS,
+      )}`.trim(),
+      `- ${cluster.members.length} elemento(s) relacionados en el informe; nada se cierra automáticamente.`,
+    );
+  }
+  if (isCloseProposal) {
+    lines.push(
+      "",
+      "**Cierre propuesto**",
+      `Motivo: \`${reason}\`. Es una propuesta: nada se cierra automáticamente; decide una persona con permisos.`,
+    );
+  }
+  lines.push(
+    "",
+    `_ClawSweeper · ${markdownLink("comandos y re-revisión", `${REVIEW_COMMENT_GUIDE_URL}#commands`)}_`,
+    "",
+  );
+  const publicBody = neutralizeReviewControlMarkers(
+    sanitizePublicSelfReferences(lines.join("\n"), number, kind),
+  );
+  const reviewHistoryBlock = renderReviewHistorySection(
+    reviewHistoryForRender(markdown, options.previousReviewCommentBody),
+  );
+  return reviewHistoryBlock ? `${publicBody.trimEnd()}\n\n${reviewHistoryBlock}\n` : publicBody;
+}
+
 export function renderReviewCommentFromReport(
   markdown: string,
   reason: CloseReason,
@@ -15609,8 +16022,9 @@ export function renderReviewCommentFromReport(
 ): string {
   const decision = frontMatterValue(markdown, "decision");
   const requiresMaintainerDecision = maintainerDecisionFromReport(markdown)?.required === true;
-  const body =
-    decision === "close" && reason !== "none" && !requiresMaintainerDecision
+  const body = isSignalCommentPolicy()
+    ? renderSignalReviewCommentFromReport(markdown, reason, options)
+    : decision === "close" && reason !== "none" && !requiresMaintainerDecision
       ? renderCloseCommentFromReport(markdown, reason)
       : renderKeepOpenCommentFromReport(markdown, options);
   const markers = reviewAutomationMarkersFromReport(markdown);
@@ -17592,7 +18006,8 @@ function reviewCommand(args: Args): void {
   const shardCount = numberArg(args.shard_count, 1);
   const hotIntake = boolArg(args.hot_intake);
   const readonlyOpenclaw = boolArg(args.readonly_openclaw);
-  const skipStartComment = boolArg(args.skip_start_comment) || localOnly || localRange;
+  const skipStartComment =
+    boolArg(args.skip_start_comment) || localOnly || localRange || isSignalCommentPolicy();
   const forcedLoginMethod = reviewCodexForcedLoginMethod(args);
   const git: GitInfo = localRangeData
     ? { mainSha: localRangeData.baseSha, latestRelease: null }
@@ -18938,19 +19353,21 @@ async function applyDecisionsCommand(args: Args): Promise<void> {
     let currentPrStatusKind: PrStatusLabelKind | null = null;
     if (state === "open" && item.kind === "pull_request") {
       if (stalePrReviewHead) {
-        const staleLabelSyncResult = syncStalePullRequestReviewLabels({
-          number,
-          labels: item.labels,
-          dryRun,
-        });
-        item.labels = staleLabelSyncResult.labels;
-        clawSweeperLabelsChanged ||= staleLabelSyncResult.changed;
+        if (!isSignalCommentPolicy()) {
+          const staleLabelSyncResult = syncStalePullRequestReviewLabels({
+            number,
+            labels: item.labels,
+            dryRun,
+          });
+          item.labels = staleLabelSyncResult.labels;
+          clawSweeperLabelsChanged ||= staleLabelSyncResult.changed;
+        }
         markdown = replaceFrontMatterValue(
           markdown,
           "current_pull_head_sha",
           stalePrReviewHead.liveHeadSha,
         );
-      } else if (labelSyncFreshEnough()) {
+      } else if (!isSignalCommentPolicy() && labelSyncFreshEnough()) {
         const realBehaviorProof = reportRealBehaviorProof(markdown);
         const proofSufficientSyncResult = syncRealBehaviorProofSufficientLabel({
           number,
@@ -19293,32 +19710,39 @@ async function applyDecisionsCommand(args: Args): Promise<void> {
         item.labels = syncResult.labels;
         clawSweeperLabelsChanged ||= syncResult.changed;
         markdown = replaceFrontMatterValue(markdown, "labels", JSON.stringify(item.labels));
-        const impactSyncResult = syncImpactLabels({
-          number,
-          labels: item.labels,
-          impactLabels: item.kind === "pull_request" ? [] : impactLabelsFromReport(markdown),
-          dryRun,
-        });
+        const impactSyncResult = isSignalCommentPolicy()
+          ? unchangedLabelSync(item.labels)
+          : syncImpactLabels({
+              number,
+              labels: item.labels,
+              impactLabels: item.kind === "pull_request" ? [] : impactLabelsFromReport(markdown),
+              dryRun,
+            });
         item.labels = impactSyncResult.labels;
         clawSweeperLabelsChanged ||= impactSyncResult.changed;
         markdown = replaceFrontMatterValue(markdown, "labels", JSON.stringify(item.labels));
-        const maturitySyncResult = syncMaturityLabels({
-          number,
-          labels: item.labels,
-          maturityLabels: item.kind === "pull_request" ? [] : maturityLabelsFromReport(markdown),
-          dryRun,
-        });
+        const maturitySyncResult = isSignalCommentPolicy()
+          ? unchangedLabelSync(item.labels)
+          : syncMaturityLabels({
+              number,
+              labels: item.labels,
+              maturityLabels:
+                item.kind === "pull_request" ? [] : maturityLabelsFromReport(markdown),
+              dryRun,
+            });
         item.labels = maturitySyncResult.labels;
         clawSweeperLabelsChanged ||= maturitySyncResult.changed;
         markdown = replaceFrontMatterValue(markdown, "labels", JSON.stringify(item.labels));
         let mergeRiskLabelsChanged = false;
         if (item.kind === "pull_request") {
-          const mergeRiskSyncResult = syncMergeRiskLabels({
-            number,
-            labels: item.labels,
-            mergeRiskLabels: mergeRiskLabelsFromReport(markdown),
-            dryRun,
-          });
+          const mergeRiskSyncResult = isSignalCommentPolicy()
+            ? unchangedLabelSync(item.labels)
+            : syncMergeRiskLabels({
+                number,
+                labels: item.labels,
+                mergeRiskLabels: mergeRiskLabelsFromReport(markdown),
+                dryRun,
+              });
           item.labels = mergeRiskSyncResult.labels;
           mergeRiskLabelsChanged = mergeRiskSyncResult.changed;
           clawSweeperLabelsChanged ||= mergeRiskSyncResult.changed;
@@ -19360,12 +19784,19 @@ async function applyDecisionsCommand(args: Args): Promise<void> {
             humanLabelState === "removed" ||
             (humanLabelState === "unknown" && reportHadGoodFirstIssue);
         }
-        const syncResult = syncIssueAdvisoryLabels({
-          number,
-          labels: item.labels,
-          state: advisoryState,
-          dryRun,
-        });
+        const syncResult = isSignalCommentPolicy()
+          ? syncKeptIssueAdvisoryLabels({
+              number,
+              labels: item.labels,
+              state: advisoryState,
+              dryRun,
+            })
+          : syncIssueAdvisoryLabels({
+              number,
+              labels: item.labels,
+              state: advisoryState,
+              dryRun,
+            });
         item.labels = syncResult.labels;
         issueAdvisoryLabelsChanged = syncResult.changed;
         clawSweeperLabelsChanged ||= syncResult.changed;
@@ -19419,6 +19850,18 @@ async function applyDecisionsCommand(args: Args): Promise<void> {
       needsReviewCommentReferenceSync,
       forceReviewCommentBodySync: clawSweeperLabelsChanged,
     });
+    // Signal policy: assigned directly (not inside the helper) so TypeScript
+    // keeps the string | null narrowing at the use sites below.
+    const signalCommentWithholdReason = (): string | null => {
+      if (!isSignalCommentPolicy() || !needsReviewCommentSync) return null;
+      return signalPolicyWithholdReason({
+        markdown,
+        hasExistingReviewComment: Boolean(existingReviewComment),
+        stalePullRequestHead: Boolean(stalePrReviewHead),
+      });
+    };
+    let withheldReviewCommentReason: string | null = signalCommentWithholdReason();
+    if (withheldReviewCommentReason) needsReviewCommentSync = false;
     if (
       isCloseProposal &&
       closeReason === "duplicate_or_superseded" &&
@@ -19498,6 +19941,8 @@ async function applyDecisionsCommand(args: Args): Promise<void> {
             needsReviewCommentReferenceSync,
             forceReviewCommentBodySync: true,
           });
+          withheldReviewCommentReason = signalCommentWithholdReason();
+          if (withheldReviewCommentReason) needsReviewCommentSync = false;
         }
         const coveringFreshnessBlock = postProofCoveringPrFreshnessBlock();
         if (coveringFreshnessBlock) {
@@ -19630,10 +20075,22 @@ async function applyDecisionsCommand(args: Args): Promise<void> {
       results.push({
         number,
         action: "kept_open",
-        reason: labelSyncReason,
+        reason: [labelSyncReason, withheldReviewCommentReason].filter(Boolean).join("; "),
       });
       processedCount += 1;
       maybeLogProgress(labelSyncProgressMessage);
+      if (processedCount >= processedLimit) break;
+    }
+    if (withheldReviewCommentReason && !clawSweeperLabelsChanged) {
+      markdown = replaceFrontMatterValue(markdown, "apply_checked_at", new Date().toISOString());
+      if (!dryRun) writeReportMarkdown(path, markdown);
+      results.push({
+        number,
+        action: "review_comment_withheld",
+        reason: withheldReviewCommentReason,
+      });
+      processedCount += 1;
+      maybeLogProgress(`withheld review comment #${number}`);
       if (processedCount >= processedLimit) break;
     }
     if (syncCommentsOnly) continue;
