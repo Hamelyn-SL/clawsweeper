@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-01T10:48:36.135Z",
-  "updatedAt": "2026-09-01T10:42:24Z",
+  "generatedAt": "2026-09-02T13:13:32.202Z",
+  "updatedAt": "2026-09-02T10:54:49Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,47 +13,41 @@
       "app:infrastructure",
       "reporter:davidgonzalez",
       "feature",
-      "triage:running",
-      "P1",
-      "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review"
+      "triage:needs-info",
+      "P1"
     ],
     "createdAt": "2026-09-01T10:28:43Z",
-    "updatedAt": "2026-09-01T10:42:24Z"
+    "updatedAt": "2026-09-02T10:54:49Z"
   },
-  "lane": "manual_review",
+  "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Se confirma en el puesto físico que el bridge informa `V77C` y que el alveolo operativo es `Alveolus_1_1_RIGHT` antes de desplegar el alta?",
-  "rationale": "El cambio de código es acotado, pero esas dos propiedades dependen del hardware y determinan que el alias y el ack fijo sean seguros.",
+  "question": "¿Se confirma que `skypod-2` usa el alveolo `1_01`, cuál es su enlace corporativo e IP Exotec, y que `skypod2` ya entra en el sondeo del ancla?",
+  "rationale": "Estos datos determinan si el cambio representa un puesto operativo real; inventarlos dejaría documentación incorrecta o monitorización engañosa.",
   "options": [
     {
-      "title": "Verificar y ejecutar el alta",
-      "body": "Confirmar ambos valores en el bridge y continuar con el cambio de core, Bifrost e inventario.",
+      "title": "Confirmar alta física completa",
+      "body": "Confirmar los cuatro valores operativos y preparar un único cambio coordinado de código, ancla e inventario.",
       "recommended": true
     },
     {
-      "title": "Corregir la identificación primero",
-      "body": "Si el bridge informa otro código o alveolo, actualizar el alcance antes de tocar la lista cerrada.",
+      "title": "Aplazar el alta",
+      "body": "Mantener la estación sin habilitar hasta que el montaje y el alveolo estén verificados.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Verificar y ejecutar el alta",
-    "body": "Confirmar ambos valores en el bridge y continuar con el cambio de core, Bifrost e inventario.",
+    "title": "Confirmar alta física completa",
+    "body": "Confirmar los cuatro valores operativos y preparar un único cambio coordinado de código, ancla e inventario.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "banosdavidhamelyn",
-    "reason": "Su historial integrado cubre tanto el soporte multiestación como el inventario Bifrost.",
+    "reason": "Su historial conecta la ruta de estación y la configuración reciente de Bifrost, además de que el contexto operativo procede de este flujo.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8976.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8976#issuecomment-5492796480",
-    "reviewedAt": "2026-09-01T10:48:36.135Z",
-    "mainSha": "2ec011fd2d7d4076217cbdcadcdb1c9ba06c3abc"
+    "reviewedAt": "2026-09-02T13:13:32.202Z",
+    "mainSha": "9b525e0aae70b41daab228e22437134fc1e70b6f"
   }
 }
