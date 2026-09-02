@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-05T00:34:17.997Z",
-  "updatedAt": "2026-08-04T23:49:06Z",
+  "generatedAt": "2026-09-02T11:27:27.815Z",
+  "updatedAt": "2026-09-02T10:55:14Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,55 +14,49 @@
       "source:admin-panel",
       "app:marketplace",
       "triage:no-change",
+      "P1",
+      "clawsweeper:needs-product-decision",
       "reporter:JavierHamelyn",
       "origin:panel",
-      "mk:amazon",
-      "P1",
-      "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "mk:amazon"
     ],
     "createdAt": "2026-08-03T13:36:22Z",
-    "updatedAt": "2026-08-04T23:49:06Z"
+    "updatedAt": "2026-09-02T10:55:14Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe aprobarse primero una PR mínima que fuerce `101078 → UNKNOWN`, dejando el grafo regional y cualquier backfill para una iniciativa separada con validación humana?",
-  "rationale": "El guard es una corrección acotada, pero decidir la condición canónica, los casos FBA y cuándo autorizar escrituras masivas exige criterio de producto y operación.",
+  "question": "¿Se aprueba separar una mitigación inmediata `101078 → UNKNOWN` del futuro resolver de condición regional y mantener cualquier backfill bloqueado hasta validar el contrato canónico?",
+  "rationale": "La exclusión mecánica es acotada, pero decidir la condición canónica, los casos FBA y las escrituras regionales cambia comportamiento operativo y no puede inferirse con seguridad del código.",
   "options": [
     {
-      "title": "Separar mitigación y remediación",
-      "body": "Aprobar primero el guard de clasificación con prueba de bundle mixto y diseñar aparte el resolver regional sin activar writes.",
+      "title": "Mitigación primero",
+      "body": "Publicar solo el guard y las pruebas de precedencia, dejando el resolver y el backfill como trabajo posterior con aprobación.",
       "recommended": true
     },
     {
-      "title": "Diseñar primero el resolver completo",
-      "body": "Mantener la mitigación pendiente hasta acordar la identidad de condición, el flujo de revisión y la política de backfill.",
+      "title": "Resolver completo antes del guard",
+      "body": "Esperar a definir el grafo regional y entregar una solución integrada, aceptando que el recovery actual siga expuesto mientras tanto.",
       "recommended": false
     },
     {
-      "title": "Bloquear recovery Amazon temporalmente",
-      "body": "Aplicar una pausa más amplia si el equipo considera insuficiente el aislamiento por código mientras se investiga la causa.",
+      "title": "Solo observación",
+      "body": "Mantener la cohorte sin cambios y ejecutar primero la auditoría account-wide para decidir el contrato de condición.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Separar mitigación y remediación",
-    "body": "Aprobar primero el guard de clasificación con prueba de bundle mixto y diseñar aparte el resolver regional sin activar writes.",
+    "title": "Mitigación primero",
+    "body": "Publicar solo el guard y las pruebas de precedencia, dejando el resolver y el backfill como trabajo posterior con aprobación.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Está asignado a la incidencia y su historial cubre el recovery de precios que debe quedar protegido.",
+    "reason": "Está asignado y su historial reciente cubre tanto la recuperación Amazon como la evidencia operativa de esta incidencia.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8188.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8188#issuecomment-5167219624",
-    "reviewedAt": "2026-08-05T00:34:17.997Z",
-    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
+    "reviewedAt": "2026-09-02T11:27:27.815Z",
+    "mainSha": "350e0bfc6a03f54c34e3afbc6a231922e06685a7"
   }
 }

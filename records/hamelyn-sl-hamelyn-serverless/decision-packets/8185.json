@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-05T00:40:22.153Z",
-  "updatedAt": "2026-08-04T23:49:01Z",
+  "generatedAt": "2026-09-02T11:27:23.058Z",
+  "updatedAt": "2026-09-02T10:55:15Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,53 +15,43 @@
       "feature",
       "triage:done",
       "reporter:irenegarcia",
-      "origin:panel",
-      "mk:mercadolibre",
+      "clawsweeper:needs-product-decision",
       "P2",
-      "impact:other",
-      "issue-rating: ➖ n/a",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "origin:panel",
+      "mk:mercadolibre"
     ],
     "createdAt": "2026-08-03T12:01:21Z",
-    "updatedAt": "2026-08-04T23:49:01Z"
+    "updatedAt": "2026-09-02T10:55:15Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué categorías deben entrar en la primera fase y qué contrato bidireccional debe conservarse entre MercadoLibre y eDesk?",
-  "rationale": "La implementación introduce canales, estado persistente y respuestas salientes; ni el webhook ni el cliente actual definen esas reglas de negocio.",
+  "question": "¿La primera entrega debe cubrir solo preguntas preventa y mensajes postventa, dejando las reclamaciones para una segunda fase?",
+  "rationale": "Cada recurso de MercadoLibre tiene reglas y autorizaciones diferentes; esta elección determina el modelo persistente, la configuración de eDesk y el alcance de los workers.",
   "options": [
     {
-      "title": "Primera fase de conversaciones",
-      "body": "Implementar preguntas preventa y mensajes postventa, con mapeo conversación↔ticket, deduplicación y reenvío de respuestas salientes.",
+      "title": "Primera fase de mensajes",
+      "body": "Implementar preguntas y mensajes bidireccionales con deduplicación y mapeos persistentes, y planificar reclamaciones después.",
       "recommended": true
     },
     {
-      "title": "Incluir reclamos desde el inicio",
-      "body": "Extender la primera entrega a reclamos y adjuntos, asumiendo mayor alcance operativo y validación externa.",
-      "recommended": false
-    },
-    {
-      "title": "Solo tickets internos",
-      "body": "Crear tickets sin responder a MercadoLibre, reduciendo alcance pero sin cumplir el objetivo bidireccional confirmado.",
+      "title": "Incluir reclamaciones",
+      "body": "Diseñar desde el inicio los tres flujos, asumiendo una entrega mayor con moderación, adjuntos y conciliación.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Primera fase de conversaciones",
-    "body": "Implementar preguntas preventa y mensajes postventa, con mapeo conversación↔ticket, deduplicación y reenvío de respuestas salientes.",
+    "title": "Primera fase de mensajes",
+    "body": "Implementar preguntas y mensajes bidireccionales con deduplicación y mapeos persistentes, y planificar reclamaciones después.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Es la persona con la procedencia más directa sobre el webhook actual de MercadoLibre y la documentación del flujo.",
+    "person": "MiguelHamelyn",
+    "reason": "Es la persona con señal más directa en el historial disponible de los dos puntos actuales de integración.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8185.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8185#issuecomment-5166101052",
-    "reviewedAt": "2026-08-05T00:40:22.153Z",
-    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
+    "reviewedAt": "2026-09-02T11:27:23.058Z",
+    "mainSha": "350e0bfc6a03f54c34e3afbc6a231922e06685a7"
   }
 }
