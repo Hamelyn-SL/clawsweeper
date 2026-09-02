@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-02T02:07:54.181Z",
-  "updatedAt": "2026-09-02T01:27:22Z",
+  "generatedAt": "2026-09-02T07:49:55.634Z",
+  "updatedAt": "2026-09-02T07:42:51Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,52 +14,46 @@
       "feature",
       "reporter:javier",
       "triage:done",
-      "P2",
       "impact:other",
-      "issue-rating: ➖ n/a",
-      "clawsweeper:linked-pr-open",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:linked-pr-open",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-09-01T23:34:34Z",
-    "updatedAt": "2026-09-02T01:27:22Z"
+    "updatedAt": "2026-09-02T07:42:51Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe mantenerse la propuesta conjunta o separarse en PRs independientes para los gates, el catálogo de skills y las correcciones de workflows?",
-  "rationale": "La retirada y fusión de skills fija una política duradera, mientras que los hooks y workflows tienen superficies de compatibilidad distintas.",
+  "question": "¿Se debe mantener una única iniciativa para los verificadores, la poda de skills y los dos workflows, o dividirla en cambios independientes antes de aceptar código?",
+  "rationale": "La selección de skills compartidas y el nivel de endurecimiento de los gates cambian la política de desarrollo; la PR actual mezcla esas decisiones con correcciones mecánicas y ya tiene cambios solicitados.",
   "options": [
     {
-      "title": "Separar los tres bloques",
-      "body": "Revisar y aterrizar gates, catálogo de skills y workflows en PRs acotadas con validación propia.",
+      "title": "Dividir por responsabilidades",
+      "body": "Separar convenciones, catálogo de skills y correcciones de workflows permite validar cada contrato y mantener el riesgo acotado.",
       "recommended": true
     },
     {
-      "title": "Patrocinar una PR conjunta",
-      "body": "Aceptar el alcance amplio si se revisan explícitamente consumidores, rutas de skills y los tres cambios operativos.",
-      "recommended": false
-    },
-    {
-      "title": "Limitar el alcance inicial",
-      "body": "Aprobar primero los gates y las correcciones reproducibles, dejando la poda de skills para una decisión posterior.",
+      "title": "Patrocinar una PR única",
+      "body": "Mantener la propuesta junta conserva una integración única, pero exige resolver todos los defectos y revisar el conjunto completo antes de mergear.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Separar los tres bloques",
-    "body": "Revisar y aterrizar gates, catálogo de skills y workflows en PRs acotadas con validación propia.",
+    "title": "Dividir por responsabilidades",
+    "body": "Separar convenciones, catálogo de skills y correcciones de workflows permite validar cada contrato y mantener el riesgo acotado.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "HamelynDev",
-    "reason": "El código base afectado de hooks y validaciones aparece ligado a su historial actual.",
+    "person": "MiguelHamelyn",
+    "reason": "Su revisión actual de la PR enlazada aporta la señal más directa sobre el alcance aceptable y los cambios pendientes.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8988.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8988#issuecomment-5502149625",
-    "reviewedAt": "2026-09-02T02:07:54.181Z",
-    "mainSha": "6feedad9d3b0414d0773798d2571d2aad65dac58"
+    "reviewedAt": "2026-09-02T07:49:55.634Z",
+    "mainSha": "e36ff4c81e2e6a3d2b4ebffe2645d34444ad37c4"
   }
 }
