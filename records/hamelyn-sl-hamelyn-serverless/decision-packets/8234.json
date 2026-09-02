@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-19T11:47:58.028Z",
-  "updatedAt": "2026-08-19T08:13:07Z",
+  "generatedAt": "2026-09-02T12:07:15.429Z",
+  "updatedAt": "2026-09-02T11:59:43Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,47 +14,41 @@
       "app:infrastructure",
       "triage:needs-info",
       "business-logic",
-      "P3",
-      "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P3"
     ],
     "createdAt": "2026-08-05T06:55:07Z",
-    "updatedAt": "2026-08-19T08:13:07Z"
+    "updatedAt": "2026-09-02T11:59:43Z"
   },
   "lane": "product_direction",
   "priority": "P3",
-  "question": "¿Debe `countCouponUsage` conservar una sola spec canónica en coupons, con referencias cruzadas desde checkout y los demás subdominios compartidos?",
-  "rationale": "La elección modifica la titularidad semántica de las reglas y el grafo BL; el protocolo F2 reserva esta decisión al owner.",
+  "question": "¿Las reglas compartidas deben tener una única spec canónica con referencias cruzadas, o conservar una spec independiente por cada subdominio que las consume?",
+  "rationale": "La elección determina los IDs BL, el grafo de dependencias y qué tests o logs representan cada regla; el código actual no resuelve esa titularidad semántica.",
   "options": [
     {
-      "title": "Una spec canónica por regla",
-      "body": "Mantener `BL-ecommerce-coupons-13` para `countCouponUsage` y sustituir la duplicación de checkout por una referencia cruzada.",
+      "title": "Una spec canónica",
+      "body": "Mantener `BL-ecommerce-coupons-13` para `countCouponUsage` y sustituir las duplicaciones por referencias cruzadas desde checkout, catalog y search.",
       "recommended": true
     },
     {
-      "title": "Mantener titularidades paralelas",
-      "body": "Conservar ambos BL-ID para reflejar responsabilidades separadas, documentando explícitamente por qué comparten la misma función.",
+      "title": "Specs por subdominio",
+      "body": "Conservar reglas independientes cuando cada subdominio necesite expresar una responsabilidad de negocio propia sobre la misma función.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Una spec canónica por regla",
-    "body": "Mantener `BL-ecommerce-coupons-13` para `countCouponUsage` y sustituir la duplicación de checkout por una referencia cruzada.",
+    "title": "Una spec canónica",
+    "body": "Mantener `BL-ecommerce-coupons-13` para `countCouponUsage` y sustituir las duplicaciones por referencias cruzadas desde checkout, catalog y search.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "danielmenchen-hamelyn",
-    "reason": "Es el contribuidor que documentó la divergencia y fusionó la instrumentación que expuso el solapamiento.",
-    "confidence": "high"
+    "person": "HamelynDev",
+    "reason": "Su historial conecta la corrección ya resuelta y la documentación BL que requiere consolidación.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8234.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8234#issuecomment-5188663433",
-    "reviewedAt": "2026-09-02T11:56:31.985Z",
+    "reviewedAt": "2026-09-02T12:07:15.429Z",
     "mainSha": "9f2c29d350ecdeaed7d4507c3beb9e0f9f1707d0"
   }
 }

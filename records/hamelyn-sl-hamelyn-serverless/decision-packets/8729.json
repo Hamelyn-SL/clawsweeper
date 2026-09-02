@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-26T10:01:19.417Z",
-  "updatedAt": "2026-08-26T08:48:02Z",
+  "generatedAt": "2026-09-02T12:06:11.222Z",
+  "updatedAt": "2026-09-02T10:55:04Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,47 +15,41 @@
       "feature",
       "triage:done",
       "reporter:victor",
-      "P2",
-      "impact:ux-friction",
-      "impact:other",
-      "issue-rating: ➖ n/a",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2"
     ],
     "createdAt": "2026-08-26T08:14:18Z",
-    "updatedAt": "2026-08-26T08:48:02Z"
+    "updatedAt": "2026-09-02T10:55:04Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe la despublicación de autores no elegibles responder explícitamente HTTP 410, pese a que la ruta actual solo usa `notFound()` para el contenido ausente?",
-  "rationale": "La solicitud fija el objetivo SEO, pero el mecanismo de App Router determina el contrato HTTP y afecta a rutas indexadas existentes.",
+  "question": "¿Se confirma que los autores no elegibles deben devolver HTTP 410 explícito en vez del 404 estándar de `notFound()`?",
+  "rationale": "El requisito SEO define el resultado deseado, pero el contrato HTTP condiciona la implementación transversal y la recuperación de URLs ya indexadas.",
   "options": [
     {
-      "title": "Conservar HTTP 410 explícito",
-      "body": "Definir una respuesta específica para autores no elegibles y aplicarla de forma coherente en todas las superficies.",
+      "title": "Mantener 410 explícito",
+      "body": "Implementar una respuesta 410 coherente para autores no elegibles y excluirlos simultáneamente de sitemap y enlaces.",
       "recommended": true
     },
     {
-      "title": "Aceptar 404 como contrato",
-      "body": "Cambiar el alcance SEO para usar el comportamiento estándar de `notFound()` y documentar la decisión.",
+      "title": "Adoptar 404 estándar",
+      "body": "Usar `notFound()` y actualizar el requisito SEO para que la retirada de hubs siga el contrato habitual de App Router.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Conservar HTTP 410 explícito",
-    "body": "Definir una respuesta específica para autores no elegibles y aplicarla de forma coherente en todas las superficies.",
+    "title": "Mantener 410 explícito",
+    "body": "Implementar una respuesta 410 coherente para autores no elegibles y excluirlos simultáneamente de sitemap y enlaces.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Su historial reciente en el componente de detalle lo sitúa cerca del cambio de ruta y presentación.",
-    "confidence": "medium"
+    "reason": "Su historial reciente en la página de autor le conecta con la ruta y la experiencia afectadas.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8729.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8729#issuecomment-5422668926",
-    "reviewedAt": "2026-08-26T10:01:19.417Z",
-    "mainSha": "82bdece35dd3b3ed50b5a02eecae0fdf2e9c684b"
+    "reviewedAt": "2026-09-02T12:06:11.222Z",
+    "mainSha": "9f2c29d350ecdeaed7d4507c3beb9e0f9f1707d0"
   }
 }
