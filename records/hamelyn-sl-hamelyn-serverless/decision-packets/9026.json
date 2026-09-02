@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-02T13:27:52.959Z",
-  "updatedAt": "2026-09-02T13:23:25Z",
+  "generatedAt": "2026-09-02T14:47:11.970Z",
+  "updatedAt": "2026-09-02T14:14:34Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,44 +12,43 @@
     "labels": [
       "bug",
       "app:ecommerce",
-      "triage:queued",
+      "triage:pr-opened",
       "reporter:alejandrodiaz",
       "clawsweeper:needs-product-decision",
       "P2"
     ],
     "createdAt": "2026-09-02T13:08:42Z",
-    "updatedAt": "2026-09-02T13:23:25Z"
+    "updatedAt": "2026-09-02T14:14:34Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe el hero regional reutilizar `config.tags.description` cuando falte una traducción explícita, o cada mercado necesita un `heroDescription` editorial independiente?",
-  "rationale": "Ambas vías eliminan el fallback incorrecto, pero fijan fuentes de verdad y responsabilidades editoriales distintas.",
+  "question": "¿Debe el hero usar la descripción SEO ya localizada fuera de España, reservando el copy editorial especial para `es`?",
+  "rationale": "La alternativa afecta al mensaje comercial visible y determina si hace falta mantener copy editorial específico por mercado.",
   "options": [
     {
-      "title": "Reutilizar copy regional",
-      "body": "Usar la descripción ya localizada de `config.tags` como fallback del hero y mantener el texto específico solo donde exista de forma explícita.",
+      "title": "Reutilizar copy SEO regional",
+      "body": "Integrar la corrección abierta para preservar el hero editorial de España y mostrar el texto localizado existente en los demás storefronts.",
       "recommended": true
     },
     {
-      "title": "Mantener copy independiente",
-      "body": "Añadir y sostener un `heroDescription` por vertical para `ca`, `es-MX`, `es-CO` y `es-AR` con copy comercial aprobado.",
+      "title": "Crear copy editorial por mercado",
+      "body": "Mantener una clave `heroDescription` independiente para cada vertical y locale regional con texto comercial aprobado.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Reutilizar copy regional",
-    "body": "Usar la descripción ya localizada de `config.tags` como fallback del hero y mantener el texto específico solo donde exista de forma explícita.",
+    "title": "Reutilizar copy SEO regional",
+    "body": "Integrar la corrección abierta para preservar el hero editorial de España y mostrar el texto localizado existente en los demás storefronts.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "Alex Cantón",
-    "reason": "La decisión determina la fuente de verdad del copy regional y su mantenimiento editorial.",
-    "confidence": "medium"
+    "person": "danielmenchen-hamelyn",
+    "reason": "Su historial en el hero y su solicitud de revisión en la PR abierta lo sitúan en la mejor posición para validar la dirección.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9026.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9026#issuecomment-5510234087",
-    "reviewedAt": "2026-09-02T13:27:52.959Z",
+    "reviewedAt": "2026-09-02T14:47:11.970Z",
     "mainSha": "9b525e0aae70b41daab228e22437134fc1e70b6f"
   }
 }
