@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-02T20:47:31.017Z",
+  "updatedAt": "2026-09-02T20:30:41Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9064,
+    "title": "Marketplace: [todocoleccion] stock <sku> (ean <id>) has no image metadata; the listing will publish without a photo",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9064",
+    "state": "open",
+    "labels": [
+      "codex",
+      "bug",
+      "app:marketplace",
+      "triage:queued",
+      "P2",
+      "marketplace-crons"
+    ],
+    "createdAt": "2026-09-02T20:30:41Z",
+    "updatedAt": "2026-09-02T20:30:41Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe TodoColección retener temporalmente los stocks sin `product.image` hasta que catálogo los enriquezca, o permitir su publicación sin foto?",
+  "rationale": "El código ya detecta el caso, pero elegir entre disponibilidad inmediata y calidad del anuncio determina el estado, el reintento y la observabilidad correctos.",
+  "options": [
+    {
+      "title": "Retener hasta disponer de imagen",
+      "body": "No crear el listing sin foto y reintentarlo mediante una ruta controlada cuando exista metadata de imagen.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener publicación degradada",
+      "body": "Seguir publicando sin foto, pero rebajar el aviso a telemetría no alertable y documentar ese comportamiento.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Retener hasta disponer de imagen",
+    "body": "No crear el listing sin foto y reintentarlo mediante una ruta controlada cuando exista metadata de imagen.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "HamelynDev",
+    "reason": "Es la persona vinculada al cambio que definió la detección actual y su semántica.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9064.md",
+    "reviewedAt": "2026-09-02T20:47:31.017Z",
+    "mainSha": "ffd90286dac2d39d356b520899b76b13f8465698"
+  }
+}
