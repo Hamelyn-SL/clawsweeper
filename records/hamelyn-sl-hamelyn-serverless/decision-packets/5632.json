@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-02T18:51:43.990Z",
-  "updatedAt": "2026-09-02T18:30:43Z",
+  "generatedAt": "2026-09-02T20:56:22.317Z",
+  "updatedAt": "2026-09-02T20:39:13Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,45 +13,49 @@
       "codex",
       "bug",
       "app:marketplace",
-      "triage:queued",
+      "triage:done",
+      "P1",
       "clawsweeper:needs-product-decision",
       "origin:watcher",
-      "mk:amazon",
-      "P1"
+      "mk:amazon"
     ],
     "createdAt": "2026-05-03T01:34:14Z",
-    "updatedAt": "2026-09-02T18:30:43Z"
+    "updatedAt": "2026-09-02T20:39:13Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe el motor común de crons imponer un presupuesto cancelable antes del límite de Vercel, y qué semántica de finalización parcial debe tener cada fase Amazon?",
-  "rationale": "El límite puede reducir 504, pero también interrumpir create, withdraw, pedidos o recuperación; el código actual no expresa cómo reconciliar ese estado.",
+  "question": "¿Se aprueba reducir ahora los límites operativos de Amazon COM V2 a `withdraw: 100` y `create: 50`, aceptando menor throughput temporal para eliminar los timeouts de 800 segundos?",
+  "rationale": "El código ya ofrece los caps necesarios; la elección afecta al ritmo de drenaje del backlog y exige una decisión operativa sobre el equilibrio entre capacidad y fiabilidad.",
   "options": [
     {
-      "title": "Contrato común con parada segura",
-      "body": "Definir deadline, telemetría por fase e idempotencia/reintento antes de aplicarlo a las rutas Amazon V2.",
+      "title": "Aplicar caps conservadores",
+      "body": "Actualizar la configuración PROD a `withdraw: 100` y `create: 50`, y revisar durante 24 horas los 504, duración de fases y backlog.",
       "recommended": true
     },
     {
-      "title": "Diagnóstico por fase primero",
-      "body": "Recoger duraciones y consultas vivas de Amazon V2 antes de fijar una política común de cancelación.",
+      "title": "Mantener capacidad actual",
+      "body": "Conservar los valores actuales y aceptar que los ticks de COM pueden seguir solapándose y terminando en el límite de Vercel.",
+      "recommended": false
+    },
+    {
+      "title": "Elegir otros límites medidos",
+      "body": "Definir caps alternativos a partir de métricas recientes de duración por fase antes de modificar la configuración viva.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Contrato común con parada segura",
-    "body": "Definir deadline, telemetría por fase e idempotencia/reintento antes de aplicarlo a las rutas Amazon V2.",
+    "title": "Aplicar caps conservadores",
+    "body": "Actualizar la configuración PROD a `withdraw: 100` y `create: 50`, y revisar durante 24 horas los 504, duración de fases y backlog.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "La discusión de esta issue ya le atribuye la decisión de trasladar el tratamiento a la capa común.",
+    "person": "Miguel Angel Hernández Perdomo",
+    "reason": "Su historial reciente contiene la migración V2 y la calibración de presupuesto Amazon que determinan el comportamiento de estos caps.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5632.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5632#issuecomment-4971269470",
-    "reviewedAt": "2026-09-02T18:51:43.990Z",
+    "reviewedAt": "2026-09-02T20:56:22.317Z",
     "mainSha": "ffd90286dac2d39d356b520899b76b13f8465698"
   }
 }

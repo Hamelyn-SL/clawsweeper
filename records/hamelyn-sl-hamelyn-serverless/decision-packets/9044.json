@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-02T20:57:38.218Z",
+  "generatedAt": "2026-09-02T20:55:39.359Z",
   "updatedAt": "2026-09-02T20:49:07Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -14,48 +14,47 @@
       "bug",
       "app:marketplace",
       "triage:needs-info",
+      "P1",
       "clawsweeper:needs-product-decision",
-      "marketplace-crons",
-      "P1"
+      "marketplace-crons"
     ],
     "createdAt": "2026-09-02T16:31:33Z",
     "updatedAt": "2026-09-02T20:49:07Z"
   },
-  "lane": "manual_review",
+  "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Tras comprobar Cainiao, debe restaurarse el tracking de un envío existente o debe Operaciones reemitir o regularizar este pedido sin envío verificable?",
-  "rationale": "El repositorio no contiene una fuente segura para derivar el tracking ausente, y una reparación automática podría crear o confirmar un envío incorrecto.",
+  "question": "¿Qué regularización operativa debe aplicarse cuando un pedido `PICKED_UP` carece de cualquier dato verificable de Cainiao?",
+  "rationale": "El código no puede distinguir de forma segura entre un envío existente sin sincronizar y uno que nunca se creó; esa elección determina si se confirma, reemite o anula.",
   "options": [
     {
-      "title": "Verificar y restaurar datos existentes",
-      "body": "Si Cainiao devuelve un envío real, actualizar solo los campos autoritativos y permitir que el cron complete la confirmación.",
+      "title": "Verificar y recuperar envío real",
+      "body": "Operaciones consulta Cainiao y aporta el tracking existente para una corrección dirigida del pedido.",
       "recommended": true
     },
     {
-      "title": "Reemitir la etiqueta",
-      "body": "Si no existe envío pero debe despacharse, crear una nueva expedición mediante el flujo operativo y conservar su tracking.",
+      "title": "Reemitir etiqueta controladamente",
+      "body": "Operaciones autoriza una nueva expedición solo tras confirmar que no existe una previa.",
       "recommended": false
     },
     {
       "title": "Regularizar como no enviado",
-      "body": "Si no hubo envío real, revertir o cerrar el pedido según el procedimiento operativo antes de evitar una confirmación falsa.",
+      "body": "Operaciones anula o corrige el pedido si Cainiao confirma que nunca hubo expedición.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Verificar y restaurar datos existentes",
-    "body": "Si Cainiao devuelve un envío real, actualizar solo los campos autoritativos y permitir que el cron complete la confirmación.",
+    "title": "Verificar y recuperar envío real",
+    "body": "Operaciones consulta Cainiao y aporta el tracking existente para una corrección dirigida del pedido.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "HamelynDev",
-    "reason": "Es la persona vinculada en el historial a la recuperación que delimitó este caso residual.",
+    "person": "MarcosTerroso",
+    "reason": "Implementó la recuperación previa y conoce el límite técnico que evita fabricar datos de expedición.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9044.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9044#issuecomment-5513466718",
-    "reviewedAt": "2026-09-02T20:57:38.218Z",
+    "reviewedAt": "2026-09-02T20:55:39.359Z",
     "mainSha": "ffd90286dac2d39d356b520899b76b13f8465698"
   }
 }

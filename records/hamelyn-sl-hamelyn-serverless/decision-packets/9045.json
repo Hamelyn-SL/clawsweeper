@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-02T17:05:55.247Z",
-  "updatedAt": "2026-09-02T16:31:34Z",
+  "generatedAt": "2026-09-02T20:56:02.663Z",
+  "updatedAt": "2026-09-02T19:32:06Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,49 +13,42 @@
       "codex",
       "bug",
       "app:marketplace",
-      "triage:queued",
-      "marketplace-crons",
+      "triage:pr-opened",
       "P1",
-      "clawsweeper:needs-product-decision"
+      "marketplace-crons"
     ],
     "createdAt": "2026-09-02T16:31:34Z",
-    "updatedAt": "2026-09-02T16:31:34Z"
+    "updatedAt": "2026-09-02T19:32:06Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe un HTTP 400 de Fnac que devuelve `state: shipped` y estado `fatal` marcarse como envío confirmado, como rechazo terminal, o mantenerse como `SYNC_ERROR` recuperable?",
-  "rationale": "El código actual conserva el rechazo deliberadamente sin clasificarlo; elegir su estado interno afecta a la reconciliación de ventas y no puede deducirse con seguridad del fragmento de respuesta disponible.",
+  "question": "¿La respuesta Fnac `ERR_002` con estado remoto `SHIPPED` debe reconciliarse localmente como `SHIPPED` o permanecer como `SYNC_ERROR` terminal?",
+  "rationale": "Los dos PR abiertos previenen el bucle, pero difieren en el estado local definitivo y en la carga operativa posterior.",
   "options": [
     {
-      "title": "Confirmar la semántica con Fnac",
-      "body": "Revisar el motivo completo o la documentación del proveedor y aplicar una clasificación explícita solo para esa firma terminal.",
+      "title": "Reconciliar el éxito remoto",
+      "body": "Aprobar la ruta de https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9058 para marcar `SHIPPED` solo con la firma estructural exacta.",
       "recommended": true
     },
     {
-      "title": "Mantener `SYNC_ERROR` temporalmente",
-      "body": "Conservar el comportamiento actual hasta disponer del motivo funcional completo, evitando convertir rechazos reales en envíos confirmados.",
-      "recommended": false
-    },
-    {
-      "title": "Tratarlo como confirmado",
-      "body": "Marcarlo como enviado solo si Fnac confirma que esa combinación de estado representa una aceptación idempotente.",
+      "title": "Conservar error terminal",
+      "body": "Aprobar la ruta de https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9062 para detener reintentos y mantener la revisión manual.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Confirmar la semántica con Fnac",
-    "body": "Revisar el motivo completo o la documentación del proveedor y aplicar una clasificación explícita solo para esa firma terminal.",
+    "title": "Reconciliar el éxito remoto",
+    "body": "Aprobar la ruta de https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9058 para marcar `SHIPPED` solo con la firma estructural exacta.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Su trabajo reciente abarca la configuración y el adaptador Fnac donde debe validarse la semántica del proveedor.",
+    "person": "HamelynDev",
+    "reason": "Ha reunido la evidencia operativa y authored ambas rutas de implementación.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9045.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9045#issuecomment-5513355680",
-    "reviewedAt": "2026-09-02T17:05:55.247Z",
-    "mainSha": "5e22d4c0088c829ca17114c2c115ec8c37b2e1a2"
+    "reviewedAt": "2026-09-02T20:56:02.663Z",
+    "mainSha": "ffd90286dac2d39d356b520899b76b13f8465698"
   }
 }

@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-02T20:58:35.588Z",
+  "updatedAt": "2026-09-02T20:30:41Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9063,
+    "title": "Marketplace: cdl api create offer ❌ error [axioserror]: request failed with status code 429 at eg (.next/server/chunks/_",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9063",
+    "state": "open",
+    "labels": [
+      "codex",
+      "bug",
+      "app:marketplace",
+      "triage:queued",
+      "P2",
+      "marketplace-crons"
+    ],
+    "createdAt": "2026-09-02T20:30:41Z",
+    "updatedAt": "2026-09-02T20:30:41Z"
+  },
+  "lane": "manual_review",
+  "priority": "P2",
+  "question": "¿Debe Marketplace introducir un límite exclusivo para Feltrinelli tras medir su cuota OF24, o tratar estas observaciones como una limitación temporal del operador?",
+  "rationale": "La corrección CDL demuestra que los presupuestos Mirakl se separan por tienda; el dato aportado no identifica todavía el límite sostenible de Feltrinelli.",
+  "options": [
+    {
+      "title": "Medir y limitar Feltrinelli",
+      "body": "Recopilar volumen, ventana y `Retry-After` de Feltrinelli y aplicar una reserva exclusiva con margen conservador.",
+      "recommended": true
+    },
+    {
+      "title": "Observar antes de cambiar",
+      "body": "Mantener la clasificación actual de 429 y abrir una corrección solo si nuevas ejecuciones confirman una cuota recurrente.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Medir y limitar Feltrinelli",
+    "body": "Recopilar volumen, ventana y `Retry-After` de Feltrinelli y aplicar una reserva exclusiva con margen conservador.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "La decisión afecta al manager Mirakl y a su política de límites por marketplace.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9063.md",
+    "reviewedAt": "2026-09-02T20:58:35.588Z",
+    "mainSha": "ffd90286dac2d39d356b520899b76b13f8465698"
+  }
+}
