@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-01T23:47:21.231Z",
-  "updatedAt": "2026-09-01T23:42:21Z",
+  "generatedAt": "2026-09-02T01:01:17.433Z",
+  "updatedAt": "2026-09-02T00:50:33Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,7 +13,7 @@
       "app:infrastructure",
       "feature",
       "reporter:javier",
-      "triage:done",
+      "triage:queued",
       "impact:other",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
@@ -22,43 +22,37 @@
       "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-09-01T23:34:34Z",
-    "updatedAt": "2026-09-01T23:42:21Z"
+    "updatedAt": "2026-09-02T00:50:33Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué reglas deben bloquear commits y PRs de forma universal, y qué excepciones explícitas deben conservar los bots y flujos internos?",
-  "rationale": "La propuesta cambia política de contribución, superficie de CI y gobernanza de skills; el código no puede decidir por sí solo el nivel de enforcement ni qué skills retirar.",
+  "question": "¿Debe aprobarse la retirada o traslado de las skills de proveedor y objetivos desde el catálogo versionado junto con los nuevos controles de convenciones?",
+  "rationale": "Los controles faltantes son verificables, pero la poda y externalización cambian la superficie de trabajo disponible y requieren una decisión humana de producto y mantenimiento.",
   "options": [
     {
-      "title": "Aprobar un alcance mínimo por fases",
-      "body": "Definir primero reglas bloqueantes, excepciones y criterios de poda, y ejecutar después PRs separados con validación de cada workflow.",
+      "title": "Separar los límites de cambio",
+      "body": "Revisar controles, política de skills y workflows como bloques independientes, manteniendo los enlaces existentes.",
       "recommended": true
     },
     {
-      "title": "Limitarse a documentación y catálogo",
-      "body": "Integrar solo la compactación y la guía de skills, dejando hooks, CI y podas para decisiones posteriores.",
-      "recommended": false
-    },
-    {
-      "title": "Adoptar enforcement completo",
-      "body": "Hacer bloqueantes todos los controles solicitados en una iniciativa coordinada con validación previa de cada automatización afectada.",
+      "title": "Aceptar el paquete completo",
+      "body": "Mantener una sola PR si se confirma expresamente que todas las fusiones, retiradas y traslados de skills son la política deseada.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar un alcance mínimo por fases",
-    "body": "Definir primero reglas bloqueantes, excepciones y criterios de poda, y ejecutar después PRs separados con validación de cada workflow.",
+    "title": "Separar los límites de cambio",
+    "body": "Revisar controles, política de skills y workflows como bloques independientes, manteniendo los enlaces existentes.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su historial reciente conecta la política de agentes, el reporter de Fallow y la propuesta relacionada de compactación.",
-    "confidence": "high"
+    "reason": "Es el contribuidor reciente del workflow Fallow y el autor de la implementación enlazada que necesita patrocinio de alcance.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8988.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8988#issuecomment-5502149625",
-    "reviewedAt": "2026-09-01T23:47:21.231Z",
+    "reviewedAt": "2026-09-02T01:01:17.433Z",
     "mainSha": "6feedad9d3b0414d0773798d2571d2aad65dac58"
   }
 }
