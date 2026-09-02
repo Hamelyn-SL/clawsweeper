@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-31T11:35:24.961Z",
-  "updatedAt": "2026-08-31T10:36:12Z",
+  "generatedAt": "2026-09-02T07:58:01.691Z",
+  "updatedAt": "2026-09-02T07:50:46Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,47 +14,46 @@
       "app:supply",
       "feature",
       "triage:needs-info",
-      "reporter:daniellopez",
-      "P2",
       "impact:other",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "reporter:daniellopez",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-08-31T10:14:50Z",
-    "updatedAt": "2026-08-31T10:36:12Z"
+    "updatedAt": "2026-09-02T07:50:46Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué señales asignan un artículo a `REVISAR`, `GRANEL`, `RECICLAR` o `INIDENTIFICABLE`, y una caja `G-*` reutiliza `INVENTORY` o mantiene su propio ciclo persistido?",
-  "rationale": "El código actual no define esas reglas ni el modelo de caja; elegirlas cambia el comportamiento operativo y el almacenamiento.",
+  "question": "¿La caja `G-*` debe ampliar el ciclo existente de una orden `INVENTORY` por cubeta, o necesita una entidad operativa independiente con apertura, cierre, conteo y correcciones?",
+  "rationale": "La respuesta determina el modelo persistido, las reglas de clasificación y el límite de los PRs; el código actual no define esa semántica.",
   "options": [
     {
-      "title": "Definir matriz y reutilizar `INVENTORY`",
-      "body": "Mantiene una sola entidad de orden y añade únicamente los campos y transiciones estrictamente necesarios.",
+      "title": "Extender `INVENTORY`",
+      "body": "Añadir destino y ciclo de caja al modelo existente para conservar el flujo actual por cubeta y limitar la migración.",
       "recommended": true
     },
     {
-      "title": "Definir un ciclo propio para `G-*`",
-      "body": "Permite apertura, cierre, conteo y correcciones explícitas, pero requiere diseñar su compatibilidad y persistencia.",
+      "title": "Crear ciclo independiente",
+      "body": "Modelar una caja `G-*` separada si Operaciones requiere trazabilidad y conciliación no equivalentes a una entrada de inventario.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Definir matriz y reutilizar `INVENTORY`",
-    "body": "Mantiene una sola entidad de orden y añade únicamente los campos y transiciones estrictamente necesarios.",
+    "title": "Extender `INVENTORY`",
+    "body": "Añadir destino y ciclo de caja al modelo existente para conservar el flujo actual por cubeta y limitar la migración.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "banosdavidhamelyn",
-    "reason": "Es la señal histórica más directa sobre el panel y las órdenes de entrada actuales.",
-    "confidence": "medium"
+    "reason": "Está asignado a la issue y ha tocado recientemente tanto la pantalla de revisión como el esquema persistido.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8929.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8929#issuecomment-5477054382",
-    "reviewedAt": "2026-08-31T11:35:24.961Z",
-    "mainSha": "3f3adacf9260ddb6525787337ef242095663ad47"
+    "reviewedAt": "2026-09-02T07:58:01.691Z",
+    "mainSha": "e36ff4c81e2e6a3d2b4ebffe2645d34444ad37c4"
   }
 }
