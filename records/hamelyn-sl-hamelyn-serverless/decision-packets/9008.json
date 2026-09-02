@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-02T08:13:26.808Z",
-  "updatedAt": "2026-09-02T08:07:40Z",
+  "generatedAt": "2026-09-02T09:22:46.790Z",
+  "updatedAt": "2026-09-02T09:07:57Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,53 +12,47 @@
     "labels": [
       "app:marketplace",
       "feature",
-      "triage:queued",
-      "marketplace-v2",
+      "triage:needs-info",
       "P1",
       "impact:other",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "issue-rating: ➖ n/a",
+      "marketplace-v2"
     ],
     "createdAt": "2026-09-02T08:07:29Z",
-    "updatedAt": "2026-09-02T08:07:40Z"
+    "updatedAt": "2026-09-02T09:07:57Z"
   },
-  "lane": "release_inclusion",
+  "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Se autoriza el cutover V2 para todos los marketplaces tras fase B, o debe excluirse Amazon hasta completar su backfill?",
-  "rationale": "La seguridad del cambio depende del estado real de datos y de la ventana de mantenimiento, información que no consta en `dev` ni en la issue.",
+  "question": "¿El primer corte debe excluir Amazon hasta completar su backfill, o debe esperar a que todas las cohortes legacy —incluida Amazon SE— estén a cero?",
+  "rationale": "El código puede retirarse mecánicamente, pero el alcance determina si se abandonan retiradas aún operativas durante la ventana.",
   "options": [
     {
-      "title": "Corte tras validar fase B",
-      "body": "Confirmar cohortes migradas y retirar todos los puentes legacy en la ventana aprobada.",
+      "title": "Esperar a cero global",
+      "body": "Mantener el contrato híbrido hasta que fase B elimine todas las cohortes legacy y ejecutar un único corte completo.",
       "recommended": true
     },
     {
       "title": "Corte parcial sin Amazon",
-      "body": "Eliminar los criterios legacy de los demás marketplaces y conservar temporalmente los puentes específicos de Amazon.",
-      "recommended": false
-    },
-    {
-      "title": "Posponer el corte",
-      "body": "Mantener la lectura híbrida hasta completar también el backfill de Amazon y cerrar las decisiones del fence.",
+      "body": "Retirar únicamente los puentes con cohortes ya vacías y conservar temporalmente el criterio Amazon documentado.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Corte tras validar fase B",
-    "body": "Confirmar cohortes migradas y retirar todos los puentes legacy en la ventana aprobada.",
+    "title": "Esperar a cero global",
+    "body": "Mantener el contrato híbrido hasta que fase B elimine todas las cohortes legacy y ejecutar un único corte completo.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Está asignado a esta iniciativa y es el contribuidor más reciente de las migraciones y precondiciones V2.",
+    "reason": "Está asignado al trabajo y su historial reciente conecta el backfill y las rutas V2 afectadas.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9008.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9008#issuecomment-5506578303",
-    "reviewedAt": "2026-09-02T08:13:26.808Z",
+    "reviewedAt": "2026-09-02T09:22:46.790Z",
     "mainSha": "c9bd4f27ed5798167e468641baf51fe6950a0c4f"
   }
 }
