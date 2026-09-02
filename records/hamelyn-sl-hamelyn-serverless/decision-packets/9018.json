@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-02T09:59:35.982Z",
+  "updatedAt": "2026-09-02T09:49:16Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 9018,
+    "title": "feat: cut selection over to v2-only state",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9018",
+    "state": "open",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-09-02T09:39:33Z",
+    "updatedAt": "2026-09-02T09:49:16Z",
+    "headSha": "9252e6f67437483b809519374bdf43cc52c35111"
+  },
+  "lane": "release_inclusion",
+  "priority": "P1",
+  "question": "¿Debe este corte esperar a que todas las cohortes legacy, incluida Amazon, estén a cero, o se autoriza un primer despliegue parcial que preserve sus puentes?",
+  "rationale": "La elección determina qué compatibilidad de datos activos se acepta durante la ventana; el código no puede resolver por sí solo ese alcance operativo.",
+  "options": [
+    {
+      "title": "Esperar al corte completo",
+      "body": "Mantener los puentes hasta acreditar fase B a cero para todas las cohortes y mergear el corte completo después.",
+      "recommended": true
+    },
+    {
+      "title": "Corte parcial sin Amazon",
+      "body": "Retirar solo las rutas ya drenadas y conservar temporalmente el puente Amazon con prueba específica de su cohorte.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Esperar al corte completo",
+    "body": "Mantener los puentes hasta acreditar fase B a cero para todas las cohortes y mergear el corte completo después.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Su historial reciente conecta el backfill, los escritores V2 y los selectores que cambian en este corte.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9018.md",
+    "reviewedAt": "2026-09-02T09:59:35.982Z",
+    "mainSha": "c9bd4f27ed5798167e468641baf51fe6950a0c4f"
+  }
+}

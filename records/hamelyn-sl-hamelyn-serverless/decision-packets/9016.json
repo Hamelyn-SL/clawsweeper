@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-02T09:59:11.523Z",
+  "updatedAt": "2026-09-02T09:36:53Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9016,
+    "title": "Marketplace: pausar los schedules de crons durante la ventana de retirada de V1",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9016",
+    "state": "open",
+    "labels": [
+      "app:marketplace",
+      "feature",
+      "triage:queued",
+      "P1",
+      "marketplace-v2"
+    ],
+    "createdAt": "2026-09-02T09:36:41Z",
+    "updatedAt": "2026-09-02T09:36:53Z"
+  },
+  "lane": "release_inclusion",
+  "priority": "P1",
+  "question": "¿Se autoriza desplegar esta pausa temporal en T0 junto con el write fence y su posterior reversión controlada?",
+  "rationale": "La eliminación de schedules es deliberadamente temporal y coordina una fase destructiva de retirada V1; el momento, el fence y la reactivación requieren responsabilidad operativa humana.",
+  "options": [
+    {
+      "title": "Coordinar T0 con fence",
+      "body": "Revisar y desplegar el PR draft junto con el fence, verificando quietud antes de ejecutar el backfill.",
+      "recommended": true
+    },
+    {
+      "title": "Aplazar la pausa",
+      "body": "Mantener los schedules actuales hasta que el fence y el runbook tengan validación operativa suficiente.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Coordinar T0 con fence",
+    "body": "Revisar y desplegar el PR draft junto con el fence, verificando quietud antes de ejecutar el backfill.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Es el contribuidor más conectado con los schedules V2 recientes y con el PR candidato.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9016.md",
+    "reviewedAt": "2026-09-02T09:59:11.523Z",
+    "mainSha": "c9bd4f27ed5798167e468641baf51fe6950a0c4f"
+  }
+}

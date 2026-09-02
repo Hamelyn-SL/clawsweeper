@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-02T10:01:14.786Z",
+  "updatedAt": "2026-09-02T09:42:06Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 9017,
+    "title": "chore: pause marketplace cron schedules for the v1 retirement window",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9017",
+    "state": "open",
+    "labels": [
+      "size/M"
+    ],
+    "createdAt": "2026-09-02T09:37:18Z",
+    "updatedAt": "2026-09-02T09:42:06Z",
+    "headSha": "191f47fc4b34d0857e99c72d6cc09958225d0a39"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Durante la ventana de retirada de V1 debe continuar el tracking de dropshipping aunque el write fence esté activo?",
+  "rationale": "La PR declara que ese cron es ajeno a marketplace, pero la PR relacionada aplica un bloqueo global al mismo wrapper que utiliza.",
+  "options": [
+    {
+      "title": "Mantener dropshipping activo",
+      "body": "Excluir `/api/ecommerce/dropshipping-tracking` del write fence y conservar su schedule, con una prueba dirigida de la excepción.",
+      "recommended": true
+    },
+    {
+      "title": "Pausarlo de forma explícita",
+      "body": "Eliminar también su schedule y asumir la interrupción temporal del tracking dentro del runbook.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mantener dropshipping activo",
+    "body": "Excluir `/api/ecommerce/dropshipping-tracking` del write fence y conservar su schedule, con una prueba dirigida de la excepción.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Ha propuesto las dos piezas de la ventana y cuenta con historial integrado en los schedules V2 afectados.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9017.md",
+    "reviewedAt": "2026-09-02T10:01:14.786Z",
+    "mainSha": "c9bd4f27ed5798167e468641baf51fe6950a0c4f"
+  }
+}
