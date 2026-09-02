@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-02T11:42:09.462Z",
+  "generatedAt": "2026-09-02T11:47:04.772Z",
   "updatedAt": "2026-09-02T10:55:20Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -13,49 +13,48 @@
       "bug",
       "app:marketplace",
       "triage:blocked",
+      "P1",
       "clawsweeper:needs-product-decision",
       "origin:dev",
-      "mk:ebay",
-      "P1"
+      "mk:ebay"
     ],
     "createdAt": "2026-07-27T05:58:02Z",
     "updatedAt": "2026-09-02T10:55:20Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué evidencia de Operaciones autoriza la sonda de 10 SKUs y qué criterio de éxito o rollback permite declarar create en el manager V2?",
-  "rationale": "La cuenta externa bloquea publicaciones nuevas y el código actual las evita intencionadamente; la decisión combina autorización operativa, riesgo de catálogo y umbrales de rollout.",
+  "question": "Cuando Operaciones confirme que eBay acepta publicaciones nuevas, ¿qué gate y tamaño inicial debe autorizarse para reactivar `create` en el cron V2?",
+  "rationale": "El código mantiene la creación apagada de forma intencional; decidir la cohorte, criterios de éxito y rollback cambia el comportamiento productivo y no puede inferirse solo del repositorio.",
   "options": [
     {
-      "title": "Mantener create apagado",
-      "body": "Esperar confirmación verificable de Seller Hub o soporte eBay antes de realizar cualquier publicación de prueba.",
+      "title": "Sonda y rollout gradual",
+      "body": "Autorizar una sonda de 10 SKUs y habilitar cohortes crecientes solo tras confirmar publicaciones remotas y estados persistidos correctos.",
       "recommended": true
     },
     {
-      "title": "Autorizar sonda limitada",
-      "body": "Tras una señal externa de desbloqueo, ejecutar 10 SKUs con outcomes remotos persistidos y abortar ante cualquier `25019`.",
+      "title": "Mantener create desactivado",
+      "body": "Conservar la capacidad ausente hasta disponer de una ventana operativa adicional o una confirmación más sólida de eBay.",
       "recommended": false
     },
     {
-      "title": "Reactivar por cohortes",
-      "body": "Solo después de una sonda limpia, añadir create V2 con un límite inicial y observación del drenaje durante 24–48 horas.",
+      "title": "Reactivar al límite configurado",
+      "body": "Habilitar directamente la capacidad con el cap habitual, asumiendo el riesgo de una nueva ola de errores permanentes.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mantener create apagado",
-    "body": "Esperar confirmación verificable de Seller Hub o soporte eBay antes de realizar cualquier publicación de prueba.",
+    "title": "Sonda y rollout gradual",
+    "body": "Autorizar una sonda de 10 SKUs y habilitar cohortes crecientes solo tras confirmar publicaciones remotas y estados persistidos correctos.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "La discusión le atribuye la decisión vigente de consolidación y el checklist de reactivación.",
+    "reason": "La discusión registra su decisión de mantener este tracker como canónico y su checklist de reactivación.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7961.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7961#issuecomment-5087934598",
-    "reviewedAt": "2026-09-02T11:42:09.462Z",
+    "reviewedAt": "2026-09-02T11:47:04.772Z",
     "mainSha": "350e0bfc6a03f54c34e3afbc6a231922e06685a7"
   }
 }
