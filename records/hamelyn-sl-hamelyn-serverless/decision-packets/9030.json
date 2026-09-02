@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-02T15:58:15.388Z",
+  "updatedAt": "2026-09-02T15:01:48Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 9030,
+    "title": "fix: allow coordinated amazon cron pauses",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9030",
+    "state": "open",
+    "labels": [
+      "size/L",
+      "P1"
+    ],
+    "createdAt": "2026-09-02T14:12:33Z",
+    "updatedAt": "2026-09-02T15:01:48Z",
+    "headSha": "a4da450cc7727e0a7a10077afbaa6dc40c47e66e"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe una pausa global de los seis crons Amazon V2 ser una configuración soportada de forma permanente tras la restauración de la ventana V1?",
+  "rationale": "La rama transforma una condición de disponibilidad actualmente obligatoria en una alternativa válida; decidirlo requiere intención operativa, no solo cobertura de test.",
+  "options": [
+    {
+      "title": "Conservar el guard activo",
+      "body": "Mantener la exigencia de seis schedules Amazon V2 hasta que exista una nueva ventana de mantenimiento aprobada.",
+      "recommended": true
+    },
+    {
+      "title": "Formalizar la pausa global",
+      "body": "Aceptar la rama tras documentar el runbook, el criterio todo-o-nada y la autorización operativa para detener Amazon.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Conservar el guard activo",
+    "body": "Mantener la exigencia de seis schedules Amazon V2 hasta que exista una nueva ventana de mantenimiento aprobada.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Gestionó los commits de pausa y reactivación que delimitan la intención operativa actual.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9030.md",
+    "reviewedAt": "2026-09-02T15:58:15.388Z",
+    "mainSha": "ed9361dfd9205a6c55dce51c764389050cbc3117"
+  }
+}
