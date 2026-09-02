@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-02T03:04:06.796Z",
+  "updatedAt": "2026-09-02T02:57:22Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8990,
+    "title": "Amazon: la cuota de feeds solo se cuenta dentro del cron y desde el 1-sep cada pasada deja un mercado sin fichero de retirada",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8990",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "triage:running",
+      "P1"
+    ],
+    "createdAt": "2026-09-02T02:23:44Z",
+    "updatedAt": "2026-09-02T02:57:22Z"
+  },
+  "lane": "manual_review",
+  "priority": "P1",
+  "question": "¿Debe la cuota compartida persistirse mediante el mecanismo de locks existente o centralizarse en la capa común de envío de feeds?",
+  "rationale": "La elección determina la semántica de concurrencia entre Lambdas y el tiempo máximo de cron; no es seguro inferirla solo desde un `Map` local.",
+  "options": [
+    {
+      "title": "Reserva compartida en la capa de feeds",
+      "body": "Registrar atómicamente cada slot por `merchantId` antes de `createFeed` para cubrir batch withdraw y reprice V2.",
+      "recommended": true
+    },
+    {
+      "title": "Coordinar solo los crons de marketplace",
+      "body": "Usar un protocolo compartido en `marketplace-crons`, dejando otros emisores Amazon fuera de la misma ventana.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Reserva compartida en la capa de feeds",
+    "body": "Registrar atómicamente cada slot por `merchantId` antes de `createFeed` para cubrir batch withdraw y reprice V2.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Miguel Angel Hernández Perdomo",
+    "reason": "Su trabajo reciente conecta el manager V2, el reprice por feeds y la documentación de cuota.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8990.md",
+    "reviewedAt": "2026-09-02T03:04:06.796Z",
+    "mainSha": "6feedad9d3b0414d0773798d2571d2aad65dac58"
+  }
+}
