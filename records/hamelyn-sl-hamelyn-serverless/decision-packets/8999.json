@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-02T07:10:52.634Z",
+  "generatedAt": "2026-09-02T07:16:51.185Z",
   "updatedAt": "2026-09-02T06:52:42Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -13,45 +13,40 @@
       "bug",
       "app:marketplace",
       "triage:pr-opened",
-      "impact:other",
-      "P2",
-      "clawsweeper:source-repro",
-      "clawsweeper:linked-pr-open",
-      "issue-rating: 💎 diamond"
+      "P2"
     ],
     "createdAt": "2026-09-02T06:16:40Z",
     "updatedAt": "2026-09-02T06:52:42Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué condición concreta de error de Fnac debe pasar a estado terminal y qué alerta operativa debe generarse tras observar la respuesta saneada?",
-  "rationale": "La evidencia actual confirma el bucle, pero no permite distinguir con seguridad un 400 permanente de uno recuperable ni fijar un umbral sin riesgo operativo.",
+  "question": "¿Qué firma concreta de rechazo Fnac debe detener los reintentos y qué alerta o circuito operativo debe recibir esos pedidos?",
+  "rationale": "El código puede conservar la respuesta saneada, pero un umbral genérico o clasificar todos los 400 como permanentes puede bloquear rechazos recuperables.",
   "options": [
     {
-      "title": "Esperar la firma real",
-      "body": "Desplegar primero la observabilidad y convertir en terminal solo la firma exacta que Fnac confirme como no recuperable.",
+      "title": "Clasificar tras observar la firma",
+      "body": "Desplegar primero el aislamiento y registrar la respuesta saneada; añadir después una exclusión terminal exacta para el motivo confirmado.",
       "recommended": true
     },
     {
-      "title": "Aplicar un máximo genérico",
-      "body": "Detener todo error repetido tras N intentos, aceptando el riesgo de dejar sin reintento fallos recuperables.",
+      "title": "Fijar un máximo genérico",
+      "body": "Detener cualquier 400 tras un número acordado de intentos, aceptando el riesgo de aparcar errores recuperables.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Esperar la firma real",
-    "body": "Desplegar primero la observabilidad y convertir en terminal solo la firma exacta que Fnac confirme como no recuperable.",
+    "title": "Clasificar tras observar la firma",
+    "body": "Desplegar primero el aislamiento y registrar la respuesta saneada; añadir después una exclusión terminal exacta para el motivo confirmado.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "HamelynDev",
-    "reason": "Ha trabajado recientemente en el recovery compartido que debe aplicar la política terminal.",
-    "confidence": "medium"
+    "person": "MiguelHamelyn",
+    "reason": "Su cambio reciente centralizó el recovery terminal compartido y es la ruta donde se materializaría la política.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8999.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8999#issuecomment-5505913902",
-    "reviewedAt": "2026-09-02T07:10:52.634Z",
+    "reviewedAt": "2026-09-02T07:16:51.185Z",
     "mainSha": "c403cf0f0e23bfd0a91430c174602fa3f7fbe425"
   }
 }
