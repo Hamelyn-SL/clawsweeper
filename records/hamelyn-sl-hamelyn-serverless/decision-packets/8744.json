@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-26T12:05:04.701Z",
-  "updatedAt": "2026-08-26T11:57:21Z",
+  "generatedAt": "2026-09-02T12:12:26.067Z",
+  "updatedAt": "2026-09-02T10:55:02Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,51 +13,46 @@
       "app:marketplace",
       "question",
       "triage:done",
-      "P3",
-      "impact:other",
-      "issue-rating: ➖ n/a",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P3"
     ],
     "createdAt": "2026-08-26T11:22:40Z",
-    "updatedAt": "2026-08-26T11:57:21Z"
+    "updatedAt": "2026-09-02T10:55:02Z"
   },
   "lane": "product_direction",
   "priority": "P3",
-  "question": "¿Qué política permanente debe aplicar Marketplace al pool FNAC `Product not found`: archivado conservador, sondeo limitado de EAN activos o statu quo documentado?",
-  "rationale": "El código confirma que el error no es recuperable por reenvío normal, pero no puede decidir el valor comercial, la retención de datos ni el presupuesto operativo de comprobar catálogos futuros.",
+  "question": "¿Aprueba Marketplace una política híbrida de archivado reversible para retirados y canario trimestral acotado para activos, en lugar de purga o reintento masivo?",
+  "rationale": "El código puede ejecutar la política elegida, pero no puede determinar por sí solo el valor comercial de conservar los espejos ni el presupuesto operativo aceptable.",
   "options": [
     {
-      "title": "Política híbrida conservadora",
-      "body": "Tras https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8745, archivar retirados sin purgar espejos y usar un canario trimestral limitado para EAN activos.",
+      "title": "Política híbrida",
+      "body": "Archivar de forma reversible los `WITHDRAWN` inertes y permitir solo un canario trimestral pequeño para EAN activos y publicables.",
       "recommended": true
     },
     {
-      "title": "Statu quo documentado",
-      "body": "Mantener todos los espejos terminales y registrar que no habrá sondeo hasta que aparezca una necesidad comercial verificable.",
+      "title": "Conservar sin sondeo",
+      "body": "Mantener todos los tombstones y documentar que no habrá reintentos futuros mientras no cambie la política comercial.",
       "recommended": false
     },
     {
-      "title": "Reintento periódico amplio",
-      "body": "Crear un job mensual o trimestral para activos publicables, aceptando su coste y definiendo métricas de recuperación y un corte explícito.",
+      "title": "Purga selectiva",
+      "body": "Eliminar los espejos retirados tras definir recuperación imposible, retención legal y una vía alternativa de auditoría.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Política híbrida conservadora",
-    "body": "Tras https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8745, archivar retirados sin purgar espejos y usar un canario trimestral limitado para EAN activos.",
+    "title": "Política híbrida",
+    "body": "Archivar de forma reversible los `WITHDRAWN` inertes y permitir solo un canario trimestral pequeño para EAN activos y publicables.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Su historial concentra la clasificación y los límites de recuperación FNAC que condicionan las tres opciones.",
+    "reason": "Su historial conecta directamente la política de recuperación de Fnac con el límite técnico que condiciona esta decisión.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8744.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8744#issuecomment-5425005324",
-    "reviewedAt": "2026-08-26T12:05:04.701Z",
-    "mainSha": "8e76b28155ea42e4fb55b7bcbddcf29550b86716"
+    "reviewedAt": "2026-09-02T12:12:26.067Z",
+    "mainSha": "358fdb8aa7afb4d252117bf8438a788874289db2"
   }
 }
