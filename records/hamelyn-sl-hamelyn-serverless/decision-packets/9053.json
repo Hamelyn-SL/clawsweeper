@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-02T17:21:38.290Z",
-  "updatedAt": "2026-09-02T17:15:40Z",
+  "generatedAt": "2026-09-02T21:23:15.928Z",
+  "updatedAt": "2026-09-02T21:18:04Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,48 +13,42 @@
       "app:infrastructure",
       "feature",
       "reporter:javier",
-      "triage:queued",
-      "P2",
-      "clawsweeper:needs-product-decision"
+      "triage:needs-info",
+      "clawsweeper:needs-product-decision",
+      "P2"
     ],
     "createdAt": "2026-09-02T17:15:26Z",
-    "updatedAt": "2026-09-02T17:15:40Z"
+    "updatedAt": "2026-09-02T21:18:04Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe el revisor propio vivir en Lyno o en el sandbox del Proof Agent, y qué contrato mínimo de verificación y publicación debe sustituir a Cursor y ClawSweeper?",
-  "rationale": "Ambas plataformas ya cubren partes del objetivo, pero tienen límites de credenciales, ejecución, permisos y responsabilidad distintos; el código no determina por sí solo cuál debe ser el contrato permanente.",
+  "question": "¿Debe el primer orquestador de revisión ejecutarse en `apps/agents`/Vercel con una vía segura para Grok, o en el runner self-hosted que ya tiene autenticados ambos CLI?",
+  "rationale": "La ubicación decide cómo se custodian tokens, cómo se ejecutan Codex y Grok, y qué superficie debe operar y monitorizar el equipo.",
   "options": [
     {
-      "title": "Piloto en Lyno con salida única",
-      "body": "Implementar un revisor separado en `apps/agents`, conservar los bots actuales y medir dos semanas de paridad antes de retirar integraciones.",
+      "title": "Piloto en runner self-hosted",
+      "body": "Usar los CLI ya autenticados para validar el contrato multi-modelo sin introducir primero un nuevo transporte de Grok en Vercel.",
       "recommended": true
     },
     {
-      "title": "Extender Proof Agent",
-      "body": "Reutilizar el sandbox de Vercel para revisión y prueba, aceptando que el agente asuma un alcance mayor y necesite un contrato de publicación nuevo.",
-      "recommended": false
-    },
-    {
-      "title": "Mantener el modelo distribuido",
-      "body": "Conservar los revisores actuales y limitar el trabajo propio a métricas y normalización de resultados, sin reemplazar proveedores todavía.",
+      "title": "Extender `apps/agents`",
+      "body": "Construir un transporte seguro para Grok en Vercel y concentrar ejecución, publicación y métricas en la plataforma existente.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Piloto en Lyno con salida única",
-    "body": "Implementar un revisor separado en `apps/agents`, conservar los bots actuales y medir dos semanas de paridad antes de retirar integraciones.",
+    "title": "Piloto en runner self-hosted",
+    "body": "Usar los CLI ya autenticados para validar el contrato multi-modelo sin introducir primero un nuevo transporte de Grok en Vercel.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su historial reciente conecta Lyno, Codex y la propuesta de rediseño; puede preparar la decisión técnica para el equipo.",
+    "reason": "Su historial reciente concentra el runtime de agentes, autenticación Codex y los flujos de revisión relacionados.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9053.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9053#issuecomment-5513554294",
-    "reviewedAt": "2026-09-02T17:21:38.290Z",
+    "reviewedAt": "2026-09-02T21:23:15.928Z",
     "mainSha": "ffd90286dac2d39d356b520899b76b13f8465698"
   }
 }
