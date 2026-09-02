@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-02T13:20:50.895Z",
-  "updatedAt": "2026-09-02T13:09:06Z",
+  "generatedAt": "2026-09-02T13:27:52.959Z",
+  "updatedAt": "2026-09-02T13:23:25Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,42 +14,41 @@
       "app:ecommerce",
       "triage:queued",
       "reporter:alejandrodiaz",
-      "P2",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2"
     ],
     "createdAt": "2026-09-02T13:08:42Z",
-    "updatedAt": "2026-09-02T13:09:06Z"
+    "updatedAt": "2026-09-02T13:23:25Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe el hero regional reutilizar la descripción SEO localizada sin precio fijo, o cada mercado necesita un `heroDescription` editorial propio con su oferta comercial?",
-  "rationale": "La corrección técnica es acotada, pero decidir el texto y cualquier cifra visible afecta a la comunicación comercial por mercado.",
+  "question": "¿Debe el hero regional reutilizar `config.tags.description` cuando falte una traducción explícita, o cada mercado necesita un `heroDescription` editorial independiente?",
+  "rationale": "Ambas vías eliminan el fallback incorrecto, pero fijan fuentes de verdad y responsabilidades editoriales distintas.",
   "options": [
     {
-      "title": "Reutilizar descripción regional",
-      "body": "Cuando falte un `heroDescription` del locale, usar la descripción SEO ya localizada y evitar precios fijos heredados.",
+      "title": "Reutilizar copy regional",
+      "body": "Usar la descripción ya localizada de `config.tags` como fallback del hero y mantener el texto específico solo donde exista de forma explícita.",
       "recommended": true
     },
     {
-      "title": "Definir copy por mercado",
-      "body": "Añadir `heroDescription` específico para catalán, México, Colombia y Argentina con copy y moneda aprobados.",
+      "title": "Mantener copy independiente",
+      "body": "Añadir y sostener un `heroDescription` por vertical para `ca`, `es-MX`, `es-CO` y `es-AR` con copy comercial aprobado.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Reutilizar descripción regional",
-    "body": "Cuando falte un `heroDescription` del locale, usar la descripción SEO ya localizada y evitar precios fijos heredados.",
+    "title": "Reutilizar copy regional",
+    "body": "Usar la descripción ya localizada de `config.tags` como fallback del hero y mantener el texto específico solo donde exista de forma explícita.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "Alex Cantón",
-    "reason": "Su historial está ligado al copy localizado de categorías y puede encauzar la decisión editorial.",
+    "reason": "La decisión determina la fuente de verdad del copy regional y su mantenimiento editorial.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9026.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9026#issuecomment-5510234087",
-    "reviewedAt": "2026-09-02T13:20:50.895Z",
+    "reviewedAt": "2026-09-02T13:27:52.959Z",
     "mainSha": "9b525e0aae70b41daab228e22437134fc1e70b6f"
   }
 }
