@@ -2,9 +2,16 @@ name: Slack Digest
 
 on:
   schedule:
-    # 08:30 Madrid (summer) on weekdays.
-    - cron: "30 6 * * 1-5"
-  workflow_dispatch: {}
+    # Mondays 08:30 Madrid. Two crons cover CEST (UTC+2) and CET (UTC+1); the
+    # week of each DST switch the digest lands an hour early or late.
+    - cron: "30 6 * 4-9 1"
+    - cron: "30 7 * 1-3,10-12 1"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Print the digest blocks instead of posting to Slack"
+        required: false
+        default: "false"
 
 permissions:
   contents: read
@@ -22,15 +29,17 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: Create state read token
+      - name: Create state and target read token
         id: state-token
         uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
         with:
           client-id: ${{ vars.CLAWSWEEPER_APP_CLIENT_ID }}
           private-key: ${{ secrets.CLAWSWEEPER_APP_PRIVATE_KEY }}
           owner: Hamelyn-SL
-          repositories: clawsweeper
+          repositories: clawsweeper,hamelyn-serverless
           permission-contents: read
+          permission-issues: read
+          permission-pull-requests: read
 
       - uses: actions/checkout@v7
         with:
@@ -40,9 +49,17 @@ jobs:
           token: ${{ steps.state-token.outputs.token }}
           fetch-depth: 1
 
-      - name: Post digest to Slack
+      - name: Post weekly digest to Slack
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
-          SLACK_CHANNEL: ${{ vars.SLACK_CHANNEL }}
-        run: node scripts/slack-digest.mjs --state-dir clawsweeper-state
+          SLACK_CHANNEL: ${{ vars.SLACK_DIGEST_CHANNEL || vars.SLACK_CHANNEL }}
+          SLACK_MENTION_MAP: ${{ vars.SLACK_MENTION_MAP }}
+          GH_TOKEN: ${{ steps.state-token.outputs.token }}
+        run: |
+          set -euo pipefail
+          dry_run_arg=()
+          if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
+            dry_run_arg=(--dry-run)
+          fi
+          node scripts/slack-digest.mjs --state-dir clawsweeper-state "${dry_run_arg[@]}"

@@ -663,6 +663,23 @@ test("sweep workflow publishes target-scoped state paths", () => {
   assert.doesNotMatch(workflow, /--path results\/sweep-status\s*\\/);
 });
 
+test("sweep workflow opts the Hamelyn fork into the signal comment policy", () => {
+  const workflow = readText(".github/workflows/sweep.yml");
+
+  // Hamelyn 2026-09: silent actions, short signal-only comments, no proof
+  // layer, hot intake for new items only, re-review only after human activity.
+  assert.match(workflow, /^  CLAWSWEEPER_COMMENT_POLICY: signal$/m);
+  assert.match(workflow, /^  CLAWSWEEPER_PROOF_GATE: "off"$/m);
+  assert.match(workflow, /^  CLAWSWEEPER_HOT_INTAKE_NEW_ONLY: "1"$/m);
+  assert.match(workflow, /^  CLAWSWEEPER_REVIEW_HUMAN_ACTIVITY_ONLY: "1"$/m);
+  assert.match(workflow, /^  CLAWSWEEPER_ACTIVITY_IGNORED_LOGINS: "HamelynDev"$/m);
+  assert.match(workflow, /^  CLAWSWEEPER_REVIEW_ONLY_ON_ACTIVITY: "1"$/m);
+  // The 15-minute hot-intake fanout stays: it is the only first-review path
+  // for new hamelyn-serverless items (no event dispatcher there).
+  assert.match(workflow, /- cron: "4\/15 \* \* \* \*"/);
+  assert.match(workflow, /- cron: "41 \* \* \* \*"/);
+});
+
 test("sweep workflow schedules cursor-based PR comment sync batches", () => {
   const workflow = readText(".github/workflows/sweep.yml");
 
