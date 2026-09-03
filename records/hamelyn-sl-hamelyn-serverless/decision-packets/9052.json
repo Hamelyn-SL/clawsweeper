@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-02T19:16:24.788Z",
-  "updatedAt": "2026-09-02T17:23:40Z",
+  "generatedAt": "2026-09-03T07:58:08.052Z",
+  "updatedAt": "2026-09-03T07:36:48Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -14,44 +14,38 @@
       "P2"
     ],
     "createdAt": "2026-09-02T17:12:36Z",
-    "updatedAt": "2026-09-02T17:23:40Z",
+    "updatedAt": "2026-09-03T07:36:48Z",
     "headSha": "bd52e55d65a5a279c7e7030c626c69ba615939ed"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe aceptarse 240 imports OF24 por hora como límite fijo compartido para Casa del Libro en producción?",
-  "rationale": "La incidencia confirma 429, pero el margen de diez slots y su impacto sobre altas, retiradas y repricing constituyen una política operativa que el código no puede validar por sí solo.",
+  "question": "¿Debe adoptarse 240 imports OF24 por hora como límite compartido fijo de Casa del Libro en producción?",
+  "rationale": "La cifra y el margen cambian deliberadamente el caudal de sincronización y sólo la evidencia operativa de Casa del Libro permite validar ese compromiso.",
   "options": [
     {
-      "title": "Aceptar el margen de 240/h",
-      "body": "Integrar el límite compartido actual y vigilar los resultados de CDL para reajustarlo con datos operativos.",
+      "title": "Adoptar 240/h y vigilar",
+      "body": "Integrar el margen conservador tras añadir la cobertura solicitada y comprobar en producción que cesan los 429 sin acumular trabajo.",
       "recommended": true
     },
     {
-      "title": "Ajustar el umbral antes de integrar",
-      "body": "Modificar el límite o el margen después de contrastarlo con la cuota real y el volumen externo a V2.",
-      "recommended": false
-    },
-    {
-      "title": "Pausar la limitación local",
-      "body": "Mantener el tratamiento actual de 429 hasta disponer de una política operativa confirmada.",
+      "title": "Calibrar antes de integrar",
+      "body": "Ajustar el límite o el margen después de contrastar la cuota real y el tráfico de CDL fuera del manager V2.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aceptar el margen de 240/h",
-    "body": "Integrar el límite compartido actual y vigilar los resultados de CDL para reajustarlo con datos operativos.",
+    "title": "Adoptar 240/h y vigilar",
+    "body": "Integrar el margen conservador tras añadir la cobertura solicitada y comprobar en producción que cesan los 429 sin acumular trabajo.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "Miguel Angel Hernández Perdomo",
-    "reason": "Su historial reúne la migración Mirakl y la semántica reciente del limitador compartido.",
+    "person": "MiguelHamelyn",
+    "reason": "Es el autor de la migración Mirakl, mantuvo el limitador compartido y dejó la revisión humana más reciente.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9052.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9052#issuecomment-5513552337",
-    "reviewedAt": "2026-09-02T19:16:24.788Z",
-    "mainSha": "ffd90286dac2d39d356b520899b76b13f8465698"
+    "reviewedAt": "2026-09-03T07:58:08.052Z",
+    "mainSha": "708ab28632c4685d238dddca4df5fae91ddc18aa"
   }
 }
