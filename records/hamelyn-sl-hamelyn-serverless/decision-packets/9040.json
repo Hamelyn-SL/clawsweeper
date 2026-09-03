@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-03T07:49:45.981Z",
+  "updatedAt": "2026-09-03T07:42:50Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9040,
+    "title": "Marketplace: cdl api withdraw offer ❌ error [axioserror]: request failed with status code 429 at eg (.next/server/chunks",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9040",
+    "state": "open",
+    "labels": [
+      "codex",
+      "bug",
+      "app:marketplace",
+      "triage:pr-opened",
+      "P2",
+      "marketplace-crons"
+    ],
+    "createdAt": "2026-09-02T16:31:29Z",
+    "updatedAt": "2026-09-03T07:42:50Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe adoptarse 240 imports OF24 por hora como límite compartido fijo de Casa del Libro en producción?",
+  "rationale": "La causa técnica está acotada, pero el valor procede de observación operativa y determina el equilibrio entre evitar 429 y retrasar sincronizaciones.",
+  "options": [
+    {
+      "title": "Adoptar 240/h y vigilar",
+      "body": "Integrar el margen conservador actual y comprobar durante la primera hora desplegada que desaparecen los 429 sin acumular trabajo excesivo.",
+      "recommended": true
+    },
+    {
+      "title": "Calibrar antes del despliegue",
+      "body": "Ajustar el límite o el margen después de contrastar la cuota real de CDL y el tráfico que no pasa por el manager V2.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Adoptar 240/h y vigilar",
+    "body": "Integrar el margen conservador actual y comprobar durante la primera hora desplegada que desaparecen los 429 sin acumular trabajo excesivo.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Miguel Angel Hernández Perdomo",
+    "reason": "Es quien introdujo la superficie Mirakl actual y aparece como dueño probable en la revisión del PR enlazado.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9040.md",
+    "reviewedAt": "2026-09-03T07:49:45.981Z",
+    "mainSha": "708ab28632c4685d238dddca4df5fae91ddc18aa"
+  }
+}
