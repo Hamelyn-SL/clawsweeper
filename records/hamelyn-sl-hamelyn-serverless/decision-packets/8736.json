@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-02T12:37:18.731Z",
-  "updatedAt": "2026-09-02T10:55:04Z",
+  "generatedAt": "2026-09-03T09:08:22.830Z",
+  "updatedAt": "2026-09-03T08:21:00Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,47 +13,46 @@
       "bug",
       "app:marketplace",
       "triage:needs-info",
-      "clawsweeper:needs-product-decision",
-      "P1"
+      "P1",
+      "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-08-26T10:18:17Z",
-    "updatedAt": "2026-09-02T10:55:04Z"
+    "updatedAt": "2026-09-03T08:21:00Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué antigüedad o número de ciclos debe agotar un batch Fnac sin outcomes de sus `pendingSkus`, y debe aplicarse la misma transición a las 29 filas ya bloqueadas?",
-  "rationale": "La corrección mecánica evita el falso progreso, pero el momento de declarar error cambia el tratamiento de retrasos reales de Fnac y de datos productivos existentes.",
+  "question": "¿Qué umbral debe mover un batch Fnac sin outcomes de sus `pendingSkus` a `SYNC_ERROR/BATCHING_TO_MARKETPLACE`, y debe aplicarse la misma regla a las filas ya bloqueadas?",
+  "rationale": "La corrección de clasificación es mecánica, pero el umbral y la transición de producción cambian el tratamiento de retrasos reales de Fnac y no deben elegirse arbitrariamente.",
   "options": [
     {
       "title": "24 horas y recuperación acotada",
-      "body": "Tras 24 horas sin outcomes de filas pendientes, transicionar a `SYNC_ERROR` y recuperar las 29 filas mediante una operación aprobada.",
+      "body": "Tras 24 horas sin outcomes de filas pendientes, pasar a `SYNC_ERROR` y recuperar las filas actuales tras comprobar su estado remoto.",
       "recommended": true
     },
     {
       "title": "48 horas y recuperación acotada",
-      "body": "Conservar una ventana más tolerante antes de declarar error, aplicando después la misma recuperación controlada.",
+      "body": "Conservar una ventana más tolerante ante informes retardados antes de aplicar la misma transición y recuperación controlada.",
       "recommended": false
     },
     {
-      "title": "Solo corregir clasificación",
-      "body": "Evitar el falso progreso sin transición terminal hasta recopilar más latencia real de informes Fnac.",
+      "title": "Solo corregir la clasificación",
+      "body": "Evitar el falso progreso ahora y mantener las filas pendientes hasta reunir datos adicionales de latencia real de Fnac.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "24 horas y recuperación acotada",
-    "body": "Tras 24 horas sin outcomes de filas pendientes, transicionar a `SYNC_ERROR` y recuperar las 29 filas mediante una operación aprobada.",
+    "body": "Tras 24 horas sin outcomes de filas pendientes, pasar a `SYNC_ERROR` y recuperar las filas actuales tras comprobar su estado remoto.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Su corrección previa define el contrato de outcomes y dejó documentado el seguimiento para informes incompletos.",
+    "reason": "Conoce el filtro de outcomes y el antecedente de batches Fnac que dejó explícita esta condición de seguimiento.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8736.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8736#issuecomment-5423965306",
-    "reviewedAt": "2026-09-02T12:37:18.731Z",
-    "mainSha": "9b525e0aae70b41daab228e22437134fc1e70b6f"
+    "reviewedAt": "2026-09-03T09:08:22.830Z",
+    "mainSha": "028da282fd46f53eee80c992b354ecc527cb45fe"
   }
 }
