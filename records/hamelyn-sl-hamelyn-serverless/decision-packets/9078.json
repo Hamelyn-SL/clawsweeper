@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-03T10:57:12.707Z",
+  "updatedAt": "2026-09-03T09:51:35Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 9078,
+    "title": "fix: read marketplace V2 error state in stock sync dashboards",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9078",
+    "state": "open",
+    "labels": [
+      "size/L",
+      "P1"
+    ],
+    "createdAt": "2026-09-03T09:19:59Z",
+    "updatedAt": "2026-09-03T09:51:35Z",
+    "headSha": "770b3f813e81839c0faec0bc1d58a2c86b36b47a"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Deben `Product not found` de Fnac y `No release found` de Discogs descontar el máximo teórico de sincronización?",
+  "rationale": "La PR conserva paridad V1, pero esa elección define el significado del KPI y no puede resolverse de forma segura solo con la implementación.",
+  "options": [
+    {
+      "title": "Mantener paridad histórica",
+      "body": "No descontar esos errores hasta demostrar que impiden permanentemente publicar el producto.",
+      "recommended": true
+    },
+    {
+      "title": "Descontarlos como no subibles",
+      "body": "Mapear ambos errores como rechazos permanentes para que reduzcan el máximo teórico.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mantener paridad histórica",
+    "body": "No descontar esos errores hasta demostrar que impiden permanentemente publicar el producto.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Su trabajo reciente conecta la transición V2 de reports con las consultas que consumen esos estados.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9078.md",
+    "reviewedAt": "2026-09-03T10:57:12.707Z",
+    "mainSha": "fa3cd003b750a825d42badcf49e22094a1ca629a"
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-03T11:02:39.571Z",
+  "updatedAt": "2026-09-03T10:27:00Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9082,
+    "title": "API v6 sync-status: el desglose de errores cuenta SYNC_ERROR y siempre devuelve cero tras V2",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9082",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "triage:queued",
+      "P2"
+    ],
+    "createdAt": "2026-09-03T10:26:45Z",
+    "updatedAt": "2026-09-03T10:27:00Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Aceptamos que `syncError.total` pueda devolver `null` al agotar el límite de consulta, o debe conservarse siempre numérico mediante otra estrategia de rendimiento?",
+  "rationale": "La corrección del modelo V2 es clara, pero convertir un campo antes numérico en nullable cambia el contrato que consumen CLI y MCP.",
+  "options": [
+    {
+      "title": "Aceptar degradación nullable",
+      "body": "Mantener el límite temporal y documentar que los clientes deben interpretar `null` como un conteo no disponible.",
+      "recommended": true
+    },
+    {
+      "title": "Conservar total numérico",
+      "body": "Buscar una consulta o índice compatible que mantenga el total siempre numérico sin agotar el presupuesto de la función.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aceptar degradación nullable",
+    "body": "Mantener el límite temporal y documentar que los clientes deben interpretar `null` como un conteo no disponible.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "HamelynDev",
+    "reason": "Introdujo el endpoint y su contrato actual según el historial disponible.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9082.md",
+    "reviewedAt": "2026-09-03T11:02:39.571Z",
+    "mainSha": "fa3cd003b750a825d42badcf49e22094a1ca629a"
+  }
+}
