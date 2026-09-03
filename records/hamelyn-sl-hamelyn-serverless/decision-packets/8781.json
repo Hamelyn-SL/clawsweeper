@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-02T12:25:48.672Z",
-  "updatedAt": "2026-09-02T10:55:02Z",
+  "generatedAt": "2026-09-03T09:05:13.715Z",
+  "updatedAt": "2026-09-03T08:20:59Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,42 +13,46 @@
       "bug",
       "app:marketplace",
       "triage:needs-info",
-      "clawsweeper:needs-product-decision",
-      "P1"
+      "P1",
+      "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-08-26T22:21:58Z",
-    "updatedAt": "2026-09-02T10:55:02Z"
+    "updatedAt": "2026-09-03T08:20:59Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe el sistema rechazar siempre `CANCELLED → PICKED_UP`, o admitir una acción separada y auditada de recogida tardía que conserve la cancelación?",
-  "rationale": "El flujo actual trata esta transición como una excepción deliberada, incluso con notificación asociada; cambiarla sin una política de almacén puede perder trazabilidad de paquetes realmente recogidos.",
+  "question": "¿Debe la edición administrativa rechazar siempre `CANCELLED → PICKED_UP` o conservar una acción diferenciada para registrar una recogida física tardía sin reabrir la confirmación de marketplace?",
+  "rationale": "El flujo de dominio actual permite expresamente esa transición, mientras la incidencia demuestra que reutilizarla reactiva envíos cancelados; elegir la excepción correcta requiere criterio operativo de Marketplace y Almacén.",
   "options": [
     {
-      "title": "Acción auditada de recogida tardía",
-      "body": "Conservar `CANCELLED`, registrar la recogida tardía y abrir una intervención manual sin reenviar el pedido a la confirmación automática.",
+      "title": "Acción separada y auditada",
+      "body": "Rechazar la reactivación normal y añadir una acción de recogida tardía que conserve la cancelación y cree revisión manual.",
       "recommended": true
     },
     {
-      "title": "Prohibición total",
-      "body": "Rechazar cualquier transición desde `CANCELLED` a `PICKED_UP`, aceptando que las recogidas físicas tardías deberán registrarse por otro proceso.",
+      "title": "Bloqueo absoluto",
+      "body": "Impedir toda transición administrativa desde `CANCELLED` a `PICKED_UP`, asumiendo que las recogidas tardías se resuelven fuera del flujo.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener la reactivación",
+      "body": "Conservar la transición actual y aceptar que operaciones gestione manualmente cada reenvío a la cola.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Acción auditada de recogida tardía",
-    "body": "Conservar `CANCELLED`, registrar la recogida tardía y abrir una intervención manual sin reenviar el pedido a la confirmación automática.",
+    "title": "Acción separada y auditada",
+    "body": "Rechazar la reactivación normal y añadir una acción de recogida tardía que conserve la cancelación y cree revisión manual.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "Miguel Angel Hernández Perdomo",
-    "reason": "Su historial conecta la excepción de estado vigente con la clasificación terminal compartida que condiciona la reparación.",
-    "confidence": "high"
+    "person": "HamelynDev",
+    "reason": "Su cambio reciente cubre la recuperación relacionada y conecta los recoveries con la política terminal propuesta.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8781.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8781#issuecomment-5431979827",
-    "reviewedAt": "2026-09-02T12:25:48.672Z",
-    "mainSha": "9b525e0aae70b41daab228e22437134fc1e70b6f"
+    "reviewedAt": "2026-09-03T09:05:13.715Z",
+    "mainSha": "028da282fd46f53eee80c992b354ecc527cb45fe"
   }
 }
