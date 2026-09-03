@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-03T09:58:52.126Z",
+  "generatedAt": "2026-09-03T09:57:29.283Z",
   "updatedAt": "2026-09-03T09:42:41Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -22,38 +22,33 @@
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué tipos de container podrá procesar cada estación Skypod durante la puesta en marcha de `Station0002`?",
-  "rationale": "El código puede registrar la estación, pero la incidencia documenta mezcla de containers si no se fija una asignación operativa entre las tres.",
+  "question": "¿Se limita inicialmente cada Skypod a un tipo de contenedor o se autoriza el trabajo simultáneo antes de resolver el reparto global por `skypodOrder`?",
+  "rationale": "La issue documenta una mitigación operativa actual, pero no define si debe mantenerse al incorporar una tercera estación; esa elección condiciona el despliegue real, no solo el código.",
   "options": [
     {
-      "title": "Asignar tipos por estación",
-      "body": "Definir y documentar qué tipos procesa cada estación antes del montaje; reduce el riesgo de mezcla mientras se mantiene el modelo actual.",
+      "title": "Mantener asignación exclusiva",
+      "body": "Arrancar cada estación con un tipo de contenedor asignado hasta que el reparto global tenga aislamiento verificable.",
       "recommended": true
     },
     {
-      "title": "Permitir tipos compartidos",
-      "body": "Autorizar la coexistencia asumiendo el riesgo conocido hasta que exista aislamiento por estación.",
-      "recommended": false
-    },
-    {
-      "title": "Posponer el alta",
-      "body": "Retrasar la tercera estación hasta implementar un aislamiento de containers por estación.",
+      "title": "Autorizar mezcla simultánea",
+      "body": "Permitir varios tipos por estación aceptando el riesgo operativo documentado y definiendo supervisión manual.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Asignar tipos por estación",
-    "body": "Definir y documentar qué tipos procesa cada estación antes del montaje; reduce el riesgo de mezcla mientras se mantiene el modelo actual.",
+    "title": "Mantener asignación exclusiva",
+    "body": "Arrancar cada estación con un tipo de contenedor asignado hasta que el reparto global tenga aislamiento verificable.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "AlexDiaz-Hamelyn",
-    "reason": "Es el asignado actual y revisor solicitado para el cambio central de registro.",
+    "person": "banosdavidhamelyn",
+    "reason": "El historial de Bifrost y el contexto operativo aportado le sitúan como la mejor referencia para proponer la decisión de despliegue.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8976.md",
-    "reviewedAt": "2026-09-03T09:58:52.126Z",
+    "reviewedAt": "2026-09-03T09:57:29.283Z",
     "mainSha": "5dae1134ca91340197926feee7f05b30a218ae3c"
   }
 }

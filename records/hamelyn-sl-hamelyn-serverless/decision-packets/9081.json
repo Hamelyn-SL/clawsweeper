@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-03T09:59:02.548Z",
+  "updatedAt": "2026-09-03T09:47:22Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 9081,
+    "title": "feat: paginate author hub catalog and unpublish authors below 3 books",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9081",
+    "state": "open",
+    "labels": [
+      "size/XL"
+    ],
+    "createdAt": "2026-09-03T09:44:49Z",
+    "updatedAt": "2026-09-03T09:47:22Z",
+    "headSha": "ff49083716eea45f3ffc0c33ef24a00969c40d92"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Deben los hubs de autor no elegibles devolver HTTP 410 explícito o se aprueba cambiar el requisito a 404 estándar de App Router?",
+  "rationale": "La rama elige 404 por limitación de la implementación actual, pero la issue enlazada conserva una decisión SEO pendiente y no hay señal humana que la resuelva.",
+  "options": [
+    {
+      "title": "Mantener 410 explícito",
+      "body": "Añadir una ruta o capa de respuesta que emita 410 para autores bajo el umbral y conservar el filtrado de sitemap y enlaces.",
+      "recommended": true
+    },
+    {
+      "title": "Aprobar 404 estándar",
+      "body": "Aceptar `notFound()` como contrato definitivo y actualizar la especificación de retirada SEO antes de fusionar.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mantener 410 explícito",
+    "body": "Añadir una ruta o capa de respuesta que emita 410 para autores bajo el umbral y conservar el filtrado de sitemap y enlaces.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "La decisión afecta al contrato SEO de una superficie donde su historial reciente y la issue enlazada muestran responsabilidad directa.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9081.md",
+    "reviewedAt": "2026-09-03T09:59:02.548Z",
+    "mainSha": "5dae1134ca91340197926feee7f05b30a218ae3c"
+  }
+}
