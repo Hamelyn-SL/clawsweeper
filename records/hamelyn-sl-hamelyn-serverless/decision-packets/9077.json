@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-03T10:26:59.258Z",
+  "updatedAt": "2026-09-03T09:57:50Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9077,
+    "title": "Dashboards de stock: sincronización y desglose de errores ciegos al modelo V2 de marketplaces",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9077",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "triage:done",
+      "P1"
+    ],
+    "createdAt": "2026-09-03T09:03:47Z",
+    "updatedAt": "2026-09-03T09:57:50Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Deben «Product not found» de Fnac y «No release found» de Discogs descontar el máximo teórico, o se mantiene la paridad histórica propuesta en la PR?",
+  "rationale": "La compatibilidad técnica está delimitada, pero ese descuento cambia el significado del KPI y la PR identifica la decisión como pendiente.",
+  "options": [
+    {
+      "title": "Mantener paridad V1",
+      "body": "No descontar esos dos errores hasta que exista evidencia de que representan una imposibilidad permanente de publicación.",
+      "recommended": true
+    },
+    {
+      "title": "Descontarlos como no subibles",
+      "body": "Actualizar el mapeo para que ambos reduzcan el máximo teórico y reflejen una capacidad efectiva menor.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mantener paridad V1",
+    "body": "No descontar esos dos errores hasta que exista evidencia de que representan una imposibilidad permanente de publicación.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Conoce la migración V2, figura asignado y propuso la clasificación candidata.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9077.md",
+    "reviewedAt": "2026-09-03T10:26:59.258Z",
+    "mainSha": "fa3cd003b750a825d42badcf49e22094a1ca629a"
+  }
+}
