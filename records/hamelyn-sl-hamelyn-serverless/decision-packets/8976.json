@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-02T13:13:32.202Z",
-  "updatedAt": "2026-09-02T10:54:49Z",
+  "generatedAt": "2026-09-03T09:58:52.126Z",
+  "updatedAt": "2026-09-03T09:42:41Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -18,38 +18,42 @@
       "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-09-01T10:28:43Z",
-    "updatedAt": "2026-09-02T10:54:49Z"
+    "updatedAt": "2026-09-03T09:42:41Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Se confirma que `skypod-2` usa el alveolo `1_01`, cuál es su enlace corporativo e IP Exotec, y que `skypod2` ya entra en el sondeo del ancla?",
-  "rationale": "Estos datos determinan si el cambio representa un puesto operativo real; inventarlos dejaría documentación incorrecta o monitorización engañosa.",
+  "question": "¿Qué tipos de container podrá procesar cada estación Skypod durante la puesta en marcha de `Station0002`?",
+  "rationale": "El código puede registrar la estación, pero la incidencia documenta mezcla de containers si no se fija una asignación operativa entre las tres.",
   "options": [
     {
-      "title": "Confirmar alta física completa",
-      "body": "Confirmar los cuatro valores operativos y preparar un único cambio coordinado de código, ancla e inventario.",
+      "title": "Asignar tipos por estación",
+      "body": "Definir y documentar qué tipos procesa cada estación antes del montaje; reduce el riesgo de mezcla mientras se mantiene el modelo actual.",
       "recommended": true
     },
     {
-      "title": "Aplazar el alta",
-      "body": "Mantener la estación sin habilitar hasta que el montaje y el alveolo estén verificados.",
+      "title": "Permitir tipos compartidos",
+      "body": "Autorizar la coexistencia asumiendo el riesgo conocido hasta que exista aislamiento por estación.",
+      "recommended": false
+    },
+    {
+      "title": "Posponer el alta",
+      "body": "Retrasar la tercera estación hasta implementar un aislamiento de containers por estación.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Confirmar alta física completa",
-    "body": "Confirmar los cuatro valores operativos y preparar un único cambio coordinado de código, ancla e inventario.",
+    "title": "Asignar tipos por estación",
+    "body": "Definir y documentar qué tipos procesa cada estación antes del montaje; reduce el riesgo de mezcla mientras se mantiene el modelo actual.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "banosdavidhamelyn",
-    "reason": "Su historial conecta la ruta de estación y la configuración reciente de Bifrost, además de que el contexto operativo procede de este flujo.",
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Es el asignado actual y revisor solicitado para el cambio central de registro.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8976.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8976#issuecomment-5492796480",
-    "reviewedAt": "2026-09-02T13:13:32.202Z",
-    "mainSha": "9b525e0aae70b41daab228e22437134fc1e70b6f"
+    "reviewedAt": "2026-09-03T09:58:52.126Z",
+    "mainSha": "5dae1134ca91340197926feee7f05b30a218ae3c"
   }
 }
