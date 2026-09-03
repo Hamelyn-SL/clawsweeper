@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-03T08:01:07.852Z",
+  "updatedAt": "2026-09-03T07:49:40Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9072,
+    "title": "TodoColeccion live Mongo state drifts from stocks_marketplace mirror",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9072",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "triage:queued",
+      "P2"
+    ],
+    "createdAt": "2026-09-03T07:49:27Z",
+    "updatedAt": "2026-09-03T07:49:40Z"
+  },
+  "lane": "manual_review",
+  "priority": "P2",
+  "question": "¿Se autoriza restaurar el CDC global de Atlas y ejecutar una reconciliación controlada de `mk_todoColeccion` para reparar el estado histórico perdido?",
+  "rationale": "La corrección afecta a producción y puede requerir recuperar millones de filas; el repositorio exige controles explícitos para backfills y no permite inferir que el trigger deshabilitado sea intencional.",
+  "options": [
+    {
+      "title": "Restaurar CDC y reconciliar",
+      "body": "Confirmar primero el estado real de Atlas, habilitar el manifiesto si está desactivado y ejecutar la recuperación con conteo, muestras y validación por cohortes.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener el trigger desactivado",
+      "body": "Conservar el comportamiento actual y retirar los KPIs de TodoColección basados en BigQuery hasta definir otra fuente operativa fiable.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Restaurar CDC y reconciliar",
+    "body": "Confirmar primero el estado real de Atlas, habilitar el manifiesto si está desactivado y ejecutar la recuperación con conteo, muestras y validación por cohortes.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Su trabajo reciente cubre el contrato y la materialización de `stocks_marketplace`, la superficie inmediata de la recuperación.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9072.md",
+    "reviewedAt": "2026-09-03T08:01:07.852Z",
+    "mainSha": "708ab28632c4685d238dddca4df5fae91ddc18aa"
+  }
+}
