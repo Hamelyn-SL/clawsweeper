@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-07T05:59:49.704Z",
-  "updatedAt": "2026-09-07T05:54:28Z",
+  "generatedAt": "2026-09-07T17:58:25.715Z",
+  "updatedAt": "2026-09-07T17:48:54Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,43 +13,47 @@
       "codex",
       "bug",
       "app:infrastructure",
-      "triage:running",
+      "triage:queued",
       "P2",
       "crons"
     ],
     "createdAt": "2026-09-07T05:40:28Z",
-    "updatedAt": "2026-09-07T05:54:28Z"
+    "updatedAt": "2026-09-07T17:48:54Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe priorizarse una corrección de resiliencia de SP-API para evitar `429` terminales correlacionados, o ajustar primero el watcher para distinguir reintentos recuperados de fallos finales?",
-  "rationale": "El código ya reintenta, pero elegir entre modificar el ritmo operativo o la señal de observabilidad requiere valorar carga, latencia y cobertura de recuperación.",
+  "question": "¿Qué garantía debe mantenerse para pedidos Amazon descartados que se corrigen localmente más de 24 horas después?",
+  "rationale": "La PR candidata reduce la ventana general para evitar 429, pero esa decisión puede eliminar una recuperación existente sin que el código actual defina la política correcta.",
   "options": [
     {
-      "title": "Corregir resiliencia de SP-API",
-      "body": "Instrumentar el resultado final y adaptar el limitador o backoff cuando varios marketplaces agotan los reintentos.",
+      "title": "Conservar recovery específico",
+      "body": "Mantener una vía acotada para descartes `ORDER_CHANGE` antiguos y aplicar el límite de un día únicamente al barrido general.",
       "recommended": true
     },
     {
-      "title": "Ajustar primero la observabilidad",
-      "body": "Conservar la política actual y abrir alertas solo cuando la respuesta final confirme una recuperación incompleta.",
+      "title": "Retener notificaciones",
+      "body": "No descartar notificaciones no formateables hasta poder reprocesarlas mediante una política observable de reintento.",
+      "recommended": false
+    },
+    {
+      "title": "Aceptar el límite diario",
+      "body": "Reducir toda la recuperación a un día y asumir que un cambio posterior de Amazon debe reactivar el pedido.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Corregir resiliencia de SP-API",
-    "body": "Instrumentar el resultado final y adaptar el limitador o backoff cuando varios marketplaces agotan los reintentos.",
+    "title": "Conservar recovery específico",
+    "body": "Mantener una vía acotada para descartes `ORDER_CHANGE` antiguos y aplicar el límite de un día únicamente al barrido general.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "HamelynDev",
-    "reason": "Conectado tanto con la incidencia anterior de recuperación como con la implementación del retry compartido.",
-    "confidence": "high"
+    "person": "MarcosTerroso",
+    "reason": "Es el revisor solicitado para la PR abierta y la persona señalada por la revisión previa para decidir esta garantía.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9182.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9182#issuecomment-5565717995",
-    "reviewedAt": "2026-09-07T05:59:49.704Z",
-    "mainSha": "497720441d168ce3f301048a9ef7dc5f6b763eaf"
+    "reviewedAt": "2026-09-07T17:58:25.715Z",
+    "mainSha": "829910f9e249e89f9d5c30248ac6ba2ca7a4ea1f"
   }
 }
