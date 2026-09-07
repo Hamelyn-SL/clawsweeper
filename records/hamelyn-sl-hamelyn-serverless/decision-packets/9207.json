@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-07T09:08:56.886Z",
+  "updatedAt": "2026-09-07T08:39:55Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9207,
+    "title": "Station: el OK del panel no confirma cuando Exotec sirve por un alveolo distinto del 1",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9207",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:admin",
+      "triage:queued",
+      "P1",
+      "reporter:AlexDiaz-Hamelyn"
+    ],
+    "createdAt": "2026-09-07T08:39:43Z",
+    "updatedAt": "2026-09-07T08:39:55Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe Exotec quedar configurado y supervisado para servir solo por `Alveolus_1_1_RIGHT`, o debe Station reconocer y confirmar el alveolo activo?",
+  "rationale": "El código actual coincide con la decisión previa, pero las trazas del nuevo reporte describen una operativa física incompatible que no puede resolverse solo desde el repositorio.",
+  "options": [
+    {
+      "title": "Garantizar alveolo 1",
+      "body": "Confirmar con Exotec la configuración de estación, corregirla si procede y añadir una comprobación operativa que detecte desvíos.",
+      "recommended": true
+    },
+    {
+      "title": "Adaptar el bridge",
+      "body": "Cambiar el bridge para seleccionar el método del alveolo activo y propagar un rechazo funcional del PLC a Station.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Garantizar alveolo 1",
+    "body": "Confirmar con Exotec la configuración de estación, corregirla si procede y añadir una comprobación operativa que detecte desvíos.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "Su comentario en el antecedente fijó explícitamente el contrato operativo de alveolo único.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9207.md",
+    "reviewedAt": "2026-09-07T09:08:56.886Z",
+    "mainSha": "298a23c25def01b408134f365610311714eaa84e"
+  }
+}

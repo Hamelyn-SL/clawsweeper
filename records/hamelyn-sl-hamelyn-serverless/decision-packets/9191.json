@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-07T09:05:50.838Z",
+  "updatedAt": "2026-09-07T07:36:36Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9191,
+    "title": "[Infrastructure] Atlas mantiene 6.596 conexiones en el primario, pero sin saturación",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9191",
+    "state": "open",
+    "labels": [
+      "bug",
+      "source:admin-panel",
+      "app:infrastructure",
+      "triage:done",
+      "P1"
+    ],
+    "createdAt": "2026-09-07T06:19:13Z",
+    "updatedAt": "2026-09-07T07:36:36Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Priorizamos instrumentar y ensayar límites por aplicación antes de cambiar la configuración global del pool Mongo?",
+  "rationale": "El módulo compartido afecta a varias aplicaciones y los datos actuales explican el patrón, pero no atribuyen los sockets a un cliente para escoger un límite seguro.",
+  "options": [
+    {
+      "title": "Instrumentar y ensayar",
+      "body": "Añadir atribución por aplicación y probar límites menores en una sola superficie antes de modificar el pool común.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener y observar",
+      "body": "Conservar el pool actual hasta contar con otro pico que incluya distribución Atlas por aplicación.",
+      "recommended": false
+    },
+    {
+      "title": "Ajustar globalmente",
+      "body": "Cambiar el pool común ahora, aceptando el riesgo de alterar a la vez todas las aplicaciones serverless.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Instrumentar y ensayar",
+    "body": "Añadir atribución por aplicación y probar límites menores en una sola superficie antes de modificar el pool común.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Su trabajo reciente cubre directamente la reutilización y recuperación del cliente Mongo compartido.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9191.md",
+    "reviewedAt": "2026-09-07T09:05:50.838Z",
+    "mainSha": "298a23c25def01b408134f365610311714eaa84e"
+  }
+}

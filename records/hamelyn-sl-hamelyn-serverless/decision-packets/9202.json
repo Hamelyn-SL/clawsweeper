@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-07T09:10:33.250Z",
+  "updatedAt": "2026-09-07T08:57:52Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 9202,
+    "title": "feat: confirm picking lines from the station and verify via webhook",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9202",
+    "state": "open",
+    "labels": [
+      "size/XXL"
+    ],
+    "createdAt": "2026-09-07T08:10:46Z",
+    "updatedAt": "2026-09-07T08:57:52Z",
+    "headSha": "35c588a54e7aac64565f92b6cc387ccb69d925fe"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe un cambio de `article_id` procedente de la HMI de Exotec confirmar siempre la línea, aunque el bridge no distinga un OK de un faltante o error?",
+  "rationale": "La API del bridge solo expone el nuevo artículo, de modo que el código no puede inferir de forma fiable si la transición externa fue un éxito sin aceptar el riesgo operativo descrito.",
+  "options": [
+    {
+      "title": "Exigir señal explícita de éxito",
+      "body": "Mantener la confirmación automática externa solo cuando el bridge o Exotec aporte un evento que distinga claramente el OK.",
+      "recommended": true
+    },
+    {
+      "title": "Restringir la confirmación a la Station",
+      "body": "Confirmar únicamente los resultados resueltos por nuestra interfaz hasta disponer de esa señal externa.",
+      "recommended": false
+    },
+    {
+      "title": "Aceptar la inferencia actual",
+      "body": "Mantener la inferencia por `article_id` y documentar que los errores externos pueden consumir huecos que luego requieren revisión.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Exigir señal explícita de éxito",
+    "body": "Mantener la confirmación automática externa solo cuando el bridge o Exotec aporte un evento que distinga claramente el OK.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Su historial en Station y su comentario sobre la limitación del bridge le conectan directamente con esta decisión.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9202.md",
+    "reviewedAt": "2026-09-07T09:10:33.250Z",
+    "mainSha": "298a23c25def01b408134f365610311714eaa84e"
+  }
+}

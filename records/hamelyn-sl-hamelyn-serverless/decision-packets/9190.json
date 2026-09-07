@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-07T07:23:34.499Z",
-  "updatedAt": "2026-09-07T06:23:51Z",
+  "generatedAt": "2026-09-07T09:03:49.928Z",
+  "updatedAt": "2026-09-07T08:16:49Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,43 +13,42 @@
       "source:admin-panel",
       "app:marketplace",
       "feature",
-      "triage:queued",
+      "triage:needs-info",
       "clawsweeper:needs-product-decision",
       "P2"
     ],
     "createdAt": "2026-09-07T06:07:59Z",
-    "updatedAt": "2026-09-07T06:23:51Z"
+    "updatedAt": "2026-09-07T08:16:49Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿F4 debe retirar ahora todos los fallbacks V1 y el adaptador de MercadoLibre Global, o conservar una transición temporal explícita para alguno de ellos?",
-  "rationale": "El código y el historial conservan rutas legacy sin schedule como fallback manual, y la documentación marca MercadoLibre Global como caso legacy separado.",
+  "question": "¿F4 debe retirar ya todos los fallbacks V1 y el adapter de MercadoLibre Global, o debe conservarse una transición explícita para alguno de esos flujos?",
+  "rationale": "El código actual demuestra que MercadoLibre Global continúa ejecutándose mediante el runtime legacy; decidir su retirada cambia el comportamiento operativo y no puede inferirse de forma segura.",
   "options": [
     {
-      "title": "Retirar en F4",
-      "body": "Eliminar los caminos legacy y confirmar que los runners V2 cubren las operaciones restantes y las excepciones acordadas.",
+      "title": "Retirada completa en F4",
+      "body": "Eliminar los fallbacks V1 y MercadoLibre Global, manteniendo únicamente las tres rutas excepcionales documentadas en la issue.",
       "recommended": true
     },
     {
-      "title": "Mantener transición limitada",
-      "body": "Conservar solo los fallbacks aprobados con propietario, condición de uso y criterio de retirada documentados.",
+      "title": "Transición explícita",
+      "body": "Conservar solo los fallbacks enumerados con propietario, motivo operativo y criterio verificable de retirada.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Retirar en F4",
-    "body": "Eliminar los caminos legacy y confirmar que los runners V2 cubren las operaciones restantes y las excepciones acordadas.",
+    "title": "Retirada completa en F4",
+    "body": "Eliminar los fallbacks V1 y MercadoLibre Global, manteniendo únicamente las tres rutas excepcionales documentadas en la issue.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "El historial lo vincula directamente con la ventana de retirada V1 y la restauración selectiva de schedules.",
+    "reason": "La discusión le solicita expresamente la decisión y su historial cubre la migración V2 de MercadoLibre.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9190.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9190#issuecomment-5566856923",
-    "reviewedAt": "2026-09-07T07:23:34.499Z",
-    "mainSha": "ce139141ee59c921b1839568955bbfe94683ea23"
+    "reviewedAt": "2026-09-07T09:03:49.928Z",
+    "mainSha": "298a23c25def01b408134f365610311714eaa84e"
   }
 }
