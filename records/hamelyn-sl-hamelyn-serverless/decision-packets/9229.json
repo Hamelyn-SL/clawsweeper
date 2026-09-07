@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-07T11:57:14.315Z",
+  "updatedAt": "2026-09-07T11:36:34Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 9229,
+    "title": "fix: retain late BL events and validate telemetry health",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9229",
+    "state": "open",
+    "labels": [
+      "size/XL"
+    ],
+    "createdAt": "2026-09-07T11:20:05Z",
+    "updatedAt": "2026-09-07T11:36:34Z",
+    "headSha": "903cf2fb9e7f81ee1d28d17d4a621ed6582a21a9"
+  },
+  "lane": "merge_risk",
+  "priority": "P2",
+  "question": "¿Debe este PR esperar a que https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9224 se integre y refrescarse contra `dev` antes de fusionarse?",
+  "rationale": "Ambos PRs cambian la ruta operativa de alertas BL; el orden de integración determina si los nuevos avisos usan el transporte recuperado.",
+  "options": [
+    {
+      "title": "Integrar Slack primero",
+      "body": "Fusionar el transporte común, hacer merge de `dev` en esta rama y volver a validar el monitor con el notificador compartido.",
+      "recommended": true
+    },
+    {
+      "title": "Fusionar de forma independiente",
+      "body": "Aceptar que los nuevos avisos sigan la ruta Slack actual hasta que el PR relacionado se integre después.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Integrar Slack primero",
+    "body": "Fusionar el transporte común, hacer merge de `dev` en esta rama y volver a validar el monitor con el notificador compartido.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "danielmenchen-hamelyn",
+    "reason": "Su historial reciente cubre el monitor y el contrato operativo de sus alertas.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9229.md",
+    "reviewedAt": "2026-09-07T11:57:14.315Z",
+    "mainSha": "d2fb7f220e1643c8b101b5df2001131819f5f27d"
+  }
+}

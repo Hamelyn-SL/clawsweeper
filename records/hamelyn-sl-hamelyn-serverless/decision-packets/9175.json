@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-07T10:43:11.472Z",
-  "updatedAt": "2026-09-07T10:39:07Z",
+  "generatedAt": "2026-09-07T11:56:25.629Z",
+  "updatedAt": "2026-09-07T11:12:50Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -17,43 +17,42 @@
       "P2"
     ],
     "createdAt": "2026-09-06T22:07:03Z",
-    "updatedAt": "2026-09-07T10:39:07Z"
+    "updatedAt": "2026-09-07T11:12:50Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe integrarse el piloto completo, incluidos el ciclo diario, la consola `/learning` y el cambio de modelo predeterminado, o limitar primero el aterrizaje a almacenamiento y evaluación sin activación?",
-  "rationale": "El comportamiento deseado introduce una nueva capacidad transversal y el PR abierto combina varios cambios operativos; el código actual no define cuál debe ser el límite de activación inicial.",
+  "question": "¿Debe la primera integración limitarse a procedimientos evaluados y pausados, o incluir también el ciclo diario, la consola `/learning` y el cambio de modelo predeterminado?",
+  "rationale": "La implementación candidata combina capacidades de aprendizaje con activación operativa y defaults de modelo, decisiones independientes del contrato común solicitado.",
   "options": [
     {
       "title": "Integrar por fases sin activación",
-      "body": "Aterrizar contrato, corpus, evaluación y controles, manteniendo desactivadas la promoción automática y la sustitución de modelo hasta una validación posterior.",
+      "body": "Aterrizar almacenamiento, corpus, evaluación y controles, manteniendo inactivos la promoción automática y los nuevos defaults de modelo.",
       "recommended": true
     },
     {
-      "title": "Aceptar el piloto acotado",
-      "body": "Integrar el ciclo diario y la consola con las salvaguardas propuestas tras validar el recorrido autenticado y el plan de reversión.",
+      "title": "Aceptar el piloto completo",
+      "body": "Integrar ciclo diario, consola y defaults propuestos tras validar el recorrido autenticado y el plan de reversión.",
       "recommended": false
     },
     {
-      "title": "Reducir la iniciativa",
-      "body": "Mantener las memorias actuales y extraer solo reglas comunes documentadas, sin nuevo almacenamiento, consola ni programación.",
+      "title": "Reducir el alcance",
+      "body": "Conservar las memorias actuales y extraer reglas comunes documentadas, sin nuevo servicio ni programación.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Integrar por fases sin activación",
-    "body": "Aterrizar contrato, corpus, evaluación y controles, manteniendo desactivadas la promoción automática y la sustitución de modelo hasta una validación posterior.",
+    "body": "Aterrizar almacenamiento, corpus, evaluación y controles, manteniendo inactivos la promoción automática y los nuevos defaults de modelo.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Está asignado a la iniciativa, propone el PR candidato y figura como contribuidor reciente de los componentes de evaluación afectados.",
+    "reason": "Está asignado a la iniciativa y su historial cubre los componentes de evaluación y persistencia que determinan el alcance.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9175.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9175#issuecomment-5565269657",
-    "reviewedAt": "2026-09-07T10:43:11.472Z",
-    "mainSha": "ec2d925d35bb62ab7459421e4ab28fe51e0d8b13"
+    "reviewedAt": "2026-09-07T11:56:25.629Z",
+    "mainSha": "d2fb7f220e1643c8b101b5df2001131819f5f27d"
   }
 }
