@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-07T13:04:14.677Z",
+  "generatedAt": "2026-09-07T13:06:56.643Z",
   "updatedAt": "2026-09-07T12:57:13Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -14,42 +14,41 @@
       "app:admin",
       "triage:queued",
       "clawsweeper:needs-product-decision",
-      "reporter:JavierHamelyn",
-      "P2"
+      "P2",
+      "reporter:JavierHamelyn"
     ],
     "createdAt": "2026-09-07T10:04:04Z",
     "updatedAt": "2026-09-07T12:57:13Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe Revisión V3 volver a persistir `phase` y `direction` opcionales en cada `ReviewStep`, además de corregir el tiempo de Atrás?",
-  "rationale": "La eliminación fue una decisión deliberada en el historial; la corrección temporal es mecánica, pero restaurar el contrato necesita confirmar el requisito de explotación.",
+  "question": "¿Debe Revisión V3 volver a persistir `phase` y `direction` opcionales en cada `ReviewStep`, además de corregir el tiempo registrado al retroceder?",
+  "rationale": "La PR anterior eliminó esos campos como innecesarios, mientras el alcance original y esta incidencia los requieren para la trazabilidad por fase; el código no puede resolver por sí solo ese contrato duradero.",
   "options": [
     {
       "title": "Restaurar trazabilidad por fase",
-      "body": "Aceptar campos opcionales compatibles y fusionar la corrección temporal para que los eventos nuevos identifiquen sección y sentido.",
+      "body": "Aceptar `phase` y `direction` opcionales para eventos nuevos, manteniendo válidos los históricos sin esos campos.",
       "recommended": true
     },
     {
-      "title": "Corregir solo el tiempo",
-      "body": "Mantener la lectura del intervalo activo al retroceder, retirar los campos persistidos y documentar que no habrá desglose por fase.",
+      "title": "Limitar el arreglo al tiempo",
+      "body": "Corregir el snapshot de Atrás sin reintroducir los campos y documentar que no habrá desglose por fase.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Restaurar trazabilidad por fase",
-    "body": "Aceptar campos opcionales compatibles y fusionar la corrección temporal para que los eventos nuevos identifiquen sección y sentido.",
+    "body": "Aceptar `phase` y `direction` opcionales para eventos nuevos, manteniendo válidos los históricos sin esos campos.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "alexcanHamelyn",
-    "reason": "Realizó el merge que redujo el contrato y puede confirmar si el cambio de alcance sigue siendo intencional.",
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Introdujo la telemetría del puesto y su historial conecta el contrato de pasos con la integración principal de Revisión V3.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9217.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9217#issuecomment-5569095899",
-    "reviewedAt": "2026-09-07T13:04:14.677Z",
+    "reviewedAt": "2026-09-07T13:06:56.643Z",
     "mainSha": "c620bc45fc5f21aa5da8e692265c52e5e68ef02c"
   }
 }

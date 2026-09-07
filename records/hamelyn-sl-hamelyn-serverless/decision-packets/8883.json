@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-07T11:54:30.370Z",
-  "updatedAt": "2026-09-07T10:32:36Z",
+  "generatedAt": "2026-09-07T13:05:38.654Z",
+  "updatedAt": "2026-09-07T12:42:50Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,47 +14,46 @@
       "source:admin-panel",
       "app:infrastructure",
       "triage:done",
-      "P2",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2"
     ],
     "createdAt": "2026-08-28T12:19:19Z",
-    "updatedAt": "2026-09-07T10:32:36Z"
+    "updatedAt": "2026-09-07T12:42:50Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Autoriza Platform ocultar temporalmente `products.newData.logista_1` como único canario reversible, con baseline y criterio explícito de desocultación?",
-  "rationale": "La evidencia reduce el riesgo, pero elegir y ejecutar una alteración de índice en Atlas afecta al comportamiento productivo y requiere autorización operativa.",
+  "question": "¿Se autoriza ocultar temporalmente un único índice candidato en producción bajo el plan de observación propuesto?",
+  "rationale": "La auditoría estática y los contadores multinodo reducen la incertidumbre, pero no sustituyen la decisión sobre riesgo operativo y consumidores externos.",
   "options": [
     {
       "title": "Autorizar un canario reversible",
-      "body": "Ocultar solo `products.newData.logista_1`, comparar latencia, documentos examinados y errores durante una semana, y desocultarlo ante regresión.",
+      "body": "Ocultar solo `products.newData.logista_1`, conservar su definición y observar métricas directas durante al menos una semana.",
       "recommended": true
     },
     {
-      "title": "Mantener observación pasiva",
-      "body": "No alterar índices todavía y ampliar la captura de consumidores externos antes de seleccionar un canario.",
+      "title": "Mantener observación sin cambios",
+      "body": "Conservar todos los índices y completar primero la auditoría de consumidores externos antes de ejecutar una prueba.",
       "recommended": false
     },
     {
-      "title": "Aprobar un lote mayor",
-      "body": "Ocultar varios candidatos a la vez acelera la auditoría, pero dificulta atribuir una regresión a un índice concreto.",
+      "title": "Definir otro candidato",
+      "body": "Elegir un índice distinto si Platform aporta evidencia operativa más sólida para una prueba inicial.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Autorizar un canario reversible",
-    "body": "Ocultar solo `products.newData.logista_1`, comparar latencia, documentos examinados y errores durante una semana, y desocultarlo ante regresión.",
+    "body": "Ocultar solo `products.newData.logista_1`, conservar su definición y observar métricas directas durante al menos una semana.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Es la persona asignada y quien documentó la selección de candidatos y el protocolo de prueba.",
-    "confidence": "high"
+    "reason": "Tiene la asignación y la evidencia operativa más reciente para ejecutar o ajustar el canario aprobado.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8883.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8883#issuecomment-5452787658",
-    "reviewedAt": "2026-09-07T11:54:30.370Z",
-    "mainSha": "d2fb7f220e1643c8b101b5df2001131819f5f27d"
+    "reviewedAt": "2026-09-07T13:05:38.654Z",
+    "mainSha": "c620bc45fc5f21aa5da8e692265c52e5e68ef02c"
   }
 }
