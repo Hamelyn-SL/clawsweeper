@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-07T07:31:13.625Z",
-  "updatedAt": "2026-09-07T06:13:39Z",
+  "generatedAt": "2026-09-07T17:54:59.367Z",
+  "updatedAt": "2026-09-07T17:51:09Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -10,48 +10,42 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9189",
     "state": "open",
     "labels": [
-      "size/S",
+      "size/L",
       "P1"
     ],
     "createdAt": "2026-09-07T05:59:53Z",
-    "updatedAt": "2026-09-07T06:13:39Z",
-    "headSha": "7a3df64dbad34a7e1b310a38ed2fd62e0887ea8c"
+    "updatedAt": "2026-09-07T17:51:09Z",
+    "headSha": "7be963d3d5709951d207d04aec9328e5adfb9296"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué garantía de recuperación debe mantenerse para pedidos Amazon descartados que se corrigen localmente después de 24 horas?",
-  "rationale": "La solución exige equilibrar cuota de `searchOrders` con la conservación de pedidos no creados; el código actual no ofrece una vía equivalente de bajo coste.",
+  "question": "¿Debe un `ORDER_CHANGE` descartado por SKU ausente seguir siendo recuperable si el SKU se corrige más de 24 horas después?",
+  "rationale": "La rama reduce una garantía operativa previa; elegir entre retener esas notificaciones o crear un recovery diferido determina el equilibrio permanente entre cuota y cobertura.",
   "options": [
     {
-      "title": "Conservar recuperación específica",
-      "body": "Mantener una vía de más de 24 horas para descartes `ORDER_CHANGE` y aplicar el recorte de cuota solo al barrido general.",
+      "title": "Conservar recovery diferido",
+      "body": "Mantener una ruta de baja frecuencia o retención selectiva para pedidos descartados hasta que el SKU pueda resolverse.",
       "recommended": true
     },
     {
-      "title": "Retener la notificación",
-      "body": "No borrar los descartes por stock o SKU hasta que puedan formatearse, con una política explícita de reintento y observabilidad.",
-      "recommended": false
-    },
-    {
-      "title": "Aceptar el límite de un día",
-      "body": "Reducir la ventana general a un día y aceptar que la recuperación dependa de una actualización posterior de Amazon.",
+      "title": "Aceptar el límite de 24 horas",
+      "body": "Reducir permanentemente la cobertura y documentar que una corrección tardía exige un backfill manual.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Conservar recuperación específica",
-    "body": "Mantener una vía de más de 24 horas para descartes `ORDER_CHANGE` y aplicar el recorte de cuota solo al barrido general.",
+    "title": "Conservar recovery diferido",
+    "body": "Mantener una ruta de baja frecuencia o retención selectiva para pedidos descartados hasta que el SKU pueda resolverse.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MarcosTerroso",
-    "reason": "Su historial conecta el contrato de descarte y la recuperación Amazon afectada.",
+    "person": "MiguelHamelyn",
+    "reason": "Introdujo el comportamiento actual de recovery y es el candidato más cercano para decidir su garantía operativa.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9189.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9189#issuecomment-5566855439",
-    "reviewedAt": "2026-09-07T07:31:13.625Z",
-    "mainSha": "ce139141ee59c921b1839568955bbfe94683ea23"
+    "reviewedAt": "2026-09-07T17:54:59.367Z",
+    "mainSha": "829910f9e249e89f9d5c30248ac6ba2ca7a4ea1f"
   }
 }

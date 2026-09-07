@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-07T17:58:25.715Z",
+  "generatedAt": "2026-09-07T17:59:57.172Z",
   "updatedAt": "2026-09-07T17:48:54Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -13,7 +13,7 @@
       "codex",
       "bug",
       "app:infrastructure",
-      "triage:pr-opened",
+      "triage:queued",
       "P2",
       "crons"
     ],
@@ -21,40 +21,39 @@
     "updatedAt": "2026-09-07T17:48:54Z"
   },
   "lane": "product_direction",
-  "priority": "P2",
-  "question": "¿Qué garantía debe mantenerse para pedidos Amazon descartados que se corrigen localmente más de 24 horas después?",
-  "rationale": "La PR candidata reduce la ventana general para evitar 429, pero esa decisión puede eliminar una recuperación existente sin que el código actual defina la política correcta.",
+  "priority": "P1",
+  "question": "¿Qué garantía de recuperación debe mantenerse para pedidos Amazon corregidos localmente después de 24 horas?",
+  "rationale": "La PR resuelve la presión de cuota reduciendo la ventana general, pero no define la garantía para recuperaciones tardías.",
   "options": [
     {
-      "title": "Conservar recovery específico",
-      "body": "Mantener una vía acotada para descartes `ORDER_CHANGE` antiguos y aplicar el límite de un día únicamente al barrido general.",
+      "title": "Mantener recuperación específica",
+      "body": "Conservar una vía de más de 24 horas para descartes `ORDER_CHANGE` y limitar solo el barrido general.",
       "recommended": true
     },
     {
-      "title": "Retener notificaciones",
-      "body": "No descartar notificaciones no formateables hasta poder reprocesarlas mediante una política observable de reintento.",
+      "title": "Retener descartes",
+      "body": "No eliminar descartes por stock o SKU hasta que puedan reintentarse con una política visible.",
       "recommended": false
     },
     {
       "title": "Aceptar el límite diario",
-      "body": "Reducir toda la recuperación a un día y asumir que un cambio posterior de Amazon debe reactivar el pedido.",
+      "body": "Usar la nueva ventana de un día y depender de actualizaciones posteriores de Amazon.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Conservar recovery específico",
-    "body": "Mantener una vía acotada para descartes `ORDER_CHANGE` antiguos y aplicar el límite de un día únicamente al barrido general.",
+    "title": "Mantener recuperación específica",
+    "body": "Conservar una vía de más de 24 horas para descartes `ORDER_CHANGE` y limitar solo el barrido general.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MarcosTerroso",
-    "reason": "Es el revisor solicitado para la PR abierta y la persona señalada por la revisión previa para decidir esta garantía.",
-    "confidence": "medium"
+    "person": "MiguelHamelyn",
+    "reason": "Introdujo el intervalo vigente y actualizó la PR candidata con el segundo tramo de la corrección.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9182.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9182#issuecomment-5565717995",
-    "reviewedAt": "2026-09-07T17:58:25.715Z",
+    "reviewedAt": "2026-09-07T17:59:57.172Z",
     "mainSha": "829910f9e249e89f9d5c30248ac6ba2ca7a4ea1f"
   }
 }
