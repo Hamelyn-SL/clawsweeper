@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-07T11:48:02.287Z",
-  "updatedAt": "2026-09-07T10:57:50Z",
+  "generatedAt": "2026-09-07T13:28:42.936Z",
+  "updatedAt": "2026-09-07T13:16:10Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,44 +13,43 @@
       "app:admin",
       "reporter:davidgonzalez",
       "feature",
-      "triage:done",
-      "origin:dev",
+      "triage:queued",
       "P1",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "origin:dev"
     ],
     "createdAt": "2026-09-03T12:45:15Z",
-    "updatedAt": "2026-09-07T10:57:50Z"
+    "updatedAt": "2026-09-07T13:16:10Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Se aprueba que Station confirme primero solo tras una transferencia validada desde la UI de Hamelyn, dejando los resultados hechos en la HMI de Exotec para el webhook?",
-  "rationale": "Esta elección cambia qué sistema se considera autoritativo en tiempo real y define el comportamiento operativo aceptado cuando se usa la HMI externa.",
+  "question": "¿Debe Hamelyn admitir los OK realizados en la HMI de Exotec como confirmación inmediata, o limitar esa confirmación a acciones iniciadas desde Station?",
+  "rationale": "La incidencia prioriza cubrir la HMI de Exotec, mientras la PR vinculada descarta inferir éxito por cambios de artículo o alvéolo; elegir la señal operativa segura cambia el comportamiento de producción.",
   "options": [
     {
-      "title": "Aprobar el contrato de Station",
-      "body": "Integrar el enfoque del PR tras validar físicamente Station 1 y 3, manteniendo el webhook como verificador y vía para acciones realizadas en la HMI.",
+      "title": "Definir una señal HMI inequívoca",
+      "body": "Mantener la cobertura de la HMI, pero solo con una señal OPC UA que Exotec garantice como confirmación de transferencia; después adaptar la PR.",
       "recommended": true
     },
     {
-      "title": "Mantener el webhook como autor único",
-      "body": "Conservar la arquitectura actual y buscar una mitigación de cola o de visualización sin introducir confirmación primaria desde Station.",
+      "title": "Limitar a Station",
+      "body": "Aceptar que solo los OK iniciados desde Station actualizan inmediatamente y dejar que la HMI espere al webhook, documentando la limitación operativa.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar el contrato de Station",
-    "body": "Integrar el enfoque del PR tras validar físicamente Station 1 y 3, manteniendo el webhook como verificador y vía para acciones realizadas en la HMI.",
+    "title": "Definir una señal HMI inequívoca",
+    "body": "Mantener la cobertura de la HMI, pero solo con una señal OPC UA que Exotec garantice como confirmación de transferencia; después adaptar la PR.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "AlexDiaz-Hamelyn",
-    "reason": "Su historial reciente cubre el comportamiento visible y operativo de Station afectado por la decisión.",
+    "person": "banosdavidhamelyn",
+    "reason": "Está asignado a la incidencia y su trabajo reciente conecta el webhook, Station y la PR candidata.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9098.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9098#issuecomment-5565376717",
-    "reviewedAt": "2026-09-07T11:48:02.287Z",
-    "mainSha": "d2fb7f220e1643c8b101b5df2001131819f5f27d"
+    "reviewedAt": "2026-09-07T13:28:42.936Z",
+    "mainSha": "b1bf6279ecb7b0dd99e264dacafabec42a634ae4"
   }
 }
