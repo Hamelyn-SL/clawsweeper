@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-07T07:21:07.516Z",
+  "generatedAt": "2026-09-07T07:31:11.727Z",
   "updatedAt": "2026-09-07T06:36:43Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -14,48 +14,46 @@
       "app:admin",
       "feature",
       "triage:queued",
-      "reporter:danielmenchen-hamelyn",
       "P2",
-      "clawsweeper:needs-product-decision"
+      "reporter:danielmenchen-hamelyn"
     ],
     "createdAt": "2026-09-07T06:36:32Z",
     "updatedAt": "2026-09-07T06:36:43Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se valida el alcance definitivo de F5 —visibilidad del operario, ubicación de parámetros y ciclo de informes— para planificarla tras F1–F4?",
-  "rationale": "La issue identifica decisiones funcionales que determinan qué datos se exponen, quién los administra y qué persistencia se crea; el código actual no puede resolverlas sin criterio de almacén.",
+  "question": "¿Se aprueba el alcance completo de F5, incluidas la retención de productividad, la visibilidad para operarios y el gobierno de informes, una vez desplegadas F1–F4?",
+  "rationale": "La issue declara estas decisiones como pendientes y condiciona su inicio a fases que aún no han aterrizado; no puede elegirse un contrato estable solo desde código.",
   "options": [
     {
       "title": "Mantener F5 bloqueada",
-      "body": "Esperar la validación de Daniel y el despliegue de F1–F4 antes de convertir este alcance en contratos o colecciones.",
+      "body": "Esperar a la validación del responsable de almacén y a F1–F4 antes de diseñar los contratos de datos y API.",
       "recommended": true
     },
     {
-      "title": "Aprobar un alcance mínimo",
-      "body": "Limitar la fase a consulta de sesiones y un panel sin informes ni parámetros históricos, dejando el resto en issues nuevas.",
+      "title": "Aprobar una lectura parcial",
+      "body": "Autorizar únicamente panel y consultas de sesiones/faltas, dejando informes y parámetros persistentes para otra fase.",
       "recommended": false
     },
     {
-      "title": "Aprobar el alcance completo",
-      "body": "Confirmar las decisiones pendientes y autorizar explícitamente las nuevas colecciones y su réplica antes del diseño técnico.",
+      "title": "Aprobar el alcance íntegro",
+      "body": "Confirmar ahora la retención, permisos, visibilidad e informes para planificar F5 como programa coordinado.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Mantener F5 bloqueada",
-    "body": "Esperar la validación de Daniel y el despliegue de F1–F4 antes de convertir este alcance en contratos o colecciones.",
+    "body": "Esperar a la validación del responsable de almacén y a F1–F4 antes de diseñar los contratos de datos y API.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "danielmenchen-hamelyn",
-    "reason": "La issue le atribuye expresamente la validación funcional previa para esta fase.",
-    "confidence": "high"
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Es el candidato histórico más cercano a la semántica vigente de sesiones y al panel que F5 extendería.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9196.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9196#issuecomment-5566864415",
-    "reviewedAt": "2026-09-07T07:21:07.516Z",
+    "reviewedAt": "2026-09-07T07:31:11.727Z",
     "mainSha": "ce139141ee59c921b1839568955bbfe94683ea23"
   }
 }
