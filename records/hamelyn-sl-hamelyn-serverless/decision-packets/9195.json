@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-07T09:04:59.593Z",
-  "updatedAt": "2026-09-07T08:57:53Z",
+  "generatedAt": "2026-09-07T10:28:12.206Z",
+  "updatedAt": "2026-09-07T09:12:34Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,48 +13,48 @@
       "source:admin-panel",
       "app:admin",
       "feature",
-      "triage:running",
+      "triage:blocked",
       "clawsweeper:needs-product-decision",
       "P2",
       "reporter:danielmenchen-hamelyn"
     ],
     "createdAt": "2026-09-07T06:36:21Z",
-    "updatedAt": "2026-09-07T08:57:53Z"
+    "updatedAt": "2026-09-07T09:12:34Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe F4 empezar con una carga que sustituye completamente cada semana, o debe soportar parches por día u operario desde el primer lanzamiento?",
-  "rationale": "La elección determina el contrato de versiones, validación atómica, resolución de conflictos y la forma de la CLI y del dashboard.",
+  "question": "¿Aprueba Daniel que la primera versión de F4 valide y sustituya atómicamente toda la semana, sin parches por día ni por operario?",
+  "rationale": "La elección define el modelo de versiones, las reglas de conflicto y la validación de carga; el código actual no establece una preferencia segura.",
   "options": [
     {
       "title": "Sustitución semanal completa",
-      "body": "Cada carga valida y reemplaza atómicamente el período semanal, creando una nueva versión activa.",
+      "body": "Cada carga valida toda la semana y activa una nueva versión, conservando las anteriores para consulta.",
       "recommended": true
     },
     {
       "title": "Parches desde el inicio",
-      "body": "Permite cambios parciales, pero exige definir precedencia, conflictos y trazabilidad adicional antes de implementar.",
+      "body": "Permite cambios parciales, pero exige decidir precedencia, conflictos y trazabilidad antes de diseñar el contrato.",
       "recommended": false
     },
     {
-      "title": "Decidir tras F1–F3",
-      "body": "Reabre el contrato cuando existan sesiones atribuidas y datos operativos de las fases previas.",
+      "title": "Posponer la semántica",
+      "body": "Mantiene F4 bloqueada hasta validar con operación datos reales ya atribuidos por las fases anteriores.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Sustitución semanal completa",
-    "body": "Cada carga valida y reemplaza atómicamente el período semanal, creando una nueva versión activa.",
+    "body": "Cada carga valida toda la semana y activa una nueva versión, conservando las anteriores para consulta.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "danielmenchen-hamelyn",
-    "reason": "La solicitud identifica expresamente su validación operativa como prerrequisito de inicio.",
+    "reason": "La issue asigna expresamente la validación operativa del cuadrante a Daniel.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9195.md",
-    "reviewedAt": "2026-09-07T09:04:59.593Z",
-    "mainSha": "298a23c25def01b408134f365610311714eaa84e"
+    "reviewedAt": "2026-09-07T10:28:12.206Z",
+    "mainSha": "ec2d925d35bb62ab7459421e4ab28fe51e0d8b13"
   }
 }

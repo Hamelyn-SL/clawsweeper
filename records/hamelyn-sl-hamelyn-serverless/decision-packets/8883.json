@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-02T12:57:47.071Z",
-  "updatedAt": "2026-09-02T10:54:53Z",
+  "generatedAt": "2026-09-07T10:27:52.167Z",
+  "updatedAt": "2026-09-07T10:22:35Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,42 +13,46 @@
       "bug",
       "source:admin-panel",
       "app:infrastructure",
-      "triage:done",
+      "triage:queued",
       "P2"
     ],
     "createdAt": "2026-08-28T12:19:19Z",
-    "updatedAt": "2026-09-02T10:54:53Z"
+    "updatedAt": "2026-09-07T10:22:35Z"
   },
-  "lane": "manual_review",
+  "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Autoriza Platform la verificación multinodo posterior al 3 de septiembre de 2026 y la preparación de propuestas de retirada solo para candidatos confirmados?",
-  "rationale": "La evidencia necesaria está en producción y cualquier retirada modifica estructuras persistentes; no es una decisión segura para automatizar desde el checkout.",
+  "question": "¿Autoriza el equipo una prueba de ocultación reversible para uno o dos de los 49 candidatos, empezando por los que no tienen consumidor localizado?",
+  "rationale": "La auditoría ya reduce el lote, pero escoger candidatos y aceptar el riesgo operacional de ocultarlos requiere criterio humano y coordinación fuera del checkout.",
   "options": [
     {
-      "title": "Verificar y conservar por defecto",
-      "body": "Revisar todos los miembros y constraints, manteniendo cualquier índice que no tenga evidencia completa de desuso.",
+      "title": "Prueba reversible limitada",
+      "body": "Ocultar uno o dos candidatos con definición, baseline y plan de desocultación documentados; observar al menos un ciclo semanal antes de valorar borrados.",
       "recommended": true
     },
     {
-      "title": "Cerrar como señal informativa",
-      "body": "Aceptar la advertencia actual del watcher sin realizar investigación operativa adicional.",
+      "title": "Ampliar la auditoría",
+      "body": "Mantener todos los índices visibles hasta completar la comprobación de consumidores externos y consultas dinámicas.",
+      "recommended": false
+    },
+    {
+      "title": "Mejorar primero el watcher",
+      "body": "Separar en el watcher muestra, cobertura multinodo y exclusiones antes de ejecutar cualquier prueba sobre Atlas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Verificar y conservar por defecto",
-    "body": "Revisar todos los miembros y constraints, manteniendo cualquier índice que no tenga evidencia completa de desuso.",
+    "title": "Prueba reversible limitada",
+    "body": "Ocultar uno o dos candidatos con definición, baseline y plan de desocultación documentados; observar al menos un ciclo semanal antes de valorar borrados.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es el autor del watcher que emite la señal y de sus guardas de seguridad.",
+    "reason": "Introdujo la superficie de observación y dejó la orientación operativa más reciente sobre cómo avanzar.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8883.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8883#issuecomment-5452787658",
-    "reviewedAt": "2026-09-02T12:57:47.071Z",
-    "mainSha": "9b525e0aae70b41daab228e22437134fc1e70b6f"
+    "reviewedAt": "2026-09-07T10:27:52.167Z",
+    "mainSha": "ec2d925d35bb62ab7459421e4ab28fe51e0d8b13"
   }
 }
