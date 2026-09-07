@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-07T05:22:52.882Z",
+  "updatedAt": "2026-09-04T14:33:56Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 9140,
+    "title": "feat: streamline revision v3 review flow",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9140",
+    "state": "open",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-09-04T14:21:08Z",
+    "updatedAt": "2026-09-04T14:33:56Z",
+    "headSha": "790cb29fc66b976370360d027f1fcaafc5d88d6e"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Cómo deben aparecer las fases omitidas por «Como nuevo» en la trazabilidad y en las métricas de productividad del puesto?",
+  "rationale": "El requisito pide conservar métricas y trazabilidad, pero registrar cero segundos, marcar fases como omitidas o excluirlas de promedios produce resultados operativos distintos.",
+  "options": [
+    {
+      "title": "Registrar fases como omitidas",
+      "body": "Persistir eventos explícitos de atajo para cada sección y excluirlos de los promedios de tiempo ordinarios.",
+      "recommended": true
+    },
+    {
+      "title": "Contabilizar cero segundos",
+      "body": "Registrar las secciones omitidas con duración cero y aceptar que afecten a las métricas de productividad.",
+      "recommended": false
+    },
+    {
+      "title": "No registrar fases omitidas",
+      "body": "Mantener solo el registro inicial y ajustar el requisito para que el atajo no prometa trazabilidad por sección.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Registrar fases como omitidas",
+    "body": "Persistir eventos explícitos de atajo para cada sección y excluirlos de los promedios de tiempo ordinarios.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "El historial le vincula a la definición del ritmo y la experiencia operativa de Revisión V3.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9140.md",
+    "reviewedAt": "2026-09-07T05:22:52.882Z",
+    "mainSha": "d7210ac77ad17ccd55714faeba2bd5631ae6fd9a"
+  }
+}

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-07T05:26:56.199Z",
+  "generatedAt": "2026-09-07T05:31:37.955Z",
   "updatedAt": "2026-09-07T01:43:50Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -10,43 +10,41 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9178",
     "state": "open",
     "labels": [
-      "size/XXL",
-      "P2"
+      "size/XXL"
     ],
     "createdAt": "2026-09-07T00:17:28Z",
     "updatedAt": "2026-09-07T01:43:50Z",
     "headSha": "068d0f3486698221aadc7ded1ecf408ffd2944fc"
   },
   "lane": "product_direction",
-  "priority": "P2",
-  "question": "¿Debe `FACTORY_INVESTIGATION_MODEL` reemplazar el modelo por defecto de Eve y el fallback de triage para instalaciones que hoy no configuran ningún override?",
-  "rationale": "La incidencia canónica pide aprendizaje evaluado, pero no exige modificar la política general de selección de modelo; la decisión afecta coste, capacidad y recuperación operativa de consumidores existentes.",
+  "priority": "P1",
+  "question": "¿Debe el nuevo modelo sustituir de forma deliberada la configuración desplegada `CODEX_DEFAULT_MODEL` del agente principal y sus watchers?",
+  "rationale": "El cambio modifica una preferencia operativa ya documentada; conservarla es mecánico, pero retirarla requiere aceptar explícitamente su impacto de actualización.",
   "options": [
     {
-      "title": "Aislar el modelo del piloto",
-      "body": "Usar `FACTORY_INVESTIGATION_MODEL` solo para generar y evaluar la guía, y conservar `CODEX_DEFAULT_MODEL` y el fallback actual de triage.",
+      "title": "Preservar compatibilidad",
+      "body": "Hacer que `FACTORY_INVESTIGATION_MODEL` use `CODEX_DEFAULT_MODEL` como fallback y conservar el override nuevo como opt-in.",
       "recommended": true
     },
     {
-      "title": "Adoptar el nuevo modelo global",
-      "body": "Aceptar el cambio para Eve y triage tras documentar la compatibilidad, el coste esperado y el plan de reversión.",
+      "title": "Cambiar el contrato",
+      "body": "Aceptar el nuevo default, documentar la migración y demostrar el comportamiento con valores heredados y nuevos.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aislar el modelo del piloto",
-    "body": "Usar `FACTORY_INVESTIGATION_MODEL` solo para generar y evaluar la guía, y conservar `CODEX_DEFAULT_MODEL` y el fallback actual de triage.",
+    "title": "Preservar compatibilidad",
+    "body": "Hacer que `FACTORY_INVESTIGATION_MODEL` use `CODEX_DEFAULT_MODEL` como fallback y conservar el override nuevo como opt-in.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Es la persona con mayor continuidad reciente en la implementación de Eve, triage y este cambio de selección de modelo.",
+    "person": "Miguel Angel Hernández Perdomo",
+    "reason": "Su commit introdujo el contrato compartido que este cambio reemplaza.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9178.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9178#issuecomment-5565522743",
-    "reviewedAt": "2026-09-07T05:26:56.199Z",
+    "reviewedAt": "2026-09-07T05:31:37.955Z",
     "mainSha": "d7210ac77ad17ccd55714faeba2bd5631ae6fd9a"
   }
 }
