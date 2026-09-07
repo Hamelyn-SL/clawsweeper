@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-07T06:50:02.350Z",
-  "updatedAt": "2026-09-07T06:36:48Z",
+  "generatedAt": "2026-09-07T07:54:09.293Z",
+  "updatedAt": "2026-09-07T07:42:50Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,44 +13,48 @@
       "source:admin-panel",
       "app:admin",
       "feature",
-      "triage:queued",
-      "reporter:danielmenchen-hamelyn",
+      "triage:running",
+      "clawsweeper:needs-product-decision",
       "P2",
-      "clawsweeper:needs-product-decision"
+      "reporter:danielmenchen-hamelyn"
     ],
     "createdAt": "2026-09-07T06:36:35Z",
-    "updatedAt": "2026-09-07T06:36:48Z"
+    "updatedAt": "2026-09-07T07:42:50Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe F6 adoptar el dashboard operativo con selección y bloqueo automático (A) o el flujo asistido por agente con consulta en admin (B)?",
-  "rationale": "La elección determina quién controla el sorteo, el bloqueo físico y la liberación, además del alcance de datos y UI que debe consolidarse.",
+  "question": "¿Debe F6 adoptar el dashboard operativo con sorteo, cola y bloqueo automático (A), o el flujo asistido por agente con consulta en admin (B)?",
+  "rationale": "La elección define quién controla la selección, si el contenedor puede avanzar y qué garantías operativas debe ofrecer el sistema; no es una decisión que pueda inferirse del código actual.",
   "options": [
     {
       "title": "Aprobar dashboard operativo",
-      "body": "Centraliza selección, cola, auditoría y bloqueo en admin, con una mayor inversión inicial pero control consistente.",
+      "body": "Centraliza en admin la selección, la cola, el registro y el bloqueo hasta resolver o cancelar la auditoría.",
       "recommended": true
     },
     {
       "title": "Aprobar flujo asistido por agente",
-      "body": "Reduce el desarrollo inicial, aceptando que el bloqueo físico sea manual o externo.",
+      "body": "Reduce desarrollo inicial, aceptando que el bloqueo físico y la prevención de anticipación queden fuera o sean manuales.",
+      "recommended": false
+    },
+    {
+      "title": "Posponer F6",
+      "body": "Mantiene faltas manuales y automáticas mientras se valida el proceso real de almacén y se cierran las fases previas.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Aprobar dashboard operativo",
-    "body": "Centraliza selección, cola, auditoría y bloqueo en admin, con una mayor inversión inicial pero control consistente.",
+    "body": "Centraliza en admin la selección, la cola, el registro y el bloqueo hasta resolver o cancelar la auditoría.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "danielmenchen-hamelyn",
-    "reason": "La propia fase condiciona el inicio a su validación operativa y conoce el programa de telemetría.",
-    "confidence": "medium"
+    "reason": "La propuesta lo identifica como la persona cuya validación operativa desbloquea esta fase.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9197.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9197#issuecomment-5566258408",
-    "reviewedAt": "2026-09-07T06:50:02.350Z",
-    "mainSha": "ad2c7c63ab668a609a99f7c305cf5a30627ad16a"
+    "reviewedAt": "2026-09-07T07:54:09.293Z",
+    "mainSha": "ce139141ee59c921b1839568955bbfe94683ea23"
   }
 }
