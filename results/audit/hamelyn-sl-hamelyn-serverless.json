@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-07T01:14:25.753Z",
+  "generatedAt": "2026-09-07T07:04:01.545Z",
   "targetRepo": "hamelyn-sl/hamelyn-serverless",
   "scan": {
     "complete": true,
@@ -7,18 +7,18 @@
     "openItemsSeen": 145
   },
   "counts": {
-    "itemRecords": 93,
-    "closedRecords": 1476,
-    "missingOpen": 52,
-    "missingEligibleOpen": 37,
+    "itemRecords": 134,
+    "closedRecords": 1496,
+    "missingOpen": 11,
+    "missingEligibleOpen": 0,
     "missingMaintainerOpen": 0,
     "missingProtectedOpen": 1,
-    "missingRecentOpen": 14,
+    "missingRecentOpen": 10,
     "openArchived": 0,
     "staleItemRecords": 0,
     "duplicateRecords": 0,
     "protectedProposed": 0,
-    "staleReviews": 1
+    "staleReviews": 0
   },
   "findings": {
     "missingOpen": [
@@ -40,1249 +40,164 @@
         "missingReason": "protected_label"
       },
       {
-        "number": 9093,
-        "kind": "issue",
-        "title": "Marketplace: [ebay post /sell/inventory/v1/offer/<id>/withdraw] retry 1/5 after 1013ms status=500",
-        "labels": [
-          "codex",
-          "bug",
-          "app:marketplace",
-          "triage:done",
-          "P2",
-          "marketplace-crons"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-03T11:30:43Z",
-        "updatedAt": "2026-09-03T12:01:58Z",
-        "missingReason": "eligible"
-      },
-      {
-        "number": 9094,
-        "kind": "issue",
-        "title": "Marketplace issue watcher opens one issue per Fnac order for the same signature",
-        "labels": [
-          "bug",
-          "app:infrastructure",
-          "reporter:miguel",
-          "triage:no-change",
-          "P2"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-03T11:49:44Z",
-        "updatedAt": "2026-09-03T12:17:52Z",
-        "missingReason": "eligible"
-      },
-      {
-        "number": 9095,
-        "kind": "pull_request",
-        "title": "fix: consolidate near-duplicate watcher signatures per route",
-        "labels": [
-          "size/L"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-03T12:05:22Z",
-        "updatedAt": "2026-09-04T12:40:37Z",
-        "missingReason": "eligible"
-      },
-      {
-        "number": 9098,
-        "kind": "issue",
-        "title": "Wishlist — confirmar el picking Skypod desde la station y verificar con el webhook",
-        "labels": [
-          "app:admin",
-          "reporter:davidgonzalez",
-          "feature",
-          "triage:done",
-          "P1",
-          "origin:dev"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-03T12:45:15Z",
-        "updatedAt": "2026-09-04T07:36:04Z",
-        "missingReason": "eligible"
-      },
-      {
-        "number": 9100,
-        "kind": "issue",
-        "title": "Amazon: los listings aceptados con purchasable_offer ignorado quedan sin oferta comprable y se reintentan con el mismo payload (6.150 AMAZON_OFFER_IGNORED)",
-        "labels": [
-          "bug",
-          "app:marketplace",
-          "reporter:miguel",
-          "triage:needs-info",
-          "P1",
-          "mk:amazon"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-03T12:52:02Z",
-        "updatedAt": "2026-09-04T10:27:50Z",
-        "missingReason": "eligible"
-      },
-      {
-        "number": 9102,
-        "kind": "issue",
-        "title": "B2B HITL blocks authorized orders for new clients",
-        "labels": [
-          "bug",
-          "source:admin-panel",
-          "app:infrastructure",
-          "reporter:javier",
-          "triage:done",
-          "P1"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-03T17:47:51Z",
-        "updatedAt": "2026-09-04T22:42:49Z",
-        "missingReason": "eligible"
-      },
-      {
-        "number": 9104,
-        "kind": "pull_request",
-        "title": "fix: execute new B2B clients with provisional identity",
-        "labels": [
-          "size/XL"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-03T18:46:22Z",
-        "updatedAt": "2026-09-04T22:45:58Z",
-        "missingReason": "eligible"
-      },
-      {
-        "number": 9112,
-        "kind": "issue",
-        "title": "Error en precio del producto, sale en negativo",
-        "labels": [
-          "bug",
-          "source:admin-panel",
-          "app:supply",
-          "reporter:marta",
-          "triage:no-change",
-          "P1"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-04T06:08:35Z",
-        "updatedAt": "2026-09-04T08:40:21Z",
-        "missingReason": "eligible"
-      },
-      {
-        "number": 9115,
-        "kind": "pull_request",
-        "title": "fix: prevent negative supply purchase prices",
-        "labels": [
-          "size/M"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-04T07:02:17Z",
-        "updatedAt": "2026-09-04T11:29:41Z",
-        "missingReason": "eligible"
-      },
-      {
-        "number": 9118,
-        "kind": "pull_request",
-        "title": "fix: defer amazon ignored-offer confirmation to the batch phase",
-        "labels": [
-          "size/XL"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-04T07:47:57Z",
-        "updatedAt": "2026-09-04T11:45:40Z",
-        "missingReason": "eligible"
-      },
-      {
-        "number": 9119,
-        "kind": "issue",
-        "title": "Discogs mirror drops V2 error fields and reports blocked reprices as executable",
-        "labels": [
-          "bug",
-          "app:marketplace",
-          "triage:done",
-          "P2"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-04T07:55:20Z",
-        "updatedAt": "2026-09-04T09:00:37Z",
-        "missingReason": "eligible"
-      },
-      {
-        "number": 9121,
-        "kind": "pull_request",
-        "title": "fix: highlight only the price tail and use mint hero pill on minihomes",
-        "labels": [
-          "size/M"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-04T08:56:35Z",
-        "updatedAt": "2026-09-04T11:02:15Z",
-        "missingReason": "eligible"
-      },
-      {
-        "number": 9122,
-        "kind": "pull_request",
-        "title": "fix: gate transit-cohort mirror drift on frozen ids in watchers",
-        "labels": [
-          "size/M"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-04T09:12:09Z",
-        "updatedAt": "2026-09-04T20:32:41Z",
-        "missingReason": "eligible"
-      },
-      {
-        "number": 9126,
-        "kind": "issue",
-        "title": "Amazon FR/SE/IT: la cola de retirada se atiende en LIFO y deja 94.000 listings de stock vendido sin retirar",
-        "labels": [
-          "bug",
-          "app:marketplace",
-          "triage:pr-opened",
-          "area:marketplace-sync",
-          "P1",
-          "mk:amazon"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-04T10:28:03Z",
-        "updatedAt": "2026-09-04T11:01:00Z",
-        "missingReason": "eligible"
-      },
-      {
-        "number": 9127,
-        "kind": "pull_request",
-        "title": "fix: prioritize oldest marketplace withdrawals",
-        "labels": [
-          "size/XS"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-04T10:59:45Z",
-        "updatedAt": "2026-09-04T11:15:48Z",
-        "missingReason": "eligible"
-      },
-      {
-        "number": 9128,
-        "kind": "issue",
-        "title": "Pagina de categoria/subcategoria - Correcciones ",
-        "labels": [
-          "bug",
-          "source:admin-panel",
-          "app:ecommerce",
-          "triage:done",
-          "reporter:victor",
-          "P2"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-04T11:01:20Z",
-        "updatedAt": "2026-09-04T15:11:17Z",
-        "missingReason": "eligible"
-      },
-      {
-        "number": 9132,
-        "kind": "pull_request",
-        "title": "chore: drop bin blocked slack notifications",
-        "labels": [
-          "size/S"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-04T12:00:18Z",
-        "updatedAt": "2026-09-04T12:14:36Z",
-        "missingReason": "eligible"
-      },
-      {
-        "number": 9133,
-        "kind": "issue",
-        "title": "feat: agilizar la revisión V3 (búsqueda dinámica, pantalla a 1 s y «Como nuevo»)",
-        "labels": [
-          "source:admin-panel",
-          "app:admin",
-          "feature",
-          "triage:pr-opened",
-          "epic:revision-v3",
-          "P2",
-          "reporter:daniellopez",
-          "origin:panel"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-04T12:30:23Z",
-        "updatedAt": "2026-09-04T14:21:49Z",
-        "missingReason": "eligible"
-      },
-      {
-        "number": 9134,
-        "kind": "issue",
-        "title": "Se está subiendo mal el idioma de algunos productos en MercadoLibre MX ",
-        "labels": [
-          "bug",
-          "source:admin-panel",
-          "app:marketplace",
-          "triage:pr-opened",
-          "P1",
-          "reporter:valentin"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-04T12:31:08Z",
-        "updatedAt": "2026-09-04T15:42:50Z",
-        "missingReason": "eligible"
-      },
-      {
-        "number": 9139,
-        "kind": "issue",
-        "title": "MercadoLibre: la descripción rechazada por item.description.type.invalid deja el listing publicado sin descripción",
-        "labels": [
-          "bug",
-          "app:marketplace",
-          "triage:pr-opened",
-          "P2"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-04T14:15:33Z",
-        "updatedAt": "2026-09-04T15:35:10Z",
-        "missingReason": "eligible"
-      },
-      {
-        "number": 9140,
-        "kind": "pull_request",
-        "title": "feat: streamline revision v3 review flow",
-        "labels": [
-          "size/L"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-04T14:21:08Z",
-        "updatedAt": "2026-09-04T14:33:56Z",
-        "missingReason": "eligible"
-      },
-      {
-        "number": 9142,
-        "kind": "pull_request",
-        "title": "fix: prefer master language for MercadoLibre listings",
-        "labels": [
-          "size/M"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-04T14:50:34Z",
-        "updatedAt": "2026-09-04T21:31:24Z",
-        "missingReason": "eligible"
-      },
-      {
-        "number": 9145,
-        "kind": "pull_request",
-        "title": "fix: sanitize MercadoLibre soft hyphens",
-        "labels": [
-          "size/XS"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-04T15:33:08Z",
-        "updatedAt": "2026-09-04T15:45:50Z",
-        "missingReason": "eligible"
-      },
-      {
-        "number": 9148,
+        "number": 9188,
         "kind": "pull_request",
         "title": "Deploy to Prod",
         "labels": [
-          "size/XXL"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-04T20:09:15Z",
-        "updatedAt": "2026-09-04T21:26:29Z",
-        "missingReason": "eligible"
-      },
-      {
-        "number": 9152,
-        "kind": "issue",
-        "title": "MercadoLibre creation telemetry classifies image failures as validation_error",
-        "labels": [
-          "bug",
-          "app:marketplace",
-          "triage:pr-opened",
-          "P2"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-05T06:03:46Z",
-        "updatedAt": "2026-09-05T06:22:41Z",
-        "missingReason": "eligible"
-      },
-      {
-        "number": 9153,
-        "kind": "pull_request",
-        "title": "fix: classify mercadolibre image telemetry",
-        "labels": [
-          "size/XS"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-05T06:21:22Z",
-        "updatedAt": "2026-09-05T06:31:41Z",
-        "missingReason": "eligible"
-      },
-      {
-        "number": 9154,
-        "kind": "issue",
-        "title": "MercadoLibre: los packs con estados mezclados se saltan indefinidamente en cancelaciones y dejan unidades retiradas como vendidas",
-        "labels": [
-          "bug",
-          "app:marketplace",
-          "triage:pr-opened",
-          "P2"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-05T06:27:06Z",
-        "updatedAt": "2026-09-05T06:49:29Z",
-        "missingReason": "eligible"
-      },
-      {
-        "number": 9155,
-        "kind": "pull_request",
-        "title": "fix: process mixed MercadoLibre pack cancellations",
-        "labels": [
           "size/L"
         ],
         "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-05T06:48:34Z",
-        "updatedAt": "2026-09-05T07:08:24Z",
-        "missingReason": "eligible"
+        "createdAt": "2026-09-07T05:53:17Z",
+        "updatedAt": "2026-09-07T06:58:53Z",
+        "missingReason": "recently_created"
       },
       {
-        "number": 9156,
-        "kind": "issue",
-        "title": "Fnac typed marketplace mirror retains 13 legacy BATCH rows after V2 cutover",
-        "labels": [
-          "bug",
-          "app:marketplace",
-          "triage:done",
-          "P3"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-05T07:27:43Z",
-        "updatedAt": "2026-09-05T07:47:33Z",
-        "missingReason": "eligible"
-      },
-      {
-        "number": 9157,
-        "kind": "issue",
-        "title": "Discogs historical duplicate remains For Sale after canonical withdrawal",
-        "labels": [
-          "bug",
-          "app:marketplace",
-          "triage:pr-opened",
-          "P1"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-05T07:37:22Z",
-        "updatedAt": "2026-09-05T08:16:01Z",
-        "missingReason": "eligible"
-      },
-      {
-        "number": 9158,
+        "number": 9189,
         "kind": "pull_request",
-        "title": "fix: recover historical discogs duplicate listings",
+        "title": "fix: reduce amazon order recovery throttling",
         "labels": [
-          "size/M"
+          "size/S"
         ],
         "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-05T08:14:44Z",
-        "updatedAt": "2026-09-05T08:26:28Z",
-        "missingReason": "eligible"
+        "createdAt": "2026-09-07T05:59:53Z",
+        "updatedAt": "2026-09-07T06:13:39Z",
+        "missingReason": "recently_created"
       },
       {
-        "number": 9159,
-        "kind": "pull_request",
-        "title": "chore: close test coverage gaps and remove stale references",
-        "labels": [
-          "size/M"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-05T09:45:56Z",
-        "updatedAt": "2026-09-05T09:56:19Z",
-        "missingReason": "eligible"
-      },
-      {
-        "number": 9160,
+        "number": 9190,
         "kind": "issue",
-        "title": "Infrastructure: la coordinación de issues bloquea el análisis de PRs propios y ajenos",
+        "title": "Marketplace V2 F4: demoler la clase Marketplace legacy y sus rutas V1",
         "labels": [
-          "bug",
-          "app:infrastructure",
-          "triage:done",
-          "P2"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-06T00:14:12Z",
-        "updatedAt": "2026-09-06T00:30:32Z",
-        "missingReason": "eligible"
-      },
-      {
-        "number": 9161,
-        "kind": "issue",
-        "title": "[Infrastructure] Un acceso al icono de Apple terminó en 500 tras superar los 2 GB de memoria",
-        "labels": [
-          "bug",
           "source:admin-panel",
-          "app:infrastructure",
-          "triage:pr-opened",
-          "P1"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-06T00:19:26Z",
-        "updatedAt": "2026-09-06T01:00:47Z",
-        "missingReason": "eligible"
-      },
-      {
-        "number": 9162,
-        "kind": "pull_request",
-        "title": "fix: allow read-only analysis of issues regardless of ownership",
-        "labels": [
-          "size/M"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-06T00:19:45Z",
-        "updatedAt": "2026-09-06T00:28:41Z",
-        "missingReason": "eligible"
-      },
-      {
-        "number": 9163,
-        "kind": "issue",
-        "title": "Infraestructura: simplificar skills y carga de contexto operativo",
-        "labels": [
-          "app:infrastructure",
+          "app:marketplace",
           "feature",
-          "triage:done",
+          "triage:queued",
           "P2"
         ],
         "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-06T00:53:14Z",
-        "updatedAt": "2026-09-06T01:42:49Z",
-        "missingReason": "eligible"
-      },
-      {
-        "number": 9164,
-        "kind": "pull_request",
-        "title": "fix: serve apple touch icons as static assets",
-        "labels": [
-          "size/XS"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-06T00:59:12Z",
-        "updatedAt": "2026-09-06T01:04:41Z",
-        "missingReason": "eligible"
-      },
-      {
-        "number": 9165,
-        "kind": "pull_request",
-        "title": "docs: simplify skill triggers and load operational references on demand",
-        "labels": [
-          "size/XXL"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-06T01:26:02Z",
-        "updatedAt": "2026-09-06T01:32:26Z",
+        "createdAt": "2026-09-07T06:07:59Z",
+        "updatedAt": "2026-09-07T06:23:51Z",
         "missingReason": "recently_created"
       },
       {
-        "number": 9166,
+        "number": 9191,
         "kind": "issue",
-        "title": "eBay: un 500 o un 400 en el withdraw se convierte en outcome=gone y tombstonea el listing sin reintento",
-        "labels": [
-          "bug",
-          "app:marketplace",
-          "triage:pr-opened",
-          "P1"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-06T10:18:29Z",
-        "updatedAt": "2026-09-06T10:42:18Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 9167,
-        "kind": "pull_request",
-        "title": "fix: keep ambiguous ebay withdrawals retryable",
-        "labels": [
-          "size/M"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-06T10:41:19Z",
-        "updatedAt": "2026-09-06T11:03:12Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 9168,
-        "kind": "issue",
-        "title": "Crons: [slack [orders_error] hooks.slack.com/services/t01u06q0m5m/b092sbyrz9c/lejyysf22fohktjh********] retry 1/3 after ",
-        "labels": [
-          "codex",
-          "bug",
-          "app:infrastructure",
-          "triage:pr-opened",
-          "P2",
-          "crons"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-06T17:40:24Z",
-        "updatedAt": "2026-09-06T17:55:02Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 9169,
-        "kind": "issue",
-        "title": "Crons: [address_recovery][google_address_validation] error while recovering order 403-<number>-<number>: timeout of 5000",
-        "labels": [
-          "codex",
-          "bug",
-          "app:infrastructure",
-          "triage:done",
-          "P2",
-          "crons"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-06T17:40:25Z",
-        "updatedAt": "2026-09-06T18:02:47Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 9170,
-        "kind": "pull_request",
-        "title": "fix: ignore transient Slack retry alerts",
-        "labels": [
-          "size/S"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-06T17:54:06Z",
-        "updatedAt": "2026-09-06T18:08:09Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 9171,
-        "kind": "issue",
-        "title": "Decathlon: los batches de publish monopolizan los 30 grupos y bloquean la retirada de 35 ventas",
-        "labels": [
-          "bug",
-          "app:marketplace",
-          "triage:pr-opened",
-          "P2"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-06T18:22:28Z",
-        "updatedAt": "2026-09-06T18:39:02Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 9172,
-        "kind": "pull_request",
-        "title": "fix: prioritize marketplace withdrawal batches",
-        "labels": [
-          "size/S"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-06T18:38:24Z",
-        "updatedAt": "2026-09-06T18:48:40Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 9173,
-        "kind": "issue",
-        "title": "Marketplace: vercel runtime timeout after 800 seconds",
-        "labels": [
-          "codex",
-          "bug",
-          "app:marketplace",
-          "triage:pr-opened",
-          "P1",
-          "marketplace-crons"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-06T21:30:36Z",
-        "updatedAt": "2026-09-06T21:54:50Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 9174,
-        "kind": "pull_request",
-        "title": "fix: bound marketplace cron lock operations",
-        "labels": [
-          "size/S"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-06T21:54:12Z",
-        "updatedAt": "2026-09-06T22:04:43Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 9175,
-        "kind": "issue",
-        "title": "Agents: learn shared investigation procedures from historical outcomes",
-        "labels": [
-          "app:infrastructure",
-          "feature",
-          "triage:done",
-          "P2"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-06T22:07:03Z",
-        "updatedAt": "2026-09-07T01:12:50Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 9176,
-        "kind": "issue",
-        "title": "Feltrinelli: el backoff transitorio aplaza hasta 10 dias la retirada de 7 ventas y sus listings siguen activos",
-        "labels": [
-          "bug",
-          "app:marketplace",
-          "triage:pr-opened",
-          "P2"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-06T22:20:41Z",
-        "updatedAt": "2026-09-06T22:43:59Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 9177,
-        "kind": "pull_request",
-        "title": "fix: cap transient marketplace withdrawal backoff",
-        "labels": [
-          "size/M"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-06T22:43:04Z",
-        "updatedAt": "2026-09-06T22:56:18Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 9178,
-        "kind": "pull_request",
-        "title": "feat: add evaluated shared investigation learning",
-        "labels": [
-          "size/XXL"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-07T00:17:28Z",
-        "updatedAt": "2026-09-07T01:07:43Z",
-        "missingReason": "recently_created"
-      }
-    ],
-    "missingEligibleOpen": [
-      {
-        "number": 9093,
-        "kind": "issue",
-        "title": "Marketplace: [ebay post /sell/inventory/v1/offer/<id>/withdraw] retry 1/5 after 1013ms status=500",
-        "labels": [
-          "codex",
-          "bug",
-          "app:marketplace",
-          "triage:done",
-          "P2",
-          "marketplace-crons"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-03T11:30:43Z",
-        "updatedAt": "2026-09-03T12:01:58Z",
-        "missingReason": "eligible"
-      },
-      {
-        "number": 9094,
-        "kind": "issue",
-        "title": "Marketplace issue watcher opens one issue per Fnac order for the same signature",
-        "labels": [
-          "bug",
-          "app:infrastructure",
-          "reporter:miguel",
-          "triage:no-change",
-          "P2"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-03T11:49:44Z",
-        "updatedAt": "2026-09-03T12:17:52Z",
-        "missingReason": "eligible"
-      },
-      {
-        "number": 9095,
-        "kind": "pull_request",
-        "title": "fix: consolidate near-duplicate watcher signatures per route",
-        "labels": [
-          "size/L"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-03T12:05:22Z",
-        "updatedAt": "2026-09-04T12:40:37Z",
-        "missingReason": "eligible"
-      },
-      {
-        "number": 9098,
-        "kind": "issue",
-        "title": "Wishlist — confirmar el picking Skypod desde la station y verificar con el webhook",
-        "labels": [
-          "app:admin",
-          "reporter:davidgonzalez",
-          "feature",
-          "triage:done",
-          "P1",
-          "origin:dev"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-03T12:45:15Z",
-        "updatedAt": "2026-09-04T07:36:04Z",
-        "missingReason": "eligible"
-      },
-      {
-        "number": 9100,
-        "kind": "issue",
-        "title": "Amazon: los listings aceptados con purchasable_offer ignorado quedan sin oferta comprable y se reintentan con el mismo payload (6.150 AMAZON_OFFER_IGNORED)",
-        "labels": [
-          "bug",
-          "app:marketplace",
-          "reporter:miguel",
-          "triage:needs-info",
-          "P1",
-          "mk:amazon"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-03T12:52:02Z",
-        "updatedAt": "2026-09-04T10:27:50Z",
-        "missingReason": "eligible"
-      },
-      {
-        "number": 9102,
-        "kind": "issue",
-        "title": "B2B HITL blocks authorized orders for new clients",
+        "title": "[Infrastructure] Atlas mantiene 6.596 conexiones en el primario, pero sin saturación",
         "labels": [
           "bug",
           "source:admin-panel",
           "app:infrastructure",
-          "reporter:javier",
-          "triage:done",
+          "triage:queued",
           "P1"
         ],
         "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-03T17:47:51Z",
-        "updatedAt": "2026-09-04T22:42:49Z",
-        "missingReason": "eligible"
+        "createdAt": "2026-09-07T06:19:13Z",
+        "updatedAt": "2026-09-07T06:19:25Z",
+        "missingReason": "recently_created"
       },
       {
-        "number": 9104,
-        "kind": "pull_request",
-        "title": "fix: execute new B2B clients with provisional identity",
-        "labels": [
-          "size/XL"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-03T18:46:22Z",
-        "updatedAt": "2026-09-04T22:45:58Z",
-        "missingReason": "eligible"
-      },
-      {
-        "number": 9112,
+        "number": 9192,
         "kind": "issue",
-        "title": "Error en precio del producto, sale en negativo",
-        "labels": [
-          "bug",
-          "source:admin-panel",
-          "app:supply",
-          "reporter:marta",
-          "triage:no-change",
-          "P1"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-04T06:08:35Z",
-        "updatedAt": "2026-09-04T08:40:21Z",
-        "missingReason": "eligible"
-      },
-      {
-        "number": 9115,
-        "kind": "pull_request",
-        "title": "fix: prevent negative supply purchase prices",
-        "labels": [
-          "size/M"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-04T07:02:17Z",
-        "updatedAt": "2026-09-04T11:29:41Z",
-        "missingReason": "eligible"
-      },
-      {
-        "number": 9118,
-        "kind": "pull_request",
-        "title": "fix: defer amazon ignored-offer confirmation to the batch phase",
-        "labels": [
-          "size/XL"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-04T07:47:57Z",
-        "updatedAt": "2026-09-04T11:45:40Z",
-        "missingReason": "eligible"
-      },
-      {
-        "number": 9119,
-        "kind": "issue",
-        "title": "Discogs mirror drops V2 error fields and reports blocked reprices as executable",
-        "labels": [
-          "bug",
-          "app:marketplace",
-          "triage:done",
-          "P2"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-04T07:55:20Z",
-        "updatedAt": "2026-09-04T09:00:37Z",
-        "missingReason": "eligible"
-      },
-      {
-        "number": 9121,
-        "kind": "pull_request",
-        "title": "fix: highlight only the price tail and use mint hero pill on minihomes",
-        "labels": [
-          "size/M"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-04T08:56:35Z",
-        "updatedAt": "2026-09-04T11:02:15Z",
-        "missingReason": "eligible"
-      },
-      {
-        "number": 9122,
-        "kind": "pull_request",
-        "title": "fix: gate transit-cohort mirror drift on frozen ids in watchers",
-        "labels": [
-          "size/M"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-04T09:12:09Z",
-        "updatedAt": "2026-09-04T20:32:41Z",
-        "missingReason": "eligible"
-      },
-      {
-        "number": 9126,
-        "kind": "issue",
-        "title": "Amazon FR/SE/IT: la cola de retirada se atiende en LIFO y deja 94.000 listings de stock vendido sin retirar",
-        "labels": [
-          "bug",
-          "app:marketplace",
-          "triage:pr-opened",
-          "area:marketplace-sync",
-          "P1",
-          "mk:amazon"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-04T10:28:03Z",
-        "updatedAt": "2026-09-04T11:01:00Z",
-        "missingReason": "eligible"
-      },
-      {
-        "number": 9127,
-        "kind": "pull_request",
-        "title": "fix: prioritize oldest marketplace withdrawals",
-        "labels": [
-          "size/XS"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-04T10:59:45Z",
-        "updatedAt": "2026-09-04T11:15:48Z",
-        "missingReason": "eligible"
-      },
-      {
-        "number": 9128,
-        "kind": "issue",
-        "title": "Pagina de categoria/subcategoria - Correcciones ",
-        "labels": [
-          "bug",
-          "source:admin-panel",
-          "app:ecommerce",
-          "triage:done",
-          "reporter:victor",
-          "P2"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-04T11:01:20Z",
-        "updatedAt": "2026-09-04T15:11:17Z",
-        "missingReason": "eligible"
-      },
-      {
-        "number": 9132,
-        "kind": "pull_request",
-        "title": "chore: drop bin blocked slack notifications",
-        "labels": [
-          "size/S"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-04T12:00:18Z",
-        "updatedAt": "2026-09-04T12:14:36Z",
-        "missingReason": "eligible"
-      },
-      {
-        "number": 9133,
-        "kind": "issue",
-        "title": "feat: agilizar la revisión V3 (búsqueda dinámica, pantalla a 1 s y «Como nuevo»)",
+        "title": "Almacén: arrancar la telemetría de operarios — F1 atribución y tipos de proceso",
         "labels": [
           "source:admin-panel",
           "app:admin",
           "feature",
-          "triage:pr-opened",
-          "epic:revision-v3",
-          "P2",
-          "reporter:daniellopez",
-          "origin:panel"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-04T12:30:23Z",
-        "updatedAt": "2026-09-04T14:21:49Z",
-        "missingReason": "eligible"
-      },
-      {
-        "number": 9134,
-        "kind": "issue",
-        "title": "Se está subiendo mal el idioma de algunos productos en MercadoLibre MX ",
-        "labels": [
-          "bug",
-          "source:admin-panel",
-          "app:marketplace",
-          "triage:pr-opened",
+          "triage:queued",
           "P1",
-          "reporter:valentin"
+          "reporter:danielmenchen-hamelyn"
         ],
         "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-04T12:31:08Z",
-        "updatedAt": "2026-09-04T15:42:50Z",
-        "missingReason": "eligible"
+        "createdAt": "2026-09-07T06:22:11Z",
+        "updatedAt": "2026-09-07T06:36:47Z",
+        "missingReason": "recently_created"
       },
       {
-        "number": 9139,
+        "number": 9193,
         "kind": "issue",
-        "title": "MercadoLibre: la descripción rechazada por item.description.type.invalid deja el listing publicado sin descripción",
+        "title": "Almacén: telemetría de operarios — F2 catálogo de faltas con snapshots inmutables",
         "labels": [
-          "bug",
-          "app:marketplace",
-          "triage:pr-opened",
-          "P2"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-04T14:15:33Z",
-        "updatedAt": "2026-09-04T15:35:10Z",
-        "missingReason": "eligible"
-      },
-      {
-        "number": 9140,
-        "kind": "pull_request",
-        "title": "feat: streamline revision v3 review flow",
-        "labels": [
-          "size/L"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-04T14:21:08Z",
-        "updatedAt": "2026-09-04T14:33:56Z",
-        "missingReason": "eligible"
-      },
-      {
-        "number": 9142,
-        "kind": "pull_request",
-        "title": "fix: prefer master language for MercadoLibre listings",
-        "labels": [
-          "size/M"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-04T14:50:34Z",
-        "updatedAt": "2026-09-04T21:31:24Z",
-        "missingReason": "eligible"
-      },
-      {
-        "number": 9145,
-        "kind": "pull_request",
-        "title": "fix: sanitize MercadoLibre soft hyphens",
-        "labels": [
-          "size/XS"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-04T15:33:08Z",
-        "updatedAt": "2026-09-04T15:45:50Z",
-        "missingReason": "eligible"
-      },
-      {
-        "number": 9148,
-        "kind": "pull_request",
-        "title": "Deploy to Prod",
-        "labels": [
-          "size/XXL"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-04T20:09:15Z",
-        "updatedAt": "2026-09-04T21:26:29Z",
-        "missingReason": "eligible"
-      },
-      {
-        "number": 9152,
-        "kind": "issue",
-        "title": "MercadoLibre creation telemetry classifies image failures as validation_error",
-        "labels": [
-          "bug",
-          "app:marketplace",
-          "triage:pr-opened",
-          "P2"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-05T06:03:46Z",
-        "updatedAt": "2026-09-05T06:22:41Z",
-        "missingReason": "eligible"
-      },
-      {
-        "number": 9153,
-        "kind": "pull_request",
-        "title": "fix: classify mercadolibre image telemetry",
-        "labels": [
-          "size/XS"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-05T06:21:22Z",
-        "updatedAt": "2026-09-05T06:31:41Z",
-        "missingReason": "eligible"
-      },
-      {
-        "number": 9154,
-        "kind": "issue",
-        "title": "MercadoLibre: los packs con estados mezclados se saltan indefinidamente en cancelaciones y dejan unidades retiradas como vendidas",
-        "labels": [
-          "bug",
-          "app:marketplace",
-          "triage:pr-opened",
-          "P2"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-05T06:27:06Z",
-        "updatedAt": "2026-09-05T06:49:29Z",
-        "missingReason": "eligible"
-      },
-      {
-        "number": 9155,
-        "kind": "pull_request",
-        "title": "fix: process mixed MercadoLibre pack cancellations",
-        "labels": [
-          "size/L"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-05T06:48:34Z",
-        "updatedAt": "2026-09-05T07:08:24Z",
-        "missingReason": "eligible"
-      },
-      {
-        "number": 9156,
-        "kind": "issue",
-        "title": "Fnac typed marketplace mirror retains 13 legacy BATCH rows after V2 cutover",
-        "labels": [
-          "bug",
-          "app:marketplace",
-          "triage:done",
-          "P3"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-05T07:27:43Z",
-        "updatedAt": "2026-09-05T07:47:33Z",
-        "missingReason": "eligible"
-      },
-      {
-        "number": 9157,
-        "kind": "issue",
-        "title": "Discogs historical duplicate remains For Sale after canonical withdrawal",
-        "labels": [
-          "bug",
-          "app:marketplace",
-          "triage:pr-opened",
-          "P1"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-05T07:37:22Z",
-        "updatedAt": "2026-09-05T08:16:01Z",
-        "missingReason": "eligible"
-      },
-      {
-        "number": 9158,
-        "kind": "pull_request",
-        "title": "fix: recover historical discogs duplicate listings",
-        "labels": [
-          "size/M"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-05T08:14:44Z",
-        "updatedAt": "2026-09-05T08:26:28Z",
-        "missingReason": "eligible"
-      },
-      {
-        "number": 9159,
-        "kind": "pull_request",
-        "title": "chore: close test coverage gaps and remove stale references",
-        "labels": [
-          "size/M"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-05T09:45:56Z",
-        "updatedAt": "2026-09-05T09:56:19Z",
-        "missingReason": "eligible"
-      },
-      {
-        "number": 9160,
-        "kind": "issue",
-        "title": "Infrastructure: la coordinación de issues bloquea el análisis de PRs propios y ajenos",
-        "labels": [
-          "bug",
-          "app:infrastructure",
-          "triage:done",
-          "P2"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-06T00:14:12Z",
-        "updatedAt": "2026-09-06T00:30:32Z",
-        "missingReason": "eligible"
-      },
-      {
-        "number": 9161,
-        "kind": "issue",
-        "title": "[Infrastructure] Un acceso al icono de Apple terminó en 500 tras superar los 2 GB de memoria",
-        "labels": [
-          "bug",
           "source:admin-panel",
-          "app:infrastructure",
-          "triage:pr-opened",
-          "P1"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-06T00:19:26Z",
-        "updatedAt": "2026-09-06T01:00:47Z",
-        "missingReason": "eligible"
-      },
-      {
-        "number": 9162,
-        "kind": "pull_request",
-        "title": "fix: allow read-only analysis of issues regardless of ownership",
-        "labels": [
-          "size/M"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-06T00:19:45Z",
-        "updatedAt": "2026-09-06T00:28:41Z",
-        "missingReason": "eligible"
-      },
-      {
-        "number": 9163,
-        "kind": "issue",
-        "title": "Infraestructura: simplificar skills y carga de contexto operativo",
-        "labels": [
-          "app:infrastructure",
+          "app:admin",
           "feature",
-          "triage:done",
+          "triage:queued",
+          "P2",
+          "reporter:danielmenchen-hamelyn"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-09-07T06:35:59Z",
+        "updatedAt": "2026-09-07T06:36:09Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 9194,
+        "kind": "issue",
+        "title": "Almacén: telemetría de operarios — F3 registro de faltas manuales y automáticas",
+        "labels": [
+          "source:admin-panel",
+          "app:admin",
+          "feature",
+          "triage:queued",
+          "P2",
+          "reporter:danielmenchen-hamelyn"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-09-07T06:36:11Z",
+        "updatedAt": "2026-09-07T06:36:22Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 9195,
+        "kind": "issue",
+        "title": "Almacén: telemetría de operarios — F4 cuadrante semanal versionado y dashboard plan vs real",
+        "labels": [
+          "source:admin-panel",
+          "app:admin",
+          "feature",
+          "triage:queued",
+          "P2",
+          "reporter:danielmenchen-hamelyn"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-09-07T06:36:21Z",
+        "updatedAt": "2026-09-07T06:36:35Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 9196,
+        "kind": "issue",
+        "title": "Almacén: telemetría de operarios — F5 panel del operario y salida completa por CLI",
+        "labels": [
+          "source:admin-panel",
+          "app:admin",
+          "feature",
+          "triage:queued",
+          "P2",
+          "reporter:danielmenchen-hamelyn"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-09-07T06:36:32Z",
+        "updatedAt": "2026-09-07T06:36:43Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 9198,
+        "kind": "issue",
+        "title": "Admin: log the authenticated user in the role verification layer",
+        "labels": [
+          "app:admin",
+          "feature",
+          "reporter:miguel",
+          "triage:queued",
           "P2"
         ],
         "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-06T00:53:14Z",
-        "updatedAt": "2026-09-06T01:42:49Z",
-        "missingReason": "eligible"
-      },
-      {
-        "number": 9164,
-        "kind": "pull_request",
-        "title": "fix: serve apple touch icons as static assets",
-        "labels": [
-          "size/XS"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-06T00:59:12Z",
-        "updatedAt": "2026-09-06T01:04:41Z",
-        "missingReason": "eligible"
+        "createdAt": "2026-09-07T06:59:27Z",
+        "updatedAt": "2026-09-07T06:59:38Z",
+        "missingReason": "recently_created"
       }
     ],
+    "missingEligibleOpen": [],
     "missingMaintainerOpen": [],
     "missingProtectedOpen": [
       {
@@ -1305,198 +220,160 @@
     ],
     "missingRecentOpen": [
       {
-        "number": 9165,
+        "number": 9188,
         "kind": "pull_request",
-        "title": "docs: simplify skill triggers and load operational references on demand",
+        "title": "Deploy to Prod",
         "labels": [
-          "size/XXL"
+          "size/L"
         ],
         "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-06T01:26:02Z",
-        "updatedAt": "2026-09-06T01:32:26Z",
+        "createdAt": "2026-09-07T05:53:17Z",
+        "updatedAt": "2026-09-07T06:58:53Z",
         "missingReason": "recently_created"
       },
       {
-        "number": 9166,
+        "number": 9189,
+        "kind": "pull_request",
+        "title": "fix: reduce amazon order recovery throttling",
+        "labels": [
+          "size/S"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-09-07T05:59:53Z",
+        "updatedAt": "2026-09-07T06:13:39Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 9190,
         "kind": "issue",
-        "title": "eBay: un 500 o un 400 en el withdraw se convierte en outcome=gone y tombstonea el listing sin reintento",
+        "title": "Marketplace V2 F4: demoler la clase Marketplace legacy y sus rutas V1",
+        "labels": [
+          "source:admin-panel",
+          "app:marketplace",
+          "feature",
+          "triage:queued",
+          "P2"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-09-07T06:07:59Z",
+        "updatedAt": "2026-09-07T06:23:51Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 9191,
+        "kind": "issue",
+        "title": "[Infrastructure] Atlas mantiene 6.596 conexiones en el primario, pero sin saturación",
         "labels": [
           "bug",
-          "app:marketplace",
-          "triage:pr-opened",
+          "source:admin-panel",
+          "app:infrastructure",
+          "triage:queued",
           "P1"
         ],
         "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-06T10:18:29Z",
-        "updatedAt": "2026-09-06T10:42:18Z",
+        "createdAt": "2026-09-07T06:19:13Z",
+        "updatedAt": "2026-09-07T06:19:25Z",
         "missingReason": "recently_created"
       },
       {
-        "number": 9167,
-        "kind": "pull_request",
-        "title": "fix: keep ambiguous ebay withdrawals retryable",
-        "labels": [
-          "size/M"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-06T10:41:19Z",
-        "updatedAt": "2026-09-06T11:03:12Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 9168,
+        "number": 9192,
         "kind": "issue",
-        "title": "Crons: [slack [orders_error] hooks.slack.com/services/t01u06q0m5m/b092sbyrz9c/lejyysf22fohktjh********] retry 1/3 after ",
+        "title": "Almacén: arrancar la telemetría de operarios — F1 atribución y tipos de proceso",
         "labels": [
-          "codex",
-          "bug",
-          "app:infrastructure",
-          "triage:pr-opened",
-          "P2",
-          "crons"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-06T17:40:24Z",
-        "updatedAt": "2026-09-06T17:55:02Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 9169,
-        "kind": "issue",
-        "title": "Crons: [address_recovery][google_address_validation] error while recovering order 403-<number>-<number>: timeout of 5000",
-        "labels": [
-          "codex",
-          "bug",
-          "app:infrastructure",
-          "triage:done",
-          "P2",
-          "crons"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-06T17:40:25Z",
-        "updatedAt": "2026-09-06T18:02:47Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 9170,
-        "kind": "pull_request",
-        "title": "fix: ignore transient Slack retry alerts",
-        "labels": [
-          "size/S"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-06T17:54:06Z",
-        "updatedAt": "2026-09-06T18:08:09Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 9171,
-        "kind": "issue",
-        "title": "Decathlon: los batches de publish monopolizan los 30 grupos y bloquean la retirada de 35 ventas",
-        "labels": [
-          "bug",
-          "app:marketplace",
-          "triage:pr-opened",
-          "P2"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-06T18:22:28Z",
-        "updatedAt": "2026-09-06T18:39:02Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 9172,
-        "kind": "pull_request",
-        "title": "fix: prioritize marketplace withdrawal batches",
-        "labels": [
-          "size/S"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-06T18:38:24Z",
-        "updatedAt": "2026-09-06T18:48:40Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 9173,
-        "kind": "issue",
-        "title": "Marketplace: vercel runtime timeout after 800 seconds",
-        "labels": [
-          "codex",
-          "bug",
-          "app:marketplace",
-          "triage:pr-opened",
-          "P1",
-          "marketplace-crons"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-06T21:30:36Z",
-        "updatedAt": "2026-09-06T21:54:50Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 9174,
-        "kind": "pull_request",
-        "title": "fix: bound marketplace cron lock operations",
-        "labels": [
-          "size/S"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-06T21:54:12Z",
-        "updatedAt": "2026-09-06T22:04:43Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 9175,
-        "kind": "issue",
-        "title": "Agents: learn shared investigation procedures from historical outcomes",
-        "labels": [
-          "app:infrastructure",
+          "source:admin-panel",
+          "app:admin",
           "feature",
-          "triage:done",
-          "P2"
+          "triage:queued",
+          "P1",
+          "reporter:danielmenchen-hamelyn"
         ],
         "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-06T22:07:03Z",
-        "updatedAt": "2026-09-07T01:12:50Z",
+        "createdAt": "2026-09-07T06:22:11Z",
+        "updatedAt": "2026-09-07T06:36:47Z",
         "missingReason": "recently_created"
       },
       {
-        "number": 9176,
+        "number": 9193,
         "kind": "issue",
-        "title": "Feltrinelli: el backoff transitorio aplaza hasta 10 dias la retirada de 7 ventas y sus listings siguen activos",
+        "title": "Almacén: telemetría de operarios — F2 catálogo de faltas con snapshots inmutables",
         "labels": [
-          "bug",
-          "app:marketplace",
-          "triage:pr-opened",
+          "source:admin-panel",
+          "app:admin",
+          "feature",
+          "triage:queued",
+          "P2",
+          "reporter:danielmenchen-hamelyn"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-09-07T06:35:59Z",
+        "updatedAt": "2026-09-07T06:36:09Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 9194,
+        "kind": "issue",
+        "title": "Almacén: telemetría de operarios — F3 registro de faltas manuales y automáticas",
+        "labels": [
+          "source:admin-panel",
+          "app:admin",
+          "feature",
+          "triage:queued",
+          "P2",
+          "reporter:danielmenchen-hamelyn"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-09-07T06:36:11Z",
+        "updatedAt": "2026-09-07T06:36:22Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 9195,
+        "kind": "issue",
+        "title": "Almacén: telemetría de operarios — F4 cuadrante semanal versionado y dashboard plan vs real",
+        "labels": [
+          "source:admin-panel",
+          "app:admin",
+          "feature",
+          "triage:queued",
+          "P2",
+          "reporter:danielmenchen-hamelyn"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-09-07T06:36:21Z",
+        "updatedAt": "2026-09-07T06:36:35Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 9196,
+        "kind": "issue",
+        "title": "Almacén: telemetría de operarios — F5 panel del operario y salida completa por CLI",
+        "labels": [
+          "source:admin-panel",
+          "app:admin",
+          "feature",
+          "triage:queued",
+          "P2",
+          "reporter:danielmenchen-hamelyn"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-09-07T06:36:32Z",
+        "updatedAt": "2026-09-07T06:36:43Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 9198,
+        "kind": "issue",
+        "title": "Admin: log the authenticated user in the role verification layer",
+        "labels": [
+          "app:admin",
+          "feature",
+          "reporter:miguel",
+          "triage:queued",
           "P2"
         ],
         "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-06T22:20:41Z",
-        "updatedAt": "2026-09-06T22:43:59Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 9177,
-        "kind": "pull_request",
-        "title": "fix: cap transient marketplace withdrawal backoff",
-        "labels": [
-          "size/M"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-06T22:43:04Z",
-        "updatedAt": "2026-09-06T22:56:18Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 9178,
-        "kind": "pull_request",
-        "title": "feat: add evaluated shared investigation learning",
-        "labels": [
-          "size/XXL"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-09-07T00:17:28Z",
-        "updatedAt": "2026-09-07T01:07:43Z",
+        "createdAt": "2026-09-07T06:59:27Z",
+        "updatedAt": "2026-09-07T06:59:38Z",
         "missingReason": "recently_created"
       }
     ],
@@ -1504,32 +381,6 @@
     "staleItemRecords": [],
     "duplicateRecords": [],
     "protectedProposed": [],
-    "staleReviews": [
-      {
-        "number": 8005,
-        "kind": "issue",
-        "title": "EPIC · Revisión V3 — Mejoras del puesto (paquete de Dani)",
-        "labels": [
-          "source:admin-panel",
-          "app:admin",
-          "feature",
-          "triage:needs-info",
-          "epic:revision-v3",
-          "reporter:daniellopez",
-          "origin:panel",
-          "P2",
-          "impact:other",
-          "issue-rating: ➖ n/a",
-          "clawsweeper:no-new-fix-pr",
-          "clawsweeper:needs-product-decision"
-        ],
-        "action": "kept_open",
-        "decision": "close",
-        "closeReason": "duplicate_or_superseded",
-        "reviewStatus": "stale_reopened",
-        "currentState": "open",
-        "itemPath": "records/hamelyn-sl-hamelyn-serverless/items/8005.md"
-      }
-    ]
+    "staleReviews": []
   }
 }
