@@ -3,23 +3,109 @@
   "slug": "hamelyn-sl-hamelyn-serverless",
   "display_name": "Hamelyn Serverless",
   "target_repo": "hamelyn-sl/hamelyn-serverless",
-  "state": "Review comments checked",
-  "detail": "Checked selected durable Codex review comments and synced missing or stale comments. Synced: 22. Item numbers: 8714,8762,8797,8900,8901,9094,9095,9098,9100,9102,9104,9112,9115,9118,9119,9121,9122,9127,9128,9132,9133,9134,9139,9152,9154,9156,9157,9160,9161,9163,9166,9168,9169.",
-  "run_url": "https://github.com/Hamelyn-SL/clawsweeper/actions/runs/34084890005",
-  "planned_count": 33,
-  "planned_capacity": 33,
-  "planned_shards": 11,
-  "active_codex": 0,
-  "due_backlog": 73,
-  "oldest_unreviewed_at": "2026-09-03T11:49:44Z",
-  "capacity_reason": "saturated: due backlog filled planned capacity",
+  "state": "Apply comments synced",
+  "detail": "Comment-only apply checkpoint 1 finished. Synced durable review comments: 22. Result records: 33. Item numbers: 8714,8762,8797,8900,8901,9094,9095,9098,9100,9102,9104,9112,9115,9118,9119,9121,9122,9127,9128,9132,9133,9134,9139,9152,9154,9156,9157,9160,9161,9163,9166,9168,9169. Next cursor: none.",
+  "run_url": "https://github.com/Hamelyn-SL/clawsweeper/actions/runs/34086013935",
+  "planned_count": null,
+  "planned_capacity": null,
+  "planned_shards": null,
+  "active_codex": null,
+  "due_backlog": null,
+  "oldest_unreviewed_at": null,
+  "capacity_reason": null,
   "inherited_label_cleanups": null,
   "self_heal_conflict_repairs": null,
   "failed_review_retries": null,
   "failed_review_retry_exhaustions": null,
   "bot_owned_proof_decisions_requested": null,
   "bot_owned_proof_dispatches": null,
-  "apply_health": null,
+  "apply_health": {
+    "schema_version": 1,
+    "generated_at": "2026-09-07T05:16:35.599Z",
+    "target_repo": "Hamelyn-SL/hamelyn-serverless",
+    "mode": "comment_sync",
+    "status": "ok",
+    "summary": "33/1000 processed; 0 closed, 22 comments synced, 11 skipped; no cursor recorded.",
+    "processed": 33,
+    "processed_limit": 1000,
+    "close_limit": 0,
+    "closed": 0,
+    "comment_synced": 22,
+    "skipped": 11,
+    "skip_reasons": {
+      "kept_open": 2,
+      "review_comment_withheld": 8,
+      "skipped_changed_since_review": 1
+    },
+    "lanes": {
+      "closure": {
+        "processed": 0,
+        "closed": 0,
+        "comment_synced": 0,
+        "skipped": 0,
+        "skip_reasons": {}
+      },
+      "comment_sync": {
+        "processed": 33,
+        "closed": 0,
+        "comment_synced": 22,
+        "skipped": 11,
+        "skip_reasons": {
+          "kept_open": 2,
+          "review_comment_withheld": 8,
+          "skipped_changed_since_review": 1
+        }
+      }
+    },
+    "next_actions": [
+      {
+        "reason": "review_comment_withheld",
+        "count": 8,
+        "bucket": "inspect",
+        "owner": "maintainer",
+        "retryable": false,
+        "label": "Inspect skip",
+        "summary": "Apply reported an unmapped skip bucket.",
+        "next_step": "Inspect the workflow run and add a deterministic mapping if this repeats."
+      },
+      {
+        "reason": "kept_open",
+        "count": 2,
+        "bucket": "inspect",
+        "owner": "maintainer",
+        "retryable": false,
+        "label": "Inspect skip",
+        "summary": "Apply reported an unmapped skip bucket.",
+        "next_step": "Inspect the workflow run and add a deterministic mapping if this repeats."
+      },
+      {
+        "reason": "skipped_changed_since_review",
+        "count": 1,
+        "bucket": "review_refresh",
+        "owner": "clawsweeper",
+        "retryable": true,
+        "label": "Refresh review",
+        "summary": "The item changed after the review that proposed closing it.",
+        "next_step": "Queue a fresh ClawSweeper review before any close retry."
+      }
+    ],
+    "next_action_buckets": {
+      "inspect": 10,
+      "review_refresh": 1
+    },
+    "cycle": {
+      "basis": "not_close_cursor",
+      "apply_ready_count": null,
+      "window_size": null,
+      "estimated_full_cycle_windows": null,
+      "estimated_full_cycle_minutes": null,
+      "scheduled_interval_minutes": null,
+      "label": "Cycle estimate is only reported for scheduled close cursor windows."
+    },
+    "attention_reasons": [],
+    "cursor_required": false,
+    "cursor": null
+  },
   "last_close_apply_health": null,
-  "updated_at": "2026-09-07T05:16:28.602Z"
+  "updated_at": "2026-09-07T05:16:36.116Z"
 }
