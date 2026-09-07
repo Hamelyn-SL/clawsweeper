@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-07T19:58:43.481Z",
+  "updatedAt": "2026-09-07T19:30:39Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 5746,
+    "title": "marketplace-crons: MercadoLibre devuelve 500/429/503 en process orders/create/withdraw",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5746",
+    "state": "open",
+    "labels": [
+      "codex",
+      "bug",
+      "app:marketplace",
+      "triage:needs-info",
+      "P1",
+      "clawsweeper:needs-product-decision",
+      "origin:watcher",
+      "mk:mercadolibre"
+    ],
+    "createdAt": "2026-05-08T01:35:13Z",
+    "updatedAt": "2026-09-07T19:30:39Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe mantenerse la política actual sin retry-backoff en los GET de MercadoLibre y resolver el riesgo con conciliación/alerta, o introducir una recuperación acotada con presupuesto compartido?",
+  "rationale": "La documentación declara que no reintentar GET es una decisión deliberada; cambiarla afecta cuota del proveedor y frescura de la sincronización, y los datos actuales no identifican todavía el consumidor de cuota.",
+  "options": [
+    {
+      "title": "Conservar GET sin reintento y conciliar",
+      "body": "Instrumentar la recuperación y conciliar pedidos y cancelaciones antes de alterar la cadencia remota.",
+      "recommended": true
+    },
+    {
+      "title": "Añadir recuperación acotada",
+      "body": "Introducir backoff o reserva compartida para GET solo tras confirmar la cuota y probar el comportamiento de recuperación.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Conservar GET sin reintento y conciliar",
+    "body": "Instrumentar la recuperación y conciliar pedidos y cancelaciones antes de alterar la cadencia remota.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Su historial reciente cubre los presupuestos y la documentación de la sincronización MercadoLibre.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5746.md",
+    "reviewedAt": "2026-09-07T19:58:43.481Z",
+    "mainSha": "829910f9e249e89f9d5c30248ac6ba2ca7a4ea1f"
+  }
+}
