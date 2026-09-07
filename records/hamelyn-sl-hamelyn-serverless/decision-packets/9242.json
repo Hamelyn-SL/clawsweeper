@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-07T14:58:00.693Z",
+  "updatedAt": "2026-09-07T14:30:39Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9242,
+    "title": "Marketplace: [create-status] mk=mercadolibre sku=<value> marketplaceid=<id> landedstatus=paused substatus=[\"picture_down",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9242",
+    "state": "open",
+    "labels": [
+      "codex",
+      "bug",
+      "app:marketplace",
+      "triage:queued",
+      "P2",
+      "marketplace-crons"
+    ],
+    "createdAt": "2026-09-07T14:30:39Z",
+    "updatedAt": "2026-09-07T14:30:39Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe `paused` con `picture_download_pending` contarse como alta correcta pendiente de activación o como incidencia que requiere recuperación automática?",
+  "rationale": "El código actual evita duplicados aceptando el `marketplaceId`, pero la publicación aún no es comprable; elegir reintento, seguimiento o umbral de alerta cambia el comportamiento operativo.",
+  "options": [
+    {
+      "title": "Seguimiento asíncrono",
+      "body": "Mantener el alta como correcta y añadir una métrica o comprobación diferida que avise únicamente si la publicación no se activa dentro del plazo definido.",
+      "recommended": true
+    },
+    {
+      "title": "Recuperación automática",
+      "body": "Tratar el estado pausado como pendiente y programar una recuperación idempotente que consulte el mismo `marketplaceId` antes de cualquier nueva creación.",
+      "recommended": false
+    },
+    {
+      "title": "Conservar la alerta actual",
+      "body": "Mantener la advertencia por cada alta pausada si el equipo considera que requiere intervención operativa inmediata.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Seguimiento asíncrono",
+    "body": "Mantener el alta como correcta y añadir una métrica o comprobación diferida que avise únicamente si la publicación no se activa dentro del plazo definido.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Su trabajo reciente concentra la ruta actual y el MarketplaceManager que determina cómo se contabilizan y procesan los resultados de creación.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9242.md",
+    "reviewedAt": "2026-09-07T14:58:00.693Z",
+    "mainSha": "829910f9e249e89f9d5c30248ac6ba2ca7a4ea1f"
+  }
+}
