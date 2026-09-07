@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-06T13:38:16.932Z",
-  "updatedAt": "2026-08-06T13:05:43Z",
+  "generatedAt": "2026-09-07T04:32:18.558Z",
+  "updatedAt": "2026-09-04T12:32:30Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,56 +13,50 @@
       "source:admin-panel",
       "app:admin",
       "feature",
-      "triage:needs-info",
+      "triage:no-change",
       "epic:revision-v3",
-      "reporter:daniellopez",
-      "origin:panel",
+      "clawsweeper:needs-product-decision",
       "P2",
-      "impact:ux-friction",
-      "impact:other",
-      "issue-rating: ➖ n/a",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "reporter:daniellopez",
+      "origin:panel"
     ],
     "createdAt": "2026-07-27T14:16:14Z",
-    "updatedAt": "2026-08-06T13:05:43Z"
+    "updatedAt": "2026-09-04T12:32:30Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe el equipo integrar la base de `EPIC/revision-v3` en `dev` antes de continuar las cuatro entregas pendientes del epic?",
-  "rationale": "La rama base del puesto no existe en `dev`, mientras que varias mejoras y dependencias siguen abiertas; elegir el orden de integración y el alcance operativo requiere intención del equipo.",
+  "question": "¿El panel de tablet debe mostrar el ranking nominal del equipo al operario o limitarse a su posición y métricas agregadas anónimas?",
+  "rationale": "La maqueta contempla nombres y posiciones, pero la discusión de métricas dejó esa política sin confirmar; no es una decisión segura de inferir desde código.",
   "options": [
     {
-      "title": "Integrar primero la base V3",
-      "body": "Preparar una integración acotada del puesto ya construido en `dev` y continuar después productividad, avisos, paneles y vídeos.",
+      "title": "Métricas agregadas por defecto",
+      "body": "Mostrar la posición propia y comparativas anónimas, reservando rankings nominales para supervisores.",
       "recommended": true
     },
     {
-      "title": "Mantener la rama aislada",
-      "body": "Seguir desarrollando las entregas en la rama de la épica y posponer su integración hasta una fecha de despliegue acordada.",
+      "title": "Ranking nominal compartido",
+      "body": "Mostrar al operario nombres y posiciones del equipo, aceptando explícitamente esa política de transparencia.",
       "recommended": false
     },
     {
-      "title": "Pausar el paquete",
-      "body": "Detener las entregas pendientes hasta recibir las decisiones de Operaciones sobre ritmo, vídeos y métricas.",
+      "title": "Posponer el panel de tablet",
+      "body": "Cerrar el alcance actual en las mejoras ya entregadas y reabrir el panel cuando Producto defina la política.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Integrar primero la base V3",
-    "body": "Preparar una integración acotada del puesto ya construido en `dev` y continuar después productividad, avisos, paneles y vídeos.",
+    "title": "Métricas agregadas por defecto",
+    "body": "Mostrar la posición propia y comparativas anónimas, reservando rankings nominales para supervisores.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Está asignado al epic y a la base de productividad que desbloquea las demás entregas.",
+    "reason": "Su comentario identifica el panel pendiente y su historial está ligado al flujo V3 actualmente integrado.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8005.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8005#issuecomment-5092763492",
-    "reviewedAt": "2026-08-06T13:38:16.932Z",
-    "mainSha": "74d8604ae011d5028aa503fa1e965d72a22063a8"
+    "reviewedAt": "2026-09-07T04:32:18.558Z",
+    "mainSha": "7917b1c783fedca0161273534392cbdd7c693ece"
   }
 }
