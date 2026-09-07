@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-07T05:59:49.704Z",
+  "updatedAt": "2026-09-07T05:54:28Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9182,
+    "title": "Crons: [amazon searchorders amazon_it] retry 2/2 after 2041ms status=429",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9182",
+    "state": "open",
+    "labels": [
+      "codex",
+      "bug",
+      "app:infrastructure",
+      "triage:running",
+      "P2",
+      "crons"
+    ],
+    "createdAt": "2026-09-07T05:40:28Z",
+    "updatedAt": "2026-09-07T05:54:28Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe priorizarse una corrección de resiliencia de SP-API para evitar `429` terminales correlacionados, o ajustar primero el watcher para distinguir reintentos recuperados de fallos finales?",
+  "rationale": "El código ya reintenta, pero elegir entre modificar el ritmo operativo o la señal de observabilidad requiere valorar carga, latencia y cobertura de recuperación.",
+  "options": [
+    {
+      "title": "Corregir resiliencia de SP-API",
+      "body": "Instrumentar el resultado final y adaptar el limitador o backoff cuando varios marketplaces agotan los reintentos.",
+      "recommended": true
+    },
+    {
+      "title": "Ajustar primero la observabilidad",
+      "body": "Conservar la política actual y abrir alertas solo cuando la respuesta final confirme una recuperación incompleta.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Corregir resiliencia de SP-API",
+    "body": "Instrumentar el resultado final y adaptar el limitador o backoff cuando varios marketplaces agotan los reintentos.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "HamelynDev",
+    "reason": "Conectado tanto con la incidencia anterior de recuperación como con la implementación del retry compartido.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9182.md",
+    "reviewedAt": "2026-09-07T05:59:49.704Z",
+    "mainSha": "497720441d168ce3f301048a9ef7dc5f6b763eaf"
+  }
+}
