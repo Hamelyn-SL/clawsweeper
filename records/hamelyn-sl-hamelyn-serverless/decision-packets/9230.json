@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-07T11:46:21.027Z",
-  "updatedAt": "2026-09-07T11:35:18Z",
+  "generatedAt": "2026-09-07T14:28:22.351Z",
+  "updatedAt": "2026-09-07T14:15:27Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,43 +13,47 @@
       "bug",
       "source:admin-panel",
       "app:admin",
-      "triage:queued",
+      "triage:done",
       "P1",
       "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-09-07T11:35:09Z",
-    "updatedAt": "2026-09-07T11:35:18Z"
+    "updatedAt": "2026-09-07T14:15:27Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Skypod debe reservar cada estación a un único operario activo o permitir trabajo compartido y atribuir cada confirmación al usuario autenticado?",
-  "rationale": "La exclusividad resuelve el desvío inmediato, pero la atribución por producto es necesaria si el trabajo compartido debe seguir siendo válido; la fuente de identidad y el modelo persistente dependen de esa regla operativa.",
+  "question": "¿Qué regla de titularidad debe ser la fuente de verdad para productividad Skypod cuando Exotec confirma una línea sin identidad del operario?",
+  "rationale": "La corrección inmediata puede reservar una estación, pero el registro duradero por producto exige decidir si la atribución proviene de una sesión reservada, de identidad autenticada u otra señal operacional.",
   "options": [
     {
-      "title": "Reserva exclusiva y auditoría posterior",
-      "body": "Impedir una segunda sesión activa por estación y planificar la atribución por producto como continuación controlada.",
+      "title": "Reserva operativa y procedencia por producto",
+      "body": "Reservar atómicamente cada estación a un rol operativo y guardar en cada producto la identidad disponible junto con la fuente de atribución.",
       "recommended": true
     },
     {
-      "title": "Trabajo compartido con atribución por confirmación",
-      "body": "Mantener varias sesiones posibles y registrar el usuario autenticado en cada producto confirmado antes de calcular productividad.",
+      "title": "Solo exclusividad de estación",
+      "body": "Impedir sesiones simultáneas por estación sin introducir todavía un historial de confirmador por producto.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar productividad Skypod",
+      "body": "Desactivar el conteo hasta que Exotec pueda aportar una identidad de confirmación verificable.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Reserva exclusiva y auditoría posterior",
-    "body": "Impedir una segunda sesión activa por estación y planificar la atribución por producto como continuación controlada.",
+    "title": "Reserva operativa y procedencia por producto",
+    "body": "Reservar atómicamente cada estación a un rol operativo y guardar en cada producto la identidad disponible junto con la fuente de atribución.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "AlexDiaz-Hamelyn",
-    "reason": "Su trabajo reciente cubre la política de inicio y cierre de sesiones que debe aplicar la decisión.",
-    "confidence": "high"
+    "person": "banosdavidhamelyn",
+    "reason": "Figura como responsable del seguimiento y debe coordinar la regla operacional con quienes mantienen el flujo Skypod.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9230.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9230#issuecomment-5570153578",
-    "reviewedAt": "2026-09-07T11:46:21.027Z",
-    "mainSha": "d2fb7f220e1643c8b101b5df2001131819f5f27d"
+    "reviewedAt": "2026-09-07T14:28:22.351Z",
+    "mainSha": "829910f9e249e89f9d5c30248ac6ba2ca7a4ea1f"
   }
 }
