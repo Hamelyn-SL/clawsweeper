@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-07T12:05:06.013Z",
+  "updatedAt": "2026-09-07T11:59:24Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 9231,
+    "title": "ci: monitor incremental index removals with atlas logs",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9231",
+    "state": "open",
+    "labels": [
+      "size/XL"
+    ],
+    "createdAt": "2026-09-07T11:59:14Z",
+    "updatedAt": "2026-09-07T11:59:24Z",
+    "headSha": "0483d273c64dda214ab585c6a43a4683acfd6571"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe Platform activar este monitor para los 49 candidatos antes de limitar la prueba a un único índice canario reversible?",
+  "rationale": "La issue vinculada mantiene una decisión explícita: el monitor es una salvaguarda útil, pero no sustituye el alcance reducido, la observación directa ni el criterio de desocultación.",
+  "options": [
+    {
+      "title": "Activar solo para el canario",
+      "body": "Restringir inicialmente el manifiesto a `products.newData.logista_1`, validar una ejecución manual y observar una semana antes de ampliar el alcance.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener observación pasiva",
+      "body": "Conservar el PR en borrador hasta que Platform defina el primer canario y el protocolo de reversión.",
+      "recommended": false
+    },
+    {
+      "title": "Activar los 49 candidatos",
+      "body": "Aceptar alertas más amplias desde el inicio, asumiendo que no atribuirán por sí solas una regresión a un índice concreto.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Activar solo para el canario",
+    "body": "Restringir inicialmente el manifiesto a `products.newData.logista_1`, validar una ejecución manual y observar una semana antes de ampliar el alcance.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es la persona con mayor historial verificable en la semántica del watcher de infraestructura y sus límites de observación.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9231.md",
+    "reviewedAt": "2026-09-07T12:05:06.013Z",
+    "mainSha": "d2fb7f220e1643c8b101b5df2001131819f5f27d"
+  }
+}
