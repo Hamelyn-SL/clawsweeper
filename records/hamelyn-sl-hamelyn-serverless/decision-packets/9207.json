@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-07T09:10:31.662Z",
+  "generatedAt": "2026-09-07T09:08:56.886Z",
   "updatedAt": "2026-09-07T08:39:55Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -22,29 +22,29 @@
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Se mantiene como contrato operativo que Exotec siempre sirva por el alveolo 1, o se autoriza que el bridge confirme dinámicamente el alveolo activo?",
-  "rationale": "El código demuestra el acoplamiento al alveolo 1, pero la incidencia comunica una preferencia operativa por corregir la configuración de Exotec antes de ampliar el bridge.",
+  "question": "¿Debe Exotec quedar configurado y supervisado para servir solo por `Alveolus_1_1_RIGHT`, o debe Station reconocer y confirmar el alveolo activo?",
+  "rationale": "El código actual coincide con la decisión previa, pero las trazas del nuevo reporte describen una operativa física incompatible que no puede resolverse solo desde el repositorio.",
   "options": [
     {
-      "title": "Garantizar alveolo 1 en Exotec",
-      "body": "Confirmar y aplicar la configuración de Exotec, verificando que las líneas NOT_FOUND no dejen una preparación que fuerce otro alveolo.",
+      "title": "Garantizar alveolo 1",
+      "body": "Confirmar con Exotec la configuración de estación, corregirla si procede y añadir una comprobación operativa que detecte desvíos.",
       "recommended": true
     },
     {
-      "title": "Confirmar el alveolo activo",
-      "body": "Ampliar el protocolo y el cliente OPC UA para derivar el método de ack desde el alveolo detectado y conservar compatibilidad con `1_1_RIGHT`.",
+      "title": "Adaptar el bridge",
+      "body": "Cambiar el bridge para seleccionar el método del alveolo activo y propagar un rechazo funcional del PLC a Station.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Garantizar alveolo 1 en Exotec",
-    "body": "Confirmar y aplicar la configuración de Exotec, verificando que las líneas NOT_FOUND no dejen una preparación que fuerce otro alveolo.",
+    "title": "Garantizar alveolo 1",
+    "body": "Confirmar con Exotec la configuración de estación, corregirla si procede y añadir una comprobación operativa que detecte desvíos.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "Alex Cantón",
-    "reason": "Introdujo el bridge y el contrato de mensajes afectados; puede concretar el límite técnico de una adaptación OPC UA.",
-    "confidence": "medium"
+    "person": "banosdavidhamelyn",
+    "reason": "Su comentario en el antecedente fijó explícitamente el contrato operativo de alveolo único.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9207.md",
