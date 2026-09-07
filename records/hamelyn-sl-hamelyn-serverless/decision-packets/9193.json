@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-07T07:23:37.096Z",
-  "updatedAt": "2026-09-07T06:36:09Z",
+  "generatedAt": "2026-09-07T08:37:11.009Z",
+  "updatedAt": "2026-09-07T08:32:47Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,49 +13,48 @@
       "source:admin-panel",
       "app:admin",
       "feature",
-      "triage:queued",
-      "reporter:danielmenchen-hamelyn",
+      "triage:blocked",
+      "clawsweeper:needs-product-decision",
       "P2",
-      "clawsweeper:needs-product-decision"
+      "reporter:danielmenchen-hamelyn"
     ],
     "createdAt": "2026-09-07T06:35:59Z",
-    "updatedAt": "2026-09-07T06:36:09Z"
+    "updatedAt": "2026-09-07T08:32:47Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se aprueba iniciar F2 cuando F1 esté desplegada, usando el rol de logística existente y guardando `weight` como decimal sin semántica adicional?",
-  "rationale": "La issue deja ambas decisiones abiertas y el modelo inmutable, los permisos y el contrato CLI/API dependen de ellas.",
+  "question": "¿Qué rol puede editar el catálogo y qué semántica persistida tendrá exactamente `weight` antes de crear datos inmutables?",
+  "rationale": "Estas decisiones definen autorización y significado histórico de los snapshots; no pueden deducirse de la base actual sin arriesgar un contrato persistente equivocado.",
   "options": [
     {
-      "title": "Esperar validación y F1",
-      "body": "Mantener la fase bloqueada hasta la validación de almacén y el despliegue de F1; después concretar roles y semántica antes de implementar.",
+      "title": "Validar rol existente y peso decimal",
+      "body": "Confirmar el rol logístico ya disponible y almacenar `weight` como decimal sin semántica adicional, documentando la unidad seleccionada.",
       "recommended": true
     },
     {
-      "title": "Aprobar el rol actual",
-      "body": "Usar el rol de logística existente y fijar `weight` como decimal, documentando esta decisión en el alcance técnico.",
+      "title": "Crear rol específico de almacén",
+      "body": "Introducir un rol de responsable de almacén y definir su alcance de lectura y escritura antes de exponer los endpoints.",
       "recommended": false
     },
     {
-      "title": "Diseñar un rol nuevo",
-      "body": "Definir primero un rol de responsable de almacén y sus permisos antes de exponer mutaciones del catálogo.",
+      "title": "Aplazar F2",
+      "body": "Mantener esta fase bloqueada hasta que la validación operativa cierre ambas decisiones.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Esperar validación y F1",
-    "body": "Mantener la fase bloqueada hasta la validación de almacén y el despliegue de F1; después concretar roles y semántica antes de implementar.",
+    "title": "Validar rol existente y peso decimal",
+    "body": "Confirmar el rol logístico ya disponible y almacenar `weight` como decimal sin semántica adicional, documentando la unidad seleccionada.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "danielmenchen-hamelyn",
-    "reason": "La propuesta identifica su validación operativa como condición previa explícita.",
+    "reason": "La propia fase requiere su validación operativa y su historial reciente conecta con la base de productividad afectada.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9193.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9193#issuecomment-5566861147",
-    "reviewedAt": "2026-09-07T07:23:37.096Z",
+    "reviewedAt": "2026-09-07T08:37:11.009Z",
     "mainSha": "ce139141ee59c921b1839568955bbfe94683ea23"
   }
 }
