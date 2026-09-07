@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-07T07:23:08.878Z",
-  "updatedAt": "2026-09-07T06:12:50Z",
+  "generatedAt": "2026-09-07T09:27:58.921Z",
+  "updatedAt": "2026-09-07T09:20:25Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,43 +12,47 @@
     "labels": [
       "app:infrastructure",
       "feature",
-      "triage:done",
+      "triage:queued",
       "clawsweeper:needs-product-decision",
       "P2"
     ],
     "createdAt": "2026-09-06T22:07:03Z",
-    "updatedAt": "2026-09-07T06:12:50Z"
+    "updatedAt": "2026-09-07T09:20:25Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe integrarse la primera versión manteniendo Factory Learning pausado por defecto hasta validar el panel y los controles reservados?",
-  "rationale": "La funcionalidad altera los procedimientos compartidos de investigación; la PR documenta una verificación incompleta del panel y una candidata que no superó todos los controles de reserva.",
+  "question": "¿Debe integrarse ahora el ciclo diario de aprendizaje compartido, incluidos el cambio de modelos predeterminados y la consola `/learning`, o limitarse primero a almacenamiento y evaluación sin activación?",
+  "rationale": "El PR cubre varias superficies y su propia evidencia mantiene el piloto pausado tras resultados reservados incompletos; el código no puede decidir qué exposición operativa acepta el equipo.",
   "options": [
     {
-      "title": "Integrar con piloto pausado",
-      "body": "Aterrizar la infraestructura y los controles, conservando el contexto actual hasta completar la evidencia operativa y las regresiones.",
+      "title": "Integrar por fases sin activación",
+      "body": "Aterrizar primero contrato, corpus, evaluación y controles, dejando la promoción automática y el cambio de modelo desactivados.",
       "recommended": true
     },
     {
-      "title": "Dividir antes de integrar",
-      "body": "Separar contrato, evaluator y almacenamiento de la consola e inyección para reducir el alcance inicial de la entrega.",
+      "title": "Aceptar el piloto acotado",
+      "body": "Integrar el ciclo diario con salvaguardas actuales y revisarlo tras completar la prueba autenticada del panel.",
+      "recommended": false
+    },
+    {
+      "title": "Reducir la iniciativa",
+      "body": "Mantener las memorias actuales y extraer solo reglas comunes documentadas sin nuevo almacenamiento ni consola.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Integrar con piloto pausado",
-    "body": "Aterrizar la infraestructura y los controles, conservando el contexto actual hasta completar la evidencia operativa y las regresiones.",
+    "title": "Integrar por fases sin activación",
+    "body": "Aterrizar primero contrato, corpus, evaluación y controles, dejando la promoción automática y el cambio de modelo desactivados.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es el asignado de la iniciativa y responsable de la PR vinculada; puede concretar el alcance de activación con los revisores de Agents.",
+    "reason": "Es el propietario asignado y autor de la propuesta técnica que concreta las alternativas.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9175.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9175#issuecomment-5565269657",
-    "reviewedAt": "2026-09-07T07:23:08.878Z",
-    "mainSha": "ce139141ee59c921b1839568955bbfe94683ea23"
+    "reviewedAt": "2026-09-07T09:27:58.921Z",
+    "mainSha": "98de6779bba00ec1c24b630cdac62cf2b4ee435f"
   }
 }
