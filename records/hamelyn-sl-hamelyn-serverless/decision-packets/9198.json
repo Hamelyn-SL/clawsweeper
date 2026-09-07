@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-07T07:24:14.853Z",
+  "updatedAt": "2026-09-07T06:59:38Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9198,
+    "title": "Admin: log the authenticated user in the role verification layer",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9198",
+    "state": "open",
+    "labels": [
+      "app:admin",
+      "feature",
+      "reporter:miguel",
+      "triage:queued",
+      "P2"
+    ],
+    "createdAt": "2026-09-07T06:59:27Z",
+    "updatedAt": "2026-09-07T06:59:38Z"
+  },
+  "lane": "security_boundary",
+  "priority": "P2",
+  "question": "¿Se aprueba conservar el email autenticado como dato de auditoría en el drain de Vercel y su réplica en BigQuery para las mutaciones cubiertas por `withAdminRoute`?",
+  "rationale": "La implementación es pequeña, pero decide la persistencia y el acceso operativo a un dato personal en una plataforma de logs compartida.",
+  "options": [
+    {
+      "title": "Aprobar email acotado",
+      "body": "Registrar email, método y pathname solo tras autorización correcta y solo en mutaciones de `withAdminRoute`, manteniendo el alcance de primera fase.",
+      "recommended": true
+    },
+    {
+      "title": "Usar identificador interno",
+      "body": "Registrar un identificador estable no personal y resolver la identidad del usuario fuera del drain cuando sea necesario investigar.",
+      "recommended": false
+    },
+    {
+      "title": "Definir auditoría dedicada",
+      "body": "Posponer el log en Vercel hasta acordar una superficie de auditoría con acceso y retención específicos.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar email acotado",
+    "body": "Registrar email, método y pathname solo tras autorización correcta y solo en mutaciones de `withAdminRoute`, manteniendo el alcance de primera fase.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Es la persona asignada y aportó el caso de uso operativo que define la necesidad de atribución.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9198.md",
+    "reviewedAt": "2026-09-07T07:24:14.853Z",
+    "mainSha": "ce139141ee59c921b1839568955bbfe94683ea23"
+  }
+}
