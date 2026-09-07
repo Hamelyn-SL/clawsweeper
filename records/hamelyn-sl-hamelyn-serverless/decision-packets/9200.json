@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-07T07:45:15.044Z",
+  "updatedAt": "2026-09-07T07:35:41Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 9200,
+    "title": "refactor: remove the legacy marketplace sync runtime",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9200",
+    "state": "open",
+    "labels": [
+      "size/XL"
+    ],
+    "createdAt": "2026-09-07T07:33:18Z",
+    "updatedAt": "2026-09-07T07:35:41Z",
+    "headSha": "8edb5d50428311ec4f3d2091d43e2f339be27190"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Se retira ahora el fallback manual V1 aunque los flujos `needsUpdateData` y varias recuperaciones sigan sin equivalente V2 documentado?",
+  "rationale": "El código y la documentación actual describen esos flujos como pendientes; decidir su retirada definitiva requiere aceptar una pérdida de capacidad operativa o priorizar su migración.",
+  "options": [
+    {
+      "title": "Completar la transición V2 antes de borrar",
+      "body": "Implementar o cubrir mediante backfill los flujos pendientes y conservar V1 hasta verificar que no quedan filas ni operaciones dependientes.",
+      "recommended": true
+    },
+    {
+      "title": "Conservar un fallback manual acotado",
+      "body": "Mantener las rutas y runners legacy necesarios sin schedule hasta que cada marketplace tenga sustitución V2 confirmada.",
+      "recommended": false
+    },
+    {
+      "title": "Aceptar la retirada inmediata",
+      "body": "Aprobar explícitamente la pérdida de esos flujos tras aportar inventario exhaustivo de datos y procedimientos operativos alternativos.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Completar la transición V2 antes de borrar",
+    "body": "Implementar o cubrir mediante backfill los flujos pendientes y conservar V1 hasta verificar que no quedan filas ni operaciones dependientes.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Miguel Angel Hernández Perdomo",
+    "reason": "Su historial incluye la migración V2 y la decisión previa de preservar un controlador legacy en la familia Mirakl.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9200.md",
+    "reviewedAt": "2026-09-07T07:45:15.044Z",
+    "mainSha": "ce139141ee59c921b1839568955bbfe94683ea23"
+  }
+}
