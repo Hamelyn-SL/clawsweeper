@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-07T15:55:44.517Z",
+  "generatedAt": "2026-09-07T15:57:31.658Z",
   "updatedAt": "2026-09-07T15:30:50Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -14,43 +14,46 @@
       "bug",
       "app:marketplace",
       "triage:needs-info",
-      "marketplace-crons",
       "P2",
-      "clawsweeper:needs-product-decision"
+      "marketplace-crons"
     ],
     "createdAt": "2026-09-02T17:30:43Z",
     "updatedAt": "2026-09-07T15:30:50Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe el flujo seguir publicando cuando falla temporalmente la consulta de restricciones, o debe aplicar un reintento acotado y bloquear el SKU si no se recupera?",
-  "rationale": "La fuente confirma una política fail-open, pero los datos disponibles no muestran si los avisos recientes causaron publicaciones indebidas ni permiten calibrar el coste de bloquear altas válidas.",
+  "question": "¿Ante un 500 recurrente del endpoint de restricciones, debe el cron reintentar y omitir temporalmente el listing, o mantener la publicación actual sin pre-check confirmado?",
+  "rationale": "El código y el test establecen la continuación actual, mientras que la recurrencia reabre el riesgo operativo de publicar sin el filtro; elegir el coste aceptable requiere criterio de negocio y cumplimiento.",
   "options": [
     {
-      "title": "Mantener el fallback mientras se investiga",
-      "body": "Conservar la continuidad actual y exigir la correlación por ASIN/región antes de cambiar la política.",
+      "title": "Reintentar y aplazar el listing",
+      "body": "Aplicar reintentos acotados y devolver un resultado transitorio si no se recupera la comprobación, evitando publicar sin validar restricciones.",
       "recommended": true
     },
     {
-      "title": "Reintentar y bloquear sin verificación",
-      "body": "Introducir reintentos acotados y dejar el SKU pendiente cuando persista el fallo, asumiendo posibles altas retrasadas.",
+      "title": "Mantener la continuación actual",
+      "body": "Conservar la publicación tras el aviso y aceptar explícitamente el riesgo operacional mientras se mejora la observabilidad por ASIN.",
+      "recommended": false
+    },
+    {
+      "title": "Aplicar una política híbrida",
+      "body": "Permitir continuación solo bajo condiciones verificables, como errores aislados o una confirmación posterior de oferta, con métricas específicas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mantener el fallback mientras se investiga",
-    "body": "Conservar la continuidad actual y exigir la correlación por ASIN/región antes de cambiar la política.",
+    "title": "Reintentar y aplazar el listing",
+    "body": "Aplicar reintentos acotados y devolver un resultado transitorio si no se recupera la comprobación, evitando publicar sin validar restricciones.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Figura asignado y mantiene el contexto operativo reciente de las rutas afectadas.",
+    "reason": "Está asignado y ya definió la condición operativa que motivó la reapertura.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9056.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9056#issuecomment-5513778115",
-    "reviewedAt": "2026-09-07T15:55:44.517Z",
+    "reviewedAt": "2026-09-07T15:57:31.658Z",
     "mainSha": "829910f9e249e89f9d5c30248ac6ba2ca7a4ea1f"
   }
 }
