@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-07T05:31:37.955Z",
-  "updatedAt": "2026-09-07T01:43:50Z",
+  "generatedAt": "2026-09-07T07:27:45.385Z",
+  "updatedAt": "2026-09-07T05:47:25Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -14,39 +14,38 @@
       "P1"
     ],
     "createdAt": "2026-09-07T00:17:28Z",
-    "updatedAt": "2026-09-07T01:43:50Z",
+    "updatedAt": "2026-09-07T05:47:25Z",
     "headSha": "068d0f3486698221aadc7ded1ecf408ffd2944fc"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe el nuevo modelo sustituir de forma deliberada la configuración desplegada `CODEX_DEFAULT_MODEL` del agente principal y sus watchers?",
-  "rationale": "El cambio modifica una preferencia operativa ya documentada; conservarla es mecánico, pero retirarla requiere aceptar explícitamente su impacto de actualización.",
+  "question": "¿Debe `FACTORY_INVESTIGATION_MODEL` sustituir también los despliegues existentes que ya configuran `CODEX_DEFAULT_MODEL` para el agente principal?",
+  "rationale": "El PR cambia una configuración operativa compartida; solo el equipo puede decidir entre migración explícita o compatibilidad de actualización.",
   "options": [
     {
-      "title": "Preservar compatibilidad",
-      "body": "Hacer que `FACTORY_INVESTIGATION_MODEL` use `CODEX_DEFAULT_MODEL` como fallback y conservar el override nuevo como opt-in.",
+      "title": "Conservar overrides existentes",
+      "body": "Usar `FACTORY_INVESTIGATION_MODEL` para nuevas instalaciones, pero respetar un `CODEX_DEFAULT_MODEL` ya configurado en el agente raíz.",
       "recommended": true
     },
     {
-      "title": "Cambiar el contrato",
-      "body": "Aceptar el nuevo default, documentar la migración y demostrar el comportamiento con valores heredados y nuevos.",
+      "title": "Aprobar la migración global",
+      "body": "Mantener el nuevo fallback y publicar una migración operativa con validación de coste, disponibilidad y calidad para los despliegues afectados.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Preservar compatibilidad",
-    "body": "Hacer que `FACTORY_INVESTIGATION_MODEL` use `CODEX_DEFAULT_MODEL` como fallback y conservar el override nuevo como opt-in.",
+    "title": "Conservar overrides existentes",
+    "body": "Usar `FACTORY_INVESTIGATION_MODEL` para nuevas instalaciones, pero respetar un `CODEX_DEFAULT_MODEL` ya configurado en el agente raíz.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "Miguel Angel Hernández Perdomo",
-    "reason": "Su commit introdujo el contrato compartido que este cambio reemplaza.",
+    "person": "JavierHamelyn",
+    "reason": "Es el contribuidor más reciente tanto del despacho del agente como del runner de triage afectado.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9178.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9178#issuecomment-5565522743",
-    "reviewedAt": "2026-09-07T05:31:37.955Z",
-    "mainSha": "d7210ac77ad17ccd55714faeba2bd5631ae6fd9a"
+    "reviewedAt": "2026-09-07T07:27:45.385Z",
+    "mainSha": "ce139141ee59c921b1839568955bbfe94683ea23"
   }
 }

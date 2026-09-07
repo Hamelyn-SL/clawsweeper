@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-07T05:07:56.057Z",
-  "updatedAt": "2026-09-06T01:42:49Z",
+  "generatedAt": "2026-09-07T07:21:07.586Z",
+  "updatedAt": "2026-09-07T06:27:51Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,42 +13,41 @@
       "app:infrastructure",
       "feature",
       "triage:done",
-      "P2",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2"
     ],
     "createdAt": "2026-09-06T00:53:14Z",
-    "updatedAt": "2026-09-06T01:42:49Z"
+    "updatedAt": "2026-09-07T06:27:51Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿El contrato canónico debe prohibir `git commit --no-verify` sin excepciones, como propone el PR, o conservar una excepción explícita por autorización humana?",
-  "rationale": "La elección cambia la política operativa de todos los agentes y el texto actual contiene ambas interpretaciones.",
+  "question": "¿Debe el contrato canónico prohibir `git commit --no-verify` sin excepciones o conservar una excepción explícita para una autorización humana?",
+  "rationale": "El PR escoge una prohibición absoluta, mientras que el contrato actual conserva una excepción; la semántica de permisos no debe decidirse automáticamente.",
   "options": [
     {
       "title": "Prohibición sin excepciones",
-      "body": "Eliminar la excepción y mantener que un hook fallido se corrige siempre antes de commitear.",
+      "body": "Eliminar la excepción y exigir corregir siempre un hook fallido antes de cualquier commit.",
       "recommended": true
     },
     {
       "title": "Excepción autorizada",
-      "body": "Conservar una excepción documentada para una petición humana explícita y ajustar la regla absoluta para que no contradiga ese flujo.",
+      "body": "Conservar una excepción documentada para una petición humana explícita y alinear la regla absoluta con ese flujo.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Prohibición sin excepciones",
-    "body": "Eliminar la excepción y mantener que un hook fallido se corrige siempre antes de commitear.",
+    "body": "Eliminar la excepción y exigir corregir siempre un hook fallido antes de cualquier commit.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su historial reciente concentra los cambios de política afectados y es la persona asignada al trabajo.",
+    "reason": "Es el autor predominante de la política raíz y está asignado a esta iniciativa.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9163.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9163#issuecomment-5565389946",
-    "reviewedAt": "2026-09-07T05:07:56.057Z",
-    "mainSha": "7917b1c783fedca0161273534392cbdd7c693ece"
+    "reviewedAt": "2026-09-07T07:21:07.586Z",
+    "mainSha": "ce139141ee59c921b1839568955bbfe94683ea23"
   }
 }

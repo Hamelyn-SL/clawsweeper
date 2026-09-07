@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-07T07:23:34.499Z",
+  "updatedAt": "2026-09-07T06:23:51Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9190,
+    "title": "Marketplace V2 F4: demoler la clase Marketplace legacy y sus rutas V1",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9190",
+    "state": "open",
+    "labels": [
+      "source:admin-panel",
+      "app:marketplace",
+      "feature",
+      "triage:queued",
+      "P2"
+    ],
+    "createdAt": "2026-09-07T06:07:59Z",
+    "updatedAt": "2026-09-07T06:23:51Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿F4 debe retirar ahora todos los fallbacks V1 y el adaptador de MercadoLibre Global, o conservar una transición temporal explícita para alguno de ellos?",
+  "rationale": "El código y el historial conservan rutas legacy sin schedule como fallback manual, y la documentación marca MercadoLibre Global como caso legacy separado.",
+  "options": [
+    {
+      "title": "Retirar en F4",
+      "body": "Eliminar los caminos legacy y confirmar que los runners V2 cubren las operaciones restantes y las excepciones acordadas.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener transición limitada",
+      "body": "Conservar solo los fallbacks aprobados con propietario, condición de uso y criterio de retirada documentados.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Retirar en F4",
+    "body": "Eliminar los caminos legacy y confirmar que los runners V2 cubren las operaciones restantes y las excepciones acordadas.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "El historial lo vincula directamente con la ventana de retirada V1 y la restauración selectiva de schedules.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9190.md",
+    "reviewedAt": "2026-09-07T07:23:34.499Z",
+    "mainSha": "ce139141ee59c921b1839568955bbfe94683ea23"
+  }
+}

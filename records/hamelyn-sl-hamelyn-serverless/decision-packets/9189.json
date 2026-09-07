@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-07T07:24:42.036Z",
+  "updatedAt": "2026-09-07T06:13:39Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 9189,
+    "title": "fix: reduce amazon order recovery throttling",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9189",
+    "state": "open",
+    "labels": [
+      "size/S"
+    ],
+    "createdAt": "2026-09-07T05:59:53Z",
+    "updatedAt": "2026-09-07T06:13:39Z",
+    "headSha": "7a3df64dbad34a7e1b310a38ed2fd62e0887ea8c"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Qué mecanismo debe preservar la recuperación de `ORDER_CHANGE` descartados al reducir la ventana automática a un día?",
+  "rationale": "La alternativa entre una segunda pasada amplia de bajo ritmo y retener notificaciones afecta la cuota Amazon, el volumen de reintentos y la semántica operativa.",
+  "options": [
+    {
+      "title": "Añadir recuperación diferida",
+      "body": "Mantener el cron diario corto y ejecutar una pasada amplia menos frecuente para cubrir pedidos descartados antiguos.",
+      "recommended": true
+    },
+    {
+      "title": "Retener la notificación",
+      "body": "No borrar el `ORDER_CHANGE` sin SKU y reintentarlo cuando la notificación vuelva a procesarse.",
+      "recommended": false
+    },
+    {
+      "title": "Aceptar la nueva caducidad",
+      "body": "Asumir que los pedidos corregidos después de un día solo se recuperarán con una actualización posterior de Amazon.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Añadir recuperación diferida",
+    "body": "Mantener el cron diario corto y ejecutar una pasada amplia menos frecuente para cubrir pedidos descartados antiguos.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Su historial define el contrato de descarte que depende de esta recuperación.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9189.md",
+    "reviewedAt": "2026-09-07T07:24:42.036Z",
+    "mainSha": "ce139141ee59c921b1839568955bbfe94683ea23"
+  }
+}

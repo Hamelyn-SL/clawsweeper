@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-07T07:28:02.368Z",
+  "updatedAt": "2026-09-07T06:36:47Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9192,
+    "title": "Almacén: arrancar la telemetría de operarios — F1 atribución y tipos de proceso",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9192",
+    "state": "open",
+    "labels": [
+      "source:admin-panel",
+      "app:admin",
+      "feature",
+      "triage:queued",
+      "P1",
+      "reporter:danielmenchen-hamelyn"
+    ],
+    "createdAt": "2026-09-07T06:22:11Z",
+    "updatedAt": "2026-09-07T06:36:47Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se confirma que el propietario de un contenedor es el último operario que lo toca, también cuando interviene una auditoría, y que `OTHER` se inicia desde el chip global de productividad?",
+  "rationale": "Estas elecciones determinan los datos persistidos y el flujo visible; el código existente no ofrece una convención que permita resolverlas sin decisión humana.",
+  "options": [
+    {
+      "title": "Confirmar la propuesta operativa",
+      "body": "Registrar el último toque, incluida la auditoría, y arrancar `OTHER` desde el chip global con nota obligatoria.",
+      "recommended": true
+    },
+    {
+      "title": "Aplazar la propiedad auditada",
+      "body": "Implementar las sesiones y atribuciones no controvertidas en F1 y dejar la transición de propiedad por auditoría para F6.",
+      "recommended": false
+    },
+    {
+      "title": "Elegir otra entrada para Otros",
+      "body": "Definir un panel de operario o una vista operativa distinta antes de diseñar el flujo y sus permisos.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Confirmar la propuesta operativa",
+    "body": "Registrar el último toque, incluida la auditoría, y arrancar `OTHER` desde el chip global con nota obligatoria.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Daniel",
+    "reason": "Su trabajo reciente en Skypod y el contexto funcional de la telemetría lo conectan directamente con esta decisión.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9192.md",
+    "reviewedAt": "2026-09-07T07:28:02.368Z",
+    "mainSha": "ce139141ee59c921b1839568955bbfe94683ea23"
+  }
+}

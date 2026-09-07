@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-07T07:23:37.096Z",
+  "updatedAt": "2026-09-07T06:36:09Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9193,
+    "title": "Almacén: telemetría de operarios — F2 catálogo de faltas con snapshots inmutables",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9193",
+    "state": "open",
+    "labels": [
+      "source:admin-panel",
+      "app:admin",
+      "feature",
+      "triage:queued",
+      "P2",
+      "reporter:danielmenchen-hamelyn"
+    ],
+    "createdAt": "2026-09-07T06:35:59Z",
+    "updatedAt": "2026-09-07T06:36:09Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se aprueba iniciar F2 cuando F1 esté desplegada, usando el rol de logística existente y guardando `weight` como decimal sin semántica adicional?",
+  "rationale": "La issue deja ambas decisiones abiertas y el modelo inmutable, los permisos y el contrato CLI/API dependen de ellas.",
+  "options": [
+    {
+      "title": "Esperar validación y F1",
+      "body": "Mantener la fase bloqueada hasta la validación de almacén y el despliegue de F1; después concretar roles y semántica antes de implementar.",
+      "recommended": true
+    },
+    {
+      "title": "Aprobar el rol actual",
+      "body": "Usar el rol de logística existente y fijar `weight` como decimal, documentando esta decisión en el alcance técnico.",
+      "recommended": false
+    },
+    {
+      "title": "Diseñar un rol nuevo",
+      "body": "Definir primero un rol de responsable de almacén y sus permisos antes de exponer mutaciones del catálogo.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Esperar validación y F1",
+    "body": "Mantener la fase bloqueada hasta la validación de almacén y el despliegue de F1; después concretar roles y semántica antes de implementar.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "danielmenchen-hamelyn",
+    "reason": "La propuesta identifica su validación operativa como condición previa explícita.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9193.md",
+    "reviewedAt": "2026-09-07T07:23:37.096Z",
+    "mainSha": "ce139141ee59c921b1839568955bbfe94683ea23"
+  }
+}

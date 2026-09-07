@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-07T07:18:06.965Z",
+  "updatedAt": "2026-09-07T06:12:53Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9168,
+    "title": "Crons: [slack [orders_error] hooks.slack.com/services/t01u06q0m5m/b092sbyrz9c/lejyysf22fohktjh********] retry 1/3 after ",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9168",
+    "state": "open",
+    "labels": [
+      "codex",
+      "bug",
+      "app:infrastructure",
+      "triage:pr-opened",
+      "P1",
+      "clawsweeper:needs-security-review",
+      "crons"
+    ],
+    "createdAt": "2026-09-06T17:40:24Z",
+    "updatedAt": "2026-09-07T06:12:53Z"
+  },
+  "lane": "security_boundary",
+  "priority": "P1",
+  "question": "¿Debe rotarse el webhook de `ORDERS_ERROR` antes de integrar la corrección que elimina su exposición futura en logs y alertas?",
+  "rationale": "El parche evita futuras exposiciones, pero la información ya apareció parcialmente en el título y en registros históricos; la valoración del secreto requiere coordinación humana.",
+  "options": [
+    {
+      "title": "Rotar y verificar el webhook",
+      "body": "Revocar o sustituir el webhook, comprobar que los crons usan el nuevo secreto e integrar después la PR.",
+      "recommended": true
+    },
+    {
+      "title": "Confirmar que no es explotable",
+      "body": "Documentar que el valor mostrado no permite invocar el webhook y conservar el endpoint antes de integrar la PR.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Rotar y verificar el webhook",
+    "body": "Revocar o sustituir el webhook, comprobar que los crons usan el nuevo secreto e integrar después la PR.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "Es el contribuidor reciente identificado en el cliente que selecciona y registra los webhooks de Slack.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9168.md",
+    "reviewedAt": "2026-09-07T07:18:06.965Z",
+    "mainSha": "ce139141ee59c921b1839568955bbfe94683ea23"
+  }
+}

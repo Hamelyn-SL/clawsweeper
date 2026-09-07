@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-07T04:59:32.209Z",
-  "updatedAt": "2026-09-07T01:12:50Z",
+  "generatedAt": "2026-09-07T07:23:08.878Z",
+  "updatedAt": "2026-09-07T06:12:50Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,47 +13,40 @@
       "app:infrastructure",
       "feature",
       "triage:done",
-      "P2",
-      "clawsweeper:needs-product-decision"
+      "P2"
     ],
     "createdAt": "2026-09-06T22:07:03Z",
-    "updatedAt": "2026-09-07T01:12:50Z"
+    "updatedAt": "2026-09-07T06:12:50Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe integrarse ahora el PR como piloto completo con cambios de modelo y consola, o dividirse para aterrizar primero el contrato, corpus y evaluador sin activar aprendizaje compartido?",
-  "rationale": "La decisión determina cuánto comportamiento nuevo entra en agentes y triage antes de que el panel autenticado y los controles reservados estén completamente verificados.",
+  "question": "¿Debe integrarse la primera versión manteniendo Factory Learning pausado por defecto hasta validar el panel y los controles reservados?",
+  "rationale": "La funcionalidad altera los procedimientos compartidos de investigación; la PR documenta una verificación incompleta del panel y una candidata que no superó todos los controles de reserva.",
   "options": [
     {
-      "title": "Aterrizar primero los invariantes",
-      "body": "Integrar o extraer contrato, corpus, evaluador y estado pausado, dejando la promoción e inyección automática desactivadas hasta completar las pruebas.",
+      "title": "Integrar con piloto pausado",
+      "body": "Aterrizar la infraestructura y los controles, conservando el contexto actual hasta completar la evidencia operativa y las regresiones.",
       "recommended": true
     },
     {
-      "title": "Aceptar el piloto completo pausado",
-      "body": "Mantener el alcance del PR si se acepta revisar después el panel autenticado y no reactivar el aprendizaje hasta resolver los controles reservados.",
-      "recommended": false
-    },
-    {
-      "title": "Dividir en entregas independientes",
-      "body": "Separar almacenamiento/evaluación, consumidores y consola en PRs sucesivos para reducir el riesgo de una integración XXL.",
+      "title": "Dividir antes de integrar",
+      "body": "Separar contrato, evaluator y almacenamiento de la consola e inyección para reducir el alcance inicial de la entrega.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aterrizar primero los invariantes",
-    "body": "Integrar o extraer contrato, corpus, evaluador y estado pausado, dejando la promoción e inyección automática desactivadas hasta completar las pruebas.",
+    "title": "Integrar con piloto pausado",
+    "body": "Aterrizar la infraestructura y los controles, conservando el contexto actual hasta completar la evidencia operativa y las regresiones.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es la persona asignada y el contribuidor más directamente conectado con el diseño y el PR candidato.",
+    "reason": "Es el asignado de la iniciativa y responsable de la PR vinculada; puede concretar el alcance de activación con los revisores de Agents.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9175.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9175#issuecomment-5565269657",
-    "reviewedAt": "2026-09-07T04:59:32.209Z",
-    "mainSha": "7917b1c783fedca0161273534392cbdd7c693ece"
+    "reviewedAt": "2026-09-07T07:23:08.878Z",
+    "mainSha": "ce139141ee59c921b1839568955bbfe94683ea23"
   }
 }

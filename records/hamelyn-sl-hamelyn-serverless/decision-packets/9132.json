@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-07T05:06:01.744Z",
-  "updatedAt": "2026-09-04T12:14:36Z",
+  "generatedAt": "2026-09-07T07:18:08.020Z",
+  "updatedAt": "2026-09-07T05:15:58Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -14,39 +14,43 @@
       "P3"
     ],
     "createdAt": "2026-09-04T12:00:18Z",
-    "updatedAt": "2026-09-04T12:14:36Z",
+    "updatedAt": "2026-09-07T05:15:58Z",
     "headSha": "61e27aa0afadb4aa387385644513fb2ab385ce22"
   },
   "lane": "product_direction",
   "priority": "P3",
-  "question": "¿Debe `priority` dejar de recibir avisos de bloqueo y recuperación normales de gavetas, manteniendo solo los fallos al aplicar el estado?",
-  "rationale": "El parche elimina una señal operativa existente y la documentación vigente la describe como visibilidad intencionada; el código no permite decidir si esa pérdida de observabilidad es aceptable.",
+  "question": "¿Las transiciones correctas de una gaveta a `Quarantine` y de vuelta a `Inside` deben dejar de avisar en `priority`?",
+  "rationale": "La guía actual define esos avisos como visibilidad operativa; retirar la señal es una decisión de operación, no una corrección mecánica.",
   "options": [
     {
-      "title": "Suprimir los avisos informativos",
-      "body": "Mantener el parche, actualizar la guía de Skypod y conservar únicamente el aviso de error accionable.",
+      "title": "Confirmar la supresión y documentarla",
+      "body": "Eliminar los dos avisos informativos, actualizar la guía de Skypod y mantener únicamente las alertas de error.",
       "recommended": true
     },
     {
-      "title": "Conservar la visibilidad actual",
-      "body": "Mantener los dos avisos de transición hasta definir un canal, agregación o umbral alternativo.",
+      "title": "Conservar los avisos actuales",
+      "body": "Mantener `priority` para que cada bloqueo y recuperación siga siendo visible al equipo operativo.",
+      "recommended": false
+    },
+    {
+      "title": "Derivar a un canal menos intrusivo",
+      "body": "Mover los avisos correctos a observabilidad no prioritaria y reservar `priority` para incidencias accionables.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Suprimir los avisos informativos",
-    "body": "Mantener el parche, actualizar la guía de Skypod y conservar únicamente el aviso de error accionable.",
+    "title": "Confirmar la supresión y documentarla",
+    "body": "Eliminar los dos avisos informativos, actualizar la guía de Skypod y mantener únicamente las alertas de error.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "banosdavidhamelyn",
-    "reason": "Es la persona con el historial más directo en la definición y documentación reciente de este flujo.",
+    "reason": "Su historial concentra la implementación y la documentación recientes de este flujo.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9132.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9132#issuecomment-5565386292",
-    "reviewedAt": "2026-09-07T05:06:01.744Z",
-    "mainSha": "7917b1c783fedca0161273534392cbdd7c693ece"
+    "reviewedAt": "2026-09-07T07:18:08.020Z",
+    "mainSha": "ce139141ee59c921b1839568955bbfe94683ea23"
   }
 }
