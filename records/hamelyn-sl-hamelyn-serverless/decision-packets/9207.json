@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-07T09:08:56.886Z",
-  "updatedAt": "2026-09-07T08:39:55Z",
+  "generatedAt": "2026-09-07T11:07:24.773Z",
+  "updatedAt": "2026-09-07T10:57:52Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,44 +12,43 @@
     "labels": [
       "bug",
       "app:admin",
-      "triage:queued",
+      "triage:running",
+      "P1",
       "clawsweeper:needs-product-decision",
-      "reporter:AlexDiaz-Hamelyn",
-      "P1"
+      "reporter:AlexDiaz-Hamelyn"
     ],
     "createdAt": "2026-09-07T08:39:43Z",
-    "updatedAt": "2026-09-07T08:39:55Z"
+    "updatedAt": "2026-09-07T10:57:52Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe Exotec quedar configurado y supervisado para servir solo por `Alveolus_1_1_RIGHT`, o debe Station reconocer y confirmar el alveolo activo?",
-  "rationale": "El código actual coincide con la decisión previa, pero las trazas del nuevo reporte describen una operativa física incompatible que no puede resolverse solo desde el repositorio.",
+  "question": "¿Debe Hamelyn mantener como contrato operativo que Exotec sirva siempre por `Alveolus_1_1_RIGHT`, o autorizar que Station confirme dinámicamente el alvéolo activo?",
+  "rationale": "El fallo está demostrado, pero el informe y el triage posterior priorizan una configuración externa. Cambiar el bridge exige conocer y aceptar el contrato OPC UA de los alvéolos 2–4.",
   "options": [
     {
-      "title": "Garantizar alveolo 1",
-      "body": "Confirmar con Exotec la configuración de estación, corregirla si procede y añadir una comprobación operativa que detecte desvíos.",
+      "title": "Garantizar alvéolo 1 en Exotec",
+      "body": "Configurar y verificar que todas las estaciones sirven por `Alveolus_1_1_RIGHT`, revisando que `NOT_FOUND` no deje una preparación que desplace el siguiente servicio.",
       "recommended": true
     },
     {
-      "title": "Adaptar el bridge",
-      "body": "Cambiar el bridge para seleccionar el método del alveolo activo y propagar un rechazo funcional del PLC a Station.",
+      "title": "Autorizar ACK dinámico",
+      "body": "Hacer que el protocolo transmita el alvéolo activo y que el bridge resuelva el método OPC UA correspondiente tras validarlo con Exotec.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Garantizar alveolo 1",
-    "body": "Confirmar con Exotec la configuración de estación, corregirla si procede y añadir una comprobación operativa que detecte desvíos.",
+    "title": "Garantizar alvéolo 1 en Exotec",
+    "body": "Configurar y verificar que todas las estaciones sirven por `Alveolus_1_1_RIGHT`, revisando que `NOT_FOUND` no deje una preparación que desplace el siguiente servicio.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "banosdavidhamelyn",
-    "reason": "Su comentario en el antecedente fijó explícitamente el contrato operativo de alveolo único.",
-    "confidence": "high"
+    "person": "Alex Cantón",
+    "reason": "La revisión previa lo identifica como dueño probable de esta decisión y su historial toca el protocolo del bridge.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9207.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9207#issuecomment-5568291982",
-    "reviewedAt": "2026-09-07T09:10:31.662Z",
-    "mainSha": "cbcc9cf4301e5b69fc65f70bd5a9651104dd471f"
+    "reviewedAt": "2026-09-07T11:07:24.773Z",
+    "mainSha": "d2fb7f220e1643c8b101b5df2001131819f5f27d"
   }
 }
