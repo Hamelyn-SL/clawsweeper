@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-07T09:04:12.188Z",
+  "updatedAt": "2026-09-07T08:58:02Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9098,
+    "title": "Wishlist — confirmar el picking Skypod desde la station y verificar con el webhook",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9098",
+    "state": "open",
+    "labels": [
+      "app:admin",
+      "reporter:davidgonzalez",
+      "feature",
+      "triage:queued",
+      "P1",
+      "origin:dev"
+    ],
+    "createdAt": "2026-09-03T12:45:15Z",
+    "updatedAt": "2026-09-07T08:58:02Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Qué señal o política debe impedir que un avance de `article_id` tras un faltante o error resuelto en la HMI de Exotec se confirme como `DONE` desde Station?",
+  "rationale": "El bridge no expone el resultado de la acción y el avance por sí solo puede representar tanto éxito como error; la elección determina si se necesita una señal de Exotec o una restricción operativa.",
+  "options": [
+    {
+      "title": "Exigir una señal explícita de resultado",
+      "body": "Ampliar el bridge o el contrato de Exotec para confirmar desde Station solo transiciones verificadas como correctas.",
+      "recommended": true
+    },
+    {
+      "title": "Restringir la operativa externa",
+      "body": "Mantener los faltantes y errores en la pantalla de Station hasta disponer de una señal fiable desde Exotec.",
+      "recommended": false
+    },
+    {
+      "title": "Aceptar verificación posterior",
+      "body": "Permitir la confirmación por avance y compensar discrepancias posteriores, asumiendo riesgo de secuencias físicas desalineadas.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Exigir una señal explícita de resultado",
+    "body": "Ampliar el bridge o el contrato de Exotec para confirmar desde Station solo transiciones verificadas como correctas.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Ha revisado el caso límite concreto y es el contribuidor reciente con mayor contexto sobre el flujo de Station.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9098.md",
+    "reviewedAt": "2026-09-07T09:04:12.188Z",
+    "mainSha": "298a23c25def01b408134f365610311714eaa84e"
+  }
+}
