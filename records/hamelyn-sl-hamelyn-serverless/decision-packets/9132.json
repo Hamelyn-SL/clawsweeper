@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-07T05:06:01.744Z",
+  "updatedAt": "2026-09-04T12:14:36Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 9132,
+    "title": "chore: drop bin blocked slack notifications",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9132",
+    "state": "open",
+    "labels": [
+      "size/S"
+    ],
+    "createdAt": "2026-09-04T12:00:18Z",
+    "updatedAt": "2026-09-04T12:14:36Z",
+    "headSha": "61e27aa0afadb4aa387385644513fb2ab385ce22"
+  },
+  "lane": "product_direction",
+  "priority": "P3",
+  "question": "¿Debe `priority` dejar de recibir avisos de bloqueo y recuperación normales de gavetas, manteniendo solo los fallos al aplicar el estado?",
+  "rationale": "El parche elimina una señal operativa existente y la documentación vigente la describe como visibilidad intencionada; el código no permite decidir si esa pérdida de observabilidad es aceptable.",
+  "options": [
+    {
+      "title": "Suprimir los avisos informativos",
+      "body": "Mantener el parche, actualizar la guía de Skypod y conservar únicamente el aviso de error accionable.",
+      "recommended": true
+    },
+    {
+      "title": "Conservar la visibilidad actual",
+      "body": "Mantener los dos avisos de transición hasta definir un canal, agregación o umbral alternativo.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Suprimir los avisos informativos",
+    "body": "Mantener el parche, actualizar la guía de Skypod y conservar únicamente el aviso de error accionable.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "Es la persona con el historial más directo en la definición y documentación reciente de este flujo.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9132.md",
+    "reviewedAt": "2026-09-07T05:06:01.744Z",
+    "mainSha": "7917b1c783fedca0161273534392cbdd7c693ece"
+  }
+}

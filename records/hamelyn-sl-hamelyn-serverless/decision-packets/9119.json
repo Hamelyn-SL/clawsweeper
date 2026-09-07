@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-07T05:02:33.999Z",
+  "updatedAt": "2026-09-04T09:00:37Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9119,
+    "title": "Discogs mirror drops V2 error fields and reports blocked reprices as executable",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9119",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "triage:done",
+      "P2"
+    ],
+    "createdAt": "2026-09-04T07:55:20Z",
+    "updatedAt": "2026-09-04T09:00:37Z"
+  },
+  "lane": "manual_review",
+  "priority": "P2",
+  "question": "¿Autoriza el equipo Data un backfill one-time, limitado a proyecciones V2 desalineadas, sobre `mongodata.stocks_marketplace`?",
+  "rationale": "La corrección requerida modifica datos analíticos a escala significativa y la política del repositorio exige dry-run, muestras y confirmación humana antes de ejecutar una mutación masiva.",
+  "options": [
+    {
+      "title": "Autorizar backfill acotado",
+      "body": "Ejecutar dry-run, revisar muestras y aplicar una actualización idempotente solo donde raw contiene valores V2 ausentes o distintos en el mirror.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener el estado actual",
+      "body": "Aceptar temporalmente métricas y colas SQL potencialmente incorrectas hasta priorizar una ventana operativa específica.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Autorizar backfill acotado",
+    "body": "Ejecutar dry-run, revisar muestras y aplicar una actualización idempotente solo donde raw contiene valores V2 ausentes o distintos en el mirror.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Es la persona más directamente vinculada al SQL de materialización que define el alcance técnico de la reparación.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9119.md",
+    "reviewedAt": "2026-09-07T05:02:33.999Z",
+    "mainSha": "7917b1c783fedca0161273534392cbdd7c693ece"
+  }
+}

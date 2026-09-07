@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-07T05:01:39.890Z",
+  "updatedAt": "2026-09-04T22:45:58Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 9104,
+    "title": "fix: execute new B2B clients with provisional identity",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9104",
+    "state": "open",
+    "labels": [
+      "size/XL"
+    ],
+    "createdAt": "2026-09-03T18:46:22Z",
+    "updatedAt": "2026-09-04T22:45:58Z",
+    "headSha": "cdbcf25dac555ac5ffca204d416c062027def093"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe una aprobación HITL permitir ejecutar un pedido B2B de un cliente aún no registrado mediante una identidad provisional persistida?",
+  "rationale": "El código actual y la documentación exigen alta previa en `B2B_CLIENTS`; este PR cambia deliberadamente esa regla operativa aunque conserve aprobación, idempotencia y validaciones.",
+  "options": [
+    {
+      "title": "Aprobar la excepción HITL",
+      "body": "Permitir la identidad provisional solo en `b2b_execute_order`, conservando el alta canónica posterior y las colisiones bloqueadas.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener el alta previa",
+      "body": "Conservar el comportamiento actual y requerir registrar el cliente en `B2B_CLIENTS` antes de cualquier ejecución real.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar la excepción HITL",
+    "body": "Permitir la identidad provisional solo en `b2b_execute_order`, conservando el alta canónica posterior y las colisiones bloqueadas.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "El historial muestra que ha definido y mantenido recientemente el flujo de clientes provisionales y B2B.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9104.md",
+    "reviewedAt": "2026-09-07T05:01:39.890Z",
+    "mainSha": "7917b1c783fedca0161273534392cbdd7c693ece"
+  }
+}

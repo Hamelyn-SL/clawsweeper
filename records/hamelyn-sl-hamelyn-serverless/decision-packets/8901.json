@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-02T13:34:41.038Z",
-  "updatedAt": "2026-08-30T10:33:58Z",
+  "generatedAt": "2026-09-07T05:02:18.184Z",
+  "updatedAt": "2026-09-04T12:54:50Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -18,38 +18,37 @@
       "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-08-30T06:19:55Z",
-    "updatedAt": "2026-08-30T10:33:58Z"
+    "updatedAt": "2026-09-04T12:54:50Z"
   },
   "lane": "product_direction",
-  "priority": "P1",
-  "question": "Si la presión de memoria persiste tras integrar y medir https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8905 durante 48–72 horas, ¿se prioriza instrumentar el heap o aumentar la memoria de la función de portada?",
-  "rationale": "Las evidencias descartan las consultas concretas como explicación suficiente, pero no atribuyen las asignaciones ni permiten elegir con seguridad entre coste operativo y diagnóstico.",
+  "priority": "P2",
+  "question": "Tras verificar la ventana posterior al despliegue, si la presión de memoria persiste, ¿se prioriza instrumentar el heap o aumentar la memoria de la función de portada?",
+  "rationale": "El código no permite atribuir las asignaciones ni elegir entre mayor coste operativo y observabilidad adicional.",
   "options": [
     {
       "title": "Perfilar antes de ampliar memoria",
-      "body": "Instrumentar una regeneración con datos equivalentes a producción y decidir el cambio de memoria con asignaciones observadas.",
+      "body": "Instrumentar una regeneración equivalente a producción y decidir con asignaciones observadas.",
       "recommended": true
     },
     {
-      "title": "Aumentar memoria con seguimiento",
-      "body": "Configurar más memoria para la ruta de portada y vigilar 5xx, duración y consumo para aceptar explícitamente el coste.",
+      "title": "Ampliar memoria con seguimiento",
+      "body": "Configurar más memoria para la portada y aceptar explícitamente su coste mientras se vigilan 5xx y consumo.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Perfilar antes de ampliar memoria",
-    "body": "Instrumentar una regeneración con datos equivalentes a producción y decidir el cambio de memoria con asignaciones observadas.",
+    "body": "Instrumentar una regeneración equivalente a producción y decidir con asignaciones observadas.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "Miguel Angel Hernández Perdomo",
-    "reason": "Su historial reciente cubre la caché, los pools y el manejo de timeout de la portada.",
+    "person": "MiguelHamelyn",
+    "reason": "Es la persona asignada al seguimiento y la elección pendiente es operativa, no un arreglo mecánico.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8901.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8901#issuecomment-5467190664",
-    "reviewedAt": "2026-09-02T13:34:41.038Z",
-    "mainSha": "9b525e0aae70b41daab228e22437134fc1e70b6f"
+    "reviewedAt": "2026-09-07T05:02:18.184Z",
+    "mainSha": "7917b1c783fedca0161273534392cbdd7c693ece"
   }
 }

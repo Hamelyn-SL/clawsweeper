@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-07T05:07:56.057Z",
+  "updatedAt": "2026-09-06T01:42:49Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9163,
+    "title": "Infraestructura: simplificar skills y carga de contexto operativo",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9163",
+    "state": "open",
+    "labels": [
+      "app:infrastructure",
+      "feature",
+      "triage:done",
+      "P2"
+    ],
+    "createdAt": "2026-09-06T00:53:14Z",
+    "updatedAt": "2026-09-06T01:42:49Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿El contrato canónico debe prohibir `git commit --no-verify` sin excepciones, como propone el PR, o conservar una excepción explícita por autorización humana?",
+  "rationale": "La elección cambia la política operativa de todos los agentes y el texto actual contiene ambas interpretaciones.",
+  "options": [
+    {
+      "title": "Prohibición sin excepciones",
+      "body": "Eliminar la excepción y mantener que un hook fallido se corrige siempre antes de commitear.",
+      "recommended": true
+    },
+    {
+      "title": "Excepción autorizada",
+      "body": "Conservar una excepción documentada para una petición humana explícita y ajustar la regla absoluta para que no contradiga ese flujo.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Prohibición sin excepciones",
+    "body": "Eliminar la excepción y mantener que un hook fallido se corrige siempre antes de commitear.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su historial reciente concentra los cambios de política afectados y es la persona asignada al trabajo.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9163.md",
+    "reviewedAt": "2026-09-07T05:07:56.057Z",
+    "mainSha": "7917b1c783fedca0161273534392cbdd7c693ece"
+  }
+}

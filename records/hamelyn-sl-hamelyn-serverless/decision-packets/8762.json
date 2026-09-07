@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-02T12:33:29.411Z",
-  "updatedAt": "2026-09-02T10:55:00Z",
+  "generatedAt": "2026-09-07T05:02:03.635Z",
+  "updatedAt": "2026-09-04T08:25:20Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,52 +13,46 @@
       "bug",
       "source:admin-panel",
       "app:marketplace",
-      "triage:done",
+      "triage:needs-info",
       "area:cron-reliability",
       "clawsweeper:needs-product-decision",
+      "P2",
       "reporter:JavierHamelyn",
       "origin:dev",
-      "mk:amazon",
-      "P2"
+      "mk:amazon"
     ],
     "createdAt": "2026-08-26T14:38:59Z",
-    "updatedAt": "2026-09-02T10:55:00Z"
+    "updatedAt": "2026-09-04T08:25:20Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe Amazon SE alertar tempranamente BATCH >1 día y discrepancias FBA vendibles, aunque el umbral canónico de BATCH muerto siga siendo siete días?",
-  "rationale": "El código actual trata BATCH muerto como un incidente de siete días y no modela FBA; elegir señales, umbrales y severidad cambia la política operativa, no solo una corrección mecánica.",
+  "question": "¿La alerta FBA de Amazon SE debe dispararse ante cualquier fila `AMAZON_EU` activa con cantidad positiva, o solo si contradice `mk_amazonSe` o el stock maestro?",
+  "rationale": "La fuente permite calcular ambas variantes, pero no define cuál representa una incongruencia operativa real ni el nivel de ruido aceptable.",
   "options": [
     {
-      "title": "Añadir alertas tempranas SE",
-      "body": "Definir findings específicos para BATCH >1 día y FBA vendible, conservando siete días como criterio de BATCH muerto.",
+      "title": "Alertar solo contradicciones internas",
+      "body": "Comparar FBA vendible con `mk_amazonSe` y stock maestro para limitar la alerta a discrepancias accionables.",
       "recommended": true
     },
     {
-      "title": "Mantener la política común",
-      "body": "Conservar el umbral actual de siete días y no introducir una señal FBA específica hasta disponer de evidencia operativa adicional.",
-      "recommended": false
-    },
-    {
-      "title": "Separar la política FBA",
-      "body": "Implementar solo la señal BATCH temprana y abrir una decisión independiente para el contrato FBA vendible.",
+      "title": "Alertar toda FBA vendible",
+      "body": "Tratar cualquier fila `AMAZON_EU` activa con cantidad positiva como señal preventiva, aceptando más volumen de alertas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Añadir alertas tempranas SE",
-    "body": "Definir findings específicos para BATCH >1 día y FBA vendible, conservando siete días como criterio de BATCH muerto.",
+    "title": "Alertar solo contradicciones internas",
+    "body": "Comparar FBA vendible con `mk_amazonSe` y stock maestro para limitar la alerta a discrepancias accionables.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es la persona asignada y la trayectoria reciente lo conecta directamente con la reparación y la documentación del watcher Amazon.",
+    "reason": "Es el responsable asignado y ya dirigió la corrección técnica que separó este alcance restante.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8762.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8762#issuecomment-5428166241",
-    "reviewedAt": "2026-09-02T12:33:29.411Z",
-    "mainSha": "9b525e0aae70b41daab228e22437134fc1e70b6f"
+    "reviewedAt": "2026-09-07T05:02:03.635Z",
+    "mainSha": "7917b1c783fedca0161273534392cbdd7c693ece"
   }
 }

@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-07T05:02:04.854Z",
+  "updatedAt": "2026-09-04T08:40:21Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9112,
+    "title": "Error en precio del producto, sale en negativo",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9112",
+    "state": "open",
+    "labels": [
+      "bug",
+      "source:admin-panel",
+      "app:supply",
+      "reporter:marta",
+      "triage:no-change",
+      "P1"
+    ],
+    "createdAt": "2026-09-04T06:08:35Z",
+    "updatedAt": "2026-09-04T08:40:21Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe Pricing adoptar el diseño B de precio base persistido e incremento de destacado derivado, o conservar un toggle almacenado con compensación exacta?",
+  "rationale": "Ambas alternativas cambian la semántica de `priceBuy` durante el experimento A/B; el código no puede decidir por sí solo qué contrato de pricing debe permanecer.",
+  "options": [
+    {
+      "title": "Derivar el incremento al leer",
+      "body": "Persistir siempre el precio base y sumar el incremento de destacado en las lecturas relevantes, evitando que el flag altere el valor base.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener el toggle compensado",
+      "body": "Conservar la mutación de `priceBuy`, pero registrar y revertir exactamente el delta aplicado en cada transición de destacado.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Derivar el incremento al leer",
+    "body": "Persistir siempre el precio base y sumar el incremento de destacado en las lecturas relevantes, evitando que el flag altere el valor base.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es el asignado actual y documentó las alternativas técnicas y operativas del área.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9112.md",
+    "reviewedAt": "2026-09-07T05:02:04.854Z",
+    "mainSha": "7917b1c783fedca0161273534392cbdd7c693ece"
+  }
+}

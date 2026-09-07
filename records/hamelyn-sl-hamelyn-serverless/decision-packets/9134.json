@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-07T05:10:38.577Z",
+  "updatedAt": "2026-09-04T15:42:50Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9134,
+    "title": "Se está subiendo mal el idioma de algunos productos en MercadoLibre MX ",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9134",
+    "state": "open",
+    "labels": [
+      "bug",
+      "source:admin-panel",
+      "app:marketplace",
+      "triage:pr-opened",
+      "P1",
+      "reporter:valentin"
+    ],
+    "createdAt": "2026-09-04T12:31:08Z",
+    "updatedAt": "2026-09-04T15:42:50Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe Marketplace ejecutar una reconciliación controlada de los listings MX ya publicados cuyo idioma difiere del producto maestro tras integrar el PR?",
+  "rationale": "La corrección propuesta solo actúa antes de crear nuevos listings; actualizar publicaciones existentes requiere criterios operativos y control del catálogo remoto.",
+  "options": [
+    {
+      "title": "Reconciliar los listings afectados",
+      "body": "Inventariar los candidatos, validar cada diferencia contra el maestro y actualizar de forma acotada las fichas remotas.",
+      "recommended": true
+    },
+    {
+      "title": "Limitar el alcance a futuras altas",
+      "body": "Integrar la prevención y gestionar manualmente los listings históricos que sigan generando reclamaciones.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Reconciliar los listings afectados",
+    "body": "Inventariar los candidatos, validar cada diferencia contra el maestro y actualizar de forma acotada las fichas remotas.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "HamelynDev",
+    "reason": "Figura como asignado y responsable del PR que ya implementa la prevención para nuevas altas.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9134.md",
+    "reviewedAt": "2026-09-07T05:10:38.577Z",
+    "mainSha": "7917b1c783fedca0161273534392cbdd7c693ece"
+  }
+}
