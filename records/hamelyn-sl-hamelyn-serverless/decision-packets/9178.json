@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-07T05:26:56.199Z",
+  "updatedAt": "2026-09-07T01:43:50Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 9178,
+    "title": "feat: add evaluated shared investigation learning",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9178",
+    "state": "open",
+    "labels": [
+      "size/XXL"
+    ],
+    "createdAt": "2026-09-07T00:17:28Z",
+    "updatedAt": "2026-09-07T01:43:50Z",
+    "headSha": "068d0f3486698221aadc7ded1ecf408ffd2944fc"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe `FACTORY_INVESTIGATION_MODEL` reemplazar el modelo por defecto de Eve y el fallback de triage para instalaciones que hoy no configuran ningún override?",
+  "rationale": "La incidencia canónica pide aprendizaje evaluado, pero no exige modificar la política general de selección de modelo; la decisión afecta coste, capacidad y recuperación operativa de consumidores existentes.",
+  "options": [
+    {
+      "title": "Aislar el modelo del piloto",
+      "body": "Usar `FACTORY_INVESTIGATION_MODEL` solo para generar y evaluar la guía, y conservar `CODEX_DEFAULT_MODEL` y el fallback actual de triage.",
+      "recommended": true
+    },
+    {
+      "title": "Adoptar el nuevo modelo global",
+      "body": "Aceptar el cambio para Eve y triage tras documentar la compatibilidad, el coste esperado y el plan de reversión.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aislar el modelo del piloto",
+    "body": "Usar `FACTORY_INVESTIGATION_MODEL` solo para generar y evaluar la guía, y conservar `CODEX_DEFAULT_MODEL` y el fallback actual de triage.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es la persona con mayor continuidad reciente en la implementación de Eve, triage y este cambio de selección de modelo.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9178.md",
+    "reviewedAt": "2026-09-07T05:26:56.199Z",
+    "mainSha": "d7210ac77ad17ccd55714faeba2bd5631ae6fd9a"
+  }
+}
