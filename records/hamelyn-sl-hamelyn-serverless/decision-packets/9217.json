@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-07T11:58:24.598Z",
+  "updatedAt": "2026-09-07T11:42:50Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9217,
+    "title": "Admin: Revisión V3 pierde la fase y el tiempo al retroceder",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9217",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:admin",
+      "triage:running",
+      "P2",
+      "reporter:JavierHamelyn"
+    ],
+    "createdAt": "2026-09-07T10:04:04Z",
+    "updatedAt": "2026-09-07T11:42:50Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe Revisión V3 volver a persistir fase y dirección por paso como contrato operativo, pese a la retirada deliberada en la PR histórica?",
+  "rationale": "La corrección del temporizador es mecánica, pero restaurar campos en un subdocumento histórico requiere decidir el contrato y el uso previsto de esa trazabilidad.",
+  "options": [
+    {
+      "title": "Restaurar trazabilidad por fase",
+      "body": "Persistir `phase` y `direction` opcionales, conservar la lectura de eventos históricos y medir Atrás con el temporizador activo.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener el contrato reducido",
+      "body": "Corregir únicamente el tiempo de Atrás y documentar que el histórico no permite análisis por fase ni dirección.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Restaurar trazabilidad por fase",
+    "body": "Persistir `phase` y `direction` opcionales, conservar la lectura de eventos históricos y medir Atrás con el temporizador activo.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Alex Cantón",
+    "reason": "Su commit está asociado a la simplificación del contrato cuya finalidad debe confirmarse.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9217.md",
+    "reviewedAt": "2026-09-07T11:58:24.598Z",
+    "mainSha": "d2fb7f220e1643c8b101b5df2001131819f5f27d"
+  }
+}
