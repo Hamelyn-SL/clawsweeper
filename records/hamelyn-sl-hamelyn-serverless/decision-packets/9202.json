@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-07T09:10:33.250Z",
-  "updatedAt": "2026-09-07T08:57:52Z",
+  "generatedAt": "2026-09-07T10:35:04.551Z",
+  "updatedAt": "2026-09-07T10:28:26Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -10,46 +10,42 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9202",
     "state": "open",
     "labels": [
-      "size/XXL"
+      "size/XXL",
+      "P1"
     ],
     "createdAt": "2026-09-07T08:10:46Z",
-    "updatedAt": "2026-09-07T08:57:52Z",
-    "headSha": "35c588a54e7aac64565f92b6cc387ccb69d925fe"
+    "updatedAt": "2026-09-07T10:28:26Z",
+    "headSha": "5285aebd49d06b656dd61cd4baff7e6fcb34fa0e"
   },
-  "lane": "product_direction",
+  "lane": "manual_review",
   "priority": "P1",
-  "question": "¿Debe un cambio de `article_id` procedente de la HMI de Exotec confirmar siempre la línea, aunque el bridge no distinga un OK de un faltante o error?",
-  "rationale": "La API del bridge solo expone el nuevo artículo, de modo que el código no puede inferir de forma fiable si la transición externa fue un éxito sin aceptar el riesgo operativo descrito.",
+  "question": "¿Qué identificador estable debe transportar Station para distinguir dos líneas del mismo SKU dentro de un `PickingOp`?",
+  "rationale": "El protocolo nuevo sólo recibe `pickingOpId` y `sku`; el repositorio no puede saber si debe usar un identificador de venta, de línea Exotec u otra identidad ya disponible en la estación.",
   "options": [
     {
-      "title": "Exigir señal explícita de éxito",
-      "body": "Mantener la confirmación automática externa solo cuando el bridge o Exotec aporte un evento que distinga claramente el OK.",
+      "title": "Usar identificador de línea estable",
+      "body": "Propagar una identidad por línea y aplicarla de forma consistente a claims, contadores y actualizaciones; evita reutilizar huecos entre unidades idénticas.",
       "recommended": true
     },
     {
-      "title": "Restringir la confirmación a la Station",
-      "body": "Confirmar únicamente los resultados resueltos por nuestra interfaz hasta disponer de esa señal externa.",
-      "recommended": false
-    },
-    {
-      "title": "Aceptar la inferencia actual",
-      "body": "Mantener la inferencia por `article_id` y documentar que los errores externos pueden consumir huecos que luego requieren revisión.",
+      "title": "Imponer unicidad de SKU",
+      "body": "Rechazar o separar explícitamente las operaciones que contengan SKU repetidos antes de que lleguen a Station, si esa es una garantía operativa real.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Exigir señal explícita de éxito",
-    "body": "Mantener la confirmación automática externa solo cuando el bridge o Exotec aporte un evento que distinga claramente el OK.",
+    "title": "Usar identificador de línea estable",
+    "body": "Propagar una identidad por línea y aplicarla de forma consistente a claims, contadores y actualizaciones; evita reutilizar huecos entre unidades idénticas.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Su historial en Station y su comentario sobre la limitación del bridge le conectan directamente con esta decisión.",
+    "reason": "Su historial concentra la definición del flujo de Station y sus invariantes de avance y contadores.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9202.md",
-    "reviewedAt": "2026-09-07T09:10:33.250Z",
-    "mainSha": "298a23c25def01b408134f365610311714eaa84e"
+    "reviewedAt": "2026-09-07T10:35:04.551Z",
+    "mainSha": "ec2d925d35bb62ab7459421e4ab28fe51e0d8b13"
   }
 }

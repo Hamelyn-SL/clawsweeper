@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-07T09:29:09.716Z",
-  "updatedAt": "2026-09-07T09:20:15Z",
+  "generatedAt": "2026-09-07T10:37:33.618Z",
+  "updatedAt": "2026-09-07T10:30:42Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -14,39 +14,43 @@
       "P1"
     ],
     "createdAt": "2026-09-07T00:17:28Z",
-    "updatedAt": "2026-09-07T09:20:15Z",
-    "headSha": "068d0f3486698221aadc7ded1ecf408ffd2944fc"
+    "updatedAt": "2026-09-07T10:30:42Z",
+    "headSha": "5a360e9c4d00fe9de5d75f94e8f9f0ed4d2d8918"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe Eve dejar de respetar `CODEX_DEFAULT_MODEL` y adoptar `FACTORY_INVESTIGATION_MODEL` como nuevo valor global en los despliegues existentes?",
-  "rationale": "El cambio modifica una preferencia de proveedor ya expuesta y puede alterar coste, latencia y respuesta sin migración; solo el equipo responsable puede aceptar ese contrato.",
+  "question": "¿Se aprueba que Horus y el triage sin override adopten `gpt-6-astra` como comportamiento predeterminado junto con este piloto pausado?",
+  "rationale": "El PR cambia una ruta operativa existente además de añadir el piloto; la corrección de directorios es mecánica, pero el coste y comportamiento por defecto requieren intención explícita.",
   "options": [
     {
-      "title": "Preservar la configuración existente",
-      "body": "Usar `CODEX_DEFAULT_MODEL` como fallback y reservar `FACTORY_INVESTIGATION_MODEL` para el piloto o para una opción explícita.",
+      "title": "Separar el cambio de modelo",
+      "body": "Mantener el aprendizaje opt-in y dejar los defaults actuales hasta aprobar un PR específico con impacto de coste y validación operativa.",
       "recommended": true
     },
     {
-      "title": "Migrar el valor global",
-      "body": "Aceptar el cambio de comportamiento, documentar la migración y confirmar los despliegues que dependían de `CODEX_DEFAULT_MODEL`.",
+      "title": "Aprobar el nuevo default",
+      "body": "Aceptar `gpt-6-astra` como default para Horus y el fallback de triage, documentando el cambio de coste y comportamiento.",
+      "recommended": false
+    },
+    {
+      "title": "Limitar el piloto",
+      "body": "Mantener el modelo nuevo solo detrás de configuración explícita durante la fase piloto.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Preservar la configuración existente",
-    "body": "Usar `CODEX_DEFAULT_MODEL` como fallback y reservar `FACTORY_INVESTIGATION_MODEL` para el piloto o para una opción explícita.",
+    "title": "Separar el cambio de modelo",
+    "body": "Mantener el aprendizaje opt-in y dejar los defaults actuales hasta aprobar un PR específico con impacto de coste y validación operativa.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es el contribuidor con historial reciente en el agente y triage, además de autor de la propuesta de cambio de modelo.",
-    "confidence": "medium"
+    "reason": "Está asignado a la incidencia canónica y su historial reciente cubre el dispatch y los schedules de agentes.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9178.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9178#issuecomment-5565522743",
-    "reviewedAt": "2026-09-07T09:29:09.716Z",
-    "mainSha": "98de6779bba00ec1c24b630cdac62cf2b4ee435f"
+    "reviewedAt": "2026-09-07T10:37:33.618Z",
+    "mainSha": "ec2d925d35bb62ab7459421e4ab28fe51e0d8b13"
   }
 }
