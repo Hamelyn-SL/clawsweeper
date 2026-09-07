@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-07T10:46:10.505Z",
+  "updatedAt": "2026-09-07T10:38:01Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 9222,
+    "title": "fix: move hot-loop bl telemetry emitters to per-request entry points",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9222",
+    "state": "open",
+    "labels": [
+      "size/M",
+      "business-logic"
+    ],
+    "createdAt": "2026-09-07T10:32:27Z",
+    "updatedAt": "2026-09-07T10:38:01Z",
+    "headSha": "f4b4829fe5b78660a6c826d9fb3ce11168984501"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe la telemetría de estas reglas conservar una señal por cada flujo que las ejercita, o se acepta `entryLog: no` cuando no existe una entrada común y estable?",
+  "rationale": "La incidencia canónica ya plantea esta elección; el PR selecciona cobertura parcial sin confirmar qué flujos de listado deben seguir observándose.",
+  "options": [
+    {
+      "title": "Conservar señal por solicitud",
+      "body": "Emitir una vez desde entradas reales de cada flujo, incluido `CategoryHub`, y documentar la cobertura esperada.",
+      "recommended": true
+    },
+    {
+      "title": "Declarar helpers sin entrada",
+      "body": "Marcar los helpers puros como `entryLog: no` y retirar su telemetría cuando la cobertura por ruta no sea un requisito.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Conservar señal por solicitud",
+    "body": "Emitir una vez desde entradas reales de cada flujo, incluido `CategoryHub`, y documentar la cobertura esperada.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "danielmenchen-hamelyn",
+    "reason": "El historial y el trabajo reciente le conectan directamente con el diseño de telemetría BL.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9222.md",
+    "reviewedAt": "2026-09-07T10:46:10.505Z",
+    "mainSha": "ec2d925d35bb62ab7459421e4ab28fe51e0d8b13"
+  }
+}
