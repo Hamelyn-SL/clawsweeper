@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-07T04:59:32.209Z",
+  "updatedAt": "2026-09-07T01:12:50Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9175,
+    "title": "Agents: learn shared investigation procedures from historical outcomes",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9175",
+    "state": "open",
+    "labels": [
+      "app:infrastructure",
+      "feature",
+      "triage:done",
+      "P2"
+    ],
+    "createdAt": "2026-09-06T22:07:03Z",
+    "updatedAt": "2026-09-07T01:12:50Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe integrarse ahora el PR como piloto completo con cambios de modelo y consola, o dividirse para aterrizar primero el contrato, corpus y evaluador sin activar aprendizaje compartido?",
+  "rationale": "La decisión determina cuánto comportamiento nuevo entra en agentes y triage antes de que el panel autenticado y los controles reservados estén completamente verificados.",
+  "options": [
+    {
+      "title": "Aterrizar primero los invariantes",
+      "body": "Integrar o extraer contrato, corpus, evaluador y estado pausado, dejando la promoción e inyección automática desactivadas hasta completar las pruebas.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar el piloto completo pausado",
+      "body": "Mantener el alcance del PR si se acepta revisar después el panel autenticado y no reactivar el aprendizaje hasta resolver los controles reservados.",
+      "recommended": false
+    },
+    {
+      "title": "Dividir en entregas independientes",
+      "body": "Separar almacenamiento/evaluación, consumidores y consola en PRs sucesivos para reducir el riesgo de una integración XXL.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aterrizar primero los invariantes",
+    "body": "Integrar o extraer contrato, corpus, evaluador y estado pausado, dejando la promoción e inyección automática desactivadas hasta completar las pruebas.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es la persona asignada y el contribuidor más directamente conectado con el diseño y el PR candidato.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9175.md",
+    "reviewedAt": "2026-09-07T04:59:32.209Z",
+    "mainSha": "7917b1c783fedca0161273534392cbdd7c693ece"
+  }
+}
