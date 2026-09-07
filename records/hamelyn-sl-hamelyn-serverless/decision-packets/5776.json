@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-07T05:51:15.964Z",
+  "updatedAt": "2026-09-07T05:42:50Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 5776,
+    "title": "crons: /api/amazon-order-recovery mezcla 500 de SP-API y stock inexistente",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5776",
+    "state": "open",
+    "labels": [
+      "codex",
+      "bug",
+      "app:marketplace",
+      "triage:pr-opened",
+      "P1",
+      "origin:watcher",
+      "mk:amazon"
+    ],
+    "createdAt": "2026-05-09T05:44:17Z",
+    "updatedAt": "2026-09-07T05:42:50Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe `/api/amazon-order-recovery` conservar pedidos con stock inexistente para regularización manual o clasificarlos como terminales?",
+  "rationale": "El código ya separa los fallos remotos de los errores por pedido, pero el destino de una referencia de stock huérfana es una decisión de negocio.",
+  "options": [
+    {
+      "title": "Conservar para regularización",
+      "body": "Mantener el error por pedido y corregir el pedido o SKU en Amazon/datos antes de reintentar.",
+      "recommended": true
+    },
+    {
+      "title": "Clasificar como terminal",
+      "body": "Añadir una regla explícita que impida reintentos repetidos para stocks irrecuperablemente inexistentes.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Conservar para regularización",
+    "body": "Mantener el error por pedido y corregir el pedido o SKU en Amazon/datos antes de reintentar.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su revisión previa del flujo y la reapertura hacen que sea el mejor candidato para decidir el comportamiento de negocio.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5776.md",
+    "reviewedAt": "2026-09-07T05:51:15.964Z",
+    "mainSha": "d7210ac77ad17ccd55714faeba2bd5631ae6fd9a"
+  }
+}
