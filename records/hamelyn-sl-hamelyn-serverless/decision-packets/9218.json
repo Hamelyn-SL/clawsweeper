@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-07T10:12:08.431Z",
+  "updatedAt": "2026-09-07T10:06:19Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9218,
+    "title": "Cuatro BL-IDs de ecommerce emiten telemetría por elemento dentro de bucles (83 % del volumen)",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9218",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:ecommerce",
+      "triage:queued",
+      "business-logic",
+      "P1",
+      "reporter:danielmenchen-hamelyn"
+    ],
+    "createdAt": "2026-09-07T10:06:08Z",
+    "updatedAt": "2026-09-07T10:06:19Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe mantenerse una señal por petición para estos cuatro BL-ID o aceptamos `entryLog: no` en helpers puros sin punto de entrada común?",
+  "rationale": "Los call sites abarcan listados y componentes distintos; elegir entre observabilidad agregada y ausencia de traza cambia el contrato operativo de cada regla.",
+  "options": [
+    {
+      "title": "Desactivar la traza de los cuatro helpers",
+      "body": "Marcar `entryLog: no`, eliminar sus emisiones y retirar las excepciones del guardián; es el cambio más acotado para detener el volumen.",
+      "recommended": true
+    },
+    {
+      "title": "Instrumentar cada punto de entrada",
+      "body": "Mover cada emisión a flujos por petición y conservar una señal agregada, asumiendo cambios coordinados en varios controladores y componentes.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Desactivar la traza de los cuatro helpers",
+    "body": "Marcar `entryLog: no`, eliminar sus emisiones y retirar las excepciones del guardián; es el cambio más acotado para detener el volumen.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "danielmenchen-hamelyn",
+    "reason": "Introdujo las reglas y la instrumentación actual, y documentó el trade-off de baseline en la PR relacionada.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9218.md",
+    "reviewedAt": "2026-09-07T10:12:08.431Z",
+    "mainSha": "f2b717c647f175be0171d6f71a804f255dbcbfde"
+  }
+}
