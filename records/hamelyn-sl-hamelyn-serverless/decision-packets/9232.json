@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-07T12:15:21.367Z",
+  "updatedAt": "2026-09-07T12:09:02Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 9232,
+    "title": "fix: preserve revision phase timing on back navigation",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9232",
+    "state": "open",
+    "labels": [
+      "size/M"
+    ],
+    "createdAt": "2026-09-07T12:02:06Z",
+    "updatedAt": "2026-09-07T12:09:02Z",
+    "headSha": "103946513a15d7316274bddd8549169330bbcbbb"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe Revisión V3 volver a persistir `phase` y `direction` opcionales en cada `ReviewStep`, además de corregir el tiempo de Atrás?",
+  "rationale": "La PR histórica eliminó esos campos deliberadamente y el cambio afecta al contrato de telemetría y al análisis operativo futuro, no solo a un cálculo local.",
+  "options": [
+    {
+      "title": "Restaurar la trazabilidad por fase",
+      "body": "Aceptar `phase` y `direction` opcionales y mergear la corrección temporal con compatibilidad para sesiones históricas.",
+      "recommended": true
+    },
+    {
+      "title": "Limitar el arreglo al tiempo",
+      "body": "Conservar la corrección del snapshot de Atrás, pero retirar los campos persistidos y documentar que no habrá desglose por fase.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Restaurar la trazabilidad por fase",
+    "body": "Aceptar `phase` y `direction` opcionales y mergear la corrección temporal con compatibilidad para sesiones históricas.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "alexcanHamelyn",
+    "reason": "Su historial cubre la implementación y el endurecimiento del temporizador afectado.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9232.md",
+    "reviewedAt": "2026-09-07T12:15:21.367Z",
+    "mainSha": "d2fb7f220e1643c8b101b5df2001131819f5f27d"
+  }
+}
