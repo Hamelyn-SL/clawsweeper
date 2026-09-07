@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-07T10:53:56.153Z",
+  "updatedAt": "2026-09-07T09:13:42Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 9206,
+    "title": "feat: extend the logistics dashboard with carrier, geography, returns and delivery SLA panels",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9206",
+    "state": "open",
+    "labels": [
+      "size/XXL",
+      "P2"
+    ],
+    "createdAt": "2026-09-07T08:36:42Z",
+    "updatedAt": "2026-09-07T09:13:42Z",
+    "headSha": "643f6b6858c9be7d8f8c78a761e4032963e228c8"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué fecha debe definir el inicio de una devolución cuando `returnData.status` pasa a `PENDING` y todavía no existe una fecha de devolución persistida?",
+  "rationale": "El origen actual no guarda esa fecha; elegir `creationDate` cambia el significado de la métrica y clasifica incorrectamente devoluciones recientes de pedidos antiguos.",
+  "options": [
+    {
+      "title": "Persistir inicio de devolución",
+      "body": "Añadir una fecha de inicio al cambio a `PENDING` y usarla para periodo y antigüedad de devolución.",
+      "recommended": true
+    },
+    {
+      "title": "Mostrar antigüedad desconocida",
+      "body": "Mientras no exista fecha verificable, separar esas devoluciones de las categorías temporales en vez de inferirla desde la compra.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Persistir inicio de devolución",
+    "body": "Añadir una fecha de inicio al cambio a `PENDING` y usarla para periodo y antigüedad de devolución.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "PabloMoran34",
+    "reason": "Su historial reciente cubre tanto los filtros y consultas de logística como la propuesta actual.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9206.md",
+    "reviewedAt": "2026-09-07T10:53:56.153Z",
+    "mainSha": "0c6c1bcb585118fba139c987dc489c38cf664a93"
+  }
+}
