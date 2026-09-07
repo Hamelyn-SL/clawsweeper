@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-07T05:40:54.751Z",
+  "updatedAt": "2026-09-04T14:34:57Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 9085,
+    "title": "refactor: finish core dependency injection and retire the legacy Marketplace",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9085",
+    "state": "open",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-09-03T10:43:42Z",
+    "updatedAt": "2026-09-04T14:34:57Z",
+    "headSha": "ff965860c6126e6a31d22ba111727439b887f9fe"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe Marketplace retirar ahora los fallbacks manuales V1 aunque TodoColeccion aún documenta fases sin equivalente V2?",
+  "rationale": "El código actual y la documentación describen esos endpoints como recuperación operativa deliberada; decidir su eliminación implica aceptar o cerrar brechas de producto, no un ajuste mecánico.",
+  "options": [
+    {
+      "title": "Conservar fallbacks hasta completar V2",
+      "body": "Mantener rutas y recuperación legacy manuales hasta que V2 cubra listing-data y recuperación de errores.",
+      "recommended": true
+    },
+    {
+      "title": "Retirar con aceptación explícita",
+      "body": "Eliminar los fallbacks y asumir temporalmente que esas fases no estarán disponibles hasta un trabajo V2 posterior.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Conservar fallbacks hasta completar V2",
+    "body": "Mantener rutas y recuperación legacy manuales hasta que V2 cubra listing-data y recuperación de errores.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Su merge de schedules V2 y la documentación de transición describen la política operativa que este PR cambiaría.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9085.md",
+    "reviewedAt": "2026-09-07T05:40:54.751Z",
+    "mainSha": "d7210ac77ad17ccd55714faeba2bd5631ae6fd9a"
+  }
+}
