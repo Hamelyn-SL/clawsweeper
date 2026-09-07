@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-07T10:04:21.578Z",
+  "updatedAt": "2026-09-07T09:57:25Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 9215,
+    "title": "feat: add decathlon marketplace snapshot and sync dashboards",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9215",
+    "state": "open",
+    "labels": [
+      "size/XL"
+    ],
+    "createdAt": "2026-09-07T09:46:25Z",
+    "updatedAt": "2026-09-07T09:57:25Z",
+    "headSha": "05ed2aee7a92191fbdc6c37e6828c60dbd6f3054"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe activarse ahora el cron diario de Decathlon mientras la tienda permanece cerrada, o limitarse el cambio a la preparación del panel hasta reabrirla?",
+  "rationale": "La implementación introduce escritura operativa y alertas para una tienda sin ofertas activas; la corrección mecánica no resuelve por sí sola si ese coste operativo es deseado ahora.",
+  "options": [
+    {
+      "title": "Activar observación controlada",
+      "body": "Aprovisionar la tabla por el canal autorizado, corregir la serie al 0 % y activar el cron solo como señal de seguimiento sin reconciliación de estados.",
+      "recommended": true
+    },
+    {
+      "title": "Preparar sin programar",
+      "body": "Conservar parser y soporte de dashboard, pero posponer el workflow diario hasta que Decathlon reabra la tienda.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Activar observación controlada",
+    "body": "Aprovisionar la tabla por el canal autorizado, corregir la serie al 0 % y activar el cron solo como señal de seguimiento sin reconciliación de estados.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su historial concentra la definición actual de snapshots y de las consultas de sincronización que este cambio extiende.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9215.md",
+    "reviewedAt": "2026-09-07T10:04:21.578Z",
+    "mainSha": "34dd52629f92c883b0c0b3fed99c7b98a0f46845"
+  }
+}
