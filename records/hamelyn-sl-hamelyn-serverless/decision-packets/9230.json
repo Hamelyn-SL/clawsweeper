@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-07T11:46:21.027Z",
+  "updatedAt": "2026-09-07T11:35:18Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9230,
+    "title": "Station productivity credits products to whoever opened the panel last",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9230",
+    "state": "open",
+    "labels": [
+      "bug",
+      "source:admin-panel",
+      "app:admin",
+      "triage:queued",
+      "P1"
+    ],
+    "createdAt": "2026-09-07T11:35:09Z",
+    "updatedAt": "2026-09-07T11:35:18Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Skypod debe reservar cada estación a un único operario activo o permitir trabajo compartido y atribuir cada confirmación al usuario autenticado?",
+  "rationale": "La exclusividad resuelve el desvío inmediato, pero la atribución por producto es necesaria si el trabajo compartido debe seguir siendo válido; la fuente de identidad y el modelo persistente dependen de esa regla operativa.",
+  "options": [
+    {
+      "title": "Reserva exclusiva y auditoría posterior",
+      "body": "Impedir una segunda sesión activa por estación y planificar la atribución por producto como continuación controlada.",
+      "recommended": true
+    },
+    {
+      "title": "Trabajo compartido con atribución por confirmación",
+      "body": "Mantener varias sesiones posibles y registrar el usuario autenticado en cada producto confirmado antes de calcular productividad.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Reserva exclusiva y auditoría posterior",
+    "body": "Impedir una segunda sesión activa por estación y planificar la atribución por producto como continuación controlada.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Su trabajo reciente cubre la política de inicio y cierre de sesiones que debe aplicar la decisión.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9230.md",
+    "reviewedAt": "2026-09-07T11:46:21.027Z",
+    "mainSha": "d2fb7f220e1643c8b101b5df2001131819f5f27d"
+  }
+}
