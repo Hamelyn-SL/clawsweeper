@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-07T18:58:57.420Z",
+  "updatedAt": "2026-09-07T18:30:38Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9249,
+    "title": "Marketplace: error status: 429",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9249",
+    "state": "open",
+    "labels": [
+      "codex",
+      "bug",
+      "app:marketplace",
+      "triage:queued",
+      "P2",
+      "marketplace-crons"
+    ],
+    "createdAt": "2026-09-07T18:30:38Z",
+    "updatedAt": "2026-09-07T18:30:38Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe el cron de MercadoLibre ampliar la recuperación de 429 a las lecturas afectadas, o conservar la política actual sin backoff en GET?",
+  "rationale": "La política actual excluye expresamente el backoff de GET y la evidencia no identifica qué operación produjo el límite; elegir un cambio global alteraría el comportamiento operativo.",
+  "options": [
+    {
+      "title": "Diagnosticar y corregir de forma dirigida",
+      "body": "Registrar operación y fase del 429, confirmar el origen y añadir la espera mínima solo donde la evidencia lo justifique.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener la política vigente",
+      "body": "Aceptar los 429 transitorios si el volumen es tolerable y usar el nuevo diagnóstico para reevaluar futuras recurrencias.",
+      "recommended": false
+    },
+    {
+      "title": "Extender reintentos a todas las lecturas",
+      "body": "Cambiar GET para reintentar con backoff, asumiendo más duración de cron y posible presión adicional sobre la cuota.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Diagnosticar y corregir de forma dirigida",
+    "body": "Registrar operación y fase del 429, confirmar el origen y añadir la espera mínima solo donde la evidencia lo justifique.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Su historial fusionado cubre tanto el limitador compartido como el reintento específico de 429 en este adaptador.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9249.md",
+    "reviewedAt": "2026-09-07T18:58:57.420Z",
+    "mainSha": "829910f9e249e89f9d5c30248ac6ba2ca7a4ea1f"
+  }
+}
