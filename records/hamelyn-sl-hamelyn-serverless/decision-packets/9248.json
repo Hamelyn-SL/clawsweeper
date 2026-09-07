@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-07T17:47:21.001Z",
+  "updatedAt": "2026-09-07T17:30:38Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9248,
+    "title": "Marketplace: [mercadolibre mx] 🚨 rate limit (429) on get /orders/search?seller=<number>&order.status=cancelled&order.da",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9248",
+    "state": "open",
+    "labels": [
+      "codex",
+      "bug",
+      "app:marketplace",
+      "triage:queued",
+      "P2",
+      "marketplace-crons"
+    ],
+    "createdAt": "2026-09-07T17:30:38Z",
+    "updatedAt": "2026-09-07T17:30:38Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Preferimos reducir y coordinar la carga de la pasada de cancelaciones manteniendo GET sin reintento, o permitir un pacing/backoff acotado para estas lecturas?",
+  "rationale": "El código declara explícitamente que los GET carecen de retry-backoff por decisión de producto; cambiar esa regla o su presupuesto compartido afecta a más de una ejecución.",
+  "options": [
+    {
+      "title": "Coordinar la pasada de cancelaciones",
+      "body": "Medir la carga real y ajustar su reserva o cadencia para que siga sin reintentos GET y evite solapamientos.",
+      "recommended": true
+    },
+    {
+      "title": "Permitir backoff acotado",
+      "body": "Añadir pacing o reintentos limitados solo a las lecturas de cancelaciones, con límites y cobertura de agotamiento de cuota.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Coordinar la pasada de cancelaciones",
+    "body": "Medir la carga real y ajustar su reserva o cadencia para que siga sin reintentos GET y evite solapamientos.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Su trabajo reciente define los presupuestos V2 y el comportamiento de cuota de Mercado Libre.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9248.md",
+    "reviewedAt": "2026-09-07T17:47:21.001Z",
+    "mainSha": "829910f9e249e89f9d5c30248ac6ba2ca7a4ea1f"
+  }
+}
