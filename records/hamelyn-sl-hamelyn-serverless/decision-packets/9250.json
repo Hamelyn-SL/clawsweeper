@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-07T20:24:56.301Z",
+  "updatedAt": "2026-09-07T19:15:27Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9250,
+    "title": "Marketplace: [mercadolibre mx] headers: object [axiosheaders] { 'content-type': 'application/json', 'content-length': '4",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9250",
+    "state": "open",
+    "labels": [
+      "codex",
+      "bug",
+      "app:marketplace",
+      "triage:no-change",
+      "P2",
+      "marketplace-crons"
+    ],
+    "createdAt": "2026-09-07T18:30:41Z",
+    "updatedAt": "2026-09-07T19:15:27Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe Marketplace mantener los GET sin retry-backoff o introducir una recuperación dirigida para `GET /orders/search` tras medir la cuota efectiva y la conciliación pendiente?",
+  "rationale": "La política vigente excluye reintentos en GET y los registros no identifican aún qué consumo dispara el 429; modificarla alteraría el comportamiento operativo.",
+  "options": [
+    {
+      "title": "Medir y corregir el recorrido acreditado",
+      "body": "Correlacionar cuota, fase y pedidos pendientes, y añadir espera o reintento solo donde la evidencia pruebe una recuperación segura.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener la política actual",
+      "body": "Conservar los GET sin reintentos y seguir observando hasta disponer de una ejecución completa conciliada.",
+      "recommended": false
+    },
+    {
+      "title": "Adoptar reintento generalizado",
+      "body": "Extender backoff a todos los GET aceptando mayor duración de cron y posible presión adicional sobre la cuota.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Medir y corregir el recorrido acreditado",
+    "body": "Correlacionar cuota, fase y pedidos pendientes, y añadir espera o reintento solo donde la evidencia pruebe una recuperación segura.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Su historial cubre la migración, los límites y la gestión reciente de errores del adaptador.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9250.md",
+    "reviewedAt": "2026-09-07T20:24:56.301Z",
+    "mainSha": "829910f9e249e89f9d5c30248ac6ba2ca7a4ea1f"
+  }
+}
