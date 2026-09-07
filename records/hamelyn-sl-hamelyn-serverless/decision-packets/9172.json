@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-07T05:28:57.553Z",
+  "generatedAt": "2026-09-07T05:35:49.956Z",
   "updatedAt": "2026-09-06T18:48:40Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -10,8 +10,7 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9172",
     "state": "open",
     "labels": [
-      "size/S",
-      "P1"
+      "size/S"
     ],
     "createdAt": "2026-09-06T18:38:24Z",
     "updatedAt": "2026-09-06T18:48:40Z",
@@ -19,34 +18,33 @@
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe MarketplaceManager V2 aplicar prioridad estricta global a `withdraw`, aceptando que `publish` y `reprice` puedan esperar mientras haya retiradas pendientes?",
-  "rationale": "La incidencia demuestra que FIFO puro es dañino, pero el cambio altera la política de planificación de todos los marketplaces que usan V2 y no establece una garantía de equidad.",
+  "question": "¿Debe MarketplaceManager V2 dar prioridad absoluta a `withdraw` o reservar capacidad para `publish` y `reprice` cuando haya retiradas continuas?",
+  "rationale": "Ambas alternativas corrigen el bloqueo FIFO, pero difieren en la política operativa compartida por todos los marketplaces V2.",
   "options": [
     {
-      "title": "Aprobar prioridad estricta",
-      "body": "Integrar la prioridad global de `withdraw` para proteger primero la retirada de stock vendido y observar el drenaje de las demás colas.",
+      "title": "Aceptar prioridad absoluta",
+      "body": "Permitir que las retiradas ocupen toda la ventana para minimizar listings activos de stock vendido.",
       "recommended": true
     },
     {
-      "title": "Añadir cuota de equidad",
-      "body": "Reservar capacidad o alternar operaciones para que las retiradas tengan preferencia sin poder aplazar indefinidamente publicaciones y repricings.",
+      "title": "Reservar capacidad",
+      "body": "Mantener algunos slots para publicaciones y repricings para evitar su inanición bajo carga sostenida.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar prioridad estricta",
-    "body": "Integrar la prioridad global de `withdraw` para proteger primero la retirada de stock vendido y observar el drenaje de las demás colas.",
+    "title": "Aceptar prioridad absoluta",
+    "body": "Permitir que las retiradas ocupen toda la ventana para minimizar listings activos de stock vendido.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Introdujo la selección V2 cuyo contrato de planificación cambia este PR.",
+    "reason": "Es el principal contribuidor reciente de la selección V2 y de las correcciones adyacentes.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9172.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9172#issuecomment-5565561771",
-    "reviewedAt": "2026-09-07T05:28:57.553Z",
+    "reviewedAt": "2026-09-07T05:35:49.956Z",
     "mainSha": "d7210ac77ad17ccd55714faeba2bd5631ae6fd9a"
   }
 }
