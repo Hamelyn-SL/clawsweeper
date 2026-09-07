@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-07T07:54:09.293Z",
-  "updatedAt": "2026-09-07T07:42:50Z",
+  "generatedAt": "2026-09-07T07:58:55.618Z",
+  "updatedAt": "2026-09-07T07:55:17Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,49 +13,48 @@
       "source:admin-panel",
       "app:admin",
       "feature",
-      "triage:running",
+      "triage:blocked",
       "clawsweeper:needs-product-decision",
-      "reporter:danielmenchen-hamelyn",
-      "P2"
+      "P2",
+      "reporter:danielmenchen-hamelyn"
     ],
     "createdAt": "2026-09-07T06:36:35Z",
-    "updatedAt": "2026-09-07T07:42:50Z"
+    "updatedAt": "2026-09-07T07:55:17Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe F6 adoptar el dashboard operativo con sorteo, cola y bloqueo automático (A), o el flujo asistido por agente con consulta en admin (B)?",
-  "rationale": "La elección define quién controla la selección, si el contenedor puede avanzar y qué garantías operativas debe ofrecer el sistema; no es una decisión que pueda inferirse del código actual.",
+  "question": "¿Se aprueba el modelo A de dashboard con sorteo y bloqueo en admin, o el modelo B dirigido por agente con la política concreta de rechazo o aviso?",
+  "rationale": "Ambas opciones son viables pero ofrecen garantías operativas y costes distintos; el código no puede decidir quién controla el sorteo ni cuándo se inmoviliza un contenedor.",
   "options": [
     {
-      "title": "Aprobar dashboard operativo",
-      "body": "Centraliza en admin la selección, la cola, el registro y el bloqueo hasta resolver o cancelar la auditoría.",
+      "title": "A: dashboard y bloqueo",
+      "body": "Generalizar el flujo de QA en admin para sortear, mostrar pendientes y bloquear el contenedor hasta auditarlo o cancelarlo.",
       "recommended": true
     },
     {
-      "title": "Aprobar flujo asistido por agente",
-      "body": "Reduce desarrollo inicial, aceptando que el bloqueo físico y la prevención de anticipación queden fuera o sean manuales.",
+      "title": "B: flujo dirigido por agente",
+      "body": "Mantener admin como consulta y registrar resultados desde `ops audits add`, definiendo si centralita rechaza o solo avisa.",
       "recommended": false
     },
     {
-      "title": "Posponer F6",
-      "body": "Mantiene faltas manuales y automáticas mientras se valida el proceso real de almacén y se cierran las fases previas.",
+      "title": "Aplazar la meta-auditoría",
+      "body": "Resolver primero el modelo operativo y dejar la auditoría del COO como una fase posterior con alcance propio.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar dashboard operativo",
-    "body": "Centraliza en admin la selección, la cola, el registro y el bloqueo hasta resolver o cancelar la auditoría.",
+    "title": "A: dashboard y bloqueo",
+    "body": "Generalizar el flujo de QA en admin para sortear, mostrar pendientes y bloquear el contenedor hasta auditarlo o cancelarlo.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "danielmenchen-hamelyn",
-    "reason": "La propuesta lo identifica como la persona cuya validación operativa desbloquea esta fase.",
+    "reason": "La propia propuesta exige su validación operativa antes de iniciar las fases dependientes.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9197.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9197#issuecomment-5566258408",
-    "reviewedAt": "2026-09-07T07:54:09.293Z",
+    "reviewedAt": "2026-09-07T07:58:55.618Z",
     "mainSha": "ce139141ee59c921b1839568955bbfe94683ea23"
   }
 }
