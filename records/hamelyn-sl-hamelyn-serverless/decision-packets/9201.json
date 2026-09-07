@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-07T08:01:34.836Z",
+  "updatedAt": "2026-09-07T07:54:35Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 9201,
+    "title": "feat: log authenticated user on mutating admin routes",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9201",
+    "state": "open",
+    "labels": [
+      "size/M"
+    ],
+    "createdAt": "2026-09-07T07:48:01Z",
+    "updatedAt": "2026-09-07T07:54:35Z",
+    "headSha": "bb143443291419d99f121273dcadaad940897d85"
+  },
+  "lane": "security_boundary",
+  "priority": "P2",
+  "question": "¿Se aprueba registrar el email corporativo del usuario autorizado en Vercel Logs y su réplica de BigQuery para atribuir mutaciones del admin?",
+  "rationale": "La implementación es técnicamente acotada, pero decidir si ese dato personal puede persistirse en esas plataformas y durante cuánto tiempo requiere criterio de responsables del producto y de datos.",
+  "options": [
+    {
+      "title": "Aprobar auditoría con email",
+      "body": "Autorizar este campo para el drain y BigQuery, definiendo acceso y retención antes de integrar el PR.",
+      "recommended": true
+    },
+    {
+      "title": "Usar identificador no personal",
+      "body": "Registrar un identificador interno estable y resolver la identidad solo desde un sistema con controles específicos.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar auditoría con email",
+    "body": "Autorizar este campo para el drain y BigQuery, definiendo acceso y retención antes de integrar el PR.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Es la persona con mayor historial reciente en la capa común que determina el alcance técnico de la auditoría.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9201.md",
+    "reviewedAt": "2026-09-07T08:01:34.836Z",
+    "mainSha": "ce139141ee59c921b1839568955bbfe94683ea23"
+  }
+}
