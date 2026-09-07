@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-07T12:04:33.198Z",
-  "updatedAt": "2026-09-07T10:54:49Z",
+  "generatedAt": "2026-09-07T14:06:42.014Z",
+  "updatedAt": "2026-09-07T13:39:36Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -14,44 +14,38 @@
       "P1"
     ],
     "createdAt": "2026-09-07T08:10:46Z",
-    "updatedAt": "2026-09-07T10:54:49Z",
-    "headSha": "5285aebd49d06b656dd61cd4baff7e6fcb34fa0e"
+    "updatedAt": "2026-09-07T13:39:36Z",
+    "headSha": "e9885ca14cc1037b717930e17eda64548d79c574"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe esta integración permitir que la HMI de Exotec siga avanzando Station durante una cola de webhook retrasada, o se exige usar el OK de Hamelyn para la confirmación inmediata?",
-  "rationale": "El PR elimina la inferencia por cambio de artículo para evitar falsos positivos, pero deja el flujo de HMI dependiente del webhook; es una decisión operativa con impacto directo en el picking.",
+  "question": "¿Debe la confirmación inmediata cubrir también los OK realizados en la HMI de Exotec, o aceptamos que esos casos dependan del webhook?",
+  "rationale": "El PR adopta la segunda opción, pero la issue canónica documenta que la HMI se usa de forma habitual y solicita una decisión explícita sobre la cobertura operativa.",
   "options": [
     {
-      "title": "Exigir el OK de Hamelyn",
-      "body": "Mantener la señal explícita actual, documentar el procedimiento y no habilitar el siguiente SKU hasta una confirmación persistida.",
+      "title": "Exigir señal HMI inequívoca",
+      "body": "Conservar cobertura inmediata para HMI solo cuando Exotec garantice una señal OPC UA que identifique una transferencia aceptada.",
       "recommended": true
     },
     {
-      "title": "Soportar la HMI con señal fiable",
-      "body": "Definir con Exotec una señal explícita de éxito de la HMI antes de volver a confirmar desde cambios del bridge.",
-      "recommended": false
-    },
-    {
-      "title": "Posponer el cambio de HMI",
-      "body": "Integrar solo después de acordar y probar un mecanismo que no infiera éxito desde `article_id` o alvéolo.",
+      "title": "Limitar la vía inmediata a Station",
+      "body": "Aceptar que los OK realizados en la HMI permanezcan sujetos al webhook y documentar el retraso operativo resultante.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Exigir el OK de Hamelyn",
-    "body": "Mantener la señal explícita actual, documentar el procedimiento y no habilitar el siguiente SKU hasta una confirmación persistida.",
+    "title": "Exigir señal HMI inequívoca",
+    "body": "Conservar cobertura inmediata para HMI solo cuando Exotec garantice una señal OPC UA que identifique una transferencia aceptada.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "AlexDiaz-Hamelyn",
-    "reason": "Ha revisado los compromisos entre señal OPC UA, webhook y seguridad de los huecos físicos.",
+    "person": "banosdavidhamelyn",
+    "reason": "Es el assignee de la issue canónica y figura en el historial reciente de webhook, B2B y bridge.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9202.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9202#issuecomment-5568285470",
-    "reviewedAt": "2026-09-07T12:04:33.198Z",
-    "mainSha": "d2fb7f220e1643c8b101b5df2001131819f5f27d"
+    "reviewedAt": "2026-09-07T14:06:42.014Z",
+    "mainSha": "516ae775cd3f358fcb787d24996b749518ff5fc1"
   }
 }

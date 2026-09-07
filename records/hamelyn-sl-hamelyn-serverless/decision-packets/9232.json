@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-07T12:15:21.367Z",
-  "updatedAt": "2026-09-07T12:09:02Z",
+  "generatedAt": "2026-09-07T14:05:33.077Z",
+  "updatedAt": "2026-09-07T12:57:01Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -13,39 +13,38 @@
       "size/M"
     ],
     "createdAt": "2026-09-07T12:02:06Z",
-    "updatedAt": "2026-09-07T12:09:02Z",
+    "updatedAt": "2026-09-07T12:57:01Z",
     "headSha": "103946513a15d7316274bddd8549169330bbcbbb"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe Revisión V3 volver a persistir `phase` y `direction` opcionales en cada `ReviewStep`, además de corregir el tiempo de Atrás?",
-  "rationale": "La PR histórica eliminó esos campos deliberadamente y el cambio afecta al contrato de telemetría y al análisis operativo futuro, no solo a un cálculo local.",
+  "question": "¿Debe Revisión V3 volver a persistir `phase` y `direction` opcionales en cada `ReviewStep`, además de corregir la temporización de Atrás?",
+  "rationale": "El defecto temporal tiene una corrección mecánica, pero conservar metadatos de fase y sentido restablece un contrato persistido que fue retirado anteriormente.",
   "options": [
     {
-      "title": "Restaurar la trazabilidad por fase",
-      "body": "Aceptar `phase` y `direction` opcionales y mergear la corrección temporal con compatibilidad para sesiones históricas.",
+      "title": "Restaurar trazabilidad por fase",
+      "body": "Aceptar los campos opcionales compatibles y mergear la corrección de intervalos para distinguir sección y sentido en eventos nuevos.",
       "recommended": true
     },
     {
       "title": "Limitar el arreglo al tiempo",
-      "body": "Conservar la corrección del snapshot de Atrás, pero retirar los campos persistidos y documentar que no habrá desglose por fase.",
+      "body": "Mantener la corrección de `snapshot()` y retirar los campos persistidos, dejando explícitamente sin desglose por fase los eventos futuros.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Restaurar la trazabilidad por fase",
-    "body": "Aceptar `phase` y `direction` opcionales y mergear la corrección temporal con compatibilidad para sesiones históricas.",
+    "title": "Restaurar trazabilidad por fase",
+    "body": "Aceptar los campos opcionales compatibles y mergear la corrección de intervalos para distinguir sección y sentido en eventos nuevos.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "alexcanHamelyn",
-    "reason": "Su historial cubre la implementación y el endurecimiento del temporizador afectado.",
-    "confidence": "high"
+    "reason": "El ciclo anterior lo identificó como el candidato más próximo para decidir el contrato de trazabilidad persistida.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9232.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9232#issuecomment-5570515032",
-    "reviewedAt": "2026-09-07T12:15:21.367Z",
-    "mainSha": "d2fb7f220e1643c8b101b5df2001131819f5f27d"
+    "reviewedAt": "2026-09-07T14:05:33.077Z",
+    "mainSha": "516ae775cd3f358fcb787d24996b749518ff5fc1"
   }
 }
