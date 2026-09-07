@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-07T06:01:33.602Z",
+  "updatedAt": "2026-09-07T05:40:30Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9184,
+    "title": "Crons: [amazon searchorders amazon_fr] retry 2/2 after 2086ms status=429",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9184",
+    "state": "open",
+    "labels": [
+      "codex",
+      "bug",
+      "app:infrastructure",
+      "triage:queued",
+      "P2",
+      "crons"
+    ],
+    "createdAt": "2026-09-07T05:40:30Z",
+    "updatedAt": "2026-09-07T05:40:30Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe la recuperación de pedidos priorizar un limitador compartido para Orders API, ampliar solo el backoff actual o aceptar estos 429 como alertas transitorias?",
+  "rationale": "El código ya reintenta; elegir duración, coordinación entre ejecuciones y efecto sobre la ventana del cron es una decisión operativa que no se deduce de una sola observación.",
+  "options": [
+    {
+      "title": "Limitar Orders API",
+      "body": "Añadir una política compartida de cuota y backoff que reduzca 429 antes de iniciar reintentos.",
+      "recommended": true
+    },
+    {
+      "title": "Ampliar el backoff",
+      "body": "Conservar el diseño actual y aumentar selectivamente la espera o el presupuesto de reintentos para `searchOrders`.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener la política",
+      "body": "Aceptar la alerta como transitoria y ajustar el watcher solo si no hay pedidos pendientes ni recurrencia.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Limitar Orders API",
+    "body": "Añadir una política compartida de cuota y backoff que reduzca 429 antes de iniciar reintentos.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "HamelynDev",
+    "reason": "Introdujo la política de retry vigente y mantiene la ruta de recuperación relacionada.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9184.md",
+    "reviewedAt": "2026-09-07T06:01:33.602Z",
+    "mainSha": "497720441d168ce3f301048a9ef7dc5f6b763eaf"
+  }
+}

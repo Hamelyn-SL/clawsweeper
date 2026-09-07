@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-07T06:00:13.462Z",
+  "updatedAt": "2026-09-07T04:54:38Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9093,
+    "title": "Marketplace: [ebay post /sell/inventory/v1/offer/<id>/withdraw] retry 1/5 after 1013ms status=500",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9093",
+    "state": "open",
+    "labels": [
+      "codex",
+      "bug",
+      "app:marketplace",
+      "triage:done",
+      "P3",
+      "marketplace-crons"
+    ],
+    "createdAt": "2026-09-03T11:30:43Z",
+    "updatedAt": "2026-09-07T04:54:38Z"
+  },
+  "lane": "product_direction",
+  "priority": "P3",
+  "question": "¿Debe el watcher dejar de abrir incidencias por retries recuperados y alertar únicamente cuando el withdraw termine en error, `errors>0` o sin retirada confirmada?",
+  "rationale": "Los registros demuestran recuperación, pero el umbral adecuado de observabilidad determina qué degradaciones transitorias deben conservar señal operativa.",
+  "options": [
+    {
+      "title": "Alertar solo resultados terminales",
+      "body": "Conservar métricas de retry y abrir incidencias únicamente cuando el lote termine con error o retirada no recuperada.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener la firma actual",
+      "body": "Seguir abriendo alertas por nuevas firmas de retry 5xx aunque el resultado final sea correcto.",
+      "recommended": false
+    },
+    {
+      "title": "Usar umbral de degradación",
+      "body": "Alertar retries recuperados solo cuando su frecuencia o tasa de agotamiento supere un umbral acordado.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Alertar solo resultados terminales",
+    "body": "Conservar métricas de retry y abrir incidencias únicamente cuando el lote termine con error o retirada no recuperada.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "HamelynDev",
+    "reason": "Está asignado a la corrección eBay relacionada y conoce la separación entre retry recuperado y tombstone terminal.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9093.md",
+    "reviewedAt": "2026-09-07T06:00:13.462Z",
+    "mainSha": "497720441d168ce3f301048a9ef7dc5f6b763eaf"
+  }
+}
