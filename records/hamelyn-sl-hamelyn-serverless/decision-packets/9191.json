@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-07T09:05:50.838Z",
-  "updatedAt": "2026-09-07T07:36:36Z",
+  "generatedAt": "2026-09-07T10:20:39.455Z",
+  "updatedAt": "2026-09-07T09:40:28Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,45 +14,46 @@
       "source:admin-panel",
       "app:infrastructure",
       "triage:done",
-      "P1"
+      "clawsweeper:needs-product-decision",
+      "P2"
     ],
     "createdAt": "2026-09-07T06:19:13Z",
-    "updatedAt": "2026-09-07T07:36:36Z"
+    "updatedAt": "2026-09-07T09:40:28Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Priorizamos instrumentar y ensayar límites por aplicación antes de cambiar la configuración global del pool Mongo?",
-  "rationale": "El módulo compartido afecta a varias aplicaciones y los datos actuales explican el patrón, pero no atribuyen los sockets a un cliente para escoger un límite seguro.",
+  "question": "¿Debe Platform instrumentar y ensayar límites por aplicación antes de cambiar el pool Mongo compartido?",
+  "rationale": "El código afecta a varias aplicaciones serverless y la telemetría actual explica el fan-out, pero no identifica qué cliente sostiene las conexiones durante el pico.",
   "options": [
     {
       "title": "Instrumentar y ensayar",
-      "body": "Añadir atribución por aplicación y probar límites menores en una sola superficie antes de modificar el pool común.",
+      "body": "Etiquetar el cliente por aplicación y probar `minPoolSize: 0` o un máximo menor en una sola superficie antes de tocar el pool común.",
       "recommended": true
     },
     {
       "title": "Mantener y observar",
-      "body": "Conservar el pool actual hasta contar con otro pico que incluya distribución Atlas por aplicación.",
+      "body": "Conservar el contrato actual hasta capturar otro pico con distribución Atlas por aplicación.",
       "recommended": false
     },
     {
       "title": "Ajustar globalmente",
-      "body": "Cambiar el pool común ahora, aceptando el riesgo de alterar a la vez todas las aplicaciones serverless.",
+      "body": "Reducir ahora el pool compartido, aceptando un cambio simultáneo de comportamiento para todas las aplicaciones.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Instrumentar y ensayar",
-    "body": "Añadir atribución por aplicación y probar límites menores en una sola superficie antes de modificar el pool común.",
+    "body": "Etiquetar el cliente por aplicación y probar `minPoolSize: 0` o un máximo menor en una sola superficie antes de tocar el pool común.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Su trabajo reciente cubre directamente la reutilización y recuperación del cliente Mongo compartido.",
+    "reason": "Combina la asignación actual con el historial más directo sobre la recuperación y reutilización del pool.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9191.md",
-    "reviewedAt": "2026-09-07T09:05:50.838Z",
-    "mainSha": "298a23c25def01b408134f365610311714eaa84e"
+    "reviewedAt": "2026-09-07T10:20:39.455Z",
+    "mainSha": "f2b717c647f175be0171d6f71a804f255dbcbfde"
   }
 }
