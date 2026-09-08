@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-08T10:26:51.585Z",
-  "updatedAt": "2026-09-08T10:19:08Z",
+  "generatedAt": "2026-09-08T11:34:08.450Z",
+  "updatedAt": "2026-09-08T10:27:52Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,43 +14,42 @@
       "source:admin-panel",
       "app:supply",
       "reporter:marta",
-      "triage:queued",
-      "clawsweeper:needs-product-decision",
-      "P1"
+      "triage:no-change",
+      "P1",
+      "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-09-04T06:08:35Z",
-    "updatedAt": "2026-09-08T10:19:08Z"
+    "updatedAt": "2026-09-08T10:27:52Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe Pricing adoptar el modelo de precio base persistido con bonus de destacado derivado, o mantener una mutación almacenada con reversión exacta por transición?",
-  "rationale": "Las dos PR abiertas difieren en el contrato persistido y en el plan de migración; elegirlo condiciona lectores, escritores, datos históricos y despliegue entre `dev` y producción.",
+  "question": "¿Debe `products.priceBuy` permanecer como importe ofrecido con una contención mínima, o pasar a ser siempre la base y derivar el bonus de `featured`?",
+  "rationale": "Las PR abiertas representan contratos persistidos distintos; la elección condiciona migración, compatibilidad de lectores y saneamiento de datos.",
   "options": [
     {
-      "title": "Derivar el bonus al ofrecer",
-      "body": "Persistir siempre la base y calcular el incremento de destacado en lectores compatibles, seguido de una migración reversible y coordinada.",
+      "title": "Despliegue por fases de precio base",
+      "body": "Patrocinar la dirección de https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9271, corrigiendo sus hallazgos y separando lectores, migración y escritores.",
       "recommended": true
     },
     {
-      "title": "Conservar un delta reversible",
-      "body": "Mantener `priceBuy` mutado, pero registrar el delta aplicado para revertir exactamente cada transición y cubrir todos los escritores.",
+      "title": "Contención mínima",
+      "body": "Integrar y acotar https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9115 para bloquear nuevos negativos, manteniendo el contrato actual mientras se decide el rediseño.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Derivar el bonus al ofrecer",
-    "body": "Persistir siempre la base y calcular el incremento de destacado en lectores compatibles, seguido de una migración reversible y coordinada.",
+    "title": "Despliegue por fases de precio base",
+    "body": "Patrocinar la dirección de https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9271, corrigiendo sus hallazgos y separando lectores, migración y escritores.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "La asignación y la auditoría de la issue le vinculan directamente con la decisión de semántica y su aplicación operativa.",
+    "reason": "Está asignado a la incidencia y su auditoría identifica las consecuencias operativas de ambas alternativas.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9112.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9112#issuecomment-5565379451",
-    "reviewedAt": "2026-09-08T10:26:51.585Z",
-    "mainSha": "584e78bf09cf7b2da70c8bbdcc0d5adfef9b437c"
+    "reviewedAt": "2026-09-08T11:34:08.450Z",
+    "mainSha": "1a07a64f4a2e5a2f7f0f5c53018c2dd91531d00a"
   }
 }
