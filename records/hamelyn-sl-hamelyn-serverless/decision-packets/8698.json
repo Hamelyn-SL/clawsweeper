@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-08T08:12:08.947Z",
-  "updatedAt": "2026-09-08T07:57:51Z",
+  "generatedAt": "2026-09-08T09:21:57.122Z",
+  "updatedAt": "2026-09-08T08:27:50Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,42 +14,41 @@
       "app:admin",
       "reporter:javier",
       "triage:no-change",
-      "clawsweeper:needs-product-decision",
-      "P1"
+      "P1",
+      "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-08-25T11:13:44Z",
-    "updatedAt": "2026-09-08T07:57:51Z"
+    "updatedAt": "2026-09-08T08:27:50Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Confirmamos `INVENTORIED` como semántica permanente de la original no encontrada, también para el backfill histórico, o queremos una razón contable específica?",
-  "rationale": "La elección determina el significado persistido de la merma, los consumidores analíticos y el alcance de la reparación histórica.",
+  "question": "¿Debe la unidad original no localizada en una sustitución conservarse como `WITHDRAWN/INVENTORIED` sin `soldAt`, o requiere una razón contable específica como `LOST_AT_PICKING`?",
+  "rationale": "La elección determina el enum persistido, las métricas futuras y el criterio seguro del backfill; el código no puede inferir esa política contable.",
   "options": [
     {
-      "title": "Confirmar `INVENTORIED`",
-      "body": "Aprovecha el enum y la invariante actuales; el PR candidato ya sigue esta dirección.",
+      "title": "Usar `INVENTORIED`",
+      "body": "Integrar el PR con la razón existente y documentar que representa la merma detectada durante picking.",
       "recommended": true
     },
     {
-      "title": "Introducir `LOST_AT_PICKING`",
-      "body": "Distingue la merma de picking, pero requiere ampliar contratos, consumidores y el plan de migración.",
+      "title": "Crear `LOST_AT_PICKING`",
+      "body": "Definir una razón nueva y ajustar métricas, validaciones, espejos y migración antes de integrar la prevención.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Confirmar `INVENTORIED`",
-    "body": "Aprovecha el enum y la invariante actuales; el PR candidato ya sigue esta dirección.",
+    "title": "Usar `INVENTORIED`",
+    "body": "Integrar el PR con la razón existente y documentar que representa la merma detectada durante picking.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Es el asignado y ha implementado el candidato que materializa la decisión.",
-    "confidence": "high"
+    "reason": "Es el asignado actual y ha concentrado la propuesta técnica que materializa esta decisión.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8698.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8698#issuecomment-5410237601",
-    "reviewedAt": "2026-09-08T08:12:08.947Z",
-    "mainSha": "e53a8fb8ff6e8c23dc76d61cf509db6befb9591a"
+    "reviewedAt": "2026-09-08T09:21:57.122Z",
+    "mainSha": "4badee9287da5bbb4cf7a76774b709ee0f285931"
   }
 }
