@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-08T08:19:13.366Z",
+  "updatedAt": "2026-09-08T08:13:45Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 9263,
+    "title": "fix: use selective indexes for price update candidates",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9263",
+    "state": "open",
+    "labels": [
+      "size/M"
+    ],
+    "createdAt": "2026-09-08T08:05:51Z",
+    "updatedAt": "2026-09-08T08:13:45Z",
+    "headSha": "2f794a5c1669013cd21656c0a7468a2bb792f62d"
+  },
+  "lane": "release_inclusion",
+  "priority": "P2",
+  "question": "¿Se autoriza construir y verificar los dos índices parciales en todas las bases objetivo antes de integrar y desplegar estos hints obligatorios?",
+  "rationale": "La corrección de código depende de infraestructura externa no versionada; elegir la ventana, el espacio disponible y el orden de despliegue exige responsabilidad operativa humana.",
+  "options": [
+    {
+      "title": "Validar índices antes de integrar",
+      "body": "Crear ambos índices fuera del PR, comprobar nombre, claves, filtro parcial y plan en staging y producción, e integrar solo tras esa verificación.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener el PR en borrador",
+      "body": "Pausar la integración hasta disponer de una ventana operativa y de la confirmación de las bases afectadas.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Validar índices antes de integrar",
+    "body": "Crear ambos índices fuera del PR, comprobar nombre, claves, filtro parcial y plan en staging y producción, e integrar solo tras esa verificación.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Introdujo la protección temporal vigente del cron y es la mejor referencia histórica para aceptar el cambio operativo.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9263.md",
+    "reviewedAt": "2026-09-08T08:19:13.366Z",
+    "mainSha": "e53a8fb8ff6e8c23dc76d61cf509db6befb9591a"
+  }
+}

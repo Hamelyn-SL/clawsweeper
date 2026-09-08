@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-02T13:21:27.891Z",
-  "updatedAt": "2026-09-02T10:54:47Z",
+  "generatedAt": "2026-09-08T08:18:50.459Z",
+  "updatedAt": "2026-09-08T07:57:50Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,42 +15,41 @@
       "feature",
       "triage:needs-info",
       "clawsweeper:needs-product-decision",
-      "reporter:daniellopez",
-      "P2"
+      "P2",
+      "reporter:daniellopez"
     ],
     "createdAt": "2026-08-31T10:14:50Z",
-    "updatedAt": "2026-09-02T10:54:47Z"
+    "updatedAt": "2026-09-08T07:57:50Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué reglas asignan `REVISAR`, `GRANEL`, `RECICLAR` e `INIDENTIFICABLE`, y la caja `G-*` necesita un ciclo propio o extiende `INVENTORY`?",
-  "rationale": "La respuesta define semántica operativa, trazabilidad y datos persistidos; el código actual no permite deducirla sin convertir una decisión de Producto y Operaciones en comportamiento irreversible.",
+  "question": "¿Debe el destino automático sustituir solo las nuevas altas y conservar `INVENTORY` y `NEW_ENTRY` como histórico de solo lectura?",
+  "rationale": "La propuesta cambia un flujo operativo persistido; decidir la compatibilidad de los lotes y métricas existentes requiere criterio de Producto y Operaciones.",
   "options": [
     {
-      "title": "Ciclo propio para `G-*`",
-      "body": "Modelar apertura, productos, conteo, cierre y correcciones como un ciclo persistido específico de granel.",
+      "title": "Conservar histórico de solo lectura",
+      "body": "Adoptar el nuevo destino para nuevas revisiones y mantener los lectores, etiquetas y métricas históricas de `INVENTORY` y `NEW_ENTRY`.",
       "recommended": true
     },
     {
-      "title": "Extender `INVENTORY`",
-      "body": "Reutilizar la orden existente solo si sus estados y campos pueden expresar de forma inequívoca el ciclo completo de granel.",
+      "title": "Retirada completa tras auditoría",
+      "body": "Eliminar también lectores y accesos antiguos solo después de confirmar que Operaciones no depende de esos registros históricos.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Ciclo propio para `G-*`",
-    "body": "Modelar apertura, productos, conteo, cierre y correcciones como un ciclo persistido específico de granel.",
+    "title": "Conservar histórico de solo lectura",
+    "body": "Adoptar el nuevo destino para nuevas revisiones y mantener los lectores, etiquetas y métricas históricas de `INVENTORY` y `NEW_ENTRY`.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "banosdavidhamelyn",
-    "reason": "Es el asignado actual y ha contribuido recientemente al flujo y al modelo de revisión afectados.",
+    "reason": "Está asignado a la incidencia y ya ha reunido la propuesta técnica que necesita esta decisión.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8929.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8929#issuecomment-5477054382",
-    "reviewedAt": "2026-09-02T13:21:27.891Z",
-    "mainSha": "9b525e0aae70b41daab228e22437134fc1e70b6f"
+    "reviewedAt": "2026-09-08T08:18:50.459Z",
+    "mainSha": "e53a8fb8ff6e8c23dc76d61cf509db6befb9591a"
   }
 }
