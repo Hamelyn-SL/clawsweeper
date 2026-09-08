@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-08T10:45:50.275Z",
+  "updatedAt": "2026-09-08T10:34:43Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9275,
+    "title": "Amazon SE reprice backlog grows despite active feed processing",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9275",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "triage:queued",
+      "P2"
+    ],
+    "createdAt": "2026-09-08T10:34:30Z",
+    "updatedAt": "2026-09-08T10:34:43Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se autoriza una prueba controlada de capacidad de repricing para Amazon SE tras instrumentar cohortes y resultados por ítem, o se mantiene el límite actual hasta disponer de esas métricas?",
+  "rationale": "El repositorio deja el cap en configuración operativa y la documentación advierte de la cuota por merchant; elegir capacidad para una cuenta EU compartida requiere intención responsable de producto y operación.",
+  "options": [
+    {
+      "title": "Medir antes de ampliar",
+      "body": "Instrumentar cohortes de flags y resolución de feeds durante 48 horas, y decidir el cap con el saldo neto y throttling observados.",
+      "recommended": true
+    },
+    {
+      "title": "Prueba de capacidad acotada",
+      "body": "Autorizar un incremento temporal y reversible de `updatePriceLimit` con umbrales de rollback por throttling y resultados remotos fallidos.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Medir antes de ampliar",
+    "body": "Instrumentar cohortes de flags y resolución de feeds durante 48 horas, y decidir el cap con el saldo neto y throttling observados.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Su historial conecta la migración Amazon, la semántica de resultados por batch y el contrato operativo documentado.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9275.md",
+    "reviewedAt": "2026-09-08T10:45:50.275Z",
+    "mainSha": "1cceb62fe82ead2bed078da8bc9a64c8c8ca1eed"
+  }
+}
