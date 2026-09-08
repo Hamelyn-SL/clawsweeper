@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-07T19:04:04.906Z",
-  "updatedAt": "2026-09-07T19:00:30Z",
+  "generatedAt": "2026-09-08T08:30:38.745Z",
+  "updatedAt": "2026-09-08T06:30:40Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,48 +14,42 @@
       "bug",
       "app:marketplace",
       "triage:blocked",
-      "marketplace-crons",
+      "clawsweeper:needs-product-decision",
       "P2",
-      "clawsweeper:needs-product-decision"
+      "marketplace-crons"
     ],
     "createdAt": "2026-09-07T17:30:38Z",
-    "updatedAt": "2026-09-07T19:00:30Z"
+    "updatedAt": "2026-09-08T06:30:40Z"
   },
   "lane": "product_direction",
-  "priority": "P2",
-  "question": "¿Debe Marketplace conservar los GET sin retry-backoff o introducir recuperación dirigida para `GET /orders/search` tras confirmar el consumo real de la cuota?",
-  "rationale": "El contrato actual prohíbe reintentos de GET como decisión deliberada, mientras que la evidencia no identifica aún si el 429 procede de cancelaciones, pedidos pagados o consumo compartido.",
+  "priority": "P1",
+  "question": "¿Se acepta que las cancelaciones de más de dos días se reconcilien en el barrido profundo diario de las 03:00 UTC para evitar que los `429` anulen las pasadas horarias?",
+  "rationale": "La política de no reintentar GET ya está documentada, pero la nueva cadencia introduce un posible retraso operativo para cancelaciones antiguas.",
   "options": [
     {
-      "title": "Diagnosticar y corregir de forma dirigida",
-      "body": "Medir cuota, operación y fase del 429, y añadir espera o reintento solo en el recorrido acreditado.",
+      "title": "Aceptar conciliación diaria",
+      "body": "Mantener la ventana horaria de dos días y el barrido completo diario, reduciendo la presión sobre `/orders/search`.",
       "recommended": true
     },
     {
-      "title": "Mantener la política actual",
-      "body": "Aceptar el fallo transitorio y usar la telemetría ampliada para reevaluar si vuelve a afectar a la conciliación.",
-      "recommended": false
-    },
-    {
-      "title": "Extender reintentos a todos los GET",
-      "body": "Adoptar backoff generalizado asumiendo más duración de cron y posible presión adicional sobre la cuota.",
+      "title": "Conservar ventana completa horaria",
+      "body": "Solicitar otra estrategia que mantenga la cobertura de 21 días cada hora sin aceptar este retraso potencial.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Diagnosticar y corregir de forma dirigida",
-    "body": "Medir cuota, operación y fase del 429, y añadir espera o reintento solo en el recorrido acreditado.",
+    "title": "Aceptar conciliación diaria",
+    "body": "Mantener la ventana horaria de dos días y el barrido completo diario, reduciendo la presión sobre `/orders/search`.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "La documentación de la política de rate limiting y los cambios principales del sincronizador proceden de su trabajo reciente.",
+    "reason": "Está asignado a la incidencia y su historial reciente cubre el flujo de cancelaciones afectado.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9248.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9248#issuecomment-5574109349",
-    "reviewedAt": "2026-09-07T19:04:04.906Z",
-    "mainSha": "829910f9e249e89f9d5c30248ac6ba2ca7a4ea1f"
+    "reviewedAt": "2026-09-08T08:30:38.745Z",
+    "mainSha": "e53a8fb8ff6e8c23dc76d61cf509db6befb9591a"
   }
 }
