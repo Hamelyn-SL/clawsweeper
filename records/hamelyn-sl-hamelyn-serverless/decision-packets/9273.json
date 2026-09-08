@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-08T10:07:02.529Z",
+  "updatedAt": "2026-09-08T10:01:39Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 9273,
+    "title": "fix: log expected mercadolibre paused create landing at info level",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9273",
+    "state": "open",
+    "labels": [
+      "size/M"
+    ],
+    "createdAt": "2026-09-08T09:55:53Z",
+    "updatedAt": "2026-09-08T10:01:39Z",
+    "headSha": "d022112920b9b2653e02f2e38a8f2b481709234d"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe una creación `paused` con solo `picture_download_pending` dejar de alertar de inmediato aunque no exista una comprobación posterior de que el anuncio llegó a estar activo?",
+  "rationale": "La evidencia observa recuperaciones frecuentes, pero no acredita una recuperación universal; decidir entre ruido operativo y detección de anuncios persistentes requiere el umbral de riesgo de Marketplace.",
+  "options": [
+    {
+      "title": "Conservar el warning por ahora",
+      "body": "Mantener la señal actual hasta que exista una verificación remota posterior que distinga una pausa transitoria de un anuncio bloqueado.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar la supresión inmediata",
+      "body": "Registrar siempre esta firma como info y asumir el riesgo operativo de que una pausa persistente no active el watcher.",
+      "recommended": false
+    },
+    {
+      "title": "Añadir verificación diferida",
+      "body": "Bajar la firma inicial a info y crear una comprobación posterior que eleve a warning los anuncios que sigan pausados.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Conservar el warning por ahora",
+    "body": "Mantener la señal actual hasta que exista una verificación remota posterior que distinga una pausa transitoria de un anuncio bloqueado.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Su historial en el flujo de sincronización de MercadoLibre y la evidencia aportada lo conectan directamente con el criterio operativo.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9273.md",
+    "reviewedAt": "2026-09-08T10:07:02.529Z",
+    "mainSha": "a94f4b0f9e34689c37861c23b47f42020bf14aae"
+  }
+}

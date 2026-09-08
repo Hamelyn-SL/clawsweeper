@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-08T10:07:56.995Z",
+  "updatedAt": "2026-09-08T10:01:37Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9274,
+    "title": "Mejora TURBOREVISION",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9274",
+    "state": "open",
+    "labels": [
+      "source:admin-panel",
+      "app:supply",
+      "feature",
+      "triage:queued",
+      "P1",
+      "reporter:daniellopez"
+    ],
+    "createdAt": "2026-09-08T09:58:23Z",
+    "updatedAt": "2026-09-08T10:01:37Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe la cubeta quedar asociada solo a la sesión activa y el modo «Aceptable» aplicarse como valor por defecto del lote, con una excepción individual a «Muy bueno»?",
+  "rationale": "El código actual conserva la cubeta entre lotes y fija la aceptación Turbo en `MUY_BUENO`; cambiar ambos contratos afecta a la continuidad operativa y requiere intención explícita.",
+  "options": [
+    {
+      "title": "Estado por sesión y lote",
+      "body": "Requerir escaneo de cubeta al iniciar cada sesión, limpiarla al cerrarla y aplicar «Aceptable» solo como valor por defecto del lote con excepción individual.",
+      "recommended": true
+    },
+    {
+      "title": "Conservar la cubeta entre lotes",
+      "body": "Mantener la cubeta al avanzar de lote y limitar la mejora al selector de calidad por lote.",
+      "recommended": false
+    },
+    {
+      "title": "Separar las decisiones",
+      "body": "Aprobar primero el modo de calidad por lote y abrir un diseño específico para persistencia y cierre de sesión de cubetas.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Estado por sesión y lote",
+    "body": "Requerir escaneo de cubeta al iniciar cada sesión, limpiarla al cerrarla y aplicar «Aceptable» solo como valor por defecto del lote con excepción individual.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es la persona con mayor trazabilidad en el panel Turbo y los flujos de cubeta y aceptación actuales.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9274.md",
+    "reviewedAt": "2026-09-08T10:07:56.995Z",
+    "mainSha": "a94f4b0f9e34689c37861c23b47f42020bf14aae"
+  }
+}
