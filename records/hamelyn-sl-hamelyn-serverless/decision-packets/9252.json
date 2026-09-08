@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-08T03:05:36.850Z",
+  "generatedAt": "2026-09-08T03:06:27.699Z",
   "updatedAt": "2026-09-08T03:00:42Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -10,8 +10,7 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9252",
     "state": "open",
     "labels": [
-      "size/XXL",
-      "P2"
+      "size/XXL"
     ],
     "createdAt": "2026-09-08T02:48:40Z",
     "updatedAt": "2026-09-08T03:00:42Z",
@@ -19,39 +18,33 @@
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe Hamelyn CLI distribuir y mantener como producto esta demo local de memoria de equipo con runtime Python e interfaz HTTP, o debe quedar fuera de la CLI estable?",
-  "rationale": "La propuesta incorpora una superficie, dependencias operativas y promesas de privacidad nuevas; los fallos mecánicos se pueden reparar, pero no resuelven por sí solos ese alcance.",
+  "question": "¿Debe `hamelyn` distribuir y soportar de forma estable esta demo local de memoria de equipo con Python 3.10+, SQLite y servidor loopback?",
+  "rationale": "La propuesta añade una superficie de producto, runtime y límites de privacidad nuevos al CLI, más allá de corregir los fallos mecánicos ya identificados.",
   "options": [
     {
-      "title": "Aprobar un MVP local acotado",
-      "body": "Mantenerlo como demo sintética aislada y exigir la corrección de los hallazgos antes de integrarlo.",
+      "title": "Patrocinar la superficie y corregir bloqueos",
+      "body": "Aceptar la demo como parte soportada del CLI y exigir la corrección de los cinco P2 con cobertura focalizada antes de integrarla.",
       "recommended": true
     },
     {
-      "title": "Separarlo de la CLI estable",
-      "body": "Mover el experimento a una herramienta o repositorio de incubación hasta definir propiedad, soporte y evolución productiva.",
-      "recommended": false
-    },
-    {
-      "title": "Reducirlo a contrato y diseño",
-      "body": "Conservar la documentación de propuesta sin distribuir el runtime, la interfaz ni el subcomando en el binario.",
+      "title": "Mantenerla fuera del CLI distribuido",
+      "body": "Pausar o extraer la demo a una herramienta experimental hasta definir su propietario, soporte y contrato de privacidad.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar un MVP local acotado",
-    "body": "Mantenerlo como demo sintética aislada y exigir la corrección de los hallazgos antes de integrarlo.",
+    "title": "Patrocinar la superficie y corregir bloqueos",
+    "body": "Aceptar la demo como parte soportada del CLI y exigir la corrección de los cinco P2 con cobertura focalizada antes de integrarla.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su historial concentra la evolución funcional y de distribución de Hamelyn CLI.",
+    "reason": "Su historial reciente concentra la evolución del CLI y el head propuesto.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9252.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9252#issuecomment-5578483632",
-    "reviewedAt": "2026-09-08T03:05:36.850Z",
+    "reviewedAt": "2026-09-08T03:06:27.699Z",
     "mainSha": "829910f9e249e89f9d5c30248ac6ba2ca7a4ea1f"
   }
 }
