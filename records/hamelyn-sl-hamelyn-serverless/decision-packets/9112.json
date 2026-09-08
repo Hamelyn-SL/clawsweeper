@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-07T05:02:04.854Z",
-  "updatedAt": "2026-09-04T08:40:21Z",
+  "generatedAt": "2026-09-08T10:26:51.585Z",
+  "updatedAt": "2026-09-08T10:19:08Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,43 +14,42 @@
       "source:admin-panel",
       "app:supply",
       "reporter:marta",
-      "triage:no-change",
-      "clawsweeper:needs-product-decision",
-      "P1"
+      "triage:queued",
+      "P1",
+      "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-09-04T06:08:35Z",
-    "updatedAt": "2026-09-04T08:40:21Z"
+    "updatedAt": "2026-09-08T10:19:08Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe Pricing adoptar el diseño B de precio base persistido e incremento de destacado derivado, o conservar un toggle almacenado con compensación exacta?",
-  "rationale": "Ambas alternativas cambian la semántica de `priceBuy` durante el experimento A/B; el código no puede decidir por sí solo qué contrato de pricing debe permanecer.",
+  "question": "¿Debe Pricing adoptar el modelo de precio base persistido con bonus de destacado derivado, o mantener una mutación almacenada con reversión exacta por transición?",
+  "rationale": "Las dos PR abiertas difieren en el contrato persistido y en el plan de migración; elegirlo condiciona lectores, escritores, datos históricos y despliegue entre `dev` y producción.",
   "options": [
     {
-      "title": "Derivar el incremento al leer",
-      "body": "Persistir siempre el precio base y sumar el incremento de destacado en las lecturas relevantes, evitando que el flag altere el valor base.",
+      "title": "Derivar el bonus al ofrecer",
+      "body": "Persistir siempre la base y calcular el incremento de destacado en lectores compatibles, seguido de una migración reversible y coordinada.",
       "recommended": true
     },
     {
-      "title": "Mantener el toggle compensado",
-      "body": "Conservar la mutación de `priceBuy`, pero registrar y revertir exactamente el delta aplicado en cada transición de destacado.",
+      "title": "Conservar un delta reversible",
+      "body": "Mantener `priceBuy` mutado, pero registrar el delta aplicado para revertir exactamente cada transición y cubrir todos los escritores.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Derivar el incremento al leer",
-    "body": "Persistir siempre el precio base y sumar el incremento de destacado en las lecturas relevantes, evitando que el flag altere el valor base.",
+    "title": "Derivar el bonus al ofrecer",
+    "body": "Persistir siempre la base y calcular el incremento de destacado en lectores compatibles, seguido de una migración reversible y coordinada.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es el asignado actual y documentó las alternativas técnicas y operativas del área.",
+    "reason": "La asignación y la auditoría de la issue le vinculan directamente con la decisión de semántica y su aplicación operativa.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9112.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9112#issuecomment-5565379451",
-    "reviewedAt": "2026-09-07T05:02:04.854Z",
-    "mainSha": "7917b1c783fedca0161273534392cbdd7c693ece"
+    "reviewedAt": "2026-09-08T10:26:51.585Z",
+    "mainSha": "584e78bf09cf7b2da70c8bbdcc0d5adfef9b437c"
   }
 }
