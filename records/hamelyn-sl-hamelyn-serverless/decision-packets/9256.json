@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-08T05:57:47.663Z",
+  "updatedAt": "2026-09-08T05:52:39Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9256,
+    "title": "Retirar el flujo de Nueva entrada de revisión y del panel",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9256",
+    "state": "open",
+    "labels": [
+      "app:supply",
+      "feature",
+      "triage:queued",
+      "P3"
+    ],
+    "createdAt": "2026-09-08T05:52:29Z",
+    "updatedAt": "2026-09-08T05:52:39Z"
+  },
+  "lane": "product_direction",
+  "priority": "P3",
+  "question": "¿Qué destino persistido reciben los EAN fuera del lote y la baja demanda, y qué compatibilidad histórica debe conservarse para `NEW_ENTRY` e `INVENTORY`?",
+  "rationale": "La retirada depende de sustituir un flujo activo y de decidir cómo interpretar sesiones y órdenes ya almacenadas.",
+  "options": [
+    {
+      "title": "Definir destinos y conservar histórico",
+      "body": "Acordar la clasificación persistida y mantener lectores históricos antes de retirar los escritores y accesos actuales.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener Nueva entrada temporalmente",
+      "body": "Conservar el flujo hasta que Operaciones confirme que el destino automático cubre todos los casos de uso activos.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Definir destinos y conservar histórico",
+    "body": "Acordar la clasificación persistida y mantener lectores históricos antes de retirar los escritores y accesos actuales.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "Su cambio reciente mantiene el flujo y la issue relacionada lo identifica como dueño probable de la decisión.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9256.md",
+    "reviewedAt": "2026-09-08T05:57:47.663Z",
+    "mainSha": "d7128025960d17a11cc26cab573f093df5c18ccb"
+  }
+}
