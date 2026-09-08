@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-08T08:49:43.752Z",
-  "updatedAt": "2026-09-08T08:34:41Z",
+  "generatedAt": "2026-09-08T10:15:13.822Z",
+  "updatedAt": "2026-09-08T09:30:33Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -13,38 +13,38 @@
       "size/L"
     ],
     "createdAt": "2026-09-08T08:24:25Z",
-    "updatedAt": "2026-09-08T08:34:41Z",
+    "updatedAt": "2026-09-08T09:30:33Z",
     "headSha": "4e517ece4e22564047565ee10f9aad5bd95e6067"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe existir una conciliación explícita de las cancelaciones pendientes antes de reducir permanentemente la ventana de 21 a 3 días?",
-  "rationale": "La evidencia local no permite saber si las pasadas con 429 dejaron cancelaciones antiguas pendientes; aceptar su exclusión cambia estados de pedidos e inventario.",
+  "question": "¿Aceptamos excluir del cron los packs mixtos ya diferidos con más de tres días, o exigimos una conciliación o cola persistente antes de reducir la ventana?",
+  "rationale": "El código no puede demostrar que el inventario histórico observado en producción siga vacío al desplegar ni decidir si la exclusión contable es aceptable.",
   "options": [
     {
       "title": "Conciliar antes de reducir",
-      "body": "Ejecutar y verificar una conciliación acotada de la ventana histórica antes de activar el barrido de tres días.",
+      "body": "Identificar y procesar o descartar explícitamente los packs activos de tres a veintiún días antes de activar la nueva ventana.",
       "recommended": true
     },
     {
       "title": "Aceptar la exclusión histórica",
-      "body": "Integrar el cambio asumiendo explícitamente que las cancelaciones pendientes de más de tres días no se recuperarán por este flujo.",
+      "body": "Aprobar que los packs históricos no reabiertos por MercadoLibre queden fuera del cron y se atiendan solo mediante operación puntual.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Conciliar antes de reducir",
-    "body": "Ejecutar y verificar una conciliación acotada de la ventana histórica antes de activar el barrido de tres días.",
+    "body": "Identificar y procesar o descartar explícitamente los packs activos de tres a veintiún días antes de activar la nueva ventana.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Su historial reciente cubre tanto la detección de cancelaciones como el diferimiento de packs mixtos que debe sobrevivir a la reducción.",
+    "reason": "Tiene el contexto reciente de los packs mixtos, de la conciliación propuesta y de los datos operativos citados.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9266.md",
-    "reviewedAt": "2026-09-08T08:49:43.752Z",
-    "mainSha": "e53a8fb8ff6e8c23dc76d61cf509db6befb9591a"
+    "reviewedAt": "2026-09-08T10:15:13.822Z",
+    "mainSha": "a94f4b0f9e34689c37861c23b47f42020bf14aae"
   }
 }

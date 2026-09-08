@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-08T10:16:36.091Z",
+  "updatedAt": "2026-09-08T09:43:40Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 9271,
+    "title": "fix: derive featured bonus from stored base price",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9271",
+    "state": "open",
+    "labels": [
+      "size/XL"
+    ],
+    "createdAt": "2026-09-08T09:30:53Z",
+    "updatedAt": "2026-09-08T09:43:40Z",
+    "headSha": "15f590e9dd986516d8c0ee0eb04bfb0a2b55f41e"
+  },
+  "lane": "release_inclusion",
+  "priority": "P1",
+  "question": "¿Se patrocina el despliegue secuenciado de lectores, migración y escritores para el nuevo contrato de `priceBuy` antes de integrar este PR?",
+  "rationale": "Los jobs de catálogo alcanzan producción y el cambio de semántica persistida no puede resolverse únicamente con la corrección local.",
+  "options": [
+    {
+      "title": "Despliegue por fases",
+      "body": "Separar lectores compatibles, validar y migrar datos, y desplegar después escritores y la rotación de destacados.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener el contrato actual",
+      "body": "Conservar temporalmente la mutación persistida mientras se adopta otra reversión exacta del delta.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Despliegue por fases",
+    "body": "Separar lectores compatibles, validar y migrar datos, y desplegar después escritores y la rotación de destacados.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su trabajo reciente en coordinación de pricing y la discusión de la alternativa vinculada lo conectan directamente con esta elección.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9271.md",
+    "reviewedAt": "2026-09-08T10:16:36.091Z",
+    "mainSha": "a94f4b0f9e34689c37861c23b47f42020bf14aae"
+  }
+}
