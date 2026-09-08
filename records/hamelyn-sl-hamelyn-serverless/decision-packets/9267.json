@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-08T08:41:07.183Z",
-  "updatedAt": "2026-09-08T08:28:35Z",
+  "generatedAt": "2026-09-08T09:45:50.540Z",
+  "updatedAt": "2026-09-08T09:02:41Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,49 +13,48 @@
       "source:admin-panel",
       "app:admin",
       "feature",
-      "triage:queued",
+      "triage:done",
       "clawsweeper:needs-product-decision",
-      "reporter:jorgecano",
-      "P2"
+      "P2",
+      "reporter:jorgecano"
     ],
     "createdAt": "2026-09-08T08:28:21Z",
-    "updatedAt": "2026-09-08T08:28:35Z"
+    "updatedAt": "2026-09-08T09:02:41Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿La acción debe confirmar secuencialmente todos los SKU de la gaveta activa con parada ante el primer rechazo, o el almacén necesita otra semántica operativa?",
-  "rationale": "El botón cambia una salvaguarda de interacción crítica: la implementación debe decidir qué ocurre ante cambios del bridge, fallos parciales y transiciones de gaveta.",
+  "question": "¿Debe «Confirmar todos» confirmar exclusivamente las líneas pendientes de la gaveta inicial y detener la tanda al primer rechazo, desconexión o cambio de gaveta?",
+  "rationale": "El visto bueno operativo respalda la mejora, pero la política de parada y recuperación determina si la acción puede cruzar accidentalmente a otra cubeta.",
   "options": [
     {
-      "title": "Extender la confirmación por línea",
-      "body": "Implementar el botón como una secuencia vinculada a la foto de la gaveta activa y detenerla ante cualquier rechazo del bridge.",
+      "title": "Tanda acotada y detenible",
+      "body": "Confirmar secuencialmente solo la gaveta inicial y parar ante cualquier resultado no concluyente, conservando el progreso.",
       "recommended": true
     },
     {
-      "title": "Mantener solo confirmación individual",
-      "body": "Priorizar primero el PR de confirmación fiable por línea y medir si elimina la fricción sin añadir una acción masiva.",
+      "title": "Tanda con reintento automático",
+      "body": "Reintentar temporalmente el mismo producto antes de parar, con límites y un estado visible para el operario.",
       "recommended": false
     },
     {
-      "title": "Diseñar un flujo específico de almacén",
-      "body": "Definir con operaciones una confirmación masiva distinta si la secuencia con parada no refleja el procedimiento real.",
+      "title": "Mantener solo confirmación individual",
+      "body": "No añadir la acción masiva hasta disponer de evidencia operativa adicional en estación.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Extender la confirmación por línea",
-    "body": "Implementar el botón como una secuencia vinculada a la foto de la gaveta activa y detenerla ante cualquier rechazo del bridge.",
+    "title": "Tanda acotada y detenible",
+    "body": "Confirmar secuencialmente solo la gaveta inicial y parar ante cualquier resultado no concluyente, conservando el progreso.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "banosdavidhamelyn",
-    "reason": "Su trabajo abierto define el contrato de confirmación de estación con el que debe coordinarse la nueva interacción.",
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Es el responsable asignado y el contribuidor reciente más cercano al flujo táctil de estación.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9267.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9267#issuecomment-5581901464",
-    "reviewedAt": "2026-09-08T08:41:07.183Z",
-    "mainSha": "e53a8fb8ff6e8c23dc76d61cf509db6befb9591a"
+    "reviewedAt": "2026-09-08T09:45:50.540Z",
+    "mainSha": "a94f4b0f9e34689c37861c23b47f42020bf14aae"
   }
 }
