@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-08T11:02:10.656Z",
+  "updatedAt": "2026-09-08T10:27:53Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8899,
+    "title": "eBay V2 withdraw leaves sold listing live when mk row lacks marketplaceId",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8899",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "triage:pr-opened",
+      "P1"
+    ],
+    "createdAt": "2026-08-30T04:45:34Z",
+    "updatedAt": "2026-09-08T10:27:53Z"
+  },
+  "lane": "merge_risk",
+  "priority": "P1",
+  "question": "¿Qué PR debe aterrizar primero para resolver los caminos solapados de `withdrawProduct`: la recuperación de IDs ausentes o la clasificación segura de fallos ambiguos?",
+  "rationale": "Ambas PRs modifican la misma función con supuestos incompatibles; la elección de orden determina el rebase y las pruebas de regresión que deben preservarse.",
+  "options": [
+    {
+      "title": "Rehacer primero la recuperación sin ID",
+      "body": "Rebasear https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8900 a dos ficheros y conservar después la clasificación de ausencias confirmadas.",
+      "recommended": false
+    },
+    {
+      "title": "Aterrizar primero la clasificación segura",
+      "body": "Integrar primero https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9167 y rehacer la recuperación por SKU sobre ese contrato.",
+      "recommended": true
+    },
+    {
+      "title": "Unificar ambas correcciones",
+      "body": "Preparar una única PR que cubra ID ausente y errores ambiguos con una matriz explícita de outcomes.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aterrizar primero la clasificación segura",
+    "body": "Integrar primero https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9167 y rehacer la recuperación por SKU sobre ese contrato.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "Ya revisó ambos cambios solapados y describió el orden y el límite de integración necesarios.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8899.md",
+    "reviewedAt": "2026-09-08T11:02:10.656Z",
+    "mainSha": "1a07a64f4a2e5a2f7f0f5c53018c2dd91531d00a"
+  }
+}

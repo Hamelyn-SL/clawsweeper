@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-08T11:03:04.572Z",
+  "updatedAt": "2026-09-08T10:27:51Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9133,
+    "title": "feat: agilizar la revisión V3 (búsqueda dinámica, pantalla a 1 s y «Como nuevo»)",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9133",
+    "state": "open",
+    "labels": [
+      "source:admin-panel",
+      "app:admin",
+      "feature",
+      "triage:pr-opened",
+      "epic:revision-v3",
+      "P2",
+      "reporter:daniellopez",
+      "origin:panel"
+    ],
+    "createdAt": "2026-09-04T12:30:23Z",
+    "updatedAt": "2026-09-08T10:27:51Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe «Como nuevo» poder finalizar una unidad tras el mismo segundo de espera que «Continuar», o necesita una salvaguarda adicional en el kiosco?",
+  "rationale": "Los criterios piden velocidad, mientras que la revisión del PR identifica riesgo operativo por completar y puntuar toda la unidad con una pulsación.",
+  "options": [
+    {
+      "title": "Añadir salvaguarda al atajo",
+      "body": "Mantener el objetivo de un segundo para continuar, pero exigir confirmación o una espera propia para «Como nuevo».",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar el atajo inmediato",
+      "body": "Mantener ambas acciones disponibles tras un segundo y asumir explícitamente el riesgo operativo.",
+      "recommended": false
+    },
+    {
+      "title": "Retirar el atajo de este alcance",
+      "body": "Integrar solo búsqueda y temporización, dejando «Como nuevo» para una decisión posterior.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Añadir salvaguarda al atajo",
+    "body": "Mantener el objetivo de un segundo para continuar, pero exigir confirmación o una espera propia para «Como nuevo».",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "Su entrega integró el flujo original y su revisión reciente formuló las alternativas operativas concretas.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9133.md",
+    "reviewedAt": "2026-09-08T11:03:04.572Z",
+    "mainSha": "1a07a64f4a2e5a2f7f0f5c53018c2dd91531d00a"
+  }
+}
