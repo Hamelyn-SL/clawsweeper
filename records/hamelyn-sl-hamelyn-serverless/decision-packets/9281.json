@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-08T13:03:52.685Z",
+  "updatedAt": "2026-09-08T12:57:50Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9281,
+    "title": "Watcher B2B: ejecutar clientes sin registrar con issue de alta y dejar de escalar por columna de cantidad",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9281",
+    "state": "open",
+    "labels": [
+      "app:infrastructure",
+      "feature",
+      "reporter:javier",
+      "triage:running",
+      "P1"
+    ],
+    "createdAt": "2026-09-08T12:54:05Z",
+    "updatedAt": "2026-09-08T12:57:50Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe un issue de alta abierto permitir al watcher ejecutar con ✅ un cliente provisional, sin que la sesión HITL reciba una identidad explícita?",
+  "rationale": "El comportamiento actual se diseñó recientemente para exigir una identidad provisional autorizada y evitar colisiones; el issue propone una política de autorización distinta.",
+  "options": [
+    {
+      "title": "Mantener HITL explícito",
+      "body": "Quitar la anomalía de cantidad y crear o enlazar el issue de alta, pero conservar `clientIdentity` autorizada para cada ejecución provisional.",
+      "recommended": true
+    },
+    {
+      "title": "Autorizar por issue abierto",
+      "body": "Permitir la ejecución con ✅ cuando el ledger tenga una identidad provisional no reservada y un issue de alta abierto enlazado.",
+      "recommended": false
+    },
+    {
+      "title": "Exigir alta permanente",
+      "body": "Conservar el comportamiento actual y usar el issue únicamente para completar `B2B_CLIENTS` antes de cualquier ejecución.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mantener HITL explícito",
+    "body": "Quitar la anomalía de cantidad y crear o enlazar el issue de alta, pero conservar `clientIdentity` autorizada para cada ejecución provisional.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Ha definido y mantenido las protecciones de cliente provisional que esta decisión modificaría.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9281.md",
+    "reviewedAt": "2026-09-08T13:03:52.685Z",
+    "mainSha": "a16a52ba2697f3a5291eb05034e11708e4bbf137"
+  }
+}
