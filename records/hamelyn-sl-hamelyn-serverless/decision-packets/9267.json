@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-08T08:35:51.009Z",
+  "generatedAt": "2026-09-08T08:41:07.183Z",
   "updatedAt": "2026-09-08T08:28:35Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -14,48 +14,46 @@
       "app:admin",
       "feature",
       "triage:queued",
-      "reporter:jorgecano",
       "P2",
-      "clawsweeper:needs-product-decision"
+      "reporter:jorgecano"
     ],
     "createdAt": "2026-09-08T08:28:21Z",
     "updatedAt": "2026-09-08T08:28:35Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe la acción confirmar varias unidades mediante una única transferencia OPC UA validada, o debe mantenerse como un flujo secuencial controlado por el bridge?",
-  "rationale": "La interfaz puede saber que hay varios productos en la gaveta, pero el bridge actual fuerza una unidad y el comportamiento seguro de una cantidad múltiple depende del contrato real de Exotec.",
+  "question": "¿La acción debe confirmar secuencialmente todos los SKU de la gaveta activa con parada ante el primer rechazo, o el almacén necesita otra semántica operativa?",
+  "rationale": "El botón cambia una salvaguarda de interacción crítica: la implementación debe decidir qué ocurre ante cambios del bridge, fallos parciales y transiciones de gaveta.",
   "options": [
     {
-      "title": "Transferencia múltiple validada",
-      "body": "Incorporar el botón solo tras comprobar en Skypod que una transferencia con la cantidad pendiente confirma exactamente esa cubeta.",
+      "title": "Extender la confirmación por línea",
+      "body": "Implementar el botón como una secuencia vinculada a la foto de la gaveta activa y detenerla ante cualquier rechazo del bridge.",
       "recommended": true
     },
     {
-      "title": "Secuencia controlada",
-      "body": "Mantener transferencias unitarias, pero ejecutar una secuencia bloqueada que no habilite la siguiente cubeta hasta terminar la actual.",
+      "title": "Mantener solo confirmación individual",
+      "body": "Priorizar primero el PR de confirmación fiable por línea y medir si elimina la fricción sin añadir una acción masiva.",
       "recommended": false
     },
     {
-      "title": "Esperar al flujo relacionado",
-      "body": "Aplazar la interfaz hasta integrar y estabilizar el cambio de confirmación del PR abierto.",
+      "title": "Diseñar un flujo específico de almacén",
+      "body": "Definir con operaciones una confirmación masiva distinta si la secuencia con parada no refleja el procedimiento real.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Transferencia múltiple validada",
-    "body": "Incorporar el botón solo tras comprobar en Skypod que una transferencia con la cantidad pendiente confirma exactamente esa cubeta.",
+    "title": "Extender la confirmación por línea",
+    "body": "Implementar el botón como una secuencia vinculada a la foto de la gaveta activa y detenerla ante cualquier rechazo del bridge.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "AlexDiaz-Hamelyn",
-    "reason": "Su historial reciente cubre directamente la interfaz y las protecciones de avance de la estación.",
+    "person": "banosdavidhamelyn",
+    "reason": "Su trabajo abierto define el contrato de confirmación de estación con el que debe coordinarse la nueva interacción.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9267.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9267#issuecomment-5581901464",
-    "reviewedAt": "2026-09-08T08:35:51.009Z",
+    "reviewedAt": "2026-09-08T08:41:07.183Z",
     "mainSha": "e53a8fb8ff6e8c23dc76d61cf509db6befb9591a"
   }
 }
