@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-07T14:56:48.875Z",
-  "updatedAt": "2026-09-07T13:42:50Z",
+  "generatedAt": "2026-09-08T08:28:30.952Z",
+  "updatedAt": "2026-09-08T08:04:38Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,43 +14,41 @@
       "reporter:davidgonzalez",
       "feature",
       "triage:done",
-      "clawsweeper:needs-product-decision",
-      "origin:dev",
-      "P1"
+      "P1",
+      "origin:dev"
     ],
     "createdAt": "2026-09-03T12:45:15Z",
-    "updatedAt": "2026-09-07T13:42:50Z"
+    "updatedAt": "2026-09-08T08:04:38Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe Hamelyn confirmar en tiempo real los OK ejecutados directamente en la HMI de Exotec, y con qué señal inequívoca debe hacerlo?",
-  "rationale": "La solicitud exige cubrir ambos botones, mientras que la PR abierta rechaza inferir éxito por cambios de SKU o alvéolo y limita la inmediatez a Station.",
+  "question": "¿Debe Station escribir la confirmación inmediata solo tras un OK validado por Hamelyn, o también inferirla al observar el avance de `article_id` provocado desde la HMI de Exotec?",
+  "rationale": "La segunda opción satisface el objetivo de inmediatez más amplio, pero puede convertir una transición observada en una confirmación falsa; el PR actual adopta la primera sin resolver esa diferencia de producto.",
   "options": [
     {
-      "title": "Definir confirmación HMI inequívoca",
-      "body": "Conservar la cobertura de la HMI usando una señal OPC UA o correlación que Exotec garantice tras la transferencia.",
+      "title": "Confirmación solo tras OK validado",
+      "body": "Mantener la escritura inmediata ligada a una transferencia OPC UA aceptada y dejar que la HMI de Exotec se confirme mediante webhook.",
       "recommended": true
     },
     {
-      "title": "Limitar la inmediatez a Station",
-      "body": "Aceptar que solo las acciones iniciadas desde Station confirmen al instante y que la HMI espere al webhook, documentando el límite operativo.",
+      "title": "Inferir desde el avance físico",
+      "body": "Confirmar al cambiar `article_id` aunque el origen sea la HMI de Exotec, definiendo guardas adicionales frente a transiciones no exitosas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Definir confirmación HMI inequívoca",
-    "body": "Conservar la cobertura de la HMI usando una señal OPC UA o correlación que Exotec garantice tras la transferencia.",
+    "title": "Confirmación solo tras OK validado",
+    "body": "Mantener la escritura inmediata ligada a una transferencia OPC UA aceptada y dejar que la HMI de Exotec se confirme mediante webhook.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "banosdavidhamelyn",
-    "reason": "Ha propuesto la implementación vinculada y aparece en el historial reciente del webhook y de la productividad Skypod.",
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Es el principal contribuidor reciente de la UX y reconciliación de Station, además de revisor de la propuesta actual.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9098.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9098#issuecomment-5565376717",
-    "reviewedAt": "2026-09-07T14:56:48.875Z",
-    "mainSha": "829910f9e249e89f9d5c30248ac6ba2ca7a4ea1f"
+    "reviewedAt": "2026-09-08T08:28:30.952Z",
+    "mainSha": "e53a8fb8ff6e8c23dc76d61cf509db6befb9591a"
   }
 }
