@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-08T08:49:43.752Z",
+  "updatedAt": "2026-09-08T08:34:41Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 9266,
+    "title": "fix: narrow mercadolibre cancelled sweep and survive page throttling",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9266",
+    "state": "open",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-09-08T08:24:25Z",
+    "updatedAt": "2026-09-08T08:34:41Z",
+    "headSha": "4e517ece4e22564047565ee10f9aad5bd95e6067"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe existir una conciliación explícita de las cancelaciones pendientes antes de reducir permanentemente la ventana de 21 a 3 días?",
+  "rationale": "La evidencia local no permite saber si las pasadas con 429 dejaron cancelaciones antiguas pendientes; aceptar su exclusión cambia estados de pedidos e inventario.",
+  "options": [
+    {
+      "title": "Conciliar antes de reducir",
+      "body": "Ejecutar y verificar una conciliación acotada de la ventana histórica antes de activar el barrido de tres días.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar la exclusión histórica",
+      "body": "Integrar el cambio asumiendo explícitamente que las cancelaciones pendientes de más de tres días no se recuperarán por este flujo.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Conciliar antes de reducir",
+    "body": "Ejecutar y verificar una conciliación acotada de la ventana histórica antes de activar el barrido de tres días.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Su historial reciente cubre tanto la detección de cancelaciones como el diferimiento de packs mixtos que debe sobrevivir a la reducción.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9266.md",
+    "reviewedAt": "2026-09-08T08:49:43.752Z",
+    "mainSha": "e53a8fb8ff6e8c23dc76d61cf509db6befb9591a"
+  }
+}

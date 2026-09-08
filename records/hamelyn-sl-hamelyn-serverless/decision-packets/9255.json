@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-08T08:50:34.525Z",
+  "updatedAt": "2026-09-08T08:43:50Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 9255,
+    "title": "feat: route out-of-lot books to bulk boxes at review",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9255",
+    "state": "open",
+    "labels": [
+      "size/XXL"
+    ],
+    "createdAt": "2026-09-08T05:51:54Z",
+    "updatedAt": "2026-09-08T08:43:50Z",
+    "headSha": "bb50b91875340f938545d585eb7d5cca245e3c7b"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se aprueba para producción el contrato operativo elegido por este PR: pedir caja en el primer `BULK`, permitir reutilizar etiquetas y no aplicar el control de 35 unidades?",
+  "rationale": "La solicitud canónica conserva una decisión de producto pendiente y el cuerpo del PR reconoce estas divergencias; el código no puede determinar qué procedimiento de almacén es el correcto.",
+  "options": [
+    {
+      "title": "Validar el contrato con Operaciones",
+      "body": "Confirmar que estas tres divergencias son el procedimiento deseado y reflejarlas en la documentación operativa antes de activar el flag.",
+      "recommended": true
+    },
+    {
+      "title": "Ajustar al documento original",
+      "body": "Implementar el control de conteo y el ciclo de etiqueta exigidos por la solicitud antes de aprobar el rollout.",
+      "recommended": false
+    },
+    {
+      "title": "Limitar el piloto",
+      "body": "Mantener el flag apagado globalmente y usar el override solo en una estación mientras se recopila decisión operativa.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Validar el contrato con Operaciones",
+    "body": "Confirmar que estas tres divergencias son el procedimiento deseado y reflejarlas en la documentación operativa antes de activar el flag.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es el principal autor histórico de las pantallas y del flujo Turbo afectados por la decisión.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9255.md",
+    "reviewedAt": "2026-09-08T08:50:34.525Z",
+    "mainSha": "e53a8fb8ff6e8c23dc76d61cf509db6befb9591a"
+  }
+}
