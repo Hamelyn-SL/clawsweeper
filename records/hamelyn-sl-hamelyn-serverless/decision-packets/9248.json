@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-08T08:30:38.745Z",
-  "updatedAt": "2026-09-08T06:30:40Z",
+  "generatedAt": "2026-09-08T09:48:24.011Z",
+  "updatedAt": "2026-09-08T09:42:49Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,43 +14,42 @@
       "bug",
       "app:marketplace",
       "triage:blocked",
+      "P1",
       "clawsweeper:needs-product-decision",
-      "marketplace-crons",
-      "P1"
+      "marketplace-crons"
     ],
     "createdAt": "2026-09-07T17:30:38Z",
-    "updatedAt": "2026-09-08T06:30:40Z"
+    "updatedAt": "2026-09-08T09:42:49Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Se acepta que las cancelaciones de más de dos días se reconcilien en el barrido profundo diario de las 03:00 UTC para evitar que los `429` anulen las pasadas horarias?",
-  "rationale": "La política de no reintentar GET ya está documentada, pero la nueva cadencia introduce un posible retraso operativo para cancelaciones antiguas.",
+  "question": "¿Aprobamos que el barrido horario consulte solo tres días y que las cancelaciones antiguas queden fuera de este cron continuo?",
+  "rationale": "El PR elimina una causa observable de abortos, pero cambia deliberadamente la cobertura temporal documentada de la conciliación.",
   "options": [
     {
-      "title": "Aceptar conciliación diaria",
-      "body": "Mantener la ventana horaria de dos días y el barrido completo diario, reduciendo la presión sobre `/orders/search`.",
+      "title": "Aprobar ventana de tres días",
+      "body": "Aceptar el PR con la cobertura acotada y verificar tras el despliegue que desaparecen los abortos horarios por cancelaciones.",
       "recommended": true
     },
     {
-      "title": "Conservar ventana completa horaria",
-      "body": "Solicitar otra estrategia que mantenga la cobertura de 21 días cada hora sin aceptar este retraso potencial.",
+      "title": "Conservar cobertura histórica",
+      "body": "Mantener los 21 días y pedir una alternativa que reduzca llamadas sin renunciar a la conciliación histórica.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aceptar conciliación diaria",
-    "body": "Mantener la ventana horaria de dos días y el barrido completo diario, reduciendo la presión sobre `/orders/search`.",
+    "title": "Aprobar ventana de tres días",
+    "body": "Aceptar el PR con la cobertura acotada y verificar tras el despliegue que desaparecen los abortos horarios por cancelaciones.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Está asignado a la incidencia y su historial reciente cubre el flujo de cancelaciones afectado.",
+    "reason": "Está asignado a la incidencia y concentra el historial reciente del flujo de cancelaciones de MercadoLibre.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9248.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9248#issuecomment-5574109349",
-    "reviewedAt": "2026-09-08T08:30:38.745Z",
-    "mainSha": "e53a8fb8ff6e8c23dc76d61cf509db6befb9591a"
+    "reviewedAt": "2026-09-08T09:48:24.011Z",
+    "mainSha": "a94f4b0f9e34689c37861c23b47f42020bf14aae"
   }
 }
