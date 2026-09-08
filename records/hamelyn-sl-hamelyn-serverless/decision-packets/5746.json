@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-07T19:58:43.481Z",
-  "updatedAt": "2026-09-07T19:30:39Z",
+  "generatedAt": "2026-09-08T06:05:58.307Z",
+  "updatedAt": "2026-09-08T05:10:03Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,44 +14,48 @@
       "bug",
       "app:marketplace",
       "triage:needs-info",
+      "P1",
       "clawsweeper:needs-product-decision",
       "origin:watcher",
-      "mk:mercadolibre",
-      "P1"
+      "mk:mercadolibre"
     ],
     "createdAt": "2026-05-08T01:35:13Z",
-    "updatedAt": "2026-09-07T19:30:39Z"
+    "updatedAt": "2026-09-08T05:10:03Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe mantenerse la política actual sin retry-backoff en los GET de MercadoLibre y resolver el riesgo con conciliación/alerta, o introducir una recuperación acotada con presupuesto compartido?",
-  "rationale": "La documentación declara que no reintentar GET es una decisión deliberada; cambiarla afecta cuota del proveedor y frescura de la sincronización, y los datos actuales no identifican todavía el consumidor de cuota.",
+  "question": "¿Debe un 429 durante la consulta de pedidos reintentarse dentro de la ejecución, diferirse al siguiente ciclo con conciliación obligatoria, o seguir otra política explícita?",
+  "rationale": "La política actual descarta retry/backoff de GET por petición; cambiarla afecta la cuota remota y todavía no hay evidencia de recuperación efectiva de pedidos.",
   "options": [
     {
-      "title": "Conservar GET sin reintento y conciliar",
-      "body": "Instrumentar la recuperación y conciliar pedidos y cancelaciones antes de alterar la cadencia remota.",
+      "title": "Diferir y conciliar",
+      "body": "Mantener la recuperación en el siguiente ciclo, pero emitir una señal comprobable y conciliar pedidos pagados tras cada 429.",
       "recommended": true
     },
     {
-      "title": "Añadir recuperación acotada",
-      "body": "Introducir backoff o reserva compartida para GET solo tras confirmar la cuota y probar el comportamiento de recuperación.",
+      "title": "Reintento acotado",
+      "body": "Añadir un backoff de GET limitado y probado solo si la cuota real demuestra que no agrava el rate limit.",
+      "recommended": false
+    },
+    {
+      "title": "Política específica",
+      "body": "Definir otro mecanismo de recuperación si la operativa exige una garantía distinta para pedidos pendientes.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Conservar GET sin reintento y conciliar",
-    "body": "Instrumentar la recuperación y conciliar pedidos y cancelaciones antes de alterar la cadencia remota.",
+    "title": "Diferir y conciliar",
+    "body": "Mantener la recuperación en el siguiente ciclo, pero emitir una señal comprobable y conciliar pedidos pagados tras cada 429.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Su historial reciente cubre los presupuestos y la documentación de la sincronización MercadoLibre.",
+    "reason": "Es el autor del presupuesto por fase y de la política documentada de GET para MercadoLibre.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5746.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5746#issuecomment-5574615450",
-    "reviewedAt": "2026-09-07T19:58:43.481Z",
-    "mainSha": "829910f9e249e89f9d5c30248ac6ba2ca7a4ea1f"
+    "reviewedAt": "2026-09-08T06:05:58.307Z",
+    "mainSha": "b751a7def5653f2621d4b3561275f5b79017bf73"
   }
 }
