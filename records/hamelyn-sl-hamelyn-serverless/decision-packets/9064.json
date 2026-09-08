@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-08T12:55:53.494Z",
-  "updatedAt": "2026-09-08T12:19:30Z",
+  "generatedAt": "2026-09-08T20:45:46.636Z",
+  "updatedAt": "2026-09-08T20:30:39Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,42 +15,41 @@
       "app:marketplace",
       "triage:needs-info",
       "clawsweeper:needs-product-decision",
-      "marketplace-crons",
-      "P2"
+      "P2",
+      "marketplace-crons"
     ],
     "createdAt": "2026-09-02T20:30:41Z",
-    "updatedAt": "2026-09-08T12:19:30Z"
+    "updatedAt": "2026-09-08T20:30:39Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe TodoColección publicar con `HAMELYN_DEFAULT_IMAGE` cuando falte una foto real, en lugar de retener el stock hasta que catálogo la complete?",
-  "rationale": "La incidencia documenta que ambos comportamientos son posibles y el PR abierto adopta uno de ellos sin una aprobación comercial explícita en la discusión.",
+  "question": "¿TodoColección debe publicar con `HAMELYN_DEFAULT_IMAGE` cuando falta la imagen primaria Bunny, o retener el stock hasta que catálogo la complete?",
+  "rationale": "El comportamiento actual publica degradado y el PR propone un fallback, pero ninguna discusión humana confirma todavía cuál de las dos políticas debe prevalecer.",
   "options": [
     {
-      "title": "Publicar con placeholder",
-      "body": "Aprobar el fallback del PR para mantener el listing activo y reemplazar la imagen en una actualización posterior.",
+      "title": "Aceptar placeholder",
+      "body": "Publicar con `HAMELYN_DEFAULT_IMAGE`, sustituirlo en la siguiente actualización cuando exista imagen primaria y corregir la condición para no confiar solo en `hasBunnyImage`.",
       "recommended": true
     },
     {
-      "title": "Retener hasta tener imagen",
-      "body": "Evitar el alta sin foto y definir la recuperación automática cuando catálogo complete la imagen.",
+      "title": "Retener el stock",
+      "body": "No crear ni actualizar el anuncio sin imagen primaria válida y definir una ruta de reintento cuando catálogo complete la foto.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Publicar con placeholder",
-    "body": "Aprobar el fallback del PR para mantener el listing activo y reemplazar la imagen en una actualización posterior.",
+    "title": "Aceptar placeholder",
+    "body": "Publicar con `HAMELYN_DEFAULT_IMAGE`, sustituirlo en la siguiente actualización cuando exista imagen primaria y corregir la condición para no confiar solo en `hasBunnyImage`.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Está asignado al trabajo y ha preparado la implementación concreta para la opción de placeholder.",
-    "confidence": "medium"
+    "reason": "Está asignado a la incidencia y es autor del PR que materializa una de las dos políticas.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9064.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9064#issuecomment-5516187576",
-    "reviewedAt": "2026-09-08T12:55:53.494Z",
-    "mainSha": "a16a52ba2697f3a5291eb05034e11708e4bbf137"
+    "reviewedAt": "2026-09-08T20:45:46.636Z",
+    "mainSha": "5e573122fe240a7c516f4168147bb61666ebad16"
   }
 }
