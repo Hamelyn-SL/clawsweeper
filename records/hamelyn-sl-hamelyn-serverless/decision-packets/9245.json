@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-08T09:37:10.591Z",
+  "updatedAt": "2026-09-08T08:47:14Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 9245,
+    "title": "fix: reclassify picking substitution originals as inventoried",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9245",
+    "state": "open",
+    "labels": [
+      "size/XXL",
+      "P1"
+    ],
+    "createdAt": "2026-09-07T16:03:59Z",
+    "updatedAt": "2026-09-08T08:47:14Z",
+    "headSha": "9a3a5f3133b42a1788a1ad59568ac5e677b5c664"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿La unidad original perdida en picking debe reclasificarse de forma permanente como `INVENTORIED` o debe modelarse una razón específica como `LOST_AT_PICKING`?",
+  "rationale": "La incidencia canónica mantiene esta elección abierta y determina tanto la trazabilidad operativa como el futuro backfill histórico.",
+  "options": [
+    {
+      "title": "Usar `INVENTORIED`",
+      "body": "Aceptar la semántica del PR y documentar que la merma de picking se excluye de ventas mediante esta razón existente.",
+      "recommended": true
+    },
+    {
+      "title": "Añadir `LOST_AT_PICKING`",
+      "body": "Introducir una razón explícita para separar la merma de picking de otros inventariados y ajustar consultas, migración y documentación.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Usar `INVENTORIED`",
+    "body": "Aceptar la semántica del PR y documentar que la merma de picking se excluye de ventas mediante esta razón existente.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es el reportante de la incidencia funcional y aporta la evidencia contable que motiva esta clasificación.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9245.md",
+    "reviewedAt": "2026-09-08T09:37:10.591Z",
+    "mainSha": "4badee9287da5bbb4cf7a76774b709ee0f285931"
+  }
+}
