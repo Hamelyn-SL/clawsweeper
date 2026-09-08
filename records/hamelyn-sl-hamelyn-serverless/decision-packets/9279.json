@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-08T13:03:57.310Z",
+  "updatedAt": "2026-09-08T12:59:16Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 9279,
+    "title": "fix: publish todocoleccion listings with a placeholder when no image",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9279",
+    "state": "open",
+    "labels": [
+      "size/M"
+    ],
+    "createdAt": "2026-09-08T12:28:02Z",
+    "updatedAt": "2026-09-08T12:59:16Z",
+    "headSha": "01926dd961a6f0d15d3074ad2a4f31c0d58af423"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe TodoColección publicar stocks sin imagen Bunny con `HAMELYN_DEFAULT_IMAGE`, en vez de retenerlos hasta que catálogo complete una foto real?",
+  "rationale": "Ambas alternativas son técnicamente viables, pero difieren en la calidad comercial del anuncio y en la disponibilidad del stock publicado.",
+  "options": [
+    {
+      "title": "Publicar con placeholder",
+      "body": "Mantiene el listing activo y permite que `updatePrice` sustituya la imagen cuando catálogo marque `hasBunnyImage: true`.",
+      "recommended": true
+    },
+    {
+      "title": "Retener el stock",
+      "body": "Evita anuncios con imagen genérica, pero requiere definir cómo reanudar automáticamente el alta al llegar la foto.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Publicar con placeholder",
+    "body": "Mantiene el listing activo y permite que `updatePrice` sustituya la imagen cuando catálogo marque `hasBunnyImage: true`.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Su historial reciente en el adaptador y la propuesta actual le sitúan como el mejor interlocutor técnico para concretar la alternativa elegida.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9279.md",
+    "reviewedAt": "2026-09-08T13:03:57.310Z",
+    "mainSha": "a16a52ba2697f3a5291eb05034e11708e4bbf137"
+  }
+}

@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-08T08:19:13.366Z",
-  "updatedAt": "2026-09-08T08:13:45Z",
+  "generatedAt": "2026-09-08T13:04:26.565Z",
+  "updatedAt": "2026-09-08T12:14:38Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,42 +11,41 @@
     "state": "open",
     "labels": [
       "size/M",
-      "P2"
+      "P1"
     ],
     "createdAt": "2026-09-08T08:05:51Z",
-    "updatedAt": "2026-09-08T08:13:45Z",
-    "headSha": "2f794a5c1669013cd21656c0a7468a2bb792f62d"
+    "updatedAt": "2026-09-08T12:14:38Z",
+    "headSha": "cc61b83e5d99593fe280597f0ae63942b9eee769"
   },
   "lane": "release_inclusion",
-  "priority": "P2",
-  "question": "¿Se autoriza construir y verificar los dos índices parciales en todas las bases objetivo antes de integrar y desplegar estos hints obligatorios?",
-  "rationale": "La corrección de código depende de infraestructura externa no versionada; elegir la ventana, el espacio disponible y el orden de despliegue exige responsabilidad operativa humana.",
+  "priority": "P1",
+  "question": "¿Se autoriza y completa el aprovisionamiento de `idx_pricing_active_attempt_update` e `idx_pricing_inactive_attempt_update` en todos los entornos antes de fusionar este PR?",
+  "rationale": "La seguridad del despliegue depende de una operación de Atlas externa al diff y la evidencia actual confirma que los índices no existen.",
   "options": [
     {
-      "title": "Validar índices antes de integrar",
-      "body": "Crear ambos índices fuera del PR, comprobar nombre, claves, filtro parcial y plan en staging y producción, e integrar solo tras esa verificación.",
+      "title": "Aprovisionar y verificar antes del merge",
+      "body": "Crear ambos índices en producción y staging, esperar su disponibilidad y adjuntar claves, filtros parciales y `explain()` del selector.",
       "recommended": true
     },
     {
-      "title": "Mantener el PR en borrador",
-      "body": "Pausar la integración hasta disponer de una ventana operativa y de la confirmación de las bases afectadas.",
+      "title": "Pausar el cambio de hints",
+      "body": "Mantener los índices y `hint` actuales hasta que exista una ventana operativa aprobada para construir y validar los nuevos.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Validar índices antes de integrar",
-    "body": "Crear ambos índices fuera del PR, comprobar nombre, claves, filtro parcial y plan en staging y producción, e integrar solo tras esa verificación.",
+    "title": "Aprovisionar y verificar antes del merge",
+    "body": "Crear ambos índices en producción y staging, esperar su disponibilidad y adjuntar claves, filtros parciales y `explain()` del selector.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Introdujo la protección temporal vigente del cron y es la mejor referencia histórica para aceptar el cambio operativo.",
+    "person": "MiguelHamelyn",
+    "reason": "Aportó la comprobación directa de Atlas que determina la seguridad de esta inclusión.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9263.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9263#issuecomment-5581694543",
-    "reviewedAt": "2026-09-08T08:19:13.366Z",
-    "mainSha": "e53a8fb8ff6e8c23dc76d61cf509db6befb9591a"
+    "reviewedAt": "2026-09-08T13:04:26.565Z",
+    "mainSha": "a16a52ba2697f3a5291eb05034e11708e4bbf137"
   }
 }
