@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-08T10:00:23.170Z",
-  "updatedAt": "2026-09-08T09:53:34Z",
+  "generatedAt": "2026-09-08T11:10:25.436Z",
+  "updatedAt": "2026-09-08T10:18:56Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -14,39 +14,38 @@
       "P1"
     ],
     "createdAt": "2026-09-04T07:02:17Z",
-    "updatedAt": "2026-09-08T09:53:34Z",
+    "updatedAt": "2026-09-08T10:18:56Z",
     "headSha": "4bfe9743730d6c2046696504dc204e71e830cfee"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe Pricing migrar a precio base persistido con bonus de `featured` derivado, o mantener la mutación almacenada registrando el delta exacto para revertirlo?",
-  "rationale": "La rama no puede reconstruir de forma fiable desde el hash actual si ni cómo se escaló un precio histórico; ambas opciones cambian el contrato de datos y el despliegue.",
+  "question": "¿Debe esta PR aterrizar como contención mínima del kickstart histórico mientras se prepara el rediseño, o sustituirse por la migración de precio base derivado?",
+  "rationale": "Ambas rutas corrigen el síntoma, pero fijan contratos distintos para `priceBuy` y requieren una decisión explícita antes de consolidar escritores y lectores.",
   "options": [
     {
-      "title": "Precio base y bonus derivado",
-      "body": "Persistir siempre la base y calcular el bonus de `featured` en las lecturas compatibles, con una migración por fases.",
+      "title": "Contención mínima ahora",
+      "body": "Corregir la frontera de esta PR, mantener los guards y dejar el rediseño de base derivada para una migración posterior.",
       "recommended": true
     },
     {
-      "title": "Delta de transición persistido",
-      "body": "Conservar la mutación de `priceBuy`, pero almacenar el multiplicador o delta aplicado y revertir exactamente ese valor al retirar `featured`.",
+      "title": "Sustituir por el rediseño",
+      "body": "Pausar esta PR y coordinar la ruta compatible de lectores, escritores y migración propuesta en https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9271.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Precio base y bonus derivado",
-    "body": "Persistir siempre la base y calcular el bonus de `featured` en las lecturas compatibles, con una migración por fases.",
+    "title": "Contención mínima ahora",
+    "body": "Corregir la frontera de esta PR, mantener los guards y dejar el rediseño de base derivada para una migración posterior.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "La procedencia de `MALVENDIDO` y la discusión vinculada le conectan directamente con la decisión de semántica.",
+    "reason": "La incidencia canónica le señala como dueño probable de la decisión de semántica de Pricing.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9115.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9115#issuecomment-5565380650",
-    "reviewedAt": "2026-09-08T10:00:23.170Z",
-    "mainSha": "a94f4b0f9e34689c37861c23b47f42020bf14aae"
+    "reviewedAt": "2026-09-08T11:10:25.436Z",
+    "mainSha": "1a07a64f4a2e5a2f7f0f5c53018c2dd91531d00a"
   }
 }
