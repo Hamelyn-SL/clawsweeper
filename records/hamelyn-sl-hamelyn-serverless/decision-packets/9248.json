@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-08T09:48:24.011Z",
-  "updatedAt": "2026-09-08T09:42:49Z",
+  "generatedAt": "2026-09-08T09:53:44.705Z",
+  "updatedAt": "2026-09-08T09:49:03Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,43 +14,42 @@
       "bug",
       "app:marketplace",
       "triage:blocked",
+      "P1",
       "clawsweeper:needs-product-decision",
-      "marketplace-crons",
-      "P1"
+      "marketplace-crons"
     ],
     "createdAt": "2026-09-07T17:30:38Z",
-    "updatedAt": "2026-09-08T09:42:49Z"
+    "updatedAt": "2026-09-08T09:49:03Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Aprobamos que el barrido horario consulte solo tres días y que las cancelaciones antiguas queden fuera de este cron continuo?",
-  "rationale": "El PR elimina una causa observable de abortos, pero cambia deliberadamente la cobertura temporal documentada de la conciliación.",
+  "question": "¿Aceptamos que el cron horario limite la conciliación de cancelaciones a tres días y que la histórica quede fuera de este flujo?",
+  "rationale": "El PR corrige los abortos por 429, pero cambia deliberadamente la cobertura histórica para reducir la exposición al límite del proveedor.",
   "options": [
     {
-      "title": "Aprobar ventana de tres días",
-      "body": "Aceptar el PR con la cobertura acotada y verificar tras el despliegue que desaparecen los abortos horarios por cancelaciones.",
+      "title": "Aceptar la exclusión histórica",
+      "body": "Integrar la ventana de tres días con la evidencia operativa aportada y vigilar el comportamiento tras el despliegue.",
       "recommended": true
     },
     {
-      "title": "Conservar cobertura histórica",
-      "body": "Mantener los 21 días y pedir una alternativa que reduzca llamadas sin renunciar a la conciliación histórica.",
+      "title": "Conservar conciliación histórica",
+      "body": "Exigir una pasada profunda temporal o una conciliación explícita antes de reducir permanentemente la ventana.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar ventana de tres días",
-    "body": "Aceptar el PR con la cobertura acotada y verificar tras el despliegue que desaparecen los abortos horarios por cancelaciones.",
+    "title": "Aceptar la exclusión histórica",
+    "body": "Integrar la ventana de tres días con la evidencia operativa aportada y vigilar el comportamiento tras el despliegue.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Está asignado a la incidencia y concentra el historial reciente del flujo de cancelaciones de MercadoLibre.",
+    "reason": "Es la persona asignada, autora de la propuesta y principal contribuidor reciente del flujo de cancelaciones.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9248.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9248#issuecomment-5574109349",
-    "reviewedAt": "2026-09-08T09:48:24.011Z",
+    "reviewedAt": "2026-09-08T09:53:44.705Z",
     "mainSha": "a94f4b0f9e34689c37861c23b47f42020bf14aae"
   }
 }
