@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-08T13:10:02.316Z",
-  "updatedAt": "2026-09-08T13:03:02Z",
+  "generatedAt": "2026-09-08T14:27:54.486Z",
+  "updatedAt": "2026-09-08T13:14:27Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -14,39 +14,38 @@
       "P2"
     ],
     "createdAt": "2026-09-08T12:28:02Z",
-    "updatedAt": "2026-09-08T13:03:02Z",
+    "updatedAt": "2026-09-08T13:14:27Z",
     "headSha": "01926dd961a6f0d15d3074ad2a4f31c0d58af423"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe TodoColeccion publicar anuncios sin imagen Bunny usando `HAMELYN_DEFAULT_IMAGE` en lugar de conservar la alerta y la URL rota actual?",
-  "rationale": "La incidencia canónica está etiquetada `clawsweeper:needs-product-decision`; la compatibilidad técnica no determina por sí sola la política de calidad del anuncio.",
+  "question": "¿Debe TodoColección publicar con `HAMELYN_DEFAULT_IMAGE` cuando falta una foto Bunny, o retener el stock hasta que catálogo complete la imagen?",
+  "rationale": "La incidencia vinculada muestra que ambos comportamientos son técnicamente viables, pero difieren en disponibilidad comercial y calidad del anuncio.",
   "options": [
     {
       "title": "Aceptar el placeholder",
-      "body": "Confirmar el fallback propuesto para mantener los anuncios publicables hasta que catálogo incorpore una imagen Bunny.",
+      "body": "Publicar el anuncio con `HAMELYN_DEFAULT_IMAGE` y sustituirlo en la siguiente actualización cuando catálogo disponga de una foto Bunny.",
       "recommended": true
     },
     {
-      "title": "Mantener la alerta",
-      "body": "Conservar el comportamiento actual mientras se define una política distinta para productos sin imagen propia.",
+      "title": "Retener el stock",
+      "body": "No crear ni actualizar el anuncio hasta que exista una imagen Bunny válida y definir la recuperación posterior.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Aceptar el placeholder",
-    "body": "Confirmar el fallback propuesto para mantener los anuncios publicables hasta que catálogo incorpore una imagen Bunny.",
+    "body": "Publicar el anuncio con `HAMELYN_DEFAULT_IMAGE` y sustituirlo en la siguiente actualización cuando catálogo disponga de una foto Bunny.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "HamelynDev",
-    "reason": "Introdujo la alerta que este cambio sustituye y es el mejor punto de contacto histórico.",
+    "reason": "Introdujo la telemetría que abrió esta decisión y conoce el comportamiento actual del formatter.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9279.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9279#issuecomment-5585656075",
-    "reviewedAt": "2026-09-08T13:10:02.316Z",
+    "reviewedAt": "2026-09-08T14:27:54.486Z",
     "mainSha": "85ca9d43221028899e7dd491f485b225005fabd7"
   }
 }
