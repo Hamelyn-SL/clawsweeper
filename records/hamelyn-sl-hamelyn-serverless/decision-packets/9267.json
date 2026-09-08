@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-08T08:35:51.009Z",
+  "updatedAt": "2026-09-08T08:28:35Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9267,
+    "title": "Añadir boton de confirmar todos los productos en picking skypod",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9267",
+    "state": "open",
+    "labels": [
+      "source:admin-panel",
+      "app:admin",
+      "feature",
+      "triage:queued",
+      "P2",
+      "reporter:jorgecano"
+    ],
+    "createdAt": "2026-09-08T08:28:21Z",
+    "updatedAt": "2026-09-08T08:28:35Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe la acción confirmar varias unidades mediante una única transferencia OPC UA validada, o debe mantenerse como un flujo secuencial controlado por el bridge?",
+  "rationale": "La interfaz puede saber que hay varios productos en la gaveta, pero el bridge actual fuerza una unidad y el comportamiento seguro de una cantidad múltiple depende del contrato real de Exotec.",
+  "options": [
+    {
+      "title": "Transferencia múltiple validada",
+      "body": "Incorporar el botón solo tras comprobar en Skypod que una transferencia con la cantidad pendiente confirma exactamente esa cubeta.",
+      "recommended": true
+    },
+    {
+      "title": "Secuencia controlada",
+      "body": "Mantener transferencias unitarias, pero ejecutar una secuencia bloqueada que no habilite la siguiente cubeta hasta terminar la actual.",
+      "recommended": false
+    },
+    {
+      "title": "Esperar al flujo relacionado",
+      "body": "Aplazar la interfaz hasta integrar y estabilizar el cambio de confirmación del PR abierto.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Transferencia múltiple validada",
+    "body": "Incorporar el botón solo tras comprobar en Skypod que una transferencia con la cantidad pendiente confirma exactamente esa cubeta.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Su historial reciente cubre directamente la interfaz y las protecciones de avance de la estación.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9267.md",
+    "reviewedAt": "2026-09-08T08:35:51.009Z",
+    "mainSha": "e53a8fb8ff6e8c23dc76d61cf509db6befb9591a"
+  }
+}
