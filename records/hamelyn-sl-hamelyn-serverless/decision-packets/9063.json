@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-08T13:10:20.536Z",
-  "updatedAt": "2026-09-08T11:45:47Z",
+  "generatedAt": "2026-09-08T21:44:59.461Z",
+  "updatedAt": "2026-09-08T21:30:41Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,48 +14,47 @@
       "bug",
       "app:marketplace",
       "triage:done",
-      "marketplace-crons",
+      "clawsweeper:needs-product-decision",
       "P2",
-      "clawsweeper:needs-product-decision"
+      "marketplace-crons"
     ],
     "createdAt": "2026-09-02T20:30:41Z",
-    "updatedAt": "2026-09-08T11:45:47Z"
+    "updatedAt": "2026-09-08T21:30:41Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Aprobamos 225 importaciones OF24 por hora y tienda como margen operativo para CDL y Feltrinelli, aceptando menor rendimiento bajo saturación para evitar 429 y abortos de feed?",
-  "rationale": "La estructura técnica reutiliza el patrón existente, pero el umbral concreto determina el intercambio operativo entre velocidad de publicación y tolerancia a la cuota empírica de Mirakl.",
+  "question": "¿Aprobamos 225 imports OF24/h por tienda como presupuesto operativo para CDL y Feltrinelli mientras no exista una cuota contractual de Mirakl?",
+  "rationale": "La evidencia observada respalda el margen, pero el valor intercambia velocidad de drenaje por menor riesgo de rechazos y abortos de feed.",
   "options": [
     {
-      "title": "Aprobar 225/h por tienda",
-      "body": "Fusionar la PR con el margen propuesto y monitorizar las franjas saturadas para confirmar que desaparecen los 429.",
+      "title": "Aprobar 225/h y medir",
+      "body": "Integrar el PR con 225/h por tienda y revisar telemetría de 429 y backlog tras una ráfaga real.",
       "recommended": true
     },
     {
-      "title": "Mantener 240/h para CDL",
-      "body": "Limitar solo Feltrinelli o conservar 240/h en CDL, aceptando la evidencia de algunos 429 residuales bajo saturación.",
+      "title": "Esperar cuota contractual",
+      "body": "Pedir a Mirakl la cuota oficial antes de cambiar el presupuesto, manteniendo la incidencia activa.",
       "recommended": false
     },
     {
-      "title": "Esperar confirmación externa",
-      "body": "Pausar la decisión hasta obtener una cuota contractual de Mirakl, manteniendo mientras tanto el comportamiento actual.",
+      "title": "Elegir otro margen",
+      "body": "Definir un límite operativo distinto y ajustar el PR con pruebas y documentación coherentes.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar 225/h por tienda",
-    "body": "Fusionar la PR con el margen propuesto y monitorizar las franjas saturadas para confirmar que desaparecen los 429.",
+    "title": "Aprobar 225/h y medir",
+    "body": "Integrar el PR con 225/h por tienda y revisar telemetría de 429 y backlog tras una ráfaga real.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Es el asignado y documentó la medición que fundamenta el presupuesto propuesto.",
+    "reason": "Es el asignado y ha reunido las mediciones operativas y la implementación candidata.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9063.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9063#issuecomment-5516322238",
-    "reviewedAt": "2026-09-08T13:10:20.536Z",
-    "mainSha": "85ca9d43221028899e7dd491f485b225005fabd7"
+    "reviewedAt": "2026-09-08T21:44:59.461Z",
+    "mainSha": "5e573122fe240a7c516f4168147bb61666ebad16"
   }
 }
