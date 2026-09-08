@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-08T20:45:46.636Z",
+  "generatedAt": "2026-09-08T20:48:32.583Z",
   "updatedAt": "2026-09-08T20:30:39Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -15,42 +15,41 @@
       "app:marketplace",
       "triage:needs-info",
       "clawsweeper:needs-product-decision",
-      "marketplace-crons",
-      "P2"
+      "P2",
+      "marketplace-crons"
     ],
     "createdAt": "2026-09-02T20:30:41Z",
     "updatedAt": "2026-09-08T20:30:39Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿TodoColección debe publicar con `HAMELYN_DEFAULT_IMAGE` cuando falta la imagen primaria Bunny, o retener el stock hasta que catálogo la complete?",
-  "rationale": "El comportamiento actual publica degradado y el PR propone un fallback, pero ninguna discusión humana confirma todavía cuál de las dos políticas debe prevalecer.",
+  "question": "¿TodoColección debe publicar productos sin imagen primaria con `HAMELYN_DEFAULT_IMAGE` o retenerlos hasta que catálogo aporte una foto válida?",
+  "rationale": "Ambas políticas evitan el anuncio sin foto, pero difieren en disponibilidad de inventario, calidad del catálogo y recuperación posterior.",
   "options": [
     {
       "title": "Aceptar placeholder",
-      "body": "Publicar con `HAMELYN_DEFAULT_IMAGE`, sustituirlo en la siguiente actualización cuando exista imagen primaria y corregir la condición para no confiar solo en `hasBunnyImage`.",
+      "body": "Publicar con la imagen genérica y sustituirla en la siguiente actualización cuando exista una imagen primaria válida.",
       "recommended": true
     },
     {
       "title": "Retener el stock",
-      "body": "No crear ni actualizar el anuncio sin imagen primaria válida y definir una ruta de reintento cuando catálogo complete la foto.",
+      "body": "No crear ni actualizar el anuncio hasta que catálogo proporcione una imagen primaria y definir el reintento posterior.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Aceptar placeholder",
-    "body": "Publicar con `HAMELYN_DEFAULT_IMAGE`, sustituirlo en la siguiente actualización cuando exista imagen primaria y corregir la condición para no confiar solo en `hasBunnyImage`.",
+    "body": "Publicar con la imagen genérica y sustituirla en la siguiente actualización cuando exista una imagen primaria válida.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MarcosTerroso",
-    "reason": "Está asignado a la incidencia y es autor del PR que materializa una de las dos políticas.",
+    "person": "HamelynDev",
+    "reason": "El triage anterior identificó expresamente esta elección de comportamiento y HamelynDev introdujo el aviso que expone el caso.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9064.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9064#issuecomment-5516187576",
-    "reviewedAt": "2026-09-08T20:45:46.636Z",
+    "reviewedAt": "2026-09-08T20:48:32.583Z",
     "mainSha": "5e573122fe240a7c516f4168147bb61666ebad16"
   }
 }
