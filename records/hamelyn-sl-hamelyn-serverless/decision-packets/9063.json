@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-08T21:44:59.461Z",
+  "generatedAt": "2026-09-08T21:47:48.132Z",
   "updatedAt": "2026-09-08T21:30:41Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -15,47 +15,41 @@
       "app:marketplace",
       "triage:done",
       "clawsweeper:needs-product-decision",
-      "marketplace-crons",
-      "P2"
+      "P2",
+      "marketplace-crons"
     ],
     "createdAt": "2026-09-02T20:30:41Z",
     "updatedAt": "2026-09-08T21:30:41Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Aprobamos 225 imports OF24/h por tienda como presupuesto operativo para CDL y Feltrinelli mientras no exista una cuota contractual de Mirakl?",
-  "rationale": "La evidencia observada respalda el margen, pero el valor intercambia velocidad de drenaje por menor riesgo de rechazos y abortos de feed.",
+  "question": "¿Se aprueba el presupuesto operativo de 225 imports OF24 por hora deslizante para Feltrinelli y la reducción equivalente para CDL?",
+  "rationale": "La calibración procede de mediciones operativas y modifica intencionadamente la capacidad de publicación durante periodos de backlog.",
   "options": [
     {
-      "title": "Aprobar 225/h y medir",
-      "body": "Integrar el PR con 225/h por tienda y revisar telemetría de 429 y backlog tras una ráfaga real.",
+      "title": "Aprobar 225/h",
+      "body": "Integrar la PR tras completar su documentación y comprobar en producción la siguiente ráfaga de publicaciones.",
       "recommended": true
     },
     {
-      "title": "Esperar cuota contractual",
-      "body": "Pedir a Mirakl la cuota oficial antes de cambiar el presupuesto, manteniendo la incidencia activa.",
-      "recommended": false
-    },
-    {
-      "title": "Elegir otro margen",
-      "body": "Definir un límite operativo distinto y ajustar el PR con pruebas y documentación coherentes.",
+      "title": "Pedir otra calibración",
+      "body": "Mantener la incidencia abierta y validar una cuota distinta antes de modificar el presupuesto compartido.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar 225/h y medir",
-    "body": "Integrar el PR con 225/h por tienda y revisar telemetría de 429 y backlog tras una ráfaga real.",
+    "title": "Aprobar 225/h",
+    "body": "Integrar la PR tras completar su documentación y comprobar en producción la siguiente ráfaga de publicaciones.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Es el asignado y ha reunido las mediciones operativas y la implementación candidata.",
+    "reason": "Es la persona asignada y documentó la decisión técnica y operativa recogida en la PR.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9063.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9063#issuecomment-5516322238",
-    "reviewedAt": "2026-09-08T21:44:59.461Z",
+    "reviewedAt": "2026-09-08T21:47:48.132Z",
     "mainSha": "5e573122fe240a7c516f4168147bb61666ebad16"
   }
 }
