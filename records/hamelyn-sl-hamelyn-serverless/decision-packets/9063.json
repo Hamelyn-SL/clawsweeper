@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-02T23:22:17.332Z",
-  "updatedAt": "2026-09-02T23:12:50Z",
+  "generatedAt": "2026-09-08T13:10:20.536Z",
+  "updatedAt": "2026-09-08T11:45:47Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,49 +13,48 @@
       "codex",
       "bug",
       "app:marketplace",
-      "triage:needs-info",
+      "triage:done",
       "clawsweeper:needs-product-decision",
       "P2",
       "marketplace-crons"
     ],
     "createdAt": "2026-09-02T20:30:41Z",
-    "updatedAt": "2026-09-02T23:12:50Z"
+    "updatedAt": "2026-09-08T11:45:47Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué máximo de imports OF24 por hora y qué margen operativo debe reservar Feltrinelli?",
-  "rationale": "Los registros confirman una ventana de cuota, pero no permiten inferir un límite seguro; escogerlo sin validación puede afectar publicaciones reales.",
+  "question": "¿Aprobamos 225 importaciones OF24 por hora y tienda como margen operativo para CDL y Feltrinelli, aceptando menor rendimiento bajo saturación para evitar 429 y abortos de feed?",
+  "rationale": "La estructura técnica reutiliza el patrón existente, pero el umbral concreto determina el intercambio operativo entre velocidad de publicación y tolerancia a la cuota empírica de Mirakl.",
   "options": [
     {
-      "title": "Medir y fijar un límite",
-      "body": "Recopilar una ventana completa de imports y `Retry-After`, y convertir el máximo observado en una reserva con margen.",
+      "title": "Aprobar 225/h por tienda",
+      "body": "Fusionar la PR con el margen propuesto y monitorizar las franjas saturadas para confirmar que desaparecen los 429.",
       "recommended": true
     },
     {
-      "title": "Aplicar un cap temporal",
-      "body": "Aprobar explícitamente un límite conservador provisional y revisarlo tras observar su comportamiento en producción.",
+      "title": "Mantener 240/h para CDL",
+      "body": "Limitar solo Feltrinelli o conservar 240/h en CDL, aceptando la evidencia de algunos 429 residuales bajo saturación.",
       "recommended": false
     },
     {
-      "title": "Mantener observación",
-      "body": "No cambiar la cadencia hasta disponer de más muestras que distingan cuota externa y picos de tráfico.",
+      "title": "Esperar confirmación externa",
+      "body": "Pausar la decisión hasta obtener una cuota contractual de Mirakl, manteniendo mientras tanto el comportamiento actual.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Medir y fijar un límite",
-    "body": "Recopilar una ventana completa de imports y `Retry-After`, y convertir el máximo observado en una reserva con margen.",
+    "title": "Aprobar 225/h por tienda",
+    "body": "Fusionar la PR con el margen propuesto y monitorizar las franjas saturadas para confirmar que desaparecen los 429.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "Su historial reciente en la migración Mirakl y en los límites de este adaptador lo conecta con la decisión técnica.",
-    "confidence": "medium"
+    "person": "MarcosTerroso",
+    "reason": "Es el asignado y documentó la medición que fundamenta el presupuesto propuesto.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9063.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9063#issuecomment-5516322238",
-    "reviewedAt": "2026-09-02T23:22:17.332Z",
-    "mainSha": "ffd90286dac2d39d356b520899b76b13f8465698"
+    "reviewedAt": "2026-09-08T13:10:20.536Z",
+    "mainSha": "85ca9d43221028899e7dd491f485b225005fabd7"
   }
 }
