@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-08T09:37:10.591Z",
-  "updatedAt": "2026-09-08T08:47:14Z",
+  "generatedAt": "2026-09-08T10:56:28.273Z",
+  "updatedAt": "2026-09-08T10:49:48Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -14,39 +14,38 @@
       "P1"
     ],
     "createdAt": "2026-09-07T16:03:59Z",
-    "updatedAt": "2026-09-08T08:47:14Z",
-    "headSha": "9a3a5f3133b42a1788a1ad59568ac5e677b5c664"
+    "updatedAt": "2026-09-08T10:49:48Z",
+    "headSha": "504847dc3817119358ba54c40cf44e6e360bc739"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿La unidad original perdida en picking debe reclasificarse de forma permanente como `INVENTORIED` o debe modelarse una razón específica como `LOST_AT_PICKING`?",
-  "rationale": "La incidencia canónica mantiene esta elección abierta y determina tanto la trazabilidad operativa como el futuro backfill histórico.",
+  "question": "¿Debe una unidad original no localizada en picking persistirse como `WITHDRAWN/INVENTORIED` sin `soldAt`, o requiere la razón específica `LOST_AT_PICKING`?",
+  "rationale": "La elección modifica el significado persistido del stock y las métricas; ni la corrección mecánica ni la evidencia del PR pueden fijar esa política por sí solas.",
   "options": [
     {
       "title": "Usar `INVENTORIED`",
-      "body": "Aceptar la semántica del PR y documentar que la merma de picking se excluye de ventas mediante esta razón existente.",
+      "body": "Mantiene el enum existente, elimina el doble conteo de venta y documenta la merma de picking mediante el flujo ya propuesto.",
       "recommended": true
     },
     {
-      "title": "Añadir `LOST_AT_PICKING`",
-      "body": "Introducir una razón explícita para separar la merma de picking de otros inventariados y ajustar consultas, migración y documentación.",
+      "title": "Crear `LOST_AT_PICKING`",
+      "body": "Distingue la merma física de un ajuste genérico, pero exige definir métricas, espejos y compatibilidad antes de integrar.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Usar `INVENTORIED`",
-    "body": "Aceptar la semántica del PR y documentar que la merma de picking se excluye de ventas mediante esta razón existente.",
+    "body": "Mantiene el enum existente, elimina el doble conteo de venta y documenta la merma de picking mediante el flujo ya propuesto.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Es el reportante de la incidencia funcional y aporta la evidencia contable que motiva esta clasificación.",
+    "person": "banosdavidhamelyn",
+    "reason": "Su historial reciente conecta directamente con la seguridad operativa y las sustituciones de picking.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9245.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9245#issuecomment-5573718617",
-    "reviewedAt": "2026-09-08T09:37:10.591Z",
-    "mainSha": "4badee9287da5bbb4cf7a76774b709ee0f285931"
+    "reviewedAt": "2026-09-08T10:56:28.273Z",
+    "mainSha": "1a07a64f4a2e5a2f7f0f5c53018c2dd91531d00a"
   }
 }

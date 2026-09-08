@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-07T14:58:00.693Z",
-  "updatedAt": "2026-09-07T14:30:39Z",
+  "generatedAt": "2026-09-08T10:54:54.419Z",
+  "updatedAt": "2026-09-08T10:30:38Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,49 +13,47 @@
       "codex",
       "bug",
       "app:marketplace",
-      "triage:queued",
-      "marketplace-crons",
+      "triage:done",
       "P2",
-      "clawsweeper:needs-product-decision"
+      "marketplace-crons"
     ],
     "createdAt": "2026-09-07T14:30:39Z",
-    "updatedAt": "2026-09-07T14:30:39Z"
+    "updatedAt": "2026-09-08T10:30:38Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe `paused` con `picture_download_pending` contarse como alta correcta pendiente de activación o como incidencia que requiere recuperación automática?",
-  "rationale": "El código actual evita duplicados aceptando el `marketplaceId`, pero la publicación aún no es comprable; elegir reintento, seguimiento o umbral de alerta cambia el comportamiento operativo.",
+  "question": "¿Debe la creación `paused` con solo `picture_download_pending` dejar de alertar inmediatamente aunque no exista una comprobación posterior de activación remota?",
+  "rationale": "La cohorte respalda que muchas altas se recuperan, pero no acredita que todas lo hagan; elegir entre ruido inicial y detección diferida define la política operativa del watcher.",
   "options": [
     {
-      "title": "Seguimiento asíncrono",
-      "body": "Mantener el alta como correcta y añadir una métrica o comprobación diferida que avise únicamente si la publicación no se activa dentro del plazo definido.",
+      "title": "Conservar el warning temporal",
+      "body": "Mantener la alerta actual hasta que exista una comprobación posterior que separe una pausa transitoria de un anuncio bloqueado.",
       "recommended": true
     },
     {
-      "title": "Recuperación automática",
-      "body": "Tratar el estado pausado como pendiente y programar una recuperación idempotente que consulte el mismo `marketplaceId` antes de cualquier nueva creación.",
+      "title": "Añadir verificación diferida",
+      "body": "Registrar la firma inicial como `info` y elevarla a `warning` si una consulta posterior sigue mostrando el anuncio pausado.",
       "recommended": false
     },
     {
-      "title": "Conservar la alerta actual",
-      "body": "Mantener la advertencia por cada alta pausada si el equipo considera que requiere intervención operativa inmediata.",
+      "title": "Aceptar la supresión inmediata",
+      "body": "Bajar siempre esta firma a `info` y asumir que las pausas persistentes no generarán alerta automática.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Seguimiento asíncrono",
-    "body": "Mantener el alta como correcta y añadir una métrica o comprobación diferida que avise únicamente si la publicación no se activa dentro del plazo definido.",
+    "title": "Conservar el warning temporal",
+    "body": "Mantener la alerta actual hasta que exista una comprobación posterior que separe una pausa transitoria de un anuncio bloqueado.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Su trabajo reciente concentra la ruta actual y el MarketplaceManager que determina cómo se contabilizan y procesan los resultados de creación.",
+    "reason": "Es la persona asignada y autora de la PR que concentra esta decisión en la ruta afectada.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9242.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9242#issuecomment-5572484033",
-    "reviewedAt": "2026-09-07T14:58:00.693Z",
-    "mainSha": "829910f9e249e89f9d5c30248ac6ba2ca7a4ea1f"
+    "reviewedAt": "2026-09-08T10:54:54.419Z",
+    "mainSha": "1a07a64f4a2e5a2f7f0f5c53018c2dd91531d00a"
   }
 }
