@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-08T12:35:58.574Z",
-  "updatedAt": "2026-09-08T12:27:50Z",
+  "generatedAt": "2026-09-08T13:46:49.651Z",
+  "updatedAt": "2026-09-08T13:40:29Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,42 +14,41 @@
       "bug",
       "app:infrastructure",
       "triage:done",
-      "crons",
-      "P3"
+      "P3",
+      "crons"
     ],
     "createdAt": "2026-09-03T09:40:25Z",
-    "updatedAt": "2026-09-08T12:27:50Z"
+    "updatedAt": "2026-09-08T13:40:29Z"
   },
-  "lane": "manual_review",
-  "priority": "P3",
-  "question": "¿Autoriza Plataforma crear y verificar los dos índices parciales requeridos en staging y producción antes de mergear el PR vinculado?",
-  "rationale": "La modificación de código depende de estructuras Mongo inexistentes y la política del repositorio exige autorización expresa para crearlas.",
+  "lane": "merge_risk",
+  "priority": "P2",
+  "question": "¿Se autoriza crear y validar `idx_pricing_active_attempt_update` e `idx_pricing_inactive_attempt_update` en staging y producción antes de fusionar el PR vinculado?",
+  "rationale": "La creación de índices en Mongo requiere autorización expresa del repositorio y el cambio de hints no es seguro mientras esos índices no existan.",
   "options": [
     {
-      "title": "Autorizar creación y validación",
-      "body": "Crear ambos índices en cada base afectada, comprobar claves, filtros y `explain()`, y después continuar con la revisión del PR.",
+      "title": "Aprovisionar y validar los índices",
+      "body": "Crear ambos índices en cada base afectada, comprobar filtros, claves y `explain()`, y continuar después la revisión del PR.",
       "recommended": true
     },
     {
       "title": "Mantener los hints actuales",
-      "body": "No crear índices por ahora y pausar o cerrar el PR, conservando la protección temporal ya desplegada.",
+      "body": "No crear índices por ahora y pausar o cerrar el PR, conservando los índices actuales y la protección de timeout desplegada.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Autorizar creación y validación",
-    "body": "Crear ambos índices en cada base afectada, comprobar claves, filtros y `explain()`, y después continuar con la revisión del PR.",
+    "title": "Aprovisionar y validar los índices",
+    "body": "Crear ambos índices en cada base afectada, comprobar filtros, claves y `explain()`, y continuar después la revisión del PR.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Está asignado a la incidencia y lleva el PR que documenta el orden operativo requerido.",
+    "reason": "Está asignado a la incidencia y lleva el PR que necesita coordinar la autorización y la validación operativa.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9079.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9079#issuecomment-5524747338",
-    "reviewedAt": "2026-09-08T12:35:58.574Z",
-    "mainSha": "a16a52ba2697f3a5291eb05034e11708e4bbf137"
+    "reviewedAt": "2026-09-08T13:46:49.651Z",
+    "mainSha": "85ca9d43221028899e7dd491f485b225005fabd7"
   }
 }
