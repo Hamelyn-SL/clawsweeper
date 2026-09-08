@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-08T05:06:20.592Z",
+  "updatedAt": "2026-09-08T05:00:26Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9253,
+    "title": "Amazon COM raw mirror retains pre-cutover states changed in live Mongo since May",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9253",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "triage:needs-info",
+      "P2"
+    ],
+    "createdAt": "2026-09-08T04:48:35Z",
+    "updatedAt": "2026-09-08T05:00:26Z"
+  },
+  "lane": "manual_review",
+  "priority": "P2",
+  "question": "¿Autoriza Data Platform un contraste actual y un dry-run para `mk_amazonCom`, seguido de una reconciliación limitada al alcance validado?",
+  "rationale": "La reparación modifica datos analíticos y puede eliminar filas obsoletas; la evidencia actual no sustituye la comparación viva ni la autorización del filtro.",
+  "options": [
+    {
+      "title": "Autorizar contraste y dry-run",
+      "body": "Comparar los 88 IDs con Mongo, publicar conteo y muestras saneadas, y pedir autorización final con el filtro literal antes de escribir.",
+      "recommended": true
+    },
+    {
+      "title": "Autorizar reconciliación completa segura",
+      "body": "Ejecutar la reconciliación de `mk_amazonCom` con guardas de `snapshot_start` tras validar que el impacto de tabla completa es aceptable.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener observación",
+      "body": "No escribir hasta disponer de evidencia viva adicional, aceptando que los residuos seguirán afectando el espejo analítico.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Autorizar contraste y dry-run",
+    "body": "Comparar los 88 IDs con Mongo, publicar conteo y muestras saneadas, y pedir autorización final con el filtro literal antes de escribir.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "danielmenchen-hamelyn",
+    "reason": "Su PR introdujo el flujo CDC que delimita la recuperación y es el mejor punto de partida técnico para el alcance operativo.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9253.md",
+    "reviewedAt": "2026-09-08T05:06:20.592Z",
+    "mainSha": "829910f9e249e89f9d5c30248ac6ba2ca7a4ea1f"
+  }
+}
