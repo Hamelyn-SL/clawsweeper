@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-08T03:06:27.699Z",
-  "updatedAt": "2026-09-08T03:00:42Z",
+  "generatedAt": "2026-09-08T04:29:37.507Z",
+  "updatedAt": "2026-09-08T04:02:41Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -14,39 +14,38 @@
       "P2"
     ],
     "createdAt": "2026-09-08T02:48:40Z",
-    "updatedAt": "2026-09-08T03:00:42Z",
-    "headSha": "3e041c6cd91a94930655e54a48fbd6af28e2a4a2"
+    "updatedAt": "2026-09-08T04:02:41Z",
+    "headSha": "918c7c4e1dea5fe689c99686edf1d6e7c40dd597"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe `hamelyn` distribuir y soportar de forma estable esta demo local de memoria de equipo con Python 3.10+, SQLite y servidor loopback?",
-  "rationale": "La propuesta añade una superficie de producto, runtime y límites de privacidad nuevos al CLI, más allá de corregir los fallos mecánicos ya identificados.",
+  "question": "¿Debe Hamelyn CLI 0.7.0 distribuir una demo local de memoria de equipo con interfaz web y runtime Python como parte del producto estándar?",
+  "rationale": "El PR añade 2.335 líneas y una nueva superficie de comportamiento, documentación y distribución; los defectos mecánicos son reparables, pero no resuelven por sí solos el encaje de producto.",
   "options": [
     {
-      "title": "Patrocinar la superficie y corregir bloqueos",
-      "body": "Aceptar la demo como parte soportada del CLI y exigir la corrección de los cinco P2 con cobertura focalizada antes de integrarla.",
-      "recommended": true
+      "title": "Integrarla como capacidad de CLI",
+      "body": "Aprobar el alcance y exigir antes del merge compatibilidad Windows, límites de entrada coherentes y una validación de release multiplataforma.",
+      "recommended": false
     },
     {
-      "title": "Mantenerla fuera del CLI distribuido",
-      "body": "Pausar o extraer la demo a una herramienta experimental hasta definir su propietario, soporte y contrato de privacidad.",
-      "recommended": false
+      "title": "Separar y acotar el prototipo",
+      "body": "Mantener la demo fuera del binario distribuido hasta definir propietario, audiencia y plan de soporte de una memoria de equipo.",
+      "recommended": true
     }
   ],
   "recommendation": {
-    "title": "Patrocinar la superficie y corregir bloqueos",
-    "body": "Aceptar la demo como parte soportada del CLI y exigir la corrección de los cinco P2 con cobertura focalizada antes de integrarla.",
+    "title": "Separar y acotar el prototipo",
+    "body": "Mantener la demo fuera del binario distribuido hasta definir propietario, audiencia y plan de soporte de una memoria de equipo.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Su historial reciente concentra la evolución del CLI y el head propuesto.",
+    "person": "MiguelHamelyn",
+    "reason": "Su historial cubre la configuración base y la distribución de la CLI, y ya figura entre los revisores solicitados.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9252.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9252#issuecomment-5578483632",
-    "reviewedAt": "2026-09-08T03:06:27.699Z",
+    "reviewedAt": "2026-09-08T04:29:37.507Z",
     "mainSha": "829910f9e249e89f9d5c30248ac6ba2ca7a4ea1f"
   }
 }
