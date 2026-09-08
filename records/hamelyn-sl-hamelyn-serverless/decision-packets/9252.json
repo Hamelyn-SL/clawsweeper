@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-08T03:05:24.336Z",
+  "updatedAt": "2026-09-08T03:00:42Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 9252,
+    "title": "feat: add local team memory to hamelyn cli",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9252",
+    "state": "open",
+    "labels": [
+      "size/XXL"
+    ],
+    "createdAt": "2026-09-08T02:48:40Z",
+    "updatedAt": "2026-09-08T03:00:42Z",
+    "headSha": "3e041c6cd91a94930655e54a48fbd6af28e2a4a2"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe `hamelyn memory` distribuirse como capacidad estable de Hamelyn CLI, con Python 3.10+ y una demo web local, o mantenerse fuera de la CLI hasta contar con una dirección de producto aprobada?",
+  "rationale": "La propuesta añade una capacidad nueva, una dependencia de ejecución y documentación de un contrato futuro; la corrección mecánica no resuelve por sí sola esa decisión de alcance.",
+  "options": [
+    {
+      "title": "Patrocinar la capacidad en CLI",
+      "body": "Mantener la dirección actual, pero exigir la corrección de los hallazgos y una definición explícita de soporte, actualización y límites de uso.",
+      "recommended": false
+    },
+    {
+      "title": "Separar la demo del producto estable",
+      "body": "Mover o mantener la demostración como herramienta experimental hasta que exista una decisión de producto y soporte para la memoria de equipo.",
+      "recommended": true
+    },
+    {
+      "title": "Reducir la propuesta",
+      "body": "Conservar únicamente una interfaz local mínima sin servidor web ni contrato de integración futura, si ese alcance satisface la necesidad inmediata.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Separar la demo del producto estable",
+    "body": "Mover o mantener la demostración como herramienta experimental hasta que exista una decisión de producto y soporte para la memoria de equipo.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es el candidato más cercano por su historial continuado en la CLI y por la dirección técnica planteada en esta rama.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9252.md",
+    "reviewedAt": "2026-09-08T03:05:24.336Z",
+    "mainSha": "829910f9e249e89f9d5c30248ac6ba2ca7a4ea1f"
+  }
+}
