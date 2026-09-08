@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-08T08:18:50.459Z",
-  "updatedAt": "2026-09-08T07:57:50Z",
+  "generatedAt": "2026-09-08T09:59:31.104Z",
+  "updatedAt": "2026-09-08T08:42:50Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,42 +15,46 @@
       "feature",
       "triage:needs-info",
       "clawsweeper:needs-product-decision",
-      "reporter:daniellopez",
-      "P2"
+      "P2",
+      "reporter:daniellopez"
     ],
     "createdAt": "2026-08-31T10:14:50Z",
-    "updatedAt": "2026-09-08T07:57:50Z"
+    "updatedAt": "2026-09-08T08:42:50Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe el destino automático sustituir solo las nuevas altas y conservar `INVENTORY` y `NEW_ENTRY` como histórico de solo lectura?",
-  "rationale": "La propuesta cambia un flujo operativo persistido; decidir la compatibilidad de los lotes y métricas existentes requiere criterio de Producto y Operaciones.",
+  "question": "¿Aprueba Supply el contrato del PR candidato: sobrante con demanda a precio cero en el lote, baja demanda a caja `G-*` y activación gradual por puesto?",
+  "rationale": "El adjunto y el PR difieren sobre el conteo, el momento de escanear la caja y el tratamiento operativo; esas reglas afectan UI, persistencia y compatibilidad histórica.",
   "options": [
     {
-      "title": "Conservar histórico de solo lectura",
-      "body": "Adoptar el nuevo destino para nuevas revisiones y mantener los lectores, etiquetas y métricas históricas de `INVENTORY` y `NEW_ENTRY`.",
+      "title": "Aprobar el piloto por puesto",
+      "body": "Confirmar el contrato del PR, mantener el flag gradual y decidir la retirada de Nueva entrada por separado.",
       "recommended": true
     },
     {
-      "title": "Retirada completa tras auditoría",
-      "body": "Eliminar también lectores y accesos antiguos solo después de confirmar que Operaciones no depende de esos registros históricos.",
+      "title": "Exigir el flujo del documento",
+      "body": "Pedir que el PR incorpore escaneo inicial y conteo antes de aceptar la implementación.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener ambos flujos",
+      "body": "Conservar Nueva entrada mientras Operaciones valide usos históricos y excepciones no cubiertas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Conservar histórico de solo lectura",
-    "body": "Adoptar el nuevo destino para nuevas revisiones y mantener los lectores, etiquetas y métricas históricas de `INVENTORY` y `NEW_ENTRY`.",
+    "title": "Aprobar el piloto por puesto",
+    "body": "Confirmar el contrato del PR, mantener el flag gradual y decidir la retirada de Nueva entrada por separado.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "banosdavidhamelyn",
-    "reason": "Está asignado a la incidencia y ya ha reunido la propuesta técnica que necesita esta decisión.",
-    "confidence": "high"
+    "reason": "Ha mantenido recientemente el flujo de entrada y es la persona conectada al PR candidato.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8929.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8929#issuecomment-5477054382",
-    "reviewedAt": "2026-09-08T08:18:50.459Z",
-    "mainSha": "e53a8fb8ff6e8c23dc76d61cf509db6befb9591a"
+    "reviewedAt": "2026-09-08T09:59:31.104Z",
+    "mainSha": "a94f4b0f9e34689c37861c23b47f42020bf14aae"
   }
 }

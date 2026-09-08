@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-08T09:59:02.895Z",
+  "generatedAt": "2026-09-08T10:00:23.170Z",
   "updatedAt": "2026-09-08T09:53:34Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -19,39 +19,33 @@
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe esta PR limitarse a los guards de Supply mientras se patrocina el diseño B por fases, o se acepta una contención legacy completa para el precio almacenado?",
-  "rationale": "La incidencia vinculada documenta que el suelo con guards no resuelve la deriva de `priceBuy`, mientras que el diseño B cambia semántica de datos y despliegue.",
+  "question": "¿Debe Pricing migrar a precio base persistido con bonus de `featured` derivado, o mantener la mutación almacenada registrando el delta exacto para revertirlo?",
+  "rationale": "La rama no puede reconstruir de forma fiable desde el hash actual si ni cómo se escaló un precio histórico; ambas opciones cambian el contrato de datos y el despliegue.",
   "options": [
     {
-      "title": "Secuenciar el diseño B",
-      "body": "Mantener o extraer los guards y usar una serie de PRs compatibles para que `priceBuy` guarde base y el bonus se derive al leer.",
+      "title": "Precio base y bonus derivado",
+      "body": "Persistir siempre la base y calcular el bonus de `featured` en las lecturas compatibles, con una migración por fases.",
       "recommended": true
     },
     {
-      "title": "Contención legacy exacta",
-      "body": "Conservar el modelo actual, pero retirar siempre el incremento escalado para todos los buckets y cubrir sus casos de ida y vuelta.",
-      "recommended": false
-    },
-    {
-      "title": "Pausar el cambio de destacados",
-      "body": "No fusionar la parte de `featured` hasta que se decida la semántica persistida y el plan de despliegue.",
+      "title": "Delta de transición persistido",
+      "body": "Conservar la mutación de `priceBuy`, pero almacenar el multiplicador o delta aplicado y revertir exactamente ese valor al retirar `featured`.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Secuenciar el diseño B",
-    "body": "Mantener o extraer los guards y usar una serie de PRs compatibles para que `priceBuy` guarde base y el bonus se derive al leer.",
+    "title": "Precio base y bonus derivado",
+    "body": "Persistir siempre la base y calcular el bonus de `featured` en las lecturas compatibles, con una migración por fases.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "La incidencia canónica le está asignada y su comentario ya delimita las alternativas y dependencias de despliegue.",
+    "reason": "La procedencia de `MALVENDIDO` y la discusión vinculada le conectan directamente con la decisión de semántica.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9115.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9115#issuecomment-5565380650",
-    "reviewedAt": "2026-09-08T09:59:02.895Z",
+    "reviewedAt": "2026-09-08T10:00:23.170Z",
     "mainSha": "a94f4b0f9e34689c37861c23b47f42020bf14aae"
   }
 }
