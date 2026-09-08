@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-07T16:49:21.559Z",
-  "updatedAt": "2026-09-07T15:50:56Z",
+  "generatedAt": "2026-09-08T08:09:54.843Z",
+  "updatedAt": "2026-09-08T07:57:51Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,42 +14,41 @@
       "app:admin",
       "reporter:javier",
       "triage:no-change",
-      "clawsweeper:needs-product-decision",
-      "P1"
+      "P1",
+      "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-08-25T11:13:44Z",
-    "updatedAt": "2026-09-07T15:50:56Z"
+    "updatedAt": "2026-09-08T07:57:51Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe la unidad original no encontrada en una sustitución de picking quedar como `INVENTORIED`, tal como propone la PR abierta, o requiere una razón contable específica?",
-  "rationale": "La elección determina la semántica persistida, las métricas históricas y el alcance del backfill; el código no puede decidir esa política contable por sí solo.",
+  "question": "¿Se confirma `INVENTORIED` como clasificación contable de la unidad original, o se requiere una razón específica de merma en picking?",
+  "rationale": "La decisión modifica semántica persistida, consumidores analíticos y el criterio del saneamiento histórico.",
   "options": [
     {
       "title": "Confirmar `INVENTORIED`",
-      "body": "Mantiene el enum existente, elimina `soldAt` y permite revisar la PR actual sin ampliar la taxonomía.",
+      "body": "Reutiliza el enum existente y permite terminar la corrección propuesta sin ampliar el contrato de retirada.",
       "recommended": true
     },
     {
-      "title": "Crear `LOST_AT_PICKING`",
-      "body": "Distingue expresamente la merma de picking, pero exige definir consumidores, migración y reglas de reporting.",
+      "title": "Crear razón específica",
+      "body": "Distingue la merma de picking, pero exige acordar el enum, sus consumidores y la migración histórica.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Confirmar `INVENTORIED`",
-    "body": "Mantiene el enum existente, elimina `soldAt` y permite revisar la PR actual sin ampliar la taxonomía.",
+    "body": "Reutiliza el enum existente y permite terminar la corrección propuesta sin ampliar el contrato de retirada.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Es el asignado y autor de la corrección candidata, por lo que puede coordinar la validación con Fulfillment e Inventario.",
-    "confidence": "medium"
+    "reason": "Ha preparado la corrección candidata y figura asignado al trabajo relacionado.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8698.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8698#issuecomment-5410237601",
-    "reviewedAt": "2026-09-07T16:49:21.559Z",
-    "mainSha": "829910f9e249e89f9d5c30248ac6ba2ca7a4ea1f"
+    "reviewedAt": "2026-09-08T08:09:54.843Z",
+    "mainSha": "e53a8fb8ff6e8c23dc76d61cf509db6befb9591a"
   }
 }
