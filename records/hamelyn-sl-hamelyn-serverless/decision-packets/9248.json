@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-08T09:53:44.705Z",
+  "generatedAt": "2026-09-08T09:54:57.476Z",
   "updatedAt": "2026-09-08T09:49:03Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -14,43 +14,42 @@
       "bug",
       "app:marketplace",
       "triage:blocked",
+      "P1",
       "clawsweeper:needs-product-decision",
-      "marketplace-crons",
-      "P1"
+      "marketplace-crons"
     ],
     "createdAt": "2026-09-07T17:30:38Z",
     "updatedAt": "2026-09-08T09:49:03Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Aceptamos que el cron horario limite la conciliación de cancelaciones a tres días y que la histórica quede fuera de este flujo?",
-  "rationale": "El PR corrige los abortos por 429, pero cambia deliberadamente la cobertura histórica para reducir la exposición al límite del proveedor.",
+  "question": "¿Se acepta reducir de 21 a 3 días la ventana horaria de cancelaciones y no conciliar el histórico que la PR identifica como no accionable?",
+  "rationale": "La propuesta evita abortos por 429, pero cambia deliberadamente la cobertura de cancelaciones antiguas; el código no puede decidir por sí solo qué histórico es aceptable excluir.",
   "options": [
     {
-      "title": "Aceptar la exclusión histórica",
-      "body": "Integrar la ventana de tres días con la evidencia operativa aportada y vigilar el comportamiento tras el despliegue.",
+      "title": "Aceptar la ventana de tres días",
+      "body": "Validar la evidencia operativa de la PR y revisar su integración como la vía para reducir la exposición al 429.",
       "recommended": true
     },
     {
       "title": "Conservar conciliación histórica",
-      "body": "Exigir una pasada profunda temporal o una conciliación explícita antes de reducir permanentemente la ventana.",
+      "body": "Pedir una reconciliación temporal o una cola persistente antes de acortar la ventana de búsqueda.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aceptar la exclusión histórica",
-    "body": "Integrar la ventana de tres días con la evidencia operativa aportada y vigilar el comportamiento tras el despliegue.",
+    "title": "Aceptar la ventana de tres días",
+    "body": "Validar la evidencia operativa de la PR y revisar su integración como la vía para reducir la exposición al 429.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Es la persona asignada, autora de la propuesta y principal contribuidor reciente del flujo de cancelaciones.",
+    "reason": "Está asignado a esta incidencia y su historial concentra el barrido de MercadoLibre y la propuesta activa.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9248.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9248#issuecomment-5574109349",
-    "reviewedAt": "2026-09-08T09:53:44.705Z",
+    "reviewedAt": "2026-09-08T09:54:57.476Z",
     "mainSha": "a94f4b0f9e34689c37861c23b47f42020bf14aae"
   }
 }
