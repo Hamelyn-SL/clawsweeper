@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-08T10:07:56.995Z",
-  "updatedAt": "2026-09-08T10:01:37Z",
+  "generatedAt": "2026-09-08T11:16:58.069Z",
+  "updatedAt": "2026-09-08T10:15:07Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,49 +13,43 @@
       "source:admin-panel",
       "app:supply",
       "feature",
-      "triage:queued",
-      "reporter:daniellopez",
+      "triage:done",
+      "clawsweeper:needs-product-decision",
       "P2",
-      "clawsweeper:needs-product-decision"
+      "reporter:daniellopez"
     ],
     "createdAt": "2026-09-08T09:58:23Z",
-    "updatedAt": "2026-09-08T10:01:37Z"
+    "updatedAt": "2026-09-08T10:15:07Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe la cubeta quedar asociada solo a la sesión activa y el modo «Aceptable» aplicarse como valor por defecto del lote, con una excepción individual a «Muy bueno»?",
-  "rationale": "El código actual conserva la cubeta entre lotes y fija la aceptación Turbo en `MUY_BUENO`; cambiar ambos contratos afecta a la continuidad operativa y requiere intención explícita.",
+  "question": "¿La cubeta debe limpiarse al iniciar una sesión nueva de productividad y conservarse únicamente al restaurar una sesión ya activa tras recargar?",
+  "rationale": "El reporte usa «sesión» sin distinguir acceso, productividad y restauración; la PR escoge productividad como límite persistente.",
   "options": [
     {
-      "title": "Estado por sesión y lote",
-      "body": "Requerir escaneo de cubeta al iniciar cada sesión, limpiarla al cerrarla y aplicar «Aceptable» solo como valor por defecto del lote con excepción individual.",
+      "title": "Vincularlo a productividad",
+      "body": "Limpiar cubeta y modo de lote al iniciar o finalizar productividad, conservándolos durante una recarga de la misma sesión.",
       "recommended": true
     },
     {
-      "title": "Conservar la cubeta entre lotes",
-      "body": "Mantener la cubeta al avanzar de lote y limitar la mejora al selector de calidad por lote.",
-      "recommended": false
-    },
-    {
-      "title": "Separar las decisiones",
-      "body": "Aprobar primero el modo de calidad por lote y abrir un diseño específico para persistencia y cierre de sesión de cubetas.",
+      "title": "Vincularlo al acceso",
+      "body": "Limpiar el estado también al autenticar, aunque una sesión de productividad previa siga abierta.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Estado por sesión y lote",
-    "body": "Requerir escaneo de cubeta al iniciar cada sesión, limpiarla al cerrarla y aplicar «Aceptable» solo como valor por defecto del lote con excepción individual.",
+    "title": "Vincularlo a productividad",
+    "body": "Limpiar cubeta y modo de lote al iniciar o finalizar productividad, conservándolos durante una recarga de la misma sesión.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Es la persona con mayor trazabilidad en el panel Turbo y los flujos de cubeta y aceptación actuales.",
+    "person": "banosdavidhamelyn",
+    "reason": "Ha documentado e implementado la distinción propuesta en la PR vinculada.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9274.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9274#issuecomment-5583440931",
-    "reviewedAt": "2026-09-08T10:07:56.995Z",
-    "mainSha": "a94f4b0f9e34689c37861c23b47f42020bf14aae"
+    "reviewedAt": "2026-09-08T11:16:58.069Z",
+    "mainSha": "1a07a64f4a2e5a2f7f0f5c53018c2dd91531d00a"
   }
 }

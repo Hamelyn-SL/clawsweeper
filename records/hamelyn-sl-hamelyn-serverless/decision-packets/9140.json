@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-07T05:22:52.882Z",
-  "updatedAt": "2026-09-04T14:33:56Z",
+  "generatedAt": "2026-09-08T11:16:33.233Z",
+  "updatedAt": "2026-09-08T10:18:55Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -14,44 +14,43 @@
       "P2"
     ],
     "createdAt": "2026-09-04T14:21:08Z",
-    "updatedAt": "2026-09-04T14:33:56Z",
+    "updatedAt": "2026-09-08T10:18:55Z",
     "headSha": "790cb29fc66b976370360d027f1fcaafc5d88d6e"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Cómo deben aparecer las fases omitidas por «Como nuevo» en la trazabilidad y en las métricas de productividad del puesto?",
-  "rationale": "El requisito pide conservar métricas y trazabilidad, pero registrar cero segundos, marcar fases como omitidas o excluirlas de promedios produce resultados operativos distintos.",
+  "question": "¿Debe «Como nuevo» finalizar tras el mismo segundo de espera que «Continuar», o necesita una confirmación o espera independiente en el kiosco?",
+  "rationale": "La implementación reutiliza correctamente la transición estándar, pero el umbral y la posición del atajo determinan el riesgo aceptable de clasificar por error una unidad como nueva.",
   "options": [
     {
-      "title": "Registrar fases como omitidas",
-      "body": "Persistir eventos explícitos de atajo para cada sección y excluirlos de los promedios de tiempo ordinarios.",
+      "title": "Añadir salvaguarda al atajo",
+      "body": "Mantener `IDENTIFY` a un segundo para continuar, pero exigir confirmación explícita o una espera propia para «Como nuevo».",
       "recommended": true
     },
     {
-      "title": "Contabilizar cero segundos",
-      "body": "Registrar las secciones omitidas con duración cero y aceptar que afecten a las métricas de productividad.",
+      "title": "Aceptar el atajo inmediato",
+      "body": "Habilitar ambas acciones al segundo y asumir explícitamente el riesgo operativo de pulsación accidental.",
       "recommended": false
     },
     {
-      "title": "No registrar fases omitidas",
-      "body": "Mantener solo el registro inicial y ajustar el requisito para que el atajo no prometa trazabilidad por sección.",
+      "title": "Separar el atajo",
+      "body": "Integrar búsqueda y temporización ahora y dejar «Como nuevo» para una decisión posterior del flujo táctil.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Registrar fases como omitidas",
-    "body": "Persistir eventos explícitos de atajo para cada sección y excluirlos de los promedios de tiempo ordinarios.",
+    "title": "Añadir salvaguarda al atajo",
+    "body": "Mantener `IDENTIFY` a un segundo para continuar, pero exigir confirmación explícita o una espera propia para «Como nuevo».",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "AlexDiaz-Hamelyn",
-    "reason": "El historial le vincula a la definición del ritmo y la experiencia operativa de Revisión V3.",
+    "person": "banosdavidhamelyn",
+    "reason": "Ya revisó esta combinación concreta de temporización, diseño táctil y clasificación final.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9140.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9140#issuecomment-5565550359",
-    "reviewedAt": "2026-09-07T05:22:52.882Z",
-    "mainSha": "d7210ac77ad17ccd55714faeba2bd5631ae6fd9a"
+    "reviewedAt": "2026-09-08T11:16:33.233Z",
+    "mainSha": "1a07a64f4a2e5a2f7f0f5c53018c2dd91531d00a"
   }
 }
