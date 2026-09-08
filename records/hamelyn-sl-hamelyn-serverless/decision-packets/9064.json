@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-02T23:33:17.913Z",
-  "updatedAt": "2026-09-02T23:03:40Z",
+  "generatedAt": "2026-09-08T12:55:53.494Z",
+  "updatedAt": "2026-09-08T12:19:30Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,42 +15,41 @@
       "app:marketplace",
       "triage:needs-info",
       "clawsweeper:needs-product-decision",
-      "marketplace-crons",
-      "P2"
+      "P2",
+      "marketplace-crons"
     ],
     "createdAt": "2026-09-02T20:30:41Z",
-    "updatedAt": "2026-09-02T23:03:40Z"
+    "updatedAt": "2026-09-08T12:19:30Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿TodoColección debe retener los stocks cuyo producto no tiene `image`, o aceptar la publicación degradada sin foto?",
-  "rationale": "El código confirma ambos efectos posibles, pero no puede decidir el equilibrio comercial entre cobertura de catálogo y calidad mínima del anuncio.",
+  "question": "¿Debe TodoColección publicar con `HAMELYN_DEFAULT_IMAGE` cuando falte una foto real, en lugar de retener el stock hasta que catálogo la complete?",
+  "rationale": "La incidencia documenta que ambos comportamientos son posibles y el PR abierto adopta uno de ellos sin una aprobación comercial explícita en la discusión.",
   "options": [
     {
-      "title": "Retener hasta tener imagen",
-      "body": "Detener o aparcar solo el SKU sin `product.image` y registrar un resultado recuperable para que catálogo complete la metadata.",
+      "title": "Publicar con placeholder",
+      "body": "Aprobar el fallback del PR para mantener el listing activo y reemplazar la imagen en una actualización posterior.",
       "recommended": true
     },
     {
-      "title": "Permitir publicación degradada",
-      "body": "Mantener el alta sin foto y convertir el aviso repetitivo en telemetría agregada que no abra incidencias operativas.",
+      "title": "Retener hasta tener imagen",
+      "body": "Evitar el alta sin foto y definir la recuperación automática cuando catálogo complete la imagen.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Retener hasta tener imagen",
-    "body": "Detener o aparcar solo el SKU sin `product.image` y registrar un resultado recuperable para que catálogo complete la metadata.",
+    "title": "Publicar con placeholder",
+    "body": "Aprobar el fallback del PR para mantener el listing activo y reemplazar la imagen en una actualización posterior.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "La decisión afecta al flujo V2 que introdujo y a su clasificación de resultados de publicación.",
+    "person": "MarcosTerroso",
+    "reason": "Está asignado al trabajo y ha preparado la implementación concreta para la opción de placeholder.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9064.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9064#issuecomment-5516187576",
-    "reviewedAt": "2026-09-02T23:33:17.913Z",
-    "mainSha": "ffd90286dac2d39d356b520899b76b13f8465698"
+    "reviewedAt": "2026-09-08T12:55:53.494Z",
+    "mainSha": "a16a52ba2697f3a5291eb05034e11708e4bbf137"
   }
 }
