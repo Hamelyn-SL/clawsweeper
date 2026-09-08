@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-08T08:09:54.843Z",
+  "generatedAt": "2026-09-08T08:12:08.947Z",
   "updatedAt": "2026-09-08T07:57:51Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -14,42 +14,41 @@
       "app:admin",
       "reporter:javier",
       "triage:no-change",
-      "clawsweeper:needs-product-decision",
-      "P1"
+      "P1",
+      "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-08-25T11:13:44Z",
     "updatedAt": "2026-09-08T07:57:51Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Se confirma `INVENTORIED` como clasificación contable de la unidad original, o se requiere una razón específica de merma en picking?",
-  "rationale": "La decisión modifica semántica persistida, consumidores analíticos y el criterio del saneamiento histórico.",
+  "question": "¿Confirmamos `INVENTORIED` como semántica permanente de la original no encontrada, también para el backfill histórico, o queremos una razón contable específica?",
+  "rationale": "La elección determina el significado persistido de la merma, los consumidores analíticos y el alcance de la reparación histórica.",
   "options": [
     {
       "title": "Confirmar `INVENTORIED`",
-      "body": "Reutiliza el enum existente y permite terminar la corrección propuesta sin ampliar el contrato de retirada.",
+      "body": "Aprovecha el enum y la invariante actuales; el PR candidato ya sigue esta dirección.",
       "recommended": true
     },
     {
-      "title": "Crear razón específica",
-      "body": "Distingue la merma de picking, pero exige acordar el enum, sus consumidores y la migración histórica.",
+      "title": "Introducir `LOST_AT_PICKING`",
+      "body": "Distingue la merma de picking, pero requiere ampliar contratos, consumidores y el plan de migración.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Confirmar `INVENTORIED`",
-    "body": "Reutiliza el enum existente y permite terminar la corrección propuesta sin ampliar el contrato de retirada.",
+    "body": "Aprovecha el enum y la invariante actuales; el PR candidato ya sigue esta dirección.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Ha preparado la corrección candidata y figura asignado al trabajo relacionado.",
+    "reason": "Es el asignado y ha implementado el candidato que materializa la decisión.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8698.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8698#issuecomment-5410237601",
-    "reviewedAt": "2026-09-08T08:09:54.843Z",
+    "reviewedAt": "2026-09-08T08:12:08.947Z",
     "mainSha": "e53a8fb8ff6e8c23dc76d61cf509db6befb9591a"
   }
 }
