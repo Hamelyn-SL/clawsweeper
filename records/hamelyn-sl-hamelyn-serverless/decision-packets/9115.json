@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-08T09:59:02.895Z",
+  "updatedAt": "2026-09-08T09:53:34Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 9115,
+    "title": "fix: prevent negative supply purchase prices",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9115",
+    "state": "open",
+    "labels": [
+      "size/M",
+      "P1"
+    ],
+    "createdAt": "2026-09-04T07:02:17Z",
+    "updatedAt": "2026-09-08T09:53:34Z",
+    "headSha": "4bfe9743730d6c2046696504dc204e71e830cfee"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe esta PR limitarse a los guards de Supply mientras se patrocina el diseño B por fases, o se acepta una contención legacy completa para el precio almacenado?",
+  "rationale": "La incidencia vinculada documenta que el suelo con guards no resuelve la deriva de `priceBuy`, mientras que el diseño B cambia semántica de datos y despliegue.",
+  "options": [
+    {
+      "title": "Secuenciar el diseño B",
+      "body": "Mantener o extraer los guards y usar una serie de PRs compatibles para que `priceBuy` guarde base y el bonus se derive al leer.",
+      "recommended": true
+    },
+    {
+      "title": "Contención legacy exacta",
+      "body": "Conservar el modelo actual, pero retirar siempre el incremento escalado para todos los buckets y cubrir sus casos de ida y vuelta.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar el cambio de destacados",
+      "body": "No fusionar la parte de `featured` hasta que se decida la semántica persistida y el plan de despliegue.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Secuenciar el diseño B",
+    "body": "Mantener o extraer los guards y usar una serie de PRs compatibles para que `priceBuy` guarde base y el bonus se derive al leer.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "La incidencia canónica le está asignada y su comentario ya delimita las alternativas y dependencias de despliegue.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9115.md",
+    "reviewedAt": "2026-09-08T09:59:02.895Z",
+    "mainSha": "a94f4b0f9e34689c37861c23b47f42020bf14aae"
+  }
+}
