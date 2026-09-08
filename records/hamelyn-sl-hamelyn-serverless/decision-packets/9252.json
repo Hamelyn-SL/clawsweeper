@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-08T04:29:37.507Z",
-  "updatedAt": "2026-09-08T04:02:41Z",
+  "generatedAt": "2026-09-08T08:00:52.857Z",
+  "updatedAt": "2026-09-08T07:29:17Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -14,39 +14,43 @@
       "P2"
     ],
     "createdAt": "2026-09-08T02:48:40Z",
-    "updatedAt": "2026-09-08T04:02:41Z",
+    "updatedAt": "2026-09-08T07:29:17Z",
     "headSha": "918c7c4e1dea5fe689c99686edf1d6e7c40dd597"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe Hamelyn CLI 0.7.0 distribuir una demo local de memoria de equipo con interfaz web y runtime Python como parte del producto estándar?",
-  "rationale": "El PR añade 2.335 líneas y una nueva superficie de comportamiento, documentación y distribución; los defectos mecánicos son reparables, pero no resuelven por sí solos el encaje de producto.",
+  "question": "¿Se acepta `hamelyn memory` en 0.7.0 únicamente como demo local sintética, dejando el contrato Mongo/Auth0 y cualquier piloto productivo fuera de este PR?",
+  "rationale": "El código evita producción, pero la documentación define una evolución operativa amplia que necesita patrocinio y trazabilidad antes de consolidarla como dirección del CLI.",
   "options": [
     {
-      "title": "Integrarla como capacidad de CLI",
-      "body": "Aprobar el alcance y exigir antes del merge compatibilidad Windows, límites de entrada coherentes y una validación de release multiplataforma.",
+      "title": "Acotar la demo local",
+      "body": "Aprobar solo la demo sintética tras corregir Windows y abrir una issue separada para el diseño productivo.",
+      "recommended": true
+    },
+    {
+      "title": "Patrocinar el piloto completo",
+      "body": "Mantener el contrato propuesto en este ciclo y asignar un responsable explícito para sus decisiones de plataforma.",
       "recommended": false
     },
     {
-      "title": "Separar y acotar el prototipo",
-      "body": "Mantener la demo fuera del binario distribuido hasta definir propietario, audiencia y plan de soporte de una memoria de equipo.",
-      "recommended": true
+      "title": "Posponer la capacidad",
+      "body": "Cerrar o dividir el PR hasta que exista una decisión de producto y una issue canónica.",
+      "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Separar y acotar el prototipo",
-    "body": "Mantener la demo fuera del binario distribuido hasta definir propietario, audiencia y plan de soporte de una memoria de equipo.",
+    "title": "Acotar la demo local",
+    "body": "Aprobar solo la demo sintética tras corregir Windows y abrir una issue separada para el diseño productivo.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "Su historial cubre la configuración base y la distribución de la CLI, y ya figura entre los revisores solicitados.",
+    "person": "danielmenchen-hamelyn",
+    "reason": "Ya ha marcado el límite de aprobación y la necesidad de trazabilidad del alcance futuro.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9252.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9252#issuecomment-5578483632",
-    "reviewedAt": "2026-09-08T04:29:37.507Z",
-    "mainSha": "829910f9e249e89f9d5c30248ac6ba2ca7a4ea1f"
+    "reviewedAt": "2026-09-08T08:00:52.857Z",
+    "mainSha": "e53a8fb8ff6e8c23dc76d61cf509db6befb9591a"
   }
 }
