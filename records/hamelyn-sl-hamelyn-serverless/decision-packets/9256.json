@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-08T05:57:47.663Z",
-  "updatedAt": "2026-09-08T05:52:39Z",
+  "generatedAt": "2026-09-08T08:47:08.932Z",
+  "updatedAt": "2026-09-08T06:01:01Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,42 +12,41 @@
     "labels": [
       "app:supply",
       "feature",
-      "triage:running",
+      "triage:needs-info",
       "P3"
     ],
     "createdAt": "2026-09-08T05:52:29Z",
-    "updatedAt": "2026-09-08T05:52:39Z"
+    "updatedAt": "2026-09-08T06:01:01Z"
   },
   "lane": "product_direction",
-  "priority": "P3",
-  "question": "¿Qué destino persistido reciben los EAN fuera del lote y la baja demanda, y qué compatibilidad histórica debe conservarse para `NEW_ENTRY` e `INVENTORY`?",
-  "rationale": "La retirada depende de sustituir un flujo activo y de decidir cómo interpretar sesiones y órdenes ya almacenadas.",
+  "priority": "P2",
+  "question": "¿Debe el destino automático sustituir las nuevas altas manteniendo `INVENTORY` y `NEW_ENTRY` como histórico de solo lectura, o debe retirarse también su lectura tras una auditoría operativa?",
+  "rationale": "La retirada cambia un flujo aún activo y afecta a datos, métricas y operación; el código no determina por sí solo la política histórica ni el destino de baja demanda.",
   "options": [
     {
-      "title": "Definir destinos y conservar histórico",
-      "body": "Acordar la clasificación persistida y mantener lectores históricos antes de retirar los escritores y accesos actuales.",
+      "title": "Conservar histórico de solo lectura",
+      "body": "Retirar los accesos y escritores solo cuando el reemplazo esté desplegado, manteniendo consultas, etiquetas y productividad históricas.",
       "recommended": true
     },
     {
-      "title": "Mantener Nueva entrada temporalmente",
-      "body": "Conservar el flujo hasta que Operaciones confirme que el destino automático cubre todos los casos de uso activos.",
+      "title": "Retirada completa tras auditoría",
+      "body": "Eliminar también lectores y métricas antiguas únicamente tras confirmar que Operaciones no necesita esos registros ni sus agregados.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Definir destinos y conservar histórico",
-    "body": "Acordar la clasificación persistida y mantener lectores históricos antes de retirar los escritores y accesos actuales.",
+    "title": "Conservar histórico de solo lectura",
+    "body": "Retirar los accesos y escritores solo cuando el reemplazo esté desplegado, manteniendo consultas, etiquetas y productividad históricas.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "banosdavidhamelyn",
-    "reason": "Su cambio reciente mantiene el flujo y la issue relacionada lo identifica como dueño probable de la decisión.",
+    "reason": "Figura en el historial de la superficie afectada y está asignado a la iniciativa relacionada de destino automático.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9256.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9256#issuecomment-5580039697",
-    "reviewedAt": "2026-09-08T05:57:47.663Z",
-    "mainSha": "d7128025960d17a11cc26cab573f093df5c18ccb"
+    "reviewedAt": "2026-09-08T08:47:08.932Z",
+    "mainSha": "e53a8fb8ff6e8c23dc76d61cf509db6befb9591a"
   }
 }
