@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-08T08:00:52.857Z",
-  "updatedAt": "2026-09-08T07:29:17Z",
+  "generatedAt": "2026-09-09T07:08:58.081Z",
+  "updatedAt": "2026-09-09T06:31:18Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -14,44 +14,43 @@
       "P2"
     ],
     "createdAt": "2026-09-08T02:48:40Z",
-    "updatedAt": "2026-09-08T07:29:17Z",
+    "updatedAt": "2026-09-09T06:31:18Z",
     "headSha": "918c7c4e1dea5fe689c99686edf1d6e7c40dd597"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se acepta `hamelyn memory` en 0.7.0 únicamente como demo local sintética, dejando el contrato Mongo/Auth0 y cualquier piloto productivo fuera de este PR?",
-  "rationale": "El código evita producción, pero la documentación define una evolución operativa amplia que necesita patrocinio y trazabilidad antes de consolidarla como dirección del CLI.",
+  "question": "¿Debe `hamelyn memory` entrar ahora en la CLI distribuida como demo local soportada, o debe quedar fuera hasta que exista una iniciativa de infraestructura para el piloto y su contrato productivo?",
+  "rationale": "El parche añade una capacidad nueva y documenta decisiones futuras sobre Mongo, Auth0, audiencias y pilotos que no pueden resolverse solo con una corrección mecánica.",
   "options": [
     {
-      "title": "Acotar la demo local",
-      "body": "Aprobar solo la demo sintética tras corregir Windows y abrir una issue separada para el diseño productivo.",
+      "title": "Patrocinar una fase local acotada",
+      "body": "Mantener la demo en la CLI tras corregir los bloqueos y abrir una issue de infraestructura que delimite el piloto y excluya producción.",
       "recommended": true
     },
     {
-      "title": "Patrocinar el piloto completo",
-      "body": "Mantener el contrato propuesto en este ciclo y asignar un responsable explícito para sus decisiones de plataforma.",
+      "title": "Separar el prototipo",
+      "body": "Extraer la demo de la release de CLI hasta acordar propietario, uso interno y transición hacia un servicio productivo.",
       "recommended": false
     },
     {
-      "title": "Posponer la capacidad",
-      "body": "Cerrar o dividir el PR hasta que exista una decisión de producto y una issue canónica.",
+      "title": "Cerrar la dirección",
+      "body": "No incorporar memoria de equipo en la CLI y conservar únicamente las conclusiones de diseño fuera de la superficie distribuida.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Acotar la demo local",
-    "body": "Aprobar solo la demo sintética tras corregir Windows y abrir una issue separada para el diseño productivo.",
+    "title": "Patrocinar una fase local acotada",
+    "body": "Mantener la demo en la CLI tras corregir los bloqueos y abrir una issue de infraestructura que delimite el piloto y excluya producción.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "danielmenchen-hamelyn",
-    "reason": "Ya ha marcado el límite de aprobación y la necesidad de trazabilidad del alcance futuro.",
+    "reason": "Ya revisó el aislamiento, los riesgos de plataforma y la necesidad de trazabilidad para las decisiones abiertas.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9252.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9252#issuecomment-5578483632",
-    "reviewedAt": "2026-09-08T08:00:52.857Z",
-    "mainSha": "e53a8fb8ff6e8c23dc76d61cf509db6befb9591a"
+    "reviewedAt": "2026-09-09T07:08:58.081Z",
+    "mainSha": "be83ada55c34f327d009a88da261ff2a72bf3f08"
   }
 }

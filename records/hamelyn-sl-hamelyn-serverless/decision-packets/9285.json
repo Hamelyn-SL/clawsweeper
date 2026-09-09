@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-08T13:55:55.413Z",
-  "updatedAt": "2026-09-08T13:45:25Z",
+  "generatedAt": "2026-09-09T07:07:30.233Z",
+  "updatedAt": "2026-09-09T05:55:51Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -17,38 +17,37 @@
       "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-09-08T13:28:34Z",
-    "updatedAt": "2026-09-08T13:45:25Z"
+    "updatedAt": "2026-09-09T05:55:51Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe la cola conservar `item.container` para artículos `ML-I-`, como excepción visible, o debe ocultarlos hasta disponer de otra fuente autoritativa?",
-  "rationale": "El resolver excluye `ML-I-` de forma intencional, pero la nueva regla de presentación solo preserva `BL-`; el código no permite inferir qué etiqueta debe ver el operario.",
+  "question": "¿Debe `ML-I-` mostrar la posición resuelta por el contador de la operación o conservar su etiqueta generada cuando aún no exista resolución?",
+  "rationale": "El código actual lo excluye del resolver, mientras la PR vinculada cambia ese contrato visual; la elección afecta a la información operativa que recibe el operario.",
   "options": [
     {
-      "title": "Conservar `ML-I-` como excepción visible",
-      "body": "Mantiene una etiqueta para un tipo que nunca se resuelve por contador y evita dejar tarjetas sin contenedor.",
+      "title": "Usar el contador para ML-I-",
+      "body": "Alinear `ML-I-` con los tipos reasignados por confirmación y ocultar la etiqueta provisional hasta obtener la posición autoritativa.",
       "recommended": true
     },
     {
-      "title": "Ocultar `ML-I-`",
-      "body": "Requiere confirmar que esas tarjetas no deben mostrar contenedor y documentar ese comportamiento operativo.",
+      "title": "Conservar la etiqueta generada",
+      "body": "Mantener `ML-I-` como excepción visible y excluirlo de la ocultación hasta contar con otra fuente autoritativa.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Conservar `ML-I-` como excepción visible",
-    "body": "Mantiene una etiqueta para un tipo que nunca se resuelve por contador y evita dejar tarjetas sin contenedor.",
+    "title": "Usar el contador para ML-I-",
+    "body": "Alinear `ML-I-` con los tipos reasignados por confirmación y ocultar la etiqueta provisional hasta obtener la posición autoritativa.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "banosdavidhamelyn",
-    "reason": "Ha trabajado recientemente en la confirmación Station y ya es responsable de la PR que implementa el ajuste.",
+    "reason": "Introdujo el flujo de confirmación relevante y es el autor de la PR que materializa ambas implicaciones técnicas.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9285.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9285#issuecomment-5586322332",
-    "reviewedAt": "2026-09-08T13:55:55.413Z",
-    "mainSha": "85ca9d43221028899e7dd491f485b225005fabd7"
+    "reviewedAt": "2026-09-09T07:07:30.233Z",
+    "mainSha": "be83ada55c34f327d009a88da261ff2a72bf3f08"
   }
 }

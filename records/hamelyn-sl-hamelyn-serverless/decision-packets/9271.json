@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-08T10:16:36.091Z",
-  "updatedAt": "2026-09-08T09:43:40Z",
+  "generatedAt": "2026-09-09T07:09:18.262Z",
+  "updatedAt": "2026-09-09T07:01:23Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -10,43 +10,47 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9271",
     "state": "open",
     "labels": [
-      "size/XL",
+      "size/L",
       "P1"
     ],
     "createdAt": "2026-09-08T09:30:53Z",
-    "updatedAt": "2026-09-08T09:43:40Z",
-    "headSha": "15f590e9dd986516d8c0ee0eb04bfb0a2b55f41e"
+    "updatedAt": "2026-09-09T07:01:23Z",
+    "headSha": "b8b7ae78ace5911d80f4ba3499c7e26e6bf5f596"
   },
-  "lane": "release_inclusion",
+  "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Se patrocina el despliegue secuenciado de lectores, migración y escritores para el nuevo contrato de `priceBuy` antes de integrar este PR?",
-  "rationale": "Los jobs de catálogo alcanzan producción y el cambio de semántica persistida no puede resolverse únicamente con la corrección local.",
+  "question": "¿Se aprueba una migración atómica sin compatibilidad legacy, o se mantiene el despliegue por fases definido para `products.priceBuy`?",
+  "rationale": "El código no puede decidir de forma segura cuándo los datos y todos los escritores están coordinados; esa elección cambia la garantía de precio durante el despliegue.",
   "options": [
     {
       "title": "Despliegue por fases",
-      "body": "Separar lectores compatibles, validar y migrar datos, y desplegar después escritores y la rotación de destacados.",
+      "body": "Restaurar el marcador temporal, desplegar lectores compatibles, ejecutar una conversión CAS comprobable y retirar la compatibilidad después.",
       "recommended": true
     },
     {
-      "title": "Mantener el contrato actual",
-      "body": "Conservar temporalmente la mutación persistida mientras se adopta otra reversión exacta del delta.",
+      "title": "Ventana atómica patrocinada",
+      "body": "Aceptar la rama sin marcador solo con una ventana operativa aprobada, manifiesto revisado y confirmación de que lectores, escritores y datos cambian juntos.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener la contención actual",
+      "body": "Pausar este rediseño y conservar el contrato persistido actual mientras se decide otra ruta de compatibilidad.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Despliegue por fases",
-    "body": "Separar lectores compatibles, validar y migrar datos, y desplegar después escritores y la rotación de destacados.",
+    "body": "Restaurar el marcador temporal, desplegar lectores compatibles, ejecutar una conversión CAS comprobable y retirar la compatibilidad después.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su trabajo reciente en coordinación de pricing y la discusión de la alternativa vinculada lo conectan directamente con esta elección.",
-    "confidence": "medium"
+    "reason": "Su análisis de la incidencia canónica define explícitamente las fases y las decisiones pendientes sobre el contrato de datos.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9271.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9271#issuecomment-5583582289",
-    "reviewedAt": "2026-09-08T10:16:36.091Z",
-    "mainSha": "a94f4b0f9e34689c37861c23b47f42020bf14aae"
+    "reviewedAt": "2026-09-09T07:09:18.262Z",
+    "mainSha": "be83ada55c34f327d009a88da261ff2a72bf3f08"
   }
 }

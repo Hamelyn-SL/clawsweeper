@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-08T11:16:58.069Z",
-  "updatedAt": "2026-09-08T10:15:07Z",
+  "generatedAt": "2026-09-09T07:07:58.566Z",
+  "updatedAt": "2026-09-09T06:42:49Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,42 +15,41 @@
       "feature",
       "triage:done",
       "clawsweeper:needs-product-decision",
-      "reporter:daniellopez",
-      "P2"
+      "P2",
+      "reporter:daniellopez"
     ],
     "createdAt": "2026-09-08T09:58:23Z",
-    "updatedAt": "2026-09-08T10:15:07Z"
+    "updatedAt": "2026-09-09T06:42:49Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿La cubeta debe limpiarse al iniciar una sesión nueva de productividad y conservarse únicamente al restaurar una sesión ya activa tras recargar?",
-  "rationale": "El reporte usa «sesión» sin distinguir acceso, productividad y restauración; la PR escoge productividad como límite persistente.",
+  "question": "¿La cubeta y el modo de calidad deben conservarse al recargar durante una productividad abierta y limpiarse solo al iniciar o finalizar una sesión real?",
+  "rationale": "La petición exige limpiar la cubeta al iniciar sesión, pero no define si una recarga dentro de una sesión activa debe comportarse como un nuevo inicio.",
   "options": [
     {
-      "title": "Vincularlo a productividad",
-      "body": "Limpiar cubeta y modo de lote al iniciar o finalizar productividad, conservándolos durante una recarga de la misma sesión.",
+      "title": "Conservar durante recarga",
+      "body": "Mantener cubeta y criterio si ya existe productividad activa, y limpiarlos únicamente al iniciar o finalizar una sesión real.",
       "recommended": true
     },
     {
-      "title": "Vincularlo al acceso",
-      "body": "Limpiar el estado también al autenticar, aunque una sesión de productividad previa siga abierta.",
+      "title": "Forzar reescaneo siempre",
+      "body": "Limpiar cubeta y criterio también al montar Turbo Revisión, aunque haya una productividad abierta.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Vincularlo a productividad",
-    "body": "Limpiar cubeta y modo de lote al iniciar o finalizar productividad, conservándolos durante una recarga de la misma sesión.",
+    "title": "Conservar durante recarga",
+    "body": "Mantener cubeta y criterio si ya existe productividad activa, y limpiarlos únicamente al iniciar o finalizar una sesión real.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "banosdavidhamelyn",
-    "reason": "Ha documentado e implementado la distinción propuesta en la PR vinculada.",
+    "reason": "Es la persona asignada y ha concretado esta distinción en la implementación candidata.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9274.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9274#issuecomment-5583440931",
-    "reviewedAt": "2026-09-08T11:16:58.069Z",
-    "mainSha": "1a07a64f4a2e5a2f7f0f5c53018c2dd91531d00a"
+    "reviewedAt": "2026-09-09T07:07:58.566Z",
+    "mainSha": "be83ada55c34f327d009a88da261ff2a72bf3f08"
   }
 }
