@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-09T09:58:11.218Z",
-  "updatedAt": "2026-09-09T09:31:53Z",
+  "generatedAt": "2026-09-09T13:58:29.275Z",
+  "updatedAt": "2026-09-09T13:42:52Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,48 +12,41 @@
     "labels": [
       "app:admin",
       "feature",
-      "triage:queued",
-      "P2",
-      "clawsweeper:needs-product-decision"
+      "triage:pr-opened",
+      "P2"
     ],
     "createdAt": "2026-09-09T09:31:42Z",
-    "updatedAt": "2026-09-09T09:31:53Z"
+    "updatedAt": "2026-09-09T13:42:52Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe Station permitir cerrar manualmente una sesión aunque el diseño actual la inicie y cierre por el ciclo de vida de `PreparationView`?",
-  "rationale": "La decisión previa de esta funcionalidad excluía ese botón; añadirlo exige fijar qué sucede mientras la vista sigue abierta para evitar reinicios o sesiones inesperadas.",
+  "question": "¿Debe Station conservar el cierre automático en `pagehide` y desmontaje además del nuevo cierre manual, o adoptar sesiones persistentes hasta confirmación explícita?",
+  "rationale": "La issue menciona distinguir cierres manuales de los automáticos, mientras que el PR abierto elimina ambos cierres automáticos y cambia la semántica de productividad.",
   "options": [
     {
-      "title": "Mantener sólo el ciclo automático",
-      "body": "Conservar la política actual y usar el indicador de error para detectar sesiones que no llegan a abrirse.",
-      "recommended": false
-    },
-    {
-      "title": "Añadir cierre manual persistente",
-      "body": "Al finalizar, mantener la sesión en `idle` hasta que el operario salga o reinicie el modo preparación.",
+      "title": "Conservar cierre automático",
+      "body": "Añadir el control manual con `station-manual` y mantener `station-pagehide` y `station-unmount` como comportamiento actual.",
       "recommended": true
     },
     {
-      "title": "Cerrar y reiniciar automáticamente",
-      "body": "Permitir cerrar pero abrir otra sesión de inmediato, limitando el valor práctico del botón.",
+      "title": "Adoptar cierre manual exclusivo",
+      "body": "Permitir que la sesión sobreviva a recargas y salidas de la vista, documentando la nueva atribución de métricas y sus límites operativos.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Añadir cierre manual persistente",
-    "body": "Al finalizar, mantener la sesión en `idle` hasta que el operario salga o reinicie el modo preparación.",
+    "title": "Conservar cierre automático",
+    "body": "Añadir el control manual con `station-manual` y mantener `station-pagehide` y `station-unmount` como comportamiento actual.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "HamelynDev",
-    "reason": "Implementó tanto el indicador como los cierres automáticos cuya semántica cambiaría.",
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Su historial conecta tanto el flujo de preparación como el mantenimiento reciente de la sesión de productividad.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9306.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9306#issuecomment-5600012025",
-    "reviewedAt": "2026-09-09T09:58:11.218Z",
-    "mainSha": "1e0dd1d639ebcb696dcb029a34f8e43dd6168493"
+    "reviewedAt": "2026-09-09T13:58:29.275Z",
+    "mainSha": "94cb970a57ae971c0f59e2f01b6667ba033b4085"
   }
 }
