@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-08T09:22:12.627Z",
-  "updatedAt": "2026-09-08T09:12:56Z",
+  "generatedAt": "2026-09-09T11:56:29.395Z",
+  "updatedAt": "2026-09-09T11:48:59Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,44 +13,43 @@
       "codex",
       "bug",
       "app:marketplace",
-      "triage:no-change",
+      "triage:queued",
       "clawsweeper:needs-product-decision",
-      "marketplace-crons",
-      "P2"
+      "P2",
+      "marketplace-crons"
     ],
     "createdAt": "2026-09-07T18:30:38Z",
-    "updatedAt": "2026-09-08T09:12:56Z"
+    "updatedAt": "2026-09-09T11:48:59Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Es aceptable que los 429 de la búsqueda de pedidos pagados sigan registrándose si el siguiente tick relee la misma ventana, o deben mitigarse también antes de cerrar?",
-  "rationale": "La política vigente evita reintentos de GET, mientras que el PR reduce la exposición de cancelaciones pero declara explícitamente que persiste el 429 de pedidos pagados.",
+  "question": "¿Aceptamos que los GET de MercadoLibre reintenten 429 de forma acotada en lugar de fallar inmediatamente el tick?",
+  "rationale": "El cambio modifica el comportamiento operativo vigente y el tiempo máximo de una ejecución, no solo el formato del registro.",
   "options": [
     {
-      "title": "Aceptar recuperación por siguiente tick",
-      "body": "Fusionar la mitigación de cancelaciones y documentar que los 429 de pedidos pagados son recuperables en la siguiente ejecución.",
+      "title": "Aceptar reintentos acotados",
+      "body": "Fusionar https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9320 con tres reintentos y mantener el error prioritario solo tras agotarlos.",
       "recommended": true
     },
     {
-      "title": "Exigir mitigación también en pedidos",
-      "body": "Mantener la incidencia abierta y ampliar la solución para reducir o recuperar de forma verificable los 429 de la fase `process`.",
+      "title": "Mantener fallo rápido",
+      "body": "Cerrar o reorientar el PR y continuar mitigando la cuota mediante cadencia, ventanas y conciliación sin reintentos GET.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aceptar recuperación por siguiente tick",
-    "body": "Fusionar la mitigación de cancelaciones y documentar que los 429 de pedidos pagados son recuperables en la siguiente ejecución.",
+    "title": "Aceptar reintentos acotados",
+    "body": "Fusionar https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9320 con tres reintentos y mantener el error prioritario solo tras agotarlos.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Está asignado a la incidencia y su PR contiene la propuesta de comportamiento a decidir.",
-    "confidence": "high"
+    "reason": "Ha mantenido recientemente la cadencia y la exposición de `/orders/search`, y puede calibrar el coste operativo del cambio.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9249.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9249#issuecomment-5574679654",
-    "reviewedAt": "2026-09-08T09:22:12.627Z",
-    "mainSha": "4badee9287da5bbb4cf7a76774b709ee0f285931"
+    "reviewedAt": "2026-09-09T11:56:29.395Z",
+    "mainSha": "a9b43192e16fc01b84bfd6504f601f9ebcac6fe3"
   }
 }
