@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-09T07:09:18.262Z",
-  "updatedAt": "2026-09-09T07:01:23Z",
+  "generatedAt": "2026-09-09T09:05:46.542Z",
+  "updatedAt": "2026-09-09T08:58:05Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -14,44 +14,43 @@
       "P1"
     ],
     "createdAt": "2026-09-08T09:30:53Z",
-    "updatedAt": "2026-09-09T07:01:23Z",
-    "headSha": "b8b7ae78ace5911d80f4ba3499c7e26e6bf5f596"
+    "updatedAt": "2026-09-09T08:58:05Z",
+    "headSha": "2f0f7e738ddac9c4156f64f7e262189f8e09634b"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Se aprueba una migración atómica sin compatibilidad legacy, o se mantiene el despliegue por fases definido para `products.priceBuy`?",
-  "rationale": "El código no puede decidir de forma segura cuándo los datos y todos los escritores están coordinados; esa elección cambia la garantía de precio durante el despliegue.",
+  "question": "¿Se aprueba que `products.priceBuy` cambie de oferta final a base persistida, con una conversión única y sin compatibilidad dual de valores históricos?",
+  "rationale": "La implementación es coherente, pero decidir el contrato persistido y aceptar una ventana de suspensión operativa excede una corrección mecánica.",
   "options": [
     {
-      "title": "Despliegue por fases",
-      "body": "Restaurar el marcador temporal, desplegar lectores compatibles, ejecutar una conversión CAS comprobable y retirar la compatibilidad después.",
+      "title": "Patrocinar precio base",
+      "body": "Adoptar esta dirección y exigir un responsable, manifiesto revisado, pausa de escritores y validación de los flujos antes del merge.",
       "recommended": true
     },
     {
-      "title": "Ventana atómica patrocinada",
-      "body": "Aceptar la rama sin marcador solo con una ventana operativa aprobada, manifiesto revisado y confirmación de que lectores, escritores y datos cambian juntos.",
+      "title": "Aplicar contención mínima",
+      "body": "Priorizar https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9115 para bloquear nuevos negativos y conservar el contrato actual temporalmente.",
       "recommended": false
     },
     {
-      "title": "Mantener la contención actual",
-      "body": "Pausar este rediseño y conservar el contrato persistido actual mientras se decide otra ruta de compatibilidad.",
+      "title": "Posponer el rediseño",
+      "body": "Mantener ambos candidatos abiertos hasta acordar la semántica persistida y el plan de conversión.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Despliegue por fases",
-    "body": "Restaurar el marcador temporal, desplegar lectores compatibles, ejecutar una conversión CAS comprobable y retirar la compatibilidad después.",
+    "title": "Patrocinar precio base",
+    "body": "Adoptar esta dirección y exigir un responsable, manifiesto revisado, pausa de escritores y validación de los flujos antes del merge.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su análisis de la incidencia canónica define explícitamente las fases y las decisiones pendientes sobre el contrato de datos.",
+    "reason": "Su trabajo reciente conecta la coordinación de pricing con el riesgo operativo que decide este cambio.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9271.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9271#issuecomment-5583582289",
-    "reviewedAt": "2026-09-09T07:09:18.262Z",
+    "reviewedAt": "2026-09-09T09:05:46.542Z",
     "mainSha": "be83ada55c34f327d009a88da261ff2a72bf3f08"
   }
 }
