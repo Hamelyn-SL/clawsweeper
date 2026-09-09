@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-09T12:25:36.211Z",
-  "updatedAt": "2026-09-09T12:12:50Z",
+  "generatedAt": "2026-09-09T12:31:52.720Z",
+  "updatedAt": "2026-09-09T12:27:54Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -18,37 +18,37 @@
       "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-09-08T12:54:05Z",
-    "updatedAt": "2026-09-09T12:12:50Z"
+    "updatedAt": "2026-09-09T12:27:54Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe una issue de alta abierta o cerrada como completada autorizar la ejecución con identidad provisional, o debe exigirse el alta efectiva previa en `B2B_CLIENTS`?",
-  "rationale": "La elección cambia quién puede generar BPs, ventas y retiradas de stock antes de que exista una configuración permanente del cliente.",
+  "question": "¿Debe una issue de alta abierta permitir ejecutar automáticamente un pedido B2B de un cliente provisional tras el ✅ autorizado?",
+  "rationale": "La propuesta sustituye el bloqueo actual por una autorización operativa basada en GitHub y afecta a la atribución de ventas, aunque conserva controles técnicos.",
   "options": [
     {
-      "title": "Autorizar mediante issue de alta",
-      "body": "Permitir el ✅ cuando la identidad es fiable y la issue de alta permanece abierta o se cerró como completada, como propone la PR.",
+      "title": "Permitir provisionales con alta abierta",
+      "body": "Aceptar la ejecución con identidad derivada únicamente si la issue de alta está abierta y se mantienen allowlist, similitudes y bloqueos actuales.",
       "recommended": true
     },
     {
-      "title": "Exigir alta efectiva",
-      "body": "Mantener la ejecución bloqueada hasta que la identidad figure en `B2B_CLIENTS`, conservando el flujo HITL actual.",
+      "title": "Mantener el bloqueo hasta el alta permanente",
+      "body": "Conservar la ejecución HITL actual y usar la issue de alta solo como seguimiento, sin habilitar retiradas automáticas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Autorizar mediante issue de alta",
-    "body": "Permitir el ✅ cuando la identidad es fiable y la issue de alta permanece abierta o se cerró como completada, como propone la PR.",
+    "title": "Permitir provisionales con alta abierta",
+    "body": "Aceptar la ejecución con identidad derivada únicamente si la issue de alta está abierta y se mantienen allowlist, similitudes y bloqueos actuales.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es la persona asignada y el autor predominante del flujo provisional que define este límite operativo.",
+    "reason": "Es el autor histórico del watcher, responsable asignado de la issue y autor del PR que concreta ambos modelos operativos.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9281.md",
-    "reviewedAt": "2026-09-09T12:25:36.211Z",
+    "reviewedAt": "2026-09-09T12:31:52.720Z",
     "mainSha": "b6a9e5288b41c0ce9d70a3f9ba273da6a7f0d7ad"
   }
 }
