@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-09T08:04:50.436Z",
+  "updatedAt": "2026-09-09T08:00:08Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 9302,
+    "title": "fix: rehydrate marketplace mirror rows when the projection changes",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9302",
+    "state": "open",
+    "labels": [
+      "size/S"
+    ],
+    "createdAt": "2026-09-09T07:55:04Z",
+    "updatedAt": "2026-09-09T08:00:08Z",
+    "headSha": "41063a88d98d312ccf0751a848c90bf608409747"
+  },
+  "lane": "security_boundary",
+  "priority": "P1",
+  "question": "¿Debe una rehidratación por `projectionVersion` poder reemplazar toda la fila cuando la fuente tiene un `timestamp` anterior al destino?",
+  "rationale": "La respuesta determina si la corrección debe limitarse a campos proyectados o si se acepta cambiar la garantía histórica de no retroceso del MERGE.",
+  "options": [
+    {
+      "title": "Conservar el guard temporal",
+      "body": "Actualizar `projectionVersion` y los campos rehidratados sin reemplazar los campos existentes cuando la fuente sea anterior.",
+      "recommended": true
+    },
+    {
+      "title": "Declarar la fuente autoritativa",
+      "body": "Aceptar el reemplazo completo y documentar que la versión de proyección prevalece sobre el orden temporal durante el backfill.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Conservar el guard temporal",
+    "body": "Actualizar `projectionVersion` y los campos rehidratados sin reemplazar los campos existentes cuando la fuente sea anterior.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Introdujo la proyección V2 y concentra el historial reciente del materializador.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9302.md",
+    "reviewedAt": "2026-09-09T08:04:50.436Z",
+    "mainSha": "be83ada55c34f327d009a88da261ff2a72bf3f08"
+  }
+}
