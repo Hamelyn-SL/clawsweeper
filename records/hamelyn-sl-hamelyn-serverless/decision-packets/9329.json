@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-09T15:26:39.143Z",
+  "generatedAt": "2026-09-09T15:24:17.386Z",
   "updatedAt": "2026-09-09T15:19:59Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -13,7 +13,7 @@
       "app:infrastructure",
       "feature",
       "reporter:javier",
-      "triage:running",
+      "triage:queued",
       "P1",
       "clawsweeper:needs-product-decision"
     ],
@@ -22,34 +22,39 @@
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe el watcher B2B adoptar una clasificación híbrida con modelo estructurado para candidatos, manteniendo el motor determinista como única vía de autorización y ejecución?",
-  "rationale": "El código actual es deliberadamente determinista y la propuesta introduce un nuevo límite operativo para decidir qué mensajes llegan al dry-run, qué se ignora y qué escala.",
+  "question": "¿Debe el watcher B2B incorporar un modelo como clasificador no autorizador, con `not_order` persistente y escalado a HITL ante incertidumbre o fallo?",
+  "rationale": "La elección fija el límite entre automatización determinista, coste operativo y el riesgo aceptable de ignorar o escalar mensajes; el código no puede resolver esa política por sí solo.",
   "options": [
     {
-      "title": "Aprobar el diseño híbrido",
-      "body": "Usar una llamada estructurada y cacheada solo para clasificación, con `needs_human` ante duda o fallo y todos los rieles de ejecución actuales intactos.",
+      "title": "Aprobar clasificador acotado",
+      "body": "Introducir una única decisión estructurada cacheada por mensaje, manteniendo ✅, topes, bloqueos e idempotencia fuera del modelo.",
       "recommended": true
     },
     {
-      "title": "Mantener clasificación determinista",
-      "body": "Limitar el trabajo a reglas y pruebas concretas sobre los falsos escalados identificados en el flujo B2B existente.",
+      "title": "Extender reglas deterministas",
+      "body": "Mantener el watcher sin modelos y priorizar patrones y pruebas para los falsos positivos observados.",
+      "recommended": false
+    },
+    {
+      "title": "Piloto solo de observación",
+      "body": "Registrar decisiones del modelo sin afectar ledgers, reacciones ni escalados hasta medir discrepancias con producción.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar el diseño híbrido",
-    "body": "Usar una llamada estructurada y cacheada solo para clasificación, con `needs_human` ante duda o fallo y todos los rieles de ejecución actuales intactos.",
+    "title": "Aprobar clasificador acotado",
+    "body": "Introducir una única decisión estructurada cacheada por mensaje, manteniendo ✅, topes, bloqueos e idempotencia fuera del modelo.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es el autor original y el contribuidor histórico principal del watcher B2B.",
+    "reason": "Ha desarrollado los límites actuales de clasificación y ejecución provisional, y está asignado al trabajo B2B relacionado.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9329.md",
     "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9329#issuecomment-5604362945",
-    "reviewedAt": "2026-09-09T15:26:39.143Z",
+    "reviewedAt": "2026-09-09T15:24:17.386Z",
     "mainSha": "94cb970a57ae971c0f59e2f01b6667ba033b4085"
   }
 }
