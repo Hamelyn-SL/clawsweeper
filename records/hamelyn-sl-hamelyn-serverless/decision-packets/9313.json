@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-09T11:03:51.526Z",
-  "updatedAt": "2026-09-09T10:59:15Z",
+  "generatedAt": "2026-09-09T12:39:10.942Z",
+  "updatedAt": "2026-09-09T12:33:37Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -10,42 +10,42 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9313",
     "state": "open",
     "labels": [
-      "size/S"
+      "size/S",
+      "P2"
     ],
     "createdAt": "2026-09-09T10:58:32Z",
-    "updatedAt": "2026-09-09T10:59:15Z",
+    "updatedAt": "2026-09-09T12:33:37Z",
     "headSha": "a824d9e0a7b664a4a2d3bbd917811769fcdc9d18"
   },
-  "lane": "merge_risk",
+  "lane": "release_inclusion",
   "priority": "P2",
-  "question": "¿Quién programa y verifica la regeneración completa persistida y la invalidación de caché inmediatamente después de desplegar este cambio?",
-  "rationale": "La corrección modifica datos derivados ya almacenados; el cron diario incremental no sustituye de forma inmediata todas las asociaciones históricas.",
+  "question": "¿Debe este cambio fusionarse solo junto con una regeneración global de recomendaciones y la invalidación de caché, o se acepta una transición gradual?",
+  "rationale": "La corrección cambia la semántica de datos ya persistidos; decidir la ventana y el tratamiento de resultados previos exige responsabilidad operativa del área.",
   "options": [
     {
-      "title": "Programar el refresco completo",
-      "body": "Coordinar la regeneración completa y la invalidación de caché con el despliegue para que la nueva semántica se aplique a todo el catálogo.",
+      "title": "Desplegar con refresco completo",
+      "body": "Corregir las rutas de autor y programar regeneración global e invalidación de caché en la misma ventana de despliegue.",
       "recommended": true
     },
     {
       "title": "Aceptar transición gradual",
-      "body": "Fusionar sin refresco global y aceptar que las asociaciones anteriores se reemplacen solo a medida que cada obra quede afectada por actividad reciente.",
+      "body": "Fusionar el generador sin refresco inmediato y asumir asociaciones antiguas hasta que procesos posteriores las sustituyan.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Programar el refresco completo",
-    "body": "Coordinar la regeneración completa y la invalidación de caché con el despliegue para que la nueva semántica se aplique a todo el catálogo.",
+    "title": "Desplegar con refresco completo",
+    "body": "Corregir las rutas de autor y programar regeneración global e invalidación de caché en la misma ventana de despliegue.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "Daniel",
-    "reason": "Es la persona con la señal histórica más directa en la ruta actual de generación.",
-    "confidence": "medium"
+    "person": "danielmenchen-hamelyn",
+    "reason": "Su historial está ligado al generador y ya figura como revisor solicitado para este cambio.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9313.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9313#issuecomment-5600807989",
-    "reviewedAt": "2026-09-09T11:03:51.526Z",
-    "mainSha": "113a475b5f617e51b268d5cd6a1d0416b86c7271"
+    "reviewedAt": "2026-09-09T12:39:10.942Z",
+    "mainSha": "b6a9e5288b41c0ce9d70a3f9ba273da6a7f0d7ad"
   }
 }
