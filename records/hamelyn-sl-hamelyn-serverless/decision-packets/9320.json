@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-09T12:03:35.738Z",
+  "updatedAt": "2026-09-09T11:59:31Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 9320,
+    "title": "fix: retry throttled mercadolibre requests before failing the tick",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9320",
+    "state": "open",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-09-09T11:48:39Z",
+    "updatedAt": "2026-09-09T11:59:31Z",
+    "headSha": "b220ea5b19499d1cfef6d969f78e87b46283f479"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe MercadoLibre adoptar reintentos 429 para todos los GET o conservar la política previa y limitar esta corrección al flujo de pedidos?",
+  "rationale": "La documentación vigente y el trabajo abierto de cancelaciones tratan la ausencia de reintentos GET como una decisión operativa; este helper modifica ese contrato en todas las llamadas.",
+  "options": [
+    {
+      "title": "Aprobar GET global acotado",
+      "body": "Adoptar el reintento para GET, pero con un límite de espera compatible con la invocación y cobertura de cabeceras excesivas.",
+      "recommended": true
+    },
+    {
+      "title": "Limitarlo a pedidos",
+      "body": "Aplicar el reintento solo a la búsqueda de pedidos pagados y conservar la estrategia de cancelaciones vigente.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener la política previa",
+      "body": "Rechazar el reintento de GET y seguir reduciendo la exposición mediante la cadencia y paginación de cada fase.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar GET global acotado",
+    "body": "Adoptar el reintento para GET, pero con un límite de espera compatible con la invocación y cobertura de cabeceras excesivas.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Su historial incluye la política de 429 de PUT y la estrategia abierta para cancelaciones de MercadoLibre.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9320.md",
+    "reviewedAt": "2026-09-09T12:03:35.738Z",
+    "mainSha": "a9b43192e16fc01b84bfd6504f601f9ebcac6fe3"
+  }
+}

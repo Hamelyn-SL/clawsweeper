@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-09T12:03:57.441Z",
+  "updatedAt": "2026-09-09T11:58:12Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 9316,
+    "title": "feat: execute unregistered b2b clients with a registration issue",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9316",
+    "state": "open",
+    "labels": [
+      "size/XXL"
+    ],
+    "createdAt": "2026-09-09T11:37:59Z",
+    "updatedAt": "2026-09-09T11:58:12Z",
+    "headSha": "0a0491062ce489f4db799f3674ae3b7a29193abe"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe el watcher ejecutar con una identidad provisional tras un ✅ autorizado mientras el alta permanente sigue abierta, aceptando valores temporales fuera de `B2B_CLIENTS`?",
+  "rationale": "La rama cambia el límite operativo entre bloquear un cliente desconocido y crear datos comerciales provisionales; los arreglos mecánicos no resuelven esa política.",
+  "options": [
+    {
+      "title": "Aprobar el flujo provisional con guardas",
+      "body": "Permitirlo tras corregir los hallazgos y conservar la obligación de alta posterior y la visibilidad del issue enlazado.",
+      "recommended": true
+    },
+    {
+      "title": "Conservar el bloqueo actual",
+      "body": "Exigir que el cliente esté en `B2B_CLIENTS` antes de ejecutar, evitando identidades comerciales temporales.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar el flujo provisional con guardas",
+    "body": "Permitirlo tras corregir los hallazgos y conservar la obligación de alta posterior y la visibilidad del issue enlazado.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es la persona con mayor continuidad histórica en el flujo provisional B2B y en la especificación de esta rama.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9316.md",
+    "reviewedAt": "2026-09-09T12:03:57.441Z",
+    "mainSha": "a9b43192e16fc01b84bfd6504f601f9ebcac6fe3"
+  }
+}
