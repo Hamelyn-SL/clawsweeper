@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-02T13:28:51.713Z",
-  "updatedAt": "2026-09-02T10:54:44Z",
+  "generatedAt": "2026-09-09T08:56:14.952Z",
+  "updatedAt": "2026-09-09T08:20:37Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -17,43 +17,42 @@
       "P2"
     ],
     "createdAt": "2026-09-01T09:32:36Z",
-    "updatedAt": "2026-09-02T10:54:44Z"
+    "updatedAt": "2026-09-09T08:20:37Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe la flota añadir reconciliación automática de Agent Runs antiguos o mantener el supervisor como detector hasta disponer de timelines posteriores al despliegue y un contrato de cierre remoto seguro?",
-  "rationale": "El código actual detecta estados antiguos, pero no expone una operación de cierre y tratar la edad como prueba de inactividad puede interrumpir sesiones válidas.",
+  "question": "¿Debe la flota cerrar automáticamente runs sin progreso, y qué combinación de último evento, tipo de sesión y plazo autoriza esa transición terminal?",
+  "rationale": "El estado `running` puede representar una sesión viva aunque supere 24 horas; elegir la señal terminal determina si se prioriza limpieza operativa o preservación de trabajo en curso.",
   "options": [
     {
-      "title": "Validar antes de automatizar",
-      "body": "Recopilar los `wrun_…` posteriores al despliegue y sus últimos eventos antes de cambiar el comportamiento de terminalización.",
+      "title": "Pedir timelines recientes primero",
+      "body": "Recopilar los `wrun_…` posteriores al despliegue y sus últimos eventos antes de fijar una política de reconciliación.",
       "recommended": true
     },
     {
-      "title": "Diseñar reconciliación conservadora",
-      "body": "Patrocinar un cierre automático solo si la API remota permite comprobar actividad reciente y conservar una causa terminal auditable.",
+      "title": "Definir reconciliación conservadora",
+      "body": "Autorizar solo el cierre de sesiones de tarea sin eventos recientes y registrar la causa para revisión operativa.",
       "recommended": false
     },
     {
-      "title": "Mantener solo observabilidad",
-      "body": "Conservar la detección y el aviso manual si no existe una operación remota segura para diferenciar sesiones activas de abandonadas.",
+      "title": "Mantener solo detección",
+      "body": "Conservar el aviso actual de `stale_running` y gestionar los casos manualmente hasta disponer de un contrato de cierre fiable.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Validar antes de automatizar",
-    "body": "Recopilar los `wrun_…` posteriores al despliegue y sus últimos eventos antes de cambiar el comportamiento de terminalización.",
+    "title": "Pedir timelines recientes primero",
+    "body": "Recopilar los `wrun_…` posteriores al despliegue y sus últimos eventos antes de fijar una política de reconciliación.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "El historial reciente le conecta directamente con el contrato de dispatch y la auditoría de Agent Runs.",
+    "reason": "Es la persona con mayor continuidad reciente en el dispatch y la supervisión de Agent Runs.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8975.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8975#issuecomment-5492161013",
-    "reviewedAt": "2026-09-02T13:28:51.713Z",
-    "mainSha": "9b525e0aae70b41daab228e22437134fc1e70b6f"
+    "reviewedAt": "2026-09-09T08:56:14.952Z",
+    "mainSha": "be83ada55c34f327d009a88da261ff2a72bf3f08"
   }
 }
