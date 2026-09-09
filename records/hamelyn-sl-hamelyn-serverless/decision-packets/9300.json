@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-09T07:47:16.896Z",
+  "updatedAt": "2026-09-09T07:42:53Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9300,
+    "title": "Discogs sold listing returns For Sale without a local withdrawal target",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9300",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "triage:running",
+      "P1"
+    ],
+    "createdAt": "2026-09-09T07:40:24Z",
+    "updatedAt": "2026-09-09T07:42:53Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Qué evidencia autoriza retirar automáticamente en Discogs un listing que reaparece tras `Sold`: verificación viva individual, una segunda foto, o ambas?",
+  "rationale": "La incidencia requiere cerrar una venta indebida sin convertir una única foto de reconciliación en una retirada remota masiva.",
+  "options": [
+    {
+      "title": "Verificación viva individual",
+      "body": "Confirmar `For Sale` en la API de Discogs y sembrar solo ese ID retirado, con límite de señal y auditoría.",
+      "recommended": true
+    },
+    {
+      "title": "Esperar segunda foto",
+      "body": "Conservar el guard actual y aceptar una ventana adicional de exposición antes de retirar.",
+      "recommended": false
+    },
+    {
+      "title": "Doble condición",
+      "body": "Exigir API viva y una segunda foto para maximizar prudencia, a costa de una retirada más lenta.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Verificación viva individual",
+    "body": "Confirmar `For Sale` en la API de Discogs y sembrar solo ese ID retirado, con límite de señal y auditoría.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "HamelynDev",
+    "reason": "Su historial cubre la cola de retirada de Discogs y la ampliación del guard de snapshots.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9300.md",
+    "reviewedAt": "2026-09-09T07:47:16.896Z",
+    "mainSha": "be83ada55c34f327d009a88da261ff2a72bf3f08"
+  }
+}
