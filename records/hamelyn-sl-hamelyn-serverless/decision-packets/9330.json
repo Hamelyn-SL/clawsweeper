@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-09T15:48:56.101Z",
-  "updatedAt": "2026-09-09T15:42:50Z",
+  "generatedAt": "2026-09-09T15:49:49.999Z",
+  "updatedAt": "2026-09-09T15:45:18Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,48 +14,40 @@
       "feature",
       "reporter:javier",
       "triage:done",
-      "P1",
-      "clawsweeper:needs-product-decision",
-      "clawsweeper:needs-security-review"
+      "P1"
     ],
     "createdAt": "2026-09-09T15:41:31Z",
-    "updatedAt": "2026-09-09T15:42:50Z"
+    "updatedAt": "2026-09-09T15:45:18Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe el despliegue activar en la misma fase los mensajes sin mención y la política de respuesta B2B, o separar primero la actualización compatible del framework?",
-  "rationale": "La actualización modifica comportamiento operativo de todos los watchers y puede cambiar el perímetro de autorización B2B; la secuencia de activación exige intención explícita.",
+  "question": "¿La migración debe activar en esta fase el intake por eventos de canal y la restricción de aprobaciones B2B, o limitarse a compatibilidad de Eve preservando el polling actual?",
+  "rationale": "Los nuevos contratos permiten ambas rutas, pero elegir una fuente de eventos y una política de aprobación altera el comportamiento operativo del watcher B2B.",
   "options": [
     {
-      "title": "Migración en dos fases",
-      "body": "Actualizar primero Eve, schedules y sesiones conservando el comportamiento actual, y habilitar después `onMessage` y la política B2B con pruebas operativas.",
+      "title": "Migración por fases con B2B controlado",
+      "body": "Migrar Eve y añadir eventos y allowlist solo con deduplicación explícita frente al polling y validación en un entorno de prueba.",
       "recommended": true
     },
     {
-      "title": "Activación conjunta",
-      "body": "Desplegar actualización y nuevos hooks B2B en un único cambio, asumiendo una ventana de validación y rollback más amplia.",
-      "recommended": false
-    },
-    {
-      "title": "Posponer el cambio funcional",
-      "body": "Limitar el próximo trabajo a documentar compatibilidad y mantener el intake por polling hasta contar con un entorno de prueba adecuado.",
+      "title": "Compatibilidad primero",
+      "body": "Actualizar dependencias, schedules y consola manteniendo el polling actual; planificar el intake y la allowlist B2B como un cambio posterior.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Migración en dos fases",
-    "body": "Actualizar primero Eve, schedules y sesiones conservando el comportamiento actual, y habilitar después `onMessage` y la política B2B con pruebas operativas.",
+    "title": "Migración por fases con B2B controlado",
+    "body": "Migrar Eve y añadir eventos y allowlist solo con deduplicación explícita frente al polling y validación en un entorno de prueba.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es el responsable asignado y concentra el historial reciente del área afectada.",
+    "reason": "Es la persona asignada y la historia local lo vincula directamente con el watcher y la ejecución B2B.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9330.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9330#issuecomment-5604688495",
-    "reviewedAt": "2026-09-09T15:48:56.101Z",
+    "reviewedAt": "2026-09-09T15:49:49.999Z",
     "mainSha": "94cb970a57ae971c0f59e2f01b6667ba033b4085"
   }
 }
