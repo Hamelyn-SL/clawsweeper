@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-09T07:08:50.064Z",
-  "updatedAt": "2026-09-09T06:11:49Z",
+  "generatedAt": "2026-09-09T07:13:11.862Z",
+  "updatedAt": "2026-09-09T07:09:03Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,49 +12,48 @@
     "labels": [
       "bug",
       "app:infrastructure",
-      "triage:done",
+      "triage:queued",
       "clawsweeper:needs-product-decision",
-      "reporter:JavierHamelyn",
-      "P2"
+      "P2",
+      "reporter:JavierHamelyn"
     ],
     "createdAt": "2026-09-08T23:54:25Z",
-    "updatedAt": "2026-09-09T06:11:49Z"
+    "updatedAt": "2026-09-09T07:09:03Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe prevalecer una precondición común de frescura antes de cada comparación, o deben conservarse schedules escalonados por watcher cuando la espera afecte a la latencia?",
-  "rationale": "La elección determina si se prioriza la coherencia de datos, la disponibilidad de los watchers o un modelo híbrido, y el PR abierto incorpora una política que necesita validación humana.",
+  "question": "¿Debe el comportamiento estándar bloquear el watcher hasta confirmar una ventana completa de report, raw y tipado, o limitar esa espera a fuentes y cohortes concretas?",
+  "rationale": "La implementación afecta los 14 watchers y puede sustituir ejecuciones puntuales por esperas de hasta 180 minutos; la aceptabilidad de esa latencia requiere criterio del equipo.",
   "options": [
     {
-      "title": "Precondición común",
-      "body": "Exigir evidencia verificable de report, raw y tipado antes de iniciar comparaciones sensibles, manteniendo los schedules como disparadores aproximados.",
+      "title": "Precondición común de frescura",
+      "body": "Exigir evidencia completa antes de comparar y conservar los schedules como disparadores aproximados.",
       "recommended": true
     },
     {
-      "title": "Schedules por watcher",
-      "body": "Ajustar cada cron tras su pipeline conocido y aceptar reglas específicas con menor capacidad de recuperación ante retrasos.",
+      "title": "Ventanas específicas por watcher",
+      "body": "Escalonar cada cron tras su pipeline conocido sin imponer una espera común de metadata.",
       "recommended": false
     },
     {
       "title": "Modelo híbrido",
-      "body": "Aplicar la barrera a fuentes transitorias y ejecutar el resto con resultados explícitamente marcados como `lagged`.",
+      "body": "Aplicar la barrera a reportes y cohortes de tránsito, manteniendo horarios fijos para métricas independientes.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Precondición común",
-    "body": "Exigir evidencia verificable de report, raw y tipado antes de iniciar comparaciones sensibles, manteniendo los schedules como disparadores aproximados.",
+    "title": "Precondición común de frescura",
+    "body": "Exigir evidencia completa antes de comparar y conservar los schedules como disparadores aproximados.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es el asignado de la issue y autor de la implementación candidata que concreta esta decisión.",
+    "reason": "Es el asignado y ha mantenido la ruta actual de finalización de watchers.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9288.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9288#issuecomment-5594323573",
-    "reviewedAt": "2026-09-09T07:08:50.064Z",
+    "reviewedAt": "2026-09-09T07:13:11.862Z",
     "mainSha": "be83ada55c34f327d009a88da261ff2a72bf3f08"
   }
 }
