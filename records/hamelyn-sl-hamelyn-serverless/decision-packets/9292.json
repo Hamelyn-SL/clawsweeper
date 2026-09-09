@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-09T09:55:31.948Z",
+  "updatedAt": "2026-09-09T09:45:56Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9292,
+    "title": "Marketplace: [withcronroute] error: mongooperationtimeouterror: timed out at socket write at ignore-listed frames { erro",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9292",
+    "state": "open",
+    "labels": [
+      "codex",
+      "bug",
+      "app:marketplace",
+      "triage:queued",
+      "P1",
+      "marketplace-crons"
+    ],
+    "createdAt": "2026-09-09T05:30:36Z",
+    "updatedAt": "2026-09-09T09:45:56Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe el watcher tratar un `MongoOperationTimeoutError` aislado y acotado a 10 s como ruido esperado, escalándolo solo cuando se repita por ruta o afecte varias rutas?",
+  "rationale": "La evidencia confirma recuperación posterior y un límite deliberado, pero el umbral aceptable de alerta operativa requiere criterio humano sobre sensibilidad frente a ruido.",
+  "options": [
+    {
+      "title": "Aceptar el umbral de repetición",
+      "body": "Aprobar el criterio del PR abierto, conservando alertas para ticks consecutivos o varias rutas afectadas.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener alerta para cada timeout",
+      "body": "Conservar la escalada actual hasta disponer de métricas de Atlas que permitan distinguir blips de degradaciones reales.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aceptar el umbral de repetición",
+    "body": "Aprobar el criterio del PR abierto, conservando alertas para ticks consecutivos o varias rutas afectadas.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Es el revisor solicitado del PR que materializa la política de detección propuesta.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9292.md",
+    "reviewedAt": "2026-09-09T09:55:31.948Z",
+    "mainSha": "1e0dd1d639ebcb696dcb029a34f8e43dd6168493"
+  }
+}

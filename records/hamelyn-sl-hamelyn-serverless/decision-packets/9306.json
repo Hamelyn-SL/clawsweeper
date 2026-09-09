@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-09T09:58:11.218Z",
+  "updatedAt": "2026-09-09T09:31:53Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9306,
+    "title": "Station: mostrar la sesion de productividad y poder finalizarla",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9306",
+    "state": "open",
+    "labels": [
+      "app:admin",
+      "feature",
+      "triage:queued",
+      "P1"
+    ],
+    "createdAt": "2026-09-09T09:31:42Z",
+    "updatedAt": "2026-09-09T09:31:53Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe Station permitir cerrar manualmente una sesión aunque el diseño actual la inicie y cierre por el ciclo de vida de `PreparationView`?",
+  "rationale": "La decisión previa de esta funcionalidad excluía ese botón; añadirlo exige fijar qué sucede mientras la vista sigue abierta para evitar reinicios o sesiones inesperadas.",
+  "options": [
+    {
+      "title": "Mantener sólo el ciclo automático",
+      "body": "Conservar la política actual y usar el indicador de error para detectar sesiones que no llegan a abrirse.",
+      "recommended": false
+    },
+    {
+      "title": "Añadir cierre manual persistente",
+      "body": "Al finalizar, mantener la sesión en `idle` hasta que el operario salga o reinicie el modo preparación.",
+      "recommended": true
+    },
+    {
+      "title": "Cerrar y reiniciar automáticamente",
+      "body": "Permitir cerrar pero abrir otra sesión de inmediato, limitando el valor práctico del botón.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Añadir cierre manual persistente",
+    "body": "Al finalizar, mantener la sesión en `idle` hasta que el operario salga o reinicie el modo preparación.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "HamelynDev",
+    "reason": "Implementó tanto el indicador como los cierres automáticos cuya semántica cambiaría.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9306.md",
+    "reviewedAt": "2026-09-09T09:58:11.218Z",
+    "mainSha": "1e0dd1d639ebcb696dcb029a34f8e43dd6168493"
+  }
+}
