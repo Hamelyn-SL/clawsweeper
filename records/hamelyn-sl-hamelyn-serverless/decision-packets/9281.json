@@ -1,60 +1,54 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-09T12:31:52.720Z",
-  "updatedAt": "2026-09-09T12:12:50Z",
+  "generatedAt": "2026-09-09T14:25:15.882Z",
+  "updatedAt": "2026-09-09T14:12:51Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
     "number": 9281,
     "title": "Watcher B2B: ejecutar clientes sin registrar con issue de alta y dejar de escalar por columna de cantidad",
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9281",
-    "state": "closed",
+    "state": "open",
     "labels": [
       "app:infrastructure",
       "feature",
       "reporter:javier",
       "triage:done",
-      "clawsweeper:needs-product-decision",
-      "P1"
+      "P1",
+      "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-09-08T12:54:05Z",
-    "updatedAt": "2026-09-09T12:12:50Z"
+    "updatedAt": "2026-09-09T14:12:51Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe un issue de alta abierto y anunciado en el hilo ser condición suficiente para que un ✅ autorizado ejecute un pedido de un cliente B2B aún no registrado?",
-  "rationale": "La decisión amplía la autorización de retirada y venta desde clientes configurados a identidades derivadas, aunque la PR proponga controles técnicos concretos.",
+  "question": "¿Debe una issue de alta abierta habilitar la ejecución con identidad provisional, sustituyendo el requisito actual de alta previa en `B2B_CLIENTS`?",
+  "rationale": "La propuesta modifica la política de autorización operativa, no solo la detección técnica de anomalías.",
   "options": [
     {
-      "title": "Adoptar el flujo provisional protegido",
-      "body": "Aceptar la issue de alta abierta como salvaguarda y revisar la PR con pruebas de identidad, aviso y estado de GitHub antes de fusionarla.",
+      "title": "Aprobar la autorización condicionada",
+      "body": "Permitir el ✅ autorizado cuando exista una issue de alta abierta y se mantengan las protecciones de identidad y desviaciones.",
       "recommended": true
     },
     {
-      "title": "Mantener ejecución HITL",
-      "body": "Conservar la ejecución manual para clientes no registrados y limitar el watcher a eliminar el falso escalado por cantidad.",
-      "recommended": false
-    },
-    {
-      "title": "Exigir alta permanente",
-      "body": "No permitir ninguna ejecución provisional hasta que la entrada real esté presente en `B2B_CLIENTS`.",
+      "title": "Mantener el alta previa",
+      "body": "Conservar `B2B_CLIENTS` como requisito de ejecución y limitar el cambio a eliminar el escalado por cantidades ausentes.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Adoptar el flujo provisional protegido",
-    "body": "Aceptar la issue de alta abierta como salvaguarda y revisar la PR con pruebas de identidad, aviso y estado de GitHub antes de fusionarla.",
+    "title": "Aprobar la autorización condicionada",
+    "body": "Permitir el ✅ autorizado cuando exista una issue de alta abierta y se mantengan las protecciones de identidad y desviaciones.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "El historial muestra trabajo continuado sobre esta ruta y la persona asignada ya mantiene la PR que materializa las alternativas.",
+    "reason": "Es el asignado y principal autor histórico del subsistema B2B inspeccionado.",
     "confidence": "high"
   },
   "source": {
-    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/9281.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9281#issuecomment-5585587863",
-    "reviewedAt": "2026-09-09T12:31:52.720Z",
-    "mainSha": "b6a9e5288b41c0ce9d70a3f9ba273da6a7f0d7ad"
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9281.md",
+    "reviewedAt": "2026-09-09T14:25:15.882Z",
+    "mainSha": "94cb970a57ae971c0f59e2f01b6667ba033b4085"
   }
 }
