@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-09T13:05:00.142Z",
-  "updatedAt": "2026-09-09T12:57:51Z",
+  "generatedAt": "2026-09-09T14:56:56.327Z",
+  "updatedAt": "2026-09-09T13:27:53Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,42 +15,41 @@
       "app:marketplace",
       "triage:needs-info",
       "clawsweeper:needs-product-decision",
-      "marketplace-crons",
-      "P2"
+      "P2",
+      "marketplace-crons"
     ],
     "createdAt": "2026-09-09T05:30:36Z",
-    "updatedAt": "2026-09-09T12:57:51Z"
+    "updatedAt": "2026-09-09T13:27:53Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe el watcher esperar recurrencia antes de abrir una incidencia por un timeout de lock aislado que terminó el tick con HTTP 500?",
-  "rationale": "El límite de 10 segundos evita consumir todo el runtime, pero no demuestra que un fallo aislado deba dejar de ser una señal operativa inmediata.",
+  "question": "¿Debe el watcher de marketplace esperar recurrencia antes de abrir una incidencia por un timeout aislado del lock que terminó con HTTP 500?",
+  "rationale": "La causa del error no está atribuida y el PR candidato cambia la política de alerta, no la disponibilidad del cron; esa tolerancia al riesgo requiere criterio del equipo.",
   "options": [
     {
       "title": "Mantener alerta inmediata",
-      "body": "Conservar el escalado actual hasta atribuir los timeouts aislados con telemetría de Atlas y del despliegue.",
+      "body": "Conservar el escalado actual hasta correlacionar los timeouts aislados con métricas de Atlas y del despliegue.",
       "recommended": true
     },
     {
-      "title": "Escalar solo por recurrencia",
-      "body": "Aceptar la política del PR una vez corrija la condición temporal y preserve el aislamiento del watcher de crons.",
+      "title": "Escalar por recurrencia",
+      "body": "Aceptar la política del PR enlazado si se prefiere reducir ruido y se mantiene evidencia de repeticiones cercanas.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Mantener alerta inmediata",
-    "body": "Conservar el escalado actual hasta atribuir los timeouts aislados con telemetría de Atlas y del despliegue.",
+    "body": "Conservar el escalado actual hasta correlacionar los timeouts aislados con métricas de Atlas y del despliegue.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Es el asignado actual y ha concretado la alternativa de comportamiento en el PR enlazado.",
+    "reason": "Es el asignado y concentra el PR que implementa la alternativa de clasificación.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9292.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9292#issuecomment-5600010469",
-    "reviewedAt": "2026-09-09T13:05:00.142Z",
-    "mainSha": "6c26fcdc2d777245b799ac4d5707cecba0e31324"
+    "reviewedAt": "2026-09-09T14:56:56.327Z",
+    "mainSha": "94cb970a57ae971c0f59e2f01b6667ba033b4085"
   }
 }
