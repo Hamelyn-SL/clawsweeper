@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-09T06:39:54.931Z",
+  "updatedAt": "2026-09-09T06:32:37Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9294,
+    "title": "crons: Address Validation API costs ~500 €/month after prevalidate-pending-addresses",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9294",
+    "state": "open",
+    "labels": [
+      "app:infrastructure",
+      "reporter:pablo",
+      "feature",
+      "triage:queued",
+      "P2"
+    ],
+    "createdAt": "2026-09-09T06:32:25Z",
+    "updatedAt": "2026-09-09T06:32:37Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué cobertura de prevalidación y presupuesto mensual se considera aceptable para preservar la reducción de errores de etiqueta?",
+  "rationale": "El código no define un umbral de riesgo ni de gasto: reducir llamadas cambia deliberadamente la cobertura preventiva actual.",
+  "options": [
+    {
+      "title": "Pilotar selección por riesgo",
+      "body": "Aplicar un filtro acotado para direcciones con señales locales de inconsistencia y comparar durante un periodo coste, correcciones y errores de etiqueta.",
+      "recommended": true
+    },
+    {
+      "title": "Conservar cobertura total",
+      "body": "Mantener la validación de todos los pedidos elegibles y aceptar el coste como protección operativa.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Pilotar selección por riesgo",
+    "body": "Aplicar un filtro acotado para direcciones con señales locales de inconsistencia y comparar durante un periodo coste, correcciones y errores de etiqueta.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Daniel",
+    "reason": "Es la persona con la señal histórica más reciente sobre la composición actual del recorrido de prevalidación.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9294.md",
+    "reviewedAt": "2026-09-09T06:39:54.931Z",
+    "mainSha": "be83ada55c34f327d009a88da261ff2a72bf3f08"
+  }
+}
