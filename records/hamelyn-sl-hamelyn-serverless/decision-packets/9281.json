@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-08T13:07:51.889Z",
-  "updatedAt": "2026-09-08T12:57:50Z",
+  "generatedAt": "2026-09-09T12:29:24.113Z",
+  "updatedAt": "2026-09-09T12:12:50Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -18,43 +18,42 @@
       "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-09-08T12:54:05Z",
-    "updatedAt": "2026-09-08T12:57:50Z"
+    "updatedAt": "2026-09-09T12:12:50Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe el ✅ de la allowlist ejecutar automáticamente un cliente provisional cuando el watcher haya creado o reutilizado una issue de alta abierta?",
-  "rationale": "Cambia una barrera operativa deliberada de la PR previa: pasa de identidad humana e HITL a una autorización automática condicionada por GitHub.",
+  "question": "¿Debe un issue de alta abierto y anunciado en el hilo ser condición suficiente para que un ✅ autorizado ejecute un pedido de un cliente B2B aún no registrado?",
+  "rationale": "La decisión amplía la autorización de retirada y venta desde clientes configurados a identidades derivadas, aunque la PR proponga controles técnicos concretos.",
   "options": [
     {
-      "title": "Autorizar con alta abierta",
-      "body": "Permitir el ✅ automático solo después de persistir la identidad y verificar una issue de alta abierta, manteniendo los demás bloqueos.",
+      "title": "Adoptar el flujo provisional protegido",
+      "body": "Aceptar la issue de alta abierta como salvaguarda y revisar la PR con pruebas de identidad, aviso y estado de GitHub antes de fusionarla.",
       "recommended": true
     },
     {
-      "title": "Conservar HITL",
-      "body": "Mantener la ejecución provisional en HITL y automatizar únicamente la creación o reutilización de la issue de alta.",
+      "title": "Mantener ejecución HITL",
+      "body": "Conservar la ejecución manual para clientes no registrados y limitar el watcher a eliminar el falso escalado por cantidad.",
       "recommended": false
     },
     {
       "title": "Exigir alta permanente",
-      "body": "No permitir ejecución provisional y conservar el registro en `B2B_CLIENTS` como requisito previo.",
+      "body": "No permitir ninguna ejecución provisional hasta que la entrada real esté presente en `B2B_CLIENTS`.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Autorizar con alta abierta",
-    "body": "Permitir el ✅ automático solo después de persistir la identidad y verificar una issue de alta abierta, manteniendo los demás bloqueos.",
+    "title": "Adoptar el flujo provisional protegido",
+    "body": "Aceptar la issue de alta abierta como salvaguarda y revisar la PR con pruebas de identidad, aviso y estado de GitHub antes de fusionarla.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es el responsable asignado y el autor de la implementación reciente del flujo provisional.",
+    "reason": "El historial muestra trabajo continuado sobre esta ruta y la persona asignada ya mantiene la PR que materializa las alternativas.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9281.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9281#issuecomment-5585587863",
-    "reviewedAt": "2026-09-08T13:07:51.889Z",
-    "mainSha": "a16a52ba2697f3a5291eb05034e11708e4bbf137"
+    "reviewedAt": "2026-09-09T12:29:24.113Z",
+    "mainSha": "b6a9e5288b41c0ce9d70a3f9ba273da6a7f0d7ad"
   }
 }
