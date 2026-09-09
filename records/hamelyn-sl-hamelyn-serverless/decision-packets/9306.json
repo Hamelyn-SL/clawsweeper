@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-09T15:41:22.822Z",
+  "generatedAt": "2026-09-09T15:42:18.540Z",
   "updatedAt": "2026-09-09T13:59:25Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -21,34 +21,33 @@
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Station debe conservar el cierre automático al salir de preparación y sumar un cierre manual, o pasar a exigir siempre un cierre manual persistente entre recargas y navegación?",
-  "rationale": "La issue propone distinguir cierres manuales y automáticos, mientras que el PR elimina estos últimos y cambia la atribución operativa de las métricas.",
+  "question": "¿Debe Station dejar de cerrar automáticamente la sesión al abandonar o recargar la vista, sustituyéndolo por cierre manual exclusivo?",
+  "rationale": "El PR cambia una salvaguarda introducida para evitar sesiones abiertas; la incidencia solicita un botón, pero no exige retirar los cierres automáticos.",
   "options": [
     {
-      "title": "Mantener cierre automático",
-      "body": "Conservar `station-unmount` y `station-pagehide` y añadir el botón manual con `closeSource: \"station-manual\"`.",
+      "title": "Conservar cierre automático",
+      "body": "Añadir el indicador y la finalización manual manteniendo `station-pagehide` y `station-unmount` como protección frente a sesiones abandonadas.",
       "recommended": true
     },
     {
-      "title": "Adoptar cierre manual exclusivo",
-      "body": "Eliminar los cierres implícitos y aceptar que la sesión continúe hasta que el operario la finalice explícitamente.",
+      "title": "Adoptar sesión persistente",
+      "body": "Eliminar los cierres automáticos y asumir que la sesión continúa hasta la confirmación manual o el autocierre diario.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mantener cierre automático",
-    "body": "Conservar `station-unmount` y `station-pagehide` y añadir el botón manual con `closeSource: \"station-manual\"`.",
+    "title": "Conservar cierre automático",
+    "body": "Añadir el indicador y la finalización manual manteniendo `station-pagehide` y `station-unmount` como protección frente a sesiones abandonadas.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Es la persona con mantenimiento reciente del hook y de la vista de preparación afectados.",
+    "reason": "Ha fusionado y mantenido recientemente el flujo de productividad de Station, incluido el comportamiento de sesión.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9306.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9306#issuecomment-5600012025",
-    "reviewedAt": "2026-09-09T15:41:22.822Z",
+    "reviewedAt": "2026-09-09T15:42:18.540Z",
     "mainSha": "94cb970a57ae971c0f59e2f01b6667ba033b4085"
   }
 }
