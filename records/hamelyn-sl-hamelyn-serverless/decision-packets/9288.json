@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-09T01:22:03.910Z",
+  "updatedAt": "2026-09-09T00:00:24Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9288,
+    "title": "Infraestructura: watchers comparan fuentes de ventanas temporales distintas",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9288",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:infrastructure",
+      "triage:done",
+      "P2"
+    ],
+    "createdAt": "2026-09-08T23:54:25Z",
+    "updatedAt": "2026-09-09T00:00:24Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe cada watcher aplazarse hasta una precondición verificable de frescura, además de escalonar sus horarios fijos?",
+  "rationale": "Los horarios no cubren retrasos reales de reporte, raw y tipado; esta elección define la garantía transversal antes de dividir la implementación.",
+  "options": [
+    {
+      "title": "Precondición de frescura",
+      "body": "Bloquear o degradar la comparación de drift hasta observar el reporte y un ciclo posterior de raw y tipado.",
+      "recommended": true
+    },
+    {
+      "title": "Solo cronogramas",
+      "body": "Escalonar los horarios conocidos y asumir recuperación operativa cuando una etapa llegue tarde.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Precondición de frescura",
+    "body": "Bloquear o degradar la comparación de drift hasta observar el reporte y un ciclo posterior de raw y tipado.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Está asignado a la issue y ya revisa el diseño técnico de la PR que aborda una parte del problema.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9288.md",
+    "reviewedAt": "2026-09-09T01:22:03.910Z",
+    "mainSha": "5e573122fe240a7c516f4168147bb61666ebad16"
+  }
+}
