@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-09T17:06:56.787Z",
+  "updatedAt": "2026-09-09T16:53:18Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 9335,
+    "title": "feat: read b2b root messages with a structured intake model",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9335",
+    "state": "open",
+    "labels": [
+      "size/XXL"
+    ],
+    "createdAt": "2026-09-09T16:40:56Z",
+    "updatedAt": "2026-09-09T16:53:18Z",
+    "headSha": "2dcae88b8bea8eb8a6cd69bd933b7cd109da07b7"
+  },
+  "lane": "security_boundary",
+  "priority": "P1",
+  "question": "¿Se acepta que el watcher envíe el texto normalizado y nombres de adjuntos de cada pedido B2B candidato a la suscripción de Codex para clasificarlo?",
+  "rationale": "El parche cambia el límite de tratamiento de datos de pedidos; la corrección técnica no determina por sí sola si ese intercambio externo es aceptable.",
+  "options": [
+    {
+      "title": "Aprobar con límite documentado",
+      "body": "Aceptar el intake externo para este canal privado y documentar qué datos se envían, el proveedor y el comportamiento ante indisponibilidad.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener clasificación local",
+      "body": "Conservar el flujo determinista hasta disponer de un proveedor o una política de datos aprobada para pedidos B2B.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar con límite documentado",
+    "body": "Aceptar el intake externo para este canal privado y documentar qué datos se envían, el proveedor y el comportamiento ante indisponibilidad.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es el autor del diseño y del historial reciente del subsistema B2B.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9335.md",
+    "reviewedAt": "2026-09-09T17:06:56.787Z",
+    "mainSha": "39e83f724d26bed9cbc6387b37916bd073d40de8"
+  }
+}

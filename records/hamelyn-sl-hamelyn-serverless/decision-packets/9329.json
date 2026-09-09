@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-09T16:56:09.006Z",
+  "generatedAt": "2026-09-09T17:02:01.513Z",
   "updatedAt": "2026-09-09T16:51:41Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -13,7 +13,7 @@
       "app:infrastructure",
       "feature",
       "reporter:javier",
-      "triage:done",
+      "triage:queued",
       "P1",
       "clawsweeper:needs-product-decision"
     ],
@@ -22,39 +22,38 @@
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Se aprueba que un modelo clasifique los mensajes candidatos como `order`, `not_order` o `needs_human`, con descarte persistido y la ejecución posterior conservada como determinista?",
-  "rationale": "La decisión cambia el límite operativo entre heurísticas deterministas, coste de modelo y recuperación de falsos negativos en pedidos B2B.",
+  "question": "¿Debe el watcher B2B adoptar una única clasificación estructurada por mensaje candidato, con `not_order` persistido y recuperación humana mediante ✅, en lugar de las heurísticas actuales?",
+  "rationale": "La elección fija el coste y la latencia del watcher, la semántica del descarte persistido y el límite entre interpretación del modelo y controles deterministas.",
   "options": [
     {
-      "title": "Aprobar el intake estructurado",
-      "body": "Mantener los rieles deterministas y usar una única lectura modelada por mensaje candidato, resolviendo los bloqueos de las PRs apiladas.",
+      "title": "Aprobar el intake acotado",
+      "body": "Mantener una llamada corta por candidato, conservar los rieles actuales y exigir la corrección de recuperación antes de integrar.",
       "recommended": true
     },
     {
-      "title": "Mantener clasificación determinista",
-      "body": "Rechazar el nuevo intake y limitar el trabajo a mejorar las reglas actuales y sus pruebas.",
+      "title": "Conservar heurísticas",
+      "body": "Mantener las regex y seguir corrigiendo casos específicos, evitando dependencia operativa del modelo.",
       "recommended": false
     },
     {
-      "title": "Pilotar con escalado conservador",
-      "body": "Permitir el modelo solo para proponer `needs_human` mientras se recopila evidencia antes de admitir `order` o `not_order`.",
+      "title": "Limitarlo a piloto",
+      "body": "Activar el intake solo para escalado o auditoría hasta validar coste y falsos descartes con tráfico real.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar el intake estructurado",
-    "body": "Mantener los rieles deterministas y usar una única lectura modelada por mensaje candidato, resolviendo los bloqueos de las PRs apiladas.",
+    "title": "Aprobar el intake acotado",
+    "body": "Mantener una llamada corta por candidato, conservar los rieles actuales y exigir la corrección de recuperación antes de integrar.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es el principal autor histórico del watcher y de la solución apilada actualmente en revisión.",
+    "reason": "Está asignado a la issue y concentra el historial reciente del flujo B2B y de la PR candidata.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9329.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9329#issuecomment-5604362945",
-    "reviewedAt": "2026-09-09T16:56:09.006Z",
+    "reviewedAt": "2026-09-09T17:02:01.513Z",
     "mainSha": "39e83f724d26bed9cbc6387b37916bd073d40de8"
   }
 }
