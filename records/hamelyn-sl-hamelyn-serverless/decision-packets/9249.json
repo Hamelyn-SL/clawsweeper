@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-09T12:02:24.571Z",
+  "generatedAt": "2026-09-09T11:57:49.790Z",
   "updatedAt": "2026-09-09T11:48:59Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -13,7 +13,7 @@
       "codex",
       "bug",
       "app:marketplace",
-      "triage:done",
+      "triage:queued",
       "clawsweeper:needs-product-decision",
       "P2",
       "marketplace-crons"
@@ -23,39 +23,38 @@
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe MercadoLibre reintentar globalmente los 429 en GET, o mantenerse la política actual de fallar el tick y recuperar en el siguiente?",
-  "rationale": "La solución propuesta modifica una política operativa compartida de cliente HTTP, no solo la ruta de pedidos pagados.",
+  "question": "¿Debe MercadoLibre reintentar los 429 en todos sus GET o limitar la nueva política a las búsquedas de pedidos afectadas?",
+  "rationale": "La documentación de `dev` establece la política contraria y el PR abierto cambia el contrato de todas las lecturas del cliente.",
   "options": [
     {
-      "title": "Aceptar reintentos GET acotados",
-      "body": "Revisar y patrocinar https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9320 con tres reintentos, respetando `retry-after` cuando exista.",
+      "title": "Acotar a pedidos",
+      "body": "Aplicar el reintento únicamente a `GET /orders/search` y conservar el comportamiento actual del resto de GET.",
       "recommended": true
     },
     {
-      "title": "Mantener la política actual",
-      "body": "Conservar GET sin reintento y cerrar o reconducir el PR, aceptando el retraso hasta el tick posterior.",
+      "title": "Adoptar política global",
+      "body": "Aceptar reintentos 429 para todos los GET de MercadoLibre y documentar el presupuesto y el impacto de latencia.",
       "recommended": false
     },
     {
-      "title": "Limitar el alcance",
-      "body": "Aplicar el reintento únicamente a `/orders/search` si se considera excesivo alterar todos los GET del cliente.",
+      "title": "Mantener sin reintento",
+      "body": "Conservar la política vigente y resolver la alerta mediante reducción adicional de exposición o conciliación.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aceptar reintentos GET acotados",
-    "body": "Revisar y patrocinar https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9320 con tres reintentos, respetando `retry-after` cuando exista.",
+    "title": "Acotar a pedidos",
+    "body": "Aplicar el reintento únicamente a `GET /orders/search` y conservar el comportamiento actual del resto de GET.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MarcosTerroso",
-    "reason": "Es el asignado actual y el mayor contribuidor histórico del área inspeccionada.",
+    "person": "JavierHamelyn",
+    "reason": "El comportamiento documentado y el PR candidato convergen en el cliente que su historial reciente introdujo.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9249.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9249#issuecomment-5574679654",
-    "reviewedAt": "2026-09-09T12:02:24.571Z",
+    "reviewedAt": "2026-09-09T11:57:49.790Z",
     "mainSha": "a9b43192e16fc01b84bfd6504f601f9ebcac6fe3"
   }
 }
