@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-09T15:35:15.434Z",
+  "generatedAt": "2026-09-09T15:41:22.822Z",
   "updatedAt": "2026-09-09T13:59:25Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -21,34 +21,33 @@
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Station debe conservar el cierre automático al salir o recargar, añadiendo además un cierre manual, o pasar explícitamente a sesiones que solo finalizan por acción del operario?",
-  "rationale": "La solicitud distingue los cierres automáticos existentes, mientras que el PR abierto los elimina para conservar el reloj tras una recarga; ambas opciones cambian la atribución operativa de productividad.",
+  "question": "¿Station debe conservar el cierre automático al salir de preparación y sumar un cierre manual, o pasar a exigir siempre un cierre manual persistente entre recargas y navegación?",
+  "rationale": "La issue propone distinguir cierres manuales y automáticos, mientras que el PR elimina estos últimos y cambia la atribución operativa de las métricas.",
   "options": [
     {
       "title": "Mantener cierre automático",
-      "body": "Añadir indicador y cierre manual conservando `station-unmount` y `station-pagehide` para limitar la duración de sesiones abandonadas.",
+      "body": "Conservar `station-unmount` y `station-pagehide` y añadir el botón manual con `closeSource: \"station-manual\"`.",
       "recommended": true
     },
     {
-      "title": "Adoptar cierre manual",
-      "body": "Aceptar que Station conserve la sesión entre recargas y salidas, con cierre nocturno como salvaguarda para sesiones olvidadas.",
+      "title": "Adoptar cierre manual exclusivo",
+      "body": "Eliminar los cierres implícitos y aceptar que la sesión continúe hasta que el operario la finalice explícitamente.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Mantener cierre automático",
-    "body": "Añadir indicador y cierre manual conservando `station-unmount` y `station-pagehide` para limitar la duración de sesiones abandonadas.",
+    "body": "Conservar `station-unmount` y `station-pagehide` y añadir el botón manual con `closeSource: \"station-manual\"`.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Su trabajo reciente cubre directamente la semántica de inicio y cierre de sesiones de Station.",
+    "reason": "Es la persona con mantenimiento reciente del hook y de la vista de preparación afectados.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9306.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9306#issuecomment-5600012025",
-    "reviewedAt": "2026-09-09T15:35:15.434Z",
+    "reviewedAt": "2026-09-09T15:41:22.822Z",
     "mainSha": "94cb970a57ae971c0f59e2f01b6667ba033b4085"
   }
 }
