@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-09T20:56:33.618Z",
+  "generatedAt": "2026-09-09T20:56:20.383Z",
   "updatedAt": "2026-09-09T20:01:31Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -15,43 +15,42 @@
       "reporter:miguel",
       "triage:done",
       "clawsweeper:needs-product-decision",
+      "P2",
       "origin:dev",
-      "mk:amazon",
-      "P2"
+      "mk:amazon"
     ],
     "createdAt": "2026-09-09T17:10:18Z",
     "updatedAt": "2026-09-09T20:01:31Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Autoriza el equipo Marketplace elevar escalonadamente `updatePriceLimit` de MX, FR e IT hasta 400 y vigilar durante 48 horas la cuota Amazon EU compartida?",
-  "rationale": "El código ya soporta el tamaño de chunk; decidir el presupuesto de producción y aceptar la posible competencia entre regiones requiere criterio operativo humano.",
+  "question": "¿Aprueba el equipo Marketplace elevar escalonadamente `updatePriceLimit` hasta 400 en MX, FR e IT, con reversión si empeoran duración, solapamientos o throttling?",
+  "rationale": "La configuración se aplica en producción y el repositorio no puede establecer por sí solo el nivel seguro ni el presupuesto de cuota compartida.",
   "options": [
     {
-      "title": "Escalado coordinado",
-      "body": "Elevar los tres límites de forma escalonada, mantener los offsets actuales y validar selección, finalización, duración, locks y throttling durante 48 horas.",
+      "title": "Escalado observado",
+      "body": "Subir una región por vez con 100, 200 y 400, revisando selección elegible, finalización por ítem, duración y throttling durante 48 horas.",
       "recommended": true
     },
     {
       "title": "Instrumentar antes",
-      "body": "Mantener los límites actuales hasta disponer de una línea base completa por cohorte que descarte otro cuello de botella dominante.",
+      "body": "Mantener los límites y añadir primero una medición de cohortes si no se acepta aún el riesgo operativo del aumento.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Escalado coordinado",
-    "body": "Elevar los tres límites de forma escalonada, mantener los offsets actuales y validar selección, finalización, duración, locks y throttling durante 48 horas.",
+    "title": "Escalado observado",
+    "body": "Subir una región por vez con 100, 200 y 400, revisando selección elegible, finalización por ítem, duración y throttling durante 48 horas.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MarcosTerroso",
-    "reason": "Su historial reciente cubre las rutas y schedules que determinan la capacidad operativa.",
-    "confidence": "high"
+    "person": "Marcos",
+    "reason": "La incidencia relacionada le identifica como responsable del ajuste de capacidad y de aportar su validación operativa.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9341.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9341#issuecomment-5606168133",
-    "reviewedAt": "2026-09-09T20:56:33.618Z",
+    "reviewedAt": "2026-09-09T20:56:20.383Z",
     "mainSha": "04d5ad041d95891dc1cd4193b8a88b2804ac1312"
   }
 }

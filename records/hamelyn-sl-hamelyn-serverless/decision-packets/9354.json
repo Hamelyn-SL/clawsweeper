@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-09T20:57:36.506Z",
+  "updatedAt": "2026-09-09T20:35:38Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 9354,
+    "title": "fix: evita duplicados activos en la selección de MercadoLibre",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9354",
+    "state": "open",
+    "labels": [
+      "size/M"
+    ],
+    "createdAt": "2026-09-09T20:25:00Z",
+    "updatedAt": "2026-09-09T20:35:38Z",
+    "headSha": "c33017d2cd2952ac905e8945563f266cb7c2ccdc"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe este PR aterrizar como mitigación de mirrors locales mientras se conserva un seguimiento activo para los duplicados remotos desconocidos?",
+  "rationale": "La issue vinculada exige elegir entre promover listings propios remotos o aparcar duplicados desconocidos; el `$lookup` local no toma esa decisión.",
+  "options": [
+    {
+      "title": "Mergear la mitigación y conservar seguimiento",
+      "body": "Mantener activa una issue canónica para la reconciliación o clasificación de duplicados remotos antes de cerrar el trabajo global.",
+      "recommended": true
+    },
+    {
+      "title": "Esperar a la política completa",
+      "body": "Pausar este PR hasta decidir si los duplicados remotos se promueven o se clasifican como no reintentables.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mergear la mitigación y conservar seguimiento",
+    "body": "Mantener activa una issue canónica para la reconciliación o clasificación de duplicados remotos antes de cerrar el trabajo global.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "La transición V2 y la decisión de recuperación del manager aparecen en su historial y ya es el revisor solicitado.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9354.md",
+    "reviewedAt": "2026-09-09T20:57:36.506Z",
+    "mainSha": "04d5ad041d95891dc1cd4193b8a88b2804ac1312"
+  }
+}
