@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-09T09:05:46.542Z",
-  "updatedAt": "2026-09-09T08:58:05Z",
+  "generatedAt": "2026-09-09T10:11:51.747Z",
+  "updatedAt": "2026-09-09T09:08:21Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -14,44 +14,38 @@
       "P1"
     ],
     "createdAt": "2026-09-08T09:30:53Z",
-    "updatedAt": "2026-09-09T08:58:05Z",
+    "updatedAt": "2026-09-09T09:08:21Z",
     "headSha": "2f0f7e738ddac9c4156f64f7e262189f8e09634b"
   },
-  "lane": "product_direction",
+  "lane": "release_inclusion",
   "priority": "P1",
-  "question": "¿Se aprueba que `products.priceBuy` cambie de oferta final a base persistida, con una conversión única y sin compatibilidad dual de valores históricos?",
-  "rationale": "La implementación es coherente, pero decidir el contrato persistido y aceptar una ventana de suspensión operativa excede una corrección mecánica.",
+  "question": "¿Se aprueba un cutover único e irreversible sin compatibilidad legacy, o debe mantenerse una transición segura hasta verificar la conversión de todos los `priceBuy` destacados?",
+  "rationale": "La decisión determina si la aplicación puede interpretar datos históricos con una semántica nueva; ni los tests focalizados ni el documento operativo demuestran que la conversión haya ocurrido antes de servir ofertas.",
   "options": [
     {
-      "title": "Patrocinar precio base",
-      "body": "Adoptar esta dirección y exigir un responsable, manifiesto revisado, pausa de escritores y validación de los flujos antes del merge.",
+      "title": "Añadir transición segura",
+      "body": "Mantener compatibilidad explícita hasta que un manifiesto verificado confirme la conversión completa y permita retirar la transición.",
       "recommended": true
     },
     {
-      "title": "Aplicar contención mínima",
-      "body": "Priorizar https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9115 para bloquear nuevos negativos y conservar el contrato actual temporalmente.",
-      "recommended": false
-    },
-    {
-      "title": "Posponer el rediseño",
-      "body": "Mantener ambos candidatos abiertos hasta acordar la semántica persistida y el plan de conversión.",
+      "title": "Aprobar cutover operativo",
+      "body": "Aceptar la publicación solo con una ventana aprobada que pause escritores, convierta los datos y valide lectores antes de reanudar tráfico.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Patrocinar precio base",
-    "body": "Adoptar esta dirección y exigir un responsable, manifiesto revisado, pausa de escritores y validación de los flujos antes del merge.",
+    "title": "Añadir transición segura",
+    "body": "Mantener compatibilidad explícita hasta que un manifiesto verificado confirme la conversión completa y permita retirar la transición.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Su trabajo reciente conecta la coordinación de pricing con el riesgo operativo que decide este cambio.",
-    "confidence": "high"
+    "person": "Daniel",
+    "reason": "El historial sitúa el contrato de pricing actual en su área y la decisión afecta a su semántica persistida.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9271.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9271#issuecomment-5583582289",
-    "reviewedAt": "2026-09-09T09:05:46.542Z",
-    "mainSha": "be83ada55c34f327d009a88da261ff2a72bf3f08"
+    "reviewedAt": "2026-09-09T10:11:51.747Z",
+    "mainSha": "31983f08da7c6bb8095a3ead573f802df42a33cb"
   }
 }
