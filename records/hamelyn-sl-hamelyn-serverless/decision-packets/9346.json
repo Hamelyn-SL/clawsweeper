@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-09T17:20:37.723Z",
+  "updatedAt": "2026-09-09T17:10:42Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9346,
+    "title": "marketplace-errors-watcher: 8 de 20 issues de la semana fueron avisos benignos; ampliar firmas esperadas",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9346",
+    "state": "open",
+    "labels": [
+      "bug",
+      "reporter:miguel",
+      "triage:queued",
+      "P2",
+      "app:agents",
+      "origin:dev"
+    ],
+    "createdAt": "2026-09-09T17:10:29Z",
+    "updatedAt": "2026-09-09T17:10:42Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué firmas de marketplace se consideran recuperadas o esperadas sin perder visibilidad de fallos que puedan impedir publicar, retirar o sincronizar?",
+  "rationale": "Las señales listadas mezclan éxitos confirmados, estados transitorios y respuestas 500; el código no puede decidir por sí solo qué nivel de observabilidad es aceptable.",
+  "options": [
+    {
+      "title": "Clasificar por desenlace confirmado",
+      "body": "Excluir o rebajar únicamente los mensajes con éxito posterior o estado remoto esperado, conservando los 4xx/5xx no recuperados.",
+      "recommended": true
+    },
+    {
+      "title": "Filtrar todas las firmas propuestas",
+      "body": "Reducir el ruido de inmediato, aceptando que algunos errores sin recuperación explícita dejen de crear incidencias.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Clasificar por desenlace confirmado",
+    "body": "Excluir o rebajar únicamente los mensajes con éxito posterior o estado remoto esperado, conservando los 4xx/5xx no recuperados.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Es la persona más conectada al diseño reciente de firmas, agrupación y conservación de incidencias del watcher.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9346.md",
+    "reviewedAt": "2026-09-09T17:20:37.723Z",
+    "mainSha": "6774a61aabbfadb15a645312d7b56b712cc60aae"
+  }
+}
