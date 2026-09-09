@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-09T20:56:20.383Z",
+  "generatedAt": "2026-09-09T20:57:47.881Z",
   "updatedAt": "2026-09-09T20:01:31Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -24,33 +24,38 @@
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Aprueba el equipo Marketplace elevar escalonadamente `updatePriceLimit` hasta 400 en MX, FR e IT, con reversión si empeoran duración, solapamientos o throttling?",
-  "rationale": "La configuración se aplica en producción y el repositorio no puede establecer por sí solo el nivel seguro ni el presupuesto de cuota compartida.",
+  "question": "¿Autoriza el equipo Marketplace elevar escalonadamente `updatePriceLimit` hasta 400 en MX, FR e IT bajo el presupuesto compartido de Amazon EU?",
+  "rationale": "El código ya ofrece el control, pero decidir el ritmo y la simultaneidad altera capacidad remota, duración de cron y posible throttling de una cuenta compartida.",
   "options": [
     {
-      "title": "Escalado observado",
-      "body": "Subir una región por vez con 100, 200 y 400, revisando selección elegible, finalización por ítem, duración y throttling durante 48 horas.",
+      "title": "Despliegue escalonado con observación",
+      "body": "Elevar una región cada vez hasta 400, manteniendo sus offsets y midiendo selector elegible, resultados persistidos, duración, omisiones y throttling durante 48 horas.",
       "recommended": true
     },
     {
-      "title": "Instrumentar antes",
-      "body": "Mantener los límites y añadir primero una medición de cohortes si no se acepta aún el riesgo operativo del aumento.",
+      "title": "Aumento simultáneo",
+      "body": "Subir MX, FR e IT a 400 a la vez para reducir antes las colas, aceptando mayor incertidumbre sobre la cuota compartida.",
+      "recommended": false
+    },
+    {
+      "title": "Instrumentar antes de cambiar",
+      "body": "No modificar límites hasta disponer de atribución por cohorte y del productor de `needsUpdatePrice`, aunque las colas sigan creciendo.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Escalado observado",
-    "body": "Subir una región por vez con 100, 200 y 400, revisando selección elegible, finalización por ítem, duración y throttling durante 48 horas.",
+    "title": "Despliegue escalonado con observación",
+    "body": "Elevar una región cada vez hasta 400, manteniendo sus offsets y midiendo selector elegible, resultados persistidos, duración, omisiones y throttling durante 48 horas.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "Marcos",
-    "reason": "La incidencia relacionada le identifica como responsable del ajuste de capacidad y de aportar su validación operativa.",
-    "confidence": "medium"
+    "person": "MarcosTerroso",
+    "reason": "Combina la asignación y acción operativa documentada en el antecedente de SE con mantenimiento reciente del cron.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9341.md",
-    "reviewedAt": "2026-09-09T20:56:20.383Z",
+    "reviewedAt": "2026-09-09T20:57:47.881Z",
     "mainSha": "04d5ad041d95891dc1cd4193b8a88b2804ac1312"
   }
 }
