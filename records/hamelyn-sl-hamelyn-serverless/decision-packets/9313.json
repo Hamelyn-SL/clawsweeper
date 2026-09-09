@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-09T11:03:51.526Z",
+  "updatedAt": "2026-09-09T10:59:15Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 9313,
+    "title": "fix: exclude listing origins from co-viewed recommendations",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9313",
+    "state": "open",
+    "labels": [
+      "size/S"
+    ],
+    "createdAt": "2026-09-09T10:58:32Z",
+    "updatedAt": "2026-09-09T10:59:15Z",
+    "headSha": "a824d9e0a7b664a4a2d3bbd917811769fcdc9d18"
+  },
+  "lane": "merge_risk",
+  "priority": "P2",
+  "question": "¿Quién programa y verifica la regeneración completa persistida y la invalidación de caché inmediatamente después de desplegar este cambio?",
+  "rationale": "La corrección modifica datos derivados ya almacenados; el cron diario incremental no sustituye de forma inmediata todas las asociaciones históricas.",
+  "options": [
+    {
+      "title": "Programar el refresco completo",
+      "body": "Coordinar la regeneración completa y la invalidación de caché con el despliegue para que la nueva semántica se aplique a todo el catálogo.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar transición gradual",
+      "body": "Fusionar sin refresco global y aceptar que las asociaciones anteriores se reemplacen solo a medida que cada obra quede afectada por actividad reciente.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Programar el refresco completo",
+    "body": "Coordinar la regeneración completa y la invalidación de caché con el despliegue para que la nueva semántica se aplique a todo el catálogo.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Daniel",
+    "reason": "Es la persona con la señal histórica más directa en la ruta actual de generación.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9313.md",
+    "reviewedAt": "2026-09-09T11:03:51.526Z",
+    "mainSha": "113a475b5f617e51b268d5cd6a1d0416b86c7271"
+  }
+}

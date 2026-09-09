@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-09T09:58:17.904Z",
-  "updatedAt": "2026-09-09T09:45:56Z",
+  "generatedAt": "2026-09-09T11:02:47.439Z",
+  "updatedAt": "2026-09-09T10:57:50Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,42 +14,41 @@
       "bug",
       "app:marketplace",
       "triage:needs-info",
-      "marketplace-crons",
-      "P2"
+      "P2",
+      "marketplace-crons"
     ],
     "createdAt": "2026-09-09T05:30:36Z",
-    "updatedAt": "2026-09-09T09:45:56Z"
+    "updatedAt": "2026-09-09T10:57:50Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe un timeout Mongo aislado y acotado al adquirir el lock dejar de abrir alerta P1, o debe mantenerse visible hasta confirmar su causa operativa?",
-  "rationale": "El cambio actual limita la duración, pero no evita el HTTP 500 observado; elegir la política de detección requiere valorar la tolerancia al riesgo operativo.",
+  "question": "¿Debe el watcher de marketplace dejar de elevar un `MongoOperationTimeoutError` aislado del lock hasta que haya dos observaciones, aunque el tick afectado siga devolviendo HTTP 500?",
+  "rationale": "La evidencia acredita continuidad posterior, pero no identifica la causa del socket ni demuestra que una única observación sea inocua; elegir el umbral de alerta es una decisión operativa.",
   "options": [
     {
-      "title": "Mantener la señal hasta atribuir la causa",
-      "body": "Conservar esta incidencia y pedir métricas de Atlas y el SHA desplegado antes de rebajar la alerta.",
+      "title": "Mantener la alerta inmediata",
+      "body": "Conservar la clasificación actual hasta disponer del SHA desplegado y métricas de Atlas que atribuyan el timeout.",
       "recommended": true
     },
     {
-      "title": "Aceptar la clasificación condicionada",
-      "body": "Fusionar el ajuste documental si se acepta que dos ticks consecutivos o varias rutas sean la única señal de escalado.",
+      "title": "Aceptar la escalada por repetición",
+      "body": "Fusionar el PR y alertar cuando la firma aparezca dos veces, preservando los demás timeouts como catastróficos.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mantener la señal hasta atribuir la causa",
-    "body": "Conservar esta incidencia y pedir métricas de Atlas y el SHA desplegado antes de rebajar la alerta.",
+    "title": "Mantener la alerta inmediata",
+    "body": "Conservar la clasificación actual hasta disponer del SHA desplegado y métricas de Atlas que atribuyan el timeout.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MarcosTerroso",
-    "reason": "Está asignado a la incidencia y su historial reciente cubre el runtime del cron marketplace.",
-    "confidence": "high"
+    "person": "HamelynDev",
+    "reason": "Es el autor de la corrección previa del lock y puede decidir junto a Platform el umbral operativo.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9292.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9292#issuecomment-5600010469",
-    "reviewedAt": "2026-09-09T09:58:17.904Z",
-    "mainSha": "1e0dd1d639ebcb696dcb029a34f8e43dd6168493"
+    "reviewedAt": "2026-09-09T11:02:47.439Z",
+    "mainSha": "113a475b5f617e51b268d5cd6a1d0416b86c7271"
   }
 }
