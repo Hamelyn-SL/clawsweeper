@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-09T20:56:25.642Z",
-  "updatedAt": "2026-09-09T19:23:27Z",
+  "generatedAt": "2026-09-09T21:03:00.262Z",
+  "updatedAt": "2026-09-09T20:58:21Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -14,39 +14,38 @@
       "P2"
     ],
     "createdAt": "2026-09-08T02:48:40Z",
-    "updatedAt": "2026-09-09T19:23:27Z",
+    "updatedAt": "2026-09-09T20:58:21Z",
     "headSha": "b0140e24c503b88df2710d562942059cebe1da38"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe Hamelyn distribuir `hamelyn memory` como parte de la release 0.7.0 tras corregir los bloqueos, o prefiere mantener esta demo fuera del CLI publicado?",
-  "rationale": "La rama incorpora una superficie de producto amplia y una versión nueva del CLI; los arreglos mecánicos no determinan por sí solos si ese alcance debe entrar en la distribución estable.",
+  "question": "¿Debe `hamelyn memory` distribuirse como demo local en la CLI 0.7.0, dejando la propuesta Mongo/Auth0 y cualquier piloto productivo fuera de este PR?",
+  "rationale": "El código evita crear recursos productivos, pero el PR introduce una nueva superficie de memoria y documenta una fase posterior que necesita trazabilidad y patrocinio explícitos.",
   "options": [
     {
-      "title": "Aprobar la demo local acotada",
-      "body": "Corregir los hallazgos, conservar el modo sintético y loopback, y aceptar `memory` como capacidad local de la 0.7.0.",
+      "title": "Aprobar alcance local",
+      "body": "Mantener solo la demo sintética local tras corregir los hallazgos y abrir una issue de infraestructura para cualquier evolución productiva.",
       "recommended": true
     },
     {
-      "title": "Separar la experimentación",
-      "body": "Mantener el motor fuera de la release publicada hasta contar con una propuesta y trazabilidad de producto más reducidas.",
+      "title": "Separar el prototipo",
+      "body": "Extraer la demo de esta release y debatir primero la necesidad, el propietario y la frontera de producto de memoria de equipo.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar la demo local acotada",
-    "body": "Corregir los hallazgos, conservar el modo sintético y loopback, y aceptar `memory` como capacidad local de la 0.7.0.",
+    "title": "Aprobar alcance local",
+    "body": "Mantener solo la demo sintética local tras corregir los hallazgos y abrir una issue de infraestructura para cualquier evolución productiva.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su historial en el CLI y la propuesta actual lo sitúan como la mejor persona para concretar el alcance técnico de la opción patrocinada.",
+    "reason": "Su historial cubre la distribución de la CLI y la implementación actual de la nueva superficie.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9252.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9252#issuecomment-5578483632",
-    "reviewedAt": "2026-09-09T20:56:25.642Z",
+    "reviewedAt": "2026-09-09T21:03:00.262Z",
     "mainSha": "04d5ad041d95891dc1cd4193b8a88b2804ac1312"
   }
 }

@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-09T20:57:36.506Z",
-  "updatedAt": "2026-09-09T20:35:38Z",
+  "generatedAt": "2026-09-09T21:02:37.219Z",
+  "updatedAt": "2026-09-09T20:58:31Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -14,39 +14,43 @@
       "P2"
     ],
     "createdAt": "2026-09-09T20:25:00Z",
-    "updatedAt": "2026-09-09T20:35:38Z",
+    "updatedAt": "2026-09-09T20:58:31Z",
     "headSha": "c33017d2cd2952ac905e8945563f266cb7c2ccdc"
   },
-  "lane": "product_direction",
+  "lane": "merge_risk",
   "priority": "P2",
-  "question": "¿Debe este PR aterrizar como mitigación de mirrors locales mientras se conserva un seguimiento activo para los duplicados remotos desconocidos?",
-  "rationale": "La issue vinculada exige elegir entre promover listings propios remotos o aparcar duplicados desconocidos; el `$lookup` local no toma esa decisión.",
+  "question": "¿Qué contrato de rendimiento debe prevalecer al excluir duplicados locales de MercadoLibre sin degradar la selección indexada?",
+  "rationale": "La corrección local es útil, pero el patrón actual invalida una optimización reciente y la alternativa requiere escoger entre modelo de datos, política de lote o presupuesto operativo.",
   "options": [
     {
-      "title": "Mergear la mitigación y conservar seguimiento",
-      "body": "Mantener activa una issue canónica para la reconciliación o clasificación de duplicados remotos antes de cerrar el trabajo global.",
+      "title": "Preservar la selección acotada",
+      "body": "Rediseñar el filtrado para conservar un límite temprano y añadir evidencia de plan y latencia de Atlas antes de fusionar.",
       "recommended": true
     },
     {
-      "title": "Esperar a la política completa",
-      "body": "Pausar este PR hasta decidir si los duplicados remotos se promueven o se clasifican como no reintentables.",
+      "title": "Aceptar el coste medido",
+      "body": "Fusionar el `$lookup` actual solo con una decisión explícita sobre el presupuesto de cron y monitorización de latencia en producción.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar esta mitigación",
+      "body": "Mantener el selector actual hasta acordar una solución de duplicados que no elimine la optimización de rendimiento.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mergear la mitigación y conservar seguimiento",
-    "body": "Mantener activa una issue canónica para la reconciliación o clasificación de duplicados remotos antes de cerrar el trabajo global.",
+    "title": "Preservar la selección acotada",
+    "body": "Rediseñar el filtrado para conservar un límite temprano y añadir evidencia de plan y latencia de Atlas antes de fusionar.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "La transición V2 y la decisión de recuperación del manager aparecen en su historial y ya es el revisor solicitado.",
+    "reason": "Su historial reciente conecta directamente la política V2 de selección con el comportamiento que debe preservarse.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9354.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9354#issuecomment-5608653184",
-    "reviewedAt": "2026-09-09T20:57:36.506Z",
+    "reviewedAt": "2026-09-09T21:02:37.219Z",
     "mainSha": "04d5ad041d95891dc1cd4193b8a88b2804ac1312"
   }
 }
