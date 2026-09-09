@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-09T15:21:05.997Z",
+  "generatedAt": "2026-09-09T15:27:26.244Z",
   "updatedAt": "2026-09-09T15:12:28Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -21,38 +21,38 @@
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Aprueba Supply que el destino automático del PR abierto sustituya Nueva entrada para EAN ajenos al lote y baja demanda, y que los registros históricos queden solo en lectura?",
-  "rationale": "La retirada cambia un flujo que sigue escribiendo datos y depende de una sustitución aún no integrada; el código no puede decidir por sí solo la cobertura operativa ni la política de histórico.",
+  "question": "¿Qué compatibilidad debe mantenerse para `CreationType.INVENTORY` y `OperationType.NEW_ENTRY` históricos, y cuándo se autoriza retirar el flujo tras validar el reemplazo de destino automático?",
+  "rationale": "La retirada cambia un flujo aún activo y afecta a productividad e historial persistido; el código no puede decidir por sí solo qué operaciones históricas deben seguir siendo visibles o editables.",
   "options": [
     {
-      "title": "Aprobar sustitución y retirada gradual",
-      "body": "Validar el contrato del destino automático, desplegarlo por puesto y planificar después una retirada que conserve el histórico en solo lectura.",
+      "title": "Retirada en dos fases",
+      "body": "Fusionar y validar primero el destino automático, conservar el histórico en solo lectura y retirar después los escritores y accesos de Nueva entrada.",
       "recommended": true
     },
     {
-      "title": "Mantener ambos flujos temporalmente",
-      "body": "Conservar Nueva entrada hasta confirmar con Operaciones que el destino automático cubre todos los usos actuales y excepciones.",
+      "title": "Conservar ambos flujos",
+      "body": "Mantener Nueva entrada hasta que Operaciones confirme que los usos recientes están cubiertos por el destino automático.",
       "recommended": false
     },
     {
-      "title": "Redefinir la sustitución",
-      "body": "Ajustar el flujo automático antes de la retirada si la política de baja demanda, cajas o sobrantes no cubre la operativa requerida.",
+      "title": "Retirada completa inmediata",
+      "body": "Eliminar ahora todas las rutas y escritores, aceptando una migración separada para los lotes y sesiones históricas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar sustitución y retirada gradual",
-    "body": "Validar el contrato del destino automático, desplegarlo por puesto y planificar después una retirada que conserve el histórico en solo lectura.",
+    "title": "Retirada en dos fases",
+    "body": "Fusionar y validar primero el destino automático, conservar el histórico en solo lectura y retirar después los escritores y accesos de Nueva entrada.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "banosdavidhamelyn",
-    "reason": "Ha trabajado tanto el flujo de Nueva entrada como el candidato de destino automático, y puede concretar la compatibilidad operativa con Supply.",
+    "reason": "Es el responsable asignado de la sustitución relacionada y figura en el historial del flujo de entrada del kiosco.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9256.md",
-    "reviewedAt": "2026-09-09T15:21:05.997Z",
+    "reviewedAt": "2026-09-09T15:27:26.244Z",
     "mainSha": "94cb970a57ae971c0f59e2f01b6667ba033b4085"
   }
 }
