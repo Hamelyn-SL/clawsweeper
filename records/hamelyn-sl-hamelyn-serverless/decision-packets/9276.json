@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-09T19:00:23.177Z",
+  "updatedAt": "2026-09-09T18:34:52Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 9276,
+    "title": "feat: add lot grading mode and drawer moves to turbo review",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9276",
+    "state": "open",
+    "labels": [
+      "size/L",
+      "P1"
+    ],
+    "createdAt": "2026-09-08T10:51:30Z",
+    "updatedAt": "2026-09-09T18:34:52Z",
+    "headSha": "fa3a75cbd7a0b679d8b155c0fbb13eb52c2a2300"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe permitirse cambiar desde el historial la gaveta de un producto cuyo Stock ya se ha generado?",
+  "rationale": "El PR abre ese caso sin sincronizar Stock; elegir entre bloquearlo o actualizar ubicación y estado de Stock modifica el contrato operativo de almacén.",
+  "options": [
+    {
+      "title": "Sincronizar Order y Stock",
+      "body": "Permitir el movimiento y actualizar de forma coherente la gaveta y el estado derivado del Stock dentro de una operación comprobable.",
+      "recommended": true
+    },
+    {
+      "title": "Bloquear tras generar Stock",
+      "body": "Rechazar el cambio desde historial cuando el producto ya tiene Stock para conservar la representación existente como fuente de verdad.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Sincronizar Order y Stock",
+    "body": "Permitir el movimiento y actualizar de forma coherente la gaveta y el estado derivado del Stock dentro de una operación comprobable.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Introdujo el flujo de revisión y ha revisado específicamente los efectos de persistencia y Stock.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9276.md",
+    "reviewedAt": "2026-09-09T19:00:23.177Z",
+    "mainSha": "18428b5212091ac86628444285f3830924338212"
+  }
+}

@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-09T09:57:32.231Z",
-  "updatedAt": "2026-09-09T08:21:08Z",
+  "generatedAt": "2026-09-09T18:59:24.497Z",
+  "updatedAt": "2026-09-09T18:53:15Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -14,44 +14,38 @@
       "P2"
     ],
     "createdAt": "2026-09-09T07:01:34Z",
-    "updatedAt": "2026-09-09T08:21:08Z",
-    "headSha": "ac7da5dfc8ca02a8699720862438901433366f88"
+    "updatedAt": "2026-09-09T18:53:15Z",
+    "headSha": "103fa8b4a3c70b7ef2e4d54be5d4d8880ea81b14"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Aceptamos que los doce triggers de report fallen cerrados y puedan esperar hasta 240 minutos si falta evidencia BigQuery, en vez de iniciar el watcher con fuentes desalineadas?",
-  "rationale": "La implementación es coherente con el problema, pero elegir entre cobertura puntual y consistencia de la señal modifica deliberadamente la operación diaria de todos los watchers.",
+  "question": "¿Debe priorizarse bloquear el watcher ante cualquier evidencia incompleta de raw o tipado, aun cuando ello pueda omitir el ciclo de ese marketplace?",
+  "rationale": "El diff decide una política operativa transversal: evita métricas de fuentes desalineadas a cambio de retrasar o suprimir sesiones cuando la observabilidad falla.",
   "options": [
     {
-      "title": "Adoptar la barrera fail-closed",
-      "body": "Aceptar el retraso y las alertas como coste operativo para impedir comparaciones entre ventanas de fuentes incompatibles.",
+      "title": "Aprobar fail-closed",
+      "body": "Integrar la barrera actual y asumir que una falta de evidencia crea una alerta en lugar de ejecutar el watcher con fuentes potencialmente desalineadas.",
       "recommended": true
     },
     {
-      "title": "Mantener dispatch inmediato",
-      "body": "Conservar la puntualidad actual y limitar la propuesta a documentación o señales `lagged` sin bloquear sesiones.",
-      "recommended": false
-    },
-    {
-      "title": "Reducir el alcance inicial",
-      "body": "Aplicar la barrera primero a AbeBooks y MercadoLibre, donde el conflicto con reports semanales está documentado.",
+      "title": "Mantener fallback explícito",
+      "body": "Preservar el comportamiento actual para una degradación controlada y añadir un modo estricto u operador-visible para activar el bloqueo completo.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Adoptar la barrera fail-closed",
-    "body": "Aceptar el retraso y las alertas como coste operativo para impedir comparaciones entre ventanas de fuentes incompatibles.",
+    "title": "Aprobar fail-closed",
+    "body": "Integrar la barrera actual y asumir que una falta de evidencia crea una alerta en lugar de ejecutar el watcher con fuentes potencialmente desalineadas.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "HamelynDev",
-    "reason": "Su historial abarca la espera posterior a reports y la semántica reciente de detección de drift en watchers.",
+    "person": "JavierHamelyn",
+    "reason": "Es la persona con mayor continuidad en Agents y en los dispatchers de watchers afectados.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9298.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9298#issuecomment-5597781758",
-    "reviewedAt": "2026-09-09T09:57:32.231Z",
-    "mainSha": "1e0dd1d639ebcb696dcb029a34f8e43dd6168493"
+    "reviewedAt": "2026-09-09T18:59:24.497Z",
+    "mainSha": "18428b5212091ac86628444285f3830924338212"
   }
 }
