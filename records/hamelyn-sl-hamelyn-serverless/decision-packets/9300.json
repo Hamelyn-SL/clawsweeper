@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-09T07:47:16.896Z",
+  "generatedAt": "2026-09-09T07:51:06.136Z",
   "updatedAt": "2026-09-09T07:42:53Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -13,47 +13,45 @@
       "bug",
       "app:marketplace",
       "triage:running",
-      "P1",
-      "clawsweeper:needs-product-decision"
+      "P1"
     ],
     "createdAt": "2026-09-09T07:40:24Z",
     "updatedAt": "2026-09-09T07:42:53Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué evidencia autoriza retirar automáticamente en Discogs un listing que reaparece tras `Sold`: verificación viva individual, una segunda foto, o ambas?",
-  "rationale": "La incidencia requiere cerrar una venta indebida sin convertir una única foto de reconciliación en una retirada remota masiva.",
+  "question": "¿Qué evidencia debe autorizar la retirada automática en Discogs cuando un listing reaparece `For Sale` después de una foto `Sold`?",
+  "rationale": "El código actual prioriza dos snapshots para evitar retiradas erróneas; cambiar esa regla decide el equilibrio entre exposición de venta y prudencia operativa.",
   "options": [
     {
       "title": "Verificación viva individual",
-      "body": "Confirmar `For Sale` en la API de Discogs y sembrar solo ese ID retirado, con límite de señal y auditoría.",
+      "body": "Confirmar el listing `For Sale` mediante la API de Discogs y encolar únicamente ese ID, con límite de señales y auditoría.",
       "recommended": true
     },
     {
-      "title": "Esperar segunda foto",
-      "body": "Conservar el guard actual y aceptar una ventana adicional de exposición antes de retirar.",
+      "title": "Esperar otra foto",
+      "body": "Mantener la guarda actual y aceptar una ventana adicional antes de retirar el listing reaparecido.",
       "recommended": false
     },
     {
-      "title": "Doble condición",
-      "body": "Exigir API viva y una segunda foto para maximizar prudencia, a costa de una retirada más lenta.",
+      "title": "Exigir ambas pruebas",
+      "body": "Requerir API viva y una segunda foto para maximizar prudencia, a costa de una retirada más lenta.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Verificación viva individual",
-    "body": "Confirmar `For Sale` en la API de Discogs y sembrar solo ese ID retirado, con límite de señal y auditoría.",
+    "body": "Confirmar el listing `For Sale` mediante la API de Discogs y encolar únicamente ese ID, con límite de señales y auditoría.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "HamelynDev",
-    "reason": "Su historial cubre la cola de retirada de Discogs y la ampliación del guard de snapshots.",
+    "reason": "El triage existente ya lo señala como dueño probable y su historial incluye la corrección base de retirada de Discogs.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9300.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9300#issuecomment-5598180194",
-    "reviewedAt": "2026-09-09T07:47:16.896Z",
+    "reviewedAt": "2026-09-09T07:51:06.136Z",
     "mainSha": "be83ada55c34f327d009a88da261ff2a72bf3f08"
   }
 }
