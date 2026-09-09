@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-08T10:54:54.419Z",
-  "updatedAt": "2026-09-08T10:30:38Z",
+  "generatedAt": "2026-09-09T12:26:04.284Z",
+  "updatedAt": "2026-09-09T12:12:53Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,48 +14,47 @@
       "bug",
       "app:marketplace",
       "triage:done",
-      "marketplace-crons",
+      "clawsweeper:needs-product-decision",
       "P2",
-      "clawsweeper:needs-product-decision"
+      "marketplace-crons"
     ],
     "createdAt": "2026-09-07T14:30:39Z",
-    "updatedAt": "2026-09-08T10:30:38Z"
+    "updatedAt": "2026-09-09T12:12:53Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe la creación `paused` con solo `picture_download_pending` dejar de alertar inmediatamente aunque no exista una comprobación posterior de activación remota?",
-  "rationale": "La cohorte respalda que muchas altas se recuperan, pero no acredita que todas lo hagan; elegir entre ruido inicial y detección diferida define la política operativa del watcher.",
+  "question": "¿Debe el watcher dejar de alertar inmediatamente para `paused / picture_download_pending` aunque no exista una comprobación posterior de que el anuncio se activó?",
+  "rationale": "La evidencia acredita que la respuesta es aceptada y suele ser transitoria, pero no demuestra que todos los anuncios se recuperen; elegir la cobertura operativa es una decisión de producto.",
   "options": [
     {
-      "title": "Conservar el warning temporal",
-      "body": "Mantener la alerta actual hasta que exista una comprobación posterior que separe una pausa transitoria de un anuncio bloqueado.",
+      "title": "Conservar el warning inicial",
+      "body": "Mantener el comportamiento actual hasta disponer de una señal remota que distinga una pausa transitoria de un anuncio bloqueado.",
       "recommended": true
     },
     {
-      "title": "Añadir verificación diferida",
-      "body": "Registrar la firma inicial como `info` y elevarla a `warning` si una consulta posterior sigue mostrando el anuncio pausado.",
+      "title": "Aceptar la reclasificación inmediata",
+      "body": "Fusionar la PR y asumir que una pausa persistente con esa firma ya no activará el watcher.",
       "recommended": false
     },
     {
-      "title": "Aceptar la supresión inmediata",
-      "body": "Bajar siempre esta firma a `info` y asumir que las pausas persistentes no generarán alerta automática.",
+      "title": "Añadir verificación diferida",
+      "body": "Registrar el aterrizaje inicial como `info` y elevar una alerta solo si la consulta posterior confirma que sigue pausado.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Conservar el warning temporal",
-    "body": "Mantener la alerta actual hasta que exista una comprobación posterior que separe una pausa transitoria de un anuncio bloqueado.",
+    "title": "Conservar el warning inicial",
+    "body": "Mantener el comportamiento actual hasta disponer de una señal remota que distinga una pausa transitoria de un anuncio bloqueado.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Es la persona asignada y autora de la PR que concentra esta decisión en la ruta afectada.",
+    "reason": "Está asignado a la incidencia y ha reunido la evidencia operativa y la implementación vinculada.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9242.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9242#issuecomment-5572484033",
-    "reviewedAt": "2026-09-08T10:54:54.419Z",
-    "mainSha": "1a07a64f4a2e5a2f7f0f5c53018c2dd91531d00a"
+    "reviewedAt": "2026-09-09T12:26:04.284Z",
+    "mainSha": "b6a9e5288b41c0ce9d70a3f9ba273da6a7f0d7ad"
   }
 }

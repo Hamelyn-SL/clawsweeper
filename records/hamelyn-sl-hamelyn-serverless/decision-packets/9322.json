@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-09T12:26:59.299Z",
+  "updatedAt": "2026-09-09T12:19:15Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 9322,
+    "title": "perf: gate google address validation behind local address checks",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9322",
+    "state": "open",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-09-09T12:13:30Z",
+    "updatedAt": "2026-09-09T12:19:15Z",
+    "headSha": "94f9a9c3ad24e160e98529f9a6f51c8b10da5f0b"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se acepta limitar la prevalidación proactiva a Cainiao no-Amazon y dejar que los demás casos se recuperen solo tras un fallo de etiqueta?",
+  "rationale": "La reducción de coste cambia deliberadamente la cobertura preventiva; el defecto del gate es mecánico, pero el nivel de riesgo operativo aceptable requiere criterio de producto y operaciones.",
+  "options": [
+    {
+      "title": "Mantener el alcance reducido",
+      "body": "Corregir el detector de CP contradictorios y aceptar la recuperación reactiva como cobertura para los carriers excluidos.",
+      "recommended": true
+    },
+    {
+      "title": "Conservar más cobertura",
+      "body": "Mantener Google para otros carriers o marketplaces hasta disponer de métricas posteriores al despliegue que justifiquen su exclusión.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mantener el alcance reducido",
+    "body": "Corregir el detector de CP contradictorios y aceptar la recuperación reactiva como cobertura para los carriers excluidos.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "PabloMoran34",
+    "reason": "Su incidencia reúne el análisis de coste y el impacto de errores de etiqueta que fundamentan el umbral de cobertura.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9322.md",
+    "reviewedAt": "2026-09-09T12:26:59.299Z",
+    "mainSha": "b6a9e5288b41c0ce9d70a3f9ba273da6a7f0d7ad"
+  }
+}

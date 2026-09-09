@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-09T10:58:21.796Z",
-  "updatedAt": "2026-09-09T09:16:08Z",
+  "generatedAt": "2026-09-09T12:25:35.423Z",
+  "updatedAt": "2026-09-09T12:19:29Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,43 +13,47 @@
       "app:infrastructure",
       "reporter:pablo",
       "feature",
-      "triage:done",
+      "triage:queued",
       "clawsweeper:needs-product-decision",
       "P2"
     ],
     "createdAt": "2026-09-09T06:32:25Z",
-    "updatedAt": "2026-09-09T09:16:08Z"
+    "updatedAt": "2026-09-09T12:19:29Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué presupuesto mensual y qué aumento máximo de errores de etiqueta acepta el equipo durante un piloto que limite las consultas proactivas a Google?",
-  "rationale": "El código puede aplicar filtros, pero elegir su cobertura implica un intercambio operativo entre gasto y calidad de etiquetado que no está definido por el contrato actual.",
+  "question": "¿Se acepta el filtro proactivo del PR vinculado como piloto con una posible pérdida limitada de correcciones preventivas a cambio de reducir el gasto mensual?",
+  "rationale": "El código puede conservar la recuperación reactiva, pero el nivel aceptable de riesgo preventivo frente al ahorro económico es una decisión operativa.",
   "options": [
     {
-      "title": "Aprobar un piloto conservador",
-      "body": "Definir y medir un predicado por riesgo y carrier, manteniendo para todos la normalización local y la recuperación reactiva.",
+      "title": "Aprobar piloto medido",
+      "body": "Aterrizar el PR y revisar semanalmente coste, consultas a Google y errores de etiqueta separados por carrier.",
       "recommended": true
     },
     {
       "title": "Mantener la cobertura actual",
-      "body": "Conservar la consulta proactiva para todos los pedidos elegibles y asumir el gasto actual mientras se reúne más evidencia.",
+      "body": "Conservar la consulta universal a Google hasta disponer de un umbral de error y una segmentación mejor validados.",
+      "recommended": false
+    },
+    {
+      "title": "Acotar primero el alcance",
+      "body": "Aplicar solo la exclusión mejor respaldada y revisar de nuevo los datos antes de añadir el filtro local completo.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar un piloto conservador",
-    "body": "Definir y medir un predicado por riesgo y carrier, manteniendo para todos la normalización local y la recuperación reactiva.",
+    "title": "Aprobar piloto medido",
+    "body": "Aterrizar el PR y revisar semanalmente coste, consultas a Google y errores de etiqueta separados por carrier.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Es la persona asignada que ya ha propuesto el predicado y la medición del piloto.",
+    "reason": "Está asignado al issue y ha concretado la alternativa técnica en el PR abierto.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9294.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9294#issuecomment-5597260413",
-    "reviewedAt": "2026-09-09T10:58:21.796Z",
-    "mainSha": "113a475b5f617e51b268d5cd6a1d0416b86c7271"
+    "reviewedAt": "2026-09-09T12:25:35.423Z",
+    "mainSha": "b6a9e5288b41c0ce9d70a3f9ba273da6a7f0d7ad"
   }
 }
