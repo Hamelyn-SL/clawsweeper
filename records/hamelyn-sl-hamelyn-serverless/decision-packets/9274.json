@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-09T15:19:36.158Z",
+  "generatedAt": "2026-09-09T15:21:19.943Z",
   "updatedAt": "2026-09-09T15:12:41Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -14,43 +14,41 @@
       "app:supply",
       "feature",
       "triage:done",
-      "reporter:daniellopez",
       "P2",
-      "clawsweeper:needs-product-decision"
+      "reporter:daniellopez"
     ],
     "createdAt": "2026-09-08T09:58:23Z",
     "updatedAt": "2026-09-09T15:12:41Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿La obligación de escanear gaveta debe activarse al iniciar sesión de productividad o al iniciar sesión en la cuenta?",
-  "rationale": "La issue usa «sesión» de forma ambigua y cada interpretación cambia el momento en que un operario pierde la gaveta activa.",
+  "question": "¿Al marcar un producto aislado como «Muy bueno» mientras el lote está en modo «Aceptable», debe conservarse el criterio «Aceptable» para los siguientes escaneos?",
+  "rationale": "La redacción de la petición pide una excepción aislada, mientras la PR actual convierte ese gesto en un cambio del criterio global; ambas opciones son válidas operativamente pero producen flujos distintos.",
   "options": [
     {
-      "title": "Sesión de productividad",
-      "body": "Limpiar y pedir gaveta solo al iniciar o finalizar productividad, preservando una recarga durante una sesión activa.",
+      "title": "Conservar la excepción aislada",
+      "body": "Enviar «Muy bueno» solo para el producto corregido y mantener el criterio de lote para los siguientes escaneos.",
       "recommended": true
     },
     {
-      "title": "Sesión de cuenta",
-      "body": "Limpiar la gaveta en cada inicio de sesión de autenticación, aunque no se inicie productividad.",
+      "title": "Usar el botón como cambio de lote",
+      "body": "Hacer que toda corrección individual actualice también el criterio global para los siguientes productos.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Sesión de productividad",
-    "body": "Limpiar y pedir gaveta solo al iniciar o finalizar productividad, preservando una recarga durante una sesión activa.",
+    "title": "Conservar la excepción aislada",
+    "body": "Enviar «Muy bueno» solo para el producto corregido y mantener el criterio de lote para los siguientes escaneos.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "banosdavidhamelyn",
-    "reason": "Es la persona asignada y su PR ya implementa una de las interpretaciones para revisión.",
+    "reason": "Es la persona asignada y quien ya documentó la disyuntiva en la implementación candidata.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9274.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9274#issuecomment-5583440931",
-    "reviewedAt": "2026-09-09T15:19:36.158Z",
+    "reviewedAt": "2026-09-09T15:21:19.943Z",
     "mainSha": "94cb970a57ae971c0f59e2f01b6667ba033b4085"
   }
 }

@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-09T14:58:10.953Z",
-  "updatedAt": "2026-09-07T14:29:13Z",
+  "generatedAt": "2026-09-09T15:17:32.895Z",
+  "updatedAt": "2026-09-09T15:12:06Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -18,42 +18,42 @@
       "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-09-07T11:35:09Z",
-    "updatedAt": "2026-09-07T14:29:13Z"
+    "updatedAt": "2026-09-09T15:12:06Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué fuente de verdad debe usar Skypod cuando Exotec confirma una línea sin identidad del operario?",
-  "rationale": "El código puede impedir dos sesiones simultáneas, pero decidir entre reserva de estación, atribución inferida o pausa del conteo determina la auditabilidad y las reglas operativas futuras.",
+  "question": "¿Qué fuente de verdad debe usar Skypod para atribuir una confirmación de Exotec que solo identifica la estación?",
+  "rationale": "La corrección exige elegir entre titularidad exclusiva de estación, auditoría por producto o pausar el conteo cuando no exista identidad verificable; el código no puede determinar esa política.",
   "options": [
     {
       "title": "Reserva y procedencia por producto",
-      "body": "Reservar atómicamente la estación a un rol operativo y persistir la identidad disponible con una fuente de atribución por confirmación.",
+      "body": "Reservar atómicamente cada estación a un rol operativo y guardar la identidad disponible y su fuente en cada confirmación.",
       "recommended": true
     },
     {
-      "title": "Solo exclusividad de estación",
-      "body": "Bloquear propietarios simultáneos por estación como contención inmediata y posponer la auditoría individual por producto.",
+      "title": "Contención por exclusividad",
+      "body": "Impedir dos sesiones activas por estación y posponer la auditoría individual por producto.",
       "recommended": false
     },
     {
-      "title": "Pausar el conteo Skypod",
-      "body": "Desactivar la productividad de estas confirmaciones hasta disponer de una identidad verificable desde Exotec.",
+      "title": "Pausar conteo sin identidad",
+      "body": "No acreditar transiciones de Exotec hasta contar con una identidad verificable del confirmador.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Reserva y procedencia por producto",
-    "body": "Reservar atómicamente la estación a un rol operativo y persistir la identidad disponible con una fuente de atribución por confirmación.",
+    "body": "Reservar atómicamente cada estación a un rol operativo y guardar la identidad disponible y su fuente en cada confirmación.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "banosdavidhamelyn",
-    "reason": "La incidencia figura asignada a esta persona y su trabajo reciente toca la ruta administrativa implicada.",
-    "confidence": "medium"
+    "reason": "Es la persona asignada y ha mantenido recientemente las rutas de estación y confirmación implicadas.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9230.md",
-    "reviewedAt": "2026-09-09T14:58:10.953Z",
+    "reviewedAt": "2026-09-09T15:17:32.895Z",
     "mainSha": "94cb970a57ae971c0f59e2f01b6667ba033b4085"
   }
 }

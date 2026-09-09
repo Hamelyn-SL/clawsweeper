@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-09T15:18:31.887Z",
+  "updatedAt": "2026-09-09T15:12:19Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9247,
+    "title": "Marketplace: error checking cancelled orders aggregateerror: mercadolibre cancellation sync failed at u.clearmercadolibr",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9247",
+    "state": "open",
+    "labels": [
+      "codex",
+      "bug",
+      "app:marketplace",
+      "triage:no-change",
+      "P2",
+      "marketplace-crons"
+    ],
+    "createdAt": "2026-09-07T17:30:37Z",
+    "updatedAt": "2026-09-09T15:12:19Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe sustituirse la búsqueda horaria de cancelaciones de 21 días por una de 3 días ahora que `dev` ya reintenta los GET limitados?",
+  "rationale": "La propuesta reduce los abortos por paginación, pero también reduce una cobertura histórica establecida; el código no puede determinar por sí solo qué garantía operativa debe prevalecer.",
+  "options": [
+    {
+      "title": "Aprobar la ventana de tres días",
+      "body": "Validar la cobertura basada en `date_last_updated` y revisar/integrar el PR como segunda barrera cuando los reintentos se agotan.",
+      "recommended": true
+    },
+    {
+      "title": "Conservar los 21 días",
+      "body": "Mantener la cobertura histórica actual y cerrar o reformular el PR si los reintentos comunes ya ofrecen una recuperación suficiente.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar la ventana de tres días",
+    "body": "Validar la cobertura basada en `date_last_updated` y revisar/integrar el PR como segunda barrera cuando los reintentos se agotan.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Introdujo la protección común actualmente integrada y figura como dueño probable de esta decisión en la discusión relacionada.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9247.md",
+    "reviewedAt": "2026-09-09T15:18:31.887Z",
+    "mainSha": "94cb970a57ae971c0f59e2f01b6667ba033b4085"
+  }
+}

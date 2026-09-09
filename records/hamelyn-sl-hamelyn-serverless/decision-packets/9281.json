@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-09T14:25:15.882Z",
-  "updatedAt": "2026-09-09T14:12:51Z",
+  "generatedAt": "2026-09-09T15:23:57.929Z",
+  "updatedAt": "2026-09-09T14:25:57Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,42 +14,41 @@
       "feature",
       "reporter:javier",
       "triage:done",
-      "clawsweeper:needs-product-decision",
-      "P1"
+      "P1",
+      "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-09-08T12:54:05Z",
-    "updatedAt": "2026-09-09T14:12:51Z"
+    "updatedAt": "2026-09-09T14:25:57Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe una issue de alta abierta habilitar la ejecución con identidad provisional, sustituyendo el requisito actual de alta previa en `B2B_CLIENTS`?",
-  "rationale": "La propuesta modifica la política de autorización operativa, no solo la detección técnica de anomalías.",
+  "question": "¿Debe una issue de alta abierta autorizar la ejecución B2B con identidad provisional tras un ✅ de la allowlist, o debe mantenerse la confirmación HITL de identidad?",
+  "rationale": "La PR propone cambiar una barrera de autorización operativa; el código y las pruebas pueden validar los raíles, pero no decidir qué nivel de aprobación permanente acepta el equipo.",
   "options": [
     {
-      "title": "Aprobar la autorización condicionada",
-      "body": "Permitir el ✅ autorizado cuando exista una issue de alta abierta y se mantengan las protecciones de identidad y desviaciones.",
+      "title": "Aprobar la ejecución condicionada",
+      "body": "Aceptar el flujo de la PR: issue de alta abierta, identidad derivada segura y ✅ autorizado permiten ejecutar.",
       "recommended": true
     },
     {
-      "title": "Mantener el alta previa",
-      "body": "Conservar `B2B_CLIENTS` como requisito de ejecución y limitar el cambio a eliminar el escalado por cantidades ausentes.",
+      "title": "Mantener la barrera HITL",
+      "body": "Conservar la identidad aportada por un humano y limitar la PR a eliminar el falso escalado por cantidades.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar la autorización condicionada",
-    "body": "Permitir el ✅ autorizado cuando exista una issue de alta abierta y se mantengan las protecciones de identidad y desviaciones.",
+    "title": "Aprobar la ejecución condicionada",
+    "body": "Aceptar el flujo de la PR: issue de alta abierta, identidad derivada segura y ✅ autorizado permiten ejecutar.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es el asignado y principal autor histórico del subsistema B2B inspeccionado.",
+    "reason": "Ha mantenido la ruta provisional actual y está asignado a la issue y a la PR candidata.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9281.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9281#issuecomment-5585587863",
-    "reviewedAt": "2026-09-09T14:25:15.882Z",
+    "reviewedAt": "2026-09-09T15:23:57.929Z",
     "mainSha": "94cb970a57ae971c0f59e2f01b6667ba033b4085"
   }
 }

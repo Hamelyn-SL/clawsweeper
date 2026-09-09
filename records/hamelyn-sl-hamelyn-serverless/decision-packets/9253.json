@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-09T15:02:24.425Z",
-  "updatedAt": "2026-09-09T08:33:42Z",
+  "generatedAt": "2026-09-09T15:23:21.139Z",
+  "updatedAt": "2026-09-09T15:12:24Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -16,37 +16,37 @@
       "P2"
     ],
     "createdAt": "2026-09-08T04:48:35Z",
-    "updatedAt": "2026-09-09T08:33:42Z"
+    "updatedAt": "2026-09-09T15:12:24Z"
   },
   "lane": "manual_review",
   "priority": "P2",
-  "question": "¿Se autoriza una limpieza limitada a los documentos actualmente ausentes de Mongo, o una reconciliación completa de `mk_amazonCom` que abarcaría los 3.150 fantasmas identificados?",
-  "rationale": "La elección modifica datos existentes y determina el universo de borrado; el código disponible ofrece una reconciliación completa, no el alcance exacto pedido.",
+  "question": "¿Se autoriza una limpieza limitada a los IDs actualmente ausentes de Mongo para Amazon COM, en vez de ejecutar la reconciliación completa de la colección?",
+  "rationale": "La operación elimina datos en BigQuery y el mecanismo disponible tiene un alcance mayor que el conjunto confirmado; la política del repositorio exige autorización expresa.",
   "options": [
     {
       "title": "Autorizar borrado acotado",
-      "body": "Validar el listado vivo y borrar únicamente los IDs ausentes confirmados, protegiendo cualquier cambio posterior al snapshot.",
+      "body": "Preparar un dry-run con IDs, hora de lectura, filtro literal y protección por timestamp, y borrar solo los ausentes confirmados.",
       "recommended": true
     },
     {
       "title": "Reconciliar toda la colección",
-      "body": "Usar la reconciliación completa protegida por timestamp para eliminar todos los fantasmas de `mk_amazonCom`, con un dry-run y aprobación del alcance ampliado.",
+      "body": "Usar el baseline completo tras aceptar explícitamente su alcance más amplio y validar el número de inserts, updates y deletes.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Autorizar borrado acotado",
-    "body": "Validar el listado vivo y borrar únicamente los IDs ausentes confirmados, protegiendo cualquier cambio posterior al snapshot.",
+    "body": "Preparar un dry-run con IDs, hora de lectura, filtro literal y protección por timestamp, y borrar solo los ausentes confirmados.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Está asignado en la discusión operativa y ha aportado el contraste de Mongo vivo y la reparación parcial.",
+    "reason": "Es el asignado y aportó el contraste vivo que delimita la operación pendiente.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9253.md",
-    "reviewedAt": "2026-09-09T15:02:24.425Z",
+    "reviewedAt": "2026-09-09T15:23:21.139Z",
     "mainSha": "94cb970a57ae971c0f59e2f01b6667ba033b4085"
   }
 }

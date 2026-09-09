@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-09T15:11:04.353Z",
-  "updatedAt": "2026-09-09T10:50:18Z",
+  "generatedAt": "2026-09-09T15:21:17.716Z",
+  "updatedAt": "2026-09-09T15:12:43Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,42 +13,45 @@
       "bug",
       "app:marketplace",
       "triage:needs-info",
-      "P2",
-      "clawsweeper:needs-product-decision"
+      "P2"
     ],
     "createdAt": "2026-09-08T10:34:30Z",
-    "updatedAt": "2026-09-09T10:50:18Z"
+    "updatedAt": "2026-09-09T15:12:43Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "Tras la ventana de 48 horas, ¿se mantiene el límite de 400 por tick o se prioriza un cambio de cadencia y offsets para Amazon SE?",
-  "rationale": "Ambas rutas modifican el reparto de capacidad compartida por merchant; el repositorio no puede determinar esa política sin resultados operativos por ítem y señales de throttling.",
+  "question": "¿Tras completar la validación de 48 horas, se mantiene el límite de 400 con la cadencia actual o se autoriza redistribuir la programación de Amazon SE dentro de la cuota EU compartida?",
+  "rationale": "La evidencia demuestra un control operativo configurable, pero no determina qué presupuesto de cuota ni qué prioridad regional debe asumir producción.",
   "options": [
     {
-      "title": "Validar y mantener 400",
-      "body": "Conservar el límite si las cohortes se confirman, la cola cae de forma sostenida y no aparece throttling recurrente.",
+      "title": "Validar primero el ajuste actual",
+      "body": "Mantener `updatePriceLimit=400` hasta confirmar descenso neto, resultados por ítem y ausencia de throttling durante 48 horas.",
       "recommended": true
     },
     {
-      "title": "Repartir la cadencia",
-      "body": "Preparar un cambio de cron con offset propio solo si 400 no absorbe las entradas o la cuota compartida muestra competencia.",
+      "title": "Redistribuir schedules EU",
+      "body": "Si la cola no baja sin throttling, introducir una cadencia u offset coordinado para SE tras revisar el presupuesto compartido.",
+      "recommended": false
+    },
+    {
+      "title": "Investigar productores de flags",
+      "body": "Si la capacidad resulta suficiente pero el saldo no mejora, atribuir los productores de `needsUpdatePrice` antes de tocar schedules.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Validar y mantener 400",
-    "body": "Conservar el límite si las cohortes se confirman, la cola cae de forma sostenida y no aparece throttling recurrente.",
+    "title": "Validar primero el ajuste actual",
+    "body": "Mantener `updatePriceLimit=400` hasta confirmar descenso neto, resultados por ítem y ausencia de throttling durante 48 horas.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Es la persona asignada y ya aplicó el ajuste operativo cuya eficacia debe validarse.",
+    "reason": "Es el contribuidor reciente del schedule y quien está llevando la mitigación operativa comunicada.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9275.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9275#issuecomment-5583935981",
-    "reviewedAt": "2026-09-09T15:11:04.353Z",
+    "reviewedAt": "2026-09-09T15:21:17.716Z",
     "mainSha": "94cb970a57ae971c0f59e2f01b6667ba033b4085"
   }
 }

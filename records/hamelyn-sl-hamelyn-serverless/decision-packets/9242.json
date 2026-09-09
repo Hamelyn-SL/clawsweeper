@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-09T15:12:38.899Z",
-  "updatedAt": "2026-09-09T12:27:38Z",
+  "generatedAt": "2026-09-09T15:19:55.847Z",
+  "updatedAt": "2026-09-09T15:12:13Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,42 +15,46 @@
       "app:marketplace",
       "triage:done",
       "clawsweeper:needs-product-decision",
-      "marketplace-crons",
-      "P2"
+      "P2",
+      "marketplace-crons"
     ],
     "createdAt": "2026-09-07T14:30:39Z",
-    "updatedAt": "2026-09-09T12:27:38Z"
+    "updatedAt": "2026-09-09T15:12:13Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe el watcher clasificar como `info` la pausa exacta `paused` con solo `picture_download_pending`, aunque la evidencia disponible sea de cohorte y no una comprobación remota universal?",
-  "rationale": "La implementación es acotada, pero decidir qué estados dejan de elevar una alerta operativa define la política de observabilidad y el umbral de riesgo aceptable.",
+  "question": "¿Debe el watcher clasificar como `info` la pausa exacta `paused` con solo `picture_download_pending` sin una comprobación remota diferida?",
+  "rationale": "La evidencia de cohorte reduce la probabilidad de fallo, pero no demuestra que cada anuncio con esa firma alcance estado comprable; elegir entre ruido operativo y posible silencio requiere criterio del equipo.",
   "options": [
     {
       "title": "Aceptar la excepción estricta",
-      "body": "Bajar a `info` solo la combinación exacta y comprobar tras el despliegue que otras pausas siguen apareciendo como warning.",
+      "body": "Registrar a nivel `info` solo esa combinación exacta y comprobar tras el despliegue que cualquier otra pausa continúa llegando como `warning`.",
       "recommended": true
     },
     {
       "title": "Conservar la advertencia",
-      "body": "Mantener el warning hasta disponer de una verificación remota más concluyente de activación posterior para esa firma.",
+      "body": "Mantener el comportamiento actual hasta disponer de una comprobación remota posterior que confirme la activación del anuncio.",
+      "recommended": false
+    },
+    {
+      "title": "Añadir verificación diferida",
+      "body": "Registrar inicialmente a nivel `info` y alertar únicamente si una consulta posterior mantiene la pausa.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Aceptar la excepción estricta",
-    "body": "Bajar a `info` solo la combinación exacta y comprobar tras el despliegue que otras pausas siguen apareciendo como warning.",
+    "body": "Registrar a nivel `info` solo esa combinación exacta y comprobar tras el despliegue que cualquier otra pausa continúa llegando como `warning`.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Es el responsable asignado y el contribuidor más activo en la ruta de sincronización de MercadoLibre.",
+    "reason": "Es el asignado de la incidencia y autor de la implementación candidata en el área afectada.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9242.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9242#issuecomment-5572484033",
-    "reviewedAt": "2026-09-09T15:12:38.899Z",
+    "reviewedAt": "2026-09-09T15:19:55.847Z",
     "mainSha": "94cb970a57ae971c0f59e2f01b6667ba033b4085"
   }
 }

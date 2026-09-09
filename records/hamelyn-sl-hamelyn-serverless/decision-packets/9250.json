@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-09T15:03:38.845Z",
-  "updatedAt": "2026-09-08T05:47:35Z",
+  "generatedAt": "2026-09-09T15:17:54.141Z",
+  "updatedAt": "2026-09-09T15:12:22Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -18,37 +18,42 @@
       "marketplace-crons"
     ],
     "createdAt": "2026-09-07T18:30:41Z",
-    "updatedAt": "2026-09-08T05:47:35Z"
+    "updatedAt": "2026-09-09T15:12:22Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe la sincronización de cancelaciones adoptar la ventana de tres días y conservar páginas ya leídas tras agotar un `429` posterior, ahora que `dev` ya reintenta los GET?",
-  "rationale": "La elección fija el equilibrio operativo entre cobertura histórica, duración del cron y exposición a la cuota del proveedor.",
+  "question": "¿Aceptamos reducir permanentemente el barrido de cancelaciones a tres días y tolerar solo los 429 posteriores a la primera página?",
+  "rationale": "La PR mejora la exposición al límite, pero conserva un fallo posible en la primera página y descarta revisar históricamente de 3 a 21 días; esa cobertura operativa requiere aceptación del equipo.",
   "options": [
     {
-      "title": "Revisar la política adicional",
-      "body": "Actualizar la PR para partir de los reintentos GET actuales y validar que la ventana reducida no deja cancelaciones accionables fuera.",
+      "title": "Aceptar la política de tres días",
+      "body": "Revisar y aterrizar la PR, verificando tras el despliegue que las cancelaciones recientes se reconcilian y que el watcher deja de repetir este patrón.",
       "recommended": true
     },
     {
-      "title": "Quedarse con los reintentos",
-      "body": "Cerrar o reducir la PR si los reintentos integrados resuelven el incidente sin cambiar la cobertura del barrido.",
+      "title": "Conservar cobertura histórica temporal",
+      "body": "Pedir una conciliación o una estrategia transitoria para cancelaciones de 3 a 21 días antes de reducir definitivamente la ventana.",
+      "recommended": false
+    },
+    {
+      "title": "Cambiar la política de límite",
+      "body": "Mantener la ventana actual y diseñar un reintento o limitador acotado para los `GET /orders/search`.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Revisar la política adicional",
-    "body": "Actualizar la PR para partir de los reintentos GET actuales y validar que la ventana reducida no deja cancelaciones accionables fuera.",
+    "title": "Aceptar la política de tres días",
+    "body": "Revisar y aterrizar la PR, verificando tras el despliegue que las cancelaciones recientes se reconcilian y que el watcher deja de repetir este patrón.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Está asignado a la incidencia y mantiene la propuesta concreta del barrido de cancelaciones.",
+    "reason": "Está asignado a la issue, propone la PR vinculada y concentra la historia reciente de esta sincronización.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9250.md",
-    "reviewedAt": "2026-09-09T15:03:38.845Z",
+    "reviewedAt": "2026-09-09T15:17:54.141Z",
     "mainSha": "94cb970a57ae971c0f59e2f01b6667ba033b4085"
   }
 }

@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-09T14:58:20.462Z",
-  "updatedAt": "2026-09-09T08:52:08Z",
+  "generatedAt": "2026-09-09T15:20:43.135Z",
+  "updatedAt": "2026-09-09T15:12:26Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -16,42 +16,37 @@
       "P2"
     ],
     "createdAt": "2026-09-08T04:49:00Z",
-    "updatedAt": "2026-09-09T08:52:08Z"
+    "updatedAt": "2026-09-09T15:12:26Z"
   },
   "lane": "manual_review",
   "priority": "P2",
-  "question": "¿Se autoriza una limpieza limitada por IDs confirmados como ausentes de Mongo para eliminar el residuo de Amazon ES y, en su caso, los demás fantasmas de `mk_amazonEs`?",
-  "rationale": "La reparación pendiente borra datos persistidos y la vía existente reconcilia una colección completa; el alcance autorizado no puede inferirse de la incidencia.",
+  "question": "¿Se autoriza una reparación de datos limitada a los IDs fantasma de Amazon ES confirmados ausentes en Mongo, una vez presentado su recuento, muestras y filtro literal?",
+  "rationale": "La corrección pendiente requiere borrar datos persistidos y el mecanismo reutilizable actual tiene alcance de colección completa; la política del repositorio exige confirmación humana antes de esas escrituras.",
   "options": [
     {
-      "title": "Autorizar limpieza por IDs",
-      "body": "Preparar dry-run con filtro literal, recuento y muestras; tras aprobación, borrar únicamente los fantasmas confirmados y comprobar ambas capas.",
+      "title": "Autorizar limpieza acotada",
+      "body": "Miguel presenta el listado confirmado y ejecuta una operación idempotente limitada a esos IDs tras el dry-run obligatorio.",
       "recommended": true
     },
     {
-      "title": "Mantener solo el residuo documentado",
-      "body": "Limitar la intervención a `Happ-2026-01-21-2e5cbc20` hasta disponer de un censo reciente para el resto de fantasmas.",
-      "recommended": false
-    },
-    {
-      "title": "Posponer la limpieza",
-      "body": "Conservar el residuo y abrir una decisión posterior sobre una reconciliación integral de la colección.",
+      "title": "Mantener el residuo monitorizado",
+      "body": "Se conserva el fantasma hasta disponer de una reconciliación más amplia o de evidencia adicional sobre los 3.929 borrados históricos.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Autorizar limpieza por IDs",
-    "body": "Preparar dry-run con filtro literal, recuento y muestras; tras aprobación, borrar únicamente los fantasmas confirmados y comprobar ambas capas.",
+    "title": "Autorizar limpieza acotada",
+    "body": "Miguel presenta el listado confirmado y ejecuta una operación idempotente limitada a esos IDs tras el dry-run obligatorio.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Es la persona asignada y quien ya realizó el contraste vivo y la recuperación parcial.",
+    "reason": "Es la persona asignada y quien aportó el contraste operativo y la propuesta de reparación.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9254.md",
-    "reviewedAt": "2026-09-09T14:58:20.462Z",
+    "reviewedAt": "2026-09-09T15:20:43.135Z",
     "mainSha": "94cb970a57ae971c0f59e2f01b6667ba033b4085"
   }
 }

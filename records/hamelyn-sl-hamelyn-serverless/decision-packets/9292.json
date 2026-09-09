@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-09T14:57:50.834Z",
-  "updatedAt": "2026-09-09T13:27:53Z",
+  "generatedAt": "2026-09-09T15:26:26.824Z",
+  "updatedAt": "2026-09-09T14:58:42Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,42 +15,41 @@
       "app:marketplace",
       "triage:needs-info",
       "clawsweeper:needs-product-decision",
-      "marketplace-crons",
-      "P2"
+      "P2",
+      "marketplace-crons"
     ],
     "createdAt": "2026-09-09T05:30:36Z",
-    "updatedAt": "2026-09-09T13:27:53Z"
+    "updatedAt": "2026-09-09T14:58:42Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe el watcher de marketplace tratar un único `MongoOperationTimeoutError` acotado a 10 s como ruido y escalarlo solo cuando se repita cerca en el tiempo?",
-  "rationale": "La evidencia acredita un blip aislado, pero convertir esa observación en política de alertado determina cuándo el equipo verá futuras degradaciones de Mongo.",
+  "question": "¿Debe el watcher de marketplace abrir una incidencia por el primer timeout acotado del lock o solo tras dos eventos cercanos?",
+  "rationale": "El código actual ya evita el agotamiento del runtime; elegir el umbral de alerta equilibra ruido operativo frente a detección temprana.",
   "options": [
     {
       "title": "Exigir repetición cercana",
-      "body": "Aceptar la política del PR abierto para ignorar un tick aislado y escalar dos eventos próximos o varias rutas afectadas.",
+      "body": "Aceptar dos timeouts en 15 minutos como señal antes de abrir la incidencia automática, manteniendo catastróficos los demás timeouts Mongo.",
       "recommended": true
     },
     {
-      "title": "Mantener escalado inmediato",
-      "body": "Conservar la clasificación catastrófica actual y tratar cada timeout del lock como una incidencia individual.",
+      "title": "Conservar alerta inmediata",
+      "body": "Mantener el primer timeout del lock como incidencia inmediata y no fusionar la nueva excepción del watcher.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Exigir repetición cercana",
-    "body": "Aceptar la política del PR abierto para ignorar un tick aislado y escalar dos eventos próximos o varias rutas afectadas.",
+    "body": "Aceptar dos timeouts en 15 minutos como señal antes de abrir la incidencia automática, manteniendo catastróficos los demás timeouts Mongo.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Está asignado a la incidencia y propone la política concreta en el PR abierto.",
+    "reason": "Es el asignado y lleva el PR vinculado, además de haber mantenido recientemente el runtime de marketplace.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9292.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9292#issuecomment-5600010469",
-    "reviewedAt": "2026-09-09T14:57:50.834Z",
+    "reviewedAt": "2026-09-09T15:26:26.824Z",
     "mainSha": "94cb970a57ae971c0f59e2f01b6667ba033b4085"
   }
 }

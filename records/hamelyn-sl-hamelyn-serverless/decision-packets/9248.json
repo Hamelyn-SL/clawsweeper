@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-09T14:58:07.777Z",
-  "updatedAt": "2026-09-09T12:33:43Z",
+  "generatedAt": "2026-09-09T15:17:37.446Z",
+  "updatedAt": "2026-09-09T15:12:20Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,41 +15,40 @@
       "app:marketplace",
       "triage:blocked",
       "P1",
-      "clawsweeper:needs-product-decision",
       "marketplace-crons"
     ],
     "createdAt": "2026-09-07T17:30:38Z",
-    "updatedAt": "2026-09-09T12:33:43Z"
+    "updatedAt": "2026-09-09T15:12:20Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Se acepta que el cron horario consulte solo tres días de cancelaciones sin conciliación histórica previa?",
-  "rationale": "La propuesta reduce los 429, pero cambia la cobertura histórica de un proceso que puede afectar a recuperaciones de stock y estados de pedidos.",
+  "question": "¿Debe el cron adoptar la ventana de tres días y procesar las páginas ya leídas tras un 429 posterior, en lugar de mantener el barrido completo de 21 días?",
+  "rationale": "La propuesta intercambia alcance de conciliación por menor exposición al límite; el código y las pruebas no pueden decidir por sí solos qué cobertura histórica acepta Marketplace.",
   "options": [
     {
-      "title": "Aceptar la ventana de tres días",
-      "body": "Integrar el enfoque del PR y asumir el residuo histórico tras la comprobación operativa documentada.",
+      "title": "Aceptar la mitigación acotada",
+      "body": "Revisar y aprobar el PR tras confirmar que la ventana de tres días cubre las cancelaciones que requieren acción operativa.",
       "recommended": true
     },
     {
-      "title": "Exigir conciliación previa",
-      "body": "Mantener o ejecutar una reconciliación acotada antes de reducir permanentemente la ventana de consulta.",
+      "title": "Mantener el barrido amplio",
+      "body": "Conservar los 21 días y buscar una estrategia distinta si la conciliación histórica debe ser completa.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aceptar la ventana de tres días",
-    "body": "Integrar el enfoque del PR y asumir el residuo histórico tras la comprobación operativa documentada.",
+    "title": "Aceptar la mitigación acotada",
+    "body": "Revisar y aprobar el PR tras confirmar que la ventana de tres días cubre las cancelaciones que requieren acción operativa.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Está asignado a la incidencia y su trabajo reciente concentra el conocimiento del flujo y de la alternativa propuesta.",
+    "reason": "Está asignado a la incidencia, conoce el flujo de cancelaciones y mantiene la propuesta concreta.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9248.md",
-    "reviewedAt": "2026-09-09T14:58:07.777Z",
+    "reviewedAt": "2026-09-09T15:17:37.446Z",
     "mainSha": "94cb970a57ae971c0f59e2f01b6667ba033b4085"
   }
 }

@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-09T14:58:17.869Z",
-  "updatedAt": "2026-09-08T06:00:21Z",
+  "generatedAt": "2026-09-09T15:18:37.998Z",
+  "updatedAt": "2026-09-09T15:12:17Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -19,37 +19,37 @@
       "marketplace-crons"
     ],
     "createdAt": "2026-09-07T17:30:35Z",
-    "updatedAt": "2026-09-08T06:00:21Z"
+    "updatedAt": "2026-09-09T15:12:17Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe integrarse la reducción permanente de la ventana de cancelaciones de 21 a 3 días ahora que `dev` ya reintenta los GET limitados?",
-  "rationale": "El reintento integrado resuelve el fallo inmediato, pero la ventana propuesta altera la cobertura de conciliación histórica y necesita una decisión explícita sobre ese compromiso.",
+  "question": "¿Debe integrarse la reducción permanente del barrido de cancelaciones de 21 a 3 días además del reintento común ya presente en `dev`?",
+  "rationale": "La elección intercambia cobertura histórica de conciliación por menor exposición al límite de tasa; los tests no pueden decidir si ese margen operativo es aceptable.",
   "options": [
     {
-      "title": "Revisar la mitigación adicional",
-      "body": "Validar la cobertura de tres días y, si es suficiente, integrar el PR abierto como segunda línea ante 429 paginados.",
+      "title": "Mantener 21 días con reintentos",
+      "body": "Conservar la red de seguridad histórica y observar el comportamiento de los reintentos antes de cambiar la cobertura.",
       "recommended": true
     },
     {
-      "title": "Conservar la ventana actual",
-      "body": "Cerrar el PR abierto si los reintentos actuales bastan y mantener el barrido de 21 días como red de seguridad.",
+      "title": "Aceptar la ventana de tres días",
+      "body": "Integrar el PR si Marketplace confirma que las cancelaciones relevantes se recuperan dentro de esa ventana.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Revisar la mitigación adicional",
-    "body": "Validar la cobertura de tres días y, si es suficiente, integrar el PR abierto como segunda línea ante 429 paginados.",
+    "title": "Mantener 21 días con reintentos",
+    "body": "Conservar la red de seguridad histórica y observar el comportamiento de los reintentos antes de cambiar la cobertura.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Introdujo la política de reintentos ya integrada y puede valorar su interacción con la cobertura del barrido.",
+    "reason": "Introdujo la política de reintentos ya integrada y la revisión previa lo señaló como dueño probable de esta decisión.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9246.md",
-    "reviewedAt": "2026-09-09T14:58:17.869Z",
+    "reviewedAt": "2026-09-09T15:18:37.998Z",
     "mainSha": "94cb970a57ae971c0f59e2f01b6667ba033b4085"
   }
 }

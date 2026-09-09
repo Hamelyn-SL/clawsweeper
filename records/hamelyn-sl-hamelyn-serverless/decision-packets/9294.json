@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-09T15:04:00.944Z",
-  "updatedAt": "2026-09-09T13:14:58Z",
+  "generatedAt": "2026-09-09T15:25:19.484Z",
+  "updatedAt": "2026-09-09T15:04:42Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -18,43 +18,42 @@
       "P2"
     ],
     "createdAt": "2026-09-09T06:32:25Z",
-    "updatedAt": "2026-09-09T13:14:58Z"
+    "updatedAt": "2026-09-09T15:04:42Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se aprueba reducir la validación proactiva al filtro local de la PR y activar Google solo en la recuperación reactiva de `admin`?",
-  "rationale": "El código puede separar ambos flujos, pero el presupuesto aceptable y la tolerancia a falsos negativos de etiquetas son una decisión operativa que la evidencia técnica no puede fijar.",
+  "question": "¿Se aprueba desplegar el filtro proactivo del PR y configurar Google Address Validation en `admin` para conservar la recuperación reactiva tras fallos reales de etiqueta?",
+  "rationale": "El código puede reducir consultas, pero aceptar el coste residual y el nivel de cobertura reactiva es una decisión operativa que no se deduce solo de la implementación.",
   "options": [
     {
-      "title": "Pilotar cobertura selectiva",
-      "body": "Revisar y desplegar https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9322, configurar la clave en `admin` y medir el impacto por carrier durante una ventana acordada.",
+      "title": "Piloto con cobertura reactiva",
+      "body": "Integrar el PR, configurar la clave en `admin` y revisar durante un ciclo mensual llamadas, coste y errores por carrier.",
       "recommended": true
     },
     {
-      "title": "Mantener la cobertura actual",
-      "body": "Conservar la consulta proactiva generalizada y aceptar el gasto mientras se recopila una muestra operativa adicional.",
+      "title": "Ahorro sin activar Google en `admin`",
+      "body": "Integrar únicamente el gate proactivo y aceptar que la recuperación reactiva continúe con la corrección local actual.",
       "recommended": false
     },
     {
-      "title": "Definir otro umbral",
-      "body": "Acordar un predicado distinto de riesgo local antes de modificar el cron y convertirlo en una nueva revisión acotada.",
+      "title": "Pausar hasta fijar umbrales",
+      "body": "Definir antes un presupuesto mensual y una tolerancia de errores de etiqueta que determinen el alcance del piloto.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Pilotar cobertura selectiva",
-    "body": "Revisar y desplegar https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9322, configurar la clave en `admin` y medir el impacto por carrier durante una ventana acordada.",
+    "title": "Piloto con cobertura reactiva",
+    "body": "Integrar el PR, configurar la clave en `admin` y revisar durante un ciclo mensual llamadas, coste y errores por carrier.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Es la persona asignada y ya mantiene la propuesta de implementación vinculada.",
+    "reason": "Es el responsable asignado y ya mantiene la propuesta técnica que materializa la decisión.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9294.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9294#issuecomment-5597260413",
-    "reviewedAt": "2026-09-09T15:04:00.944Z",
+    "reviewedAt": "2026-09-09T15:25:19.484Z",
     "mainSha": "94cb970a57ae971c0f59e2f01b6667ba033b4085"
   }
 }
