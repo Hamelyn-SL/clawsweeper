@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-09T18:58:59.194Z",
-  "updatedAt": "2026-09-09T18:42:53Z",
+  "generatedAt": "2026-09-09T19:05:28.885Z",
+  "updatedAt": "2026-09-09T19:01:30Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,47 +14,46 @@
       "app:infrastructure",
       "triage:done",
       "clawsweeper:needs-product-decision",
-      "reporter:JavierHamelyn",
-      "P2"
+      "P2",
+      "reporter:JavierHamelyn"
     ],
     "createdAt": "2026-09-08T23:54:25Z",
-    "updatedAt": "2026-09-09T18:42:53Z"
+    "updatedAt": "2026-09-09T19:01:30Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe el comportamiento estándar aplazar todos los watchers derivados de reportes hasta acreditar reporte, raw y tipado completos?",
-  "rationale": "La opción elegida afecta a 14 watchers y cambia deliberadamente el equilibrio entre puntualidad y evitar comparaciones con cortes temporales distintos.",
+  "question": "¿Debe el comportamiento estándar bloquear los watchers derivados de reportes hasta acreditar reporte, raw y tipado completos, aunque una sesión se retrase por telemetría incompleta?",
+  "rationale": "La elección define el equilibrio permanente entre evitar comparaciones temporalmente incoherentes y conservar la cadencia de observación.",
   "options": [
     {
-      "title": "Adoptar la barrera común",
-      "body": "Exigir evidencia ordenada y fallar de forma conservadora cuando falte, preservando alertas para investigar la fuente pendiente.",
+      "title": "Adoptar una barrera común",
+      "body": "Esperar evidencia ordenada y alertar cuando falte, evitando iniciar sesiones sobre ventanas desalineadas.",
       "recommended": true
     },
     {
-      "title": "Aplicar un alcance inicial",
-      "body": "Limitar la barrera a AbeBooks y MercadoLibre mientras se completa la matriz operativa del resto de marketplaces.",
+      "title": "Limitar el alcance inicial",
+      "body": "Aplicar la barrera primero a AbeBooks y MercadoLibre mientras se valida la matriz operativa del resto.",
       "recommended": false
     },
     {
-      "title": "Mantener el disparo inmediato",
-      "body": "Conservar la puntualidad y degradar comparaciones no alineadas a `lagged` sin aplazar la sesión.",
+      "title": "Mantener ejecución degradada",
+      "body": "Conservar el disparo inmediato y marcar comparaciones no alineadas como `lagged` sin bloquear sesiones.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Adoptar la barrera común",
-    "body": "Exigir evidencia ordenada y fallar de forma conservadora cuando falte, preservando alertas para investigar la fuente pendiente.",
+    "title": "Adoptar una barrera común",
+    "body": "Esperar evidencia ordenada y alertar cuando falte, evitando iniciar sesiones sobre ventanas desalineadas.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es el responsable más conectado al scheduler y a la PR que propone el cambio de comportamiento.",
+    "reason": "Es el asignado de la incidencia y autor de la implementación candidata.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9288.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9288#issuecomment-5594323573",
-    "reviewedAt": "2026-09-09T18:58:59.194Z",
+    "reviewedAt": "2026-09-09T19:05:28.885Z",
     "mainSha": "18428b5212091ac86628444285f3830924338212"
   }
 }

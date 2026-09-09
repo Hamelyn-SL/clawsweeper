@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-09T18:59:28.734Z",
-  "updatedAt": "2026-09-09T17:22:48Z",
+  "generatedAt": "2026-09-09T19:07:02.050Z",
+  "updatedAt": "2026-09-09T19:01:07Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,48 +14,47 @@
       "reporter:miguel",
       "triage:done",
       "clawsweeper:needs-product-decision",
+      "P2",
       "app:agents",
-      "origin:dev",
-      "P2"
+      "origin:dev"
     ],
     "createdAt": "2026-09-09T17:10:29Z",
-    "updatedAt": "2026-09-09T17:22:48Z"
+    "updatedAt": "2026-09-09T19:01:07Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué clases de timeout de marketplace deben conservar alerta inmediata y cuáles deben exigir dos requests en quince minutos antes de abrir una incidencia?",
-  "rationale": "El código actual trata todos los timeouts como catastróficos, mientras que la PR abierta solo exceptúa el lock Mongo; extender esa política cambia la sensibilidad operativa del watcher.",
+  "question": "¿Se prioriza un rediseño del watcher con correlación por desenlace antes de ampliar exclusiones, o se aceptan excepciones puntuales con menor cobertura temporal de fallos?",
+  "rationale": "La fuente actual no contiene el éxito correlacionado y el triage aportó contraejemplos donde una misma firma precede a errores terminales o a un 504 sin otro warning/error.",
   "options": [
     {
-      "title": "Clasificar por causa y desenlace",
-      "body": "Mantener alerta inmediata para timeouts no recuperados y exigir recurrencia solo para causas transitorias demostradas, empezando por el lock Mongo.",
+      "title": "Definir clasificación por desenlace",
+      "body": "Ampliar la detección para contrastar cada operación con su resultado final antes de descartar alertas; conservar los ajustes puntuales ya acotados.",
       "recommended": true
     },
     {
-      "title": "Exigir recurrencia para todo timeout",
-      "body": "Reducir el ruido aplicando dos requests en quince minutos a cualquier timeout de marketplace, aceptando una detección más tardía.",
+      "title": "Aceptar exclusiones globales",
+      "body": "Suprimir las firmas solicitadas aunque ciertos errores terminales de igual texto dejen de generar una incidencia.",
       "recommended": false
     },
     {
-      "title": "Conservar el escalado actual",
-      "body": "Aplicar únicamente firmas benignas inequívocas y dejar todos los timeouts aislados como catastróficos.",
+      "title": "Mantener el comportamiento actual",
+      "body": "Dejar las reglas actuales hasta disponer de más telemetría y resolver por separado las dos PRs abiertas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Clasificar por causa y desenlace",
-    "body": "Mantener alerta inmediata para timeouts no recuperados y exigir recurrencia solo para causas transitorias demostradas, empezando por el lock Mongo.",
+    "title": "Definir clasificación por desenlace",
+    "body": "Ampliar la detección para contrastar cada operación con su resultado final antes de descartar alertas; conservar los ajustes puntuales ya acotados.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "Su historial reciente cubre la normalización, la consolidación y la evidencia de recurrencia del watcher.",
+    "person": "Miguel Angel Hernández Perdomo",
+    "reason": "Su historial concentra la evolución de normalización, consolidación y evidencia canónica del watcher.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9346.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9346#issuecomment-5605957168",
-    "reviewedAt": "2026-09-09T18:59:28.734Z",
+    "reviewedAt": "2026-09-09T19:07:02.050Z",
     "mainSha": "18428b5212091ac86628444285f3830924338212"
   }
 }
