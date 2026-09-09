@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-09T17:27:38.285Z",
-  "updatedAt": "2026-09-09T17:20:54Z",
+  "generatedAt": "2026-09-09T17:33:46.193Z",
+  "updatedAt": "2026-09-09T17:30:31Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,42 +14,46 @@
       "feature",
       "reporter:javier",
       "triage:queued",
-      "clawsweeper:needs-product-decision",
-      "P1"
+      "P1",
+      "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-09-08T12:54:05Z",
-    "updatedAt": "2026-09-09T17:20:54Z"
+    "updatedAt": "2026-09-09T17:30:31Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe un ✅ de la allowlist ejecutar un cliente provisional cuando ya existe una issue de alta abierta, sin pedir una identidad por texto en HITL?",
-  "rationale": "La elección define el control operativo de creación de pedidos B2B y no puede deducirse con seguridad solo de la implementación.",
+  "question": "¿Debe una issue de alta abierta permitir ejecutar pedidos B2B con una identidad provisional antes de que exista entrada permanente en `B2B_CLIENTS`?",
+  "rationale": "La propuesta altera deliberadamente la condición de seguridad operativa que hoy exige un cliente registrado; el código no puede decidir por sí solo ese umbral.",
   "options": [
     {
-      "title": "Aceptar la autorización condicionada",
-      "body": "Permitir la ejecución con identidad derivada segura, issue de alta abierta y ✅ de la allowlist, como plantea la PR vinculada.",
+      "title": "Aprobar el flujo provisional",
+      "body": "Permitir ejecución tras ✅ autorizado y una issue de alta abierta, conservando las protecciones de identidad y los demás bloqueos.",
       "recommended": true
     },
     {
-      "title": "Mantener la barrera HITL",
-      "body": "Conservar la identidad indicada por una persona y limitar el cambio a eliminar los falsos escalados por cantidad.",
+      "title": "Exigir alta permanente",
+      "body": "Mantener la configuración en `B2B_CLIENTS` como requisito previo y limitar la issue de alta a seguimiento administrativo.",
+      "recommended": false
+    },
+    {
+      "title": "Pilotar con alcance limitado",
+      "body": "Autorizar el flujo solo para clientes o canales B2B explícitamente aprobados hasta validar su operación real.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aceptar la autorización condicionada",
-    "body": "Permitir la ejecución con identidad derivada segura, issue de alta abierta y ✅ de la allowlist, como plantea la PR vinculada.",
+    "title": "Aprobar el flujo provisional",
+    "body": "Permitir ejecución tras ✅ autorizado y una issue de alta abierta, conservando las protecciones de identidad y los demás bloqueos.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es el responsable asignado y el historial lo sitúa en el flujo B2B afectado.",
+    "reason": "Está asignado a la issue y su historial reciente concentra la evolución del watcher B2B.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9281.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9281#issuecomment-5585587863",
-    "reviewedAt": "2026-09-09T17:27:38.285Z",
+    "reviewedAt": "2026-09-09T17:33:46.193Z",
     "mainSha": "9cb306eb3bd4043d988a6fd61485d2db6ba40ceb"
   }
 }
