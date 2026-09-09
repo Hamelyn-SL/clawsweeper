@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-09T09:57:32.231Z",
+  "updatedAt": "2026-09-09T08:21:08Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 9298,
+    "title": "fix: align marketplace watchers with complete source windows",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9298",
+    "state": "open",
+    "labels": [
+      "size/XXL",
+      "P2"
+    ],
+    "createdAt": "2026-09-09T07:01:34Z",
+    "updatedAt": "2026-09-09T08:21:08Z",
+    "headSha": "ac7da5dfc8ca02a8699720862438901433366f88"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Aceptamos que los doce triggers de report fallen cerrados y puedan esperar hasta 240 minutos si falta evidencia BigQuery, en vez de iniciar el watcher con fuentes desalineadas?",
+  "rationale": "La implementación es coherente con el problema, pero elegir entre cobertura puntual y consistencia de la señal modifica deliberadamente la operación diaria de todos los watchers.",
+  "options": [
+    {
+      "title": "Adoptar la barrera fail-closed",
+      "body": "Aceptar el retraso y las alertas como coste operativo para impedir comparaciones entre ventanas de fuentes incompatibles.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener dispatch inmediato",
+      "body": "Conservar la puntualidad actual y limitar la propuesta a documentación o señales `lagged` sin bloquear sesiones.",
+      "recommended": false
+    },
+    {
+      "title": "Reducir el alcance inicial",
+      "body": "Aplicar la barrera primero a AbeBooks y MercadoLibre, donde el conflicto con reports semanales está documentado.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Adoptar la barrera fail-closed",
+    "body": "Aceptar el retraso y las alertas como coste operativo para impedir comparaciones entre ventanas de fuentes incompatibles.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "HamelynDev",
+    "reason": "Su historial abarca la espera posterior a reports y la semántica reciente de detección de drift en watchers.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9298.md",
+    "reviewedAt": "2026-09-09T09:57:32.231Z",
+    "mainSha": "1e0dd1d639ebcb696dcb029a34f8e43dd6168493"
+  }
+}

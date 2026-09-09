@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-09T09:55:31.948Z",
+  "generatedAt": "2026-09-09T09:58:17.904Z",
   "updatedAt": "2026-09-09T09:45:56Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -13,7 +13,7 @@
       "codex",
       "bug",
       "app:marketplace",
-      "triage:needs-info",
+      "triage:queued",
       "P1",
       "marketplace-crons"
     ],
@@ -22,34 +22,33 @@
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe el watcher tratar un `MongoOperationTimeoutError` aislado y acotado a 10 s como ruido esperado, escalándolo solo cuando se repita por ruta o afecte varias rutas?",
-  "rationale": "La evidencia confirma recuperación posterior y un límite deliberado, pero el umbral aceptable de alerta operativa requiere criterio humano sobre sensibilidad frente a ruido.",
+  "question": "¿Debe un timeout Mongo aislado y acotado al adquirir el lock dejar de abrir alerta P1, o debe mantenerse visible hasta confirmar su causa operativa?",
+  "rationale": "El cambio actual limita la duración, pero no evita el HTTP 500 observado; elegir la política de detección requiere valorar la tolerancia al riesgo operativo.",
   "options": [
     {
-      "title": "Aceptar el umbral de repetición",
-      "body": "Aprobar el criterio del PR abierto, conservando alertas para ticks consecutivos o varias rutas afectadas.",
+      "title": "Mantener la señal hasta atribuir la causa",
+      "body": "Conservar esta incidencia y pedir métricas de Atlas y el SHA desplegado antes de rebajar la alerta.",
       "recommended": true
     },
     {
-      "title": "Mantener alerta para cada timeout",
-      "body": "Conservar la escalada actual hasta disponer de métricas de Atlas que permitan distinguir blips de degradaciones reales.",
+      "title": "Aceptar la clasificación condicionada",
+      "body": "Fusionar el ajuste documental si se acepta que dos ticks consecutivos o varias rutas sean la única señal de escalado.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aceptar el umbral de repetición",
-    "body": "Aprobar el criterio del PR abierto, conservando alertas para ticks consecutivos o varias rutas afectadas.",
+    "title": "Mantener la señal hasta atribuir la causa",
+    "body": "Conservar esta incidencia y pedir métricas de Atlas y el SHA desplegado antes de rebajar la alerta.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "AlexDiaz-Hamelyn",
-    "reason": "Es el revisor solicitado del PR que materializa la política de detección propuesta.",
-    "confidence": "medium"
+    "person": "MarcosTerroso",
+    "reason": "Está asignado a la incidencia y su historial reciente cubre el runtime del cron marketplace.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9292.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9292#issuecomment-5600010469",
-    "reviewedAt": "2026-09-09T09:55:31.948Z",
+    "reviewedAt": "2026-09-09T09:58:17.904Z",
     "mainSha": "1e0dd1d639ebcb696dcb029a34f8e43dd6168493"
   }
 }

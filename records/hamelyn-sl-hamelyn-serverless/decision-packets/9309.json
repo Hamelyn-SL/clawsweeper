@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-09T09:58:13.328Z",
+  "updatedAt": "2026-09-09T09:52:22Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 9309,
+    "title": "fix: release idle mongo pool connections",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9309",
+    "state": "open",
+    "labels": [
+      "size/M"
+    ],
+    "createdAt": "2026-09-09T09:46:04Z",
+    "updatedAt": "2026-09-09T09:52:22Z",
+    "headSha": "3cfcbeaa3a3bf46ccf666cede710a5929fc96b69"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe `minPoolSize: 0` aplicarse ya al pool compartido de todas las aplicaciones, o mantenerse primero como despliegue acotado por superficie?",
+  "rationale": "La alternativa modifica simultáneamente el calentamiento y la reconexión de numerosos consumidores; el código no determina qué riesgo de latencia operativa acepta Platform.",
+  "options": [
+    {
+      "title": "Mantener el ensayo acotado",
+      "body": "Aplicar el valor únicamente en superficies instrumentadas hasta disponer de comparación por aplicación y ráfagas posteriores al periodo idle.",
+      "recommended": true
+    },
+    {
+      "title": "Aprobar el cambio global",
+      "body": "Aceptar el nuevo mínimo para todos los consumidores y vigilar conexiones Atlas, 5xx y p95/p99 con un plan de reversión.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mantener el ensayo acotado",
+    "body": "Aplicar el valor únicamente en superficies instrumentadas hasta disponer de comparación por aplicación y ráfagas posteriores al periodo idle.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "La issue vinculada lo identifica como dueño probable del experimento y su historial lo relaciona con el módulo.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9309.md",
+    "reviewedAt": "2026-09-09T09:58:13.328Z",
+    "mainSha": "1e0dd1d639ebcb696dcb029a34f8e43dd6168493"
+  }
+}
