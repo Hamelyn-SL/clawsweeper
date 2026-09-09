@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-09T17:13:01.107Z",
+  "generatedAt": "2026-09-09T17:18:00.545Z",
   "updatedAt": "2026-09-09T17:03:29Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -13,7 +13,7 @@
       "source:admin-panel",
       "app:supply",
       "feature",
-      "triage:done",
+      "triage:queued",
       "clawsweeper:needs-product-decision",
       "P2",
       "reporter:daniellopez"
@@ -23,39 +23,33 @@
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿La cubeta debe obligatoriamente reescanearse al iniciar una sesión de productividad, al iniciar sesión en la cuenta, o en ambos casos?",
-  "rationale": "El texto del reporte usa «inicias sesión», mientras que el PR propone limpiar solo en los límites de productividad para permitir reanudar una sesión abierta tras recargar.",
+  "question": "¿La cubeta debe limpiarse al iniciar productividad, al iniciar sesión autenticada o en ambos momentos?",
+  "rationale": "La petición usa «sesión» sin fijar el límite; la PR propone productividad, pero esa elección cambia el flujo diario del operario.",
   "options": [
     {
       "title": "Solo productividad",
-      "body": "Limpiar la cubeta al iniciar y finalizar productividad, manteniendo la restauración al recargar una sesión ya abierta.",
+      "body": "Limpiar al iniciar y finalizar productividad, pero conservar la cubeta al recargar una productividad ya abierta.",
       "recommended": true
     },
     {
-      "title": "También acceso a cuenta",
-      "body": "Limpiar la cubeta tras cada nuevo acceso autenticado, incluso si existe una sesión de productividad abierta.",
-      "recommended": false
-    },
-    {
-      "title": "Ambos con aviso",
-      "body": "Limpiar en ambos límites y mostrar una indicación explícita para evitar confundir una recarga con un nuevo inicio.",
+      "title": "También autenticación",
+      "body": "Limpiar tras cada acceso autenticado, incluso si se detecta una productividad abierta.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Solo productividad",
-    "body": "Limpiar la cubeta al iniciar y finalizar productividad, manteniendo la restauración al recargar una sesión ya abierta.",
+    "body": "Limpiar al iniciar y finalizar productividad, pero conservar la cubeta al recargar una productividad ya abierta.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "daniellopez",
-    "reason": "El reportero puede precisar el comportamiento esperado en el kiosco y la diferencia entre acceso y productividad.",
+    "reason": "Puede validar la intención operativa que originó la petición.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9274.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9274#issuecomment-5583440931",
-    "reviewedAt": "2026-09-09T17:13:01.107Z",
+    "reviewedAt": "2026-09-09T17:18:00.545Z",
     "mainSha": "39e83f724d26bed9cbc6387b37916bd073d40de8"
   }
 }
