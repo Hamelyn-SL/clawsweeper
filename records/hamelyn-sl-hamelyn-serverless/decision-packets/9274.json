@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-09T18:57:16.301Z",
+  "generatedAt": "2026-09-09T18:58:50.309Z",
   "updatedAt": "2026-09-09T18:42:54Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -15,42 +15,41 @@
       "feature",
       "triage:done",
       "clawsweeper:needs-product-decision",
-      "reporter:daniellopez",
-      "P2"
+      "P2",
+      "reporter:daniellopez"
     ],
     "createdAt": "2026-09-08T09:58:23Z",
     "updatedAt": "2026-09-09T18:42:54Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿El reescaneo obligatorio de cubeta debe ocurrir al iniciar sesión de cuenta o únicamente al iniciar una nueva sesión de productividad?",
-  "rationale": "La solicitud usa «sesión» de forma ambigua y la PR elige la semántica de productividad, con impacto directo en el flujo del operario.",
+  "question": "¿La cubeta debe limpiarse solo al iniciar/finalizar productividad o también tras cada inicio de sesión autenticada?",
+  "rationale": "La petición usa «sesión» de forma ambigua y ambas interpretaciones cambian el flujo de operarios al recargar o volver a acceder.",
   "options": [
     {
-      "title": "Usar sesión de productividad",
-      "body": "Limpiar cubeta al iniciar o finalizar productividad y conservarla durante una recarga de una productividad ya abierta.",
+      "title": "Solo productividad",
+      "body": "Limpiar al iniciar y finalizar productividad, conservando cubeta y modo tras recargar una productividad ya abierta.",
       "recommended": true
     },
     {
-      "title": "Usar inicio de cuenta",
-      "body": "Exigir cubeta tras cada autenticación, aunque exista una productividad operativa previa.",
+      "title": "También autenticación",
+      "body": "Limpiar tras cada autenticación aunque exista una productividad abierta, priorizando aislamiento frente a continuidad.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Usar sesión de productividad",
-    "body": "Limpiar cubeta al iniciar o finalizar productividad y conservarla durante una recarga de una productividad ya abierta.",
+    "title": "Solo productividad",
+    "body": "Limpiar al iniciar y finalizar productividad, conservando cubeta y modo tras recargar una productividad ya abierta.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "banosdavidhamelyn",
-    "reason": "Es el responsable asignado y ha concretado la alternativa técnica en la PR enlazada.",
-    "confidence": "high"
+    "person": "daniellopez",
+    "reason": "Es quien describió el riesgo operativo que la decisión debe resolver.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9274.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9274#issuecomment-5583440931",
-    "reviewedAt": "2026-09-09T18:57:16.301Z",
+    "reviewedAt": "2026-09-09T18:58:50.309Z",
     "mainSha": "18428b5212091ac86628444285f3830924338212"
   }
 }
