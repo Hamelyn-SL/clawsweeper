@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-09T07:57:55.747Z",
+  "generatedAt": "2026-09-09T07:58:16.734Z",
   "updatedAt": "2026-09-09T07:51:38Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -18,36 +18,35 @@
     "createdAt": "2026-09-04T07:55:20Z",
     "updatedAt": "2026-09-09T07:51:38Z"
   },
-  "lane": "release_inclusion",
+  "lane": "manual_review",
   "priority": "P2",
-  "question": "¿Se autoriza desplegar la rehidratación única de toda `mongodata.stocks_marketplace` propuesta en https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9302?",
-  "rationale": "La corrección evita futuras desalineaciones, pero su primera ejecución muta aproximadamente 26,8 millones de filas y requiere el gate operativo de backfills.",
+  "question": "¿Se acepta la rehidratación global por `projectionVersion` en lugar de ejecutar un backfill puntual de las filas desalineadas?",
+  "rationale": "Ambas rutas corrigen datos históricos, pero difieren en coste operativo, alcance entre marketplaces y mecanismo permanente de mantenimiento.",
   "options": [
     {
-      "title": "Autorizar la rehidratación versionada",
-      "body": "Revisar y desplegar el PR con una ventana observada, conteo previo y validación de convergencia posterior.",
+      "title": "Integrar rehidratación versionada",
+      "body": "Revisar la ejecución única sobre la tabla completa y aceptar `projectionVersion` como mecanismo recurrente de evolución.",
       "recommended": true
     },
     {
-      "title": "Hacer un backfill controlado aparte",
-      "body": "Corregir la cohorte histórica mediante un job con dry-run y conservar el PR solo para prevenir nuevas desalineaciones.",
+      "title": "Backfill acotado",
+      "body": "Mantener el MERGE incremental y ejecutar una operación idempotente solo sobre proyecciones V2 desalineadas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Autorizar la rehidratación versionada",
-    "body": "Revisar y desplegar el PR con una ventana observada, conteo previo y validación de convergencia posterior.",
+    "title": "Integrar rehidratación versionada",
+    "body": "Revisar la ejecución única sobre la tabla completa y aceptar `projectionVersion` como mecanismo recurrente de evolución.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Está asignado y mantiene la implementación candidata que define el coste y la verificación del despliegue.",
+    "reason": "Es la persona actualmente asignada y puede coordinar la decisión operativa con Data.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9119.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9119#issuecomment-5565382221",
-    "reviewedAt": "2026-09-09T07:57:55.747Z",
+    "reviewedAt": "2026-09-09T07:58:16.734Z",
     "mainSha": "be83ada55c34f327d009a88da261ff2a72bf3f08"
   }
 }
