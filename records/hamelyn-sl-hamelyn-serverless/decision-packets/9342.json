@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-09T17:29:34.406Z",
+  "generatedAt": "2026-09-09T17:34:41.382Z",
   "updatedAt": "2026-09-09T17:10:36Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -14,49 +14,47 @@
       "app:marketplace",
       "reporter:miguel",
       "triage:queued",
-      "origin:dev",
-      "mk:mercadolibre",
       "P2",
-      "clawsweeper:needs-product-decision"
+      "origin:dev",
+      "mk:mercadolibre"
     ],
     "createdAt": "2026-09-09T17:10:20Z",
     "updatedAt": "2026-09-09T17:10:36Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe MercadoLibre consultar y promover el anuncio remoto propio ante cada duplicado verificable, o aparcarlo salvo evidencia de que el mirror ha perdido su `marketplaceId`?",
-  "rationale": "El código actual conserva el reintento como política deliberada; cambiarlo puede recuperar cuota, pero también puede dejar anuncios propios sin sincronizar.",
+  "question": "¿Debe el flujo de creación consultar y promover anuncios remotos propios al recibir `DUPLICATE_ACTIVE_LISTING`, o mantenerlos aparcados como rechazo permanente cuando no estén en el mirror?",
+  "rationale": "La evidencia confirma el bucle actual, pero elegir la fuente remota autorizada, los estados promocionables y el tratamiento de duplicados de catálogo altera el contrato operativo.",
   "options": [
     {
-      "title": "Resolver y promover selectivamente",
-      "body": "Verificar el duplicado contra el listing remoto propio, enlazar el `marketplaceId` cuando exista y aparcar el resto con una causa terminal.",
+      "title": "Reconciliar y promover anuncios propios",
+      "body": "Buscar el anuncio por una clave remota fiable, enlazarlo solo si cumple los estados permitidos y aparcar los demás duplicados.",
       "recommended": true
     },
     {
-      "title": "Conservar el reintento actual",
-      "body": "Mantener `DUPLICATE_ACTIVE_LISTING` transitorio y priorizar observabilidad adicional antes de cambiar la política de creación.",
+      "title": "Aparcar todos los duplicados desconocidos",
+      "body": "Eliminar su reintento ejecutable sin crear reconciliación remota, priorizando el ahorro de cola sobre recuperar anuncios existentes.",
       "recommended": false
     },
     {
-      "title": "Aparcar todos los duplicados",
-      "body": "Tratar todos los duplicados como permanentes, aceptando que la recuperación de mirrors incompletos requerirá un flujo separado.",
+      "title": "Mantener el retry actual",
+      "body": "Conservar la red de seguridad existente y corregir únicamente la alerta operativa, aceptando el consumo de capacidad observado.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Resolver y promover selectivamente",
-    "body": "Verificar el duplicado contra el listing remoto propio, enlazar el `marketplaceId` cuando exista y aparcar el resto con una causa terminal.",
+    "title": "Reconciliar y promover anuncios propios",
+    "body": "Buscar el anuncio por una clave remota fiable, enlazarlo solo si cumple los estados permitidos y aparcar los demás duplicados.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "El historial disponible le conecta directamente con la política de reencolación y sus presupuestos operativos.",
+    "reason": "Su historial conecta la corrección de reencolado previa, la migración vigente y el contrato documentado del ciclo de vida de duplicados.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9342.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9342#issuecomment-5606057162",
-    "reviewedAt": "2026-09-09T17:29:34.406Z",
+    "reviewedAt": "2026-09-09T17:34:41.382Z",
     "mainSha": "9cb306eb3bd4043d988a6fd61485d2db6ba40ceb"
   }
 }

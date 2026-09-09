@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-09T17:38:40.893Z",
+  "generatedAt": "2026-09-09T17:29:25.512Z",
   "updatedAt": "2026-09-09T17:10:31Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -23,33 +23,38 @@
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué reparto de capacidad y límites deben operar ES, FR, IT y SE para reducir las cuatro colas sin superar la cuota compartida de Amazon EU?",
-  "rationale": "El código permite fijar límites independientes, pero el valor seguro depende de telemetría de producción y de una cuota compartida que el checkout no puede determinar.",
+  "question": "¿Qué presupuesto de reprice y qué offsets deben asignarse a MX, FR e IT sin degradar la cuota compartida de Amazon EU?",
+  "rationale": "El código permite cambiar los límites, pero no define el reparto seguro entre regiones ni existe evidencia de 48 horas que permita inferirlo automáticamente.",
   "options": [
     {
-      "title": "Escalado medido por regiones",
-      "body": "Subir de forma coordinada los límites de MX, FR e IT, conservar offsets y validar durante 48 horas saldo, resultados por ítem y throttling.",
+      "title": "Validar límites escalonados",
+      "body": "Autorizar una subida coordinada y escalonada de los tres límites, manteniendo offsets separados y midiendo cohortes por feed durante 48 horas.",
       "recommended": true
     },
     {
-      "title": "Instrumentar antes de escalar",
-      "body": "Mantener los límites actuales hasta obtener cohortes de feed y atribución de los nuevos flags que descarten otro cuello de botella.",
+      "title": "Mantener capacidad actual",
+      "body": "No modificar PROD hasta obtener una traza de entradas de `needsUpdatePrice` y resultados por ítem que demuestre la causa dominante.",
+      "recommended": false
+    },
+    {
+      "title": "Redistribuir schedules EU",
+      "body": "Cambiar cadencias u offsets solo si la validación muestra que el límite mayor no reduce la cola sin competir por cuota.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Escalado medido por regiones",
-    "body": "Subir de forma coordinada los límites de MX, FR e IT, conservar offsets y validar durante 48 horas saldo, resultados por ítem y throttling.",
+    "title": "Validar límites escalonados",
+    "body": "Autorizar una subida coordinada y escalonada de los tres límites, manteniendo offsets separados y midiendo cohortes por feed durante 48 horas.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Su trabajo reciente conecta los schedules vigentes con la validación operativa del límite de Amazon SE.",
-    "confidence": "high"
+    "reason": "El historial reciente de las rutas y la discusión de SE lo sitúan cerca de la coordinación operativa de los schedules de Amazon.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9341.md",
-    "reviewedAt": "2026-09-09T17:38:40.893Z",
+    "reviewedAt": "2026-09-09T17:29:25.512Z",
     "mainSha": "9cb306eb3bd4043d988a6fd61485d2db6ba40ceb"
   }
 }
