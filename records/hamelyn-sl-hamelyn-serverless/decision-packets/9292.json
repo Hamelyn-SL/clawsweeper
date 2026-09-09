@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-09T11:02:47.439Z",
-  "updatedAt": "2026-09-09T10:57:50Z",
+  "generatedAt": "2026-09-09T13:05:00.142Z",
+  "updatedAt": "2026-09-09T12:57:51Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,43 +14,42 @@
       "bug",
       "app:marketplace",
       "triage:needs-info",
-      "marketplace-crons",
+      "clawsweeper:needs-product-decision",
       "P2",
-      "clawsweeper:needs-product-decision"
+      "marketplace-crons"
     ],
     "createdAt": "2026-09-09T05:30:36Z",
-    "updatedAt": "2026-09-09T10:57:50Z"
+    "updatedAt": "2026-09-09T12:57:51Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe el watcher de marketplace dejar de elevar un `MongoOperationTimeoutError` aislado del lock hasta que haya dos observaciones, aunque el tick afectado siga devolviendo HTTP 500?",
-  "rationale": "La evidencia acredita continuidad posterior, pero no identifica la causa del socket ni demuestra que una única observación sea inocua; elegir el umbral de alerta es una decisión operativa.",
+  "question": "¿Debe el watcher esperar recurrencia antes de abrir una incidencia por un timeout de lock aislado que terminó el tick con HTTP 500?",
+  "rationale": "El límite de 10 segundos evita consumir todo el runtime, pero no demuestra que un fallo aislado deba dejar de ser una señal operativa inmediata.",
   "options": [
     {
-      "title": "Mantener la alerta inmediata",
-      "body": "Conservar la clasificación actual hasta disponer del SHA desplegado y métricas de Atlas que atribuyan el timeout.",
+      "title": "Mantener alerta inmediata",
+      "body": "Conservar el escalado actual hasta atribuir los timeouts aislados con telemetría de Atlas y del despliegue.",
       "recommended": true
     },
     {
-      "title": "Aceptar la escalada por repetición",
-      "body": "Fusionar el PR y alertar cuando la firma aparezca dos veces, preservando los demás timeouts como catastróficos.",
+      "title": "Escalar solo por recurrencia",
+      "body": "Aceptar la política del PR una vez corrija la condición temporal y preserve el aislamiento del watcher de crons.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mantener la alerta inmediata",
-    "body": "Conservar la clasificación actual hasta disponer del SHA desplegado y métricas de Atlas que atribuyan el timeout.",
+    "title": "Mantener alerta inmediata",
+    "body": "Conservar el escalado actual hasta atribuir los timeouts aislados con telemetría de Atlas y del despliegue.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "HamelynDev",
-    "reason": "Es el autor de la corrección previa del lock y puede decidir junto a Platform el umbral operativo.",
-    "confidence": "medium"
+    "person": "MarcosTerroso",
+    "reason": "Es el asignado actual y ha concretado la alternativa de comportamiento en el PR enlazado.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9292.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9292#issuecomment-5600010469",
-    "reviewedAt": "2026-09-09T11:02:47.439Z",
-    "mainSha": "113a475b5f617e51b268d5cd6a1d0416b86c7271"
+    "reviewedAt": "2026-09-09T13:05:00.142Z",
+    "mainSha": "6c26fcdc2d777245b799ac4d5707cecba0e31324"
   }
 }
