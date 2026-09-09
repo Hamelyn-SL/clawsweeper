@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-09T15:21:19.943Z",
-  "updatedAt": "2026-09-09T15:12:41Z",
+  "generatedAt": "2026-09-09T17:13:01.107Z",
+  "updatedAt": "2026-09-09T17:03:29Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,44 +13,48 @@
       "source:admin-panel",
       "app:supply",
       "feature",
-      "triage:done",
+      "triage:queued",
       "clawsweeper:needs-product-decision",
-      "reporter:daniellopez",
-      "P2"
+      "P2",
+      "reporter:daniellopez"
     ],
     "createdAt": "2026-09-08T09:58:23Z",
-    "updatedAt": "2026-09-09T15:12:41Z"
+    "updatedAt": "2026-09-09T17:03:29Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Al marcar un producto aislado como «Muy bueno» mientras el lote está en modo «Aceptable», debe conservarse el criterio «Aceptable» para los siguientes escaneos?",
-  "rationale": "La redacción de la petición pide una excepción aislada, mientras la PR actual convierte ese gesto en un cambio del criterio global; ambas opciones son válidas operativamente pero producen flujos distintos.",
+  "question": "¿La cubeta debe obligatoriamente reescanearse al iniciar una sesión de productividad, al iniciar sesión en la cuenta, o en ambos casos?",
+  "rationale": "El texto del reporte usa «inicias sesión», mientras que el PR propone limpiar solo en los límites de productividad para permitir reanudar una sesión abierta tras recargar.",
   "options": [
     {
-      "title": "Conservar la excepción aislada",
-      "body": "Enviar «Muy bueno» solo para el producto corregido y mantener el criterio de lote para los siguientes escaneos.",
+      "title": "Solo productividad",
+      "body": "Limpiar la cubeta al iniciar y finalizar productividad, manteniendo la restauración al recargar una sesión ya abierta.",
       "recommended": true
     },
     {
-      "title": "Usar el botón como cambio de lote",
-      "body": "Hacer que toda corrección individual actualice también el criterio global para los siguientes productos.",
+      "title": "También acceso a cuenta",
+      "body": "Limpiar la cubeta tras cada nuevo acceso autenticado, incluso si existe una sesión de productividad abierta.",
+      "recommended": false
+    },
+    {
+      "title": "Ambos con aviso",
+      "body": "Limpiar en ambos límites y mostrar una indicación explícita para evitar confundir una recarga con un nuevo inicio.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Conservar la excepción aislada",
-    "body": "Enviar «Muy bueno» solo para el producto corregido y mantener el criterio de lote para los siguientes escaneos.",
+    "title": "Solo productividad",
+    "body": "Limpiar la cubeta al iniciar y finalizar productividad, manteniendo la restauración al recargar una sesión ya abierta.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "banosdavidhamelyn",
-    "reason": "Es la persona asignada y quien ya documentó la disyuntiva en la implementación candidata.",
-    "confidence": "high"
+    "person": "daniellopez",
+    "reason": "El reportero puede precisar el comportamiento esperado en el kiosco y la diferencia entre acceso y productividad.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9274.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9274#issuecomment-5583440931",
-    "reviewedAt": "2026-09-09T15:21:19.943Z",
-    "mainSha": "94cb970a57ae971c0f59e2f01b6667ba033b4085"
+    "reviewedAt": "2026-09-09T17:13:01.107Z",
+    "mainSha": "39e83f724d26bed9cbc6387b37916bd073d40de8"
   }
 }
