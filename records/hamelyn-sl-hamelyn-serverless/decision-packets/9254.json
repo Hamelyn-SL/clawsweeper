@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-08T04:59:26.070Z",
-  "updatedAt": "2026-09-08T04:49:09Z",
+  "generatedAt": "2026-09-09T08:51:24.193Z",
+  "updatedAt": "2026-09-09T08:45:43Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,48 +12,41 @@
     "labels": [
       "bug",
       "app:marketplace",
-      "triage:queued",
-      "P2",
-      "clawsweeper:needs-product-decision"
+      "triage:needs-info",
+      "P2"
     ],
     "createdAt": "2026-09-08T04:49:00Z",
-    "updatedAt": "2026-09-08T04:49:09Z"
+    "updatedAt": "2026-09-09T08:45:43Z"
   },
   "lane": "manual_review",
   "priority": "P2",
-  "question": "¿La reparación debe reescribir la partición histórica del 3 de septiembre o conservarla como evidencia del snapshot defectuoso tras recuperar los mirrors actuales?",
-  "rationale": "La decisión cambia el significado de datos históricos persistidos y no puede deducirse con seguridad del código ni del reporte.",
+  "question": "¿Se autoriza una limpieza de BigQuery limitada a los IDs fantasma de `mk_amazonEs` previamente confirmados como ausentes en Mongo vivo?",
+  "rationale": "La vía de sincronización existente borra por colección completa; elegir y autorizar un conjunto exacto de borrados es una decisión operativa con impacto persistente.",
   "options": [
     {
-      "title": "Corregir serving y evaluar histórico",
-      "body": "Resincronizar raw y tipado actuales, medir la cohorte histórica exacta y aprobar una corrección separada solo si se confirma que esos snapshots debían reflejar Mongo vivo.",
+      "title": "Autorizar limpieza limitada",
+      "body": "Miguel prepara IDs, recuento, muestras y SQL literal; se borra solo el conjunto confirmado y se verifica raw/tipado después.",
       "recommended": true
     },
     {
-      "title": "Corregir también el histórico",
-      "body": "Reescribir las filas históricas discrepantes para que la serie represente el estado vivo que debió haberse materializado en la fecha del snapshot.",
-      "recommended": false
-    },
-    {
-      "title": "Preservar el histórico",
-      "body": "Reparar únicamente los mirrors actuales y conservar la partición del 3 de septiembre como evidencia de la incidencia de ingestión.",
+      "title": "Mantener el residuo monitorizado",
+      "body": "Se pospone toda escritura y se acepta temporalmente la distorsión conocida en los agregados hasta disponer de más contraste.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Corregir serving y evaluar histórico",
-    "body": "Resincronizar raw y tipado actuales, medir la cohorte histórica exacta y aprobar una corrección separada solo si se confirma que esos snapshots debían reflejar Mongo vivo.",
+    "title": "Autorizar limpieza limitada",
+    "body": "Miguel prepara IDs, recuento, muestras y SQL literal; se borra solo el conjunto confirmado y se verifica raw/tipado después.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Su historial conecta el mecanismo de recuperación con la semántica de los mirrors que deben corregirse.",
+    "reason": "Es el asignado y ya aportó la medición operativa que delimita la reparación.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9254.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9254#issuecomment-5579510299",
-    "reviewedAt": "2026-09-08T04:59:26.070Z",
-    "mainSha": "829910f9e249e89f9d5c30248ac6ba2ca7a4ea1f"
+    "reviewedAt": "2026-09-09T08:51:24.193Z",
+    "mainSha": "be83ada55c34f327d009a88da261ff2a72bf3f08"
   }
 }
