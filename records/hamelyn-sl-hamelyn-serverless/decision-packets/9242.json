@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-09T14:58:15.777Z",
+  "generatedAt": "2026-09-09T15:12:38.899Z",
   "updatedAt": "2026-09-09T12:27:38Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -23,34 +23,33 @@
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Aceptamos tratar `paused` con exclusivamente `picture_download_pending` como señal informativa, conservando alerta para todos los demás aterrizajes no activos?",
-  "rationale": "La telemetría respalda el caso concreto, pero no justifica suprimir otras pausas o subestados que podrían requerir actuación operativa.",
+  "question": "¿Debe el watcher clasificar como `info` la pausa exacta `paused` con solo `picture_download_pending`, aunque la evidencia disponible sea de cohorte y no una comprobación remota universal?",
+  "rationale": "La implementación es acotada, pero decidir qué estados dejan de elevar una alerta operativa define la política de observabilidad y el umbral de riesgo aceptable.",
   "options": [
     {
-      "title": "Aceptar el filtro acotado",
-      "body": "Fusionar la PR vinculada y comprobar tras despliegue que solo la pausa exclusiva por imágenes baja a info.",
+      "title": "Aceptar la excepción estricta",
+      "body": "Bajar a `info` solo la combinación exacta y comprobar tras el despliegue que otras pausas siguen apareciendo como warning.",
       "recommended": true
     },
     {
-      "title": "Mantener el warning actual",
-      "body": "Conservar la alerta hasta disponer de una comprobación remota más concluyente por anuncio.",
+      "title": "Conservar la advertencia",
+      "body": "Mantener el warning hasta disponer de una verificación remota más concluyente de activación posterior para esa firma.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aceptar el filtro acotado",
-    "body": "Fusionar la PR vinculada y comprobar tras despliegue que solo la pausa exclusiva por imágenes baja a info.",
+    "title": "Aceptar la excepción estricta",
+    "body": "Bajar a `info` solo la combinación exacta y comprobar tras el despliegue que otras pausas siguen apareciendo como warning.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Está asignado a la incidencia, mantiene esta integración y ha preparado la única implementación candidata.",
+    "reason": "Es el responsable asignado y el contribuidor más activo en la ruta de sincronización de MercadoLibre.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9242.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9242#issuecomment-5572484033",
-    "reviewedAt": "2026-09-09T14:58:15.777Z",
+    "reviewedAt": "2026-09-09T15:12:38.899Z",
     "mainSha": "94cb970a57ae971c0f59e2f01b6667ba033b4085"
   }
 }

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-09T15:02:15.806Z",
+  "generatedAt": "2026-09-09T15:11:04.353Z",
   "updatedAt": "2026-09-09T10:50:18Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -18,36 +18,35 @@
     "createdAt": "2026-09-08T10:34:30Z",
     "updatedAt": "2026-09-09T10:50:18Z"
   },
-  "lane": "manual_review",
+  "lane": "product_direction",
   "priority": "P2",
-  "question": "Tras la ventana de 48 horas, ¿se consolida `updatePriceLimit=400` para SE o se modifica la planificación compartida de feeds de la cuenta EU?",
-  "rationale": "La elección depende de cuota, throttling y resultados de producción por ítem, señales que el código y el mirror no pueden sustituir.",
+  "question": "Tras la ventana de 48 horas, ¿se mantiene el límite de 400 por tick o se prioriza un cambio de cadencia y offsets para Amazon SE?",
+  "rationale": "Ambas rutas modifican el reparto de capacidad compartida por merchant; el repositorio no puede determinar esa política sin resultados operativos por ítem y señales de throttling.",
   "options": [
     {
       "title": "Validar y mantener 400",
-      "body": "Mantener el lote si la cola cae de forma sostenida, las cohortes confirman resultados por ítem y no hay throttling recurrente.",
+      "body": "Conservar el límite si las cohortes se confirman, la cola cae de forma sostenida y no aparece throttling recurrente.",
       "recommended": true
     },
     {
-      "title": "Repartir la cadencia EU",
-      "body": "Introducir offsets o ajustar la cadencia solo si el seguimiento muestra competencia de cuota entre regiones.",
+      "title": "Repartir la cadencia",
+      "body": "Preparar un cambio de cron con offset propio solo si 400 no absorbe las entradas o la cuota compartida muestra competencia.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Validar y mantener 400",
-    "body": "Mantener el lote si la cola cae de forma sostenida, las cohortes confirman resultados por ítem y no hay throttling recurrente.",
+    "body": "Conservar el límite si las cohortes se confirman, la cola cae de forma sostenida y no aparece throttling recurrente.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Es el asignado y quien documentó el ajuste operativo y sus criterios de validación.",
+    "reason": "Es la persona asignada y ya aplicó el ajuste operativo cuya eficacia debe validarse.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9275.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9275#issuecomment-5583935981",
-    "reviewedAt": "2026-09-09T15:02:15.806Z",
+    "reviewedAt": "2026-09-09T15:11:04.353Z",
     "mainSha": "94cb970a57ae971c0f59e2f01b6667ba033b4085"
   }
 }

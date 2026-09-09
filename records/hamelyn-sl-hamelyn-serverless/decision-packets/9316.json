@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-09T15:10:06.152Z",
+  "generatedAt": "2026-09-09T15:12:53.387Z",
   "updatedAt": "2026-09-09T14:01:34Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -10,8 +10,7 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9316",
     "state": "open",
     "labels": [
-      "size/XXL",
-      "P1"
+      "size/XXL"
     ],
     "createdAt": "2026-09-09T11:37:59Z",
     "updatedAt": "2026-09-09T14:01:34Z",
@@ -19,39 +18,33 @@
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe el watcher ejecutar automáticamente pedidos de clientes no registrados con una identidad provisional mientras la alta permanente sigue abierta?",
-  "rationale": "La propuesta escribe identidades provisionales en OrderSells y stocks; el propio contexto indica que esas identidades pueden no estar reconocidas por los paneles posteriores.",
+  "question": "¿Debe el watcher ejecutar automáticamente con una identidad provisional tras un ✅ autorizado y un issue de alta abierto, antes de que `B2B_CLIENTS` contenga al cliente?",
+  "rationale": "Esta ruta crea ventas, retiros de stock y valores de marketplace provisionales; la corrección técnica no decide por sí sola si ese contrato operativo es aceptable.",
   "options": [
     {
-      "title": "Aceptar el flujo provisional acotado",
-      "body": "Mantener la ejecución con issue abierto tras corregir los fallos, documentando el seguimiento obligatorio del alta permanente.",
+      "title": "Mantener la ejecución provisional controlada",
+      "body": "Aceptar el flujo con issue de alta, allowlist y escalado de identidades dudosas, tras corregir los bloqueadores técnicos.",
       "recommended": true
     },
     {
-      "title": "Exigir alta antes de ejecutar",
-      "body": "Conservar el escalado HITL hasta que el cliente exista en `B2B_CLIENTS`, evitando valores provisionales en producción.",
-      "recommended": false
-    },
-    {
-      "title": "Permitir solo ejecución manual",
-      "body": "Usar la identidad provisional únicamente desde la tool tras una aprobación humana explícita, sin autorizarla por ✅.",
+      "title": "Exigir alta permanente antes de ejecutar",
+      "body": "Conservar el comportamiento de escalado hasta que el cliente exista en `B2B_CLIENTS`, priorizando la clasificación estable.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aceptar el flujo provisional acotado",
-    "body": "Mantener la ejecución con issue abierto tras corregir los fallos, documentando el seguimiento obligatorio del alta permanente.",
+    "title": "Mantener la ejecución provisional controlada",
+    "body": "Aceptar el flujo con issue de alta, allowlist y escalado de identidades dudosas, tras corregir los bloqueadores técnicos.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es la persona con mayor continuidad histórica en el watcher B2B y en el diseño de identidades provisionales.",
+    "reason": "El historial muestra que concentra el diseño y mantenimiento reciente del watcher B2B.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9316.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9316#issuecomment-5601535539",
-    "reviewedAt": "2026-09-09T15:10:06.152Z",
+    "reviewedAt": "2026-09-09T15:12:53.387Z",
     "mainSha": "94cb970a57ae971c0f59e2f01b6667ba033b4085"
   }
 }
