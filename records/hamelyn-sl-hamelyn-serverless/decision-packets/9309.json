@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-09T09:58:13.328Z",
-  "updatedAt": "2026-09-09T09:52:22Z",
+  "generatedAt": "2026-09-09T10:05:11.582Z",
+  "updatedAt": "2026-09-09T10:00:08Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -14,39 +14,43 @@
       "P2"
     ],
     "createdAt": "2026-09-09T09:46:04Z",
-    "updatedAt": "2026-09-09T09:52:22Z",
+    "updatedAt": "2026-09-09T10:00:08Z",
     "headSha": "3cfcbeaa3a3bf46ccf666cede710a5929fc96b69"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe `minPoolSize: 0` aplicarse ya al pool compartido de todas las aplicaciones, o mantenerse primero como despliegue acotado por superficie?",
-  "rationale": "La alternativa modifica simultáneamente el calentamiento y la reconexión de numerosos consumidores; el código no determina qué riesgo de latencia operativa acepta Platform.",
+  "question": "¿Debe este PR cambiar ya el mínimo del pool para toda la flota, o limitarse a un despliegue instrumentado por aplicación antes de generalizarlo?",
+  "rationale": "La incidencia relacionada descartó inicialmente el cambio global sin atribución por aplicación; el piloto reduce la incertidumbre, pero no decide el impacto aceptable en los consumidores restantes.",
   "options": [
     {
-      "title": "Mantener el ensayo acotado",
-      "body": "Aplicar el valor únicamente en superficies instrumentadas hasta disponer de comparación por aplicación y ráfagas posteriores al periodo idle.",
+      "title": "Instrumentar y ampliar por fases",
+      "body": "Mantener el contrato global actual hasta observar por aplicación conexiones, 5xx y p95/p99 en las superficies aún no ensayadas.",
       "recommended": true
     },
     {
-      "title": "Aprobar el cambio global",
-      "body": "Aceptar el nuevo mínimo para todos los consumidores y vigilar conexiones Atlas, 5xx y p95/p99 con un plan de reversión.",
+      "title": "Autorizar el cambio global",
+      "body": "Aceptar la reconexión tras inactividad como coste operativo y monitorizar inmediatamente errores y latencias por aplicación.",
+      "recommended": false
+    },
+    {
+      "title": "Diseñar una política configurable",
+      "body": "Introducir un alcance explícito por aplicación si se necesita conservar el comportamiento warm en parte de la flota.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mantener el ensayo acotado",
-    "body": "Aplicar el valor únicamente en superficies instrumentadas hasta disponer de comparación por aplicación y ráfagas posteriores al periodo idle.",
+    "title": "Instrumentar y ampliar por fases",
+    "body": "Mantener el contrato global actual hasta observar por aplicación conexiones, 5xx y p95/p99 en las superficies aún no ensayadas.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "La issue vinculada lo identifica como dueño probable del experimento y su historial lo relaciona con el módulo.",
-    "confidence": "high"
+    "person": "danielmenchen-hamelyn",
+    "reason": "Es el revisor solicitado y tiene señal reciente en el módulo compartido afectado.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9309.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9309#issuecomment-5600027621",
-    "reviewedAt": "2026-09-09T09:58:13.328Z",
-    "mainSha": "1e0dd1d639ebcb696dcb029a34f8e43dd6168493"
+    "reviewedAt": "2026-09-09T10:05:11.582Z",
+    "mainSha": "31983f08da7c6bb8095a3ead573f802df42a33cb"
   }
 }
