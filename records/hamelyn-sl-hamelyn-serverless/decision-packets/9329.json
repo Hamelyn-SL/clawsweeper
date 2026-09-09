@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-09T15:24:17.386Z",
-  "updatedAt": "2026-09-09T15:19:59Z",
+  "generatedAt": "2026-09-09T16:56:09.006Z",
+  "updatedAt": "2026-09-09T16:51:41Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -18,43 +18,42 @@
       "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-09-09T15:19:47Z",
-    "updatedAt": "2026-09-09T15:19:59Z"
+    "updatedAt": "2026-09-09T16:51:41Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe el watcher B2B incorporar un modelo como clasificador no autorizador, con `not_order` persistente y escalado a HITL ante incertidumbre o fallo?",
-  "rationale": "La elección fija el límite entre automatización determinista, coste operativo y el riesgo aceptable de ignorar o escalar mensajes; el código no puede resolver esa política por sí solo.",
+  "question": "¿Se aprueba que un modelo clasifique los mensajes candidatos como `order`, `not_order` o `needs_human`, con descarte persistido y la ejecución posterior conservada como determinista?",
+  "rationale": "La decisión cambia el límite operativo entre heurísticas deterministas, coste de modelo y recuperación de falsos negativos en pedidos B2B.",
   "options": [
     {
-      "title": "Aprobar clasificador acotado",
-      "body": "Introducir una única decisión estructurada cacheada por mensaje, manteniendo ✅, topes, bloqueos e idempotencia fuera del modelo.",
+      "title": "Aprobar el intake estructurado",
+      "body": "Mantener los rieles deterministas y usar una única lectura modelada por mensaje candidato, resolviendo los bloqueos de las PRs apiladas.",
       "recommended": true
     },
     {
-      "title": "Extender reglas deterministas",
-      "body": "Mantener el watcher sin modelos y priorizar patrones y pruebas para los falsos positivos observados.",
+      "title": "Mantener clasificación determinista",
+      "body": "Rechazar el nuevo intake y limitar el trabajo a mejorar las reglas actuales y sus pruebas.",
       "recommended": false
     },
     {
-      "title": "Piloto solo de observación",
-      "body": "Registrar decisiones del modelo sin afectar ledgers, reacciones ni escalados hasta medir discrepancias con producción.",
+      "title": "Pilotar con escalado conservador",
+      "body": "Permitir el modelo solo para proponer `needs_human` mientras se recopila evidencia antes de admitir `order` o `not_order`.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar clasificador acotado",
-    "body": "Introducir una única decisión estructurada cacheada por mensaje, manteniendo ✅, topes, bloqueos e idempotencia fuera del modelo.",
+    "title": "Aprobar el intake estructurado",
+    "body": "Mantener los rieles deterministas y usar una única lectura modelada por mensaje candidato, resolviendo los bloqueos de las PRs apiladas.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Ha desarrollado los límites actuales de clasificación y ejecución provisional, y está asignado al trabajo B2B relacionado.",
+    "reason": "Es el principal autor histórico del watcher y de la solución apilada actualmente en revisión.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9329.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9329#issuecomment-5604362945",
-    "reviewedAt": "2026-09-09T15:24:17.386Z",
-    "mainSha": "94cb970a57ae971c0f59e2f01b6667ba033b4085"
+    "reviewedAt": "2026-09-09T16:56:09.006Z",
+    "mainSha": "39e83f724d26bed9cbc6387b37916bd073d40de8"
   }
 }
