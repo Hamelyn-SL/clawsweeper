@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-09T11:49:32.976Z",
+  "updatedAt": "2026-09-09T11:42:50Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9317,
+    "title": "Envíos urgentes a América por Spring",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9317",
+    "state": "open",
+    "labels": [
+      "source:admin-panel",
+      "app:admin",
+      "feature",
+      "triage:running",
+      "P1",
+      "reporter:jorgecano"
+    ],
+    "createdAt": "2026-09-09T11:38:19Z",
+    "updatedAt": "2026-09-09T11:42:50Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué códigos de país concretos forman «todo América» y cuáles están confirmados como destinos soportados por Spring para envío urgente?",
+  "rationale": "La matriz acepta expresiones regulares por país; una cobertura demasiado amplia podría enviar a Spring destinos sin servicio o eliminar excepciones operativas actuales.",
+  "options": [
+    {
+      "title": "Validar cobertura Spring y separar filas",
+      "body": "Confirmar países operativos y aplicar una fila `INDIVIDUAL` de Spring junto a la excepción `MULTIPLE` de FedEx.",
+      "recommended": true
+    },
+    {
+      "title": "Limitar inicialmente a países confirmados",
+      "body": "Aplicar el cambio sólo a los países americanos con servicio Spring confirmado y ampliar después con evidencia operativa.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Validar cobertura Spring y separar filas",
+    "body": "Confirmar países operativos y aplicar una fila `INDIVIDUAL` de Spring junto a la excepción `MULTIPLE` de FedEx.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Su trabajo reciente documenta las filas activas y la migración operativa de `shipMatrix`.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9317.md",
+    "reviewedAt": "2026-09-09T11:49:32.976Z",
+    "mainSha": "a9b43192e16fc01b84bfd6504f601f9ebcac6fe3"
+  }
+}
