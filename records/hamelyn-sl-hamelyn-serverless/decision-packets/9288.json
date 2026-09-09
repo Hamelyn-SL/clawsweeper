@@ -1,60 +1,59 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-09T08:58:00.588Z",
-  "updatedAt": "2026-09-09T08:12:50Z",
+  "generatedAt": "2026-09-09T15:04:47.038Z",
+  "updatedAt": "2026-09-09T08:58:44Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
     "number": 9288,
     "title": "Infraestructura: watchers comparan fuentes de ventanas temporales distintas",
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9288",
-    "state": "open",
+    "state": "closed",
     "labels": [
       "bug",
       "app:infrastructure",
       "triage:done",
       "clawsweeper:needs-product-decision",
-      "reporter:JavierHamelyn",
-      "P2"
+      "P2",
+      "reporter:JavierHamelyn"
     ],
     "createdAt": "2026-09-08T23:54:25Z",
-    "updatedAt": "2026-09-09T08:12:50Z"
+    "updatedAt": "2026-09-09T08:58:44Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe el comportamiento estándar bloquear cada watcher dependiente de reportes hasta acreditar report, raw y tipado completos, o limitar la barrera a fuentes concretas?",
-  "rationale": "La elección cambia cuándo se inician sesiones de producción y el equilibrio entre datos fiables y disponibilidad operativa; el código no puede fijar esa política por sí solo.",
+  "question": "¿Debe el comportamiento estándar bloquear los watchers dependientes de reports hasta acreditar report, raw y tipado completos, o limitarse inicialmente a marketplaces con solapamientos demostrados?",
+  "rationale": "La corrección cambia cuándo se ejecutan doce disparos y puede privilegiar exactitud frente a disponibilidad; el código no puede decidir ese coste operativo.",
   "options": [
     {
-      "title": "Precondición común de frescura",
-      "body": "Exigir evidencia ordenada antes de los triggers dependientes de reportes y degradar explícitamente las comparaciones sin recibo.",
+      "title": "Adoptar la barrera común",
+      "body": "Exigir evidencia ordenada en todos los triggers derivados de reports y alertar cuando no pueda acreditarse.",
       "recommended": true
     },
     {
-      "title": "Ventanas por watcher",
-      "body": "Mantener schedules independientes y ajustar cada watcher según su pipeline conocido, sin una barrera común.",
+      "title": "Aplicarla solo a casos demostrados",
+      "body": "Empezar por AbeBooks y MercadoLibre, manteniendo el resto de schedules hasta reunir evidencia equivalente.",
       "recommended": false
     },
     {
-      "title": "Modelo híbrido",
-      "body": "Aplicar la barrera a reportes y cohortes de tránsito, preservando crons fijos para métricas independientes.",
+      "title": "Mantener dispatch inmediato",
+      "body": "Conservar la puntualidad actual y degradar las comparaciones sin ventana completa como `lagged` sin bloquear sesiones.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Precondición común de frescura",
-    "body": "Exigir evidencia ordenada antes de los triggers dependientes de reportes y degradar explícitamente las comparaciones sin recibo.",
+    "title": "Adoptar la barrera común",
+    "body": "Exigir evidencia ordenada en todos los triggers derivados de reports y alertar cuando no pueda acreditarse.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es el asignado y ha mantenido recientemente la finalización de watchers y el PR candidato.",
+    "reason": "Es el asignado de la incidencia y el historial le vincula con los schedules, workflows y ruta afectados.",
     "confidence": "high"
   },
   "source": {
-    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9288.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9288#issuecomment-5594323573",
-    "reviewedAt": "2026-09-09T08:58:00.588Z",
-    "mainSha": "be83ada55c34f327d009a88da261ff2a72bf3f08"
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/9288.md",
+    "reviewedAt": "2026-09-09T15:04:47.038Z",
+    "mainSha": "94cb970a57ae971c0f59e2f01b6667ba033b4085"
   }
 }

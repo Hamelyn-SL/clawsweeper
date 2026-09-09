@@ -1,14 +1,14 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-08T09:22:31.041Z",
-  "updatedAt": "2026-09-08T09:12:06Z",
+  "generatedAt": "2026-09-09T14:58:05.230Z",
+  "updatedAt": "2026-09-08T09:30:15Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
     "number": 9256,
     "title": "Retirar el flujo de Nueva entrada de revisión y del panel",
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9256",
-    "state": "open",
+    "state": "closed",
     "labels": [
       "app:supply",
       "feature",
@@ -17,38 +17,42 @@
       "P2"
     ],
     "createdAt": "2026-09-08T05:52:29Z",
-    "updatedAt": "2026-09-08T09:12:06Z"
+    "updatedAt": "2026-09-08T09:30:15Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe el destino automático sustituir las nuevas altas mientras `INVENTORY` y `NEW_ENTRY` se conservan como histórico de solo lectura?",
-  "rationale": "La decisión determina si se eliminan solo accesos operativos o también lectores, etiquetas y métricas de datos persistidos.",
+  "question": "¿Qué flujo desplegado sustituirá `Nueva entrada` para EAN ajenos al lote y baja demanda, y qué lectura histórica debe conservarse para `NEW_ENTRY` e `INVENTORY`?",
+  "rationale": "La eliminación cambia una capacidad operativa todavía accesible y afecta datos persistidos; el código no define el sustituto ni la política de histórico.",
   "options": [
     {
-      "title": "Conservar histórico de solo lectura",
-      "body": "Retirar los accesos y escritores activos tras validar el sustituto, manteniendo consultas, etiquetas y productividad histórica.",
+      "title": "Aprobar sustituto e histórico antes de retirar",
+      "body": "Definir el destino automático y conservar los tipos históricos en solo lectura; después planificar la retirada por fases.",
       "recommended": true
     },
     {
-      "title": "Retirada completa tras auditoría",
-      "body": "Eliminar también lectores y métricas únicamente cuando Operaciones confirme que no necesita los registros antiguos.",
+      "title": "Conservar temporalmente Nueva entrada",
+      "body": "Mantener los accesos y escritores hasta que Operaciones confirme que el flujo alternativo cubre los casos reales.",
+      "recommended": false
+    },
+    {
+      "title": "Retirar sin sustitución",
+      "body": "Eliminar el flujo actual y aceptar que los casos hoy atendidos deberán seguir otro proceso operativo explícito.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Conservar histórico de solo lectura",
-    "body": "Retirar los accesos y escritores activos tras validar el sustituto, manteniendo consultas, etiquetas y productividad histórica.",
+    "title": "Aprobar sustituto e histórico antes de retirar",
+    "body": "Definir el destino automático y conservar los tipos históricos en solo lectura; después planificar la retirada por fases.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "banosdavidhamelyn",
-    "reason": "Ha impulsado tanto la evolución reciente de `INVENTORY` como la retirada solicitada.",
-    "confidence": "high"
+    "reason": "Ha aportado la petición y mantiene trabajo reciente exactamente en el modo de entrada del kiosko.",
+    "confidence": "medium"
   },
   "source": {
-    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9256.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9256#issuecomment-5580039697",
-    "reviewedAt": "2026-09-08T09:22:31.041Z",
-    "mainSha": "4badee9287da5bbb4cf7a76774b709ee0f285931"
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/9256.md",
+    "reviewedAt": "2026-09-09T14:58:05.230Z",
+    "mainSha": "94cb970a57ae971c0f59e2f01b6667ba033b4085"
   }
 }

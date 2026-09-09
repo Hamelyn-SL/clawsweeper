@@ -1,60 +1,59 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-07T14:28:22.351Z",
-  "updatedAt": "2026-09-07T14:15:27Z",
+  "generatedAt": "2026-09-09T14:58:10.953Z",
+  "updatedAt": "2026-09-07T14:29:13Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
     "number": 9230,
     "title": "Station productivity credits products to whoever opened the panel last",
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9230",
-    "state": "open",
+    "state": "closed",
     "labels": [
       "bug",
       "source:admin-panel",
       "app:admin",
       "triage:done",
-      "clawsweeper:needs-product-decision",
-      "P1"
+      "P1",
+      "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-09-07T11:35:09Z",
-    "updatedAt": "2026-09-07T14:15:27Z"
+    "updatedAt": "2026-09-07T14:29:13Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué regla de titularidad debe ser la fuente de verdad para productividad Skypod cuando Exotec confirma una línea sin identidad del operario?",
-  "rationale": "La corrección inmediata puede reservar una estación, pero el registro duradero por producto exige decidir si la atribución proviene de una sesión reservada, de identidad autenticada u otra señal operacional.",
+  "question": "¿Qué fuente de verdad debe usar Skypod cuando Exotec confirma una línea sin identidad del operario?",
+  "rationale": "El código puede impedir dos sesiones simultáneas, pero decidir entre reserva de estación, atribución inferida o pausa del conteo determina la auditabilidad y las reglas operativas futuras.",
   "options": [
     {
-      "title": "Reserva operativa y procedencia por producto",
-      "body": "Reservar atómicamente cada estación a un rol operativo y guardar en cada producto la identidad disponible junto con la fuente de atribución.",
+      "title": "Reserva y procedencia por producto",
+      "body": "Reservar atómicamente la estación a un rol operativo y persistir la identidad disponible con una fuente de atribución por confirmación.",
       "recommended": true
     },
     {
       "title": "Solo exclusividad de estación",
-      "body": "Impedir sesiones simultáneas por estación sin introducir todavía un historial de confirmador por producto.",
+      "body": "Bloquear propietarios simultáneos por estación como contención inmediata y posponer la auditoría individual por producto.",
       "recommended": false
     },
     {
-      "title": "Pausar productividad Skypod",
-      "body": "Desactivar el conteo hasta que Exotec pueda aportar una identidad de confirmación verificable.",
+      "title": "Pausar el conteo Skypod",
+      "body": "Desactivar la productividad de estas confirmaciones hasta disponer de una identidad verificable desde Exotec.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Reserva operativa y procedencia por producto",
-    "body": "Reservar atómicamente cada estación a un rol operativo y guardar en cada producto la identidad disponible junto con la fuente de atribución.",
+    "title": "Reserva y procedencia por producto",
+    "body": "Reservar atómicamente la estación a un rol operativo y persistir la identidad disponible con una fuente de atribución por confirmación.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "banosdavidhamelyn",
-    "reason": "Figura como responsable del seguimiento y debe coordinar la regla operacional con quienes mantienen el flujo Skypod.",
+    "reason": "La incidencia figura asignada a esta persona y su trabajo reciente toca la ruta administrativa implicada.",
     "confidence": "medium"
   },
   "source": {
-    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9230.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9230#issuecomment-5570153578",
-    "reviewedAt": "2026-09-07T14:28:22.351Z",
-    "mainSha": "829910f9e249e89f9d5c30248ac6ba2ca7a4ea1f"
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/9230.md",
+    "reviewedAt": "2026-09-09T14:58:10.953Z",
+    "mainSha": "94cb970a57ae971c0f59e2f01b6667ba033b4085"
   }
 }

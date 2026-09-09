@@ -1,56 +1,55 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-09T12:26:25.396Z",
-  "updatedAt": "2026-09-09T12:17:48Z",
+  "generatedAt": "2026-09-09T14:58:07.777Z",
+  "updatedAt": "2026-09-09T12:33:43Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
     "number": 9248,
     "title": "Marketplace: [mercadolibre mx] 🚨 rate limit (429) on get /orders/search?seller=<number>&order.status=cancelled&order.da",
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9248",
-    "state": "open",
+    "state": "closed",
     "labels": [
       "codex",
       "bug",
       "app:marketplace",
       "triage:blocked",
-      "marketplace-crons",
       "P1",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "marketplace-crons"
     ],
     "createdAt": "2026-09-07T17:30:38Z",
-    "updatedAt": "2026-09-09T12:17:48Z"
+    "updatedAt": "2026-09-09T12:33:43Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Se acepta como política permanente una ventana horaria de tres días y resultados parciales tras un 429 agotado en páginas posteriores?",
-  "rationale": "La propuesta intercambia cobertura histórica por menor exposición al rate limit y cambia qué cancelaciones se vuelven a examinar automáticamente.",
+  "question": "¿Se acepta que el cron horario consulte solo tres días de cancelaciones sin conciliación histórica previa?",
+  "rationale": "La propuesta reduce los 429, pero cambia la cobertura histórica de un proceso que puede afectar a recuperaciones de stock y estados de pedidos.",
   "options": [
     {
-      "title": "Aceptar la política acotada",
-      "body": "Validar los datos operativos del PR y mantener la ventana de tres días con conservación de páginas ya leídas.",
+      "title": "Aceptar la ventana de tres días",
+      "body": "Integrar el enfoque del PR y asumir el residuo histórico tras la comprobación operativa documentada.",
       "recommended": true
     },
     {
-      "title": "Mantener cobertura más amplia",
-      "body": "Pedir una conciliación o cola duradera que reduzca el rate limit sin limitar la revisión histórica.",
+      "title": "Exigir conciliación previa",
+      "body": "Mantener o ejecutar una reconciliación acotada antes de reducir permanentemente la ventana de consulta.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aceptar la política acotada",
-    "body": "Validar los datos operativos del PR y mantener la ventana de tres días con conservación de páginas ya leídas.",
+    "title": "Aceptar la ventana de tres días",
+    "body": "Integrar el enfoque del PR y asumir el residuo histórico tras la comprobación operativa documentada.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Está asignado y ha reunido la evidencia operativa junto con la implementación candidata.",
+    "reason": "Está asignado a la incidencia y su trabajo reciente concentra el conocimiento del flujo y de la alternativa propuesta.",
     "confidence": "high"
   },
   "source": {
-    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9248.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9248#issuecomment-5574109349",
-    "reviewedAt": "2026-09-09T12:26:25.396Z",
-    "mainSha": "b6a9e5288b41c0ce9d70a3f9ba273da6a7f0d7ad"
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/9248.md",
+    "reviewedAt": "2026-09-09T14:58:07.777Z",
+    "mainSha": "94cb970a57ae971c0f59e2f01b6667ba033b4085"
   }
 }

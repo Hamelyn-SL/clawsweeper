@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-09T14:58:17.869Z",
+  "updatedAt": "2026-09-08T06:00:21Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9246,
+    "title": "Marketplace: [mercadolibre mx] response: { status: 429, message: 'local_rate_limited' }",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9246",
+    "state": "closed",
+    "labels": [
+      "codex",
+      "bug",
+      "app:marketplace",
+      "triage:needs-info",
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "marketplace-crons"
+    ],
+    "createdAt": "2026-09-07T17:30:35Z",
+    "updatedAt": "2026-09-08T06:00:21Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe integrarse la reducción permanente de la ventana de cancelaciones de 21 a 3 días ahora que `dev` ya reintenta los GET limitados?",
+  "rationale": "El reintento integrado resuelve el fallo inmediato, pero la ventana propuesta altera la cobertura de conciliación histórica y necesita una decisión explícita sobre ese compromiso.",
+  "options": [
+    {
+      "title": "Revisar la mitigación adicional",
+      "body": "Validar la cobertura de tres días y, si es suficiente, integrar el PR abierto como segunda línea ante 429 paginados.",
+      "recommended": true
+    },
+    {
+      "title": "Conservar la ventana actual",
+      "body": "Cerrar el PR abierto si los reintentos actuales bastan y mantener el barrido de 21 días como red de seguridad.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Revisar la mitigación adicional",
+    "body": "Validar la cobertura de tres días y, si es suficiente, integrar el PR abierto como segunda línea ante 429 paginados.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Introdujo la política de reintentos ya integrada y puede valorar su interacción con la cobertura del barrido.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/9246.md",
+    "reviewedAt": "2026-09-09T14:58:17.869Z",
+    "mainSha": "94cb970a57ae971c0f59e2f01b6667ba033b4085"
+  }
+}

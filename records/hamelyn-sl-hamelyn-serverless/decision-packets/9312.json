@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-09T15:06:19.663Z",
+  "updatedAt": "2026-09-09T13:45:38Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 9312,
+    "title": "feat: add shared station productivity controls",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9312",
+    "state": "open",
+    "labels": [
+      "size/L",
+      "P2"
+    ],
+    "createdAt": "2026-09-09T10:24:56Z",
+    "updatedAt": "2026-09-09T13:45:38Z",
+    "headSha": "43f543cb741020779c7782eb7ba4612182ef67c1"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe Station conservar el cierre automático en `pagehide` y desmontaje además del control manual, o pasar a sesiones persistentes hasta confirmación explícita?",
+  "rationale": "La rama altera cuándo se atribuyen los conteos SKYPOD y el contrato actual sí cerraba la sesión al abandonar la vista; la implementación no puede decidir esa política operativa.",
+  "options": [
+    {
+      "title": "Conservar el cierre automático",
+      "body": "Mantener `station-pagehide` y `station-unmount`, incorporando el diálogo manual como una vía adicional de cierre.",
+      "recommended": true
+    },
+    {
+      "title": "Adoptar cierre manual exclusivo",
+      "body": "Aceptar que recargas y navegación mantengan la sesión abierta, con la nueva atribución de tiempo y conteos documentada para operación.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Conservar el cierre automático",
+    "body": "Mantener `station-pagehide` y `station-unmount`, incorporando el diálogo manual como una vía adicional de cierre.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Introdujo y mantuvo recientemente el ciclo de productividad de Station que este PR modifica.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9312.md",
+    "reviewedAt": "2026-09-09T15:06:19.663Z",
+    "mainSha": "94cb970a57ae971c0f59e2f01b6667ba033b4085"
+  }
+}

@@ -1,14 +1,14 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-08T10:45:50.275Z",
-  "updatedAt": "2026-09-08T10:34:43Z",
+  "generatedAt": "2026-09-09T15:02:15.806Z",
+  "updatedAt": "2026-09-09T10:50:18Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
     "number": 9275,
     "title": "Amazon SE reprice backlog grows despite active feed processing",
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9275",
-    "state": "open",
+    "state": "closed",
     "labels": [
       "bug",
       "app:marketplace",
@@ -16,38 +16,37 @@
       "P2"
     ],
     "createdAt": "2026-09-08T10:34:30Z",
-    "updatedAt": "2026-09-08T10:34:43Z"
+    "updatedAt": "2026-09-09T10:50:18Z"
   },
-  "lane": "product_direction",
+  "lane": "manual_review",
   "priority": "P2",
-  "question": "¿Se autoriza una prueba controlada de capacidad de repricing para Amazon SE tras instrumentar cohortes y resultados por ítem, o se mantiene el límite actual hasta disponer de esas métricas?",
-  "rationale": "El repositorio deja el cap en configuración operativa y la documentación advierte de la cuota por merchant; elegir capacidad para una cuenta EU compartida requiere intención responsable de producto y operación.",
+  "question": "Tras la ventana de 48 horas, ¿se consolida `updatePriceLimit=400` para SE o se modifica la planificación compartida de feeds de la cuenta EU?",
+  "rationale": "La elección depende de cuota, throttling y resultados de producción por ítem, señales que el código y el mirror no pueden sustituir.",
   "options": [
     {
-      "title": "Medir antes de ampliar",
-      "body": "Instrumentar cohortes de flags y resolución de feeds durante 48 horas, y decidir el cap con el saldo neto y throttling observados.",
+      "title": "Validar y mantener 400",
+      "body": "Mantener el lote si la cola cae de forma sostenida, las cohortes confirman resultados por ítem y no hay throttling recurrente.",
       "recommended": true
     },
     {
-      "title": "Prueba de capacidad acotada",
-      "body": "Autorizar un incremento temporal y reversible de `updatePriceLimit` con umbrales de rollback por throttling y resultados remotos fallidos.",
+      "title": "Repartir la cadencia EU",
+      "body": "Introducir offsets o ajustar la cadencia solo si el seguimiento muestra competencia de cuota entre regiones.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Medir antes de ampliar",
-    "body": "Instrumentar cohortes de flags y resolución de feeds durante 48 horas, y decidir el cap con el saldo neto y throttling observados.",
+    "title": "Validar y mantener 400",
+    "body": "Mantener el lote si la cola cae de forma sostenida, las cohortes confirman resultados por ítem y no hay throttling recurrente.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "Su historial conecta la migración Amazon, la semántica de resultados por batch y el contrato operativo documentado.",
+    "person": "MarcosTerroso",
+    "reason": "Es el asignado y quien documentó el ajuste operativo y sus criterios de validación.",
     "confidence": "high"
   },
   "source": {
-    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9275.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9275#issuecomment-5583935981",
-    "reviewedAt": "2026-09-08T10:45:50.275Z",
-    "mainSha": "1cceb62fe82ead2bed078da8bc9a64c8c8ca1eed"
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/9275.md",
+    "reviewedAt": "2026-09-09T15:02:15.806Z",
+    "mainSha": "94cb970a57ae971c0f59e2f01b6667ba033b4085"
   }
 }
