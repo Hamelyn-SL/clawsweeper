@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-09T15:47:34.194Z",
+  "generatedAt": "2026-09-09T15:48:56.101Z",
   "updatedAt": "2026-09-09T15:42:50Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -13,42 +13,46 @@
       "app:infrastructure",
       "feature",
       "reporter:javier",
-      "triage:done",
+      "triage:running",
       "P1"
     ],
     "createdAt": "2026-09-09T15:41:31Z",
     "updatedAt": "2026-09-09T15:42:50Z"
   },
   "lane": "product_direction",
-  "priority": "P2",
-  "question": "¿Debe priorizarse la migración completa de `eve` antes de ampliar el intake B2B, o mantenerse el polling actual hasta completar una actualización independiente?",
-  "rationale": "La elección afecta a todos los watchers y condiciona si las nuevas capacidades de Slack cambian el diseño de la incidencia B2B relacionada.",
+  "priority": "P1",
+  "question": "¿Debe el despliegue activar en la misma fase los mensajes sin mención y la política de respuesta B2B, o separar primero la actualización compatible del framework?",
+  "rationale": "La actualización modifica comportamiento operativo de todos los watchers y puede cambiar el perímetro de autorización B2B; la secuencia de activación exige intención explícita.",
   "options": [
     {
-      "title": "Migración por fases",
-      "body": "Actualizar `eve` con adaptadores y comprobaciones de compatibilidad antes de activar eventos Slack o nuevas restricciones de aprobación.",
+      "title": "Migración en dos fases",
+      "body": "Actualizar primero Eve, schedules y sesiones conservando el comportamiento actual, y habilitar después `onMessage` y la política B2B con pruebas operativas.",
       "recommended": true
     },
     {
-      "title": "Desacoplar B2B",
-      "body": "Mantener el polling y la mitigación actual mientras se planifica la migración transversal como trabajo independiente.",
+      "title": "Activación conjunta",
+      "body": "Desplegar actualización y nuevos hooks B2B en un único cambio, asumiendo una ventana de validación y rollback más amplia.",
+      "recommended": false
+    },
+    {
+      "title": "Posponer el cambio funcional",
+      "body": "Limitar el próximo trabajo a documentar compatibilidad y mantener el intake por polling hasta contar con un entorno de prueba adecuado.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Migración por fases",
-    "body": "Actualizar `eve` con adaptadores y comprobaciones de compatibilidad antes de activar eventos Slack o nuevas restricciones de aprobación.",
+    "title": "Migración en dos fases",
+    "body": "Actualizar primero Eve, schedules y sesiones conservando el comportamiento actual, y habilitar después `onMessage` y la política B2B con pruebas operativas.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su historial cubre el bump actual, las notas de compatibilidad y el trabajo B2B relacionado.",
+    "reason": "Es el responsable asignado y concentra el historial reciente del área afectada.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9330.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9330#issuecomment-5604688495",
-    "reviewedAt": "2026-09-09T15:47:34.194Z",
+    "reviewedAt": "2026-09-09T15:48:56.101Z",
     "mainSha": "94cb970a57ae971c0f59e2f01b6667ba033b4085"
   }
 }
