@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-09T17:29:25.512Z",
-  "updatedAt": "2026-09-09T17:10:31Z",
+  "generatedAt": "2026-09-09T20:56:33.618Z",
+  "updatedAt": "2026-09-09T20:01:31Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,50 +13,44 @@
       "bug",
       "app:marketplace",
       "reporter:miguel",
-      "triage:queued",
-      "origin:dev",
-      "mk:amazon",
+      "triage:done",
+      "clawsweeper:needs-product-decision",
       "P2",
-      "clawsweeper:needs-product-decision"
+      "origin:dev",
+      "mk:amazon"
     ],
     "createdAt": "2026-09-09T17:10:18Z",
-    "updatedAt": "2026-09-09T17:10:31Z"
+    "updatedAt": "2026-09-09T20:01:31Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué presupuesto de reprice y qué offsets deben asignarse a MX, FR e IT sin degradar la cuota compartida de Amazon EU?",
-  "rationale": "El código permite cambiar los límites, pero no define el reparto seguro entre regiones ni existe evidencia de 48 horas que permita inferirlo automáticamente.",
+  "question": "¿Autoriza el equipo Marketplace elevar escalonadamente `updatePriceLimit` de MX, FR e IT hasta 400 y vigilar durante 48 horas la cuota Amazon EU compartida?",
+  "rationale": "El código ya soporta el tamaño de chunk; decidir el presupuesto de producción y aceptar la posible competencia entre regiones requiere criterio operativo humano.",
   "options": [
     {
-      "title": "Validar límites escalonados",
-      "body": "Autorizar una subida coordinada y escalonada de los tres límites, manteniendo offsets separados y midiendo cohortes por feed durante 48 horas.",
+      "title": "Escalado coordinado",
+      "body": "Elevar los tres límites de forma escalonada, mantener los offsets actuales y validar selección, finalización, duración, locks y throttling durante 48 horas.",
       "recommended": true
     },
     {
-      "title": "Mantener capacidad actual",
-      "body": "No modificar PROD hasta obtener una traza de entradas de `needsUpdatePrice` y resultados por ítem que demuestre la causa dominante.",
-      "recommended": false
-    },
-    {
-      "title": "Redistribuir schedules EU",
-      "body": "Cambiar cadencias u offsets solo si la validación muestra que el límite mayor no reduce la cola sin competir por cuota.",
+      "title": "Instrumentar antes",
+      "body": "Mantener los límites actuales hasta disponer de una línea base completa por cohorte que descarte otro cuello de botella dominante.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Validar límites escalonados",
-    "body": "Autorizar una subida coordinada y escalonada de los tres límites, manteniendo offsets separados y midiendo cohortes por feed durante 48 horas.",
+    "title": "Escalado coordinado",
+    "body": "Elevar los tres límites de forma escalonada, mantener los offsets actuales y validar selección, finalización, duración, locks y throttling durante 48 horas.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "El historial reciente de las rutas y la discusión de SE lo sitúan cerca de la coordinación operativa de los schedules de Amazon.",
-    "confidence": "medium"
+    "reason": "Su historial reciente cubre las rutas y schedules que determinan la capacidad operativa.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9341.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9341#issuecomment-5606168133",
-    "reviewedAt": "2026-09-09T17:38:40.893Z",
-    "mainSha": "9cb306eb3bd4043d988a6fd61485d2db6ba40ceb"
+    "reviewedAt": "2026-09-09T20:56:33.618Z",
+    "mainSha": "04d5ad041d95891dc1cd4193b8a88b2804ac1312"
   }
 }
