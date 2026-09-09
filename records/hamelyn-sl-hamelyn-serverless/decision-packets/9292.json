@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-09T14:56:56.327Z",
+  "generatedAt": "2026-09-09T14:57:50.834Z",
   "updatedAt": "2026-09-09T13:27:53Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -15,42 +15,41 @@
       "app:marketplace",
       "triage:needs-info",
       "clawsweeper:needs-product-decision",
-      "marketplace-crons",
-      "P2"
+      "P2",
+      "marketplace-crons"
     ],
     "createdAt": "2026-09-09T05:30:36Z",
     "updatedAt": "2026-09-09T13:27:53Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe el watcher de marketplace esperar recurrencia antes de abrir una incidencia por un timeout aislado del lock que terminó con HTTP 500?",
-  "rationale": "La causa del error no está atribuida y el PR candidato cambia la política de alerta, no la disponibilidad del cron; esa tolerancia al riesgo requiere criterio del equipo.",
+  "question": "¿Debe el watcher de marketplace tratar un único `MongoOperationTimeoutError` acotado a 10 s como ruido y escalarlo solo cuando se repita cerca en el tiempo?",
+  "rationale": "La evidencia acredita un blip aislado, pero convertir esa observación en política de alertado determina cuándo el equipo verá futuras degradaciones de Mongo.",
   "options": [
     {
-      "title": "Mantener alerta inmediata",
-      "body": "Conservar el escalado actual hasta correlacionar los timeouts aislados con métricas de Atlas y del despliegue.",
+      "title": "Exigir repetición cercana",
+      "body": "Aceptar la política del PR abierto para ignorar un tick aislado y escalar dos eventos próximos o varias rutas afectadas.",
       "recommended": true
     },
     {
-      "title": "Escalar por recurrencia",
-      "body": "Aceptar la política del PR enlazado si se prefiere reducir ruido y se mantiene evidencia de repeticiones cercanas.",
+      "title": "Mantener escalado inmediato",
+      "body": "Conservar la clasificación catastrófica actual y tratar cada timeout del lock como una incidencia individual.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mantener alerta inmediata",
-    "body": "Conservar el escalado actual hasta correlacionar los timeouts aislados con métricas de Atlas y del despliegue.",
+    "title": "Exigir repetición cercana",
+    "body": "Aceptar la política del PR abierto para ignorar un tick aislado y escalar dos eventos próximos o varias rutas afectadas.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Es el asignado y concentra el PR que implementa la alternativa de clasificación.",
+    "reason": "Está asignado a la incidencia y propone la política concreta en el PR abierto.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9292.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9292#issuecomment-5600010469",
-    "reviewedAt": "2026-09-09T14:56:56.327Z",
+    "reviewedAt": "2026-09-09T14:57:50.834Z",
     "mainSha": "94cb970a57ae971c0f59e2f01b6667ba033b4085"
   }
 }
