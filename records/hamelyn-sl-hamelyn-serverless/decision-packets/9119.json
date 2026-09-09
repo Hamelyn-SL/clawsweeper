@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-07T05:02:33.999Z",
-  "updatedAt": "2026-09-04T09:00:37Z",
+  "generatedAt": "2026-09-09T07:57:55.747Z",
+  "updatedAt": "2026-09-09T07:51:38Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -16,38 +16,37 @@
       "P2"
     ],
     "createdAt": "2026-09-04T07:55:20Z",
-    "updatedAt": "2026-09-04T09:00:37Z"
+    "updatedAt": "2026-09-09T07:51:38Z"
   },
-  "lane": "manual_review",
+  "lane": "release_inclusion",
   "priority": "P2",
-  "question": "¿Autoriza el equipo Data un backfill one-time, limitado a proyecciones V2 desalineadas, sobre `mongodata.stocks_marketplace`?",
-  "rationale": "La corrección requerida modifica datos analíticos a escala significativa y la política del repositorio exige dry-run, muestras y confirmación humana antes de ejecutar una mutación masiva.",
+  "question": "¿Se autoriza desplegar la rehidratación única de toda `mongodata.stocks_marketplace` propuesta en https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9302?",
+  "rationale": "La corrección evita futuras desalineaciones, pero su primera ejecución muta aproximadamente 26,8 millones de filas y requiere el gate operativo de backfills.",
   "options": [
     {
-      "title": "Autorizar backfill acotado",
-      "body": "Ejecutar dry-run, revisar muestras y aplicar una actualización idempotente solo donde raw contiene valores V2 ausentes o distintos en el mirror.",
+      "title": "Autorizar la rehidratación versionada",
+      "body": "Revisar y desplegar el PR con una ventana observada, conteo previo y validación de convergencia posterior.",
       "recommended": true
     },
     {
-      "title": "Mantener el estado actual",
-      "body": "Aceptar temporalmente métricas y colas SQL potencialmente incorrectas hasta priorizar una ventana operativa específica.",
+      "title": "Hacer un backfill controlado aparte",
+      "body": "Corregir la cohorte histórica mediante un job con dry-run y conservar el PR solo para prevenir nuevas desalineaciones.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Autorizar backfill acotado",
-    "body": "Ejecutar dry-run, revisar muestras y aplicar una actualización idempotente solo donde raw contiene valores V2 ausentes o distintos en el mirror.",
+    "title": "Autorizar la rehidratación versionada",
+    "body": "Revisar y desplegar el PR con una ventana observada, conteo previo y validación de convergencia posterior.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MarcosTerroso",
-    "reason": "Es la persona más directamente vinculada al SQL de materialización que define el alcance técnico de la reparación.",
+    "person": "MiguelHamelyn",
+    "reason": "Está asignado y mantiene la implementación candidata que define el coste y la verificación del despliegue.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9119.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9119#issuecomment-5565382221",
-    "reviewedAt": "2026-09-07T05:02:33.999Z",
-    "mainSha": "7917b1c783fedca0161273534392cbdd7c693ece"
+    "reviewedAt": "2026-09-09T07:57:55.747Z",
+    "mainSha": "be83ada55c34f327d009a88da261ff2a72bf3f08"
   }
 }
