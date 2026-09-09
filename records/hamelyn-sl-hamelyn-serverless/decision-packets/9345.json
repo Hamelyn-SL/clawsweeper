@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-09T20:57:02.398Z",
+  "generatedAt": "2026-09-09T20:56:37.474Z",
   "updatedAt": "2026-09-09T19:53:57Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -14,42 +14,44 @@
       "app:infrastructure",
       "reporter:miguel",
       "triage:done",
-      "P1",
       "origin:dev",
-      "mk:amazon"
+      "mk:amazon",
+      "P1",
+      "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-09-09T17:10:27Z",
     "updatedAt": "2026-09-09T19:53:57Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Las pausas manuales planificadas de `amazon-report.yml` deben alertar siempre y requerir confirmación humana, o permitirse mediante una supresión temporal documentada?",
-  "rationale": "El umbral regional es un arreglo técnico claro, pero la excepción operativa para una ventana de mantenimiento cambia qué indisponibilidades deben despertar una alerta.",
+  "question": "¿Las pausas manuales planificadas de Amazon deben generar avisos de 30 horas o declararse como una ventana de mantenimiento que suprima y documente esos avisos?",
+  "rationale": "La cadencia horaria resolvería el hueco, pero sin esta política el mismo mecanismo puede producir ruido operativo durante mantenimientos autorizados.",
   "options": [
     {
-      "title": "Alertar siempre y documentar",
-      "body": "Mantener la alerta regional activa durante cualquier pausa y registrar la decisión operativa en el runbook.",
+      "title": "Ventana documentada",
+      "body": "Mantener el aviso regional de 30 horas y añadir una excepción de mantenimiento explícita, con deduplicación de Slack.",
       "recommended": true
     },
     {
-      "title": "Permitir supresión temporal",
-      "body": "Aceptar una excepción con caducidad y motivo explícitos para ventanas planificadas, sin desactivar la vigilancia de forma indefinida.",
+      "title": "Alertar toda pausa",
+      "body": "Avisar también por pausas manuales planificadas y tratar cada alerta como confirmación operativa requerida.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Alertar siempre y documentar",
-    "body": "Mantener la alerta regional activa durante cualquier pausa y registrar la decisión operativa en el runbook.",
+    "title": "Ventana documentada",
+    "body": "Mantener el aviso regional de 30 horas y añadir una excepción de mantenimiento explícita, con deduplicación de Slack.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "El historial reciente le vincula con el workflow de Amazon y con el supervisor que define el comportamiento de alerta.",
+    "reason": "Su cambio reciente conecta la entrega Slack con `cron-health` y es la mejor ruta para decidir la semántica operativa del aviso.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9345.md",
-    "reviewedAt": "2026-09-09T20:57:02.398Z",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9345#issuecomment-5608638169",
+    "reviewedAt": "2026-09-09T20:56:37.474Z",
     "mainSha": "04d5ad041d95891dc1cd4193b8a88b2804ac1312"
   }
 }
