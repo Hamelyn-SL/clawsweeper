@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-09T15:04:47.038Z",
-  "updatedAt": "2026-09-09T08:58:44Z",
+  "generatedAt": "2026-09-09T15:19:15.617Z",
+  "updatedAt": "2026-09-09T15:12:46Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -18,42 +18,42 @@
       "reporter:JavierHamelyn"
     ],
     "createdAt": "2026-09-08T23:54:25Z",
-    "updatedAt": "2026-09-09T08:58:44Z"
+    "updatedAt": "2026-09-09T15:12:46Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe el comportamiento estándar bloquear los watchers dependientes de reports hasta acreditar report, raw y tipado completos, o limitarse inicialmente a marketplaces con solapamientos demostrados?",
-  "rationale": "La corrección cambia cuándo se ejecutan doce disparos y puede privilegiar exactitud frente a disponibilidad; el código no puede decidir ese coste operativo.",
+  "question": "¿Debe el comportamiento estándar bloquear todos los watchers disparados por reportes hasta acreditar report, raw y tipado completos?",
+  "rationale": "La elección afecta puntualidad, disponibilidad de watchers y política de degradación de toda la flota; el código actual no fija esa prioridad operativa.",
   "options": [
     {
       "title": "Adoptar la barrera común",
-      "body": "Exigir evidencia ordenada en todos los triggers derivados de reports y alertar cuando no pueda acreditarse.",
+      "body": "Exigir evidencia ordenada para todos los disparos derivados de reportes y alertar cuando no pueda acreditarse.",
       "recommended": true
     },
     {
-      "title": "Aplicarla solo a casos demostrados",
-      "body": "Empezar por AbeBooks y MercadoLibre, manteniendo el resto de schedules hasta reunir evidencia equivalente.",
+      "title": "Limitarla a solapamientos demostrados",
+      "body": "Aplicarla primero a AbeBooks y MercadoLibre mientras se recopila evidencia equivalente para el resto.",
       "recommended": false
     },
     {
-      "title": "Mantener dispatch inmediato",
-      "body": "Conservar la puntualidad actual y degradar las comparaciones sin ventana completa como `lagged` sin bloquear sesiones.",
+      "title": "Conservar el disparo inmediato",
+      "body": "Mantener la puntualidad y degradar las comparaciones sin ventana completa a `lagged` sin bloquear sesiones.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Adoptar la barrera común",
-    "body": "Exigir evidencia ordenada en todos los triggers derivados de reports y alertar cuando no pueda acreditarse.",
+    "body": "Exigir evidencia ordenada para todos los disparos derivados de reportes y alertar cuando no pueda acreditarse.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es el asignado de la incidencia y el historial le vincula con los schedules, workflows y ruta afectados.",
+    "reason": "Es el asignado de esta issue y su historial conecta el disparador actual con la propuesta de implementación.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9288.md",
-    "reviewedAt": "2026-09-09T15:04:47.038Z",
+    "reviewedAt": "2026-09-09T15:19:15.617Z",
     "mainSha": "94cb970a57ae971c0f59e2f01b6667ba033b4085"
   }
 }

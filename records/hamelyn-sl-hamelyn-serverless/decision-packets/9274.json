@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-09T07:07:58.566Z",
-  "updatedAt": "2026-09-09T06:42:49Z",
+  "generatedAt": "2026-09-09T15:19:36.158Z",
+  "updatedAt": "2026-09-09T15:12:41Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,43 +14,41 @@
       "app:supply",
       "feature",
       "triage:done",
-      "clawsweeper:needs-product-decision",
-      "reporter:daniellopez",
-      "P2"
+      "P2",
+      "reporter:daniellopez"
     ],
     "createdAt": "2026-09-08T09:58:23Z",
-    "updatedAt": "2026-09-09T06:42:49Z"
+    "updatedAt": "2026-09-09T15:12:41Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿La cubeta y el modo de calidad deben conservarse al recargar durante una productividad abierta y limpiarse solo al iniciar o finalizar una sesión real?",
-  "rationale": "La petición exige limpiar la cubeta al iniciar sesión, pero no define si una recarga dentro de una sesión activa debe comportarse como un nuevo inicio.",
+  "question": "¿La obligación de escanear gaveta debe activarse al iniciar sesión de productividad o al iniciar sesión en la cuenta?",
+  "rationale": "La issue usa «sesión» de forma ambigua y cada interpretación cambia el momento en que un operario pierde la gaveta activa.",
   "options": [
     {
-      "title": "Conservar durante recarga",
-      "body": "Mantener cubeta y criterio si ya existe productividad activa, y limpiarlos únicamente al iniciar o finalizar una sesión real.",
+      "title": "Sesión de productividad",
+      "body": "Limpiar y pedir gaveta solo al iniciar o finalizar productividad, preservando una recarga durante una sesión activa.",
       "recommended": true
     },
     {
-      "title": "Forzar reescaneo siempre",
-      "body": "Limpiar cubeta y criterio también al montar Turbo Revisión, aunque haya una productividad abierta.",
+      "title": "Sesión de cuenta",
+      "body": "Limpiar la gaveta en cada inicio de sesión de autenticación, aunque no se inicie productividad.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Conservar durante recarga",
-    "body": "Mantener cubeta y criterio si ya existe productividad activa, y limpiarlos únicamente al iniciar o finalizar una sesión real.",
+    "title": "Sesión de productividad",
+    "body": "Limpiar y pedir gaveta solo al iniciar o finalizar productividad, preservando una recarga durante una sesión activa.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "banosdavidhamelyn",
-    "reason": "Es la persona asignada y ha concretado esta distinción en la implementación candidata.",
+    "reason": "Es la persona asignada y su PR ya implementa una de las interpretaciones para revisión.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9274.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9274#issuecomment-5583440931",
-    "reviewedAt": "2026-09-09T07:07:58.566Z",
-    "mainSha": "be83ada55c34f327d009a88da261ff2a72bf3f08"
+    "reviewedAt": "2026-09-09T15:19:36.158Z",
+    "mainSha": "94cb970a57ae971c0f59e2f01b6667ba033b4085"
   }
 }
