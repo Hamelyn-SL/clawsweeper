@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-10T05:25:54.105Z",
+  "updatedAt": "2026-09-10T05:20:35Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 9308,
+    "title": "fix: suppress isolated cron lock timeouts in the marketplace watcher",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9308",
+    "state": "open",
+    "labels": [
+      "size/L",
+      "P2"
+    ],
+    "createdAt": "2026-09-09T09:35:45Z",
+    "updatedAt": "2026-09-10T05:20:35Z",
+    "headSha": "c2ec76b85f03731cd95ca549474e7ec8e6f1c858"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe el watcher de marketplace dejar de abrir una incidencia por el primer `MongoOperationTimeoutError` acotado y exigir dos ocurrencias separadas como máximo 15 minutos?",
+  "rationale": "La corrección técnica cambia el umbral de alerta operativa; el código no puede decidir por sí solo el equilibrio entre ruido y detección temprana.",
+  "options": [
+    {
+      "title": "Exigir repetición cercana",
+      "body": "Escalar solo con dos timeouts cercanos, preservando alertas inmediatas para los demás errores Mongo catastróficos.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener alerta inmediata",
+      "body": "Conservar el primer timeout del lock como incidencia P1 y no introducir esta excepción específica.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Exigir repetición cercana",
+    "body": "Escalar solo con dos timeouts cercanos, preservando alertas inmediatas para los demás errores Mongo catastróficos.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Su historial reciente cubre la semántica de agrupación y la preservación de canónicas del watcher.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9308.md",
+    "reviewedAt": "2026-09-10T05:25:54.105Z",
+    "mainSha": "55d6dc30d47ded8d6a74fd2d23897fe79fac841d"
+  }
+}
