@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-02T20:56:22.317Z",
-  "updatedAt": "2026-09-02T20:39:13Z",
+  "generatedAt": "2026-09-12T09:03:48.770Z",
+  "updatedAt": "2026-09-11T11:30:31Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,49 +14,43 @@
       "bug",
       "app:marketplace",
       "triage:done",
+      "P1",
       "clawsweeper:needs-product-decision",
       "origin:watcher",
-      "mk:amazon",
-      "P1"
+      "mk:amazon"
     ],
     "createdAt": "2026-05-03T01:34:14Z",
-    "updatedAt": "2026-09-02T20:39:13Z"
+    "updatedAt": "2026-09-11T11:30:31Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Se aprueba reducir ahora los límites operativos de Amazon COM V2 a `withdraw: 100` y `create: 50`, aceptando menor throughput temporal para eliminar los timeouts de 800 segundos?",
-  "rationale": "El código ya ofrece los caps necesarios; la elección afecta al ritmo de drenaje del backlog y exige una decisión operativa sobre el equilibrio entre capacidad y fiabilidad.",
+  "question": "¿Debe el batch withdraw priorizar terminar dentro de 800 segundos mediante un cap temporal por tick, aunque deje retiradas pendientes para ejecuciones posteriores?",
+  "rationale": "El código actual no define el equilibrio entre latencia de retirada, capacidad de drenaje y coste de ejecuciones solapadas; es una decisión operativa del dominio.",
   "options": [
     {
-      "title": "Aplicar caps conservadores",
-      "body": "Actualizar la configuración PROD a `withdraw: 100` y `create: 50`, y revisar durante 24 horas los 504, duración de fases y backlog.",
+      "title": "Presupuesto por tick",
+      "body": "Cortar cada ejecución antes del límite de Vercel y reanudar el backlog en el tick siguiente, con métricas de cola y duración.",
       "recommended": true
     },
     {
-      "title": "Mantener capacidad actual",
-      "body": "Conservar los valores actuales y aceptar que los ticks de COM pueden seguir solapándose y terminando en el límite de Vercel.",
-      "recommended": false
-    },
-    {
-      "title": "Elegir otros límites medidos",
-      "body": "Definir caps alternativos a partir de métricas recientes de duración por fase antes de modificar la configuración viva.",
+      "title": "Aumentar capacidad por ruta",
+      "body": "Mantener el recorrido completo y ajustar concurrencia, cadencia o distribución de marketplaces tras una evaluación de coste y solapamiento.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aplicar caps conservadores",
-    "body": "Actualizar la configuración PROD a `withdraw: 100` y `create: 50`, y revisar durante 24 horas los 504, duración de fases y backlog.",
+    "title": "Presupuesto por tick",
+    "body": "Cortar cada ejecución antes del límite de Vercel y reanudar el backlog en el tick siguiente, con métricas de cola y duración.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "Miguel Angel Hernández Perdomo",
-    "reason": "Su historial reciente contiene la migración V2 y la calibración de presupuesto Amazon que determinan el comportamiento de estos caps.",
+    "person": "MiguelHamelyn",
+    "reason": "Sus merges recientes definen los límites y la estrategia de presupuesto de Amazon.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5632.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5632#issuecomment-4971269470",
-    "reviewedAt": "2026-09-02T20:56:22.317Z",
-    "mainSha": "ffd90286dac2d39d356b520899b76b13f8465698"
+    "reviewedAt": "2026-09-12T09:03:48.770Z",
+    "mainSha": "55db7e4a7cbff616c2537722dd88f2549f8bfce6"
   }
 }
