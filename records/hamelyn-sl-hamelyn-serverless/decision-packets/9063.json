@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-08T21:47:48.132Z",
-  "updatedAt": "2026-09-08T21:30:41Z",
+  "generatedAt": "2026-09-12T08:56:48.393Z",
+  "updatedAt": "2026-09-11T20:42:51Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,43 +14,46 @@
       "bug",
       "app:marketplace",
       "triage:done",
-      "clawsweeper:needs-product-decision",
-      "marketplace-crons",
-      "P2"
+      "P2",
+      "marketplace-crons"
     ],
     "createdAt": "2026-09-02T20:30:41Z",
-    "updatedAt": "2026-09-08T21:30:41Z"
+    "updatedAt": "2026-09-11T20:42:51Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se aprueba el presupuesto operativo de 225 imports OF24 por hora deslizante para Feltrinelli y la reducción equivalente para CDL?",
-  "rationale": "La calibración procede de mediciones operativas y modifica intencionadamente la capacidad de publicación durante periodos de backlog.",
+  "question": "¿Debe Marketplace investigar primero si las llamadas posteriores al merge omitieron la reserva, o aprobar una reducción adicional del presupuesto OF24 de 225 por hora?",
+  "rationale": "La cuota es empírica y reducirla cambia el equilibrio entre evitar 429 y mantener el caudal de publicación; el código no puede decidir esa política por sí solo.",
   "options": [
     {
-      "title": "Aprobar 225/h",
-      "body": "Integrar la PR tras completar su documentación y comprobar en producción la siguiente ráfaga de publicaciones.",
+      "title": "Verificar el camino desplegado",
+      "body": "Confirmar versión desplegada, clave de reserva y origen de las llamadas 429 antes de modificar el presupuesto.",
       "recommended": true
     },
     {
-      "title": "Pedir otra calibración",
-      "body": "Mantener la incidencia abierta y validar una cuota distinta antes de modificar el presupuesto compartido.",
+      "title": "Reducir el presupuesto",
+      "body": "Aceptar menor caudal y bajar el límite por tienda con pruebas de aislamiento y una ventana de observación posterior.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener 225 temporalmente",
+      "body": "Conservar el límite actual mientras se recopila una ventana saturada más amplia para decidir con más datos.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar 225/h",
-    "body": "Integrar la PR tras completar su documentación y comprobar en producción la siguiente ráfaga de publicaciones.",
+    "title": "Verificar el camino desplegado",
+    "body": "Confirmar versión desplegada, clave de reserva y origen de las llamadas 429 antes de modificar el presupuesto.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Es la persona asignada y documentó la decisión técnica y operativa recogida en la PR.",
+    "reason": "Es el asignado y autor del límite actual por tienda.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9063.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9063#issuecomment-5516322238",
-    "reviewedAt": "2026-09-08T21:47:48.132Z",
-    "mainSha": "5e573122fe240a7c516f4168147bb61666ebad16"
+    "reviewedAt": "2026-09-12T08:56:48.393Z",
+    "mainSha": "55db7e4a7cbff616c2537722dd88f2549f8bfce6"
   }
 }
