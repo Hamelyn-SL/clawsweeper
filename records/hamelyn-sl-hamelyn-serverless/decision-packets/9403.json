@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-12T09:26:23.399Z",
+  "generatedAt": "2026-09-12T09:20:38.659Z",
   "updatedAt": "2026-09-10T14:45:46Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -22,34 +22,34 @@
     "updatedAt": "2026-09-10T14:45:46Z"
   },
   "lane": "product_direction",
-  "priority": "P1",
-  "question": "¿Qué regla comercial debe gobernar los precios MX terminados en 9 y cuándo debe aplicarse respecto a la conversión actual?",
-  "rationale": "El código solo redondea al entero superior; escoger cercano, siempre superior o conservar el importe afecta márgenes y coherencia entre el catálogo y el cobro.",
+  "priority": "P2",
+  "question": "¿Qué regla comercial debe generar precios mexicanos terminados en 9 y se aprueba ampliar el contrato de dirección para distinguir estado, municipio y colonia?",
+  "rationale": "El código actual no define ni la transformación de precios ni el modelo persistido requerido; ambas decisiones afectan importes mostrados y direcciones existentes.",
   "options": [
     {
-      "title": "Conservar el redondeo actual",
-      "body": "Mantener `Math.ceil` y entregar primero las correcciones regionales que no modifican importes.",
+      "title": "Dividir y definir contratos",
+      "body": "Separar los cambios visuales del cambio de dirección y documentar la regla de precios antes de tocar importes o datos persistidos.",
       "recommended": true
     },
     {
-      "title": "Redondear al 9 más cercano",
-      "body": "Definir una regla explícita de proximidad y validar sus efectos en precio, carrito, checkout y pago.",
+      "title": "Limitarse al copy",
+      "body": "Corregir texto, moneda y formatos visibles, dejando dirección y precios para una decisión posterior.",
       "recommended": false
     },
     {
-      "title": "Redondear siempre al 9 superior",
-      "body": "Priorizar un margen no decreciente mediante una regla comercial documentada y pruebas de extremos.",
+      "title": "Adoptar una regla propuesta",
+      "body": "Aprobar explícitamente una regla de redondeo y un mapeo compatible de los campos mexicanos antes de implementar el conjunto completo.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Conservar el redondeo actual",
-    "body": "Mantener `Math.ceil` y entregar primero las correcciones regionales que no modifican importes.",
+    "title": "Dividir y definir contratos",
+    "body": "Separar los cambios visuales del cambio de dirección y documentar la regla de precios antes de tocar importes o datos persistidos.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "victor",
-    "reason": "La petición de triaje existente solicita expresamente esta definición al reportante.",
+    "person": "JavierHamelyn",
+    "reason": "El precedente regional de ecommerce que abrió conecta directamente con el desglose y la dirección de localización del trabajo.",
     "confidence": "medium"
   },
   "source": {
