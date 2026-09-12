@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-12T09:20:38.659Z",
-  "updatedAt": "2026-09-10T14:45:46Z",
+  "generatedAt": "2026-09-12T10:32:50.068Z",
+  "updatedAt": "2026-09-12T09:27:17Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,47 +15,46 @@
       "app:ecommerce",
       "triage:done",
       "reporter:victor",
-      "clawsweeper:needs-product-decision",
-      "P1"
+      "P1",
+      "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-09-10T13:34:54Z",
-    "updatedAt": "2026-09-10T14:45:46Z"
+    "updatedAt": "2026-09-12T09:27:17Z"
   },
   "lane": "product_direction",
-  "priority": "P2",
-  "question": "¿Qué regla comercial debe generar precios mexicanos terminados en 9 y se aprueba ampliar el contrato de dirección para distinguir estado, municipio y colonia?",
-  "rationale": "El código actual no define ni la transformación de precios ni el modelo persistido requerido; ambas decisiones afectan importes mostrados y direcciones existentes.",
+  "priority": "P1",
+  "question": "¿Qué regla comercial debe aplicar México a los precios terminados en 9 tras la conversión desde EUR?",
+  "rationale": "El código actual redondea monedas enteras con `Math.ceil`; elegir proximidad o redondeo superior cambia importes reales y no puede inferirse del diseño.",
   "options": [
     {
-      "title": "Dividir y definir contratos",
-      "body": "Separar los cambios visuales del cambio de dirección y documentar la regla de precios antes de tocar importes o datos persistidos.",
+      "title": "Mantener el redondeo actual primero",
+      "body": "Conservar `Math.ceil` y entregar las correcciones regionales que no modifican importes mientras se define la política comercial.",
       "recommended": true
     },
     {
-      "title": "Limitarse al copy",
-      "body": "Corregir texto, moneda y formatos visibles, dejando dirección y precios para una decisión posterior.",
+      "title": "Redondear al 9 más cercano",
+      "body": "Definir una regla de proximidad, sus límites y pruebas que garanticen el mismo precio en toda la compra.",
       "recommended": false
     },
     {
-      "title": "Adoptar una regla propuesta",
-      "body": "Aprobar explícitamente una regla de redondeo y un mapeo compatible de los campos mexicanos antes de implementar el conjunto completo.",
+      "title": "Redondear siempre al 9 superior",
+      "body": "Priorizar un margen no decreciente mediante una regla documentada y validada para cada importe convertido.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Dividir y definir contratos",
-    "body": "Separar los cambios visuales del cambio de dirección y documentar la regla de precios antes de tocar importes o datos persistidos.",
+    "title": "Mantener el redondeo actual primero",
+    "body": "Conservar `Math.ceil` y entregar las correcciones regionales que no modifican importes mientras se define la política comercial.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "El precedente regional de ecommerce que abrió conecta directamente con el desglose y la dirección de localización del trabajo.",
+    "person": "victor",
+    "reason": "El requisito de terminación en 9 procede del reporte y necesita confirmación comercial.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9403.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9403#issuecomment-5645007675",
-    "reviewedAt": "2026-09-12T09:26:23.399Z",
+    "reviewedAt": "2026-09-12T10:32:50.068Z",
     "mainSha": "55db7e4a7cbff616c2537722dd88f2549f8bfce6"
   }
 }
