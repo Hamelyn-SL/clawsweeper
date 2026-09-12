@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-12T09:20:33.580Z",
+  "updatedAt": "2026-09-10T12:46:04Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9389,
+    "title": "Auth0 post-user-registration action falla con 401 por no enviar el token de Action",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9389",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:infrastructure",
+      "triage:needs-info",
+      "P2"
+    ],
+    "createdAt": "2026-09-10T09:51:02Z",
+    "updatedAt": "2026-09-10T12:46:04Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe Hamelyn crear el documento de usuario para una alta de Auth0 aunque esa persona no llegue a iniciar sesión?",
+  "rationale": "Las dos alternativas de la incidencia cambian el contrato operativo de altas creadas por Management API; el código no puede determinar qué comportamiento de negocio debe prevalecer.",
+  "options": [
+    {
+      "title": "Mantener aprovisionamiento al registrarse",
+      "body": "Conservar la Action de registro, añadir el token y versionar su código para que las altas sin login creen el documento de usuario.",
+      "recommended": true
+    },
+    {
+      "title": "Aplazar hasta primer login",
+      "body": "Retirar las Actions redundantes y aceptar explícitamente que las altas por Management API no se materialicen en Mongo hasta el primer login.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mantener aprovisionamiento al registrarse",
+    "body": "Conservar la Action de registro, añadir el token y versionar su código para que las altas sin login creen el documento de usuario.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Es la persona con la señal histórica más fuerte sobre la frontera de autorización de Auth0 y la gestión de sus tokens.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9389.md",
+    "reviewedAt": "2026-09-12T09:20:33.580Z",
+    "mainSha": "55db7e4a7cbff616c2537722dd88f2549f8bfce6"
+  }
+}

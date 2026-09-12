@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-12T09:17:48.897Z",
+  "generatedAt": "2026-09-12T09:23:09.338Z",
   "updatedAt": "2026-09-11T10:34:16Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -13,47 +13,45 @@
       "bug",
       "app:marketplace",
       "triage:done",
-      "P2",
-      "clawsweeper:needs-product-decision"
+      "P2"
     ],
     "createdAt": "2026-09-11T10:19:54Z",
     "updatedAt": "2026-09-11T10:34:16Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe un `PackageToUpdateNotFound` verificado como `Shipped` en Amazon convertirse en `SHIPPED` local y tratarse el backlog mediante una reconciliación separada?",
-  "rationale": "La consulta remota es viable, pero la semántica persistida y el alcance operativo del backfill afectan a informes y estados históricos.",
+  "question": "¿Debe el sistema convertir `PackageToUpdateNotFound` en `SHIPPED` local únicamente tras verificar `OrderStatus=Shipped` en Amazon, y tratar el backlog con una reconciliación separada?",
+  "rationale": "La consulta remota existe, pero decidir si sustituye el error persistido, si se crea un estado diferenciado y cómo se corrige el histórico afecta a informes y a la señal operativa de `SYNC_ERROR`.",
   "options": [
     {
       "title": "Verificar y reconciliar",
-      "body": "Consultar Amazon solo para la firma exacta, persistir `SHIPPED` únicamente con respuesta `Shipped` y preparar un backfill separado con autorización.",
+      "body": "Consultar Amazon solo para la firma exacta, persistir `SHIPPED` únicamente con respuesta `Shipped` y planificar un backfill separado con autorización.",
       "recommended": true
     },
     {
       "title": "Mantener error terminal",
-      "body": "Conservar `SYNC_ERROR` para todos los rechazos y limitar la intervención a un procedimiento manual de Seller Central.",
+      "body": "Conservar `SYNC_ERROR` en todos los rechazos y resolver los casos mediante un procedimiento manual de Seller Central.",
       "recommended": false
     },
     {
-      "title": "Añadir estado diferenciado",
-      "body": "Introducir un estado o razón explícita para confirmación remota previa antes de decidir su uso en informes y recoveries.",
+      "title": "Crear estado diferenciado",
+      "body": "Persistir una razón o estado específico de confirmación remota previa antes de integrarlo en informes y recoveries.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Verificar y reconciliar",
-    "body": "Consultar Amazon solo para la firma exacta, persistir `SHIPPED` únicamente con respuesta `Shipped` y preparar un backfill separado con autorización.",
+    "body": "Consultar Amazon solo para la firma exacta, persistir `SHIPPED` únicamente con respuesta `Shipped` y planificar un backfill separado con autorización.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "Su corrección anterior definió la clasificación terminal que esta decisión amplía.",
+    "person": "Miguel Angel Hernández Perdomo",
+    "reason": "Su cambio reciente define la política terminal que esta decisión debe ampliar o conservar.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9448.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9448#issuecomment-5644977566",
-    "reviewedAt": "2026-09-12T09:17:48.897Z",
+    "reviewedAt": "2026-09-12T09:23:09.338Z",
     "mainSha": "55db7e4a7cbff616c2537722dd88f2549f8bfce6"
   }
 }

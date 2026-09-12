@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-12T09:18:20.667Z",
+  "generatedAt": "2026-09-12T09:18:04.387Z",
   "updatedAt": "2026-09-11T10:51:06Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -13,42 +13,45 @@
       "app:admin",
       "feature",
       "triage:needs-info",
-      "P1",
-      "clawsweeper:needs-product-decision"
+      "P1"
     ],
     "createdAt": "2026-09-11T10:34:56Z",
     "updatedAt": "2026-09-11T10:51:06Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué matriz de HS codes y fallback aprueba Operaciones/FedEx para US, MX y el resto de destinos, y cómo deben declararse las expediciones mixtas de MercadoLibre y Deco?",
-  "rationale": "El código evidencia divergencias, pero no permite decidir qué valor externo es correcto ni la política de agregación de commodities.",
+  "question": "¿Qué HS codes, fallbacks y longitudes han confirmado Operaciones y FedEx para US, MX y el resto de destinos no UE?",
+  "rationale": "La centralización determina datos aduaneros y el código actual contiene tablas incompatibles; el historial solo acredita la validación de Estados Unidos.",
   "options": [
     {
-      "title": "Confirmar matriz y agregación",
-      "body": "Operaciones valida códigos, fallbacks y tratamiento de envíos mixtos; después se implementa un selector único con esos contratos.",
+      "title": "Confirmar la matriz operativa",
+      "body": "Operaciones aporta los códigos por tipo, destino y fallback antes de migrar los consumidores.",
       "recommended": true
     },
     {
-      "title": "Limitar el alcance a refactor",
-      "body": "Se unifican solo los valores ya aprobados para EE. UU. y se mantiene el resto de tablas hasta recibir confirmación operativa.",
+      "title": "Limitar el alcance a US",
+      "body": "Se centraliza únicamente el comportamiento ya validado para Estados Unidos y se mantiene el resto hasta nueva confirmación.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener las tablas temporalmente",
+      "body": "No se cambia la asignación mientras no exista una confirmación operativa suficiente.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Confirmar matriz y agregación",
-    "body": "Operaciones valida códigos, fallbacks y tratamiento de envíos mixtos; después se implementa un selector único con esos contratos.",
+    "title": "Confirmar la matriz operativa",
+    "body": "Operaciones aporta los códigos por tipo, destino y fallback antes de migrar los consumidores.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Es el contribuidor más reciente de la ruta FedEx y ya participó en las decisiones de códigos y exención para EE. UU.",
-    "confidence": "medium"
+    "reason": "Es el autor de la issue y ha mantenido recientemente las reglas BL y los mapeos afectados.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9449.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9449#issuecomment-5644977839",
-    "reviewedAt": "2026-09-12T09:18:20.667Z",
+    "reviewedAt": "2026-09-12T09:18:04.387Z",
     "mainSha": "55db7e4a7cbff616c2537722dd88f2549f8bfce6"
   }
 }

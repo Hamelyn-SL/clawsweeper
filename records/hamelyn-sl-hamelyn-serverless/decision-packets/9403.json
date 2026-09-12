@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-12T09:20:38.659Z",
+  "updatedAt": "2026-09-10T14:45:46Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9403,
+    "title": "Localización México - Home, Página de producto, Checkout y Léxico",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9403",
+    "state": "open",
+    "labels": [
+      "bug",
+      "source:admin-panel",
+      "app:ecommerce",
+      "triage:done",
+      "reporter:victor",
+      "P1"
+    ],
+    "createdAt": "2026-09-10T13:34:54Z",
+    "updatedAt": "2026-09-10T14:45:46Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué regla comercial debe generar precios mexicanos terminados en 9 y se aprueba ampliar el contrato de dirección para distinguir estado, municipio y colonia?",
+  "rationale": "El código actual no define ni la transformación de precios ni el modelo persistido requerido; ambas decisiones afectan importes mostrados y direcciones existentes.",
+  "options": [
+    {
+      "title": "Dividir y definir contratos",
+      "body": "Separar los cambios visuales del cambio de dirección y documentar la regla de precios antes de tocar importes o datos persistidos.",
+      "recommended": true
+    },
+    {
+      "title": "Limitarse al copy",
+      "body": "Corregir texto, moneda y formatos visibles, dejando dirección y precios para una decisión posterior.",
+      "recommended": false
+    },
+    {
+      "title": "Adoptar una regla propuesta",
+      "body": "Aprobar explícitamente una regla de redondeo y un mapeo compatible de los campos mexicanos antes de implementar el conjunto completo.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Dividir y definir contratos",
+    "body": "Separar los cambios visuales del cambio de dirección y documentar la regla de precios antes de tocar importes o datos persistidos.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "El precedente regional de ecommerce que abrió conecta directamente con el desglose y la dirección de localización del trabajo.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9403.md",
+    "reviewedAt": "2026-09-12T09:20:38.659Z",
+    "mainSha": "55db7e4a7cbff616c2537722dd88f2549f8bfce6"
+  }
+}

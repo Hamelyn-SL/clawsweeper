@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-12T09:17:24.127Z",
+  "updatedAt": "2026-09-10T09:44:17Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 9283,
+    "title": "feat: add batch picking confirmation and remove keypad shortcuts",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9283",
+    "state": "open",
+    "labels": [
+      "size/XXL",
+      "P1"
+    ],
+    "createdAt": "2026-09-08T13:18:32Z",
+    "updatedAt": "2026-09-10T09:44:17Z",
+    "headSha": "03adc90ea0f22fb2ff53d5ea99ee50e58e9e9734"
+  },
+  "lane": "merge_risk",
+  "priority": "P1",
+  "question": "¿Debe este PR mantener el nuevo protocolo de claim/lease junto a las mejoras de interfaz, o dividirse para aterrizar primero la botonera y la confirmación por lotes sobre el modelo actual?",
+  "rationale": "El protocolo persistente cambia la recuperación ante fallos en el camino de picking y los bloqueantes requieren decidir si se corrige y valida dentro de este PR XXL o se reduce su alcance.",
+  "options": [
+    {
+      "title": "Dividir el protocolo de reservas",
+      "body": "Extraer el claim/lease a un PR específico con pruebas de repositorio, recuperación y validación física; conservar las mejoras de interfaz en cambios más acotados.",
+      "recommended": true
+    },
+    {
+      "title": "Corregir y validar en este PR",
+      "body": "Mantener el alcance actual, pero resolver todos los bloqueantes, cubrir rutas de fallo y validar el despliegue coordinado antes de quitar el draft.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar la funcionalidad de lote",
+      "body": "No continuar hasta acordar explícitamente la semántica de recuperación y bloqueo entre estaciones.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Dividir el protocolo de reservas",
+    "body": "Extraer el claim/lease a un PR específico con pruebas de repositorio, recuperación y validación física; conservar las mejoras de interfaz en cambios más acotados.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "Introdujo y ha mantenido el flujo base de confirmación de estación, donde se concentra el cambio de contrato.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9283.md",
+    "reviewedAt": "2026-09-12T09:17:24.127Z",
+    "mainSha": "55db7e4a7cbff616c2537722dd88f2549f8bfce6"
+  }
+}
