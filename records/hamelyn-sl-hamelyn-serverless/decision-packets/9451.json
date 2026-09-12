@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-12T09:09:38.410Z",
+  "updatedAt": "2026-09-11T11:30:33Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9451,
+    "title": "Volcado de datos de pedido/lotes a campos personalizados de eDesk",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9451",
+    "state": "open",
+    "labels": [
+      "source:admin-panel",
+      "app:infrastructure",
+      "feature",
+      "reporter:arineligrigore",
+      "triage:needs-info",
+      "P2"
+    ],
+    "createdAt": "2026-09-11T11:24:49Z",
+    "updatedAt": "2026-09-11T11:30:33Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué campos exactos, destinos eDesk y reglas de actualización deben aplicarse, incluidos valores de lista, contadores temporales y la preservación de `Subestado ATC`?",
+  "rationale": "El repositorio muestra una carga inicial parcial, pero la configuración real de campos y la política de actualización viven en eDesk y determinan tanto el contrato como los reintentos seguros.",
+  "options": [
+    {
+      "title": "Cerrar el catálogo y sincronizar completo",
+      "body": "ATC confirma nombres, tipos, opciones y destino; Backend implementa carga inicial y refrescos idempotentes preservando los campos manuales.",
+      "recommended": true
+    },
+    {
+      "title": "Limitarlo a la carga inicial",
+      "body": "Se amplía solo la creación de tickets, aceptando explícitamente que estados y contadores posteriores no se actualicen.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener el alcance actual",
+      "body": "Se conserva el subconjunto existente hasta que eDesk disponga de un catálogo verificable y una política de actualización aprobada.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Cerrar el catálogo y sincronizar completo",
+    "body": "ATC confirma nombres, tipos, opciones y destino; Backend implementa carga inicial y refrescos idempotentes preservando los campos manuales.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "arineligrigore",
+    "reason": "Es la persona reportante indicada para coordinar con Administración de eDesk el contrato externo que bloquea una implementación segura.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9451.md",
+    "reviewedAt": "2026-09-12T09:09:38.410Z",
+    "mainSha": "55db7e4a7cbff616c2537722dd88f2549f8bfce6"
+  }
+}
