@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-02T13:34:26.262Z",
-  "updatedAt": "2026-09-02T13:05:26Z",
+  "generatedAt": "2026-09-12T08:28:40.563Z",
+  "updatedAt": "2026-09-10T08:20:40Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -18,43 +18,42 @@
       "P2"
     ],
     "createdAt": "2026-08-25T11:13:59Z",
-    "updatedAt": "2026-09-02T13:05:26Z"
+    "updatedAt": "2026-09-10T08:20:40Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿La cohorte histórica debe exponerse primero en una vista de revisión sin encolar, o puede reintentarse automáticamente tras una confirmación operativa por cubeta?",
-  "rationale": "El único flujo existente convierte la consulta en una acción sobre Skypod; el repositorio no puede confirmar por código que las cubetas pendientes sigan físicamente disponibles.",
+  "question": "¿Debe la recuperación de `PENDING_SKYPOD` antiguo ser una vista pasiva con reencolado confirmado por Operaciones, o una recuperación automática?",
+  "rationale": "El único endpoint actual transforma la consulta en acciones de Skypod; el código no puede decidir por sí solo si las cubetas históricas siguen físicamente disponibles.",
   "options": [
     {
-      "title": "Vista pasiva y acción confirmada",
-      "body": "Añadir visibilidad de todas las cubetas envejecidas y exigir una selección confirmada antes de encolar cada reintento.",
+      "title": "Separar revisión y acción",
+      "body": "Añadir una vista histórica de solo lectura y exigir confirmación operativa por cubeta antes de encolar BIN IN.",
       "recommended": true
     },
     {
-      "title": "Reencolado tras validación operativa",
-      "body": "Operaciones confirma las cubetas disponibles y se ejecuta una recuperación limitada únicamente sobre esa lista.",
+      "title": "Recuperación automática",
+      "body": "Eliminar el límite y reencolar las cubetas elegibles, asumiendo el riesgo de actuar sobre material ya retirado.",
       "recommended": false
     },
     {
       "title": "Mantener el límite actual",
-      "body": "Conservar las doce horas y resolver los casos históricos exclusivamente con intervención operativa externa.",
+      "body": "Conservar las 12 horas y resolver la cohorte únicamente mediante el procedimiento operativo manual.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Vista pasiva y acción confirmada",
-    "body": "Añadir visibilidad de todas las cubetas envejecidas y exigir una selección confirmada antes de encolar cada reintento.",
+    "title": "Separar revisión y acción",
+    "body": "Añadir una vista histórica de solo lectura y exigir confirmación operativa por cubeta antes de encolar BIN IN.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "banosdavidhamelyn",
-    "reason": "Su trabajo reciente define el comportamiento de reintentos y las acciones de recuperación de cubetas.",
+    "reason": "Es la persona con más historial reciente en la lógica de reintentos y la interacción Skypod afectada.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8700.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8700#issuecomment-5409648772",
-    "reviewedAt": "2026-09-02T13:34:26.262Z",
-    "mainSha": "9b525e0aae70b41daab228e22437134fc1e70b6f"
+    "reviewedAt": "2026-09-12T08:28:40.563Z",
+    "mainSha": "55db7e4a7cbff616c2537722dd88f2549f8bfce6"
   }
 }
