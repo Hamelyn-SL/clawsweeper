@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-12T17:48:02.137Z",
+  "updatedAt": "2026-09-12T17:42:49Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9455,
+    "title": "Marketplace: ⏹️ order <id> moved to to_cancel (provider status 0 without tracking data after 168h)",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9455",
+    "state": "open",
+    "labels": [
+      "codex",
+      "bug",
+      "app:marketplace",
+      "triage:running",
+      "P2",
+      "marketplace-crons"
+    ],
+    "createdAt": "2026-09-12T17:30:34Z",
+    "updatedAt": "2026-09-12T17:42:49Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe un pedido de Logista que no aparece en la ventana de cuatro días poder pasar a `TO_CANCEL` tras 168 horas?",
+  "rationale": "El resultado `0` representa tanto pedido pendiente como referencia fuera de la búsqueda; los dos casos observados ya habían mostrado un estado de expedición.",
+  "options": [
+    {
+      "title": "Bloquear la cancelación por no encontrado",
+      "body": "Conservar el pedido en estado indeterminado y escalarlo a Operaciones hasta verificar la referencia en Logista.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener el timeout actual",
+      "body": "Aceptar la cancelación tras 168 horas aunque la ausencia de referencia no distinga un pedido expedido.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Bloquear la cancelación por no encontrado",
+    "body": "Conservar el pedido en estado indeterminado y escalarlo a Operaciones hasta verificar la referencia en Logista.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Daniel",
+    "reason": "Su trabajo reciente conecta el controlador actual con los adaptadores de dropshipping implicados.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9455.md",
+    "reviewedAt": "2026-09-12T17:48:02.137Z",
+    "mainSha": "55db7e4a7cbff616c2537722dd88f2549f8bfce6"
+  }
+}
