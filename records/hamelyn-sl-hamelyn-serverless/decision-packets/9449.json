@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-12T09:18:20.667Z",
+  "updatedAt": "2026-09-11T10:51:06Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9449,
+    "title": "Aduanas: centralizar la asignación de HS codes en una única función de dominio para todos los carriers",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9449",
+    "state": "open",
+    "labels": [
+      "app:admin",
+      "feature",
+      "triage:needs-info",
+      "P1"
+    ],
+    "createdAt": "2026-09-11T10:34:56Z",
+    "updatedAt": "2026-09-11T10:51:06Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Qué matriz de HS codes y fallback aprueba Operaciones/FedEx para US, MX y el resto de destinos, y cómo deben declararse las expediciones mixtas de MercadoLibre y Deco?",
+  "rationale": "El código evidencia divergencias, pero no permite decidir qué valor externo es correcto ni la política de agregación de commodities.",
+  "options": [
+    {
+      "title": "Confirmar matriz y agregación",
+      "body": "Operaciones valida códigos, fallbacks y tratamiento de envíos mixtos; después se implementa un selector único con esos contratos.",
+      "recommended": true
+    },
+    {
+      "title": "Limitar el alcance a refactor",
+      "body": "Se unifican solo los valores ya aprobados para EE. UU. y se mantiene el resto de tablas hasta recibir confirmación operativa.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Confirmar matriz y agregación",
+    "body": "Operaciones valida códigos, fallbacks y tratamiento de envíos mixtos; después se implementa un selector único con esos contratos.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Es el contribuidor más reciente de la ruta FedEx y ya participó en las decisiones de códigos y exención para EE. UU.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9449.md",
+    "reviewedAt": "2026-09-12T09:18:20.667Z",
+    "mainSha": "55db7e4a7cbff616c2537722dd88f2549f8bfce6"
+  }
+}

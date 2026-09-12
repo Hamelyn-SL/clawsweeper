@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-12T09:17:48.897Z",
+  "updatedAt": "2026-09-11T10:34:16Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9448,
+    "title": "Amazon COM/MX: 425 pedidos enviados quedan en SYNC_ERROR permanente tras un 400 PackageToUpdateNotFound que ya no se reintenta",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9448",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "triage:done",
+      "P2"
+    ],
+    "createdAt": "2026-09-11T10:19:54Z",
+    "updatedAt": "2026-09-11T10:34:16Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe un `PackageToUpdateNotFound` verificado como `Shipped` en Amazon convertirse en `SHIPPED` local y tratarse el backlog mediante una reconciliación separada?",
+  "rationale": "La consulta remota es viable, pero la semántica persistida y el alcance operativo del backfill afectan a informes y estados históricos.",
+  "options": [
+    {
+      "title": "Verificar y reconciliar",
+      "body": "Consultar Amazon solo para la firma exacta, persistir `SHIPPED` únicamente con respuesta `Shipped` y preparar un backfill separado con autorización.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener error terminal",
+      "body": "Conservar `SYNC_ERROR` para todos los rechazos y limitar la intervención a un procedimiento manual de Seller Central.",
+      "recommended": false
+    },
+    {
+      "title": "Añadir estado diferenciado",
+      "body": "Introducir un estado o razón explícita para confirmación remota previa antes de decidir su uso en informes y recoveries.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Verificar y reconciliar",
+    "body": "Consultar Amazon solo para la firma exacta, persistir `SHIPPED` únicamente con respuesta `Shipped` y preparar un backfill separado con autorización.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Su corrección anterior definió la clasificación terminal que esta decisión amplía.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9448.md",
+    "reviewedAt": "2026-09-12T09:17:48.897Z",
+    "mainSha": "55db7e4a7cbff616c2537722dd88f2549f8bfce6"
+  }
+}
