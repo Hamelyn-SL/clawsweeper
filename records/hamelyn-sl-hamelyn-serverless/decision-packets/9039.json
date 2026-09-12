@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-12T08:50:20.904Z",
+  "updatedAt": "2026-09-11T20:42:53Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9039,
+    "title": "Marketplace: cdl api create offer ❌ error [axioserror]: request failed with status code 429 at eg (.next/server/chunks/_",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9039",
+    "state": "open",
+    "labels": [
+      "codex",
+      "bug",
+      "app:marketplace",
+      "triage:done",
+      "P2",
+      "marketplace-crons"
+    ],
+    "createdAt": "2026-09-02T16:31:28Z",
+    "updatedAt": "2026-09-11T20:42:53Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe priorizarse una reducción adicional del presupuesto OF24 de CDL para eliminar 429, aceptando menor caudal, o investigarse primero tráfico no cubierto por la reserva?",
+  "rationale": "El límite actual ya aplica a las tres mutaciones y aun así hay rechazos posteriores; elegir entre menor caudal e investigación de cobertura requiere criterio operativo.",
+  "options": [
+    {
+      "title": "Medir antes de bajar",
+      "body": "Correlacionar los 429 con las reservas y el volumen OF24 real de CDL antes de modificar el límite.",
+      "recommended": true
+    },
+    {
+      "title": "Reducir preventivamente",
+      "body": "Bajar temporalmente el presupuesto de CDL y vigilar que desaparezcan los 429 a costa de menor throughput.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Medir antes de bajar",
+    "body": "Correlacionar los 429 con las reservas y el volumen OF24 real de CDL antes de modificar el límite.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Es el autor del presupuesto actual y el asignado que ya coordinó su validación operativa.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9039.md",
+    "reviewedAt": "2026-09-12T08:50:20.904Z",
+    "mainSha": "55db7e4a7cbff616c2537722dd88f2549f8bfce6"
+  }
+}
