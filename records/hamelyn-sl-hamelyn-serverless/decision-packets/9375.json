@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-12T08:56:36.687Z",
+  "updatedAt": "2026-09-10T09:14:44Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9375,
+    "title": "Almacén: decidir el flujo de auditorías (F6)",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9375",
+    "state": "open",
+    "labels": [
+      "source:admin-panel",
+      "app:admin",
+      "question",
+      "triage:needs-info",
+      "P2",
+      "reporter:danielmenchen-hamelyn"
+    ],
+    "createdAt": "2026-09-10T07:39:50Z",
+    "updatedAt": "2026-09-10T09:14:44Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se aprueba para F6 un dashboard de Admin con selección y bloqueo explícitos, o un flujo dirigido por agente con la intervención de la centralita definida?",
+  "rationale": "El código ofrece precedentes de QA, pero no determina qué proceso protege mejor la operación real ni quién asume las excepciones de bloqueo y cancelación.",
+  "options": [
+    {
+      "title": "A: dashboard con bloqueo controlado",
+      "body": "Seleccionar desde el sistema, bloquear hasta auditar o cancelar con motivo autorizado y exponer una cola operativa en Admin.",
+      "recommended": true
+    },
+    {
+      "title": "B: agente y registro asistido",
+      "body": "Delegar la selección al agente y definir expresamente si la centralita bloquea, avisa o no interviene.",
+      "recommended": false
+    },
+    {
+      "title": "Posponer F6",
+      "body": "Mantener solo la base de F3 hasta validar el flujo con el responsable de Almacén.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "A: dashboard con bloqueo controlado",
+    "body": "Seleccionar desde el sistema, bloquear hasta auditar o cancelar con motivo autorizado y exponer una cola operativa en Admin.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "danielmenchen-hamelyn",
+    "reason": "El propio hilo le sitúa como responsable de la validación operativa necesaria para cerrar estas reglas.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9375.md",
+    "reviewedAt": "2026-09-12T08:56:36.687Z",
+    "mainSha": "55db7e4a7cbff616c2537722dd88f2549f8bfce6"
+  }
+}

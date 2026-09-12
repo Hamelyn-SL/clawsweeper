@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-12T08:58:35.479Z",
+  "updatedAt": "2026-09-10T06:46:47Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9364,
+    "title": "eBay: seis ofertas llevan 4 días en bucle de retirada fallida con HTTP 400 en /api/ebay sin emitir withdraw-result",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9364",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "triage:needs-info",
+      "P2"
+    ],
+    "createdAt": "2026-09-10T06:22:58Z",
+    "updatedAt": "2026-09-10T06:46:47Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Qué estado y proceso debe aplicar eBay tras N retiradas HTTP 400 ambiguas: seguir reintentando, aparcar para revisión o alertar con una cola explícita?",
+  "rationale": "El código actual prioriza no tombstonear una oferta potencialmente viva, pero no define una salida terminal ni un circuito operativo para errores persistentes.",
+  "options": [
+    {
+      "title": "Aparcar y alertar tras umbral",
+      "body": "Conservar el mirror y registrar un estado revisable con telemetría por SKU/oferta para que Operaciones verifique eBay.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener reintentos indefinidos",
+      "body": "Preservar la seguridad de retirada actual aceptando que los casos persistentes dependan de vigilancia externa.",
+      "recommended": false
+    },
+    {
+      "title": "Tombstonear tras umbral",
+      "body": "Sacar la oferta de la cola tras N errores, asumiendo el riesgo de dejar un listing remoto todavía publicado.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aparcar y alertar tras umbral",
+    "body": "Conservar el mirror y registrar un estado revisable con telemetría por SKU/oferta para que Operaciones verifique eBay.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Miguel Angel Hernández Perdomo",
+    "reason": "Es el candidato más próximo al flujo actual de recuperación de IDs y retirada eBay.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9364.md",
+    "reviewedAt": "2026-09-12T08:58:35.479Z",
+    "mainSha": "55db7e4a7cbff616c2537722dd88f2549f8bfce6"
+  }
+}

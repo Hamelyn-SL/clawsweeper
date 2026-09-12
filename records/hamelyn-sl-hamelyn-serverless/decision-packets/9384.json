@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-12T09:06:44.884Z",
+  "updatedAt": "2026-09-11T10:12:50Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9384,
+    "title": "feat: activar los plazos nuevos de sospechoso y pago",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9384",
+    "state": "open",
+    "labels": [
+      "app:infrastructure",
+      "reporter:davidgonzalez",
+      "feature",
+      "triage:done",
+      "P1",
+      "epic:supply-plazos"
+    ],
+    "createdAt": "2026-09-10T09:40:43Z",
+    "updatedAt": "2026-09-11T10:12:50Z"
+  },
+  "lane": "release_inclusion",
+  "priority": "P1",
+  "question": "¿Autoriza Ingeniería Supply activar estos plazos en `dev` tras acreditar producción, recalcular incidencias abiertas y limpiar la cola afectada?",
+  "rationale": "El cambio altera transiciones automáticas y pagos; la corrección de código ya existe, pero el momento seguro de activación depende de datos y operaciones de producción.",
+  "options": [
+    {
+      "title": "Completar el gate operativo",
+      "body": "Mantener la activación fuera de `dev` hasta aportar despliegue, recuentos actualizados y confirmación de cola limpia.",
+      "recommended": true
+    },
+    {
+      "title": "Activar con seguimiento reforzado",
+      "body": "Promoverla tras aceptar expresamente el volumen calculado y supervisar la primera ejecución del cron.",
+      "recommended": false
+    },
+    {
+      "title": "Posponer el cambio",
+      "body": "Mantener los plazos actuales mientras Operaciones no pueda preparar la cola y los recuentos.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Completar el gate operativo",
+    "body": "Mantener la activación fuera de `dev` hasta aportar despliegue, recuentos actualizados y confirmación de cola limpia.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "Es la persona asignada y autora del cambio integrado en la rama del épico, con el contexto operativo documentado.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9384.md",
+    "reviewedAt": "2026-09-12T09:06:44.884Z",
+    "mainSha": "55db7e4a7cbff616c2537722dd88f2549f8bfce6"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-12T09:02:29.401Z",
+  "updatedAt": "2026-09-11T07:06:33Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9378,
+    "title": "EPIC · Supply — Plazos de estados en recepción y revisión",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9378",
+    "state": "open",
+    "labels": [
+      "app:supply",
+      "reporter:davidgonzalez",
+      "feature",
+      "triage:done",
+      "P1",
+      "epic:supply-plazos"
+    ],
+    "createdAt": "2026-09-10T09:39:31Z",
+    "updatedAt": "2026-09-11T07:06:33Z"
+  },
+  "lane": "release_inclusion",
+  "priority": "P1",
+  "question": "¿Se autoriza preparar el aterrizaje de `EPIC/supply-plazos` en `dev` tras validar con Operaciones los recuentos y el plan de activación de plazos?",
+  "rationale": "La integración cambia transiciones y pagos, y los plazos nuevos pueden afectar masivamente a lotes existentes; el código no puede decidir ese umbral operativo.",
+  "options": [
+    {
+      "title": "Validar y aterrizar el épico",
+      "body": "Confirmar los recuentos con Operaciones y abrir una PR única hacia `dev` que preserve el orden de activación acordado.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener la rama épica en espera",
+      "body": "Posponer el aterrizaje hasta que Operaciones confirme que la cola existente puede asumir las transiciones y pagos resultantes.",
+      "recommended": false
+    },
+    {
+      "title": "Ajustar el alcance antes de integrar",
+      "body": "Modificar primero los plazos o la estrategia de activación si la validación operativa muestra un volumen no aceptable.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Validar y aterrizar el épico",
+    "body": "Confirmar los recuentos con Operaciones y abrir una PR única hacia `dev` que preserve el orden de activación acordado.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "Ha llevado la descomposición y las integraciones de las piezas del flujo en la rama épica.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9378.md",
+    "reviewedAt": "2026-09-12T09:02:29.401Z",
+    "mainSha": "55db7e4a7cbff616c2537722dd88f2549f8bfce6"
+  }
+}

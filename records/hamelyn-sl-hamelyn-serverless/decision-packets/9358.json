@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-12T08:57:29.638Z",
+  "updatedAt": "2026-09-10T06:15:15Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9358,
+    "title": "Core: deuda residual tras el refactor de capas (carrier-manager, vocabulario legacy, runtime duplicado, project references)",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9358",
+    "state": "open",
+    "labels": [
+      "source:admin-panel",
+      "app:infrastructure",
+      "feature",
+      "triage:done",
+      "P3"
+    ],
+    "createdAt": "2026-09-10T05:44:50Z",
+    "updatedAt": "2026-09-10T06:15:15Z"
+  },
+  "lane": "product_direction",
+  "priority": "P3",
+  "question": "¿Debe el equipo adoptar el runtime construido desde `composition/` y project references por capa, o limitar este seguimiento a las correcciones pequeñas ya demostradas?",
+  "rationale": "La limpieza de etiquetas y tripwire es mecánica, pero el límite permanente entre composición e infraestructura y la estrategia de compilación requieren una decisión arquitectónica explícita.",
+  "options": [
+    {
+      "title": "Separar y priorizar residuos mecánicos",
+      "body": "Abrir seguimientos pequeños para README y tripwire, dejando runtime y project references para diseño y medición independientes.",
+      "recommended": true
+    },
+    {
+      "title": "Adoptar el runtime desde composición",
+      "body": "Definir el contrato de inyección y migrar los adaptadores a un runtime construido por composición en un PR específico.",
+      "recommended": false
+    },
+    {
+      "title": "Prototipar project references",
+      "body": "Preparar una comparación aislada de compilación y caché antes de comprometer cambios de estructura en todo `@hamelyn/core`.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Separar y priorizar residuos mecánicos",
+    "body": "Abrir seguimientos pequeños para README y tripwire, dejando runtime y project references para diseño y medición independientes.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "danielmenchen-hamelyn",
+    "reason": "Es el contribuidor reciente con la traza más directa sobre la inyección de marketplace y el alcance original del refactor.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9358.md",
+    "reviewedAt": "2026-09-12T08:57:29.638Z",
+    "mainSha": "55db7e4a7cbff616c2537722dd88f2549f8bfce6"
+  }
+}

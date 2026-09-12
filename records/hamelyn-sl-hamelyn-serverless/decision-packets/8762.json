@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-07T05:02:03.635Z",
-  "updatedAt": "2026-09-04T08:25:20Z",
+  "generatedAt": "2026-09-12T08:57:56.979Z",
+  "updatedAt": "2026-09-12T08:17:26Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -16,44 +16,43 @@
       "triage:needs-info",
       "area:cron-reliability",
       "clawsweeper:needs-product-decision",
+      "P2",
       "reporter:JavierHamelyn",
       "origin:dev",
-      "mk:amazon",
-      "P2"
+      "mk:amazon"
     ],
     "createdAt": "2026-08-26T14:38:59Z",
-    "updatedAt": "2026-09-04T08:25:20Z"
+    "updatedAt": "2026-09-12T08:17:26Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿La alerta FBA de Amazon SE debe dispararse ante cualquier fila `AMAZON_EU` activa con cantidad positiva, o solo si contradice `mk_amazonSe` o el stock maestro?",
-  "rationale": "La fuente permite calcular ambas variantes, pero no define cuál representa una incongruencia operativa real ni el nivel de ruido aceptable.",
+  "question": "¿La alerta FBA de Amazon SE debe dispararse ante cualquier fila `AMAZON_EU` activa con cantidad positiva o solo cuando contradiga `mk_amazonSe` o el stock maestro?",
+  "rationale": "El report ya conserva el canal logístico, pero la discusión y la guía no establecen qué condición representa una anomalía operativa; esa elección define ruido, severidad y respuesta.",
   "options": [
     {
-      "title": "Alertar solo contradicciones internas",
-      "body": "Comparar FBA vendible con `mk_amazonSe` y stock maestro para limitar la alerta a discrepancias accionables.",
+      "title": "Alertar solo discrepancias internas",
+      "body": "Comparar FBA activa y vendible con `mk_amazonSe` o stock maestro para evitar alertas sobre inventario FBA legítimo.",
       "recommended": true
     },
     {
       "title": "Alertar toda FBA vendible",
-      "body": "Tratar cualquier fila `AMAZON_EU` activa con cantidad positiva como señal preventiva, aceptando más volumen de alertas.",
+      "body": "Tratar cualquier fila `AMAZON_EU` activa con cantidad positiva como señal preventiva, aceptando un volumen mayor de alertas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Alertar solo contradicciones internas",
-    "body": "Comparar FBA vendible con `mk_amazonSe` y stock maestro para limitar la alerta a discrepancias accionables.",
+    "title": "Alertar solo discrepancias internas",
+    "body": "Comparar FBA activa y vendible con `mk_amazonSe` o stock maestro para evitar alertas sobre inventario FBA legítimo.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Es el responsable asignado y ya dirigió la corrección técnica que separó este alcance restante.",
+    "person": "Miguel Angel Hernández Perdomo",
+    "reason": "Aportó el análisis V2 que cerró el hilo BATCH y conoce la semántica operativa de las métricas restantes.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8762.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8762#issuecomment-5428166241",
-    "reviewedAt": "2026-09-07T05:02:03.635Z",
-    "mainSha": "7917b1c783fedca0161273534392cbdd7c693ece"
+    "reviewedAt": "2026-09-12T08:57:56.979Z",
+    "mainSha": "55db7e4a7cbff616c2537722dd88f2549f8bfce6"
   }
 }

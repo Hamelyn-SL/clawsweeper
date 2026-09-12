@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-12T09:03:41.976Z",
+  "updatedAt": "2026-09-10T08:44:54Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9373,
+    "title": "Almacén: exponer sesiones e informes mediante CLI (F5B)",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9373",
+    "state": "open",
+    "labels": [
+      "source:admin-panel",
+      "app:admin",
+      "feature",
+      "triage:done",
+      "P2",
+      "reporter:danielmenchen-hamelyn"
+    ],
+    "createdAt": "2026-09-10T07:39:46Z",
+    "updatedAt": "2026-09-10T08:44:54Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se autoriza el modelo persistente y la réplica analítica de informes inmutables de F5B una vez se integre F4?",
+  "rationale": "La issue exige conservar versiones, autoría y referencias de datos; esa frontera de persistencia y analítica no puede decidirse de forma segura solo desde el contrato actual.",
+  "options": [
+    {
+      "title": "Autorizar el archivo versionado",
+      "body": "Definir colección, esquema de referencias, retención y réplica, y ejecutar F5B después de que F4 esté integrada.",
+      "recommended": true
+    },
+    {
+      "title": "Limitar la primera entrega a consultas",
+      "body": "Entregar primero API y CLI de sesiones y agregados, dejando el archivo de informes y la réplica para una issue posterior.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Autorizar el archivo versionado",
+    "body": "Definir colección, esquema de referencias, retención y réplica, y ejecutar F5B después de que F4 esté integrada.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "danielmenchen-hamelyn",
+    "reason": "Lidera la PR de F4 que aporta el contrato de cuadrantes requerido y es quien definió el desglose funcional.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9373.md",
+    "reviewedAt": "2026-09-12T09:03:41.976Z",
+    "mainSha": "55db7e4a7cbff616c2537722dd88f2549f8bfce6"
+  }
+}
