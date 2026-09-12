@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-12T09:25:27.125Z",
-  "updatedAt": "2026-09-12T09:20:18Z",
+  "generatedAt": "2026-09-12T09:18:04.387Z",
+  "updatedAt": "2026-09-11T10:51:06Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,41 +14,46 @@
       "feature",
       "triage:needs-info",
       "clawsweeper:needs-product-decision",
-      "P2"
+      "P1"
     ],
     "createdAt": "2026-09-11T10:34:56Z",
-    "updatedAt": "2026-09-12T09:20:18Z"
+    "updatedAt": "2026-09-11T10:51:06Z"
   },
   "lane": "product_direction",
-  "priority": "P2",
-  "question": "¿Qué matriz de HS codes, fallback para tipos ausentes y tratamiento de mercancía agregada debe aprobar Operaciones/FedEx para US, MX y el resto de destinos?",
-  "rationale": "El código prueba que existen tablas divergentes, pero no permite determinar cuál es legalmente correcta por país ni cómo declarar expediciones agregadas.",
+  "priority": "P1",
+  "question": "¿Qué HS codes, fallbacks y longitudes han confirmado Operaciones y FedEx para US, MX y el resto de destinos no UE?",
+  "rationale": "La centralización determina datos aduaneros y el código actual contiene tablas incompatibles; el historial solo acredita la validación de Estados Unidos.",
   "options": [
     {
-      "title": "Validar matriz operativa",
-      "body": "Operaciones/FedEx confirma códigos, fallbacks y longitudes por carrier; después se implementa una única regla de dominio.",
+      "title": "Confirmar la matriz operativa",
+      "body": "Operaciones aporta los códigos por tipo, destino y fallback antes de migrar los consumidores.",
       "recommended": true
     },
     {
-      "title": "Limitarse al refactor sin cambios de valores",
-      "body": "Se centralizan los valores actuales sin alterar destinos, dejando la corrección normativa en una issue posterior.",
+      "title": "Limitar el alcance a US",
+      "body": "Se centraliza únicamente el comportamiento ya validado para Estados Unidos y se mantiene el resto hasta nueva confirmación.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener las tablas temporalmente",
+      "body": "No se cambia la asignación mientras no exista una confirmación operativa suficiente.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Validar matriz operativa",
-    "body": "Operaciones/FedEx confirma códigos, fallbacks y longitudes por carrier; después se implementa una única regla de dominio.",
+    "title": "Confirmar la matriz operativa",
+    "body": "Operaciones aporta los códigos por tipo, destino y fallback antes de migrar los consumidores.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Ha trabajado recientemente en la regla de EE. UU. y figura en el antecedente donde se planteó el alcance internacional.",
+    "reason": "Es el autor de la issue y ha mantenido recientemente las reglas BL y los mapeos afectados.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9449.md",
     "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9449#issuecomment-5644977839",
-    "reviewedAt": "2026-09-12T09:25:27.125Z",
+    "reviewedAt": "2026-09-12T09:18:04.387Z",
     "mainSha": "55db7e4a7cbff616c2537722dd88f2549f8bfce6"
   }
 }
