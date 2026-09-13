@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-13T07:00:42.574Z",
-  "updatedAt": "2026-09-13T06:47:48Z",
+  "generatedAt": "2026-09-13T07:03:28.842Z",
+  "updatedAt": "2026-09-13T06:57:50Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,42 +13,40 @@
       "bug",
       "app:marketplace",
       "triage:running",
-      "P2",
-      "clawsweeper:needs-product-decision"
+      "P2"
     ],
     "createdAt": "2026-09-13T06:47:38Z",
-    "updatedAt": "2026-09-13T06:47:48Z"
+    "updatedAt": "2026-09-13T06:57:50Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe Casa del Libro validar remotamente cada SKU de un lote `COMPLETE` antes de activarlo localmente, o limitar esa comprobación a las discrepancias detectadas por reconciliación?",
-  "rationale": "El contrato actual considera éxito la aceptación limpia del import, mientras que la evidencia operativa demuestra que eso no garantiza recuperación remota y la lectura adicional consume cuota OF24.",
+  "question": "¿Debe CDL exigir una comprobación remota por SKU tras un `COMPLETE` antes de confirmar ACTIVE, y cómo debe representar localmente un `PRODUCT_DISABLED` persistente?",
+  "rationale": "La elección separa la aceptación del batch de la disponibilidad comercial real y determina el estado local, la política de reintento y el seguimiento con el proveedor.",
   "options": [
     {
-      "title": "Confirmar cada publicación CDL",
-      "body": "Tras un lote terminado, consultar cada SKU mediante OF24 y activar solo las ofertas cuyo estado remoto sea `active=true`.",
+      "title": "Reconciliar antes de activar",
+      "body": "Consultar la oferta CDL tras completar el batch y confirmar ACTIVE solo cuando Mirakl responda `active=true`; registrar los bloqueos persistentes para seguimiento operativo.",
       "recommended": true
     },
     {
-      "title": "Revalidar solo discrepancias",
-      "body": "Mantener la activación actual y consultar OF24 únicamente para ausencias detectadas por el report de reconciliación.",
+      "title": "Mantener el éxito por batch",
+      "body": "Conservar ACTIVE tras `COMPLETE` y aceptar que la disponibilidad remota se gestione fuera del pipeline, con el riesgo de republicaciones sin efecto.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Confirmar cada publicación CDL",
-    "body": "Tras un lote terminado, consultar cada SKU mediante OF24 y activar solo las ofertas cuyo estado remoto sea `active=true`.",
+    "title": "Reconciliar antes de activar",
+    "body": "Consultar la oferta CDL tras completar el batch y confirmar ACTIVE solo cuando Mirakl responda `active=true`; registrar los bloqueos persistentes para seguimiento operativo.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Introdujo el contrato de publicación diferida de Mirakl que necesita definir esta semántica de confirmación.",
+    "reason": "El contrato de batches y su traducción al estado del mirror proceden de la migración que introdujo.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9458.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9458#issuecomment-5651822534",
-    "reviewedAt": "2026-09-13T07:00:42.574Z",
+    "reviewedAt": "2026-09-13T07:03:28.842Z",
     "mainSha": "55db7e4a7cbff616c2537722dd88f2549f8bfce6"
   }
 }
