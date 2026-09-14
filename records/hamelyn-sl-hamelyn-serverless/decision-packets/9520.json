@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-14T15:06:34.371Z",
-  "updatedAt": "2026-09-14T14:58:53Z",
+  "generatedAt": "2026-09-14T16:26:33.138Z",
+  "updatedAt": "2026-09-14T15:15:01Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,49 +13,48 @@
       "source:admin-panel",
       "app:marketplace",
       "feature",
-      "triage:queued",
-      "reporter:carlotavarela",
+      "triage:needs-info",
+      "clawsweeper:needs-product-decision",
       "P2",
-      "clawsweeper:needs-product-decision"
+      "reporter:carlotavarela"
     ],
     "createdAt": "2026-09-14T14:58:41Z",
-    "updatedAt": "2026-09-14T14:58:53Z"
+    "updatedAt": "2026-09-14T15:15:01Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿El distintivo debe representar el mercado o cuenta vendedora de Mercado Libre, y qué posición y tamaño exactos debe tener en la etiqueta impresa?",
-  "rationale": "La petición ofrece ejemplos, pero no define una fuente de verdad para el país ni un formato de impresión que sea seguro para el flujo de almacén.",
+  "question": "¿Qué fuente debe determinar el país impreso —el destino del envío de Mercado Libre, la cuenta/circuito de origen o ambas— y qué banda visual cabe en el papel usado por almacén?",
+  "rationale": "El código disponible ofrece el nombre de país del envío, pero el pedido persistido fija `MX`; elegir sin validar el circuito argentino y el formato físico puede clasificar o imprimir etiquetas incorrectamente.",
   "options": [
     {
-      "title": "Código por mercado vendedor",
-      "body": "Derivar AR, MX y futuros códigos de la cuenta o mercado de Mercado Libre y añadir una franja estándar fuera de las zonas críticas del transportista.",
+      "title": "Validar circuito y muestras primero",
+      "body": "Confirmar cómo entra Argentina y aportar una etiqueta anonimizada de cada país con tamaño de papel antes de fijar la fuente y la banda.",
       "recommended": true
     },
     {
-      "title": "Código por dirección destinataria",
-      "body": "Usar `address.countryCode`, asumiendo que el país del receptor coincide siempre con el mercado que debe separar el almacén.",
+      "title": "Usar destino de Mercado Libre",
+      "body": "Derivar el distintivo de `receiver_address.country` si una muestra argentina confirma que ese campo representa el país operativo de almacén.",
       "recommended": false
     },
     {
-      "title": "Validar una muestra operativa primero",
-      "body": "Acordar posición, tamaño y ejemplos impresos con almacén antes de fijar el contrato de etiquetado.",
+      "title": "Usar circuito de cuenta",
+      "body": "Asignar el distintivo por cuenta o adaptador si los destinos no representan de forma estable el país que almacén necesita separar.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Código por mercado vendedor",
-    "body": "Derivar AR, MX y futuros códigos de la cuenta o mercado de Mercado Libre y añadir una franja estándar fuera de las zonas críticas del transportista.",
+    "title": "Validar circuito y muestras primero",
+    "body": "Confirmar cómo entra Argentina y aportar una etiqueta anonimizada de cada país con tamaño de papel antes de fijar la fuente y la banda.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "Daniel",
-    "reason": "Es el contribuidor reciente con mayor conexión histórica al servicio que descarga y persiste estas etiquetas.",
-    "confidence": "high"
+    "person": "carlotavarela",
+    "reason": "Puede confirmar el uso operativo en almacén, el circuito de Argentina y la aceptación del diseño físico.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9520.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9520#issuecomment-5666137348",
-    "reviewedAt": "2026-09-14T15:06:34.371Z",
+    "reviewedAt": "2026-09-14T16:26:33.138Z",
     "mainSha": "ff3b1daeeb02785d5067eeff5266eff1ff7acdf4"
   }
 }
