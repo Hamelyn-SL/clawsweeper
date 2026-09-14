@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-14T06:27:19.238Z",
-  "updatedAt": "2026-09-14T06:19:28Z",
+  "generatedAt": "2026-09-14T07:36:16.240Z",
+  "updatedAt": "2026-09-14T06:28:40Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -14,44 +14,43 @@
       "P2"
     ],
     "createdAt": "2026-09-14T06:14:10Z",
-    "updatedAt": "2026-09-14T06:19:28Z",
+    "updatedAt": "2026-09-14T06:28:40Z",
     "headSha": "53b859a738209c094e0a2eaefdbadcfcbc5a5c3d"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Queda aprobada la retirada permanente de estas veinte declaraciones de índices, incluidas las quince variantes `mk_*.product_1`, tras revisar consumidores e hints dinámicos?",
-  "rationale": "La evidencia enlazada confirma la recreación, pero también exige validación individual antes de eliminar soporte de consultas potencialmente activas.",
+  "question": "¿Está aprobado retirar permanentemente las 20 declaraciones concretas, aceptando que scripts externos con `autoIndex` ya no podrán recrearlas?",
+  "rationale": "El código confirma el mecanismo, pero la issue canónica todavía solicita identificar el origen y separar esa decisión del inventario de índices físicos.",
   "options": [
     {
-      "title": "Confirmar el inventario y continuar",
-      "body": "Registrar la aprobación de estas veinte retiradas y mantener el PR como prevención para los procesos que ejecuten el código actualizado.",
+      "title": "Confirmar el inventario",
+      "body": "Validar con Platform que las 20 declaraciones son exactamente las aprobadas y fusionar el PR con la limpieza física planificada aparte.",
       "recommended": true
     },
     {
       "title": "Reducir el alcance",
-      "body": "Conservar las declaraciones cuyo uso o hint no esté descartado y limitar el PR a los índices con validación suficiente.",
+      "body": "Conservar las declaraciones cuyo uso o retirada aprobada aún no esté acreditado y limitar el PR a los índices confirmados.",
       "recommended": false
     },
     {
-      "title": "Mantener las declaraciones",
-      "body": "Cerrar esta vía de cambio y tratar los índices recreados como parte del contrato actual de los esquemas.",
+      "title": "Pausar la retirada",
+      "body": "Mantener las declaraciones hasta identificar el script que recreó los índices y decidir una política única de `autoIndex`.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Confirmar el inventario y continuar",
-    "body": "Registrar la aprobación de estas veinte retiradas y mantener el PR como prevención para los procesos que ejecuten el código actualizado.",
+    "title": "Confirmar el inventario",
+    "body": "Validar con Platform que las 20 declaraciones son exactamente las aprobadas y fusionar el PR con la limpieza física planificada aparte.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Su investigación reúne la evidencia operativa y delimita qué comprobaciones faltan para aprobar el inventario.",
-    "confidence": "high"
+    "reason": "Es la persona asignada al informe canónico y quien reunió la evidencia de las declaraciones candidatas.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9474.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9474#issuecomment-5659941565",
-    "reviewedAt": "2026-09-14T06:27:19.238Z",
-    "mainSha": "f3cdba11f0d9b4219bcb66f4075e0597b2bba7ac"
+    "reviewedAt": "2026-09-14T07:36:16.240Z",
+    "mainSha": "cb57e44c36343b9d11f5fa76c29b3cff99312415"
   }
 }

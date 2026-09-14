@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-14T07:36:38.789Z",
+  "updatedAt": "2026-09-14T07:26:16Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9484,
+    "title": "Los informes de marketplace mantienen un runner esperando 80-100 min a la réplica de BigQuery",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9484",
+    "state": "open",
+    "labels": [
+      "app:infrastructure",
+      "feature",
+      "triage:queued",
+      "P2",
+      "reporter:JavierHamelyn"
+    ],
+    "createdAt": "2026-09-14T07:25:56Z",
+    "updatedAt": "2026-09-14T07:26:16Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se adopta una cola durable en `apps/agents` para los watchers de informes o se amplía Lyno con capacidad aislada para esperas largas?",
+  "rationale": "Ambas vías reducen minutos de GitHub, pero difieren en durabilidad, observabilidad, coste operativo y en cómo se conservan las alertas actuales.",
+  "options": [
+    {
+      "title": "Cola durable en agentes",
+      "body": "Registrar el receipt y comprobar la ventana desde `apps/agents`, con alertas basadas en el resultado persistido.",
+      "recommended": true
+    },
+    {
+      "title": "Runner Lyno dedicado",
+      "body": "Mantener el flujo actual en uno o varios runners `lyno-waits` aislados de housekeeping y aceptar su operación continua.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Cola durable en agentes",
+    "body": "Registrar el receipt y comprobar la ventana desde `apps/agents`, con alertas basadas en el resultado persistido.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Concentra el historial reciente de la ventana de watchers y del análisis de coste que motiva la decisión.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9484.md",
+    "reviewedAt": "2026-09-14T07:36:38.789Z",
+    "mainSha": "cb57e44c36343b9d11f5fa76c29b3cff99312415"
+  }
+}
