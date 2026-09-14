@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-14T07:17:15.369Z",
-  "updatedAt": "2026-09-14T06:36:28Z",
+  "generatedAt": "2026-09-14T10:10:25.909Z",
+  "updatedAt": "2026-09-14T10:01:54Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,49 +13,43 @@
       "bug",
       "source:admin-panel",
       "app:ecommerce",
-      "triage:done",
+      "triage:queued",
       "reporter:victor",
       "clawsweeper:needs-product-decision",
       "P2"
     ],
     "createdAt": "2026-09-10T13:34:54Z",
-    "updatedAt": "2026-09-14T06:36:28Z"
+    "updatedAt": "2026-09-14T10:01:54Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué regla comercial debe aplicar México a los precios terminados en 9 tras convertir desde EUR?",
-  "rationale": "El código actual redondea al entero superior; las opciones de redondeo a 9 afectan margen y deben ser coherentes entre tarjeta, carrito y cobro.",
+  "question": "¿Debe el redondeo superior sin decimales de MXN aplicarse de forma uniforme a catálogo, carrito y cobro, o limitarse a superficies no transaccionales?",
+  "rationale": "La aclaración del reporte define el algoritmo, pero la PR deja la regla fuera y no concreta si el importe final cobrado debe seguir la misma política.",
   "options": [
     {
-      "title": "Mantener el redondeo actual inicialmente",
-      "body": "Entregar primero textos, formatos y layout sin alterar `Math.ceil` mientras se define la política de precios.",
+      "title": "Redondeo uniforme transaccional",
+      "body": "Aplicar `Math.ceil` a MXN antes de mostrar y cobrar, con pruebas de catálogo, carrito y pedido para evitar importes divergentes.",
       "recommended": true
     },
     {
-      "title": "Redondear al 9 más cercano",
-      "body": "Definir límites y pruebas para aproximar cada importe convertido al valor terminado en 9 más próximo.",
-      "recommended": false
-    },
-    {
-      "title": "Redondear siempre al 9 superior",
-      "body": "Preservar un margen no decreciente aplicando una regla documentada de redondeo ascendente al siguiente 9.",
+      "title": "Solo presentación",
+      "body": "Mantener el cobro con decimales y redondear únicamente etiquetas o tarjetas, aceptando que el cliente vea importes distintos al finalizar.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mantener el redondeo actual inicialmente",
-    "body": "Entregar primero textos, formatos y layout sin alterar `Math.ceil` mientras se define la política de precios.",
+    "title": "Redondeo uniforme transaccional",
+    "body": "Aplicar `Math.ceil` a MXN antes de mostrar y cobrar, con pruebas de catálogo, carrito y pedido para evitar importes divergentes.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "Es el asignado actual y puede coordinar la decisión comercial con el reportante y el equipo de ecommerce.",
-    "confidence": "high"
+    "person": "victor",
+    "reason": "La persona reportante aportó la especificación de redondeo y puede confirmar el alcance comercial pretendido.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9403.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9403#issuecomment-5645007675",
-    "reviewedAt": "2026-09-14T07:17:15.369Z",
-    "mainSha": "fa13b6ceab9436a4c1f81ae3ee4aef88e89d80e9"
+    "reviewedAt": "2026-09-14T10:10:25.909Z",
+    "mainSha": "54661592cd176a3f29ebb899b1b9ed757b9a780a"
   }
 }

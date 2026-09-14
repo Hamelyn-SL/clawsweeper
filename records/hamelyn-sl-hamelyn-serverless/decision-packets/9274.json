@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-09T18:58:50.309Z",
-  "updatedAt": "2026-09-09T18:42:54Z",
+  "generatedAt": "2026-09-14T10:09:35.462Z",
+  "updatedAt": "2026-09-14T09:27:50Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,43 +14,41 @@
       "app:supply",
       "feature",
       "triage:done",
-      "clawsweeper:needs-product-decision",
-      "reporter:daniellopez",
-      "P2"
+      "P2",
+      "reporter:daniellopez"
     ],
     "createdAt": "2026-09-08T09:58:23Z",
-    "updatedAt": "2026-09-09T18:42:54Z"
+    "updatedAt": "2026-09-14T09:27:50Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿La cubeta debe limpiarse solo al iniciar/finalizar productividad o también tras cada inicio de sesión autenticada?",
-  "rationale": "La petición usa «sesión» de forma ambigua y ambas interpretaciones cambian el flujo de operarios al recargar o volver a acceder.",
+  "question": "¿Debe Turbo Revisión conservar un modo «Aceptable» predeterminado por lote, o se confirma su retirada y la calidad individual como único comportamiento?",
+  "rationale": "La issue lo solicita expresamente, pero el PR vinculado lo elimina indicando una petición de producto sin una confirmación visible del reportero o del responsable funcional.",
   "options": [
     {
-      "title": "Solo productividad",
-      "body": "Limpiar al iniciar y finalizar productividad, conservando cubeta y modo tras recargar una productividad ya abierta.",
+      "title": "Confirmar calidad individual בלבד",
+      "body": "Mantener «Muy bueno» por defecto y el cambio individual a «Aceptable», revisar el PR actual y cerrar la issue tras fusionarlo.",
       "recommended": true
     },
     {
-      "title": "También autenticación",
-      "body": "Limpiar tras cada autenticación aunque exista una productividad abierta, priorizando aislamiento frente a continuidad.",
+      "title": "Conservar modo por lote",
+      "body": "Mantener la issue abierta y ampliar o separar el PR con un modo por lote que se reinicie al cambiar de lote y admita excepciones individuales.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Solo productividad",
-    "body": "Limpiar al iniciar y finalizar productividad, conservando cubeta y modo tras recargar una productividad ya abierta.",
+    "title": "Confirmar calidad individual בלבד",
+    "body": "Mantener «Muy bueno» por defecto y el cambio individual a «Aceptable», revisar el PR actual y cerrar la issue tras fusionarlo.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "daniellopez",
-    "reason": "Es quien describió el riesgo operativo que la decisión debe resolver.",
-    "confidence": "medium"
+    "person": "banosdavidhamelyn",
+    "reason": "Está asignado a la issue y al PR que documenta la decisión de alcance actualmente propuesta.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9274.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9274#issuecomment-5583440931",
-    "reviewedAt": "2026-09-09T18:58:50.309Z",
-    "mainSha": "18428b5212091ac86628444285f3830924338212"
+    "reviewedAt": "2026-09-14T10:09:35.462Z",
+    "mainSha": "54661592cd176a3f29ebb899b1b9ed757b9a780a"
   }
 }
