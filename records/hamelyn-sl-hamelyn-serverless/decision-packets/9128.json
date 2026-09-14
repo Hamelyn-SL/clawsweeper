@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-14T10:02:28.631Z",
+  "updatedAt": "2026-09-14T08:32:29Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9128,
+    "title": "Pagina de categoria/subcategoria - Correcciones ",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9128",
+    "state": "open",
+    "labels": [
+      "bug",
+      "source:admin-panel",
+      "app:ecommerce",
+      "triage:done",
+      "reporter:victor",
+      "P2"
+    ],
+    "createdAt": "2026-09-04T11:01:20Z",
+    "updatedAt": "2026-09-14T08:32:29Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué regla permanente debe gobernar las categorías de libros y qué alcance de saneamiento debe aplicarse a los productos con asignaciones masivas?",
+  "rationale": "El código puede corregir la UI, pero el límite válido de categorías y la corrección de inventario requieren criterio de catálogo antes de modificar datos activos.",
+  "options": [
+    {
+      "title": "Aprobar regla y saneamiento completo",
+      "body": "Definir el máximo o criterio taxonómico, validar el dry-run y corregir todos los productos activos que incumplan la regla.",
+      "recommended": true
+    },
+    {
+      "title": "Resolver solo la UI",
+      "body": "Aterrizar los ajustes visuales y dejar la calidad de categorías en una incidencia específica de catálogo.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener la clasificación actual",
+      "body": "Corregir únicamente la exclusión y los desempates, aceptando que productos multiclase sigan participando en varias categorías.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar regla y saneamiento completo",
+    "body": "Definir el máximo o criterio taxonómico, validar el dry-run y corregir todos los productos activos que incumplan la regla.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "alexcanHamelyn",
+    "reason": "Su historial cubre el diseño y los flujos de highlights cuyo contrato debe evolucionar con la decisión de catálogo.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9128.md",
+    "reviewedAt": "2026-09-14T10:02:28.631Z",
+    "mainSha": "54661592cd176a3f29ebb899b1b9ed757b9a780a"
+  }
+}

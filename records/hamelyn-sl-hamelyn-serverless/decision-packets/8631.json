@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-02T13:58:24.318Z",
-  "updatedAt": "2026-09-02T11:59:56Z",
+  "generatedAt": "2026-09-14T10:03:49.432Z",
+  "updatedAt": "2026-09-14T08:32:02Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -17,38 +17,42 @@
       "P2"
     ],
     "createdAt": "2026-08-22T18:12:42Z",
-    "updatedAt": "2026-09-02T11:59:56Z"
+    "updatedAt": "2026-09-14T08:32:02Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe el objetivo de 100/100 incluir un desglose público de ofertas por estado de conservación en el catálogo, o mantenerse limitado a routing y descubrimiento?",
-  "rationale": "El comentario de campo separa esa ampliación de contrato público de los fallos verificables de descubrimiento, y el scanner no demuestra por sí solo qué datos comerciales deben exponerse.",
+  "question": "¿Debe cerrarse la iniciativa tras resolver el soft-404 y validar un escaneo fresco, dejando el desglose público de ofertas como trabajo API independiente?",
+  "rationale": "El código actual confirma que el catálogo solo publica el mínimo; publicar estados y ofertas añadiría superficie de contrato que no es necesaria para corregir el fallo de rutas.",
   "options": [
     {
-      "title": "Separar el contrato de catálogo",
-      "body": "Corregir routing y enlaces de descubrimiento, reescanear y abrir una propuesta API independiente para el desglose de ofertas.",
+      "title": "Acotar al objetivo de readiness",
+      "body": "Corregir el soft-404, completar descubrimiento y exigir un escaneo fresco; el catálogo mantiene el precio mínimo actual.",
       "recommended": true
     },
     {
-      "title": "Ampliar el catálogo público",
-      "body": "Aprobar explícitamente la exposición por estado de conservación y definir límites, caché, rate limit y compatibilidad del contrato.",
+      "title": "Ampliar el contrato de catálogo",
+      "body": "Diseñar y aprobar un esquema público de ofertas por estado, con límites de datos, caché y documentación de compatibilidad.",
+      "recommended": false
+    },
+    {
+      "title": "Aceptar el estado actual",
+      "body": "Mantener 97/99 como suficiente y documentar las fricciones conocidas sin perseguir el 100/100.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Separar el contrato de catálogo",
-    "body": "Corregir routing y enlaces de descubrimiento, reescanear y abrir una propuesta API independiente para el desglose de ofertas.",
+    "title": "Acotar al objetivo de readiness",
+    "body": "Corregir el soft-404, completar descubrimiento y exigir un escaneo fresco; el catálogo mantiene el precio mínimo actual.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "La asignación y los PRs fusionados sitúan esta superficie bajo su contexto técnico y de producto reciente.",
+    "reason": "Es la persona con la trazabilidad más directa en los PRs integrados y ya está asignada a la iniciativa.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8631.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8631#issuecomment-5381981715",
-    "reviewedAt": "2026-09-02T13:58:24.318Z",
-    "mainSha": "9b525e0aae70b41daab228e22437134fc1e70b6f"
+    "reviewedAt": "2026-09-14T10:03:49.432Z",
+    "mainSha": "54661592cd176a3f29ebb899b1b9ed757b9a780a"
   }
 }
