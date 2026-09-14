@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-14T10:46:15.715Z",
+  "updatedAt": "2026-09-14T10:41:59Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 9503,
+    "title": "feat: allow re-uploading the schedule of the current day",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9503",
+    "state": "open",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-09-14T10:36:44Z",
+    "updatedAt": "2026-09-14T10:41:59Z",
+    "headSha": "cc26f093bd93e7743c102ab77fe872795aba4159"
+  },
+  "lane": "merge_risk",
+  "priority": "P2",
+  "question": "¿Debe garantizarse que una carga que cruza la medianoche de Madrid nunca se persista, o se acepta explícitamente esa ventana residual?",
+  "rationale": "El autor identifica una inconsistencia temporal conocida; cerrarla exige elegir entre una escritura condicional más compleja y asumir una excepción al contrato de `409`.",
+  "options": [
+    {
+      "title": "Cerrar la ventana atómicamente",
+      "body": "Condicionar la escritura a que la fecha Madrid del servidor siga siendo `effectiveFrom` y añadir una prueba del cruce de día.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar la excepción documentada",
+      "body": "Mantener la comprobación previa, rebajar la garantía del contrato y dejar claro que un cruce dentro de `create()` puede responder `200`.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Cerrar la ventana atómicamente",
+    "body": "Condicionar la escritura a que la fecha Madrid del servidor siga siendo `effectiveFrom` y añadir una prueba del cruce de día.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "danielmenchen-hamelyn",
+    "reason": "Es el principal autor de la ruta y ya ha delimitado las alternativas técnicas en la discusión.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9503.md",
+    "reviewedAt": "2026-09-14T10:46:15.715Z",
+    "mainSha": "06edfdafa3a6a874445d9ed1c58d364062f9ca6d"
+  }
+}
