@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-14T08:04:44.541Z",
-  "updatedAt": "2026-09-14T07:49:02Z",
+  "generatedAt": "2026-09-14T10:23:39.143Z",
+  "updatedAt": "2026-09-14T09:07:56Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,48 +14,47 @@
       "app:infrastructure",
       "feature",
       "reporter:arineligrigore",
-      "triage:queued",
-      "clawsweeper:needs-product-decision",
-      "P1"
+      "triage:needs-info",
+      "P1",
+      "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-09-11T11:24:49Z",
-    "updatedAt": "2026-09-14T07:49:02Z"
+    "updatedAt": "2026-09-14T09:07:56Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe priorizarse restaurar los campos actuales manteniendo la creación de tickets, o hacer obligatoria la escritura de campos aunque pueda bloquear la incidencia?",
-  "rationale": "La decisión contrapone continuidad del canal de soporte y completitud de la ficha; el código actual eligió continuidad, pero el reporte confirma impacto operativo por campos ausentes.",
+  "question": "¿Debe priorizarse restaurar y sincronizar los campos configurados conservando el fallback de creación, o debe bloquearse la creación de incidencias cuando eDesk rechace campos?",
+  "rationale": "La corrección depende de un contrato externo aún no confirmado y la política ante rechazos decide entre continuidad operativa y consistencia de datos.",
   "options": [
     {
-      "title": "Restaurar y diagnosticar",
-      "body": "Validar el catálogo de eDesk, corregir el mapeo y conservar un fallback observable para no detener la creación de incidencias.",
+      "title": "Restaurar y sincronizar",
+      "body": "Confirmar el catálogo de eDesk, corregir el mapeo y añadir actualización posterior sin bloquear nuevas incidencias.",
       "recommended": true
     },
     {
-      "title": "Mantener el fallback actual",
-      "body": "Aceptar temporalmente tickets sin campos mientras ATC corrige el catálogo externo, preservando la continuidad actual.",
+      "title": "Mantener el fallback temporal",
+      "body": "Aceptar tickets sin campos mientras ATC corrige la configuración externa, dejando el problema de completitud pendiente.",
       "recommended": false
     },
     {
-      "title": "Exigir la carga completa",
-      "body": "Rechazar la creación cuando fallen los campos, priorizando consistencia a costa de interrumpir el canal de incidencias.",
+      "title": "Exigir campos válidos",
+      "body": "Rechazar la creación cuando falle un campo para evitar tickets incompletos, asumiendo la interrupción del flujo.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Restaurar y diagnosticar",
-    "body": "Validar el catálogo de eDesk, corregir el mapeo y conservar un fallback observable para no detener la creación de incidencias.",
+    "title": "Restaurar y sincronizar",
+    "body": "Confirmar el catálogo de eDesk, corregir el mapeo y añadir actualización posterior sin bloquear nuevas incidencias.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "El historial le vincula tanto con la integración de tickets como con la política actual de fallback.",
+    "reason": "Está asignado al issue y el historial le vincula con el fallback que define este comportamiento.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9451.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9451#issuecomment-5644938485",
-    "reviewedAt": "2026-09-14T08:04:44.541Z",
-    "mainSha": "5f94686b2f77077dd8336b49330b90370937343e"
+    "reviewedAt": "2026-09-14T10:23:39.143Z",
+    "mainSha": "a3b8c222d6df86d83e8dc3e516292d9fed082308"
   }
 }

@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-14T07:36:38.789Z",
-  "updatedAt": "2026-09-14T07:26:16Z",
+  "generatedAt": "2026-09-14T10:25:39.511Z",
+  "updatedAt": "2026-09-14T10:15:28Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,44 +12,43 @@
     "labels": [
       "app:infrastructure",
       "feature",
-      "triage:queued",
-      "reporter:JavierHamelyn",
+      "triage:done",
+      "clawsweeper:needs-product-decision",
       "P2",
-      "clawsweeper:needs-product-decision"
+      "reporter:JavierHamelyn"
     ],
     "createdAt": "2026-09-14T07:25:56Z",
-    "updatedAt": "2026-09-14T07:26:16Z"
+    "updatedAt": "2026-09-14T10:15:28Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se adopta una cola durable en `apps/agents` para los watchers de informes o se amplía Lyno con capacidad aislada para esperas largas?",
-  "rationale": "Ambas vías reducen minutos de GitHub, pero difieren en durabilidad, observabilidad, coste operativo y en cómo se conservan las alertas actuales.",
+  "question": "¿Se aprueba invertir en una cola durable de Agents para eliminar los runners de espera, o se mantiene el diseño actual con capacidad Lyno aislada para esperas largas?",
+  "rationale": "La alternativa elegida determina permisos BigQuery, persistencia, idempotencia, alertas y operación de runners; no es una reparación mecánica acotada.",
   "options": [
     {
-      "title": "Cola durable en agentes",
-      "body": "Registrar el receipt y comprobar la ventana desde `apps/agents`, con alertas basadas en el resultado persistido.",
+      "title": "Cola durable en Agents",
+      "body": "Persistir cada solicitud, respetar su minuto reservado y publicar despacho, métricas y alertas desde el servidor.",
       "recommended": true
     },
     {
-      "title": "Runner Lyno dedicado",
-      "body": "Mantener el flujo actual en uno o varios runners `lyno-waits` aislados de housekeeping y aceptar su operación continua.",
+      "title": "Runner Lyno aislado",
+      "body": "Mantener el flujo de GitHub Actions, pero registrar varios runners dedicados que no bloqueen el housekeeping.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Cola durable en agentes",
-    "body": "Registrar el receipt y comprobar la ventana desde `apps/agents`, con alertas basadas en el resultado persistido.",
+    "title": "Cola durable en Agents",
+    "body": "Persistir cada solicitud, respetar su minuto reservado y publicar despacho, métricas y alertas desde el servidor.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Concentra el historial reciente de la ventana de watchers y del análisis de coste que motiva la decisión.",
+    "reason": "Su historial concentra el contrato de ventanas y los recibos que la decisión debe conservar.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9484.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9484#issuecomment-5660619899",
-    "reviewedAt": "2026-09-14T07:36:38.789Z",
-    "mainSha": "cb57e44c36343b9d11f5fa76c29b3cff99312415"
+    "reviewedAt": "2026-09-14T10:25:39.511Z",
+    "mainSha": "a3b8c222d6df86d83e8dc3e516292d9fed082308"
   }
 }
