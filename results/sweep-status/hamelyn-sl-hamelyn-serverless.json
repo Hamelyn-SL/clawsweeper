@@ -3,16 +3,16 @@
   "slug": "hamelyn-sl-hamelyn-serverless",
   "display_name": "Hamelyn Serverless",
   "target_repo": "hamelyn-sl/hamelyn-serverless",
-  "state": "Review comments checked",
-  "detail": "Checked selected durable Codex review comments and synced missing or stale comments. Synced: 2. Item numbers: 8883,9382,9383.",
-  "run_url": "https://github.com/Hamelyn-SL/clawsweeper/actions/runs/34834834681",
+  "state": "Review in progress",
+  "detail": "Planned 3 items across 1 shards. Capacity is 3 items; due backlog scanned is 17. Capacity reason: saturated: due backlog filled planned capacity. Review shards are starting; publish will merge artifacts when they finish.",
+  "run_url": "https://github.com/Hamelyn-SL/clawsweeper/actions/runs/34835794251",
   "planned_count": 3,
   "planned_capacity": 3,
   "planned_shards": 1,
-  "active_codex": 0,
-  "due_backlog": 3,
-  "oldest_unreviewed_at": null,
-  "capacity_reason": null,
+  "active_codex": 1,
+  "due_backlog": 17,
+  "oldest_unreviewed_at": "2026-09-14T10:38:37Z",
+  "capacity_reason": "saturated: due backlog filled planned capacity",
   "inherited_label_cleanups": null,
   "self_heal_conflict_repairs": null,
   "failed_review_retries": null,
@@ -21,16 +21,16 @@
   "bot_owned_proof_dispatches": null,
   "apply_health": {
     "schema_version": 1,
-    "generated_at": "2026-09-14T10:58:42.328Z",
-    "target_repo": "Hamelyn-SL/hamelyn-serverless",
+    "generated_at": "2026-09-14T10:54:24.887Z",
+    "target_repo": "hamelyn-sl/hamelyn-serverless",
     "mode": "comment_sync",
-    "status": "ok",
-    "summary": "3/1000 processed; 0 closed, 2 comments synced, 1 skipped; no cursor recorded.",
-    "processed": 3,
+    "status": "needs_attention",
+    "summary": "1/1000 processed; 0 closed, 0 comments synced, 1 skipped; no cursor recorded. Attention: review_comment_withheld.",
+    "processed": 1,
     "processed_limit": 1000,
     "close_limit": 0,
     "closed": 0,
-    "comment_synced": 2,
+    "comment_synced": 0,
     "skipped": 1,
     "skip_reasons": {
       "review_comment_withheld": 1
@@ -44,9 +44,9 @@
         "skip_reasons": {}
       },
       "comment_sync": {
-        "processed": 3,
+        "processed": 1,
         "closed": 0,
-        "comment_synced": 2,
+        "comment_synced": 0,
         "skipped": 1,
         "skip_reasons": {
           "review_comment_withheld": 1
@@ -77,10 +77,12 @@
       "scheduled_interval_minutes": null,
       "label": "Cycle estimate is only reported for scheduled close cursor windows."
     },
-    "attention_reasons": [],
+    "attention_reasons": [
+      "review_comment_withheld"
+    ],
     "cursor_required": false,
     "cursor": null
   },
   "last_close_apply_health": null,
-  "updated_at": "2026-09-14T10:58:42.235Z"
+  "updated_at": "2026-09-14T10:58:56.635Z"
 }
