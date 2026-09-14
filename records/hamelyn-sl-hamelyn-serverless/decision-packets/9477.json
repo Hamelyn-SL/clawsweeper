@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-14T07:29:16.511Z",
+  "generatedAt": "2026-09-14T07:30:13.004Z",
   "updatedAt": "2026-09-14T06:49:04Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -22,38 +22,38 @@
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué flujo operativo debe aprobarse para F6, incluyendo selección, bloqueo y desbloqueo, cancelación con motivo, auditorías dirigidas y alcance de la meta-auditoría?",
-  "rationale": "La propia fase F6 deja estas reglas abiertas; F3 aporta la base técnica, pero no puede decidir una política operativa de almacén.",
+  "question": "¿Debe mantenerse F6 fuera de F3 hasta que el responsable de almacén apruebe el flujo de selección, bloqueo y cancelación de auditorías?",
+  "rationale": "La propia épica reserva F6 para una decisión operativa y F3 solo puede construir una base común sin fijar ese comportamiento.",
   "options": [
     {
-      "title": "Admin con bloqueo controlado",
-      "body": "Seleccionar desde el sistema, bloquear hasta completar o cancelar con motivo autorizado y gestionar la cola desde Admin.",
+      "title": "Separar F6 de F3",
+      "body": "Mantener F3 limitado al registro y modelo común, y crear la implementación de auditorías después de una decisión escrita.",
       "recommended": true
     },
     {
-      "title": "Selección mediante agente",
-      "body": "Delegar la selección al agente y fijar expresamente si la centralita bloquea, avisa o no interviene.",
+      "title": "Aprobar flujo en Admin",
+      "body": "Elegir una cola operacional en Admin con selección, bloqueo y resolución explícitos antes de ampliar F3.",
       "recommended": false
     },
     {
-      "title": "Posponer F6 tras F3",
-      "body": "Entregar solo la base de auditorías de F3 y abrir la implementación de F6 cuando exista una decisión operativa cerrada.",
+      "title": "Aprobar flujo mediante agente",
+      "body": "Elegir selección por agente y registrar resultados por CLI, definiendo también el efecto sobre Centralita.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Admin con bloqueo controlado",
-    "body": "Seleccionar desde el sistema, bloquear hasta completar o cancelar con motivo autorizado y gestionar la cola desde Admin.",
+    "title": "Separar F6 de F3",
+    "body": "Mantener F3 limitado al registro y modelo común, y crear la implementación de auditorías después de una decisión escrita.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "danielmenchen-hamelyn",
-    "reason": "Coordina la épica y la fase F6 le señala como interlocutor para consolidar la decisión del responsable de almacén.",
+    "reason": "Es la persona asignada a la épica y quien documentó la secuencia y decisiones de integración.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9477.md",
-    "reviewedAt": "2026-09-14T07:29:16.511Z",
-    "mainSha": "fa13b6ceab9436a4c1f81ae3ee4aef88e89d80e9"
+    "reviewedAt": "2026-09-14T07:30:13.004Z",
+    "mainSha": "cb57e44c36343b9d11f5fa76c29b3cff99312415"
   }
 }
