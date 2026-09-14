@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-14T10:16:29.322Z",
-  "updatedAt": "2026-09-14T09:23:00Z",
+  "generatedAt": "2026-09-14T11:25:42.835Z",
+  "updatedAt": "2026-09-14T10:22:31Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,48 +14,47 @@
       "feature",
       "triage:queued",
       "clawsweeper:needs-product-decision",
+      "P2",
       "reporter:danielmenchen-hamelyn",
-      "epic:warehouse-telemetry",
-      "P2"
+      "epic:warehouse-telemetry"
     ],
     "createdAt": "2026-09-14T06:41:33Z",
-    "updatedAt": "2026-09-14T09:23:00Z"
+    "updatedAt": "2026-09-14T10:22:31Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe F6 mantenerse fuera de F3 hasta que se apruebe por escrito el flujo de selección, bloqueo, cancelación y auditorías dirigidas?",
-  "rationale": "Las dos alternativas funcionales cambian quién selecciona auditorías, cómo se bloquea el trabajo y qué superficie deben implementar Admin, CLI y Centralita.",
+  "question": "¿Se aprueba una lista canónica de procesos de la que deriven las listas de ritmo y catálogo antes de iniciar F3 y F5B?",
+  "rationale": "El código no puede decidir qué procesos solo miden tiempo, cuáles tienen objetivo de ritmo y cuáles admiten faltas sin imponer una política operativa.",
   "options": [
     {
-      "title": "Separar F6 de F3",
-      "body": "Mantener F3 en faltas y en el modelo común de auditorías, dejando el flujo operativo para una fase posterior definida.",
+      "title": "Definir taxonomía canónica",
+      "body": "Aprobar una lista maestra y derivar explícitamente los subconjuntos de sesiones, ritmo y catálogo antes de continuar.",
       "recommended": true
     },
     {
-      "title": "Aprobar flujo en Admin",
-      "body": "Definir una cola operacional en Admin con selección, bloqueo, cancelación y registro explícito de resultados.",
+      "title": "Mantener listas independientes",
+      "body": "Conservar listas separadas, documentando para cada proceso su inclusión y las excepciones históricas.",
       "recommended": false
     },
     {
-      "title": "Aprobar flujo mediante agente",
-      "body": "Delegar la selección al agente y fijar en CLI el registro de resultados y el efecto de Centralita.",
+      "title": "Posponer la normalización",
+      "body": "Continuar las fases actuales y registrar la divergencia como deuda que deberá resolverse antes del PR final.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Separar F6 de F3",
-    "body": "Mantener F3 en faltas y en el modelo común de auditorías, dejando el flujo operativo para una fase posterior definida.",
+    "title": "Definir taxonomía canónica",
+    "body": "Aprobar una lista maestra y derivar explícitamente los subconjuntos de sesiones, ritmo y catálogo antes de continuar.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "danielmenchen-hamelyn",
-    "reason": "La descripción de la épica y sus decisiones operativas provienen de esta persona, que además comparte la asignación de coordinación.",
+    "reason": "Coordina las fases de producto afectadas y documentó la divergencia en la epic.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9477.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9477#issuecomment-5660550775",
-    "reviewedAt": "2026-09-14T10:16:29.322Z",
-    "mainSha": "54661592cd176a3f29ebb899b1b9ed757b9a780a"
+    "reviewedAt": "2026-09-14T11:25:42.835Z",
+    "mainSha": "31cd3d47473a303b1906da1fc19dd5219d052d49"
   }
 }
