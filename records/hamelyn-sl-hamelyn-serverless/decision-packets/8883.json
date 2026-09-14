@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-14T06:12:16.120Z",
-  "updatedAt": "2026-09-14T06:06:36Z",
+  "generatedAt": "2026-09-14T07:17:13.135Z",
+  "updatedAt": "2026-09-14T06:15:17Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,48 +13,42 @@
       "bug",
       "source:admin-panel",
       "app:infrastructure",
-      "triage:running",
+      "triage:needs-info",
       "clawsweeper:needs-product-decision",
       "P2"
     ],
     "createdAt": "2026-08-28T12:19:19Z",
-    "updatedAt": "2026-09-14T06:06:36Z"
+    "updatedAt": "2026-09-14T06:15:17Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué contrato debe gobernar los índices retirados: restaurarlos como parte de los esquemas o eliminar sus declaraciones para impedir que conexiones Mongoose los recrean?",
-  "rationale": "La evidencia confirma declaraciones activas y recreaciones, pero no determina si cada índice debe existir ni cuál era la intención de la retirada.",
+  "question": "¿Qué conjunto exacto de índices debe dejar de declararse permanentemente en código y cuál debe conservarse antes de continuar las retiradas en Atlas?",
+  "rationale": "La investigación demuestra recreaciones y la PR propone una selección, pero la decisión final sobre el contrato operativo de esos índices debe ser explícita.",
   "options": [
     {
-      "title": "Acordar inventario y ciclo de vida",
-      "body": "Congelar nuevas retiradas, clasificar los 17 índices recreados y después aplicar una corrección limitada por cada decisión aprobada.",
+      "title": "Aprobar la selección de la PR",
+      "body": "Validar las 20 declaraciones incluidas, fusionar la corrección y tratar las retiradas de Atlas como una operación separada y reversible.",
       "recommended": true
     },
     {
-      "title": "Conservar las declaraciones",
-      "body": "Tratar los índices recreados como contrato de los esquemas y restaurar o mantener los que sigan siendo necesarios.",
-      "recommended": false
-    },
-    {
-      "title": "Retirar declaraciones aprobadas",
-      "body": "Eliminar de los esquemas solo los índices validados para retirada y exigir `autoIndex: false` en conexiones locales que carguen modelos.",
+      "title": "Conservar las declaraciones por ahora",
+      "body": "Pausar la modificación de esquemas hasta identificar el cliente que recreó los índices y completar la auditoría de consumidores externos.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Acordar inventario y ciclo de vida",
-    "body": "Congelar nuevas retiradas, clasificar los 17 índices recreados y después aplicar una corrección limitada por cada decisión aprobada.",
+    "title": "Aprobar la selección de la PR",
+    "body": "Validar las 20 declaraciones incluidas, fusionar la corrección y tratar las retiradas de Atlas como una operación separada y reversible.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Es el asignado que reunió la evidencia operativa más reciente y conoce el lote de índices afectado.",
+    "reason": "Ha reunido la evidencia multinodo y mantiene la implementación candidata vinculada.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8883.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8883#issuecomment-5452787658",
-    "reviewedAt": "2026-09-14T06:12:16.120Z",
-    "mainSha": "f3cdba11f0d9b4219bcb66f4075e0597b2bba7ac"
+    "reviewedAt": "2026-09-14T07:17:13.135Z",
+    "mainSha": "fa13b6ceab9436a4c1f81ae3ee4aef88e89d80e9"
   }
 }

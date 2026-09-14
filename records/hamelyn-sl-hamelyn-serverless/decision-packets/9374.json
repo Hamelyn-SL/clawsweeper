@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-14T07:18:33.600Z",
+  "updatedAt": "2026-09-14T07:12:52Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9374,
+    "title": "Almacén: registrar faltas y actualizar la calidad (F3)",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9374",
+    "state": "open",
+    "labels": [
+      "source:admin-panel",
+      "app:admin",
+      "feature",
+      "triage:running",
+      "P2",
+      "reporter:danielmenchen-hamelyn",
+      "epic:warehouse-telemetry"
+    ],
+    "createdAt": "2026-09-10T07:39:48Z",
+    "updatedAt": "2026-09-14T07:12:52Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se autorizan las colecciones persistentes y el modelo final de faltas y auditorías de F3 antes de iniciar su PR sobre `EPIC/warehouse-telemetry`?",
+  "rationale": "La fase necesita conservar historial y auditorías, pero la política prohíbe crear colecciones sin autorización expresa y la epic todavía no enumera las necesarias para F3.",
+  "options": [
+    {
+      "title": "Autorizar el modelo de F3",
+      "body": "Aprobar las colecciones e índices de faltas y auditorías, limitando F3 al registro, trazabilidad, calidad y avisos sin decidir el flujo operativo de F6.",
+      "recommended": true
+    },
+    {
+      "title": "Reutilizar almacenamiento existente",
+      "body": "Definir un almacenamiento ya existente que pueda preservar faltas, auditorías y su historial con índices compatibles.",
+      "recommended": false
+    },
+    {
+      "title": "Posponer la persistencia",
+      "body": "Mantener F3 bloqueada hasta que F6 cierre el modelo de auditorías y se autorice un diseño conjunto.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Autorizar el modelo de F3",
+    "body": "Aprobar las colecciones e índices de faltas y auditorías, limitando F3 al registro, trazabilidad, calidad y avisos sin decidir el flujo operativo de F6.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "danielmenchen-hamelyn",
+    "reason": "Coordina la epic abierta y ha establecido el orden de integración de F2 y F3.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9374.md",
+    "reviewedAt": "2026-09-14T07:18:33.600Z",
+    "mainSha": "fa13b6ceab9436a4c1f81ae3ee4aef88e89d80e9"
+  }
+}
