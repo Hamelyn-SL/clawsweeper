@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-14T18:28:57.517Z",
+  "updatedAt": "2026-09-14T18:12:21Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 9522,
+    "title": "fix: register bulrushed books as a b2b sales channel",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9522",
+    "state": "open",
+    "labels": [
+      "size/S"
+    ],
+    "createdAt": "2026-09-14T18:06:24Z",
+    "updatedAt": "2026-09-14T18:12:21Z",
+    "headSha": "d589bc0e74a1472be61a0e007958f23852ae76ed"
+  },
+  "lane": "merge_risk",
+  "priority": "P2",
+  "question": "¿Debe el alta canónica usar `BULRUSHED_BOOKS_HMBB`, mantener compatibilidad con ambos valores o confirmar que nunca se persistió esa identidad?",
+  "rationale": "La elección afecta a pedidos, stocks y analítica existentes; el código y la prueba actual ofrecen señales contradictorias y no pueden resolver qué identidad histórica es la correcta.",
+  "options": [
+    {
+      "title": "Verificar y preservar la identidad histórica",
+      "body": "Consultar los registros operativos disponibles, registrar el valor realmente usado y añadir una prueba de regresión para el título original.",
+      "recommended": true
+    },
+    {
+      "title": "Compatibilidad dual explícita",
+      "body": "Conservar ambos valores en los consumidores mientras se decide una migración segura de los datos históricos.",
+      "recommended": false
+    },
+    {
+      "title": "Confirmar que no hubo ejecución persistida",
+      "body": "Documentar la evidencia de ausencia de datos y mantener `BULRUSHED_BOOKS` como identidad canónica.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Verificar y preservar la identidad histórica",
+    "body": "Consultar los registros operativos disponibles, registrar el valor realmente usado y añadir una prueba de regresión para el título original.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su historial conecta directamente la derivación de identidad provisional y la clasificación B2B afectadas.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9522.md",
+    "reviewedAt": "2026-09-14T18:28:57.517Z",
+    "mainSha": "ff3b1daeeb02785d5067eeff5266eff1ff7acdf4"
+  }
+}
