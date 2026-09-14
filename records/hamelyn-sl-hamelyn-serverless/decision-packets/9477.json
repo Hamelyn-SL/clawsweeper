@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-14T07:29:16.511Z",
+  "updatedAt": "2026-09-14T06:49:04Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9477,
+    "title": "EPIC · Almacén — Telemetría de operarios (F1–F6)",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9477",
+    "state": "open",
+    "labels": [
+      "app:admin",
+      "feature",
+      "triage:queued",
+      "P2",
+      "reporter:danielmenchen-hamelyn",
+      "epic:warehouse-telemetry"
+    ],
+    "createdAt": "2026-09-14T06:41:33Z",
+    "updatedAt": "2026-09-14T06:49:04Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué flujo operativo debe aprobarse para F6, incluyendo selección, bloqueo y desbloqueo, cancelación con motivo, auditorías dirigidas y alcance de la meta-auditoría?",
+  "rationale": "La propia fase F6 deja estas reglas abiertas; F3 aporta la base técnica, pero no puede decidir una política operativa de almacén.",
+  "options": [
+    {
+      "title": "Admin con bloqueo controlado",
+      "body": "Seleccionar desde el sistema, bloquear hasta completar o cancelar con motivo autorizado y gestionar la cola desde Admin.",
+      "recommended": true
+    },
+    {
+      "title": "Selección mediante agente",
+      "body": "Delegar la selección al agente y fijar expresamente si la centralita bloquea, avisa o no interviene.",
+      "recommended": false
+    },
+    {
+      "title": "Posponer F6 tras F3",
+      "body": "Entregar solo la base de auditorías de F3 y abrir la implementación de F6 cuando exista una decisión operativa cerrada.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Admin con bloqueo controlado",
+    "body": "Seleccionar desde el sistema, bloquear hasta completar o cancelar con motivo autorizado y gestionar la cola desde Admin.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "danielmenchen-hamelyn",
+    "reason": "Coordina la épica y la fase F6 le señala como interlocutor para consolidar la decisión del responsable de almacén.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9477.md",
+    "reviewedAt": "2026-09-14T07:29:16.511Z",
+    "mainSha": "fa13b6ceab9436a4c1f81ae3ee4aef88e89d80e9"
+  }
+}
