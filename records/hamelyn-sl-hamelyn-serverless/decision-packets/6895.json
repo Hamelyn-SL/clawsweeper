@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-02T11:04:34.495Z",
-  "updatedAt": "2026-09-02T10:55:27Z",
+  "generatedAt": "2026-09-14T09:06:24.049Z",
+  "updatedAt": "2026-09-14T08:31:13Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -16,47 +16,41 @@
       "business-logic",
       "hackathon",
       "clawsweeper:needs-product-decision",
-      "origin:bl",
-      "P3"
+      "P3",
+      "origin:bl"
     ],
     "createdAt": "2026-07-06T06:47:16Z",
-    "updatedAt": "2026-09-02T10:55:27Z"
+    "updatedAt": "2026-09-14T08:31:13Z"
   },
   "lane": "product_direction",
   "priority": "P3",
-  "question": "¿Debe esta issue conservarse como paraguas actualizado del dominio Supply o reducirse al bloque B2B y crear seguimientos separados para cualquier residual fuera de `buying`?",
-  "rationale": "La extracción existente reubicó parte del alcance bajo `buying`, pero la issue conserva todos los checkboxes abiertos y no fija quién valida B2B ni qué fronteras siguen pendientes.",
+  "question": "¿Deben `incidents` y `b2b-orders` continuar como bloques de la épica `buying`, o deben reasignarse a dominios distintos y salir de su checklist?",
+  "rationale": "La extracción fusionada reorganizó Supply como `buying` y cubre varios bloques, pero el código y los documentos no establecen con suficiente claridad la frontera pendiente de incidencias y B2B.",
   "options": [
     {
-      "title": "Actualizar y conservar la épica",
-      "body": "Reconciliar los checkboxes con los bloques `buying` cerrados y dejar B2B y cualquier residual explícitamente asignados aquí.",
+      "title": "Mantener los dos bloques en Buying",
+      "body": "Crear subissues BL para incidencias y B2B, completar sus artefactos F1–F5 y actualizar el checklist de esta épica.",
       "recommended": true
     },
     {
-      "title": "Reducirla a B2B",
-      "body": "Cerrar el alcance ya absorbido por `buying` y renombrar esta issue para que siga únicamente la extracción B2B pendiente.",
-      "recommended": false
-    },
-    {
-      "title": "Dividir el residual",
-      "body": "Crear una issue canónica por B2B y otra por cualquier bloque no mapeado, dejando esta como índice histórico.",
+      "title": "Reasignar por dominio",
+      "body": "Mover cada bloque pendiente al dominio que decida el equipo y cerrar esta épica tras reflejar esa frontera en su checklist.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Actualizar y conservar la épica",
-    "body": "Reconciliar los checkboxes con los bloques `buying` cerrados y dejar B2B y cualquier residual explícitamente asignados aquí.",
+    "title": "Mantener los dos bloques en Buying",
+    "body": "Crear subissues BL para incidencias y B2B, completar sus artefactos F1–F5 y actualizar el checklist de esta épica.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es quien definió el checklist original y mantiene el proceso BL relacionado.",
+    "reason": "Es el autor de la épica y aparece como contribuidor de la documentación y el código vigentes que definen su alcance.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6895.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6895#issuecomment-4911147057",
-    "reviewedAt": "2026-09-02T11:04:34.495Z",
-    "mainSha": "9220c7fc5bd5c7e3b77dd3e4b4bd090f86f37df4"
+    "reviewedAt": "2026-09-14T09:06:24.049Z",
+    "mainSha": "f2c64ff0f7aa52807eb1692359970ed3251a1644"
   }
 }
