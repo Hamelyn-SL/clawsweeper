@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-14T11:37:11.790Z",
+  "generatedAt": "2026-09-14T11:43:55.998Z",
   "updatedAt": "2026-09-14T11:27:51Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -10,46 +10,45 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9500",
     "state": "open",
     "labels": [
-      "triage:done"
+      "triage:running"
     ],
     "createdAt": "2026-09-14T10:06:16Z",
     "updatedAt": "2026-09-14T11:27:51Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué política operativa aprobamos para umbrales por marketplace, recordatorios persistentes y pausas manuales visibles de los workflows?",
-  "rationale": "Amazon tiene un umbral concreto, pero el alcance requiere decidir los márgenes de otros marketplaces y cuándo una pausa autorizada puede silenciar avisos.",
+  "question": "¿Qué contrato de estado persistente se aprueba para deduplicar avisos, emitir un recordatorio acotado y notificar recuperaciones sin crear estructuras de datos no autorizadas?",
+  "rationale": "Los criterios exigen comportamiento entre ejecuciones, pero el monitor actual no conserva ese estado y la política del repositorio exige autorización explícita para nuevas estructuras BigQuery o MongoDB.",
   "options": [
     {
-      "title": "Política explícita y acotada",
-      "body": "Fijar Amazon en 30 h, derivar márgenes por cadencia y enviar un aviso inicial, recuperación y un recordatorio a los siete días; toda pausa sigue visible.",
+      "title": "Definir una superficie existente",
+      "body": "Aprobar una fuente de estado ya existente y su retención antes de implementar el ciclo completo de alertas.",
       "recommended": true
     },
     {
-      "title": "Solo aviso y recuperación",
-      "body": "Notificar la primera superación y la recuperación sin recordatorios mientras se define una política de guardia.",
+      "title": "Autorizar almacenamiento específico",
+      "body": "Autorizar una estructura mínima de monitorización con esquema, volumen y responsable para guardar el estado de cada incidente.",
       "recommended": false
     },
     {
-      "title": "Mantener la vigilancia semanal",
-      "body": "Conservar la cobertura global existente y aceptar el retraso de detección hasta una decisión posterior.",
+      "title": "Separar la primera fase",
+      "body": "Limitar inicialmente el cambio a frescura diaria regional y dejar deduplicación, recordatorios y recuperación para una issue posterior.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Política explícita y acotada",
-    "body": "Fijar Amazon en 30 h, derivar márgenes por cadencia y enviar un aviso inicial, recuperación y un recordatorio a los siete días; toda pausa sigue visible.",
+    "title": "Definir una superficie existente",
+    "body": "Aprobar una fuente de estado ya existente y su retención antes de implementar el ciclo completo de alertas.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MarcosTerroso",
-    "reason": "Documentó el alcance separado y los criterios operativos que requieren confirmación.",
+    "person": "danielmenchen-hamelyn",
+    "reason": "Introdujo el monitor actual y puede calibrar el contrato operativo sin degradar sus detecciones existentes.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9500.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9500#issuecomment-5662447811",
-    "reviewedAt": "2026-09-14T11:37:11.790Z",
+    "reviewedAt": "2026-09-14T11:43:55.998Z",
     "mainSha": "31cd3d47473a303b1906da1fc19dd5219d052d49"
   }
 }
