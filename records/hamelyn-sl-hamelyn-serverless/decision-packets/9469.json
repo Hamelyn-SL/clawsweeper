@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-14T12:00:26.589Z",
-  "updatedAt": "2026-09-14T11:52:48Z",
+  "generatedAt": "2026-09-14T12:13:55.236Z",
+  "updatedAt": "2026-09-14T12:00:06Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -18,38 +18,37 @@
       "P2"
     ],
     "createdAt": "2026-09-14T05:50:17Z",
-    "updatedAt": "2026-09-14T11:52:48Z"
+    "updatedAt": "2026-09-14T12:00:06Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe TodoColección seguir ejecutándose como cobertura `UNAVAILABLE` visible, o retirarse del colector hasta disponer de una fuente autenticada?",
-  "rationale": "Las dos opciones cambian la semántica operativa del informe: la implementación actual sólo diferencia `SUCCESS` y `ERROR`.",
+  "question": "¿Debe TodoColección seguir ejecutándose a diario como `UNAVAILABLE` con alerta de cobertura, o retirarse por completo hasta disponer de una fuente autenticada?",
+  "rationale": "La elección cambia el significado de la salud del marketplace y de las alertas operativas; el código no puede decidir esa política por sí solo.",
   "options": [
     {
-      "title": "Mantener cobertura no disponible",
-      "body": "Registrar el 403 como `UNAVAILABLE`, mostrar la antigüedad y evitar que el job falle por una restricción externa persistente.",
+      "title": "Mantener cobertura degradada",
+      "body": "Registrar el 403 como `UNAVAILABLE`, conservar el sondeo diario y exponer la antigüedad de la última métrica válida.",
       "recommended": true
     },
     {
       "title": "Retirar temporalmente la fuente",
-      "body": "Excluir TodoColección del job y de `collection_status` hasta contar con acceso autenticado verificable.",
+      "body": "Excluir TodoColección del estado actual hasta que exista un acceso autenticado o una API apta para recopilar sus métricas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mantener cobertura no disponible",
-    "body": "Registrar el 403 como `UNAVAILABLE`, mostrar la antigüedad y evitar que el job falle por una restricción externa persistente.",
+    "title": "Mantener cobertura degradada",
+    "body": "Registrar el 403 como `UNAVAILABLE`, conservar el sondeo diario y exponer la antigüedad de la última métrica válida.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "PabloMoran34",
-    "reason": "Introdujo el colector y realizó el mantenimiento más reciente de los archivos afectados.",
+    "reason": "Introdujo el recolector y la semántica de estado que requieren esta decisión.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9469.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9469#issuecomment-5659669896",
-    "reviewedAt": "2026-09-14T12:00:26.589Z",
+    "reviewedAt": "2026-09-14T12:13:55.236Z",
     "mainSha": "31cd3d47473a303b1906da1fc19dd5219d052d49"
   }
 }
