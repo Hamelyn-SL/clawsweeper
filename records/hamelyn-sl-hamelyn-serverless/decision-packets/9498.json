@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-14T10:17:05.830Z",
+  "updatedAt": "2026-09-14T10:11:46Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 9498,
+    "title": "feat: add personal dashboard alerts with Slack delivery",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9498",
+    "state": "open",
+    "labels": [
+      "size/XXL"
+    ],
+    "createdAt": "2026-09-14T09:58:10Z",
+    "updatedAt": "2026-09-14T10:11:46Z",
+    "headSha": "34c84aa068a45fcd7e47b8ba01d5928e9f1a3d89"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se autoriza crear y operar `marketplace_health.alert_rules` y `marketplace_health.alert_events` para alertas personales, incluidos emails de usuarios y el cron horario de Slack?",
+  "rationale": "La política del repositorio exige autorización expresa para nuevas tablas de BigQuery; no es una decisión que una corrección mecánica pueda sustituir.",
+  "options": [
+    {
+      "title": "Autorizar el esquema con alcance explícito",
+      "body": "Aprobar tablas, retención, responsable y credenciales; entonces se corrige la transacción y se valida la entrega.",
+      "recommended": true
+    },
+    {
+      "title": "Separar la persistencia del PR",
+      "body": "Mantener el diseño de interfaz y aplazar tablas, cron y entrega hasta una propuesta de plataforma aprobada.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Autorizar el esquema con alcance explícito",
+    "body": "Aprobar tablas, retención, responsable y credenciales; entonces se corrige la transacción y se valida la entrega.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su historial reciente sobre el helper de BigQuery le sitúa cerca de la decisión de operación y caché de esta integración.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9498.md",
+    "reviewedAt": "2026-09-14T10:17:05.830Z",
+    "mainSha": "54661592cd176a3f29ebb899b1b9ed757b9a780a"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-14T10:17:04.693Z",
+  "updatedAt": "2026-09-14T10:07:05Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9500,
+    "title": "cron-health: detectar cada hora la ausencia de ejecuciones y snapshots Amazon de más de 30 h",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9500",
+    "state": "open",
+    "labels": [
+      "triage:queued"
+    ],
+    "createdAt": "2026-09-14T10:06:16Z",
+    "updatedAt": "2026-09-14T10:07:05Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Qué política operativa deben seguir los recordatorios persistentes y las pausas manuales de `amazon-report.yml`?",
+  "rationale": "La incidencia exige deduplicación, recordatorios y supresiones con caducidad, pero no fija su intervalo ni quién puede aprobarlas.",
+  "options": [
+    {
+      "title": "Política explícita y acotada",
+      "body": "Definir aviso inicial, recordatorio limitado y supresión temporal con motivo, responsable y caducidad antes de implementar.",
+      "recommended": true
+    },
+    {
+      "title": "Sólo aviso y recuperación",
+      "body": "Avisar del primer incumplimiento y de la recuperación, sin recordatorios mientras no haya política de guardia.",
+      "recommended": false
+    },
+    {
+      "title": "Conservar la vigilancia semanal",
+      "body": "Mantener la cobertura actual y aceptar que otra ausencia puede detectarse con retraso.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Política explícita y acotada",
+    "body": "Definir aviso inicial, recordatorio limitado y supresión temporal con motivo, responsable y caducidad antes de implementar.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su trabajo reciente conecta la entrega Slack compartida con el monitor que debe adoptar esta política.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9500.md",
+    "reviewedAt": "2026-09-14T10:17:04.693Z",
+    "mainSha": "54661592cd176a3f29ebb899b1b9ed757b9a780a"
+  }
+}
