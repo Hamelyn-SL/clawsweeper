@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-12T08:56:36.687Z",
-  "updatedAt": "2026-09-10T09:14:44Z",
+  "generatedAt": "2026-09-14T06:50:18.110Z",
+  "updatedAt": "2026-09-14T06:43:08Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,49 +13,49 @@
       "source:admin-panel",
       "app:admin",
       "question",
-      "triage:needs-info",
+      "triage:queued",
       "clawsweeper:needs-product-decision",
+      "P2",
       "reporter:danielmenchen-hamelyn",
-      "P2"
+      "epic:warehouse-telemetry"
     ],
     "createdAt": "2026-09-10T07:39:50Z",
-    "updatedAt": "2026-09-10T09:14:44Z"
+    "updatedAt": "2026-09-14T06:43:08Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se aprueba para F6 un dashboard de Admin con selección y bloqueo explícitos, o un flujo dirigido por agente con la intervención de la centralita definida?",
-  "rationale": "El código ofrece precedentes de QA, pero no determina qué proceso protege mejor la operación real ni quién asume las excepciones de bloqueo y cancelación.",
+  "question": "¿Qué flujo operativo aprueba el responsable de almacén para F6, incluida la regla de bloqueo, su desbloqueo, la cancelación con motivo, las auditorías dirigidas y el alcance de la meta-auditoría?",
+  "rationale": "El código actual solo aporta un precedente de QA de recepción y F3 excluye deliberadamente la selección y el bloqueo; elegir esas reglas desde una implementación impondría una política operativa no acordada.",
   "options": [
     {
-      "title": "A: dashboard con bloqueo controlado",
-      "body": "Seleccionar desde el sistema, bloquear hasta auditar o cancelar con motivo autorizado y exponer una cola operativa en Admin.",
+      "title": "Admin con bloqueo controlado",
+      "body": "Seleccionar desde el sistema, mantener el contenedor bloqueado hasta auditarlo o cancelarlo con motivo autorizado y gestionar la cola desde Admin.",
       "recommended": true
     },
     {
-      "title": "B: agente y registro asistido",
-      "body": "Delegar la selección al agente y definir expresamente si la centralita bloquea, avisa o no interviene.",
+      "title": "Agente con intervención definida",
+      "body": "Delegar la selección al agente y decidir expresamente si la centralita bloquea, avisa o no interviene antes de registrar el resultado.",
       "recommended": false
     },
     {
-      "title": "Posponer F6",
-      "body": "Mantener solo la base de F3 hasta validar el flujo con el responsable de Almacén.",
+      "title": "Posponer F6 tras F3",
+      "body": "Mantener únicamente la base de auditorías de F3 hasta validar el flujo con el responsable de almacén.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "A: dashboard con bloqueo controlado",
-    "body": "Seleccionar desde el sistema, bloquear hasta auditar o cancelar con motivo autorizado y exponer una cola operativa en Admin.",
+    "title": "Admin con bloqueo controlado",
+    "body": "Seleccionar desde el sistema, mantener el contenedor bloqueado hasta auditarlo o cancelarlo con motivo autorizado y gestionar la cola desde Admin.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "danielmenchen-hamelyn",
-    "reason": "El propio hilo le sitúa como responsable de la validación operativa necesaria para cerrar estas reglas.",
+    "reason": "Está coordinando la epic y la última actualización identifica esta decisión como pendiente del responsable de almacén.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9375.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9375#issuecomment-5644932951",
-    "reviewedAt": "2026-09-12T08:56:36.687Z",
-    "mainSha": "55db7e4a7cbff616c2537722dd88f2549f8bfce6"
+    "reviewedAt": "2026-09-14T06:50:18.110Z",
+    "mainSha": "b19cbcbba23983dd34f040503f0c7bca8977a49b"
   }
 }
