@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-07T05:02:18.184Z",
-  "updatedAt": "2026-09-04T12:54:50Z",
+  "generatedAt": "2026-09-14T05:56:10.735Z",
+  "updatedAt": "2026-09-14T05:47:01Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,43 +13,42 @@
       "bug",
       "source:admin-panel",
       "app:infrastructure",
-      "triage:no-change",
+      "triage:queued",
       "clawsweeper:needs-product-decision",
       "P2"
     ],
     "createdAt": "2026-08-30T06:19:55Z",
-    "updatedAt": "2026-09-04T12:54:50Z"
+    "updatedAt": "2026-09-14T05:47:01Z"
   },
   "lane": "product_direction",
-  "priority": "P2",
-  "question": "Tras verificar la ventana posterior al despliegue, si la presión de memoria persiste, ¿se prioriza instrumentar el heap o aumentar la memoria de la función de portada?",
-  "rationale": "El código no permite atribuir las asignaciones ni elegir entre mayor coste operativo y observabilidad adicional.",
+  "priority": "P1",
+  "question": "¿Debe priorizarse una asignación de memoria mayor para la regeneración de la portada como mitigación operativa, o instrumentar y perfilar primero sus cuatro pools para reducir el working set?",
+  "rationale": "Los datos de producción confirman el fallo, pero no atribuyen las asignaciones a una operación concreta; la alternativa de capacidad afecta al coste y la instrumentación actual no cubre esta ruta.",
   "options": [
     {
-      "title": "Perfilar antes de ampliar memoria",
-      "body": "Instrumentar una regeneración equivalente a producción y decidir con asignaciones observadas.",
+      "title": "Perfilar primero la portada",
+      "body": "Añadir medición por fase a los cuatro pools y decidir la reducción o la capacidad con una muestra de regeneraciones reales.",
       "recommended": true
     },
     {
-      "title": "Ampliar memoria con seguimiento",
-      "body": "Configurar más memoria para la portada y aceptar explícitamente su coste mientras se vigilan 5xx y consumo.",
+      "title": "Mitigar con más memoria",
+      "body": "Configurar y verificar una asignación mayor para la ruta de portada, vigilando coste, p95 y nuevos 5xx durante una ventana representativa.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Perfilar antes de ampliar memoria",
-    "body": "Instrumentar una regeneración equivalente a producción y decidir con asignaciones observadas.",
+    "title": "Perfilar primero la portada",
+    "body": "Añadir medición por fase a los cuatro pools y decidir la reducción o la capacidad con una muestra de regeneraciones reales.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Es la persona asignada al seguimiento y la elección pendiente es operativa, no un arreglo mecánico.",
+    "reason": "Es el contribuidor reciente del pool afectado y de la telemetría de render que puede concretar el coste y la cobertura de la medición.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8901.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8901#issuecomment-5467190664",
-    "reviewedAt": "2026-09-07T05:02:18.184Z",
-    "mainSha": "7917b1c783fedca0161273534392cbdd7c693ece"
+    "reviewedAt": "2026-09-14T05:56:10.735Z",
+    "mainSha": "f3cdba11f0d9b4219bcb66f4075e0597b2bba7ac"
   }
 }
