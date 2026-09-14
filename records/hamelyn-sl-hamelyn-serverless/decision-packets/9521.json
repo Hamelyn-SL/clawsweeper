@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-14T19:23:28.109Z",
+  "updatedAt": "2026-09-14T18:07:00Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9521,
+    "title": "Watcher B2B: alta del cliente BULRUSHED_BOOKS en B2B_CLIENTS",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9521",
+    "state": "open",
+    "labels": [
+      "app:infrastructure",
+      "feature",
+      "triage:pr-opened",
+      "P2"
+    ],
+    "createdAt": "2026-09-14T17:45:12Z",
+    "updatedAt": "2026-09-14T18:07:00Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué identidad debe ser canónica para Bulrushed Books y cómo se preservarán los datos que puedan haberse ejecutado con `BULRUSHED_BOOKS_HMBB`?",
+  "rationale": "El título original deriva una identidad distinta de la propuesta y la evidencia operativa disponible no demuestra ausencia de datos persistidos.",
+  "options": [
+    {
+      "title": "Verificar y preservar la identidad histórica",
+      "body": "Consultar los registros operativos disponibles, usar el valor realmente ejecutado y cubrir el título original con una regresión.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener compatibilidad dual",
+      "body": "Aceptar ambos valores en los consumidores mientras se define una migración acotada de cualquier dato histórico.",
+      "recommended": false
+    },
+    {
+      "title": "Confirmar ausencia de persistencia",
+      "body": "Documentar que no se ejecutó ningún dato persistente y mantener `BULRUSHED_BOOKS` como valor canónico.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Verificar y preservar la identidad histórica",
+    "body": "Consultar los registros operativos disponibles, usar el valor realmente ejecutado y cubrir el título original con una regresión.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su historial concentra la lógica de identidad provisional y la clasificación B2B implicadas.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9521.md",
+    "reviewedAt": "2026-09-14T19:23:28.109Z",
+    "mainSha": "ff3b1daeeb02785d5067eeff5266eff1ff7acdf4"
+  }
+}
