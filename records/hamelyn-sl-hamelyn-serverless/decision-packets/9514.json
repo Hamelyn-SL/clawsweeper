@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-14T14:01:00.523Z",
+  "updatedAt": "2026-09-14T13:01:38Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 9514,
+    "title": "feat: blacklist the vallada buyer behind the open stripe disputes",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9514",
+    "state": "open",
+    "labels": [
+      "size/L",
+      "P2"
+    ],
+    "createdAt": "2026-09-14T12:11:04Z",
+    "updatedAt": "2026-09-14T13:01:38Z",
+    "headSha": "f5171cfd4a1930b1c2df3a84571cd713dd2227fd"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Las nuevas señales de Vallada deben bloquear pedidos en todos los marketplaces que usan la factory o solo en ecommerce y dropshipping?",
+  "rationale": "La implementación actual añade identidades a una blacklist compartida; la elección cambia qué pedidos ajenos a Stripe pueden nacer en `TO_CANCEL`.",
+  "options": [
+    {
+      "title": "Limitar a ecommerce",
+      "body": "Restringir estas señales al checkout ecommerce y dropshipping para evitar cancelar pedidos de canales no relacionados.",
+      "recommended": true
+    },
+    {
+      "title": "Autorizar alcance transversal",
+      "body": "Mantenerlas en la blacklist compartida y aceptar que cualquier canal que use la factory pueda cancelar coincidencias.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Limitar a ecommerce",
+    "body": "Restringir estas señales al checkout ecommerce y dropshipping para evitar cancelar pedidos de canales no relacionados.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es quien aportó el contexto operativo de disputas y está ligado al informe y a la propuesta actual.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9514.md",
+    "reviewedAt": "2026-09-14T14:01:00.523Z",
+    "mainSha": "ff3b1daeeb02785d5067eeff5266eff1ff7acdf4"
+  }
+}

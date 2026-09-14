@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-14T12:21:13.096Z",
-  "updatedAt": "2026-09-14T12:15:48Z",
+  "generatedAt": "2026-09-14T13:58:58.753Z",
+  "updatedAt": "2026-09-14T13:39:03Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -13,38 +13,38 @@
       "size/XXL"
     ],
     "createdAt": "2026-09-14T10:38:37Z",
-    "updatedAt": "2026-09-14T12:15:48Z",
-    "headSha": "ba34d02f800d77ad35237ac8fa291e5456bde5dd"
+    "updatedAt": "2026-09-14T13:39:03Z",
+    "headSha": "a5c16576c4fe6413133c05d1535dc436ea7fb067"
   },
-  "lane": "product_direction",
+  "lane": "release_inclusion",
   "priority": "P1",
-  "question": "¿Se autoriza que esta rama active ya los nuevos plazos automáticos tras revisar el backlog y las incidencias abiertas, o debe esperar a una ventana operativa posterior?",
-  "rationale": "La corrección técnica no determina por sí sola cuándo es aceptable cambiar masivamente estados y pagos de lotes existentes.",
+  "question": "¿Debe incluirse esta PR en el próximo despliegue productivo solo después de confirmar el recálculo de incidencias y la limpieza del backlog declarados?",
+  "rationale": "Los cambios reducen plazos de clasificación y pago para datos existentes; la preparación de esas cohortes es una decisión operativa que el código no puede resolver.",
   "options": [
     {
-      "title": "Activar con preparación operativa",
-      "body": "Completar el recálculo, limpiar o decidir el backlog y documentar el flujo de kiosco antes de fusionar para que el cron entre con datos controlados.",
+      "title": "Integrar tras la preparación operativa",
+      "body": "Confirmar el recálculo de incidencias y la revisión del backlog antes de incluir estos umbrales en producción.",
       "recommended": true
     },
     {
-      "title": "Posponer la activación",
-      "body": "Mantener esta rama abierta hasta una ventana de Operaciones en la que el cambio de plazos y los pagos automáticos puedan supervisarse.",
+      "title": "Separar la activación de umbrales",
+      "body": "Integrar las piezas no activadoras y aplazar los nuevos plazos hasta disponer de una ventana operativa explícita.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Activar con preparación operativa",
-    "body": "Completar el recálculo, limpiar o decidir el backlog y documentar el flujo de kiosco antes de fusionar para que el cron entre con datos controlados.",
+    "title": "Integrar tras la preparación operativa",
+    "body": "Confirmar el recálculo de incidencias y la revisión del backlog antes de incluir estos umbrales en producción.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "banosdavidhamelyn",
-    "reason": "Es el principal enlace histórico y técnico entre el flujo existente de bultos pendientes y la implementación integrada.",
-    "confidence": "high"
+    "reason": "Ha documentado el impacto del primer cron y ha mantenido las rutas de activación del flujo.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9505.md",
-    "reviewedAt": "2026-09-14T12:21:13.096Z",
-    "mainSha": "a206fbfd37abf9263eab1c88a70e7bb9c9f2739c"
+    "reviewedAt": "2026-09-14T13:58:58.753Z",
+    "mainSha": "ff3b1daeeb02785d5067eeff5266eff1ff7acdf4"
   }
 }
