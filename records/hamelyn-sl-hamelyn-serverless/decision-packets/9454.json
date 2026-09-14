@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-14T06:05:59.640Z",
+  "updatedAt": "2026-09-14T05:49:34Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 9454,
+    "title": "feat: add versioned warehouse fault catalog",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9454",
+    "state": "open",
+    "labels": [
+      "size/XXL",
+      "P1"
+    ],
+    "createdAt": "2026-09-11T14:12:43Z",
+    "updatedAt": "2026-09-14T05:49:34Z",
+    "headSha": "23023ee2202cac36afbdd21129d2c511d7729807"
+  },
+  "lane": "security_boundary",
+  "priority": "P2",
+  "question": "¿Debe `admin-logistic` poder emitir y usar PAT con `write:warehouse` para el comando CLI de guardado anunciado?",
+  "rationale": "La corrección exige ampliar o limitar de forma explícita la política actual de tokens de escritura para un rol operativo.",
+  "options": [
+    {
+      "title": "Habilitar CLI de logística",
+      "body": "Permitir el PAT mínimo `read:warehouse` y `write:warehouse` para `admin-logistic`, actualizar `auth login` y cubrir ambos flujos.",
+      "recommended": true
+    },
+    {
+      "title": "Restringir escritura a admin-user",
+      "body": "Conservar la política de PAT actual y retirar o documentar como no disponible el comando CLI de guardado para logística.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Habilitar CLI de logística",
+    "body": "Permitir el PAT mínimo `read:warehouse` y `write:warehouse` para `admin-logistic`, actualizar `auth login` y cubrir ambos flujos.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es el autor identificado de la política actual de scopes y tokens personales.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9454.md",
+    "reviewedAt": "2026-09-14T06:05:59.640Z",
+    "mainSha": "f3cdba11f0d9b4219bcb66f4075e0597b2bba7ac"
+  }
+}

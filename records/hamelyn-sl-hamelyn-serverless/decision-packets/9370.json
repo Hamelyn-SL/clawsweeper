@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-12T10:47:36.731Z",
-  "updatedAt": "2026-09-12T09:11:56Z",
+  "generatedAt": "2026-09-14T06:02:33.400Z",
+  "updatedAt": "2026-09-14T05:57:50Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,43 +14,42 @@
       "app:admin",
       "feature",
       "triage:done",
-      "reporter:danielmenchen-hamelyn",
+      "clawsweeper:needs-product-decision",
       "P2",
-      "clawsweeper:needs-product-decision"
+      "reporter:danielmenchen-hamelyn"
     ],
     "createdAt": "2026-09-10T07:39:40Z",
-    "updatedAt": "2026-09-12T09:11:56Z"
+    "updatedAt": "2026-09-14T05:57:50Z"
   },
-  "lane": "release_inclusion",
+  "lane": "product_direction",
   "priority": "P2",
-  "question": "¿La réplica analítica de `warehouseProductivityParameterVersions` debe formar parte de esta entrega antes de cerrar la issue, o se acepta separarla en una issue enlazada?",
-  "rationale": "La issue la exige expresamente, mientras la PR la deja fuera de alcance y conserva el cierre vinculado.",
+  "question": "¿La réplica analítica de `warehouseProductivityParameterVersions` debe completarse antes de considerar satisfecha esta issue?",
+  "rationale": "La aceptación exige esa réplica, pero la PR candidata la difiere a otra fase; aceptar o separar ese requisito cambia el alcance comprometido.",
   "options": [
     {
-      "title": "Completar la réplica antes de integrar",
-      "body": "Añadir la colección al catálogo de réplica y validar el flujo analítico antes de fusionar la PR y cerrar esta issue.",
+      "title": "Completar la réplica en esta entrega",
+      "body": "Añadir la colección al catálogo analítico y validar el flujo antes de fusionar la implementación candidata.",
       "recommended": true
     },
     {
-      "title": "Separar el requisito con trazabilidad",
-      "body": "Retirar el cierre vinculado de la PR y abrir o enlazar una issue concreta para la réplica analítica antes de aceptar el alcance parcial.",
+      "title": "Separar la réplica con trazabilidad",
+      "body": "Crear o enlazar un seguimiento concreto para la réplica y retirar el cierre de esta issue de la PR de alcance parcial.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Completar la réplica antes de integrar",
-    "body": "Añadir la colección al catálogo de réplica y validar el flujo analítico antes de fusionar la PR y cerrar esta issue.",
+    "title": "Completar la réplica en esta entrega",
+    "body": "Añadir la colección al catálogo analítico y validar el flujo antes de fusionar la implementación candidata.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "danielmenchen-hamelyn",
-    "reason": "Es el asignado de la issue y autor de la PR que define el reparto de alcance.",
+    "reason": "Está asignado a la implementación candidata y conoce el alcance de parámetros y sesiones que condiciona la decisión.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9370.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9370#issuecomment-5644932095",
-    "reviewedAt": "2026-09-12T10:47:36.731Z",
-    "mainSha": "55db7e4a7cbff616c2537722dd88f2549f8bfce6"
+    "reviewedAt": "2026-09-14T06:02:33.400Z",
+    "mainSha": "f3cdba11f0d9b4219bcb66f4075e0597b2bba7ac"
   }
 }

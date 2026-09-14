@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-14T06:04:39.643Z",
+  "updatedAt": "2026-09-14T05:50:19Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9465,
+    "title": "Amazon CA AT_RISK: zombie listings sell stocks withdrawn since 2023 (no CA report/withdraw coverage)",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9465",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "reporter:miguel",
+      "triage:queued",
+      "P1"
+    ],
+    "createdAt": "2026-09-14T05:50:08Z",
+    "updatedAt": "2026-09-14T05:50:19Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe CA usar un snapshot y una reconciliación propios que retiren stock no activo, o debe ampliarse el flujo COM compartido con garantías para no reactivar retirados?",
+  "rationale": "El flujo actual interpreta `onlyInAmazon` como una recuperación hacia `ACTIVE`, mientras que este caso necesita una retirada; elegir la semántica compartida condiciona datos, feeds y operación.",
+  "options": [
+    {
+      "title": "Separar CA de COM",
+      "body": "Crear una cobertura CA explícita, con snapshot identificable y retirada de stock no activo sin modificar la recuperación de COM.",
+      "recommended": true
+    },
+    {
+      "title": "Ampliar COM con salvaguardas",
+      "body": "Usar el flujo compartido solo si se distingue por marketplace el caso de retirada y se prueban US, CA y upgrades operativos.",
+      "recommended": false
+    },
+    {
+      "title": "Corrección manual única",
+      "body": "Retirar ahora los históricos y posponer la cobertura permanente, aceptando que el riesgo reaparezca.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Separar CA de COM",
+    "body": "Crear una cobertura CA explícita, con snapshot identificable y retirada de stock no activo sin modificar la recuperación de COM.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Es el candidato más cercano por el mantenimiento reciente del informe y su reconciliación.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9465.md",
+    "reviewedAt": "2026-09-14T06:04:39.643Z",
+    "mainSha": "f3cdba11f0d9b4219bcb66f4075e0597b2bba7ac"
+  }
+}
