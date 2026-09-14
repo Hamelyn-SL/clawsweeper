@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-02T13:19:40.694Z",
-  "updatedAt": "2026-09-02T10:54:47Z",
+  "generatedAt": "2026-09-14T09:46:30.210Z",
+  "updatedAt": "2026-09-14T08:32:23Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,43 +14,42 @@
       "source:admin-panel",
       "app:supply",
       "triage:done",
-      "reporter:JavierHamelyn",
+      "clawsweeper:needs-product-decision",
       "P2",
-      "clawsweeper:needs-product-decision"
+      "reporter:JavierHamelyn"
     ],
     "createdAt": "2026-08-29T20:11:27Z",
-    "updatedAt": "2026-09-02T10:54:47Z"
+    "updatedAt": "2026-09-14T08:32:23Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe el endpoint publicar objetivos independientes para iOS y Android, o normalizarse antes una única numeración nativa compartida?",
-  "rationale": "La reparación exige migrar el valor remoto y decidir el contrato de compatibilidad para ambas tiendas; el código no puede inferir esa política con seguridad.",
+  "question": "¿Debe el endpoint de actualización publicar objetivos independientes para iOS y Android, o debe imponerse una única numeración nativa compartida antes de comparar?",
+  "rationale": "La elección determina el contrato remoto permanente y la configuración de releases; el código no puede inferir qué política de versionado quiere mantener el equipo.",
   "options": [
     {
-      "title": "Versiones por plataforma",
-      "body": "Publicar y consumir objetivos separados para iOS y Android, comparados con la versión nativa instalada.",
+      "title": "Objetivos por plataforma",
+      "body": "Publicar y consumir versiones separadas para iOS y Android, comparadas siempre con la versión nativa instalada.",
       "recommended": true
     },
     {
       "title": "Numeración nativa única",
-      "body": "Mantener un único objetivo remoto tras alinear explícitamente las numeraciones nativas de ambas plataformas.",
+      "body": "Mantener un solo objetivo remoto después de alinear y verificar explícitamente la numeración nativa de ambas tiendas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Versiones por plataforma",
-    "body": "Publicar y consumir objetivos separados para iOS y Android, comparados con la versión nativa instalada.",
+    "title": "Objetivos por plataforma",
+    "body": "Publicar y consumir versiones separadas para iOS y Android, comparadas siempre con la versión nativa instalada.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es la persona asignada y puede coordinar el contrato remoto con el equipo de Supply.",
+    "reason": "Es la persona asignada y participa en los cambios recientes de versión y release de Supply.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8898.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8898#issuecomment-5464697521",
-    "reviewedAt": "2026-09-02T13:19:40.694Z",
-    "mainSha": "9b525e0aae70b41daab228e22437134fc1e70b6f"
+    "reviewedAt": "2026-09-14T09:46:30.210Z",
+    "mainSha": "0f63380573f92ec0af6b63c476b84e5d324a7a56"
   }
 }
