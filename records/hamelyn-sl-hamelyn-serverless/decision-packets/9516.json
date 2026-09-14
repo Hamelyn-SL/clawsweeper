@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-14T12:54:50.911Z",
-  "updatedAt": "2026-09-14T12:35:33Z",
+  "generatedAt": "2026-09-14T14:48:58.691Z",
+  "updatedAt": "2026-09-14T13:15:07Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,44 +13,43 @@
       "source:admin-panel",
       "app:marketplace",
       "feature",
-      "triage:queued",
+      "triage:needs-info",
       "clawsweeper:needs-product-decision",
-      "reporter:carlotavarela",
-      "P2"
+      "P2",
+      "reporter:carlotavarela"
     ],
     "createdAt": "2026-09-14T12:35:19Z",
-    "updatedAt": "2026-09-14T12:35:33Z"
+    "updatedAt": "2026-09-14T13:15:07Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿La recogida argentina debe entrar ya como ruta MELI-FedEx mantenida junto a México, o limitarse a una preparación operativa temporal para las pruebas del 15 de septiembre de 2026?",
-  "rationale": "El código actual solo admite un destinatario y la elección determina si debe diseñarse una selección regional persistente o un proceso acotado fuera de esa ruta.",
+  "question": "¿Qué entidad operativa y documentación comercial aprobadas deben usarse para MELI Argentina, y cómo se separarán sus pedidos de los de México?",
+  "rationale": "El código necesita datos fiscales y reglas de expedición externas; inferirlas desde la dirección podría generar etiquetas o facturas inválidas.",
   "options": [
     {
-      "title": "Ruta regional mantenida",
-      "body": "Añadir Argentina como configuración y selección separadas, conservar México y cubrir ambos destinos con pruebas de creación de etiquetas.",
+      "title": "Confirmar ficha argentina",
+      "body": "Operaciones facilita destinatario, importador, teléfono, datos fiscales, condiciones FedEx/MELI y un pedido de prueba; después se implementa la variante por país.",
       "recommended": true
     },
     {
-      "title": "Preparación temporal",
-      "body": "Validar primero los datos de MELI y FedEx para la prueba operativa sin convertir todavía el flujo persistente en una integración regional.",
+      "title": "Limitar la prueba a México",
+      "body": "Se mantiene el flujo actual hasta que exista una ficha comercial argentina aprobada.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Ruta regional mantenida",
-    "body": "Añadir Argentina como configuración y selección separadas, conservar México y cubrir ambos destinos con pruebas de creación de etiquetas.",
+    "title": "Confirmar ficha argentina",
+    "body": "Operaciones facilita destinatario, importador, teléfono, datos fiscales, condiciones FedEx/MELI y un pedido de prueba; después se implementa la variante por país.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "carlotavarela",
-    "reason": "Es la solicitante operativa que puede confirmar la necesidad real de la prueba y el horizonte de mantenimiento.",
+    "reason": "Es el enlace indicado en el reporte para completar los datos operativos necesarios.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9516.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9516#issuecomment-5664230476",
-    "reviewedAt": "2026-09-14T12:54:50.911Z",
+    "reviewedAt": "2026-09-14T14:48:58.691Z",
     "mainSha": "ff3b1daeeb02785d5067eeff5266eff1ff7acdf4"
   }
 }
