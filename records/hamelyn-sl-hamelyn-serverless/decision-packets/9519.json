@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-14T14:59:16.597Z",
+  "updatedAt": "2026-09-14T14:53:40Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9519,
+    "title": "MercadoLibre: el fallo de items/search por estado se traga en la retirada y puede dejar vivo el listing activo",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9519",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "triage:queued",
+      "P2"
+    ],
+    "createdAt": "2026-09-14T14:53:24Z",
+    "updatedAt": "2026-09-14T14:53:40Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe la retirada bloquearse y reintentarse cuando `items/search?status=active` falla aunque `paused` devuelva ids, o se acepta un cierre parcial con telemetría explícita?",
+  "rationale": "La elección contrapone evitar listings comprables no resueltos frente a conservar disponibilidad de retirada ante una degradación parcial de MercadoLibre.",
+  "options": [
+    {
+      "title": "Reintento y fail-closed en active",
+      "body": "Reintentar `active` una vez y registrar un error reintentable si sigue fallando, sin tombstone del stock.",
+      "recommended": true
+    },
+    {
+      "title": "Cerrar parcialmente con alerta",
+      "body": "Cerrar los ids conocidos, pero emitir `unresolvedStatuses=active` y evitar presentar el resultado como una retirada íntegra.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener la tolerancia actual",
+      "body": "Conservar el comportamiento parcial actual y aceptar el riesgo operativo documentado.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Reintento y fail-closed en active",
+    "body": "Reintentar `active` una vez y registrar un error reintentable si sigue fallando, sin tombstone del stock.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "El endurecimiento contractual más cercano del flujo de retirada se fusionó desde su trabajo.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9519.md",
+    "reviewedAt": "2026-09-14T14:59:16.597Z",
+    "mainSha": "ff3b1daeeb02785d5067eeff5266eff1ff7acdf4"
+  }
+}
