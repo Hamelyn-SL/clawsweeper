@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-14T11:06:42.468Z",
-  "updatedAt": "2026-09-14T11:01:29Z",
+  "generatedAt": "2026-09-14T12:21:13.096Z",
+  "updatedAt": "2026-09-14T12:15:48Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -13,39 +13,38 @@
       "size/XXL"
     ],
     "createdAt": "2026-09-14T10:38:37Z",
-    "updatedAt": "2026-09-14T11:01:29Z",
-    "headSha": "4b1d61c45144e26405860484ef8e83c3b5f766b3"
+    "updatedAt": "2026-09-14T12:15:48Z",
+    "headSha": "ba34d02f800d77ad35237ac8fa291e5456bde5dd"
   },
-  "lane": "release_inclusion",
+  "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Se autoriza integrar y desplegar estos nuevos plazos únicamente tras recalcular el backlog afectado y coordinar la limpieza con Operaciones?",
-  "rationale": "La corrección técnica está cubierta, pero elegir cuándo activar reglas que pueden marcar o pagar lotes existentes es una decisión operativa y de producto.",
+  "question": "¿Se autoriza que esta rama active ya los nuevos plazos automáticos tras revisar el backlog y las incidencias abiertas, o debe esperar a una ventana operativa posterior?",
+  "rationale": "La corrección técnica no determina por sí sola cuándo es aceptable cambiar masivamente estados y pagos de lotes existentes.",
   "options": [
     {
-      "title": "Activación controlada",
-      "body": "Recalcular incidencias y backlog el día previo, acordar la limpieza con Operaciones y desplegar después.",
+      "title": "Activar con preparación operativa",
+      "body": "Completar el recálculo, limpiar o decidir el backlog y documentar el flujo de kiosco antes de fusionar para que el cron entre con datos controlados.",
       "recommended": true
     },
     {
       "title": "Posponer la activación",
-      "body": "Mantener el PR abierto hasta disponer de una ventana operativa y cifras actualizadas del impacto.",
+      "body": "Mantener esta rama abierta hasta una ventana de Operaciones en la que el cambio de plazos y los pagos automáticos puedan supervisarse.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Activación controlada",
-    "body": "Recalcular incidencias y backlog el día previo, acordar la limpieza con Operaciones y desplegar después.",
+    "title": "Activar con preparación operativa",
+    "body": "Completar el recálculo, limpiar o decidir el backlog y documentar el flujo de kiosco antes de fusionar para que el cron entre con datos controlados.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "banosdavidhamelyn",
-    "reason": "Ha llevado la integración del épico y documentó las condiciones previas de activación.",
+    "reason": "Es el principal enlace histórico y técnico entre el flujo existente de bultos pendientes y la implementación integrada.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9505.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9505#issuecomment-5662984658",
-    "reviewedAt": "2026-09-14T11:06:42.468Z",
-    "mainSha": "f1b5191d2a637d01d284e2930f45008babeba356"
+    "reviewedAt": "2026-09-14T12:21:13.096Z",
+    "mainSha": "a206fbfd37abf9263eab1c88a70e7bb9c9f2739c"
   }
 }

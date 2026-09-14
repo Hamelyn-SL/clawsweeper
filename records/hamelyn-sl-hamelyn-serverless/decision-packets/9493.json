@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-14T10:44:24.052Z",
-  "updatedAt": "2026-09-14T08:34:30Z",
+  "generatedAt": "2026-09-14T12:22:20.418Z",
+  "updatedAt": "2026-09-14T12:15:01Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,43 +14,42 @@
       "app:marketplace",
       "feature",
       "reporter:rubenmorueco",
-      "triage:queued",
+      "triage:needs-info",
       "clawsweeper:needs-product-decision",
       "P2"
     ],
     "createdAt": "2026-09-14T08:20:27Z",
-    "updatedAt": "2026-09-14T08:34:30Z"
+    "updatedAt": "2026-09-14T12:15:01Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe entregarse un fichero único de 10.000 libros para el piloto o construirse una integración mantenida de Mercado Libre Argentina?",
-  "rationale": "La decisión cambia el límite de la solución, el lugar del código y las validaciones necesarias; el soporte actual de MX no permite inferir una opción segura.",
+  "question": "¿Se necesita un fichero único de 10.000 libros para el piloto o una integración mantenida de Mercado Libre Argentina?",
+  "rationale": "Ambas opciones cambian el perímetro, las fuentes de datos, la validación y el coste de mantenimiento; el código actual no decide cuál es el producto requerido.",
   "options": [
     {
       "title": "Piloto operativo acotado",
-      "body": "Generar un único fichero fuera del repositorio, validado contra la plantilla argentina y las reglas aportadas.",
+      "body": "Generar fuera del repositorio un único fichero validado tras recibir la plantilla argentina y cerrar los criterios ambiguos.",
       "recommended": true
     },
     {
       "title": "Integración persistente de Argentina",
-      "body": "Crear un destino separado con configuración, taxonomía, filtros, plantilla y cobertura de pruebas.",
+      "body": "Diseñar un destino separado con configuración, taxonomía, reglas de elegibilidad y pruebas de exportación mantenidas.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Piloto operativo acotado",
-    "body": "Generar un único fichero fuera del repositorio, validado contra la plantilla argentina y las reglas aportadas.",
+    "body": "Generar fuera del repositorio un único fichero validado tras recibir la plantilla argentina y cerrar los criterios ambiguos.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "banosdavidhamelyn",
-    "reason": "El triage existente ya le sitúa como la persona más cercana a decidir el alcance operativo.",
+    "reason": "La discusión previa le identifica como el candidato más probable para resolver el alcance operativo.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9493.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9493#issuecomment-5662615029",
-    "reviewedAt": "2026-09-14T10:44:24.052Z",
-    "mainSha": "1f2eb6a576bfc7ae5a4e2ef3e22e1c8b0aa9e77f"
+    "reviewedAt": "2026-09-14T12:22:20.418Z",
+    "mainSha": "a206fbfd37abf9263eab1c88a70e7bb9c9f2739c"
   }
 }

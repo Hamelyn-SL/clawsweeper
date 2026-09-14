@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-14T12:22:10.814Z",
+  "updatedAt": "2026-09-14T12:15:58Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 9509,
+    "title": "feat: sync edesk custom fields from orders and lots",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9509",
+    "state": "open",
+    "labels": [
+      "size/XXL",
+      "P1"
+    ],
+    "createdAt": "2026-09-14T10:47:42Z",
+    "updatedAt": "2026-09-14T12:15:58Z",
+    "headSha": "2cbabba562ff5c09ff5e5049ab768cd6d24b6d09"
+  },
+  "lane": "release_inclusion",
+  "priority": "P1",
+  "question": "¿Debe aterrizarse este PR con fechas y `SUP · Incompleto` todavía no persistentes, o esperar a confirmar y cubrir los formatos que eDesk admite?",
+  "rationale": "La prueba real aportada confirma una limitación externa observable; el código no puede inferir con seguridad el formato correcto sin una decisión sobre aceptar alcance parcial o bloquear el cierre funcional.",
+  "options": [
+    {
+      "title": "Corregir blockers y mantener alcance parcial",
+      "body": "Limitar la caché, retirar la documentación del cron y dejar la incidencia abierta para completar los formatos eDesk confirmados.",
+      "recommended": true
+    },
+    {
+      "title": "Esperar confirmación de eDesk",
+      "body": "Pausar el merge hasta validar formatos persistentes para fechas y `SUP · Incompleto` en el panel real.",
+      "recommended": false
+    },
+    {
+      "title": "Aceptar el riesgo explícitamente",
+      "body": "Aprobar el PR sabiendo que esos campos permanecerán vacíos hasta un seguimiento posterior.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Corregir blockers y mantener alcance parcial",
+    "body": "Limitar la caché, retirar la documentación del cron y dejar la incidencia abierta para completar los formatos eDesk confirmados.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Ha definido el alcance final, ejecutado la prueba eDesk y concentra el historial de este flujo.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9509.md",
+    "reviewedAt": "2026-09-14T12:22:10.814Z",
+    "mainSha": "a206fbfd37abf9263eab1c88a70e7bb9c9f2739c"
+  }
+}
