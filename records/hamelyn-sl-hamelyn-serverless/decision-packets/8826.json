@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-02T12:25:05.541Z",
-  "updatedAt": "2026-09-02T10:55:00Z",
+  "generatedAt": "2026-09-14T09:41:22.838Z",
+  "updatedAt": "2026-09-14T08:32:15Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -18,38 +18,37 @@
       "P2"
     ],
     "createdAt": "2026-08-28T05:59:13Z",
-    "updatedAt": "2026-09-02T10:55:00Z"
+    "updatedAt": "2026-09-14T08:32:15Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿El alcance aprobado debe incluir un aviso visible en Admin al usar desarrollo, o limitarse al selector y diagnóstico de terminal?",
-  "rationale": "El selector de terminal está bien definido, pero el indicador de Admin fue solicitado como conveniencia y la PR cerrada lo dejó explícitamente fuera de alcance.",
+  "question": "¿Qué política de migración y seguridad debe aplicar el selector de Mongo para `dev:run` y `local:run`?",
+  "rationale": "La mejora necesita elegir entre compatibilidad temporal con configuraciones existentes y un corte estricto; además, el valor por defecto de scripts locales puede afectar datos de producción.",
   "options": [
     {
-      "title": "Limitarse al tooling",
-      "body": "Implementar `dev:run --db=dev`, `local:run` y la salida explícita de la base, sin modificar la UI de Admin.",
+      "title": "Migración compatible y local explícito",
+      "body": "Mantener compatibilidad temporal con `MONGO_URL` avisando de la migración en `dev:run`, y exigir `--db` explícito en `local:run`.",
       "recommended": true
     },
     {
-      "title": "Incluir aviso en Admin",
-      "body": "Añadir además un indicador visible de entorno no productivo en Admin, con alcance y pruebas de interfaz propios.",
+      "title": "Migración estricta coordinada",
+      "body": "Aceptar solo variables raíz nombradas y producción por defecto, acompañándolo de un mensaje accionable y una comunicación previa al equipo.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Limitarse al tooling",
-    "body": "Implementar `dev:run --db=dev`, `local:run` y la salida explícita de la base, sin modificar la UI de Admin.",
+    "title": "Migración compatible y local explícito",
+    "body": "Mantener compatibilidad temporal con `MONGO_URL` avisando de la migración en `dev:run`, y exigir `--db` explícito en `local:run`.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "banosdavidhamelyn",
-    "reason": "Fue el revisor asignado por experiencia directa en los scripts afectados y puede concretar el alcance operativo.",
-    "confidence": "medium"
+    "reason": "Conoce la sincronización de worktrees afectada y revisó la implementación anterior.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8826.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8826#issuecomment-5449219580",
-    "reviewedAt": "2026-09-02T12:25:05.541Z",
-    "mainSha": "9b525e0aae70b41daab228e22437134fc1e70b6f"
+    "reviewedAt": "2026-09-14T09:41:22.838Z",
+    "mainSha": "0f63380573f92ec0af6b63c476b84e5d324a7a56"
   }
 }

@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-02T12:12:26.067Z",
-  "updatedAt": "2026-09-02T10:55:02Z",
+  "generatedAt": "2026-09-14T09:40:59.944Z",
+  "updatedAt": "2026-09-14T08:32:08Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -17,43 +17,42 @@
       "P3"
     ],
     "createdAt": "2026-08-26T11:22:40Z",
-    "updatedAt": "2026-09-02T10:55:02Z"
+    "updatedAt": "2026-09-14T08:32:08Z"
   },
   "lane": "product_direction",
   "priority": "P3",
-  "question": "¿Aprueba Marketplace una política híbrida de archivado reversible para retirados y canario trimestral acotado para activos, en lugar de purga o reintento masivo?",
-  "rationale": "El código puede ejecutar la política elegida, pero no puede determinar por sí solo el valor comercial de conservar los espejos ni el presupuesto operativo aceptable.",
+  "question": "¿Aprueba Marketplace una política híbrida de archivado reversible para retirados y canario trimestral acotado para EAN activos, en vez de purgar o reintentar masivamente?",
+  "rationale": "El código confirma que los rechazos son permanentes, pero no puede decidir por sí solo la retención operativa, el valor comercial de un sondeo ni el riesgo aceptable de modificar cientos de miles de espejos.",
   "options": [
     {
       "title": "Política híbrida",
-      "body": "Archivar de forma reversible los `WITHDRAWN` inertes y permitir solo un canario trimestral pequeño para EAN activos y publicables.",
+      "body": "Archivar de forma reversible los `WITHDRAWN` inertes y ejecutar como máximo un canario trimestral pequeño para EAN `ACTIVE` y publicables.",
       "recommended": true
     },
     {
       "title": "Conservar sin sondeo",
-      "body": "Mantener todos los tombstones y documentar que no habrá reintentos futuros mientras no cambie la política comercial.",
+      "body": "Mantener todos los tombstones y documentar que no se reintentarán mientras no cambie la política comercial.",
       "recommended": false
     },
     {
       "title": "Purga selectiva",
-      "body": "Eliminar los espejos retirados tras definir recuperación imposible, retención legal y una vía alternativa de auditoría.",
+      "body": "Eliminar espejos retirados solo después de acordar retención, auditoría y una recuperación alternativa verificable.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Política híbrida",
-    "body": "Archivar de forma reversible los `WITHDRAWN` inertes y permitir solo un canario trimestral pequeño para EAN activos y publicables.",
+    "body": "Archivar de forma reversible los `WITHDRAWN` inertes y ejecutar como máximo un canario trimestral pequeño para EAN `ACTIVE` y publicables.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Su historial conecta directamente la política de recuperación de Fnac con el límite técnico que condiciona esta decisión.",
+    "reason": "La migración y el cierre de la incidencia adyacente le vinculan directamente al contrato operativo de Fnac.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8744.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8744#issuecomment-5425005324",
-    "reviewedAt": "2026-09-02T12:12:26.067Z",
-    "mainSha": "358fdb8aa7afb4d252117bf8438a788874289db2"
+    "reviewedAt": "2026-09-14T09:40:59.944Z",
+    "mainSha": "0f63380573f92ec0af6b63c476b84e5d324a7a56"
   }
 }

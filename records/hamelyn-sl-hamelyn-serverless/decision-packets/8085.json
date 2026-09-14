@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-02T11:42:48.074Z",
-  "updatedAt": "2026-09-02T10:55:19Z",
+  "generatedAt": "2026-09-14T09:41:18.086Z",
+  "updatedAt": "2026-09-14T08:31:39Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,49 +14,48 @@
       "reporter:javier",
       "triage:needs-info",
       "clawsweeper:needs-product-decision",
-      "app:data",
-      "origin:dev",
       "P2",
-      "clawsweeper:needs-security-review"
+      "clawsweeper:needs-security-review",
+      "app:data",
+      "origin:dev"
     ],
     "createdAt": "2026-07-29T10:14:09Z",
-    "updatedAt": "2026-09-02T10:55:19Z"
+    "updatedAt": "2026-09-14T08:31:39Z"
   },
-  "lane": "product_direction",
+  "lane": "security_boundary",
   "priority": "P2",
-  "question": "¿Qué campos personales, retención y mecanismo duradero de entrega se aprueban para la trazabilidad de webhooks Mandrill antes de crear las tablas y el endpoint?",
-  "rationale": "La decisión define exposición de datos personales, coste de almacenamiento, recuperación ante fallos y objetos nuevos de BigQuery, cuya creación exige autorización expresa del repositorio.",
+  "question": "¿Qué campos personales y plazo de retención se aprueban para los eventos de Mandrill, y debe existir una cola durable antes de devolver 2xx al proveedor?",
+  "rationale": "La respuesta determina la frontera de privacidad, el coste de almacenamiento y si el sistema puede perder eventos tras aceptar un webhook; además habilita nuevas estructuras de BigQuery sujetas a autorización.",
   "options": [
     {
-      "title": "Aprobar ingesta minimizada y duradera",
-      "body": "Guardar solo campos correlacionables aprobados, fijar retención y confirmar a Mandrill después de encolar el lote de forma durable.",
+      "title": "Minimizar y persistir durablemente",
+      "body": "Aprobar identificadores correlacionables y una retención limitada, con cola durable antes del 2xx para conservar trazabilidad sin pérdida silenciosa.",
       "recommended": true
     },
     {
-      "title": "Limitar a analítica agregada",
-      "body": "Eliminar payload bruto e identificadores de red, y materializar únicamente métricas y estados agregados con la correlación mínima necesaria.",
+      "title": "Ingesta directa con reconciliación",
+      "body": "Insertar directamente en BigQuery y aceptar 2xx con alertas y reconciliación posterior, asumiendo el riesgo residual de pérdida.",
       "recommended": false
     },
     {
-      "title": "Posponer la iniciativa",
-      "body": "Mantener el logging síncrono actual hasta contar con responsable de datos, política de retención y presupuesto de infraestructura.",
+      "title": "Aplazar la iniciativa",
+      "body": "Mantener la observabilidad síncrona actual hasta que privacidad y Data/Platform acuerden el contrato completo.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar ingesta minimizada y duradera",
-    "body": "Guardar solo campos correlacionables aprobados, fijar retención y confirmar a Mandrill después de encolar el lote de forma durable.",
+    "title": "Minimizar y persistir durablemente",
+    "body": "Aprobar identificadores correlacionables y una retención limitada, con cola durable antes del 2xx para conservar trazabilidad sin pérdida silenciosa.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Es quien documentó el objetivo, el esquema y los criterios de aceptación que deben concretarse con Data/Platform y privacidad.",
-    "confidence": "medium"
+    "person": "banosdavidhamelyn",
+    "reason": "Es el candidato más cercano por el historial actual del punto central de envío; la decisión deberá validarse también con Data/Platform y privacidad.",
+    "confidence": "low"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8085.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8085#issuecomment-5116438979",
-    "reviewedAt": "2026-09-02T11:42:48.074Z",
-    "mainSha": "350e0bfc6a03f54c34e3afbc6a231922e06685a7"
+    "reviewedAt": "2026-09-14T09:41:18.086Z",
+    "mainSha": "0f63380573f92ec0af6b63c476b84e5d324a7a56"
   }
 }
