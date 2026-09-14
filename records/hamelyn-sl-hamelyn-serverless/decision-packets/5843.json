@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-14T08:55:24.644Z",
+  "generatedAt": "2026-09-14T08:58:32.887Z",
   "updatedAt": "2026-09-14T08:30:59Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -18,47 +18,46 @@
       "surface:pdp",
       "epic:v3.5-features",
       "clawsweeper:needs-product-decision",
-      "origin:dev",
-      "P2"
+      "P2",
+      "origin:dev"
     ],
     "createdAt": "2026-05-13T22:17:19Z",
     "updatedAt": "2026-09-14T08:30:59Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe aprobarse ahora el programa de traducción persistida para catálogo completo, incluido proveedor, presupuesto y política de fallback regional?",
-  "rationale": "El resultado del benchmark determina proveedor, coste y forma del almacenamiento; ninguna de esas decisiones se deduce de forma segura del código actual.",
+  "question": "¿Qué contrato persistido por locale, proveedor de traducción y política de regeneración debe adoptar ecommerce antes de ejecutar un pipeline masivo?",
+  "rationale": "La respuesta condiciona coste, calidad, retención, fallback y compatibilidad de datos; no puede resolverse de forma mecánica en un único PR.",
   "options": [
     {
-      "title": "Aprobar contrato y benchmark",
-      "body": "Definir el modelo persistido, muestra, umbrales de calidad y presupuesto antes de construir el pipeline y la UI.",
+      "title": "Benchmark y contrato primero",
+      "body": "Evaluar una muestra representativa y aprobar esquema, proveedor, fallback e invalidación antes de traducir el catálogo.",
       "recommended": true
     },
     {
-      "title": "Reducir el alcance",
-      "body": "Limitar primero el trabajo a una sola familia de locales o a traducciones ya disponibles en `multilingualDescriptions`.",
+      "title": "Preparar solo la lectura",
+      "body": "Definir el contrato y permitir consumir traducciones existentes, dejando el job masivo para una decisión posterior.",
       "recommended": false
     },
     {
-      "title": "Posponer la capacidad",
-      "body": "Mantener el comportamiento actual hasta que exista una prioridad comercial y presupuesto para el catálogo completo.",
+      "title": "Mantener solo copy de interfaz",
+      "body": "Descartar las traducciones persistidas y limitar la localización a recursos de UI y SEO.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar contrato y benchmark",
-    "body": "Definir el modelo persistido, muestra, umbrales de calidad y presupuesto antes de construir el pipeline y la UI.",
+    "title": "Benchmark y contrato primero",
+    "body": "Evaluar una muestra representativa y aprobar esquema, proveedor, fallback e invalidación antes de traducir el catálogo.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Aportó la definición funcional, el desglose por fases y actualizó explícitamente el alcance que continúa pendiente.",
-    "confidence": "medium"
+    "reason": "Es quien definió el comportamiento esperado y ha mantenido explícitamente la separación entre este alcance y los PRs ya fusionados.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5843.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5843#issuecomment-4909754959",
-    "reviewedAt": "2026-09-14T08:55:24.644Z",
+    "reviewedAt": "2026-09-14T08:58:32.887Z",
     "mainSha": "f2c64ff0f7aa52807eb1692359970ed3251a1644"
   }
 }
