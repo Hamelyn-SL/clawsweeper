@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-14T06:19:01.344Z",
+  "updatedAt": "2026-09-14T06:12:25Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 9473,
+    "title": "feat: schedule the fnac fr marketplace cron",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9473",
+    "state": "open",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-09-14T06:08:29Z",
+    "updatedAt": "2026-09-14T06:12:25Z",
+    "headSha": "4e9da09934dccd0c7c7e59bce1049c832c7be0c5"
+  },
+  "lane": "release_inclusion",
+  "priority": "P2",
+  "question": "¿Se autoriza activar Fnac FR en el próximo Deploy to Prod con el schedule de cinco minutos y los límites iniciales documentados?",
+  "rationale": "El código reutiliza una ruta existente, pero la decisión activa escrituras periódicas contra una cuenta externa de producción y depende de configuración operativa fuera del repositorio.",
+  "options": [
+    {
+      "title": "Autorizar salida controlada",
+      "body": "Integrar el PR y validar el primer tick de producción, locks y operaciones pendientes con los límites iniciales ya definidos.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener la tienda inerte",
+      "body": "Posponer el merge o el Deploy to Prod hasta que el responsable confirme de nuevo credenciales, índices y capacidad de la cola.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Autorizar salida controlada",
+    "body": "Integrar el PR y validar el primer tick de producción, locks y operaciones pendientes con los límites iniciales ya definidos.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Introdujo la ruta actual de Fnac FR y ya figura como revisor solicitado de la activación.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9473.md",
+    "reviewedAt": "2026-09-14T06:19:01.344Z",
+    "mainSha": "f3cdba11f0d9b4219bcb66f4075e0597b2bba7ac"
+  }
+}

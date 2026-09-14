@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-14T06:19:22.653Z",
+  "updatedAt": "2026-09-14T06:08:31Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 9472,
+    "title": "fix: centralize customs classification across carriers",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9472",
+    "state": "open",
+    "labels": [
+      "size/XXL"
+    ],
+    "createdAt": "2026-09-14T06:08:23Z",
+    "updatedAt": "2026-09-14T06:08:31Z",
+    "headSha": "ee2269839d9ba9e0f2dc8cbbf75c6a2d0c0df42c"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Qué matriz de HS, fallbacks y longitudes por destino ha aprobado Operaciones/FedEx para sustituir los valores actuales en todos los carriers?",
+  "rationale": "El PR incorpora códigos para países cuya aceptación por carrier no está confirmada y decide cómo fallar o degradar cada caso.",
+  "options": [
+    {
+      "title": "Confirmar la matriz completa",
+      "body": "Operaciones/FedEx valida códigos, formatos y fallbacks por destino antes de integrar el resolver global.",
+      "recommended": true
+    },
+    {
+      "title": "Limitar el alcance confirmado",
+      "body": "Centralizar únicamente los destinos y formatos con aceptación documentada, preservando temporalmente los demás adaptadores.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar la sustitución",
+      "body": "Mantener las tablas actuales hasta disponer de evidencia operativa suficiente para cada carrier.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Confirmar la matriz completa",
+    "body": "Operaciones/FedEx valida códigos, formatos y fallbacks por destino antes de integrar el resolver global.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Figura como responsable de la issue canónica y concentra el contexto reciente de las reglas aduaneras.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9472.md",
+    "reviewedAt": "2026-09-14T06:19:22.653Z",
+    "mainSha": "f3cdba11f0d9b4219bcb66f4075e0597b2bba7ac"
+  }
+}
