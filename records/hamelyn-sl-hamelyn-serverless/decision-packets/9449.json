@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-12T10:23:35.566Z",
-  "updatedAt": "2026-09-12T09:27:08Z",
+  "generatedAt": "2026-09-14T10:52:08.365Z",
+  "updatedAt": "2026-09-14T08:33:54Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,47 +13,46 @@
       "app:admin",
       "feature",
       "triage:needs-info",
-      "clawsweeper:needs-product-decision",
-      "P1"
+      "P1",
+      "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-09-11T10:34:56Z",
-    "updatedAt": "2026-09-12T09:27:08Z"
+    "updatedAt": "2026-09-14T08:33:54Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué códigos, fallbacks y longitudes han confirmado Operaciones/FedEx para US, MX y el resto de destinos no UE antes de convertirlos en la regla única?",
-  "rationale": "El código demuestra divergencia, pero no permite inferir cuál de los mapas es correcto fuera del alcance estadounidense ya validado.",
+  "question": "¿Qué matriz de HS, fallbacks y notas han confirmado Operaciones/FedEx para US, MX y los demás destinos antes de adoptar la tabla común de la PR?",
+  "rationale": "La PR sustituye reglas divergentes por códigos nacionales que reconoce como incompletamente validados; esa elección afecta declaraciones reales y no puede resolverse solo desde el repositorio.",
   "options": [
     {
-      "title": "Confirmar la matriz completa",
-      "body": "Operaciones aporta los códigos por tipo, destino, fallback y formato de carrier antes de centralizar los consumidores.",
+      "title": "Confirmar la matriz operativa",
+      "body": "Operaciones/FedEx aporta códigos, notas, formatos y fallback por destino para incorporarlos y revisar la PR con esa fuente.",
       "recommended": true
     },
     {
-      "title": "Limitar temporalmente a US",
-      "body": "Se centraliza únicamente la regla estadounidense ya documentada y se mantienen los demás mapas hasta confirmar su alcance.",
+      "title": "Acotar a reglas confirmadas",
+      "body": "La PR conserva únicamente destinos y tratamientos ya validados, manteniendo los mapas existentes para los demás hasta tener confirmación.",
       "recommended": false
     },
     {
-      "title": "Mantener las tablas actuales",
-      "body": "No se cambia el comportamiento de aduanas hasta disponer de confirmación operativa suficiente.",
+      "title": "Pausar la centralización",
+      "body": "Se mantiene el comportamiento actual hasta disponer de una matriz operativa suficiente para evitar institucionalizar valores inciertos.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Confirmar la matriz completa",
-    "body": "Operaciones aporta los códigos por tipo, destino, fallback y formato de carrier antes de centralizar los consumidores.",
+    "title": "Confirmar la matriz operativa",
+    "body": "Operaciones/FedEx aporta códigos, notas, formatos y fallback por destino para incorporarlos y revisar la PR con esa fuente.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Está asignado a esta issue y dirigió los ajustes recientes de facturación estadounidense.",
-    "confidence": "high"
+    "reason": "Ha conducido los cambios recientes de clasificación y puede coordinar la confirmación operativa necesaria.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9449.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9449#issuecomment-5644977839",
-    "reviewedAt": "2026-09-12T10:23:35.566Z",
-    "mainSha": "55db7e4a7cbff616c2537722dd88f2549f8bfce6"
+    "reviewedAt": "2026-09-14T10:52:08.365Z",
+    "mainSha": "0dcd329e50beeb7b36894b1f6eeb94cdf69bb08b"
   }
 }
