@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-14T10:23:39.143Z",
-  "updatedAt": "2026-09-14T09:07:56Z",
+  "generatedAt": "2026-09-14T12:48:31.802Z",
+  "updatedAt": "2026-09-14T12:12:50Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,48 +14,41 @@
       "app:infrastructure",
       "feature",
       "reporter:arineligrigore",
-      "triage:needs-info",
-      "clawsweeper:needs-product-decision",
+      "triage:done",
       "P1"
     ],
     "createdAt": "2026-09-11T11:24:49Z",
-    "updatedAt": "2026-09-14T09:07:56Z"
+    "updatedAt": "2026-09-14T12:12:50Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe priorizarse restaurar y sincronizar los campos configurados conservando el fallback de creación, o debe bloquearse la creación de incidencias cuando eDesk rechace campos?",
-  "rationale": "La corrección depende de un contrato externo aún no confirmado y la política ante rechazos decide entre continuidad operativa y consistencia de datos.",
+  "question": "¿Los campos de eDesk deben reflejar solo el estado al abrir la incidencia o actualizarse después cuando cambien pedidos y lotes?",
+  "rationale": "La petición inicial exige refresco posterior, mientras que la PR abierta lo elimina como decisión de alcance; ambas opciones son comportamientos válidos pero incompatibles.",
   "options": [
     {
-      "title": "Restaurar y sincronizar",
-      "body": "Confirmar el catálogo de eDesk, corregir el mapeo y añadir actualización posterior sin bloquear nuevas incidencias.",
+      "title": "Mantener sincronización posterior",
+      "body": "Conservar el requisito original y añadir una actualización acotada para tickets abiertos cuando cambien los datos relevantes.",
       "recommended": true
     },
     {
-      "title": "Mantener el fallback temporal",
-      "body": "Aceptar tickets sin campos mientras ATC corrige la configuración externa, dejando el problema de completitud pendiente.",
-      "recommended": false
-    },
-    {
-      "title": "Exigir campos válidos",
-      "body": "Rechazar la creación cuando falle un campo para evitar tickets incompletos, asumiendo la interrupción del flujo.",
+      "title": "Confirmar instantánea de apertura",
+      "body": "Aceptar que los campos representen solo el momento de crear la incidencia y ajustar la issue y la PR a ese contrato.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Restaurar y sincronizar",
-    "body": "Confirmar el catálogo de eDesk, corregir el mapeo y añadir actualización posterior sin bloquear nuevas incidencias.",
+    "title": "Mantener sincronización posterior",
+    "body": "Conservar el requisito original y añadir una actualización acotada para tickets abiertos cuando cambien los datos relevantes.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Está asignado al issue y el historial le vincula con el fallback que define este comportamiento.",
+    "reason": "Lleva la PR vinculada y puede concretar el coste técnico de cada alcance con ATC.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9451.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9451#issuecomment-5644938485",
-    "reviewedAt": "2026-09-14T10:23:39.143Z",
-    "mainSha": "a3b8c222d6df86d83e8dc3e516292d9fed082308"
+    "reviewedAt": "2026-09-14T12:48:31.802Z",
+    "mainSha": "ff3b1daeeb02785d5067eeff5266eff1ff7acdf4"
   }
 }

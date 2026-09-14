@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-14T11:25:42.835Z",
-  "updatedAt": "2026-09-14T10:22:31Z",
+  "generatedAt": "2026-09-14T12:49:15.102Z",
+  "updatedAt": "2026-09-14T12:42:51Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,50 +12,49 @@
     "labels": [
       "app:admin",
       "feature",
-      "triage:queued",
+      "triage:running",
       "clawsweeper:needs-product-decision",
+      "P2",
       "reporter:danielmenchen-hamelyn",
-      "epic:warehouse-telemetry",
-      "P2"
+      "epic:warehouse-telemetry"
     ],
     "createdAt": "2026-09-14T06:41:33Z",
-    "updatedAt": "2026-09-14T10:22:31Z"
+    "updatedAt": "2026-09-14T12:42:51Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se aprueba una lista canónica de procesos de la que deriven las listas de ritmo y catálogo antes de iniciar F3 y F5B?",
-  "rationale": "El código no puede decidir qué procesos solo miden tiempo, cuáles tienen objetivo de ritmo y cuáles admiten faltas sin imponer una política operativa.",
+  "question": "¿Qué flujo operativo debe gobernar las auditorías de contenedores de F6: cola y bloqueo en Admin, o selección mediante agente con una política explícita de Centralita?",
+  "rationale": "F3 puede crear la base técnica, pero no debe inferir quién selecciona, bloquea o cancela contenedores sin una regla operativa aprobada.",
   "options": [
     {
-      "title": "Definir taxonomía canónica",
-      "body": "Aprobar una lista maestra y derivar explícitamente los subconjuntos de sesiones, ritmo y catálogo antes de continuar.",
+      "title": "Cola en Admin",
+      "body": "Generalizar el patrón operativo con selección, bloqueo, cancelación motivada y registro del resultado desde Admin.",
       "recommended": true
     },
     {
-      "title": "Mantener listas independientes",
-      "body": "Conservar listas separadas, documentando para cada proceso su inclusión y las excepciones históricas.",
+      "title": "Selección por agente",
+      "body": "Delegar la selección al agente y fijar en el contrato CLI el papel de Centralita ante una auditoría.",
       "recommended": false
     },
     {
-      "title": "Posponer la normalización",
-      "body": "Continuar las fases actuales y registrar la divergencia como deuda que deberá resolverse antes del PR final.",
+      "title": "Aplazar F6",
+      "body": "Limitar F3 a la base de auditorías y aplazar el flujo hasta que el responsable de almacén cierre los criterios.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Definir taxonomía canónica",
-    "body": "Aprobar una lista maestra y derivar explícitamente los subconjuntos de sesiones, ritmo y catálogo antes de continuar.",
+    "title": "Cola en Admin",
+    "body": "Generalizar el patrón operativo con selección, bloqueo, cancelación motivada y registro del resultado desde Admin.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "danielmenchen-hamelyn",
-    "reason": "Coordina las fases de producto afectadas y documentó la divergencia en la epic.",
+    "reason": "La epic y sus comentarios sitúan la decisión como una definición funcional de la operativa de almacén.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9477.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9477#issuecomment-5660550775",
-    "reviewedAt": "2026-09-14T11:25:42.835Z",
-    "mainSha": "31cd3d47473a303b1906da1fc19dd5219d052d49"
+    "reviewedAt": "2026-09-14T12:49:15.102Z",
+    "mainSha": "ff3b1daeeb02785d5067eeff5266eff1ff7acdf4"
   }
 }
