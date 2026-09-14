@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-14T10:25:39.511Z",
+  "generatedAt": "2026-09-14T10:27:27.309Z",
   "updatedAt": "2026-09-14T10:15:28Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -14,42 +14,41 @@
       "feature",
       "triage:done",
       "clawsweeper:needs-product-decision",
-      "reporter:JavierHamelyn",
-      "P2"
+      "P2",
+      "reporter:JavierHamelyn"
     ],
     "createdAt": "2026-09-14T07:25:56Z",
     "updatedAt": "2026-09-14T10:15:28Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se aprueba invertir en una cola durable de Agents para eliminar los runners de espera, o se mantiene el diseño actual con capacidad Lyno aislada para esperas largas?",
-  "rationale": "La alternativa elegida determina permisos BigQuery, persistencia, idempotencia, alertas y operación de runners; no es una reparación mecánica acotada.",
+  "question": "¿Se aprueba trasladar el ciclo completo a `apps/agents` con estado durable, o se prefiere mantener GitHub Actions en una capacidad de runner aislada?",
+  "rationale": "La elección decide el contrato de persistencia, permisos, recuperación tras reinicios y coste operativo que el equipo debe mantener.",
   "options": [
     {
-      "title": "Cola durable en Agents",
-      "body": "Persistir cada solicitud, respetar su minuto reservado y publicar despacho, métricas y alertas desde el servidor.",
+      "title": "Orquestador durable en Agents",
+      "body": "Persistir la solicitud y ejecutar despacho, seguimiento y alertas fuera de GitHub Actions, conservando idempotencia por marketplace e intento.",
       "recommended": true
     },
     {
-      "title": "Runner Lyno aislado",
-      "body": "Mantener el flujo de GitHub Actions, pero registrar varios runners dedicados que no bloqueen el housekeeping.",
+      "title": "Runner aislado para esperas",
+      "body": "Mantener el flujo actual en GitHub Actions, pero reservar capacidad separada para no bloquear housekeeping.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Cola durable en Agents",
-    "body": "Persistir cada solicitud, respetar su minuto reservado y publicar despacho, métricas y alertas desde el servidor.",
+    "title": "Orquestador durable en Agents",
+    "body": "Persistir la solicitud y ejecutar despacho, seguimiento y alertas fuera de GitHub Actions, conservando idempotencia por marketplace e intento.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su historial concentra el contrato de ventanas y los recibos que la decisión debe conservar.",
+    "reason": "El reporte y los commits recientes muestran conocimiento directo de los costes, ventanas y reintentos del flujo.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9484.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9484#issuecomment-5660619899",
-    "reviewedAt": "2026-09-14T10:25:39.511Z",
-    "mainSha": "a3b8c222d6df86d83e8dc3e516292d9fed082308"
+    "reviewedAt": "2026-09-14T10:27:27.309Z",
+    "mainSha": "1f2eb6a576bfc7ae5a4e2ef3e22e1c8b0aa9e77f"
   }
 }
