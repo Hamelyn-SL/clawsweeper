@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-14T11:51:43.894Z",
-  "updatedAt": "2026-09-14T11:46:32Z",
+  "generatedAt": "2026-09-14T11:54:59.563Z",
+  "updatedAt": "2026-09-14T11:46:29Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,48 +14,45 @@
       "source:admin-panel",
       "app:supply",
       "reporter:arineligrigore",
-      "triage:needs-info",
-      "P1",
-      "clawsweeper:needs-product-decision"
+      "P1"
     ],
     "createdAt": "2026-09-14T07:55:48Z",
-    "updatedAt": "2026-09-14T11:46:32Z"
+    "updatedAt": "2026-09-14T11:46:29Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué política debe aplicar Supply cuando una fusión aumenta cajas después de que MRW haya aceptado la recogida?",
-  "rationale": "El código dispone de una primitiva de modificación, pero falta decidir si se sincroniza, se bloquea la fusión o se deriva a una gestión manual cuando ya existe tracking.",
+  "question": "¿Qué debe hacer Supply cuando una fusión aumenta las cajas de una recogida MRW ya contratada?",
+  "rationale": "La integración actual no ofrece una actualización directa y elegir entre modificar, cancelar/recrear o bloquear la fusión afecta a la operativa y a referencias existentes.",
   "options": [
     {
-      "title": "Sincronización automática idempotente",
-      "body": "Modificar el envío MRW al fusionar, persistir el resultado y dejar el pedido pendiente de intervención si el transportista lo rechaza.",
+      "title": "Modificar mediante contrato MRW",
+      "body": "Implementar una actualización idempotente solo si MRW confirma un endpoint y la aceptación de bultos modificados.",
       "recommended": true
     },
     {
-      "title": "Bloquear la fusión con tracking",
-      "body": "Impedir que el cliente añada cajas cuando la recogida ya está contratada y mostrar una instrucción de soporte.",
+      "title": "Cancelar y recrear",
+      "body": "Cancelar la recogida previa y crear otra únicamente si Operaciones valida que no duplica ni pierde la planificación.",
       "recommended": false
     },
     {
-      "title": "Gestión operativa manual",
-      "body": "Mantener la fusión interna y exigir a ATC que actualice cada recogida ya contratada antes de confirmarla.",
+      "title": "Bloquear tras tracking",
+      "body": "Impedir la fusión que aumente cajas cuando ya exista tracking hasta disponer de un circuito de modificación.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Sincronización automática idempotente",
-    "body": "Modificar el envío MRW al fusionar, persistir el resultado y dejar el pedido pendiente de intervención si el transportista lo rechaza.",
+    "title": "Modificar mediante contrato MRW",
+    "body": "Implementar una actualización idempotente solo si MRW confirma un endpoint y la aceptación de bultos modificados.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "HamelynDev",
-    "reason": "El historial y el triage reciente lo conectan con el flujo de merge y la integración MRW.",
-    "confidence": "high"
+    "person": "JavierHamelyn",
+    "reason": "Su trabajo previo se centró en el cálculo de cajas del mismo flujo de fusión.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9488.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9488#issuecomment-5662682394",
-    "reviewedAt": "2026-09-14T11:51:43.894Z",
+    "reviewedAt": "2026-09-14T11:54:59.563Z",
     "mainSha": "31cd3d47473a303b1906da1fc19dd5219d052d49"
   }
 }

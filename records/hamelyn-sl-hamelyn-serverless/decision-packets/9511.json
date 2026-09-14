@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-14T11:59:37.310Z",
+  "updatedAt": "2026-09-14T11:33:56Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9511,
+    "title": "Ecommerce: bloquear al comprador de Vallada 46691 con 14 disputas abiertas",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9511",
+    "state": "open",
+    "labels": [
+      "app:ecommerce",
+      "feature",
+      "triage:queued",
+      "P1"
+    ],
+    "createdAt": "2026-09-14T11:33:32Z",
+    "updatedAt": "2026-09-14T11:33:56Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Los identificadores de este comprador deben cancelar solo pedidos de `HAMELYN_ECOMMERCE` o cualquier pedido creado por la fábrica compartida?",
+  "rationale": "La lista se aplica antes de diferenciar el flujo de ecommerce y actualmente afecta a todos los marketplaces; el código no expresa una política de alcance por canal.",
+  "options": [
+    {
+      "title": "Limitarlo a ecommerce",
+      "body": "Aplicar estos identificadores solo cuando `marketplace` sea `HAMELYN_ECOMMERCE`, evitando efectos sobre otros canales.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener bloqueo global",
+      "body": "Conservar la semántica central actual y bloquear cualquier pedido que coincida con estos identificadores en todos los marketplaces.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Limitarlo a ecommerce",
+    "body": "Aplicar estos identificadores solo cuando `marketplace` sea `HAMELYN_ECOMMERCE`, evitando efectos sobre otros canales.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Daniel",
+    "reason": "Es el contribuidor más reciente del archivo que materializa la política actual de coincidencia.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9511.md",
+    "reviewedAt": "2026-09-14T11:59:37.310Z",
+    "mainSha": "31cd3d47473a303b1906da1fc19dd5219d052d49"
+  }
+}
