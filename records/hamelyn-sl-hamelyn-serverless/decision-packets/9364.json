@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-12T08:58:35.479Z",
-  "updatedAt": "2026-09-10T06:46:47Z",
+  "generatedAt": "2026-09-14T10:30:06.145Z",
+  "updatedAt": "2026-09-14T08:33:07Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,47 +13,46 @@
       "bug",
       "app:marketplace",
       "triage:needs-info",
-      "clawsweeper:needs-product-decision",
-      "P1"
+      "P1",
+      "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-09-10T06:22:58Z",
-    "updatedAt": "2026-09-10T06:46:47Z"
+    "updatedAt": "2026-09-14T08:33:07Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué estado y proceso debe aplicar eBay tras N retiradas HTTP 400 ambiguas: seguir reintentando, aparcar para revisión o alertar con una cola explícita?",
-  "rationale": "El código actual prioriza no tombstonear una oferta potencialmente viva, pero no define una salida terminal ni un circuito operativo para errores persistentes.",
+  "question": "¿Qué estado operativo debe aplicar eBay tras N retiros HTTP 400 ambiguos que siguen fallando: reintento ilimitado, aparcado con alerta o tombstone?",
+  "rationale": "El código actual prioriza no afirmar una retirada sin prueba, pero el umbral y el proceso de recuperación cambian el riesgo de sobreventa frente al de retirar prematuramente.",
   "options": [
     {
       "title": "Aparcar y alertar tras umbral",
-      "body": "Conservar el mirror y registrar un estado revisable con telemetría por SKU/oferta para que Operaciones verifique eBay.",
+      "body": "Conservar el mirror, persistir una causa revisable y alertar a Operaciones para comprobar eBay antes de cerrar el caso.",
       "recommended": true
     },
     {
-      "title": "Mantener reintentos indefinidos",
-      "body": "Preservar la seguridad de retirada actual aceptando que los casos persistentes dependan de vigilancia externa.",
+      "title": "Mantener reintentos ilimitados",
+      "body": "Conservar la semántica actual de seguridad, aceptando que los rechazos persistentes dependan de vigilancia externa.",
       "recommended": false
     },
     {
       "title": "Tombstonear tras umbral",
-      "body": "Sacar la oferta de la cola tras N errores, asumiendo el riesgo de dejar un listing remoto todavía publicado.",
+      "body": "Sacar el elemento de la cola asumiendo el riesgo explícito de que una oferta remota siga publicada.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Aparcar y alertar tras umbral",
-    "body": "Conservar el mirror y registrar un estado revisable con telemetría por SKU/oferta para que Operaciones verifique eBay.",
+    "body": "Conservar el mirror, persistir una causa revisable y alertar a Operaciones para comprobar eBay antes de cerrar el caso.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "Miguel Angel Hernández Perdomo",
-    "reason": "Es el candidato más próximo al flujo actual de recuperación de IDs y retirada eBay.",
+    "reason": "Su cambio reciente gobierna la recuperación por SKU y la clasificación de las retiradas eBay.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9364.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9364#issuecomment-5644931658",
-    "reviewedAt": "2026-09-12T08:58:35.479Z",
-    "mainSha": "55db7e4a7cbff616c2537722dd88f2549f8bfce6"
+    "reviewedAt": "2026-09-14T10:30:06.145Z",
+    "mainSha": "a3b8c222d6df86d83e8dc3e516292d9fed082308"
   }
 }

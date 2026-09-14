@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-09T19:07:02.050Z",
-  "updatedAt": "2026-09-09T19:01:07Z",
+  "generatedAt": "2026-09-14T10:29:09.230Z",
+  "updatedAt": "2026-09-14T08:32:59Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,48 +14,42 @@
       "reporter:miguel",
       "triage:done",
       "clawsweeper:needs-product-decision",
+      "P2",
       "app:agents",
-      "origin:dev",
-      "P2"
+      "origin:dev"
     ],
     "createdAt": "2026-09-09T17:10:29Z",
-    "updatedAt": "2026-09-09T19:01:07Z"
+    "updatedAt": "2026-09-14T08:32:59Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se prioriza un rediseño del watcher con correlación por desenlace antes de ampliar exclusiones, o se aceptan excepciones puntuales con menor cobertura temporal de fallos?",
-  "rationale": "La fuente actual no contiene el éxito correlacionado y el triage aportó contraejemplos donde una misma firma precede a errores terminales o a un 504 sin otro warning/error.",
+  "question": "¿Qué evidencia de desenlace debe exigir el watcher antes de suprimir o rebajar una firma compartida entre reintentos recuperables y fallos terminales?",
+  "rationale": "La fuente actual no incluye el resultado de la operación, y los contraejemplos del triage muestran que la misma firma puede coexistir con retiradas fallidas.",
   "options": [
     {
-      "title": "Definir clasificación por desenlace",
-      "body": "Ampliar la detección para contrastar cada operación con su resultado final antes de descartar alertas; conservar los ajustes puntuales ya acotados.",
+      "title": "Correlación por desenlace",
+      "body": "Incorporar evidencia de resultado por `request_id` u operación y rebajar únicamente los casos con éxito confirmado.",
       "recommended": true
     },
     {
-      "title": "Aceptar exclusiones globales",
-      "body": "Suprimir las firmas solicitadas aunque ciertos errores terminales de igual texto dejen de generar una incidencia.",
-      "recommended": false
-    },
-    {
-      "title": "Mantener el comportamiento actual",
-      "body": "Dejar las reglas actuales hasta disponer de más telemetría y resolver por separado las dos PRs abiertas.",
+      "title": "Firmas globales acotadas",
+      "body": "Suprimir solo firmas demostrablemente inocuas y mantener el resto como señal hasta disponer de correlación.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Definir clasificación por desenlace",
-    "body": "Ampliar la detección para contrastar cada operación con su resultado final antes de descartar alertas; conservar los ajustes puntuales ya acotados.",
+    "title": "Correlación por desenlace",
+    "body": "Incorporar evidencia de resultado por `request_id` u operación y rebajar únicamente los casos con éxito confirmado.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "Miguel Angel Hernández Perdomo",
-    "reason": "Su historial concentra la evolución de normalización, consolidación y evidencia canónica del watcher.",
+    "person": "MarcosTerroso",
+    "reason": "Ha mantenido las excepciones recientes del watcher y las correcciones parciales que condicionan esta decisión.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9346.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9346#issuecomment-5605957168",
-    "reviewedAt": "2026-09-09T19:07:02.050Z",
-    "mainSha": "18428b5212091ac86628444285f3830924338212"
+    "reviewedAt": "2026-09-14T10:29:09.230Z",
+    "mainSha": "a3b8c222d6df86d83e8dc3e516292d9fed082308"
   }
 }

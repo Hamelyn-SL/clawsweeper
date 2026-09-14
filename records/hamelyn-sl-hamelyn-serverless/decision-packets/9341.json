@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-09T20:57:47.881Z",
-  "updatedAt": "2026-09-09T20:01:31Z",
+  "generatedAt": "2026-09-14T10:26:15.806Z",
+  "updatedAt": "2026-09-14T08:32:52Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,48 +15,47 @@
       "reporter:miguel",
       "triage:done",
       "clawsweeper:needs-product-decision",
+      "P2",
       "origin:dev",
-      "mk:amazon",
-      "P2"
+      "mk:amazon"
     ],
     "createdAt": "2026-09-09T17:10:18Z",
-    "updatedAt": "2026-09-09T20:01:31Z"
+    "updatedAt": "2026-09-14T08:32:52Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Autoriza el equipo Marketplace elevar escalonadamente `updatePriceLimit` hasta 400 en MX, FR e IT bajo el presupuesto compartido de Amazon EU?",
-  "rationale": "El código ya ofrece el control, pero decidir el ritmo y la simultaneidad altera capacidad remota, duración de cron y posible throttling de una cuenta compartida.",
+  "question": "¿Qué escalado de `updatePriceLimit` y qué umbrales de parada aprueba Marketplace para MX, FR e IT en la cuenta Amazon EU compartida?",
+  "rationale": "El repositorio ya soporta el cambio, pero escoger el caudal de producción y aceptar su presupuesto de cuota requiere juicio operativo.",
   "options": [
     {
-      "title": "Despliegue escalonado con observación",
-      "body": "Elevar una región cada vez hasta 400, manteniendo sus offsets y midiendo selector elegible, resultados persistidos, duración, omisiones y throttling durante 48 horas.",
+      "title": "Escalado monitorizado a 400",
+      "body": "Elevar cada región por etapas hasta 400, manteniendo offsets y parando ante throttling, más duración u omisiones.",
       "recommended": true
     },
     {
-      "title": "Aumento simultáneo",
-      "body": "Subir MX, FR e IT a 400 a la vez para reducir antes las colas, aceptando mayor incertidumbre sobre la cuota compartida.",
+      "title": "Mantener los límites actuales",
+      "body": "No cambiar producción hasta completar una medición adicional del selector elegible y de la cuota por cuenta.",
       "recommended": false
     },
     {
-      "title": "Instrumentar antes de cambiar",
-      "body": "No modificar límites hasta disponer de atribución por cohorte y del productor de `needsUpdatePrice`, aunque las colas sigan creciendo.",
+      "title": "Rediseñar el reparto",
+      "body": "Modificar límites y cadencias conjuntamente tras modelar el presupuesto de feeds de la cuenta EU.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Despliegue escalonado con observación",
-    "body": "Elevar una región cada vez hasta 400, manteniendo sus offsets y midiendo selector elegible, resultados persistidos, duración, omisiones y throttling durante 48 horas.",
+    "title": "Escalado monitorizado a 400",
+    "body": "Elevar cada región por etapas hasta 400, manteniendo offsets y parando ante throttling, más duración u omisiones.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MarcosTerroso",
-    "reason": "Combina la asignación y acción operativa documentada en el antecedente de SE con mantenimiento reciente del cron.",
-    "confidence": "high"
+    "person": "Miguel Angel Hernández Perdomo",
+    "reason": "Su historial cubre la migración Amazon y el adaptador de feeds afectados.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9341.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9341#issuecomment-5606168133",
-    "reviewedAt": "2026-09-09T20:57:47.881Z",
-    "mainSha": "04d5ad041d95891dc1cd4193b8a88b2804ac1312"
+    "reviewedAt": "2026-09-14T10:26:15.806Z",
+    "mainSha": "a3b8c222d6df86d83e8dc3e516292d9fed082308"
   }
 }

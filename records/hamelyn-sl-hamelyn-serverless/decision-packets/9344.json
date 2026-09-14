@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-09T17:21:23.003Z",
-  "updatedAt": "2026-09-09T17:10:41Z",
+  "generatedAt": "2026-09-14T10:26:19.106Z",
+  "updatedAt": "2026-09-14T08:32:54Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,48 +12,44 @@
     "labels": [
       "bug",
       "reporter:miguel",
-      "triage:queued",
-      "P2",
+      "triage:needs-info",
+      "P1",
+      "clawsweeper:needs-product-decision",
       "app:agents",
       "origin:dev"
     ],
     "createdAt": "2026-09-09T17:10:25Z",
-    "updatedAt": "2026-09-09T17:10:41Z"
+    "updatedAt": "2026-09-14T08:32:54Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "Cuando el juez Gateway no esté disponible, ¿debe Coliseo publicar los hallazgos de Codex como revisión degradada o bloquear la publicación hasta recuperar un juez estructurado?",
-  "rationale": "La elección modifica la garantía de calidad y la semántica del comentario de revisión; el código actual solo informa del fallo de clustering.",
+  "question": "¿Las voces Grok y Gateway deben seguir siendo una capacidad operativa soportada en rondas solicitadas explícitamente, o Coliseo debe consolidarse como revisión automática solo con Codex?",
+  "rationale": "La ruta automática ya evita sus fallos, pero la respuesta determina si procede invertir en credenciales, cuota y certificados para voces que permanecen seleccionables.",
   "options": [
     {
-      "title": "Publicar como degradada",
-      "body": "Conservar los hallazgos de Codex y marcar visiblemente que clustering o criba no estuvieron disponibles, sin presentar el resultado como veredicto completo.",
+      "title": "Consolidar Codex por defecto",
+      "body": "Mantener las voces adicionales fuera de la operación normal y documentarlas como experimentales hasta disponer de una garantía operativa.",
       "recommended": true
     },
     {
-      "title": "Bloquear la revisión",
-      "body": "Mantener la garantía actual y no publicar resultados hasta que un juez compatible vuelva a estar disponible.",
-      "recommended": false
-    },
-    {
-      "title": "Rotar a otro juez",
-      "body": "Aprobar un proveedor alternativo con presupuesto y contrato estructurado antes de habilitarlo como fallback permanente.",
+      "title": "Recuperar multivoces opcionales",
+      "body": "Restaurar cuota y autenticación, corregir el sandbox de certificados y exigir una ronda completa con telemetría antes de volver a recomendarlas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Publicar como degradada",
-    "body": "Conservar los hallazgos de Codex y marcar visiblemente que clustering o criba no estuvieron disponibles, sin presentar el resultado como veredicto completo.",
+    "title": "Consolidar Codex por defecto",
+    "body": "Mantener las voces adicionales fuera de la operación normal y documentarlas como experimentales hasta disponer de una garantía operativa.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "La historia muestra que concentra la arquitectura de voces, jueces y credenciales de Coliseo.",
+    "reason": "La configuración vigente y la decisión de coste y cobertura de las voces proceden de su trabajo fusionado.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9344.md",
-    "reviewedAt": "2026-09-09T17:21:23.003Z",
-    "mainSha": "6774a61aabbfadb15a645312d7b56b712cc60aae"
+    "reviewedAt": "2026-09-14T10:26:19.106Z",
+    "mainSha": "a3b8c222d6df86d83e8dc3e516292d9fed082308"
   }
 }

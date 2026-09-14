@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-12T08:57:29.638Z",
-  "updatedAt": "2026-09-10T06:15:15Z",
+  "generatedAt": "2026-09-14T10:30:04.843Z",
+  "updatedAt": "2026-09-14T08:33:05Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -18,43 +18,42 @@
       "P3"
     ],
     "createdAt": "2026-09-10T05:44:50Z",
-    "updatedAt": "2026-09-10T06:15:15Z"
+    "updatedAt": "2026-09-14T08:33:05Z"
   },
   "lane": "product_direction",
   "priority": "P3",
-  "question": "¿Debe el equipo adoptar el runtime construido desde `composition/` y project references por capa, o limitar este seguimiento a las correcciones pequeñas ya demostradas?",
-  "rationale": "La limpieza de etiquetas y tripwire es mecánica, pero el límite permanente entre composición e infraestructura y la estrategia de compilación requieren una decisión arquitectónica explícita.",
+  "question": "¿Debe el equipo priorizar ahora project references por capa y, si es así, aceptar una migración gradual del cableado de marketplaces en tickets separados?",
+  "rationale": "La refactorización ya eliminó las fronteras ilegales, pero elegir la arquitectura de compilación y el punto de composición definitivo cambia el coste de mantenimiento y de CI.",
   "options": [
     {
-      "title": "Separar y priorizar residuos mecánicos",
-      "body": "Abrir seguimientos pequeños para README y tripwire, dejando runtime y project references para diseño y medición independientes.",
+      "title": "Dividir y priorizar la medición",
+      "body": "Crear tickets independientes y empezar por una prueba de referencias por capa con comparación reproducible del tiempo de CI.",
       "recommended": true
     },
     {
-      "title": "Adoptar el runtime desde composición",
-      "body": "Definir el contrato de inyección y migrar los adaptadores a un runtime construido por composición en un PR específico.",
+      "title": "Cerrar deuda menor primero",
+      "body": "Actualizar contrato, README y tripwire tras la verificación de datos, dejando runtime y referencias para una fase posterior.",
       "recommended": false
     },
     {
-      "title": "Prototipar project references",
-      "body": "Preparar una comparación aislada de compilación y caché antes de comprometer cambios de estructura en todo `@hamelyn/core`.",
+      "title": "Mantener el diseño actual",
+      "body": "Conservar el runtime de infraestructura y el proyecto composite único mientras no haya beneficio de CI demostrado.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Separar y priorizar residuos mecánicos",
-    "body": "Abrir seguimientos pequeños para README y tripwire, dejando runtime y project references para diseño y medición independientes.",
+    "title": "Dividir y priorizar la medición",
+    "body": "Crear tickets independientes y empezar por una prueba de referencias por capa con comparación reproducible del tiempo de CI.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "danielmenchen-hamelyn",
-    "reason": "Es el contribuidor reciente con la traza más directa sobre la inyección de marketplace y el alcance original del refactor.",
+    "reason": "Su historial reciente cubre tanto la inyección del runtime como el diseño de fronteras de `@hamelyn/core`.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9358.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9358#issuecomment-5644930294",
-    "reviewedAt": "2026-09-12T08:57:29.638Z",
-    "mainSha": "55db7e4a7cbff616c2537722dd88f2549f8bfce6"
+    "reviewedAt": "2026-09-14T10:30:04.843Z",
+    "mainSha": "a3b8c222d6df86d83e8dc3e516292d9fed082308"
   }
 }
