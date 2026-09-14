@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-14T11:12:54.027Z",
-  "updatedAt": "2026-09-14T10:53:37Z",
+  "generatedAt": "2026-09-14T11:30:25.586Z",
+  "updatedAt": "2026-09-14T11:14:35Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,47 +13,46 @@
       "app:admin",
       "feature",
       "triage:needs-info",
-      "clawsweeper:needs-product-decision",
-      "P1"
+      "P1",
+      "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-09-11T10:34:56Z",
-    "updatedAt": "2026-09-14T10:53:37Z"
+    "updatedAt": "2026-09-14T11:14:35Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué códigos HS, fallbacks y notas por destino han confirmado Operaciones/FedEx para adoptar como matriz común en la PR?",
-  "rationale": "El diseño compartido es viable, pero elegir valores nacionales y degradaciones sin validación operativa cambiaría declaraciones aduaneras reales.",
+  "question": "¿Debe aprobarse una matriz limitada a códigos confirmados por Operaciones/FedEx antes de extender variantes nacionales de clasificación en la PR abierta?",
+  "rationale": "La centralización técnica es razonable, pero la issue exige confirmación operativa y la PR reconoce que varias variantes nacionales no se han validado con carriers.",
   "options": [
     {
-      "title": "Confirmar matriz operativa",
-      "body": "Operaciones/FedEx aporta códigos, notas, longitudes y fallback por destino para incorporarlos a la PR antes del merge.",
+      "title": "Esperar la matriz validada",
+      "body": "Solicitar a Operaciones/FedEx los códigos y formatos aceptados por destino antes de decidir el alcance definitivo de la PR.",
       "recommended": true
     },
     {
-      "title": "Acotar a reglas verificadas",
-      "body": "La PR centraliza solo destinos y tratamientos confirmados, conservando temporalmente el comportamiento actual donde falte validación.",
+      "title": "Limitar el primer aterrizaje",
+      "body": "Mantener solo destinos y códigos expresamente confirmados, con fallback HS6 documentado hasta ampliar la validación.",
       "recommended": false
     },
     {
-      "title": "Pausar el cambio",
-      "body": "Se mantiene la lógica distribuida hasta disponer de una matriz suficientemente comprobada para todos los destinos afectados.",
+      "title": "Aceptar la tabla propuesta",
+      "body": "Aprobar las variantes nacionales documentadas y asumir una revisión operativa posterior de los destinos restantes.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Confirmar matriz operativa",
-    "body": "Operaciones/FedEx aporta códigos, notas, longitudes y fallback por destino para incorporarlos a la PR antes del merge.",
+    "title": "Esperar la matriz validada",
+    "body": "Solicitar a Operaciones/FedEx los códigos y formatos aceptados por destino antes de decidir el alcance definitivo de la PR.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Es el autor de la propuesta y de la PR que materializa la decisión de clasificación.",
+    "reason": "Es el responsable asignado y concentra la trayectoria más directa en los selectores HS, la factura US y la PR candidata.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9449.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9449#issuecomment-5644977839",
-    "reviewedAt": "2026-09-14T11:12:54.027Z",
+    "reviewedAt": "2026-09-14T11:30:25.586Z",
     "mainSha": "31cd3d47473a303b1906da1fc19dd5219d052d49"
   }
 }
