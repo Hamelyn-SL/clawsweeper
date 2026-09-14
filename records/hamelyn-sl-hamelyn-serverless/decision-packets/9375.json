@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-14T08:03:06.660Z",
-  "updatedAt": "2026-09-14T07:29:14Z",
+  "generatedAt": "2026-09-14T11:19:50.220Z",
+  "updatedAt": "2026-09-14T08:33:20Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,48 +15,47 @@
       "question",
       "triage:no-change",
       "clawsweeper:needs-product-decision",
+      "P2",
       "reporter:danielmenchen-hamelyn",
-      "epic:warehouse-telemetry",
-      "P2"
+      "epic:warehouse-telemetry"
     ],
     "createdAt": "2026-09-10T07:39:50Z",
-    "updatedAt": "2026-09-14T07:29:14Z"
+    "updatedAt": "2026-09-14T08:33:20Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se aprueba A, con cola operacional en Admin y bloqueo hasta auditar o cancelar, o B, con selección por agente y una política explícita de Centralita?",
-  "rationale": "Ambas alternativas cambian quién decide, cómo se bloquea el trabajo y qué superficie debe implementarse; el código actual solo aporta precedentes de QA especializados.",
+  "question": "¿Debe F6 adoptar una cola operacional en Admin con bloqueo, o una selección mediante agente con una política explícita de Centralita?",
+  "rationale": "Ambas opciones cambian quién controla el flujo, cuándo se bloquea un contenedor y cómo se recupera la operación; el código no puede resolver ese contrato operativo.",
   "options": [
     {
-      "title": "A: cola en Admin y bloqueo",
-      "body": "Generalizar el patrón de QA para seleccionar contenedores, bloquearlos hasta auditar o cancelar con motivo y registrar faltas automáticamente.",
+      "title": "Dashboard operativo en Admin",
+      "body": "Generalizar el patrón de QA para seleccionar contenedores, bloquearlos hasta auditar o cancelar con motivo y crear faltas desde el resultado.",
       "recommended": true
     },
     {
-      "title": "B: selección por agente",
-      "body": "Delegar la selección al agente, registrar el resultado por CLI y decidir expresamente si Centralita bloquea, avisa o no interviene.",
+      "title": "Selección mediante agente",
+      "body": "Delegar la selección al agente y fijar en el contrato CLI si Centralita bloquea, avisa o no interviene.",
       "recommended": false
     },
     {
-      "title": "Aplazar F6",
-      "body": "Mantener F3 limitada a la base común y dejar el flujo operativo para una fase posterior con responsable y criterios cerrados.",
+      "title": "Aplazar el flujo operativo",
+      "body": "Limitar F3 a la base común de auditorías y abrir F6 después con un responsable y criterios operativos cerrados.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "A: cola en Admin y bloqueo",
-    "body": "Generalizar el patrón de QA para seleccionar contenedores, bloquearlos hasta auditar o cancelar con motivo y registrar faltas automáticamente.",
+    "title": "Dashboard operativo en Admin",
+    "body": "Generalizar el patrón de QA para seleccionar contenedores, bloquearlos hasta auditar o cancelar con motivo y crear faltas desde el resultado.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "danielmenchen-hamelyn",
-    "reason": "La actualización de la épica le vincula directamente con la definición funcional y el destino de integración de F6.",
+    "reason": "La planificación y los comentarios de la epic lo sitúan como la mejor ruta disponible para validar la decisión de almacén.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9375.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9375#issuecomment-5644932951",
-    "reviewedAt": "2026-09-14T08:03:06.660Z",
-    "mainSha": "5f94686b2f77077dd8336b49330b90370937343e"
+    "reviewedAt": "2026-09-14T11:19:50.220Z",
+    "mainSha": "31cd3d47473a303b1906da1fc19dd5219d052d49"
   }
 }
