@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-02T11:35:55.529Z",
-  "updatedAt": "2026-09-02T10:55:18Z",
+  "generatedAt": "2026-09-14T09:33:52.272Z",
+  "updatedAt": "2026-09-14T08:31:41Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -16,42 +16,46 @@
       "feature",
       "triage:blocked",
       "clawsweeper:needs-product-decision",
-      "origin:panel",
-      "P2"
+      "P2",
+      "origin:panel"
     ],
     "createdAt": "2026-07-30T09:23:51Z",
-    "updatedAt": "2026-09-02T10:55:18Z"
+    "updatedAt": "2026-09-14T08:31:41Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué señal de activación separará los correos de Supply V2 de los de V1 y cuál será el contrato canónico de slugs y variables para el corte?",
-  "rationale": "La implementación actual no contiene un límite de versión y la especificación adjunta mantiene discrepancias con los handlers existentes.",
+  "question": "¿Qué mecanismo y fecha de activación separarán los correos de Supply V2 de los slugs que continúa usando Supply V1?",
+  "rationale": "El código no contiene una señal de V2 y el cambio solicitado reemplazaría envíos productivos; escoger el mecanismo de corte determina el diseño seguro.",
   "options": [
     {
-      "title": "Activación explícita de V2",
-      "body": "Introducir una señal de versión o rollout que conserve los slugs V1 hasta habilitar los nuevos contratos.",
+      "title": "Activación coordinada de V2",
+      "body": "Introducir una condición explícita de V2 y aplicar el rediseño completo cuando el equipo confirme la fecha y el contrato de variables.",
       "recommended": true
     },
     {
-      "title": "Corte global coordinado",
-      "body": "Sustituir todas las plantillas cuando se confirme que Supply V1 ya no puede generar envíos.",
+      "title": "Mantener los slugs actuales",
+      "body": "Posponer el rediseño hasta que Supply V2 disponga de una señal técnica que separe ambos flujos.",
+      "recommended": false
+    },
+    {
+      "title": "Migración inmediata",
+      "body": "Sustituir los slugs actuales asumiendo que Supply V1 recibirá las nuevas plantillas desde el despliegue.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Activación explícita de V2",
-    "body": "Introducir una señal de versión o rollout que conserve los slugs V1 hasta habilitar los nuevos contratos.",
+    "title": "Activación coordinada de V2",
+    "body": "Introducir una condición explícita de V2 y aplicar el rediseño completo cuando el equipo confirme la fecha y el contrato de variables.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "alexcanHamelyn",
-    "reason": "Su historial en el sistema de plantillas y localización le conecta con la decisión de contrato y ruta de migración.",
-    "confidence": "high"
+    "person": "Daniel",
+    "reason": "Su trabajo reciente concentra el registro de plantillas y es el mejor punto técnico para concretar el mecanismo elegido.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8127.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8127#issuecomment-5129139177",
-    "reviewedAt": "2026-09-02T11:35:55.529Z",
-    "mainSha": "350e0bfc6a03f54c34e3afbc6a231922e06685a7"
+    "reviewedAt": "2026-09-14T09:33:52.272Z",
+    "mainSha": "0f63380573f92ec0af6b63c476b84e5d324a7a56"
   }
 }
