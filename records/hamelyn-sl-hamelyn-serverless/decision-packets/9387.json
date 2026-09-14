@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-14T11:46:40.696Z",
-  "updatedAt": "2026-09-14T11:35:15Z",
+  "generatedAt": "2026-09-14T11:51:13.504Z",
+  "updatedAt": "2026-09-14T11:47:20Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -19,43 +19,42 @@
       "epic:supply-plazos"
     ],
     "createdAt": "2026-09-10T09:41:42Z",
-    "updatedAt": "2026-09-14T11:35:15Z"
+    "updatedAt": "2026-09-14T11:47:20Z"
   },
   "lane": "release_inclusion",
   "priority": "P2",
-  "question": "¿Se autoriza integrar la épica de plazos en `dev` tras validar con Operaciones los recuentos y el plan de activación en producción?",
-  "rationale": "La única ruta activa incorpora esta limpieza junto con cambios de plazos, pagos e incidencias, por lo que la aceptación operativa excede esta refactorización aislada.",
+  "question": "¿Conviene extraer ahora la limpieza del cron en una PR acotada o mantenerla dentro de la integración amplia de plazos?",
+  "rationale": "`dev` sigue expuesto al doble procesamiento de MRW, pero la única implementación activa está agrupada con cambios de flujo y validaciones aún pendientes.",
   "options": [
     {
-      "title": "Validar e integrar la épica",
-      "body": "Confirmar con Operaciones los recuentos y aterrizar la PR abierta en `dev` con el plan de activación documentado.",
+      "title": "Extraer la limpieza",
+      "body": "Crear una PR estrecha con la deduplicación, la separación de SEUR y la retirada de la ruta muerta, sin activar los nuevos plazos.",
       "recommended": true
     },
     {
-      "title": "Extraer la limpieza",
-      "body": "Preparar una PR estrecha con solo la deduplicación y la retirada de la ruta obsoleta antes de activar los plazos nuevos.",
+      "title": "Completar la integración amplia",
+      "body": "Resolver los hallazgos y la validación persistente de la PR del épico antes de integrar también esta limpieza.",
       "recommended": false
     },
     {
-      "title": "Mantener la integración en espera",
-      "body": "Posponer el aterrizaje hasta disponer de una aprobación operativa para el volumen de transiciones y pagos resultante.",
+      "title": "Posponer ambos cambios",
+      "body": "Mantener el cron actual hasta que Operaciones y el equipo prioricen la activación completa de plazos.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Validar e integrar la épica",
-    "body": "Confirmar con Operaciones los recuentos y aterrizar la PR abierta en `dev` con el plan de activación documentado.",
+    "title": "Extraer la limpieza",
+    "body": "Crear una PR estrecha con la deduplicación, la separación de SEUR y la retirada de la ruta muerta, sin activar los nuevos plazos.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "banosdavidhamelyn",
-    "reason": "Es el responsable asignado de la issue y de la rama de integración actualmente abierta.",
+    "reason": "Ha llevado tanto la limpieza original como la PR abierta que contiene el cambio.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9387.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9387#issuecomment-5662740244",
-    "reviewedAt": "2026-09-14T11:46:40.696Z",
+    "reviewedAt": "2026-09-14T11:51:13.504Z",
     "mainSha": "31cd3d47473a303b1906da1fc19dd5219d052d49"
   }
 }

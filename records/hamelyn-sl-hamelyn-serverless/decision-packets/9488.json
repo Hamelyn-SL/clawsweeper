@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-14T11:51:43.894Z",
+  "updatedAt": "2026-09-14T11:46:32Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9488,
+    "title": "Lotes fusionados y número de cajas ",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9488",
+    "state": "open",
+    "labels": [
+      "bug",
+      "source:admin-panel",
+      "app:supply",
+      "reporter:arineligrigore",
+      "triage:needs-info",
+      "P1"
+    ],
+    "createdAt": "2026-09-14T07:55:48Z",
+    "updatedAt": "2026-09-14T11:46:32Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Qué política debe aplicar Supply cuando una fusión aumenta cajas después de que MRW haya aceptado la recogida?",
+  "rationale": "El código dispone de una primitiva de modificación, pero falta decidir si se sincroniza, se bloquea la fusión o se deriva a una gestión manual cuando ya existe tracking.",
+  "options": [
+    {
+      "title": "Sincronización automática idempotente",
+      "body": "Modificar el envío MRW al fusionar, persistir el resultado y dejar el pedido pendiente de intervención si el transportista lo rechaza.",
+      "recommended": true
+    },
+    {
+      "title": "Bloquear la fusión con tracking",
+      "body": "Impedir que el cliente añada cajas cuando la recogida ya está contratada y mostrar una instrucción de soporte.",
+      "recommended": false
+    },
+    {
+      "title": "Gestión operativa manual",
+      "body": "Mantener la fusión interna y exigir a ATC que actualice cada recogida ya contratada antes de confirmarla.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Sincronización automática idempotente",
+    "body": "Modificar el envío MRW al fusionar, persistir el resultado y dejar el pedido pendiente de intervención si el transportista lo rechaza.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "HamelynDev",
+    "reason": "El historial y el triage reciente lo conectan con el flujo de merge y la integración MRW.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9488.md",
+    "reviewedAt": "2026-09-14T11:51:43.894Z",
+    "mainSha": "31cd3d47473a303b1906da1fc19dd5219d052d49"
+  }
+}
