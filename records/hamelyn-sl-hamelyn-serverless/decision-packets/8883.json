@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-07T13:10:49.834Z",
-  "updatedAt": "2026-09-07T12:42:50Z",
+  "generatedAt": "2026-09-14T06:12:16.120Z",
+  "updatedAt": "2026-09-14T06:06:36Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,43 +13,47 @@
       "bug",
       "source:admin-panel",
       "app:infrastructure",
-      "triage:done",
+      "triage:queued",
       "clawsweeper:needs-product-decision",
       "P2"
     ],
     "createdAt": "2026-08-28T12:19:19Z",
-    "updatedAt": "2026-09-07T12:42:50Z"
+    "updatedAt": "2026-09-14T06:06:36Z"
   },
-  "lane": "manual_review",
+  "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Autoriza Platform ocultar únicamente `products.newData.logista_1` durante una semana con baseline, reversión inmediata y sin borrado definitivo?",
-  "rationale": "La auditoría estática reduce el riesgo, pero no puede excluir consumidores externos o de bajo volumen; la operación sobre Atlas requiere asumir ese riesgo controlado.",
+  "question": "¿Qué contrato debe gobernar los índices retirados: restaurarlos como parte de los esquemas o eliminar sus declaraciones para impedir que conexiones Mongoose los recrean?",
+  "rationale": "La evidencia confirma declaraciones activas y recreaciones, pero no determina si cada índice debe existir ni cuál era la intención de la retirada.",
   "options": [
     {
-      "title": "Autorizar canario reversible",
-      "body": "Ocultar un solo índice, conservar su definición y desocultarlo ante regresión; es la vía recomendada.",
+      "title": "Acordar inventario y ciclo de vida",
+      "body": "Congelar nuevas retiradas, clasificar los 17 índices recreados y después aplicar una corrección limitada por cada decisión aprobada.",
       "recommended": true
     },
     {
-      "title": "Mantener observación",
-      "body": "No modificar índices hasta obtener más evidencia operativa o identificar todos los consumidores externos.",
+      "title": "Conservar las declaraciones",
+      "body": "Tratar los índices recreados como contrato de los esquemas y restaurar o mantener los que sigan siendo necesarios.",
+      "recommended": false
+    },
+    {
+      "title": "Retirar declaraciones aprobadas",
+      "body": "Eliminar de los esquemas solo los índices validados para retirada y exigir `autoIndex: false` en conexiones locales que carguen modelos.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Autorizar canario reversible",
-    "body": "Ocultar un solo índice, conservar su definición y desocultarlo ante regresión; es la vía recomendada.",
+    "title": "Acordar inventario y ciclo de vida",
+    "body": "Congelar nuevas retiradas, clasificar los 17 índices recreados y después aplicar una corrección limitada por cada decisión aprobada.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Es el responsable asignado y ha realizado la auditoría que define el candidato y las guardas de la prueba.",
+    "reason": "Es el asignado que reunió la evidencia operativa más reciente y conoce el lote de índices afectado.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8883.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8883#issuecomment-5452787658",
-    "reviewedAt": "2026-09-07T13:10:49.834Z",
-    "mainSha": "c620bc45fc5f21aa5da8e692265c52e5e68ef02c"
+    "reviewedAt": "2026-09-14T06:12:16.120Z",
+    "mainSha": "f3cdba11f0d9b4219bcb66f4075e0597b2bba7ac"
   }
 }
