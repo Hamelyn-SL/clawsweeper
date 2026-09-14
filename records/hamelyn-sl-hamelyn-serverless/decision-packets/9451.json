@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-12T09:09:38.410Z",
-  "updatedAt": "2026-09-11T11:30:33Z",
+  "generatedAt": "2026-09-14T08:04:44.541Z",
+  "updatedAt": "2026-09-14T07:49:02Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,48 +14,47 @@
       "app:infrastructure",
       "feature",
       "reporter:arineligrigore",
-      "triage:needs-info",
-      "P2",
-      "clawsweeper:needs-product-decision"
+      "triage:queued",
+      "clawsweeper:needs-product-decision",
+      "P2"
     ],
     "createdAt": "2026-09-11T11:24:49Z",
-    "updatedAt": "2026-09-11T11:30:33Z"
+    "updatedAt": "2026-09-14T07:49:02Z"
   },
   "lane": "product_direction",
-  "priority": "P2",
-  "question": "¿Qué campos exactos, destinos eDesk y reglas de actualización deben aplicarse, incluidos valores de lista, contadores temporales y la preservación de `Subestado ATC`?",
-  "rationale": "El repositorio muestra una carga inicial parcial, pero la configuración real de campos y la política de actualización viven en eDesk y determinan tanto el contrato como los reintentos seguros.",
+  "priority": "P1",
+  "question": "¿Debe priorizarse restaurar los campos actuales manteniendo la creación de tickets, o hacer obligatoria la escritura de campos aunque pueda bloquear la incidencia?",
+  "rationale": "La decisión contrapone continuidad del canal de soporte y completitud de la ficha; el código actual eligió continuidad, pero el reporte confirma impacto operativo por campos ausentes.",
   "options": [
     {
-      "title": "Cerrar el catálogo y sincronizar completo",
-      "body": "ATC confirma nombres, tipos, opciones y destino; Backend implementa carga inicial y refrescos idempotentes preservando los campos manuales.",
+      "title": "Restaurar y diagnosticar",
+      "body": "Validar el catálogo de eDesk, corregir el mapeo y conservar un fallback observable para no detener la creación de incidencias.",
       "recommended": true
     },
     {
-      "title": "Limitarlo a la carga inicial",
-      "body": "Se amplía solo la creación de tickets, aceptando explícitamente que estados y contadores posteriores no se actualicen.",
+      "title": "Mantener el fallback actual",
+      "body": "Aceptar temporalmente tickets sin campos mientras ATC corrige el catálogo externo, preservando la continuidad actual.",
       "recommended": false
     },
     {
-      "title": "Mantener el alcance actual",
-      "body": "Se conserva el subconjunto existente hasta que eDesk disponga de un catálogo verificable y una política de actualización aprobada.",
+      "title": "Exigir la carga completa",
+      "body": "Rechazar la creación cuando fallen los campos, priorizando consistencia a costa de interrumpir el canal de incidencias.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Cerrar el catálogo y sincronizar completo",
-    "body": "ATC confirma nombres, tipos, opciones y destino; Backend implementa carga inicial y refrescos idempotentes preservando los campos manuales.",
+    "title": "Restaurar y diagnosticar",
+    "body": "Validar el catálogo de eDesk, corregir el mapeo y conservar un fallback observable para no detener la creación de incidencias.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "arineligrigore",
-    "reason": "Es la persona reportante indicada para coordinar con Administración de eDesk el contrato externo que bloquea una implementación segura.",
-    "confidence": "medium"
+    "person": "JavierHamelyn",
+    "reason": "El historial le vincula tanto con la integración de tickets como con la política actual de fallback.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9451.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9451#issuecomment-5644938485",
-    "reviewedAt": "2026-09-12T09:09:38.410Z",
-    "mainSha": "55db7e4a7cbff616c2537722dd88f2549f8bfce6"
+    "reviewedAt": "2026-09-14T08:04:44.541Z",
+    "mainSha": "5f94686b2f77077dd8336b49330b90370937343e"
   }
 }

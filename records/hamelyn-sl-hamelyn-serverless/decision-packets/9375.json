@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-14T06:50:18.110Z",
-  "updatedAt": "2026-09-14T06:43:08Z",
+  "generatedAt": "2026-09-14T08:03:06.660Z",
+  "updatedAt": "2026-09-14T07:29:14Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,50 +13,49 @@
       "source:admin-panel",
       "app:admin",
       "question",
-      "triage:queued",
+      "triage:no-change",
       "clawsweeper:needs-product-decision",
+      "P2",
       "reporter:danielmenchen-hamelyn",
-      "epic:warehouse-telemetry",
-      "P2"
+      "epic:warehouse-telemetry"
     ],
     "createdAt": "2026-09-10T07:39:50Z",
-    "updatedAt": "2026-09-14T06:43:08Z"
+    "updatedAt": "2026-09-14T07:29:14Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué flujo operativo aprueba el responsable de almacén para F6, incluida la regla de bloqueo, su desbloqueo, la cancelación con motivo, las auditorías dirigidas y el alcance de la meta-auditoría?",
-  "rationale": "El código actual solo aporta un precedente de QA de recepción y F3 excluye deliberadamente la selección y el bloqueo; elegir esas reglas desde una implementación impondría una política operativa no acordada.",
+  "question": "¿Se aprueba A, con cola operacional en Admin y bloqueo hasta auditar o cancelar, o B, con selección por agente y una política explícita de Centralita?",
+  "rationale": "Ambas alternativas cambian quién decide, cómo se bloquea el trabajo y qué superficie debe implementarse; el código actual solo aporta precedentes de QA especializados.",
   "options": [
     {
-      "title": "Admin con bloqueo controlado",
-      "body": "Seleccionar desde el sistema, mantener el contenedor bloqueado hasta auditarlo o cancelarlo con motivo autorizado y gestionar la cola desde Admin.",
+      "title": "A: cola en Admin y bloqueo",
+      "body": "Generalizar el patrón de QA para seleccionar contenedores, bloquearlos hasta auditar o cancelar con motivo y registrar faltas automáticamente.",
       "recommended": true
     },
     {
-      "title": "Agente con intervención definida",
-      "body": "Delegar la selección al agente y decidir expresamente si la centralita bloquea, avisa o no interviene antes de registrar el resultado.",
+      "title": "B: selección por agente",
+      "body": "Delegar la selección al agente, registrar el resultado por CLI y decidir expresamente si Centralita bloquea, avisa o no interviene.",
       "recommended": false
     },
     {
-      "title": "Posponer F6 tras F3",
-      "body": "Mantener únicamente la base de auditorías de F3 hasta validar el flujo con el responsable de almacén.",
+      "title": "Aplazar F6",
+      "body": "Mantener F3 limitada a la base común y dejar el flujo operativo para una fase posterior con responsable y criterios cerrados.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Admin con bloqueo controlado",
-    "body": "Seleccionar desde el sistema, mantener el contenedor bloqueado hasta auditarlo o cancelarlo con motivo autorizado y gestionar la cola desde Admin.",
+    "title": "A: cola en Admin y bloqueo",
+    "body": "Generalizar el patrón de QA para seleccionar contenedores, bloquearlos hasta auditar o cancelar con motivo y registrar faltas automáticamente.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "danielmenchen-hamelyn",
-    "reason": "Está coordinando la epic y la última actualización identifica esta decisión como pendiente del responsable de almacén.",
+    "reason": "La actualización de la épica le vincula directamente con la definición funcional y el destino de integración de F6.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9375.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9375#issuecomment-5644932951",
-    "reviewedAt": "2026-09-14T06:50:18.110Z",
-    "mainSha": "b19cbcbba23983dd34f040503f0c7bca8977a49b"
+    "reviewedAt": "2026-09-14T08:03:06.660Z",
+    "mainSha": "5f94686b2f77077dd8336b49330b90370937343e"
   }
 }
