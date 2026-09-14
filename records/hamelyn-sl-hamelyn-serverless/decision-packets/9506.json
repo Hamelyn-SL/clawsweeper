@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-14T10:47:01.159Z",
+  "updatedAt": "2026-09-14T10:41:27Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9506,
+    "title": "Admin: allow inventory, fusion and Buscalibre productivity sessions alongside the operator's main session",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9506",
+    "state": "open",
+    "labels": [
+      "app:admin",
+      "feature",
+      "triage:queued",
+      "reporter:alejandrodiaz",
+      "P2"
+    ],
+    "createdAt": "2026-09-14T10:41:14Z",
+    "updatedAt": "2026-09-14T10:41:27Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se aprueba que INVENTARIO, INVENTARIO_EXOTEC, FUSIONADO y BUSCALIBRE sean excepciones permanentes a la regla de una única sesión activa por operario?",
+  "rationale": "La propuesta cambia la semántica operativa y de medición introducida recientemente; el código puede implementarla, pero la regla de negocio debe quedar respaldada por quien define productividad.",
+  "options": [
+    {
+      "title": "Aprobar la excepción acotada",
+      "body": "Fusionar la política propuesta tras comprobar en almacén que las sesiones concurrentes conservan atribución y métricas correctas.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener exclusión total",
+      "body": "Conservar una única sesión activa por operario y resolver las interrupciones mediante otro flujo operativo o de medición.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar la excepción acotada",
+    "body": "Fusionar la política propuesta tras comprobar en almacén que las sesiones concurrentes conservan atribución y métricas correctas.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Ha definido los criterios de aceptación y mantiene la propuesta concreta de cambio.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9506.md",
+    "reviewedAt": "2026-09-14T10:47:01.159Z",
+    "mainSha": "06edfdafa3a6a874445d9ed1c58d364062f9ca6d"
+  }
+}
