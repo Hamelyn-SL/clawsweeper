@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-14T09:51:36.110Z",
-  "updatedAt": "2026-09-14T08:32:13Z",
+  "generatedAt": "2026-09-14T10:00:06.975Z",
+  "updatedAt": "2026-09-14T09:52:37Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,47 +15,46 @@
       "feature",
       "triage:done",
       "clawsweeper:needs-product-decision",
-      "reporter:JavierHamelyn",
-      "P2"
+      "P2",
+      "reporter:JavierHamelyn"
     ],
     "createdAt": "2026-08-26T14:39:23Z",
-    "updatedAt": "2026-09-14T08:32:13Z"
+    "updatedAt": "2026-09-14T09:52:37Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se aprueba una primera entrega limitada a observación, clasificación y dry-run FYP para las seis regiones antes de permitir cualquier mutación automática?",
-  "rationale": "La elección define qué incidencias son seguras, los límites de lote y quién autoriza mutaciones contra Amazon; no puede inferirse de la infraestructura existente.",
+  "question": "¿Qué mercados y clases de incidencia deben entrar en la primera fase, y debe limitarse inicialmente a observación y dry-run?",
+  "rationale": "La solicitud define mutaciones recurrentes sobre miles de listings y deja abiertas la cobertura regional y el umbral operativo de activación.",
   "options": [
     {
-      "title": "Observación antes de mutar",
-      "body": "Implementar informe FYP, clasificación, telemetría y dry-run con recuento y muestras, manteniendo las mutaciones desactivadas.",
+      "title": "Observación y dry-run primero",
+      "body": "Implementar cobertura FYP, clasificación, telemetría y muestras revisables antes de autorizar cualquier PATCH recurrente.",
       "recommended": true
     },
     {
-      "title": "Piloto de un remediador",
-      "body": "Añadir un único remediador de bajo riesgo con filtro literal, límite reducido y autorización operativa explícita por ejecución.",
+      "title": "Piloto limitado COM/MX",
+      "body": "Autorizar sólo remediación de imágenes en COM y MX tras validar el dry-run y los límites por cuenta.",
       "recommended": false
     },
     {
-      "title": "Mantener el proceso manual",
-      "body": "Conservar los one-shots actuales hasta contar con una política de remediación y verificación aprobada.",
+      "title": "Esperar a una política global",
+      "body": "Posponer el desarrollo hasta acordar cobertura de las seis regiones y los tipos de incidencia permitidos.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Observación antes de mutar",
-    "body": "Implementar informe FYP, clasificación, telemetría y dry-run con recuento y muestras, manteniendo las mutaciones desactivadas.",
+    "title": "Observación y dry-run primero",
+    "body": "Implementar cobertura FYP, clasificación, telemetría y muestras revisables antes de autorizar cualquier PATCH recurrente.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MarcosTerroso",
-    "reason": "Es el candidato más próximo por el historial reciente del flujo recurrente de informes Amazon.",
+    "person": "JavierHamelyn",
+    "reason": "Está asignado a la iniciativa y su historial reciente conecta los paths de verificación y los watchers Amazon implicados.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8764.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8764#issuecomment-5428169628",
-    "reviewedAt": "2026-09-14T09:51:36.110Z",
-    "mainSha": "0f63380573f92ec0af6b63c476b84e5d324a7a56"
+    "reviewedAt": "2026-09-14T10:00:06.975Z",
+    "mainSha": "54661592cd176a3f29ebb899b1b9ed757b9a780a"
   }
 }
