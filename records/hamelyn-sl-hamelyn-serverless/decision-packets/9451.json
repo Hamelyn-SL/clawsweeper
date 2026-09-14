@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-14T12:48:31.802Z",
+  "generatedAt": "2026-09-14T12:48:45.822Z",
   "updatedAt": "2026-09-14T12:12:50Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -15,42 +15,40 @@
       "feature",
       "reporter:arineligrigore",
       "triage:done",
-      "P1",
-      "clawsweeper:needs-product-decision"
+      "P1"
     ],
     "createdAt": "2026-09-11T11:24:49Z",
     "updatedAt": "2026-09-14T12:12:50Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Los campos de eDesk deben reflejar solo el estado al abrir la incidencia o actualizarse después cuando cambien pedidos y lotes?",
-  "rationale": "La petición inicial exige refresco posterior, mientras que la PR abierta lo elimina como decisión de alcance; ambas opciones son comportamientos válidos pero incompatibles.",
+  "question": "¿Los campos de eDesk deben quedar congelados al abrir la incidencia o actualizarse cuando cambien el pedido, el lote o los contadores?",
+  "rationale": "La solicitud original exige refresco posterior, mientras la PR abierta adopta el alcance de captura inicial; ambas opciones cambian la información operativa que verá ATC.",
   "options": [
     {
-      "title": "Mantener sincronización posterior",
-      "body": "Conservar el requisito original y añadir una actualización acotada para tickets abiertos cuando cambien los datos relevantes.",
+      "title": "Mantener refresco posterior",
+      "body": "Conservar la actualización de estados y contadores tras el alta, con una ruta idempotente y acotada.",
       "recommended": true
     },
     {
-      "title": "Confirmar instantánea de apertura",
-      "body": "Aceptar que los campos representen solo el momento de crear la incidencia y ajustar la issue y la PR a ese contrato.",
+      "title": "Captura inicial únicamente",
+      "body": "Aceptar valores congelados al crear la incidencia y ajustar la issue, la PR y la documentación a ese contrato.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mantener sincronización posterior",
-    "body": "Conservar el requisito original y añadir una actualización acotada para tickets abiertos cuando cambien los datos relevantes.",
+    "title": "Mantener refresco posterior",
+    "body": "Conservar la actualización de estados y contadores tras el alta, con una ruta idempotente y acotada.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Lleva la PR vinculada y puede concretar el coste técnico de cada alcance con ATC.",
+    "reason": "Lleva el cambio vinculado y ha documentado el catálogo y el cambio de alcance.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9451.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9451#issuecomment-5644938485",
-    "reviewedAt": "2026-09-14T12:48:31.802Z",
+    "reviewedAt": "2026-09-14T12:48:45.822Z",
     "mainSha": "ff3b1daeeb02785d5067eeff5266eff1ff7acdf4"
   }
 }

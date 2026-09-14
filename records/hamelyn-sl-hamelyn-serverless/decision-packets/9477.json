@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-14T12:49:15.102Z",
+  "generatedAt": "2026-09-14T12:51:08.553Z",
   "updatedAt": "2026-09-14T12:42:51Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -12,7 +12,7 @@
     "labels": [
       "app:admin",
       "feature",
-      "triage:done",
+      "triage:running",
       "clawsweeper:needs-product-decision",
       "P2",
       "reporter:danielmenchen-hamelyn",
@@ -23,39 +23,38 @@
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué flujo operativo debe gobernar las auditorías de contenedores de F6: cola y bloqueo en Admin, o selección mediante agente con una política explícita de Centralita?",
-  "rationale": "F3 puede crear la base técnica, pero no debe inferir quién selecciona, bloquea o cancela contenedores sin una regla operativa aprobada.",
+  "question": "¿Debe el contrato de ritmo quedar limitado explícitamente a los diez procesos definidos en el plan, preservando la lectura de parámetros históricos que contengan objetivos adicionales?",
+  "rationale": "El código actual y la epic expresan alcances distintos; elegir la semántica permanente y la transición de datos requiere criterio operativo.",
   "options": [
     {
-      "title": "Cola en Admin",
-      "body": "Generalizar el patrón operativo con selección, bloqueo, cancelación motivada y registro del resultado desde Admin.",
+      "title": "Lista explícita de diez procesos",
+      "body": "Derivar los objetivos de ritmo de una constante canónica de diez procesos y conservar lectura segura de versiones históricas.",
       "recommended": true
     },
     {
-      "title": "Selección por agente",
-      "body": "Delegar la selección al agente y fijar en el contrato CLI el papel de Centralita ante una auditoría.",
+      "title": "Mantener los quince procesos actuales",
+      "body": "Actualizar el plan funcional para aceptar objetivos de ritmo también en `OTROS` y los procesos históricos.",
       "recommended": false
     },
     {
-      "title": "Aplazar F6",
-      "body": "Limitar F3 a la base de auditorías y aplazar el flujo hasta que el responsable de almacén cierre los criterios.",
+      "title": "Aplazar la convergencia",
+      "body": "No modificar el contrato hasta que F3 y F5B precisen qué agregados consumen los objetivos adicionales.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Cola en Admin",
-    "body": "Generalizar el patrón operativo con selección, bloqueo, cancelación motivada y registro del resultado desde Admin.",
+    "title": "Lista explícita de diez procesos",
+    "body": "Derivar los objetivos de ritmo de una constante canónica de diez procesos y conservar lectura segura de versiones históricas.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "danielmenchen-hamelyn",
-    "reason": "La epic y sus comentarios sitúan la decisión como una definición funcional de la operativa de almacén.",
+    "reason": "Coordina la integración actual y authored la incorporación de parámetros en `dev`.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9477.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9477#issuecomment-5660550775",
-    "reviewedAt": "2026-09-14T12:49:15.102Z",
+    "reviewedAt": "2026-09-14T12:51:08.553Z",
     "mainSha": "ff3b1daeeb02785d5067eeff5266eff1ff7acdf4"
   }
 }

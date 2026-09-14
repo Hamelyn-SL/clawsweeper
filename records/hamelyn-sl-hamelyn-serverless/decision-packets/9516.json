@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-14T12:50:10.992Z",
+  "generatedAt": "2026-09-14T12:54:50.911Z",
   "updatedAt": "2026-09-14T12:35:33Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -14,43 +14,41 @@
       "app:marketplace",
       "feature",
       "triage:queued",
-      "reporter:carlotavarela",
-      "P2",
-      "clawsweeper:needs-product-decision"
+      "P1",
+      "reporter:carlotavarela"
     ],
     "createdAt": "2026-09-14T12:35:19Z",
     "updatedAt": "2026-09-14T12:35:33Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿La recogida de Argentina debe convertirse ya en una integración regional mantenida o limitarse a una preparación operativa para las pruebas del 15 de septiembre de 2026?",
-  "rationale": "La elección determina si se diseña una ruta separada y persistente con compatibilidad para México o un procedimiento temporal fuera del flujo principal.",
+  "question": "¿La recogida argentina debe entrar ya como ruta MELI-FedEx mantenida junto a México, o limitarse a una preparación operativa temporal para las pruebas del 15 de septiembre de 2026?",
+  "rationale": "El código actual solo admite un destinatario y la elección determina si debe diseñarse una selección regional persistente o un proceso acotado fuera de esa ruta.",
   "options": [
     {
-      "title": "Integración regional mantenida",
-      "body": "Añadir una configuración Argentina separada, conservar México y cubrir ambas rutas con pruebas de creación de etiquetas.",
+      "title": "Ruta regional mantenida",
+      "body": "Añadir Argentina como configuración y selección separadas, conservar México y cubrir ambos destinos con pruebas de creación de etiquetas.",
       "recommended": true
     },
     {
-      "title": "Preparación operativa temporal",
-      "body": "Validar primero los datos externos de MELI y FedEx mediante un proceso acotado antes de ampliar la integración persistente.",
+      "title": "Preparación temporal",
+      "body": "Validar primero los datos de MELI y FedEx para la prueba operativa sin convertir todavía el flujo persistente en una integración regional.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Integración regional mantenida",
-    "body": "Añadir una configuración Argentina separada, conservar México y cubrir ambas rutas con pruebas de creación de etiquetas.",
+    "title": "Ruta regional mantenida",
+    "body": "Añadir Argentina como configuración y selección separadas, conservar México y cubrir ambos destinos con pruebas de creación de etiquetas.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "carlotavarela",
-    "reason": "Aportó los requisitos logísticos y puede confirmar si la recogida diaria es una operación permanente.",
+    "reason": "Es la solicitante operativa que puede confirmar la necesidad real de la prueba y el horizonte de mantenimiento.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9516.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9516#issuecomment-5664230476",
-    "reviewedAt": "2026-09-14T12:50:10.992Z",
+    "reviewedAt": "2026-09-14T12:54:50.911Z",
     "mainSha": "ff3b1daeeb02785d5067eeff5266eff1ff7acdf4"
   }
 }
