@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-14T09:28:05.401Z",
+  "updatedAt": "2026-09-14T08:31:54Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8277,
+    "title": "Admin: corregir avisos de lint introducidos por Next.js 16.3",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8277",
+    "state": "open",
+    "labels": [
+      "bug",
+      "source:admin-panel",
+      "app:admin",
+      "triage:no-change",
+      "P2",
+      "reporter:danielmenchen-hamelyn"
+    ],
+    "createdAt": "2026-08-06T09:28:38Z",
+    "updatedAt": "2026-09-14T08:31:54Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe Admin completar ahora la limpieza de diagnósticos `info` y sustituir la redirección 401, o se acepta esa deuda como política estable de Biome?",
+  "rationale": "La migración de herramienta resolvió el gate de CI, pero el resultado esperado del reporte incluía corregir avisos aplicables y navegación interna, no solo reclasificarlos.",
+  "options": [
+    {
+      "title": "Completar la limpieza selectiva",
+      "body": "Mantener abierta la issue y corregir por grupos los diagnósticos válidos, empezando por la redirección 401 con validación de los flujos afectados.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar la señal no bloqueante",
+      "body": "Documentar que los diagnósticos `info` de Admin son deuda aceptada y crear una incidencia separada solo si la redirección 401 sigue siendo prioritaria.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Completar la limpieza selectiva",
+    "body": "Mantener abierta la issue y corregir por grupos los diagnósticos válidos, empezando por la redirección 401 con validación de los flujos afectados.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "alexcanHamelyn",
+    "reason": "La decisión afecta directamente a la estrategia de Biome introducida en la PR de migración.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8277.md",
+    "reviewedAt": "2026-09-14T09:28:05.401Z",
+    "mainSha": "c8da96547ada81bca1122a5e439bfc877c92bca5"
+  }
+}

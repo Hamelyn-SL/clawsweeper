@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-02T11:27:48.250Z",
-  "updatedAt": "2026-09-02T10:55:16Z",
+  "generatedAt": "2026-09-14T09:28:28.506Z",
+  "updatedAt": "2026-09-14T08:31:43Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,45 +14,49 @@
       "source:admin-panel",
       "app:marketplace",
       "triage:done",
+      "P1",
       "clawsweeper:needs-product-decision",
       "reporter:JavierHamelyn",
       "origin:panel",
-      "mk:amazon",
-      "P1"
+      "mk:amazon"
     ],
     "createdAt": "2026-08-01T23:33:29Z",
-    "updatedAt": "2026-09-02T10:55:16Z"
+    "updatedAt": "2026-09-14T08:31:43Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Se aprueba publicar la corrección con `legacy` por defecto y habilitar inicialmente solo `shadow` en Amazon FR tras la revisión de la PR?",
-  "rationale": "La implementación puede preservar compatibilidad, pero el modo inicial y el primer mercado cambian el comportamiento operativo y requieren aprobación humana.",
+  "question": "¿Se aprueba publicar el contrato regional con `legacy` por defecto y limitar el primer despliegue a `shadow` en Amazon FR?",
+  "rationale": "La evidencia confirma el defecto, pero la fuente de verdad regional, la política de casos ambiguos y el orden de activación cambian comportamiento operativo y requieren intención explícita.",
   "options": [
     {
-      "title": "Publicar y observar en FR",
-      "body": "Aprobar una PR con `legacy` por defecto y habilitar únicamente `shadow` en FR después de su revisión.",
+      "title": "Publicar seguro y observar FR",
+      "body": "Aprobar una PR con `legacy` por defecto y activar únicamente `shadow` en FR tras revisar telemetría.",
       "recommended": true
     },
     {
-      "title": "Mantener la preparación local",
-      "body": "No publicar aún hasta decidir una política completa para todas las regiones y los consumidores legacy.",
+      "title": "Autorizar enforce escalonado",
+      "body": "Definir criterios de telemetría, rollback y aprobación humana antes de permitir `enforce` región por región.",
+      "recommended": false
+    },
+    {
+      "title": "Separar primero el contrato de la remediación",
+      "body": "Limitar la PR a resolución y bloqueo de writes ambiguos, dejando backfill y listings legacy en trabajo aprobado aparte.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Publicar y observar en FR",
-    "body": "Aprobar una PR con `legacy` por defecto y habilitar únicamente `shadow` en FR después de su revisión.",
+    "title": "Publicar seguro y observar FR",
+    "body": "Aprobar una PR con `legacy` por defecto y activar únicamente `shadow` en FR tras revisar telemetría.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es el responsable asignado que ha reunido la evidencia y preparado la implementación local.",
+    "reason": "Es el responsable asignado y concentra la evidencia operativa y el diseño local descritos en la discusión.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8162.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8162#issuecomment-5154039596",
-    "reviewedAt": "2026-09-02T11:27:48.250Z",
-    "mainSha": "350e0bfc6a03f54c34e3afbc6a231922e06685a7"
+    "reviewedAt": "2026-09-14T09:28:28.506Z",
+    "mainSha": "c8da96547ada81bca1122a5e439bfc877c92bca5"
   }
 }

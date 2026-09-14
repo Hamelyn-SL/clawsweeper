@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-14T09:27:20.151Z",
+  "updatedAt": "2026-09-14T08:31:56Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8354,
+    "title": "Bifrost · Wake-on-LAN en los puestos",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8354",
+    "state": "open",
+    "labels": [
+      "app:infrastructure",
+      "reporter:davidgonzalez",
+      "feature",
+      "triage:done",
+      "P2"
+    ],
+    "createdAt": "2026-08-10T10:38:54Z",
+    "updatedAt": "2026-09-14T08:31:56Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe cerrarse esta subtarea con un `wol.ps1` operativo y validación física, o se patrocina ya el agente Windows versionado para que el botón del panel ejecute WoL real?",
+  "rationale": "La issue describe una vía operativa fuera del repositorio, mientras que la guía actual prevé un agente versionado para completar la acción del panel; elegir una fija el alcance y evita prometer una capacidad incompleta.",
+  "options": [
+    {
+      "title": "Completar primero la vía operativa",
+      "body": "Configurar y probar el script por puesto cableado, conservar la matriz física y abrir después una tarea separada para integrar el botón.",
+      "recommended": true
+    },
+    {
+      "title": "Patrocinar el agente desde ahora",
+      "body": "Definir un servicio Windows y una API autenticada en una tarea acotada para sustituir el botón simulado tras la validación de hardware.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Completar primero la vía operativa",
+    "body": "Configurar y probar el script por puesto cableado, conservar la matriz física y abrir después una tarea separada para integrar el botón.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "Su historial reciente abarca el panel y la clasificación de enlaces, las dos superficies que condicionan el alcance de WoL.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8354.md",
+    "reviewedAt": "2026-09-14T09:27:20.151Z",
+    "mainSha": "c8da96547ada81bca1122a5e439bfc877c92bca5"
+  }
+}
