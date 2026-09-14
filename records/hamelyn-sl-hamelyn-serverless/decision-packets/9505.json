@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-14T11:06:42.468Z",
+  "updatedAt": "2026-09-14T11:01:29Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 9505,
+    "title": "feat: apply the new supply deadlines and the incomplete lot flow",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9505",
+    "state": "open",
+    "labels": [
+      "size/XXL"
+    ],
+    "createdAt": "2026-09-14T10:38:37Z",
+    "updatedAt": "2026-09-14T11:01:29Z",
+    "headSha": "4b1d61c45144e26405860484ef8e83c3b5f766b3"
+  },
+  "lane": "release_inclusion",
+  "priority": "P1",
+  "question": "¿Se autoriza integrar y desplegar estos nuevos plazos únicamente tras recalcular el backlog afectado y coordinar la limpieza con Operaciones?",
+  "rationale": "La corrección técnica está cubierta, pero elegir cuándo activar reglas que pueden marcar o pagar lotes existentes es una decisión operativa y de producto.",
+  "options": [
+    {
+      "title": "Activación controlada",
+      "body": "Recalcular incidencias y backlog el día previo, acordar la limpieza con Operaciones y desplegar después.",
+      "recommended": true
+    },
+    {
+      "title": "Posponer la activación",
+      "body": "Mantener el PR abierto hasta disponer de una ventana operativa y cifras actualizadas del impacto.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Activación controlada",
+    "body": "Recalcular incidencias y backlog el día previo, acordar la limpieza con Operaciones y desplegar después.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "Ha llevado la integración del épico y documentó las condiciones previas de activación.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9505.md",
+    "reviewedAt": "2026-09-14T11:06:42.468Z",
+    "mainSha": "f1b5191d2a637d01d284e2930f45008babeba356"
+  }
+}
