@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-14T10:39:32.974Z",
+  "updatedAt": "2026-09-14T08:33:40Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9387,
+    "title": "chore: limpiar el cron de sospechosos y separar el plazo de SEUR",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9387",
+    "state": "open",
+    "labels": [
+      "app:infrastructure",
+      "reporter:davidgonzalez",
+      "feature",
+      "triage:no-change",
+      "P1",
+      "epic:supply-plazos"
+    ],
+    "createdAt": "2026-09-10T09:41:42Z",
+    "updatedAt": "2026-09-14T08:33:40Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se autoriza preparar el aterrizaje de `EPIC/supply-plazos` en `dev` tras validar con Operaciones los recuentos y el plan de activación?",
+  "rationale": "La limpieza ya está implementada en la rama épica, pero integrarla con el resto del flujo determina cuándo pueden producirse transiciones y pagos automáticos.",
+  "options": [
+    {
+      "title": "Validar y aterrizar la épica",
+      "body": "Confirmar los recuentos con Operaciones y abrir una PR hacia `dev` que preserve el orden de activación acordado.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener la rama en espera",
+      "body": "Posponer el aterrizaje hasta confirmar que la cola operativa puede asumir las transiciones y pagos resultantes.",
+      "recommended": false
+    },
+    {
+      "title": "Ajustar el alcance antes de integrar",
+      "body": "Revisar plazos o estrategia de activación si la validación operativa revela un volumen no aceptable.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Validar y aterrizar la épica",
+    "body": "Confirmar los recuentos con Operaciones y abrir una PR hacia `dev` que preserve el orden de activación acordado.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "Es la persona asignada a la implementación ya integrada en la rama épica y el dueño probable señalado en la discusión canónica.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9387.md",
+    "reviewedAt": "2026-09-14T10:39:32.974Z",
+    "mainSha": "1f2eb6a576bfc7ae5a4e2ef3e22e1c8b0aa9e77f"
+  }
+}

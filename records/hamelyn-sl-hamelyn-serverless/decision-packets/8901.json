@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-14T07:10:00.454Z",
-  "updatedAt": "2026-09-14T06:00:17Z",
+  "generatedAt": "2026-09-14T10:36:15.267Z",
+  "updatedAt": "2026-09-14T08:32:25Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -18,38 +18,42 @@
       "P2"
     ],
     "createdAt": "2026-08-30T06:19:55Z",
-    "updatedAt": "2026-09-14T06:00:17Z"
+    "updatedAt": "2026-09-14T08:32:25Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe priorizarse un perfil de heap de la regeneración real antes de cambiar capacidad, o aprobar una mitigación temporal de memoria para la portada mientras se perfila?",
-  "rationale": "La telemetría confirma el fallo, pero no atribuye las asignaciones; escoger concurrencia, candidatos o capacidad implica coste y comportamiento de la portada.",
+  "question": "¿Debe el equipo priorizar perfilado de heap con datos reales antes de aumentar la memoria de la portada, o acepta una mitigación de capacidad monitorizada mientras se perfila?",
+  "rationale": "La evidencia confirma presión sostenida, pero no atribuye las asignaciones a una operación concreta; elegir entre coste de infraestructura y cambio de comportamiento requiere intención del equipo.",
   "options": [
     {
-      "title": "Perfilar antes de cambiar",
-      "body": "Capturar memoria inicial, carga de secciones y render completo con la revisión y deployment efectivos antes de modificar la configuración.",
+      "title": "Perfilar antes de mitigar",
+      "body": "Capturar heap, memoria inicial, carga de secciones y SHA desplegado antes de modificar concurrencia o capacidad.",
       "recommended": true
     },
     {
-      "title": "Mitigación temporal de capacidad",
-      "body": "Aprobar más memoria para la portada con seguimiento explícito de coste, p95 y 5xx mientras se obtiene el perfil.",
+      "title": "Aumentar capacidad temporalmente",
+      "body": "Aplicar una regla específica para la portada, vigilar coste y 5xx, y mantener el perfilado como condición de seguimiento.",
+      "recommended": false
+    },
+    {
+      "title": "Reducir carga de la portada",
+      "body": "Cambiar concurrencia o volumen solo si el perfil identifica una sección o representación dominante.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Perfilar antes de cambiar",
-    "body": "Capturar memoria inicial, carga de secciones y render completo con la revisión y deployment efectivos antes de modificar la configuración.",
+    "title": "Perfilar antes de mitigar",
+    "body": "Capturar heap, memoria inicial, carga de secciones y SHA desplegado antes de modificar concurrencia o capacidad.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Está asignado a la incidencia y ya aportó la medición postdespliegue que delimita la decisión.",
+    "reason": "Está asignado a la investigación y su historial reciente cubre el flujo de carga de productos de la portada.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8901.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8901#issuecomment-5467190664",
-    "reviewedAt": "2026-09-14T07:10:00.454Z",
-    "mainSha": "b19cbcbba23983dd34f040503f0c7bca8977a49b"
+    "reviewedAt": "2026-09-14T10:36:15.267Z",
+    "mainSha": "1f2eb6a576bfc7ae5a4e2ef3e22e1c8b0aa9e77f"
   }
 }
