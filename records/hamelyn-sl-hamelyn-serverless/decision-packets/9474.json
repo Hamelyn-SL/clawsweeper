@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-14T07:36:16.240Z",
-  "updatedAt": "2026-09-14T06:28:40Z",
+  "generatedAt": "2026-09-14T10:32:24.503Z",
+  "updatedAt": "2026-09-14T09:28:41Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -14,44 +14,43 @@
       "P2"
     ],
     "createdAt": "2026-09-14T06:14:10Z",
-    "updatedAt": "2026-09-14T06:28:40Z",
-    "headSha": "53b859a738209c094e0a2eaefdbadcfcbc5a5c3d"
+    "updatedAt": "2026-09-14T09:28:41Z",
+    "headSha": "d1d6d62a4e73d498c6ff26cb9b5ae8b5c8ec7602"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Está aprobado retirar permanentemente las 20 declaraciones concretas, aceptando que scripts externos con `autoIndex` ya no podrán recrearlas?",
-  "rationale": "El código confirma el mecanismo, pero la issue canónica todavía solicita identificar el origen y separar esa decisión del inventario de índices físicos.",
+  "question": "¿Se aprueba retirar permanentemente las 20 declaraciones concretas, incluidas las tres no observadas entre las 17 recreaciones, del contrato de schemas?",
+  "rationale": "La evidencia confirma la mecánica de recreación y el parche, pero no identifica el cliente responsable ni aporta una aprobación independiente del alcance ampliado.",
   "options": [
     {
-      "title": "Confirmar el inventario",
-      "body": "Validar con Platform que las 20 declaraciones son exactamente las aprobadas y fusionar el PR con la limpieza física planificada aparte.",
+      "title": "Aprobar las 20 declaraciones",
+      "body": "Validar la selección descrita, fusionar el cambio y mantener la retirada física de Atlas como operación independiente.",
       "recommended": true
     },
     {
-      "title": "Reducir el alcance",
-      "body": "Conservar las declaraciones cuyo uso o retirada aprobada aún no esté acreditado y limitar el PR a los índices confirmados.",
+      "title": "Limitarlo a las 17 recreadas",
+      "body": "Conservar temporalmente las tres declaraciones adicionales hasta completar su validación operativa.",
       "recommended": false
     },
     {
-      "title": "Pausar la retirada",
-      "body": "Mantener las declaraciones hasta identificar el script que recreó los índices y decidir una política única de `autoIndex`.",
+      "title": "Pausar la retirada declarativa",
+      "body": "Mantener los schemas actuales hasta identificar el cliente que abrió la conexión directa y revisar consumidores externos.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Confirmar el inventario",
-    "body": "Validar con Platform que las 20 declaraciones son exactamente las aprobadas y fusionar el PR con la limpieza física planificada aparte.",
+    "title": "Aprobar las 20 declaraciones",
+    "body": "Validar la selección descrita, fusionar el cambio y mantener la retirada física de Atlas como operación independiente.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "AlexDiaz-Hamelyn",
-    "reason": "Es la persona asignada al informe canónico y quien reunió la evidencia de las declaraciones candidatas.",
-    "confidence": "medium"
+    "person": "Daniel",
+    "reason": "Es el revisor solicitado y el autor del factory que centraliza la declaración compartida de `product_1`.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9474.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9474#issuecomment-5659941565",
-    "reviewedAt": "2026-09-14T07:36:16.240Z",
-    "mainSha": "cb57e44c36343b9d11f5fa76c29b3cff99312415"
+    "reviewedAt": "2026-09-14T10:32:24.503Z",
+    "mainSha": "1f2eb6a576bfc7ae5a4e2ef3e22e1c8b0aa9e77f"
   }
 }

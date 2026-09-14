@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-14T07:17:19.100Z",
-  "updatedAt": "2026-09-14T06:43:06Z",
+  "generatedAt": "2026-09-14T10:32:52.576Z",
+  "updatedAt": "2026-09-14T08:44:14Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,50 +13,44 @@
       "source:admin-panel",
       "app:admin",
       "feature",
-      "triage:queued",
+      "triage:needs-info",
       "clawsweeper:needs-product-decision",
+      "P2",
       "reporter:danielmenchen-hamelyn",
-      "epic:warehouse-telemetry",
-      "P2"
+      "epic:warehouse-telemetry"
     ],
     "createdAt": "2026-09-10T07:39:46Z",
-    "updatedAt": "2026-09-14T06:43:06Z"
+    "updatedAt": "2026-09-14T08:44:14Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se autoriza ahora una colección append-only para informes de F5B y se difiere su réplica a BigQuery al cierre de la epic?",
-  "rationale": "La issue exige informes congelados y réplica analítica, pero la epic autoriza otras colecciones y pospone BigQuery; esta elección condiciona el contrato, la persistencia y el alcance.",
+  "question": "¿F5B debe limitarse a sesiones y agregado diario por API v6 y CLI, o incluir también el archivo inmutable y la descarga de informes?",
+  "rationale": "La elección determina si se crea almacenamiento persistente nuevo y si la fase sigue siendo una consulta acotada o un flujo completo de archivo.",
   "options": [
     {
-      "title": "Autorizar archivo y diferir BigQuery",
-      "body": "Autorizar una colección append-only de informes con identidad y referencias versionadas, dejando la réplica analítica para el PR final de la epic.",
+      "title": "Aprobar consultas v6/CLI",
+      "body": "Implementar sesiones paginadas y agregado diario con JSON estable, sin crear almacenamiento de informes en esta fase.",
       "recommended": true
     },
     {
-      "title": "Incluir la réplica en F5B",
-      "body": "Autorizar también la modificación de la réplica analítica y mantener todos los criterios de aceptación dentro de esta fase.",
-      "recommended": false
-    },
-    {
-      "title": "Posponer F5B",
-      "body": "No iniciar la fase hasta decidir el modelo de archivo y la responsabilidad de la réplica analítica.",
+      "title": "Incluir archivo inmutable",
+      "body": "Ampliar F5B con informes versionados, autoría, descarga y autorización explícita de la persistencia y su réplica.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Autorizar archivo y diferir BigQuery",
-    "body": "Autorizar una colección append-only de informes con identidad y referencias versionadas, dejando la réplica analítica para el PR final de la epic.",
+    "title": "Aprobar consultas v6/CLI",
+    "body": "Implementar sesiones paginadas y agregado diario con JSON estable, sin crear almacenamiento de informes en esta fase.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "danielmenchen-hamelyn",
-    "reason": "Es la persona asignada a la epic y ya integró las dos fases que definen la base funcional de F5B.",
+    "reason": "Ha formulado la disyuntiva funcional y coordina la rama de integración de la epic.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9373.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9373#issuecomment-5644932590",
-    "reviewedAt": "2026-09-14T07:17:19.100Z",
-    "mainSha": "fa13b6ceab9436a4c1f81ae3ee4aef88e89d80e9"
+    "reviewedAt": "2026-09-14T10:32:52.576Z",
+    "mainSha": "1f2eb6a576bfc7ae5a4e2ef3e22e1c8b0aa9e77f"
   }
 }

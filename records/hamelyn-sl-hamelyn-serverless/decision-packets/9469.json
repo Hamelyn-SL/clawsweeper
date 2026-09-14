@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-14T05:57:08.232Z",
-  "updatedAt": "2026-09-14T05:50:28Z",
+  "generatedAt": "2026-09-14T10:31:37.458Z",
+  "updatedAt": "2026-09-14T08:35:52Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,43 +13,42 @@
       "bug",
       "app:infrastructure",
       "reporter:miguel",
-      "triage:queued",
-      "P2",
-      "clawsweeper:needs-product-decision"
+      "triage:done",
+      "clawsweeper:needs-product-decision",
+      "P2"
     ],
     "createdAt": "2026-09-14T05:50:17Z",
-    "updatedAt": "2026-09-14T05:50:28Z"
+    "updatedAt": "2026-09-14T08:35:52Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe mantenerse la cobertura de salud de TodoColección mediante una integración autenticada, o desactivarse temporalmente y mostrarse como no disponible?",
-  "rationale": "El código actual solo conoce scraping público; elegir entre conservar cobertura con un nuevo acceso o retirar la fuente cambia el comportamiento operativo del panel.",
+  "question": "¿Debe TodoColección continuar como fuente activa con estado `UNAVAILABLE` y aviso de cobertura, o retirarse hasta disponer de acceso autenticado?",
+  "rationale": "El código solo admite `SUCCESS` y `ERROR`; elegir entre alerta de cobertura, error operativo o retirada altera el significado del estado publicado.",
   "options": [
     {
-      "title": "Desactivar y depurar estados",
-      "body": "Retirar TodoColección de la colección activa y excluir Fnac FR y Alibris de `collection_status` hasta que exista un acceso soportado.",
+      "title": "Mantener cobertura degradada",
+      "body": "Registrar el 403 conocido como `UNAVAILABLE`, conservar la consulta diaria y mostrar la última métrica válida con su antigüedad.",
       "recommended": true
     },
     {
-      "title": "Integrar acceso autenticado",
-      "body": "Mantener la cobertura si se confirma una API o portal automatizable, con credenciales y pruebas de continuidad.",
+      "title": "Retirar temporalmente la fuente",
+      "body": "Excluir TodoColección de los estados activos hasta que el proveedor facilite una fuente autenticada verificable.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Desactivar y depurar estados",
-    "body": "Retirar TodoColección de la colección activa y excluir Fnac FR y Alibris de `collection_status` hasta que exista un acceso soportado.",
+    "title": "Mantener cobertura degradada",
+    "body": "Registrar el 403 conocido como `UNAVAILABLE`, conservar la consulta diaria y mostrar la última métrica válida con su antigüedad.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "PabloMoran34",
-    "reason": "El historial atribuye a esta persona la implementación completa del recolector y su presentación en el panel.",
+    "reason": "Es la persona con la señal histórica más directa sobre el contrato del colector y su panel.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9469.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9469#issuecomment-5659669896",
-    "reviewedAt": "2026-09-14T05:57:08.232Z",
-    "mainSha": "f3cdba11f0d9b4219bcb66f4075e0597b2bba7ac"
+    "reviewedAt": "2026-09-14T10:31:37.458Z",
+    "mainSha": "1f2eb6a576bfc7ae5a4e2ef3e22e1c8b0aa9e77f"
   }
 }

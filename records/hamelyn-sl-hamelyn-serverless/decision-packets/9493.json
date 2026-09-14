@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-14T10:31:52.023Z",
+  "updatedAt": "2026-09-14T08:34:30Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9493,
+    "title": "Meli ARG",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9493",
+    "state": "open",
+    "labels": [
+      "source:admin-panel",
+      "app:marketplace",
+      "feature",
+      "reporter:rubenmorueco",
+      "triage:queued",
+      "P2"
+    ],
+    "createdAt": "2026-09-14T08:20:27Z",
+    "updatedAt": "2026-09-14T08:34:30Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe resolverse como una exportación operativa única de 10.000 libros o como una nueva integración mantenida de Mercado Libre Argentina?",
+  "rationale": "Ambas opciones requieren fuentes, validaciones y responsabilidades distintas; el código actual solo modela el flujo de México.",
+  "options": [
+    {
+      "title": "Piloto operativo acotado",
+      "body": "Generar un fichero único desde un script local no versionado, validado contra la plantilla y las reglas entregadas por Mercado Libre Argentina.",
+      "recommended": true
+    },
+    {
+      "title": "Integración persistente de Argentina",
+      "body": "Diseñar un destino de país separado con plantilla, moneda, taxonomía, filtros y pruebas mantenibles antes de producir el catálogo.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Piloto operativo acotado",
+    "body": "Generar un fichero único desde un script local no versionado, validado contra la plantilla y las reglas entregadas por Mercado Libre Argentina.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "Su trabajo reciente conecta el comportamiento de idioma con el payload activo de altas de Mercado Libre.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9493.md",
+    "reviewedAt": "2026-09-14T10:31:52.023Z",
+    "mainSha": "1f2eb6a576bfc7ae5a4e2ef3e22e1c8b0aa9e77f"
+  }
+}
