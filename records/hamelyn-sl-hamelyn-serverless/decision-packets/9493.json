@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-14T12:27:08.700Z",
-  "updatedAt": "2026-09-14T12:15:01Z",
+  "generatedAt": "2026-09-14T14:59:53.299Z",
+  "updatedAt": "2026-09-14T14:01:05Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,42 +15,40 @@
       "feature",
       "reporter:rubenmorueco",
       "triage:needs-info",
-      "clawsweeper:needs-product-decision",
       "P2"
     ],
     "createdAt": "2026-09-14T08:20:27Z",
-    "updatedAt": "2026-09-14T12:15:01Z"
+    "updatedAt": "2026-09-14T14:01:05Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿El objetivo es un fichero único para el piloto de Mercado Libre Argentina o una integración regional mantenida en el producto?",
-  "rationale": "La elección determina si procede un proceso operativo no versionado o una nueva superficie de exportación con contrato, configuración y pruebas persistentes.",
+  "question": "¿Qué fuente y regla de redondeo EUR→ARS se aprueban, y cómo deben representarse el género y la disponibilidad de 20 días en la plantilla argentina?",
+  "rationale": "Estas reglas determinan datos comerciales enviados a una plataforma externa y no se pueden inferir de la plantilla ni del adaptador mexicano.",
   "options": [
     {
-      "title": "Piloto operativo acotado",
-      "body": "Recibir la plantilla argentina y los criterios cerrados, generar un fichero único validado fuera del repositorio y no convertirlo aún en integración persistente.",
+      "title": "Aprobar fuente y mapeo completos",
+      "body": "Operaciones define proveedor, momento de captura y redondeo del cambio, además del mapeo de género y disponibilidad; después se genera el lote.",
       "recommended": true
     },
     {
-      "title": "Integración mantenida",
-      "body": "Definir un contrato regional de Argentina, su taxonomía, moneda, reglas de elegibilidad y cobertura automatizada antes de implementar una ruta reutilizable.",
+      "title": "Aplazar la carga argentina",
+      "body": "Se conserva el flujo mexicano mientras Mercado Libre confirme los campos y la fórmula operativa para Argentina.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Piloto operativo acotado",
-    "body": "Recibir la plantilla argentina y los criterios cerrados, generar un fichero único validado fuera del repositorio y no convertirlo aún en integración persistente.",
+    "title": "Aprobar fuente y mapeo completos",
+    "body": "Operaciones define proveedor, momento de captura y redondeo del cambio, además del mapeo de género y disponibilidad; después se genera el lote.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "rubenmorueco",
-    "reason": "Es quien debe confirmar la plantilla de carga y los requisitos de aceptación del piloto.",
+    "reason": "Es quien aportó los requisitos de negocio y las aclaraciones operativas de la carga.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9493.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9493#issuecomment-5662615029",
-    "reviewedAt": "2026-09-14T12:27:08.700Z",
-    "mainSha": "a206fbfd37abf9263eab1c88a70e7bb9c9f2739c"
+    "reviewedAt": "2026-09-14T14:59:53.299Z",
+    "mainSha": "ff3b1daeeb02785d5067eeff5266eff1ff7acdf4"
   }
 }
