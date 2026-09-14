@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-14T06:27:19.238Z",
+  "updatedAt": "2026-09-14T06:19:28Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 9474,
+    "title": "fix: prevent recreation of retired mongo indexes",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9474",
+    "state": "open",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-09-14T06:14:10Z",
+    "updatedAt": "2026-09-14T06:19:28Z",
+    "headSha": "53b859a738209c094e0a2eaefdbadcfcbc5a5c3d"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Queda aprobada la retirada permanente de estas veinte declaraciones de índices, incluidas las quince variantes `mk_*.product_1`, tras revisar consumidores e hints dinámicos?",
+  "rationale": "La evidencia enlazada confirma la recreación, pero también exige validación individual antes de eliminar soporte de consultas potencialmente activas.",
+  "options": [
+    {
+      "title": "Confirmar el inventario y continuar",
+      "body": "Registrar la aprobación de estas veinte retiradas y mantener el PR como prevención para los procesos que ejecuten el código actualizado.",
+      "recommended": true
+    },
+    {
+      "title": "Reducir el alcance",
+      "body": "Conservar las declaraciones cuyo uso o hint no esté descartado y limitar el PR a los índices con validación suficiente.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener las declaraciones",
+      "body": "Cerrar esta vía de cambio y tratar los índices recreados como parte del contrato actual de los esquemas.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Confirmar el inventario y continuar",
+    "body": "Registrar la aprobación de estas veinte retiradas y mantener el PR como prevención para los procesos que ejecuten el código actualizado.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Su investigación reúne la evidencia operativa y delimita qué comprobaciones faltan para aprobar el inventario.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9474.md",
+    "reviewedAt": "2026-09-14T06:27:19.238Z",
+    "mainSha": "f3cdba11f0d9b4219bcb66f4075e0597b2bba7ac"
+  }
+}
