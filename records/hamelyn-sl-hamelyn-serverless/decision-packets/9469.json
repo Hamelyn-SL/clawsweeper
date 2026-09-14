@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-14T11:59:27.977Z",
-  "updatedAt": "2026-09-14T11:52:48Z",
+  "generatedAt": "2026-09-14T10:31:37.458Z",
+  "updatedAt": "2026-09-14T08:35:52Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -18,43 +18,38 @@
       "P2"
     ],
     "createdAt": "2026-09-14T05:50:17Z",
-    "updatedAt": "2026-09-14T11:52:48Z"
+    "updatedAt": "2026-09-14T08:35:52Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe TodoColección seguir figurando como fuente activa con estado `UNAVAILABLE` y aviso de cobertura, o retirarse hasta disponer de un acceso autenticado?",
-  "rationale": "La corrección técnica depende de decidir si el 403 representa una cobertura degradada que debe vigilarse o una fuente fuera de servicio que debe desaparecer del estado operativo.",
+  "question": "¿Debe TodoColección continuar como fuente activa con estado `UNAVAILABLE` y aviso de cobertura, o retirarse hasta disponer de acceso autenticado?",
+  "rationale": "El código solo admite `SUCCESS` y `ERROR`; elegir entre alerta de cobertura, error operativo o retirada altera el significado del estado publicado.",
   "options": [
     {
       "title": "Mantener cobertura degradada",
-      "body": "Registrar el 403 como `UNAVAILABLE`, conservar la fecha de la última métrica válida y mostrar el aviso de falta de cobertura sin tratarlo como éxito.",
+      "body": "Registrar el 403 conocido como `UNAVAILABLE`, conservar la consulta diaria y mostrar la última métrica válida con su antigüedad.",
       "recommended": true
     },
     {
-      "title": "Suspender la fuente",
-      "body": "Excluir TodoColección de las fuentes activas hasta que exista una API o portal autenticado, igual que las fuentes retiradas.",
-      "recommended": false
-    },
-    {
-      "title": "Habilitar acceso autenticado",
-      "body": "Aportar una integración autenticada del proveedor y conservar la métrica diaria solo cuando pueda verificarse con esa fuente.",
+      "title": "Retirar temporalmente la fuente",
+      "body": "Excluir TodoColección de los estados activos hasta que el proveedor facilite una fuente autenticada verificable.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Mantener cobertura degradada",
-    "body": "Registrar el 403 como `UNAVAILABLE`, conservar la fecha de la última métrica válida y mostrar el aviso de falta de cobertura sin tratarlo como éxito.",
+    "body": "Registrar el 403 conocido como `UNAVAILABLE`, conservar la consulta diaria y mostrar la última métrica válida con su antigüedad.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "PabloMoran34",
-    "reason": "La decisión afecta al contrato de estado y a la arquitectura del colector que introdujo.",
+    "reason": "Es la persona con la señal histórica más directa sobre el contrato del colector y su panel.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9469.md",
     "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9469#issuecomment-5659669896",
-    "reviewedAt": "2026-09-14T11:59:27.977Z",
-    "mainSha": "31cd3d47473a303b1906da1fc19dd5219d052d49"
+    "reviewedAt": "2026-09-14T10:31:37.458Z",
+    "mainSha": "1f2eb6a576bfc7ae5a4e2ef3e22e1c8b0aa9e77f"
   }
 }
