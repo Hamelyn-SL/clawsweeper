@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-14T11:59:37.310Z",
-  "updatedAt": "2026-09-14T11:33:56Z",
+  "generatedAt": "2026-09-14T13:26:44.775Z",
+  "updatedAt": "2026-09-14T12:59:54Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,43 +12,42 @@
     "labels": [
       "app:ecommerce",
       "feature",
-      "triage:queued",
+      "triage:done",
       "P1",
       "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-09-14T11:33:32Z",
-    "updatedAt": "2026-09-14T11:33:56Z"
+    "updatedAt": "2026-09-14T12:59:54Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Los identificadores de este comprador deben cancelar solo pedidos de `HAMELYN_ECOMMERCE` o cualquier pedido creado por la fábrica compartida?",
-  "rationale": "La lista se aplica antes de diferenciar el flujo de ecommerce y actualmente afecta a todos los marketplaces; el código no expresa una política de alcance por canal.",
+  "question": "¿Las nuevas señales del comprador de Vallada deben bloquear pedidos en todos los marketplaces que usan la factory compartida o solo en ecommerce?",
+  "rationale": "La implementación candidata preserva el alcance global actual, pero la petición está acotada a ecommerce y ese efecto transversal requiere una decisión de negocio explícita.",
   "options": [
     {
-      "title": "Limitarlo a ecommerce",
-      "body": "Aplicar estos identificadores solo cuando `marketplace` sea `HAMELYN_ECOMMERCE`, evitando efectos sobre otros canales.",
+      "title": "Mantener bloqueo compartido",
+      "body": "Aplicar las señales a todos los pedidos que pasen por la factory, conservando el contrato actual de blacklist.",
       "recommended": true
     },
     {
-      "title": "Mantener bloqueo global",
-      "body": "Conservar la semántica central actual y bloquear cualquier pedido que coincida con estos identificadores en todos los marketplaces.",
+      "title": "Limitar a ecommerce",
+      "body": "Hacer que las nuevas señales se evalúen solo en los flujos de checkout ecommerce y mantener intactos los demás canales.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Limitarlo a ecommerce",
-    "body": "Aplicar estos identificadores solo cuando `marketplace` sea `HAMELYN_ECOMMERCE`, evitando efectos sobre otros canales.",
+    "title": "Mantener bloqueo compartido",
+    "body": "Aplicar las señales a todos los pedidos que pasen por la factory, conservando el contrato actual de blacklist.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "Daniel",
-    "reason": "Es el contribuidor más reciente del archivo que materializa la política actual de coincidencia.",
-    "confidence": "medium"
+    "person": "JavierHamelyn",
+    "reason": "Figura como responsable asignado y ya ha documentado el alcance de la PR candidata.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9511.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9511#issuecomment-5663549896",
-    "reviewedAt": "2026-09-14T11:59:37.310Z",
-    "mainSha": "31cd3d47473a303b1906da1fc19dd5219d052d49"
+    "reviewedAt": "2026-09-14T13:26:44.775Z",
+    "mainSha": "ff3b1daeeb02785d5067eeff5266eff1ff7acdf4"
   }
 }
