@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-14T10:39:32.974Z",
-  "updatedAt": "2026-09-14T08:33:40Z",
+  "generatedAt": "2026-09-14T11:46:40.696Z",
+  "updatedAt": "2026-09-14T11:35:15Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,49 +13,48 @@
       "app:infrastructure",
       "reporter:davidgonzalez",
       "feature",
-      "triage:no-change",
+      "triage:queued",
       "clawsweeper:needs-product-decision",
-      "epic:supply-plazos",
-      "P2"
+      "P2",
+      "epic:supply-plazos"
     ],
     "createdAt": "2026-09-10T09:41:42Z",
-    "updatedAt": "2026-09-14T08:33:40Z"
+    "updatedAt": "2026-09-14T11:35:15Z"
   },
-  "lane": "product_direction",
+  "lane": "release_inclusion",
   "priority": "P2",
-  "question": "¿Se autoriza preparar el aterrizaje de `EPIC/supply-plazos` en `dev` tras validar con Operaciones los recuentos y el plan de activación?",
-  "rationale": "La limpieza ya está implementada en la rama épica, pero integrarla con el resto del flujo determina cuándo pueden producirse transiciones y pagos automáticos.",
+  "question": "¿Se autoriza integrar la épica de plazos en `dev` tras validar con Operaciones los recuentos y el plan de activación en producción?",
+  "rationale": "La única ruta activa incorpora esta limpieza junto con cambios de plazos, pagos e incidencias, por lo que la aceptación operativa excede esta refactorización aislada.",
   "options": [
     {
-      "title": "Validar y aterrizar la épica",
-      "body": "Confirmar los recuentos con Operaciones y abrir una PR hacia `dev` que preserve el orden de activación acordado.",
+      "title": "Validar e integrar la épica",
+      "body": "Confirmar con Operaciones los recuentos y aterrizar la PR abierta en `dev` con el plan de activación documentado.",
       "recommended": true
     },
     {
-      "title": "Mantener la rama en espera",
-      "body": "Posponer el aterrizaje hasta confirmar que la cola operativa puede asumir las transiciones y pagos resultantes.",
+      "title": "Extraer la limpieza",
+      "body": "Preparar una PR estrecha con solo la deduplicación y la retirada de la ruta obsoleta antes de activar los plazos nuevos.",
       "recommended": false
     },
     {
-      "title": "Ajustar el alcance antes de integrar",
-      "body": "Revisar plazos o estrategia de activación si la validación operativa revela un volumen no aceptable.",
+      "title": "Mantener la integración en espera",
+      "body": "Posponer el aterrizaje hasta disponer de una aprobación operativa para el volumen de transiciones y pagos resultante.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Validar y aterrizar la épica",
-    "body": "Confirmar los recuentos con Operaciones y abrir una PR hacia `dev` que preserve el orden de activación acordado.",
+    "title": "Validar e integrar la épica",
+    "body": "Confirmar con Operaciones los recuentos y aterrizar la PR abierta en `dev` con el plan de activación documentado.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "banosdavidhamelyn",
-    "reason": "Es la persona asignada a la implementación ya integrada en la rama épica y el dueño probable señalado en la discusión canónica.",
+    "reason": "Es el responsable asignado de la issue y de la rama de integración actualmente abierta.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9387.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9387#issuecomment-5662740244",
-    "reviewedAt": "2026-09-14T10:39:32.974Z",
-    "mainSha": "1f2eb6a576bfc7ae5a4e2ef3e22e1c8b0aa9e77f"
+    "reviewedAt": "2026-09-14T11:46:40.696Z",
+    "mainSha": "31cd3d47473a303b1906da1fc19dd5219d052d49"
   }
 }
