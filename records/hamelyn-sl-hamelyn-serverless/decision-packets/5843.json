@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-02T11:03:53.872Z",
-  "updatedAt": "2026-09-02T10:55:32Z",
+  "generatedAt": "2026-09-14T08:55:24.644Z",
+  "updatedAt": "2026-09-14T08:30:59Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -18,47 +18,46 @@
       "surface:pdp",
       "epic:v3.5-features",
       "clawsweeper:needs-product-decision",
-      "origin:dev",
-      "P2"
+      "P2",
+      "origin:dev"
     ],
     "createdAt": "2026-05-13T22:17:19Z",
-    "updatedAt": "2026-09-02T10:55:32Z"
+    "updatedAt": "2026-09-14T08:30:59Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué contrato de traducciones, locales iniciales y política editorial se aprueban antes de generar datos persistidos para el catálogo?",
-  "rationale": "La elección determina coste, modelo de datos, regeneración, SEO y el significado del sufijo de versión; no es una decisión mecánica de implementación.",
+  "question": "¿Debe aprobarse ahora el programa de traducción persistida para catálogo completo, incluido proveedor, presupuesto y política de fallback regional?",
+  "rationale": "El resultado del benchmark determina proveedor, coste y forma del almacenamiento; ninguna de esas decisiones se deduce de forma segura del código actual.",
   "options": [
     {
-      "title": "Aprobar una primera fase acotada",
-      "body": "Definir un subconjunto de locales, contrato de datos y benchmark para validar coste y calidad antes del backfill completo.",
+      "title": "Aprobar contrato y benchmark",
+      "body": "Definir el modelo persistido, muestra, umbrales de calidad y presupuesto antes de construir el pipeline y la UI.",
       "recommended": true
     },
     {
-      "title": "Implementar todo el alcance original",
-      "body": "Aprobar de una vez pipeline, backfill, sufijos, variantes hispanoamericanas y edición administrativa.",
+      "title": "Reducir el alcance",
+      "body": "Limitar primero el trabajo a una sola familia de locales o a traducciones ya disponibles en `multilingualDescriptions`.",
       "recommended": false
     },
     {
-      "title": "Limitarse a contenido de interfaz",
-      "body": "Mantener la localización actual de SEO y copy sin introducir traducciones persistidas de producto.",
+      "title": "Posponer la capacidad",
+      "body": "Mantener el comportamiento actual hasta que exista una prioridad comercial y presupuesto para el catálogo completo.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar una primera fase acotada",
-    "body": "Definir un subconjunto de locales, contrato de datos y benchmark para validar coste y calidad antes del backfill completo.",
+    "title": "Aprobar contrato y benchmark",
+    "body": "Definir el modelo persistido, muestra, umbrales de calidad y presupuesto antes de construir el pipeline y la UI.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "Es la conexión histórica más directa entre la PDP activa y el trabajo reciente de contenido localizado.",
+    "person": "JavierHamelyn",
+    "reason": "Aportó la definición funcional, el desglose por fases y actualizó explícitamente el alcance que continúa pendiente.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5843.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5843#issuecomment-4909754959",
-    "reviewedAt": "2026-09-02T11:03:53.872Z",
-    "mainSha": "a06eef5ffba50de3be7eed3d621896cc964a5abf"
+    "reviewedAt": "2026-09-14T08:55:24.644Z",
+    "mainSha": "f2c64ff0f7aa52807eb1692359970ed3251a1644"
   }
 }
