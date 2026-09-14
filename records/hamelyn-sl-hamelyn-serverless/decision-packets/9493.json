@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-14T12:22:20.418Z",
+  "generatedAt": "2026-09-14T12:27:08.700Z",
   "updatedAt": "2026-09-14T12:15:01Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -23,34 +23,33 @@
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se necesita un fichero único de 10.000 libros para el piloto o una integración mantenida de Mercado Libre Argentina?",
-  "rationale": "Ambas opciones cambian el perímetro, las fuentes de datos, la validación y el coste de mantenimiento; el código actual no decide cuál es el producto requerido.",
+  "question": "¿El objetivo es un fichero único para el piloto de Mercado Libre Argentina o una integración regional mantenida en el producto?",
+  "rationale": "La elección determina si procede un proceso operativo no versionado o una nueva superficie de exportación con contrato, configuración y pruebas persistentes.",
   "options": [
     {
       "title": "Piloto operativo acotado",
-      "body": "Generar fuera del repositorio un único fichero validado tras recibir la plantilla argentina y cerrar los criterios ambiguos.",
+      "body": "Recibir la plantilla argentina y los criterios cerrados, generar un fichero único validado fuera del repositorio y no convertirlo aún en integración persistente.",
       "recommended": true
     },
     {
-      "title": "Integración persistente de Argentina",
-      "body": "Diseñar un destino separado con configuración, taxonomía, reglas de elegibilidad y pruebas de exportación mantenidas.",
+      "title": "Integración mantenida",
+      "body": "Definir un contrato regional de Argentina, su taxonomía, moneda, reglas de elegibilidad y cobertura automatizada antes de implementar una ruta reutilizable.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Piloto operativo acotado",
-    "body": "Generar fuera del repositorio un único fichero validado tras recibir la plantilla argentina y cerrar los criterios ambiguos.",
+    "body": "Recibir la plantilla argentina y los criterios cerrados, generar un fichero único validado fuera del repositorio y no convertirlo aún en integración persistente.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "banosdavidhamelyn",
-    "reason": "La discusión previa le identifica como el candidato más probable para resolver el alcance operativo.",
-    "confidence": "medium"
+    "person": "rubenmorueco",
+    "reason": "Es quien debe confirmar la plantilla de carga y los requisitos de aceptación del piloto.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9493.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9493#issuecomment-5662615029",
-    "reviewedAt": "2026-09-14T12:22:20.418Z",
+    "reviewedAt": "2026-09-14T12:27:08.700Z",
     "mainSha": "a206fbfd37abf9263eab1c88a70e7bb9c9f2739c"
   }
 }
