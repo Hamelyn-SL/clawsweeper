@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-14T10:50:57.805Z",
-  "updatedAt": "2026-09-14T09:42:50Z",
+  "generatedAt": "2026-09-14T10:58:47.761Z",
+  "updatedAt": "2026-09-14T10:53:34Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,42 +14,40 @@
       "source:admin-panel",
       "app:infrastructure",
       "triage:needs-info",
-      "P2",
-      "clawsweeper:needs-product-decision"
+      "P2"
     ],
     "createdAt": "2026-08-28T12:19:19Z",
-    "updatedAt": "2026-09-14T09:42:50Z"
+    "updatedAt": "2026-09-14T10:53:34Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se aprueba que las 20 declaraciones auditadas dejen de formar parte permanentemente de los schemas Mongoose?",
-  "rationale": "El código puede impedir recreaciones, pero decidir qué índices dejan de declararse permanentemente afecta al contrato operativo de los modelos.",
+  "question": "Tras desplegar la prevención, ¿qué índices recreados se autoriza retirar de Atlas y bajo qué observación reversible?",
+  "rationale": "La retirada cambia datos de producción y la política del repositorio exige autorización explícita; el PR solo elimina declaraciones de código.",
   "options": [
     {
-      "title": "Aprobar las 20 retiradas",
-      "body": "Validar el inventario probado por la PR e integrar la prevención, tratando Atlas como una operación independiente.",
+      "title": "Esperar una validación adicional",
+      "body": "Mantener los 17 índices recreados hasta identificar el punto de entrada y observar el código desplegado sin nuevas órdenes de creación.",
       "recommended": true
     },
     {
-      "title": "Conservar alguna declaración",
-      "body": "Devolver a la PR los índices que deban seguir declarados y mantener sus pruebas de preservación.",
+      "title": "Autorizar un canario reversible",
+      "body": "Elegir uno o dos índices concretos, registrar baseline y ocultarlos antes de valorar cualquier borrado definitivo.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar las 20 retiradas",
-    "body": "Validar el inventario probado por la PR e integrar la prevención, tratando Atlas como una operación independiente.",
+    "title": "Esperar una validación adicional",
+    "body": "Mantener los 17 índices recreados hasta identificar el punto de entrada y observar el código desplegado sin nuevas órdenes de creación.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Es la persona conectada a la auditoría, al inventario propuesto y a la PR candidata.",
+    "reason": "Es la persona asignada que aportó el inventario, la investigación de recreación y el candidato de corrección.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8883.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8883#issuecomment-5452787658",
-    "reviewedAt": "2026-09-14T10:50:57.805Z",
-    "mainSha": "0dcd329e50beeb7b36894b1f6eeb94cdf69bb08b"
+    "reviewedAt": "2026-09-14T10:58:47.761Z",
+    "mainSha": "8b1a01e31be1f93f9d14bd843ff1e8651d1dc9f9"
   }
 }
