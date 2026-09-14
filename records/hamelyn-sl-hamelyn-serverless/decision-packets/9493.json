@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-14T14:59:53.299Z",
-  "updatedAt": "2026-09-14T14:01:05Z",
+  "generatedAt": "2026-09-14T15:05:46.092Z",
+  "updatedAt": "2026-09-14T15:01:41Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -19,38 +19,42 @@
       "P2"
     ],
     "createdAt": "2026-09-14T08:20:27Z",
-    "updatedAt": "2026-09-14T14:01:05Z"
+    "updatedAt": "2026-09-14T15:01:41Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué fuente y regla de redondeo EUR→ARS se aprueban, y cómo deben representarse el género y la disponibilidad de 20 días en la plantilla argentina?",
-  "rationale": "Estas reglas determinan datos comerciales enviados a una plataforma externa y no se pueden inferir de la plantilla ni del adaptador mexicano.",
+  "question": "¿Qué fuente de cotización EUR→ARS se aplicará y cómo deben representarse el género y los 20 días de disponibilidad cuando la plantilla argentina no ofrece esos campos?",
+  "rationale": "Estas decisiones cambian el contenido comercial del fichero y no pueden deducirse con seguridad del exportador mexicano ni del Excel adjunto.",
   "options": [
     {
-      "title": "Aprobar fuente y mapeo completos",
-      "body": "Operaciones define proveedor, momento de captura y redondeo del cambio, además del mapeo de género y disponibilidad; después se genera el lote.",
+      "title": "Cerrar la especificación argentina",
+      "body": "Rubén confirma fuente y momento de cambio, mapeo de género y destino de disponibilidad para producir un lote de prueba verificable.",
       "recommended": true
     },
     {
-      "title": "Aplazar la carga argentina",
-      "body": "Se conserva el flujo mexicano mientras Mercado Libre confirme los campos y la fórmula operativa para Argentina.",
+      "title": "Excluir los campos no soportados",
+      "body": "Se entrega un lote limitado sin género ni disponibilidad, aceptando que no valida todos los requisitos de carga.",
+      "recommended": false
+    },
+    {
+      "title": "Aplazar la prueba",
+      "body": "Se mantiene el flujo actual hasta recibir una plantilla o instrucciones de Mercado Libre que incluyan esos campos.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar fuente y mapeo completos",
-    "body": "Operaciones define proveedor, momento de captura y redondeo del cambio, además del mapeo de género y disponibilidad; después se genera el lote.",
+    "title": "Cerrar la especificación argentina",
+    "body": "Rubén confirma fuente y momento de cambio, mapeo de género y destino de disponibilidad para producir un lote de prueba verificable.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "rubenmorueco",
-    "reason": "Es quien aportó los requisitos de negocio y las aclaraciones operativas de la carga.",
+    "reason": "Es quien ha definido las reglas comerciales y puede validar los parámetros pendientes con Marketplace.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9493.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9493#issuecomment-5662615029",
-    "reviewedAt": "2026-09-14T14:59:53.299Z",
+    "reviewedAt": "2026-09-14T15:05:46.092Z",
     "mainSha": "ff3b1daeeb02785d5067eeff5266eff1ff7acdf4"
   }
 }
