@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-14T12:01:05.180Z",
+  "updatedAt": "2026-09-14T10:47:15Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9460,
+    "title": "TodoColección: la retirada cierra como gone cualquier 404 del DELETE y el anuncio se revende al cliente",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9460",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "triage:done",
+      "P1"
+    ],
+    "createdAt": "2026-09-13T14:22:30Z",
+    "updatedAt": "2026-09-14T10:47:15Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Qué política debe seguir V2 cuando un DELETE devuelve `404` genérico: reintentar solo tras una identidad remota verificable o conservar siempre el listing para reintento hasta disponer de una confirmación fiable?",
+  "rationale": "La lectura del proveedor tiene antecedentes de `404` para listings activos y el reintento puede recorrer recuperación de referencias ambiguas; elegir la señal terminal cambia qué ventas se cierran o se retrasan.",
+  "options": [
+    {
+      "title": "Cerrar solo con evidencia semántica",
+      "body": "Mantener `gone` únicamente para claves API conocidas y dejar cualquier `404` genérico como error reintentable hasta validar una identidad remota fiable.",
+      "recommended": true
+    },
+    {
+      "title": "Reintentar por SKU validado",
+      "body": "Recuperar un ID por SKU y reintentar una vez solo cuando el proveedor confirme que corresponde al listing esperado y no entra en recuperación ambigua.",
+      "recommended": false
+    },
+    {
+      "title": "Conservar la reconciliación amplia",
+      "body": "Aceptar cualquier `404` como retirada ya realizada, asumiendo el riesgo actual de listings remotos aún comprables.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Cerrar solo con evidencia semántica",
+    "body": "Mantener `gone` únicamente para claves API conocidas y dejar cualquier `404` genérico como error reintentable hasta validar una identidad remota fiable.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Miguel Angel Hernández Perdomo",
+    "reason": "Su refactor aisló la capa V2 afectada; la decisión debe coordinarse con el precedente de `banosdavidhamelyn`.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9460.md",
+    "reviewedAt": "2026-09-14T12:01:05.180Z",
+    "mainSha": "31cd3d47473a303b1906da1fc19dd5219d052d49"
+  }
+}
