@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-14T14:48:58.691Z",
+  "generatedAt": "2026-09-14T14:51:45.183Z",
   "updatedAt": "2026-09-14T13:15:07Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -15,42 +15,41 @@
       "feature",
       "triage:needs-info",
       "clawsweeper:needs-product-decision",
-      "reporter:carlotavarela",
-      "P2"
+      "P2",
+      "reporter:carlotavarela"
     ],
     "createdAt": "2026-09-14T12:35:19Z",
     "updatedAt": "2026-09-14T13:15:07Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué entidad operativa y documentación comercial aprobadas deben usarse para MELI Argentina, y cómo se separarán sus pedidos de los de México?",
-  "rationale": "El código necesita datos fiscales y reglas de expedición externas; inferirlas desde la dirección podría generar etiquetas o facturas inválidas.",
+  "question": "¿Qué perfil operativo y fiscal aprobado debe usar MELI Argentina, y cómo se separarán sus pedidos de los de México dentro del picking?",
+  "rationale": "La dirección por sí sola no define el destinatario FedEx, importador, moneda, documentación ni criterio de selección necesarios para emitir un envío válido.",
   "options": [
     {
-      "title": "Confirmar ficha argentina",
-      "body": "Operaciones facilita destinatario, importador, teléfono, datos fiscales, condiciones FedEx/MELI y un pedido de prueba; después se implementa la variante por país.",
+      "title": "Definir el perfil argentino completo",
+      "body": "Operaciones confirma destinatario, importador, condiciones FedEx/MELI y un pedido de prueba; después se implementa una ruta separada por país.",
       "recommended": true
     },
     {
-      "title": "Limitar la prueba a México",
-      "body": "Se mantiene el flujo actual hasta que exista una ficha comercial argentina aprobada.",
+      "title": "Aplazar las etiquetas argentinas",
+      "body": "Se mantiene el flujo mexicano hasta que FedEx y MELI validen la documentación y el circuito operativo de Argentina.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Confirmar ficha argentina",
-    "body": "Operaciones facilita destinatario, importador, teléfono, datos fiscales, condiciones FedEx/MELI y un pedido de prueba; después se implementa la variante por país.",
+    "title": "Definir el perfil argentino completo",
+    "body": "Operaciones confirma destinatario, importador, condiciones FedEx/MELI y un pedido de prueba; después se implementa una ruta separada por país.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "carlotavarela",
-    "reason": "Es el enlace indicado en el reporte para completar los datos operativos necesarios.",
+    "reason": "Es el contacto operativo identificado por el reporte y por la petición de datos del triage.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9516.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9516#issuecomment-5664230476",
-    "reviewedAt": "2026-09-14T14:48:58.691Z",
+    "reviewedAt": "2026-09-14T14:51:45.183Z",
     "mainSha": "ff3b1daeeb02785d5067eeff5266eff1ff7acdf4"
   }
 }
