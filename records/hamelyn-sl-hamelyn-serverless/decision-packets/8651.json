@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-14T09:56:06.853Z",
-  "updatedAt": "2026-09-14T08:32:04Z",
+  "generatedAt": "2026-09-14T10:02:53.291Z",
+  "updatedAt": "2026-09-14T09:56:55Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -18,38 +18,37 @@
       "P2"
     ],
     "createdAt": "2026-08-24T06:04:50Z",
-    "updatedAt": "2026-09-14T08:32:04Z"
+    "updatedAt": "2026-09-14T09:56:55Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe Operaciones activar ya una excepción limitada a Guam en ShipMatrix o esperar a confirmar conjuntamente la cobertura de Guam, AS y MP con Spring?",
-  "rationale": "El código no puede decidir la cobertura contractual ni el coste aceptable de cada territorio; la matriz es configuración viva mantenida fuera del repositorio.",
+  "question": "¿Debe Operaciones desviar únicamente Guam a FedEx ahora, o esperar a confirmar formalmente la cobertura contractual de Spring antes de cambiar la matriz?",
+  "rationale": "La corrección es una configuración viva y el coste frente a la cobertura del contrato de Spring no puede deducirse del código ni de la incidencia.",
   "options": [
     {
-      "title": "Excepción sólo para Guam",
-      "body": "Añadir la fila `US`/`NORMAL`/`96910–96932` hacia FedEx, recargar procesos y comprobar que el caso resuelve a FedEx.",
+      "title": "Aplicar excepción de Guam",
+      "body": "Crear la regla `US`/`96910–96932` hacia FedEx y verificar que un pedido `NORMAL` resuelve a FedEx.",
       "recommended": true
     },
     {
-      "title": "Validar primero todos los territorios",
-      "body": "Esperar la confirmación de Spring para Guam, AS y MP y mantener mientras el rescate manual disponible.",
+      "title": "Confirmar antes con Spring",
+      "body": "Mantener la matriz actual hasta disponer de confirmación contractual sobre Guam y los territorios próximos.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Excepción sólo para Guam",
-    "body": "Añadir la fila `US`/`NORMAL`/`96910–96932` hacia FedEx, recargar procesos y comprobar que el caso resuelve a FedEx.",
+    "title": "Aplicar excepción de Guam",
+    "body": "Crear la regla `US`/`96910–96932` hacia FedEx y verificar que un pedido `NORMAL` resuelve a FedEx.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "Ya documentó la decisión de cobertura y coste para un problema comparable de ShipMatrix.",
+    "person": "JavierHamelyn",
+    "reason": "Su actividad reciente en el triaje indica que está conectado con la decisión pendiente sobre esta incidencia.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8651.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8651#issuecomment-5395804226",
-    "reviewedAt": "2026-09-14T09:56:06.853Z",
-    "mainSha": "0f63380573f92ec0af6b63c476b84e5d324a7a56"
+    "reviewedAt": "2026-09-14T10:02:53.291Z",
+    "mainSha": "54661592cd176a3f29ebb899b1b9ed757b9a780a"
   }
 }

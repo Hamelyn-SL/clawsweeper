@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-09T15:17:32.895Z",
-  "updatedAt": "2026-09-09T15:12:06Z",
+  "generatedAt": "2026-09-14T10:09:11.850Z",
+  "updatedAt": "2026-09-14T08:32:35Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,47 +14,41 @@
       "source:admin-panel",
       "app:admin",
       "triage:done",
-      "clawsweeper:needs-product-decision",
-      "P1"
+      "P1",
+      "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-09-07T11:35:09Z",
-    "updatedAt": "2026-09-09T15:12:06Z"
+    "updatedAt": "2026-09-14T08:32:35Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué fuente de verdad debe usar Skypod para atribuir una confirmación de Exotec que solo identifica la estación?",
-  "rationale": "La corrección exige elegir entre titularidad exclusiva de estación, auditoría por producto o pausar el conteo cuando no exista identidad verificable; el código no puede determinar esa política.",
+  "question": "¿Qué roles pueden iniciar una sesión SKYPOD que compute productividad en producción?",
+  "rationale": "La concurrencia ya está protegida; decidir si `admin-logistic` puede contar y si `admin-user` debe quedar excluido es una regla operativa, no un detalle técnico.",
   "options": [
     {
-      "title": "Reserva y procedencia por producto",
-      "body": "Reservar atómicamente cada estación a un rol operativo y guardar la identidad disponible y su fuente en cada confirmación.",
+      "title": "Solo roles operativos",
+      "body": "Permitir `warehouse-operator`, `junior-warehouse-operator` y, si procede, `admin-logistic`; excluir `admin-user` de sesiones computables.",
       "recommended": true
     },
     {
-      "title": "Contención por exclusividad",
-      "body": "Impedir dos sesiones activas por estación y posponer la auditoría individual por producto.",
-      "recommended": false
-    },
-    {
-      "title": "Pausar conteo sin identidad",
-      "body": "No acreditar transiciones de Exotec hasta contar con una identidad verificable del confirmador.",
+      "title": "Mantener `admin-user`",
+      "body": "Conservar el acceso actual y aceptar que administración pueda ocupar y contabilizar una estación.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Reserva y procedencia por producto",
-    "body": "Reservar atómicamente cada estación a un rol operativo y guardar la identidad disponible y su fuente en cada confirmación.",
+    "title": "Solo roles operativos",
+    "body": "Permitir `warehouse-operator`, `junior-warehouse-operator` y, si procede, `admin-logistic`; excluir `admin-user` de sesiones computables.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "banosdavidhamelyn",
-    "reason": "Es la persona asignada y ha mantenido recientemente las rutas de estación y confirmación implicadas.",
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Es la persona más vinculada por historial al diseño vigente de sesiones y atribución.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9230.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9230#issuecomment-5570153578",
-    "reviewedAt": "2026-09-09T15:17:32.895Z",
-    "mainSha": "94cb970a57ae971c0f59e2f01b6667ba033b4085"
+    "reviewedAt": "2026-09-14T10:09:11.850Z",
+    "mainSha": "54661592cd176a3f29ebb899b1b9ed757b9a780a"
   }
 }

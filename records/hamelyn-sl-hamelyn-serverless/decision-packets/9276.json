@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-09T19:00:23.177Z",
-  "updatedAt": "2026-09-09T18:34:52Z",
+  "generatedAt": "2026-09-14T10:14:51.836Z",
+  "updatedAt": "2026-09-14T09:38:27Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -14,39 +14,38 @@
       "P1"
     ],
     "createdAt": "2026-09-08T10:51:30Z",
-    "updatedAt": "2026-09-09T18:34:52Z",
-    "headSha": "fa3a75cbd7a0b679d8b155c0fbb13eb52c2a2300"
+    "updatedAt": "2026-09-14T09:38:27Z",
+    "headSha": "24620274c407b832cedcdfe611a5215f3ed12c52"
   },
   "lane": "product_direction",
-  "priority": "P1",
-  "question": "¿Debe permitirse cambiar desde el historial la gaveta de un producto cuyo Stock ya se ha generado?",
-  "rationale": "El PR abre ese caso sin sincronizar Stock; elegir entre bloquearlo o actualizar ubicación y estado de Stock modifica el contrato operativo de almacén.",
+  "priority": "P2",
+  "question": "¿Se confirma que Turbo Revisión elimina de forma permanente el modo «Aceptable» por lote y conserva solo la calificación individual?",
+  "rationale": "La issue vinculada aún mantiene esa capacidad como requisito, mientras que el PR la retira alegando una petición de producto sin una confirmación durable en la discusión.",
   "options": [
     {
-      "title": "Sincronizar Order y Stock",
-      "body": "Permitir el movimiento y actualizar de forma coherente la gaveta y el estado derivado del Stock dentro de una operación comprobable.",
+      "title": "Confirmar calidad individual",
+      "body": "Mantener «Muy bueno» por defecto, aceptar este comportamiento y alinear la documentación operativa antes de fusionar.",
       "recommended": true
     },
     {
-      "title": "Bloquear tras generar Stock",
-      "body": "Rechazar el cambio desde historial cuando el producto ya tiene Stock para conservar la representación existente como fuente de verdad.",
+      "title": "Conservar modo por lote",
+      "body": "Mantener la issue abierta y ampliar o separar el trabajo para un modo por lote con excepciones individuales.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Sincronizar Order y Stock",
-    "body": "Permitir el movimiento y actualizar de forma coherente la gaveta y el estado derivado del Stock dentro de una operación comprobable.",
+    "title": "Confirmar calidad individual",
+    "body": "Mantener «Muy bueno» por defecto, aceptar este comportamiento y alinear la documentación operativa antes de fusionar.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Introdujo el flujo de revisión y ha revisado específicamente los efectos de persistencia y Stock.",
-    "confidence": "high"
+    "person": "banosdavidhamelyn",
+    "reason": "Ha implementado ambos enfoques en esta área y dejó constancia de la petición de retirada en el PR.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9276.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9276#issuecomment-5584156565",
-    "reviewedAt": "2026-09-09T19:00:23.177Z",
-    "mainSha": "18428b5212091ac86628444285f3830924338212"
+    "reviewedAt": "2026-09-14T10:14:51.836Z",
+    "mainSha": "54661592cd176a3f29ebb899b1b9ed757b9a780a"
   }
 }

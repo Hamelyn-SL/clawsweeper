@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-14T10:02:42.230Z",
+  "generatedAt": "2026-09-14T10:02:27.811Z",
   "updatedAt": "2026-09-14T09:52:37Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -15,47 +15,46 @@
       "feature",
       "triage:done",
       "clawsweeper:needs-product-decision",
-      "reporter:JavierHamelyn",
-      "P2"
+      "P2",
+      "reporter:JavierHamelyn"
     ],
     "createdAt": "2026-08-26T14:39:23Z",
     "updatedAt": "2026-09-14T09:52:37Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué mercados y clases de incidencias deben formar la primera fase, y debe limitarse inicialmente a observación y dry-run sin PATCH recurrente?",
-  "rationale": "La solicitud combina cobertura regional, reglas de elegibilidad y mutaciones externas masivas; el código existente no establece una política segura que permita elegir esos límites automáticamente.",
+  "question": "¿Debe la primera fase cubrir sólo observación y dry-run para COM/MX, o autorizar ya un piloto de remediación de imágenes?",
+  "rationale": "La elección determina qué marketplaces y mutaciones automáticas son aceptables; el código actual no fija esa política operativa.",
   "options": [
     {
       "title": "Observación y dry-run primero",
-      "body": "Iniciar con reports FYP, clasificación, telemetría, recuento y tres muestras revisables antes de habilitar mutaciones.",
+      "body": "Añadir cobertura FYP, clasificación, telemetría y tres muestras revisables sin ejecutar PATCH recurrentes.",
       "recommended": true
     },
     {
-      "title": "Piloto COM/MX de imágenes",
-      "body": "Autorizar sólo imágenes en COM y MX después de validar dry-run, límites por cuenta y verificación diferida.",
+      "title": "Piloto limitado COM/MX",
+      "body": "Permitir sólo remediación de imágenes en COM y MX después de validar dry-run, límites y verificación diferida.",
       "recommended": false
     },
     {
-      "title": "Política global previa",
-      "body": "Posponer la implementación hasta acordar las seis regiones y todos los tipos de incidencias admitidos.",
+      "title": "Política global antes de construir",
+      "body": "Posponer el desarrollo hasta acordar las seis regiones y todos los tipos de incidencia permitidos.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Observación y dry-run primero",
-    "body": "Iniciar con reports FYP, clasificación, telemetría, recuento y tres muestras revisables antes de habilitar mutaciones.",
+    "body": "Añadir cobertura FYP, clasificación, telemetría y tres muestras revisables sin ejecutar PATCH recurrentes.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es el responsable asignado y ha participado recientemente en la operativa de verificación Amazon.",
-    "confidence": "medium"
+    "reason": "Está asignado a la iniciativa y figura como contribuidor reciente del workflow Amazon.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8764.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8764#issuecomment-5428169628",
-    "reviewedAt": "2026-09-14T10:02:42.230Z",
+    "reviewedAt": "2026-09-14T10:02:27.811Z",
     "mainSha": "54661592cd176a3f29ebb899b1b9ed757b9a780a"
   }
 }
