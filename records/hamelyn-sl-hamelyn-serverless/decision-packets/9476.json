@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-14T10:38:17.388Z",
+  "updatedAt": "2026-09-14T08:36:10Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 9476,
+    "title": "chore: remove unused supply visual suite and jest snapshot test",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9476",
+    "state": "open",
+    "labels": [
+      "size/L",
+      "P3"
+    ],
+    "createdAt": "2026-09-14T06:35:41Z",
+    "updatedAt": "2026-09-14T08:36:10Z",
+    "headSha": "d55fac5be196951783f050004d103a82a92eef61"
+  },
+  "lane": "product_direction",
+  "priority": "P3",
+  "question": "¿Se acepta retirar la única regresión visual automatizada de Supply web sin sustituirla por otra cobertura?",
+  "rationale": "El cambio elimina infraestructura inactiva, pero también cierra el único guardarraíl de render web y esa compensación no se resuelve sólo con análisis estático.",
+  "options": [
+    {
+      "title": "Aceptar la retirada",
+      "body": "Confirmar que el coste de mantener la suite supera su valor actual, resolver el conflicto con `dev` y fusionar la limpieza.",
+      "recommended": true
+    },
+    {
+      "title": "Conservar la cobertura",
+      "body": "Mantener o reparar el workflow visual hasta acordar una alternativa automatizada para Supply web.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aceptar la retirada",
+    "body": "Confirmar que el coste de mantener la suite supera su valor actual, resolver el conflicto con `dev` y fusionar la limpieza.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Es revisor solicitado y contribuidor reciente del área de Supply, por lo que puede encauzar la decisión de cobertura.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9476.md",
+    "reviewedAt": "2026-09-14T10:38:17.388Z",
+    "mainSha": "3d8f2c698b01a64f3d7b669bfa3e0ebdc8f68282"
+  }
+}
