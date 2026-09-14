@@ -1,55 +1,54 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-14T10:17:04.693Z",
-  "updatedAt": "2026-09-14T10:07:05Z",
+  "generatedAt": "2026-09-14T11:37:11.790Z",
+  "updatedAt": "2026-09-14T11:27:51Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
     "number": 9500,
-    "title": "cron-health: detectar cada hora la ausencia de ejecuciones y snapshots Amazon de más de 30 h",
+    "title": "cron-health: comprobación diaria de ejecuciones con umbrales por marketplace",
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9500",
     "state": "open",
     "labels": [
-      "triage:queued"
+      "triage:running"
     ],
     "createdAt": "2026-09-14T10:06:16Z",
-    "updatedAt": "2026-09-14T10:07:05Z"
+    "updatedAt": "2026-09-14T11:27:51Z"
   },
   "lane": "product_direction",
-  "priority": "P1",
-  "question": "¿Qué política operativa deben seguir los recordatorios persistentes y las pausas manuales de `amazon-report.yml`?",
-  "rationale": "La incidencia exige deduplicación, recordatorios y supresiones con caducidad, pero no fija su intervalo ni quién puede aprobarlas.",
+  "priority": "P2",
+  "question": "¿Qué política operativa aprobamos para umbrales por marketplace, recordatorios persistentes y pausas manuales visibles de los workflows?",
+  "rationale": "Amazon tiene un umbral concreto, pero el alcance requiere decidir los márgenes de otros marketplaces y cuándo una pausa autorizada puede silenciar avisos.",
   "options": [
     {
       "title": "Política explícita y acotada",
-      "body": "Definir aviso inicial, recordatorio limitado y supresión temporal con motivo, responsable y caducidad antes de implementar.",
+      "body": "Fijar Amazon en 30 h, derivar márgenes por cadencia y enviar un aviso inicial, recuperación y un recordatorio a los siete días; toda pausa sigue visible.",
       "recommended": true
     },
     {
-      "title": "Sólo aviso y recuperación",
-      "body": "Avisar del primer incumplimiento y de la recuperación, sin recordatorios mientras no haya política de guardia.",
+      "title": "Solo aviso y recuperación",
+      "body": "Notificar la primera superación y la recuperación sin recordatorios mientras se define una política de guardia.",
       "recommended": false
     },
     {
-      "title": "Conservar la vigilancia semanal",
-      "body": "Mantener la cobertura actual y aceptar que otra ausencia puede detectarse con retraso.",
+      "title": "Mantener la vigilancia semanal",
+      "body": "Conservar la cobertura global existente y aceptar el retraso de detección hasta una decisión posterior.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Política explícita y acotada",
-    "body": "Definir aviso inicial, recordatorio limitado y supresión temporal con motivo, responsable y caducidad antes de implementar.",
+    "body": "Fijar Amazon en 30 h, derivar márgenes por cadencia y enviar un aviso inicial, recuperación y un recordatorio a los siete días; toda pausa sigue visible.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Su trabajo reciente conecta la entrega Slack compartida con el monitor que debe adoptar esta política.",
+    "person": "MarcosTerroso",
+    "reason": "Documentó el alcance separado y los criterios operativos que requieren confirmación.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9500.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9500#issuecomment-5662447811",
-    "reviewedAt": "2026-09-14T10:17:04.693Z",
-    "mainSha": "54661592cd176a3f29ebb899b1b9ed757b9a780a"
+    "reviewedAt": "2026-09-14T11:37:11.790Z",
+    "mainSha": "31cd3d47473a303b1906da1fc19dd5219d052d49"
   }
 }
