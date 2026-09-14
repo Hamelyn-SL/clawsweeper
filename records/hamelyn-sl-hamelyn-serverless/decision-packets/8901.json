@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-14T05:58:18.883Z",
-  "updatedAt": "2026-09-14T05:47:01Z",
+  "generatedAt": "2026-09-14T07:10:00.454Z",
+  "updatedAt": "2026-09-14T06:00:17Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,43 +13,42 @@
       "bug",
       "source:admin-panel",
       "app:infrastructure",
-      "triage:running",
+      "triage:needs-info",
       "clawsweeper:needs-product-decision",
       "P2"
     ],
     "createdAt": "2026-08-30T06:19:55Z",
-    "updatedAt": "2026-09-14T05:47:01Z"
+    "updatedAt": "2026-09-14T06:00:17Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe priorizarse instrumentar el heap de la regeneración de portada antes de ampliar la memoria, o se acepta ampliar capacidad con seguimiento de coste y 5xx?",
-  "rationale": "La evidencia descarta que las consultas medidas expliquen por sí solas el pico, y la configuración de capacidad requiere elegir un coste operativo antes de un cambio de código seguro.",
+  "question": "¿Debe priorizarse un perfil de heap de la regeneración real antes de cambiar capacidad, o aprobar una mitigación temporal de memoria para la portada mientras se perfila?",
+  "rationale": "La telemetría confirma el fallo, pero no atribuye las asignaciones; escoger concurrencia, candidatos o capacidad implica coste y comportamiento de la portada.",
   "options": [
     {
-      "title": "Perfilar antes de ampliar memoria",
-      "body": "Añadir instrumentación acotada del render y decidir con fases y muestras de memoria observadas.",
+      "title": "Perfilar antes de cambiar",
+      "body": "Capturar memoria inicial, carga de secciones y render completo con la revisión y deployment efectivos antes de modificar la configuración.",
       "recommended": true
     },
     {
-      "title": "Ampliar memoria con seguimiento",
-      "body": "Configurar más memoria para la portada y aceptar explícitamente su coste mientras el watcher vigila 5xx y consumo.",
+      "title": "Mitigación temporal de capacidad",
+      "body": "Aprobar más memoria para la portada con seguimiento explícito de coste, p95 y 5xx mientras se obtiene el perfil.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Perfilar antes de ampliar memoria",
-    "body": "Añadir instrumentación acotada del render y decidir con fases y muestras de memoria observadas.",
+    "title": "Perfilar antes de cambiar",
+    "body": "Capturar memoria inicial, carga de secciones y render completo con la revisión y deployment efectivos antes de modificar la configuración.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Combina la medición operativa reciente con trabajo actual de diagnóstico de render ecommerce.",
+    "reason": "Está asignado a la incidencia y ya aportó la medición postdespliegue que delimita la decisión.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8901.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8901#issuecomment-5467190664",
-    "reviewedAt": "2026-09-14T05:58:18.883Z",
-    "mainSha": "f3cdba11f0d9b4219bcb66f4075e0597b2bba7ac"
+    "reviewedAt": "2026-09-14T07:10:00.454Z",
+    "mainSha": "b19cbcbba23983dd34f040503f0c7bca8977a49b"
   }
 }
