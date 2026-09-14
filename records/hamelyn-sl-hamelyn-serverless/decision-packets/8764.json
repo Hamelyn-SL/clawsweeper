@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-14T09:48:14.308Z",
+  "generatedAt": "2026-09-14T09:51:36.110Z",
   "updatedAt": "2026-09-14T08:32:13Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -15,42 +15,46 @@
       "feature",
       "triage:done",
       "clawsweeper:needs-product-decision",
-      "reporter:JavierHamelyn",
-      "P2"
+      "P2",
+      "reporter:JavierHamelyn"
     ],
     "createdAt": "2026-08-26T14:39:23Z",
     "updatedAt": "2026-09-14T08:32:13Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se aprueba una primera entrega solo de observación, clasificación y dry-run FYP para las seis regiones antes de autorizar cualquier remediación automática?",
-  "rationale": "La cobertura regional, el umbral de mutación y la definición de cierre operativo cambian el comportamiento de producción y exigen criterio del equipo de Marketplaces.",
+  "question": "¿Se aprueba una primera entrega limitada a observación, clasificación y dry-run FYP para las seis regiones antes de permitir cualquier mutación automática?",
+  "rationale": "La elección define qué incidencias son seguras, los límites de lote y quién autoriza mutaciones contra Amazon; no puede inferirse de la infraestructura existente.",
   "options": [
     {
       "title": "Observación antes de mutar",
-      "body": "Implementar informe FYP, clasificación, telemetría y muestras de dry-run; mantener toda mutación desactivada hasta revisar resultados.",
+      "body": "Implementar informe FYP, clasificación, telemetría y dry-run con recuento y muestras, manteniendo las mutaciones desactivadas.",
       "recommended": true
     },
     {
-      "title": "Piloto acotado",
-      "body": "Añadir un único remediador seguro con límite bajo y autorización operativa explícita para cada filtro y lote.",
+      "title": "Piloto de un remediador",
+      "body": "Añadir un único remediador de bajo riesgo con filtro literal, límite reducido y autorización operativa explícita por ejecución.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener el proceso manual",
+      "body": "Conservar los one-shots actuales hasta contar con una política de remediación y verificación aprobada.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Observación antes de mutar",
-    "body": "Implementar informe FYP, clasificación, telemetría y muestras de dry-run; mantener toda mutación desactivada hasta revisar resultados.",
+    "body": "Implementar informe FYP, clasificación, telemetría y dry-run con recuento y muestras, manteniendo las mutaciones desactivadas.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Su historial reciente en el pipeline de informes Amazon le conecta con la primera entrega de observación y clasificación.",
+    "reason": "Es el candidato más próximo por el historial reciente del flujo recurrente de informes Amazon.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8764.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8764#issuecomment-5428169628",
-    "reviewedAt": "2026-09-14T09:48:14.308Z",
+    "reviewedAt": "2026-09-14T09:51:36.110Z",
     "mainSha": "0f63380573f92ec0af6b63c476b84e5d324a7a56"
   }
 }
