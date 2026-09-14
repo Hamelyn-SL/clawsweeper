@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-14T16:47:21.509Z",
+  "generatedAt": "2026-09-14T16:50:10.293Z",
   "updatedAt": "2026-09-14T15:03:57Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -13,42 +13,41 @@
       "bug",
       "app:marketplace",
       "triage:done",
-      "clawsweeper:needs-product-decision",
-      "P1"
+      "P1",
+      "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-09-14T14:53:24Z",
     "updatedAt": "2026-09-14T15:03:57Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe la retirada cerrar los IDs ya identificados y dejar el SKU reintentable ante un estado no resuelto, o abortar toda llamada de cierre remota?",
-  "rationale": "Las dos alternativas evitan confirmar localmente una retirada incompleta, pero cambian el efecto remoto permitido durante un fallo parcial.",
+  "question": "¿Una retirada con `active` o `paused` sin resolver debe quedar siempre en error reintentable aunque haya cerrado IDs conocidos, o puede confirmarse localmente con telemetría reforzada?",
+  "rationale": "La elección determina cuándo se marca retirado el stock frente a un fallo parcial remoto y, por tanto, el equilibrio entre sobreventa y reintentos tras cierres ya efectuados.",
   "options": [
     {
-      "title": "Cerrar lo conocido y reintentar",
-      "body": "Cerrar los IDs identificados, registrar el estado pendiente y no marcar la retirada como completada hasta resolverlo.",
+      "title": "Mantener el stock reintentable",
+      "body": "Cerrar los IDs confirmados, registrar el estado no resuelto y devolver error hasta que ambas búsquedas vivas se completen.",
       "recommended": true
     },
     {
-      "title": "Abortar antes del cierre",
-      "body": "No ejecutar ningún cierre remoto mientras falle la búsqueda de cualquiera de los estados vivos.",
+      "title": "Confirmar con observabilidad",
+      "body": "Permitir la confirmación parcial solo si se emite una señal estructurada para detectar y reparar listings potencialmente vivos.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Cerrar lo conocido y reintentar",
-    "body": "Cerrar los IDs identificados, registrar el estado pendiente y no marcar la retirada como completada hasta resolverlo.",
+    "title": "Mantener el stock reintentable",
+    "body": "Cerrar los IDs confirmados, registrar el estado no resuelto y devolver error hasta que ambas búsquedas vivas se completen.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "El historial reciente le sitúa en la ruta de retirada y recuperación de MercadoLibre.",
+    "reason": "Es el colaborador más reciente en el adaptador local de MercadoLibre y puede calibrar la semántica de reintento con el equipo de marketplaces.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9519.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9519#issuecomment-5666023464",
-    "reviewedAt": "2026-09-14T16:47:21.509Z",
+    "reviewedAt": "2026-09-14T16:50:10.293Z",
     "mainSha": "ff3b1daeeb02785d5067eeff5266eff1ff7acdf4"
   }
 }
