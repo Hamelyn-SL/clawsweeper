@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-14T07:23:08.763Z",
+  "updatedAt": "2026-09-14T07:16:19Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9482,
+    "title": "Reporte diario de Fnac FR y filtro por tienda en los dashboards",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9482",
+    "state": "open",
+    "labels": [
+      "app:marketplace",
+      "feature",
+      "reporter:javier",
+      "triage:queued",
+      "P2"
+    ],
+    "createdAt": "2026-09-14T07:16:01Z",
+    "updatedAt": "2026-09-14T07:16:19Z"
+  },
+  "lane": "release_inclusion",
+  "priority": "P2",
+  "question": "¿Se debe calendarizar el snapshot diario de Fnac FR inmediatamente o tras una primera ejecución controlada contra la tienda real?",
+  "rationale": "El código puede reutilizar el flujo existente, pero la frecuencia inicial y la primera consulta completa afectan a una tienda recién activada en producción.",
+  "options": [
+    {
+      "title": "Primera ejecución controlada",
+      "body": "Ejecutar y revisar un snapshot FR inicial antes de activar su programación diaria.",
+      "recommended": true
+    },
+    {
+      "title": "Programar directamente",
+      "body": "Activar el workflow diario junto al cambio y asumir la primera ejecución automática como validación operativa.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Primera ejecución controlada",
+    "body": "Ejecutar y revisar un snapshot FR inicial antes de activar su programación diaria.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es la persona vinculada al arranque de Fnac FR y al historial reciente de reporting del área.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9482.md",
+    "reviewedAt": "2026-09-14T07:23:08.763Z",
+    "mainSha": "fa13b6ceab9436a4c1f81ae3ee4aef88e89d80e9"
+  }
+}
