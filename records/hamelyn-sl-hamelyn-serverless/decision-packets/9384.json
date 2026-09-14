@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-12T09:06:44.884Z",
-  "updatedAt": "2026-09-11T10:12:50Z",
+  "generatedAt": "2026-09-14T11:04:09.851Z",
+  "updatedAt": "2026-09-14T08:33:33Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,48 +14,42 @@
       "reporter:davidgonzalez",
       "feature",
       "triage:done",
+      "P1",
       "clawsweeper:needs-product-decision",
-      "epic:supply-plazos",
-      "P1"
+      "epic:supply-plazos"
     ],
     "createdAt": "2026-09-10T09:40:43Z",
-    "updatedAt": "2026-09-11T10:12:50Z"
+    "updatedAt": "2026-09-14T08:33:33Z"
   },
-  "lane": "release_inclusion",
+  "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Autoriza Ingeniería Supply activar estos plazos en `dev` tras acreditar producción, recalcular incidencias abiertas y limpiar la cola afectada?",
-  "rationale": "El cambio altera transiciones automáticas y pagos; la corrección de código ya existe, pero el momento seguro de activación depende de datos y operaciones de producción.",
+  "question": "¿Se autoriza activar los plazos nuevos una vez corregido el contador y validados los recuentos de lotes, el despliegue de dependencias y la limpieza de la cola en tránsito?",
+  "rationale": "La decisión cambia cuándo lotes reales pasan a sospechoso y pago automático; el código no puede determinar por sí solo el umbral operativo aceptable.",
   "options": [
     {
-      "title": "Completar el gate operativo",
-      "body": "Mantener la activación fuera de `dev` hasta aportar despliegue, recuentos actualizados y confirmación de cola limpia.",
+      "title": "Activar con compuertas verificadas",
+      "body": "Aprobar tras una nueva prueba de la PR, recuentos actualizados por regla y confirmación conjunta de que la cola y las dependencias están listas.",
       "recommended": true
     },
     {
-      "title": "Activar con seguimiento reforzado",
-      "body": "Promoverla tras aceptar expresamente el volumen calculado y supervisar la primera ejecución del cron.",
-      "recommended": false
-    },
-    {
-      "title": "Posponer el cambio",
-      "body": "Mantener los plazos actuales mientras Operaciones no pueda preparar la cola y los recuentos.",
+      "title": "Posponer la activación",
+      "body": "Mantener los plazos actuales y retomar la PR cuando Operaciones tenga una ventana segura para absorber el impacto inicial.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Completar el gate operativo",
-    "body": "Mantener la activación fuera de `dev` hasta aportar despliegue, recuentos actualizados y confirmación de cola limpia.",
+    "title": "Activar con compuertas verificadas",
+    "body": "Aprobar tras una nueva prueba de la PR, recuentos actualizados por regla y confirmación conjunta de que la cola y las dependencias están listas.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "banosdavidhamelyn",
-    "reason": "Es la persona asignada y autora del cambio integrado en la rama del épico, con el contexto operativo documentado.",
+    "reason": "Es la persona asignada y autora de la PR candidata; puede coordinar la evidencia técnica con Operaciones.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9384.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9384#issuecomment-5644933840",
-    "reviewedAt": "2026-09-12T09:06:44.884Z",
-    "mainSha": "55db7e4a7cbff616c2537722dd88f2549f8bfce6"
+    "reviewedAt": "2026-09-14T11:04:09.851Z",
+    "mainSha": "f1b5191d2a637d01d284e2930f45008babeba356"
   }
 }
