@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-02T11:27:23.058Z",
-  "updatedAt": "2026-09-02T10:55:15Z",
+  "generatedAt": "2026-09-14T09:20:29.145Z",
+  "updatedAt": "2026-09-14T08:31:45Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -16,43 +16,42 @@
       "triage:done",
       "reporter:irenegarcia",
       "clawsweeper:needs-product-decision",
+      "P2",
       "origin:panel",
-      "mk:mercadolibre",
-      "P2"
+      "mk:mercadolibre"
     ],
     "createdAt": "2026-08-03T12:01:21Z",
-    "updatedAt": "2026-09-02T10:55:15Z"
+    "updatedAt": "2026-09-14T08:31:45Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿La primera entrega debe cubrir solo preguntas preventa y mensajes postventa, dejando las reclamaciones para una segunda fase?",
-  "rationale": "Cada recurso de MercadoLibre tiene reglas y autorizaciones diferentes; esta elección determina el modelo persistente, la configuración de eDesk y el alcance de los workers.",
+  "question": "¿La primera entrega debe limitarse a preguntas preventa y mensajes posventa, dejando las reclamaciones para una segunda fase?",
+  "rationale": "Los tres flujos tienen recursos y restricciones distintos, y el código actual no contiene canal, mapeos persistentes ni entrega saliente para resolver esa prioridad automáticamente.",
   "options": [
     {
       "title": "Primera fase de mensajes",
-      "body": "Implementar preguntas y mensajes bidireccionales con deduplicación y mapeos persistentes, y planificar reclamaciones después.",
+      "body": "Implementar preguntas y mensajes bidireccionales con idempotencia y mapeo conversación↔ticket, y planificar las reclamaciones después.",
       "recommended": true
     },
     {
-      "title": "Incluir reclamaciones",
-      "body": "Diseñar desde el inicio los tres flujos, asumiendo una entrega mayor con moderación, adjuntos y conciliación.",
+      "title": "Incluir reclamaciones desde el inicio",
+      "body": "Diseñar los tres flujos en una entrega mayor con adjuntos, moderación, reconciliación y las configuraciones externas necesarias.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Primera fase de mensajes",
-    "body": "Implementar preguntas y mensajes bidireccionales con deduplicación y mapeos persistentes, y planificar reclamaciones después.",
+    "body": "Implementar preguntas y mensajes bidireccionales con idempotencia y mapeo conversación↔ticket, y planificar las reclamaciones después.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "Es la persona con señal más directa en el historial disponible de los dos puntos actuales de integración.",
-    "confidence": "medium"
+    "person": "Miguel Angel Hernández Perdomo",
+    "reason": "Es la persona con la conexión histórica más directa con el endpoint de notificaciones que debe evolucionar.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8185.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8185#issuecomment-5166101052",
-    "reviewedAt": "2026-09-02T11:27:23.058Z",
-    "mainSha": "350e0bfc6a03f54c34e3afbc6a231922e06685a7"
+    "reviewedAt": "2026-09-14T09:20:29.145Z",
+    "mainSha": "df26e17c87415675ccb8ebca3cbf71d0c427f0ab"
   }
 }

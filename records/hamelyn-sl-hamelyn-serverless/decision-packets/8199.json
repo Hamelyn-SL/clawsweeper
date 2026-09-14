@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-02T11:27:02.961Z",
-  "updatedAt": "2026-09-02T10:55:13Z",
+  "generatedAt": "2026-09-14T09:21:02.837Z",
+  "updatedAt": "2026-09-14T08:31:50Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,43 +12,42 @@
     "labels": [
       "triage:blocked",
       "clawsweeper:needs-product-decision",
+      "P3",
       "app:agents",
-      "origin:dev",
-      "P3"
+      "origin:dev"
     ],
     "createdAt": "2026-08-04T06:38:56Z",
-    "updatedAt": "2026-09-02T10:55:13Z"
+    "updatedAt": "2026-09-14T08:31:50Z"
   },
   "lane": "product_direction",
   "priority": "P3",
-  "question": "¿Debe el equipo automatizar en `[Deps] Grouped` los bumps de SheetJS desde `xlsx.lst`, o aceptar una revisión manual periódica con responsable explícito?",
-  "rationale": "El código confirma que ambas rutas son viables, pero no puede decidir por sí solo el coste operativo aceptable ni la política de mantenimiento del CDN externo.",
+  "question": "¿Debe `[Deps] Grouped` descubrir y proponer automáticamente versiones de SheetJS desde `xlsx.lst`, o se prefiere una revisión manual con responsable explícito?",
+  "rationale": "Ambas rutas son viables, pero difieren en la política de confianza del upstream y en quién asume la revisión de actualizaciones de seguridad fuera de npm.",
   "options": [
     {
-      "title": "Automatizar el índice oficial",
-      "body": "Añadir una comprobación determinista de `xlsx.lst` que abra el PR de actualización cuando haya una versión superior.",
+      "title": "Automatizar desde `xlsx.lst`",
+      "body": "Añadir una comprobación determinista del índice oficial que abra un PR cuando haya una versión superior y conserve la validación actual.",
       "recommended": true
     },
     {
-      "title": "Revisión manual programada",
-      "body": "Documentar una revisión trimestral y asignar un responsable para comprobar el CDN y preparar el bump manual.",
+      "title": "Auditoría manual trimestral",
+      "body": "Documentar la revisión del CDN, asignar responsable y mantener los bumps como cambios manuales revisados.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Automatizar el índice oficial",
-    "body": "Añadir una comprobación determinista de `xlsx.lst` que abra el PR de actualización cuando haya una versión superior.",
+    "title": "Automatizar desde `xlsx.lst`",
+    "body": "Añadir una comprobación determinista del índice oficial que abra un PR cuando haya una versión superior y conserve la validación actual.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Es la persona más conectada al workflow actual de actualizaciones agrupadas.",
+    "reason": "Es el contribuidor identificado en la ruta actual que construye y aplica las exclusiones del actualizador agrupado.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8199.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8199#issuecomment-5175570287",
-    "reviewedAt": "2026-09-02T11:27:02.961Z",
-    "mainSha": "350e0bfc6a03f54c34e3afbc6a231922e06685a7"
+    "reviewedAt": "2026-09-14T09:21:02.837Z",
+    "mainSha": "df26e17c87415675ccb8ebca3cbf71d0c427f0ab"
   }
 }

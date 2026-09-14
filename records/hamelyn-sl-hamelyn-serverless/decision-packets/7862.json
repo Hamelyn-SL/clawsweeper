@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-02T11:20:39.236Z",
-  "updatedAt": "2026-09-02T10:55:22Z",
+  "generatedAt": "2026-09-14T09:21:13.562Z",
+  "updatedAt": "2026-09-14T08:31:31Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,44 +14,43 @@
       "source:admin-panel",
       "app:infrastructure",
       "triage:done",
+      "P1",
       "clawsweeper:needs-product-decision",
       "reporter:danielmenchen-hamelyn",
-      "origin:panel",
-      "P1"
+      "origin:panel"
     ],
     "createdAt": "2026-07-22T06:41:29Z",
-    "updatedAt": "2026-09-02T10:55:22Z"
+    "updatedAt": "2026-09-14T08:31:31Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe Analytics Supply emitir solo `auth0_user_id` y completar `mongo_user_id` fuera de la petición, o mantener el enriquecimiento Mongo síncrono mientras la configuración se refresca solo en cold start?",
-  "rationale": "La tormenta de reconexiones está mitigada, pero las dos alternativas restantes cambian el contrato de propagación de configuración o la semántica de eventos autenticados.",
+  "question": "¿Analytics Supply debe conservar `mongo_user_id` durante la petición o puede enriquecerse después para eliminar MongoDB de esta ruta?",
+  "rationale": "La retirada de `createConnectionAndInitializeEnv()` cambia el contrato observado de eventos autenticados, no solo la eficiencia de infraestructura.",
   "options": [
     {
-      "title": "Desacoplar enriquecimiento",
-      "body": "Registrar `auth0_user_id` en la petición y completar `mongo_user_id` de forma asíncrona mientras se añade un refresco TTL con single-flight.",
+      "title": "Conservar enriquecimiento síncrono",
+      "body": "Mantener la conexión MongoDB de Analytics y considerar resuelta la parte de reconexiones.",
       "recommended": true
     },
     {
-      "title": "Mantener enriquecimiento síncrono",
-      "body": "Conservar la consulta Mongo de Analytics Supply y limitar el cambio a documentar que la configuración se actualiza en el siguiente cold start.",
+      "title": "Enriquecer de forma asíncrona",
+      "body": "Definir un proceso posterior que añada `mongo_user_id` sin consultar MongoDB durante la petición.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Desacoplar enriquecimiento",
-    "body": "Registrar `auth0_user_id` en la petición y completar `mongo_user_id` de forma asíncrona mientras se añade un refresco TTL con single-flight.",
+    "title": "Conservar enriquecimiento síncrono",
+    "body": "Mantener la conexión MongoDB de Analytics y considerar resuelta la parte de reconexiones.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Su historial disponible cubre la canalización de eventos donde se decide la semántica de `mongo_user_id`.",
-    "confidence": "high"
+    "person": "Daniel",
+    "reason": "Su propuesta previa cubría exactamente el desacoplamiento de Analytics y conoce el alcance del cambio.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7862.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7862#issuecomment-5043656384",
-    "reviewedAt": "2026-09-02T11:20:39.236Z",
-    "mainSha": "350e0bfc6a03f54c34e3afbc6a231922e06685a7"
+    "reviewedAt": "2026-09-14T09:21:13.562Z",
+    "mainSha": "df26e17c87415675ccb8ebca3cbf71d0c427f0ab"
   }
 }

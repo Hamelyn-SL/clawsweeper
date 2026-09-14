@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-02T11:27:27.815Z",
-  "updatedAt": "2026-09-02T10:55:14Z",
+  "generatedAt": "2026-09-14T09:20:54.200Z",
+  "updatedAt": "2026-09-14T08:31:48Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,50 +14,44 @@
       "source:admin-panel",
       "app:marketplace",
       "triage:no-change",
+      "P1",
       "clawsweeper:needs-product-decision",
       "reporter:JavierHamelyn",
       "origin:panel",
-      "mk:amazon",
-      "P1"
+      "mk:amazon"
     ],
     "createdAt": "2026-08-03T13:36:22Z",
-    "updatedAt": "2026-09-02T10:55:14Z"
+    "updatedAt": "2026-09-14T08:31:48Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Se aprueba separar una mitigación inmediata `101078 → UNKNOWN` del futuro resolver de condición regional y mantener cualquier backfill bloqueado hasta validar el contrato canónico?",
-  "rationale": "La exclusión mecánica es acotada, pero decidir la condición canónica, los casos FBA y las escrituras regionales cambia comportamiento operativo y no puede inferirse con seguridad del código.",
+  "question": "¿Debe el equipo limitar esta incidencia al guard inmediato de no-retry o patrocinar también el resolver regional de condición y su backfill controlado?",
+  "rationale": "El guard es mecánico, pero la condición canónica, los casos FBA y cualquier write account-wide definen una política operativa nueva que el código actual no puede elegir por sí solo.",
   "options": [
     {
-      "title": "Mitigación primero",
-      "body": "Publicar solo el guard y las pruebas de precedencia, dejando el resolver y el backfill como trabajo posterior con aprobación.",
+      "title": "Separar guard y resolver",
+      "body": "Publicar primero un cambio acotado que fuerce `101078` a no ser reintentable y planificar el grafo regional como iniciativa aprobada aparte.",
       "recommended": true
     },
     {
-      "title": "Resolver completo antes del guard",
-      "body": "Esperar a definir el grafo regional y entregar una solución integrada, aceptando que el recovery actual siga expuesto mientras tanto.",
-      "recommended": false
-    },
-    {
-      "title": "Solo observación",
-      "body": "Mantener la cohorte sin cambios y ejecutar primero la auditoría account-wide para decidir el contrato de condición.",
+      "title": "Patrocinar el resolver completo",
+      "body": "Aprobar alcance, responsables, criterios FBA y controles de rollout antes de implementar lectura, clasificación y cualquier backfill.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mitigación primero",
-    "body": "Publicar solo el guard y las pruebas de precedencia, dejando el resolver y el backfill como trabajo posterior con aprobación.",
+    "title": "Separar guard y resolver",
+    "body": "Publicar primero un cambio acotado que fuerce `101078` a no ser reintentable y planificar el grafo regional como iniciativa aprobada aparte.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Está asignado y su historial reciente cubre tanto la recuperación Amazon como la evidencia operativa de esta incidencia.",
+    "person": "Miguel Angel Hernández Perdomo",
+    "reason": "Es la persona con mayor trazabilidad reciente sobre el clasificador V2 que debe alojar el guard inmediato.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8188.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8188#issuecomment-5167219624",
-    "reviewedAt": "2026-09-02T11:27:27.815Z",
-    "mainSha": "350e0bfc6a03f54c34e3afbc6a231922e06685a7"
+    "reviewedAt": "2026-09-14T09:20:54.200Z",
+    "mainSha": "df26e17c87415675ccb8ebca3cbf71d0c427f0ab"
   }
 }

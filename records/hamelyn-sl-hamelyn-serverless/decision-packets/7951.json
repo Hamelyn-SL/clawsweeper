@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-02T11:20:40.323Z",
-  "updatedAt": "2026-09-02T10:55:21Z",
+  "generatedAt": "2026-09-14T09:20:26.546Z",
+  "updatedAt": "2026-09-14T08:31:33Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,44 +14,43 @@
       "source:admin-panel",
       "triage:done",
       "clawsweeper:needs-product-decision",
+      "P2",
       "reporter:JavierHamelyn",
       "app:agents",
-      "origin:panel",
-      "P2"
+      "origin:panel"
     ],
     "createdAt": "2026-07-27T00:01:13Z",
-    "updatedAt": "2026-09-02T10:55:21Z"
+    "updatedAt": "2026-09-14T08:31:33Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe `proof` seguir siendo una señal no bloqueante o convertirse en un gate que espera el veredicto terminal antes de permitir el merge?",
-  "rationale": "El comportamiento actual está documentado y cubierto por pruebas; convertirlo en gate cambia el contrato de merge y no es una corrección mecánica.",
+  "question": "¿Debe PR Proof pasar de señal asíncrona informativa a gate autoritativo que bloquee el merge hasta recibir su veredicto terminal?",
+  "rationale": "El código actual adopta deliberadamente el modelo no bloqueante; cambiarlo altera la política de merge, la experiencia de entrega y el contrato operativo del agente.",
   "options": [
     {
-      "title": "Mantenerlo no bloqueante",
-      "body": "Conservar el comentario y el estado `proof` como feedback, y reformular esta incidencia como mejora de presentación o trazabilidad.",
+      "title": "Mantener Proof como asesor",
+      "body": "Conservar el flujo asíncrono y aclarar que el check de CI autoritativo es `Lint and typecheck`, priorizando solo mejoras de legibilidad de la evidencia.",
       "recommended": true
     },
     {
-      "title": "Aprobar un gate autoritativo",
-      "body": "Reabrir el alcance como cambio de plataforma con espera por run terminal, persistencia y evidencia verificable antes de decidir el check.",
+      "title": "Convertirlo en gate autoritativo",
+      "body": "Planificar una iniciativa separada con estado por run, consulta terminal, ledger verificable, límites de timeout y pruebas de recuperación.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mantenerlo no bloqueante",
-    "body": "Conservar el comentario y el estado `proof` como feedback, y reformular esta incidencia como mejora de presentación o trazabilidad.",
+    "title": "Mantener Proof como asesor",
+    "body": "Conservar el flujo asíncrono y aclarar que el check de CI autoritativo es `Lint and typecheck`, priorizando solo mejoras de legibilidad de la evidencia.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Concentra la entrega de Proof y los endurecimientos recientes de esta superficie.",
+    "reason": "Es la persona con mayor continuidad reciente en el workflow y en la implementación de PR Proof.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7951.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7951#issuecomment-5086112215",
-    "reviewedAt": "2026-09-02T11:20:40.323Z",
-    "mainSha": "350e0bfc6a03f54c34e3afbc6a231922e06685a7"
+    "reviewedAt": "2026-09-14T09:20:26.546Z",
+    "mainSha": "df26e17c87415675ccb8ebca3cbf71d0c427f0ab"
   }
 }
