@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-15T07:37:54.209Z",
+  "updatedAt": "2026-09-15T07:21:38Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 9528,
+    "title": "feat: execute b2b orders within deviation caps on an authorized reaction",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9528",
+    "state": "open",
+    "labels": [
+      "size/XXL"
+    ],
+    "createdAt": "2026-09-15T06:04:33Z",
+    "updatedAt": "2026-09-15T07:21:38Z",
+    "headSha": "671769e9a707f9159c34873fb547a31ec671a4a6"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe el watcher aceptar como política permanente un ✅ para pedidos con hasta 80 % no servido y 200.000 unidades, incluso cuando el incidente citado puede explicarse por filas de totales?",
+  "rationale": "La propuesta cambia la frontera de retirada automática de stock; el código no puede determinar por sí solo si ese riesgo comercial es aceptable.",
+  "options": [
+    {
+      "title": "Aprobar topes con reautorización segura",
+      "body": "Mantener 80 % y 200.000, pero bloquear cualquier ✅ heredado tras un re-adjunto hasta recibir HITL o una confirmación nueva verificable.",
+      "recommended": true
+    },
+    {
+      "title": "Conservar los topes actuales",
+      "body": "Mantener 20 % y 8.000 unidades mientras se valida si el caso Bulrushed queda resuelto por la corrección de filas de totales.",
+      "recommended": false
+    },
+    {
+      "title": "Adoptar el riesgo actual",
+      "body": "Aceptar que una reacción raíz previa pueda ejecutar el fichero sustituido dentro de los nuevos topes.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar topes con reautorización segura",
+    "body": "Mantener 80 % y 200.000, pero bloquear cualquier ✅ heredado tras un re-adjunto hasta recibir HITL o una confirmación nueva verificable.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "La discusión le pide una segunda revisión específica sobre la nueva regla de ejecución.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9528.md",
+    "reviewedAt": "2026-09-15T07:37:54.209Z",
+    "mainSha": "7afc4c51fc58e42f2113ebb515c3e712dcf7ca28"
+  }
+}
