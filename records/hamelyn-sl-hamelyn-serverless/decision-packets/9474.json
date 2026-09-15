@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-14T10:43:19.925Z",
-  "updatedAt": "2026-09-14T09:28:41Z",
+  "generatedAt": "2026-09-15T06:35:44.728Z",
+  "updatedAt": "2026-09-15T06:25:22Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -10,43 +10,42 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9474",
     "state": "open",
     "labels": [
-      "size/L",
+      "size/M",
       "P2"
     ],
     "createdAt": "2026-09-14T06:14:10Z",
-    "updatedAt": "2026-09-14T09:28:41Z",
-    "headSha": "d1d6d62a4e73d498c6ff26cb9b5ae8b5c8ec7602"
+    "updatedAt": "2026-09-15T06:25:22Z",
+    "headSha": "838179a93bf1ea2a89416f186274357121365dab"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se aprueba que estas 20 declaraciones de índices dejen de formar parte permanentemente de los schemas Mongoose?",
-  "rationale": "La evidencia confirma la implementación, pero la incidencia relacionada mantiene pendiente decidir el inventario exacto antes de continuar la retirada operativa.",
+  "question": "¿Debe `autoCreate` y `autoIndex` quedar desactivado de forma permanente para estos modelos, asumiendo que Atlas provisionará también todos los índices aún necesarios?",
+  "rationale": "La corrección evita recrear índices retirados, pero también elimina el respaldo automático para índices válidos de colecciones nuevas o recuperadas; esa compatibilidad depende de una decisión operativa explícita.",
   "options": [
     {
-      "title": "Aprobar las 20 retiradas",
-      "body": "Validar el inventario probado por el PR, integrarlo y tratar los índices físicos de Atlas como una operación independiente y reversible.",
+      "title": "Adoptar gestión manual en Atlas",
+      "body": "Aprobar el inventario y el runbook de aprovisionamiento manual para estos tres modelos antes de fusionar.",
       "recommended": true
     },
     {
-      "title": "Conservar las declaraciones",
-      "body": "Pausar el PR hasta identificar el cliente que recreó los índices y confirmar que ningún consumidor externo necesita ese contrato.",
+      "title": "Conservar el respaldo automático",
+      "body": "Limitar el PR a retirar los seis índices aprobados y mantener una vía controlada para crear los índices restantes.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar las 20 retiradas",
-    "body": "Validar el inventario probado por el PR, integrarlo y tratar los índices físicos de Atlas como una operación independiente y reversible.",
+    "title": "Adoptar gestión manual en Atlas",
+    "body": "Aprobar el inventario y el runbook de aprovisionamiento manual para estos tres modelos antes de fusionar.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "AlexDiaz-Hamelyn",
-    "reason": "Ha reunido la evidencia operativa, propuso la selección concreta y es el responsable asignado de esta línea de trabajo.",
+    "person": "Daniel",
+    "reason": "Es el candidato con conexión directa al factory compartido afectado y ya está solicitado como revisor.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9474.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9474#issuecomment-5659941565",
-    "reviewedAt": "2026-09-14T10:43:19.925Z",
-    "mainSha": "1f2eb6a576bfc7ae5a4e2ef3e22e1c8b0aa9e77f"
+    "reviewedAt": "2026-09-15T06:35:44.728Z",
+    "mainSha": "8cd0b2c22a5acc54ec14facdd49fe8d4fe179dd7"
   }
 }
