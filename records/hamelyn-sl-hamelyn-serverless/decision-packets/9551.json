@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-15T08:00:31.253Z",
+  "generatedAt": "2026-09-15T08:01:38.436Z",
   "updatedAt": "2026-09-15T07:52:48Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -13,47 +13,40 @@
       "bug",
       "app:marketplace",
       "triage:queued",
-      "P2",
-      "clawsweeper:needs-product-decision"
+      "P2"
     ],
     "createdAt": "2026-09-15T07:51:59Z",
     "updatedAt": "2026-09-15T07:52:48Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe TodoColeccion tratar el precio del stock maestro como fuente que se reaplica automáticamente ante cualquier diferencia remota, o admitir diferencias remotas documentadas?",
-  "rationale": "El código fija una fuente interna para reprice, pero no existe contrato ni señal de reconciliación para una lectura remota divergente; esa política afecta precios publicados y carga de API.",
+  "question": "¿Debe TodoColeccion tratar el precio del stock maestro como fuente canónica y reconciliar al remoto cada discrepancia confirmada, o existen diferencias remotas válidas que deben excluirse?",
+  "rationale": "El código actual usa el stock maestro al reprocesar, pero la incidencia pide validar si los cinco desacuerdos deben sobrescribirse; esa semántica no puede inferirse solo del adapter.",
   "options": [
     {
-      "title": "Maestro local canónico",
-      "body": "Reconciliar por canario y marcar `needsUpdatePrice` cuando el precio remoto difiera del maestro activo y publicable.",
+      "title": "Master canónico con canario",
+      "body": "Confirmar el stock maestro como precio canónico, señalar los cinco casos tras validación y ampliar la detección de forma acotada.",
       "recommended": true
     },
     {
-      "title": "Diferencias permitidas",
-      "body": "Documentar los casos remotos intencionales y excluirlos mediante una señal explícita antes de introducir reconciliación automática.",
-      "recommended": false
-    },
-    {
-      "title": "Solo observabilidad",
-      "body": "Mantener el flujo actual y ampliar el watcher hasta disponer de más evidencia operativa.",
+      "title": "Catalogar excepciones",
+      "body": "Documentar y codificar las clases de listings donde el precio remoto puede diferir sin activar reprice.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Maestro local canónico",
-    "body": "Reconciliar por canario y marcar `needsUpdatePrice` cuando el precio remoto difiera del maestro activo y publicable.",
+    "title": "Master canónico con canario",
+    "body": "Confirmar el stock maestro como precio canónico, señalar los cinco casos tras validación y ampliar la detección de forma acotada.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "Daniel",
-    "reason": "El runtime de selección y resolución de reprice pasa por los runners que este historial atribuye a su refactor.",
+    "person": "MarcosTerroso",
+    "reason": "Su historial concentra la transición al modelo V2 que actualmente selecciona y publica los precios.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9551.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9551#issuecomment-5676823919",
-    "reviewedAt": "2026-09-15T08:00:31.253Z",
+    "reviewedAt": "2026-09-15T08:01:38.436Z",
     "mainSha": "c007d9dc476b56e9a39afc015ca4e0a1e00ee7a5"
   }
 }

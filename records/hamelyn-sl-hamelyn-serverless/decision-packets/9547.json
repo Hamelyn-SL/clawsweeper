@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-15T07:59:44.696Z",
+  "updatedAt": "2026-09-15T07:47:05Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9547,
+    "title": "Admin: segunda revisión Skypod con BringBins antes de sustituir",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9547",
+    "state": "open",
+    "labels": [
+      "app:admin",
+      "feature",
+      "triage:queued",
+      "P2"
+    ],
+    "createdAt": "2026-09-15T07:46:38Z",
+    "updatedAt": "2026-09-15T07:47:05Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué resultado operativo y criterio de activación deben gobernar la segunda revisión BringBins antes de bloquear o permitir la resolución comercial?",
+  "rationale": "El código actual trata `NOT_FOUND` como terminal; decidir el nuevo estado, el responsable de recuperación y el umbral del piloto cambia la política de almacén y no puede inferirse de forma segura.",
+  "options": [
+    {
+      "title": "Pilotar con estado recuperable",
+      "body": "Definir una revisión pendiente idempotente, mantener bloqueada la resolución comercial y habilitar BringBins solo en el puesto de pruebas antes del despliegue gradual.",
+      "recommended": true
+    },
+    {
+      "title": "Validar primero el contrato externo",
+      "body": "Completar una demostración aislada contra Control Tower y documentar respuestas, reintentos y timeouts antes de modificar los flujos de pedido.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener la resolución actual",
+      "body": "No introducir la segunda revisión y conservar el tratamiento terminal actual de los productos no encontrados.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Pilotar con estado recuperable",
+    "body": "Definir una revisión pendiente idempotente, mantener bloqueada la resolución comercial y habilitar BringBins solo en el puesto de pruebas antes del despliegue gradual.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Su trabajo reciente conecta las confirmaciones de estación, la productividad y la semántica final de las líneas.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9547.md",
+    "reviewedAt": "2026-09-15T07:59:44.696Z",
+    "mainSha": "c007d9dc476b56e9a39afc015ca4e0a1e00ee7a5"
+  }
+}
