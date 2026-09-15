@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-15T06:09:23.961Z",
+  "generatedAt": "2026-09-15T06:17:17.779Z",
   "updatedAt": "2026-09-15T06:04:04Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -17,40 +17,34 @@
     "headSha": "ffdd3cefd5323bc9b3126572cee61c87b65bb424"
   },
   "lane": "release_inclusion",
-  "priority": "P1",
-  "question": "¿Qué secuencia de despliegue debe proteger el dispatch automático mientras se cambia de `/api/coliseo` a `/api/asamblea`?",
-  "rationale": "La corrección exige coordinar una variable de GitHub y despliegues de Vercel externos al diff; el código no puede decidir por sí solo la ventana operativa aceptable.",
+  "priority": "P2",
+  "question": "¿Se programa primero un despliegue compatible en producción o se acepta una ventana en la que el revisor automático no publique resultados?",
+  "rationale": "La URL de producción usada por los workflows cambia al mergear en `dev`, pero el endpoint nuevo no existe allí hasta el posterior Deploy to Prod.",
   "options": [
     {
-      "title": "Rollout temporal por staging",
-      "body": "Recomendada: fijar temporalmente el entorno en staging, fusionar, verificar `@asamblea`, desplegar producción y restaurar el destino de producción.",
+      "title": "Desplegar compatibilidad antes",
+      "body": "Añadir y desplegar primero aliases compatibles en producción, y después cambiar los workflows y callbacks a Asamblea.",
       "recommended": true
     },
     {
-      "title": "Despliegue en dos fases",
-      "body": "Publicar primero compatibilidad de endpoint en producción y realizar después la conmutación de workflows en un PR separado.",
-      "recommended": false
-    },
-    {
-      "title": "Aceptar la ventana de corte",
-      "body": "Fusionar y desplegar producción inmediatamente, asumiendo que Asamblea no revisará PRs durante la transición.",
+      "title": "Aceptar una ventana coordinada",
+      "body": "Mergear el renombrado y desplegar producción inmediatamente, asumiendo que las revisiones durante esa ventana pueden fallar.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Rollout temporal por staging",
-    "body": "Recomendada: fijar temporalmente el entorno en staging, fusionar, verificar `@asamblea`, desplegar producción y restaurar el destino de producción.",
+    "title": "Desplegar compatibilidad antes",
+    "body": "Añadir y desplegar primero aliases compatibles en producción, y después cambiar los workflows y callbacks a Asamblea.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "El historial le vincula directamente con la configuración de dispatch y el ciclo de vida de PRs.",
+    "reason": "El historial muestra que ha mantenido la coordinación de runs y es el mejor punto de decisión para el orden del despliegue.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9527.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9527#issuecomment-5675600422",
-    "reviewedAt": "2026-09-15T06:09:23.961Z",
-    "mainSha": "3a812f53c87040b623a977b95c10aa001976d5e6"
+    "reviewedAt": "2026-09-15T06:17:17.779Z",
+    "mainSha": "8cd0b2c22a5acc54ec14facdd49fe8d4fe179dd7"
   }
 }

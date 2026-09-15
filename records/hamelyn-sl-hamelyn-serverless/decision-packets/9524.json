@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-15T06:13:04.926Z",
+  "updatedAt": "2026-09-15T06:02:31Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 9524,
+    "title": "feat: register warehouse faults and compute operator quality",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9524",
+    "state": "open",
+    "labels": [
+      "size/XXL"
+    ],
+    "createdAt": "2026-09-15T05:49:16Z",
+    "updatedAt": "2026-09-15T06:02:31Z",
+    "headSha": "b89e744d244256611529a77301e415e4008c3613"
+  },
+  "lane": "release_inclusion",
+  "priority": "P2",
+  "question": "¿Se autoriza crear `warehouseFaults` y `warehouseAudits` y se mantiene este aterrizaje directo en `dev`, o debe F3 volver a la rama `EPIC/warehouse-telemetry`?",
+  "rationale": "La política del repositorio prohíbe crear colecciones sin autorización expresa y la épica publicada conserva una secuencia de integración distinta.",
+  "options": [
+    {
+      "title": "Autorizar y mantener `dev`",
+      "body": "Aprobar formalmente ambas colecciones, provisionar sus siete índices y confirmar que F3 puede entrar directamente en `dev`.",
+      "recommended": false
+    },
+    {
+      "title": "Reapuntar a la épica",
+      "body": "Mantener la integración coordinada: provisionar los datos autorizados y mover este PR a `EPIC/warehouse-telemetry` antes del merge final.",
+      "recommended": true
+    },
+    {
+      "title": "Pausar F3",
+      "body": "Esperar una decisión sobre el flujo F6 y la persistencia de auditorías antes de continuar con esta fase.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Reapuntar a la épica",
+    "body": "Mantener la integración coordinada: provisionar los datos autorizados y mover este PR a `EPIC/warehouse-telemetry` antes del merge final.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "danielmenchen-hamelyn",
+    "reason": "Es la persona con evidencia reciente de coordinación e integración de la épica de telemetría.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9524.md",
+    "reviewedAt": "2026-09-15T06:13:04.926Z",
+    "mainSha": "8cd0b2c22a5acc54ec14facdd49fe8d4fe179dd7"
+  }
+}
