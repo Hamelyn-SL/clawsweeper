@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-15T07:37:54.209Z",
+  "generatedAt": "2026-09-15T07:36:15.592Z",
   "updatedAt": "2026-09-15T07:21:38Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -10,8 +10,7 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9528",
     "state": "open",
     "labels": [
-      "size/XXL",
-      "P1"
+      "size/XXL"
     ],
     "createdAt": "2026-09-15T06:04:33Z",
     "updatedAt": "2026-09-15T07:21:38Z",
@@ -19,39 +18,38 @@
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe el watcher aceptar como política permanente un ✅ para pedidos con hasta 80 % no servido y 200.000 unidades, incluso cuando el incidente citado puede explicarse por filas de totales?",
-  "rationale": "La propuesta cambia la frontera de retirada automática de stock; el código no puede determinar por sí solo si ese riesgo comercial es aceptable.",
+  "question": "¿Aprueba el equipo que un ✅ de `B2B_AUTHORIZER_IDS` ejecute pedidos con entre 20 % y 80 % no servido y hasta 200.000 unidades, sin botones HITL adicionales?",
+  "rationale": "El código conserva la allowlist, pero desplaza el umbral práctico de aprobación de una sesión HITL a una reacción para operaciones que antes se detenían.",
   "options": [
     {
-      "title": "Aprobar topes con reautorización segura",
-      "body": "Mantener 80 % y 200.000, pero bloquear cualquier ✅ heredado tras un re-adjunto hasta recibir HITL o una confirmación nueva verificable.",
+      "title": "Confirmar los topes propuestos",
+      "body": "Aceptar 80 % y 200.000 como política operativa, manteniendo HITL para bloqueos, intake, identidad dudosa y demás anomalías.",
       "recommended": true
     },
     {
-      "title": "Conservar los topes actuales",
-      "body": "Mantener 20 % y 8.000 unidades mientras se valida si el caso Bulrushed queda resuelto por la corrección de filas de totales.",
+      "title": "Mantener HITL para desviaciones",
+      "body": "Conservar el contrato actual y limitar este PR a los mensajes correctos de escalado y cliente provisional.",
       "recommended": false
     },
     {
-      "title": "Adoptar el riesgo actual",
-      "body": "Aceptar que una reacción raíz previa pueda ejecutar el fichero sustituido dentro de los nuevos topes.",
+      "title": "Aprobar límites más conservadores",
+      "body": "Definir un rango menor o categorías permitidas antes de fijar las constantes y la documentación.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar topes con reautorización segura",
-    "body": "Mantener 80 % y 200.000, pero bloquear cualquier ✅ heredado tras un re-adjunto hasta recibir HITL o una confirmación nueva verificable.",
+    "title": "Confirmar los topes propuestos",
+    "body": "Aceptar 80 % y 200.000 como política operativa, manteniendo HITL para bloqueos, intake, identidad dudosa y demás anomalías.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "La discusión le pide una segunda revisión específica sobre la nueva regla de ejecución.",
-    "confidence": "medium"
+    "person": "JavierHamelyn",
+    "reason": "Es la persona con mayor continuidad demostrable en la autorización y el flujo B2B afectado.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9528.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9528#issuecomment-5675601020",
-    "reviewedAt": "2026-09-15T07:37:54.209Z",
+    "reviewedAt": "2026-09-15T07:36:15.592Z",
     "mainSha": "7afc4c51fc58e42f2113ebb515c3e712dcf7ca28"
   }
 }
