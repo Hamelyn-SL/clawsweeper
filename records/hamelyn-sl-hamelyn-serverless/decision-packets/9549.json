@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-15T09:09:01.017Z",
+  "updatedAt": "2026-09-15T08:44:40Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9549,
+    "title": "El job validate de [CI] Monorepo tarda 11 minutos por dos steps que se pueden acelerar sin quitar checks",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9549",
+    "state": "open",
+    "labels": [
+      "app:infrastructure",
+      "feature",
+      "triage:done",
+      "P2",
+      "reporter:JavierHamelyn"
+    ],
+    "createdAt": "2026-09-15T07:50:37Z",
+    "updatedAt": "2026-09-15T08:44:40Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe la PR limitarse a las optimizaciones dentro del job `validate` o aceptar también la nueva topología de varios jobs con mayor coste facturado?",
+  "rationale": "La segunda confirmación de la PR amplía la solución desde optimizar dos steps a paralelizar la topología del workflow, con un coste operativo explícito.",
+  "options": [
+    {
+      "title": "Limitar la PR al alcance original",
+      "body": "Mantener la lectura por lotes, el gate selectivo del self-test y las suites concurrentes dentro del job para reducir tiempo sin cambiar el coste de jobs.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar varios jobs paralelos",
+      "body": "Adoptar la reducción adicional de tiempo de pared asumiendo los minutos facturados extra indicados en la propuesta.",
+      "recommended": false
+    },
+    {
+      "title": "Separar la topología",
+      "body": "Integrar primero las optimizaciones acotadas y abrir una decisión independiente para repartir el gate entre jobs.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Limitar la PR al alcance original",
+    "body": "Mantener la lectura por lotes, el gate selectivo del self-test y las suites concurrentes dentro del job para reducir tiempo sin cambiar el coste de jobs.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es el asignado actual y autor de la PR que describe los dos límites de coste y rendimiento.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9549.md",
+    "reviewedAt": "2026-09-15T09:09:01.017Z",
+    "mainSha": "d68062effb8088d08cf6d9b7d69eea82f188bc84"
+  }
+}
