@@ -1,10 +1,10 @@
 {
   "status": "dry_run",
-  "generated_at": "2026-09-15T08:54:10.878Z",
+  "generated_at": "2026-09-15T09:14:07.412Z",
   "repo": "Hamelyn-SL/hamelyn-serverless",
   "repair_repo": "Hamelyn-SL/clawsweeper",
   "review_repo": "Hamelyn-SL/clawsweeper",
-  "since": "2026-09-15T05:54:08.752Z",
+  "since": "2026-09-15T06:14:04.591Z",
   "execute": false,
   "force_reprocess": false,
   "max_comments": 100,
@@ -13,7 +13,7 @@
   "status_comment_id": null,
   "max_autoclose_targets": 8,
   "scanned_comments": 100,
-  "commands_seen": 0,
+  "commands_seen": 1,
   "actionable": 0,
   "trusted_bots": [
     "clawsweeper[bot]",
@@ -27,21 +27,63 @@
   "max_auto_repairs_per_head": 2,
   "max_auto_repairs_per_pr": 10,
   "lookup_concurrency": 8,
-  "commands": [],
+  "commands": [
+    {
+      "idempotency_key": "comment-router:Hamelyn-SL/hamelyn-serverless:9535:5677701357:2026-09-15T09:13:25Z:re_review",
+      "comment_id": "5677701357",
+      "comment_version_key": "5677701357:2026-09-15T09:13:25Z",
+      "comment_url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9535#issuecomment-5677701357",
+      "repo": "Hamelyn-SL/hamelyn-serverless",
+      "target_branch": null,
+      "issue_number": 9535,
+      "author": "PabloMoran34",
+      "author_id": 191837330,
+      "author_association": "CONTRIBUTOR",
+      "comment_created_at": "2026-09-15T09:13:25Z",
+      "comment_updated_at": "2026-09-15T09:13:25Z",
+      "status_comment_id": null,
+      "trigger": "mention",
+      "command": "re-review",
+      "intent": "re_review",
+      "autoclose_message": null,
+      "implementation_prompt": null,
+      "operator_override": null,
+      "trusted_bot": false,
+      "trusted_bot_author": null,
+      "automation_source": null,
+      "repair_reason": null,
+      "review_summary": null,
+      "review_followup": null,
+      "freeform_prompt": null,
+      "visual_lens": null,
+      "expected_head_sha": null,
+      "close_reason": null,
+      "close_confidence": null,
+      "close_action_taken": null,
+      "reviewed_at": null,
+      "expected_item_updated_at": null,
+      "expected_source_revision": null,
+      "finding_id": null,
+      "status": "waiting",
+      "actions": [],
+      "author_repository_permission": "admin",
+      "reason": "GitHub lookup failed; will retry later: GraphQL: Resource not accessible by integration (repository.pullRequest.statusCheckRollup.nodes.0.commit.statusCheckRollup) Command failed: gh pr view 9535 --repo Hamelyn-SL/hamelyn-serverless --json additions,headRefName,headRefOid,author,"
+    }
+  ],
   "timings": {
-    "total_ms": 2126,
+    "total_ms": 2821,
     "phases": [
       {
         "name": "list_candidate_comments",
-        "ms": 2123
+        "ms": 1741
       },
       {
         "name": "prehydrate_comment_commands",
-        "ms": 0
+        "ms": 1073
       },
       {
         "name": "classify_comment_commands",
-        "ms": 0
+        "ms": 1
       },
       {
         "name": "prehydrate_repair_loop_sweeps",
