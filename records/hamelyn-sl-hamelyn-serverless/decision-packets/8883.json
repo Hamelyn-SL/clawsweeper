@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-14T10:58:47.761Z",
-  "updatedAt": "2026-09-14T10:53:34Z",
+  "generatedAt": "2026-09-15T07:46:42.238Z",
+  "updatedAt": "2026-09-15T07:39:01Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,43 +13,42 @@
       "bug",
       "source:admin-panel",
       "app:infrastructure",
-      "triage:needs-info",
+      "triage:queued",
       "clawsweeper:needs-product-decision",
       "P2"
     ],
     "createdAt": "2026-08-28T12:19:19Z",
-    "updatedAt": "2026-09-14T10:53:34Z"
+    "updatedAt": "2026-09-15T07:39:01Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "Tras desplegar la prevención, ¿qué índices recreados se autoriza retirar de Atlas y bajo qué observación reversible?",
-  "rationale": "La retirada cambia datos de producción y la política del repositorio exige autorización explícita; el PR solo elimina declaraciones de código.",
+  "question": "¿Deben estos tres grupos de modelos mantener desactivados permanentemente `autoIndex` y `autoCreate`, con todos los índices necesarios aprovisionados manualmente en Atlas?",
+  "rationale": "La corrección técnica elimina recreaciones, pero también cambia quién garantiza los índices válidos en entornos nuevos o recuperados.",
   "options": [
     {
-      "title": "Esperar una validación adicional",
-      "body": "Mantener los 17 índices recreados hasta identificar el punto de entrada y observar el código desplegado sin nuevas órdenes de creación.",
+      "title": "Adoptar gestión manual en Atlas",
+      "body": "Aprobar un inventario y runbook de aprovisionamiento por entorno, y fusionar el PR con `autoIndex` y `autoCreate` desactivados.",
       "recommended": true
     },
     {
-      "title": "Autorizar un canario reversible",
-      "body": "Elegir uno o dos índices concretos, registrar baseline y ocultarlos antes de valorar cualquier borrado definitivo.",
+      "title": "Conservar una vía automática controlada",
+      "body": "Limitar el PR a las declaraciones retiradas y definir una ruta explícita y autorizada para crear los índices restantes.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Esperar una validación adicional",
-    "body": "Mantener los 17 índices recreados hasta identificar el punto de entrada y observar el código desplegado sin nuevas órdenes de creación.",
+    "title": "Adoptar gestión manual en Atlas",
+    "body": "Aprobar un inventario y runbook de aprovisionamiento por entorno, y fusionar el PR con `autoIndex` y `autoCreate` desactivados.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "AlexDiaz-Hamelyn",
-    "reason": "Es la persona asignada que aportó el inventario, la investigación de recreación y el candidato de corrección.",
-    "confidence": "high"
+    "person": "Daniel",
+    "reason": "La historia reciente del modelo compartido y la discusión del PR lo sitúan como el mejor punto de decisión disponible.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8883.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8883#issuecomment-5452787658",
-    "reviewedAt": "2026-09-14T10:58:47.761Z",
-    "mainSha": "8b1a01e31be1f93f9d14bd843ff1e8651d1dc9f9"
+    "reviewedAt": "2026-09-15T07:46:42.238Z",
+    "mainSha": "7afc4c51fc58e42f2113ebb515c3e712dcf7ca28"
   }
 }
