@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-15T07:10:04.028Z",
+  "updatedAt": "2026-09-15T06:59:03Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9542,
+    "title": "Watcher B2B: el ✅ de un autorizado debe ejecutar pedidos con desviaciones dentro de unos topes",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9542",
+    "state": "open",
+    "labels": [
+      "app:infrastructure",
+      "feature",
+      "reporter:javier",
+      "triage:queued",
+      "P1"
+    ],
+    "createdAt": "2026-09-15T06:58:50Z",
+    "updatedAt": "2026-09-15T06:59:03Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe el ✅ autorizado aceptar automáticamente servicio parcial de hasta el 80 % y pedidos de hasta 200.000 unidades, o debe mantenerse HITL para esas desviaciones?",
+  "rationale": "Los valores solicitados cambian el umbral que protege ejecuciones con mutaciones de pedidos y stock; el código actual trata cualquier anomalía como motivo de escalado.",
+  "options": [
+    {
+      "title": "Aprobar topes fijos",
+      "body": "Permitir únicamente ratio no servido de hasta el 80 % y volumen de hasta 200.000, preservando HITL para bloqueos, identidad, intake y entrega.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener HITL",
+      "body": "Conservar el escalado para toda desviación y limitar el trabajo a aclarar los mensajes tratados en https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9525.",
+      "recommended": false
+    },
+    {
+      "title": "Definir una política más conservadora",
+      "body": "Aprobar categorías o límites inferiores tras revisar operaciones B2B antes de codificar la autorización automática.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar topes fijos",
+    "body": "Permitir únicamente ratio no servido de hasta el 80 % y volumen de hasta 200.000, preservando HITL para bloqueos, identidad, intake y entrega.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es la persona con mayor historial reciente en la autorización y el pipeline B2B.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9542.md",
+    "reviewedAt": "2026-09-15T07:10:04.028Z",
+    "mainSha": "7afc4c51fc58e42f2113ebb515c3e712dcf7ca28"
+  }
+}
