@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-14T10:38:17.388Z",
-  "updatedAt": "2026-09-14T08:36:10Z",
+  "generatedAt": "2026-09-15T06:08:53.381Z",
+  "updatedAt": "2026-09-15T05:46:32Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -14,39 +14,38 @@
       "P3"
     ],
     "createdAt": "2026-09-14T06:35:41Z",
-    "updatedAt": "2026-09-14T08:36:10Z",
+    "updatedAt": "2026-09-15T05:46:32Z",
     "headSha": "d55fac5be196951783f050004d103a82a92eef61"
   },
   "lane": "product_direction",
   "priority": "P3",
-  "question": "¿Se acepta retirar la única regresión visual automatizada de Supply web sin sustituirla por otra cobertura?",
-  "rationale": "El cambio elimina infraestructura inactiva, pero también cierra el único guardarraíl de render web y esa compensación no se resuelve sólo con análisis estático.",
+  "question": "¿Aceptamos retirar la única regresión visual automática de Supply web sin sustituirla por otra cobertura web?",
+  "rationale": "La implementación es coherente con el objetivo, pero el coste de mantenimiento frente a la pérdida de detección visual requiere una decisión de calidad de producto.",
   "options": [
     {
       "title": "Aceptar la retirada",
-      "body": "Confirmar que el coste de mantener la suite supera su valor actual, resolver el conflicto con `dev` y fusionar la limpieza.",
+      "body": "Eliminar la suite inactiva, retirar las dos etiquetas sin consumidores y dejar Maestro como cobertura automatizada restante.",
       "recommended": true
     },
     {
-      "title": "Conservar la cobertura",
-      "body": "Mantener o reparar el workflow visual hasta acordar una alternativa automatizada para Supply web.",
+      "title": "Conservar o reemplazar la cobertura web",
+      "body": "Mantener la suite hasta acordar una alternativa ligera y activa para detectar regresiones de Supply web.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Aceptar la retirada",
-    "body": "Confirmar que el coste de mantener la suite supera su valor actual, resolver el conflicto con `dev` y fusionar la limpieza.",
+    "body": "Eliminar la suite inactiva, retirar las dos etiquetas sin consumidores y dejar Maestro como cobertura automatizada restante.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "Es revisor solicitado y contribuidor reciente del área de Supply, por lo que puede encauzar la decisión de cobertura.",
-    "confidence": "medium"
+    "person": "Miguel Angel Hernández Perdomo",
+    "reason": "Introdujo el workflow y su mecanismo de activación, por lo que tiene el contexto histórico más directo.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9476.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9476#issuecomment-5660494888",
-    "reviewedAt": "2026-09-14T10:38:17.388Z",
-    "mainSha": "3d8f2c698b01a64f3d7b669bfa3e0ebdc8f68282"
+    "reviewedAt": "2026-09-15T06:08:53.381Z",
+    "mainSha": "3a812f53c87040b623a977b95c10aa001976d5e6"
   }
 }

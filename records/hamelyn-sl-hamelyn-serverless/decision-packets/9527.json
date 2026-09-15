@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-15T06:09:23.961Z",
+  "updatedAt": "2026-09-15T06:04:04Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 9527,
+    "title": "chore: rename coliseo reviewer to asamblea",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9527",
+    "state": "open",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-09-15T06:01:14Z",
+    "updatedAt": "2026-09-15T06:04:04Z",
+    "headSha": "ffdd3cefd5323bc9b3126572cee61c87b65bb424"
+  },
+  "lane": "release_inclusion",
+  "priority": "P1",
+  "question": "¿Qué secuencia de despliegue debe proteger el dispatch automático mientras se cambia de `/api/coliseo` a `/api/asamblea`?",
+  "rationale": "La corrección exige coordinar una variable de GitHub y despliegues de Vercel externos al diff; el código no puede decidir por sí solo la ventana operativa aceptable.",
+  "options": [
+    {
+      "title": "Rollout temporal por staging",
+      "body": "Recomendada: fijar temporalmente el entorno en staging, fusionar, verificar `@asamblea`, desplegar producción y restaurar el destino de producción.",
+      "recommended": true
+    },
+    {
+      "title": "Despliegue en dos fases",
+      "body": "Publicar primero compatibilidad de endpoint en producción y realizar después la conmutación de workflows en un PR separado.",
+      "recommended": false
+    },
+    {
+      "title": "Aceptar la ventana de corte",
+      "body": "Fusionar y desplegar producción inmediatamente, asumiendo que Asamblea no revisará PRs durante la transición.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Rollout temporal por staging",
+    "body": "Recomendada: fijar temporalmente el entorno en staging, fusionar, verificar `@asamblea`, desplegar producción y restaurar el destino de producción.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "El historial le vincula directamente con la configuración de dispatch y el ciclo de vida de PRs.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9527.md",
+    "reviewedAt": "2026-09-15T06:09:23.961Z",
+    "mainSha": "3a812f53c87040b623a977b95c10aa001976d5e6"
+  }
+}
