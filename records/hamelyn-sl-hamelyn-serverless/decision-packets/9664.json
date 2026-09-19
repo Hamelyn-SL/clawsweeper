@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-19T11:25:20.054Z",
+  "updatedAt": "2026-09-17T10:15:00Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9664,
+    "title": "Unificar los 12 roles en 6 roles de puesto modelados sobre el organigrama",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9664",
+    "state": "open",
+    "labels": [
+      "app:infrastructure",
+      "feature",
+      "triage:done",
+      "P1",
+      "reporter:JavierHamelyn",
+      "origin:dev"
+    ],
+    "createdAt": "2026-09-17T09:27:50Z",
+    "updatedAt": "2026-09-17T10:15:00Z"
+  },
+  "lane": "security_boundary",
+  "priority": "P1",
+  "question": "¿Debe un `analyst` poder ejecutar `write:stocks` mediante un token delegado, y cuál es el principal auditado y revocable de esa operación?",
+  "rationale": "Hoy los PAT heredan roles del propietario y el control de mutaciones no recibe una marca de agente; la decisión define una frontera de autorización duradera.",
+  "options": [
+    {
+      "title": "Separar delegación de la migración",
+      "body": "Migrar puestos y flags sin escritura delegada para `analyst`, y diseñar después un principal delegado con auditoría y revocación explícitas.",
+      "recommended": true
+    },
+    {
+      "title": "Delegación personal acotada",
+      "body": "Permitir `write:stocks` únicamente para un usuario destinatario identificado, con expiración, auditoría y pruebas de denegación.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener solo lectura",
+      "body": "Conservar `analyst` como rol estrictamente de lectura y no añadir delegación de escritura.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Separar delegación de la migración",
+    "body": "Migrar puestos y flags sin escritura delegada para `analyst`, y diseñar después un principal delegado con auditoría y revocación explícitas.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Está asignado a la issue y su historial cubre los contratos de PAT, CLI y escrituras v6 que deben evolucionar.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9664.md",
+    "reviewedAt": "2026-09-19T11:25:20.054Z",
+    "mainSha": "d0e0b93e78bba63a1c6ff1614e823941e10afa9f"
+  }
+}

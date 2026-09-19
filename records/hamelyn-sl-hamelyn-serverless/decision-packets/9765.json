@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-19T11:22:13.961Z",
+  "generatedAt": "2026-09-19T11:23:22.223Z",
   "updatedAt": "2026-09-19T11:15:57Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -14,42 +14,41 @@
       "feature",
       "reporter:javier",
       "triage:done",
-      "clawsweeper:needs-product-decision",
-      "P1"
+      "P1",
+      "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-09-18T14:18:31Z",
     "updatedAt": "2026-09-19T11:15:57Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Aprobamos una primera fase con corte local por proceso tras `usage_limit_reached`, o debe existir estado compartido antes de ejecutar agentes nuevos?",
-  "rationale": "La elección cambia el contrato operativo: el corte local reduce llamadas inmediatamente, mientras que el estado compartido evita incluso la primera llamada de cada lambda.",
+  "question": "¿Se aprueba primero el corte local por proceso al detectar `usage_limit_reached`, dejando el estado compartido entre lambdas para una fase posterior?",
+  "rationale": "La elección determina si el primer intento de cada proceso puede seguir consumiendo una llamada y condiciona el contrato de skip, la persistencia y la experiencia visible en los PR.",
   "options": [
     {
       "title": "Corte local primero",
-      "body": "Propagar el agotamiento dentro de cada ejecución y dejar la persistencia compartida como una fase posterior.",
+      "body": "Clasificar el agotamiento, detener cada ejecución y publicar un estado claro; diferir la coordinación entre procesos.",
       "recommended": true
     },
     {
       "title": "Estado compartido desde el inicio",
-      "body": "Añadir una fuente compartida de cuota para bloquear ejecuciones antes de contactar con Codex.",
+      "body": "Añadir una fuente compartida de cuota para bloquear también el primer intento de nuevas lambdas.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Corte local primero",
-    "body": "Propagar el agotamiento dentro de cada ejecución y dejar la persistencia compartida como una fase posterior.",
+    "body": "Clasificar el agotamiento, detener cada ejecución y publicar un estado claro; diferir la coordinación entre procesos.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Conecta el transporte Codex, el PR de cuota abierto y las automatizaciones afectadas.",
+    "person": "banosdavidhamelyn",
+    "reason": "Su historial conecta los dos clientes compartidos y el flujo de Skill Guardian que deben acordar el contrato.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9765.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9765#issuecomment-5740658292",
-    "reviewedAt": "2026-09-19T11:22:13.961Z",
+    "reviewedAt": "2026-09-19T11:23:22.223Z",
     "mainSha": "d0e0b93e78bba63a1c6ff1614e823941e10afa9f"
   }
 }

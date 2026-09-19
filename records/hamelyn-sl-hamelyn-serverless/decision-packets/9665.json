@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-19T11:23:56.641Z",
+  "updatedAt": "2026-09-17T11:15:06Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9665,
+    "title": "Evaluar qué ve y qué hace cada rol en el admin y condensar pantallas por puesto",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9665",
+    "state": "open",
+    "labels": [
+      "app:admin",
+      "feature",
+      "triage:needs-info",
+      "P2",
+      "reporter:JavierHamelyn",
+      "origin:dev"
+    ],
+    "createdAt": "2026-09-17T09:28:07Z",
+    "updatedAt": "2026-09-17T11:15:06Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe el admin limitarse estrictamente a operación de almacén, o conservar excepciones para `support` y `finance` en marketing, pagos, costes y cupones?",
+  "rationale": "La elección determina los roles, las rutas que deben permanecer y la autorización por acción; el código no puede inferirla sin una decisión de dirección y operaciones.",
+  "options": [
+    {
+      "title": "Aprobar matriz operativa con excepciones explícitas",
+      "body": "Definir cada pantalla y acción por rol, enumerando las excepciones necesarias para `support` y `finance` antes de iniciar la migración.",
+      "recommended": true
+    },
+    {
+      "title": "Admin solo de almacén",
+      "body": "Mover todas las superficies no operativas al CLI tras confirmar que cada operación y su autorización están disponibles.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener superficies compartidas",
+      "body": "Conservar marketing, finanzas y soporte en el admin con permisos por acción documentados y coherentes entre menú y API.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar matriz operativa con excepciones explícitas",
+    "body": "Definir cada pantalla y acción por rol, enumerando las excepciones necesarias para `support` y `finance` antes de iniciar la migración.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "La issue está asignada a JavierHamelyn y solicita expresamente una aprobación funcional de dirección y operaciones.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9665.md",
+    "reviewedAt": "2026-09-19T11:23:56.641Z",
+    "mainSha": "d0e0b93e78bba63a1c6ff1614e823941e10afa9f"
+  }
+}

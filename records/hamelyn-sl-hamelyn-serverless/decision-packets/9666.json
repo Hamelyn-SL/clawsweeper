@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-19T11:25:04.254Z",
+  "updatedAt": "2026-09-17T11:00:16Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9666,
+    "title": "Rutas del admin sin autenticación (v5) o sin comprobación de rol (v4) aceptan cualquier llamada",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9666",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:admin",
+      "triage:done",
+      "P0",
+      "reporter:JavierHamelyn",
+      "origin:dev"
+    ],
+    "createdAt": "2026-09-17T09:28:25Z",
+    "updatedAt": "2026-09-17T11:00:16Z"
+  },
+  "lane": "security_boundary",
+  "priority": "P0",
+  "question": "¿Qué excepciones administrativas, callbacks y audiencias deben seguir permitidas antes de extender la autorización a v5 y denegar roles vacíos?",
+  "rationale": "La corrección afecta integraciones legítimas y consumidores compartidos del verificador de Auth0; el código no revela por sí solo la política de compatibilidad aceptable.",
+  "options": [
+    {
+      "title": "Autorizar explícitamente por ruta",
+      "body": "Recomendada: proteger cada ruta administrativa con roles no vacíos y conservar solo excepciones documentadas y probadas.",
+      "recommended": true
+    },
+    {
+      "title": "Extender el proxy a v5",
+      "body": "Añadir token global a v5 y complementar los handlers sensibles con roles explícitos, tras inventariar callbacks.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener excepciones heredadas",
+      "body": "Aceptar temporalmente las rutas exentas únicamente si su necesidad está documentada y limitada por otro mecanismo verificable.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Autorizar explícitamente por ruta",
+    "body": "Recomendada: proteger cada ruta administrativa con roles no vacíos y conservar solo excepciones documentadas y probadas.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es el responsable asignado y ya se le señaló el alcance conjunto durante el triage.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9666.md",
+    "reviewedAt": "2026-09-19T11:25:04.254Z",
+    "mainSha": "d0e0b93e78bba63a1c6ff1614e823941e10afa9f"
+  }
+}
