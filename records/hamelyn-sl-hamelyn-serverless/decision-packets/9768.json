@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-19T22:58:38.687Z",
+  "updatedAt": "2026-09-19T22:54:38Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9768,
+    "title": "[WATCHER-ALERT] mercadolibre: report trigger failed",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9768",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "triage:no-change",
+      "P2"
+    ],
+    "createdAt": "2026-09-18T19:08:32Z",
+    "updatedAt": "2026-09-19T22:54:38Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿La política de corte por `usage_limit_reached` debe incluir las sesiones Eve de watchers y finalizar el trigger antes del timeout?",
+  "rationale": "La evidencia confirma una recuperación posterior, pero no determina si el comportamiento deseado ante una cuota agotada es esperar, fallar pronto o compartir estado entre ejecuciones.",
+  "options": [
+    {
+      "title": "Extender el corte a Eve",
+      "body": "Clasificar el agotamiento de cuota y finalizar la sesión y el trigger con una señal clara hasta el próximo reset.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener la espera actual",
+      "body": "Conservar el sondeo de 1.800 segundos y tratar cada alerta como una incidencia operativa recuperable.",
+      "recommended": false
+    },
+    {
+      "title": "Resolver solo los agentes de revisión",
+      "body": "Limitar la corrección de cuota a Asamblea, Proof y Skill Guardian, dejando Eve fuera por ahora.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Extender el corte a Eve",
+    "body": "Clasificar el agotamiento de cuota y finalizar la sesión y el trigger con una señal clara hasta el próximo reset.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Ha realizado los cambios recientes en recibos, ventanas y reintentos del watcher.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9768.md",
+    "reviewedAt": "2026-09-19T22:58:38.687Z",
+    "mainSha": "d0e0b93e78bba63a1c6ff1614e823941e10afa9f"
+  }
+}
