@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-19T11:36:36.958Z",
-  "updatedAt": "2026-09-19T11:27:51Z",
+  "generatedAt": "2026-09-19T11:37:47.402Z",
+  "updatedAt": "2026-09-19T11:30:12Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,45 +14,43 @@
       "feature",
       "triage:done",
       "clawsweeper:needs-product-decision",
+      "P2",
       "reporter:danielmenchen-hamelyn",
       "origin:dev",
-      "epic:supply-v3",
-      "P2",
-      "clawsweeper:needs-security-review"
+      "epic:supply-v3"
     ],
     "createdAt": "2026-09-18T08:04:03Z",
-    "updatedAt": "2026-09-19T11:27:51Z"
+    "updatedAt": "2026-09-19T11:30:12Z"
   },
-  "lane": "product_direction",
+  "lane": "security_boundary",
   "priority": "P2",
-  "question": "¿Qué responsables aprueban el mapa final de URLs, la recuperación limitada de sesión/carrito y los criterios de reversión antes de configurar el ensayo de cutover?",
-  "rationale": "El código actual no puede decidir por sí solo los destinos de dominio, orígenes autorizados de Auth0/CORS ni la propiedad operativa de la reversión.",
+  "question": "¿Qué política de recuperación entre orígenes y de separación de carritos por país se aprueba para el cutover antes de configurar Auth0/CORS y ensayarlo en staging?",
+  "rationale": "El alcance fija límites de seguridad y continuidad, pero no asigna el mecanismo aprobado ni los responsables de la reversión; esa elección no puede resolverse de forma segura desde código.",
   "options": [
     {
-      "title": "Aprobar contrato de cutover",
-      "body": "Designar responsables y validar mapa, orígenes Auth0/CORS, aislamiento de carrito y runbook antes de implementar el ensayo.",
+      "title": "Aprobar contrato limitado",
+      "body": "Validar inventario, recuperación sin tokens reutilizables en URL, namespaces por país y responsables del rollback antes del ensayo.",
       "recommended": true
     },
     {
-      "title": "Limitar D02 al inventario",
-      "body": "Entregar primero el mapa antiguo→nuevo y aplazar la configuración de staging hasta cerrar los contratos de rutas, sesión, carrito y preview.",
+      "title": "Aplazar el ensayo",
+      "body": "Mantener el inventario y posponer Auth0/CORS de staging hasta cerrar los contratos de rutas, sesión, carrito y preview.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar contrato de cutover",
-    "body": "Designar responsables y validar mapa, orígenes Auth0/CORS, aislamiento de carrito y runbook antes de implementar el ensayo.",
+    "title": "Aprobar contrato limitado",
+    "body": "Validar inventario, recuperación sin tokens reutilizables en URL, namespaces por país y responsables del rollback antes del ensayo.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "danielmenchen-hamelyn",
-    "reason": "Su PR vinculada y la épica relacionada establecen la arquitectura de routing y la secuencia de integración.",
-    "confidence": "medium"
+    "reason": "Coordina la épica y fusionó la base de `epic/supply-v3` donde debe integrarse este trabajo.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9744.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9744#issuecomment-5740689461",
-    "reviewedAt": "2026-09-19T11:36:36.958Z",
+    "reviewedAt": "2026-09-19T11:37:47.402Z",
     "mainSha": "d0e0b93e78bba63a1c6ff1614e823941e10afa9f"
   }
 }
