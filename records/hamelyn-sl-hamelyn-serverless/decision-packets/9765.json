@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-19T09:02:29.495Z",
+  "updatedAt": "2026-09-19T08:13:25Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9765,
+    "title": "Infra: los agentes no hacen skip cuando la cuota de Codex se agota",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9765",
+    "state": "open",
+    "labels": [
+      "app:infrastructure",
+      "feature",
+      "reporter:javier",
+      "triage:queued",
+      "P1"
+    ],
+    "createdAt": "2026-09-18T14:18:31Z",
+    "updatedAt": "2026-09-19T08:13:25Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿El objetivo debe limitarse a cortar cada proceso tras su primer `usage_limit_reached`, o debe bloquear también invocaciones nuevas mediante estado compartido hasta el reset?",
+  "rationale": "El PR relacionado conserva la última cuota solo en memoria, y la segunda opción implica persistencia u operación adicional que la issue deja abierta.",
+  "options": [
+    {
+      "title": "Corte por proceso primero",
+      "body": "Detener reintentos y publicar un skip claro tras el primer 429 de cuota, sin añadir estado compartido en esta fase.",
+      "recommended": true
+    },
+    {
+      "title": "Gate compartido",
+      "body": "Persistir el reset de cuota para evitar incluso la primera llamada de nuevas lambdas durante la ventana agotada.",
+      "recommended": false
+    },
+    {
+      "title": "Separar persistencia",
+      "body": "Resolver ahora los reintentos y los comentarios, y abrir una decisión técnica independiente para la coordinación entre procesos.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Corte por proceso primero",
+    "body": "Detener reintentos y publicar un skip claro tras el primer 429 de cuota, sin añadir estado compartido en esta fase.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Ha trabajado recientemente tanto en el wrapper de Codex como en el PR de telemetría que condiciona esta decisión.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9765.md",
+    "reviewedAt": "2026-09-19T09:02:29.495Z",
+    "mainSha": "d0e0b93e78bba63a1c6ff1614e823941e10afa9f"
+  }
+}
