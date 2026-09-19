@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-19T09:26:20.693Z",
+  "updatedAt": "2026-09-19T06:26:26Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9770,
+    "title": "[WATCHER-ALERT] amazon_mx: report trigger failed",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9770",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "P1"
+    ],
+    "createdAt": "2026-09-19T06:26:26Z",
+    "updatedAt": "2026-09-19T06:26:26Z"
+  },
+  "lane": "manual_review",
+  "priority": "P1",
+  "question": "¿Puede el equipo de Agents aportar la traza saneada y el estado del recibo de una sesión fallida para decidir si el defecto está en Eve, en la persistencia o en el watcher?",
+  "rationale": "La fuente confirma el contrato de consulta, pero no expone el resultado interno de `emit_metrics` ni el almacenamiento del recibo necesario para elegir una corrección segura.",
+  "options": [
+    {
+      "title": "Trazar una sesión fallida",
+      "body": "Recuperar el resultado de `emit_metrics` y el recibo por sesión antes de reparar el componente compartido.",
+      "recommended": true
+    },
+    {
+      "title": "Reintentar con observabilidad",
+      "body": "Ejecutar un watcher manual con identificadores correlacionados y conservar una traza saneada del recorrido completo.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Trazar una sesión fallida",
+    "body": "Recuperar el resultado de `emit_metrics` y el recibo por sesión antes de reparar el componente compartido.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es la persona con historial más reciente tanto en el trigger compartido como en la integración de sesiones de Eve.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9770.md",
+    "reviewedAt": "2026-09-19T09:26:20.693Z",
+    "mainSha": "d0e0b93e78bba63a1c6ff1614e823941e10afa9f"
+  }
+}

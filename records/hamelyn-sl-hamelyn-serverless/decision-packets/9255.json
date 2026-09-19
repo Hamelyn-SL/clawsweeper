@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-19T09:25:32.924Z",
-  "updatedAt": "2026-09-18T13:03:45Z",
+  "generatedAt": "2026-09-19T09:26:28.527Z",
+  "updatedAt": "2026-09-19T09:21:44Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -14,39 +14,43 @@
       "P1"
     ],
     "createdAt": "2026-09-08T05:51:54Z",
-    "updatedAt": "2026-09-18T13:03:45Z",
+    "updatedAt": "2026-09-19T09:21:44Z",
     "headSha": "8fda49839d965aede1ec98fb7f0d4fdc8eacf432"
   },
-  "lane": "merge_risk",
+  "lane": "manual_review",
   "priority": "P1",
-  "question": "¿Se autoriza imponer una garantía global de unicidad para `bulkboxes.products.scanId` y comprobar previamente posibles duplicados en los entornos de despliegue?",
-  "rationale": "La corrección mecánica necesita una decisión operativa sobre un índice o migración de datos persistentes, que la política del repositorio no permite ejecutar sin autorización expresa.",
+  "question": "¿Se aprueba exigir y desplegar una unicidad persistente de `products.scanId` en `bulkboxes` como requisito del flujo de granel?",
+  "rationale": "La corrección necesita una garantía de almacenamiento y una operación manual en Atlas; no es seguro sustituir esa decisión por una comprobación cliente o una lectura previa.",
   "options": [
     {
-      "title": "Autorizar índice único y comprobación previa",
-      "body": "Verificar duplicados existentes y crear una garantía única global para que dos cajas no puedan aceptar el mismo `scanId`.",
+      "title": "Exigir unicidad atómica",
+      "body": "Aprobar el índice o modelo único, gestionar duplicados existentes y traducir el conflicto de clave a la respuesta idempotente.",
       "recommended": true
     },
     {
-      "title": "Pausar el rollout de granel",
-      "body": "Mantener el flag desactivado hasta acordar una alternativa de idempotencia atómica que no requiera ese índice.",
+      "title": "Acotar el flujo antes del rollout",
+      "body": "Mantener el flag apagado y rediseñar el almacenamiento para que el destino se decida de forma atómica sin depender de cajas separadas.",
+      "recommended": false
+    },
+    {
+      "title": "Aceptar deduplicación eventual",
+      "body": "Permitir temporalmente la carrera operativa y reconciliar duplicados manualmente, asumiendo la trazabilidad incorrecta.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Autorizar índice único y comprobación previa",
-    "body": "Verificar duplicados existentes y crear una garantía única global para que dos cajas no puedan aceptar el mismo `scanId`.",
+    "title": "Exigir unicidad atómica",
+    "body": "Aprobar el índice o modelo único, gestionar duplicados existentes y traducir el conflicto de clave a la respuesta idempotente.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "Es el candidato más cercano por historial del flujo de revisión y por su seguimiento previo de la recuperación de `scanId`.",
-    "confidence": "high"
+    "person": "JavierHamelyn",
+    "reason": "Su trabajo reciente conecta la regla de demanda reutilizada con la decisión funcional de destino y rollout.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9255.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9255#issuecomment-5580056139",
-    "reviewedAt": "2026-09-19T09:25:32.924Z",
+    "reviewedAt": "2026-09-19T09:26:28.527Z",
     "mainSha": "d0e0b93e78bba63a1c6ff1614e823941e10afa9f"
   }
 }
