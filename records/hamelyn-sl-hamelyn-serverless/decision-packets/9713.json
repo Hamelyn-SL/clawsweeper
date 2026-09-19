@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-19T10:44:41.054Z",
-  "updatedAt": "2026-09-18T07:58:27Z",
+  "generatedAt": "2026-09-19T19:53:15.406Z",
+  "updatedAt": "2026-09-19T19:45:51Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,44 +13,48 @@
       "source:admin-panel",
       "app:ecommerce",
       "feature",
-      "triage:queued",
+      "triage:done",
       "reporter:victor",
       "P1",
       "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-09-18T07:33:45Z",
-    "updatedAt": "2026-09-18T07:58:27Z"
+    "updatedAt": "2026-09-19T19:45:51Z"
   },
   "lane": "product_direction",
-  "priority": "P1",
-  "question": "¿El alcance debe limitarse a reorganizar los métodos ya habilitados en México o autoriza habilitar Apple Pay y otros métodos solicitados?",
-  "rationale": "Stripe determina la disponibilidad de métodos y la incidencia mezcla cambios visuales con activación comercial y técnica de proveedores.",
+  "priority": "P2",
+  "question": "¿Se aprueba el rediseño completo de México dividido en cambios de dirección, composición de checkout y pagos/prueba social, condicionado a confirmar Apple Pay, MSI y las métricas mostradas?",
+  "rationale": "La petición mezcla UX localizada con disponibilidad contractual de proveedores y afirmaciones comerciales que no pueden resolverse de forma fiable solo desde código.",
   "options": [
     {
-      "title": "Separar diseño y proveedores",
-      "body": "Implementar la experiencia MX solo con métodos confirmados y tratar cada alta de proveedor como trabajo independiente.",
+      "title": "Aprobar alcance dividido",
+      "body": "Separar la entrega en PRs de dirección, composición y pagos, y bloquear cada medio o cifra hasta contar con verificación operativa.",
       "recommended": true
     },
     {
-      "title": "Autorizar ampliación de pagos",
-      "body": "Incluir explícitamente Apple Pay y los métodos necesarios, con validación regional y comercial antes de cambiar el checkout.",
+      "title": "Limitar a interfaz disponible",
+      "body": "Implementar solo los cambios visuales y de dirección que no añadan medios de pago ni afirmaciones comerciales nuevas.",
+      "recommended": false
+    },
+    {
+      "title": "Posponer el rediseño",
+      "body": "Mantener la localización actual hasta disponer de la confirmación de pagos y de las cifras que podrán mostrarse.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Separar diseño y proveedores",
-    "body": "Implementar la experiencia MX solo con métodos confirmados y tratar cada alta de proveedor como trabajo independiente.",
+    "title": "Aprobar alcance dividido",
+    "body": "Separar la entrega en PRs de dirección, composición y pagos, y bloquear cada medio o cifra hasta contar con verificación operativa.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "El historial reciente le vincula directamente con la localización de checkout y dirección de México.",
+    "reason": "Su trabajo reciente concentra la localización MX y los formularios de dirección afectados.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9713.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9713#issuecomment-5741170166",
-    "reviewedAt": "2026-09-19T10:44:41.054Z",
+    "reviewedAt": "2026-09-19T19:53:15.406Z",
     "mainSha": "d0e0b93e78bba63a1c6ff1614e823941e10afa9f"
   }
 }
