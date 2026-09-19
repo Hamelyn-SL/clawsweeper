@@ -3,16 +3,16 @@
   "slug": "hamelyn-sl-hamelyn-serverless",
   "display_name": "Hamelyn Serverless",
   "target_repo": "hamelyn-sl/hamelyn-serverless",
-  "state": "Apply finished",
-  "detail": "Apply/comment-sync run finished with 0 fresh closes out of requested limit 0. See apply-report.json for per-item results.",
-  "run_url": "https://github.com/Hamelyn-SL/clawsweeper/actions/runs/35439533606",
-  "planned_count": null,
-  "planned_capacity": null,
-  "planned_shards": null,
-  "active_codex": null,
-  "due_backlog": null,
-  "oldest_unreviewed_at": null,
-  "capacity_reason": null,
+  "state": "Review in progress",
+  "detail": "Planned 3 items across 1 shards. Capacity is 3 items; due backlog scanned is 10. Capacity reason: saturated: due backlog filled planned capacity. Review shards are starting; publish will merge artifacts when they finish.",
+  "run_url": "https://github.com/Hamelyn-SL/clawsweeper/actions/runs/35439548355",
+  "planned_count": 3,
+  "planned_capacity": 3,
+  "planned_shards": 1,
+  "active_codex": 1,
+  "due_backlog": 10,
+  "oldest_unreviewed_at": "2026-09-17T09:27:50Z",
+  "capacity_reason": "saturated: due backlog filled planned capacity",
   "inherited_label_cleanups": null,
   "self_heal_conflict_repairs": null,
   "failed_review_retries": null,
@@ -21,19 +21,19 @@
   "bot_owned_proof_dispatches": null,
   "apply_health": {
     "schema_version": 1,
-    "generated_at": "2026-09-19T11:14:35.585Z",
+    "generated_at": "2026-09-19T10:59:05.338Z",
     "target_repo": "Hamelyn-SL/hamelyn-serverless",
     "mode": "comment_sync",
-    "status": "ok",
-    "summary": "3/1000 processed; 0 closed, 2 comments synced, 1 skipped; no cursor recorded.",
+    "status": "needs_attention",
+    "summary": "3/1000 processed; 0 closed, 0 comments synced, 3 skipped; no cursor recorded. Attention: review_comment_withheld.",
     "processed": 3,
     "processed_limit": 1000,
     "close_limit": 0,
     "closed": 0,
-    "comment_synced": 2,
-    "skipped": 1,
+    "comment_synced": 0,
+    "skipped": 3,
     "skip_reasons": {
-      "review_comment_withheld": 1
+      "review_comment_withheld": 3
     },
     "lanes": {
       "closure": {
@@ -46,17 +46,17 @@
       "comment_sync": {
         "processed": 3,
         "closed": 0,
-        "comment_synced": 2,
-        "skipped": 1,
+        "comment_synced": 0,
+        "skipped": 3,
         "skip_reasons": {
-          "review_comment_withheld": 1
+          "review_comment_withheld": 3
         }
       }
     },
     "next_actions": [
       {
         "reason": "review_comment_withheld",
-        "count": 1,
+        "count": 3,
         "bucket": "inspect",
         "owner": "maintainer",
         "retryable": false,
@@ -66,7 +66,7 @@
       }
     ],
     "next_action_buckets": {
-      "inspect": 1
+      "inspect": 3
     },
     "cycle": {
       "basis": "not_close_cursor",
@@ -77,10 +77,12 @@
       "scheduled_interval_minutes": null,
       "label": "Cycle estimate is only reported for scheduled close cursor windows."
     },
-    "attention_reasons": [],
+    "attention_reasons": [
+      "review_comment_withheld"
+    ],
     "cursor_required": false,
     "cursor": null
   },
   "last_close_apply_health": null,
-  "updated_at": "2026-09-19T11:14:35.937Z"
+  "updated_at": "2026-09-19T11:14:38.113Z"
 }
