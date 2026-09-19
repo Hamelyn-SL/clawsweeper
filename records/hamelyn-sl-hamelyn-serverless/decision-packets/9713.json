@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-19T19:53:15.406Z",
+  "generatedAt": "2026-09-19T19:57:25.046Z",
   "updatedAt": "2026-09-19T19:45:51Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -15,47 +15,46 @@
       "feature",
       "triage:done",
       "reporter:victor",
-      "clawsweeper:needs-product-decision",
-      "P2"
+      "P1",
+      "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-09-18T07:33:45Z",
     "updatedAt": "2026-09-19T19:45:51Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se aprueba el rediseño completo de México dividido en cambios de dirección, composición de checkout y pagos/prueba social, condicionado a confirmar Apple Pay, MSI y las métricas mostradas?",
-  "rationale": "La petición mezcla UX localizada con disponibilidad contractual de proveedores y afirmaciones comerciales que no pueden resolverse de forma fiable solo desde código.",
+  "question": "¿Qué medios de pago, condiciones de MSI y métricas de confianza están confirmados para mostrar en el checkout de México, incluido si Apple Pay debe habilitarse?",
+  "rationale": "La interfaz puede ordenar o ocultar opciones, pero habilitar Apple Pay, prometer MSI y mostrar cifras comerciales exige confirmar capacidades de proveedor y datos de negocio.",
   "options": [
     {
-      "title": "Aprobar alcance dividido",
-      "body": "Separar la entrega en PRs de dirección, composición y pagos, y bloquear cada medio o cifra hasta contar con verificación operativa.",
+      "title": "Confirmar catálogo de pagos y métricas",
+      "body": "Validar con pagos los métodos, Apple Pay y las reglas de MSI, y con negocio las cifras y acreditación antes de dividir la implementación.",
       "recommended": true
     },
     {
-      "title": "Limitar a interfaz disponible",
-      "body": "Implementar solo los cambios visuales y de dirección que no añadan medios de pago ni afirmaciones comerciales nuevas.",
+      "title": "Limitar la primera entrega a dirección",
+      "body": "Implementar solo dirección MX y dejar pagos, envío y prueba social para una issue posterior confirmada.",
       "recommended": false
     },
     {
-      "title": "Posponer el rediseño",
-      "body": "Mantener la localización actual hasta disponer de la confirmación de pagos y de las cifras que podrán mostrarse.",
+      "title": "Mantener el checkout actual",
+      "body": "No cambiar la experiencia hasta contar con la aprobación comercial y de proveedor para el rediseño completo.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar alcance dividido",
-    "body": "Separar la entrega en PRs de dirección, composición y pagos, y bloquear cada medio o cifra hasta contar con verificación operativa.",
+    "title": "Confirmar catálogo de pagos y métricas",
+    "body": "Validar con pagos los métodos, Apple Pay y las reglas de MSI, y con negocio las cifras y acreditación antes de dividir la implementación.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "Su trabajo reciente concentra la localización MX y los formularios de dirección afectados.",
-    "confidence": "high"
+    "person": "JavierHamelyn",
+    "reason": "La decisión crítica afecta a la integración y disponibilidad de los métodos de pago actuales.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9713.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9713#issuecomment-5741170166",
-    "reviewedAt": "2026-09-19T19:53:15.406Z",
+    "reviewedAt": "2026-09-19T19:57:25.046Z",
     "mainSha": "d0e0b93e78bba63a1c6ff1614e823941e10afa9f"
   }
 }
