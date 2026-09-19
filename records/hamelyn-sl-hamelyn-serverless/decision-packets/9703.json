@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-19T16:24:30.618Z",
-  "updatedAt": "2026-09-19T16:14:34Z",
+  "generatedAt": "2026-09-19T17:53:40.281Z",
+  "updatedAt": "2026-09-19T16:29:19Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,48 +13,47 @@
       "bug",
       "app:marketplace",
       "reporter:javier",
-      "triage:queued",
-      "clawsweeper:needs-product-decision",
-      "P1"
+      "triage:no-change",
+      "P1",
+      "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-09-17T22:20:44Z",
-    "updatedAt": "2026-09-19T16:14:34Z"
+    "updatedAt": "2026-09-19T16:29:19Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué límite efectivo y qué reparto del presupuesto OF24 debe reservar Feltrinelli para retiradas durante picos B2B, y cómo se garantiza su aplicación en instancias warm?",
-  "rationale": "El código ya ofrece el límite configurable y el retry corregido; elegir capacidad y política de refresco es una decisión operativa que no se puede deducir con seguridad del checkout.",
+  "question": "¿Qué capacidad debe reservar Feltrinelli para retiradas durante picos B2B y cómo se garantiza que el cambio de configuración se aplique a instancias warm?",
+  "rationale": "El código ya evita el backoff de días; el reparto entre retiradas, altas y precios, y la estrategia de recarga, implican un compromiso operativo que el código no puede escoger de forma segura.",
   "options": [
     {
-      "title": "Validar `withdraw=50` antes de ampliar",
-      "body": "Observar ejecuciones posteriores, medir selección, lotes y rechazos OF24, y conservar 50 solo si el drenaje supera de forma sostenida la entrada.",
+      "title": "Validar 50 con cuota de retirada",
+      "body": "Observar ejecuciones posteriores, selección, lotes, rechazos OF24 y resultados remotos; conservar `withdraw=50` solo si el drenaje supera la entrada.",
       "recommended": true
     },
     {
-      "title": "Reservar más capacidad de retirada",
-      "body": "Aumentar el límite o el reparto OF24 para retiradas, asumiendo menor capacidad inmediata para altas y cambios de precio.",
+      "title": "Aumentar la reserva de retirada",
+      "body": "Elevar el límite o reservar más cuota OF24 para retiradas, aceptando menor capacidad inmediata para altas o precios.",
       "recommended": false
     },
     {
-      "title": "Forzar refresco controlado",
-      "body": "Aplicar un mecanismo operativo de renovación de instancias tras cambios de configuración para evitar que el valor persistido tarde en ser efectivo.",
+      "title": "Definir recarga controlada",
+      "body": "Incorporar un procedimiento operativo de renovación o recarga tras cambios de configuración para evitar valores persistidos sin efecto inmediato.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Validar `withdraw=50` antes de ampliar",
-    "body": "Observar ejecuciones posteriores, medir selección, lotes y rechazos OF24, y conservar 50 solo si el drenaje supera de forma sostenida la entrada.",
+    "title": "Validar 50 con cuota de retirada",
+    "body": "Observar ejecuciones posteriores, selección, lotes, rechazos OF24 y resultados remotos; conservar `withdraw=50` solo si el drenaje supera la entrada.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Su actualización operativa ya reúne la configuración aplicada, el SHA desplegado y las métricas necesarias para decidir el siguiente umbral.",
+    "reason": "Su actualización operativa ya delimitó la configuración viva, el presupuesto compartido y la validación pendiente.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9703.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9703#issuecomment-5740830359",
-    "reviewedAt": "2026-09-19T16:24:30.618Z",
+    "reviewedAt": "2026-09-19T17:53:40.281Z",
     "mainSha": "d0e0b93e78bba63a1c6ff1614e823941e10afa9f"
   }
 }
