@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-15T06:08:53.381Z",
-  "updatedAt": "2026-09-15T05:46:32Z",
+  "generatedAt": "2026-09-19T09:05:34.435Z",
+  "updatedAt": "2026-09-18T09:24:29Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -14,39 +14,38 @@
       "P3"
     ],
     "createdAt": "2026-09-14T06:35:41Z",
-    "updatedAt": "2026-09-15T05:46:32Z",
-    "headSha": "d55fac5be196951783f050004d103a82a92eef61"
+    "updatedAt": "2026-09-18T09:24:29Z",
+    "headSha": "859da537d1531c92acac5d3d6fb767c5bcbec758"
   },
   "lane": "product_direction",
   "priority": "P3",
-  "question": "¿Aceptamos retirar la única regresión visual automática de Supply web sin sustituirla por otra cobertura web?",
-  "rationale": "La implementación es coherente con el objetivo, pero el coste de mantenimiento frente a la pérdida de detección visual requiere una decisión de calidad de producto.",
+  "question": "¿Acepta el equipo retirar la única regresión visual automática de Supply sin sustituirla por otra cobertura visual?",
+  "rationale": "La suite fue añadida como salvaguarda deliberada y el propio PR declara que Supply quedará sin regresión visual automática; decidir el nivel de cobertura no es una corrección mecánica.",
   "options": [
     {
-      "title": "Aceptar la retirada",
-      "body": "Eliminar la suite inactiva, retirar las dos etiquetas sin consumidores y dejar Maestro como cobertura automatizada restante.",
+      "title": "Retirar la suite sin sustituto",
+      "body": "Aceptar el coste de no mantener cobertura visual web porque la suite no se ejecuta ni actualiza desde julio de 2026.",
       "recommended": true
     },
     {
-      "title": "Conservar o reemplazar la cobertura web",
-      "body": "Mantener la suite hasta acordar una alternativa ligera y activa para detectar regresiones de Supply web.",
+      "title": "Conservar o reemplazar la cobertura",
+      "body": "Mantener la suite actual o definir una alternativa integrada y mantenida antes de borrar sus baselines y workflow.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aceptar la retirada",
-    "body": "Eliminar la suite inactiva, retirar las dos etiquetas sin consumidores y dejar Maestro como cobertura automatizada restante.",
+    "title": "Retirar la suite sin sustituto",
+    "body": "Aceptar el coste de no mantener cobertura visual web porque la suite no se ejecuta ni actualiza desde julio de 2026.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "Miguel Angel Hernández Perdomo",
-    "reason": "Introdujo el workflow y su mecanismo de activación, por lo que tiene el contexto histórico más directo.",
+    "person": "danielmenchen-hamelyn",
+    "reason": "Es autor de la suite original, responsable de la issue canónica y proponente de la retirada.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9476.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9476#issuecomment-5660494888",
-    "reviewedAt": "2026-09-15T06:08:53.381Z",
-    "mainSha": "3a812f53c87040b623a977b95c10aa001976d5e6"
+    "reviewedAt": "2026-09-19T09:05:34.435Z",
+    "mainSha": "d0e0b93e78bba63a1c6ff1614e823941e10afa9f"
   }
 }
