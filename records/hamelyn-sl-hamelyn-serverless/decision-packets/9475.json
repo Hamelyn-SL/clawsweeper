@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-19T17:43:04.710Z",
-  "updatedAt": "2026-09-19T17:27:50Z",
+  "generatedAt": "2026-09-19T17:47:00.270Z",
+  "updatedAt": "2026-09-19T17:43:48Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,43 +13,42 @@
       "app:supply",
       "feature",
       "triage:done",
-      "reporter:danielmenchen-hamelyn",
+      "clawsweeper:needs-product-decision",
       "P3",
-      "clawsweeper:needs-product-decision"
+      "reporter:danielmenchen-hamelyn"
     ],
     "createdAt": "2026-09-14T06:24:28Z",
-    "updatedAt": "2026-09-19T17:27:50Z"
+    "updatedAt": "2026-09-19T17:43:48Z"
   },
   "lane": "product_direction",
   "priority": "P3",
-  "question": "¿Acepta el equipo retirar la única cobertura visual automática de Supply sin sustituirla por otra antes de integrar la PR vinculada?",
-  "rationale": "La retirada es técnicamente acotada, pero elegir entre eliminar o conservar una salvaguarda de regresión visual cambia la garantía de calidad del producto.",
+  "question": "¿Acepta el equipo retirar la única regresión visual automática de Supply sin sustituirla antes de integrar la PR vinculada?",
+  "rationale": "El código confirma que la suite existe, pero decidir si su ausencia es aceptable es una elección de calidad y cobertura, no una corrección mecánica.",
   "options": [
     {
       "title": "Retirar la suite sin sustituto",
-      "body": "Aceptar que Supply quede sin regresión visual automática porque la suite no se ejecuta ni actualiza desde julio de 2026.",
+      "body": "Aceptar la limpieza y dejar la cobertura visual futura de Supply v3 en su plan específico de validación.",
       "recommended": true
     },
     {
-      "title": "Conservar o reemplazar la cobertura",
-      "body": "Mantener temporalmente la suite o definir una alternativa mantenida antes de borrar workflow y baselines.",
+      "title": "Mantener o reemplazar la cobertura",
+      "body": "Conservar temporalmente la suite actual o definir una alternativa mantenida antes de eliminar workflow y baselines.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Retirar la suite sin sustituto",
-    "body": "Aceptar que Supply quede sin regresión visual automática porque la suite no se ejecuta ni actualiza desde julio de 2026.",
+    "body": "Aceptar la limpieza y dejar la cobertura visual futura de Supply v3 en su plan específico de validación.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "danielmenchen-hamelyn",
-    "reason": "Es el autor histórico de la suite y está llevando la retirada propuesta.",
+    "reason": "Es el asignado de la issue y autor de la PR que materializa la retirada propuesta.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9475.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9475#issuecomment-5662367969",
-    "reviewedAt": "2026-09-19T17:43:04.710Z",
+    "reviewedAt": "2026-09-19T17:47:00.270Z",
     "mainSha": "d0e0b93e78bba63a1c6ff1614e823941e10afa9f"
   }
 }
