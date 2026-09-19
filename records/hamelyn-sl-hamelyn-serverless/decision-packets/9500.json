@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-19T11:32:13.906Z",
+  "generatedAt": "2026-09-19T11:32:06.143Z",
   "updatedAt": "2026-09-16T11:27:43Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -19,34 +19,38 @@
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Las pausas manuales planificadas de workflows deben alertar siempre o admitirse solo mediante una supresión temporal con caducidad, motivo y responsable?",
-  "rationale": "El código puede implementar ambas rutas, pero la visibilidad operativa y el nivel de ruido aceptable dependen de una política del equipo.",
+  "question": "¿Qué superficie de estado aprobada debe conservar la aparición, el recordatorio y la recuperación de cada incidente de cron-health?",
+  "rationale": "La frescura puede leerse de `snapshot_runs`, pero evitar duplicados y comunicar recuperaciones exige decidir dónde vive el estado sin crear tablas o colecciones sin autorización.",
   "options": [
     {
-      "title": "Alertar siempre y documentar",
-      "body": "Mantener la alerta regional activa durante cualquier pausa y registrar la decisión operativa en el runbook.",
+      "title": "Reutilizar estado existente",
+      "body": "Aprobar una fuente persistente ya operativa y su retención para registrar el estado mínimo por workflow o región.",
       "recommended": true
     },
     {
-      "title": "Permitir excepción temporal acotada",
-      "body": "Aceptar una supresión con fecha de caducidad, motivo y responsable, sin ocultar indefinidamente la vigilancia.",
+      "title": "Autorizar estructura específica",
+      "body": "Autorizar explícitamente un almacenamiento mínimo de monitorización con esquema, volumen y responsable definidos.",
+      "recommended": false
+    },
+    {
+      "title": "Dividir en dos fases",
+      "body": "Entregar primero la detección diaria regional y planificar después deduplicación, recordatorios y recuperaciones.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Alertar siempre y documentar",
-    "body": "Mantener la alerta regional activa durante cualquier pausa y registrar la decisión operativa en el runbook.",
+    "title": "Reutilizar estado existente",
+    "body": "Aprobar una fuente persistente ya operativa y su retención para registrar el estado mínimo por workflow o región.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Su historial reciente conecta directamente con las notificaciones Slack que deberán comunicar esta política.",
+    "person": "MarcosTerroso",
+    "reason": "La incidencia está asignada a MarcosTerroso y su descripción fija los criterios operativos que condicionan la decisión.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9500.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9500#issuecomment-5662447811",
-    "reviewedAt": "2026-09-19T11:32:13.906Z",
+    "reviewedAt": "2026-09-19T11:32:06.143Z",
     "mainSha": "d0e0b93e78bba63a1c6ff1614e823941e10afa9f"
   }
 }
