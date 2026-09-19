@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-19T15:43:43.141Z",
+  "updatedAt": "2026-09-19T14:59:51Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9719,
+    "title": "Supply v3: define API contracts, query state and integration fixtures",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9719",
+    "state": "open",
+    "labels": [
+      "app:supply",
+      "feature",
+      "triage:done",
+      "P2",
+      "reporter:danielmenchen-hamelyn",
+      "origin:dev",
+      "epic:supply-v3"
+    ],
+    "createdAt": "2026-09-18T08:03:09Z",
+    "updatedAt": "2026-09-19T14:59:51Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué archivos y contratos mínimos pertenecen a F03, y quién posee los límites compartidos entre sesión, carrito y estado remoto?",
+  "rationale": "La issue prohíbe centralizar toda la API y reserva la persistencia del carrito a otro paquete; sólo el equipo puede decidir un límite estable antes de que varios flujos implementen consumidores.",
+  "options": [
+    {
+      "title": "Núcleo compartido mínimo",
+      "body": "Acordar tipos, errores, cancelación, claves e invalidación comunes y mantener servicios, hooks y persistencia en cada flujo.",
+      "recommended": true
+    },
+    {
+      "title": "Contratos independientes",
+      "body": "Documentar convenciones y permitir que cada flujo defina sus propios contratos sin archivos compartidos.",
+      "recommended": false
+    },
+    {
+      "title": "Capa API centralizada",
+      "body": "Crear una implementación común que concentre servicios y hooks de todos los endpoints de Supply.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Núcleo compartido mínimo",
+    "body": "Acordar tipos, errores, cancelación, claves e invalidación comunes y mantener servicios, hooks y persistencia en cada flujo.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "danielmenchen-hamelyn",
+    "reason": "La épica y la PR de base proporcionadas le vinculan con la rama de integración donde debe formalizarse este acuerdo.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9719.md",
+    "reviewedAt": "2026-09-19T15:43:43.141Z",
+    "mainSha": "d0e0b93e78bba63a1c6ff1614e823941e10afa9f"
+  }
+}
