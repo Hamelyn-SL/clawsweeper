@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-14T10:59:52.574Z",
-  "updatedAt": "2026-09-14T08:33:44Z",
+  "generatedAt": "2026-09-19T10:00:04.156Z",
+  "updatedAt": "2026-09-18T08:20:06Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -17,38 +17,37 @@
       "P2"
     ],
     "createdAt": "2026-09-10T09:51:02Z",
-    "updatedAt": "2026-09-14T08:33:44Z"
+    "updatedAt": "2026-09-18T08:20:06Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Deben las altas de Auth0 aprovisionar el documento de Hamelyn aunque la persona nunca llegue a iniciar sesión?",
-  "rationale": "Ambas alternativas son técnicamente viables, pero difieren en el contrato de altas internas y de Management API.",
+  "question": "¿Debe Hamelyn aprovisionar el documento de usuario al registrarse aunque la persona nunca llegue a iniciar sesión?",
+  "rationale": "Las dos alternativas son válidas técnicamente, pero cambian el contrato de altas internas y el momento de materialización del usuario.",
   "options": [
     {
-      "title": "Mantener el alta sin login",
-      "body": "Conservar la Action de registro, autenticar sus escrituras y versionar el despliegue de Actions tras validar el export activo.",
+      "title": "Conservar el alta al registrarse",
+      "body": "Corregir las Actions con `AUTH0_ACTION_TOKEN` y versionar su despliegue tras contrastar el estado activo del tenant.",
       "recommended": true
     },
     {
-      "title": "Aplazar hasta el primer login",
-      "body": "Retirar las Actions redundantes y documentar que las altas por Management API no se materializan hasta autenticar.",
+      "title": "Aplazar el alta al login",
+      "body": "Retirar las Actions redundantes y documentar que las altas por Management API no aparecen en Mongo hasta el primer acceso.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mantener el alta sin login",
-    "body": "Conservar la Action de registro, autenticar sus escrituras y versionar el despliegue de Actions tras validar el export activo.",
+    "title": "Conservar el alta al registrarse",
+    "body": "Corregir las Actions con `AUTH0_ACTION_TOKEN` y versionar su despliegue tras contrastar el estado activo del tenant.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Su trabajo previo definió y operó el límite de confianza del token de Action.",
+    "reason": "Introdujo el límite de confianza de las Actions y documentó recientemente el despliegue del token compartido.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9389.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9389#issuecomment-5645006500",
-    "reviewedAt": "2026-09-14T10:59:52.574Z",
-    "mainSha": "8b1a01e31be1f93f9d14bd843ff1e8651d1dc9f9"
+    "reviewedAt": "2026-09-19T10:00:04.156Z",
+    "mainSha": "d0e0b93e78bba63a1c6ff1614e823941e10afa9f"
   }
 }
