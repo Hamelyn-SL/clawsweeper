@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-19T09:40:11.983Z",
-  "updatedAt": "2026-09-18T10:42:04Z",
+  "generatedAt": "2026-09-19T16:24:30.618Z",
+  "updatedAt": "2026-09-19T16:14:34Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -18,38 +18,42 @@
       "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-09-17T22:20:44Z",
-    "updatedAt": "2026-09-18T10:42:04Z"
+    "updatedAt": "2026-09-19T16:14:34Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué capacidad y reparto de presupuesto OF24 debe reservar Feltrinelli para retiradas frente a altas y cambios de precio?",
-  "rationale": "El código ya expone el límite de retirada y corrige el backoff; elegir el valor operativo y su presupuesto compartido requiere decidir el equilibrio entre disponibilidad de listings y caudal de sincronización.",
+  "question": "¿Qué límite efectivo y qué reparto del presupuesto OF24 debe reservar Feltrinelli para retiradas durante picos B2B, y cómo se garantiza su aplicación en instancias warm?",
+  "rationale": "El código ya ofrece el límite configurable y el retry corregido; elegir capacidad y política de refresco es una decisión operativa que no se puede deducir con seguridad del checkout.",
   "options": [
     {
-      "title": "Validar 50 y reservar presupuesto",
-      "body": "Observar ejecuciones con la nueva configuración y fijar una reserva explícita para retiradas si el caudal mantiene la cola al día.",
+      "title": "Validar `withdraw=50` antes de ampliar",
+      "body": "Observar ejecuciones posteriores, medir selección, lotes y rechazos OF24, y conservar 50 solo si el drenaje supera de forma sostenida la entrada.",
       "recommended": true
     },
     {
-      "title": "Mantener reparto actual",
-      "body": "Conservar el presupuesto compartido actual y monitorizar la cola, aceptando nuevas denegaciones locales durante picos.",
+      "title": "Reservar más capacidad de retirada",
+      "body": "Aumentar el límite o el reparto OF24 para retiradas, asumiendo menor capacidad inmediata para altas y cambios de precio.",
+      "recommended": false
+    },
+    {
+      "title": "Forzar refresco controlado",
+      "body": "Aplicar un mecanismo operativo de renovación de instancias tras cambios de configuración para evitar que el valor persistido tarde en ser efectivo.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Validar 50 y reservar presupuesto",
-    "body": "Observar ejecuciones con la nueva configuración y fijar una reserva explícita para retiradas si el caudal mantiene la cola al día.",
+    "title": "Validar `withdraw=50` antes de ampliar",
+    "body": "Observar ejecuciones posteriores, medir selección, lotes y rechazos OF24, y conservar 50 solo si el drenaje supera de forma sostenida la entrada.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Aportó la evidencia operativa reciente y tiene historial directo en el límite OF24 por tienda.",
-    "confidence": "medium"
+    "reason": "Su actualización operativa ya reúne la configuración aplicada, el SHA desplegado y las métricas necesarias para decidir el siguiente umbral.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9703.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9703#issuecomment-5740830359",
-    "reviewedAt": "2026-09-19T09:40:11.983Z",
+    "reviewedAt": "2026-09-19T16:24:30.618Z",
     "mainSha": "d0e0b93e78bba63a1c6ff1614e823941e10afa9f"
   }
 }
