@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-19T08:29:18.859Z",
+  "updatedAt": "2026-09-16T14:30:37Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9057,
+    "title": "Marketplace: [marketplace ship] ebay_es: 1/1 ordersells failed confirmshipment",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9057",
+    "state": "open",
+    "labels": [
+      "codex",
+      "bug",
+      "app:marketplace",
+      "triage:no-change",
+      "P2",
+      "marketplace-crons"
+    ],
+    "createdAt": "2026-09-02T17:30:44Z",
+    "updatedAt": "2026-09-16T14:30:37Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "Cuando una firma saneada confirme un rechazo permanente de eBay, ¿se excluye por coincidencia exacta o se implanta un límite genérico de reintentos para todos los marketplaces?",
+  "rationale": "El código actual permite observar la causa, pero elegir entre una exclusión estrecha y una política común cambia el comportamiento operativo de pedidos recuperables.",
+  "options": [
+    {
+      "title": "Excluir firmas exactas",
+      "body": "Añadir solo firmas eBay verificadas al patrón terminal y mantener reintentos para los demás errores.",
+      "recommended": true
+    },
+    {
+      "title": "Límite común de reintentos",
+      "body": "Introducir un contador y una política transversal para cortar repeticiones de cualquier marketplace.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Excluir firmas exactas",
+    "body": "Añadir solo firmas eBay verificadas al patrón terminal y mantener reintentos para los demás errores.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Miguel Angel Hernández Perdomo",
+    "reason": "El historial reciente le vincula directamente con el controlador que decide qué errores se reintentan.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9057.md",
+    "reviewedAt": "2026-09-19T08:29:18.859Z",
+    "mainSha": "d0e0b93e78bba63a1c6ff1614e823941e10afa9f"
+  }
+}
