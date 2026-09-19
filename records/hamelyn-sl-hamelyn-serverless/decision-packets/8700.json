@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-14T10:21:41.736Z",
-  "updatedAt": "2026-09-14T08:32:06Z",
+  "generatedAt": "2026-09-19T09:27:07.087Z",
+  "updatedAt": "2026-09-17T08:22:05Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -18,38 +18,37 @@
       "P2"
     ],
     "createdAt": "2026-08-25T11:13:59Z",
-    "updatedAt": "2026-09-14T08:32:06Z"
+    "updatedAt": "2026-09-17T08:22:05Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe habilitarse primero una vista de revisión sin efectos para cubetas antiguas, o autoriza Operaciones el reencolado de las cubetas confirmadas?",
-  "rationale": "El endpoint actual combina consulta y acción física; el código no puede decidir si una cubeta histórica sigue disponible para introducirla en Skypod.",
+  "question": "¿La cohorte histórica pendiente debe exponerse solo para revisión manual o debe habilitarse un reencolado automático tras una comprobación física de cada cubeta?",
+  "rationale": "El endpoint existente encola BIN IN al consultar resultados, mientras que el estado físico de las cubetas no puede deducirse con seguridad desde Mongo ni desde el flujo de cola.",
   "options": [
     {
-      "title": "Vista segura y revisión por cubeta",
-      "body": "Añadir una consulta administrativa de solo lectura y habilitar el BIN IN únicamente tras confirmación operativa explícita.",
+      "title": "Separar visibilidad y acción",
+      "body": "Añadir una vista o comando de revisión sin efecto lateral y ejecutar BIN IN únicamente para las cubetas confirmadas por Operaciones.",
       "recommended": true
     },
     {
-      "title": "Reencolado de cubetas confirmadas",
-      "body": "Operaciones aporta la lista de cubetas físicamente disponibles y se prepara una recuperación acotada para esa lista.",
+      "title": "Reencolar automáticamente",
+      "body": "Ampliar la ventana actual y aceptar el riesgo operativo de intentar introducir cubetas que ya no estén disponibles.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Vista segura y revisión por cubeta",
-    "body": "Añadir una consulta administrativa de solo lectura y habilitar el BIN IN únicamente tras confirmación operativa explícita.",
+    "title": "Separar visibilidad y acción",
+    "body": "Añadir una vista o comando de revisión sin efecto lateral y ejecutar BIN IN únicamente para las cubetas confirmadas por Operaciones.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "banosdavidhamelyn",
-    "reason": "Su historial reciente concentra la lógica de declaración, reintentos y alertas de Skypod.",
+    "reason": "Es la persona con señales más recientes y directas en el historial del flujo de declaración y recuperación de bins.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8700.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8700#issuecomment-5409648772",
-    "reviewedAt": "2026-09-14T10:21:41.736Z",
-    "mainSha": "a3b8c222d6df86d83e8dc3e516292d9fed082308"
+    "reviewedAt": "2026-09-19T09:27:07.087Z",
+    "mainSha": "d0e0b93e78bba63a1c6ff1614e823941e10afa9f"
   }
 }

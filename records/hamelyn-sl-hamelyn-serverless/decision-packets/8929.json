@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-08T09:59:31.104Z",
-  "updatedAt": "2026-09-08T08:42:50Z",
+  "generatedAt": "2026-09-19T09:33:25.403Z",
+  "updatedAt": "2026-09-18T11:52:16Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,49 +13,47 @@
       "source:admin-panel",
       "app:supply",
       "feature",
-      "triage:needs-info",
-      "clawsweeper:needs-product-decision",
-      "reporter:daniellopez",
-      "P2"
+      "triage:queued",
+      "P2",
+      "reporter:daniellopez"
     ],
     "createdAt": "2026-08-31T10:14:50Z",
-    "updatedAt": "2026-09-08T08:42:50Z"
+    "updatedAt": "2026-09-18T11:52:16Z"
   },
-  "lane": "product_direction",
+  "lane": "merge_risk",
   "priority": "P2",
-  "question": "¿Aprueba Supply el contrato del PR candidato: sobrante con demanda a precio cero en el lote, baja demanda a caja `G-*` y activación gradual por puesto?",
-  "rationale": "El adjunto y el PR difieren sobre el conteo, el momento de escanear la caja y el tratamiento operativo; esas reglas afectan UI, persistencia y compatibilidad histórica.",
+  "question": "¿Se aprueba una garantía persistente y atómica de unicidad para `products.scanId` en `bulkboxes` antes de activar el destino automático de granel?",
+  "rationale": "La decisión define si el sistema puede asegurar trazabilidad correcta durante escaneos y reintentos concurrentes; el PR actual no puede resolverlo de forma segura sin ese criterio.",
   "options": [
     {
-      "title": "Aprobar el piloto por puesto",
-      "body": "Confirmar el contrato del PR, mantener el flag gradual y decidir la retirada de Nueva entrada por separado.",
+      "title": "Exigir unicidad atómica",
+      "body": "Aprobar el modelo o índice necesario, tratar conflictos como reintentos idempotentes y mantener el rollout bloqueado hasta verificarlo.",
       "recommended": true
     },
     {
-      "title": "Exigir el flujo del documento",
-      "body": "Pedir que el PR incorpore escaneo inicial y conteo antes de aceptar la implementación.",
+      "title": "Rediseñar el almacenamiento",
+      "body": "Mantener el flag apagado y sustituir las cajas separadas por una persistencia que decida y deduplique el destino en una única operación.",
       "recommended": false
     },
     {
-      "title": "Mantener ambos flujos",
-      "body": "Conservar Nueva entrada mientras Operaciones valide usos históricos y excepciones no cubiertas.",
+      "title": "Aceptar reconciliación manual temporal",
+      "body": "Permitir duplicados potenciales y corregirlos operativamente, asumiendo trazabilidad incompleta durante el piloto.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar el piloto por puesto",
-    "body": "Confirmar el contrato del PR, mantener el flag gradual y decidir la retirada de Nueva entrada por separado.",
+    "title": "Exigir unicidad atómica",
+    "body": "Aprobar el modelo o índice necesario, tratar conflictos como reintentos idempotentes y mantener el rollout bloqueado hasta verificarlo.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "banosdavidhamelyn",
-    "reason": "Ha mantenido recientemente el flujo de entrada y es la persona conectada al PR candidato.",
-    "confidence": "medium"
+    "person": "JavierHamelyn",
+    "reason": "Su comentario fija el contrato operativo de pago y destino, y la decisión pendiente determina cómo se preserva esa trazabilidad.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8929.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8929#issuecomment-5477054382",
-    "reviewedAt": "2026-09-08T09:59:31.104Z",
-    "mainSha": "a94f4b0f9e34689c37861c23b47f42020bf14aae"
+    "reviewedAt": "2026-09-19T09:33:25.403Z",
+    "mainSha": "d0e0b93e78bba63a1c6ff1614e823941e10afa9f"
   }
 }
