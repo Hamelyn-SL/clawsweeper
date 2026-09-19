@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-19T13:46:51.073Z",
+  "updatedAt": "2026-09-19T13:42:51Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9724,
+    "title": "Supply v3: implement analytics and operational observability",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9724",
+    "state": "open",
+    "labels": [
+      "app:supply",
+      "feature",
+      "triage:running",
+      "P2",
+      "reporter:danielmenchen-hamelyn",
+      "origin:dev",
+      "epic:supply-v3"
+    ],
+    "createdAt": "2026-09-18T08:03:21Z",
+    "updatedAt": "2026-09-19T13:42:51Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué métricas y umbrales de errores, conversión, scanner y rendimiento serán obligatorios para aprobar el lanzamiento de Supply v3, y qué origen Capacitor exacto se permitirá?",
+  "rationale": "El código puede reutilizar el contrato actual, pero los umbrales de go/no-go y el origen nativo permitido determinan el comportamiento operativo y la frontera CORS.",
+  "options": [
+    {
+      "title": "Definir contrato de lanzamiento",
+      "body": "Aprobar métricas, umbrales y el origen Capacitor exacto antes de implementar la instrumentación de Supply v3.",
+      "recommended": true
+    },
+    {
+      "title": "Limitar esta entrega al transporte",
+      "body": "Implementar únicamente la paridad de eventos y dejar los umbrales de lanzamiento para la validación integrada.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Definir contrato de lanzamiento",
+    "body": "Aprobar métricas, umbrales y el origen Capacitor exacto antes de implementar la instrumentación de Supply v3.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "El historial le vincula al diseño inicial del pipeline y a la fiabilidad del transporte de eventos.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9724.md",
+    "reviewedAt": "2026-09-19T13:46:51.073Z",
+    "mainSha": "d0e0b93e78bba63a1c6ff1614e823941e10afa9f"
+  }
+}
