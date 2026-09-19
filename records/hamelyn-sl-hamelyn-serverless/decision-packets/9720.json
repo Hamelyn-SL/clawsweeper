@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-19T10:34:38.504Z",
-  "updatedAt": "2026-09-18T08:04:25Z",
+  "generatedAt": "2026-09-19T19:46:41.896Z",
+  "updatedAt": "2026-09-19T19:30:32Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,47 +12,46 @@
     "labels": [
       "app:supply",
       "feature",
-      "triage:queued",
+      "triage:needs-info",
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:needs-security-review",
       "reporter:danielmenchen-hamelyn",
       "origin:dev",
-      "epic:supply-v3",
-      "P2",
-      "clawsweeper:needs-product-decision",
-      "clawsweeper:needs-security-review"
+      "epic:supply-v3"
     ],
     "createdAt": "2026-09-18T08:03:12Z",
-    "updatedAt": "2026-09-18T08:04:25Z"
+    "updatedAt": "2026-09-19T19:30:32Z"
   },
   "lane": "security_boundary",
   "priority": "P2",
-  "question": "¿Qué política existente de Auth0 debe conservar Supply v3 para expiración, renovación, callbacks y logout web antes de cerrar el contrato de sesión?",
-  "rationale": "La issue prohíbe inventar plazos, refresh tokens y scopes; esa elección depende de la configuración real del tenant y afecta a la seguridad y compatibilidad de sesiones.",
+  "question": "¿Qué política vigente de Auth0 debe aplicar a Supply web para audiencia, renovación, callbacks y `returnTo` antes de integrar F04?",
+  "rationale": "El código puede reutilizar la validación actual, pero el tenant y sus restricciones determinan qué sesión, origen y token son compatibles sin inventar scopes o plazos.",
   "options": [
     {
-      "title": "Conservar la política actual",
-      "body": "Confirmar la configuración efectiva del tenant y documentarla como contrato web, sin activar scopes ni refresh tokens nuevos.",
+      "title": "Confirmar la política vigente",
+      "body": "Aportar configuración saneada y un entorno de prueba autorizado para implementar el contrato existente sin ampliar permisos.",
       "recommended": true
     },
     {
-      "title": "Cambiar la política de sesión",
-      "body": "Aprobar explícitamente los nuevos plazos, scopes, callbacks y plan de compatibilidad antes de implementarlos.",
+      "title": "Aplazar la integración",
+      "body": "Mantener F04 bloqueada hasta que el responsable de Auth0 defina los callbacks, logout y renovación admisibles.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Conservar la política actual",
-    "body": "Confirmar la configuración efectiva del tenant y documentarla como contrato web, sin activar scopes ni refresh tokens nuevos.",
+    "title": "Confirmar la política vigente",
+    "body": "Aportar configuración saneada y un entorno de prueba autorizado para implementar el contrato existente sin ampliar permisos.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "danielmenchen-hamelyn",
-    "reason": "Ha definido el plan y la integración de Supply v3 donde se establece el alcance de esta sesión.",
+    "reason": "Coordina la base y la épica de Supply v3, donde se decidió el límite de la integración web.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9720.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9720#issuecomment-5741109863",
-    "reviewedAt": "2026-09-19T10:34:38.504Z",
+    "reviewedAt": "2026-09-19T19:46:41.896Z",
     "mainSha": "d0e0b93e78bba63a1c6ff1614e823941e10afa9f"
   }
 }
