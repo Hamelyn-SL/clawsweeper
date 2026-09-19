@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-19T19:30:25.546Z",
+  "updatedAt": "2026-09-19T19:00:11Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9722,
+    "title": "Supply v3: implement the Capacitor Auth0 callback adapter",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9722",
+    "state": "open",
+    "labels": [
+      "app:supply",
+      "feature",
+      "triage:done",
+      "P2",
+      "reporter:danielmenchen-hamelyn",
+      "origin:dev",
+      "epic:supply-v3"
+    ],
+    "createdAt": "2026-09-18T08:03:16Z",
+    "updatedAt": "2026-09-19T19:00:11Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se aprueban ahora los mínimos móviles D12 para habilitar y validar callbacks de Auth0 en el contenedor Capacitor de desarrollo?",
+  "rationale": "`capacitor.config.ts` bloquea las acciones nativas hasta acordar esas versiones, y la matriz de aceptación de esta issue exige pruebas físicas.",
+  "options": [
+    {
+      "title": "Mantener D12 pendiente",
+      "body": "Preparar el adaptador contra interfaces acordadas, pero no habilitar ni acreditar el perfil móvil hasta decidir compatibilidad.",
+      "recommended": true
+    },
+    {
+      "title": "Aprobar los mínimos propuestos",
+      "body": "Autorizar el perfil moderno y exigir la validación de callbacks, sesión y logout en dispositivos compatibles.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mantener D12 pendiente",
+    "body": "Preparar el adaptador contra interfaces acordadas, pero no habilitar ni acreditar el perfil móvil hasta decidir compatibilidad.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "danielmenchen-hamelyn",
+    "reason": "Su historial en la base de la épica y la coordinación existente lo conectan con la decisión de integración.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9722.md",
+    "reviewedAt": "2026-09-19T19:30:25.546Z",
+    "mainSha": "d0e0b93e78bba63a1c6ff1614e823941e10afa9f"
+  }
+}
