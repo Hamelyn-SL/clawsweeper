@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-19T10:38:49.399Z",
+  "generatedAt": "2026-09-19T10:46:20.340Z",
   "updatedAt": "2026-09-16T11:30:06Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -22,38 +22,38 @@
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿El primer alcance debe limitarse a Amazon con una fuente de reglas completa validada, dejando AbeBooks fuera hasta confirmar que puede exportar plantillas equivalentes?",
-  "rationale": "La petición admite AbeBooks solo si es viable y las integraciones actuales solo contienen datos operativos por oferta o pedido, no el contrato completo de plantillas.",
+  "question": "¿Debe la primera fase limitarse a una exportación periódica de solo lectura para Amazon, dejando AbeBooks y la escritura automática fuera hasta confirmar sus APIs?",
+  "rationale": "La fuente de datos completa no está demostrada y la petición mezcla auditoría de tarifas con una futura modificación de plantillas.",
   "options": [
     {
-      "title": "Validar Amazon primero",
-      "body": "Confirmar una exportación o vía de lectura real de Amazon y diseñar el extractor solo para esa fuente inicial.",
+      "title": "Fase Amazon de solo lectura",
+      "body": "Validar una cuenta y entregar un CSV comparable de Amazon antes de estimar AbeBooks o cualquier escritura.",
       "recommended": true
     },
     {
-      "title": "Exigir ambos proveedores",
-      "body": "Posponer el desarrollo hasta disponer de una fuente completa y homologable para Amazon y AbeBooks.",
+      "title": "Validar ambos proveedores primero",
+      "body": "Esperar muestras y documentación operativa de Amazon y AbeBooks para decidir un alcance común.",
       "recommended": false
     },
     {
-      "title": "Conservar revisión manual",
-      "body": "Definir el CSV y cargarlo desde una exportación manual mientras se investiga la automatización.",
+      "title": "Incluir escritura automática",
+      "body": "Abrir un diseño separado para la modificación de plantillas, con controles y autorización operativa explícita.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Validar Amazon primero",
-    "body": "Confirmar una exportación o vía de lectura real de Amazon y diseñar el extractor solo para esa fuente inicial.",
+    "title": "Fase Amazon de solo lectura",
+    "body": "Validar una cuenta y entregar un CSV comparable de Amazon antes de estimar AbeBooks o cualquier escritura.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MarcosTerroso",
-    "reason": "Su historial en la integración Amazon lo sitúa como el mejor candidato técnico para validar el alcance inicial.",
+    "person": "PabloMoran34",
+    "reason": "Su historial reciente en la integración Amazon le sitúa cerca de la validación técnica de la primera fase.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9614.md",
-    "reviewedAt": "2026-09-19T10:38:49.399Z",
+    "reviewedAt": "2026-09-19T10:46:20.340Z",
     "mainSha": "d0e0b93e78bba63a1c6ff1614e823941e10afa9f"
   }
 }
