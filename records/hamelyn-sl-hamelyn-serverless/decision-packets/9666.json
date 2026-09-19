@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-19T11:25:04.254Z",
+  "generatedAt": "2026-09-19T11:27:11.438Z",
   "updatedAt": "2026-09-17T11:00:16Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -13,50 +13,42 @@
       "bug",
       "app:admin",
       "triage:done",
-      "reporter:JavierHamelyn",
-      "origin:dev",
       "P0",
-      "clawsweeper:needs-product-decision",
-      "clawsweeper:needs-security-review"
+      "reporter:JavierHamelyn",
+      "origin:dev"
     ],
     "createdAt": "2026-09-17T09:28:25Z",
     "updatedAt": "2026-09-17T11:00:16Z"
   },
   "lane": "security_boundary",
   "priority": "P0",
-  "question": "¿Qué excepciones administrativas, callbacks y audiencias deben seguir permitidas antes de extender la autorización a v5 y denegar roles vacíos?",
-  "rationale": "La corrección afecta integraciones legítimas y consumidores compartidos del verificador de Auth0; el código no revela por sí solo la política de compatibilidad aceptable.",
+  "question": "¿La denegación de listas de roles vacías debe aplicarse de inmediato a todos los consumidores de la política compartida o introducirse primero como contrato estricto del admin tras inventariar callbacks?",
+  "rationale": "La semántica permisiva es compartida y una corrección global cambia la compatibilidad de consumidores ajenos al admin; la elección de migración define la frontera permanente.",
   "options": [
     {
-      "title": "Autorizar explícitamente por ruta",
-      "body": "Recomendada: proteger cada ruta administrativa con roles no vacíos y conservar solo excepciones documentadas y probadas.",
+      "title": "Migrar y denegar globalmente",
+      "body": "Inventariar todos los consumidores, asignar roles o excepciones autenticadas explícitas y convertir la política común en fail-closed.",
       "recommended": true
     },
     {
-      "title": "Extender el proxy a v5",
-      "body": "Añadir token global a v5 y complementar los handlers sensibles con roles explícitos, tras inventariar callbacks.",
-      "recommended": false
-    },
-    {
-      "title": "Mantener excepciones heredadas",
-      "body": "Aceptar temporalmente las rutas exentas únicamente si su necesidad está documentada y limitada por otro mecanismo verificable.",
+      "title": "Aislar primero el admin",
+      "body": "Aplicar una política estricta sólo al admin y planificar una migración posterior para los demás consumidores.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Autorizar explícitamente por ruta",
-    "body": "Recomendada: proteger cada ruta administrativa con roles no vacíos y conservar solo excepciones documentadas y probadas.",
+    "title": "Migrar y denegar globalmente",
+    "body": "Inventariar todos los consumidores, asignar roles o excepciones autenticadas explícitas y convertir la política común en fail-closed.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es el responsable asignado y ya se le señaló el alcance conjunto durante el triage.",
-    "confidence": "medium"
+    "reason": "Está asignado al trabajo y ya figura como contacto explícito del siguiente paso de triaje.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9666.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9666#issuecomment-5741441445",
-    "reviewedAt": "2026-09-19T11:25:04.254Z",
+    "reviewedAt": "2026-09-19T11:27:11.438Z",
     "mainSha": "d0e0b93e78bba63a1c6ff1614e823941e10afa9f"
   }
 }
