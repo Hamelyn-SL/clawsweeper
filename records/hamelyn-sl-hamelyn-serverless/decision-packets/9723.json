@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-19T10:28:45.677Z",
-  "updatedAt": "2026-09-18T08:05:09Z",
+  "generatedAt": "2026-09-19T19:18:42.689Z",
+  "updatedAt": "2026-09-19T19:15:25Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,46 +12,50 @@
     "labels": [
       "app:supply",
       "feature",
-      "triage:queued",
+      "triage:needs-info",
+      "clawsweeper:needs-product-decision",
+      "P2",
       "reporter:danielmenchen-hamelyn",
       "origin:dev",
-      "epic:supply-v3",
-      "P2",
-      "clawsweeper:needs-product-decision"
+      "epic:supply-v3"
     ],
     "createdAt": "2026-09-18T08:03:18Z",
-    "updatedAt": "2026-09-18T08:05:09Z"
+    "updatedAt": "2026-09-19T19:15:25Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué dispositivos físicos, navegadores/WebViews y umbrales de calidad deben decidir si el motor web común basta para Supply v3?",
-  "rationale": "El cierre exige una muestra y mínimos aprobados, mientras la épica mantiene pendiente la decisión D12 de plataforma.",
+  "question": "¿Qué muestra etiquetada, matriz de iPhone/Android/WebView y umbrales de acierto, falsos positivos y latencia se aprueban para aceptar la opción A?",
+  "rationale": "El código puede reutilizar contratos del scanner actual, pero no puede decidir por sí solo qué nivel de paridad física permite descartar una adaptación nativa.",
   "options": [
     {
-      "title": "Acordar el baseline de validación",
-      "body": "Fijar dispositivos, WebViews y umbrales de precisión, falsos positivos y latencia antes de acreditar F07.",
+      "title": "Aprobar benchmark web",
+      "body": "Definir muestra, dispositivos y umbrales medibles; implementar el motor común y decidir sobre nativo solo ante un límite reproducido.",
       "recommended": true
     },
     {
-      "title": "Posponer la acreditación física",
-      "body": "Permitir investigación y contrato web, pero mantener la validación y la decisión nativa abiertas hasta aprobar D12.",
+      "title": "Validar primero el contenedor",
+      "body": "Cerrar antes los mínimos de Capacitor y WebView de https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9721, retrasando la comparación del motor.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener motores separados",
+      "body": "Conservar los flujos actuales y limitar Supply v3 a entrada manual hasta contar con una propuesta técnica nueva.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Acordar el baseline de validación",
-    "body": "Fijar dispositivos, WebViews y umbrales de precisión, falsos positivos y latencia antes de acreditar F07.",
+    "title": "Aprobar benchmark web",
+    "body": "Definir muestra, dispositivos y umbrales medibles; implementar el motor común y decidir sobre nativo solo ante un límite reproducido.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "danielmenchen-hamelyn",
-    "reason": "Es el autor de la épica que centraliza D12 y el reparto de los paquetes de migración.",
-    "confidence": "high"
+    "reason": "La planificación de la épica y la propia issue le atribuyen la coordinación de la decisión.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9723.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9723#issuecomment-5741059308",
-    "reviewedAt": "2026-09-19T10:28:45.677Z",
+    "reviewedAt": "2026-09-19T19:18:42.689Z",
     "mainSha": "d0e0b93e78bba63a1c6ff1614e823941e10afa9f"
   }
 }
