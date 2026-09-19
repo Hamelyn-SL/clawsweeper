@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-19T10:29:43.816Z",
+  "updatedAt": "2026-09-18T07:56:37Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 9714,
+    "title": "fix: corrige la moneda en correos de confirmación",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9714",
+    "state": "open",
+    "labels": [
+      "size/S"
+    ],
+    "createdAt": "2026-09-18T07:51:50Z",
+    "updatedAt": "2026-09-18T07:56:37Z",
+    "headSha": "398128dea1ba94b260f821c715619107816f9762"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe una confirmación de pedido extranjero sin tasa histórica válida bloquearse o enviarse con una alternativa explícitamente identificada?",
+  "rationale": "El parche corrige la conversión cuando existe tasa, pero introduce un fallo de ejecución para registros históricos incompletos; el equilibrio entre entrega y exactitud requiere intención de producto.",
+  "options": [
+    {
+      "title": "Bloquear con error explícito",
+      "body": "Mantiene la exactitud monetaria, pero exige una ruta operativa clara para recuperar el correo fallido.",
+      "recommended": false
+    },
+    {
+      "title": "Enviar una alternativa identificada",
+      "body": "Conserva la entrega mediante un importe o aviso claramente distinguido cuando no existe una tasa verificable.",
+      "recommended": true
+    }
+  ],
+  "recommendation": {
+    "title": "Enviar una alternativa identificada",
+    "body": "Conserva la entrega mediante un importe o aviso claramente distinguido cuando no existe una tasa verificable.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Es la persona más cercana al contrato histórico de conversión que reutiliza el cambio.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9714.md",
+    "reviewedAt": "2026-09-19T10:29:43.816Z",
+    "mainSha": "d0e0b93e78bba63a1c6ff1614e823941e10afa9f"
+  }
+}
