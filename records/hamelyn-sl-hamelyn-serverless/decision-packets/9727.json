@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-19T12:50:42.004Z",
-  "updatedAt": "2026-09-19T12:45:19Z",
+  "generatedAt": "2026-09-19T12:57:27.462Z",
+  "updatedAt": "2026-09-19T12:51:31Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,45 +13,44 @@
       "app:supply",
       "feature",
       "triage:done",
+      "clawsweeper:needs-product-decision",
+      "P2",
       "reporter:danielmenchen-hamelyn",
       "origin:dev",
-      "epic:supply-v3",
-      "P2",
-      "clawsweeper:needs-product-decision"
+      "epic:supply-v3"
     ],
     "createdAt": "2026-09-18T08:03:27Z",
-    "updatedAt": "2026-09-19T12:45:19Z"
+    "updatedAt": "2026-09-19T12:51:31Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe Supply v3 seguir integrándose temporalmente en `epic/supply-v3`, o debe publicarse una base equivalente en `dev` antes de desarrollar y revisar las pantallas?",
-  "rationale": "La épica y la PR de base describen una rama de integración, pero el `dev` revisado no contiene `apps/supply-web`; sin resolverlo no hay destino ni superficie verificable para S08.",
+  "question": "¿Debe Supply v3 continuar integrándose temporalmente en `epic/supply-v3` accesible para los paquetes, o debe publicarse una base equivalente en `dev` antes de implementar S08?",
+  "rationale": "La issue exige archivos y contratos de una base que no está en `dev`; elegir el destino condiciona el reparto de trabajo, la revisión y la futura integración.",
   "options": [
     {
       "title": "Mantener la rama de integración",
-      "body": "Conservar `epic/supply-v3` como destino temporal y facilitar esa base a los equipos de pantalla antes de abrir sus implementaciones.",
+      "body": "Conservar `epic/supply-v3` como destino temporal y facilitarla a los equipos antes de abrir entregas de pantalla.",
       "recommended": true
     },
     {
       "title": "Publicar primero la base en dev",
-      "body": "Integrar una base revisable en `dev` y ajustar las entregas posteriores para partir de esa rama.",
+      "body": "Integrar una base revisable en `dev` y reorientar las entregas posteriores para partir de esa rama.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Mantener la rama de integración",
-    "body": "Conservar `epic/supply-v3` como destino temporal y facilitar esa base a los equipos de pantalla antes de abrir sus implementaciones.",
+    "body": "Conservar `epic/supply-v3` como destino temporal y facilitarla a los equipos antes de abrir entregas de pantalla.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "danielmenchen-hamelyn",
-    "reason": "La épica y la PR relacionada atribuidas a este usuario definen expresamente el carril de integración de Supply v3.",
-    "confidence": "medium"
+    "reason": "La PR de base y la definición de la épica documentan este destino de integración.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9727.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9727#issuecomment-5742019316",
-    "reviewedAt": "2026-09-19T12:50:42.004Z",
+    "reviewedAt": "2026-09-19T12:57:27.462Z",
     "mainSha": "d0e0b93e78bba63a1c6ff1614e823941e10afa9f"
   }
 }
