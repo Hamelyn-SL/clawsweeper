@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-19T09:02:29.495Z",
-  "updatedAt": "2026-09-19T08:13:25Z",
+  "generatedAt": "2026-09-19T11:22:13.961Z",
+  "updatedAt": "2026-09-19T11:15:57Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,48 +13,42 @@
       "app:infrastructure",
       "feature",
       "reporter:javier",
-      "triage:queued",
+      "triage:done",
       "P1",
       "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-09-18T14:18:31Z",
-    "updatedAt": "2026-09-19T08:13:25Z"
+    "updatedAt": "2026-09-19T11:15:57Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿El objetivo debe limitarse a cortar cada proceso tras su primer `usage_limit_reached`, o debe bloquear también invocaciones nuevas mediante estado compartido hasta el reset?",
-  "rationale": "El PR relacionado conserva la última cuota solo en memoria, y la segunda opción implica persistencia u operación adicional que la issue deja abierta.",
+  "question": "¿Aprobamos una primera fase con corte local por proceso tras `usage_limit_reached`, o debe existir estado compartido antes de ejecutar agentes nuevos?",
+  "rationale": "La elección cambia el contrato operativo: el corte local reduce llamadas inmediatamente, mientras que el estado compartido evita incluso la primera llamada de cada lambda.",
   "options": [
     {
-      "title": "Corte por proceso primero",
-      "body": "Detener reintentos y publicar un skip claro tras el primer 429 de cuota, sin añadir estado compartido en esta fase.",
+      "title": "Corte local primero",
+      "body": "Propagar el agotamiento dentro de cada ejecución y dejar la persistencia compartida como una fase posterior.",
       "recommended": true
     },
     {
-      "title": "Gate compartido",
-      "body": "Persistir el reset de cuota para evitar incluso la primera llamada de nuevas lambdas durante la ventana agotada.",
-      "recommended": false
-    },
-    {
-      "title": "Separar persistencia",
-      "body": "Resolver ahora los reintentos y los comentarios, y abrir una decisión técnica independiente para la coordinación entre procesos.",
+      "title": "Estado compartido desde el inicio",
+      "body": "Añadir una fuente compartida de cuota para bloquear ejecuciones antes de contactar con Codex.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Corte por proceso primero",
-    "body": "Detener reintentos y publicar un skip claro tras el primer 429 de cuota, sin añadir estado compartido en esta fase.",
+    "title": "Corte local primero",
+    "body": "Propagar el agotamiento dentro de cada ejecución y dejar la persistencia compartida como una fase posterior.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Ha trabajado recientemente tanto en el wrapper de Codex como en el PR de telemetría que condiciona esta decisión.",
+    "reason": "Conecta el transporte Codex, el PR de cuota abierto y las automatizaciones afectadas.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9765.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9765#issuecomment-5740658292",
-    "reviewedAt": "2026-09-19T09:02:29.495Z",
+    "reviewedAt": "2026-09-19T11:22:13.961Z",
     "mainSha": "d0e0b93e78bba63a1c6ff1614e823941e10afa9f"
   }
 }
