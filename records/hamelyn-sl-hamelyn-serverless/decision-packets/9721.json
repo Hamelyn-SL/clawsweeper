@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-19T20:54:47.808Z",
+  "generatedAt": "2026-09-19T20:56:54.838Z",
   "updatedAt": "2026-09-19T18:58:47Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -14,49 +14,43 @@
       "feature",
       "triage:needs-info",
       "clawsweeper:needs-product-decision",
+      "P2",
       "reporter:danielmenchen-hamelyn",
       "origin:dev",
-      "epic:supply-v3",
-      "P2"
+      "epic:supply-v3"
     ],
     "createdAt": "2026-09-18T08:03:14Z",
     "updatedAt": "2026-09-19T18:58:47Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué mínimos de iOS, Android y WebView aprueba el equipo para habilitar y acreditar el perfil Capacitor de Supply v3?",
-  "rationale": "La propuesta iOS 16.4+/API 24/WebView 111+ condiciona compatibilidad, pruebas físicas y el comportamiento de los avisos; el código no puede decidir ese soporte por sí solo.",
+  "question": "¿Se aprueban ahora los mínimos D12 de iOS, Android y WebView para validar Capacitor, o se aplaza la habilitación nativa mientras avanza la migración web?",
+  "rationale": "Los mínimos propuestos condicionan compatibilidad, matriz de dispositivos y alcance de las pruebas; el código actual no permite deducir una política de soporte aprobada.",
   "options": [
     {
-      "title": "Mantener el perfil bloqueado",
-      "body": "Continuar el inventario de capacidades y no generar ni acreditar builds nativos hasta acordar mínimos formales.",
+      "title": "Aplazar D12 y continuar web",
+      "body": "Mantener el perfil móvil deshabilitado y avanzar el inventario de capacidades hasta acordar mínimos formales.",
       "recommended": true
     },
     {
-      "title": "Aprobar la propuesta actual",
-      "body": "Adoptar iOS 16.4+, API 24 y WebView 111+ y preparar la matriz de validación correspondiente.",
-      "recommended": false
-    },
-    {
-      "title": "Definir mínimos alternativos",
-      "body": "Acordar otra matriz de soporte y actualizar después scripts, avisos y pruebas de esta entrega.",
+      "title": "Aprobar mínimos D12",
+      "body": "Fijar versiones soportadas y exigir la matriz iOS, Android y WebView como condición de cierre de esta entrega.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mantener el perfil bloqueado",
-    "body": "Continuar el inventario de capacidades y no generar ni acreditar builds nativos hasta acordar mínimos formales.",
+    "title": "Aplazar D12 y continuar web",
+    "body": "Mantener el perfil móvil deshabilitado y avanzar el inventario de capacidades hasta acordar mínimos formales.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "danielmenchen-hamelyn",
-    "reason": "La base y la épica de Supply v3 atribuyen a esta persona la coordinación de la decisión de compatibilidad.",
+    "reason": "Figura como coordinador de la épica y la discusión de triage le pide concretar la decisión D12.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9721.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9721#issuecomment-5741058761",
-    "reviewedAt": "2026-09-19T20:54:47.808Z",
+    "reviewedAt": "2026-09-19T20:56:54.838Z",
     "mainSha": "d0e0b93e78bba63a1c6ff1614e823941e10afa9f"
   }
 }
