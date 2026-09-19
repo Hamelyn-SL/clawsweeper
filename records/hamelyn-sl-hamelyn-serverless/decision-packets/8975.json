@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-19T08:49:01.734Z",
+  "generatedAt": "2026-09-19T08:50:10.461Z",
   "updatedAt": "2026-09-16T08:20:59Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -21,39 +21,38 @@
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe la flota terminalizar automáticamente un Agent Run sin eventos recientes y, en ese caso, con qué señal y estado terminal?",
-  "rationale": "La antigüedad no distingue por sí sola un residuo de una sesión legítima; elegir entre `failed` y `cancelled` también cambia la semántica operativa.",
+  "question": "¿Debe la flota seguir solo alertando sobre `stale_running` o terminalizar automáticamente runs tras verificar ausencia de eventos recientes mediante una operación soportada por Vercel?",
+  "rationale": "La elección cambia el contrato operativo entre observabilidad y mutación remota; el código actual no demuestra que todos los runs antiguos estén inactivos.",
   "options": [
     {
-      "title": "Reconciliar con actividad verificable",
-      "body": "Cerrar automáticamente solo tras confirmar falta de progreso mediante timeline o heartbeat y guardar una causa diagnóstica.",
+      "title": "Validar antes de mutar",
+      "body": "Mantener la alerta y recopilar timelines posteriores al despliegue antes de diseñar una reconciliación automática.",
       "recommended": true
     },
     {
-      "title": "Mantener alerta manual",
-      "body": "Conservar `stale_running` como señal de supervisión hasta disponer de una fuente de actividad suficientemente fiable.",
+      "title": "Reconciliación conservadora",
+      "body": "Autorizar una transición terminal solo cuando la API confirme falta de eventos recientes y permita preservar la causa.",
       "recommended": false
     },
     {
-      "title": "Aplicar timeout fijo",
-      "body": "Terminalizar por antigüedad y aceptar el riesgo de interrumpir trabajo activo sin señales recientes.",
+      "title": "Timeout fijo",
+      "body": "Cerrar por antigüedad superior a 24 horas, asumiendo el riesgo de terminar ejecuciones lentas aún activas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Reconciliar con actividad verificable",
-    "body": "Cerrar automáticamente solo tras confirmar falta de progreso mediante timeline o heartbeat y guardar una causa diagnóstica.",
+    "title": "Validar antes de mutar",
+    "body": "Mantener la alerta y recopilar timelines posteriores al despliegue antes de diseñar una reconciliación automática.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su historial reúne el hardening de dispatch y la señal de supervisión más cercanos al comportamiento descrito.",
-    "confidence": "medium"
+    "reason": "Introdujo el hardening que separa el origen ya corregido del comportamiento que queda por decidir.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8975.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8975#issuecomment-5492161013",
-    "reviewedAt": "2026-09-19T08:49:01.734Z",
+    "reviewedAt": "2026-09-19T08:50:10.461Z",
     "mainSha": "d0e0b93e78bba63a1c6ff1614e823941e10afa9f"
   }
 }
