@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-14T16:26:33.138Z",
-  "updatedAt": "2026-09-14T15:15:01Z",
+  "generatedAt": "2026-09-19T11:02:48.850Z",
+  "updatedAt": "2026-09-18T05:57:10Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,47 +15,41 @@
       "feature",
       "triage:needs-info",
       "clawsweeper:needs-product-decision",
-      "reporter:carlotavarela",
-      "P2"
+      "P2",
+      "reporter:carlotavarela"
     ],
     "createdAt": "2026-09-14T14:58:41Z",
-    "updatedAt": "2026-09-14T15:15:01Z"
+    "updatedAt": "2026-09-18T05:57:10Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué fuente debe determinar el país impreso —el destino del envío de Mercado Libre, la cuenta/circuito de origen o ambas— y qué banda visual cabe en el papel usado por almacén?",
-  "rationale": "El código disponible ofrece el nombre de país del envío, pero el pedido persistido fija `MX`; elegir sin validar el circuito argentino y el formato físico puede clasificar o imprimir etiquetas incorrectamente.",
+  "question": "¿Debe esta entrega limitarse al sello y distintivos de país solicitados, o aprobar también la separación de FedEx y facturación por site incluida en el PR vinculado?",
+  "rationale": "La petición original es visual para almacén, mientras que el PR amplía el alcance a perfiles fiscales, facturación agrupada y envíos FedEx con impacto operativo.",
   "options": [
     {
-      "title": "Validar circuito y muestras primero",
-      "body": "Confirmar cómo entra Argentina y aportar una etiqueta anonimizada de cada país con tamaño de papel antes de fijar la fuente y la banda.",
+      "title": "Separar el alcance",
+      "body": "Dejar el PR en una implementación acotada de sello e indicadores de país y tratar FedEx/facturación en una entrega revisada aparte.",
       "recommended": true
     },
     {
-      "title": "Usar destino de Mercado Libre",
-      "body": "Derivar el distintivo de `receiver_address.country` si una muestra argentina confirma que ese campo representa el país operativo de almacén.",
-      "recommended": false
-    },
-    {
-      "title": "Usar circuito de cuenta",
-      "body": "Asignar el distintivo por cuenta o adaptador si los destinos no representan de forma estable el país que almacén necesita separar.",
+      "title": "Aprobar el paquete completo",
+      "body": "Mantener el alcance ampliado tras resolver conflictos, hallazgos P1 y validación operativa de los datos argentinos.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Validar circuito y muestras primero",
-    "body": "Confirmar cómo entra Argentina y aportar una etiqueta anonimizada de cada país con tamaño de papel antes de fijar la fuente y la banda.",
+    "title": "Separar el alcance",
+    "body": "Dejar el PR en una implementación acotada de sello e indicadores de país y tratar FedEx/facturación en una entrega revisada aparte.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "carlotavarela",
-    "reason": "Puede confirmar el uso operativo en almacén, el circuito de Argentina y la aceptación del diseño físico.",
-    "confidence": "medium"
+    "person": "MarcosTerroso",
+    "reason": "Ha definido la integración MLA previa y ha implementado el PR que conecta el distintivo con los circuitos de packing y envío.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9520.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9520#issuecomment-5666137348",
-    "reviewedAt": "2026-09-14T16:26:33.138Z",
-    "mainSha": "ff3b1daeeb02785d5067eeff5266eff1ff7acdf4"
+    "reviewedAt": "2026-09-19T11:02:48.850Z",
+    "mainSha": "d0e0b93e78bba63a1c6ff1614e823941e10afa9f"
   }
 }
