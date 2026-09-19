@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-19T10:38:49.399Z",
+  "updatedAt": "2026-09-16T11:30:06Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9614,
+    "title": "extraer la info de costes y plazos de envios de las plantillas de todos los amazon y si se puede, abebooks.",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9614",
+    "state": "open",
+    "labels": [
+      "source:admin-panel",
+      "app:marketplace",
+      "feature",
+      "triage:needs-info",
+      "P2",
+      "reporter:jorgecano"
+    ],
+    "createdAt": "2026-09-16T11:18:59Z",
+    "updatedAt": "2026-09-16T11:30:06Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿El primer alcance debe limitarse a Amazon con una fuente de reglas completa validada, dejando AbeBooks fuera hasta confirmar que puede exportar plantillas equivalentes?",
+  "rationale": "La petición admite AbeBooks solo si es viable y las integraciones actuales solo contienen datos operativos por oferta o pedido, no el contrato completo de plantillas.",
+  "options": [
+    {
+      "title": "Validar Amazon primero",
+      "body": "Confirmar una exportación o vía de lectura real de Amazon y diseñar el extractor solo para esa fuente inicial.",
+      "recommended": true
+    },
+    {
+      "title": "Exigir ambos proveedores",
+      "body": "Posponer el desarrollo hasta disponer de una fuente completa y homologable para Amazon y AbeBooks.",
+      "recommended": false
+    },
+    {
+      "title": "Conservar revisión manual",
+      "body": "Definir el CSV y cargarlo desde una exportación manual mientras se investiga la automatización.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Validar Amazon primero",
+    "body": "Confirmar una exportación o vía de lectura real de Amazon y diseñar el extractor solo para esa fuente inicial.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Su historial en la integración Amazon lo sitúa como el mejor candidato técnico para validar el alcance inicial.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9614.md",
+    "reviewedAt": "2026-09-19T10:38:49.399Z",
+    "mainSha": "d0e0b93e78bba63a1c6ff1614e823941e10afa9f"
+  }
+}
