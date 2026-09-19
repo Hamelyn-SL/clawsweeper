@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-19T11:09:04.735Z",
+  "updatedAt": "2026-09-17T15:32:27Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9696,
+    "title": "MercadoLibre: la retirada a 60 ítems por pasada deja 34.277 listings vendidos comprables 29 h después",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9696",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "reporter:javier",
+      "triage:needs-info",
+      "P2"
+    ],
+    "createdAt": "2026-09-17T14:32:21Z",
+    "updatedAt": "2026-09-17T15:32:27Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Qué plazo máximo debe garantizar MercadoLibre para retirar listings vendidos durante una entrada masiva y qué presupuesto de cuota puede reservarse para cumplirlo?",
+  "rationale": "El código fija el límite, pero no define un SLA ni permite inferir con seguridad qué capacidad remota puede consumirse sin degradar otras fases compartidas.",
+  "options": [
+    {
+      "title": "Acordar SLA y piloto controlado",
+      "body": "Fijar el máximo de antigüedad y probar un incremento temporal medido antes de decidir entre prioridad persistente o una integración por lote.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener el límite actual",
+      "body": "Aceptar la exposición actual y dejar la incidencia abierta solo para observabilidad de edad y alertas operativas.",
+      "recommended": false
+    },
+    {
+      "title": "Diseñar batching de MercadoLibre",
+      "body": "Abrir una propuesta técnica separada tras confirmar soporte remoto, semántica de confirmación y consumo de cuota.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Acordar SLA y piloto controlado",
+    "body": "Fijar el máximo de antigüedad y probar un incremento temporal medido antes de decidir entre prioridad persistente o una integración por lote.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Es la persona con la señal histórica más directa sobre el gestor y los límites actuales de MercadoLibre.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9696.md",
+    "reviewedAt": "2026-09-19T11:09:04.735Z",
+    "mainSha": "d0e0b93e78bba63a1c6ff1614e823941e10afa9f"
+  }
+}
