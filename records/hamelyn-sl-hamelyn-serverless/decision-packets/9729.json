@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-19T10:13:04.705Z",
-  "updatedAt": "2026-09-18T08:06:37Z",
+  "generatedAt": "2026-09-19T14:53:00.173Z",
+  "updatedAt": "2026-09-19T14:44:58Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,51 +12,45 @@
     "labels": [
       "app:supply",
       "feature",
-      "triage:queued",
+      "triage:done",
+      "clawsweeper:needs-product-decision",
+      "P2",
       "reporter:danielmenchen-hamelyn",
       "origin:dev",
-      "epic:supply-v3",
-      "P2",
-      "clawsweeper:needs-product-decision"
+      "epic:supply-v3"
     ],
     "createdAt": "2026-09-18T08:03:31Z",
-    "updatedAt": "2026-09-18T08:06:37Z"
+    "updatedAt": "2026-09-19T14:44:58Z"
   },
-  "lane": "product_direction",
+  "lane": "security_boundary",
   "priority": "P2",
-  "question": "¿Debe esta entrega partir de `dev` y abrir una PR normal hacia `dev`, o se autoriza explícitamente el carril `epic/supply-v3` indicado por la épica?",
-  "rationale": "La política del repositorio exige trabajar desde `dev`, pero la planificación sitúa la base necesaria fuera de esa rama; esta elección determina dónde puede vivir la implementación sin crear una integración paralela.",
+  "question": "¿Debe la capacidad de autorización del carrito conservar `SecureStore` en móvil o pasar a `localStorage` también allí como parte de Supply v3?",
+  "rationale": "El alcance exige una nueva persistencia, pero el código actual protege la capacidad nativa con `SecureStore`; la decisión define la frontera de seguridad y la compatibilidad de la migración.",
   "options": [
     {
-      "title": "Alinear con `dev`",
-      "body": "Consolidar primero la base necesaria en `dev` y desarrollar el carrito con una PR normal hacia esa rama.",
+      "title": "Mantener almacenamiento seguro nativo",
+      "body": "Usar `localStorage` en web y `SecureStore` en móvil detrás de un adaptador versionado por mercado.",
       "recommended": true
     },
     {
-      "title": "Autorizar `epic/supply-v3`",
-      "body": "Mantener la entrega en el carril de épica como excepción documentada y hacer accesible su referencia antes de iniciar el trabajo.",
-      "recommended": false
-    },
-    {
-      "title": "Pausar la entrega",
-      "body": "Esperar a una consolidación explícita de la base si no se aprueba ninguno de los dos carriles.",
+      "title": "Unificar en almacenamiento web",
+      "body": "Adoptar `localStorage` en ambas plataformas con un modelo de amenazas, migración y recuperación documentados.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Alinear con `dev`",
-    "body": "Consolidar primero la base necesaria en `dev` y desarrollar el carrito con una PR normal hacia esa rama.",
+    "title": "Mantener almacenamiento seguro nativo",
+    "body": "Usar `localStorage` en web y `SecureStore` en móvil detrás de un adaptador versionado por mercado.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "danielmenchen-hamelyn",
-    "reason": "Definió la épica y la base relacionada, por lo que cuenta con el contexto más directo sobre el carril de integración previsto.",
+    "reason": "La decisión afecta el contrato transversal definido por la épica y el destino de integración de Supply v3.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9729.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9729#issuecomment-5740979314",
-    "reviewedAt": "2026-09-19T10:13:04.705Z",
+    "reviewedAt": "2026-09-19T14:53:00.173Z",
     "mainSha": "d0e0b93e78bba63a1c6ff1614e823941e10afa9f"
   }
 }
