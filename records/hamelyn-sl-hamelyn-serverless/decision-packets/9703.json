@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-19T09:40:11.983Z",
+  "updatedAt": "2026-09-18T10:42:04Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9703,
+    "title": "Feltrinelli: 955 listings de stock vendido siguen comprables, 482 desde hace 37 horas",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9703",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "reporter:javier",
+      "triage:queued",
+      "P1"
+    ],
+    "createdAt": "2026-09-17T22:20:44Z",
+    "updatedAt": "2026-09-18T10:42:04Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Qué capacidad y reparto de presupuesto OF24 debe reservar Feltrinelli para retiradas frente a altas y cambios de precio?",
+  "rationale": "El código ya expone el límite de retirada y corrige el backoff; elegir el valor operativo y su presupuesto compartido requiere decidir el equilibrio entre disponibilidad de listings y caudal de sincronización.",
+  "options": [
+    {
+      "title": "Validar 50 y reservar presupuesto",
+      "body": "Observar ejecuciones con la nueva configuración y fijar una reserva explícita para retiradas si el caudal mantiene la cola al día.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener reparto actual",
+      "body": "Conservar el presupuesto compartido actual y monitorizar la cola, aceptando nuevas denegaciones locales durante picos.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Validar 50 y reservar presupuesto",
+    "body": "Observar ejecuciones con la nueva configuración y fijar una reserva explícita para retiradas si el caudal mantiene la cola al día.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Aportó la evidencia operativa reciente y tiene historial directo en el límite OF24 por tienda.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9703.md",
+    "reviewedAt": "2026-09-19T09:40:11.983Z",
+    "mainSha": "d0e0b93e78bba63a1c6ff1614e823941e10afa9f"
+  }
+}

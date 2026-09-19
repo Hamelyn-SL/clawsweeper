@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-19T09:41:33.571Z",
+  "updatedAt": "2026-09-18T12:22:31Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9760,
+    "title": "[WATCHER-ALERT] amazon_se: report trigger failed",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9760",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "P1"
+    ],
+    "createdAt": "2026-09-18T12:22:31Z",
+    "updatedAt": "2026-09-18T12:22:31Z"
+  },
+  "lane": "proof_sufficiency",
+  "priority": "P1",
+  "question": "¿Qué traza saneada confirma si el fallo actual de `amazon_se` está en Eve, en el recibo de métricas o en el trigger autenticado?",
+  "rationale": "El código ya cubre el fallo histórico del alias; la alerta genérica y el run sin detalle no permiten elegir con seguridad una reparación de integración.",
+  "options": [
+    {
+      "title": "Trazar una sesión fallida",
+      "body": "Recuperar el resultado de `emit_metrics`, el recibo por sesión y las respuestas HTTP del mismo `session_id`.",
+      "recommended": true
+    },
+    {
+      "title": "Reintentar con correlación",
+      "body": "Ejecutar el watcher manualmente y guardar una traza saneada desde el snapshot hasta `emitted=true` o el punto exacto de fallo.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Trazar una sesión fallida",
+    "body": "Recuperar el resultado de `emit_metrics`, el recibo por sesión y las respuestas HTTP del mismo `session_id`.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su cambio reciente cubre el trigger y la incidencia relacionada ya le identifica para el seguimiento de Amazon SE.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9760.md",
+    "reviewedAt": "2026-09-19T09:41:33.571Z",
+    "mainSha": "d0e0b93e78bba63a1c6ff1614e823941e10afa9f"
+  }
+}
