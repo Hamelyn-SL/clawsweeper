@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-19T20:53:40.133Z",
+  "generatedAt": "2026-09-19T20:54:47.808Z",
   "updatedAt": "2026-09-19T18:58:47Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -14,49 +14,48 @@
       "feature",
       "triage:needs-info",
       "clawsweeper:needs-product-decision",
+      "P2",
       "reporter:danielmenchen-hamelyn",
       "origin:dev",
-      "epic:supply-v3",
-      "P2"
+      "epic:supply-v3"
     ],
     "createdAt": "2026-09-18T08:03:14Z",
     "updatedAt": "2026-09-19T18:58:47Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué mínimos D12 se aprueban para habilitar el contenedor nativo de Supply v3?",
-  "rationale": "La base técnica rechaza la activación sin esa decisión y los mínimos determinan la compatibilidad real de iOS, Android y WebView.",
+  "question": "¿Qué mínimos de iOS, Android y WebView aprueba el equipo para habilitar y acreditar el perfil Capacitor de Supply v3?",
+  "rationale": "La propuesta iOS 16.4+/API 24/WebView 111+ condiciona compatibilidad, pruebas físicas y el comportamiento de los avisos; el código no puede decidir ese soporte por sí solo.",
   "options": [
     {
-      "title": "Aprobar los mínimos propuestos",
-      "body": "Aprobar iOS 16.4+, Android API 24+ y WebView 111+ para desbloquear la generación y acreditación de builds de desarrollo.",
+      "title": "Mantener el perfil bloqueado",
+      "body": "Continuar el inventario de capacidades y no generar ni acreditar builds nativos hasta acordar mínimos formales.",
       "recommended": true
     },
     {
-      "title": "Ajustar la matriz de mínimos",
-      "body": "Elegir mínimos distintos y actualizar la configuración, la documentación y la matriz de dispositivos antes de generar proyectos nativos.",
+      "title": "Aprobar la propuesta actual",
+      "body": "Adoptar iOS 16.4+, API 24 y WebView 111+ y preparar la matriz de validación correspondiente.",
       "recommended": false
     },
     {
-      "title": "Mantener la habilitación aplazada",
-      "body": "Conservar el guard actual y avanzar solo con inventario de capacidades hasta que haya una decisión de compatibilidad.",
+      "title": "Definir mínimos alternativos",
+      "body": "Acordar otra matriz de soporte y actualizar después scripts, avisos y pruebas de esta entrega.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar los mínimos propuestos",
-    "body": "Aprobar iOS 16.4+, Android API 24+ y WebView 111+ para desbloquear la generación y acreditación de builds de desarrollo.",
+    "title": "Mantener el perfil bloqueado",
+    "body": "Continuar el inventario de capacidades y no generar ni acreditar builds nativos hasta acordar mínimos formales.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "danielmenchen-hamelyn",
-    "reason": "Es el autor de la base integrada y la persona indicada en la discusión para coordinar la decisión D12.",
+    "reason": "La base y la épica de Supply v3 atribuyen a esta persona la coordinación de la decisión de compatibilidad.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9721.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9721#issuecomment-5741058761",
-    "reviewedAt": "2026-09-19T20:53:40.133Z",
+    "reviewedAt": "2026-09-19T20:54:47.808Z",
     "mainSha": "d0e0b93e78bba63a1c6ff1614e823941e10afa9f"
   }
 }
