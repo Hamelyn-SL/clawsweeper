@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-19T10:00:19.270Z",
+  "updatedAt": "2026-09-18T09:46:11Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 9699,
+    "title": "feat: mint role-granted warehouse scopes on cli login",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9699",
+    "state": "open",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-09-17T15:09:35Z",
+    "updatedAt": "2026-09-18T09:46:11Z",
+    "headSha": "7e31e22c05e63265841eb6b16f95a96f1a18f486"
+  },
+  "lane": "security_boundary",
+  "priority": "P1",
+  "question": "¿Debe permitirse que cualquier rol operativo con `cli` autoacuñe todos los scopes de escritura de su rol, o debe limitarse por ahora a `write:warehouse`?",
+  "rationale": "La implementación es coherente con el modelo de scopes y roles, pero define una ampliación permanente de credenciales personales de escritura que no puede decidirse solo por corrección técnica.",
+  "options": [
+    {
+      "title": "Acotar inicialmente a almacén",
+      "body": "Permitir únicamente `write:warehouse`, que cubre el bloqueo operativo documentado y reduce el alcance de PAT autoacuñables.",
+      "recommended": true
+    },
+    {
+      "title": "Aprobar la política general",
+      "body": "Mantener todos los `ROLE_WRITE_SCOPES` para que el PAT refleje íntegramente las capacidades operativas ya concedidas en sesión.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Acotar inicialmente a almacén",
+    "body": "Permitir únicamente `write:warehouse`, que cubre el bloqueo operativo documentado y reduce el alcance de PAT autoacuñables.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Su trabajo reciente define y endurece la política de scopes y roles de almacén afectada por esta ampliación.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9699.md",
+    "reviewedAt": "2026-09-19T10:00:19.270Z",
+    "mainSha": "d0e0b93e78bba63a1c6ff1614e823941e10afa9f"
+  }
+}
