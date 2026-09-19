@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-19T09:10:18.781Z",
+  "updatedAt": "2026-09-19T07:58:24Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9744,
+    "title": "Supply v3: prepare domain routing and session continuity for cutover",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9744",
+    "state": "open",
+    "labels": [
+      "app:supply",
+      "feature",
+      "triage:queued",
+      "P2",
+      "reporter:danielmenchen-hamelyn",
+      "origin:dev",
+      "epic:supply-v3"
+    ],
+    "createdAt": "2026-09-18T08:04:03Z",
+    "updatedAt": "2026-09-19T07:58:24Z"
+  },
+  "lane": "release_inclusion",
+  "priority": "P2",
+  "question": "¿Qué responsables aprueban el mapa final de URLs, la política de recuperación de sesión/carrito y los criterios de reversión antes de configurar el cutover en staging?",
+  "rationale": "La base técnica ya define parte del routing, pero DNS, Auth0, CORS, ownership de rutas y rollback cruzan servicios y requieren una decisión operativa explícita.",
+  "options": [
+    {
+      "title": "Aprobar contrato de cutover",
+      "body": "Designar responsables y validar el mapa, los orígenes Auth0/CORS, la recuperación limitada y el runbook de reversión antes de implementar el ensayo.",
+      "recommended": true
+    },
+    {
+      "title": "Posponer D02 hasta cerrar dependencias",
+      "body": "Mantener solo el inventario y aplazar la configuración de staging hasta que rutas, sesión, carrito y preview tengan contratos cerrados.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar contrato de cutover",
+    "body": "Designar responsables y validar el mapa, los orígenes Auth0/CORS, la recuperación limitada y el runbook de reversión antes de implementar el ensayo.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "danielmenchen-hamelyn",
+    "reason": "Es el autor de la base de routing y del desglose de la épica donde se define este paquete de lanzamiento.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9744.md",
+    "reviewedAt": "2026-09-19T09:10:18.781Z",
+    "mainSha": "d0e0b93e78bba63a1c6ff1614e823941e10afa9f"
+  }
+}

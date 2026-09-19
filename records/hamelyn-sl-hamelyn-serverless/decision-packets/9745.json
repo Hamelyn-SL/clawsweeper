@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-19T09:09:34.225Z",
+  "updatedAt": "2026-09-19T07:43:25Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9745,
+    "title": "Supply v3: rehearse and execute the controlled web rollout",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9745",
+    "state": "open",
+    "labels": [
+      "app:supply",
+      "feature",
+      "triage:queued",
+      "P2",
+      "reporter:danielmenchen-hamelyn",
+      "origin:dev",
+      "epic:supply-v3"
+    ],
+    "createdAt": "2026-09-18T08:04:05Z",
+    "updatedAt": "2026-09-19T07:43:25Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué responsables, umbrales verificables y autoridad de activación o reversión aprueba el equipo para pasar Supply v3 a producción?",
+  "rationale": "El código puede preparar mecanismos, pero aceptar desviaciones de negocio, métricas y una reversión de tráfico exige una decisión operativa y de producto.",
+  "options": [
+    {
+      "title": "Aprobar gates y responsables medibles",
+      "body": "Definir baseline, umbrales, ventana de estabilidad, dueño de la activación y dueño de la reversión antes del ensayo.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener el rollout bloqueado",
+      "body": "Completar primero las dependencias y posponer cualquier ensayo de activación hasta contar con evidencias de QA y transición.",
+      "recommended": false
+    },
+    {
+      "title": "Reducir el primer alcance",
+      "body": "Autorizar un rollout limitado con países o flujos explícitos y criterios propios de reversión.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar gates y responsables medibles",
+    "body": "Definir baseline, umbrales, ventana de estabilidad, dueño de la activación y dueño de la reversión antes del ensayo.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "danielmenchen-hamelyn",
+    "reason": "Ha definido la base y el desglose de la épica, y es el mejor punto de coordinación visible para llevar la decisión al equipo adecuado.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9745.md",
+    "reviewedAt": "2026-09-19T09:09:34.225Z",
+    "mainSha": "d0e0b93e78bba63a1c6ff1614e823941e10afa9f"
+  }
+}
