@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-19T10:43:35.414Z",
-  "updatedAt": "2026-09-18T08:03:42Z",
+  "generatedAt": "2026-09-19T20:22:24.414Z",
+  "updatedAt": "2026-09-19T20:15:20Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,46 +12,50 @@
     "labels": [
       "app:supply",
       "feature",
-      "triage:queued",
+      "triage:needs-info",
+      "clawsweeper:needs-product-decision",
+      "P2",
       "reporter:danielmenchen-hamelyn",
       "origin:dev",
-      "epic:supply-v3",
-      "P2",
-      "clawsweeper:needs-product-decision"
+      "epic:supply-v3"
     ],
     "createdAt": "2026-09-18T08:03:07Z",
-    "updatedAt": "2026-09-18T08:03:42Z"
+    "updatedAt": "2026-09-19T20:15:20Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué fuente aprobada fija el comportamiento de idiomas secundarios y los valores pendientes de las cuatro rutas y ocho descriptions del inventario?",
-  "rationale": "El legado conserva idiomas y slugs, pero los criterios prohíben completar los huecos por deducción; hace falta una decisión explícita antes de convertirlos en contrato compartido.",
+  "question": "¿Qué fuente y regla aprobada deben determinar los idiomas secundarios, los huecos SEO y el destino de `/developers` antes de fijar la matriz de rutas e indexación?",
+  "rationale": "El código heredado separa idioma web por build y preferencia móvil persistida, mientras que el inventario contiene valores incompletos que no permiten deducir SEO seguro.",
   "options": [
     {
-      "title": "Aprobar la matriz del legado",
-      "body": "Validar una tabla por ruta con idioma, indexación, canonical y metadata antes de implementar los helpers compartidos.",
+      "title": "Validar matriz desde el legado",
+      "body": "Designar una fuente responsable y aprobar por ruta el idioma, canonical, indexación y tratamiento de cada hueco antes de implementar F02.",
       "recommended": true
     },
     {
-      "title": "Aplazar los huecos explícitos",
-      "body": "Entregar routing e i18n sólo para las rutas con datos completos y mantener los huecos fuera de indexación hasta recibir valores aprobados.",
+      "title": "Limitar F02 a infraestructura neutra",
+      "body": "Entregar únicamente tipos, carga de diccionarios y helpers sin publicar decisiones SEO hasta contar con la matriz aprobada.",
+      "recommended": false
+    },
+    {
+      "title": "Aplazar el contrato completo",
+      "body": "Mantener la base de prueba sin cambios de indexación mientras se recupera o reconstruye la fuente de verdad del legado.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar la matriz del legado",
-    "body": "Validar una tabla por ruta con idioma, indexación, canonical y metadata antes de implementar los helpers compartidos.",
+    "title": "Validar matriz desde el legado",
+    "body": "Designar una fuente responsable y aprobar por ruta el idioma, canonical, indexación y tratamiento de cada hueco antes de implementar F02.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "danielmenchen-hamelyn",
-    "reason": "Introdujo la base de `apps/supply-web` y figura como autor de la épica que define el reparto de contratos.",
+    "reason": "Coordina la épica y fue autor de la integración de base que delimitó este paquete transversal.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9718.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9718#issuecomment-5741171066",
-    "reviewedAt": "2026-09-19T10:43:35.414Z",
+    "reviewedAt": "2026-09-19T20:22:24.414Z",
     "mainSha": "d0e0b93e78bba63a1c6ff1614e823941e10afa9f"
   }
 }
