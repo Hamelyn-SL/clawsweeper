@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-19T21:53:18.380Z",
+  "updatedAt": "2026-09-19T21:45:43Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9772,
+    "title": "[WATCHER-ALERT] amazon_fr: report trigger failed",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9772",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "triage:blocked",
+      "P1"
+    ],
+    "createdAt": "2026-09-19T07:58:33Z",
+    "updatedAt": "2026-09-19T21:45:43Z"
+  },
+  "lane": "manual_review",
+  "priority": "P1",
+  "question": "¿Qué persona de Infraestructura verificará la cuota del proveedor de Eve y autorizará el reintento controlado de Amazon FR?",
+  "rationale": "La causa demostrada es una limitación externa de uso; el repositorio no puede restaurar ni comprobar esa cuota mediante un cambio de código.",
+  "options": [
+    {
+      "title": "Restablecer y validar",
+      "body": "Comprobar la cuota, recuperarla si procede y ejecutar un heartbeat FR que confirme `emitted=true`.",
+      "recommended": true
+    },
+    {
+      "title": "Escalar al proveedor",
+      "body": "Si no puede recuperarse internamente, escalar el límite al proveedor y mantener la alerta bloqueada hasta disponer de capacidad.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Restablecer y validar",
+    "body": "Comprobar la cuota, recuperarla si procede y ejecutar un heartbeat FR que confirme `emitted=true`.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "HamelynDev",
+    "reason": "Es quien documentó el diagnóstico operativo y el procedimiento de validación de esta alerta.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9772.md",
+    "reviewedAt": "2026-09-19T21:53:18.380Z",
+    "mainSha": "d0e0b93e78bba63a1c6ff1614e823941e10afa9f"
+  }
+}
