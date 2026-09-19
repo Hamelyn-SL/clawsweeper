@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-19T11:32:06.143Z",
+  "generatedAt": "2026-09-19T11:33:04.384Z",
   "updatedAt": "2026-09-16T11:27:43Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -19,39 +19,33 @@
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué superficie de estado aprobada debe conservar la aparición, el recordatorio y la recuperación de cada incidente de cron-health?",
-  "rationale": "La frescura puede leerse de `snapshot_runs`, pero evitar duplicados y comunicar recuperaciones exige decidir dónde vive el estado sin crear tablas o colecciones sin autorización.",
+  "question": "¿Las pausas manuales planificadas de `amazon-report.yml` deben alertar siempre o permitirse solo con una supresión temporal caducable, motivada y con responsable?",
+  "rationale": "El código no expresa esta política y afecta directamente a qué incidentes se notifican y a cómo se evita silenciar una interrupción real.",
   "options": [
     {
-      "title": "Reutilizar estado existente",
-      "body": "Aprobar una fuente persistente ya operativa y su retención para registrar el estado mínimo por workflow o región.",
+      "title": "Alertar siempre y documentar",
+      "body": "Mantener la vigilancia activa durante cualquier pausa y registrar el mantenimiento en el runbook.",
       "recommended": true
     },
     {
-      "title": "Autorizar estructura específica",
-      "body": "Autorizar explícitamente un almacenamiento mínimo de monitorización con esquema, volumen y responsable definidos.",
-      "recommended": false
-    },
-    {
-      "title": "Dividir en dos fases",
-      "body": "Entregar primero la detección diaria regional y planificar después deduplicación, recordatorios y recuperaciones.",
+      "title": "Permitir excepción temporal",
+      "body": "Aceptar una supresión explícita con caducidad, motivo y responsable, sin ocultar pausas indefinidas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Reutilizar estado existente",
-    "body": "Aprobar una fuente persistente ya operativa y su retención para registrar el estado mínimo por workflow o región.",
+    "title": "Alertar siempre y documentar",
+    "body": "Mantener la vigilancia activa durante cualquier pausa y registrar el mantenimiento en el runbook.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MarcosTerroso",
-    "reason": "La incidencia está asignada a MarcosTerroso y su descripción fija los criterios operativos que condicionan la decisión.",
+    "person": "JavierHamelyn",
+    "reason": "Su trabajo reciente conecta el monitor con las notificaciones Slack y es el mejor punto de decisión para el comportamiento operativo.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9500.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9500#issuecomment-5662447811",
-    "reviewedAt": "2026-09-19T11:32:06.143Z",
+    "reviewedAt": "2026-09-19T11:33:04.384Z",
     "mainSha": "d0e0b93e78bba63a1c6ff1614e823941e10afa9f"
   }
 }
