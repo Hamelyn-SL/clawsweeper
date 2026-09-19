@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-19T10:06:12.340Z",
+  "updatedAt": "2026-09-18T08:07:34Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9733,
+    "title": "Supply v3: implement checkout state and authenticated step orchestration",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9733",
+    "state": "open",
+    "labels": [
+      "app:supply",
+      "feature",
+      "triage:queued",
+      "P2",
+      "reporter:danielmenchen-hamelyn",
+      "origin:dev",
+      "epic:supply-v3"
+    ],
+    "createdAt": "2026-09-18T08:03:40Z",
+    "updatedAt": "2026-09-18T08:07:34Z"
+  },
+  "lane": "release_inclusion",
+  "priority": "P2",
+  "question": "¿Debe esta entrega continuar contra el carril `epic/supply-v3` descrito en la épica o partir de `dev` conforme a la política vigente del repositorio?",
+  "rationale": "La planificación remite a una rama de integración que no existe en el checkout revisado, mientras `AGENTS.md` establece `dev` como base obligatoria; esa excepción necesita una decisión humana explícita.",
+  "options": [
+    {
+      "title": "Alinear con dev",
+      "body": "Crear la implementación desde `dev` y usar una PR normal hacia `dev`, manteniendo contratos pequeños con las tareas dependientes.",
+      "recommended": true
+    },
+    {
+      "title": "Autorizar el carril de épica",
+      "body": "Mantener `epic/supply-v3` como excepción documentada y proporcionar su referencia accesible antes de iniciar la implementación.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar hasta consolidar base",
+      "body": "Esperar a que la base de Supply v3 esté disponible en `dev` para evitar una integración paralela.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Alinear con dev",
+    "body": "Crear la implementación desde `dev` y usar una PR normal hacia `dev`, manteniendo contratos pequeños con las tareas dependientes.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "danielmenchen-hamelyn",
+    "reason": "El plan y el destino de integración citados para la épica proceden de su coordinación.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9733.md",
+    "reviewedAt": "2026-09-19T10:06:12.340Z",
+    "mainSha": "d0e0b93e78bba63a1c6ff1614e823941e10afa9f"
+  }
+}
