@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-19T09:33:47.352Z",
+  "updatedAt": "2026-09-18T11:28:48Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 9749,
+    "title": "chore: remove the web-router static proxy",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9749",
+    "state": "open",
+    "labels": [
+      "size/XXL"
+    ],
+    "createdAt": "2026-09-18T08:59:45Z",
+    "updatedAt": "2026-09-18T11:28:48Z",
+    "headSha": "1119606530671775f45213c0f620b1a9c71a62f8"
+  },
+  "lane": "release_inclusion",
+  "priority": "P2",
+  "question": "¿Está completado y validado el traspaso de `hamelyn.it` y `www.hamelyn.it` a `supply-it` antes de retirar el router del repositorio y de Vercel?",
+  "rationale": "La configuración viva de dominios y el orden de la operación residen fuera del checkout, por lo que el parche no puede demostrar por sí solo una retirada sin corte.",
+  "options": [
+    {
+      "title": "Completar el corte y fusionar",
+      "body": "Mover los dominios, comprobar que sirven desde `supply-it` y confirmar los watchers antes de eliminar el proyecto Vercel y fusionar este PR.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener el router temporalmente",
+      "body": "Conservar la aplicación y su cableado hasta disponer de una ventana operativa y de validación explícita para el traspaso.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Completar el corte y fusionar",
+    "body": "Mover los dominios, comprobar que sirven desde `supply-it` y confirmar los watchers antes de eliminar el proyecto Vercel y fusionar este PR.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "La historia del área y el plan operativo del PR lo sitúan como la mejor persona para confirmar el estado del piloto.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9749.md",
+    "reviewedAt": "2026-09-19T09:33:47.352Z",
+    "mainSha": "d0e0b93e78bba63a1c6ff1614e823941e10afa9f"
+  }
+}
