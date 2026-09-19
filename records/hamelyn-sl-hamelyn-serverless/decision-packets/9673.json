@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-19T11:17:34.453Z",
+  "updatedAt": "2026-09-17T12:31:30Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9673,
+    "title": "Usar para factura fedex mx precio de supply",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9673",
+    "state": "open",
+    "labels": [
+      "source:admin-panel",
+      "app:admin",
+      "feature",
+      "reporter:blanca",
+      "triage:needs-info",
+      "P1"
+    ],
+    "createdAt": "2026-09-17T09:51:21Z",
+    "updatedAt": "2026-09-17T12:31:30Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿El `unit price` de FedEx México debe reflejar el coste histórico de cada ejemplar (`stocks.priceBuy`) o el precio de compra vigente de su ficha (`products.priceBuy`)?",
+  "rationale": "Ambos campos existen y cambian el importe comercial; el código no define cuál representa la factura solicitada.",
+  "options": [
+    {
+      "title": "Coste por ejemplar",
+      "body": "Usar `stocks.priceBuy` para que cada línea refleje lo que se pagó por la unidad enviada.",
+      "recommended": true
+    },
+    {
+      "title": "Precio actual de catálogo",
+      "body": "Usar `products.priceBuy` para aplicar el precio de compra vigente de la ficha, incluso si fue revalorizada después.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Coste por ejemplar",
+    "body": "Usar `stocks.priceBuy` para que cada línea refleje lo que se pagó por la unidad enviada.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Es el contribuidor más reciente del cálculo aduanero compartido entre la factura y el envío.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9673.md",
+    "reviewedAt": "2026-09-19T11:17:34.453Z",
+    "mainSha": "d0e0b93e78bba63a1c6ff1614e823941e10afa9f"
+  }
+}

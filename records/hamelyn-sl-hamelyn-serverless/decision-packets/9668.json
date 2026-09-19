@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-19T11:17:06.670Z",
+  "updatedAt": "2026-09-17T11:44:44Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9668,
+    "title": "API v6: mover idempotencia y rate limit de colecciones Mongo a Redis",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9668",
+    "state": "open",
+    "labels": [
+      "app:infrastructure",
+      "feature",
+      "triage:done",
+      "P2",
+      "reporter:JavierHamelyn",
+      "origin:dev"
+    ],
+    "createdAt": "2026-09-17T09:28:52Z",
+    "updatedAt": "2026-09-17T11:44:44Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Las solicitudes con la misma clave mientras la primera sigue en curso deben recibir 409 inmediato o esperar brevemente a la respuesta almacenada?",
+  "rationale": "La elección define el contrato de reintentos del CLI y cómo se evita duplicar efectos externos cuando el handler falla después de reservar la clave.",
+  "options": [
+    {
+      "title": "Responder 409 mientras esté en curso",
+      "body": "Reservar con TTL y devolver conflicto hasta que exista una respuesta final evita bloquear workers y mantiene una semántica conservadora.",
+      "recommended": true
+    },
+    {
+      "title": "Esperar brevemente la finalización",
+      "body": "Permite devolver el replay completado, pero exige un tiempo máximo, observabilidad y una salida inequívoca ante timeout.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Responder 409 mientras esté en curso",
+    "body": "Reservar con TTL y devolver conflicto hasta que exista una respuesta final evita bloquear workers y mantiene una semántica conservadora.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Diseñó la fundación de escritura v6, plantea esta migración y figura como responsable de la issue.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9668.md",
+    "reviewedAt": "2026-09-19T11:17:06.670Z",
+    "mainSha": "d0e0b93e78bba63a1c6ff1614e823941e10afa9f"
+  }
+}

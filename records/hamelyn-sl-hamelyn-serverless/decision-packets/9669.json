@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-19T11:16:30.496Z",
+  "updatedAt": "2026-09-17T11:59:56Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9669,
+    "title": "CLI: primer lote de mutaciones con piloto set-as-picked-up y patrón de escritura",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9669",
+    "state": "open",
+    "labels": [
+      "feature",
+      "triage:done",
+      "P2",
+      "reporter:JavierHamelyn",
+      "app:agents",
+      "origin:dev"
+    ],
+    "createdAt": "2026-09-17T09:29:06Z",
+    "updatedAt": "2026-09-17T11:59:56Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿El piloto debe aceptar operaciones de picking para reproducir exactamente los efectos del panel, o se desea una nueva operación distinta que acepte IDs de ventas?",
+  "rationale": "La elección determina si se confirman operaciones de picking y cómo se aplican las transiciones con y sin desglose; no es una decisión mecánica de implementación.",
+  "options": [
+    {
+      "title": "Mantener IDs de picking",
+      "body": "Exponer `ops` y reutilizar íntegramente la semántica de confirmación y desglose ya existente en el panel.",
+      "recommended": true
+    },
+    {
+      "title": "Diseñar mutación por venta",
+      "body": "Aceptar IDs de venta solo con un contrato explícito que documente qué efectos de picking se conservan, cambian o se excluyen.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mantener IDs de picking",
+    "body": "Exponer `ops` y reutilizar íntegramente la semántica de confirmación y desglose ya existente en el panel.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es la persona asignada y el autor del registro de escritura que definió este piloto como trabajo posterior.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9669.md",
+    "reviewedAt": "2026-09-19T11:16:30.496Z",
+    "mainSha": "d0e0b93e78bba63a1c6ff1614e823941e10afa9f"
+  }
+}
