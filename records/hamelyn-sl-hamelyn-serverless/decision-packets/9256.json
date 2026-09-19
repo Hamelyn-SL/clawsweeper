@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-14T10:12:29.878Z",
-  "updatedAt": "2026-09-14T08:32:37Z",
+  "generatedAt": "2026-09-19T09:20:50.323Z",
+  "updatedAt": "2026-09-15T08:20:59Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -17,43 +17,42 @@
       "P2"
     ],
     "createdAt": "2026-09-08T05:52:29Z",
-    "updatedAt": "2026-09-14T08:32:37Z"
+    "updatedAt": "2026-09-15T08:20:59Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué flujo desplegado sustituirá «Nueva entrada» para libros fuera del lote y baja demanda, y qué lectura histórica deben conservar `INVENTORY` y `NEW_ENTRY`?",
-  "rationale": "La eliminación modifica un flujo operativo con uso reciente y la semántica de órdenes y productividad históricas; el código actual no acredita una sustitución equivalente.",
+  "question": "¿Qué flujo desplegado sustituye Nueva entrada para artículos fuera de lote y baja demanda, y qué comportamiento histórico deben conservar `INVENTORY` y `NEW_ENTRY`?",
+  "rationale": "La retirada del panel ya aisló el kiosco como único camino, pero la alternativa automática sigue sin aterrizar de forma viable y la issue exige decidir el histórico.",
   "options": [
     {
-      "title": "Validar el sustituto antes",
-      "body": "Mantener Nueva entrada hasta que Operaciones confirme que el destino automático cubre libros dentro y fuera del lote, además de baja demanda.",
+      "title": "Esperar al destino automático",
+      "body": "Mantener el kiosco hasta fusionar, desplegar y validar la cobertura de la iniciativa de destino automático.",
       "recommended": true
     },
     {
-      "title": "Retirar por fases",
-      "body": "Tras acordar el destino y el histórico, eliminar primero accesos y escritores y conservar los valores antiguos solo para lectura.",
+      "title": "Retirar con lectura histórica",
+      "body": "Eliminar el kiosco solo tras confirmar la sustitución, preservando consultas y etiquetas de datos `INVENTORY` y `NEW_ENTRY` existentes.",
       "recommended": false
     },
     {
-      "title": "Conservar el flujo",
-      "body": "Mantener Nueva entrada si Operaciones confirma un caso de uso que el nuevo destino no debe absorber.",
+      "title": "Retirada completa con migración",
+      "body": "Eliminar también la semántica histórica tras aprobar una migración de productividad y reporting.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Validar el sustituto antes",
-    "body": "Mantener Nueva entrada hasta que Operaciones confirme que el destino automático cubre libros dentro y fuera del lote, además de baja demanda.",
+    "title": "Esperar al destino automático",
+    "body": "Mantener el kiosco hasta fusionar, desplegar y validar la cobertura de la iniciativa de destino automático.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "AlexDiaz-Hamelyn",
-    "reason": "Su historial reciente conecta la aplicación de revisión, las entradas `INVENTORY` y la productividad afectadas por la decisión.",
-    "confidence": "medium"
+    "person": "banosdavidhamelyn",
+    "reason": "Es la persona con trabajo reciente tanto en la retirada parcial como en la alternativa automática pendiente.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9256.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9256#issuecomment-5580039697",
-    "reviewedAt": "2026-09-14T10:12:29.878Z",
-    "mainSha": "54661592cd176a3f29ebb899b1b9ed757b9a780a"
+    "reviewedAt": "2026-09-19T09:20:50.323Z",
+    "mainSha": "d0e0b93e78bba63a1c6ff1614e823941e10afa9f"
   }
 }
