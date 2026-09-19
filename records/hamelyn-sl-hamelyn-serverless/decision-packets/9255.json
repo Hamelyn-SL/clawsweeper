@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-08T08:50:34.525Z",
-  "updatedAt": "2026-09-08T08:43:50Z",
+  "generatedAt": "2026-09-19T09:25:32.924Z",
+  "updatedAt": "2026-09-18T13:03:45Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -10,46 +10,42 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9255",
     "state": "open",
     "labels": [
-      "size/XXL"
+      "size/XXL",
+      "P1"
     ],
     "createdAt": "2026-09-08T05:51:54Z",
-    "updatedAt": "2026-09-08T08:43:50Z",
-    "headSha": "bb50b91875340f938545d585eb7d5cca245e3c7b"
+    "updatedAt": "2026-09-18T13:03:45Z",
+    "headSha": "8fda49839d965aede1ec98fb7f0d4fdc8eacf432"
   },
-  "lane": "product_direction",
-  "priority": "P2",
-  "question": "¿Se aprueba para producción el contrato operativo elegido por este PR: pedir caja en el primer `BULK`, permitir reutilizar etiquetas y no aplicar el control de 35 unidades?",
-  "rationale": "La solicitud canónica conserva una decisión de producto pendiente y el cuerpo del PR reconoce estas divergencias; el código no puede determinar qué procedimiento de almacén es el correcto.",
+  "lane": "merge_risk",
+  "priority": "P1",
+  "question": "¿Se autoriza imponer una garantía global de unicidad para `bulkboxes.products.scanId` y comprobar previamente posibles duplicados en los entornos de despliegue?",
+  "rationale": "La corrección mecánica necesita una decisión operativa sobre un índice o migración de datos persistentes, que la política del repositorio no permite ejecutar sin autorización expresa.",
   "options": [
     {
-      "title": "Validar el contrato con Operaciones",
-      "body": "Confirmar que estas tres divergencias son el procedimiento deseado y reflejarlas en la documentación operativa antes de activar el flag.",
+      "title": "Autorizar índice único y comprobación previa",
+      "body": "Verificar duplicados existentes y crear una garantía única global para que dos cajas no puedan aceptar el mismo `scanId`.",
       "recommended": true
     },
     {
-      "title": "Ajustar al documento original",
-      "body": "Implementar el control de conteo y el ciclo de etiqueta exigidos por la solicitud antes de aprobar el rollout.",
-      "recommended": false
-    },
-    {
-      "title": "Limitar el piloto",
-      "body": "Mantener el flag apagado globalmente y usar el override solo en una estación mientras se recopila decisión operativa.",
+      "title": "Pausar el rollout de granel",
+      "body": "Mantener el flag desactivado hasta acordar una alternativa de idempotencia atómica que no requiera ese índice.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Validar el contrato con Operaciones",
-    "body": "Confirmar que estas tres divergencias son el procedimiento deseado y reflejarlas en la documentación operativa antes de activar el flag.",
+    "title": "Autorizar índice único y comprobación previa",
+    "body": "Verificar duplicados existentes y crear una garantía única global para que dos cajas no puedan aceptar el mismo `scanId`.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Es el principal autor histórico de las pantallas y del flujo Turbo afectados por la decisión.",
-    "confidence": "medium"
+    "person": "MiguelHamelyn",
+    "reason": "Es el candidato más cercano por historial del flujo de revisión y por su seguimiento previo de la recuperación de `scanId`.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9255.md",
-    "reviewedAt": "2026-09-08T08:50:34.525Z",
-    "mainSha": "e53a8fb8ff6e8c23dc76d61cf509db6befb9591a"
+    "reviewedAt": "2026-09-19T09:25:32.924Z",
+    "mainSha": "d0e0b93e78bba63a1c6ff1614e823941e10afa9f"
   }
 }
