@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-19T11:13:09.662Z",
+  "updatedAt": "2026-09-17T09:59:55Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9663,
+    "title": "Revisar y retirar permisos de cuentas fuera del organigrama (ex-empleados, legacy, compartidas, prueba)",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9663",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:infrastructure",
+      "triage:needs-info",
+      "P1",
+      "reporter:JavierHamelyn",
+      "origin:dev"
+    ],
+    "createdAt": "2026-09-17T09:27:23Z",
+    "updatedAt": "2026-09-17T09:59:55Z"
+  },
+  "lane": "security_boundary",
+  "priority": "P1",
+  "question": "¿Qué cuentas compartidas, segundas cuentas y bajas quedan autorizadas en la lista final antes de retirar roles y revocar sus credenciales?",
+  "rationale": "El código confirma que estado, roles y PAT son controles distintos, pero no puede decidir qué identidades de producción deben conservar acceso.",
+  "options": [
+    {
+      "title": "Aprobar lista nominal completa",
+      "body": "Validar por cuenta la acción, roles finales y revocación de PAT antes de ejecutar la remediación.",
+      "recommended": true
+    },
+    {
+      "title": "Retirar solo privilegios de alto riesgo",
+      "body": "Eliminar primero `admin-user` y PAT de las cuentas inequívocamente bajas, dejando el resto pendiente de RRHH.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar lista nominal completa",
+    "body": "Validar por cuenta la acción, roles finales y revocación de PAT antes de ejecutar la remediación.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es el responsable asignado de la incidencia y de la iniciativa que define el modelo de accesos.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9663.md",
+    "reviewedAt": "2026-09-19T11:13:09.662Z",
+    "mainSha": "d0e0b93e78bba63a1c6ff1614e823941e10afa9f"
+  }
+}
