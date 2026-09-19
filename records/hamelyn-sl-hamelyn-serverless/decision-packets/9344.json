@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-14T10:26:19.106Z",
-  "updatedAt": "2026-09-14T08:32:54Z",
+  "generatedAt": "2026-09-19T09:47:37.041Z",
+  "updatedAt": "2026-09-17T08:22:02Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,44 +13,48 @@
       "bug",
       "reporter:miguel",
       "triage:needs-info",
+      "P1",
       "clawsweeper:needs-product-decision",
       "app:agents",
-      "origin:dev",
-      "P1"
+      "origin:dev"
     ],
     "createdAt": "2026-09-09T17:10:25Z",
-    "updatedAt": "2026-09-14T08:32:54Z"
+    "updatedAt": "2026-09-17T08:22:02Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Las voces Grok y Gateway deben seguir siendo una capacidad operativa soportada en rondas solicitadas explícitamente, o Coliseo debe consolidarse como revisión automática solo con Codex?",
-  "rationale": "La ruta automática ya evita sus fallos, pero la respuesta determina si procede invertir en credenciales, cuota y certificados para voces que permanecen seleccionables.",
+  "question": "¿Debe una ronda con Codex operativo pero Grok o los judges indisponibles publicarse como revisión degradada, o seguir marcándose como fallo de infraestructura?",
+  "rationale": "El código conserva candidatos y permite criba parcial, pero el nivel mínimo aceptable de cobertura de revisión es una decisión operativa que el código actual no define.",
   "options": [
     {
-      "title": "Consolidar Codex por defecto",
-      "body": "Mantener las voces adicionales fuera de la operación normal y documentarlas como experimentales hasta disponer de una garantía operativa.",
+      "title": "Publicar degradada",
+      "body": "Permitir una revisión Codex-only claramente marcada cuando conserve hallazgos verificables y señalar las voces ausentes.",
       "recommended": true
     },
     {
-      "title": "Recuperar multivoces opcionales",
-      "body": "Restaurar cuota y autenticación, corregir el sandbox de certificados y exigir una ronda completa con telemetría antes de volver a recomendarlas.",
+      "title": "Exigir multivoz",
+      "body": "Mantener el resultado como fallo hasta recuperar Grok y los judges, aunque existan candidatos parciales.",
+      "recommended": false
+    },
+    {
+      "title": "Separar por riesgo",
+      "body": "Publicar degradada solo en PRs de bajo riesgo y exigir multivoz para superficies sensibles.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Consolidar Codex por defecto",
-    "body": "Mantener las voces adicionales fuera de la operación normal y documentarlas como experimentales hasta disponer de una garantía operativa.",
+    "title": "Publicar degradada",
+    "body": "Permitir una revisión Codex-only claramente marcada cuando conserve hallazgos verificables y señalar las voces ausentes.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "La configuración vigente y la decisión de coste y cobertura de las voces proceden de su trabajo fusionado.",
+    "reason": "Su historial reúne el diseño de voces, criba y presupuestos de ejecución de Coliseo.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9344.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9344#issuecomment-5605956204",
-    "reviewedAt": "2026-09-14T10:26:19.106Z",
-    "mainSha": "a3b8c222d6df86d83e8dc3e516292d9fed082308"
+    "reviewedAt": "2026-09-19T09:47:37.041Z",
+    "mainSha": "d0e0b93e78bba63a1c6ff1614e823941e10afa9f"
   }
 }
