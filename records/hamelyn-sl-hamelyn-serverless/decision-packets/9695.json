@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-19T16:53:27.805Z",
+  "updatedAt": "2026-09-19T16:42:51Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9695,
+    "title": "CLI login should mint the write scopes of the user's operational role",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9695",
+    "state": "open",
+    "labels": [
+      "source:admin-panel",
+      "app:infrastructure",
+      "feature",
+      "triage:done",
+      "P1"
+    ],
+    "createdAt": "2026-09-17T13:57:31Z",
+    "updatedAt": "2026-09-19T16:42:51Z"
+  },
+  "lane": "security_boundary",
+  "priority": "P1",
+  "question": "¿Deben los roles operativos poder acuñar PATs no expirables con los scopes de escritura que ya poseen en su sesión Auth0?",
+  "rationale": "La solicitud amplía deliberadamente la capacidad de acuñar credenciales de escritura; la corrección técnica debe respetar una decisión explícita sobre esta frontera.",
+  "options": [
+    {
+      "title": "Permitir scopes del propio rol",
+      "body": "Permitir únicamente los scopes operativos ya otorgados al dueño, manteniendo `minRole`, `auth0Only` y la exclusión de `manage:tokens`.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener PATs de solo lectura",
+      "body": "Conservar la política actual y definir un flujo alternativo gestionado para las subidas operativas.",
+      "recommended": false
+    },
+    {
+      "title": "Limitarlo inicialmente a almacén",
+      "body": "Autorizar solo `write:warehouse` para `admin-logistic` y ampliar otros scopes tras validar el modelo.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Permitir scopes del propio rol",
+    "body": "Permitir únicamente los scopes operativos ya otorgados al dueño, manteniendo `minRole`, `auth0Only` y la exclusión de `manage:tokens`.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Su trabajo reciente concentra la política de scopes y el comportamiento de login afectados.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9695.md",
+    "reviewedAt": "2026-09-19T16:53:27.805Z",
+    "mainSha": "d0e0b93e78bba63a1c6ff1614e823941e10afa9f"
+  }
+}
