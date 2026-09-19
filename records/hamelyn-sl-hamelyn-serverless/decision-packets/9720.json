@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-19T10:34:38.504Z",
+  "updatedAt": "2026-09-18T08:04:25Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9720,
+    "title": "Supply v3: complete web authentication and protected API access",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9720",
+    "state": "open",
+    "labels": [
+      "app:supply",
+      "feature",
+      "triage:queued",
+      "P2",
+      "reporter:danielmenchen-hamelyn",
+      "origin:dev",
+      "epic:supply-v3"
+    ],
+    "createdAt": "2026-09-18T08:03:12Z",
+    "updatedAt": "2026-09-18T08:04:25Z"
+  },
+  "lane": "security_boundary",
+  "priority": "P2",
+  "question": "¿Qué política existente de Auth0 debe conservar Supply v3 para expiración, renovación, callbacks y logout web antes de cerrar el contrato de sesión?",
+  "rationale": "La issue prohíbe inventar plazos, refresh tokens y scopes; esa elección depende de la configuración real del tenant y afecta a la seguridad y compatibilidad de sesiones.",
+  "options": [
+    {
+      "title": "Conservar la política actual",
+      "body": "Confirmar la configuración efectiva del tenant y documentarla como contrato web, sin activar scopes ni refresh tokens nuevos.",
+      "recommended": true
+    },
+    {
+      "title": "Cambiar la política de sesión",
+      "body": "Aprobar explícitamente los nuevos plazos, scopes, callbacks y plan de compatibilidad antes de implementarlos.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Conservar la política actual",
+    "body": "Confirmar la configuración efectiva del tenant y documentarla como contrato web, sin activar scopes ni refresh tokens nuevos.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "danielmenchen-hamelyn",
+    "reason": "Ha definido el plan y la integración de Supply v3 donde se establece el alcance de esta sesión.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9720.md",
+    "reviewedAt": "2026-09-19T10:34:38.504Z",
+    "mainSha": "d0e0b93e78bba63a1c6ff1614e823941e10afa9f"
+  }
+}
