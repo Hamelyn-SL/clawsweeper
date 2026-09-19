@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-19T10:43:35.414Z",
+  "updatedAt": "2026-09-18T08:03:42Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9718,
+    "title": "Supply v3: complete country routing, localization and metadata contracts",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9718",
+    "state": "open",
+    "labels": [
+      "app:supply",
+      "feature",
+      "triage:queued",
+      "P2",
+      "reporter:danielmenchen-hamelyn",
+      "origin:dev",
+      "epic:supply-v3"
+    ],
+    "createdAt": "2026-09-18T08:03:07Z",
+    "updatedAt": "2026-09-18T08:03:42Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué fuente aprobada fija el comportamiento de idiomas secundarios y los valores pendientes de las cuatro rutas y ocho descriptions del inventario?",
+  "rationale": "El legado conserva idiomas y slugs, pero los criterios prohíben completar los huecos por deducción; hace falta una decisión explícita antes de convertirlos en contrato compartido.",
+  "options": [
+    {
+      "title": "Aprobar la matriz del legado",
+      "body": "Validar una tabla por ruta con idioma, indexación, canonical y metadata antes de implementar los helpers compartidos.",
+      "recommended": true
+    },
+    {
+      "title": "Aplazar los huecos explícitos",
+      "body": "Entregar routing e i18n sólo para las rutas con datos completos y mantener los huecos fuera de indexación hasta recibir valores aprobados.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar la matriz del legado",
+    "body": "Validar una tabla por ruta con idioma, indexación, canonical y metadata antes de implementar los helpers compartidos.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "danielmenchen-hamelyn",
+    "reason": "Introdujo la base de `apps/supply-web` y figura como autor de la épica que define el reparto de contratos.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9718.md",
+    "reviewedAt": "2026-09-19T10:43:35.414Z",
+    "mainSha": "d0e0b93e78bba63a1c6ff1614e823941e10afa9f"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-19T10:42:57.399Z",
+  "updatedAt": "2026-09-18T07:52:56Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9712,
+    "title": "Error en variables de la plantilla de correo ec-pedido-confirmado-normal-mx",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9712",
+    "state": "open",
+    "labels": [
+      "bug",
+      "source:admin-panel",
+      "app:ecommerce",
+      "reporter:marta",
+      "triage:pr-opened",
+      "P1"
+    ],
+    "createdAt": "2026-09-18T07:22:35Z",
+    "updatedAt": "2026-09-18T07:52:56Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe una confirmación extranjera sin tasa histórica verificable bloquearse para reintento o enviarse con una alternativa claramente identificada?",
+  "rationale": "La conversión correcta depende de un dato persistido que puede faltar; elegir entre exactitud estricta y continuidad de entrega cambia el comportamiento visible de correos existentes.",
+  "options": [
+    {
+      "title": "Enviar alternativa identificada",
+      "body": "Conserva la entrega y deja explícito que el importe no procede de una tasa histórica verificable.",
+      "recommended": true
+    },
+    {
+      "title": "Bloquear y recuperar",
+      "body": "Evita mostrar un importe no verificable, pero exige una cola o procedimiento claro para reenviar el correo tras corregir los datos.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Enviar alternativa identificada",
+    "body": "Conserva la entrega y deja explícito que el importe no procede de una tasa histórica verificable.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Su trabajo reciente conecta el servicio de correo con el contrato de conversión de facturación.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9712.md",
+    "reviewedAt": "2026-09-19T10:42:57.399Z",
+    "mainSha": "d0e0b93e78bba63a1c6ff1614e823941e10afa9f"
+  }
+}
