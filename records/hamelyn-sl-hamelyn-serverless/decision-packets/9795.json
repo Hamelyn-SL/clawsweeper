@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-20T14:26:04.432Z",
+  "updatedAt": "2026-09-20T13:40:54Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 9795,
+    "title": "fix: align percent chart controls with visible series",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9795",
+    "state": "open",
+    "labels": [
+      "size/S"
+    ],
+    "createdAt": "2026-09-20T13:37:23Z",
+    "updatedAt": "2026-09-20T13:40:54Z",
+    "headSha": "53931cf28d24c1b29aff01d00b744d16ab61fd03"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué debe mostrar el gráfico de ventas en modo porcentaje cuando se pulsa «Ninguno»: Total, un gráfico vacío o una tercera representación explícita?",
+  "rationale": "La incidencia define que el control debe ser coherente, pero no fija la representación final; la propuesta contradice la opción recomendada en la revisión ya visible.",
+  "options": [
+    {
+      "title": "Mostrar Total al limpiar",
+      "body": "Distinguir el vacío explícito de la selección inicial, pero renderizar la serie Total para conservar una lectura agregada.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener el gráfico vacío",
+      "body": "Aceptar que «Ninguno» significa ausencia de series y comunicarlo visualmente como un estado vacío deliberado.",
+      "recommended": false
+    },
+    {
+      "title": "Redefinir el control",
+      "body": "Retirar o renombrar «Ninguno» en porcentaje si ninguna representación conserva una semántica clara.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mostrar Total al limpiar",
+    "body": "Distinguir el vacío explícito de la selección inicial, pero renderizar la serie Total para conservar una lectura agregada.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "La incidencia y la revisión anterior lo sitúan como mejor punto de partida para confirmar la expectativa de la persona usuaria.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9795.md",
+    "reviewedAt": "2026-09-20T14:26:04.432Z",
+    "mainSha": "23ad0a8387fe46e505d38f64ed9772bda99dda09"
+  }
+}
