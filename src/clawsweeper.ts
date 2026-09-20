@@ -57,9 +57,10 @@ import {
   compareHotIntakeDueCandidates,
   hasReviewPolicyMismatch,
   nextReviewDueAtMs,
+  planExcludedItemNumbers,
   reviewContentCacheHit,
-  reviewedAtMs,
   reviewPriority,
+  reviewedAtMs,
   schedulerBucket,
   selectDueCandidates,
   shouldReviewItem,
@@ -6597,6 +6598,7 @@ function planCandidates(options: {
   hotIntake?: boolean;
   minimumActiveShards?: number;
   minimumBackfillReviewAgeMs?: number;
+  excludeItemNumbers?: ReadonlySet<number>;
 }): PlanCandidateResult {
   const shardCount = planShardCount(options.shardCount);
   const batchSize = Math.max(1, options.batchSize);
@@ -6659,6 +6661,7 @@ function planCandidates(options: {
     const { items, pagesScanned } = fetchHotIntakeItems(options.maxPages);
     for (const item of items) {
       if (!shouldPlanItem(item)) continue;
+      if (options.excludeItemNumbers?.has(item.number)) continue;
       const candidate = dueCandidate(
         item,
         options.itemsDir,
@@ -6702,6 +6705,7 @@ function planCandidates(options: {
     if (items.length === 0) break;
     for (const item of items) {
       if (!shouldPlanItem(item)) continue;
+      if (options.excludeItemNumbers?.has(item.number)) continue;
       const candidate = dueCandidate(
         item,
         options.itemsDir,
@@ -17793,6 +17797,8 @@ function planCommand(args: Args): void {
   };
   if (hasItemNumbersInput || itemNumbers.length > 0) planOptions.itemNumbers = itemNumbers;
   if (hotIntake) planOptions.hotIntake = true;
+  const excludeItemNumbers = planExcludedItemNumbers(process.env.CLAWSWEEPER_PLAN_EXCLUDE_ITEMS);
+  if (excludeItemNumbers.size > 0) planOptions.excludeItemNumbers = excludeItemNumbers;
   const plan = planCandidates(planOptions);
   console.log(
     JSON.stringify(

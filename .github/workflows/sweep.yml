@@ -988,6 +988,10 @@ jobs:
           CODEX_TOKEN_KEY: ${{ secrets.CODEX_TOKEN_KEY }}
           CLAWSWEEPER_BUDGET_MAX_5H: ${{ vars.CLAWSWEEPER_BUDGET_MAX_5H || '30' }}
           CLAWSWEEPER_BUDGET_MAX_WEEKLY: ${{ vars.CLAWSWEEPER_BUDGET_MAX_WEEKLY || '85' }}
+          # New items and exact requests keep flowing up to the hot cap; only the
+          # re-review backfill stops at the normal cap.
+          CLAWSWEEPER_BUDGET_MAX_5H_HOT: ${{ vars.CLAWSWEEPER_BUDGET_MAX_5H_HOT || '50' }}
+          CLAWSWEEPER_BUDGET_LANE: ${{ ((github.event_name == 'repository_dispatch' && (github.event.client_payload.hot_intake == 'true' || github.event.client_payload.item_number != '')) || (github.event_name == 'workflow_dispatch' && (github.event.inputs.hot_intake == 'true' || github.event.inputs.item_number != '' || github.event.inputs.item_numbers != ''))) && 'hot' || 'normal' }}
         run: |
           set -euo pipefail
           if ! node clawsweeper/scripts/codex-budget-gate.mjs; then
@@ -1234,9 +1238,39 @@ jobs:
             echo "shard_count=$shard_count"
           } >> "$GITHUB_OUTPUT"
 
+      - name: Collect items under review in other runs
+        id: inflight
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TARGET_REPO: ${{ steps.target.outputs.target_repo }}
+        run: |
+          set -euo pipefail
+          # Hot intake, normal review and exact dispatches plan the same item
+          # minutes apart before the first review is recorded: 39 of 101 reviews
+          # on 19-20 Sept were such repeats. Live shard job names carry the item.
+          target_lower="$(printf '%s' "$TARGET_REPO" | tr '[:upper:]' '[:lower:]')"
+          items=""
+          while read -r rid; do
+            [ -z "$rid" ] && continue
+            [ "$rid" = "$GITHUB_RUN_ID" ] && continue
+            names="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${rid}/jobs?per_page=100" --jq '.jobs[] | select(.status != "completed") | .name' 2>/dev/null || true)"
+            while read -r name; do
+              lower="$(printf '%s' "$name" | tr '[:upper:]' '[:lower:]')"
+              case "$lower" in
+                "review shard "*" · ${target_lower}#"*) items="${items}${items:+,}${lower##*#}" ;;
+              esac
+            done <<< "$names"
+          done < <(gh api "repos/${GITHUB_REPOSITORY}/actions/runs?per_page=100&status=in_progress" --jq '.workflow_runs[] | select(.path == ".github/workflows/sweep.yml") | .id' 2>/dev/null || true)
+          items="$(printf '%s' "$items" | tr ',' '\n' | grep -E '^[0-9]+$' | sort -un | paste -sd, - || true)"
+          echo "items=$items" >> "$GITHUB_OUTPUT"
+          if [ -n "$items" ]; then
+            echo "::notice::Skipping items already under review in other runs: $items"
+          fi
+
       - id: select
         working-directory: clawsweeper
         env:
+          CLAWSWEEPER_PLAN_EXCLUDE_ITEMS: ${{ steps.inflight.outputs.items }}
           SHARD_COUNT: ${{ steps.mode.outputs.shard_count }}
           BATCH_SIZE: ${{ steps.mode.outputs.batch_size }}
           HOT_INTAKE: ${{ steps.mode.outputs.hot_intake }}
