@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-20T13:37:13.195Z",
+  "updatedAt": "2026-09-20T13:27:50Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9794,
+    "title": "data-dashboards: percent-mode chips and Todos/Ninguno do not match the chart",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9794",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:infrastructure",
+      "reporter:javier",
+      "triage:running",
+      "P2"
+    ],
+    "createdAt": "2026-09-20T13:24:49Z",
+    "updatedAt": "2026-09-20T13:27:50Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué debe mostrar el gráfico porcentual cuando la persona pulsa «Ninguno»: Total, un estado vacío u otra representación explícita?",
+  "rationale": "El valor vacío se usa actualmente como señal para pintar todos los grupos, así que una corrección completa requiere elegir el resultado de una deselección explícita.",
+  "options": [
+    {
+      "title": "Mostrar Total al limpiar",
+      "body": "Distinguir el estado inicial implícito del vacío explícito y mostrar una sola serie Total al pulsar «Ninguno».",
+      "recommended": true
+    },
+    {
+      "title": "Mantener todos seleccionados",
+      "body": "Mostrar todos los chips activos y retirar o redefinir «Ninguno» en porcentaje para evitar una acción sin efecto.",
+      "recommended": false
+    },
+    {
+      "title": "Mostrar un gráfico vacío",
+      "body": "Tratar el vacío explícito como ausencia de series y presentar un estado vacío claro.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mostrar Total al limpiar",
+    "body": "Distinguir el estado inicial implícito del vacío explícito y mostrar una sola serie Total al pulsar «Ninguno».",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Introdujo las rutas actuales de selección y puede confirmar la intención del modo porcentaje.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9794.md",
+    "reviewedAt": "2026-09-20T13:37:13.195Z",
+    "mainSha": "4951d8bd3515debd102e3de1b7135068bb82fe3f"
+  }
+}
