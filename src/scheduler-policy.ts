@@ -121,12 +121,23 @@ function reviewOnlyOnActivity(): boolean {
   return process.env.CLAWSWEEPER_REVIEW_ONLY_ON_ACTIVITY === "1";
 }
 
+// Hamelyn opt-in (env CLAWSWEEPER_ACTIVITY_REVIEW_MINUTES): how long an already
+// reviewed item waits after target-side activity before it is reviewed again.
+// Upstream re-reviews hourly, so a PR that gets several pushes or comments in a
+// day is reviewed several times a day at ~800k tokens each on the shared Codex
+// subscription; a daily cadence keeps one review per active item per day.
+function activityReviewCadenceMs(): number {
+  const minutes = Number(process.env.CLAWSWEEPER_ACTIVITY_REVIEW_MINUTES ?? "");
+  if (!Number.isFinite(minutes) || minutes <= 0) return HOURLY_REVIEW_MS;
+  return minutes * 60 * 1000;
+}
+
 function reviewCadenceMs(
   item: SchedulerItem,
   review: SchedulerExistingReview | null,
   now = Date.now(),
 ): number {
-  if (hasActivitySinceReview(item, review)) return HOURLY_REVIEW_MS;
+  if (hasActivitySinceReview(item, review)) return activityReviewCadenceMs();
   if (reviewOnlyOnActivity()) return Number.POSITIVE_INFINITY;
   if (isCreatedWithinDays(item, HOT_REVIEW_DAYS, now)) return DAILY_REVIEW_DAYS * DAY_MS;
   if (item.kind === "pull_request") return DAILY_REVIEW_DAYS * DAY_MS;

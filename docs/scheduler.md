@@ -315,6 +315,7 @@ allocated.
 Review cadence:
 
 - items with target-side activity since the last real review: hourly
+  (`CLAWSWEEPER_ACTIVITY_REVIEW_MINUTES` stretches this; Hamelyn uses 1440)
 - items created in the last 7 days without new target-side activity: daily
 - pull requests outside the hot window: daily
 - issues created in the last 30 days: daily
@@ -362,6 +363,11 @@ that cadence and changes only what gets re-reviewed, through `sweep.yml` env:
   head moved) and keeps the item due if GitHub fails.
 - `CLAWSWEEPER_ACTIVITY_IGNORED_LOGINS=HamelynDev`: automation accounts that
   are not `[bot]` users. `[bot]` accounts and `app/*` actors never count.
+- `CLAWSWEEPER_ACTIVITY_REVIEW_MINUTES=1440`: an item with human activity is
+  re-reviewed at most once a day instead of hourly. Every review costs
+  ~800k tokens of the shared Codex subscription, and the budget gate
+  (`CLAWSWEEPER_BUDGET_MAX_5H`, default 30) caps this bot at 30 % of the weekly
+  window, which on Pro plans is the only window the usage endpoint reports.
 
 Bot comments (Codex connector, Vercel, github-actions, the triage bot) and
 label churn still bump `updated_at`, so such an item stays technically due and
