@@ -272,6 +272,82 @@ test("CLAWSWEEPER_REVIEW_ONLY_ON_ACTIVITY disables the no-activity re-review tim
   }
 });
 
+test("CLAWSWEEPER_ACTIVITY_REVIEW_MINUTES stretches the activity re-review cadence", () => {
+  const previous = process.env.CLAWSWEEPER_ACTIVITY_REVIEW_MINUTES;
+  const now = Date.parse("2026-04-26T12:00:00Z");
+  const review = (reviewedAt, itemUpdatedAt) => ({
+    path: "items/123.md",
+    markdown: "",
+    reviewedAt,
+    itemUpdatedAt,
+    decision: "keep_open",
+    reviewStatus: "complete",
+    reviewPolicy: "current",
+  });
+  // Reviewed at 10:00, human activity at 11:10, planned at 12:00.
+  const active = item({ createdAt: "2026-04-24T00:00:00Z", updatedAt: "2026-04-26T11:10:00Z" });
+  try {
+    delete process.env.CLAWSWEEPER_ACTIVITY_REVIEW_MINUTES;
+    // Default stays hourly: two hours after the review the item is due.
+    assert.equal(
+      shouldReviewItem(
+        active,
+        review("2026-04-26T10:00:00Z", "2026-04-24T00:00:00Z"),
+        now,
+        "current",
+      ),
+      true,
+    );
+
+    process.env.CLAWSWEEPER_ACTIVITY_REVIEW_MINUTES = "1440";
+    // Daily cadence: the same activity waits until a day after the review.
+    assert.equal(
+      shouldReviewItem(
+        active,
+        review("2026-04-26T10:00:00Z", "2026-04-24T00:00:00Z"),
+        now,
+        "current",
+      ),
+      false,
+    );
+    assert.equal(
+      shouldReviewItem(
+        active,
+        review("2026-04-25T11:00:00Z", "2026-04-24T00:00:00Z"),
+        now,
+        "current",
+      ),
+      true,
+    );
+    // Never-reviewed items and policy changes are not delayed.
+    assert.equal(shouldReviewItem(active, null, now, "current"), true);
+    assert.equal(
+      shouldReviewItem(
+        active,
+        { ...review("2026-04-26T11:59:00Z", "2026-04-24T00:00:00Z"), reviewPolicy: "old" },
+        now,
+        "current",
+      ),
+      true,
+    );
+
+    // A malformed value falls back to the hourly default.
+    process.env.CLAWSWEEPER_ACTIVITY_REVIEW_MINUTES = "soon";
+    assert.equal(
+      shouldReviewItem(
+        active,
+        review("2026-04-26T10:00:00Z", "2026-04-24T00:00:00Z"),
+        now,
+        "current",
+      ),
+      true,
+    );
+  } finally {
+    if (previous === undefined) delete process.env.CLAWSWEEPER_ACTIVITY_REVIEW_MINUTES;
+    else process.env.CLAWSWEEPER_ACTIVITY_REVIEW_MINUTES = previous;
+  }
+});
+
 test("hot new item priority is protected from older activity churn", () => {
   const now = Date.parse("2026-04-30T12:00:00Z");
   const review = (reviewedAt, itemUpdatedAt) => ({

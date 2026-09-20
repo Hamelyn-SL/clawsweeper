@@ -3,18 +3,22 @@
 // subscription and decides whether a sweep run may spend model time now.
 //
 // Exit 0  -> headroom available, proceed.
-// Exit 1  -> 5h/weekly window too hot (or usage unknowable): skip this run.
+// Exit 1  -> the binding window is too hot (or usage unknowable): skip this run.
+//            On Pro plans the endpoint reports a single primary window of 10080
+//            minutes (the weekly one) and no secondary window, so MAX_5H is in
+//            practice the share of the WEEK this bot may spend: the rest of the
+//            week must stay free for Asamblea, Proof, Guardian and the watchers.
 //            The schedule keeps ticking, so work resumes automatically on the
 //            first tick after the window resets — no state, no daemon.
 //
 // Env: CODEX_TOKEN_BLOB_URL, CODEX_TOKEN_KEY (same secrets as the proxy),
-//      CLAWSWEEPER_BUDGET_MAX_5H (default 60), CLAWSWEEPER_BUDGET_MAX_WEEKLY
-//      (default 85).
+//      CLAWSWEEPER_BUDGET_MAX_5H (default 30, primary window),
+//      CLAWSWEEPER_BUDGET_MAX_WEEKLY (default 85, secondary window when present).
 
 import { createDecipheriv } from "node:crypto";
 
 const USAGE_URL = "https://chatgpt.com/backend-api/wham/usage";
-const MAX_5H = Number(process.env.CLAWSWEEPER_BUDGET_MAX_5H ?? 60);
+const MAX_5H = Number(process.env.CLAWSWEEPER_BUDGET_MAX_5H ?? 30);
 const MAX_WEEKLY = Number(process.env.CLAWSWEEPER_BUDGET_MAX_WEEKLY ?? 85);
 
 function fail(message) {
@@ -53,13 +57,15 @@ try {
 }
 
 const primary = usage?.rate_limit?.primary_window?.used_percent;
-const weekly = usage?.rate_limit?.secondary_window?.used_percent ?? 0;
+const secondary = usage?.rate_limit?.secondary_window?.used_percent ?? 0;
+const primaryMinutes = usage?.rate_limit?.primary_window?.window_minutes;
 const resetMin = Math.ceil((usage?.rate_limit?.primary_window?.reset_after_seconds ?? 0) / 60);
 if (typeof primary !== "number") fail("no primary_window.used_percent in response");
 
+const primaryLabel = typeof primaryMinutes === "number" ? `${primaryMinutes}m window` : "primary";
 console.log(
-  `budget-gate: 5h=${primary}% (max ${MAX_5H}%), weekly=${weekly}% (max ${MAX_WEEKLY}%), 5h reset in ~${resetMin}m`,
+  `budget-gate: 5h=${primary}% (max ${MAX_5H}%, ${primaryLabel}), weekly=${secondary}% (max ${MAX_WEEKLY}%), 5h reset in ~${resetMin}m`,
 );
-if (primary >= MAX_5H) fail(`5h window at ${primary}%`);
-if (weekly >= MAX_WEEKLY) fail(`weekly window at ${weekly}%`);
+if (primary >= MAX_5H) fail(`primary window at ${primary}%`);
+if (secondary >= MAX_WEEKLY) fail(`secondary window at ${secondary}%`);
 console.log("budget-gate: headroom OK, proceeding");
