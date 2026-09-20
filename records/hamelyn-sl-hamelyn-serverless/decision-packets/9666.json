@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-20T09:26:46.547Z",
+  "generatedAt": "2026-09-20T09:27:36.892Z",
   "updatedAt": "2026-09-20T09:05:27Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -13,50 +13,49 @@
       "bug",
       "app:admin",
       "triage:needs-info",
+      "P1",
       "clawsweeper:needs-product-decision",
       "clawsweeper:needs-security-review",
       "reporter:JavierHamelyn",
-      "origin:dev",
-      "P0"
+      "origin:dev"
     ],
     "createdAt": "2026-09-17T09:28:25Z",
     "updatedAt": "2026-09-20T09:05:27Z"
   },
   "lane": "security_boundary",
-  "priority": "P0",
-  "question": "¿Qué contrato autenticado debe sustituir las llamadas no interactivas de almacén antes de exigir roles explícitos en todas las rutas administrativas?",
-  "rationale": "El código demuestra la exposición, pero elegir identidad de servicio, callback firmado u otro contrato depende de consumidores desplegados que el repositorio no describe.",
+  "priority": "P1",
+  "question": "¿Qué identidad autenticada y qué autorización deben usar las rutas de almacén que no pueden adoptar inmediatamente los roles administrativos estándar?",
+  "rationale": "La decisión define el límite entre usuarios administrativos y automatizaciones operativas; el código no puede inferir de forma segura qué callbacks son legítimos ni qué credenciales deben emitir.",
   "options": [
     {
-      "title": "Identidades de servicio",
-      "body": "Migrar procesos no interactivos a credenciales de servicio con permisos mínimos y exigir roles a las rutas de usuario.",
+      "title": "Identidad de servicio acotada",
+      "body": "Crear un contrato de autenticación específico para callbacks operativos y exigir roles administrativos explícitos al resto de rutas.",
       "recommended": true
     },
     {
-      "title": "Callbacks firmados",
-      "body": "Permitir callbacks con firma verificable únicamente en rutas concretas y documentadas.",
+      "title": "Usar roles administrativos actuales",
+      "body": "Aplicar los roles existentes tras confirmar que todos los clientes operativos pueden obtenerlos sin interrumpir almacén.",
       "recommended": false
     },
     {
-      "title": "Excepciones temporales",
-      "body": "Mantener rutas específicas sin roles durante la migración y aceptar temporalmente el riesgo de seguridad.",
+      "title": "Separar antes las rutas operativas",
+      "body": "Mover los callbacks a una superficie dedicada con contrato propio antes de endurecer `/api/v5/admin`.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Identidades de servicio",
-    "body": "Migrar procesos no interactivos a credenciales de servicio con permisos mínimos y exigir roles a las rutas de usuario.",
+    "title": "Identidad de servicio acotada",
+    "body": "Crear un contrato de autenticación específico para callbacks operativos y exigir roles administrativos explícitos al resto de rutas.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Está asignado y ya delimitó los flujos operativos que condicionan el cambio.",
+    "reason": "Es la persona asignada y quien ha identificado la restricción operativa que condiciona el límite de seguridad.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9666.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9666#issuecomment-5741441445",
-    "reviewedAt": "2026-09-20T09:26:46.547Z",
+    "reviewedAt": "2026-09-20T09:27:36.892Z",
     "mainSha": "8a73da7cd3197e746a4549eb6ae6550c7276f32a"
   }
 }
