@@ -4,6 +4,7 @@ import test from "node:test";
 import {
   appendFloorBackfillCandidates,
   hotIntakeRecencyMs,
+  planExcludedItemNumbers,
   reviewPriority,
   selectDueCandidates,
   shouldReviewItem,
@@ -346,6 +347,13 @@ test("CLAWSWEEPER_ACTIVITY_REVIEW_MINUTES stretches the activity re-review caden
     if (previous === undefined) delete process.env.CLAWSWEEPER_ACTIVITY_REVIEW_MINUTES;
     else process.env.CLAWSWEEPER_ACTIVITY_REVIEW_MINUTES = previous;
   }
+});
+
+test("in-flight exclusions parse numbers only, in any separator", () => {
+  assert.deepEqual([...planExcludedItemNumbers("9666,9388, 12")], [9666, 9388, 12]);
+  assert.deepEqual([...planExcludedItemNumbers("9666\n9388 x -1 0 9666")], [9666, 9388]);
+  assert.equal(planExcludedItemNumbers(undefined).size, 0);
+  assert.equal(planExcludedItemNumbers("").size, 0);
 });
 
 test("hot new item priority is protected from older activity churn", () => {

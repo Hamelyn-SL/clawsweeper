@@ -13,13 +13,19 @@
 //
 // Env: CODEX_TOKEN_BLOB_URL, CODEX_TOKEN_KEY (same secrets as the proxy),
 //      CLAWSWEEPER_BUDGET_MAX_5H (default 30, primary window),
-//      CLAWSWEEPER_BUDGET_MAX_WEEKLY (default 85, secondary window when present).
+//      CLAWSWEEPER_BUDGET_MAX_WEEKLY (default 85, secondary window when present),
+//      CLAWSWEEPER_BUDGET_LANE (hot|normal, default normal) and
+//      CLAWSWEEPER_BUDGET_MAX_5H_HOT (default 50): a first review of a new item
+//      or an exact request may still run past MAX_5H; re-review backfill may not.
 
 import { createDecipheriv } from "node:crypto";
 
 const USAGE_URL = "https://chatgpt.com/backend-api/wham/usage";
 const MAX_5H = Number(process.env.CLAWSWEEPER_BUDGET_MAX_5H ?? 30);
 const MAX_WEEKLY = Number(process.env.CLAWSWEEPER_BUDGET_MAX_WEEKLY ?? 85);
+const LANE = process.env.CLAWSWEEPER_BUDGET_LANE === "hot" ? "hot" : "normal";
+const MAX_HOT = Number(process.env.CLAWSWEEPER_BUDGET_MAX_5H_HOT ?? 50);
+const MAX_PRIMARY = LANE === "hot" ? Math.max(MAX_5H, MAX_HOT) : MAX_5H;
 
 function fail(message) {
   console.log(`budget-gate: ${message} -> skip run`);
@@ -64,8 +70,8 @@ if (typeof primary !== "number") fail("no primary_window.used_percent in respons
 
 const primaryLabel = typeof primaryMinutes === "number" ? `${primaryMinutes}m window` : "primary";
 console.log(
-  `budget-gate: 5h=${primary}% (max ${MAX_5H}%, ${primaryLabel}), weekly=${secondary}% (max ${MAX_WEEKLY}%), 5h reset in ~${resetMin}m`,
+  `budget-gate: 5h=${primary}% (max ${MAX_PRIMARY}%, ${primaryLabel}, lane ${LANE}), weekly=${secondary}% (max ${MAX_WEEKLY}%), 5h reset in ~${resetMin}m`,
 );
-if (primary >= MAX_5H) fail(`primary window at ${primary}%`);
+if (primary >= MAX_PRIMARY) fail(`primary window at ${primary}% (lane ${LANE})`);
 if (secondary >= MAX_WEEKLY) fail(`secondary window at ${secondary}%`);
 console.log("budget-gate: headroom OK, proceeding");

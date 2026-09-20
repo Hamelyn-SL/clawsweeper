@@ -363,6 +363,13 @@ that cadence and changes only what gets re-reviewed, through `sweep.yml` env:
   head moved) and keeps the item due if GitHub fails.
 - `CLAWSWEEPER_ACTIVITY_IGNORED_LOGINS=HamelynDev`: automation accounts that
   are not `[bot]` users. `[bot]` accounts and `app/*` actors never count.
+- `CLAWSWEEPER_PLAN_EXCLUDE_ITEMS` (set by the `inflight` step of `sweep.yml`):
+  items whose review shard is still running in another sweep run are not
+  planned again. Hot intake, normal review and exact dispatches used to plan
+  the same item minutes apart, before the first review was recorded.
+- `CLAWSWEEPER_BUDGET_MAX_5H_HOT` (default 50) with `CLAWSWEEPER_BUDGET_LANE`:
+  the budget gate lets hot intake and exact requests run up to this share of
+  the window, while normal re-review backfill stops at `CLAWSWEEPER_BUDGET_MAX_5H`.
 - `CLAWSWEEPER_ACTIVITY_REVIEW_MINUTES=1440`: an item with human activity is
   re-reviewed at most once a day instead of hourly. Every review costs
   ~800k tokens of the shared Codex subscription, and the budget gate

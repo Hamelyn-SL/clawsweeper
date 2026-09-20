@@ -400,3 +400,15 @@ export function shouldStopSaturatedPlanScan(options: {
 }): boolean {
   return options.capacity > 0 && options.dueCount >= options.capacity;
 }
+
+// Items another live sweep run is already reviewing (their shard job names
+// carry the number): planning them again minutes later buys a second review.
+export function planExcludedItemNumbers(value: string | undefined): Set<number> {
+  const numbers = new Set<number>();
+  for (const part of (value ?? "").split(/[\s,]+/)) {
+    if (part === "") continue;
+    const parsed = Number(part);
+    if (Number.isInteger(parsed) && parsed > 0) numbers.add(parsed);
+  }
+  return numbers;
+}
