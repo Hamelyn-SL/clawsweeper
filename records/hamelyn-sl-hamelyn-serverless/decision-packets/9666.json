@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-20T09:04:43.447Z",
-  "updatedAt": "2026-09-20T08:45:20Z",
+  "generatedAt": "2026-09-20T09:26:46.547Z",
+  "updatedAt": "2026-09-20T09:05:27Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,50 +13,49 @@
       "bug",
       "app:admin",
       "triage:needs-info",
+      "P1",
       "clawsweeper:needs-product-decision",
       "clawsweeper:needs-security-review",
       "reporter:JavierHamelyn",
-      "origin:dev",
-      "P1"
+      "origin:dev"
     ],
     "createdAt": "2026-09-17T09:28:25Z",
-    "updatedAt": "2026-09-20T08:45:20Z"
+    "updatedAt": "2026-09-20T09:05:27Z"
   },
   "lane": "security_boundary",
-  "priority": "P1",
-  "question": "¿Qué frontera de autenticación debe usar cada flujo de almacén afectado para eliminar el acceso anónimo sin bloquear a los clientes de servicio legítimos?",
-  "rationale": "El código confirma la falta de barrera, pero el responsable ha indicado que varias rutas operativas no pueden adoptar roles de usuario sin una alternativa compatible.",
+  "priority": "P0",
+  "question": "¿Qué contrato autenticado debe sustituir las llamadas no interactivas de almacén antes de exigir roles explícitos en todas las rutas administrativas?",
+  "rationale": "El código demuestra la exposición, pero elegir identidad de servicio, callback firmado u otro contrato depende de consumidores desplegados que el repositorio no describe.",
   "options": [
     {
-      "title": "Separar usuarios y servicios",
-      "body": "Proteger las rutas de panel con `withAdminRoute` y mover cada integración necesaria a una autenticación de servicio explícita y acotada.",
+      "title": "Identidades de servicio",
+      "body": "Migrar procesos no interactivos a credenciales de servicio con permisos mínimos y exigir roles a las rutas de usuario.",
       "recommended": true
     },
     {
-      "title": "Aplicar el proxy a todo v5",
-      "body": "Exigir Auth0 en todo `/api/v5`, aceptando que antes habrá que adaptar los clientes de almacén incompatibles.",
+      "title": "Callbacks firmados",
+      "body": "Permitir callbacks con firma verificable únicamente en rutas concretas y documentadas.",
       "recommended": false
     },
     {
-      "title": "Mantener excepciones temporales",
-      "body": "Conservar únicamente excepciones documentadas mientras se diseña la migración, asumiendo el riesgo de seguridad temporal.",
+      "title": "Excepciones temporales",
+      "body": "Mantener rutas específicas sin roles durante la migración y aceptar temporalmente el riesgo de seguridad.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Separar usuarios y servicios",
-    "body": "Proteger las rutas de panel con `withAdminRoute` y mover cada integración necesaria a una autenticación de servicio explícita y acotada.",
+    "title": "Identidades de servicio",
+    "body": "Migrar procesos no interactivos a credenciales de servicio con permisos mínimos y exigir roles a las rutas de usuario.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es la persona asignada y ya ha identificado los flujos operativos cuya compatibilidad condiciona la elección.",
+    "reason": "Está asignado y ya delimitó los flujos operativos que condicionan el cambio.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9666.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9666#issuecomment-5741441445",
-    "reviewedAt": "2026-09-20T09:04:43.447Z",
+    "reviewedAt": "2026-09-20T09:26:46.547Z",
     "mainSha": "8a73da7cd3197e746a4549eb6ae6550c7276f32a"
   }
 }
