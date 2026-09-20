@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-19T11:23:22.223Z",
-  "updatedAt": "2026-09-19T11:15:57Z",
+  "generatedAt": "2026-09-20T09:12:41.717Z",
+  "updatedAt": "2026-09-20T08:45:39Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,42 +14,41 @@
       "feature",
       "reporter:javier",
       "triage:done",
-      "clawsweeper:needs-product-decision",
-      "P1"
+      "P1",
+      "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-09-18T14:18:31Z",
-    "updatedAt": "2026-09-19T11:15:57Z"
+    "updatedAt": "2026-09-20T08:45:39Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Se aprueba primero el corte local por proceso al detectar `usage_limit_reached`, dejando el estado compartido entre lambdas para una fase posterior?",
-  "rationale": "La elección determina si el primer intento de cada proceso puede seguir consumiendo una llamada y condiciona el contrato de skip, la persistencia y la experiencia visible en los PR.",
+  "question": "¿La primera entrega debe limitarse al corte local tras el primer `usage_limit_reached`, o debe incluir estado compartido para evitar incluso esa primera llamada en nuevas instancias?",
+  "rationale": "La memoria por proceso del PR de telemetría no resuelve el comportamiento entre lambdas; elegir persistencia compartida cambia infraestructura, coste y alcance del trabajo.",
   "options": [
     {
       "title": "Corte local primero",
-      "body": "Clasificar el agotamiento, detener cada ejecución y publicar un estado claro; diferir la coordinación entre procesos.",
+      "body": "Detectar `usage_limit_reached`, detener el run actual y propagar un skip limpio; dejar el estado compartido como seguimiento separado.",
       "recommended": true
     },
     {
-      "title": "Estado compartido desde el inicio",
-      "body": "Añadir una fuente compartida de cuota para bloquear también el primer intento de nuevas lambdas.",
+      "title": "Gate compartido ahora",
+      "body": "Persistir el reset de cuota para que nuevas instancias hagan skip antes de llamar a Codex, asumiendo diseño y operación adicionales.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Corte local primero",
-    "body": "Clasificar el agotamiento, detener cada ejecución y publicar un estado claro; diferir la coordinación entre procesos.",
+    "body": "Detectar `usage_limit_reached`, detener el run actual y propagar un skip limpio; dejar el estado compartido como seguimiento separado.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "banosdavidhamelyn",
-    "reason": "Su historial conecta los dos clientes compartidos y el flujo de Skill Guardian que deben acordar el contrato.",
+    "person": "JavierHamelyn",
+    "reason": "Ha mantenido recientemente el cliente Codex y el PR de telemetría que define las limitaciones de estado por proceso.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9765.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9765#issuecomment-5740658292",
-    "reviewedAt": "2026-09-19T11:23:22.223Z",
-    "mainSha": "d0e0b93e78bba63a1c6ff1614e823941e10afa9f"
+    "reviewedAt": "2026-09-20T09:12:41.717Z",
+    "mainSha": "8a73da7cd3197e746a4549eb6ae6550c7276f32a"
   }
 }
