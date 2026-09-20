@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-12T17:48:02.137Z",
-  "updatedAt": "2026-09-12T17:42:49Z",
+  "generatedAt": "2026-09-20T08:30:48.072Z",
+  "updatedAt": "2026-09-20T08:18:41Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,43 +14,42 @@
       "bug",
       "app:marketplace",
       "triage:needs-info",
+      "P1",
       "clawsweeper:needs-product-decision",
-      "marketplace-crons",
-      "P1"
+      "marketplace-crons"
     ],
     "createdAt": "2026-09-12T17:30:34Z",
-    "updatedAt": "2026-09-12T17:42:49Z"
+    "updatedAt": "2026-09-20T08:18:41Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe un pedido de Logista que no aparece en la ventana de cuatro días poder pasar a `TO_CANCEL` tras 168 horas?",
-  "rationale": "El resultado `0` representa tanto pedido pendiente como referencia fuera de la búsqueda; los dos casos observados ya habían mostrado un estado de expedición.",
+  "question": "¿Debe una referencia Logista ausente de la ventana de cuatro días seguir pudiendo pasar a `TO_CANCEL` a las 168 horas, o debe conservarse y escalarse hasta verificarla?",
+  "rationale": "El adaptador colapsa una ausencia por cobertura temporal y un pedido aún no expedido en el mismo `status: 0`; escoger la respuesta cambia la política de cancelación de clientes.",
   "options": [
     {
-      "title": "Bloquear la cancelación por no encontrado",
-      "body": "Conservar el pedido en estado indeterminado y escalarlo a Operaciones hasta verificar la referencia en Logista.",
+      "title": "Distinguir y escalar ausencias",
+      "body": "Conservar los casos no encontrados y llevarlos a revisión operativa hasta disponer de una señal fiable de expedición o rechazo.",
       "recommended": true
     },
     {
-      "title": "Mantener el timeout actual",
-      "body": "Aceptar la cancelación tras 168 horas aunque la ausencia de referencia no distinga un pedido expedido.",
+      "title": "Mantener el límite duro",
+      "body": "Seguir cancelando a las 168 horas si Operaciones confirma que la ausencia de referencia representa pedidos no expedidos.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Bloquear la cancelación por no encontrado",
-    "body": "Conservar el pedido en estado indeterminado y escalarlo a Operaciones hasta verificar la referencia en Logista.",
+    "title": "Distinguir y escalar ausencias",
+    "body": "Conservar los casos no encontrados y llevarlos a revisión operativa hasta disponer de una señal fiable de expedición o rechazo.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "Daniel",
-    "reason": "Su trabajo reciente conecta el controlador actual con los adaptadores de dropshipping implicados.",
-    "confidence": "medium"
+    "person": "MarcosTerroso",
+    "reason": "Introdujo la política de límite duro que requiere recalibración con la evidencia operativa.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9455.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9455#issuecomment-5647610588",
-    "reviewedAt": "2026-09-12T17:48:02.137Z",
-    "mainSha": "55db7e4a7cbff616c2537722dd88f2549f8bfce6"
+    "reviewedAt": "2026-09-20T08:30:48.072Z",
+    "mainSha": "d0e0b93e78bba63a1c6ff1614e823941e10afa9f"
   }
 }
