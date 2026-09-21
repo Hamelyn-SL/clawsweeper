@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-21T14:51:20.099Z",
+  "updatedAt": "2026-09-21T14:45:01Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9851,
+    "title": "Integrar subida buscalibre al sistema automaticamente",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9851",
+    "state": "open",
+    "labels": [
+      "source:admin-panel",
+      "app:supply",
+      "feature",
+      "triage:needs-info",
+      "P2",
+      "reporter:daniellopez"
+    ],
+    "createdAt": "2026-09-21T13:05:39Z",
+    "updatedAt": "2026-09-21T14:45:01Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Los pedidos recibidos de Buscalibre deben quedar retenidos por lote hasta una selección manual, o entrar automáticamente en el picking diario?",
+  "rationale": "Ambas opciones alteran cuándo se compromete el stock y qué operaciones ve el almacén; el código actual no define esa política.",
+  "options": [
+    {
+      "title": "Retener por lote",
+      "body": "Importar los pedidos idempotentemente en un estado no seleccionable y habilitar una acción explícita para incluir el lote en picking.",
+      "recommended": true
+    },
+    {
+      "title": "Incluir automáticamente",
+      "body": "Mantener el modelo actual y hacer que cada importación válida cree pedidos disponibles para el siguiente picking.",
+      "recommended": false
+    },
+    {
+      "title": "Decidir por pedido",
+      "body": "Añadir una selección individual, con más control operativo pero una interfaz y flujo de estados más amplios.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Retener por lote",
+    "body": "Importar los pedidos idempotentemente en un estado no seleccionable y habilitar una acción explícita para incluir el lote en picking.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Daniel",
+    "reason": "Es la persona con cambios recientes en la ruta de importación que materializaría la política acordada.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9851.md",
+    "reviewedAt": "2026-09-21T14:51:20.099Z",
+    "mainSha": "4754c780e05d48300ab4f09bf99421f69daacc25"
+  }
+}
