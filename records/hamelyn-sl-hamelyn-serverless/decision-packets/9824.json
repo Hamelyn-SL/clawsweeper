@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-21T11:28:35.420Z",
+  "updatedAt": "2026-09-21T11:17:44Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9824,
+    "title": "Modificaciones en las minihomes (Libros, Peliculas, Musica)",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9824",
+    "state": "open",
+    "labels": [
+      "bug",
+      "source:admin-panel",
+      "app:ecommerce",
+      "triage:done",
+      "reporter:victor",
+      "P2"
+    ],
+    "createdAt": "2026-09-21T10:59:05Z",
+    "updatedAt": "2026-09-21T11:17:44Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe el carrusel de vinilos seleccionar por formato `Vinyl` aunque el producto no tenga idioma español, o mantenerse el requisito de idioma y aceptar que el raíl pueda ocultarse?",
+  "rationale": "La intención comercial exige mostrar vinilos, pero el criterio de elegibilidad determina qué inventario puede promocionarse y no se deduce de forma segura solo del código.",
+  "options": [
+    {
+      "title": "Seleccionar por formato",
+      "body": "Buscar vinilos activos por `normalizedFormat: Vinyl` con los controles habituales de disponibilidad e imagen, sin exigir idioma español.",
+      "recommended": true
+    },
+    {
+      "title": "Conservar idioma español",
+      "body": "Mantener el filtro de idioma y documentar que el carrusel solo se muestra cuando haya inventario elegible.",
+      "recommended": false
+    },
+    {
+      "title": "Definir una regla mixta",
+      "body": "Priorizar vinilos en español y completar con otros idiomas cuando no haya suficientes productos aptos.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Seleccionar por formato",
+    "body": "Buscar vinilos activos por `normalizedFormat: Vinyl` con los controles habituales de disponibilidad e imagen, sin exigir idioma español.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Su trabajo previo define la integración de las minihomes y los enlaces canónicos afectados.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9824.md",
+    "reviewedAt": "2026-09-21T11:28:35.420Z",
+    "mainSha": "93fe2197418579d8d6345ee833e2d02a6a4d04dc"
+  }
+}
