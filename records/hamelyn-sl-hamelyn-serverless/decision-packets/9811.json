@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-21T08:41:13.780Z",
+  "updatedAt": "2026-09-21T08:30:28Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9811,
+    "title": "Carrier manager: la clasificación HS bloquea etiquetas internacionales en vez de usar fallbacks por productType",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9811",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:admin",
+      "reporter:miguel",
+      "triage:done",
+      "P0"
+    ],
+    "createdAt": "2026-09-21T08:23:52Z",
+    "updatedAt": "2026-09-21T08:30:28Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe la plataforma declarar siempre un HS de fallback para cartuchos, contradicciones y tipos desconocidos, o mantener rechazo para los casos con clasificación física no fiable?",
+  "rationale": "La petición cambia la política documentada de aduanas y puede sustituir una revisión manual por una declaración arancelaria potencialmente incorrecta.",
+  "options": [
+    {
+      "title": "Fallback total por tipo",
+      "body": "Usar `productType` como autoridad y declarar libro ante tipo desconocido, aceptando el riesgo operativo de clasificar datos contradictorios.",
+      "recommended": false
+    },
+    {
+      "title": "Fallback acotado con datos fiables",
+      "body": "Mantener los rechazos para soporte digital o contradicciones confirmadas y añadir fallback solo a los estados aprobados por Operaciones.",
+      "recommended": true
+    },
+    {
+      "title": "Conservar validación estricta",
+      "body": "Mantener el contrato actual y resolver cada clase bloqueada mediante corrección operativa de datos.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Fallback acotado con datos fiables",
+    "body": "Mantener los rechazos para soporte digital o contradicciones confirmadas y añadir fallback solo a los estados aprobados por Operaciones.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Es la persona asignada y la trayectoria del resolver actual apunta a su área de trabajo.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9811.md",
+    "reviewedAt": "2026-09-21T08:41:13.780Z",
+    "mainSha": "fb8557fe3d969240dad7226c10f10fc1fed4a54b"
+  }
+}
