@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-19T11:17:34.453Z",
-  "updatedAt": "2026-09-17T12:31:30Z",
+  "generatedAt": "2026-09-21T06:54:41.879Z",
+  "updatedAt": "2026-09-21T06:46:19Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,42 +15,41 @@
       "feature",
       "reporter:blanca",
       "triage:needs-info",
-      "P2",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2"
     ],
     "createdAt": "2026-09-17T09:51:21Z",
-    "updatedAt": "2026-09-17T12:31:30Z"
+    "updatedAt": "2026-09-21T06:46:19Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿El `unit price` de FedEx México debe reflejar el coste histórico de cada ejemplar (`stocks.priceBuy`) o el precio de compra vigente de su ficha (`products.priceBuy`)?",
-  "rationale": "Ambos campos existen y cambian el importe comercial; el código no define cuál representa la factura solicitada.",
+  "question": "¿El `unit price` de FedEx MX debe reflejar el precio de compra vigente mostrado en Supply (`products.priceBuy`) o el coste histórico del ejemplar enviado (`stocks.priceBuy`)?",
+  "rationale": "Ambos campos existen, se actualizan por vías distintas y producirían importes diferentes para una misma línea de factura.",
   "options": [
     {
-      "title": "Coste por ejemplar",
-      "body": "Usar `stocks.priceBuy` para que cada línea refleje lo que se pagó por la unidad enviada.",
+      "title": "Precio vigente de Supply",
+      "body": "Usar `products.priceBuy` para reflejar el valor actual de compra publicado en la ficha del producto.",
       "recommended": true
     },
     {
-      "title": "Precio actual de catálogo",
-      "body": "Usar `products.priceBuy` para aplicar el precio de compra vigente de la ficha, incluso si fue revalorizada después.",
+      "title": "Coste histórico del stock",
+      "body": "Usar `stocks.priceBuy` para reflejar el coste de adquisición del ejemplar concreto enviado.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Coste por ejemplar",
-    "body": "Usar `stocks.priceBuy` para que cada línea refleje lo que se pagó por la unidad enviada.",
+    "title": "Precio vigente de Supply",
+    "body": "Usar `products.priceBuy` para reflejar el valor actual de compra publicado en la ficha del producto.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "Es el contribuidor más reciente del cálculo aduanero compartido entre la factura y el envío.",
+    "person": "MarcosTerroso",
+    "reason": "Su trabajo reciente delimitó el flujo de MercadoLibre México y FedEx afectado por la decisión.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9673.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9673#issuecomment-5741396683",
-    "reviewedAt": "2026-09-19T11:17:34.453Z",
-    "mainSha": "d0e0b93e78bba63a1c6ff1614e823941e10afa9f"
+    "reviewedAt": "2026-09-21T06:54:41.879Z",
+    "mainSha": "7f0d03ea331da3efb08ca84ae10c47efa224f9ef"
   }
 }
