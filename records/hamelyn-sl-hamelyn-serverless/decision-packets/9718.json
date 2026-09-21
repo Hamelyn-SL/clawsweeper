@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-19T20:22:24.414Z",
-  "updatedAt": "2026-09-19T20:15:20Z",
+  "generatedAt": "2026-09-21T05:52:27.765Z",
+  "updatedAt": "2026-09-21T05:40:32Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,49 +14,43 @@
       "feature",
       "triage:needs-info",
       "clawsweeper:needs-product-decision",
+      "P2",
       "reporter:danielmenchen-hamelyn",
       "origin:dev",
-      "epic:supply-v3",
-      "P2"
+      "epic:supply-v3"
     ],
     "createdAt": "2026-09-18T08:03:07Z",
-    "updatedAt": "2026-09-19T20:15:20Z"
+    "updatedAt": "2026-09-21T05:40:32Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué fuente y regla aprobada deben determinar los idiomas secundarios, los huecos SEO y el destino de `/developers` antes de fijar la matriz de rutas e indexación?",
-  "rationale": "El código heredado separa idioma web por build y preferencia móvil persistida, mientras que el inventario contiene valores incompletos que no permiten deducir SEO seguro.",
+  "question": "¿Qué matriz aprobada debe decidir los idiomas secundarios por ruta y el tratamiento de `/developers` y de los huecos SEO?",
+  "rationale": "El legado mantiene recursos localizados, pero web y móvil aplican reglas distintas; ninguna fuente actual determina qué combinaciones deben publicarse ni cómo completar metadata ausente.",
   "options": [
     {
-      "title": "Validar matriz desde el legado",
+      "title": "Aprobar matriz de legado",
       "body": "Designar una fuente responsable y aprobar por ruta el idioma, canonical, indexación y tratamiento de cada hueco antes de implementar F02.",
       "recommended": true
     },
     {
-      "title": "Limitar F02 a infraestructura neutra",
-      "body": "Entregar únicamente tipos, carga de diccionarios y helpers sin publicar decisiones SEO hasta contar con la matriz aprobada.",
-      "recommended": false
-    },
-    {
-      "title": "Aplazar el contrato completo",
-      "body": "Mantener la base de prueba sin cambios de indexación mientras se recupera o reconstruye la fuente de verdad del legado.",
+      "title": "Limitar la primera entrega",
+      "body": "Entregar solo tipos, carga de diccionarios y helpers neutros sin publicar decisiones SEO hasta contar con la matriz validada.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Validar matriz desde el legado",
+    "title": "Aprobar matriz de legado",
     "body": "Designar una fuente responsable y aprobar por ruta el idioma, canonical, indexación y tratamiento de cada hueco antes de implementar F02.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "danielmenchen-hamelyn",
-    "reason": "Coordina la épica y fue autor de la integración de base que delimitó este paquete transversal.",
+    "reason": "La base de la épica y el inventario asociado parten de su entrega, por lo que puede aportar la fuente y coordinar el alcance con la persona asignada.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9718.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9718#issuecomment-5741171066",
-    "reviewedAt": "2026-09-19T20:22:24.414Z",
-    "mainSha": "d0e0b93e78bba63a1c6ff1614e823941e10afa9f"
+    "reviewedAt": "2026-09-21T05:52:27.765Z",
+    "mainSha": "23ad0a8387fe46e505d38f64ed9772bda99dda09"
   }
 }
