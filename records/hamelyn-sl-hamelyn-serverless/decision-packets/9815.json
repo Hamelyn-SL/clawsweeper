@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-21T09:54:09.873Z",
+  "updatedAt": "2026-09-21T09:44:58Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9815,
+    "title": "MercadoLibre: banda lateral ARGENTINA y etiquetas MX sin sello",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9815",
+    "state": "open",
+    "labels": [
+      "app:marketplace",
+      "feature",
+      "triage:done",
+      "P2"
+    ],
+    "createdAt": "2026-09-21T09:11:28Z",
+    "updatedAt": "2026-09-21T09:44:58Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Puede eliminarse la segunda página de productos de las etiquetas oficiales AR al normalizar la etiqueta de envío para impresión?",
+  "rationale": "La PR vinculada reutiliza esa normalización y una revisión pendiente señala que la página podría servir para cuadrar el paquete en almacén; el código no puede determinar ese uso operativo.",
+  "options": [
+    {
+      "title": "Confirmar que no se usa",
+      "body": "Mantener la normalización a una sola página de envío y documentar que la página de productos no forma parte del flujo de packing.",
+      "recommended": true
+    },
+    {
+      "title": "Conservar la segunda página",
+      "body": "Cambiar la normalización para preservar la página de productos y adaptar la presentación de la banda sin perder ese material.",
+      "recommended": false
+    },
+    {
+      "title": "Separar los cambios",
+      "body": "Aplazar la normalización AR y aterrizar únicamente la preservación de MX hasta validar el flujo de almacén.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Confirmar que no se usa",
+    "body": "Mantener la normalización a una sola página de envío y documentar que la página de productos no forma parte del flujo de packing.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Es el responsable asignado y el autor del comportamiento actual y de la propuesta que une ambas transformaciones.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9815.md",
+    "reviewedAt": "2026-09-21T09:54:09.873Z",
+    "mainSha": "c583531ecb31f3fcea4907e81c3451a2c0478781"
+  }
+}
