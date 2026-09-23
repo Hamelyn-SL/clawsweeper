@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-23T13:48:39.042Z",
+  "updatedAt": "2026-09-23T13:37:00Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10025,
+    "title": "Cuadrante: los NE de Skypod se imputan como Picking de Skypod en vez de Otros",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10025",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:admin",
+      "triage:queued",
+      "P2",
+      "reporter:danielmenchen-hamelyn"
+    ],
+    "createdAt": "2026-09-23T13:36:45Z",
+    "updatedAt": "2026-09-23T13:37:00Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿La estación debe cambiar automáticamente a una sesión temporal `OTROS` durante una `NE-EX` y reanudar `SKYPOD` al resolverla, o debe requerir una acción explícita del operario?",
+  "rationale": "La política actual deja `OTROS` como sesión manual y exenta de caducidad; elegir el relevo afecta a la experiencia de estación, al cierre de sesiones y a la continuidad de la métrica.",
+  "options": [
+    {
+      "title": "Relevo automático acotado",
+      "body": "La estación abre o selecciona `OTROS` para la revisión, lo cierra al terminar y reanuda la sesión `SKYPOD`; evita atribuir la NE al picking normal.",
+      "recommended": true
+    },
+    {
+      "title": "Acción explícita en estación",
+      "body": "La interfaz exige iniciar `OTROS` antes de la revisión y muestra una recuperación clara hacia `SKYPOD`, con menor automatismo pero reglas de sesión visibles.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener `SKYPOD` y excluir contadores",
+      "body": "No se crea una sesión `OTROS`, pero se elimina tiempo y artículos de Skypod; no reproduce la semántica solicitada de «Otros».",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Relevo automático acotado",
+    "body": "La estación abre o selecciona `OTROS` para la revisión, lo cierra al terminar y reanuda la sesión `SKYPOD`; evita atribuir la NE al picking normal.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "danielmenchen-hamelyn",
+    "reason": "La decisión concreta extiende la política de imputación que introdujo y que esta incidencia busca completar.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10025.md",
+    "reviewedAt": "2026-09-23T13:48:39.042Z",
+    "mainSha": "ebcb255147d73b8d0dd13fb87cdff57ba220a682"
+  }
+}
