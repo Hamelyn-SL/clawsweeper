@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-23T10:59:45.323Z",
+  "generatedAt": "2026-09-23T10:59:41.534Z",
   "updatedAt": "2026-09-22T07:00:45Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -14,43 +14,46 @@
       "app:supply",
       "feature",
       "triage:needs-info",
-      "reporter:daniellopez",
       "P2",
-      "clawsweeper:needs-product-decision"
+      "reporter:daniellopez"
     ],
     "createdAt": "2026-09-22T06:52:46Z",
     "updatedAt": "2026-09-22T07:00:45Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Aprueba Operaciones automatizar el portal de Postlibri y puede proporcionar el flujo exacto sin credenciales para delimitar la integración?",
-  "rationale": "El código confirma el tramo manual, pero no permite inferir qué producto, sesión o mecanismo de descarga del portal es el autorizado para automatizar.",
+  "question": "¿Operaciones aprueba automatizar el portal de Correos/Postlibri y puede confirmar el producto, opciones, autenticación y descarga de PDF que debe reproducir el sistema?",
+  "rationale": "El código actual cubre el TXT y la composición posterior, pero la capacidad nueva depende de un contrato externo y de cómo custodiar sus credenciales.",
   "options": [
     {
-      "title": "Confirmar y acotar el portal",
-      "body": "Operaciones facilita URL, producto, opciones y requisito de sesión para preparar una integración limitada al PDF.",
+      "title": "Definir integración oficial",
+      "body": "Operaciones documenta el recorrido sin credenciales y se implementa un adaptador con secretos gestionados y pruebas contra un entorno autorizado.",
       "recommended": true
     },
     {
-      "title": "Mantener el procedimiento manual",
-      "body": "Se conserva la exportación y carga actuales si el portal no admite una automatización estable o autorizada.",
+      "title": "Mantener operación manual",
+      "body": "Se conserva la subida manual de `CP_Correos.txt` y PDF mientras Correos no ofrezca un contrato automatizable estable.",
+      "recommended": false
+    },
+    {
+      "title": "Buscar canal alternativo",
+      "body": "Se valida con Correos un API o servicio empresarial que sustituya la automatización del portal web.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Confirmar y acotar el portal",
-    "body": "Operaciones facilita URL, producto, opciones y requisito de sesión para preparar una integración limitada al PDF.",
+    "title": "Definir integración oficial",
+    "body": "Operaciones documenta el recorrido sin credenciales y se implementa un adaptador con secretos gestionados y pruebas contra un entorno autorizado.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "daniellopez",
-    "reason": "El flujo pendiente depende de detalles operativos que el reporte atribuye a Daniel/Operaciones.",
-    "confidence": "high"
+    "reason": "Es el referente operativo del flujo manual descrito y puede coordinar la confirmación con Operaciones.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9896.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9896#issuecomment-5793744259",
-    "reviewedAt": "2026-09-23T10:59:45.323Z",
+    "reviewedAt": "2026-09-23T10:59:41.534Z",
     "mainSha": "49cf8dd3dcd603e7191f56a17c28174ba52a5a98"
   }
 }
