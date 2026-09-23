@@ -23,10 +23,14 @@ import { writeFileSync } from "node:fs";
 import { Readable } from "node:stream";
 
 const UPSTREAM_URL = "https://chatgpt.com/backend-api/codex/responses";
+// Codex CLI sends session-id and thread-id; the backend routes prompt-cache
+// affinity by session-id, so dropping it leaves most review turns uncached.
 const FORWARDED_REQUEST_HEADERS = [
   "accept",
   "content-type",
   "openai-beta",
+  "session-id",
+  "thread-id",
   "session_id",
   "conversation_id",
 ];
