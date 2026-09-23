@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-14T09:21:13.562Z",
-  "updatedAt": "2026-09-14T08:31:31Z",
+  "generatedAt": "2026-09-23T09:58:57.498Z",
+  "updatedAt": "2026-09-23T01:14:54Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,45 +13,49 @@
       "bug",
       "source:admin-panel",
       "app:infrastructure",
-      "triage:done",
+      "triage:needs-info",
+      "P1",
       "clawsweeper:needs-product-decision",
       "reporter:danielmenchen-hamelyn",
-      "origin:panel",
-      "P1"
+      "origin:panel"
     ],
     "createdAt": "2026-07-22T06:41:29Z",
-    "updatedAt": "2026-09-14T08:31:31Z"
+    "updatedAt": "2026-09-23T01:14:54Z"
   },
   "lane": "product_direction",
-  "priority": "P1",
-  "question": "¿Analytics Supply debe conservar `mongo_user_id` durante la petición o puede enriquecerse después para eliminar MongoDB de esta ruta?",
-  "rationale": "La retirada de `createConnectionAndInitializeEnv()` cambia el contrato observado de eventos autenticados, no solo la eficiencia de infraestructura.",
+  "priority": "P2",
+  "question": "¿Debe `ConfigService` conservar el modelo actual de configuración por cold start o incorporar refresco warm acotado, y debe Analytics Supply seguir resolviendo `mongo_user_id` durante la petición?",
+  "rationale": "El código actual elimina la reconexión, pero las dos alternativas cambian la latencia, la consistencia de configuración y el contenido analítico observado.",
   "options": [
     {
-      "title": "Conservar enriquecimiento síncrono",
-      "body": "Mantener la conexión MongoDB de Analytics y considerar resuelta la parte de reconexiones.",
+      "title": "Mantener el contrato actual",
+      "body": "Conservar configuración por cold start y enriquecimiento síncrono de `mongo_user_id`, documentando que los cambios normales requieren una nueva instancia.",
       "recommended": true
     },
     {
-      "title": "Enriquecer de forma asíncrona",
-      "body": "Definir un proceso posterior que añada `mongo_user_id` sin consultar MongoDB durante la petición.",
+      "title": "Adoptar frescura acotada",
+      "body": "Añadir TTL y single-flight con stale-on-error, preservando refrescos explícitos de MercadoLibre y definiendo su prioridad.",
+      "recommended": false
+    },
+    {
+      "title": "Desacoplar Analytics",
+      "body": "Mantener `auth0_user_id` en la petición y mover el enriquecimiento de `mongo_user_id` a un proceso posterior.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Conservar enriquecimiento síncrono",
-    "body": "Mantener la conexión MongoDB de Analytics y considerar resuelta la parte de reconexiones.",
+    "title": "Mantener el contrato actual",
+    "body": "Conservar configuración por cold start y enriquecimiento síncrono de `mongo_user_id`, documentando que los cambios normales requieren una nueva instancia.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "Daniel",
-    "reason": "Su propuesta previa cubría exactamente el desacoplamiento de Analytics y conoce el alcance del cambio.",
-    "confidence": "medium"
+    "person": "JavierHamelyn",
+    "reason": "Su historial en Analytics Supply y el comentario más reciente conectan directamente ambas decisiones.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7862.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7862#issuecomment-5043656384",
-    "reviewedAt": "2026-09-14T09:21:13.562Z",
-    "mainSha": "df26e17c87415675ccb8ebca3cbf71d0c427f0ab"
+    "reviewedAt": "2026-09-23T09:58:57.498Z",
+    "mainSha": "49cf8dd3dcd603e7191f56a17c28174ba52a5a98"
   }
 }

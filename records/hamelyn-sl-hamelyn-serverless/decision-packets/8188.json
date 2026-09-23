@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-23T09:58:49.690Z",
+  "generatedAt": "2026-09-23T10:01:39.720Z",
   "updatedAt": "2026-09-23T01:09:20Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -14,50 +14,44 @@
       "source:admin-panel",
       "app:marketplace",
       "triage:done",
+      "P1",
       "clawsweeper:needs-product-decision",
       "reporter:JavierHamelyn",
       "origin:panel",
-      "mk:amazon",
-      "P1"
+      "mk:amazon"
     ],
     "createdAt": "2026-08-03T13:36:22Z",
     "updatedAt": "2026-09-23T01:09:20Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Se aprueba dividir el trabajo en una mitigación V2 inmediata de no-retry y un diseño posterior del resolver regional de condición?",
-  "rationale": "La protección mecánica está acotada, pero definir condición canónica, evidencias exigibles y reglas de escritura regional requiere una política de Marketplace antes de implementar el alcance amplio.",
+  "question": "¿Debe aprobarse ahora el guard de no-retry como mitigación independiente y mantener el resolver regional de condición con backfill en un trabajo posterior aprobado?",
+  "rationale": "El guard está acotado por el contrato de recuperación actual, pero decidir una condición canónica cross-marketplace y autorizar writes masivos requiere una política operativa distinta.",
   "options": [
     {
       "title": "Separar mitigación y resolver",
-      "body": "Aprobar un PR pequeño para bloquear `101078` en V2 y abrir el diseño regional/backfill solo después de obtener preimágenes account-wide.",
+      "body": "Aprobar un cambio pequeño que bloquee `101078` en V2 y abrir o mantener un alcance distinto para auditoría, decisión canónica y backfill.",
       "recommended": true
     },
     {
-      "title": "Diseñar primero el resolver",
-      "body": "Posponer el guard hasta acordar el contrato de condición regional y entregar ambos cambios como un programa coordinado.",
-      "recommended": false
-    },
-    {
-      "title": "Mantener solo observación",
-      "body": "Conservar el comportamiento actual mientras se recopilan más muestras, aceptando que bundles ocultos puedan seguir reintentándose.",
+      "title": "Unificar el programa",
+      "body": "Mantener ambos alcances en esta incidencia, aceptando que el guard no se entregue hasta definir el resolver regional completo.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Separar mitigación y resolver",
-    "body": "Aprobar un PR pequeño para bloquear `101078` en V2 y abrir el diseño regional/backfill solo después de obtener preimágenes account-wide.",
+    "body": "Aprobar un cambio pequeño que bloquee `101078` en V2 y abrir o mantener un alcance distinto para auditoría, decisión canónica y backfill.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Está asignado a la incidencia y mantiene una ruta Amazon directamente afectada.",
+    "reason": "Figura asignado a la incidencia y su historial reciente cubre el adaptador Amazon afectado.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8188.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8188#issuecomment-5167219624",
-    "reviewedAt": "2026-09-23T09:58:49.690Z",
+    "reviewedAt": "2026-09-23T10:01:39.720Z",
     "mainSha": "49cf8dd3dcd603e7191f56a17c28174ba52a5a98"
   }
 }

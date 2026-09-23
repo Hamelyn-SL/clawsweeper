@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-14T10:09:03.607Z",
-  "updatedAt": "2026-09-14T09:31:44Z",
+  "generatedAt": "2026-09-23T10:02:16.307Z",
+  "updatedAt": "2026-09-22T08:20:56Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,47 +14,41 @@
       "app:marketplace",
       "reporter:miguel",
       "triage:needs-info",
-      "clawsweeper:needs-product-decision",
-      "P1"
+      "P1",
+      "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-09-14T05:50:08Z",
-    "updatedAt": "2026-09-14T09:31:44Z"
+    "updatedAt": "2026-09-22T08:20:56Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe CA tener un snapshot y una reconciliación de retirada propios, o se debe generalizar COM con aislamiento estricto por marketplace?",
-  "rationale": "La evidencia confirma el hueco, pero elegir el modelo determina el espejo persistente, el destino de feeds y la seguridad operativa de US.",
+  "question": "¿La cobertura permanente de CA debe usar un espejo y reconciliación propios, o una retirada directa por SKU/marketplace sin cambiar el espejo compartido de COM?",
+  "rationale": "El diseño actual separa el marketplace de informe US del procesamiento CA; la elección determina qué estado es fuente de verdad y cómo evitar retiradas en el destino incorrecto.",
   "options": [
     {
-      "title": "Aislar CA como flujo propio",
-      "body": "Crear report, comparación y retirada identificados por CA, preservando el comportamiento COM actual para US.",
+      "title": "Retirada CA acotada",
+      "body": "Solicitar el informe CA, cruzarlo con el stock maestro y retirar solo los SKUs verificados, manteniendo intacto el espejo COM.",
       "recommended": true
     },
     {
-      "title": "Generalizar COM por marketplace",
-      "body": "Extender el flujo compartido solo si cada lectura, espejo y retirada conserva explícitamente su marketplace de destino.",
-      "recommended": false
-    },
-    {
-      "title": "Hacer solo limpieza puntual",
-      "body": "Retirar los históricos tras validar el report CA y posponer la cobertura permanente, aceptando recurrencia del riesgo.",
+      "title": "Espejo CA separado",
+      "body": "Crear una ruta de informe y reconciliación específica para CA con estado, validación y operación independientes.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aislar CA como flujo propio",
-    "body": "Crear report, comparación y retirada identificados por CA, preservando el comportamiento COM actual para US.",
+    "title": "Retirada CA acotada",
+    "body": "Solicitar el informe CA, cruzarlo con el stock maestro y retirar solo los SKUs verificados, manteniendo intacto el espejo COM.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MarcosTerroso",
-    "reason": "Su trabajo reciente sobre el runtime de Amazon lo sitúa cerca de la decisión de separación del flujo.",
-    "confidence": "medium"
+    "person": "Miguel Angel Hernández Perdomo",
+    "reason": "Su historial conecta directamente con la división actual entre informes COM y procesamiento CA.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9465.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9465#issuecomment-5659733694",
-    "reviewedAt": "2026-09-14T10:09:03.607Z",
-    "mainSha": "54661592cd176a3f29ebb899b1b9ed757b9a780a"
+    "reviewedAt": "2026-09-23T10:02:16.307Z",
+    "mainSha": "49cf8dd3dcd603e7191f56a17c28174ba52a5a98"
   }
 }

@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-15T05:50:15.635Z",
-  "updatedAt": "2026-09-15T05:24:08Z",
+  "generatedAt": "2026-09-23T10:07:01.491Z",
+  "updatedAt": "2026-09-22T08:20:55Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,47 +15,46 @@
       "app:supply",
       "reporter:arineligrigore",
       "triage:needs-info",
-      "clawsweeper:needs-product-decision",
-      "P1"
+      "P1",
+      "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-09-14T07:55:48Z",
-    "updatedAt": "2026-09-15T05:24:08Z"
+    "updatedAt": "2026-09-22T08:20:55Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué debe hacer Supply cuando una fusión incrementa las cajas de una recogida MRW que ya tiene tracking?",
-  "rationale": "La integración tiene soporte de modificación, pero no existe un flujo aplicado al merge ni evidencia de qué operación acepta MRW para una recogida contratada.",
+  "question": "¿Qué operación debe aplicar Supply cuando una fusión aumenta las cajas de una recogida MRW que ya tiene tracking?",
+  "rationale": "El código ofrece primitivas de creación, modificación y cancelación, pero no acredita cuál conserva la recogida ni qué respuesta de MRW permite confirmar el cambio sin riesgo operativo.",
   "options": [
     {
-      "title": "Modificar mediante MRW",
-      "body": "Añadir una actualización idempotente de bultos solo tras validar el endpoint, la aceptación y la respuesta operativa de MRW.",
+      "title": "Modificar la recogida existente",
+      "body": "Validar con Operaciones y MRW una actualización idempotente por el tracking original y persistir solo la aceptación confirmada.",
       "recommended": true
     },
     {
       "title": "Cancelar y recrear",
-      "body": "Usar cancelación y nueva recogida únicamente si Operaciones confirma que no duplica ni pierde la planificación existente.",
+      "body": "Usar cancelación y una nueva recogida únicamente si MRW y Operaciones confirman que no duplica ni pierde la planificación.",
       "recommended": false
     },
     {
-      "title": "Bloquear la fusión posterior",
-      "body": "Impedir aumentos de cajas cuando exista tracking hasta disponer de un circuito externo validado.",
+      "title": "Bloquear el aumento de cajas",
+      "body": "Impedir fusionar más bultos tras asignar tracking hasta disponer de un circuito externo comprobado.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Modificar mediante MRW",
-    "body": "Añadir una actualización idempotente de bultos solo tras validar el endpoint, la aceptación y la respuesta operativa de MRW.",
+    "title": "Modificar la recogida existente",
+    "body": "Validar con Operaciones y MRW una actualización idempotente por el tracking original y persistir solo la aceptación confirmada.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es la persona asignada y la decisión cruza Supply, Operaciones y la integración del transportista.",
+    "reason": "Está asignado a la incidencia y es el contribuidor reciente de la ruta de fusión afectada.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9488.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9488#issuecomment-5662682394",
-    "reviewedAt": "2026-09-15T05:50:15.635Z",
-    "mainSha": "3a812f53c87040b623a977b95c10aa001976d5e6"
+    "reviewedAt": "2026-09-23T10:07:01.491Z",
+    "mainSha": "49cf8dd3dcd603e7191f56a17c28174ba52a5a98"
   }
 }

@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-14T12:51:08.553Z",
-  "updatedAt": "2026-09-14T12:42:51Z",
+  "generatedAt": "2026-09-23T10:06:15.390Z",
+  "updatedAt": "2026-09-23T08:22:45Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,48 +14,42 @@
       "feature",
       "triage:done",
       "clawsweeper:needs-product-decision",
+      "P2",
       "reporter:danielmenchen-hamelyn",
-      "epic:warehouse-telemetry",
-      "P2"
+      "epic:warehouse-telemetry"
     ],
     "createdAt": "2026-09-14T06:41:33Z",
-    "updatedAt": "2026-09-14T12:42:51Z"
+    "updatedAt": "2026-09-23T08:22:45Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe el contrato de ritmo quedar limitado explícitamente a los diez procesos definidos en el plan, preservando la lectura de parámetros históricos que contengan objetivos adicionales?",
-  "rationale": "El código actual y la epic expresan alcances distintos; elegir la semántica permanente y la transición de datos requiere criterio operativo.",
+  "question": "¿Qué flujo operativo se aprueba para las auditorías de contenedores: cola gestionada en Admin con bloqueo o selección por agente sin bloqueo automático?",
+  "rationale": "El código actual cubre faltas manuales, pero no puede decidir por sí mismo cuándo bloquear un contenedor, quién prioriza una auditoría ni cómo se resuelven cancelaciones.",
   "options": [
     {
-      "title": "Lista explícita de diez procesos",
-      "body": "Derivar los objetivos de ritmo de una constante canónica de diez procesos y conservar lectura segura de versiones históricas.",
+      "title": "Selección mediante agente",
+      "body": "El agente propone auditorías y el responsable registra el resultado, evitando introducir bloqueos automáticos mientras se valida la operativa.",
       "recommended": true
     },
     {
-      "title": "Mantener los quince procesos actuales",
-      "body": "Actualizar el plan funcional para aceptar objetivos de ritmo también en `OTROS` y los procesos históricos.",
-      "recommended": false
-    },
-    {
-      "title": "Aplazar la convergencia",
-      "body": "No modificar el contrato hasta que F3 y F5B precisen qué agregados consumen los objetivos adicionales.",
+      "title": "Cola operacional en Admin",
+      "body": "Admin selecciona, bloquea y resuelve auditorías, asumiendo una nueva superficie operativa y reglas explícitas de cancelación.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Lista explícita de diez procesos",
-    "body": "Derivar los objetivos de ritmo de una constante canónica de diez procesos y conservar lectura segura de versiones históricas.",
+    "title": "Selección mediante agente",
+    "body": "El agente propone auditorías y el responsable registra el resultado, evitando introducir bloqueos automáticos mientras se valida la operativa.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "danielmenchen-hamelyn",
-    "reason": "Coordina la integración actual y authored la incorporación de parámetros en `dev`.",
-    "confidence": "high"
+    "reason": "Es coasignado y autor de la planificación funcional de la épica; puede coordinar la decisión con el responsable de almacén.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9477.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9477#issuecomment-5660550775",
-    "reviewedAt": "2026-09-14T12:51:08.553Z",
-    "mainSha": "ff3b1daeeb02785d5067eeff5266eff1ff7acdf4"
+    "reviewedAt": "2026-09-23T10:06:15.390Z",
+    "mainSha": "49cf8dd3dcd603e7191f56a17c28174ba52a5a98"
   }
 }

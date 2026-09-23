@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-23T09:57:35.915Z",
+  "updatedAt": "2026-09-23T02:30:39Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 6773,
+    "title": "🐛 Matcher T2: hoja CORREOS mezcla Postlibri y paquetería en el reparto plano e infla el coste de POSTLIBRI",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6773",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:admin",
+      "triage:needs-info",
+      "P2",
+      "no-stale",
+      "origin:dev"
+    ],
+    "createdAt": "2026-07-02T08:19:11Z",
+    "updatedAt": "2026-09-23T02:30:39Z"
+  },
+  "lane": "manual_review",
+  "priority": "P2",
+  "question": "¿Se autoriza ejecutar y certificar el rerun histórico de abril y mayo con una conciliación de los 64 pedidos afectados?",
+  "rationale": "La corrección futura está en código, pero la operación escribe datos históricos y el estado vivo no puede verificarse desde este checkout.",
+  "options": [
+    {
+      "title": "Reprocesar y conciliar",
+      "body": "Ejecutar ambos meses con las hojas originales y adjuntar recuentos, totales y una muestra de pedidos antes de cerrar.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener pendiente histórica",
+      "body": "Conservar la issue abierta si no se dispone de los ficheros o de autorización para corregir los datos históricos.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Reprocesar y conciliar",
+    "body": "Ejecutar ambos meses con las hojas originales y adjuntar recuentos, totales y una muestra de pedidos antes de cerrar.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "PabloMoran34",
+    "reason": "Está asignado a la issue y su historial concentra la implementación y las reglas de reparto de este matcher.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6773.md",
+    "reviewedAt": "2026-09-23T09:57:35.915Z",
+    "mainSha": "49cf8dd3dcd603e7191f56a17c28174ba52a5a98"
+  }
+}
