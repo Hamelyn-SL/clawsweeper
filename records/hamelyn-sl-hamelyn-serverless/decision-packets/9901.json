@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-23T11:03:29.554Z",
+  "updatedAt": "2026-09-22T09:00:15Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9901,
+    "title": "Ecommerce: add dark mode support to the storefront",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9901",
+    "state": "open",
+    "labels": [
+      "app:ecommerce",
+      "feature",
+      "reporter:miguel",
+      "triage:done",
+      "P3",
+      "origin:dev"
+    ],
+    "createdAt": "2026-09-22T08:37:19Z",
+    "updatedAt": "2026-09-22T09:00:15Z"
+  },
+  "lane": "product_direction",
+  "priority": "P3",
+  "question": "¿D10 aprueba solo `prefers-color-scheme` inicialmente o también un selector persistente compartido, y en qué entrega entra?",
+  "rationale": "La incidencia exige un selector, pero la épica conserva explícitamente esa decisión como aplazada y prohíbe asumirla aprobada.",
+  "options": [
+    {
+      "title": "Solo tema del sistema primero",
+      "body": "Entregar tokens y `prefers-color-scheme` sin selector persistente, dejando su contrato para una decisión posterior.",
+      "recommended": true
+    },
+    {
+      "title": "Aprobar selector persistente",
+      "body": "Definir prioridad, almacenamiento, SSR/SSG, primera pintura y equivalencia entre Ecommerce y Supply antes de implementarlo.",
+      "recommended": false
+    },
+    {
+      "title": "Posponer el paquete",
+      "body": "Mantener la migración a tokens preparada y aplazar ambos comportamientos hasta la ventana acordada.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Solo tema del sistema primero",
+    "body": "Entregar tokens y `prefers-color-scheme` sin selector persistente, dejando su contrato para una decisión posterior.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "danielmenchen-hamelyn",
+    "reason": "La decisión D10 está registrada y mantenida en la épica de Supply que esta incidencia debe coordinar.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9901.md",
+    "reviewedAt": "2026-09-23T11:03:29.554Z",
+    "mainSha": "49cf8dd3dcd603e7191f56a17c28174ba52a5a98"
+  }
+}
