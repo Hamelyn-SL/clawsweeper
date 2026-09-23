@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-21T14:01:50.446Z",
-  "updatedAt": "2026-09-21T13:53:50Z",
+  "generatedAt": "2026-09-23T11:15:27.686Z",
+  "updatedAt": "2026-09-21T15:45:35Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,44 +13,48 @@
       "source:admin-panel",
       "app:marketplace",
       "question",
-      "triage:queued",
-      "reporter:carlotavarela",
+      "triage:needs-info",
+      "clawsweeper:needs-product-decision",
       "P2",
-      "clawsweeper:needs-product-decision"
+      "reporter:carlotavarela"
     ],
     "createdAt": "2026-09-21T13:53:37Z",
-    "updatedAt": "2026-09-21T13:53:50Z"
+    "updatedAt": "2026-09-21T15:45:35Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe Hamelyn declarar España como origen aduanero fijo para todo el inventario de marketplace o gestionar un origen verificable por producto y canal?",
-  "rationale": "El campo existente describe producción de contenidos y la ruta Amazon solo publica ofertas; el valor correcto y el punto de integración requieren criterio comercial y de cumplimiento.",
+  "question": "¿Debe Hamelyn gestionar el país de origen como dato de catálogo por producto o aplicar un valor fijo únicamente a los listings y mercados que confirme la alerta de Amazon?",
+  "rationale": "La obligatoriedad, el nombre del atributo y la corrección de los listings existentes dependen del mercado y del esquema de producto; el código no puede inferir esa política de negocio.",
   "options": [
     {
-      "title": "Origen por producto y canal",
-      "body": "Añadir un origen aduanero explícito y enviar únicamente el atributo que acepte cada marketplace para el tipo de publicación correspondiente.",
+      "title": "Acotar al requisito confirmado",
+      "body": "Validar la alerta, mercado y tipo de producto, y aplicar el atributo solo donde el esquema de Amazon lo admita.",
       "recommended": true
     },
     {
-      "title": "España como política global",
-      "body": "Documentar la validación legal y aplicar España en los canales y atributos concretos donde ese valor sea correcto.",
+      "title": "Modelar el dato de catálogo",
+      "body": "Incorporar país de origen por producto para reutilizarlo en varios marketplaces, asumiendo migración y revisión de datos históricos.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener el flujo actual",
+      "body": "No enviar el atributo hasta disponer de una obligación concreta y evidencia de que afecta a listings de Hamelyn.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Origen por producto y canal",
-    "body": "Añadir un origen aduanero explícito y enviar únicamente el atributo que acepte cada marketplace para el tipo de publicación correspondiente.",
+    "title": "Acotar al requisito confirmado",
+    "body": "Validar la alerta, mercado y tipo de producto, y aplicar el atributo solo donde el esquema de Amazon lo admita.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "Miguel Angel Hernández Perdomo",
-    "reason": "Su historial conecta directamente con la arquitectura actual de creación y cumplimiento de listings Amazon.",
-    "confidence": "high"
+    "reason": "Su trabajo reciente está en el flujo que construye y actualiza los listings de Amazon.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9854.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9854#issuecomment-5761745113",
-    "reviewedAt": "2026-09-21T14:01:50.446Z",
-    "mainSha": "f33ec8860cfcd2e8e3b46191249ec5df79217c43"
+    "reviewedAt": "2026-09-23T11:15:27.686Z",
+    "mainSha": "49cf8dd3dcd603e7191f56a17c28174ba52a5a98"
   }
 }

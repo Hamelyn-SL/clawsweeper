@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-23T11:16:37.308Z",
+  "updatedAt": "2026-09-22T15:34:25Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9937,
+    "title": "Creación de cupones por países",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9937",
+    "state": "open",
+    "labels": [
+      "source:admin-panel",
+      "app:ecommerce",
+      "reporter:marta",
+      "feature",
+      "triage:done",
+      "P2"
+    ],
+    "createdAt": "2026-09-22T13:13:40Z",
+    "updatedAt": "2026-09-22T15:34:25Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿La restricción debe corresponder al storefront resuelto desde el host de la compra, independientemente del país de envío?",
+  "rationale": "La issue usa “país” y “tienda” indistintamente, pero el código distingue el host de la tienda del destino del pedido; esa elección define el contrato persistido.",
+  "options": [
+    {
+      "title": "Restringir por storefront",
+      "body": "Guardar un país de tienda opcional, resolverlo desde el host y mantener globales los cupones sin valor.",
+      "recommended": true
+    },
+    {
+      "title": "Restringir por destino de envío",
+      "body": "Aplicar el cupón según `address.countryCode`, aunque se compre desde otra tienda.",
+      "recommended": false
+    },
+    {
+      "title": "Admitir ambos ámbitos",
+      "body": "Diseñar reglas separadas para storefront y destino, con mayor complejidad operativa.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Restringir por storefront",
+    "body": "Guardar un país de tienda opcional, resolverlo desde el host y mantener globales los cupones sin valor.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Miguel Angel Hernández Perdomo",
+    "reason": "Su trabajo reciente conecta el host del carrito con la validación de cupones.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9937.md",
+    "reviewedAt": "2026-09-23T11:16:37.308Z",
+    "mainSha": "49cf8dd3dcd603e7191f56a17c28174ba52a5a98"
+  }
+}
