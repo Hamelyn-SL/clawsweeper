@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-23T10:38:24.681Z",
+  "updatedAt": "2026-09-23T06:31:30Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9968,
+    "title": "Marketplace: [mercadolibre writes] ❌ request #384 falló {\"marketplace\":\"mercadolibre\",\"operation\":\"post\",\"path\":\"/items\"",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9968",
+    "state": "open",
+    "labels": [
+      "codex",
+      "bug",
+      "app:marketplace",
+      "triage:needs-info",
+      "P2",
+      "marketplace-crons"
+    ],
+    "createdAt": "2026-09-23T04:30:43Z",
+    "updatedAt": "2026-09-23T06:31:30Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué criterio operativo debe decidir que unas dimensiones de producto son demasiado pequeñas para enviarlas a MercadoLibre?",
+  "rationale": "El proveedor rechaza los valores observados, pero no aporta un mínimo universal y la incidencia no incluye el payload ni las medidas reales de embalaje.",
+  "options": [
+    {
+      "title": "Validar embalajes y fijar umbral",
+      "body": "Confirmar los atributos enviados y medidas reales de los SKU afectados antes de codificar una regla conservadora con fallback por peso.",
+      "recommended": true
+    },
+    {
+      "title": "Corregir datos de catálogo",
+      "body": "Mantener la regla actual y reparar exclusivamente las dimensiones incorrectas de los productos afectados si el embalaje real las desmiente.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Validar embalajes y fijar umbral",
+    "body": "Confirmar los atributos enviados y medidas reales de los SKU afectados antes de codificar una regla conservadora con fallback por peso.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Conoce el formateador y la política de fallback incorporada en la integración previa.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9968.md",
+    "reviewedAt": "2026-09-23T10:38:24.681Z",
+    "mainSha": "49cf8dd3dcd603e7191f56a17c28174ba52a5a98"
+  }
+}

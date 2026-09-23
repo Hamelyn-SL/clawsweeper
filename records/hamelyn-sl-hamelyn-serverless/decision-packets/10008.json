@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-23T10:39:23.940Z",
+  "updatedAt": "2026-09-23T10:28:23Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10008,
+    "title": "Agents: guardián de despliegues con sandbox por release y triage 2h/12h/24h",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10008",
+    "state": "open",
+    "labels": [
+      "app:infrastructure",
+      "feature",
+      "triage:queued",
+      "P2",
+      "reporter:danielmenchen-hamelyn"
+    ],
+    "createdAt": "2026-09-23T10:27:58Z",
+    "updatedAt": "2026-09-23T10:28:23Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe empezar el guardián como un piloto de observación por release sin acciones externas, o se aprueba desde el inicio el broker capaz de crear issues y publicar en Slack?",
+  "rationale": "La elección determina el perímetro de secretos, las garantías de idempotencia, el contrato de Blob y la superficie de fallo; no es una decisión que pueda inferirse de la implementación existente.",
+  "options": [
+    {
+      "title": "Piloto de observación acotado",
+      "body": "Implementar primero guardias por release en dry-run, con estado en Blob y reporte de hallazgos sin crear issues ni publicar fuera del canal de pruebas.",
+      "recommended": true
+    },
+    {
+      "title": "Habilitar acciones mediante broker",
+      "body": "Definir desde el inicio un broker con permisos por run para GitHub y Slack, junto con auditoría e idempotencia de todas las escrituras.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener los watchers actuales",
+      "body": "Conservar el gate post-despliegue vigente y posponer el guardián hasta disponer de una especificación operativa más estrecha.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Piloto de observación acotado",
+    "body": "Implementar primero guardias por release en dry-run, con estado en Blob y reporte de hallazgos sin crear issues ni publicar fuera del canal de pruebas.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es la persona con la señal histórica más fuerte sobre la arquitectura actual del infrastructure watcher y su contrato operativo.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10008.md",
+    "reviewedAt": "2026-09-23T10:39:23.940Z",
+    "mainSha": "49cf8dd3dcd603e7191f56a17c28174ba52a5a98"
+  }
+}
