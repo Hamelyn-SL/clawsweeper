@@ -1,60 +1,54 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-19T17:53:40.281Z",
-  "updatedAt": "2026-09-19T16:29:19Z",
+  "generatedAt": "2026-09-23T11:02:19.822Z",
+  "updatedAt": "2026-09-22T23:01:16Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
     "number": 9703,
-    "title": "Feltrinelli: 955 listings de stock vendido siguen comprables, 482 desde hace 37 horas",
+    "title": "Feltrinelli: validar capacidad de retirada y cuota OF24 tras drenar la cola B2B",
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9703",
     "state": "open",
     "labels": [
       "bug",
       "app:marketplace",
       "reporter:javier",
-      "triage:no-change",
+      "triage:needs-info",
       "clawsweeper:needs-product-decision",
-      "P1"
+      "P2"
     ],
     "createdAt": "2026-09-17T22:20:44Z",
-    "updatedAt": "2026-09-19T16:29:19Z"
+    "updatedAt": "2026-09-22T23:01:16Z"
   },
   "lane": "product_direction",
-  "priority": "P1",
-  "question": "¿Qué capacidad debe reservar Feltrinelli para retiradas durante picos B2B y cómo se garantiza que el cambio de configuración se aplique a instancias warm?",
-  "rationale": "El código ya evita el backoff de días; el reparto entre retiradas, altas y precios, y la estrategia de recarga, implican un compromiso operativo que el código no puede escoger de forma segura.",
+  "priority": "P2",
+  "question": "¿Debe Feltrinelli reservar o priorizar cuota OF24 para retiradas de stock vendido frente a altas y cambios de precio durante picos?",
+  "rationale": "El límite actual se comparte intencionadamente por tienda; cambiar su reparto modifica el servicio relativo de tres operaciones de Marketplace.",
   "options": [
     {
-      "title": "Validar 50 con cuota de retirada",
-      "body": "Observar ejecuciones posteriores, selección, lotes, rechazos OF24 y resultados remotos; conservar `withdraw=50` solo si el drenaje supera la entrada.",
+      "title": "Priorizar retiradas vendidas",
+      "body": "Dar preferencia o una reserva acotada a `withdraw` cuando exista deuda de stock vendido, manteniendo el techo OF24 total.",
       "recommended": true
     },
     {
-      "title": "Aumentar la reserva de retirada",
-      "body": "Elevar el límite o reservar más cuota OF24 para retiradas, aceptando menor capacidad inmediata para altas o precios.",
-      "recommended": false
-    },
-    {
-      "title": "Definir recarga controlada",
-      "body": "Incorporar un procedimiento operativo de renovación o recarga tras cambios de configuración para evitar valores persistidos sin efecto inmediato.",
+      "title": "Mantener cuota compartida",
+      "body": "Conservar el reparto actual y aceptar reintentos locales, documentando una expectativa de latencia sin garantía durante picos.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Validar 50 con cuota de retirada",
-    "body": "Observar ejecuciones posteriores, selección, lotes, rechazos OF24 y resultados remotos; conservar `withdraw=50` solo si el drenaje supera la entrada.",
+    "title": "Priorizar retiradas vendidas",
+    "body": "Dar preferencia o una reserva acotada a `withdraw` cuando exista deuda de stock vendido, manteniendo el techo OF24 total.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Su actualización operativa ya delimitó la configuración viva, el presupuesto compartido y la validación pendiente.",
+    "reason": "Es la persona más conectada tanto al diseño del limitador OF24 como a la evidencia operativa reciente.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9703.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9703#issuecomment-5740830359",
-    "reviewedAt": "2026-09-19T17:53:40.281Z",
-    "mainSha": "d0e0b93e78bba63a1c6ff1614e823941e10afa9f"
+    "reviewedAt": "2026-09-23T11:02:19.822Z",
+    "mainSha": "49cf8dd3dcd603e7191f56a17c28174ba52a5a98"
   }
 }
