@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-23T10:58:20.143Z",
+  "updatedAt": "2026-09-22T23:33:02Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9639,
+    "title": "eBay: verificar prevención de propagación B2B incompleta tras recuperar la cohorte del 16-sep",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9639",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "triage:done",
+      "P2"
+    ],
+    "createdAt": "2026-09-17T06:28:55Z",
+    "updatedAt": "2026-09-22T23:33:02Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe una ejecución B2B interrumpida reanudar automáticamente las fases pendientes tras reconciliar el estado, o quedar bloqueada para recuperación explícita de un operador?",
+  "rationale": "La elección define la semántica operativa ante escrituras parciales y efectos externos inciertos; el código actual solo informa del residuo y bloquea un reintento seguro.",
+  "options": [
+    {
+      "title": "Reanudar por fases confirmadas",
+      "body": "Persistir checkpoints e identidades, reconciliar antes de cada retoma y repetir únicamente los pasos todavía no acreditados.",
+      "recommended": true
+    },
+    {
+      "title": "Recuperación manual controlada",
+      "body": "Marcar la ejecución parcial como fallida y ofrecer una operación explícita que un operador autorice tras revisar mirrors y Skypod.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Reanudar por fases confirmadas",
+    "body": "Persistir checkpoints e identidades, reconciliar antes de cada retoma y repetir únicamente los pasos todavía no acreditados.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "El historial reciente le vincula directamente con el diseño del ledger, los claims y los flujos de ejecución B2B.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9639.md",
+    "reviewedAt": "2026-09-23T10:58:20.143Z",
+    "mainSha": "49cf8dd3dcd603e7191f56a17c28174ba52a5a98"
+  }
+}
