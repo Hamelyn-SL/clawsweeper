@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-19T09:56:22.629Z",
-  "updatedAt": "2026-09-17T08:22:00Z",
+  "generatedAt": "2026-09-23T10:29:52.929Z",
+  "updatedAt": "2026-09-21T11:50:52Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
     "number": 9364,
-    "title": "eBay: seis ofertas llevan 4 días en bucle de retirada fallida con HTTP 400 en /api/ebay sin emitir withdraw-result",
+    "title": "eBay: completar diagnóstico por oferta en retiradas fallidas; seis casos históricos recuperados",
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9364",
     "state": "open",
     "labels": [
@@ -14,41 +14,45 @@
       "app:marketplace",
       "triage:needs-info",
       "clawsweeper:needs-product-decision",
-      "P1"
+      "P2"
     ],
     "createdAt": "2026-09-10T06:22:58Z",
-    "updatedAt": "2026-09-17T08:22:00Z"
+    "updatedAt": "2026-09-21T11:50:52Z"
   },
   "lane": "product_direction",
-  "priority": "P1",
-  "question": "¿Qué debe ocurrir tras N fallos ambiguos consecutivos de retirada eBay: continuar con backoff o aparcar el mirror y alertar para revisión operativa?",
-  "rationale": "El código puede añadir telemetría de forma mecánica, pero decidir el umbral y el estado operativo exige equilibrar sobreventa frente a tombstones incorrectos.",
+  "priority": "P2",
+  "question": "¿Qué debe ocurrir tras N fallos eBay no confirmados de retirada: continuar reintentando con alerta, pasar a revisión manual, o cerrar la retirada?",
+  "rationale": "El contrato actual prioriza no tombstonear una oferta potencialmente viva; detener o cerrar el flujo tras un umbral cambia ese equilibrio operativo.",
   "options": [
     {
-      "title": "Aparcar y alertar tras umbral",
-      "body": "Conservar el mirror y detener los reintentos frecuentes, dejando una señal explícita con SKU, offerId y error eBay para revisión.",
+      "title": "Reintentar con alerta individual",
+      "body": "Mantener la retirada pendiente y emitir diagnóstico/alerta por SKU, oferta y error saneado cuando se alcance el umbral.",
       "recommended": true
     },
     {
-      "title": "Mantener retry ilimitado",
-      "body": "Seguir reintentando cada cuatro horas hasta que eBay confirme ausencia o éxito, aceptando la carga operativa y el riesgo de exposición.",
+      "title": "Pasar a revisión manual",
+      "body": "Pausar el reintento automático tras el umbral, preservando el identificador y una acción operativa explícita de retirada.",
+      "recommended": false
+    },
+    {
+      "title": "Cerrar como retirada",
+      "body": "Tombstonear tras el umbral aunque no exista ausencia remota confirmada, aceptando el riesgo de listing todavía publicado.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aparcar y alertar tras umbral",
-    "body": "Conservar el mirror y detener los reintentos frecuentes, dejando una señal explícita con SKU, offerId y error eBay para revisión.",
+    "title": "Reintentar con alerta individual",
+    "body": "Mantener la retirada pendiente y emitir diagnóstico/alerta por SKU, oferta y error saneado cuando se alcance el umbral.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "Miguel Angel Hernández Perdomo",
-    "reason": "Su historial reciente cubre la reconciliación de destino y la semántica actual del adaptador eBay.",
+    "person": "MiguelHamelyn",
+    "reason": "Introdujo la ruta actual de retirada por SKU y puede valorar el contrato de reintentos frente a la seguridad de inventario.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9364.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9364#issuecomment-5644931658",
-    "reviewedAt": "2026-09-19T09:56:22.629Z",
-    "mainSha": "d0e0b93e78bba63a1c6ff1614e823941e10afa9f"
+    "reviewedAt": "2026-09-23T10:29:52.929Z",
+    "mainSha": "49cf8dd3dcd603e7191f56a17c28174ba52a5a98"
   }
 }
