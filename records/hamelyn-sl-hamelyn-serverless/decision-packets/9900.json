@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-23T10:50:14.839Z",
+  "updatedAt": "2026-09-22T08:45:41Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9900,
+    "title": "Supply v3: add dark mode support to the seller web",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9900",
+    "state": "open",
+    "labels": [
+      "app:supply",
+      "feature",
+      "reporter:miguel",
+      "triage:needs-info",
+      "P3",
+      "origin:dev",
+      "epic:supply-v3"
+    ],
+    "createdAt": "2026-09-22T08:37:10Z",
+    "updatedAt": "2026-09-22T08:45:41Z"
+  },
+  "lane": "product_direction",
+  "priority": "P3",
+  "question": "¿Supply v3 debe respetar únicamente `prefers-color-scheme` o incluir también un selector persistido, y debe entregarse antes del lanzamiento web?",
+  "rationale": "Las dos alternativas cambian configuración, persistencia y comportamiento de primera pintura; la propia épica mantiene esa elección aplazada.",
+  "options": [
+    {
+      "title": "Solo tema del sistema inicialmente",
+      "body": "Entregar tokens y detección del sistema sin guardar una elección explícita, dejando el selector para una decisión posterior.",
+      "recommended": true
+    },
+    {
+      "title": "Aprobar selector persistido",
+      "body": "Definir almacenamiento, prioridad frente al sistema, migración, SSR/SSG y equivalencia en Capacitor antes de implementar.",
+      "recommended": false
+    },
+    {
+      "title": "Posponer el paquete completo",
+      "body": "Mantener los estilos preparados para tokens, pero aplazar ambos comportamientos hasta después del lanzamiento web.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Solo tema del sistema inicialmente",
+    "body": "Entregar tokens y detección del sistema sin guardar una elección explícita, dejando el selector para una decisión posterior.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "danielmenchen-hamelyn",
+    "reason": "La épica de Supply v3 establece el orden de integración y registra D10 como decisión pendiente.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9900.md",
+    "reviewedAt": "2026-09-23T10:50:14.839Z",
+    "mainSha": "49cf8dd3dcd603e7191f56a17c28174ba52a5a98"
+  }
+}
