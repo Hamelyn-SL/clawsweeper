@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-23T13:58:51.826Z",
+  "generatedAt": "2026-09-23T14:00:01.105Z",
   "updatedAt": "2026-09-23T13:48:42Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -10,48 +10,46 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10023",
     "state": "open",
     "labels": [
-      "size/XXL",
-      "P2"
+      "size/XXL"
     ],
     "createdAt": "2026-09-23T13:32:08Z",
     "updatedAt": "2026-09-23T13:48:42Z",
     "headSha": "59eae0a412dbd75a7ea566cc9bef4e79d2212087"
   },
-  "lane": "product_direction",
+  "lane": "security_boundary",
   "priority": "P2",
-  "question": "¿Se aprueba que el piloto pueda evolucionar a un broker que cree issues y publique en Slack, o debe quedarse limitado a observación en dry-run?",
-  "rationale": "La implementación ya incluye ambas capacidades, pero la issue canónica conserva una decisión explícita sobre el nivel de automatización aceptable.",
+  "question": "¿Se aprueba que `deploy-guard` publique en Slack y cree issues desde el inicio, o debe limitarse primero a un piloto observacional sin escrituras externas?",
+  "rationale": "El cambio amplía el perímetro de credenciales y automatiza comunicaciones operativas; la decisión afecta al contrato permanente, no solo a una corrección mecánica.",
   "options": [
     {
-      "title": "Piloto solo observación",
-      "body": "Mantener dry-run, canal de pruebas y sin creación externa hasta revisar resultados de releases reales.",
+      "title": "Piloto observacional acotado",
+      "body": "Bloquear publicaciones externas en dry-run y exigir un canal de pruebas explícito antes de activar cualquier salida.",
       "recommended": true
     },
     {
-      "title": "Aprobar publicaciones acotadas",
-      "body": "Permitir issues y Slack tras documentar la autorización por run, auditoría e idempotencia como contrato permanente.",
+      "title": "Aprobar el broker de escritura",
+      "body": "Aceptar Slack e issues desde el inicio tras documentar el canal, auditoría, idempotencia y criterio de activación.",
       "recommended": false
     },
     {
-      "title": "Posponer el guardia",
-      "body": "Conservar los watchers actuales hasta reducir el alcance del nuevo ciclo de vida.",
+      "title": "Pausar la integración",
+      "body": "Mantener los watchers actuales hasta disponer de una especificación más estrecha para el broker y su operación.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Piloto solo observación",
-    "body": "Mantener dry-run, canal de pruebas y sin creación externa hasta revisar resultados de releases reales.",
+    "title": "Piloto observacional acotado",
+    "body": "Bloquear publicaciones externas en dry-run y exigir un canal de pruebas explícito antes de activar cualquier salida.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "El comentario de la issue le identifica como dueño probable y su historial cubre el broker de lectura reutilizado.",
-    "confidence": "high"
+    "reason": "La issue canónica ya le señala como dueño probable de esta decisión de seguridad y comportamiento.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10023.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10023#issuecomment-5796212296",
-    "reviewedAt": "2026-09-23T13:58:51.826Z",
+    "reviewedAt": "2026-09-23T14:00:01.105Z",
     "mainSha": "ebcb255147d73b8d0dd13fb87cdff57ba220a682"
   }
 }
