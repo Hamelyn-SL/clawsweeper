@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-23T10:26:59.794Z",
+  "updatedAt": "2026-09-23T08:28:52Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9993,
+    "title": "Communication Center: ejecutar los emails con dispatcher y workers",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9993",
+    "state": "open",
+    "labels": [
+      "app:infrastructure",
+      "feature",
+      "triage:queued",
+      "P2",
+      "reporter:danielmenchen-hamelyn",
+      "epic:communication-center"
+    ],
+    "createdAt": "2026-09-23T08:25:32Z",
+    "updatedAt": "2026-09-23T08:28:52Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué app o proyecto y qué entorno no productivo alojarán el consumidor central para validar publicación, recepción, fallo y reentrega entre los proyectos productores antes de implementar los workers?",
+  "rationale": "La fase previa de infraestructura identifica esta elección como necesaria para saber si Vercel Queues puede transportar los trabajos de los emisores existentes al worker elegido.",
+  "options": [
+    {
+      "title": "Validar una app existente",
+      "body": "Usar temporalmente una app desplegable actual como consumidor y demostrar el recorrido aislado por entorno antes de fijar la arquitectura.",
+      "recommended": true
+    },
+    {
+      "title": "Crear un proyecto dedicado",
+      "body": "Separar los workers en un proyecto propio si la prueba muestra que una app existente no ofrece el aislamiento u operación necesarios.",
+      "recommended": false
+    },
+    {
+      "title": "Posponer la cola",
+      "body": "Mantener el envío actual mientras se evalúa una topología soportada si la prueba entre proyectos no resulta viable.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Validar una app existente",
+    "body": "Usar temporalmente una app desplegable actual como consumidor y demostrar el recorrido aislado por entorno antes de fijar la arquitectura.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "danielmenchen-hamelyn",
+    "reason": "Es el proponente de la épica y la discusión relacionada ya le identifica como dueño probable de esta elección.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9993.md",
+    "reviewedAt": "2026-09-23T10:26:59.794Z",
+    "mainSha": "49cf8dd3dcd603e7191f56a17c28174ba52a5a98"
+  }
+}
