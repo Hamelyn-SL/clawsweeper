@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-23T10:47:21.628Z",
+  "updatedAt": "2026-09-23T05:45:48Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9963,
+    "title": "Marketplace: unhandled error in process order for abebooks { name: 'typeerror', message: 'fetch failed' }",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9963",
+    "state": "open",
+    "labels": [
+      "codex",
+      "bug",
+      "app:marketplace",
+      "triage:needs-info",
+      "P2",
+      "marketplace-crons"
+    ],
+    "createdAt": "2026-09-23T02:30:45Z",
+    "updatedAt": "2026-09-23T05:45:48Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se debe limitar una futura mitigación a lecturas idempotentes de pedidos o se confirma que las operaciones de actualización de AbeBooks toleran reintentos seguros?",
+  "rationale": "El helper de transporte es común a consultas y actualizaciones; el código no demuestra que repetir una actualización de envío sea inocuo.",
+  "options": [
+    {
+      "title": "Conciliar y acotar reintentos",
+      "body": "Confirmar primero el impacto operativo y añadir reintentos únicamente a `getAllNewOrders` y `searchOrders` con cobertura focalizada.",
+      "recommended": true
+    },
+    {
+      "title": "Validar reintentos de mutaciones",
+      "body": "Obtener garantía de AbeBooks sobre la idempotencia de actualizaciones antes de compartir una política de reintentos con envíos.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener observabilidad actual",
+      "body": "No cambiar transporte si la conciliación confirma recuperación completa y el proveedor no ofrece semántica segura de reintento.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Conciliar y acotar reintentos",
+    "body": "Confirmar primero el impacto operativo y añadir reintentos únicamente a `getAllNewOrders` y `searchOrders` con cobertura focalizada.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Es el autor identificado del helper de transporte y puede evaluar el límite técnico de la política de reintentos.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9963.md",
+    "reviewedAt": "2026-09-23T10:47:21.628Z",
+    "mainSha": "49cf8dd3dcd603e7191f56a17c28174ba52a5a98"
+  }
+}

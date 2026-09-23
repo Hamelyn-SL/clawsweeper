@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-23T10:47:41.195Z",
+  "updatedAt": "2026-09-23T04:59:00Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9916,
+    "title": "Marketplace: ❌ error processing order <id> (ordercode: d-<number>): internal error",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9916",
+    "state": "open",
+    "labels": [
+      "codex",
+      "bug",
+      "app:marketplace",
+      "triage:no-change",
+      "P2",
+      "marketplace-crons"
+    ],
+    "createdAt": "2026-09-22T10:30:41Z",
+    "updatedAt": "2026-09-23T04:59:00Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe un error interno `-4` de Arnoia seguir llevando a `TO_CANCEL` a las 168 horas, o debe detenerse para reconciliación antes de cancelar?",
+  "rationale": "El código actual aplica un límite duro, mientras que la clasificación y el diseño histórico reconocen que un error técnico no confirma la inexistencia del pedido en el proveedor.",
+  "options": [
+    {
+      "title": "Reconciliar antes de cancelar",
+      "body": "Para `-4`, conservar el pedido pendiente y alertar a Operaciones hasta confirmar expedición, transportista o inexistencia en Arnoia.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener el límite duro",
+      "body": "Conservar la cancelación a las 168 horas y aceptar el riesgo operativo de que un pedido expedido requiera recuperación posterior.",
+      "recommended": false
+    },
+    {
+      "title": "Aplicar una ventana distinta",
+      "body": "Definir un plazo específico para errores ambiguos y una transición visible de revisión antes de cualquier cancelación.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Reconciliar antes de cancelar",
+    "body": "Para `-4`, conservar el pedido pendiente y alertar a Operaciones hasta confirmar expedición, transportista o inexistencia en Arnoia.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Su cambio reciente define el comportamiento de reintento y el límite que esta incidencia cuestiona.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9916.md",
+    "reviewedAt": "2026-09-23T10:47:41.195Z",
+    "mainSha": "49cf8dd3dcd603e7191f56a17c28174ba52a5a98"
+  }
+}
