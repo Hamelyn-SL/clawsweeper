@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-19T08:29:18.859Z",
-  "updatedAt": "2026-09-16T14:30:37Z",
+  "generatedAt": "2026-09-23T10:14:46.356Z",
+  "updatedAt": "2026-09-23T02:30:41Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,43 +14,42 @@
       "bug",
       "app:marketplace",
       "triage:no-change",
-      "marketplace-crons",
+      "clawsweeper:needs-product-decision",
       "P2",
-      "clawsweeper:needs-product-decision"
+      "marketplace-crons"
     ],
     "createdAt": "2026-09-02T17:30:44Z",
-    "updatedAt": "2026-09-16T14:30:37Z"
+    "updatedAt": "2026-09-23T02:30:41Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "Cuando una firma saneada confirme un rechazo permanente de eBay, ¿se excluye por coincidencia exacta o se implanta un límite genérico de reintentos para todos los marketplaces?",
-  "rationale": "El código actual permite observar la causa, pero elegir entre una exclusión estrecha y una política común cambia el comportamiento operativo de pedidos recuperables.",
+  "question": "¿Qué política debe aplicarse a cada rechazo de `confirmShipment`: reintento acotado, estado terminal con revisión operativa o reconciliación contra el marketplace?",
+  "rationale": "El código puede implementar una firma concreta, pero decidir qué fallos son permanentes por marketplace altera la recuperación de pedidos recogidos y no se deduce con seguridad de los logs agregados.",
   "options": [
     {
-      "title": "Excluir firmas exactas",
-      "body": "Añadir solo firmas eBay verificadas al patrón terminal y mantener reintentos para los demás errores.",
+      "title": "Clasificar por proveedor y firma",
+      "body": "Mantener reintentos sólo para errores transitorios y añadir reglas terminales o reconciliación para rechazos identificados.",
       "recommended": true
     },
     {
-      "title": "Límite común de reintentos",
-      "body": "Introducir un contador y una política transversal para cortar repeticiones de cualquier marketplace.",
+      "title": "Mantener recuperación genérica",
+      "body": "Seguir reabriendo cualquier error no reconocido mientras se recopilan más firmas y evidencia operativa.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Excluir firmas exactas",
-    "body": "Añadir solo firmas eBay verificadas al patrón terminal y mantener reintentos para los demás errores.",
+    "title": "Clasificar por proveedor y firma",
+    "body": "Mantener reintentos sólo para errores transitorios y añadir reglas terminales o reconciliación para rechazos identificados.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "Miguel Angel Hernández Perdomo",
-    "reason": "El historial reciente le vincula directamente con el controlador que decide qué errores se reintentan.",
+    "person": "MiguelHamelyn",
+    "reason": "La investigación de recovery y los cambios recientes de esta ruta lo sitúan como mejor punto de decisión técnica-operativa.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9057.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9057#issuecomment-5516740876",
-    "reviewedAt": "2026-09-19T08:29:18.859Z",
-    "mainSha": "d0e0b93e78bba63a1c6ff1614e823941e10afa9f"
+    "reviewedAt": "2026-09-23T10:14:46.356Z",
+    "mainSha": "49cf8dd3dcd603e7191f56a17c28174ba52a5a98"
   }
 }
