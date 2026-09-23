@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-23T10:32:26.401Z",
+  "updatedAt": "2026-09-23T08:28:48Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9992,
+    "title": "Communication Center: definir sendNotification y la tabla maestra de eventos",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9992",
+    "state": "open",
+    "labels": [
+      "app:infrastructure",
+      "feature",
+      "triage:queued",
+      "P2",
+      "reporter:danielmenchen-hamelyn",
+      "epic:communication-center"
+    ],
+    "createdAt": "2026-09-23T08:25:29Z",
+    "updatedAt": "2026-09-23T08:28:48Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué app o proyecto será propietario del consumidor central de Communication Center para que `sendNotification` defina una aceptación e idempotencia compatibles con la topología real?",
+  "rationale": "El destino de aceptación, la identidad de reintento y la semántica de encolado dependen de una arquitectura entre proyectos que la fase previa todavía no ha demostrado.",
+  "options": [
+    {
+      "title": "Ampliar Public",
+      "body": "Usar `apps/public` como consumidor central y definir topics, autorización y límites específicos de comunicaciones.",
+      "recommended": true
+    },
+    {
+      "title": "Crear workers dedicados",
+      "body": "Alojar consumidores en una app propia y definir un puente autenticado desde cada productor.",
+      "recommended": false
+    },
+    {
+      "title": "Posponer el contrato",
+      "body": "Mantener los envíos actuales hasta disponer de una topología de cola soportada y validada en no producción.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Ampliar Public",
+    "body": "Usar `apps/public` como consumidor central y definir topics, autorización y límites específicos de comunicaciones.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "La fase de infraestructura relacionada le identifica como dueño probable de la decisión sobre el consumidor central.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9992.md",
+    "reviewedAt": "2026-09-23T10:32:26.401Z",
+    "mainSha": "49cf8dd3dcd603e7191f56a17c28174ba52a5a98"
+  }
+}
