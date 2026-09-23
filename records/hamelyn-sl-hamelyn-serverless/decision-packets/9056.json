@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-07T15:57:31.658Z",
-  "updatedAt": "2026-09-07T15:30:50Z",
+  "generatedAt": "2026-09-23T10:03:16.121Z",
+  "updatedAt": "2026-09-22T08:21:00Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,47 +15,41 @@
       "app:marketplace",
       "triage:needs-info",
       "clawsweeper:needs-product-decision",
-      "marketplace-crons",
-      "P2"
+      "P2",
+      "marketplace-crons"
     ],
     "createdAt": "2026-09-02T17:30:43Z",
-    "updatedAt": "2026-09-07T15:30:50Z"
+    "updatedAt": "2026-09-22T08:21:00Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Ante un 500 recurrente del endpoint de restricciones, debe el cron reintentar y omitir temporalmente el listing, o mantener la publicación actual sin pre-check confirmado?",
-  "rationale": "El código y el test establecen la continuación actual, mientras que la recurrencia reabre el riesgo operativo de publicar sin el filtro; elegir el coste aceptable requiere criterio de negocio y cumplimiento.",
+  "question": "¿Debe un 500 persistente de restricciones bloquear temporalmente la publicación tras reintentos acotados, o se acepta publicar sin ese filtro?",
+  "rationale": "La prueba actual fija una decisión fail-open; cambiarla altera el equilibrio entre continuidad operativa y riesgo de listings restringidos.",
   "options": [
     {
-      "title": "Reintentar y aplazar el listing",
-      "body": "Aplicar reintentos acotados y devolver un resultado transitorio si no se recupera la comprobación, evitando publicar sin validar restricciones.",
+      "title": "Reintentar y dejar pendiente",
+      "body": "Tras reintentos acotados, registrar un error transitorio y no publicar hasta obtener una comprobación de restricciones concluyente.",
       "recommended": true
     },
     {
-      "title": "Mantener la continuación actual",
-      "body": "Conservar la publicación tras el aviso y aceptar explícitamente el riesgo operacional mientras se mejora la observabilidad por ASIN.",
-      "recommended": false
-    },
-    {
-      "title": "Aplicar una política híbrida",
-      "body": "Permitir continuación solo bajo condiciones verificables, como errores aislados o una confirmación posterior de oferta, con métricas específicas.",
+      "title": "Mantener fail-open explícito",
+      "body": "Seguir publicando tras el 500, pero aceptar el riesgo y exigir correlación por listing para detectar consecuencias.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Reintentar y aplazar el listing",
-    "body": "Aplicar reintentos acotados y devolver un resultado transitorio si no se recupera la comprobación, evitando publicar sin validar restricciones.",
+    "title": "Reintentar y dejar pendiente",
+    "body": "Tras reintentos acotados, registrar un error transitorio y no publicar hasta obtener una comprobación de restricciones concluyente.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Está asignado y ya definió la condición operativa que motivó la reapertura.",
+    "reason": "Es la persona asignada y ya evaluó el comportamiento operativo de esta alerta.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9056.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9056#issuecomment-5513778115",
-    "reviewedAt": "2026-09-07T15:57:31.658Z",
-    "mainSha": "829910f9e249e89f9d5c30248ac6ba2ca7a4ea1f"
+    "reviewedAt": "2026-09-23T10:03:16.121Z",
+    "mainSha": "49cf8dd3dcd603e7191f56a17c28174ba52a5a98"
   }
 }

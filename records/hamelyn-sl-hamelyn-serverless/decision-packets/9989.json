@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-23T10:02:14.870Z",
+  "updatedAt": "2026-09-23T09:29:51Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9989,
+    "title": "Épica Communication Center: centralizar los emails y ampliar después la trazabilidad",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9989",
+    "state": "open",
+    "labels": [
+      "app:infrastructure",
+      "feature",
+      "triage:done",
+      "P2",
+      "reporter:danielmenchen-hamelyn",
+      "epic:communication-center"
+    ],
+    "createdAt": "2026-09-23T08:25:24Z",
+    "updatedAt": "2026-09-23T09:29:51Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué app o proyecto y qué entorno no productivo alojarán el consumidor central para validar el recorrido entre proyectos antes de implementar los workers?",
+  "rationale": "El cliente compartido no determina por sí mismo el destino de mensajes entre proyectos Vercel, y esta elección condiciona aislamiento, autenticación, reintentos y despliegue.",
+  "options": [
+    {
+      "title": "Validar una app desplegable existente",
+      "body": "Usar una app existente como consumidor temporal y demostrar publicación, recepción, fallo y reentrega aislados por entorno antes de fijar la arquitectura.",
+      "recommended": true
+    },
+    {
+      "title": "Crear un proyecto dedicado",
+      "body": "Separar los workers en un proyecto específico si la prueba demuestra que una app existente no satisface el aislamiento o la operación requerida.",
+      "recommended": false
+    },
+    {
+      "title": "Posponer la cola",
+      "body": "Mantener los envíos actuales mientras se decide una alternativa soportada si Vercel Queues no cubre el recorrido entre proyectos.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Validar una app desplegable existente",
+    "body": "Usar una app existente como consumidor temporal y demostrar publicación, recepción, fallo y reentrega aislados por entorno antes de fijar la arquitectura.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "danielmenchen-hamelyn",
+    "reason": "Es quien articula la épica y las fases abiertas que contienen la decisión de topología.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9989.md",
+    "reviewedAt": "2026-09-23T10:02:14.870Z",
+    "mainSha": "49cf8dd3dcd603e7191f56a17c28174ba52a5a98"
+  }
+}
