@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-23T13:58:51.826Z",
+  "updatedAt": "2026-09-23T13:48:42Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10023,
+    "title": "feat: add deploy guard with sandbox watch per release",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10023",
+    "state": "open",
+    "labels": [
+      "size/XXL"
+    ],
+    "createdAt": "2026-09-23T13:32:08Z",
+    "updatedAt": "2026-09-23T13:48:42Z",
+    "headSha": "59eae0a412dbd75a7ea566cc9bef4e79d2212087"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se aprueba que el piloto pueda evolucionar a un broker que cree issues y publique en Slack, o debe quedarse limitado a observación en dry-run?",
+  "rationale": "La implementación ya incluye ambas capacidades, pero la issue canónica conserva una decisión explícita sobre el nivel de automatización aceptable.",
+  "options": [
+    {
+      "title": "Piloto solo observación",
+      "body": "Mantener dry-run, canal de pruebas y sin creación externa hasta revisar resultados de releases reales.",
+      "recommended": true
+    },
+    {
+      "title": "Aprobar publicaciones acotadas",
+      "body": "Permitir issues y Slack tras documentar la autorización por run, auditoría e idempotencia como contrato permanente.",
+      "recommended": false
+    },
+    {
+      "title": "Posponer el guardia",
+      "body": "Conservar los watchers actuales hasta reducir el alcance del nuevo ciclo de vida.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Piloto solo observación",
+    "body": "Mantener dry-run, canal de pruebas y sin creación externa hasta revisar resultados de releases reales.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "El comentario de la issue le identifica como dueño probable y su historial cubre el broker de lectura reutilizado.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10023.md",
+    "reviewedAt": "2026-09-23T13:58:51.826Z",
+    "mainSha": "ebcb255147d73b8d0dd13fb87cdff57ba220a682"
+  }
+}
