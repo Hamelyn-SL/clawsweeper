@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-23T23:22:54.873Z",
+  "updatedAt": "2026-09-23T23:17:19Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10039,
+    "title": "feat: move codex agents to gpt-6-sol and report sandbox usage",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10039",
+    "state": "open",
+    "labels": [],
+    "createdAt": "2026-09-23T23:12:05Z",
+    "updatedAt": "2026-09-23T23:17:19Z",
+    "headSha": "cb89446dcba259317e5d3ad61fa6dd813e4c99fb"
+  },
+  "lane": "release_inclusion",
+  "priority": "P2",
+  "question": "¿Se actualizarán y verificarán los consumidores locales a Codex CLI 0.155 o posterior antes de activar GPT-6 como default?",
+  "rationale": "La PR confirma que una versión anterior rechaza GPT-6, pero no muestra una comprobación o actualización obligatoria para consumidores locales existentes.",
+  "options": [
+    {
+      "title": "Asegurar la actualización previa",
+      "body": "Actualizar o comprobar la versión mínima en los consumidores locales antes de desplegar los nuevos defaults.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener compatibilidad temporal",
+      "body": "Conservar un default compatible hasta que el CLI mínimo esté desplegado y verificado en todos los consumidores.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Asegurar la actualización previa",
+    "body": "Actualizar o comprobar la versión mínima en los consumidores locales antes de desplegar los nuevos defaults.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Su historial conecta con el endpoint de uso afectado; es el candidato de código más cercano disponible, aunque la decisión también implica operación de los consumidores locales.",
+    "confidence": "low"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10039.md",
+    "reviewedAt": "2026-09-23T23:22:54.873Z",
+    "mainSha": "b24766d47eeebe38300b95d1a6c26531b2326454"
+  }
+}
