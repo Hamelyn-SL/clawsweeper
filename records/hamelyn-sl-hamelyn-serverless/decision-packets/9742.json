@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-19T08:55:14.961Z",
-  "updatedAt": "2026-09-19T08:45:05Z",
+  "generatedAt": "2026-09-23T11:27:07.230Z",
+  "updatedAt": "2026-09-21T06:24:04Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,45 +13,45 @@
       "app:supply",
       "feature",
       "triage:needs-info",
+      "clawsweeper:needs-product-decision",
+      "P2",
       "reporter:danielmenchen-hamelyn",
       "origin:dev",
       "epic:supply-v3",
-      "P2",
-      "clawsweeper:needs-product-decision"
+      "platform:mobile-only"
     ],
     "createdAt": "2026-09-18T08:03:59Z",
-    "updatedAt": "2026-09-19T08:45:05Z"
+    "updatedAt": "2026-09-21T06:24:04Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué mínimos D12 de dispositivos, sistemas y WebView se aprueban para aceptar la paridad empaquetada de Supply v3?",
-  "rationale": "La evidencia requerida y el umbral de aceptación no pueden deducirse del código; condicionan qué casos físicos bastan para el handoff.",
+  "question": "¿Qué matriz D12 de dispositivos, sistemas operativos y WebView se acepta para certificar la paridad empaquetada de Supply v3?",
+  "rationale": "La selección define el soporte comprometido y el umbral de cierre; el código no puede inferir esa política de QA.",
   "options": [
     {
-      "title": "Aprobar una matriz D12 acotada",
-      "body": "Fijar dispositivos, versiones, orientaciones y API de pruebas antes de generar el candidato y recoger evidencia comparable.",
+      "title": "Aprobar matriz D12 acotada",
+      "body": "Fijar dispositivos, versiones, orientaciones y API de pruebas para obtener evidencia comparable antes de crear el candidato.",
       "recommended": true
     },
     {
-      "title": "Posponer la validación empaquetada",
-      "body": "Mantener la web y React Native como referencias mientras se decide el soporte mínimo y la capacidad de QA física.",
+      "title": "Separar la validación móvil",
+      "body": "Mantener React Native como referencia y cerrar primero únicamente los hitos web hasta disponer de capacidad de QA física.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar una matriz D12 acotada",
-    "body": "Fijar dispositivos, versiones, orientaciones y API de pruebas antes de generar el candidato y recoger evidencia comparable.",
+    "title": "Aprobar matriz D12 acotada",
+    "body": "Fijar dispositivos, versiones, orientaciones y API de pruebas para obtener evidencia comparable antes de crear el candidato.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Su historial reciente en la preparación de releases de Supply le conecta con la viabilidad operativa del candidato móvil.",
-    "confidence": "medium"
+    "reason": "Su historial reciente prepara la versión y configuración de la app móvil vigente.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9742.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9742#issuecomment-5740622784",
-    "reviewedAt": "2026-09-19T08:55:14.961Z",
-    "mainSha": "d0e0b93e78bba63a1c6ff1614e823941e10afa9f"
+    "reviewedAt": "2026-09-23T11:27:07.230Z",
+    "mainSha": "6f3267644d93ddfae4aae4f121faf36e909e4b67"
   }
 }
