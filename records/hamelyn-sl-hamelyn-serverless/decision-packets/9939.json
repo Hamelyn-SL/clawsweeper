@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-23T11:08:53.633Z",
+  "updatedAt": "2026-09-22T19:25:20Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9939,
+    "title": "BBDD \"stocks\" en admin, que aparezca el proceso por el que se ha dado entrada",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9939",
+    "state": "open",
+    "labels": [
+      "source:admin-panel",
+      "app:supply",
+      "feature",
+      "triage:pr-opened",
+      "P2",
+      "reporter:daniellopez"
+    ],
+    "createdAt": "2026-09-22T15:37:07Z",
+    "updatedAt": "2026-09-22T19:25:20Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe el listado clasificar solo cuando la trazabilidad por SKU sea concluyente y mostrar «Sin información» en el resto de stocks históricos o contradictorios?",
+  "rationale": "La fuente conserva señales por pedido y unidad, pero no documenta una política de presentación para datos incompletos; el PR cerrado eligió una regla sin quedar integrada.",
+  "options": [
+    {
+      "title": "Mostrar solo procedencia verificable",
+      "body": "Clasificar por SKU cuando pedido y unidad coincidan, y mostrar «Sin información» si faltan o se contradicen los datos.",
+      "recommended": true
+    },
+    {
+      "title": "Inferir un valor histórico",
+      "body": "Definir una prioridad adicional para datos parciales, asumiendo el riesgo de atribuir un proceso incorrecto.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mostrar solo procedencia verificable",
+    "body": "Clasificar por SKU cuando pedido y unidad coincidan, y mostrar «Sin información» si faltan o se contradicen los datos.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "Su historial reciente cubre la semántica de revisión por unidad y cerró el primer candidato de implementación.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9939.md",
+    "reviewedAt": "2026-09-23T11:08:53.633Z",
+    "mainSha": "49cf8dd3dcd603e7191f56a17c28174ba52a5a98"
+  }
+}
