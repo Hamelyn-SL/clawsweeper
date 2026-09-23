@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-23T13:06:43.105Z",
+  "updatedAt": "2026-09-23T12:40:24Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10020,
+    "title": "fix: read plain hex stock order ids in stocks materialization",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10020",
+    "state": "open",
+    "labels": [
+      "size/S"
+    ],
+    "createdAt": "2026-09-23T12:34:41Z",
+    "updatedAt": "2026-09-23T12:40:24Z",
+    "headSha": "a35bc156b14e00da81db34d8a44d51e37ae3dde3"
+  },
+  "lane": "manual_review",
+  "priority": "P2",
+  "question": "¿Se autoriza y programa el UPDATE masivo de recuperación histórica tras desplegar este cambio?",
+  "rationale": "El parche evita nuevas materializaciones incorrectas, pero la recuperación de aproximadamente millones de filas requiere una operación BigQuery explícita fuera del diff.",
+  "options": [
+    {
+      "title": "Autorizar backfill verificado",
+      "body": "Desplegar el cambio y ejecutar el UPDATE aprobado con recuento, muestra saneada y comprobación posterior de `orderId`.",
+      "recommended": true
+    },
+    {
+      "title": "Limitarse a nuevas filas",
+      "body": "Aceptar que las filas históricas seguirán sin `orderId` hasta que se planifique una recuperación independiente.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Autorizar backfill verificado",
+    "body": "Desplegar el cambio y ejecutar el UPDATE aprobado con recuento, muestra saneada y comprobación posterior de `orderId`.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Su cambio reciente mantiene la misma ruta de materialización y ventana de reprocesado afectada.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10020.md",
+    "reviewedAt": "2026-09-23T13:06:43.105Z",
+    "mainSha": "719051eee672c200f73043d728db1a2d57715a1f"
+  }
+}
