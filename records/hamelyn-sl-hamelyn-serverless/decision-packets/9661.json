@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-23T10:56:24.499Z",
+  "updatedAt": "2026-09-23T08:29:06Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 9661,
+    "title": "fix: attribute packing progress once per picking container",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9661",
+    "state": "open",
+    "labels": [
+      "size/XL",
+      "P1"
+    ],
+    "createdAt": "2026-09-17T09:22:05Z",
+    "updatedAt": "2026-09-23T08:29:06Z",
+    "headSha": "afa094f7efe2b1ba5126d45ae558e33df9c1f92d"
+  },
+  "lane": "release_inclusion",
+  "priority": "P1",
+  "question": "¿Debe este PR soportar tandas iniciadas antes del despliegue aunque otro operario dispare el primer progreso nuevo del mismo contenedor?",
+  "rationale": "El código actual reconoce datos legacy solo del operario activo; aceptar esa limitación permite una duplicación conocida en una tanda anterior.",
+  "options": [
+    {
+      "title": "Preservar deduplicación legacy global",
+      "body": "Consultar los pedidos legacy de cualquier operario dentro de la ventana de la tanda y añadir cobertura para A legacy seguido de B.",
+      "recommended": true
+    },
+    {
+      "title": "Desplegar solo con tandas nuevas",
+      "body": "Aceptar el límite y documentar un procedimiento operativo que impida reutilizar cualquier tanda iniciada antes del despliegue.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Preservar deduplicación legacy global",
+    "body": "Consultar los pedidos legacy de cualquier operario dentro de la ventana de la tanda y añadir cobertura para A legacy seguido de B.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Daniel",
+    "reason": "Conoce la capa de persistencia y planteó el caso de compatibilidad pendiente en la revisión.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9661.md",
+    "reviewedAt": "2026-09-23T10:56:24.499Z",
+    "mainSha": "49cf8dd3dcd603e7191f56a17c28174ba52a5a98"
+  }
+}

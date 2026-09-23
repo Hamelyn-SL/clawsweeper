@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-21T05:52:27.765Z",
-  "updatedAt": "2026-09-21T05:40:32Z",
+  "generatedAt": "2026-09-23T10:55:26.840Z",
+  "updatedAt": "2026-09-23T04:00:51Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,46 +12,45 @@
     "labels": [
       "app:supply",
       "feature",
-      "triage:needs-info",
+      "triage:done",
       "clawsweeper:needs-product-decision",
+      "P2",
       "reporter:danielmenchen-hamelyn",
       "origin:dev",
-      "epic:supply-v3",
-      "P2"
+      "epic:supply-v3"
     ],
     "createdAt": "2026-09-18T08:03:07Z",
-    "updatedAt": "2026-09-21T05:40:32Z"
+    "updatedAt": "2026-09-23T04:00:51Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué matriz aprobada debe decidir los idiomas secundarios por ruta y el tratamiento de `/developers` y de los huecos SEO?",
-  "rationale": "El legado mantiene recursos localizados, pero web y móvil aplican reglas distintas; ninguna fuente actual determina qué combinaciones deben publicarse ni cómo completar metadata ausente.",
+  "question": "¿Debe MX permanecer excluido de `hreflang` e indexación pública mientras sea solo una prueba de arquitectura?",
+  "rationale": "La issue prohíbe habilitar MX comercialmente, pero el contrato integrado permite que el interruptor global indexe sus rutas públicas.",
   "options": [
     {
-      "title": "Aprobar matriz de legado",
-      "body": "Designar una fuente responsable y aprobar por ruta el idioma, canonical, indexación y tratamiento de cada hueco antes de implementar F02.",
+      "title": "Excluir MX mientras sea prueba",
+      "body": "Mantener MX fuera de alternates e indexación hasta que exista una decisión de lanzamiento comercial y SEO.",
       "recommended": true
     },
     {
-      "title": "Limitar la primera entrega",
-      "body": "Entregar solo tipos, carga de diccionarios y helpers neutros sin publicar decisiones SEO hasta contar con la matriz validada.",
+      "title": "Aceptar MX indexable",
+      "body": "Autorizar expresamente que el interruptor global incluya MX y registrar la responsabilidad comercial y SEO resultante.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar matriz de legado",
-    "body": "Designar una fuente responsable y aprobar por ruta el idioma, canonical, indexación y tratamiento de cada hueco antes de implementar F02.",
+    "title": "Excluir MX mientras sea prueba",
+    "body": "Mantener MX fuera de alternates e indexación hasta que exista una decisión de lanzamiento comercial y SEO.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "danielmenchen-hamelyn",
-    "reason": "La base de la épica y el inventario asociado parten de su entrega, por lo que puede aportar la fuente y coordinar el alcance con la persona asignada.",
+    "person": "MiguelHamelyn",
+    "reason": "Es el asignado de esta issue y el autor de la entrega F02 que debe aplicar la decisión acordada.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9718.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9718#issuecomment-5741171066",
-    "reviewedAt": "2026-09-21T05:52:27.765Z",
-    "mainSha": "23ad0a8387fe46e505d38f64ed9772bda99dda09"
+    "reviewedAt": "2026-09-23T10:55:26.840Z",
+    "mainSha": "49cf8dd3dcd603e7191f56a17c28174ba52a5a98"
   }
 }
