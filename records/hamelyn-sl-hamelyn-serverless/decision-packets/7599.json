@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-14T09:12:57.945Z",
-  "updatedAt": "2026-09-14T08:31:29Z",
+  "generatedAt": "2026-09-23T09:57:19.474Z",
+  "updatedAt": "2026-09-23T01:29:41Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,50 +12,49 @@
     "labels": [
       "app:marketplace",
       "question",
-      "triage:no-change",
+      "triage:needs-info",
       "clawsweeper:needs-product-decision",
+      "P2",
       "origin:dev",
-      "mk:amazon",
-      "P2"
+      "mk:amazon"
     ],
     "createdAt": "2026-07-15T12:06:25Z",
-    "updatedAt": "2026-09-14T08:31:29Z"
+    "updatedAt": "2026-09-23T01:29:41Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué ciclo de vida deben seguir los pares `(EAN, región)` que continúan sin ASIN regional una vez agotada la ventana inicial de reintentos?",
-  "rationale": "La elección define datos persistidos, frecuencia de llamadas a Catalog API y visibilidad operativa; el código no puede inferir esos umbrales ni la política de negocio.",
+  "question": "¿Qué ciclo de vida debe aplicar V2 a un par `(EAN, región)` que no obtiene ningún ASIN regional resoluble?",
+  "rationale": "El código actual solo clasifica el intento; elegir duración, revalidación y visibilidad cambia el estado persistido, el coste de Catalog API y la expectativa operativa.",
   "options": [
     {
-      "title": "Ventana y revalidación",
-      "body": "Reintentar durante una ventana aprobada, marcar después el par como no-listable y revalidarlo periódicamente con visibilidad operativa.",
+      "title": "Ventana limitada y revisión mensual",
+      "body": "Reintentar durante 7 días, pasar a `UNRESOLVED` no-listable y revalidar cada 30 días con visibilidad operativa.",
       "recommended": true
     },
     {
-      "title": "Mantener reintento automático",
-      "body": "Conservar el estado transitorio actual sin nueva clasificación, aceptando el coste y el ruido de intentos recurrentes.",
+      "title": "Mantener reintento indefinido",
+      "body": "Conservar el comportamiento transitorio actual y aceptar el coste y ruido continuados de Catalog API.",
       "recommended": false
     },
     {
-      "title": "Retirar y reportar",
-      "body": "Excluir el stock de la región tras el umbral y exponerlo en una vista operativa para revisión explícita.",
+      "title": "Suspensión regional definitiva",
+      "body": "Retirar el par de creación regional hasta una intervención manual o una señal externa de catálogo.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Ventana y revalidación",
-    "body": "Reintentar durante una ventana aprobada, marcar después el par como no-listable y revalidarlo periódicamente con visibilidad operativa.",
+    "title": "Ventana limitada y revisión mensual",
+    "body": "Reintentar durante 7 días, pasar a `UNRESOLVED` no-listable y revalidar cada 30 días con visibilidad operativa.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "Es la señal histórica más fuerte en el flujo actual y en la delimitación técnica de esta decisión.",
+    "person": "JavierHamelyn",
+    "reason": "Es el responsable visible del trabajo regional relacionado y del manager Amazon actual.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7599.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7599#issuecomment-4980638639",
-    "reviewedAt": "2026-09-14T09:12:57.945Z",
-    "mainSha": "f2c64ff0f7aa52807eb1692359970ed3251a1644"
+    "reviewedAt": "2026-09-23T09:57:19.474Z",
+    "mainSha": "49cf8dd3dcd603e7191f56a17c28174ba52a5a98"
   }
 }
