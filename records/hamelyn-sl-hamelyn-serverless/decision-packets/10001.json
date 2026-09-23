@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-23T10:09:51.567Z",
+  "updatedAt": "2026-09-23T09:21:24Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10001,
+    "title": "Admin: GENERAR NE/S crea la NE-EX sin pedir sus cubetas cuando la relectura va al secundario",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10001",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:admin",
+      "triage:queued",
+      "P1"
+    ],
+    "createdAt": "2026-09-23T09:20:59Z",
+    "updatedAt": "2026-09-23T09:21:24Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe GENERAR NE/S esperar y reintentar una vez la confirmación de Astar dentro de la misma petición, o dejar ese reintento para una ruta recuperable separada?",
+  "rationale": "El arreglo de consistencia en MongoDB es mecánico, pero el tiempo de espera, la idempotencia y la experiencia ante Astar lento cambian el comportamiento operativo del botón.",
+  "options": [
+    {
+      "title": "Confirmación acotada en la ruta",
+      "body": "Comprobar la línea de Astar tras el envío, reintentar una vez y devolver `NE_DISPATCH_PENDING` si sigue ausente.",
+      "recommended": true
+    },
+    {
+      "title": "Recuperación asíncrona",
+      "body": "Despachar de inmediato y registrar el pendiente para que un proceso recuperable confirme o reintente fuera de la petición.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Confirmación acotada en la ruta",
+    "body": "Comprobar la línea de Astar tras el envío, reintentar una vez y devolver `NE_DISPATCH_PENDING` si sigue ausente.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "Es la persona con mayor continuidad reciente en el flujo de NE-EX y está asignada a esta incidencia.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10001.md",
+    "reviewedAt": "2026-09-23T10:09:51.567Z",
+    "mainSha": "49cf8dd3dcd603e7191f56a17c28174ba52a5a98"
+  }
+}
