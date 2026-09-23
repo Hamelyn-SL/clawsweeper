@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-19T20:56:54.838Z",
-  "updatedAt": "2026-09-19T18:58:47Z",
+  "generatedAt": "2026-09-23T11:24:37.999Z",
+  "updatedAt": "2026-09-21T06:23:59Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,44 +14,44 @@
       "feature",
       "triage:needs-info",
       "clawsweeper:needs-product-decision",
+      "P2",
       "reporter:danielmenchen-hamelyn",
       "origin:dev",
       "epic:supply-v3",
-      "P2"
+      "platform:mobile-only"
     ],
     "createdAt": "2026-09-18T08:03:14Z",
-    "updatedAt": "2026-09-19T18:58:47Z"
+    "updatedAt": "2026-09-21T06:23:59Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se aprueban ahora los mínimos D12 de iOS, Android y WebView para validar Capacitor, o se aplaza la habilitación nativa mientras avanza la migración web?",
-  "rationale": "Los mínimos propuestos condicionan compatibilidad, matriz de dispositivos y alcance de las pruebas; el código actual no permite deducir una política de soporte aprobada.",
+  "question": "¿Se mantiene D12 pendiente mientras se prepara su matriz de impacto, o se aprueban mínimos concretos para habilitar la validación nativa de F05?",
+  "rationale": "La issue declara iOS 16.4+/API 24/WebView 111+ como propuesta y exige una decisión explícita antes de habilitar el perfil; el código actual no permite resolver ese umbral de producto.",
   "options": [
     {
-      "title": "Aplazar D12 y continuar web",
-      "body": "Mantener el perfil móvil deshabilitado y avanzar el inventario de capacidades hasta acordar mínimos formales.",
+      "title": "Preparar impacto y mantener D12 pendiente",
+      "body": "Inventariar dispositivos, WebViews y capacidades primero; solo después aprobar mínimos y comenzar la acreditación física.",
       "recommended": true
     },
     {
-      "title": "Aprobar mínimos D12",
-      "body": "Fijar versiones soportadas y exigir la matriz iOS, Android y WebView como condición de cierre de esta entrega.",
+      "title": "Aprobar los mínimos propuestos",
+      "body": "Adoptar iOS 16.4+, API 24 y WebView 111+ como soporte inicial y documentar explícitamente los dispositivos excluidos.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aplazar D12 y continuar web",
-    "body": "Mantener el perfil móvil deshabilitado y avanzar el inventario de capacidades hasta acordar mínimos formales.",
+    "title": "Preparar impacto y mantener D12 pendiente",
+    "body": "Inventariar dispositivos, WebViews y capacidades primero; solo después aprobar mínimos y comenzar la acreditación física.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "danielmenchen-hamelyn",
-    "reason": "Figura como coordinador de la épica y la discusión de triage le pide concretar la decisión D12.",
+    "reason": "Coordina la épica y el contexto de la issue le solicita expresamente concretar la decisión D12.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9721.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9721#issuecomment-5741058761",
-    "reviewedAt": "2026-09-19T20:56:54.838Z",
-    "mainSha": "d0e0b93e78bba63a1c6ff1614e823941e10afa9f"
+    "reviewedAt": "2026-09-23T11:24:37.999Z",
+    "mainSha": "6f3267644d93ddfae4aae4f121faf36e909e4b67"
   }
 }
