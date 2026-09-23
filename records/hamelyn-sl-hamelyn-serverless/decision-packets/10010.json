@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-23T11:48:00.273Z",
+  "updatedAt": "2026-09-23T11:40:10Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10010,
+    "title": "Aumentar nº de bultos en fedex",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10010",
+    "state": "open",
+    "labels": [
+      "source:admin-panel",
+      "app:admin",
+      "feature",
+      "reporter:sandra",
+      "triage:queued",
+      "P1"
+    ],
+    "createdAt": "2026-09-23T11:39:55Z",
+    "updatedAt": "2026-09-23T11:40:10Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Un pedido ya etiquetado con FedEx debe regenerarse como un único envío multipieza o conservar su primera etiqueta como bulto independiente?",
+  "rationale": "La elección cambia el tracking y los documentos ya persistidos; la ruta actual solo cambia desde otros carriers.",
+  "options": [
+    {
+      "title": "Regenerar como multipieza",
+      "body": "Invalidar la etiqueta anterior y persistir un único envío FedEx multipieza como fuente de verdad.",
+      "recommended": true
+    },
+    {
+      "title": "Conservar el primer bulto",
+      "body": "Añadir piezas bajo el tracking existente solo si el contrato FedEx y los datos almacenados lo permiten.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Regenerar como multipieza",
+    "body": "Invalidar la etiqueta anterior y persistir un único envío FedEx multipieza como fuente de verdad.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Miguel Angel Hernández Perdomo",
+    "reason": "Su cambio define la interfaz y el límite actual de la operación de bultos.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10010.md",
+    "reviewedAt": "2026-09-23T11:48:00.273Z",
+    "mainSha": "45fa9693013b0e6182cde1d69fd68cce0ac50c68"
+  }
+}

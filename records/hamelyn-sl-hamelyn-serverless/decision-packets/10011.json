@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-23T11:52:07.545Z",
+  "updatedAt": "2026-09-23T11:41:51Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10011,
+    "title": "feat: rebuild operator panel from the operator score design",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10011",
+    "state": "open",
+    "labels": [
+      "size/XXL"
+    ],
+    "createdAt": "2026-09-23T11:40:00Z",
+    "updatedAt": "2026-09-23T11:41:51Z",
+    "headSha": "52f80eda3fe7a897ab324175ab657a2b2513b7fa"
+  },
+  "lane": "release_inclusion",
+  "priority": "P2",
+  "question": "¿Debe el despliegue del rediseño esperar al backfill de sesiones históricas de `OTROS`, o se acepta una ventana temporal con histórico legacy?",
+  "rationale": "El PR elimina tipos persistidos y declara que la migración operativa ocurre después; el orden determina la experiencia sobre datos ya almacenados.",
+  "options": [
+    {
+      "title": "Aterrizar con backfill coordinado",
+      "body": "Mergear tras acordar y ejecutar el backfill, verificando que las vistas históricas aceptan el formato migrado.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar transición temporal",
+      "body": "Mergear primero y asumir explícitamente el histórico legacy hasta que se complete el backfill posterior.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aterrizar con backfill coordinado",
+    "body": "Mergear tras acordar y ejecutar el backfill, verificando que las vistas históricas aceptan el formato migrado.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "danielmenchen-hamelyn",
+    "reason": "Es la persona más conectada al contrato actual de supervisión y datos del panel.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10011.md",
+    "reviewedAt": "2026-09-23T11:52:07.545Z",
+    "mainSha": "45fa9693013b0e6182cde1d69fd68cce0ac50c68"
+  }
+}
