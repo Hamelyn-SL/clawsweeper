@@ -3,16 +3,16 @@
   "slug": "hamelyn-sl-hamelyn-serverless",
   "display_name": "Hamelyn Serverless",
   "target_repo": "hamelyn-sl/hamelyn-serverless",
-  "state": "Planning review",
-  "detail": "Planner is scanning GitHub for the next review candidates. Candidate counts and shard details will be posted after planning completes.",
-  "run_url": "https://github.com/Hamelyn-SL/clawsweeper/actions/runs/35851321533",
-  "planned_count": null,
-  "planned_capacity": null,
-  "planned_shards": null,
-  "active_codex": null,
-  "due_backlog": null,
-  "oldest_unreviewed_at": null,
-  "capacity_reason": null,
+  "state": "Review comments checked",
+  "detail": "Checked selected durable Codex review comments and synced missing or stale comments. Synced: 3. Item numbers: 8453,9573,9888,9892,9896,9900,9901,9923,9927.",
+  "run_url": "https://github.com/Hamelyn-SL/clawsweeper/actions/runs/35849977239",
+  "planned_count": 9,
+  "planned_capacity": 9,
+  "planned_shards": 3,
+  "active_codex": 0,
+  "due_backlog": 40,
+  "oldest_unreviewed_at": "2026-09-22T05:25:09Z",
+  "capacity_reason": "saturated: due backlog filled planned capacity",
   "inherited_label_cleanups": null,
   "self_heal_conflict_repairs": null,
   "failed_review_retries": null,
@@ -21,18 +21,20 @@
   "bot_owned_proof_dispatches": null,
   "apply_health": {
     "schema_version": 1,
-    "generated_at": "2026-09-23T10:53:04.538Z",
-    "target_repo": "hamelyn-sl/hamelyn-serverless",
+    "generated_at": "2026-09-23T10:39:13.656Z",
+    "target_repo": "Hamelyn-SL/hamelyn-serverless",
     "mode": "comment_sync",
-    "status": "idle",
-    "summary": "Apply processed no records in this run.",
-    "processed": 0,
+    "status": "ok",
+    "summary": "9/1000 processed; 0 closed, 6 comments synced, 3 skipped; no cursor recorded.",
+    "processed": 9,
     "processed_limit": 1000,
     "close_limit": 0,
     "closed": 0,
-    "comment_synced": 0,
-    "skipped": 0,
-    "skip_reasons": {},
+    "comment_synced": 6,
+    "skipped": 3,
+    "skip_reasons": {
+      "review_comment_withheld": 3
+    },
     "lanes": {
       "closure": {
         "processed": 0,
@@ -42,15 +44,30 @@
         "skip_reasons": {}
       },
       "comment_sync": {
-        "processed": 0,
+        "processed": 9,
         "closed": 0,
-        "comment_synced": 0,
-        "skipped": 0,
-        "skip_reasons": {}
+        "comment_synced": 6,
+        "skipped": 3,
+        "skip_reasons": {
+          "review_comment_withheld": 3
+        }
       }
     },
-    "next_actions": [],
-    "next_action_buckets": {},
+    "next_actions": [
+      {
+        "reason": "review_comment_withheld",
+        "count": 3,
+        "bucket": "inspect",
+        "owner": "maintainer",
+        "retryable": false,
+        "label": "Inspect skip",
+        "summary": "Apply reported an unmapped skip bucket.",
+        "next_step": "Inspect the workflow run and add a deterministic mapping if this repeats."
+      }
+    ],
+    "next_action_buckets": {
+      "inspect": 3
+    },
     "cycle": {
       "basis": "not_close_cursor",
       "apply_ready_count": null,
@@ -65,5 +82,5 @@
     "cursor": null
   },
   "last_close_apply_health": null,
-  "updated_at": "2026-09-23T10:53:25.885Z"
+  "updated_at": "2026-09-23T10:53:47.036Z"
 }
