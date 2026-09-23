@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-23T17:44:16.381Z",
+  "updatedAt": "2026-09-23T17:30:43Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9878,
+    "title": "Marketplace: fnac provider http 500",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9878",
+    "state": "open",
+    "labels": [
+      "codex",
+      "bug",
+      "app:marketplace",
+      "triage:queued",
+      "P2",
+      "marketplace-crons"
+    ],
+    "createdAt": "2026-09-21T23:30:40Z",
+    "updatedAt": "2026-09-23T17:30:43Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe mantenerse la gestión transitoria actual mientras Fnac aclara los 500, o se prioriza una política específica de reintentos y alertas para pedidos y cancelaciones?",
+  "rationale": "La evidencia acredita recurrencia, pero no una causa corregible ni qué coste operativo aceptable debe tener un reintento adicional.",
+  "options": [
+    {
+      "title": "Investigar con Fnac y conciliar",
+      "body": "Mantener la semántica actual y contrastar los request IDs con el proveedor antes de modificar el flujo.",
+      "recommended": true
+    },
+    {
+      "title": "Diseñar resiliencia acotada",
+      "body": "Definir reintentos, límites y alertas por operación tras fijar el impacto aceptable sobre pedidos y stock.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Investigar con Fnac y conciliar",
+    "body": "Mantener la semántica actual y contrastar los request IDs con el proveedor antes de modificar el flujo.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Ha llevado la consolidación operacional y el diagnóstico Fnac más cercano al episodio.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9878.md",
+    "reviewedAt": "2026-09-23T17:44:16.381Z",
+    "mainSha": "ebcb255147d73b8d0dd13fb87cdff57ba220a682"
+  }
+}
