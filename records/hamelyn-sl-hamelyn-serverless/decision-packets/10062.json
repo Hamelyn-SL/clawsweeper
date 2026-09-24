@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-24T09:54:51.244Z",
+  "updatedAt": "2026-09-24T09:46:07Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10062,
+    "title": "fix: restore expo-modules-jsi 57.1.0 for supply 2.7.01",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10062",
+    "state": "open",
+    "labels": [
+      "size/XL"
+    ],
+    "createdAt": "2026-09-24T09:45:56Z",
+    "updatedAt": "2026-09-24T09:46:07Z",
+    "headSha": "edaa4cc733cb1a0ab09836f9fa15ac9765a38f76"
+  },
+  "lane": "proof_sufficiency",
+  "priority": "P2",
+  "question": "¿Debe exigirse una build de EAS con Xcode 26.6 antes de aceptar el cambio del parche Swift y publicar Supply `2.7.01`?",
+  "rationale": "El PR documenta una comprobación local con Xcode 26.2, pero deja sin validar la versión de Xcode usada por EAS; aceptar esa diferencia o bloquear hasta obtener la build requiere fijar el umbral de validación de release.",
+  "options": [
+    {
+      "title": "Esperar la validación de EAS",
+      "body": "Mantener el PR pendiente hasta confirmar que el parche compila y la app arranca con Xcode 26.6.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar la prueba local",
+      "body": "Considerar suficiente la validación con Xcode 26.2 y dejar que las comprobaciones de EAS determinen la compatibilidad restante.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Esperar la validación de EAS",
+    "body": "Mantener el PR pendiente hasta confirmar que el parche compila y la app arranca con Xcode 26.6.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Su historial local cubre el pin JSI y cambios recientes del área de Supply, por lo que es el candidato más cercano para aportar o interpretar la validación.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10062.md",
+    "reviewedAt": "2026-09-24T09:54:51.244Z",
+    "mainSha": "b3f7c1eace1f7638fa2f8de78cce0587ae8df711"
+  }
+}
