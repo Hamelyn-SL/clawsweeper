@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-24T18:49:42.485Z",
+  "updatedAt": "2026-09-24T18:42:50Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10092,
+    "title": "Skypod: los stocks BIN_BLOCKED movidos a otra cubeta no se reactivan nunca",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10092",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:infrastructure",
+      "reporter:davidgonzalez",
+      "triage:running",
+      "P3"
+    ],
+    "createdAt": "2026-09-24T17:54:23Z",
+    "updatedAt": "2026-09-24T18:42:50Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "Al mover stocks `BIN_BLOCKED` a una cubeta que ya está sana, ¿deben reactivarse y republicarse automáticamente o debe propagarse el estado bloqueado al destino?",
+  "rationale": "La reactivación cambia el estado del inventario y sincroniza marketplaces; la issue plantea ambas alternativas y el código actual solo reactiva tras una transición de cubeta bloqueada a sana.",
+  "options": [
+    {
+      "title": "Reactivar en destino sano",
+      "body": "Limpiar el bloqueo y sincronizar los marketplaces cuando el traslado confirma que la cubeta de destino está sana.",
+      "recommended": true
+    },
+    {
+      "title": "Conservar el bloqueo",
+      "body": "Mantener los stocks retirados y propagar o registrar el bloqueo en la cubeta de destino hasta una acción explícita de BIN IN.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Reactivar en destino sano",
+    "body": "Limpiar el bloqueo y sincronizar los marketplaces cuando el traslado confirma que la cubeta de destino está sana.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "La evidencia local disponible lo relaciona con la condición actual de reactivación de estado de cubeta; el historial completo no está disponible en este checkout.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10092.md",
+    "reviewedAt": "2026-09-24T18:49:42.485Z",
+    "mainSha": "c0cbf3f71aaf34f6a1d1608497da5d6a4383550b"
+  }
+}
