@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-19T10:51:33.305Z",
-  "updatedAt": "2026-09-18T07:15:51Z",
+  "generatedAt": "2026-09-24T13:25:43.605Z",
+  "updatedAt": "2026-09-24T12:20:56Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,47 +15,41 @@
       "feature",
       "reporter:arineligrigore",
       "triage:needs-info",
-      "P2",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2"
     ],
     "createdAt": "2026-09-18T06:58:44Z",
-    "updatedAt": "2026-09-18T07:15:51Z"
+    "updatedAt": "2026-09-24T12:20:56Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué bloque de motivos, o qué bloqueo, corresponde a `IN_TRANSIT`, `PICKED_UP`, `PAYMENT_PENDING`, `PAYMENT_ERROR`, `PENDING_ERROR` y `SUSPICIOUS`?",
-  "rationale": "El código ya distingue esos estados, pero el anexo no los vincula inequívocamente a sus siete bloques; esa regla determina la experiencia y el contrato de soporte.",
+  "question": "¿Qué fase y motivos corresponden a `IN_TRANSIT`, `PICKED_UP`, `SUSPICIOUS` y `PAYMENT_PENDING`, y se permiten incidencias en `PENDING_ERROR` y `PAYMENT_ERROR`?",
+  "rationale": "La respuesta disponible solo aclara los nombres de estados; elegir la visibilidad de motivos o bloquear consultas cambia el comportamiento del producto.",
   "options": [
     {
       "title": "Completar la matriz de estados",
-      "body": "Definir para cada estado interno los motivos visibles y si abrir una incidencia debe quedar bloqueado.",
+      "body": "Indicar la fase del PDF y los motivos disponibles para cada estado, incluidos los dos estados de error.",
       "recommended": true
     },
     {
-      "title": "Limitar inicialmente el rediseño",
-      "body": "Aplicar la matriz solo a los estados documentados y conservar el catálogo vigente en los restantes hasta una decisión posterior.",
-      "recommended": false
-    },
-    {
-      "title": "Mantener el formulario vigente",
-      "body": "Posponer el rediseño completo hasta disponer de una especificación funcional única para todos los estados.",
+      "title": "Bloquear estados de error",
+      "body": "Definir que `PENDING_ERROR` y `PAYMENT_ERROR` no permiten abrir incidencias y completar la correspondencia de los demás estados.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Completar la matriz de estados",
-    "body": "Definir para cada estado interno los motivos visibles y si abrir una incidencia debe quedar bloqueado.",
+    "body": "Indicar la fase del PDF y los motivos disponibles para cada estado, incluidos los dos estados de error.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "arineligrigore",
-    "reason": "Es la persona identificada en el reporte y en la petición de aclaración funcional ya publicada.",
-    "confidence": "high"
+    "reason": "Es el contacto funcional identificado en la issue y ya proporcionó parte de la correspondencia solicitada.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9710.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9710#issuecomment-5741215226",
-    "reviewedAt": "2026-09-19T10:51:33.305Z",
-    "mainSha": "d0e0b93e78bba63a1c6ff1614e823941e10afa9f"
+    "reviewedAt": "2026-09-24T13:25:43.605Z",
+    "mainSha": "a335011496c637588e42f1c261c7c22d6bd737b8"
   }
 }
