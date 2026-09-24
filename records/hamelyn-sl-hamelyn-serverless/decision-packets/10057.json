@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-24T08:33:45.054Z",
+  "updatedAt": "2026-09-24T08:10:18Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10057,
+    "title": "fix: keep ne-ex source lines not_found and drop the found status",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10057",
+    "state": "open",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-09-24T08:01:01Z",
+    "updatedAt": "2026-09-24T08:10:18Z",
+    "headSha": "697656d77e3fe89cb46936df324c4b4a3b227e99"
+  },
+  "lane": "merge_risk",
+  "priority": "P2",
+  "question": "¿Se coordina antes del merge la transición de las tres líneas históricas `FOUND` identificadas en el PR, y qué comprobación confirmará que sus tarjetas quedan completas?",
+  "rationale": "El cambio elimina el recuento de `FOUND`, pero el PR identifica registros persistidos que todavía usan ese estado; hace falta acordar una operación de datos y su verificación, no inferir que ya se ejecutaron.",
+  "options": [
+    {
+      "title": "Coordinar corrección antes del merge",
+      "body": "Acordar y ejecutar la transición autorizada de los tres registros, y comprobar que sus tarjetas quedan completas antes de integrar el cambio.",
+      "recommended": true
+    },
+    {
+      "title": "Conservar compatibilidad temporal",
+      "body": "Mantener temporalmente el conteo de registros `FOUND` hasta que se confirme su normalización en producción.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Coordinar corrección antes del merge",
+    "body": "Acordar y ejecutar la transición autorizada de los tres registros, y comprobar que sus tarjetas quedan completas antes de integrar el cambio.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "Ha trabajado recientemente en el flujo que crea y resuelve estas revisiones; puede confirmar la secuencia esperada con quien opere los datos.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10057.md",
+    "reviewedAt": "2026-09-24T08:33:45.054Z",
+    "mainSha": "c9c91f6d9e21a5ae8d8930e7639869aebb48b67a"
+  }
+}
