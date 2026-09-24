@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-24T09:49:43.421Z",
+  "updatedAt": "2026-09-24T09:37:01Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10061,
+    "title": "SSR - Ficha de producto",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10061",
+    "state": "open",
+    "labels": [
+      "bug",
+      "source:admin-panel",
+      "app:ecommerce",
+      "reporter:victor",
+      "P1"
+    ],
+    "createdAt": "2026-09-24T09:36:08Z",
+    "updatedAt": "2026-09-24T09:37:01Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se debe mantener la revalidación diaria de recomendaciones y más vendidos, o fijar para esos módulos una caducidad configurable de 7–30 días como pide el reporte?",
+  "rationale": "El código actual usa una caducidad diaria para ambos módulos, mientras que el plazo propuesto es una decisión explícita de estabilidad frente a frescura del catálogo y no queda determinado por el contrato actual.",
+  "options": [
+    {
+      "title": "Mantener caducidad diaria",
+      "body": "Conservar el refresco diario actual y validar primero que el HTML público satisface los demás criterios de la ficha.",
+      "recommended": true
+    },
+    {
+      "title": "Ampliar la caducidad",
+      "body": "Acordar el plazo y el mecanismo de renovación de recomendaciones y más vendidos antes de cambiar la caché.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mantener caducidad diaria",
+    "body": "Conservar el refresco diario actual y validar primero que el HTML público satisface los demás criterios de la ficha.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Su historial reciente cubre el rediseño de la ficha de producto donde se presentan estos módulos.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10061.md",
+    "reviewedAt": "2026-09-24T09:49:43.421Z",
+    "mainSha": "b3f7c1eace1f7638fa2f8de78cce0587ae8df711"
+  }
+}
