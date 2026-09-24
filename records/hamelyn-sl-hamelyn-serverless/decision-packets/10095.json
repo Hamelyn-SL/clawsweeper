@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-24T19:33:23.356Z",
+  "updatedAt": "2026-09-24T19:30:54Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10095,
+    "title": "Webhook BinStatus: Header.Date se interpreta como UTC y es hora de Madrid",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10095",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:infrastructure",
+      "reporter:davidgonzalez",
+      "triage:running",
+      "P3"
+    ],
+    "createdAt": "2026-09-24T17:54:30Z",
+    "updatedAt": "2026-09-24T19:30:54Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué contrato de orden temporal se adoptará para los webhooks de Exotec y cómo se protegerán los `binStateDate` heredados antes del cambio?",
+  "rationale": "El parseo actual desplaza los instantes, pero cambiarlo sin resolver la hora ambigua y el desfase persistido puede hacer que el guard rechace eventos válidos; la solución depende de un acuerdo con el proveedor y de una decisión operativa sobre los datos existentes.",
+  "options": [
+    {
+      "title": "Solicitar timestamps con offset",
+      "body": "Acordar que Exotec envíe fechas con offset y definir la conversión compatible de los valores persistidos antes de activar el nuevo parser.",
+      "recommended": true
+    },
+    {
+      "title": "Acordar secuencia monotónica",
+      "body": "Usar una secuencia fiable por gaveta para ordenar eventos, junto con un plan de transición para los estados ya guardados.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener el parser hasta aclarar el contrato",
+      "body": "Posponer el cambio para evitar introducir rechazos de eventos mientras no exista una regla inequívoca de orden y migración.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Solicitar timestamps con offset",
+    "body": "Acordar que Exotec envíe fechas con offset y definir la conversión compatible de los valores persistidos antes de activar el nuevo parser.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "El cambio debe contemplar el guard de persistencia cuya comparación histórica introdujo esta persona.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10095.md",
+    "reviewedAt": "2026-09-24T19:33:23.356Z",
+    "mainSha": "6989d1045fe82c0a9387dd2d05107b091db49c77"
+  }
+}
