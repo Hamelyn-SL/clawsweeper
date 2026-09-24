@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-24T21:34:15.720Z",
+  "updatedAt": "2026-09-24T17:45:26Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10088,
+    "title": "fix: stop conflict resolver sandboxes when their run ends",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10088",
+    "state": "open",
+    "labels": [
+      "size/XL"
+    ],
+    "createdAt": "2026-09-24T17:35:35Z",
+    "updatedAt": "2026-09-24T17:45:26Z",
+    "headSha": "08e7f4677183df77a1261b080dfeb6f9b0faaed7"
+  },
+  "lane": "merge_risk",
+  "priority": "P2",
+  "question": "¿Se acepta que un run de triage iniciado antes del despliegue no pueda parar su sandbox y espere hasta el timeout, o debe conservarse la ruta anterior durante la transición?",
+  "rationale": "La rama elimina una ruta que los procesos ya iniciados pueden seguir usando. La persona autora acepta el efecto, pero la integración decide el impacto operativo de esa transición.",
+  "options": [
+    {
+      "title": "Conservar compatibilidad temporal",
+      "body": "Mantener la ruta antigua como alias del nuevo manejador para que callbacks en curso puedan detener su sandbox.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar el coste acotado",
+      "body": "Integrar el cambio sabiendo que un run de triage que cruce el despliegue puede consumir sandbox hasta el timeout.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Conservar compatibilidad temporal",
+    "body": "Mantener la ruta antigua como alias del nuevo manejador para que callbacks en curso puedan detener su sandbox.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Introdujo el mecanismo de autoparada de triage y mantiene los runners afectados por el cambio.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10088.md",
+    "reviewedAt": "2026-09-24T21:34:15.720Z",
+    "mainSha": "6989d1045fe82c0a9387dd2d05107b091db49c77"
+  }
+}
