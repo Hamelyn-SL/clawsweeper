@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-24T17:44:08.698Z",
+  "updatedAt": "2026-09-24T17:36:36Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10086,
+    "title": "Admin: las cubetas en huecos deshabilitados de Skypod siguen a la venta y generan NE imposibles",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10086",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:admin",
+      "triage:queued",
+      "P1"
+    ],
+    "createdAt": "2026-09-24T17:25:37Z",
+    "updatedAt": "2026-09-24T17:36:36Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe `Unreachable: true` bloquear stock aunque pueda afectar a muchas cubetas durante una deshabilitación masiva, y debe `Locked: true` producir el mismo bloqueo?",
+  "rationale": "El PR enlazado revierte la política integrada para evitar retiradas masivas, mientras que el incidente descrito muestra pedidos imposibles bajo la regla actual; la elección depende del significado operativo de esos estados en Exotec.",
+  "options": [
+    {
+      "title": "Bloquear ambos estados",
+      "body": "Aprobar retirada por `Unreachable` y `Locked`, con pruebas de recuperación y validación del impacto de una deshabilitación masiva.",
+      "recommended": true
+    },
+    {
+      "title": "Bloquear solo `Unreachable`",
+      "body": "Acotar el cambio al estado que el incidente y el PR candidato describen, dejando `Locked` sin cambios hasta confirmar su semántica.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener la regla actual",
+      "body": "No retirar stock automáticamente por estos estados hasta acordar un mecanismo que limite o gestione los bloqueos masivos.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Bloquear ambos estados",
+    "body": "Aprobar retirada por `Unreachable` y `Locked`, con pruebas de recuperación y validación del impacto de una deshabilitación masiva.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Su historial en el servicio afectado ofrece la mejor referencia disponible sobre la implementación de estados de cubeta.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10086.md",
+    "reviewedAt": "2026-09-24T17:44:08.698Z",
+    "mainSha": "c0cbf3f71aaf34f6a1d1608497da5d6a4383550b"
+  }
+}
