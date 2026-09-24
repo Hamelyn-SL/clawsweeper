@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-19T09:41:07.098Z",
-  "updatedAt": "2026-09-17T08:22:02Z",
+  "generatedAt": "2026-09-24T09:01:39.704Z",
+  "updatedAt": "2026-09-24T08:22:02Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,44 +13,43 @@
       "bug",
       "reporter:miguel",
       "triage:needs-info",
+      "P1",
       "clawsweeper:needs-product-decision",
       "app:agents",
-      "origin:dev",
-      "P1"
+      "origin:dev"
     ],
     "createdAt": "2026-09-09T17:10:25Z",
-    "updatedAt": "2026-09-17T08:22:02Z"
+    "updatedAt": "2026-09-24T08:22:02Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Deben Grok y Gateway seguir siendo voces operativas soportadas en las rondas solicitadas, o debe Asamblea consolidarse temporalmente como revisión automática basada en Codex?",
-  "rationale": "El código ya degrada correctamente varias fases, pero la disponibilidad prometida de voces externas depende de cuotas, credenciales y sandbox; esa política no se puede deducir con seguridad del código.",
+  "question": "¿Deben Grok y Gateway seguir siendo voces operativas soportadas, o debe Asamblea tomar Codex como base mientras las demás voces son experimentales?",
+  "rationale": "La corrección de stdin cubre E2BIG y hay tolerancia parcial a fallos, pero no hay evidencia de una ronda multivoces sana; decidir recuperación frente a degradación define el alcance y el comportamiento esperado.",
   "options": [
     {
-      "title": "Consolidar Codex como base",
-      "body": "Mantener Codex como resultado operativo suficiente y mostrar las voces adicionales como experimentales hasta disponer de garantía de servicio.",
+      "title": "Codex como base operativa",
+      "body": "Mantener Codex como resultado suficiente y presentar las voces adicionales como experimentales hasta contar con una garantía de servicio.",
       "recommended": true
     },
     {
-      "title": "Restaurar multivoces soportadas",
-      "body": "Recuperar cuota y autenticación, corregir el CA del sandbox y exigir una ronda completa con telemetría antes de volver a considerarlas disponibles.",
+      "title": "Mantener soporte multivoces",
+      "body": "Recuperar cuota, autenticación y certificados y exigir evidencia de una ronda completa con telemetría antes de dar por resuelto el problema.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Consolidar Codex como base",
-    "body": "Mantener Codex como resultado operativo suficiente y mostrar las voces adicionales como experimentales hasta disponer de garantía de servicio.",
+    "title": "Codex como base operativa",
+    "body": "Mantener Codex como resultado suficiente y presentar las voces adicionales como experimentales hasta contar con una garantía de servicio.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su historial es el más extenso en las voces, `fx` y el lanzamiento remoto.",
-    "confidence": "high"
+    "reason": "Su historial reciente cubre la arquitectura de voces, los presupuestos y la gestión del token de Grok.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9344.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9344#issuecomment-5605956204",
-    "reviewedAt": "2026-09-19T09:41:07.098Z",
-    "mainSha": "d0e0b93e78bba63a1c6ff1614e823941e10afa9f"
+    "reviewedAt": "2026-09-24T09:01:39.704Z",
+    "mainSha": "43cee7979fb990544fabb1eab301c80084b4a251"
   }
 }
