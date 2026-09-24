@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-23T11:52:07.545Z",
-  "updatedAt": "2026-09-23T11:41:51Z",
+  "generatedAt": "2026-09-24T11:57:35.345Z",
+  "updatedAt": "2026-09-24T10:43:20Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -14,39 +14,38 @@
       "P2"
     ],
     "createdAt": "2026-09-23T11:40:00Z",
-    "updatedAt": "2026-09-23T11:41:51Z",
-    "headSha": "52f80eda3fe7a897ab324175ab657a2b2513b7fa"
+    "updatedAt": "2026-09-24T10:43:20Z",
+    "headSha": "e27088ce53ac918915a347cafb32ca694e0b094e"
   },
   "lane": "release_inclusion",
   "priority": "P2",
-  "question": "¿Debe el despliegue del rediseño esperar al backfill de sesiones históricas de `OTROS`, o se acepta una ventana temporal con histórico legacy?",
-  "rationale": "El PR elimina tipos persistidos y declara que la migración operativa ocurre después; el orden determina la experiencia sobre datos ya almacenados.",
+  "question": "¿Se confirma el orden de despliegue de este cambio y el backfill histórico de sesiones «Otros» antes de considerar cerrada la implementación?",
+  "rationale": "La propia descripción del cambio relacionado deja un backfill de producción pendiente y este PR depende de ese trabajo; la preparación operativa no se puede deducir solo del código.",
   "options": [
     {
-      "title": "Aterrizar con backfill coordinado",
-      "body": "Mergear tras acordar y ejecutar el backfill, verificando que las vistas históricas aceptan el formato migrado.",
+      "title": "Coordinar despliegue y backfill",
+      "body": "Mantener el PR abierto hasta confirmar el orden de integración y la ejecución del backfill requerido.",
       "recommended": true
     },
     {
-      "title": "Aceptar transición temporal",
-      "body": "Mergear primero y asumir explícitamente el histórico legacy hasta que se complete el backfill posterior.",
+      "title": "Separar la entrega del panel",
+      "body": "Desacoplar la parte del panel de la migración de sesiones si el equipo confirma que puede desplegarse sin ella.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aterrizar con backfill coordinado",
-    "body": "Mergear tras acordar y ejecutar el backfill, verificando que las vistas históricas aceptan el formato migrado.",
+    "title": "Coordinar despliegue y backfill",
+    "body": "Mantener el PR abierto hasta confirmar el orden de integración y la ejecución del backfill requerido.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "danielmenchen-hamelyn",
-    "reason": "Es la persona más conectada al contrato actual de supervisión y datos del panel.",
-    "confidence": "high"
+    "person": "Daniel",
+    "reason": "Su historial reciente en el panel y el roster lo convierte en el candidato mejor respaldado para aclarar el comportamiento esperado.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10011.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10011#issuecomment-5794318370",
-    "reviewedAt": "2026-09-23T11:52:07.545Z",
-    "mainSha": "45fa9693013b0e6182cde1d69fd68cce0ac50c68"
+    "reviewedAt": "2026-09-24T11:57:35.345Z",
+    "mainSha": "b3f7c1eace1f7638fa2f8de78cce0587ae8df711"
   }
 }
