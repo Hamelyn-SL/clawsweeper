@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-24T01:34:07.587Z",
+  "updatedAt": "2026-09-24T01:30:48Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9886,
+    "title": "Marketplace: [withdraw-result] mk=fnac sku=<value> marketplaceid=<sku> outcome=error kind=transient code=batch_failed",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9886",
+    "state": "open",
+    "labels": [
+      "codex",
+      "bug",
+      "app:marketplace",
+      "triage:queued",
+      "P2",
+      "marketplace-crons"
+    ],
+    "createdAt": "2026-09-22T00:30:53Z",
+    "updatedAt": "2026-09-24T01:30:48Z"
+  },
+  "lane": "proof_sufficiency",
+  "priority": "P2",
+  "question": "¿Debe el equipo de Marketplaces obtener y verificar el motivo remoto de los lotes recurrentes antes de autorizar un cambio de código?",
+  "rationale": "La evidencia apunta a resultados de error emitidos por Fnac, pero no identifica su motivo; modificar clasificación o reintentos sin esa información podría ocultar retiradas no confirmadas.",
+  "options": [
+    {
+      "title": "Solicitar diagnóstico al proveedor",
+      "body": "Obtener el código y mensaje saneados de los lotes citados y contrastar el estado remoto de una oferta antes de definir una corrección.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener el seguimiento operativo",
+      "body": "Conservar el comportamiento actual y reunir nuevas observaciones del siguiente ciclo de retirada sin alterar la clasificación ni los reintentos.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Solicitar diagnóstico al proveedor",
+    "body": "Obtener el código y mensaje saneados de los lotes citados y contrastar el estado remoto de una oferta antes de definir una corrección.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Ha participado recientemente en el diagnóstico Fnac relacionado y en el análisis de la conservación de errores de lote.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9886.md",
+    "reviewedAt": "2026-09-24T01:34:07.587Z",
+    "mainSha": "2f2ba31472533c0e5deb4e01233d54d34f7b1fe7"
+  }
+}
