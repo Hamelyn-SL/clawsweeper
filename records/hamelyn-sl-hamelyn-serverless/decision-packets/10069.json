@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-24T10:53:19.582Z",
+  "updatedAt": "2026-09-24T10:48:27Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10069,
+    "title": "Dato No encontrados en canal: \"reporting-produccion\"",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10069",
+    "state": "open",
+    "labels": [
+      "source:admin-panel",
+      "app:supply",
+      "feature",
+      "triage:queued",
+      "P1",
+      "reporter:daniellopez"
+    ],
+    "createdAt": "2026-09-24T10:48:14Z",
+    "updatedAt": "2026-09-24T10:48:27Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué fecha debe determinar el día del desglose: la operación original o la resolución del no encontrado?",
+  "rationale": "Las operaciones de rescate pueden corresponder a una ola anterior, por lo que ambas reglas producen informes diarios distintos y el ejemplo no fija cuál representa la métrica deseada.",
+  "options": [
+    {
+      "title": "Día de la operación original",
+      "body": "Atribuir cada no encontrado al día de la ola de picking de origen.",
+      "recommended": true
+    },
+    {
+      "title": "Día de resolución",
+      "body": "Atribuir cada no encontrado al día en que se registra su resolución.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Día de la operación original",
+    "body": "Atribuir cada no encontrado al día de la ola de picking de origen.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Es el candidato más conectado por historial con el generador del informe diario.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10069.md",
+    "reviewedAt": "2026-09-24T10:53:19.582Z",
+    "mainSha": "b3f7c1eace1f7638fa2f8de78cce0587ae8df711"
+  }
+}
