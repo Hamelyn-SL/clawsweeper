@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-24T19:21:26.942Z",
+  "updatedAt": "2026-09-24T19:12:51Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10094,
+    "title": "Admin: una línea NOT_FOUND en gaveta BIN se puede sustituir o cancelar antes de su NE-EX",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10094",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:admin",
+      "reporter:davidgonzalez",
+      "triage:running",
+      "P2"
+    ],
+    "createdAt": "2026-09-24T17:54:28Z",
+    "updatedAt": "2026-09-24T19:12:51Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué criterio debe separar las candidatas nuevas a `NE-EX` de las líneas `NOT_FOUND` antiguas sin marcas para decidir cuáles quedan excluidas de sustitución?",
+  "rationale": "El criterio actual por flags conserva la compatibilidad heredada, mientras que el filtro por candidatura cambiaría el tratamiento de registros que la prueba existente protege; el repositorio no acredita su estado actual en producción.",
+  "options": [
+    {
+      "title": "Acotar por fecha o cohorte",
+      "body": "Excluir candidatas solo desde un hito acordado y conservar sustitución para líneas anteriores sin marcas.",
+      "recommended": true
+    },
+    {
+      "title": "Aplicar a todas las candidatas",
+      "body": "Tratar toda línea `BIN` que cumpla el criterio actual como pendiente de segunda pasada, aceptando que también cambie el flujo de registros antiguos.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Acotar por fecha o cohorte",
+    "body": "Excluir candidatas solo desde un hito acordado y conservar sustitución para líneas anteriores sin marcas.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "Su historial reciente cubre los guards y el flujo de alta de revisiones; es la mejor referencia disponible para validar el criterio operativo.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10094.md",
+    "reviewedAt": "2026-09-24T19:21:26.942Z",
+    "mainSha": "c0cbf3f71aaf34f6a1d1608497da5d6a4383550b"
+  }
+}
