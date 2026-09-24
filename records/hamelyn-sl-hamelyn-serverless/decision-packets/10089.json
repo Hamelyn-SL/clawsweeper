@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-24T20:46:57.853Z",
+  "updatedAt": "2026-09-24T18:10:44Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10089,
+    "title": "Crons: la ingesta de Amazon por notificaciones crea pedidos con ítems ya cancelados",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10089",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:infrastructure",
+      "reporter:davidgonzalez",
+      "triage:done",
+      "P3"
+    ],
+    "createdAt": "2026-09-24T17:54:17Z",
+    "updatedAt": "2026-09-24T18:10:44Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Deben las notificaciones Amazon `Canceled` posteriores a la creación mover el pedido a `TO_CANCEL` y activar recuperación de stock?",
+  "rationale": "La transición afecta a pedidos existentes y al stock; no se puede inferir con seguridad la política deseada solo a partir del arreglo de ingesta.",
+  "options": [
+    {
+      "title": "Separar la gestión posterior",
+      "body": "Corregir primero la consulta de ingesta y abrir trabajo separado para definir y probar `Canceled` y la recuperación de stock.",
+      "recommended": true
+    },
+    {
+      "title": "Incluir `Canceled` en el mismo alcance",
+      "body": "Ampliar este trabajo para tratar esas notificaciones tras acordar explícitamente las transiciones y sus límites operativos.",
+      "recommended": false
+    },
+    {
+      "title": "No cambiar el estado del pedido",
+      "body": "Limitar el cambio a la ingesta y documentar que `Canceled` posterior no provoca una transición automática.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Separar la gestión posterior",
+    "body": "Corregir primero la consulta de ingesta y abrir trabajo separado para definir y probar `Canceled` y la recuperación de stock.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Su PR integrado introdujo el manejo compartido de cancelaciones de Amazon que constituye el antecedente directo del cambio.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10089.md",
+    "reviewedAt": "2026-09-24T20:46:57.853Z",
+    "mainSha": "6989d1045fe82c0a9387dd2d05107b091db49c77"
+  }
+}
