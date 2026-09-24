@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-24T06:40:38.943Z",
+  "updatedAt": "2026-09-24T06:27:52Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10046,
+    "title": "Amazon MX report demotes two repeatedly BUYABLE DB_ONLY listings to INACTIVE",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10046",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "triage:running",
+      "P2"
+    ],
+    "createdAt": "2026-09-24T06:02:10Z",
+    "updatedAt": "2026-09-24T06:27:52Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe el reconciliador verificar mediante Listings Items cada candidato MX ausente del report antes de demotarlo, o preferís otra salvaguarda para evitar falsos `DB_ONLY`?",
+  "rationale": "La evidencia confirma listings remotos vivos, pero el alcance y el coste de llamadas de una comprobación remota requieren elegir qué fuente prevalece y cómo limitar la verificación.",
+  "options": [
+    {
+      "title": "Verificar candidatos con Listings Items",
+      "body": "Consultar solo los candidatos a democión y preservar los que sigan `BUYABLE`, con límites y pruebas de regresión.",
+      "recommended": true
+    },
+    {
+      "title": "Usar otra salvaguarda de reconciliación",
+      "body": "Definir una comprobación alternativa basada en snapshots o repetición del report antes de cambiar el estado local.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Verificar candidatos con Listings Items",
+    "body": "Consultar solo los candidatos a democión y preservar los que sigan `BUYABLE`, con límites y pruebas de regresión.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "El historial del código actual lo vincula directamente con la comparación y democión del report Amazon.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10046.md",
+    "reviewedAt": "2026-09-24T06:40:38.943Z",
+    "mainSha": "b2627c046e31185d9ffecd22f180a7fb49fbfe35"
+  }
+}
