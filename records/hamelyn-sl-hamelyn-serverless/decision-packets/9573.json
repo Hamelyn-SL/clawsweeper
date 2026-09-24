@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-24T10:54:37.083Z",
+  "updatedAt": "2026-09-24T08:13:00Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9573,
+    "title": "Admin: attribute packing progress to the first operator per picking container",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9573",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:admin",
+      "triage:done",
+      "reporter:alejandrodiaz",
+      "P1"
+    ],
+    "createdAt": "2026-09-15T10:14:47Z",
+    "updatedAt": "2026-09-24T08:13:00Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe el PR deduplicar globalmente los conteos legacy entre operarios, o se acepta esa limitación si el despliegue se realiza antes de iniciar una tanda nueva?",
+  "rationale": "La alternativa cambia el comportamiento de atribuciones ya persistidas y el momento operativo seguro del despliegue; la revisión reciente identifica ambas opciones, pero no hay una decisión final registrada.",
+  "options": [
+    {
+      "title": "Deduplicar historial legacy",
+      "body": "Consultar la atribución existente sin filtrar por el operario del evento y cubrir con pruebas el caso en que A recibió crédito antes del despliegue y B reclama después.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar limitación operativa",
+      "body": "Mantener el alcance actual y exigir que el despliegue se haga antes de iniciar una tanda nueva, con esa condición documentada y confirmada por el responsable de almacén.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Deduplicar historial legacy",
+    "body": "Consultar la atribución existente sin filtrar por el operario del evento y cubrir con pruebas el caso en que A recibió crédito antes del despliegue y B reclama después.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Está conectado con la funcionalidad existente y es autor del PR que implementa esta solución, por lo que es el candidato disponible más próximo a la decisión de alcance.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9573.md",
+    "reviewedAt": "2026-09-24T10:54:37.083Z",
+    "mainSha": "b3f7c1eace1f7638fa2f8de78cce0587ae8df711"
+  }
+}

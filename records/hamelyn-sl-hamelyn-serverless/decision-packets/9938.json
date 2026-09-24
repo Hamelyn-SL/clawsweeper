@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-24T10:54:06.153Z",
+  "updatedAt": "2026-09-24T10:45:08Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 9938,
+    "title": "feat: group non-scored warehouse processes under otros",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9938",
+    "state": "open",
+    "labels": [
+      "size/XL",
+      "P1"
+    ],
+    "createdAt": "2026-09-22T13:48:16Z",
+    "updatedAt": "2026-09-24T10:45:08Z",
+    "headSha": "4cd3d8b86d4ab3642bbd171e8f6b5c40e414138b"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe la pantalla de No Encontrados mantener reservada la estación frente a otro operario mientras registra la sesión como `OTROS`?",
+  "rationale": "El cambio elimina la sesión `SKYPOD` asociada a la estación; la discusión reconoce que eso permite que otro operario la use, pero no confirma si ese efecto es intencionado.",
+  "options": [
+    {
+      "title": "Conservar la reserva",
+      "body": "Registrar el trabajo en `OTROS` y mantener un mecanismo de reserva de estación durante el rescate.",
+      "recommended": true
+    },
+    {
+      "title": "Permitir el uso compartido",
+      "body": "Aceptar que otro operario pueda iniciar preparación ordinaria en la estación durante el flujo de No Encontrados.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Conservar la reserva",
+    "body": "Registrar el trabajo en `OTROS` y mantener un mecanismo de reserva de estación durante el rescate.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Daniel",
+    "reason": "Su cambio en main introdujo el registro de No Encontrados como `OTROS`; es la persona con el vínculo histórico más directo con este límite del flujo.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9938.md",
+    "reviewedAt": "2026-09-24T10:54:06.153Z",
+    "mainSha": "b3f7c1eace1f7638fa2f8de78cce0587ae8df711"
+  }
+}

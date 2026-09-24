@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-23T10:23:49.493Z",
-  "updatedAt": "2026-09-23T08:28:57Z",
+  "generatedAt": "2026-09-24T10:55:35.550Z",
+  "updatedAt": "2026-09-23T13:15:32Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,50 +12,44 @@
     "labels": [
       "app:infrastructure",
       "feature",
-      "triage:queued",
-      "reporter:danielmenchen-hamelyn",
-      "epic:communication-center",
+      "triage:done",
+      "clawsweeper:needs-product-decision",
       "P2",
-      "clawsweeper:needs-product-decision"
+      "reporter:danielmenchen-hamelyn",
+      "epic:communication-center"
     ],
     "createdAt": "2026-09-23T08:25:34Z",
-    "updatedAt": "2026-09-23T08:28:57Z"
+    "updatedAt": "2026-09-23T13:15:32Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se autoriza crear una estructura persistente específica para la trazabilidad de notificaciones, con qué retención, minimización de datos y responsable operativo?",
-  "rationale": "La issue exige una colección o estructura equivalente, pero la política del repositorio prohíbe crearla sin autorización expresa y el diseño determina datos retenidos y recuperación operativa.",
+  "question": "¿Qué diseño de persistencia y recuperación debe aprobarse para la trazabilidad interna, especialmente cuando el envío se completa pero falla el registro de su resultado?",
+  "rationale": "La decisión afecta al modelo persistido y a cómo recuperar resultados inciertos; la política del repositorio exige autorización antes de crear colecciones o índices, y no hay aún una propuesta validada en el contexto consultado.",
   "options": [
     {
-      "title": "Autorizar un registro específico",
-      "body": "Aprobar una colección de trazas con eventos internos, intentos y resultados saneados, tras documentar esquema, volumen, retención y responsable.",
+      "title": "Aprobar diseño tras validar el circuito",
+      "body": "Preparar esquema, retención, volumen y recuperación sobre el contrato de #9993 y autorizar explícitamente las estructuras necesarias.",
       "recommended": true
     },
     {
-      "title": "Reutilizar marcas existentes",
-      "body": "Mantener las marcas actuales de negocio y limitar esta fase a documentar qué información no permite reconstruir el recorrido completo.",
-      "recommended": false
-    },
-    {
-      "title": "Posponer la persistencia",
-      "body": "Completar primero el circuito de dispatcher y workers y decidir la estructura después de medir sus estados y necesidades operativas.",
+      "title": "Mantener marcas legacy temporalmente",
+      "body": "Completar primero el circuito de envío y posponer la persistencia hasta disponer de evidencia operativa suficiente.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Autorizar un registro específico",
-    "body": "Aprobar una colección de trazas con eventos internos, intentos y resultados saneados, tras documentar esquema, volumen, retención y responsable.",
+    "title": "Aprobar diseño tras validar el circuito",
+    "body": "Preparar esquema, retención, volumen y recuperación sobre el contrato de #9993 y autorizar explícitamente las estructuras necesarias.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "danielmenchen-hamelyn",
-    "reason": "Definió la épica y los criterios de esta fase, incluida la exigencia de autorización previa.",
+    "reason": "Ha definido la secuencia de fases y los criterios del Communication Center en la épica y sus issues relacionadas.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9994.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9994#issuecomment-5793149182",
-    "reviewedAt": "2026-09-23T10:23:49.493Z",
-    "mainSha": "49cf8dd3dcd603e7191f56a17c28174ba52a5a98"
+    "reviewedAt": "2026-09-24T10:55:35.550Z",
+    "mainSha": "b3f7c1eace1f7638fa2f8de78cce0587ae8df711"
   }
 }

@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-24T11:00:48.525Z",
+  "updatedAt": "2026-09-24T10:47:52Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10068,
+    "title": "fix: declare mexico books with hs 49011099",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10068",
+    "state": "open",
+    "labels": [
+      "size/S"
+    ],
+    "createdAt": "2026-09-24T10:42:23Z",
+    "updatedAt": "2026-09-24T10:47:52Z",
+    "headSha": "203950025c802e4dc200d7fe7d38ab5a0a4a2589"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe aplicarse 49011099 a todos los libros con destino México, o mantenerse el respaldo HS6 hasta documentar qué subtipo de libro cumple esa clasificación?",
+  "rationale": "El cambio afecta a declaraciones enviadas a carriers y ficheros aduaneros, mientras la documentación vigente deja el subtipo mexicano sin resolver; el alcance no se puede decidir solo con las pruebas de código.",
+  "options": [
+    {
+      "title": "Mantener HS6 hasta verificar el subtipo",
+      "body": "Conservar el código de respaldo actual y actualizar resolver y pruebas cuando exista evidencia para una partida nacional aplicable.",
+      "recommended": true
+    },
+    {
+      "title": "Aplicar 49011099 a todos los libros",
+      "body": "Confirmar que la clasificación cubre todo el catálogo afectado y actualizar la tabla y sus fuentes para documentar esa decisión.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mantener HS6 hasta verificar el subtipo",
+    "body": "Conservar el código de respaldo actual y actualizar resolver y pruebas cuando exista evidencia para una partida nacional aplicable.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Su historial incluye la centralización reciente de esta clasificación y cambios relacionados con códigos aduaneros.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10068.md",
+    "reviewedAt": "2026-09-24T11:00:48.525Z",
+    "mainSha": "b3f7c1eace1f7638fa2f8de78cce0587ae8df711"
+  }
+}

@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-23T10:26:59.794Z",
-  "updatedAt": "2026-09-23T08:28:52Z",
+  "generatedAt": "2026-09-24T10:57:08.147Z",
+  "updatedAt": "2026-09-23T13:45:27Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,19 +12,19 @@
     "labels": [
       "app:infrastructure",
       "feature",
-      "triage:queued",
-      "reporter:danielmenchen-hamelyn",
-      "epic:communication-center",
+      "triage:done",
+      "clawsweeper:needs-product-decision",
       "P2",
-      "clawsweeper:needs-product-decision"
+      "reporter:danielmenchen-hamelyn",
+      "epic:communication-center"
     ],
     "createdAt": "2026-09-23T08:25:32Z",
-    "updatedAt": "2026-09-23T08:28:52Z"
+    "updatedAt": "2026-09-23T13:45:27Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué app o proyecto y qué entorno no productivo alojarán el consumidor central para validar publicación, recepción, fallo y reentrega entre los proyectos productores antes de implementar los workers?",
-  "rationale": "La fase previa de infraestructura identifica esta elección como necesaria para saber si Vercel Queues puede transportar los trabajos de los emisores existentes al worker elegido.",
+  "question": "¿Qué app/proyecto y entorno no productivo deben alojar el consumidor central para validar publicación, recepción, fallo y reentrega entre proyectos antes de implementar los workers?",
+  "rationale": "La ruta de entrega depende del aislamiento y destino reales de Vercel Queues entre proyectos; el código local y compartir el cliente no determinan esa topología.",
   "options": [
     {
       "title": "Validar una app existente",
@@ -33,7 +33,7 @@
     },
     {
       "title": "Crear un proyecto dedicado",
-      "body": "Separar los workers en un proyecto propio si la prueba muestra que una app existente no ofrece el aislamiento u operación necesarios.",
+      "body": "Separar los workers en un proyecto propio si la prueba demuestra que una app existente no ofrece el aislamiento u operación necesarios.",
       "recommended": false
     },
     {
@@ -48,14 +48,13 @@
     "recommended": true
   },
   "likelyOwner": {
-    "person": "danielmenchen-hamelyn",
-    "reason": "Es el proponente de la épica y la discusión relacionada ya le identifica como dueño probable de esta elección.",
-    "confidence": "medium"
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Su historial de cambios en la infraestructura de colas lo convierte en el candidato de código más próximo para valorar la topología; la decisión sigue siendo del equipo.",
+    "confidence": "low"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9993.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9993#issuecomment-5793179551",
-    "reviewedAt": "2026-09-23T10:26:59.794Z",
-    "mainSha": "49cf8dd3dcd603e7191f56a17c28174ba52a5a98"
+    "reviewedAt": "2026-09-24T10:57:08.147Z",
+    "mainSha": "b3f7c1eace1f7638fa2f8de78cce0587ae8df711"
   }
 }

@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-23T10:47:41.195Z",
-  "updatedAt": "2026-09-23T04:59:00Z",
+  "generatedAt": "2026-09-24T10:58:07.663Z",
+  "updatedAt": "2026-09-23T10:49:29Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,46 +14,47 @@
       "bug",
       "app:marketplace",
       "triage:no-change",
+      "clawsweeper:needs-product-decision",
       "P2",
       "marketplace-crons"
     ],
     "createdAt": "2026-09-22T10:30:41Z",
-    "updatedAt": "2026-09-23T04:59:00Z"
+    "updatedAt": "2026-09-23T10:49:29Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe un error interno `-4` de Arnoia seguir llevando a `TO_CANCEL` a las 168 horas, o debe detenerse para reconciliación antes de cancelar?",
-  "rationale": "El código actual aplica un límite duro, mientras que la clasificación y el diseño histórico reconocen que un error técnico no confirma la inexistencia del pedido en el proveedor.",
+  "question": "¿Debe un error `-4` persistente de Arnoia seguir llevando el pedido a `TO_CANCEL` al cumplir 168 horas, o debe pasar antes por reconciliación con Operaciones?",
+  "rationale": "El código y la documentación describen la cancelación tras el límite, pero cambiarla afecta al tratamiento de pedidos cuyo estado el proveedor no confirma; la evidencia de este caso no permite elegir esa política automáticamente.",
   "options": [
     {
       "title": "Reconciliar antes de cancelar",
-      "body": "Para `-4`, conservar el pedido pendiente y alertar a Operaciones hasta confirmar expedición, transportista o inexistencia en Arnoia.",
+      "body": "Mantener el pedido pendiente y avisar a Operaciones para confirmar su estado con Arnoia antes de cancelarlo.",
       "recommended": true
     },
     {
-      "title": "Mantener el límite duro",
-      "body": "Conservar la cancelación a las 168 horas y aceptar el riesgo operativo de que un pedido expedido requiera recuperación posterior.",
+      "title": "Mantener el límite de 168 horas",
+      "body": "Conservar la política documentada y asumir que los pedidos con errores persistentes pueden requerir recuperación operativa posterior.",
       "recommended": false
     },
     {
-      "title": "Aplicar una ventana distinta",
-      "body": "Definir un plazo específico para errores ambiguos y una transición visible de revisión antes de cualquier cancelación.",
+      "title": "Definir una transición de revisión",
+      "body": "Establecer un plazo específico para errores ambiguos y una revisión visible antes de cualquier cancelación.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Reconciliar antes de cancelar",
-    "body": "Para `-4`, conservar el pedido pendiente y alertar a Operaciones hasta confirmar expedición, transportista o inexistencia en Arnoia.",
+    "body": "Mantener el pedido pendiente y avisar a Operaciones para confirmar su estado con Arnoia antes de cancelarlo.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Su cambio reciente define el comportamiento de reintento y el límite que esta incidencia cuestiona.",
+    "reason": "Su cambio reciente modificó el tratamiento de errores transitorios en el controlador afectado.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9916.md",
-    "reviewedAt": "2026-09-23T10:47:41.195Z",
-    "mainSha": "49cf8dd3dcd603e7191f56a17c28174ba52a5a98"
+    "reviewedAt": "2026-09-24T10:58:07.663Z",
+    "mainSha": "b3f7c1eace1f7638fa2f8de78cce0587ae8df711"
   }
 }

@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-23T10:47:21.628Z",
-  "updatedAt": "2026-09-23T05:45:48Z",
+  "generatedAt": "2026-09-24T10:56:41.542Z",
+  "updatedAt": "2026-09-23T10:49:42Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,46 +14,47 @@
       "bug",
       "app:marketplace",
       "triage:needs-info",
+      "clawsweeper:needs-product-decision",
       "P2",
       "marketplace-crons"
     ],
     "createdAt": "2026-09-23T02:30:45Z",
-    "updatedAt": "2026-09-23T05:45:48Z"
+    "updatedAt": "2026-09-23T10:49:42Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se debe limitar una futura mitigación a lecturas idempotentes de pedidos o se confirma que las operaciones de actualización de AbeBooks toleran reintentos seguros?",
-  "rationale": "El helper de transporte es común a consultas y actualizaciones; el código no demuestra que repetir una actualización de envío sea inocuo.",
+  "question": "Tras conciliar los pedidos y el envío del intervalo 02:00–02:12 UTC del 23 de septiembre, ¿se deben añadir reintentos acotados a las consultas AbeBooks, y hay garantía de idempotencia para extenderlos a actualizaciones?",
+  "rationale": "El incidente ya no aparece en las ejecuciones posteriores, pero su impacto sigue sin verificarse y el presupuesto actual de reintentos depende de la operación; reintentar escrituras sin confirmar idempotencia podría duplicar efectos.",
   "options": [
     {
-      "title": "Conciliar y acotar reintentos",
-      "body": "Confirmar primero el impacto operativo y añadir reintentos únicamente a `getAllNewOrders` y `searchOrders` con cobertura focalizada.",
+      "title": "Conciliar y limitar a consultas",
+      "body": "Verificar primero los pedidos y el envío; si se mantiene una mitigación, aplicarla a búsquedas idempotentes con cobertura focalizada.",
       "recommended": true
     },
     {
-      "title": "Validar reintentos de mutaciones",
-      "body": "Obtener garantía de AbeBooks sobre la idempotencia de actualizaciones antes de compartir una política de reintentos con envíos.",
+      "title": "Validar también las mutaciones",
+      "body": "Solicitar garantías de AbeBooks y pruebas de idempotencia antes de aplicar reintentos a actualizaciones o confirmaciones de envío.",
       "recommended": false
     },
     {
-      "title": "Mantener observabilidad actual",
-      "body": "No cambiar transporte si la conciliación confirma recuperación completa y el proveedor no ofrece semántica segura de reintento.",
+      "title": "No cambiar el transporte",
+      "body": "Mantener el comportamiento actual si la conciliación confirma recuperación y no se establece una política segura de reintentos.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Conciliar y acotar reintentos",
-    "body": "Confirmar primero el impacto operativo y añadir reintentos únicamente a `getAllNewOrders` y `searchOrders` con cobertura focalizada.",
+    "title": "Conciliar y limitar a consultas",
+    "body": "Verificar primero los pedidos y el envío; si se mantiene una mitigación, aplicarla a búsquedas idempotentes con cobertura focalizada.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "Es el autor identificado del helper de transporte y puede evaluar el límite técnico de la política de reintentos.",
-    "confidence": "high"
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Su historial conecta directamente con la implementación del transporte AbeBooks que tendría que cambiarse si se aprueba una mitigación.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9963.md",
-    "reviewedAt": "2026-09-23T10:47:21.628Z",
-    "mainSha": "49cf8dd3dcd603e7191f56a17c28174ba52a5a98"
+    "reviewedAt": "2026-09-24T10:56:41.542Z",
+    "mainSha": "b3f7c1eace1f7638fa2f8de78cce0587ae8df711"
   }
 }

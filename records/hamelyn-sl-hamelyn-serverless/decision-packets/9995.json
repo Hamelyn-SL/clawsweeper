@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-23T10:24:20.606Z",
-  "updatedAt": "2026-09-23T08:29:02Z",
+  "generatedAt": "2026-09-24T10:58:01.622Z",
+  "updatedAt": "2026-09-23T13:30:13Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,45 +12,44 @@
     "labels": [
       "app:infrastructure",
       "feature",
-      "triage:queued",
-      "reporter:danielmenchen-hamelyn",
-      "epic:communication-center",
+      "triage:needs-info",
+      "clawsweeper:needs-product-decision",
       "P2",
-      "clawsweeper:needs-product-decision"
+      "reporter:danielmenchen-hamelyn",
+      "epic:communication-center"
     ],
     "createdAt": "2026-09-23T08:25:36Z",
-    "updatedAt": "2026-09-23T08:29:02Z"
+    "updatedAt": "2026-09-23T13:30:13Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe esta fase mantener Mailchimp Transactional/Mandrill como proveedor de referencia o aprobar una migración a AWS SES antes de diseñar los webhooks?",
-  "rationale": "La alternativa elegida determina autenticación, formato de eventos, límites e identificadores de correlación; la implementación no puede resolver ese contrato operativo por sí misma.",
+  "question": "¿Debe esta fase mantener Mailchimp Transactional/Mandrill como proveedor de referencia o aprobar primero una migración a AWS SES?",
+  "rationale": "La elección determina el mecanismo de autenticación y transporte de eventos, así como la compatibilidad con el envío actual; la issue no aporta configuración real de cuenta que permita resolverlo por evidencia local.",
   "options": [
     {
       "title": "Mantener Mandrill en esta fase",
-      "body": "Implementar la trazabilidad externa sobre el proveedor actual y dejar una migración futura a AWS como alcance separado.",
+      "body": "Ampliar el flujo actual con webhooks de Mandrill y dejar una posible migración a SES como trabajo separado.",
       "recommended": true
     },
     {
-      "title": "Aprobar migración a AWS SES",
-      "body": "Definir primero alcance, compatibilidad, secretos y operación de la migración antes de construir la recepción de eventos.",
+      "title": "Aprobar migración a SES",
+      "body": "Definir primero alcance, configuración y compatibilidad de la migración, y basar la recepción de eventos en SNS.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Mantener Mandrill en esta fase",
-    "body": "Implementar la trazabilidad externa sobre el proveedor actual y dejar una migración futura a AWS como alcance separado.",
+    "body": "Ampliar el flujo actual con webhooks de Mandrill y dejar una posible migración a SES como trabajo separado.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "danielmenchen-hamelyn",
-    "reason": "Ha definido el alcance escalonado de Communication Center y está llevando la extracción inicial de los flujos actuales.",
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Su historial está directamente ligado al servicio actual de email que condiciona el alcance de proveedor.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9995.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9995#issuecomment-5793150072",
-    "reviewedAt": "2026-09-23T10:24:20.606Z",
-    "mainSha": "49cf8dd3dcd603e7191f56a17c28174ba52a5a98"
+    "reviewedAt": "2026-09-24T10:58:01.622Z",
+    "mainSha": "b3f7c1eace1f7638fa2f8de78cce0587ae8df711"
   }
 }

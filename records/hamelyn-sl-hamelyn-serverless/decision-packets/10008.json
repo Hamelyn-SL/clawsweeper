@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-23T10:39:23.940Z",
-  "updatedAt": "2026-09-23T10:28:23Z",
+  "generatedAt": "2026-09-24T10:58:06.649Z",
+  "updatedAt": "2026-09-23T14:14:41Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,50 +12,49 @@
     "labels": [
       "app:infrastructure",
       "feature",
-      "triage:queued",
-      "reporter:danielmenchen-hamelyn",
-      "P2",
+      "triage:done",
       "clawsweeper:needs-product-decision",
-      "clawsweeper:needs-security-review"
+      "P2",
+      "clawsweeper:needs-security-review",
+      "reporter:danielmenchen-hamelyn"
     ],
     "createdAt": "2026-09-23T10:27:58Z",
-    "updatedAt": "2026-09-23T10:28:23Z"
+    "updatedAt": "2026-09-23T14:14:41Z"
   },
-  "lane": "product_direction",
+  "lane": "security_boundary",
   "priority": "P2",
-  "question": "¿Debe empezar el guardián como un piloto de observación por release sin acciones externas, o se aprueba desde el inicio el broker capaz de crear issues y publicar en Slack?",
-  "rationale": "La elección determina el perímetro de secretos, las garantías de idempotencia, el contrato de Blob y la superficie de fallo; no es una decisión que pueda inferirse de la implementación existente.",
+  "question": "¿Se acepta que el guardián use el sandbox y el broker descritos para observar releases y publicar issues/comentarios/avisos de Slack bajo límites por ejecución?",
+  "rationale": "La propuesta añade observación automatizada y permisos de escritura en canales del equipo; la aceptación de esos límites y del despliegue gradual es una decisión de seguridad y operación, no deducible solo del código.",
   "options": [
     {
-      "title": "Piloto de observación acotado",
-      "body": "Implementar primero guardias por release en dry-run, con estado en Blob y reporte de hallazgos sin crear issues ni publicar fuera del canal de pruebas.",
+      "title": "Aprobar límites y piloto escalonado",
+      "body": "Revisar el broker y aislamiento, y autorizar primero dry-run en staging antes de habilitar escrituras de producción.",
       "recommended": true
     },
     {
-      "title": "Habilitar acciones mediante broker",
-      "body": "Definir desde el inicio un broker con permisos por run para GitHub y Slack, junto con auditoría e idempotencia de todas las escrituras.",
+      "title": "Reducir permisos antes del piloto",
+      "body": "Limitar todavía más las escrituras o señales observables y actualizar la propuesta antes de probarla.",
       "recommended": false
     },
     {
-      "title": "Mantener los watchers actuales",
-      "body": "Conservar el gate post-despliegue vigente y posponer el guardián hasta disponer de una especificación operativa más estrecha.",
+      "title": "No incorporar el guardián",
+      "body": "Descartar esta automatización si la capacidad y el coste operativo no justifican el riesgo.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Piloto de observación acotado",
-    "body": "Implementar primero guardias por release en dry-run, con estado en Blob y reporte de hallazgos sin crear issues ni publicar fuera del canal de pruebas.",
+    "title": "Aprobar límites y piloto escalonado",
+    "body": "Revisar el broker y aislamiento, y autorizar primero dry-run en staging antes de habilitar escrituras de producción.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es la persona con la señal histórica más fuerte sobre la arquitectura actual del infrastructure watcher y su contrato operativo.",
-    "confidence": "high"
+    "reason": "Su historial reciente cubre sesiones Codex y ejecución en sandbox dentro de agents, áreas centrales para revisar los límites propuestos.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10008.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10008#issuecomment-5793378613",
-    "reviewedAt": "2026-09-23T10:39:23.940Z",
-    "mainSha": "49cf8dd3dcd603e7191f56a17c28174ba52a5a98"
+    "reviewedAt": "2026-09-24T10:58:06.649Z",
+    "mainSha": "b3f7c1eace1f7638fa2f8de78cce0587ae8df711"
   }
 }

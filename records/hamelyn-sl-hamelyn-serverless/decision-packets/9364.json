@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-23T10:29:52.929Z",
-  "updatedAt": "2026-09-21T11:50:52Z",
+  "generatedAt": "2026-09-24T10:56:37.325Z",
+  "updatedAt": "2026-09-24T08:22:00Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -17,43 +17,37 @@
       "P2"
     ],
     "createdAt": "2026-09-10T06:22:58Z",
-    "updatedAt": "2026-09-21T11:50:52Z"
+    "updatedAt": "2026-09-24T08:22:00Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué debe ocurrir tras N fallos eBay no confirmados de retirada: continuar reintentando con alerta, pasar a revisión manual, o cerrar la retirada?",
-  "rationale": "El contrato actual prioriza no tombstonear una oferta potencialmente viva; detener o cerrar el flujo tras un umbral cambia ese equilibrio operativo.",
+  "question": "¿Qué debe ocurrir cuando una retirada eBay acumula fallos sin confirmación de ausencia: seguir reintentando con alerta individual o pasar a revisión manual preservando la retirada pendiente?",
+  "rationale": "El código actual reintenta errores no confirmados; decidir el umbral y si se pausa la automatización cambia la política operativa y no debe resolverse cerrando la retirada sin evidencia de ausencia remota.",
   "options": [
     {
-      "title": "Reintentar con alerta individual",
-      "body": "Mantener la retirada pendiente y emitir diagnóstico/alerta por SKU, oferta y error saneado cuando se alcance el umbral.",
+      "title": "Reintentar y alertar",
+      "body": "Conservar la retirada pendiente y emitir diagnóstico por oferta y alerta cuando alcance el umbral acordado.",
       "recommended": true
     },
     {
       "title": "Pasar a revisión manual",
-      "body": "Pausar el reintento automático tras el umbral, preservando el identificador y una acción operativa explícita de retirada.",
-      "recommended": false
-    },
-    {
-      "title": "Cerrar como retirada",
-      "body": "Tombstonear tras el umbral aunque no exista ausencia remota confirmada, aceptando el riesgo de listing todavía publicado.",
+      "body": "Al alcanzar el umbral, pausar nuevos intentos automáticos pero preservar el identificador y una acción explícita para completar la retirada.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Reintentar con alerta individual",
-    "body": "Mantener la retirada pendiente y emitir diagnóstico/alerta por SKU, oferta y error saneado cuando se alcance el umbral.",
+    "title": "Reintentar y alertar",
+    "body": "Conservar la retirada pendiente y emitir diagnóstico por oferta y alerta cuando alcance el umbral acordado.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "Introdujo la ruta actual de retirada por SKU y puede valorar el contrato de reintentos frente a la seguridad de inventario.",
-    "confidence": "high"
+    "person": "MarcosTerroso",
+    "reason": "Es la persona con el trabajo más reciente del historial local sobre la conservación de intentos eBay; la propiedad de la decisión de política no queda identificada con certeza.",
+    "confidence": "low"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9364.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9364#issuecomment-5644931658",
-    "reviewedAt": "2026-09-23T10:29:52.929Z",
-    "mainSha": "49cf8dd3dcd603e7191f56a17c28174ba52a5a98"
+    "reviewedAt": "2026-09-24T10:56:37.325Z",
+    "mainSha": "b3f7c1eace1f7638fa2f8de78cce0587ae8df711"
   }
 }
