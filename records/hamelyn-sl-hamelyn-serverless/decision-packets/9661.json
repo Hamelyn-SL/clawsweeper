@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-23T10:56:24.499Z",
-  "updatedAt": "2026-09-23T08:29:06Z",
+  "generatedAt": "2026-09-24T11:12:11.309Z",
+  "updatedAt": "2026-09-24T08:09:57Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -14,39 +14,38 @@
       "P1"
     ],
     "createdAt": "2026-09-17T09:22:05Z",
-    "updatedAt": "2026-09-23T08:29:06Z",
+    "updatedAt": "2026-09-24T08:09:57Z",
     "headSha": "afa094f7efe2b1ba5126d45ae558e33df9c1f92d"
   },
-  "lane": "release_inclusion",
+  "lane": "merge_risk",
   "priority": "P1",
-  "question": "¿Debe este PR soportar tandas iniciadas antes del despliegue aunque otro operario dispare el primer progreso nuevo del mismo contenedor?",
-  "rationale": "El código actual reconoce datos legacy solo del operario activo; aceptar esa limitación permite una duplicación conocida en una tanda anterior.",
+  "question": "¿Debe esta PR deduplicar entre operarios los créditos legacy de la misma tanda antes de integrarse, o se acepta como requisito operativo que el despliegue ocurra antes de iniciar una tanda nueva?",
+  "rationale": "La discusión confirma que el código puede duplicar unidades si se reanuda una tanda anterior, pero deja esa situación fuera del alcance acordado. Resolverlo requiere decidir entre compatibilidad técnica y una restricción operativa explícita de despliegue.",
   "options": [
     {
-      "title": "Preservar deduplicación legacy global",
-      "body": "Consultar los pedidos legacy de cualquier operario dentro de la ventana de la tanda y añadir cobertura para A legacy seguido de B.",
+      "title": "Corregir compatibilidad legacy",
+      "body": "Consultar atribuciones previas de todos los operarios para la tanda y demostrar con una prueba A→B que no se repiten unidades.",
       "recommended": true
     },
     {
-      "title": "Desplegar solo con tandas nuevas",
-      "body": "Aceptar el límite y documentar un procedimiento operativo que impida reutilizar cualquier tanda iniciada antes del despliegue.",
+      "title": "Aceptar restricción operativa",
+      "body": "Mantener la limitación y establecer como condición de despliegue que no se reutilicen tandas anteriores al cambio.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Preservar deduplicación legacy global",
-    "body": "Consultar los pedidos legacy de cualquier operario dentro de la ventana de la tanda y añadir cobertura para A legacy seguido de B.",
+    "title": "Corregir compatibilidad legacy",
+    "body": "Consultar atribuciones previas de todos los operarios para la tanda y demostrar con una prueba A→B que no se repiten unidades.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "Daniel",
-    "reason": "Conoce la capa de persistencia y planteó el caso de compatibilidad pendiente en la revisión.",
+    "person": "danielmenchen-hamelyn",
+    "reason": "Identificó y documentó el caso pendiente en la revisión más reciente.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9661.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9661#issuecomment-5740829984",
-    "reviewedAt": "2026-09-23T10:56:24.499Z",
-    "mainSha": "49cf8dd3dcd603e7191f56a17c28174ba52a5a98"
+    "reviewedAt": "2026-09-24T11:12:11.309Z",
+    "mainSha": "b3f7c1eace1f7638fa2f8de78cce0587ae8df711"
   }
 }
