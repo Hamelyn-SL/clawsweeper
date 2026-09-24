@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-24T21:25:11.710Z",
+  "updatedAt": "2026-09-24T17:55:25Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10087,
+    "title": "fix: block skypod bins reported unreachable",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10087",
+    "state": "open",
+    "labels": [
+      "size/M"
+    ],
+    "createdAt": "2026-09-24T17:35:07Z",
+    "updatedAt": "2026-09-24T17:55:25Z",
+    "headSha": "cc41c90e71e0862701b8f333f5b5caead48c4cb3"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué ubicaciones deben activar el bloqueo por `Unreachable`, y debe `Locked: true` retirar stock antes de cerrar https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10086?",
+  "rationale": "La condición amplia puede bloquear bins listos en la interfaz y revertir una decisión anterior tomada tras deshabilitaciones masivas; la issue enlazada también incluye `Locked`, que el PR deja fuera.",
+  "options": [
+    {
+      "title": "Acotar por ubicación y decidir `Locked` aparte",
+      "body": "Excluir `BinInterface` del bloqueo por `Unreachable` y mantener `Locked` fuera hasta confirmar su semántica operativa.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar el bloqueo amplio por `Unreachable`",
+      "body": "Mantener la regla del PR, aceptando que una deshabilitación masiva retire temporalmente stock hasta la rehabilitación de las cubetas.",
+      "recommended": false
+    },
+    {
+      "title": "Incluir también `Locked`",
+      "body": "Ampliar el bloqueo a `Locked: true` y validar la semántica y la recuperación automática con pruebas del flujo.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Acotar por ubicación y decidir `Locked` aparte",
+    "body": "Excluir `BinInterface` del bloqueo por `Unreachable` y mantener `Locked` fuera hasta confirmar su semántica operativa.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "La revisión de la issue enlazada lo señala como responsable probable de la decisión sobre alcance y bloqueo masivo.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10087.md",
+    "reviewedAt": "2026-09-24T21:25:11.710Z",
+    "mainSha": "6989d1045fe82c0a9387dd2d05107b091db49c77"
+  }
+}
