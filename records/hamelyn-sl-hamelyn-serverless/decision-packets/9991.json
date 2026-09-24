@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-23T10:03:25.619Z",
-  "updatedAt": "2026-09-23T09:57:51Z",
+  "generatedAt": "2026-09-24T10:26:05.725Z",
+  "updatedAt": "2026-09-24T08:42:13Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -18,38 +18,42 @@
       "epic:communication-center"
     ],
     "createdAt": "2026-09-23T08:25:27Z",
-    "updatedAt": "2026-09-23T09:57:51Z"
+    "updatedAt": "2026-09-24T08:42:13Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe el Communication Center ampliar Public como propietario central de la cola o alojar sus consumidores en una app de workers independiente?",
-  "rationale": "El patrón eDesk valida una alternativa concreta, pero no decide el contrato permanente para comunicaciones generales ni su aislamiento operativo.",
+  "question": "¿Qué app/proyecto y entorno no productivo alojarán el consumidor central para validar la publicación entre proyectos?",
+  "rationale": "La topología determina dónde se despliegan los consumidores y qué puente autenticado usan las apps productoras; el código existente no resuelve esa decisión ni demuestra su aislamiento.",
   "options": [
     {
-      "title": "Ampliar Public",
-      "body": "Mantener Public como entrada y consumidor central, con topics, límites y autorización específicos de comunicaciones.",
+      "title": "Probar en una app existente",
+      "body": "Usar temporalmente una app desplegable existente como consumidor y validar entrega, aislamiento y reintentos antes de fijar la arquitectura.",
       "recommended": true
     },
     {
-      "title": "Separar workers",
-      "body": "Crear una app propietaria de consumidores y definir un puente autenticado desde cada productor.",
+      "title": "Crear un proyecto de workers",
+      "body": "Separar consumidores en un proyecto dedicado y definir el puente autenticado desde cada productor.",
+      "recommended": false
+    },
+    {
+      "title": "Aplazar la cola",
+      "body": "Mantener los envíos actuales hasta confirmar una topología soportada por Vercel Queues.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Ampliar Public",
-    "body": "Mantener Public como entrada y consumidor central, con topics, límites y autorización específicos de comunicaciones.",
+    "title": "Probar en una app existente",
+    "body": "Usar temporalmente una app desplegable existente como consumidor y validar entrega, aislamiento y reintentos antes de fijar la arquitectura.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su historial reciente conecta la configuración de Public, el puente OIDC y el uso operativo de la cola.",
+    "reason": "Su historial reciente toca configuración regional compartida de los proyectos Vercel implicados en la topología.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9991.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9991#issuecomment-5792857454",
-    "reviewedAt": "2026-09-23T10:03:25.619Z",
-    "mainSha": "49cf8dd3dcd603e7191f56a17c28174ba52a5a98"
+    "reviewedAt": "2026-09-24T10:26:05.725Z",
+    "mainSha": "b3f7c1eace1f7638fa2f8de78cce0587ae8df711"
   }
 }
