@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-24T11:52:34.506Z",
+  "updatedAt": "2026-09-24T06:14:22Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 9969,
+    "title": "fix: recognize b2b sales on completed product picking",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9969",
+    "state": "open",
+    "labels": [
+      "size/L",
+      "P2"
+    ],
+    "createdAt": "2026-09-23T05:53:52Z",
+    "updatedAt": "2026-09-24T06:14:22Z",
+    "headSha": "dea4153e4ee46f8ac2c4d2361e46a9fc5311b5ef"
+  },
+  "lane": "merge_risk",
+  "priority": "P2",
+  "question": "¿Se acepta el coste medido de 763.269.666 bytes por consulta o se mantiene bloqueado el merge hasta reducirlo más?",
+  "rationale": "La semántica solicitada está cubierta, pero la última medición confirma una regresión sustancial y el autor deja su aceptación pendiente; no hay un umbral de coste aprobado en la evidencia disponible.",
+  "options": [
+    {
+      "title": "Reducir el coste antes de integrar",
+      "body": "Mantener la semántica por producto preparado y aportar una comparación equivalente que reduzca la lectura sin excluir pedidos antiguos preparados ahora.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar la lectura medida",
+      "body": "Aprobar explícitamente el coste repetido de la consulta y seguir con el enfoque actual.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Reducir el coste antes de integrar",
+    "body": "Mantener la semántica por producto preparado y aportar una comparación equivalente que reduzca la lectura sin excluir pedidos antiguos preparados ahora.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Solicitó la revisión de rendimiento y aportó la comparación que fundamenta esta decisión.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9969.md",
+    "reviewedAt": "2026-09-24T11:52:34.506Z",
+    "mainSha": "b3f7c1eace1f7638fa2f8de78cce0587ae8df711"
+  }
+}
