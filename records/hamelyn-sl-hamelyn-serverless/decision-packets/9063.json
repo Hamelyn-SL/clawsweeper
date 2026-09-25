@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-12T08:56:48.393Z",
-  "updatedAt": "2026-09-11T20:42:51Z",
+  "generatedAt": "2026-09-25T03:49:58.898Z",
+  "updatedAt": "2026-09-25T03:42:51Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,49 +13,42 @@
       "codex",
       "bug",
       "app:marketplace",
-      "triage:done",
-      "marketplace-crons",
+      "triage:no-change",
       "P2",
-      "clawsweeper:needs-product-decision"
+      "marketplace-crons"
     ],
     "createdAt": "2026-09-02T20:30:41Z",
-    "updatedAt": "2026-09-11T20:42:51Z"
+    "updatedAt": "2026-09-25T03:42:51Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe Marketplace investigar primero si las llamadas posteriores al merge omitieron la reserva, o aprobar una reducción adicional del presupuesto OF24 de 225 por hora?",
-  "rationale": "La cuota es empírica y reducirla cambia el equilibrio entre evitar 429 y mantener el caudal de publicación; el código no puede decidir esa política por sí solo.",
+  "question": "¿Debe mantenerse el presupuesto de Feltrinelli en 225 solicitudes OF24 por hora mientras se verifica la recurrencia, o se autoriza revisar ese límite con los datos posteriores al despliegue?",
+  "rationale": "El código aplica el presupuesto aprobado anteriormente, pero los 12 errores posteriores al despliegue exceden el umbral del watcher y no bastan para establecer si procede cambiar el límite o investigar primero el comportamiento externo.",
   "options": [
     {
-      "title": "Verificar el camino desplegado",
-      "body": "Confirmar versión desplegada, clave de reserva y origen de las llamadas 429 antes de modificar el presupuesto.",
+      "title": "Verificar antes de cambiar",
+      "body": "Mantener el límite actual y correlacionar reservas, respuestas 429 y resultados de importación antes de proponer otro valor.",
       "recommended": true
     },
     {
-      "title": "Reducir el presupuesto",
-      "body": "Aceptar menor caudal y bajar el límite por tienda con pruebas de aislamiento y una ventana de observación posterior.",
-      "recommended": false
-    },
-    {
-      "title": "Mantener 225 temporalmente",
-      "body": "Conservar el límite actual mientras se recopila una ventana saturada más amplia para decidir con más datos.",
+      "title": "Revisar el presupuesto",
+      "body": "Solicitar a Marketplace que valore un límite distinto para Feltrinelli a partir de la evidencia posterior al despliegue.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Verificar el camino desplegado",
-    "body": "Confirmar versión desplegada, clave de reserva y origen de las llamadas 429 antes de modificar el presupuesto.",
+    "title": "Verificar antes de cambiar",
+    "body": "Mantener el límite actual y correlacionar reservas, respuestas 429 y resultados de importación antes de proponer otro valor.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Es el asignado y autor del límite actual por tienda.",
+    "reason": "Está vinculado a la implementación del límite y a la verificación previa bajo carga.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9063.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9063#issuecomment-5516322238",
-    "reviewedAt": "2026-09-12T08:56:48.393Z",
-    "mainSha": "55db7e4a7cbff616c2537722dd88f2549f8bfce6"
+    "reviewedAt": "2026-09-25T03:49:58.898Z",
+    "mainSha": "cc3510386055c2c98c62a38d1e779f9ffd32bea6"
   }
 }
