@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-23T14:00:01.105Z",
-  "updatedAt": "2026-09-23T13:48:42Z",
+  "generatedAt": "2026-09-25T07:06:28.726Z",
+  "updatedAt": "2026-09-25T06:40:03Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -14,44 +14,43 @@
       "P2"
     ],
     "createdAt": "2026-09-23T13:32:08Z",
-    "updatedAt": "2026-09-23T13:48:42Z",
-    "headSha": "59eae0a412dbd75a7ea566cc9bef4e79d2212087"
+    "updatedAt": "2026-09-25T06:40:03Z",
+    "headSha": "21dec14192cd620df86dd87573f9e957b5228c40"
   },
   "lane": "security_boundary",
   "priority": "P2",
-  "question": "¿Se aprueba que `deploy-guard` publique en Slack y cree issues desde el inicio, o debe limitarse primero a un piloto observacional sin escrituras externas?",
-  "rationale": "El cambio amplía el perímetro de credenciales y automatiza comunicaciones operativas; la decisión afecta al contrato permanente, no solo a una corrección mecánica.",
+  "question": "¿Debe `dryRun` impedir toda publicación en Slack operativo, incluidas las alertas de fallo de arranque, y exigirse un canal de pruebas explícito?",
+  "rationale": "La respuesta determina si la configuración actual puede emitir mensajes externos durante el piloto; el código no puede resolver esa intención operativa de forma segura.",
   "options": [
     {
-      "title": "Piloto observacional acotado",
-      "body": "Bloquear publicaciones externas en dry-run y exigir un canal de pruebas explícito antes de activar cualquier salida.",
+      "title": "Aislar el piloto",
+      "body": "Exigir un canal de pruebas explícito y bloquear las publicaciones Slack operativas mientras `dryRun` esté activo.",
       "recommended": true
     },
     {
-      "title": "Aprobar el broker de escritura",
-      "body": "Aceptar Slack e issues desde el inicio tras documentar el canal, auditoría, idempotencia y criterio de activación.",
+      "title": "Permitir alertas operativas",
+      "body": "Mantener las alertas de arranque en el canal general y documentar que dry-run no suprime ese efecto externo.",
       "recommended": false
     },
     {
-      "title": "Pausar la integración",
-      "body": "Mantener los watchers actuales hasta disponer de una especificación más estrecha para el broker y su operación.",
+      "title": "Pausar el piloto",
+      "body": "No habilitar el disparo del workflow hasta acordar la política de notificaciones.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Piloto observacional acotado",
-    "body": "Bloquear publicaciones externas en dry-run y exigir un canal de pruebas explícito antes de activar cualquier salida.",
+    "title": "Aislar el piloto",
+    "body": "Exigir un canal de pruebas explícito y bloquear las publicaciones Slack operativas mientras `dryRun` esté activo.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "La issue canónica ya le señala como dueño probable de esta decisión de seguridad y comportamiento.",
-    "confidence": "medium"
+    "reason": "La revisión anterior lo señaló como candidato para decidir el alcance del piloto y de sus escrituras externas.",
+    "confidence": "low"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10023.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10023#issuecomment-5796212296",
-    "reviewedAt": "2026-09-23T14:00:01.105Z",
-    "mainSha": "ebcb255147d73b8d0dd13fb87cdff57ba220a682"
+    "reviewedAt": "2026-09-25T07:06:28.726Z",
+    "mainSha": "d04ca1f48f57ad0831eda25aba2168407c716b56"
   }
 }
