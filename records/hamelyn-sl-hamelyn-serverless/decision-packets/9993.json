@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-24T10:57:08.147Z",
-  "updatedAt": "2026-09-23T13:45:27Z",
+  "generatedAt": "2026-09-25T13:47:10.711Z",
+  "updatedAt": "2026-09-24T12:47:20Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,48 +14,47 @@
       "feature",
       "triage:done",
       "clawsweeper:needs-product-decision",
+      "P2",
       "reporter:danielmenchen-hamelyn",
-      "epic:communication-center",
-      "P2"
+      "epic:communication-center"
     ],
     "createdAt": "2026-09-23T08:25:32Z",
-    "updatedAt": "2026-09-23T13:45:27Z"
+    "updatedAt": "2026-09-24T12:47:20Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué app/proyecto y entorno no productivo deben alojar el consumidor central para validar publicación, recepción, fallo y reentrega entre proyectos antes de implementar los workers?",
-  "rationale": "La ruta de entrega depende del aislamiento y destino reales de Vercel Queues entre proyectos; el código local y compartir el cliente no determinan esa topología.",
+  "question": "¿Qué app existente y entorno no productivo deben alojar el consumidor central para validar la publicación, recepción, fallo y reentrega entre proyectos?",
+  "rationale": "La elección del consumidor condiciona el diseño y la validación de esta fase; la issue de infraestructura relacionada aún no registra una topología validada.",
   "options": [
     {
       "title": "Validar una app existente",
-      "body": "Usar temporalmente una app desplegable actual como consumidor y demostrar el recorrido aislado por entorno antes de fijar la arquitectura.",
+      "body": "Probar primero un consumidor en una app desplegable actual y fijar la arquitectura solo si la prueba demuestra que no ofrece el aislamiento necesario.",
       "recommended": true
     },
     {
       "title": "Crear un proyecto dedicado",
-      "body": "Separar los workers en un proyecto propio si la prueba demuestra que una app existente no ofrece el aislamiento u operación necesarios.",
+      "body": "Separar los workers si la validación confirma que las apps actuales no cubren las necesidades operativas o de aislamiento.",
       "recommended": false
     },
     {
       "title": "Posponer la cola",
-      "body": "Mantener el envío actual mientras se evalúa una topología soportada si la prueba entre proyectos no resulta viable.",
+      "body": "Mantener los envíos actuales hasta confirmar una topología soportada entre productores y consumidores.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Validar una app existente",
-    "body": "Usar temporalmente una app desplegable actual como consumidor y demostrar el recorrido aislado por entorno antes de fijar la arquitectura.",
+    "body": "Probar primero un consumidor en una app desplegable actual y fijar la arquitectura solo si la prueba demuestra que no ofrece el aislamiento necesario.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Su historial de cambios en la infraestructura de colas lo convierte en el candidato de código más próximo para valorar la topología; la decisión sigue siendo del equipo.",
-    "confidence": "low"
+    "reason": "El historial de infraestructura y el contexto de revisión lo señalan como candidato de coordinación para la topología de colas.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9993.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9993#issuecomment-5793179551",
-    "reviewedAt": "2026-09-24T10:57:08.147Z",
-    "mainSha": "b3f7c1eace1f7638fa2f8de78cce0587ae8df711"
+    "reviewedAt": "2026-09-25T13:47:10.711Z",
+    "mainSha": "88e0a9197e139b667c6a7ff20eebddb78e3bfd27"
   }
 }
