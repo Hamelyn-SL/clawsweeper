@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-25T14:48:51.066Z",
+  "updatedAt": "2026-09-24T11:08:08Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10009,
+    "title": "Feltrinelli: el verificador de lotes (process=15) retrasa horas la retirada de stock vendido con un lote de precio o alta abierto",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10009",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "reporter:javier",
+      "triage:done",
+      "clawsweeper:needs-product-decision",
+      "P2"
+    ],
+    "createdAt": "2026-09-23T10:37:50Z",
+    "updatedAt": "2026-09-24T11:08:08Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe la prioridad de lotes con stock vendido aplicarse en el selector compartido para todos los marketplaces o limitarse a Feltrinelli?",
+  "rationale": "La solución recomendada modifica el orden del selector compartido; elegir el alcance puede alterar la latencia de procesamiento de otros marketplaces y no se resuelve solo con evidencia local.",
+  "options": [
+    {
+      "title": "Prioridad compartida",
+      "body": "Priorizar en todos los marketplaces los lotes abiertos que contengan stock WITHDRAWN y validar los flujos afectados.",
+      "recommended": true
+    },
+    {
+      "title": "Solo Feltrinelli",
+      "body": "Acotar la nueva prioridad a Feltrinelli para reducir el impacto potencial en el resto de tiendas.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener configuración",
+      "body": "Conservar el aumento operativo de process y recopilar más resultados antes de modificar la lógica compartida.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Prioridad compartida",
+    "body": "Priorizar en todos los marketplaces los lotes abiertos que contengan stock WITHDRAWN y validar los flujos afectados.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "HamelynDev",
+    "reason": "El triage de la issue analizó la posición de los lotes y propuso la modificación estructural; no hay evidencia local suficiente para elevar la confianza.",
+    "confidence": "low"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10009.md",
+    "reviewedAt": "2026-09-25T14:48:51.066Z",
+    "mainSha": "88e0a9197e139b667c6a7ff20eebddb78e3bfd27"
+  }
+}
