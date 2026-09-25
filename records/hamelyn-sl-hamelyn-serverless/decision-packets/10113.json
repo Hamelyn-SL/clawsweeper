@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-25T10:45:18.110Z",
+  "updatedAt": "2026-09-25T10:00:52Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10113,
+    "title": "Separar supply y ecommerce de @hamelyn/ui y borrar el paquete",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10113",
+    "state": "open",
+    "labels": [
+      "app:ecommerce",
+      "app:supply",
+      "feature",
+      "reporter:miguel",
+      "triage:done",
+      "P2",
+      "origin:dev"
+    ],
+    "createdAt": "2026-09-25T09:40:17Z",
+    "updatedAt": "2026-09-25T10:00:52Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "Cuando se complete Supply v3, ¿se debe retirar `@hamelyn/ui` y duplicar en Supply Expo y ecommerce las piezas que necesiten, aunque se mantenga el paquete compartido para las webs?",
+  "rationale": "La propuesta de duplicar código entra en tensión con la extracción compartida de #9903, mientras que la integración de esa extracción en `epic/supply-v3` no resuelve por sí sola los consumidores Expo actuales.",
+  "options": [
+    {
+      "title": "Retirar tras la épica",
+      "body": "Separar los consumidores de Supply Expo y ecommerce y borrar `packages/ui` solo cuando no queden referencias.",
+      "recommended": true
+    },
+    {
+      "title": "Conservar el paquete para Expo",
+      "body": "Mantener `packages/ui` para los componentes de Supply Expo y separar únicamente los consumidores que ya no deban depender de él.",
+      "recommended": false
+    },
+    {
+      "title": "Decidir en la integración de la épica",
+      "body": "Posponer la elección hasta revisar el inventario final de consumidores y el resultado integrado de #9903.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Retirar tras la épica",
+    "body": "Separar los consumidores de Supply Expo y ecommerce y borrar `packages/ui` solo cuando no queden referencias.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Está vinculado a esta propuesta, a #9903 y a la PR de extracción integrada en la rama de la épica.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10113.md",
+    "reviewedAt": "2026-09-25T10:45:18.110Z",
+    "mainSha": "5775b887404a2c5e526c205e2585b08223569e95"
+  }
+}
