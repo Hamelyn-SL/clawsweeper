@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-25T18:58:19.898Z",
+  "updatedAt": "2026-09-25T10:15:42Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10117,
+    "title": "fix: suppress provider failures in fnac snapshot alerts",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10117",
+    "state": "open",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-09-25T09:59:02Z",
+    "updatedAt": "2026-09-25T10:15:42Z",
+    "headSha": "f4eaadcc52f4b614d52bbb7cc7ae04eb8233a548"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Deben los HTTP 5xx de Fnac ES/FR permanecer sin alertas de snapshot aunque persistan, o debe escalarse un fallo sostenido?",
+  "rationale": "El PR cambia deliberadamente el comportamiento de alertas y elimina también la señal repetida del watcher; decidir el umbral de escalado es una elección operativa, no un defecto que pueda resolverse por inspección del código.",
+  "options": [
+    {
+      "title": "Mantener la supresión total",
+      "body": "Aceptar que los 5xx acreditados de Fnac queden como telemetría sin issue hasta que se recupere el snapshot.",
+      "recommended": true
+    },
+    {
+      "title": "Escalar fallos persistentes",
+      "body": "Conservar la supresión de alertas repetidas y definir un criterio de duración o impacto para alertar sobre indisponibilidad sostenida.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mantener la supresión total",
+    "body": "Aceptar que los 5xx acreditados de Fnac queden como telemetría sin issue hasta que se recupere el snapshot.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su historial incluye la introducción del flujo de snapshots Fnac ES/FR; es la mejor referencia disponible para validar el impacto operativo de esta política.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10117.md",
+    "reviewedAt": "2026-09-25T18:58:19.898Z",
+    "mainSha": "b7ca4ccf2295720375fc765a9fe4ea56a1f68320"
+  }
+}
