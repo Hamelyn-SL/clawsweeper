@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-25T14:27:21.692Z",
+  "updatedAt": "2026-09-24T11:17:08Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10067,
+    "title": "Amazon: el stock vendido con el espejo en alta o INACTIVE no se retira y su anuncio sigue comprable",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10067",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "reporter:javier",
+      "triage:done",
+      "P2",
+      "mk:amazon"
+    ],
+    "createdAt": "2026-09-24T10:41:41Z",
+    "updatedAt": "2026-09-24T11:17:08Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe la retirada enviar DELETE también a espejos Amazon sin estado o `INACTIVE`, y qué comprobación remota debe exigirse cuando el informe los reactive después de un DELETE aceptado?",
+  "rationale": "El selector puede ampliarse mecánicamente, pero los datos disponibles no distinguen si el anuncio sigue comprable o si el snapshot diario conserva una fila antigua; la elección afecta al riesgo de dejar anuncios vivos o retirar uno que no se debe tocar.",
+  "options": [
+    {
+      "title": "Ampliar retirada y verificar reactivaciones",
+      "body": "Incluir los estados relevantes con guardas acotadas y consultar Listings Items antes de decidir qué hacer con una reactivación posterior.",
+      "recommended": true
+    },
+    {
+      "title": "Ampliar solo el selector",
+      "body": "Retirar los espejos no activos mediante DELETE idempotente y posponer la detección de reactivaciones a otro seguimiento.",
+      "recommended": false
+    },
+    {
+      "title": "Separar la reconciliación",
+      "body": "Mantener la retirada actual y abrir un seguimiento distinto para definir y validar cómo tratar las reactivaciones del informe.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Ampliar retirada y verificar reactivaciones",
+    "body": "Incluir los estados relevantes con guardas acotadas y consultar Listings Items antes de decidir qué hacer con una reactivación posterior.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su historial local cubre la retirada Amazon basada en feeds DELETE y el contexto actual aporta evidencia detallada del comportamiento observado.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10067.md",
+    "reviewedAt": "2026-09-25T14:27:21.692Z",
+    "mainSha": "88e0a9197e139b667c6a7ff20eebddb78e3bfd27"
+  }
+}
