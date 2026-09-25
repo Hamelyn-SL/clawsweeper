@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-25T21:55:37.464Z",
+  "updatedAt": "2026-09-25T21:01:24Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10146,
+    "title": "Marketplace: [mercadolibre] op=create st=err d=39s e=mongoserverselectionerror:socket 'secureconnect' timed out after 10",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10146",
+    "state": "open",
+    "labels": [
+      "codex",
+      "bug",
+      "app:marketplace",
+      "triage:needs-info",
+      "P1",
+      "marketplace-crons"
+    ],
+    "createdAt": "2026-09-25T20:31:33Z",
+    "updatedAt": "2026-09-25T21:01:24Z"
+  },
+  "lane": "manual_review",
+  "priority": "P2",
+  "question": "¿Se han contrastado y reconciliado los candidatos de `create` afectados durante el fallo de conectividad?",
+  "rationale": "Las ejecuciones posteriores correctas demuestran recuperación del cron, pero no establecen el resultado de las publicaciones ni la persistencia local de la ejecución fallida.",
+  "options": [
+    {
+      "title": "Mantener abierto hasta verificar",
+      "body": "Confirmar el estado de los candidatos en MongoDB y MercadoLibre antes de cerrar este aviso y su incidencia relacionada.",
+      "recommended": true
+    },
+    {
+      "title": "Cerrar tras confirmar reconciliación",
+      "body": "Cerrar el seguimiento si el equipo confirma que los candidatos afectados quedaron publicados y reconciliados.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mantener abierto hasta verificar",
+    "body": "Confirmar el estado de los candidatos en MongoDB y MercadoLibre antes de cerrar este aviso y su incidencia relacionada.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "danielmenchen-hamelyn",
+    "reason": "Su historial local en el flujo de fases de cron lo convierte en una referencia técnica para el comportamiento del lock, aunque la confirmación de reconciliación corresponde al equipo operativo.",
+    "confidence": "low"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10146.md",
+    "reviewedAt": "2026-09-25T21:55:37.464Z",
+    "mainSha": "b7ca4ccf2295720375fc765a9fe4ea56a1f68320"
+  }
+}
