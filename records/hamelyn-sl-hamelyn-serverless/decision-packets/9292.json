@@ -1,56 +1,55 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-09T15:26:26.824Z",
-  "updatedAt": "2026-09-09T14:58:42Z",
+  "generatedAt": "2026-09-25T20:36:03.367Z",
+  "updatedAt": "2026-09-25T20:30:46Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
     "number": 9292,
     "title": "Marketplace: [withcronroute] error: mongooperationtimeouterror: timed out at socket write at ignore-listed frames { erro",
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9292",
-    "state": "closed",
+    "state": "open",
     "labels": [
       "codex",
       "bug",
       "app:marketplace",
-      "triage:needs-info",
+      "triage:queued",
       "clawsweeper:needs-product-decision",
-      "marketplace-crons",
-      "P2"
+      "P2",
+      "marketplace-crons"
     ],
     "createdAt": "2026-09-09T05:30:36Z",
-    "updatedAt": "2026-09-09T14:58:42Z"
+    "updatedAt": "2026-09-25T20:30:46Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe el watcher de marketplace abrir una incidencia por el primer timeout acotado del lock o solo tras dos eventos cercanos?",
-  "rationale": "El código actual ya evita el agotamiento del runtime; elegir el umbral de alerta equilibra ruido operativo frente a detección temprana.",
+  "question": "¿Debe Platform investigar primero la correlación de Atlas/red y del deployment antes de considerar cambios en el timeout o el comportamiento de reintento del lock?",
+  "rationale": "La evidencia muestra recurrencia tras el despliegue, pero no distingue un incidente de infraestructura de un defecto en el flujo del lock; la solución segura depende de esa atribución.",
   "options": [
     {
-      "title": "Exigir repetición cercana",
-      "body": "Aceptar dos timeouts en 15 minutos como señal antes de abrir la incidencia automática, manteniendo catastróficos los demás timeouts Mongo.",
+      "title": "Diagnóstico operativo primero",
+      "body": "Contrastar los seis requests con métricas y eventos disponibles de Atlas, red y deployment antes de cambiar el comportamiento del cron.",
       "recommended": true
     },
     {
-      "title": "Conservar alerta inmediata",
-      "body": "Mantener el primer timeout del lock como incidencia inmediata y no fusionar la nueva excepción del watcher.",
+      "title": "Revisar el flujo del lock",
+      "body": "Investigar el código y proponer un cambio acotado al manejo del timeout si la evidencia operativa no identifica una causa externa.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Exigir repetición cercana",
-    "body": "Aceptar dos timeouts en 15 minutos como señal antes de abrir la incidencia automática, manteniendo catastróficos los demás timeouts Mongo.",
+    "title": "Diagnóstico operativo primero",
+    "body": "Contrastar los seis requests con métricas y eventos disponibles de Atlas, red y deployment antes de cambiar el comportamiento del cron.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Es el asignado y lleva el PR vinculado, además de haber mantenido recientemente el runtime de marketplace.",
-    "confidence": "high"
+    "reason": "Su trabajo reciente en la detección y recuperación del watcher lo sitúa como candidato para coordinar el análisis técnico junto con Platform.",
+    "confidence": "medium"
   },
   "source": {
-    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/9292.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9292#issuecomment-5600010469",
-    "reviewedAt": "2026-09-09T15:26:26.824Z",
-    "mainSha": "94cb970a57ae971c0f59e2f01b6667ba033b4085"
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9292.md",
+    "reviewedAt": "2026-09-25T20:36:03.367Z",
+    "mainSha": "b7ca4ccf2295720375fc765a9fe4ea56a1f68320"
   }
 }
