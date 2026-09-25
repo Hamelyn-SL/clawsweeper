@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-24T19:21:26.942Z",
-  "updatedAt": "2026-09-24T19:12:51Z",
+  "generatedAt": "2026-09-25T19:32:28.579Z",
+  "updatedAt": "2026-09-24T19:26:00Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,43 +13,47 @@
       "bug",
       "app:admin",
       "reporter:davidgonzalez",
-      "triage:running",
-      "P2",
-      "clawsweeper:needs-product-decision"
+      "triage:done",
+      "clawsweeper:needs-product-decision",
+      "P2"
     ],
     "createdAt": "2026-09-24T17:54:28Z",
-    "updatedAt": "2026-09-24T19:12:51Z"
+    "updatedAt": "2026-09-24T19:26:00Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué criterio debe separar las candidatas nuevas a `NE-EX` de las líneas `NOT_FOUND` antiguas sin marcas para decidir cuáles quedan excluidas de sustitución?",
-  "rationale": "El criterio actual por flags conserva la compatibilidad heredada, mientras que el filtro por candidatura cambiaría el tratamiento de registros que la prueba existente protege; el repositorio no acredita su estado actual en producción.",
+  "question": "¿Qué criterio debe separar las candidatas BIN nuevas, que deben esperar a GENERAR NE/S, de las líneas NOT_FOUND antiguas sin marca que conservan sustitución?",
+  "rationale": "El código actual y la prueba de legado establecen comportamientos distintos, y no hay evidencia suficiente del estado vivo de Mongo para decidir con seguridad una fecha de corte o migración.",
   "options": [
     {
-      "title": "Acotar por fecha o cohorte",
-      "body": "Excluir candidatas solo desde un hito acordado y conservar sustitución para líneas anteriores sin marcas.",
+      "title": "Aplicar corte temporal",
+      "body": "Excluir las candidatas desde una fecha acordada y mantener la sustitución para las líneas anteriores o sin timestamp.",
       "recommended": true
     },
     {
-      "title": "Aplicar a todas las candidatas",
-      "body": "Tratar toda línea `BIN` que cumpla el criterio actual como pendiente de segunda pasada, aceptando que también cambie el flujo de registros antiguos.",
+      "title": "Bloquear todas las candidatas",
+      "body": "Usar el predicado de candidata sin excepción y aceptar que las líneas antiguas sin marca también dejen de ofrecer sustitución.",
+      "recommended": false
+    },
+    {
+      "title": "Aplazar hasta verificar datos",
+      "body": "Confirmar primero con una consulta operativa autorizada qué líneas antiguas activas quedan antes de fijar el criterio.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Acotar por fecha o cohorte",
-    "body": "Excluir candidatas solo desde un hito acordado y conservar sustitución para líneas anteriores sin marcas.",
+    "title": "Aplicar corte temporal",
+    "body": "Excluir las candidatas desde una fecha acordada y mantener la sustitución para las líneas anteriores o sin timestamp.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "banosdavidhamelyn",
-    "reason": "Su historial reciente cubre los guards y el flujo de alta de revisiones; es la mejor referencia disponible para validar el criterio operativo.",
+    "reason": "Su historial reciente abarca la segunda pasada y el enrolado NE-EX, por lo que está directamente relacionado con el contrato que se está ajustando.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10094.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10094#issuecomment-5820687730",
-    "reviewedAt": "2026-09-24T19:21:26.942Z",
-    "mainSha": "c0cbf3f71aaf34f6a1d1608497da5d6a4383550b"
+    "reviewedAt": "2026-09-25T19:32:28.579Z",
+    "mainSha": "b7ca4ccf2295720375fc765a9fe4ea56a1f68320"
   }
 }
