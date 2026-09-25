@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-25T02:50:00.023Z",
+  "updatedAt": "2026-09-24T02:45:45Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9887,
+    "title": "Marketplace: [withdraw-result] mk=fnacfr sku=<value> marketplaceid=<uuid> outcome=error kind=transient code=batch_failed",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9887",
+    "state": "open",
+    "labels": [
+      "codex",
+      "bug",
+      "app:marketplace",
+      "triage:blocked",
+      "P2",
+      "marketplace-crons"
+    ],
+    "createdAt": "2026-09-22T01:30:50Z",
+    "updatedAt": "2026-09-24T02:45:45Z"
+  },
+  "lane": "proof_sufficiency",
+  "priority": "P1",
+  "question": "¿Debe mantenerse esta incidencia como seguimiento separado de la degradación general Fnac mientras las ofertas afectadas no estén conciliadas en el estado remoto?",
+  "rationale": "La réplica registra SKU aún activos, pero no confirma el estado de las ofertas en Fnac; cerrar o agrupar el seguimiento depende de si el equipo considera suficiente esa evidencia operativa.",
+  "options": [
+    {
+      "title": "Mantener seguimiento separado",
+      "body": "Dejar esta incidencia abierta hasta obtener el motivo del lote y conciliar las ofertas afectadas en Fnac.",
+      "recommended": true
+    },
+    {
+      "title": "Consolidar en el seguimiento general",
+      "body": "Trasladar la evidencia específica de Fnac FR al seguimiento general y cerrar esta incidencia solo si ese seguimiento conserva la conciliación pendiente.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mantener seguimiento separado",
+    "body": "Dejar esta incidencia abierta hasta obtener el motivo del lote y conciliar las ofertas afectadas en Fnac.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Lyno",
+    "reason": "La atribución disponible del adaptador es débil y no identifica a un responsable decisor; no se puede establecer un owner de decisión fiable a partir del historial parcial.",
+    "confidence": "low"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9887.md",
+    "reviewedAt": "2026-09-25T02:50:00.023Z",
+    "mainSha": "cc3510386055c2c98c62a38d1e779f9ffd32bea6"
+  }
+}
