@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-24T11:06:53.271Z",
-  "updatedAt": "2026-09-24T10:57:23Z",
+  "generatedAt": "2026-09-25T13:57:59.934Z",
+  "updatedAt": "2026-09-24T12:00:38Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,49 +13,48 @@
       "source:admin-panel",
       "app:supply",
       "feature",
-      "triage:queued",
-      "reporter:daniellopez",
+      "triage:needs-info",
+      "clawsweeper:needs-product-decision",
       "P2",
-      "clawsweeper:needs-product-decision"
+      "reporter:daniellopez"
     ],
     "createdAt": "2026-09-24T10:57:10Z",
-    "updatedAt": "2026-09-24T10:57:23Z"
+    "updatedAt": "2026-09-24T12:00:38Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Cuándo debe generarse BIN OUT para una cubeta NE-EX: al marcar cada producto como no encontrado o al completar la revisión de todas sus líneas?",
-  "rationale": "La petición menciona ambas señales; lanzar BIN OUT repetidamente para una misma cubeta podría producir operaciones físicas duplicadas, así que hace falta fijar el momento y la deduplicación.",
+  "question": "¿Debe mantenerse el BIN OUT único al resolver la última línea pendiente de cada cubeta NE-EX, o debe solicitarse antes o automatizar también el inventariado?",
+  "rationale": "La petición habla de generar BIN OUT ante un no encontrado, pero la revisión guarda resultados por línea y la solución existente libera la cubeta cuando ya no quedan líneas pendientes; cambiar ese momento o incluir inventariado requiere acordar el flujo operativo.",
   "options": [
     {
-      "title": "Al completar la revisión por cubeta",
-      "body": "Generar un único BIN OUT cuando todas las líneas de la cubeta tengan resultado y continuar después con su inventariado.",
+      "title": "BIN OUT al completar la cubeta",
+      "body": "Mantener la liberación actual tras resolver todas las líneas y dejar el inventariado como paso posterior.",
       "recommended": true
     },
     {
-      "title": "En cada resultado no encontrado",
-      "body": "Solicitar BIN OUT inmediatamente al marcar un producto, definiendo cómo se evita repetir la operación para la misma cubeta.",
+      "title": "BIN OUT al primer no encontrado",
+      "body": "Solicitarlo en el primer negativo, aceptando que la cubeta podría salir mientras queden líneas por revisar.",
       "recommended": false
     },
     {
-      "title": "Mantener BIN OUT manual",
-      "body": "Conservar la operativa actual y no automatizar la salida de la cubeta desde el flujo NE.",
+      "title": "Automatizar también inventariado",
+      "body": "Definir y añadir un paso de inventariado automatizado además de la liberación de la cubeta.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Al completar la revisión por cubeta",
-    "body": "Generar un único BIN OUT cuando todas las líneas de la cubeta tengan resultado y continuar después con su inventariado.",
+    "title": "BIN OUT al completar la cubeta",
+    "body": "Mantener la liberación actual tras resolver todas las líneas y dejar el inventariado como paso posterior.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "banosdavidhamelyn",
-    "reason": "El historial disponible le vincula con la integración de revisión NE-EX que esta petición amplía.",
+    "reason": "Su historial cubre la auto-liberación de cubetas NE-EX y la implementación reciente del transporte BringBins.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10072.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10072#issuecomment-5812892981",
-    "reviewedAt": "2026-09-24T11:06:53.271Z",
-    "mainSha": "b3f7c1eace1f7638fa2f8de78cce0587ae8df711"
+    "reviewedAt": "2026-09-25T13:57:59.934Z",
+    "mainSha": "88e0a9197e139b667c6a7ff20eebddb78e3bfd27"
   }
 }
