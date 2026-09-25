@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-25T08:52:15.709Z",
+  "updatedAt": "2026-09-25T08:42:50Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10108,
+    "title": "Watcher B2B: alta del cliente ZBK en B2B_CLIENTS",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10108",
+    "state": "open",
+    "labels": [
+      "app:infrastructure",
+      "feature",
+      "triage:running",
+      "P2"
+    ],
+    "createdAt": "2026-09-25T08:41:06Z",
+    "updatedAt": "2026-09-25T08:42:50Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe ZBK incorporarse como marketplace canónico en el enum compartido y en la clasificación de ventas, y cómo deben contabilizarse los pedidos ya guardados con la identidad provisional?",
+  "rationale": "La propuesta del reporte fija los campos del watcher, pero deja pendiente el alta en las listas del dashboard; el valor provisional ya se ha usado en pedidos, así que la clave persistente y el tratamiento histórico afectan a la clasificación existente.",
+  "options": [
+    {
+      "title": "Registrar ZBK de extremo a extremo",
+      "body": "Añadir una clave canónica coherente al enum, watcher y dashboard, y mantener la compatibilidad de los pedidos provisionales ya ejecutados.",
+      "recommended": true
+    },
+    {
+      "title": "Dar de alta solo al cliente en el watcher",
+      "body": "Conservar el marketplace provisional fuera de la taxonomía del dashboard hasta confirmar cómo debe clasificarse comercialmente.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Registrar ZBK de extremo a extremo",
+    "body": "Añadir una clave canónica coherente al enum, watcher y dashboard, y mantener la compatibilidad de los pedidos provisionales ya ejecutados.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su historial reciente cubre el flujo B2B y el mecanismo que genera estas solicitudes de alta.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10108.md",
+    "reviewedAt": "2026-09-25T08:52:15.709Z",
+    "mainSha": "d04ca1f48f57ad0831eda25aba2168407c716b56"
+  }
+}
