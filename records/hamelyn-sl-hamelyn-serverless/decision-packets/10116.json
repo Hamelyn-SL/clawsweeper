@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-25T09:57:02.994Z",
+  "updatedAt": "2026-09-25T09:54:16Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10116,
+    "title": "Cambiar subida feeds de US.HAMELYN.COM (EEUU)",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10116",
+    "state": "open",
+    "labels": [
+      "source:admin-panel",
+      "app:ecommerce",
+      "reporter:jesus",
+      "feature",
+      "triage:queued",
+      "P1"
+    ],
+    "createdAt": "2026-09-25T09:54:03Z",
+    "updatedAt": "2026-09-25T09:54:16Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Confirmamos que el merchant de EEUU debe dejar de recibir por completo los feeds antiguos por categorías y quedarse únicamente con los feeds diarios por idiomas?",
+  "rationale": "El código confirma que ambas rutas de carga existen, pero el checkout no acredita que la cobertura por idiomas sustituya todas las necesidades del merchant estadounidense.",
+  "options": [
+    {
+      "title": "Usar solo feeds por idiomas",
+      "body": "Retirar la ejecución automática del feed antiguo de US y conservar el job diario por idiomas.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener ambas cargas",
+      "body": "Dejar el workflow sin cambios hasta confirmar la cobertura o definir una migración distinta.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Usar solo feeds por idiomas",
+    "body": "Retirar la ejecución automática del feed antiguo de US y conservar el job diario por idiomas.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Lyno",
+    "reason": "El historial local le vincula con el bloque actual del workflow; no hay otra persona con una señal de historial más directa en la evidencia disponible.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10116.md",
+    "reviewedAt": "2026-09-25T09:57:02.994Z",
+    "mainSha": "cf6e64021c6761a97d6c5a3f173c83a0f8ba0bc4"
+  }
+}
