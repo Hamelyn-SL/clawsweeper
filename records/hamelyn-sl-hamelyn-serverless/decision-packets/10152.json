@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-25T23:55:46.891Z",
+  "updatedAt": "2026-09-25T23:45:40Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10152,
+    "title": "Marketplace: mk.amazonit.create failed mongoserverselectionerror: socket 'secureconnect' timed out after 10017ms (connec",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10152",
+    "state": "open",
+    "labels": [
+      "codex",
+      "bug",
+      "app:marketplace",
+      "triage:needs-info",
+      "P1",
+      "marketplace-crons"
+    ],
+    "createdAt": "2026-09-25T20:31:55Z",
+    "updatedAt": "2026-09-25T23:45:40Z"
+  },
+  "lane": "manual_review",
+  "priority": "P1",
+  "question": "¿Puede Platform confirmar los eventos de Atlas/red de 19:48–20:15 UTC y Marketplace reconciliar las diez fichas afectadas antes de cerrar el seguimiento?",
+  "rationale": "El checkout muestra cómo el fallo de persistencia puede dejar desalineados los estados local y remoto, pero la causa de conexión y la situación actual de los datos dependen de verificaciones operativas externas al código.",
+  "options": [
+    {
+      "title": "Verificar y mantener abierto",
+      "body": "Contrastar las diez fichas en Mongo y Amazon y los eventos de Atlas/Vercel; mantener el seguimiento mientras quede alguna sin reconciliar.",
+      "recommended": true
+    },
+    {
+      "title": "Confirmar recuperación",
+      "body": "Cerrar el seguimiento solo después de confirmar la reconciliación de las diez fichas y que la incidencia de conectividad quedó contenida.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Verificar y mantener abierto",
+    "body": "Contrastar las diez fichas en Mongo y Amazon y los eventos de Atlas/Vercel; mantener el seguimiento mientras quede alguna sin reconciliar.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "danielmenchen-hamelyn",
+    "reason": "El historial local lo conecta con el flujo de publicación y su persistencia; la verificación operativa también requiere participación de Platform.",
+    "confidence": "low"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10152.md",
+    "reviewedAt": "2026-09-25T23:55:46.891Z",
+    "mainSha": "b7ca4ccf2295720375fc765a9fe4ea56a1f68320"
+  }
+}
