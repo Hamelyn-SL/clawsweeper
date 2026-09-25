@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-25T19:43:59.162Z",
+  "updatedAt": "2026-09-25T09:27:52Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10073,
+    "title": "fix: split daily missing products by warehouse location",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10073",
+    "state": "open",
+    "labels": [
+      "size/S",
+      "P2"
+    ],
+    "createdAt": "2026-09-24T11:36:05Z",
+    "updatedAt": "2026-09-25T09:27:52Z",
+    "headSha": "cddf90594a24d9eda0a56d11e75dd79ef99c2bfc"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se debe adoptar en el reporte diario el desglose de no encontrados por estantería y Skypod, usando el prefijo BIN para clasificar Skypod?",
+  "rationale": "La issue vinculada permanece abierta con `clawsweeper:needs-product-decision`; el PR implementa la propuesta, pero no consta una decisión de producto que confirme la clasificación y el cambio de salida.",
+  "options": [
+    {
+      "title": "Adoptar el desglose",
+      "body": "Validar la regla BIN y conservar los tres valores (estantería, Skypod y total) en el reporte diario.",
+      "recommended": true
+    },
+    {
+      "title": "Ajustar la regla",
+      "body": "Definir otra señal de ubicación o clasificación antes de incorporar el desglose al reporte.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Adoptar el desglose",
+    "body": "Validar la regla BIN y conservar los tres valores (estantería, Skypod y total) en el reporte diario.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "danielmenchen-hamelyn",
+    "reason": "Es el candidato de enrutamiento disponible con historial reciente en el generador del reporte; la evidencia no demuestra que sea el decisor definitivo.",
+    "confidence": "low"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10073.md",
+    "reviewedAt": "2026-09-25T19:43:59.162Z",
+    "mainSha": "b7ca4ccf2295720375fc765a9fe4ea56a1f68320"
+  }
+}
