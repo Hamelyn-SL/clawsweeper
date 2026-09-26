@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-26T21:57:32.815Z",
+  "updatedAt": "2026-09-25T21:48:07Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10143,
+    "title": "Marketplace: [amazonit] op=create st=err d=84s e=mongoserverselectionerror:socket 'secureconnect' timed out after 10017m",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10143",
+    "state": "open",
+    "labels": [
+      "codex",
+      "bug",
+      "app:marketplace",
+      "triage:needs-info",
+      "P2",
+      "marketplace-crons"
+    ],
+    "createdAt": "2026-09-25T20:31:22Z",
+    "updatedAt": "2026-09-25T21:48:07Z"
+  },
+  "lane": "manual_review",
+  "priority": "P2",
+  "question": "¿Puede Platform confirmar que las diez fichas afectadas quedaron reconciliadas en Mongo y Amazon y que la conectividad con Atlas se estabilizó?",
+  "rationale": "Los registros disponibles muestran la incidencia y ejecuciones posteriores correctas, pero no permiten verificar el estado vivo de esas fichas ni cerrar su reconciliación.",
+  "options": [
+    {
+      "title": "Verificar y mantener abierto",
+      "body": "Contrastar las diez fichas en Mongo y Amazon y mantener el seguimiento si alguna continúa sin reconciliar.",
+      "recommended": true
+    },
+    {
+      "title": "Cerrar tras confirmar",
+      "body": "Cerrar el seguimiento solo cuando Platform confirme la reconciliación de las fichas y la recuperación de Atlas.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Verificar y mantener abierto",
+    "body": "Contrastar las diez fichas en Mongo y Amazon y mantener el seguimiento si alguna continúa sin reconciliar.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "danielmenchen-hamelyn",
+    "reason": "Es el candidato mejor respaldado por el historial de la ruta que persiste las publicaciones; Platform debe aportar la verificación operativa.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10143.md",
+    "reviewedAt": "2026-09-26T21:57:32.815Z",
+    "mainSha": "b7ca4ccf2295720375fc765a9fe4ea56a1f68320"
+  }
+}
