@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-19T10:50:53.042Z",
-  "updatedAt": "2026-09-18T07:30:49Z",
+  "generatedAt": "2026-09-26T10:55:32.728Z",
+  "updatedAt": "2026-09-25T09:30:22Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,43 +14,47 @@
       "app:ecommerce",
       "feature",
       "reporter:arineligrigore",
-      "triage:needs-info",
-      "P2",
-      "clawsweeper:needs-product-decision"
+      "triage:done",
+      "clawsweeper:needs-product-decision",
+      "P2"
     ],
     "createdAt": "2026-09-18T07:17:06Z",
-    "updatedAt": "2026-09-18T07:30:49Z"
+    "updatedAt": "2026-09-25T09:30:22Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué submotivos, campos obligatorios y política de fotos corresponden a cada uno de los cuatro bloques, especialmente «Modificar mis datos o mi pedido» y «Facturas y pagos»?",
-  "rationale": "El diseño enlazado no es accesible desde la revisión y el texto no define el contrato necesario para clasificar y validar los tickets de forma segura.",
+  "question": "¿Qué estados técnicos adicionales deben mapearse a los cuatro estados definidos y qué política debe aplicarse a nuevas consultas cuando un pedido ya tiene un ticket?",
+  "rationale": "La matriz no cubre todos los estados del dominio y contradice la regla actual de una incidencia por pedido; implementarla sin esas decisiones puede ocultar motivos válidos o impedir seguimientos legítimos.",
   "options": [
     {
-      "title": "Adjuntar el diseño completo",
-      "body": "Compartir capturas o una exportación con todos los pasos y campos para derivar la matriz exacta.",
+      "title": "Acordar mapeo y política antes de implementar",
+      "body": "Definir los estados técnicos equivalentes y si las consultas posteriores crean otro ticket o se añaden al existente.",
       "recommended": true
     },
     {
-      "title": "Especificar la matriz en la issue",
-      "body": "Enumerar por bloque los submotivos, campos, requisitos de fotos y cualquier regla de encaminamiento a eDesk.",
+      "title": "Limitarse a los cuatro estados indicados",
+      "body": "Rechazar o excluir los demás estados y conservar el límite actual de una incidencia por pedido.",
+      "recommended": false
+    },
+    {
+      "title": "Ampliar estados y permitir seguimientos",
+      "body": "Incluir estados adicionales y permitir consultas posteriores, especificando cómo se relacionan con el ticket previo.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Adjuntar el diseño completo",
-    "body": "Compartir capturas o una exportación con todos los pasos y campos para derivar la matriz exacta.",
+    "title": "Acordar mapeo y política antes de implementar",
+    "body": "Definir los estados técnicos equivalentes y si las consultas posteriores crean otro ticket o se añaden al existente.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "arineligrigore",
-    "reason": "Es la persona reportante y la fuente más directa para confirmar el diseño y sus reglas funcionales.",
-    "confidence": "high"
+    "person": "JavierHamelyn",
+    "reason": "Está vinculado al PR que introdujo el flujo ecommerce y cuenta con contexto directo de su contrato actual.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9711.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9711#issuecomment-5741215722",
-    "reviewedAt": "2026-09-19T10:50:53.042Z",
-    "mainSha": "d0e0b93e78bba63a1c6ff1614e823941e10afa9f"
+    "reviewedAt": "2026-09-26T10:55:32.728Z",
+    "mainSha": "b7ca4ccf2295720375fc765a9fe4ea56a1f68320"
   }
 }
