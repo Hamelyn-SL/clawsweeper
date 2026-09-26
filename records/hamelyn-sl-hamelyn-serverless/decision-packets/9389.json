@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-19T10:00:04.156Z",
-  "updatedAt": "2026-09-18T08:20:06Z",
+  "generatedAt": "2026-09-26T10:22:19.800Z",
+  "updatedAt": "2026-09-25T08:21:32Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -17,38 +17,37 @@
       "P2"
     ],
     "createdAt": "2026-09-10T09:51:02Z",
-    "updatedAt": "2026-09-18T08:20:06Z"
+    "updatedAt": "2026-09-25T08:21:32Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe Hamelyn aprovisionar el documento de usuario al registrarse aunque la persona nunca llegue a iniciar sesión?",
-  "rationale": "Las dos alternativas son válidas técnicamente, pero cambian el contrato de altas internas y el momento de materialización del usuario.",
+  "question": "¿Debe Hamelyn crear el documento de usuario al registrarse aunque la persona nunca inicie sesión?",
+  "rationale": "Conservar la Action de registro o aplazar el aprovisionamiento cambia cuándo aparecen en Mongo los usuarios creados mediante Management API; el código del repositorio no determina ese comportamiento de negocio.",
   "options": [
     {
       "title": "Conservar el alta al registrarse",
-      "body": "Corregir las Actions con `AUTH0_ACTION_TOKEN` y versionar su despliegue tras contrastar el estado activo del tenant.",
+      "body": "Mantener el aprovisionamiento previo al login y corregir las Actions activas para enviar el token, tras verificar su estado en el tenant.",
       "recommended": true
     },
     {
-      "title": "Aplazar el alta al login",
-      "body": "Retirar las Actions redundantes y documentar que las altas por Management API no aparecen en Mongo hasta el primer acceso.",
+      "title": "Aplazar el alta al primer login",
+      "body": "Retirar las Actions redundantes y documentar que las altas de Management API no aparecerán en Mongo hasta el primer acceso.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Conservar el alta al registrarse",
-    "body": "Corregir las Actions con `AUTH0_ACTION_TOKEN` y versionar su despliegue tras contrastar el estado activo del tenant.",
+    "body": "Mantener el aprovisionamiento previo al login y corregir las Actions activas para enviar el token, tras verificar su estado en el tenant.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "Introdujo el límite de confianza de las Actions y documentó recientemente el despliegue del token compartido.",
-    "confidence": "high"
+    "person": "Miguel Angel Hernández Perdomo",
+    "reason": "Su historial incluye la introducción del control de autenticación de estas Actions; es el candidato de decisión señalado en la revisión previa.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9389.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9389#issuecomment-5645006500",
-    "reviewedAt": "2026-09-19T10:00:04.156Z",
-    "mainSha": "d0e0b93e78bba63a1c6ff1614e823941e10afa9f"
+    "reviewedAt": "2026-09-26T10:22:19.800Z",
+    "mainSha": "b7ca4ccf2295720375fc765a9fe4ea56a1f68320"
   }
 }
