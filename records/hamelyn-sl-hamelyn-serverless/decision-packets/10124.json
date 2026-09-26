@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-26T17:43:58.185Z",
+  "updatedAt": "2026-09-25T14:00:07Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10124,
+    "title": "Revisión granel: etiqueta sin guion, caja entre lotes y rechazo al escanear",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10124",
+    "state": "open",
+    "labels": [
+      "app:admin",
+      "reporter:davidgonzalez",
+      "feature",
+      "triage:no-change",
+      "P2"
+    ],
+    "createdAt": "2026-09-25T12:29:14Z",
+    "updatedAt": "2026-09-25T14:00:07Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe una caja confirmada seguir válida al abrir lotes posteriores hasta que el revisor la cierre, o debe volver a confirmarse en cada lote?",
+  "rationale": "La aceptación de la issue y el comportamiento reportado de la prueba difieren; cambiar el ciclo de confirmación sin resolver esa discrepancia puede alterar el flujo operativo del almacén.",
+  "options": [
+    {
+      "title": "Mantener confirmación entre lotes",
+      "body": "Conservar la caja confirmada para los lotes siguientes hasta que el revisor la cierre.",
+      "recommended": true
+    },
+    {
+      "title": "Confirmar por lote",
+      "body": "Mantener el comportamiento actual y actualizar la aceptación para dejar claro que cada lote requiere confirmación.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mantener confirmación entre lotes",
+    "body": "Conservar la caja confirmada para los lotes siguientes hasta que el revisor la cierre.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "Tiene asignada la issue y está coordinando con quien realizó la prueba que originó la discrepancia.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10124.md",
+    "reviewedAt": "2026-09-26T17:43:58.185Z",
+    "mainSha": "b7ca4ccf2295720375fc765a9fe4ea56a1f68320"
+  }
+}
