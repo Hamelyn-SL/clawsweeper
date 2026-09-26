@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-26T09:55:51.250Z",
+  "updatedAt": "2026-09-25T05:47:24Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10104,
+    "title": "Marketplace: [mercadolibre writes] ❌ request #501 falló {\"marketplace\":\"mercadolibre\",\"operation\":\"post\",\"path\":\"/items\"",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10104",
+    "state": "open",
+    "labels": [
+      "codex",
+      "bug",
+      "app:marketplace",
+      "triage:done",
+      "P2",
+      "marketplace-crons"
+    ],
+    "createdAt": "2026-09-25T05:30:44Z",
+    "updatedAt": "2026-09-25T05:47:24Z"
+  },
+  "lane": "manual_review",
+  "priority": "P2",
+  "question": "¿Se verificaron en vivo los reintentos posteriores a las 05:45 UTC y el estado remoto de los dos SKU aún pendientes?",
+  "rationale": "La evidencia disponible termina antes de esos reintentos y no permite resolver si las publicaciones se recuperaron; cerrar o escalar requiere esa comprobación operativa.",
+  "options": [
+    {
+      "title": "Verificar y cerrar si recuperaron",
+      "body": "Contrastar cada SKU con Mongo y MercadoLibre y cerrar solo si el resultado posterior confirma la recuperación.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener abierta si persiste",
+      "body": "Si algún SKU continúa fallido, conservar la incidencia y documentar la reconciliación y el siguiente paso operativo.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Verificar y cerrar si recuperaron",
+    "body": "Contrastar cada SKU con Mongo y MercadoLibre y cerrar solo si el resultado posterior confirma la recuperación.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Es la persona con actividad reciente en la lógica de recuperación y evidencia del watcher de MercadoLibre.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10104.md",
+    "reviewedAt": "2026-09-26T09:55:51.250Z",
+    "mainSha": "b7ca4ccf2295720375fc765a9fe4ea56a1f68320"
+  }
+}
