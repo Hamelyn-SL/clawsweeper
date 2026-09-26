@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-24T21:25:11.710Z",
-  "updatedAt": "2026-09-24T17:55:25Z",
+  "generatedAt": "2026-09-26T17:51:51.736Z",
+  "updatedAt": "2026-09-25T09:00:17Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -14,44 +14,43 @@
       "P2"
     ],
     "createdAt": "2026-09-24T17:35:07Z",
-    "updatedAt": "2026-09-24T17:55:25Z",
+    "updatedAt": "2026-09-25T09:00:17Z",
     "headSha": "cc41c90e71e0862701b8f333f5b5caead48c4cb3"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué ubicaciones deben activar el bloqueo por `Unreachable`, y debe `Locked: true` retirar stock antes de cerrar https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10086?",
-  "rationale": "La condición amplia puede bloquear bins listos en la interfaz y revertir una decisión anterior tomada tras deshabilitaciones masivas; la issue enlazada también incluye `Locked`, que el PR deja fuera.",
+  "question": "¿Debe `BinInterface` quedar excluido del bloqueo cuando `Locked: false` aunque `Unreachable: true`, o ese estado debe retirar el stock?",
+  "rationale": "La rama y merge-auto asignan consecuencias distintas a esa combinación, y la discusión disponible no confirma si Exotec la produce realmente en operación.",
   "options": [
     {
-      "title": "Acotar por ubicación y decidir `Locked` aparte",
-      "body": "Excluir `BinInterface` del bloqueo por `Unreachable` y mantener `Locked` fuera hasta confirmar su semántica operativa.",
+      "title": "Confirmar el contrato antes de integrar",
+      "body": "Verificar un evento real o la especificación de Exotec y ajustar el predicado y su prueba para que coincidan con la disponibilidad de la cubeta.",
       "recommended": true
     },
     {
-      "title": "Aceptar el bloqueo amplio por `Unreachable`",
-      "body": "Mantener la regla del PR, aceptando que una deshabilitación masiva retire temporalmente stock hasta la rehabilitación de las cubetas.",
+      "title": "Excluir interfaces accesibles",
+      "body": "Preservar el tratamiento de estación cuando `Locked: false` y añadir una prueba para esa combinación.",
       "recommended": false
     },
     {
-      "title": "Incluir también `Locked`",
-      "body": "Ampliar el bloqueo a `Locked: true` y validar la semántica y la recuperación automática con pruebas del flujo.",
+      "title": "Bloquear cualquier interfaz inalcanzable",
+      "body": "Mantener la retirada por `Unreachable: true` en `BinInterface` y confirmar que el flujo de estación no considera esa cubeta disponible.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Acotar por ubicación y decidir `Locked` aparte",
-    "body": "Excluir `BinInterface` del bloqueo por `Unreachable` y mantener `Locked` fuera hasta confirmar su semántica operativa.",
+    "title": "Confirmar el contrato antes de integrar",
+    "body": "Verificar un evento real o la especificación de Exotec y ajustar el predicado y su prueba para que coincidan con la disponibilidad de la cubeta.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "AlexDiaz-Hamelyn",
-    "reason": "La revisión de la issue enlazada lo señala como responsable probable de la decisión sobre alcance y bloqueo masivo.",
+    "person": "MarcosTerroso",
+    "reason": "Ya examinó específicamente el conflicto y señaló que la decisión depende de confirmar el contrato operativo.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10087.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10087#issuecomment-5822510491",
-    "reviewedAt": "2026-09-24T21:25:11.710Z",
-    "mainSha": "6989d1045fe82c0a9387dd2d05107b091db49c77"
+    "reviewedAt": "2026-09-26T17:51:51.736Z",
+    "mainSha": "b7ca4ccf2295720375fc765a9fe4ea56a1f68320"
   }
 }

@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-26T17:52:23.726Z",
+  "updatedAt": "2026-09-24T12:42:50Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9296,
+    "title": "Etiquetas SEO en el head (Categoria, subcategoria, producto, autor)",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9296",
+    "state": "open",
+    "labels": [
+      "bug",
+      "source:admin-panel",
+      "app:ecommerce",
+      "triage:pr-opened",
+      "reporter:victor",
+      "P2"
+    ],
+    "createdAt": "2026-09-09T06:59:29Z",
+    "updatedAt": "2026-09-24T12:42:50Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué estrategia debe entregar la metadata en el HTML inicial para visitantes normales en categorías, autores y productos: generación de shells por entidad, SSR u otro patrón compatible con el caché actual?",
+  "rationale": "El arreglo de matching de Googlebot no aborda el streaming para navegadores, y la alternativa de shells por entidad implica elegir cómo equilibrar metadata inicial, datos dinámicos y caché; la issue 10061 concreta parte del alcance de producto.",
+  "options": [
+    {
+      "title": "Shells por entidad",
+      "body": "Preparar metadata estática por entidad para que las rutas relevantes tengan un head completo en el HTML inicial.",
+      "recommended": true
+    },
+    {
+      "title": "SSR de metadata",
+      "body": "Generar la metadata en servidor por visita y aceptar el impacto correspondiente en prerenderizado o caché.",
+      "recommended": false
+    },
+    {
+      "title": "Definir un alcance acotado",
+      "body": "Resolver primero las rutas y campos SEO prioritarios y registrar el resto como trabajo separado.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Shells por entidad",
+    "body": "Preparar metadata estática por entidad para que las rutas relevantes tengan un head completo en el HTML inicial.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "HamelynDev",
+    "reason": "Está conectado por el cambio integrado de prerender y figura como responsable asignado de esta issue; puede coordinar la decisión con los propietarios de Ecommerce.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9296.md",
+    "reviewedAt": "2026-09-26T17:52:23.726Z",
+    "mainSha": "b7ca4ccf2295720375fc765a9fe4ea56a1f68320"
+  }
+}

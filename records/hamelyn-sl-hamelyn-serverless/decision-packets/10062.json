@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-24T09:54:51.244Z",
-  "updatedAt": "2026-09-24T09:46:07Z",
+  "generatedAt": "2026-09-26T17:52:07.984Z",
+  "updatedAt": "2026-09-25T05:06:13Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -14,39 +14,38 @@
       "P2"
     ],
     "createdAt": "2026-09-24T09:45:56Z",
-    "updatedAt": "2026-09-24T09:46:07Z",
+    "updatedAt": "2026-09-25T05:06:13Z",
     "headSha": "edaa4cc733cb1a0ab09836f9fa15ac9765a38f76"
   },
-  "lane": "proof_sufficiency",
+  "lane": "release_inclusion",
   "priority": "P2",
-  "question": "¿Debe exigirse una build de EAS con Xcode 26.6 antes de aceptar el cambio del parche Swift y publicar Supply `2.7.01`?",
-  "rationale": "El PR documenta una comprobación local con Xcode 26.2, pero deja sin validar la versión de Xcode usada por EAS; aceptar esa diferencia o bloquear hasta obtener la build requiere fijar el umbral de validación de release.",
+  "question": "¿Debe exigirse una build EAS con Xcode 26.6 que compile y arranque Supply antes de aceptar este parche para la release 2.7.01?",
+  "rationale": "El PR declara que el parche Swift solo se probó con Xcode 26.2; la prueba automatizada no verificó iOS y la compatibilidad con el builder de release sigue sin demostrarse.",
   "options": [
     {
-      "title": "Esperar la validación de EAS",
-      "body": "Mantener el PR pendiente hasta confirmar que el parche compila y la app arranca con Xcode 26.6.",
+      "title": "Esperar validación EAS",
+      "body": "Mantener pendiente la aceptación hasta disponer de una build con Xcode 26.6 que compile y arranque la app.",
       "recommended": true
     },
     {
-      "title": "Aceptar la prueba local",
-      "body": "Considerar suficiente la validación con Xcode 26.2 y dejar que las comprobaciones de EAS determinen la compatibilidad restante.",
+      "title": "Aceptar prueba local",
+      "body": "Considerar suficiente la comprobación con Xcode 26.2 y dejar que EAS determine la compatibilidad al ejecutar la build de release.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Esperar la validación de EAS",
-    "body": "Mantener el PR pendiente hasta confirmar que el parche compila y la app arranca con Xcode 26.6.",
+    "title": "Esperar validación EAS",
+    "body": "Mantener pendiente la aceptación hasta disponer de una build con Xcode 26.6 que compile y arranque la app.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Su historial local cubre el pin JSI y cambios recientes del área de Supply, por lo que es el candidato más cercano para aportar o interpretar la validación.",
-    "confidence": "high"
+    "reason": "Está asignado al PR y figura en la historia reciente del área Supply.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10062.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10062#issuecomment-5811907717",
-    "reviewedAt": "2026-09-24T09:54:51.244Z",
-    "mainSha": "b3f7c1eace1f7638fa2f8de78cce0587ae8df711"
+    "reviewedAt": "2026-09-26T17:52:07.984Z",
+    "mainSha": "b7ca4ccf2295720375fc765a9fe4ea56a1f68320"
   }
 }
