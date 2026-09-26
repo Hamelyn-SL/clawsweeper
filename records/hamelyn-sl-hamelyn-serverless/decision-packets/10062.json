@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-26T17:52:07.984Z",
+  "generatedAt": "2026-09-26T17:55:57.433Z",
   "updatedAt": "2026-09-25T05:06:13Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -19,34 +19,33 @@
   },
   "lane": "release_inclusion",
   "priority": "P2",
-  "question": "¿Debe exigirse una build EAS con Xcode 26.6 que compile y arranque Supply antes de aceptar este parche para la release 2.7.01?",
-  "rationale": "El PR declara que el parche Swift solo se probó con Xcode 26.2; la prueba automatizada no verificó iOS y la compatibilidad con el builder de release sigue sin demostrarse.",
+  "question": "¿Debe exigirse una build EAS con Xcode 26.6 que compile y arranque Supply antes de aceptar el parche y publicar `2.7.01`?",
+  "rationale": "El PR documenta una validación local con Xcode 26.2, pero deja pendiente probar la versión usada por EAS; el equipo debe decidir si esa diferencia bloquea esta release.",
   "options": [
     {
-      "title": "Esperar validación EAS",
-      "body": "Mantener pendiente la aceptación hasta disponer de una build con Xcode 26.6 que compile y arranque la app.",
+      "title": "Exigir validación EAS",
+      "body": "Mantener pendiente la aceptación hasta verificar la compilación y el arranque con Xcode 26.6.",
       "recommended": true
     },
     {
-      "title": "Aceptar prueba local",
-      "body": "Considerar suficiente la comprobación con Xcode 26.2 y dejar que EAS determine la compatibilidad al ejecutar la build de release.",
+      "title": "Aceptar la prueba local",
+      "body": "Considerar suficiente la prueba con Xcode 26.2 y dejar que las comprobaciones de EAS aporten la validación restante.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Esperar validación EAS",
-    "body": "Mantener pendiente la aceptación hasta disponer de una build con Xcode 26.6 que compile y arranque la app.",
+    "title": "Exigir validación EAS",
+    "body": "Mantener pendiente la aceptación hasta verificar la compilación y el arranque con Xcode 26.6.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Está asignado al PR y figura en la historia reciente del área Supply.",
-    "confidence": "medium"
+    "reason": "Su historial cubre el pin de `expo-modules-jsi` y la actualización del SDK 57 que origina este cambio.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10062.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10062#issuecomment-5811907717",
-    "reviewedAt": "2026-09-26T17:52:07.984Z",
+    "reviewedAt": "2026-09-26T17:55:57.433Z",
     "mainSha": "b7ca4ccf2295720375fc765a9fe4ea56a1f68320"
   }
 }

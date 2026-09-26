@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-26T17:52:18.967Z",
+  "generatedAt": "2026-09-26T17:55:41.001Z",
   "updatedAt": "2026-09-25T09:46:11Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -19,34 +19,33 @@
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se autoriza integrar la guardia con el piloto de producción ya configurado y capacidad de crear issues y publicar en Slack, o debe pasar primero por dry-run y staging?",
-  "rationale": "El PR cambia el orden de aceptación descrito por la issue vinculada y, según su cuerpo, la configuración de producción ya está habilitada. La preferencia afecta a cuándo la automatización puede efectuar escrituras externas.",
+  "question": "¿Debe el primer piloto seguir la aceptación del issue —dry-run en staging y publicación de issues desactivada— antes de habilitar el disparo de producción?",
+  "rationale": "El PR cambia el orden del piloto y concentra los controles en un interruptor; decidir si esa desviación es intencional requiere criterio de producto y operación.",
   "options": [
     {
-      "title": "Exigir dry-run y staging primero",
-      "body": "Mantener desactivadas las escrituras de producción hasta validar la guardia en staging y completar la aceptación del dry-run.",
+      "title": "Exigir piloto dry-run en staging",
+      "body": "Ajustar el flujo para probar primero en staging y separar el modo dry-run de la creación de issues antes de activar producción.",
       "recommended": true
     },
     {
       "title": "Aceptar el piloto de producción",
-      "body": "Autorizar explícitamente el despliegue del piloto con la capacidad de crear issues y publicar en el canal configurado.",
+      "body": "Confirmar explícitamente que el despliegue directo a producción y el interruptor único sustituyen la aceptación original.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Exigir dry-run y staging primero",
-    "body": "Mantener desactivadas las escrituras de producción hasta validar la guardia en staging y completar la aceptación del dry-run.",
+    "title": "Exigir piloto dry-run en staging",
+    "body": "Ajustar el flujo para probar primero en staging y separar el modo dry-run de la creación de issues antes de activar producción.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "danielmenchen-hamelyn",
-    "reason": "La issue vinculada define los criterios de aceptación del piloto y el PR aporta la implementación propuesta; el historial local también lo conecta con rutas de agentes.",
+    "reason": "Es quien propuso el PR y el issue vinculado, y puede aclarar si la diferencia respecto a la aceptación fue deliberada.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10023.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10023#issuecomment-5796212296",
-    "reviewedAt": "2026-09-26T17:52:18.967Z",
+    "reviewedAt": "2026-09-26T17:55:41.001Z",
     "mainSha": "b7ca4ccf2295720375fc765a9fe4ea56a1f68320"
   }
 }
