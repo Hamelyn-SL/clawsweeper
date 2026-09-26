@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-23T10:01:39.720Z",
-  "updatedAt": "2026-09-23T01:09:20Z",
+  "generatedAt": "2026-09-26T17:45:56.545Z",
+  "updatedAt": "2026-09-25T12:15:39Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,45 +14,44 @@
       "source:admin-panel",
       "app:marketplace",
       "triage:done",
+      "P1",
       "clawsweeper:needs-product-decision",
       "reporter:JavierHamelyn",
       "origin:panel",
-      "mk:amazon",
-      "P1"
+      "mk:amazon"
     ],
     "createdAt": "2026-08-03T13:36:22Z",
-    "updatedAt": "2026-09-23T01:09:20Z"
+    "updatedAt": "2026-09-25T12:15:39Z"
   },
   "lane": "product_direction",
-  "priority": "P1",
-  "question": "¿Debe aprobarse ahora el guard de no-retry como mitigación independiente y mantener el resolver regional de condición con backfill en un trabajo posterior aprobado?",
-  "rationale": "El guard está acotado por el contrato de recuperación actual, pero decidir una condición canónica cross-marketplace y autorizar writes masivos requiere una política operativa distinta.",
+  "priority": "P2",
+  "question": "¿Qué alcance debe aprobarse para el resolver de condición de `101078` antes de cualquier backfill: limitarse al guard V2 y una muestra account-wide, o definir además un flujo de remediación regional con aprobación humana?",
+  "rationale": "El guard es una corrección acotada, pero extenderlo a un resolver y backfill exige decidir el alcance operativo y los criterios de autorización; el piloto solo acredita un SKU.",
   "options": [
     {
-      "title": "Separar mitigación y resolver",
-      "body": "Aprobar un cambio pequeño que bloquee `101078` en V2 y abrir o mantener un alcance distinto para auditoría, decisión canónica y backfill.",
+      "title": "Separar guard y resolver",
+      "body": "Priorizar el guard no-retry V2 y exigir una propuesta de resolver con evidencia account-wide antes de aprobar escrituras masivas.",
       "recommended": true
     },
     {
-      "title": "Unificar el programa",
-      "body": "Mantener ambos alcances en esta incidencia, aceptando que el guard no se entregue hasta definir el resolver regional completo.",
+      "title": "Aprobar diseño de resolver",
+      "body": "Definir ahora un flujo regional pausado con preimágenes, clasificación, revisión humana y verificación posterior antes de considerar el backfill.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Separar mitigación y resolver",
-    "body": "Aprobar un cambio pequeño que bloquee `101078` en V2 y abrir o mantener un alcance distinto para auditoría, decisión canónica y backfill.",
+    "title": "Separar guard y resolver",
+    "body": "Priorizar el guard no-retry V2 y exigir una propuesta de resolver con evidencia account-wide antes de aprobar escrituras masivas.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Figura asignado a la incidencia y su historial reciente cubre el adaptador Amazon afectado.",
-    "confidence": "high"
+    "reason": "Está asignado al issue y recopiló tanto el diagnóstico como la evidencia del piloto.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8188.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8188#issuecomment-5167219624",
-    "reviewedAt": "2026-09-23T10:01:39.720Z",
-    "mainSha": "49cf8dd3dcd603e7191f56a17c28174ba52a5a98"
+    "reviewedAt": "2026-09-26T17:45:56.545Z",
+    "mainSha": "b7ca4ccf2295720375fc765a9fe4ea56a1f68320"
   }
 }
