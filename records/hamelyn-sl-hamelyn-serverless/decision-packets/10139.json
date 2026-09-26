@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-26T07:56:11.444Z",
+  "updatedAt": "2026-09-26T00:00:46Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10139,
+    "title": "Marketplace: [casadellibro] op=create st=err d=38s e=mongoserverselectionerror:socket 'secureconnect' timed out after 10",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10139",
+    "state": "open",
+    "labels": [
+      "codex",
+      "bug",
+      "app:marketplace",
+      "triage:needs-info",
+      "P1",
+      "marketplace-crons"
+    ],
+    "createdAt": "2026-09-25T20:31:10Z",
+    "updatedAt": "2026-09-26T00:00:46Z"
+  },
+  "lane": "manual_review",
+  "priority": "P1",
+  "question": "¿Debe Infraestructura revisar la conectividad Atlas–Vercel de las 19:55–20:05 UTC y confirmar el estado de las ofertas afectadas antes de resolver esta incidencia?",
+  "rationale": "La resolución requiere acceso operativo a Atlas y a los registros de conectividad; el código y los datos de seguimiento disponibles no permiten confirmar la persistencia ni el origen del corte.",
+  "options": [
+    {
+      "title": "Solicitar verificación operativa",
+      "body": "Confirmar la conectividad y el estado de las ofertas afectadas antes de decidir si hace falta una recuperación.",
+      "recommended": true
+    },
+    {
+      "title": "Cerrar con el estado actual",
+      "body": "Dar por suficiente la recuperación de ejecuciones posteriores sin confirmar la cohorte afectada.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Solicitar verificación operativa",
+    "body": "Confirmar la conectividad y el estado de las ofertas afectadas antes de decidir si hace falta una recuperación.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "danielmenchen-hamelyn",
+    "reason": "Es el candidato de código más próximo hallado en el historial local de las fases de marketplace, aunque la decisión operativa corresponde a Infraestructura y su vínculo con la incidencia es indirecto.",
+    "confidence": "low"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10139.md",
+    "reviewedAt": "2026-09-26T07:56:11.444Z",
+    "mainSha": "b7ca4ccf2295720375fc765a9fe4ea56a1f68320"
+  }
+}
