@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-19T12:50:54.327Z",
-  "updatedAt": "2026-09-19T11:59:57Z",
+  "generatedAt": "2026-09-27T08:30:10.843Z",
+  "updatedAt": "2026-09-27T08:19:16Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,50 +14,44 @@
       "feature",
       "triage:needs-info",
       "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:needs-security-review",
       "reporter:danielmenchen-hamelyn",
       "origin:dev",
-      "epic:supply-v3",
-      "P2",
-      "clawsweeper:needs-security-review"
+      "epic:supply-v3"
     ],
     "createdAt": "2026-09-18T08:04:05Z",
-    "updatedAt": "2026-09-19T11:59:57Z"
+    "updatedAt": "2026-09-27T08:19:16Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué responsables, baseline, umbrales de aceptación o reversión y ventana de estabilidad autoriza el equipo para el rollout web de Supply v3?",
-  "rationale": "La activación, la reversión y los criterios de negocio no se deducen de código ni de CI; determinan cuándo es seguro cambiar tráfico real.",
+  "question": "¿Quién aprueba, activa y revierte el rollout, y qué baseline, umbrales de errores/scanner/conversión/SEO y ventana de estabilidad determinan aceptar o revertir?",
+  "rationale": "La aceptación y la reversión dependen de umbrales operativos y autoridad de lanzamiento que el código y la issue no pueden decidir; el triage previo ya pidió esta definición y sigue pendiente.",
   "options": [
     {
-      "title": "Aprobar gates medibles",
-      "body": "Definir dueño de activación y reversión, baseline, umbrales y ventana antes de ensayar el lanzamiento.",
+      "title": "Acordar gates y responsables",
+      "body": "El equipo Supply fija responsables, métricas, umbrales y ventana de estabilidad antes de ensayar el rollout.",
       "recommended": true
     },
     {
-      "title": "Mantener el rollout bloqueado",
-      "body": "Completar primero QA web, preview Vercel y transición de sesión/URLs antes de fijar una ventana.",
-      "recommended": false
-    },
-    {
-      "title": "Limitar el primer corte",
-      "body": "Autorizar un alcance inicial explícito con métricas y reversión propias antes del despliegue general.",
+      "title": "Aplazar la activación",
+      "body": "Mantener la issue abierta y no activar producción hasta que producto y operación proporcionen esos criterios.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar gates medibles",
-    "body": "Definir dueño de activación y reversión, baseline, umbrales y ventana antes de ensayar el lanzamiento.",
+    "title": "Acordar gates y responsables",
+    "body": "El equipo Supply fija responsables, métricas, umbrales y ventana de estabilidad antes de ensayar el rollout.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "danielmenchen-hamelyn",
-    "reason": "Es el principal vínculo histórico disponible con la base de Supply v3 y el plan de integración de la épica.",
-    "confidence": "high"
+    "reason": "La discusión de la épica le identifica como dueño probable para coordinar la definición pendiente del equipo Supply.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9745.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9745#issuecomment-5740689773",
-    "reviewedAt": "2026-09-19T12:50:54.327Z",
-    "mainSha": "d0e0b93e78bba63a1c6ff1614e823941e10afa9f"
+    "reviewedAt": "2026-09-27T08:30:10.843Z",
+    "mainSha": "b7ca4ccf2295720375fc765a9fe4ea56a1f68320"
   }
 }
