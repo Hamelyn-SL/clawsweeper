@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-25T05:25:03.058Z",
-  "updatedAt": "2026-09-25T05:16:51Z",
+  "generatedAt": "2026-09-27T18:27:30.443Z",
+  "updatedAt": "2026-09-27T08:19:20Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,45 +13,43 @@
       "app:supply",
       "feature",
       "triage:needs-info",
-      "clawsweeper:needs-product-decision",
+      "P2",
       "reporter:danielmenchen-hamelyn",
       "origin:dev",
-      "epic:supply-v3",
-      "P2"
+      "epic:supply-v3"
     ],
     "createdAt": "2026-09-18T08:03:12Z",
-    "updatedAt": "2026-09-25T05:16:51Z"
+    "updatedAt": "2026-09-27T08:19:20Z"
   },
-  "lane": "security_boundary",
+  "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se aprueba usar `https://api.hamelyn.com` como audiencia de Supply y habilitar refresh tokens con la configuración efectiva del tenant, o debe mantenerse la configuración actual hasta validar otra ruta compatible?",
-  "rationale": "La PR relacionada introduce una audiencia y una dependencia de configuración de Auth0 que no están verificadas aquí; elegirla afecta autorización, renovación de sesión y disponibilidad de las lecturas protegidas.",
+  "question": "¿Qué configuración vigente de Auth0, entorno de prueba y endpoint protegido se usarán para aceptar F04 sin introducir plazos ni scopes nuevos?",
+  "rationale": "La configuración del tenant y el acceso autorizado de prueba no se pueden deducir del código del cliente; escogerlos por inferencia podría validar una política de sesión distinta de la real.",
   "options": [
     {
-      "title": "Aprobar el nuevo contrato",
-      "body": "Confirmar la audiencia y los ajustes de tenant y entorno, y completar la verificación de refresh token y lectura protegida antes de cerrar F04.",
+      "title": "Validar configuración vigente",
+      "body": "Aportar configuración saneada y un procedimiento autorizado para comprobar renovación y lectura protegida sin modificar plazos ni scopes.",
       "recommended": true
     },
     {
-      "title": "Mantener el contrato actual",
-      "body": "No habilitar el nuevo flujo hasta documentar una ruta compatible con la audiencia y la política de sesión vigentes.",
+      "title": "Definir cambio de política",
+      "body": "Si la configuración actual no satisface el flujo, acordar explícitamente la política y sus cambios antes de ampliar la implementación.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar el nuevo contrato",
-    "body": "Confirmar la audiencia y los ajustes de tenant y entorno, y completar la verificación de refresh token y lectura protegida antes de cerrar F04.",
+    "title": "Validar configuración vigente",
+    "body": "Aportar configuración saneada y un procedimiento autorizado para comprobar renovación y lectura protegida sin modificar plazos ni scopes.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Está asignado a F04 y ha propuesto el cambio de audiencia y refresh tokens en la PR relacionada.",
+    "reason": "Está asignado a la issue y contribuyó al cambio de sesión Auth0 relacionado en la rama de la épica.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9720.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9720#issuecomment-5741109863",
-    "reviewedAt": "2026-09-25T05:25:03.058Z",
-    "mainSha": "cc3510386055c2c98c62a38d1e779f9ffd32bea6"
+    "reviewedAt": "2026-09-27T18:27:30.443Z",
+    "mainSha": "b7ca4ccf2295720375fc765a9fe4ea56a1f68320"
   }
 }
