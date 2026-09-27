@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-26T17:45:56.545Z",
-  "updatedAt": "2026-09-25T12:15:39Z",
+  "generatedAt": "2026-09-27T17:55:44.682Z",
+  "updatedAt": "2026-09-27T17:44:59Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,44 +15,43 @@
       "app:marketplace",
       "triage:done",
       "clawsweeper:needs-product-decision",
+      "P2",
       "reporter:JavierHamelyn",
       "origin:panel",
-      "mk:amazon",
-      "P2"
+      "mk:amazon"
     ],
     "createdAt": "2026-08-03T13:36:22Z",
-    "updatedAt": "2026-09-25T12:15:39Z"
+    "updatedAt": "2026-09-27T17:44:59Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué alcance debe aprobarse para el resolver de condición de `101078` antes de cualquier backfill: limitarse al guard V2 y una muestra account-wide, o definir además un flujo de remediación regional con aprobación humana?",
-  "rationale": "El guard es una corrección acotada, pero extenderlo a un resolver y backfill exige decidir el alcance operativo y los criterios de autorización; el piloto solo acredita un SKU.",
+  "question": "¿Debe priorizarse como trabajo separado un auditor account-wide reanudable para clasificar la cohorte antes de diseñar el resolver y cualquier backfill?",
+  "rationale": "La evidencia muestra divergencias regionales y casos sin listing, mientras que resolver condición, identidad y alcance de cuenta determina qué operaciones remotas serían seguras; ese alcance no se deduce del guard de retry.",
   "options": [
     {
-      "title": "Separar guard y resolver",
-      "body": "Priorizar el guard no-retry V2 y exigir una propuesta de resolver con evidencia account-wide antes de aprobar escrituras masivas.",
+      "title": "Separar mitigación y auditoría",
+      "body": "Tratar el guard de `101078` como mitigación acotada y aprobar por separado el diseño de auditoría reanudable antes de proponer remediación.",
       "recommended": true
     },
     {
-      "title": "Aprobar diseño de resolver",
-      "body": "Definir ahora un flujo regional pausado con preimágenes, clasificación, revisión humana y verificación posterior antes de considerar el backfill.",
+      "title": "Mantener el alcance integral",
+      "body": "Dejar la issue como programa único hasta acordar auditoría, reglas de clasificación y flujo de remediación regional.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Separar guard y resolver",
-    "body": "Priorizar el guard no-retry V2 y exigir una propuesta de resolver con evidencia account-wide antes de aprobar escrituras masivas.",
+    "title": "Separar mitigación y auditoría",
+    "body": "Tratar el guard de `101078` como mitigación acotada y aprobar por separado el diseño de auditoría reanudable antes de proponer remediación.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Está asignado al issue y recopiló tanto el diagnóstico como la evidencia del piloto.",
+    "person": "danielmenchen-hamelyn",
+    "reason": "Su historial cubre las reglas actuales de clasificación Amazon, la parte técnica más inmediata de la decisión.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8188.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8188#issuecomment-5167219624",
-    "reviewedAt": "2026-09-26T17:45:56.545Z",
+    "reviewedAt": "2026-09-27T17:55:44.682Z",
     "mainSha": "b7ca4ccf2295720375fc765a9fe4ea56a1f68320"
   }
 }
