@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-26T17:55:34.147Z",
-  "updatedAt": "2026-09-25T09:00:17Z",
+  "generatedAt": "2026-09-28T07:21:16.664Z",
+  "updatedAt": "2026-09-28T07:00:41Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -14,39 +14,38 @@
       "P2"
     ],
     "createdAt": "2026-09-24T17:35:07Z",
-    "updatedAt": "2026-09-25T09:00:17Z",
-    "headSha": "cc41c90e71e0862701b8f333f5b5caead48c4cb3"
+    "updatedAt": "2026-09-28T07:00:41Z",
+    "headSha": "7583a58dec076f8d396a61e139f04b9df1222529"
   },
-  "lane": "proof_sufficiency",
+  "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Confirma el contrato de Exotec o un evento real que una cubeta `BinInterface*` con `Locked: false` puede llevar `Unreachable: true`, y cómo debe afectar ese estado a sus stocks?",
-  "rationale": "El código considera esa interfaz lista para estación, mientras que la condición propuesta puede retirar su stock y la recuperación actual no lo restaura al recibir `Outside`; resolverlo requiere confirmar la semántica operativa del evento.",
+  "question": "¿Debe `Locked: true` activar también `BIN_BLOCKED`, además de `Unreachable: true`, o debe mantenerse como criterio separado de reactivación?",
+  "rationale": "La issue vinculada solicita ambos indicadores, pero la revisión advierte que falta confirmar la semántica operativa de `Locked`; incluirlo puede retirar stock adicional.",
   "options": [
     {
-      "title": "Excluir la interfaz accesible",
-      "body": "Confirmar que `BinInterface*` con `Locked: false` sigue disponible y evitar que `Unreachable: true` la bloquee.",
+      "title": "Solo bloquear por `Unreachable`",
+      "body": "Conservar este alcance y tratar `Locked` en una decisión o cambio separado cuando se confirme su significado operativo.",
       "recommended": true
     },
     {
-      "title": "Bloquearla con recuperación definida",
-      "body": "Confirmar que ese evento representa inaccesibilidad y definir qué estado posterior restaura los stocks bloqueados.",
+      "title": "Bloquear también por `Locked`",
+      "body": "Ampliar el contrato y los tests para retirar stock cuando Exotec informe `Locked: true`.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Excluir la interfaz accesible",
-    "body": "Confirmar que `BinInterface*` con `Locked: false` sigue disponible y evitar que `Unreachable: true` la bloquee.",
+    "title": "Solo bloquear por `Unreachable`",
+    "body": "Conservar este alcance y tratar `Locked` en una decisión o cambio separado cuando se confirme su significado operativo.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Ha documentado el conflicto entre los estados de interfaz y bloqueo, y señaló que falta validar el evento real.",
+    "reason": "Su revisión existente identifica directamente la incertidumbre de semántica y recomienda confirmarla antes de ampliar el bloqueo.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10087.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10087#issuecomment-5822510491",
-    "reviewedAt": "2026-09-26T17:55:34.147Z",
-    "mainSha": "b7ca4ccf2295720375fc765a9fe4ea56a1f68320"
+    "reviewedAt": "2026-09-28T07:21:16.664Z",
+    "mainSha": "7c9e3808bc4685a3c8937bf3acabf1a6cd8ed20f"
   }
 }

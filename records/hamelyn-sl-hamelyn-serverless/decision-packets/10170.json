@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-28T07:21:48.552Z",
+  "updatedAt": "2026-09-28T06:33:13Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10170,
+    "title": "fix: correct excess amazon listing quantity safely",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10170",
+    "state": "open",
+    "labels": [
+      "size/XL"
+    ],
+    "createdAt": "2026-09-28T06:24:06Z",
+    "updatedAt": "2026-09-28T06:33:13Z",
+    "headSha": "dde1c722ad8c0c1809780af3b22b92544d9368b7"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe el report reducir automáticamente a 1 los listings Amazon ES BUYABLE con cantidad superior, bajo las salvaguardas del PR, o debe limitarse a clasificarlos para corrección manual?",
+  "rationale": "La propuesta convierte una anomalía analítica en una escritura automática de inventario remoto; la incidencia enlazada mantiene una etiqueta de decisión de producto y la intención de corregir cantidades no determina por sí sola la política de remediación automática.",
+  "options": [
+    {
+      "title": "Autorizar corrección automática acotada",
+      "body": "Aprobar el envío limitado a ES después de validar los guardarraíles y el orden de despliegue del gestor y el report.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener solo clasificación",
+      "body": "Registrar `EXCESS_QUANTITY` y dejar la modificación del listing para una intervención manual hasta definir la política operativa.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Autorizar corrección automática acotada",
+    "body": "Aprobar el envío limitado a ES después de validar los guardarraíles y el orden de despliegue del gestor y el report.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "HamelynDev",
+    "reason": "Contribuyó al flujo actual del report y aparece como responsable de coordinación y revisión en el contexto del PR.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10170.md",
+    "reviewedAt": "2026-09-28T07:21:48.552Z",
+    "mainSha": "7c9e3808bc4685a3c8937bf3acabf1a6cd8ed20f"
+  }
+}
