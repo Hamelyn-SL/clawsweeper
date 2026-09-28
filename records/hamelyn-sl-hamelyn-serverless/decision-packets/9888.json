@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-28T05:58:14.130Z",
+  "updatedAt": "2026-09-28T05:54:43Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9888,
+    "title": "Amazon ES report keeps BUYABLE quantity-two listings parked as REPORT_INACTIVE",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9888",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "triage:done",
+      "P2"
+    ],
+    "createdAt": "2026-09-22T05:25:09Z",
+    "updatedAt": "2026-09-28T05:54:43Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe el reconciliador compartido tratar cualquier cantidad entera positiva de un listing `Active` como vendible en todas las regiones que usan este report?",
+  "rationale": "La reparación propuesta cambia un criterio común que escribe estados permanentes y afecta el aparcamiento y la readmisión; conviene confirmar el contrato regional antes de aplicarla.",
+  "options": [
+    {
+      "title": "Aceptar cantidades positivas",
+      "body": "Aplicar el criterio en las regiones que comparten el parser y cubrir los casos de cantidad y operaciones vivas.",
+      "recommended": true
+    },
+    {
+      "title": "Limitar el cambio a ES",
+      "body": "Proteger los casos confirmados de Amazon ES y mantener sin cambios el criterio compartido para otras regiones.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aceptar cantidades positivas",
+    "body": "Aplicar el criterio en las regiones que comparten el parser y cubrir los casos de cantidad y operaciones vivas.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Su historial está ligado directamente al predicado de cantidad y a la clasificación de filas del report.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9888.md",
+    "reviewedAt": "2026-09-28T05:58:14.130Z",
+    "mainSha": "24a71938366b5718429d4c6a7c712c046b4b0783"
+  }
+}
