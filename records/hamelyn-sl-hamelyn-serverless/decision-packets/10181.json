@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-28T10:29:24.689Z",
+  "updatedAt": "2026-09-28T10:15:36Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10181,
+    "title": "infrastructure: amazon price files workflow silently aborts every week and is obsolete",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10181",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:infrastructure",
+      "reporter:marcos",
+      "triage:done",
+      "P3"
+    ],
+    "createdAt": "2026-09-28T10:07:27Z",
+    "updatedAt": "2026-09-28T10:15:36Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se confirma que no hay consumidores externos de `Amazon-files` y debe retirarse el proceso, o hay que mantener y reparar la generación de ficheros?",
+  "rationale": "La issue y la nota de triage documentan el aborto y la alternativa de Listings API, pero también reconocen que no se han comprobado consumidores externos y que las reglas de precio no son necesariamente equivalentes.",
+  "options": [
+    {
+      "title": "Retirar tras verificar dependencias",
+      "body": "Confirmar que ningún consumidor externo necesita los ficheros y retirar todas las referencias del flujo en un cambio coordinado.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener y reparar",
+      "body": "Si existe un consumidor, conservar el workflow y corregir configuración, selección de ofertas y orden de borrado para no vaciar la carpeta antes de producir resultados.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Retirar tras verificar dependencias",
+    "body": "Confirmar que ningún consumidor externo necesita los ficheros y retirar todas las referencias del flujo en un cambio coordinado.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "La persona asignada también aparece en el historial del script y puede validar tanto el propósito operativo como sus consumidores conocidos.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10181.md",
+    "reviewedAt": "2026-09-28T10:29:24.689Z",
+    "mainSha": "1998ce12ff9e740ecaf2f9a64a37a2b859df40fe"
+  }
+}
