@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-24T10:55:35.550Z",
-  "updatedAt": "2026-09-23T13:15:32Z",
+  "generatedAt": "2026-09-28T06:02:26.091Z",
+  "updatedAt": "2026-09-28T05:59:26Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,43 +14,42 @@
       "feature",
       "triage:done",
       "clawsweeper:needs-product-decision",
+      "P2",
       "reporter:danielmenchen-hamelyn",
-      "epic:communication-center",
-      "P2"
+      "epic:communication-center"
     ],
     "createdAt": "2026-09-23T08:25:34Z",
-    "updatedAt": "2026-09-23T13:15:32Z"
+    "updatedAt": "2026-09-28T05:59:26Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué diseño de persistencia y recuperación debe aprobarse para la trazabilidad interna, especialmente cuando el envío se completa pero falla el registro de su resultado?",
-  "rationale": "La decisión afecta al modelo persistido y a cómo recuperar resultados inciertos; la política del repositorio exige autorización antes de crear colecciones o índices, y no hay aún una propuesta validada en el contexto consultado.",
+  "question": "¿Qué propuesta de almacenamiento y recuperación debe aprobarse para registrar solicitudes, intentos y resultados sin duplicar envíos cuando falle la persistencia tras una respuesta incierta del proveedor?",
+  "rationale": "La issue exige definir colección, esquema, índices, volumen, retención y mantenedor, y la política del repositorio requiere autorización expresa antes de crear colecciones o índices; además, el diseño depende del contrato de ejecución aún pendiente.",
   "options": [
     {
-      "title": "Aprobar diseño tras validar el circuito",
-      "body": "Preparar esquema, retención, volumen y recuperación sobre el contrato de #9993 y autorizar explícitamente las estructuras necesarias.",
+      "title": "Aprobar diseño después del circuito",
+      "body": "Completar primero el circuito de envío y aprobar una propuesta de esquema, retención, volumen y recuperación antes de autorizar sus estructuras.",
       "recommended": true
     },
     {
-      "title": "Mantener marcas legacy temporalmente",
-      "body": "Completar primero el circuito de envío y posponer la persistencia hasta disponer de evidencia operativa suficiente.",
+      "title": "Posponer persistencia",
+      "body": "Conservar temporalmente las marcas legacy y aplazar el historial persistido hasta disponer de evidencia operativa del circuito.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar diseño tras validar el circuito",
-    "body": "Preparar esquema, retención, volumen y recuperación sobre el contrato de #9993 y autorizar explícitamente las estructuras necesarias.",
+    "title": "Aprobar diseño después del circuito",
+    "body": "Completar primero el circuito de envío y aprobar una propuesta de esquema, retención, volumen y recuperación antes de autorizar sus estructuras.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "danielmenchen-hamelyn",
-    "reason": "Ha definido la secuencia de fases y los criterios del Communication Center en la épica y sus issues relacionadas.",
+    "reason": "Está asignado a la issue y coordinó el alcance por fases; no hay una persona con propiedad histórica clara para esta nueva persistencia.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9994.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9994#issuecomment-5793149182",
-    "reviewedAt": "2026-09-24T10:55:35.550Z",
-    "mainSha": "b3f7c1eace1f7638fa2f8de78cce0587ae8df711"
+    "reviewedAt": "2026-09-28T06:02:26.091Z",
+    "mainSha": "24a71938366b5718429d4c6a7c712c046b4b0783"
   }
 }
