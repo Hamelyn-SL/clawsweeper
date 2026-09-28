@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-28T09:06:02.137Z",
+  "updatedAt": "2026-09-28T08:33:35Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10177,
+    "title": "modificar precios de coste de ecommerce de acuerdo a los nuevos costes de logistica",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10177",
+    "state": "open",
+    "labels": [
+      "source:admin-panel",
+      "app:ecommerce",
+      "feature",
+      "triage:queued",
+      "P2",
+      "reporter:jorgecano"
+    ],
+    "createdAt": "2026-09-28T08:33:21Z",
+    "updatedAt": "2026-09-28T08:33:35Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué columnas e importes de la tabla deben aplicarse por país y moneda, y qué reglas de precio de venta y envío gratuito deben conservarse o modificarse en ecommerce?",
+  "rationale": "El código implementa la mecánica de tarifas, pero elegir importes y condiciones de envío gratuito es una decisión comercial que no se puede inferir con seguridad de la implementación.",
+  "options": [
+    {
+      "title": "Aplicar tabla y política confirmadas",
+      "body": "Confirmar los valores por país/moneda y los umbrales de ecommerce antes de actualizar las tarifas y validar el checkout.",
+      "recommended": true
+    },
+    {
+      "title": "Actualizar solo costes logísticos",
+      "body": "Cambiar las tarifas de transporte y mantener sin cambios los precios de venta y umbrales actuales.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aplicar tabla y política confirmadas",
+    "body": "Confirmar los valores por país/moneda y los umbrales de ecommerce antes de actualizar las tarifas y validar el checkout.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su trabajo integrado cubre el recálculo y la validación de importes en el checkout; la decisión de importes debe confirmarla el responsable de pricing.",
+    "confidence": "low"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10177.md",
+    "reviewedAt": "2026-09-28T09:06:02.137Z",
+    "mainSha": "1998ce12ff9e740ecaf2f9a64a37a2b859df40fe"
+  }
+}
