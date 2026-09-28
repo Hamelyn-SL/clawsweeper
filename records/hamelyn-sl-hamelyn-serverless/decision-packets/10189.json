@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-28T11:24:14.923Z",
+  "updatedAt": "2026-09-28T11:08:50Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10189,
+    "title": "chore: remove legacy mercadolibre manifest order import endpoint",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10189",
+    "state": "open",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-09-28T11:00:05Z",
+    "updatedAt": "2026-09-28T11:08:50Z",
+    "headSha": "bb98cea5df04a0822ce0d9a06519f942df3b6060"
+  },
+  "lane": "product_direction",
+  "priority": "P3",
+  "question": "¿Se confirma retirar el endpoint XLSX de Mercado Libre, asumiendo que pueden existir consumidores manuales o externos no visibles en el monorepo?",
+  "rationale": "La ruta existe en la base y su eliminación cambia una superficie API; la evidencia aportada reduce la probabilidad de uso interno, pero no establece la intención de retirar posibles usos externos.",
+  "options": [
+    {
+      "title": "Confirmar retirada",
+      "body": "Aprobar la eliminación tras validar que los equipos operativos no dependen del endpoint manual.",
+      "recommended": true
+    },
+    {
+      "title": "Conservar temporalmente",
+      "body": "Mantener la ruta hasta identificar y migrar cualquier consumidor externo o procedimiento manual vigente.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Confirmar retirada",
+    "body": "Aprobar la eliminación tras validar que los equipos operativos no dependen del endpoint manual.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Miguel Angel Hernández Perdomo",
+    "reason": "Su historial acredita la introducción de la ruta y le da contexto directo sobre el comportamiento original.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10189.md",
+    "reviewedAt": "2026-09-28T11:24:14.923Z",
+    "mainSha": "07bc8af8bde138642ca2364bad06d9a929f3b804"
+  }
+}
