@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-28T05:58:29.138Z",
+  "updatedAt": "2026-09-28T05:46:12Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10166,
+    "title": "Amazon COM raw CDC omits four active May 28 listings despite completed materializations",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10166",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "triage:needs-info",
+      "P2"
+    ],
+    "createdAt": "2026-09-28T05:30:03Z",
+    "updatedAt": "2026-09-28T05:46:12Z"
+  },
+  "lane": "manual_review",
+  "priority": "P2",
+  "question": "¿Se autoriza leer Mongo vivo para determinar todas las altas mk_amazonCom del 28 de mayo y ejecutar la reconciliación del universo confirmado, incluida cualquier estructura temporal necesaria?",
+  "rationale": "La reparación es una operación sobre datos de producción; todavía no está validado el conjunto completo y la política requiere autorización expresa para crear estructuras de BigQuery.",
+  "options": [
+    {
+      "title": "Autorizar inspección y dry-run",
+      "body": "Confirmar el universo afectado desde Mongo vivo y presentar el alcance exacto antes de modificar BigQuery.",
+      "recommended": true
+    },
+    {
+      "title": "Autorizar reconciliación acotada",
+      "body": "Reconciliar los cuatro IDs ya identificados y verificar ambas capas, dejando pendiente una búsqueda más amplia.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener en espera",
+      "body": "No acceder ni modificar datos hasta que el equipo defina el alcance y las estructuras permitidas.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Autorizar inspección y dry-run",
+    "body": "Confirmar el universo afectado desde Mongo vivo y presentar el alcance exacto antes de modificar BigQuery.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Su trabajo reciente cubre el merge CDC y la materialización asociados; es el candidato de enrutamiento mejor respaldado por el historial local.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10166.md",
+    "reviewedAt": "2026-09-28T05:58:29.138Z",
+    "mainSha": "24a71938366b5718429d4c6a7c712c046b4b0783"
+  }
+}

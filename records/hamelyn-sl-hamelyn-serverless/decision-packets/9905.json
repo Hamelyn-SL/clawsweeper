@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-28T05:58:33.729Z",
+  "updatedAt": "2026-09-28T05:46:29Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 9905,
+    "title": "fix: show how many products a coupon still needs",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/9905",
+    "state": "open",
+    "labels": [
+      "size/XL",
+      "P2"
+    ],
+    "createdAt": "2026-09-22T09:18:03Z",
+    "updatedAt": "2026-09-28T05:46:29Z",
+    "headSha": "bc333b9dc27cfd9a1d8a0b418638d65f4daf42e4"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe mostrarse el aviso legal del 5% en cualquier tienda con productos nuevos disponibles o solo en España y Cataluña?",
+  "rationale": "La revisión humana aprobó el código, pero dejó sin confirmar el alcance por tienda/localidad; elegirlo define cuándo verá el cliente un aviso legal y no puede deducirse con seguridad de las traducciones añadidas.",
+  "options": [
+    {
+      "title": "Limitarlo a ES/CA",
+      "body": "Mostrar el aviso solo en las tiendas española y catalana cuando el carrito incluya productos nuevos disponibles.",
+      "recommended": true
+    },
+    {
+      "title": "Mostrarlo donde haya productos nuevos",
+      "body": "Mantener el aviso en cualquier localidad donde el checkout permita comprar productos nuevos.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Limitarlo a ES/CA",
+    "body": "Mostrar el aviso solo en las tiendas española y catalana cuando el carrito incluya productos nuevos disponibles.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "danielmenchen-hamelyn",
+    "reason": "Es quien señaló explícitamente en la revisión reciente que falta confirmar el alcance por despliegue y localidad.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9905.md",
+    "reviewedAt": "2026-09-28T05:58:33.729Z",
+    "mainSha": "24a71938366b5718429d4c6a7c712c046b4b0783"
+  }
+}
