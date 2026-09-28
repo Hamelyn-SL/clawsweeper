@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-28T11:00:34.081Z",
+  "updatedAt": "2026-09-28T10:41:53Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10185,
+    "title": "admin: remove unused legacy Mercado Libre manifest order import endpoint",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10185",
+    "state": "open",
+    "labels": [
+      "app:admin",
+      "feature",
+      "triage:queued",
+      "reporter:alejandrodiaz",
+      "P3"
+    ],
+    "createdAt": "2026-09-28T10:41:38Z",
+    "updatedAt": "2026-09-28T10:41:53Z"
+  },
+  "lane": "product_direction",
+  "priority": "P3",
+  "question": "¿Se ha retirado formalmente la carga manual XLSX de pedidos de Mercado Libre, incluida la operación manual que aún describe la documentación?",
+  "rationale": "La búsqueda no detecta llamadores internos, pero la documentación vigente mantiene el flujo como referencia; decidir si borrar el endpoint requiere confirmar si sigue existiendo uso operativo manual.",
+  "options": [
+    {
+      "title": "Confirmar retirada y eliminar",
+      "body": "Retirar el endpoint y corregir la documentación, preservando los helpers que aún utiliza Buscalibre.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener la carga manual",
+      "body": "Conservar el endpoint y actualizar la issue o documentar con precisión el flujo vigente.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Confirmar retirada y eliminar",
+    "body": "Retirar el endpoint y corregir la documentación, preservando los helpers que aún utiliza Buscalibre.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Miguel Angel Hernández Perdomo",
+    "reason": "Es el contribuyente de historial más cercano a la ruta actual; la evidencia no identifica quién es responsable de confirmar su uso operativo.",
+    "confidence": "low"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10185.md",
+    "reviewedAt": "2026-09-28T11:00:34.081Z",
+    "mainSha": "07bc8af8bde138642ca2364bad06d9a929f3b804"
+  }
+}
