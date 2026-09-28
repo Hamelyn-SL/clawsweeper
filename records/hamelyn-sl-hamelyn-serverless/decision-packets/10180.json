@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-28T10:06:07.615Z",
+  "updatedAt": "2026-09-28T09:50:23Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10180,
+    "title": "🐞 Dependency update: el autofix de CI falló en chore/dependency-major-service-sdks",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10180",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:infrastructure",
+      "P2"
+    ],
+    "createdAt": "2026-09-28T09:50:23Z",
+    "updatedAt": "2026-09-28T09:50:23Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se debe mantener Sentry en la major compatible o completar ahora la migración de configuración a Sentry 11 en todas las aplicaciones afectadas?",
+  "rationale": "La review de la PR presenta ambas alternativas; escoger entre ellas determina si la actualización major puede aterrizar y qué cambios de compatibilidad se requieren.",
+  "options": [
+    {
+      "title": "Completar la migración a Sentry 11",
+      "body": "Adaptar la configuración de cada aplicación afectada y validar sus builds antes de integrar la actualización.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener la major compatible",
+      "body": "Rebajar `@sentry/nextjs` en esta actualización y posponer la migración hasta poder validarla en un cambio acotado.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Completar la migración a Sentry 11",
+    "body": "Adaptar la configuración de cada aplicación afectada y validar sus builds antes de integrar la actualización.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "Su review documenta directamente la incompatibilidad de Sentry 11 y delimita las dos alternativas.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10180.md",
+    "reviewedAt": "2026-09-28T10:06:07.615Z",
+    "mainSha": "1998ce12ff9e740ecaf2f9a64a37a2b859df40fe"
+  }
+}

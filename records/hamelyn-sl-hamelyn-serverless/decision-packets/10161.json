@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-28T10:06:03.122Z",
+  "updatedAt": "2026-09-28T06:26:51Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10161,
+    "title": "Fnac y Fnac FR: 5 stocks vendidos el 24-09 siguen a la venta y la recuperación del informe no puede retirarlos",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10161",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "reporter:javier",
+      "triage:done",
+      "P2",
+      "mk:fnac"
+    ],
+    "createdAt": "2026-09-27T09:10:52Z",
+    "updatedAt": "2026-09-28T06:26:51Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe Fnac y Fnac FR reencolar espejos sin `ACTIVE` y permitir retirar por SKU cuando falta `marketplaceId`, bajo las salvaguardas de maestro retirado y snapshots persistentes?",
+  "rationale": "La recuperación puede disparar borrados remotos de ofertas; hace falta validar el límite de seguridad antes de extenderla a estados de espejo dudosos y a ambas tiendas.",
+  "options": [
+    {
+      "title": "Aprobar recuperación protegida",
+      "body": "Reencolar solo tras confirmar maestro retirado durante más de 48 horas y presencia repetida como `MK_ONLY`, y permitir la resolución de Fnac por SKU.",
+      "recommended": true
+    },
+    {
+      "title": "Separar los dos cambios",
+      "body": "Habilitar primero la retirada por SKU y mantener fuera los espejos sin `ACTIVE` hasta definir una salvaguarda adicional.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar recuperación protegida",
+    "body": "Reencolar solo tras confirmar maestro retirado durante más de 48 horas y presencia repetida como `MK_ONLY`, y permitir la resolución de Fnac por SKU.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Es el asignado actual y la autoría de la señal de retirada lo conecta directamente con una parte central del comportamiento.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10161.md",
+    "reviewedAt": "2026-09-28T10:06:03.122Z",
+    "mainSha": "1998ce12ff9e740ecaf2f9a64a37a2b859df40fe"
+  }
+}
