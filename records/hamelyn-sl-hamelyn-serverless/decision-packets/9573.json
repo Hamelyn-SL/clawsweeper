@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-24T10:54:37.083Z",
-  "updatedAt": "2026-09-24T08:13:00Z",
+  "generatedAt": "2026-09-28T05:52:34.947Z",
+  "updatedAt": "2026-09-28T05:47:50Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,44 +12,43 @@
     "labels": [
       "bug",
       "app:admin",
-      "triage:done",
+      "triage:queued",
       "reporter:alejandrodiaz",
-      "clawsweeper:needs-product-decision",
-      "P1"
+      "P1",
+      "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-09-15T10:14:47Z",
-    "updatedAt": "2026-09-24T08:13:00Z"
+    "updatedAt": "2026-09-28T05:47:50Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe el PR deduplicar globalmente los conteos legacy entre operarios, o se acepta esa limitación si el despliegue se realiza antes de iniciar una tanda nueva?",
-  "rationale": "La alternativa cambia el comportamiento de atribuciones ya persistidas y el momento operativo seguro del despliegue; la revisión reciente identifica ambas opciones, pero no hay una decisión final registrada.",
+  "question": "¿Debe el cambio deduplicar globalmente atribuciones legacy entre operarios o impedir de forma verificable que se reanuden tandas iniciadas antes del despliegue?",
+  "rationale": "La decisión determina si el sistema garantiza exclusividad también para tandas antiguas o si operaciones debe asegurar un despliegue antes de iniciar nuevas tandas; el PR actual no cubre ambas alternativas.",
   "options": [
     {
-      "title": "Deduplicar historial legacy",
-      "body": "Consultar la atribución existente sin filtrar por el operario del evento y cubrir con pruebas el caso en que A recibió crédito antes del despliegue y B reclama después.",
+      "title": "Deduplicar el historial legacy",
+      "body": "Consultar las atribuciones anteriores sin filtrar por el operario del evento y probar que un segundo operario no vuelve a acreditar las mismas unidades.",
       "recommended": true
     },
     {
-      "title": "Aceptar limitación operativa",
-      "body": "Mantener el alcance actual y exigir que el despliegue se haga antes de iniciar una tanda nueva, con esa condición documentada y confirmada por el responsable de almacén.",
+      "title": "Exigir tandas nuevas tras el despliegue",
+      "body": "Mantener el límite de compatibilidad actual y añadir una precondición operativa verificable, documentada y validada antes de reanudar packing.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Deduplicar historial legacy",
-    "body": "Consultar la atribución existente sin filtrar por el operario del evento y cubrir con pruebas el caso en que A recibió crédito antes del despliegue y B reclama después.",
+    "title": "Deduplicar el historial legacy",
+    "body": "Consultar las atribuciones anteriores sin filtrar por el operario del evento y probar que un segundo operario no vuelve a acreditar las mismas unidades.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Está conectado con la funcionalidad existente y es autor del PR que implementa esta solución, por lo que es el candidato disponible más próximo a la decisión de alcance.",
+    "reason": "Figura como responsable de la issue y propuso las reglas de atribución operativa que debe respetar la solución.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9573.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9573#issuecomment-5812881162",
-    "reviewedAt": "2026-09-24T10:54:37.083Z",
-    "mainSha": "b3f7c1eace1f7638fa2f8de78cce0587ae8df711"
+    "reviewedAt": "2026-09-28T05:52:34.947Z",
+    "mainSha": "24a71938366b5718429d4c6a7c712c046b4b0783"
   }
 }
