@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-28T20:56:34.324Z",
+  "updatedAt": "2026-09-28T20:53:08Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10198,
+    "title": "feat: add process durations to daily report",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10198",
+    "state": "open",
+    "labels": [
+      "size/M"
+    ],
+    "createdAt": "2026-09-28T20:52:34Z",
+    "updatedAt": "2026-09-28T20:53:08Z",
+    "headSha": "f04fa0d615aa971eb7e4079f3afd5bba83d9022e"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿El reporte debe atribuir toda la duración de cada sesión al día de Madrid en que empezó, incluso si cruza medianoche, o repartirla entre los días correspondientes?",
+  "rationale": "La regla cambia el significado de los totales diarios y no puede deducirse de la issue resumida ni de la implementación actual del reporte.",
+  "options": [
+    {
+      "title": "Atribuir al día de inicio",
+      "body": "Mantener cada sesión completa en el día de Madrid en que comenzó, como describe el PR.",
+      "recommended": true
+    },
+    {
+      "title": "Repartir por día",
+      "body": "Limitar la duración contabilizada a cada intervalo diario y reflejar el tiempo posterior a medianoche en el siguiente reporte.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Atribuir al día de inicio",
+    "body": "Mantener cada sesión completa en el día de Madrid en que comenzó, como describe el PR.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Daniel",
+    "reason": "Su historial reciente se concentra en la política y consulta de sesiones de productividad, que determinan cómo se interpreta este dato.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10198.md",
+    "reviewedAt": "2026-09-28T20:56:34.324Z",
+    "mainSha": "8cb1d53371a232072da01d8a7c6a66d6a0048775"
+  }
+}
