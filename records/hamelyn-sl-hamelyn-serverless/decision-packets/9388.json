@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-28T08:59:31.122Z",
+  "updatedAt": "2026-09-28T08:28:23Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9388,
+    "title": "Admin: exigir ticket de subida para URLs de assets de GitHub nuevas en issues",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9388",
+    "state": "open",
+    "labels": [
+      "bug",
+      "source:admin-panel",
+      "app:admin",
+      "reporter:javier",
+      "triage:needs-info",
+      "clawsweeper:needs-security-review",
+      "P0"
+    ],
+    "createdAt": "2026-09-10T09:50:31Z",
+    "updatedAt": "2026-09-28T08:28:23Z"
+  },
+  "lane": "security_boundary",
+  "priority": "P1",
+  "question": "¿Se ha comprobado el acceso de `GITHUB_ISSUES_TOKEN` a assets privados de este repositorio y de otro repositorio privado, y qué contención se aplicará si el token puede resolver ambos?",
+  "rationale": "La ruta de escritura insegura está respaldada por el código y las pruebas descritas, pero la consecuencia entre repositorios depende del comportamiento real de GitHub y de los permisos del token desplegado; eso requiere una comprobación operativa de seguridad.",
+  "options": [
+    {
+      "title": "Comprobar y limitar el acceso",
+      "body": "Ejecutar la matriz de `HEAD` con acceso anónimo, token actual y PAT limitado a un repositorio, y reducir el alcance o separar credenciales si el token actual resuelve assets ajenos.",
+      "recommended": true
+    },
+    {
+      "title": "Comprobar que el token ya está aislado",
+      "body": "Aportar resultados saneados que acrediten que el token desplegado no puede resolver assets privados fuera de este repositorio, manteniendo la corrección de escritura como trabajo pendiente.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Comprobar y limitar el acceso",
+    "body": "Ejecutar la matriz de `HEAD` con acceso anónimo, token actual y PAT limitado a un repositorio, y reducir el alcance o separar credenciales si el token actual resuelve assets ajenos.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Figura asignado y ha trabajado recientemente en el cliente y el resolver de adjuntos que delimitan esta comprobación.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9388.md",
+    "reviewedAt": "2026-09-28T08:59:31.122Z",
+    "mainSha": "1998ce12ff9e740ecaf2f9a64a37a2b859df40fe"
+  }
+}
