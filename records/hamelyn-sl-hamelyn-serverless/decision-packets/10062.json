@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-26T17:55:57.433Z",
-  "updatedAt": "2026-09-25T05:06:13Z",
+  "generatedAt": "2026-09-28T11:54:51.068Z",
+  "updatedAt": "2026-09-28T11:51:54Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -14,39 +14,38 @@
       "P2"
     ],
     "createdAt": "2026-09-24T09:45:56Z",
-    "updatedAt": "2026-09-25T05:06:13Z",
-    "headSha": "edaa4cc733cb1a0ab09836f9fa15ac9765a38f76"
+    "updatedAt": "2026-09-28T11:51:54Z",
+    "headSha": "c8a1879cd4e751266d11f720efbf11aec96a3a6b"
   },
-  "lane": "release_inclusion",
+  "lane": "merge_risk",
   "priority": "P2",
-  "question": "¿Debe exigirse una build EAS con Xcode 26.6 que compile y arranque Supply antes de aceptar el parche y publicar `2.7.01`?",
-  "rationale": "El PR documenta una validación local con Xcode 26.2, pero deja pendiente probar la versión usada por EAS; el equipo debe decidir si esa diferencia bloquea esta release.",
+  "question": "¿Debe integrarse la restauración de `expo-modules-jsi` 57.1.0 para Supply 2.7.01 antes de validar el parche con Xcode 26.6 en EAS?",
+  "rationale": "El parche cambia cómo se capturan y reconstruyen punteros alrededor de closures aislados de Swift; la descripción acredita una prueba local con Xcode 26.2, mientras que el builder objetivo usa 26.6 y la prueba automatizada reciente no pudo validar el arranque nativo.",
   "options": [
     {
-      "title": "Exigir validación EAS",
-      "body": "Mantener pendiente la aceptación hasta verificar la compilación y el arranque con Xcode 26.6.",
+      "title": "Esperar validación EAS",
+      "body": "Mantener el PR abierto hasta confirmar que el build de EAS compila y que la aplicación arranca con los símbolos JSI esperados.",
       "recommended": true
     },
     {
-      "title": "Aceptar la prueba local",
-      "body": "Considerar suficiente la prueba con Xcode 26.2 y dejar que las comprobaciones de EAS aporten la validación restante.",
+      "title": "Integrar con la evidencia local",
+      "body": "Aceptar la prueba de simulador con Xcode 26.2 como evidencia suficiente y asumir el riesgo de diferencias con Xcode 26.6.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Exigir validación EAS",
-    "body": "Mantener pendiente la aceptación hasta verificar la compilación y el arranque con Xcode 26.6.",
+    "title": "Esperar validación EAS",
+    "body": "Mantener el PR abierto hasta confirmar que el build de EAS compila y que la aplicación arranca con los símbolos JSI esperados.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "Su historial cubre el pin de `expo-modules-jsi` y la actualización del SDK 57 que origina este cambio.",
-    "confidence": "high"
+    "person": "Daniel",
+    "reason": "Su historial incluye la fijación anterior de JSI por concurrencia Swift y la restauración de un runtime compatible, por lo que es el candidato más conectado a la decisión de compatibilidad.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10062.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10062#issuecomment-5811907717",
-    "reviewedAt": "2026-09-26T17:55:57.433Z",
-    "mainSha": "b7ca4ccf2295720375fc765a9fe4ea56a1f68320"
+    "reviewedAt": "2026-09-28T11:54:51.068Z",
+    "mainSha": "0e482c228d520a4df53cfb6e525ac0131ae09620"
   }
 }

@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-28T11:57:25.485Z",
+  "updatedAt": "2026-09-28T11:49:15Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10190,
+    "title": "fix: confirm amazon offers individually without an initial delay",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10190",
+    "state": "open",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-09-28T11:44:08Z",
+    "updatedAt": "2026-09-28T11:49:15Z",
+    "headSha": "222e4cae51ece7c8303008a5a7e59560191cf315"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe este PR mantenerse como mejora acotada de confirmación, mientras la retirada de espejos Amazon no activos se aborda por separado?",
+  "rationale": "La issue enlazada exige ampliar la retirada y definir la respuesta ante reactivaciones tras un DELETE aceptado; el PR evita deliberadamente esos cambios y la conversación de la issue deja pendiente esa decisión.",
+  "options": [
+    {
+      "title": "Separar los alcances",
+      "body": "Revisar este cambio por la confirmación parcial y mantener abierta la issue de retirada para decidir su solución específica.",
+      "recommended": true
+    },
+    {
+      "title": "Ampliar este PR",
+      "body": "Incorporar también la retirada de espejos no activos y la verificación de reactivaciones, con pruebas para ambos flujos.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Separar los alcances",
+    "body": "Revisar este cambio por la confirmación parcial y mantener abierta la issue de retirada para decidir su solución específica.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Figura como contribuidor reciente del flujo batch de retirada, el área que la issue pide cambiar.",
+    "confidence": "low"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10190.md",
+    "reviewedAt": "2026-09-28T11:57:25.485Z",
+    "mainSha": "0e482c228d520a4df53cfb6e525ac0131ae09620"
+  }
+}
