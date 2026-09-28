@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-25T14:27:21.692Z",
-  "updatedAt": "2026-09-24T11:17:08Z",
+  "generatedAt": "2026-09-28T09:40:10.143Z",
+  "updatedAt": "2026-09-28T09:34:12Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,48 +14,47 @@
       "app:marketplace",
       "reporter:javier",
       "triage:done",
-      "mk:amazon",
+      "clawsweeper:needs-product-decision",
       "P2",
-      "clawsweeper:needs-product-decision"
+      "mk:amazon"
     ],
     "createdAt": "2026-09-24T10:41:41Z",
-    "updatedAt": "2026-09-24T11:17:08Z"
+    "updatedAt": "2026-09-28T09:34:12Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe la retirada enviar DELETE también a espejos Amazon sin estado o `INACTIVE`, y qué comprobación remota debe exigirse cuando el informe los reactive después de un DELETE aceptado?",
-  "rationale": "El selector puede ampliarse mecánicamente, pero los datos disponibles no distinguen si el anuncio sigue comprable o si el snapshot diario conserva una fila antigua; la elección afecta al riesgo de dejar anuncios vivos o retirar uno que no se debe tocar.",
+  "question": "¿Debe la retirada enviar DELETE a espejos Amazon vendidos sin estado o `INACTIVE`, y qué comprobación remota debe exigirse si el informe los reactiva tras un DELETE aceptado?",
+  "rationale": "El selector y las guardas muestran el hueco, pero ampliar qué estados pueden provocar un DELETE y qué hacer ante una reactivación reportada requiere acordar el comportamiento operativo seguro.",
   "options": [
     {
-      "title": "Ampliar retirada y verificar reactivaciones",
-      "body": "Incluir los estados relevantes con guardas acotadas y consultar Listings Items antes de decidir qué hacer con una reactivación posterior.",
+      "title": "Ampliar y verificar",
+      "body": "Incluir los estados relevantes con guardas acotadas y verificar Listings Items antes de decidir qué hacer ante una reactivación posterior.",
       "recommended": true
     },
     {
       "title": "Ampliar solo el selector",
-      "body": "Retirar los espejos no activos mediante DELETE idempotente y posponer la detección de reactivaciones a otro seguimiento.",
+      "body": "Enviar DELETE idempotente a los espejos no activos y dejar la detección de reactivaciones para un seguimiento separado.",
       "recommended": false
     },
     {
       "title": "Separar la reconciliación",
-      "body": "Mantener la retirada actual y abrir un seguimiento distinto para definir y validar cómo tratar las reactivaciones del informe.",
+      "body": "Mantener la retirada actual y resolver por separado cómo validar y tratar las reactivaciones del informe.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Ampliar retirada y verificar reactivaciones",
-    "body": "Incluir los estados relevantes con guardas acotadas y consultar Listings Items antes de decidir qué hacer con una reactivación posterior.",
+    "title": "Ampliar y verificar",
+    "body": "Incluir los estados relevantes con guardas acotadas y verificar Listings Items antes de decidir qué hacer ante una reactivación posterior.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Su historial local cubre la retirada Amazon basada en feeds DELETE y el contexto actual aporta evidencia detallada del comportamiento observado.",
+    "person": "MarcosTerroso",
+    "reason": "Es la persona asignada y aparece como colaborador frecuente en el historial de los archivos centrales de esta ruta.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10067.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10067#issuecomment-5834074221",
-    "reviewedAt": "2026-09-25T14:27:21.692Z",
-    "mainSha": "88e0a9197e139b667c6a7ff20eebddb78e3bfd27"
+    "reviewedAt": "2026-09-28T09:40:10.143Z",
+    "mainSha": "1998ce12ff9e740ecaf2f9a64a37a2b859df40fe"
   }
 }
