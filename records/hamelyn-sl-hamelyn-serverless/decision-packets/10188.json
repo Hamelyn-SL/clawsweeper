@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-28T11:02:06.219Z",
+  "updatedAt": "2026-09-28T10:53:08Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10188,
+    "title": "chore: remove obsolete amazon price files workflow",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10188",
+    "state": "open",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-09-28T10:50:07Z",
+    "updatedAt": "2026-09-28T10:53:08Z",
+    "headSha": "5be7e99626b204d50d6fe945b6c0ee1a48dc5c4f"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se ha confirmado que ningún consumidor externo depende de `Amazon-files`, de modo que pueda retirarse el proceso, o debe mantenerse y repararse la generación?",
+  "rationale": "La issue vinculada identifica expresamente esta verificación como pendiente y el diff elimina el flujo antes de resolverla.",
+  "options": [
+    {
+      "title": "Retirar tras confirmar dependencias",
+      "body": "Verificar con los consumidores externos que ya no necesitan los ficheros y entonces aceptar la retirada completa.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener y reparar el flujo",
+      "body": "Si existe un consumidor activo, conservar el proceso y corregir la configuración, la selección de ofertas y el orden de borrado.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Retirar tras confirmar dependencias",
+    "body": "Verificar con los consumidores externos que ya no necesitan los ficheros y entonces aceptar la retirada completa.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "La issue vinculada está asignada a él y documenta la investigación del flujo.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10188.md",
+    "reviewedAt": "2026-09-28T11:02:06.219Z",
+    "mainSha": "07bc8af8bde138642ca2364bad06d9a929f3b804"
+  }
+}

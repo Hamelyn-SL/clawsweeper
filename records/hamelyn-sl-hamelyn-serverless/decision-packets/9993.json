@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-25T13:47:10.711Z",
-  "updatedAt": "2026-09-24T12:47:20Z",
+  "generatedAt": "2026-09-28T11:03:29.437Z",
+  "updatedAt": "2026-09-28T10:58:34Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,50 +12,49 @@
     "labels": [
       "app:infrastructure",
       "feature",
-      "triage:done",
+      "triage:queued",
       "clawsweeper:needs-product-decision",
+      "P2",
       "reporter:danielmenchen-hamelyn",
-      "epic:communication-center",
-      "P2"
+      "epic:communication-center"
     ],
     "createdAt": "2026-09-23T08:25:32Z",
-    "updatedAt": "2026-09-24T12:47:20Z"
+    "updatedAt": "2026-09-28T10:58:34Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué app existente y entorno no productivo deben alojar el consumidor central para validar la publicación, recepción, fallo y reentrega entre proyectos?",
-  "rationale": "La elección del consumidor condiciona el diseño y la validación de esta fase; la issue de infraestructura relacionada aún no registra una topología validada.",
+  "question": "¿Se aprueba la topología propuesta en https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10184 —ingreso autenticado desde Public y ejecución mediante el worker— como destino del piloto no productivo?",
+  "rationale": "La issue anterior dejó pendiente elegir entre validar una app existente, crear un proyecto dedicado o posponer la cola; el PR candidato propone una topología concreta, pero aún no consta una decisión humana que la ratifique.",
   "options": [
     {
-      "title": "Validar una app existente",
-      "body": "Probar primero un consumidor en una app desplegable actual y fijar la arquitectura solo si la prueba demuestra que no ofrece el aislamiento necesario.",
+      "title": "Validar la app existente (recomendada)",
+      "body": "Aprobar la topología del PR para el piloto aislado y posponer una app dedicada salvo que la validación revele una carencia operativa.",
       "recommended": true
     },
     {
-      "title": "Crear un proyecto dedicado",
-      "body": "Separar los workers si la validación confirma que las apps actuales no cubren las necesidades operativas o de aislamiento.",
+      "title": "Exigir un proyecto dedicado",
+      "body": "Pedir que el piloto separe los workers si el equipo considera insuficiente el aislamiento de las apps actuales.",
       "recommended": false
     },
     {
       "title": "Posponer la cola",
-      "body": "Mantener los envíos actuales hasta confirmar una topología soportada entre productores y consumidores.",
+      "body": "Mantener los envíos actuales hasta que el equipo cierre la decisión de topología y sus dependencias.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Validar una app existente",
-    "body": "Probar primero un consumidor en una app desplegable actual y fijar la arquitectura solo si la prueba demuestra que no ofrece el aislamiento necesario.",
+    "title": "Validar la app existente (recomendada)",
+    "body": "Aprobar la topología del PR para el piloto aislado y posponer una app dedicada salvo que la validación revele una carencia operativa.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "AlexDiaz-Hamelyn",
-    "reason": "El historial de infraestructura y el contexto de revisión lo señalan como candidato de coordinación para la topología de colas.",
+    "person": "Miguel Angel Hernández Perdomo",
+    "reason": "Es la persona mejor respaldada por el historial local de los adaptadores de email y la infraestructura de colas; la atribución de la decisión es de confianza media.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9993.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9993#issuecomment-5793179551",
-    "reviewedAt": "2026-09-25T13:47:10.711Z",
-    "mainSha": "88e0a9197e139b667c6a7ff20eebddb78e3bfd27"
+    "reviewedAt": "2026-09-28T11:03:29.437Z",
+    "mainSha": "07bc8af8bde138642ca2364bad06d9a929f3b804"
   }
 }
