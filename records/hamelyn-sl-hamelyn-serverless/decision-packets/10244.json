@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-29T11:57:51.300Z",
+  "updatedAt": "2026-09-29T11:56:21Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10244,
+    "title": "fix: confirm ebay withdrawal before marking it complete",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10244",
+    "state": "open",
+    "labels": [
+      "size/M",
+      "P1"
+    ],
+    "createdAt": "2026-09-29T11:28:55Z",
+    "updatedAt": "2026-09-29T11:56:21Z",
+    "headSha": "5a5c1ffb3d80daaaf4956fe64e54a26be3aa6dc8"
+  },
+  "lane": "merge_risk",
+  "priority": "P1",
+  "question": "¿Debe integrarse esta reconciliación exacta tras cada retirada aceptada por eBay como criterio para guardar el resultado local?",
+  "rationale": "El cambio afecta a cuándo el sistema da por completada una retirada real; la issue aporta un caso concreto, pero la decisión de adopción requiere confirmar que el comportamiento remoto y operativo esperado es este.",
+  "options": [
+    {
+      "title": "Aprobar con revisión del flujo",
+      "body": "Integrar la lectura posterior y el reintento si la oferta sigue publicada o la consulta no permite confirmar la retirada.",
+      "recommended": true
+    },
+    {
+      "title": "Pedir verificación operativa adicional",
+      "body": "Mantener el PR abierto hasta contrastar el comportamiento de eBay en un caso representativo de retirada aceptada.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar con revisión del flujo",
+    "body": "Integrar la lectura posterior y el reintento si la oferta sigue publicada o la consulta no permite confirmar la retirada.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Miguel Angel Hernández Perdomo",
+    "reason": "Su historial reciente incluye la resolución del destino de retirada eBay por SKU, por lo que está conectado al comportamiento que condiciona esta decisión.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10244.md",
+    "reviewedAt": "2026-09-29T11:57:51.300Z",
+    "mainSha": "cb1043f8985ca25de3c879d7050308859e64b7ac"
+  }
+}
