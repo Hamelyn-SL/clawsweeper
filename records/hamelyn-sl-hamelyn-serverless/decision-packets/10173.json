@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-29T08:05:44.128Z",
+  "updatedAt": "2026-09-28T07:45:40Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10173,
+    "title": "Marketplace: [mercadolibre writes] {\"marketplace\":\"mercadolibrear\",\"operation\":\"put\",\"path\":\"/items/<id>\",\"status\":400,\"",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10173",
+    "state": "open",
+    "labels": [
+      "codex",
+      "bug",
+      "app:marketplace",
+      "triage:done",
+      "P2",
+      "marketplace-crons"
+    ],
+    "createdAt": "2026-09-28T07:30:47Z",
+    "updatedAt": "2026-09-28T07:45:40Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "Cuando MercadoLibre responde `item.price.not_modifiable` por una ficha bajo revisión, ¿debemos mantener el reintento transitorio o retirar y republicar la ficha si el rechazo persiste?",
+  "rationale": "El código actual trata el estado como temporal, mientras que este incidente se recuperó sustituyendo las fichas; falta confirmar si el estado temporal acabó y qué resultado tuvo la publicación nueva.",
+  "options": [
+    {
+      "title": "Mantener el reintento temporal",
+      "body": "Conservar el tratamiento transitorio y verificar que las fichas nuevas se activen cuando termine la revisión del proveedor.",
+      "recommended": true
+    },
+    {
+      "title": "Reconciliar rechazos persistentes",
+      "body": "Definir una condición verificable para retirar y republicar la ficha si MercadoLibre sigue rechazando el precio tras la revisión.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mantener el reintento temporal",
+    "body": "Conservar el tratamiento transitorio y verificar que las fichas nuevas se activen cuando termine la revisión del proveedor.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su cambio histórico introdujo el tratamiento transitorio de errores de precio en esta integración; es una persona de enrutamiento para validar la intención del comportamiento.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10173.md",
+    "reviewedAt": "2026-09-29T08:05:44.128Z",
+    "mainSha": "d7533a4ffe3270e3fc179e39bbdd317e67cceadb"
+  }
+}

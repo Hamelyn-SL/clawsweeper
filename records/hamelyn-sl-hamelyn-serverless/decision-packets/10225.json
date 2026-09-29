@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-29T08:03:28.546Z",
+  "updatedAt": "2026-09-29T08:00:12Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10225,
+    "title": "feat: integrate communication center and provider tracking",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10225",
+    "state": "open",
+    "labels": [
+      "size/XL"
+    ],
+    "createdAt": "2026-09-29T07:57:03Z",
+    "updatedAt": "2026-09-29T08:00:12Z",
+    "headSha": "09aa945c80c7980ac0af7ec789ed9e4879199a85"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se autoriza provisionar `notification_dispatches` para reservas de envío y observaciones de proveedor antes de activar el circuito?",
+  "rationale": "La funcionalidad persistente depende de esa colección, que el código no crea; la política del repositorio exige autorización expresa para nuevas colecciones.",
+  "options": [
+    {
+      "title": "Autorizar la provisión",
+      "body": "Aprobar la colección y definir los entornos donde debe provisionarse antes de activar las banderas.",
+      "recommended": true
+    },
+    {
+      "title": "Posponer la provisión",
+      "body": "Mantener la integración desactivada hasta acordar otro destino persistente o la aprobación correspondiente.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Autorizar la provisión",
+    "body": "Aprobar la colección y definir los entornos donde debe provisionarse antes de activar las banderas.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Su historial reciente en los recorridos de email le vincula con el comportamiento que esta integración migra; la decisión sigue correspondiendo al equipo responsable de la provisión de datos.",
+    "confidence": "low"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10225.md",
+    "reviewedAt": "2026-09-29T08:03:28.546Z",
+    "mainSha": "d7533a4ffe3270e3fc179e39bbdd317e67cceadb"
+  }
+}
