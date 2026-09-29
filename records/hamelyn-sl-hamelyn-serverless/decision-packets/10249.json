@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-29T19:37:02.518Z",
+  "updatedAt": "2026-09-29T19:30:41Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10249,
+    "title": "Marketplace: [meli validator] error validating image dimensions: error: read econnreset",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10249",
+    "state": "open",
+    "labels": [
+      "codex",
+      "bug",
+      "app:marketplace",
+      "triage:queued",
+      "P2",
+      "marketplace-crons"
+    ],
+    "createdAt": "2026-09-29T19:30:41Z",
+    "updatedAt": "2026-09-29T19:30:41Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe un `ECONNRESET` al consultar dimensiones reintentarse o diferirse como error transitorio, en vez de fallar la validación de imagen?",
+  "rationale": "La elección afecta la recuperación del cron y el tratamiento de candidatos; el antecedente de timeout redujo la descarga, pero dejó explícitamente fuera la política de reintentos.",
+  "options": [
+    {
+      "title": "Tratarlo como transitorio",
+      "body": "Separar el reset de los errores de imagen y reintentar o diferir el candidato con límites explícitos.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener el fallo inmediato",
+      "body": "Conservar el rechazo del candidato y mejorar la clasificación o el diagnóstico sin reintentos automáticos.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Tratarlo como transitorio",
+    "body": "Separar el reset de los errores de imagen y reintentar o diferir el candidato con límites explícitos.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Su implementación introdujo el tratamiento de errores y timeout del validador; la decisión define la política de recuperación de ese comportamiento.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10249.md",
+    "reviewedAt": "2026-09-29T19:37:02.518Z",
+    "mainSha": "0f86707cd423b1ecb9ee90483c89c99a1c243318"
+  }
+}
