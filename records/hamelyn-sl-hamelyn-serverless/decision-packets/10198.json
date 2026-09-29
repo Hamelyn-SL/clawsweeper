@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-28T20:56:34.324Z",
-  "updatedAt": "2026-09-28T20:53:08Z",
+  "generatedAt": "2026-09-29T21:25:11.861Z",
+  "updatedAt": "2026-09-28T20:58:37Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -13,39 +13,38 @@
       "size/M"
     ],
     "createdAt": "2026-09-28T20:52:34Z",
-    "updatedAt": "2026-09-28T20:53:08Z",
+    "updatedAt": "2026-09-28T20:58:37Z",
     "headSha": "f04fa0d615aa971eb7e4079f3afd5bba83d9022e"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿El reporte debe atribuir toda la duración de cada sesión al día de Madrid en que empezó, incluso si cruza medianoche, o repartirla entre los días correspondientes?",
-  "rationale": "La regla cambia el significado de los totales diarios y no puede deducirse de la issue resumida ni de la implementación actual del reporte.",
+  "question": "¿El reporte debe imputar toda la sesión al día de Madrid en que empezó, aunque termine después de medianoche, o repartir la duración entre ambos días?",
+  "rationale": "Ambas reglas producen totales diarios distintos y el comportamiento solicitado no permite resolver con seguridad cuál representa el criterio operativo esperado.",
   "options": [
     {
-      "title": "Atribuir al día de inicio",
-      "body": "Mantener cada sesión completa en el día de Madrid en que comenzó, como describe el PR.",
+      "title": "Imputar al día de inicio",
+      "body": "Contabiliza la sesión completa en el día de Madrid en que comenzó, tal como plantea esta PR.",
       "recommended": true
     },
     {
       "title": "Repartir por día",
-      "body": "Limitar la duración contabilizada a cada intervalo diario y reflejar el tiempo posterior a medianoche en el siguiente reporte.",
+      "body": "Limita cada total al tiempo transcurrido dentro de ese día y refleja el resto en el reporte siguiente.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Atribuir al día de inicio",
-    "body": "Mantener cada sesión completa en el día de Madrid en que comenzó, como describe el PR.",
+    "title": "Imputar al día de inicio",
+    "body": "Contabiliza la sesión completa en el día de Madrid en que comenzó, tal como plantea esta PR.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "Daniel",
-    "reason": "Su historial reciente se concentra en la política y consulta de sesiones de productividad, que determinan cómo se interpreta este dato.",
+    "reason": "Su historial reciente está ligado a la semántica de sesiones de productividad y ya fue señalado en la revisión previa para esta decisión.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10198.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10198#issuecomment-5878407133",
-    "reviewedAt": "2026-09-28T20:56:34.324Z",
-    "mainSha": "8cb1d53371a232072da01d8a7c6a66d6a0048775"
+    "reviewedAt": "2026-09-29T21:25:11.861Z",
+    "mainSha": "43372711fc01f38ce1991dad125463f2ddf67890"
   }
 }
