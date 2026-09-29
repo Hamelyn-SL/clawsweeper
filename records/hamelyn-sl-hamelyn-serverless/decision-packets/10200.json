@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-29T23:55:55.084Z",
+  "updatedAt": "2026-09-29T00:01:17Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10200,
+    "title": "Marketplace: amazonIT provider http 429",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10200",
+    "state": "open",
+    "labels": [
+      "codex",
+      "bug",
+      "app:marketplace",
+      "triage:done",
+      "P2",
+      "marketplace-crons"
+    ],
+    "createdAt": "2026-09-28T23:30:47Z",
+    "updatedAt": "2026-09-29T00:01:17Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué límite compartido por cuenta y qué espera máxima deben aplicarse a las llamadas `getFeedDocument` entre regiones?",
+  "rationale": "La cuota efectiva no está establecida por el código y una tasa arbitraria puede alargar el procesamiento; hace falta acordar el comportamiento operativo antes de fijar el límite.",
+  "options": [
+    {
+      "title": "Medir y fijar el límite compartido",
+      "body": "Confirmar la cuota efectiva de Amazon y establecer un límite compartido con espera acotada antes de cambiar el flujo.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener el límite actual mientras se mide",
+      "body": "Conservar los límites por instancia y recoger más datos antes de introducir coordinación entre regiones.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Medir y fijar el límite compartido",
+    "body": "Confirmar la cuota efectiva de Amazon y establecer un límite compartido con espera acotada antes de cambiar el flujo.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Su historial local cubre la definición del límite actual, aunque no identifica por sí solo al responsable de la decisión operativa.",
+    "confidence": "low"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10200.md",
+    "reviewedAt": "2026-09-29T23:55:55.084Z",
+    "mainSha": "e460a6012b6baced9ee128e0f9bf0ff30163e871"
+  }
+}
