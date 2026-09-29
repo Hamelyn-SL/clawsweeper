@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-29T07:13:43.602Z",
+  "updatedAt": "2026-09-29T06:41:38Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10215,
+    "title": "TodoColección: anuncios de stock vendido hace meses siguen a la venta sin fila en mk_todoColeccion (10 SYNC_NO_RECENT desde agosto)",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10215",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "reporter:javier",
+      "triage:queued",
+      "P2",
+      "mk:todocoleccion"
+    ],
+    "createdAt": "2026-09-29T06:41:22Z",
+    "updatedAt": "2026-09-29T06:41:38Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué presupuesto y cadencia de consultas por SKU se autorizan para detectar anuncios huérfanos de TodoColección sin degradar los flujos que comparten su API, y se aprueba una pasada inicial acotada sobre el lote de ZoomBooks?",
+  "rationale": "No hay endpoint de catálogo masivo y la auditoría existente limita deliberadamente la concurrencia por rate limits y uso compartido; decidir el alcance operativo no se deduce del código.",
+  "options": [
+    {
+      "title": "Piloto acotado y luego cobertura periódica",
+      "body": "Aprobar un barrido inicial con límite explícito de SKU y tasa, medir el impacto y fijar después una cuota recurrente para detección.",
+      "recommended": true
+    },
+    {
+      "title": "Solo cobertura incremental",
+      "body": "Evitar el barrido histórico y diseñar una muestra o cola incremental con una cuota de llamadas aprobada.",
+      "recommended": false
+    },
+    {
+      "title": "Aplazar consultas adicionales",
+      "body": "Mantener la auditoría muestral actual hasta que Marketplace confirme capacidad o una fuente de catálogo alternativa.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Piloto acotado y luego cobertura periódica",
+    "body": "Aprobar un barrido inicial con límite explícito de SKU y tasa, medir el impacto y fijar después una cuota recurrente para detección.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su historial conecta con la auditoría semanal y con la observabilidad de retiradas; es el candidato disponible con más contexto del límite de API señalado.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10215.md",
+    "reviewedAt": "2026-09-29T07:13:43.602Z",
+    "mainSha": "74c48f644c52ac7e8cc8a2eb95221aeffec5ac13"
+  }
+}

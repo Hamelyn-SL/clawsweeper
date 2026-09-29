@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-28T05:58:14.130Z",
-  "updatedAt": "2026-09-28T05:54:43Z",
+  "generatedAt": "2026-09-29T07:10:42.831Z",
+  "updatedAt": "2026-09-28T06:42:51Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,42 +13,41 @@
       "bug",
       "app:marketplace",
       "triage:done",
-      "P2",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2"
     ],
     "createdAt": "2026-09-22T05:25:09Z",
-    "updatedAt": "2026-09-28T05:54:43Z"
+    "updatedAt": "2026-09-28T06:42:51Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe el reconciliador compartido tratar cualquier cantidad entera positiva de un listing `Active` como vendible en todas las regiones que usan este report?",
-  "rationale": "La reparación propuesta cambia un criterio común que escribe estados permanentes y afecta el aparcamiento y la readmisión; conviene confirmar el contrato regional antes de aplicarla.",
+  "question": "¿Debe el reconciliador compartido tratar cualquier cantidad entera positiva de un listing activo como vendible en todas las regiones que usan el informe, o limitar el cambio a Amazon ES?",
+  "rationale": "La evidencia confirma el criterio de cantidad 1 y el caso ES, pero cambiar el parser compartido puede alterar conciliaciones en otras regiones; la issue no aporta evidencia suficiente para extrapolar ese impacto.",
   "options": [
     {
-      "title": "Aceptar cantidades positivas",
-      "body": "Aplicar el criterio en las regiones que comparten el parser y cubrir los casos de cantidad y operaciones vivas.",
+      "title": "Aceptar cantidades positivas en el parser compartido",
+      "body": "Cambiar el criterio para listings activos con cantidad entera positiva y validar cantidades, duplicados y operaciones en curso en las regiones que comparten el parser.",
       "recommended": true
     },
     {
-      "title": "Limitar el cambio a ES",
-      "body": "Proteger los casos confirmados de Amazon ES y mantener sin cambios el criterio compartido para otras regiones.",
+      "title": "Limitar el comportamiento a ES",
+      "body": "Aplicar una excepción específica para Amazon ES y mantener el criterio actual en el resto de regiones.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aceptar cantidades positivas",
-    "body": "Aplicar el criterio en las regiones que comparten el parser y cubrir los casos de cantidad y operaciones vivas.",
+    "title": "Aceptar cantidades positivas en el parser compartido",
+    "body": "Cambiar el criterio para listings activos con cantidad entera positiva y validar cantidades, duplicados y operaciones en curso en las regiones que comparten el parser.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Su historial está ligado directamente al predicado de cantidad y a la clasificación de filas del report.",
-    "confidence": "high"
+    "reason": "Su historial muestra trabajo en el report Amazon y en la activación regional, por lo que es el candidato disponible más cercano para orientar el alcance.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9888.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9888#issuecomment-5864341371",
-    "reviewedAt": "2026-09-28T05:58:14.130Z",
-    "mainSha": "24a71938366b5718429d4c6a7c712c046b4b0783"
+    "reviewedAt": "2026-09-29T07:10:42.831Z",
+    "mainSha": "74c48f644c52ac7e8cc8a2eb95221aeffec5ac13"
   }
 }

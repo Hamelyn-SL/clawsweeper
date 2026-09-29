@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-29T07:13:25.253Z",
+  "updatedAt": "2026-09-29T06:34:20Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10212,
+    "title": "fix: recover stranded fnac withdrawals",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10212",
+    "state": "open",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-09-29T06:21:58Z",
+    "updatedAt": "2026-09-29T06:34:20Z",
+    "headSha": "c894f836e71298ef1f5c8f4639297c2a7676f08b"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe Fnac ES/FR reencolar automáticamente espejos existentes sin estado o `INACTIVE` cuando el maestro está retirado y snapshots completos consecutivos confirman la oferta?",
+  "rationale": "La mutación vuelve a introducir registros en el selector normal y puede iniciar una retirada remota; la issue vinculada señala que esta decisión de comportamiento requiere validación del equipo.",
+  "options": [
+    {
+      "title": "Aprobar recuperación protegida",
+      "body": "Permitir el reencolado con las guardas de maestro retirado, snapshots repetidos, ausencia de operaciones en curso y CAS incluidas en el PR.",
+      "recommended": true
+    },
+    {
+      "title": "Separar los cambios",
+      "body": "Aprobar la retirada por SKU y dejar los espejos sin `ACTIVE` fuera de la recuperación automática hasta acordar una salvaguarda adicional.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar recuperación protegida",
+    "body": "Permitir el reencolado con las guardas de maestro retirado, snapshots repetidos, ausencia de operaciones en curso y CAS incluidas en el PR.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "La issue vinculada lo identifica como candidato de decisión y su historial reciente cubre el área de marketplaces y Fnac afectada.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10212.md",
+    "reviewedAt": "2026-09-29T07:13:25.253Z",
+    "mainSha": "74c48f644c52ac7e8cc8a2eb95221aeffec5ac13"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-29T07:15:25.769Z",
+  "updatedAt": "2026-09-29T06:34:16Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10213,
+    "title": "CLI en Windows: Smart App Control bloquea hamelyn.exe porque el release no lo firma",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10213",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:infrastructure",
+      "triage:queued",
+      "P1",
+      "reporter:jorgecano"
+    ],
+    "createdAt": "2026-09-29T06:34:03Z",
+    "updatedAt": "2026-09-29T06:34:16Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Se aprueba habilitar Azure Artifact Signing para los releases del CLI, incluida la configuración y el coste del servicio descritos en el PR?",
+  "rationale": "La solución propuesta requiere contratar y configurar un servicio de firma, validar la identidad de la organización y decidir cómo se comportan los releases mientras esas credenciales no estén habilitadas.",
+  "options": [
+    {
+      "title": "Aprobar Azure Artifact Signing",
+      "body": "Autorizar la configuración del servicio y revisar el PR para que los releases Windows puedan publicarse firmados.",
+      "recommended": true
+    },
+    {
+      "title": "Pausar la decisión de proveedor",
+      "body": "Mantener la issue abierta mientras se evalúa otro certificado o servicio de firma antes de habilitar el cambio.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar Azure Artifact Signing",
+    "body": "Autorizar la configuración del servicio y revisar el PR para que los releases Windows puedan publicarse firmados.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Está asignado a la issue y es quien mantiene la propuesta concreta del flujo de firma.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10213.md",
+    "reviewedAt": "2026-09-29T07:15:25.769Z",
+    "mainSha": "74c48f644c52ac7e8cc8a2eb95221aeffec5ac13"
+  }
+}
