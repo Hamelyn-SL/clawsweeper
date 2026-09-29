@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-23T10:06:01.197Z",
-  "updatedAt": "2026-09-22T08:20:58Z",
+  "generatedAt": "2026-09-29T09:17:39.226Z",
+  "updatedAt": "2026-09-29T09:06:12Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,43 +15,42 @@
       "feature",
       "triage:needs-info",
       "clawsweeper:needs-product-decision",
+      "P2",
       "reporter:danielmenchen-hamelyn",
-      "epic:warehouse-telemetry",
-      "P2"
+      "epic:warehouse-telemetry"
     ],
     "createdAt": "2026-09-10T07:39:46Z",
-    "updatedAt": "2026-09-22T08:20:58Z"
+    "updatedAt": "2026-09-29T09:06:12Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿F5B debe incluir el archivo inmutable y descargable de informes, además de sesiones y agregados diarios por API v6 y CLI?",
-  "rationale": "La respuesta determina si se añaden persistencia, autoría, referencias de versiones, interfaz Admin y réplica analítica.",
+  "question": "¿F5B debe limitarse a exponer sesiones y agregados diarios por API v6/CLI, o debe incluir también el archivo inmutable de informes y su listado y descarga en Admin?",
+  "rationale": "La propia discusión deja el archivo condicionado a una decisión funcional; escoger uno de los alcances cambia de forma sustancial el modelo persistido, la API, el CLI y la interfaz de Admin.",
   "options": [
     {
-      "title": "Limitarse a consultas",
-      "body": "Crear API v6 y CLI para sesiones paginadas y agregados diarios; el agente genera y conserva el informe fuera del sistema.",
+      "title": "Solo consultas por CLI",
+      "body": "Acordar sesiones y agregados diarios en API v6/CLI y generar los informes fuera del sistema.",
       "recommended": true
     },
     {
-      "title": "Archivar informes",
-      "body": "Añadir informes de solo inserción con autoría, versiones de origen y listado/descarga desde Admin.",
+      "title": "Consultas y archivo de informes",
+      "body": "Mantener también los informes inmutables, definiendo antes sus versiones de referencia, autoría, acceso en Admin y réplica analítica.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Limitarse a consultas",
-    "body": "Crear API v6 y CLI para sesiones paginadas y agregados diarios; el agente genera y conserva el informe fuera del sistema.",
+    "title": "Solo consultas por CLI",
+    "body": "Acordar sesiones y agregados diarios en API v6/CLI y generar los informes fuera del sistema.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "danielmenchen-hamelyn",
-    "reason": "El comentario funcional más reciente identifica que esta definición depende de Daniel.",
+    "reason": "La conversación identifica a Daniel como la persona de quien se espera esta definición funcional.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9373.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9373#issuecomment-5644932590",
-    "reviewedAt": "2026-09-23T10:06:01.197Z",
-    "mainSha": "49cf8dd3dcd603e7191f56a17c28174ba52a5a98"
+    "reviewedAt": "2026-09-29T09:17:39.226Z",
+    "mainSha": "06044b618d4da5888c7adb84b2cdda4d2f2f2039"
   }
 }

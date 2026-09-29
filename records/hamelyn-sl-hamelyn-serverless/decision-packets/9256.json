@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-23T10:13:50.404Z",
-  "updatedAt": "2026-09-21T13:46:09Z",
+  "generatedAt": "2026-09-29T09:20:47.459Z",
+  "updatedAt": "2026-09-29T09:06:11Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -17,43 +17,42 @@
       "P2"
     ],
     "createdAt": "2026-09-08T05:52:29Z",
-    "updatedAt": "2026-09-21T13:46:09Z"
+    "updatedAt": "2026-09-29T09:06:11Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se autoriza retirar Nueva entrada en todos los puestos tras confirmar que el destino automático está activado y cubre los libros fuera de lote y de baja demanda, dejando el histórico en solo lectura?",
-  "rationale": "El código mantiene ambos caminos deliberadamente: el sustituto requiere activación por puesto y el escritor de inventario continúa operativo.",
+  "question": "¿Confirma Operaciones que el destino automático cubre los puestos y casos que todavía usan Nueva entrada, y autoriza retirar el modo de escritura conservando la lectura histórica?",
+  "rationale": "La retirada elimina una ruta operativa que el código mantiene y para la que la discusión registra uso reciente; el estado de despliegue por puesto y la política histórica requieren confirmación del equipo.",
   "options": [
     {
-      "title": "Validar y retirar el flujo",
-      "body": "Operaciones confirma la cobertura por puesto y se elimina el modo antiguo, preservando las consultas históricas.",
+      "title": "Mantener el flujo hasta validar la cobertura",
+      "body": "Conservar temporalmente la entrada mientras Operaciones comprueba el uso y la activación del sustituto en todos los puestos afectados.",
       "recommended": true
     },
     {
-      "title": "Mantener coexistencia temporal",
-      "body": "Se conserva Nueva entrada hasta que el destino automático esté habilitado y probado en todos los puestos afectados.",
+      "title": "Autorizar retirada por fases",
+      "body": "Retirar la escritura antigua tras confirmar la cobertura y dejar `INVENTORY` y `NEW_ENTRY` disponibles solo para el histórico.",
       "recommended": false
     },
     {
-      "title": "Aprobar solo el histórico",
-      "body": "Se define primero qué pantallas y métricas deben seguir leyendo `INVENTORY` y `NEW_ENTRY` antes de retirar escritores.",
+      "title": "Conservar Nueva entrada como excepción",
+      "body": "Mantener el modo antiguo donde el destino automático no cubra los casos operativos identificados.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Validar y retirar el flujo",
-    "body": "Operaciones confirma la cobertura por puesto y se elimina el modo antiguo, preservando las consultas históricas.",
+    "title": "Mantener el flujo hasta validar la cobertura",
+    "body": "Conservar temporalmente la entrada mientras Operaciones comprueba el uso y la activación del sustituto en todos los puestos afectados.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "banosdavidhamelyn",
-    "reason": "Ha implementado las dos piezas ya fusionadas y pidió comprobar la producción antes de cerrar la petición.",
-    "confidence": "high"
+    "reason": "Su historial incluye las PR fusionadas relacionadas y la discusión ya le pide contrastar el cambio con Operaciones.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9256.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9256#issuecomment-5580039697",
-    "reviewedAt": "2026-09-23T10:13:50.404Z",
-    "mainSha": "49cf8dd3dcd603e7191f56a17c28174ba52a5a98"
+    "reviewedAt": "2026-09-29T09:20:47.459Z",
+    "mainSha": "06044b618d4da5888c7adb84b2cdda4d2f2f2039"
   }
 }

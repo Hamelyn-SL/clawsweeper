@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-23T10:07:01.491Z",
-  "updatedAt": "2026-09-22T08:20:55Z",
+  "generatedAt": "2026-09-29T09:18:46.700Z",
+  "updatedAt": "2026-09-29T09:06:15Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,47 +15,41 @@
       "app:supply",
       "reporter:arineligrigore",
       "triage:needs-info",
-      "clawsweeper:needs-product-decision",
-      "P1"
+      "P1",
+      "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-09-14T07:55:48Z",
-    "updatedAt": "2026-09-22T08:20:55Z"
+    "updatedAt": "2026-09-29T09:06:15Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué operación debe aplicar Supply cuando una fusión aumenta las cajas de una recogida MRW que ya tiene tracking?",
-  "rationale": "El código ofrece primitivas de creación, modificación y cancelación, pero no acredita cuál conserva la recogida ni qué respuesta de MRW permite confirmar el cambio sin riesgo operativo.",
+  "question": "¿Debe Supply modificar la recogida MRW ya contratada cuando una fusión aumenta las cajas y qué respuesta de MRW debe considerarse confirmación?",
+  "rationale": "El cálculo local ya guarda el total actualizado, pero la incidencia depende de una modificación externa cuyo contrato y comportamiento esperado no están documentados ni acreditados en la discusión.",
   "options": [
     {
-      "title": "Modificar la recogida existente",
-      "body": "Validar con Operaciones y MRW una actualización idempotente por el tracking original y persistir solo la aceptación confirmada.",
+      "title": "Actualizar la recogida existente",
+      "body": "Definir y verificar con MRW cómo cambiar los bultos contratados y registrar la aceptación antes de dar la recogida por actualizada.",
       "recommended": true
     },
     {
-      "title": "Cancelar y recrear",
-      "body": "Usar cancelación y una nueva recogida únicamente si MRW y Operaciones confirman que no duplica ni pierde la planificación.",
-      "recommended": false
-    },
-    {
-      "title": "Bloquear el aumento de cajas",
-      "body": "Impedir fusionar más bultos tras asignar tracking hasta disponer de un circuito externo comprobado.",
+      "title": "Mantener la recogida y escalar",
+      "body": "No modificar automáticamente el envío y derivar estos casos a Operaciones mientras se confirma el procedimiento del transportista.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Modificar la recogida existente",
-    "body": "Validar con Operaciones y MRW una actualización idempotente por el tracking original y persistir solo la aceptación confirmada.",
+    "title": "Actualizar la recogida existente",
+    "body": "Definir y verificar con MRW cómo cambiar los bultos contratados y registrar la aceptación antes de dar la recogida por actualizada.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Está asignado a la incidencia y es el contribuidor reciente de la ruta de fusión afectada.",
-    "confidence": "high"
+    "reason": "Figura como persona asignada y ha contribuido recientemente al flujo de fusión de Supply.",
+    "confidence": "low"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9488.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9488#issuecomment-5662682394",
-    "reviewedAt": "2026-09-23T10:07:01.491Z",
-    "mainSha": "49cf8dd3dcd603e7191f56a17c28174ba52a5a98"
+    "reviewedAt": "2026-09-29T09:18:46.700Z",
+    "mainSha": "06044b618d4da5888c7adb84b2cdda4d2f2f2039"
   }
 }
