@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-29T09:13:17.927Z",
+  "updatedAt": "2026-09-29T09:07:08Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10236,
+    "title": "Commercial Invoice",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10236",
+    "state": "open",
+    "labels": [
+      "source:admin-panel",
+      "app:admin",
+      "feature",
+      "reporter:rubenmorueco",
+      "triage:queued",
+      "P2"
+    ],
+    "createdAt": "2026-09-29T09:05:46Z",
+    "updatedAt": "2026-09-29T09:07:08Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué casos B2B, además de Mercado Libre, deben activar la etiqueta «Delivery Address» y cómo se identifica que llevan importador, especialmente para DECO?",
+  "rationale": "El renderer puede condicionar la etiqueta al importador, pero la issue no define qué datos o pedidos B2B deben incluirlo; esa elección determina el alcance correcto y evita cambiar facturas ajenas a la petición.",
+  "options": [
+    {
+      "title": "Limitarlo a facturas con importador existente",
+      "body": "Cambiar la etiqueta solo cuando `invoice.importer` ya esté presente y dejar para otro trabajo la incorporación de importadores B2B.",
+      "recommended": true
+    },
+    {
+      "title": "Incluir B2B/DECO en este alcance",
+      "body": "Definir ahora los casos B2B/DECO y los datos de importador necesarios antes de implementar tanto su elegibilidad como la nueva etiqueta.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Limitarlo a facturas con importador existente",
+    "body": "Cambiar la etiqueta solo cuando `invoice.importer` ya esté presente y dejar para otro trabajo la incorporación de importadores B2B.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Está asignado a la issue y aparece en el historial reciente del renderizado de facturas.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10236.md",
+    "reviewedAt": "2026-09-29T09:13:17.927Z",
+    "mainSha": "06044b618d4da5888c7adb84b2cdda4d2f2f2039"
+  }
+}
