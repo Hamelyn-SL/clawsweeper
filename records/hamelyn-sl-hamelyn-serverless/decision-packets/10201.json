@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-29T04:52:36.143Z",
+  "updatedAt": "2026-09-29T04:45:56Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10201,
+    "title": "Marketplace: [mercadolibre writes] ❌ request #<number> falló {\"marketplace\":\"mercadolibrear\",\"operation\":\"post\",\"sku\":\"<",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10201",
+    "state": "open",
+    "labels": [
+      "codex",
+      "bug",
+      "app:marketplace",
+      "triage:done",
+      "P2",
+      "marketplace-crons"
+    ],
+    "createdAt": "2026-09-29T04:30:44Z",
+    "updatedAt": "2026-09-29T04:45:56Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe `daily_quota.reached` pausar todas las operaciones de MercadoLibre AR hasta el reinicio diario confirmado por el proveedor, en vez de limitar únicamente las altas y reintentar en el siguiente tick?",
+  "rationale": "La cuota comunicada es de llamadas de aplicación y se comparte entre distintas operaciones; definir el presupuesto y su ventana de reinicio condiciona tanto el alcance del limitador como cuándo reanudar trabajos.",
+  "options": [
+    {
+      "title": "Presupuesto compartido y pausa global",
+      "body": "Añadir seguimiento compartido de llamadas y pausar las operaciones de MercadoLibre AR hasta la ventana de reinicio confirmada.",
+      "recommended": true
+    },
+    {
+      "title": "Pausa solo en altas",
+      "body": "Evitar reintentos de publicación tras el 403 sin bloquear retirada, precios ni lecturas.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener reintento por tick",
+      "body": "Conservar el comportamiento actual y gestionar los rechazos mediante recuperación operativa de SKU.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Presupuesto compartido y pausa global",
+    "body": "Añadir seguimiento compartido de llamadas y pausar las operaciones de MercadoLibre AR hasta la ventana de reinicio confirmada.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "danielmenchen-hamelyn",
+    "reason": "Su historial reciente está vinculado al presupuesto compartido entre procesos, que es la parte central de la decisión técnica.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10201.md",
+    "reviewedAt": "2026-09-29T04:52:36.143Z",
+    "mainSha": "8cb1d53371a232072da01d8a7c6a66d6a0048775"
+  }
+}
