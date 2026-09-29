@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-28T07:20:40.161Z",
-  "updatedAt": "2026-09-28T06:57:51Z",
+  "generatedAt": "2026-09-29T12:39:31.015Z",
+  "updatedAt": "2026-09-29T12:12:51Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,42 +13,41 @@
       "bug",
       "app:admin",
       "triage:done",
-      "clawsweeper:needs-product-decision",
-      "P1"
+      "P1",
+      "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-09-24T17:25:37Z",
-    "updatedAt": "2026-09-28T06:57:51Z"
+    "updatedAt": "2026-09-29T12:12:51Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe `Locked: true` retirar stock como `BIN_BLOCKED`, o se limita esta corrección a `Unreachable: true` hasta confirmar la semántica operativa de `Locked`?",
-  "rationale": "La issue solicita ambos casos, pero la PR abierta solo implementa `Unreachable`; la discusión recomienda no alterar el tratamiento de `Locked` sin confirmación del contrato operativo.",
+  "question": "¿Debe `Locked: true` retirar las cubetas de la venta como `BIN_BLOCKED`, o limitar esta corrección a `Unreachable: true` hasta confirmar la semántica operativa de `Locked`?",
+  "rationale": "La issue plantea ambos estados, pero la PR abierta implementa solo `Unreachable` y la revisión vinculada advierte que ampliar el bloqueo sin validar `Locked` puede cambiar qué stock se retira.",
   "options": [
     {
-      "title": "Limitar a Unreachable",
-      "body": "Integrar la corrección de `Unreachable` y dejar `Locked` fuera hasta contar con confirmación operativa.",
+      "title": "Limitar a `Unreachable`",
+      "body": "Integrar el bloqueo por inalcanzabilidad y dejar `Locked` fuera hasta confirmar que ese estado significa que el contenido no está disponible para picking.",
       "recommended": true
     },
     {
-      "title": "Incluir Locked",
-      "body": "Ampliar el bloqueo a `Locked: true` únicamente tras confirmar que indica que el contenido no está disponible para picking.",
+      "title": "Incluir `Locked`",
+      "body": "Ampliar el bloqueo a `Locked: true` después de confirmar su contrato operativo y cubrir los casos afectados con pruebas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Limitar a Unreachable",
-    "body": "Integrar la corrección de `Unreachable` y dejar `Locked` fuera hasta contar con confirmación operativa.",
+    "title": "Limitar a `Unreachable`",
+    "body": "Integrar el bloqueo por inalcanzabilidad y dejar `Locked` fuera hasta confirmar que ese estado significa que el contenido no está disponible para picking.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Es quien aportó el análisis operativo más concreto sobre el alcance de los estados en la discusión reciente.",
-    "confidence": "medium"
+    "reason": "Su revisión de la PR vinculada identificó explícitamente `Locked` como decisión de alcance pendiente.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10086.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10086#issuecomment-5819172338",
-    "reviewedAt": "2026-09-28T07:20:40.161Z",
-    "mainSha": "7c9e3808bc4685a3c8937bf3acabf1a6cd8ed20f"
+    "reviewedAt": "2026-09-29T12:39:31.015Z",
+    "mainSha": "cb1043f8985ca25de3c879d7050308859e64b7ac"
   }
 }
