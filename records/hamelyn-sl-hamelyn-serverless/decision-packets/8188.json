@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-27T17:55:44.682Z",
-  "updatedAt": "2026-09-27T17:44:59Z",
+  "generatedAt": "2026-09-29T07:58:06.232Z",
+  "updatedAt": "2026-09-29T07:46:52Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,46 +13,45 @@
       "bug",
       "source:admin-panel",
       "app:marketplace",
-      "triage:done",
+      "triage:queued",
       "clawsweeper:needs-product-decision",
+      "P2",
       "reporter:JavierHamelyn",
       "origin:panel",
-      "mk:amazon",
-      "P2"
+      "mk:amazon"
     ],
     "createdAt": "2026-08-03T13:36:22Z",
-    "updatedAt": "2026-09-27T17:44:59Z"
+    "updatedAt": "2026-09-29T07:46:52Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe priorizarse como trabajo separado un auditor account-wide reanudable para clasificar la cohorte antes de diseñar el resolver y cualquier backfill?",
-  "rationale": "La evidencia muestra divergencias regionales y casos sin listing, mientras que resolver condición, identidad y alcance de cuenta determina qué operaciones remotas serían seguras; ese alcance no se deduce del guard de retry.",
+  "question": "¿Debe el equipo mantener el resolver de condición como una operación account-wide, pausable y con aprobación humana por caso, separada del guard de no-reintento y del trabajo de identidad regional?",
+  "rationale": "La condición canónica y los criterios para excluir regiones, listings con FBA/FNSKU o identidades dudosas determinan qué escrituras serían aceptables; el código y el mirror no resuelven esa política por sí solos.",
   "options": [
     {
-      "title": "Separar mitigación y auditoría",
-      "body": "Tratar el guard de `101078` como mitigación acotada y aprobar por separado el diseño de auditoría reanudable antes de proponer remediación.",
+      "title": "Separar guard y resolver pausable",
+      "body": "Acordar primero los gates de clasificación y preflight; mantener el backfill bloqueado hasta validar cada cohorte con evidencia remota.",
       "recommended": true
     },
     {
-      "title": "Mantener el alcance integral",
-      "body": "Dejar la issue como programa único hasta acordar auditoría, reglas de clasificación y flujo de remediación regional.",
+      "title": "Limitar el alcance al guard",
+      "body": "Evitar reintentos automáticos para `101078` y dejar la reconciliación regional como operación manual fuera de este cambio.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Separar mitigación y auditoría",
-    "body": "Tratar el guard de `101078` como mitigación acotada y aprobar por separado el diseño de auditoría reanudable antes de proponer remediación.",
+    "title": "Separar guard y resolver pausable",
+    "body": "Acordar primero los gates de clasificación y preflight; mantener el backfill bloqueado hasta validar cada cohorte con evidencia remota.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "danielmenchen-hamelyn",
-    "reason": "Su historial cubre las reglas actuales de clasificación Amazon, la parte técnica más inmediata de la decisión.",
+    "person": "JavierHamelyn",
+    "reason": "Ha presentado la evidencia operativa de Listings y los canarios que delimitan los riesgos de ampliar la reparación.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8188.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8188#issuecomment-5167219624",
-    "reviewedAt": "2026-09-27T17:55:44.682Z",
-    "mainSha": "b7ca4ccf2295720375fc765a9fe4ea56a1f68320"
+    "reviewedAt": "2026-09-29T07:58:06.232Z",
+    "mainSha": "12e69e57c892b295e78cec4d167dabe6caa63660"
   }
 }
