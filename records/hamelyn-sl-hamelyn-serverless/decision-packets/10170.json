@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-28T07:26:05.280Z",
-  "updatedAt": "2026-09-28T07:22:51Z",
+  "generatedAt": "2026-09-29T08:10:48.215Z",
+  "updatedAt": "2026-09-29T08:05:41Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -14,39 +14,38 @@
       "P2"
     ],
     "createdAt": "2026-09-28T06:24:06Z",
-    "updatedAt": "2026-09-28T07:22:51Z",
+    "updatedAt": "2026-09-29T08:05:41Z",
     "headSha": "dde1c722ad8c0c1809780af3b22b92544d9368b7"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe el report de Amazon ES fijar automáticamente a 1 los listings BUYABLE con cantidad superior, o limitarse a clasificarlos para corrección manual?",
-  "rationale": "La reparación propuesta cambia una cantidad existente en el marketplace, mientras que el issue asociado explícitamente excluye modificar cantidades comerciales; el código no puede resolver esa elección operativa.",
+  "question": "¿Debe el report de Amazon ES corregir automáticamente a 1 los listings BUYABLE con cantidad superior, o limitarse a clasificarlos para corrección manual?",
+  "rationale": "El cambio envía una modificación remota de inventario; decidir si esa corrección automática es el comportamiento operativo deseado requiere intención explícita del equipo.",
   "options": [
     {
-      "title": "Autorizar la corrección acotada",
-      "body": "Aceptar los envíos limitados a ES tras revisar las salvaguardas y el orden de despliegue del gestor y el report.",
+      "title": "Autorizar la corrección limitada",
+      "body": "Permitir los PATCH acotados a ES con las comprobaciones y la confirmación remota añadidas, una vez resueltos los conflictos.",
       "recommended": true
     },
     {
       "title": "Mantener solo la clasificación",
-      "body": "Registrar `EXCESS_QUANTITY` y dejar cualquier modificación remota de cantidad para una intervención manual.",
+      "body": "Conservar `EXCESS_QUANTITY` como señal de reconciliación y dejar la modificación de cantidades para intervención manual.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Autorizar la corrección acotada",
-    "body": "Aceptar los envíos limitados a ES tras revisar las salvaguardas y el orden de despliegue del gestor y el report.",
+    "title": "Autorizar la corrección limitada",
+    "body": "Permitir los PATCH acotados a ES con las comprobaciones y la confirmación remota añadidas, una vez resueltos los conflictos.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "HamelynDev",
-    "reason": "La revisión anterior ya canalizó esta pregunta al equipo y señaló a HamelynDev como responsable probable de la decisión.",
-    "confidence": "medium"
+    "person": "MiguelHamelyn",
+    "reason": "Es el revisor que aprobó el PR y la señal de revisión más directa disponible para encaminar la decisión; no consta que haya expresado aún la elección de producto.",
+    "confidence": "low"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10170.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10170#issuecomment-5865337498",
-    "reviewedAt": "2026-09-28T07:26:05.280Z",
-    "mainSha": "7c9e3808bc4685a3c8937bf3acabf1a6cd8ed20f"
+    "reviewedAt": "2026-09-29T08:10:48.215Z",
+    "mainSha": "a5cb040f41ebc270f3bed59eae5d9aae5c458aca"
   }
 }
