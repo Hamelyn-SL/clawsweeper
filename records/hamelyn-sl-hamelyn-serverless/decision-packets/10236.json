@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-29T09:13:17.927Z",
-  "updatedAt": "2026-09-29T09:07:08Z",
+  "generatedAt": "2026-09-30T09:57:31.981Z",
+  "updatedAt": "2026-09-29T10:15:16Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,43 +14,42 @@
       "app:admin",
       "feature",
       "reporter:rubenmorueco",
-      "triage:queued",
-      "P2",
-      "clawsweeper:needs-product-decision"
+      "triage:needs-info",
+      "clawsweeper:needs-product-decision",
+      "P2"
     ],
     "createdAt": "2026-09-29T09:05:46Z",
-    "updatedAt": "2026-09-29T09:07:08Z"
+    "updatedAt": "2026-09-29T10:15:16Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué casos B2B, además de Mercado Libre, deben activar la etiqueta «Delivery Address» y cómo se identifica que llevan importador, especialmente para DECO?",
-  "rationale": "El renderer puede condicionar la etiqueta al importador, pero la issue no define qué datos o pedidos B2B deben incluirlo; esa elección determina el alcance correcto y evita cambiar facturas ajenas a la petición.",
+  "question": "¿Qué facturas B2B —incluida DECO— deben llevar importador y cuáles son, para cada caso, su razón social, identificación fiscal y dirección?",
+  "rationale": "La regla actual no define importadores B2B y el correo del envío Correos no determina los datos del importador en la factura; elegirlos sin confirmación cambiaría contenido fiscal/comercial.",
   "options": [
     {
-      "title": "Limitarlo a facturas con importador existente",
-      "body": "Cambiar la etiqueta solo cuando `invoice.importer` ya esté presente y dejar para otro trabajo la incorporación de importadores B2B.",
+      "title": "Definir los importadores B2B",
+      "body": "Confirmar los casos aplicables y los datos legales de cada importador para ampliar después la regla y sus pruebas.",
       "recommended": true
     },
     {
-      "title": "Incluir B2B/DECO en este alcance",
-      "body": "Definir ahora los casos B2B/DECO y los datos de importador necesarios antes de implementar tanto su elegibilidad como la nueva etiqueta.",
+      "title": "Limitar el alcance a MercadoLibre",
+      "body": "Dejar DECO y otros casos B2B fuera de este cambio hasta que exista una definición comercial.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Limitarlo a facturas con importador existente",
-    "body": "Cambiar la etiqueta solo cuando `invoice.importer` ya esté presente y dejar para otro trabajo la incorporación de importadores B2B.",
+    "title": "Definir los importadores B2B",
+    "body": "Confirmar los casos aplicables y los datos legales de cada importador para ampliar después la regla y sus pruebas.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Está asignado a la issue y aparece en el historial reciente del renderizado de facturas.",
-    "confidence": "high"
+    "reason": "Figura asignado a la issue y ha preparado la PR vinculada del cambio de título; la confirmación de los datos comerciales puede requerir coordinación con quien reportó el caso.",
+    "confidence": "low"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10236.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10236#issuecomment-5887235639",
-    "reviewedAt": "2026-09-29T09:13:17.927Z",
-    "mainSha": "06044b618d4da5888c7adb84b2cdda4d2f2f2039"
+    "reviewedAt": "2026-09-30T09:57:31.981Z",
+    "mainSha": "8a42f89ded984174cc5220724f4c69fdc2b079dc"
   }
 }
