@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-30T10:58:01.249Z",
+  "updatedAt": "2026-09-30T10:35:19Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10221,
+    "title": "ci: sign the windows cli binary with azure artifact signing",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10221",
+    "state": "open",
+    "labels": [
+      "size/M",
+      "P1"
+    ],
+    "createdAt": "2026-09-29T06:58:24Z",
+    "updatedAt": "2026-09-30T10:35:19Z",
+    "headSha": "212b3c2eb7ffc972e6b6620bb368ac8c70d3e5b5"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Aprueba el equipo habilitar Azure Artifact Signing para los releases del CLI de Windows, incluida la configuración de Azure y su coste, o prefiere evaluar otro proveedor antes de activar la firma?",
+  "rationale": "La decisión pendiente afecta al proveedor y al coste operativo; la propuesta técnica y la revisión de CI no determinan por sí solas la dirección que el equipo quiere adoptar.",
+  "options": [
+    {
+      "title": "Aprobar Azure Artifact Signing",
+      "body": "Autorizar su configuración y continuar con este PR, verificando después la firma en un release publicado.",
+      "recommended": true
+    },
+    {
+      "title": "Evaluar otro proveedor",
+      "body": "Mantener abierta la issue y acordar un proveedor alternativo antes de activar la firma.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar Azure Artifact Signing",
+    "body": "Autorizar su configuración y continuar con este PR, verificando después la firma en un release publicado.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "La issue relacionada le asigna la coordinación de la decisión y la comprobación del release firmado.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10221.md",
+    "reviewedAt": "2026-09-30T10:58:01.249Z",
+    "mainSha": "0a1efa3485443d9111ce50a02be8c2ff1a5d1c8e"
+  }
+}
