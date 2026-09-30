@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-30T15:03:12.765Z",
+  "updatedAt": "2026-09-30T14:07:35Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10295,
+    "title": "feat: add supply checkout state and step orchestration",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10295",
+    "state": "open",
+    "labels": [
+      "size/XXL"
+    ],
+    "createdAt": "2026-09-30T14:00:13Z",
+    "updatedAt": "2026-09-30T14:07:35Z",
+    "headSha": "7cf4680817f05754561e1b6b4d21216998564921"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "Tras el login iniciado desde checkout, ¿debe restaurarse el paso solicitado solo cuando sesión, carrito y datos sigan siendo válidos, o debe volver al carrito para reanudar el flujo?",
+  "rationale": "La issue canónica registra esta decisión como pendiente; la PR implementa la restauración en URL, pero la opción de producto aún no tiene confirmación humana.",
+  "options": [
+    {
+      "title": "Restauración validada con salida al carrito",
+      "body": "Restaurar el paso si sus datos y el carrito siguen siendo válidos, y volver al carrito con una salida visible cuando la validación falle.",
+      "recommended": true
+    },
+    {
+      "title": "Restaurar únicamente el primer paso incompleto",
+      "body": "Mantener al usuario dentro del checkout y redirigirlo al primer paso pendiente sin volver automáticamente al carrito.",
+      "recommended": false
+    },
+    {
+      "title": "Volver siempre al carrito",
+      "body": "Usar el fallback legado tras autenticación y pedir al usuario que reanude el checkout manualmente.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Restauración validada con salida al carrito",
+    "body": "Restaurar el paso si sus datos y el carrito siguen siendo válidos, y volver al carrito con una salida visible cuando la validación falle.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Es el asignado de la issue y ha contribuido al checkout legado de Supply.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10295.md",
+    "reviewedAt": "2026-09-30T15:03:12.765Z",
+    "mainSha": "dee8167221595d403debbcf42dac485699e96fc0"
+  }
+}

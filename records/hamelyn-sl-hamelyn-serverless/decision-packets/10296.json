@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-30T14:59:50.786Z",
+  "updatedAt": "2026-09-30T14:57:51Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10296,
+    "title": "EC- Añadir nombre y dirección a los datos de usuario de purchase",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10296",
+    "state": "open",
+    "labels": [
+      "source:admin-panel",
+      "app:ecommerce",
+      "reporter:jesus",
+      "feature",
+      "triage:running",
+      "P2"
+    ],
+    "createdAt": "2026-09-30T14:11:01Z",
+    "updatedAt": "2026-09-30T14:57:51Z"
+  },
+  "lane": "security_boundary",
+  "priority": "P2",
+  "question": "¿Está aprobado enviar a Google Ads nombre, apellidos y dirección de compra, incluida la dirección sin cifrar, para Enhanced Conversions?",
+  "rationale": "La implementación transmite nuevos datos personales a un tercero y la issue no acredita que ese uso esté cubierto por el consentimiento y la política de datos vigentes.",
+  "options": [
+    {
+      "title": "Confirmar el envío solicitado",
+      "body": "Autorizar estos campos para Google Ads y continuar con el mapeo desde los datos del checkout.",
+      "recommended": false
+    },
+    {
+      "title": "Limitar los datos compartidos",
+      "body": "Definir qué campos se pueden enviar o excluir dirección hasta confirmar su cobertura de privacidad.",
+      "recommended": true
+    },
+    {
+      "title": "No ampliar el envío",
+      "body": "Mantener únicamente los identificadores actuales hasta que exista una autorización de producto y privacidad.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Limitar los datos compartidos",
+    "body": "Definir qué campos se pueden enviar o excluir dirección hasta confirmar su cobertura de privacidad.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es la persona mejor identificada en el historial local del componente que emite el evento; la revisión no identifica un responsable de privacidad específico.",
+    "confidence": "low"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10296.md",
+    "reviewedAt": "2026-09-30T14:59:50.786Z",
+    "mainSha": "dee8167221595d403debbcf42dac485699e96fc0"
+  }
+}
