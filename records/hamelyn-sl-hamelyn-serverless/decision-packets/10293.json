@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-30T13:57:11.845Z",
+  "updatedAt": "2026-09-30T13:51:50Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10293,
+    "title": "Guardar el clic de anuncio (gclid y utm) en cada pedido",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10293",
+    "state": "open",
+    "labels": [
+      "source:admin-panel",
+      "app:ecommerce",
+      "reporter:jesus",
+      "feature",
+      "triage:queued",
+      "P1"
+    ],
+    "createdAt": "2026-09-30T13:51:36Z",
+    "updatedAt": "2026-09-30T13:51:50Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué semántica y límites de privacidad deben regir la atribución almacenada por pedido, especialmente para los múltiples toques, las cookies y los identificadores de cliente/sesión?",
+  "rationale": "El alcance enumera tanto datos de primer contacto como una lista de toques y cookies de varios proveedores, pero no fija precedencia, retención ni condiciones de captura; esas decisiones afectan al significado del dato y no se deducen del código existente.",
+  "options": [
+    {
+      "title": "Definir el contrato antes de implementar",
+      "body": "Acordar precedencia y retención de los toques y qué identificadores/cookies se pueden guardar, y después persistir el contrato aprobado.",
+      "recommended": true
+    },
+    {
+      "title": "Guardar solo la atribución ya capturada",
+      "body": "Persistir UTM e identificadores disponibles en el snapshot actual, posponiendo cookies y datos GA4 adicionales.",
+      "recommended": false
+    },
+    {
+      "title": "Persistir atribución multitoque completa",
+      "body": "Mantener el historial de toques y los identificadores GA4/cookies solicitados, con reglas explícitas de consentimiento y retención.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Definir el contrato antes de implementar",
+    "body": "Acordar precedencia y retención de los toques y qué identificadores/cookies se pueden guardar, y después persistir el contrato aprobado.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "La utilidad de atribución actual aparece en su historial reciente; no hay evidencia suficiente para atribuirle autoridad de producto.",
+    "confidence": "low"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10293.md",
+    "reviewedAt": "2026-09-30T13:57:11.845Z",
+    "mainSha": "dee8167221595d403debbcf42dac485699e96fc0"
+  }
+}
