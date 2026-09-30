@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-30T13:14:33.495Z",
+  "updatedAt": "2026-09-30T12:31:56Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10286,
+    "title": "feat: add scraper platform service and its sources",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10286",
+    "state": "open",
+    "labels": [
+      "size/XXL"
+    ],
+    "createdAt": "2026-09-30T12:31:44Z",
+    "updatedAt": "2026-09-30T12:31:56Z",
+    "headSha": "c78f26af7af1663db07f807514645da3e4d96df0"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe este PR limitarse a versionar el servicio y exigir que las tablas de BigQuery ya existan, sin crearlas durante `setup`?",
+  "rationale": "La issue excluye la creación de tablas en esta entrega y la política del repositorio requiere autorización expresa para crear estructuras; el código actual incorpora esa creación al flujo de preparación.",
+  "options": [
+    {
+      "title": "Exigir tablas existentes",
+      "body": "Mantener el alcance pedido y cambiar `setup` para validar las tablas sin crearlas.",
+      "recommended": true
+    },
+    {
+      "title": "Autorizar la creación en setup",
+      "body": "Confirmar expresamente que este PR puede crear las tablas declaradas cuando falten.",
+      "recommended": false
+    },
+    {
+      "title": "Reducir el alcance",
+      "body": "Separar el motor y las fuentes de las partes cuyo alcance aún no está aprobado.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Exigir tablas existentes",
+    "body": "Mantener el alcance pedido y cambiar `setup` para validar las tablas sin crearlas.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "El triage previo de la issue lo identificó como candidato para la decisión de alcance.",
+    "confidence": "low"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10286.md",
+    "reviewedAt": "2026-09-30T13:14:33.495Z",
+    "mainSha": "21aca14c50adeee8a509268059f956801b5d0453"
+  }
+}
