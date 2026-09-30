@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-30T09:02:46.879Z",
+  "generatedAt": "2026-09-30T09:08:47.026Z",
   "updatedAt": "2026-09-30T08:22:14Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -22,34 +22,33 @@
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué criterio operativo debe considerarse capacidad suficiente para Feltrinelli: sostener una ventana de pico con drenaje neto y antigüedad bajo umbral, o reservar cuota OF24 específica para retiradas frente a altas y precios?",
-  "rationale": "La cuota actual es compartida entre operaciones por tienda y cambiar su reparto alteraría el comportamiento operativo; los datos disponibles muestran denegaciones recurrentes, pero no acreditan todavía la medida ni la política deseadas.",
+  "question": "¿Debe el equipo reservar o priorizar capacidad OF24 para las retiradas de Feltrinelli frente a altas y cambios de precio, o basta con mantener el presupuesto compartido y recopilar más mediciones?",
+  "rationale": "La configuración y el limitador actuales ya funcionan según la evidencia aportada; separar o priorizar la cuota cambia el reparto operativo y no se deduce del código ni de la medición disponible.",
   "options": [
     {
-      "title": "Validar capacidad con métricas",
-      "body": "Medir entradas únicas, retiradas confirmadas, edad de cola y consumo por fase durante un pico antes de proponer cambios de código o presupuesto.",
+      "title": "Medir antes de cambiar",
+      "body": "Mantener el presupuesto compartido y aportar una ventana de demanda con entradas únicas, retiradas confirmadas y denegaciones OF24.",
       "recommended": true
     },
     {
-      "title": "Reservar cuota para retiradas",
-      "body": "Definir y aprobar un reparto explícito de slots OF24 para evitar que altas y precios consuman toda la capacidad disponible para retirar stock vendido.",
+      "title": "Priorizar retiradas",
+      "body": "Definir una reserva o prioridad de cuota para retiradas y validar su efecto sin degradar altas ni cambios de precio.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Validar capacidad con métricas",
-    "body": "Medir entradas únicas, retiradas confirmadas, edad de cola y consumo por fase durante un pico antes de proponer cambios de código o presupuesto.",
+    "title": "Medir antes de cambiar",
+    "body": "Mantener el presupuesto compartido y aportar una ventana de demanda con entradas únicas, retiradas confirmadas y denegaciones OF24.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Su historial local está ligado a la implementación del límite OF24 por tienda, el área técnica más cercana a decidir cómo instrumentar o repartir esa cuota.",
+    "reason": "Su historial está directamente vinculado al límite OF24 por tienda y a la documentación de su uso.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9703.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9703#issuecomment-5740830359",
-    "reviewedAt": "2026-09-30T09:02:46.879Z",
-    "mainSha": "b280e5a0a961d92ac217c62d052e0de29deb93a6"
+    "reviewedAt": "2026-09-30T09:08:47.026Z",
+    "mainSha": "8a42f89ded984174cc5220724f4c69fdc2b079dc"
   }
 }

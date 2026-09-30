@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-30T09:03:00.768Z",
+  "generatedAt": "2026-09-30T09:10:16.441Z",
   "updatedAt": "2026-09-30T08:22:27Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -15,43 +15,47 @@
       "app:infrastructure",
       "triage:needs-info",
       "clawsweeper:needs-product-decision",
+      "P2",
       "reporter:danielmenchen-hamelyn",
-      "origin:panel",
-      "P2"
+      "origin:panel"
     ],
     "createdAt": "2026-07-22T06:41:29Z",
     "updatedAt": "2026-09-30T08:22:27Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué intervalo de frescura debe aplicarse a la configuración warm y cómo debe conservar Analytics Supply el enriquecimiento `mongo_user_id` sin abrir Mongo en cada petición?",
-  "rationale": "El intervalo afecta a cuándo se propagan cambios de configuración, y retirar Mongo de Analytics exige escoger una alternativa al enriquecimiento actual; el hilo no registra una decisión confirmada.",
+  "question": "¿Se mantiene el requisito de refresco warm con frescura acotada —y qué intervalo máximo se acepta—, y cómo debe conservar Analytics Supply el enriquecimiento de usuarios autenticados sin abrir Mongo en cada petición?",
+  "rationale": "El intervalo y el destino del enriquecimiento determinan el comportamiento del producto; el código y la evidencia disponible no permiten inferir esos contratos con seguridad.",
   "options": [
     {
-      "title": "TTL y enriquecimiento diferido",
-      "body": "Acordar un TTL con el equipo y mover el enriquecimiento de usuario fuera de la petición, manteniendo eventos autenticados correctamente identificados.",
+      "title": "Frescura acotada y enriquecimiento desacoplado",
+      "body": "Acordar un TTL, mantener los refrescos explícitos de MercadoLibre y mover fuera de la inicialización de la ruta el enriquecimiento que requiera Mongo.",
       "recommended": true
     },
     {
-      "title": "Frescura solo por refresco explícito",
-      "body": "Mantener la configuración warm hasta que un flujo explícito solicite refrescarla y conservar el enriquecimiento Mongo síncrono en Analytics.",
+      "title": "Configuración fija por instancia",
+      "body": "Aceptar que la configuración no se refresque automáticamente en warm y mantener únicamente los refrescos explícitos, dejando el enriquecimiento actual de Analytics Supply.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener Analytics ligado a Mongo",
+      "body": "Resolver primero cómo conservar el enriquecimiento en el endpoint y posponer la retirada de su inicialización Mongo.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "TTL y enriquecimiento diferido",
-    "body": "Acordar un TTL con el equipo y mover el enriquecimiento de usuario fuera de la petición, manteniendo eventos autenticados correctamente identificados.",
+    "title": "Frescura acotada y enriquecimiento desacoplado",
+    "body": "Acordar un TTL, mantener los refrescos explícitos de MercadoLibre y mover fuera de la inicialización de la ruta el enriquecimiento que requiera Mongo.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Es quien dejó explícito el matiz de frescura pendiente y el requisito de respetar los refrescos de MercadoLibre en la discusión más reciente.",
+    "person": "danielmenchen-hamelyn",
+    "reason": "Está asignado a la issue y presentó la propuesta técnica enlazada; puede concretar el alcance con el equipo.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7862.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7862#issuecomment-5043656384",
-    "reviewedAt": "2026-09-30T09:03:00.768Z",
-    "mainSha": "b280e5a0a961d92ac217c62d052e0de29deb93a6"
+    "reviewedAt": "2026-09-30T09:10:16.441Z",
+    "mainSha": "8a42f89ded984174cc5220724f4c69fdc2b079dc"
   }
 }
