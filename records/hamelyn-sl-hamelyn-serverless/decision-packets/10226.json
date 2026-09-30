@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-30T08:35:00.169Z",
+  "updatedAt": "2026-09-29T09:11:55Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10226,
+    "title": "Agrupación de pedidos múltiples Meli Argentina",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10226",
+    "state": "open",
+    "labels": [
+      "source:admin-panel",
+      "app:ecommerce",
+      "feature",
+      "reporter:rubenmorueco",
+      "triage:done",
+      "P2"
+    ],
+    "createdAt": "2026-09-29T08:00:19Z",
+    "updatedAt": "2026-09-29T09:11:55Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe limitarse la nueva clave de consolidación a MercadoLibre Argentina y qué regla debe aplicarse cuando el nombre del destinatario esté vacío?",
+  "rationale": "El reporte y el triage proponen un cambio específico de canal que modifica una regla compartida de fulfillment; la política para nombres vacíos y grupos ya persistidos no queda establecida por el contrato actual.",
+  "options": [
+    {
+      "title": "Limitar a Meli Argentina",
+      "body": "Combinar dirección y nombre normalizado solo para MercadoLibre Argentina y excluir de la consolidación los pedidos sin nombre utilizable.",
+      "recommended": true
+    },
+    {
+      "title": "Extender a todos los canales",
+      "body": "Aplicar la nueva clave de destinatario a todos los pedidos elegibles, aceptando el cambio más amplio de comportamiento.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener agrupación actual",
+      "body": "No cambiar la clave hasta confirmar con el carrier que la mezcla causa el fallo de etiqueta.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Limitar a Meli Argentina",
+    "body": "Combinar dirección y nombre normalizado solo para MercadoLibre Argentina y excluir de la consolidación los pedidos sin nombre utilizable.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Su historial reciente en el servicio incluye la incorporación del sitio MercadoLibre Argentina; no se identifica en el checkout una señal más directa de propiedad funcional.",
+    "confidence": "low"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10226.md",
+    "reviewedAt": "2026-09-30T08:35:00.169Z",
+    "mainSha": "736cec8d6ee735e181bb2b64b2f71867e9549775"
+  }
+}
