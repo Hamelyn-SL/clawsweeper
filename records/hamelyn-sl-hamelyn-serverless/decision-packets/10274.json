@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-30T10:49:34.303Z",
+  "updatedAt": "2026-09-30T10:38:53Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10274,
+    "title": "Bloquear la dirección de un usuario para que no aplique cupones",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10274",
+    "state": "open",
+    "labels": [
+      "source:admin-panel",
+      "app:ecommerce",
+      "reporter:marta",
+      "feature",
+      "triage:done",
+      "P1"
+    ],
+    "createdAt": "2026-09-30T10:13:08Z",
+    "updatedAt": "2026-09-30T10:38:53Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe bloquearse la aplicación de cupones al coincidir país, código postal, calle y número normalizados, y mantenerse permitido el checkout sin cupón?",
+  "rationale": "La comparación aproximada de direcciones puede afectar a clientes distintos; la política de coincidencia y el alcance del bloqueo requieren una decisión de ecommerce.",
+  "options": [
+    {
+      "title": "Regla acotada por domicilio",
+      "body": "Bloquear solo la aplicación de cupones al coincidir país, código postal, calle y número, con controles para evitar falsos positivos.",
+      "recommended": true
+    },
+    {
+      "title": "Bloqueo más amplio",
+      "body": "Definir otros campos o acciones que deban bloquearse además de los cupones antes de implementar la restricción.",
+      "recommended": false
+    },
+    {
+      "title": "No bloquear por domicilio",
+      "body": "Mantener las restricciones actuales por usuario y tratar este patrón mediante otra política de promociones.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Regla acotada por domicilio",
+    "body": "Bloquear solo la aplicación de cupones al coincidir país, código postal, calle y número, con controles para evitar falsos positivos.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Su historial reciente está ligado al contrato y la lógica de cupones; es el candidato mejor respaldado para valorar el impacto de la regla en esa área.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10274.md",
+    "reviewedAt": "2026-09-30T10:49:34.303Z",
+    "mainSha": "8a42f89ded984174cc5220724f4c69fdc2b079dc"
+  }
+}
