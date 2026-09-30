@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-30T11:55:38.308Z",
+  "updatedAt": "2026-09-30T11:50:07Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10280,
+    "title": "fix: keep amazon compliance offers withdrawable after a sale",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10280",
+    "state": "open",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-09-30T11:48:53Z",
+    "updatedAt": "2026-09-30T11:50:07Z",
+    "headSha": "7cf125ca239fe2674ff9b678ed9a964a9386e43d"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Se aprueba que los errores de cumplimiento mantengan la confirmación abierta hasta el horizonte y que los anuncios existentes de stocks vendidos permitan completar esa confirmación para pasar a retirada?",
+  "rationale": "La issue enlazada está marcada con `clawsweeper:needs-product-decision` y plantea esta elección de comportamiento; la revisión técnica no puede sustituir la decisión del equipo sobre el tratamiento de cumplimiento.",
+  "options": [
+    {
+      "title": "Aprobar el comportamiento propuesto",
+      "body": "Mantener en curso los errores de cumplimiento antes del horizonte y permitir la retirada posterior de anuncios existentes ligados a stock vendido.",
+      "recommended": true
+    },
+    {
+      "title": "Separar la decisión de confirmación",
+      "body": "Resolver primero la retirada de ventas y conservar sin cambios la clasificación y el horizonte de los errores de cumplimiento.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar el comportamiento propuesto",
+    "body": "Mantener en curso los errores de cumplimiento antes del horizonte y permitir la retirada posterior de anuncios existentes ligados a stock vendido.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Su historial de cambios recientes en la confirmación Amazon lo convierte en el candidato mejor conectado para aclarar el comportamiento; la decisión corresponde al equipo.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10280.md",
+    "reviewedAt": "2026-09-30T11:55:38.308Z",
+    "mainSha": "0a1efa3485443d9111ce50a02be8c2ff1a5d1c8e"
+  }
+}

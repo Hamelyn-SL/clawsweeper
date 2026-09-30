@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-30T11:55:27.270Z",
+  "updatedAt": "2026-09-30T11:40:25Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10279,
+    "title": "Plataforma de scrapers: versionar el servicio y sus fuentes en el repo",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10279",
+    "state": "open",
+    "labels": [
+      "app:infrastructure",
+      "reporter:pablo",
+      "feature",
+      "triage:queued",
+      "P2"
+    ],
+    "createdAt": "2026-09-30T11:39:59Z",
+    "updatedAt": "2026-09-30T11:40:25Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se aprueba incorporar al monorepo la plataforma completa de scrapers —motor, catálogo, panel y las cinco fuentes— como un nuevo servicio de data-platform, manteniendo fuera el despliegue de la VM y la creación de tablas?",
+  "rationale": "La petición propone una capacidad amplia con componentes operativos nuevos. El repositorio ofrece un patrón de servicio Cloud Run, pero no determina si este alcance completo debe formar parte del monorepo ni cómo se delimita su responsabilidad.",
+  "options": [
+    {
+      "title": "Aprobar el alcance completo",
+      "body": "Mantener la issue como iniciativa y concretar una entrega que versiona motor, catálogo, panel y fuentes sin desplegar la VM ni crear tablas.",
+      "recommended": true
+    },
+    {
+      "title": "Reducir el alcance inicial",
+      "body": "Limitar la primera entrega a versionar motor y fuentes, y decidir aparte el catálogo, el panel y las herramientas de alta.",
+      "recommended": false
+    },
+    {
+      "title": "No incorporarlo a data-platform",
+      "body": "Dejar el servicio fuera del monorepo y cerrar o redirigir la propuesta según el destino acordado.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar el alcance completo",
+    "body": "Mantener la issue como iniciativa y concretar una entrega que versiona motor, catálogo, panel y fuentes sin desplegar la VM ni crear tablas.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Su historial reciente en data-platform lo sitúa cerca de las convenciones y límites de los servicios existentes.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10279.md",
+    "reviewedAt": "2026-09-30T11:55:27.270Z",
+    "mainSha": "0a1efa3485443d9111ce50a02be8c2ff1a5d1c8e"
+  }
+}
