@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-30T15:28:45.962Z",
+  "updatedAt": "2026-09-30T15:16:44Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10302,
+    "title": "feat: add purchase name and address conversion data",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10302",
+    "state": "open",
+    "labels": [
+      "size/M"
+    ],
+    "createdAt": "2026-09-30T15:10:45Z",
+    "updatedAt": "2026-09-30T15:16:44Z",
+    "headSha": "a0e8705450f0926cff800201588d8385d5fbc65f"
+  },
+  "lane": "security_boundary",
+  "priority": "P2",
+  "question": "¿Se autoriza enviar a Google Ads los hashes de nombre y los campos de dirección de `purchase` y, en caso afirmativo, qué aviso y condición de consentimiento deben aplicarse?",
+  "rationale": "La decisión afecta a la divulgación de datos personales y no puede deducirse de las pruebas técnicas ni resolverse solo desde el código; la revisión vinculada ya señaló la tensión con la política publicada.",
+  "options": [
+    {
+      "title": "Aprobar con condiciones",
+      "body": "Confirmar el propósito y los controles de aviso y consentimiento, y limitar el envío a los campos aprobados.",
+      "recommended": true
+    },
+    {
+      "title": "Definir primero la política",
+      "body": "Aclarar el aviso y el flujo de consentimiento antes de decidir qué datos se envían.",
+      "recommended": false
+    },
+    {
+      "title": "Excluir la dirección",
+      "body": "Descartar los campos de dirección y mantener el evento actual hasta una decisión posterior sobre esas señales.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar con condiciones",
+    "body": "Confirmar el propósito y los controles de aviso y consentimiento, y limitar el envío a los campos aprobados.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su historial conecta con la implementación actual del evento purchase; es el candidato más próximo disponible para encaminar la decisión técnica, aunque la decisión de tratamiento puede requerir coordinación adicional.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10302.md",
+    "reviewedAt": "2026-09-30T15:28:45.962Z",
+    "mainSha": "dee8167221595d403debbcf42dac485699e96fc0"
+  }
+}
