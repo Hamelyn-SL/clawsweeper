@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-30T01:11:40.929Z",
+  "updatedAt": "2026-09-28T23:46:55Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10199,
+    "title": "Marketplace: amazonFR provider http 429",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10199",
+    "state": "open",
+    "labels": [
+      "codex",
+      "bug",
+      "app:marketplace",
+      "triage:done",
+      "P2",
+      "marketplace-crons"
+    ],
+    "createdAt": "2026-09-28T23:30:43Z",
+    "updatedAt": "2026-09-28T23:46:55Z"
+  },
+  "lane": "manual_review",
+  "priority": "P2",
+  "question": "¿Qué límite efectivo de sondeo y mecanismo compartido debemos adoptar para `getFeedDocument` entre regiones e invocaciones?",
+  "rationale": "La evidencia confirma errores operativos, pero no proporciona las cabeceras de cuota ni el estado vivo de los batches; esos datos determinan el presupuesto y el alcance seguros del control.",
+  "options": [
+    {
+      "title": "Confirmar cuota y estado en producción",
+      "body": "Verificar los batches afectados y las cabeceras de Amazon antes de fijar el presupuesto compartido.",
+      "recommended": true
+    },
+    {
+      "title": "Reutilizar el patrón de cuota compartida",
+      "body": "Extender el control coordinado existente al sondeo solo tras confirmar que el límite y la clave de cuota corresponden a este endpoint.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener el seguimiento sin cambio de ritmo",
+      "body": "Conservar la lógica actual mientras se recopilan datos adicionales de cuota y resolución.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Confirmar cuota y estado en producción",
+    "body": "Verificar los batches afectados y las cabeceras de Amazon antes de fijar el presupuesto compartido.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Su historial local incluye la configuración actual de límites de Amazon y cambios recientes en el flujo de confirmación.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10199.md",
+    "reviewedAt": "2026-09-30T01:11:40.929Z",
+    "mainSha": "e460a6012b6baced9ee128e0f9bf0ff30163e871"
+  }
+}
