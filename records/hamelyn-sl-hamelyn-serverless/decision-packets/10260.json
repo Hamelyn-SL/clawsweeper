@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-30T07:11:34.756Z",
+  "generatedAt": "2026-09-30T07:17:33.020Z",
   "updatedAt": "2026-09-30T07:06:30Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -14,47 +14,45 @@
       "app:infrastructure",
       "reporter:miguel",
       "triage:queued",
-      "P2",
-      "clawsweeper:needs-product-decision"
+      "P2"
     ],
     "createdAt": "2026-09-30T07:06:16Z",
     "updatedAt": "2026-09-30T07:06:30Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué vía debe priorizarse para resolver el OOM de Vercel: reutilizar una validación o artefacto equivalente de CI, acotar el grafo de core por aplicación, o instrumentar primero las fases para decidir con datos?",
-  "rationale": "Las alternativas cambian el límite entre CI y despliegues, y no hay mediciones que permitan elegir con seguridad una sin afectar la cobertura de tipos o la configuración del build.",
+  "question": "¿Qué vía debe priorizarse para investigar y resolver el OOM de Vercel: medir primero las fases, evaluar una validación o artefacto verificable de CI, o acotar el grafo de core por aplicación?",
+  "rationale": "La evidencia confirma el fallo, pero no identifica el componente dominante ni demuestra que omitir el chequeo de Next sea seguro; elegir una intervención requiere acordar el equilibrio entre coste de build, cobertura de tipos y complejidad operativa.",
   "options": [
     {
       "title": "Medir primero",
-      "body": "Añadir evidencia comparable de memoria, duración y archivos por fase antes de escoger una intervención.",
+      "body": "Añadir evidencia comparable de duración, memoria y archivos por fase antes de modificar la validación de despliegue.",
       "recommended": true
     },
     {
       "title": "Evaluar reutilización de CI",
-      "body": "Diseñar una transferencia verificable por SHA, versiones y tipos generados, manteniendo el chequeo como condición de despliegue.",
+      "body": "Diseñar una transferencia vinculada a SHA, versiones y tipos generados, manteniendo una validación equivalente como condición del despliegue.",
       "recommended": false
     },
     {
       "title": "Acotar core por aplicación",
-      "body": "Medir imports transitivos y reducir el grafo solo si la validación completa de core continúa cubierta en CI.",
+      "body": "Medir los imports transitivos y reducir el grafo solo si CI sigue cubriendo el chequeo completo de core.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Medir primero",
-    "body": "Añadir evidencia comparable de memoria, duración y archivos por fase antes de escoger una intervención.",
+    "body": "Añadir evidencia comparable de duración, memoria y archivos por fase antes de modificar la validación de despliegue.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "Su trabajo reciente en la separación del typecheck de CI le conecta con la decisión sobre límites entre validación y builds.",
-    "confidence": "medium"
+    "person": "banosdavidhamelyn",
+    "reason": "Sus cambios recientes abordaron la presión de memoria y el typecheck de Admin, el área más directamente afectada.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10260.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10260#issuecomment-5906110886",
-    "reviewedAt": "2026-09-30T07:11:34.756Z",
+    "reviewedAt": "2026-09-30T07:17:33.020Z",
     "mainSha": "8c4b24e5bb3a042893783bf8b08ee0840356528a"
   }
 }
