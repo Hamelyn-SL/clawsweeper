@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-29T07:15:25.769Z",
-  "updatedAt": "2026-09-29T06:34:16Z",
+  "generatedAt": "2026-09-30T07:23:11.232Z",
+  "updatedAt": "2026-09-29T09:15:09Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,44 +12,43 @@
     "labels": [
       "bug",
       "app:infrastructure",
-      "triage:queued",
+      "triage:done",
+      "P1",
       "clawsweeper:needs-product-decision",
-      "reporter:jorgecano",
-      "P1"
+      "reporter:jorgecano"
     ],
     "createdAt": "2026-09-29T06:34:03Z",
-    "updatedAt": "2026-09-29T06:34:16Z"
+    "updatedAt": "2026-09-29T09:15:09Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Se aprueba habilitar Azure Artifact Signing para los releases del CLI, incluida la configuración y el coste del servicio descritos en el PR?",
-  "rationale": "La solución propuesta requiere contratar y configurar un servicio de firma, validar la identidad de la organización y decidir cómo se comportan los releases mientras esas credenciales no estén habilitadas.",
+  "question": "¿Aprueba el equipo habilitar Azure Artifact Signing para los releases de Windows del CLI, incluida su configuración y coste, o prefiere evaluar otro proveedor antes de activar la firma?",
+  "rationale": "La propuesta introduce una dependencia de servicio y coste recurrente; la PR abierta no puede resolver esa decisión ni demostrar un release firmado hasta que se configure el servicio.",
   "options": [
     {
       "title": "Aprobar Azure Artifact Signing",
-      "body": "Autorizar la configuración del servicio y revisar el PR para que los releases Windows puedan publicarse firmados.",
+      "body": "Autorizar la configuración del servicio y continuar con la PR, verificando la firma en un release publicado.",
       "recommended": true
     },
     {
-      "title": "Pausar la decisión de proveedor",
-      "body": "Mantener la issue abierta mientras se evalúa otro certificado o servicio de firma antes de habilitar el cambio.",
+      "title": "Evaluar otra opción de firma",
+      "body": "Mantener la issue abierta mientras se acuerda un proveedor alternativo y se adapta la solución.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Aprobar Azure Artifact Signing",
-    "body": "Autorizar la configuración del servicio y revisar el PR para que los releases Windows puedan publicarse firmados.",
+    "body": "Autorizar la configuración del servicio y continuar con la PR, verificando la firma en un release publicado.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Está asignado a la issue y es quien mantiene la propuesta concreta del flujo de firma.",
+    "reason": "Tiene asignada la issue y propuso la implementación vinculada.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10213.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10213#issuecomment-5885552032",
-    "reviewedAt": "2026-09-29T07:15:25.769Z",
-    "mainSha": "74c48f644c52ac7e8cc8a2eb95221aeffec5ac13"
+    "reviewedAt": "2026-09-30T07:23:11.232Z",
+    "mainSha": "8c4b24e5bb3a042893783bf8b08ee0840356528a"
   }
 }
