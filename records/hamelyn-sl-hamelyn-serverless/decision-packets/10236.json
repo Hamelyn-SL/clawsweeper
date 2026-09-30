@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-30T09:57:31.981Z",
-  "updatedAt": "2026-09-29T10:15:16Z",
+  "generatedAt": "2026-09-30T10:01:13.459Z",
+  "updatedAt": "2026-09-30T09:58:52Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -19,38 +19,37 @@
       "P2"
     ],
     "createdAt": "2026-09-29T09:05:46Z",
-    "updatedAt": "2026-09-29T10:15:16Z"
+    "updatedAt": "2026-09-30T09:58:52Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué facturas B2B —incluida DECO— deben llevar importador y cuáles son, para cada caso, su razón social, identificación fiscal y dirección?",
-  "rationale": "La regla actual no define importadores B2B y el correo del envío Correos no determina los datos del importador en la factura; elegirlos sin confirmación cambiaría contenido fiscal/comercial.",
+  "question": "¿Qué facturas B2B, incluida DECO, deben llevar importador y cuáles son en cada caso su razón social, identificación fiscal y dirección?",
+  "rationale": "La elección determina datos fiscales que deben aparecer en facturas comerciales y no puede deducirse del importerEmail de Correos.",
   "options": [
     {
-      "title": "Definir los importadores B2B",
-      "body": "Confirmar los casos aplicables y los datos legales de cada importador para ampliar después la regla y sus pruebas.",
+      "title": "Definir los importadores B2B ahora",
+      "body": "Aportar los casos aplicables y sus datos fiscales para ampliar el resolver de importadores con una regla explícita.",
       "recommended": true
     },
     {
-      "title": "Limitar el alcance a MercadoLibre",
-      "body": "Dejar DECO y otros casos B2B fuera de este cambio hasta que exista una definición comercial.",
+      "title": "Limitar el alcance a Mercado Libre",
+      "body": "Dejar DECO fuera hasta que el equipo de negocio confirme qué entidad debe constar como importador.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Definir los importadores B2B",
-    "body": "Confirmar los casos aplicables y los datos legales de cada importador para ampliar después la regla y sus pruebas.",
+    "title": "Definir los importadores B2B ahora",
+    "body": "Aportar los casos aplicables y sus datos fiscales para ampliar el resolver de importadores con una regla explícita.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Figura asignado a la issue y ha preparado la PR vinculada del cambio de título; la confirmación de los datos comerciales puede requerir coordinación con quien reportó el caso.",
-    "confidence": "low"
+    "reason": "Figura asignado a la issue y la definición requerida afecta el alcance de la factura que está implementando en la PR vinculada.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10236.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10236#issuecomment-5887235639",
-    "reviewedAt": "2026-09-30T09:57:31.981Z",
+    "reviewedAt": "2026-09-30T10:01:13.459Z",
     "mainSha": "8a42f89ded984174cc5220724f4c69fdc2b079dc"
   }
 }
