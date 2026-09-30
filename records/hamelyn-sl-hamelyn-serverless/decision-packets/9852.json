@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-28T09:06:18.810Z",
-  "updatedAt": "2026-09-28T08:10:30Z",
+  "generatedAt": "2026-09-30T10:51:52.247Z",
+  "updatedAt": "2026-09-30T10:42:54Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -19,38 +19,37 @@
       "P2"
     ],
     "createdAt": "2026-09-21T13:13:02Z",
-    "updatedAt": "2026-09-28T08:10:30Z"
+    "updatedAt": "2026-09-30T10:42:54Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué métodos de pago y financiación están habilitados para el checkout mexicano y qué cifra de pedidos debe mostrarse junto al 98 % de valoraciones?",
-  "rationale": "La petición condiciona los métodos a los que estén habilitados, mientras que el contenido regional existente muestra cifras distintas; el repositorio no valida cuál es la afirmación vigente para el carrito.",
+  "question": "¿Qué cifras y condiciones deben mostrarse en el carrito MX: 12 cuotas con la limitación de tarjetas participantes, +10k o 30.000 pedidos, 98% de valoraciones y MercadoLíder Platinum?",
+  "rationale": "La petición y la PR no coinciden en la cifra de pedidos, y la condición de las cuotas y el resto de las afirmaciones comerciales requieren confirmación de negocio y pagos; el código no puede determinar qué datos son los vigentes.",
   "options": [
     {
-      "title": "Confirmar contenido regional completo",
-      "body": "Validar con negocio y pagos los métodos, las cuotas y las cifras antes de implementar la variante mexicana.",
+      "title": "Confirmar los datos vigentes",
+      "body": "Validar con negocio y pagos las cifras, la categoría y las condiciones de financiación, y reflejarlas de forma coherente en el carrito MX.",
       "recommended": true
     },
     {
-      "title": "Limitarse a contenido verificado",
-      "body": "Añadir solo métodos y afirmaciones que ya estén confirmados en la configuración o documentación actual, dejando el resto fuera.",
+      "title": "Retirar lo no confirmado",
+      "body": "Limitar el carrito a los mensajes y condiciones ya aprobados hasta que negocio y pagos validen las afirmaciones restantes.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Confirmar contenido regional completo",
-    "body": "Validar con negocio y pagos los métodos, las cuotas y las cifras antes de implementar la variante mexicana.",
+    "title": "Confirmar los datos vigentes",
+    "body": "Validar con negocio y pagos las cifras, la categoría y las condiciones de financiación, y reflejarlas de forma coherente en el carrito MX.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "AlexDiaz-Hamelyn",
-    "reason": "Está asignado a la issue y ha contribuido recientemente al rediseño y mantenimiento del carrito.",
-    "confidence": "high"
+    "person": "victor",
+    "reason": "La petición define la cifra de 30.000 pedidos y la revisión de la PR señala a Victor o negocio como contacto para confirmar el copy.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9852.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9852#issuecomment-5793330839",
-    "reviewedAt": "2026-09-28T09:06:18.810Z",
-    "mainSha": "1998ce12ff9e740ecaf2f9a64a37a2b859df40fe"
+    "reviewedAt": "2026-09-30T10:51:52.247Z",
+    "mainSha": "8a42f89ded984174cc5220724f4c69fdc2b079dc"
   }
 }
