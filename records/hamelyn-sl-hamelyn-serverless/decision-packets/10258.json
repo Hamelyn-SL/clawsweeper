@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-30T07:05:27.527Z",
+  "updatedAt": "2026-09-30T06:44:36Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10258,
+    "title": "Amazon ES/SE: la confirmación del alta deja sin status anuncios vivos con AMAZON_100530 y al venderse no se retiran",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10258",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "reporter:javier",
+      "triage:running",
+      "P2",
+      "mk:amazon"
+    ],
+    "createdAt": "2026-09-30T06:40:48Z",
+    "updatedAt": "2026-09-30T06:44:36Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe mantenerse `AMAZON_100530` como error permanente y ampliarse la retirada de espejos vendidos sin `status`, o debe cambiarse la confirmación para esperar antes de cerrar el caso?",
+  "rationale": "El historial considera `100530` un bloqueo permanente de cumplimiento, mientras que la evidencia de esta incidencia apunta a listings vivos no elegibles para retirada; elegir el límite seguro requiere confirmar el comportamiento deseado para esos anuncios.",
+  "options": [
+    {
+      "title": "Mantener el error permanente y ampliar la retirada",
+      "body": "Preservar la política de cumplimiento y retirar de forma segura los anuncios vivos de stocks vendidos aunque el espejo no tenga estado activo.",
+      "recommended": true
+    },
+    {
+      "title": "Aplazar la decisión de confirmación",
+      "body": "Conservar la retirada actual mientras se verifica cuándo `100530` impide realmente la venta y qué estados remotos deben confirmarse.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mantener el error permanente y ampliar la retirada",
+    "body": "Preservar la política de cumplimiento y retirar de forma segura los anuncios vivos de stocks vendidos aunque el espejo no tenga estado activo.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Su trabajo reciente abarca la confirmación Amazon y la retirada de casos de cantidad excesiva, superficies centrales para delimitar el cambio.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10258.md",
+    "reviewedAt": "2026-09-30T07:05:27.527Z",
+    "mainSha": "8c4b24e5bb3a042893783bf8b08ee0840356528a"
+  }
+}
