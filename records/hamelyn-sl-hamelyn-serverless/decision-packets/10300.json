@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-30T14:59:21.782Z",
+  "updatedAt": "2026-09-30T14:34:28Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10300,
+    "title": "eBay ES: la confirmación de #10244 no ve la retirada al primer intento en el 98 % de las ventas y cada baja espera una hora",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10300",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "reporter:javier",
+      "triage:queued",
+      "P2",
+      "mk:ebay"
+    ],
+    "createdAt": "2026-09-30T14:34:12Z",
+    "updatedAt": "2026-09-30T14:34:28Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe el flujo sondear `getOffer` durante una ventana breve tras una retirada aceptada antes de registrar un error reintentable?",
+  "rationale": "La corrección depende de definir cuánto esperar a la consistencia eventual de eBay sin ocultar ofertas que continúen publicadas ni sobrepasar el presupuesto de ejecución.",
+  "options": [
+    {
+      "title": "Añadir sondeo acotado",
+      "body": "Acordar un plazo y cadencia de relecturas breves y mantener el reintento existente si la oferta sigue publicada al agotarse el plazo.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener el reintento horario",
+      "body": "No cambiar el comportamiento hasta obtener de eBay un contrato de consistencia o una señal remota más fiable.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Añadir sondeo acotado",
+    "body": "Acordar un plazo y cadencia de relecturas breves y mantener el reintento existente si la oferta sigue publicada al agotarse el plazo.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Su cambio reciente introdujo la confirmación posterior a la retirada que da lugar a esta decisión de comportamiento.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10300.md",
+    "reviewedAt": "2026-09-30T14:59:21.782Z",
+    "mainSha": "dee8167221595d403debbcf42dac485699e96fc0"
+  }
+}

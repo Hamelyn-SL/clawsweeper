@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-30T14:59:27.351Z",
+  "updatedAt": "2026-09-30T14:16:26Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10299,
+    "title": "EC - marcar en purchase si el cliente es nuevo",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10299",
+    "state": "open",
+    "labels": [
+      "source:admin-panel",
+      "app:ecommerce",
+      "reporter:jesus",
+      "feature",
+      "triage:queued",
+      "P2"
+    ],
+    "createdAt": "2026-09-30T14:16:11Z",
+    "updatedAt": "2026-09-30T14:16:26Z"
+  },
+  "lane": "manual_review",
+  "priority": "P2",
+  "question": "¿Hay en producción un índice existente que permita buscar los pedidos elegibles por email normalizado y fecha sin crear ni recrear índices?",
+  "rationale": "El schema revisado no declara un índice por email y las reglas del repositorio reservan la gestión de índices de Atlas; no se puede validar desde el checkout qué índices están desplegados.",
+  "options": [
+    {
+      "title": "Confirmar índice existente",
+      "body": "Indicar el índice disponible para que la implementación pueda hacer una búsqueda acotada y segura.",
+      "recommended": true
+    },
+    {
+      "title": "Pedir evaluación de datos",
+      "body": "Revisar una alternativa que cumpla la definición sin escaneo amplio antes de implementar el cálculo.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Confirmar índice existente",
+    "body": "Indicar el índice disponible para que la implementación pueda hacer una búsqueda acotada y segura.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su historial está ligado a la ruta de checkout afectada; la disponibilidad operativa del índice requiere confirmación del equipo con acceso a Atlas.",
+    "confidence": "low"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10299.md",
+    "reviewedAt": "2026-09-30T14:59:27.351Z",
+    "mainSha": "dee8167221595d403debbcf42dac485699e96fc0"
+  }
+}
