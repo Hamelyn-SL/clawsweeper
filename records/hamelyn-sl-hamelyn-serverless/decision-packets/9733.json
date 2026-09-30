@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-19T14:46:57.453Z",
-  "updatedAt": "2026-09-19T13:59:58Z",
+  "generatedAt": "2026-09-30T12:40:11.719Z",
+  "updatedAt": "2026-09-30T12:34:39Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,50 +13,49 @@
       "app:supply",
       "feature",
       "triage:done",
+      "clawsweeper:needs-product-decision",
+      "P2",
       "reporter:danielmenchen-hamelyn",
       "origin:dev",
-      "epic:supply-v3",
-      "P2",
-      "clawsweeper:needs-product-decision"
+      "epic:supply-v3"
     ],
     "createdAt": "2026-09-18T08:03:40Z",
-    "updatedAt": "2026-09-19T13:59:58Z"
+    "updatedAt": "2026-09-30T12:34:39Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿El login desde checkout debe restaurar siempre el paso solicitado con el carrito válido, o debe conservarse el retorno legado al carrito cuando falte contexto verificable?",
-  "rationale": "El legado redirige al carrito, mientras que el objetivo exige retorno al paso; elegir la recuperación segura afecta sesión, persistencia e integración con los contratos compartidos.",
+  "question": "Tras un login iniciado desde un paso de checkout, ¿se debe restaurar ese paso únicamente cuando sesión, carrito y datos del paso sigan siendo válidos, o volver al carrito y pedir que se reanude el checkout?",
+  "rationale": "La issue exige retorno al destino/paso correcto, mientras el legado vuelve al carrito cuando falta sesión. El límite entre restauración y fallback depende del comportamiento que el equipo quiera garantizar y ya se señaló como decisión pendiente en la revisión previa.",
   "options": [
     {
-      "title": "Restauración validada",
-      "body": "Guardar un destino de checkout efímero y restaurarlo solo tras validar sesión, carrito y datos del paso.",
+      "title": "Restauración validada (recomendada)",
+      "body": "Conservar un destino efímero y restaurarlo solo después de validar sesión, carrito y datos requeridos por ese paso.",
       "recommended": true
     },
     {
       "title": "Retorno al carrito",
-      "body": "Mantener el fallback legado al carrito y requerir que el usuario reanude manualmente el checkout.",
+      "body": "Mantener el fallback legado al carrito y pedir al usuario que reanude manualmente el checkout tras autenticarse.",
       "recommended": false
     },
     {
-      "title": "Definir ambos flujos",
-      "body": "Ofrecer restauración validada y fallback explícito al carrito cuando la recuperación no sea segura.",
+      "title": "Definir ambos casos",
+      "body": "Restaurar el paso cuando la validación sea satisfactoria y volver al carrito con una salida explícita cuando no lo sea.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Restauración validada",
-    "body": "Guardar un destino de checkout efímero y restaurarlo solo tras validar sesión, carrito y datos del paso.",
+    "title": "Restauración validada (recomendada)",
+    "body": "Conservar un destino efímero y restaurarlo solo después de validar sesión, carrito y datos requeridos por ese paso.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "danielmenchen-hamelyn",
-    "reason": "La planificación y la base de Supply v3 le vinculan directamente con el contrato entre rutas, sesión y pantallas.",
+    "person": "MiguelHamelyn",
+    "reason": "Está asignado a la issue y tiene cambios históricos en el servicio actual de checkout, que es una referencia para decidir la recuperación del flujo.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9733.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9733#issuecomment-5740943695",
-    "reviewedAt": "2026-09-19T14:46:57.453Z",
-    "mainSha": "d0e0b93e78bba63a1c6ff1614e823941e10afa9f"
+    "reviewedAt": "2026-09-30T12:40:11.719Z",
+    "mainSha": "254ec124da8acd6b7be027edb23b6322b558c42a"
   }
 }
