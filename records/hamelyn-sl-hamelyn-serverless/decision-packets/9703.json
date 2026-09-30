@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-23T11:02:19.822Z",
-  "updatedAt": "2026-09-22T23:01:16Z",
+  "generatedAt": "2026-09-30T09:02:46.879Z",
+  "updatedAt": "2026-09-30T08:22:14Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -18,38 +18,37 @@
       "P2"
     ],
     "createdAt": "2026-09-17T22:20:44Z",
-    "updatedAt": "2026-09-22T23:01:16Z"
+    "updatedAt": "2026-09-30T08:22:14Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe Feltrinelli reservar o priorizar cuota OF24 para retiradas de stock vendido frente a altas y cambios de precio durante picos?",
-  "rationale": "El límite actual se comparte intencionadamente por tienda; cambiar su reparto modifica el servicio relativo de tres operaciones de Marketplace.",
+  "question": "¿Qué criterio operativo debe considerarse capacidad suficiente para Feltrinelli: sostener una ventana de pico con drenaje neto y antigüedad bajo umbral, o reservar cuota OF24 específica para retiradas frente a altas y precios?",
+  "rationale": "La cuota actual es compartida entre operaciones por tienda y cambiar su reparto alteraría el comportamiento operativo; los datos disponibles muestran denegaciones recurrentes, pero no acreditan todavía la medida ni la política deseadas.",
   "options": [
     {
-      "title": "Priorizar retiradas vendidas",
-      "body": "Dar preferencia o una reserva acotada a `withdraw` cuando exista deuda de stock vendido, manteniendo el techo OF24 total.",
+      "title": "Validar capacidad con métricas",
+      "body": "Medir entradas únicas, retiradas confirmadas, edad de cola y consumo por fase durante un pico antes de proponer cambios de código o presupuesto.",
       "recommended": true
     },
     {
-      "title": "Mantener cuota compartida",
-      "body": "Conservar el reparto actual y aceptar reintentos locales, documentando una expectativa de latencia sin garantía durante picos.",
+      "title": "Reservar cuota para retiradas",
+      "body": "Definir y aprobar un reparto explícito de slots OF24 para evitar que altas y precios consuman toda la capacidad disponible para retirar stock vendido.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Priorizar retiradas vendidas",
-    "body": "Dar preferencia o una reserva acotada a `withdraw` cuando exista deuda de stock vendido, manteniendo el techo OF24 total.",
+    "title": "Validar capacidad con métricas",
+    "body": "Medir entradas únicas, retiradas confirmadas, edad de cola y consumo por fase durante un pico antes de proponer cambios de código o presupuesto.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Es la persona más conectada tanto al diseño del limitador OF24 como a la evidencia operativa reciente.",
-    "confidence": "high"
+    "reason": "Su historial local está ligado a la implementación del límite OF24 por tienda, el área técnica más cercana a decidir cómo instrumentar o repartir esa cuota.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9703.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9703#issuecomment-5740830359",
-    "reviewedAt": "2026-09-23T11:02:19.822Z",
-    "mainSha": "49cf8dd3dcd603e7191f56a17c28174ba52a5a98"
+    "reviewedAt": "2026-09-30T09:02:46.879Z",
+    "mainSha": "b280e5a0a961d92ac217c62d052e0de29deb93a6"
   }
 }

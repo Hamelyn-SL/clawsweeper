@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-24T10:56:41.542Z",
-  "updatedAt": "2026-09-23T10:49:42Z",
+  "generatedAt": "2026-09-30T09:02:40.618Z",
+  "updatedAt": "2026-09-30T08:22:07Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,47 +15,41 @@
       "app:marketplace",
       "triage:needs-info",
       "clawsweeper:needs-product-decision",
-      "marketplace-crons",
-      "P2"
+      "P2",
+      "marketplace-crons"
     ],
     "createdAt": "2026-09-23T02:30:45Z",
-    "updatedAt": "2026-09-23T10:49:42Z"
+    "updatedAt": "2026-09-30T08:22:07Z"
   },
-  "lane": "product_direction",
+  "lane": "proof_sufficiency",
   "priority": "P2",
-  "question": "Tras conciliar los pedidos y el envío del intervalo 02:00–02:12 UTC del 23 de septiembre, ¿se deben añadir reintentos acotados a las consultas AbeBooks, y hay garantía de idempotencia para extenderlos a actualizaciones?",
-  "rationale": "El incidente ya no aparece en las ejecuciones posteriores, pero su impacto sigue sin verificarse y el presupuesto actual de reintentos depende de la operación; reintentar escrituras sin confirmar idempotencia podría duplicar efectos.",
+  "question": "¿Se han conciliado en AbeBooks y en los sistemas internos los pedidos y envíos afectados entre las 02:00 y las 02:12 UTC del 23 de septiembre de 2026?",
+  "rationale": "El error dejó de observarse, pero no demuestra que se recuperasen las operaciones fallidas; solo el equipo con acceso a esos estados puede confirmar si queda trabajo pendiente.",
   "options": [
     {
-      "title": "Conciliar y limitar a consultas",
-      "body": "Verificar primero los pedidos y el envío; si se mantiene una mitigación, aplicarla a búsquedas idempotentes con cobertura focalizada.",
+      "title": "Mantener abierta",
+      "body": "Conservar el seguimiento hasta verificar la conciliación de todos los pedidos y envíos afectados.",
       "recommended": true
     },
     {
-      "title": "Validar también las mutaciones",
-      "body": "Solicitar garantías de AbeBooks y pruebas de idempotencia antes de aplicar reintentos a actualizaciones o confirmaciones de envío.",
-      "recommended": false
-    },
-    {
-      "title": "No cambiar el transporte",
-      "body": "Mantener el comportamiento actual si la conciliación confirma recuperación y no se establece una política segura de reintentos.",
+      "title": "Cerrar tras confirmar",
+      "body": "Cerrar cuando el equipo confirme que no queda ninguna operación pendiente ni efecto funcional sin resolver.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Conciliar y limitar a consultas",
-    "body": "Verificar primero los pedidos y el envío; si se mantiene una mitigación, aplicarla a búsquedas idempotentes con cobertura focalizada.",
+    "title": "Mantener abierta",
+    "body": "Conservar el seguimiento hasta verificar la conciliación de todos los pedidos y envíos afectados.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "AlexDiaz-Hamelyn",
-    "reason": "Su historial conecta directamente con la implementación del transporte AbeBooks que tendría que cambiarse si se aprueba una mitigación.",
+    "person": "HamelynDev",
+    "reason": "El triage previo solicitó una comprobación operativa del estado de los pedidos afectados, que requiere acceso del equipo a los sistemas correspondientes.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9963.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9963#issuecomment-5793497486",
-    "reviewedAt": "2026-09-24T10:56:41.542Z",
-    "mainSha": "b3f7c1eace1f7638fa2f8de78cce0587ae8df711"
+    "reviewedAt": "2026-09-30T09:02:40.618Z",
+    "mainSha": "b280e5a0a961d92ac217c62d052e0de29deb93a6"
   }
 }

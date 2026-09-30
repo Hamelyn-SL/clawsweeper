@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-30T09:02:34.576Z",
+  "updatedAt": "2026-09-30T08:22:05Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9965,
+    "title": "Marketplace: [abebooks] error searching expired orders (page 0): fetch failed",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9965",
+    "state": "open",
+    "labels": [
+      "codex",
+      "bug",
+      "app:marketplace",
+      "triage:needs-info",
+      "P2",
+      "marketplace-crons"
+    ],
+    "createdAt": "2026-09-23T02:30:50Z",
+    "updatedAt": "2026-09-30T08:22:05Z"
+  },
+  "lane": "manual_review",
+  "priority": "P2",
+  "question": "¿Se conciliaron en los sistemas internos los pedidos AbeBooks expirados del intervalo 23 de septiembre de 2026, 02:00–02:12 UTC?",
+  "rationale": "El código puede continuar con una lista vacía tras el fallo de búsqueda, pero la evidencia disponible no confirma si algún pedido quedó pendiente ni si hace falta corregir el flujo.",
+  "options": [
+    {
+      "title": "Confirmar conciliación",
+      "body": "Verificar los pedidos afectados y documentar que los estados internos coinciden con AbeBooks.",
+      "recommended": true
+    },
+    {
+      "title": "Investigar pedidos pendientes",
+      "body": "Si la conciliación no está completa, identificar los pedidos pendientes y abrir una reparación acotada con evidencia saneada.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Confirmar conciliación",
+    "body": "Verificar los pedidos afectados y documentar que los estados internos coinciden con AbeBooks.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "HamelynDev",
+    "reason": "El comentario de triage documenta el análisis de requests y dejó pendiente la verificación de conciliación con el equipo de marketplaces.",
+    "confidence": "low"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9965.md",
+    "reviewedAt": "2026-09-30T09:02:34.576Z",
+    "mainSha": "b280e5a0a961d92ac217c62d052e0de29deb93a6"
+  }
+}

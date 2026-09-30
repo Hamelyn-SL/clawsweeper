@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-23T10:50:14.839Z",
-  "updatedAt": "2026-09-22T08:45:41Z",
+  "generatedAt": "2026-09-30T09:04:35.406Z",
+  "updatedAt": "2026-09-30T08:22:09Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,48 +15,47 @@
       "reporter:miguel",
       "triage:needs-info",
       "clawsweeper:needs-product-decision",
+      "P3",
       "origin:dev",
-      "epic:supply-v3",
-      "P3"
+      "epic:supply-v3"
     ],
     "createdAt": "2026-09-22T08:37:10Z",
-    "updatedAt": "2026-09-22T08:45:41Z"
+    "updatedAt": "2026-09-30T08:22:09Z"
   },
   "lane": "product_direction",
   "priority": "P3",
-  "question": "¿Supply v3 debe respetar únicamente `prefers-color-scheme` o incluir también un selector persistido, y debe entregarse antes del lanzamiento web?",
-  "rationale": "Las dos alternativas cambian configuración, persistencia y comportamiento de primera pintura; la propia épica mantiene esa elección aplazada.",
+  "question": "¿Qué alcance y calendario se aprueban para D10 en Supply v3: solo `prefers-color-scheme`, también selector persistido, y antes o después del lanzamiento web?",
+  "rationale": "La issue condiciona la implementación a una decisión explícita y la épica mantiene el tema aplazado; elegir selector, persistencia o fecha de entrega requiere intención de producto, no inferencia técnica.",
   "options": [
     {
-      "title": "Solo tema del sistema inicialmente",
-      "body": "Entregar tokens y detección del sistema sin guardar una elección explícita, dejando el selector para una decisión posterior.",
+      "title": "Empezar con el tema del sistema",
+      "body": "Aprobar tokens y detección de `prefers-color-scheme` para una primera fase, y dejar el selector persistido sujeto a una decisión posterior.",
       "recommended": true
     },
     {
-      "title": "Aprobar selector persistido",
-      "body": "Definir almacenamiento, prioridad frente al sistema, migración, SSR/SSG y equivalencia en Capacitor antes de implementar.",
+      "title": "Aprobar también selector persistido",
+      "body": "Definir prioridad del ajuste frente al sistema, persistencia y comportamiento de primera pintura en SSG y Capacitor antes de planificar la entrega.",
       "recommended": false
     },
     {
-      "title": "Posponer el paquete completo",
-      "body": "Mantener los estilos preparados para tokens, pero aplazar ambos comportamientos hasta después del lanzamiento web.",
+      "title": "Aplazar el tema",
+      "body": "Mantener la paleta actual durante el lanzamiento web y reconsiderar tanto detección como selector en una fase posterior.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Solo tema del sistema inicialmente",
-    "body": "Entregar tokens y detección del sistema sin guardar una elección explícita, dejando el selector para una decisión posterior.",
+    "title": "Empezar con el tema del sistema",
+    "body": "Aprobar tokens y detección de `prefers-color-scheme` para una primera fase, y dejar el selector persistido sujeto a una decisión posterior.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "danielmenchen-hamelyn",
-    "reason": "La épica de Supply v3 establece el orden de integración y registra D10 como decisión pendiente.",
+    "reason": "Es el autor de la épica donde D10 quedó aplazada y de la base de `apps/supply-web`.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9900.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9900#issuecomment-5793550599",
-    "reviewedAt": "2026-09-23T10:50:14.839Z",
-    "mainSha": "49cf8dd3dcd603e7191f56a17c28174ba52a5a98"
+    "reviewedAt": "2026-09-30T09:04:35.406Z",
+    "mainSha": "b280e5a0a961d92ac217c62d052e0de29deb93a6"
   }
 }

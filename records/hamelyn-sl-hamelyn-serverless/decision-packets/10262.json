@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-30T09:04:36.057Z",
+  "updatedAt": "2026-09-30T08:34:55Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10262,
+    "title": "feat: split not-found ratios by picking location",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10262",
+    "state": "open",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-09-30T08:03:47Z",
+    "updatedAt": "2026-09-30T08:34:55Z",
+    "headSha": "38c6fafea30549f8d4eadebea3c9f3b63aa49730"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿El reporte debe imputar la sesión completa al día de Madrid en que empezó, o repartir su duración entre los días que abarca?",
+  "rationale": "La diferencia cambia los totales diarios y no puede resolverse solo con evidencia de código; la revisión anterior ya identificó esta elección como decisión del equipo.",
+  "options": [
+    {
+      "title": "Imputar al día de inicio",
+      "body": "Contabiliza la duración completa en el día de Madrid en que comenzó la sesión, como hace la propuesta.",
+      "recommended": true
+    },
+    {
+      "title": "Repartir entre días",
+      "body": "Limita cada reporte al tiempo transcurrido dentro de ese día y distribuye el resto en el siguiente.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Imputar al día de inicio",
+    "body": "Contabiliza la duración completa en el día de Madrid en que comenzó la sesión, como hace la propuesta.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "HamelynDev",
+    "reason": "Es la persona disponible con historial directo en el código del reporte; no consta otro responsable identificable en el historial inspeccionado.",
+    "confidence": "low"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10262.md",
+    "reviewedAt": "2026-09-30T09:04:36.057Z",
+    "mainSha": "b280e5a0a961d92ac217c62d052e0de29deb93a6"
+  }
+}
