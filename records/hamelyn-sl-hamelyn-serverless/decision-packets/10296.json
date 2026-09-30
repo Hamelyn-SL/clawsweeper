@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-30T15:05:57.109Z",
+  "generatedAt": "2026-09-30T15:06:52.600Z",
   "updatedAt": "2026-09-30T14:57:51Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -23,39 +23,38 @@
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se autoriza enviar a Google Ads calle, ciudad, región, código postal y país sin cifrar como datos de conversiones mejoradas?",
-  "rationale": "La dirección sin cifrar es información personal y el repositorio no documenta aquí la aprobación para compartirla con ese tercero; la decisión de producto y privacidad debe preceder a la implementación.",
+  "question": "¿Debe ecommerce enviar nombre y dirección de compra a Google Ads para Enhanced Conversions y, si se autoriza, bajo qué aviso y condición de consentimiento?",
+  "rationale": "La política publicada restringe la cesión comercial a terceros y no menciona Google Ads; elegir el tratamiento y sus controles requiere intención de producto y privacidad que no se deduce del código.",
   "options": [
     {
-      "title": "Autorizar los campos solicitados",
-      "body": "Implementar el envío de la dirección sin cifrar y limitar el payload a los campos aceptados y disponibles en el checkout.",
-      "recommended": false
-    },
-    {
-      "title": "Limitar el envío a nombre hasheado",
-      "body": "Añadir únicamente nombre y apellidos hasheados, dejando fuera la dirección hasta confirmar la autorización.",
+      "title": "Aprobar con condiciones",
+      "body": "Confirmar el encaje y los controles de consentimiento y aviso antes de añadir únicamente los campos aprobados.",
       "recommended": true
     },
     {
-      "title": "No ampliar los datos enviados",
-      "body": "Mantener el payload actual de email y teléfono hasta que exista una decisión aprobada sobre el tratamiento adicional.",
+      "title": "Definir primero la política",
+      "body": "Aclarar o actualizar el aviso y el flujo de consentimiento antes de decidir si se envían estos identificadores.",
+      "recommended": false
+    },
+    {
+      "title": "No enviar dirección",
+      "body": "Descartar los campos de dirección a Google Ads y mantener el evento actual hasta una decisión posterior.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Limitar el envío a nombre hasheado",
-    "body": "Añadir únicamente nombre y apellidos hasheados, dejando fuera la dirección hasta confirmar la autorización.",
+    "title": "Aprobar con condiciones",
+    "body": "Confirmar el encaje y los controles de consentimiento y aviso antes de añadir únicamente los campos aprobados.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es el candidato de código mejor respaldado por el historial local del evento, aunque no consta que sea quien deba aprobar el uso de datos personales.",
-    "confidence": "low"
+    "reason": "El historial lo vincula tanto al flujo actual de compra como al texto de privacidad afectado; no hay evidencia local de un responsable de privacidad más específico.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10296.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10296#issuecomment-5913973350",
-    "reviewedAt": "2026-09-30T15:05:57.109Z",
+    "reviewedAt": "2026-09-30T15:06:52.600Z",
     "mainSha": "dee8167221595d403debbcf42dac485699e96fc0"
   }
 }
