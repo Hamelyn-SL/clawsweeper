@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-30T07:11:34.756Z",
+  "updatedAt": "2026-09-30T07:06:30Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10260,
+    "title": "Infraestructura: builds de Vercel fallan por memoria durante el chequeo TypeScript",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10260",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:infrastructure",
+      "reporter:miguel",
+      "triage:queued",
+      "P2"
+    ],
+    "createdAt": "2026-09-30T07:06:16Z",
+    "updatedAt": "2026-09-30T07:06:30Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué vía debe priorizarse para resolver el OOM de Vercel: reutilizar una validación o artefacto equivalente de CI, acotar el grafo de core por aplicación, o instrumentar primero las fases para decidir con datos?",
+  "rationale": "Las alternativas cambian el límite entre CI y despliegues, y no hay mediciones que permitan elegir con seguridad una sin afectar la cobertura de tipos o la configuración del build.",
+  "options": [
+    {
+      "title": "Medir primero",
+      "body": "Añadir evidencia comparable de memoria, duración y archivos por fase antes de escoger una intervención.",
+      "recommended": true
+    },
+    {
+      "title": "Evaluar reutilización de CI",
+      "body": "Diseñar una transferencia verificable por SHA, versiones y tipos generados, manteniendo el chequeo como condición de despliegue.",
+      "recommended": false
+    },
+    {
+      "title": "Acotar core por aplicación",
+      "body": "Medir imports transitivos y reducir el grafo solo si la validación completa de core continúa cubierta en CI.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Medir primero",
+    "body": "Añadir evidencia comparable de memoria, duración y archivos por fase antes de escoger una intervención.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Su trabajo reciente en la separación del typecheck de CI le conecta con la decisión sobre límites entre validación y builds.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10260.md",
+    "reviewedAt": "2026-09-30T07:11:34.756Z",
+    "mainSha": "8c4b24e5bb3a042893783bf8b08ee0840356528a"
+  }
+}
