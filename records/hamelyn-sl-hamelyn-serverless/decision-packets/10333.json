@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-01T10:47:56.042Z",
-  "updatedAt": "2026-10-01T10:42:54Z",
+  "generatedAt": "2026-10-01T10:54:09.381Z",
+  "updatedAt": "2026-10-01T10:48:47Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,48 +14,47 @@
       "app:marketplace",
       "reporter:javier",
       "triage:running",
-      "mk:amazon",
+      "clawsweeper:needs-product-decision",
       "P2",
-      "clawsweeper:needs-product-decision"
+      "mk:amazon"
     ],
     "createdAt": "2026-10-01T10:37:28Z",
-    "updatedAt": "2026-10-01T10:42:54Z"
+    "updatedAt": "2026-10-01T10:48:47Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué política debe seguir la retirada cuando Amazon acepta el DELETE pero la oferta continúa BUYABLE durante la propagación eventual?",
-  "rationale": "La elección entre comprobación con reintentos, ajuste adicional de cantidad o solo alerta cambia el comportamiento operativo y no puede resolverse únicamente con el código: depende de los datos de latencia y del coste de nuevas llamadas a Amazon.",
+  "question": "¿Debe el flujo de retirada verificar y reintentar de forma acotada cuando Amazon aún muestra la oferta como comprable, probar además una actualización de cantidad cero o aceptar y documentar la ventana residual?",
+  "rationale": "El código ofrece un verificador reutilizable, pero aplicar reintentos, añadir otra operación de escritura o aceptar cancelaciones residuales implica elegir comportamiento operativo y riesgo de integración con Amazon.",
   "options": [
     {
-      "title": "Verificar y reintentar de forma acotada",
-      "body": "Consultar la comprabilidad tras el DELETE y emitir una señal o reintentar dentro de un límite acordado.",
+      "title": "Verificar y reintentar con límite",
+      "body": "Usar el verificador existente tras el DELETE y emitir una señal si la oferta sigue comprable al agotarse el límite.",
       "recommended": true
     },
     {
-      "title": "Añadir una actualización de cantidad",
-      "body": "Medir si enviar cantidad cero junto al DELETE reduce la ventana, aceptando la complejidad de una segunda operación.",
+      "title": "Probar también cantidad cero",
+      "body": "Medir si una actualización de inventario reduce la ventana, aceptando el coste y la interacción de una segunda operación.",
       "recommended": false
     },
     {
-      "title": "Documentar la propagación",
-      "body": "Si Amazon no permite acortar la ventana, dejar constancia de la limitación y acordar el impacto residual.",
+      "title": "Documentar el límite residual",
+      "body": "Mantener la retirada actual si Amazon no permite acortar la propagación y acordar explícitamente el impacto aceptado.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Verificar y reintentar de forma acotada",
-    "body": "Consultar la comprabilidad tras el DELETE y emitir una señal o reintentar dentro de un límite acordado.",
+    "title": "Verificar y reintentar con límite",
+    "body": "Usar el verificador existente tras el DELETE y emitir una señal si la oferta sigue comprable al agotarse el límite.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "HamelynDev",
-    "reason": "Su historial local reciente cubre la confirmación del estado de listings de Amazon, la ruta más próxima para valorar una política de verificación.",
+    "person": "JavierHamelyn",
+    "reason": "Su historial en el flujo de retirada por feeds y la medición concreta del reporte le conectan con la decisión sobre el comportamiento observado.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10333.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10333#issuecomment-5929807428",
-    "reviewedAt": "2026-10-01T10:47:56.042Z",
+    "reviewedAt": "2026-10-01T10:54:09.381Z",
     "mainSha": "16d78daab656cd6fa3afef2d915a3a59a1a46da2"
   }
 }
