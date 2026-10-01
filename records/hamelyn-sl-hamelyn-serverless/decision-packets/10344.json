@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-01T13:02:18.395Z",
+  "generatedAt": "2026-10-01T13:02:35.742Z",
   "updatedAt": "2026-10-01T12:57:51Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -15,42 +15,40 @@
       "app:ecommerce",
       "reporter:blanca",
       "triage:running",
-      "P1",
-      "clawsweeper:needs-product-decision"
+      "P1"
     ],
     "createdAt": "2026-10-01T12:49:02Z",
     "updatedAt": "2026-10-01T12:57:51Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe la corrección incluir la recuperación de pedidos históricos y limitarla a los registros cuyo motivo original pueda reconstruirse desde `returnData.reasonCode` u otra fuente verificable?",
-  "rationale": "La corrección del flujo actual está definida, pero no se puede afirmar que todos los motivos sustituidos sean reconstruibles; una actualización histórica necesita un límite de datos explícito antes de ejecutarse.",
+  "question": "¿Debe «Devolución recibida» limitarse a actualizar `returnData.status`, conservando el motivo original, y hacerse un backfill solo de pedidos con un motivo original verificable?",
+  "rationale": "La issue previa https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5807 acordó usar «Devolución» como `cancelReason`, mientras que el PR fusionado https://github.com/Hamelyn-SL/hamelyn-serverless/pull/6398 también conserva el motivo Amazon en `returnData.reasonCode`; hace falta confirmar cuál dato debe prevalecer y el límite del backfill.",
   "options": [
     {
-      "title": "Separar el arreglo y auditar la recuperación",
-      "body": "Corregir los flujos actuales y mostrar el estado por separado; restaurar después únicamente los pedidos para los que una auditoría confirme una fuente fiable.",
+      "title": "Conservar motivo y estado por separado",
+      "body": "Al confirmar la recepción se modifica solo `returnData.status` y se recuperan motivos únicamente cuando exista una fuente persistida verificable.",
       "recommended": true
     },
     {
-      "title": "Incluir una restauración acotada",
-      "body": "Añadir a la misma intervención una restauración solo desde códigos originales persistidos y documentar cuántos registros quedan sin recuperar.",
+      "title": "Mantener «Devolución» como motivo final",
+      "body": "Se conserva el comportamiento acordado en la gestión anterior y no se restaura el motivo previo como `cancelReason`.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Separar el arreglo y auditar la recuperación",
-    "body": "Corregir los flujos actuales y mostrar el estado por separado; restaurar después únicamente los pedidos para los que una auditoría confirme una fuente fiable.",
+    "title": "Conservar motivo y estado por separado",
+    "body": "Al confirmar la recepción se modifica solo `returnData.status` y se recuperan motivos únicamente cuando exista una fuente persistida verificable.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "Alex Cantón",
-    "reason": "Su trabajo fusionado introdujo el mapeo de motivos Amazon y el campo `returnData.reasonCode` que sirven de base para valorar la recuperación histórica.",
+    "person": "alexcanHamelyn",
+    "reason": "Implementó y fusionó el flujo de devoluciones Amazon donde se combinan el motivo original y el estado de recepción.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10344.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10344#issuecomment-5932038621",
-    "reviewedAt": "2026-10-01T13:02:18.395Z",
+    "reviewedAt": "2026-10-01T13:02:35.742Z",
     "mainSha": "158c2ecd5f6b7006430e4cb4a4257afb28e0e776"
   }
 }
