@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-30T13:14:33.495Z",
-  "updatedAt": "2026-09-30T12:31:56Z",
+  "generatedAt": "2026-10-01T14:03:20.881Z",
+  "updatedAt": "2026-10-01T10:55:36Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -14,44 +14,38 @@
       "P2"
     ],
     "createdAt": "2026-09-30T12:31:44Z",
-    "updatedAt": "2026-09-30T12:31:56Z",
-    "headSha": "c78f26af7af1663db07f807514645da3e4d96df0"
+    "updatedAt": "2026-10-01T10:55:36Z",
+    "headSha": "b4e2128de40760a0d44eebc20e3b51f218675c63"
   },
-  "lane": "product_direction",
+  "lane": "release_inclusion",
   "priority": "P2",
-  "question": "¿Debe este PR limitarse a versionar el servicio y exigir que las tablas de BigQuery ya existan, sin crearlas durante `setup`?",
-  "rationale": "La issue excluye la creación de tablas en esta entrega y la política del repositorio requiere autorización expresa para crear estructuras; el código actual incorpora esa creación al flujo de preparación.",
+  "question": "¿Debe este PR incluir el despliegue automático a hamelyn-scrapers, aunque la issue vinculada excluía cambios en la VM?",
+  "rationale": "El flujo de GitHub Actions añade una ruta de despliegue a una VM en producción y reinicia servicios existentes; decidir si ese cambio está aprobado no puede deducirse de la petición original.",
   "options": [
     {
-      "title": "Exigir tablas existentes",
-      "body": "Mantener el alcance pedido y cambiar `setup` para validar las tablas sin crearlas.",
+      "title": "Mantener el despliegue en este PR",
+      "body": "Confirmar que el despliegue automático y el reinicio de hamelyn-scrapers están dentro del alcance aprobado.",
+      "recommended": false
+    },
+    {
+      "title": "Separar el despliegue",
+      "body": "Dejar en este PR el servicio versionado y mover el workflow y la mecánica de VM a una propuesta separada.",
       "recommended": true
-    },
-    {
-      "title": "Autorizar la creación en setup",
-      "body": "Confirmar expresamente que este PR puede crear las tablas declaradas cuando falten.",
-      "recommended": false
-    },
-    {
-      "title": "Reducir el alcance",
-      "body": "Separar el motor y las fuentes de las partes cuyo alcance aún no está aprobado.",
-      "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Exigir tablas existentes",
-    "body": "Mantener el alcance pedido y cambiar `setup` para validar las tablas sin crearlas.",
+    "title": "Separar el despliegue",
+    "body": "Dejar en este PR el servicio versionado y mover el workflow y la mecánica de VM a una propuesta separada.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "El triage previo de la issue lo identificó como candidato para la decisión de alcance.",
-    "confidence": "low"
+    "reason": "Es el revisor solicitado que pidió cambios y el candidato más claro disponible para resolver el alcance de integración.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10286.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10286#issuecomment-5912125233",
-    "reviewedAt": "2026-09-30T13:14:33.495Z",
-    "mainSha": "21aca14c50adeee8a509268059f956801b5d0453"
+    "reviewedAt": "2026-10-01T14:03:20.881Z",
+    "mainSha": "0e1bbc8c04f2de435f8d05f6818e5ade444d9e30"
   }
 }
