@@ -3,8 +3,8 @@
   "slug": "hamelyn-sl-hamelyn-serverless",
   "display_name": "Hamelyn Serverless",
   "target_repo": "hamelyn-sl/hamelyn-serverless",
-  "state": "Hot intake publish complete",
-  "detail": "Merged 1 hot intake artifacts for run 36846167340 without full folder reconciliation. Captured 1 shard metrics; 0 shards reported non-success review status.",
+  "state": "Review comments checked",
+  "detail": "Checked selected durable Codex review comments and synced missing or stale comments. Synced: 1. Item numbers: 9723.",
   "run_url": "https://github.com/Hamelyn-SL/clawsweeper/actions/runs/36846167340",
   "planned_count": 1,
   "planned_capacity": 1,
@@ -21,19 +21,19 @@
   "bot_owned_proof_dispatches": null,
   "apply_health": {
     "schema_version": 1,
-    "generated_at": "2026-10-01T10:02:07.875Z",
-    "target_repo": "Hamelyn-SL/hamelyn-serverless",
+    "generated_at": "2026-10-01T09:54:32.605Z",
+    "target_repo": "hamelyn-sl/hamelyn-serverless",
     "mode": "comment_sync",
-    "status": "ok",
-    "summary": "5/1000 processed; 0 closed, 2 comments synced, 3 skipped; no cursor recorded.",
-    "processed": 5,
+    "status": "needs_attention",
+    "summary": "1/1000 processed; 0 closed, 0 comments synced, 1 skipped; no cursor recorded. Attention: review_comment_withheld.",
+    "processed": 1,
     "processed_limit": 1000,
     "close_limit": 0,
     "closed": 0,
-    "comment_synced": 2,
-    "skipped": 3,
+    "comment_synced": 0,
+    "skipped": 1,
     "skip_reasons": {
-      "review_comment_withheld": 3
+      "review_comment_withheld": 1
     },
     "lanes": {
       "closure": {
@@ -44,19 +44,19 @@
         "skip_reasons": {}
       },
       "comment_sync": {
-        "processed": 5,
+        "processed": 1,
         "closed": 0,
-        "comment_synced": 2,
-        "skipped": 3,
+        "comment_synced": 0,
+        "skipped": 1,
         "skip_reasons": {
-          "review_comment_withheld": 3
+          "review_comment_withheld": 1
         }
       }
     },
     "next_actions": [
       {
         "reason": "review_comment_withheld",
-        "count": 3,
+        "count": 1,
         "bucket": "inspect",
         "owner": "maintainer",
         "retryable": false,
@@ -66,7 +66,7 @@
       }
     ],
     "next_action_buckets": {
-      "inspect": 3
+      "inspect": 1
     },
     "cycle": {
       "basis": "not_close_cursor",
@@ -77,10 +77,12 @@
       "scheduled_interval_minutes": null,
       "label": "Cycle estimate is only reported for scheduled close cursor windows."
     },
-    "attention_reasons": [],
+    "attention_reasons": [
+      "review_comment_withheld"
+    ],
     "cursor_required": false,
     "cursor": null
   },
   "last_close_apply_health": null,
-  "updated_at": "2026-10-01T10:02:06.913Z"
+  "updated_at": "2026-10-01T10:02:21.544Z"
 }
