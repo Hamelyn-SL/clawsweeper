@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-26T17:23:46.590Z",
-  "updatedAt": "2026-09-25T15:01:11Z",
+  "generatedAt": "2026-10-01T11:24:34.138Z",
+  "updatedAt": "2026-10-01T11:15:37Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,43 +14,47 @@
       "app:marketplace",
       "reporter:javier",
       "triage:done",
-      "mk:todocoleccion",
+      "clawsweeper:needs-product-decision",
       "P2",
-      "clawsweeper:needs-product-decision"
+      "mk:todocoleccion"
     ],
     "createdAt": "2026-09-25T14:49:56Z",
-    "updatedAt": "2026-09-25T15:01:11Z"
+    "updatedAt": "2026-10-01T11:15:37Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe reservarse el stock desde que TodoColección crea un pedido pendiente de pago y, si se aprueba, qué evento o plazo libera esa reserva?",
-  "rationale": "El flujo actual importa solo pedidos pagados; una reserva previa requiere acordar su efecto en la disponibilidad entre canales y cómo evitar reservas indefinidas sin convertir pedidos impagados en pedidos listos para preparación.",
+  "question": "¿Debe TodoColección reservar la unidad desde la compra pendiente de pago y, en ese caso, qué evento o plazo libera la reserva si el pedido no se paga?",
+  "rationale": "La implementación requiere escoger una política de inventario y estados; importar sin más los pedidos impagados podría tratarlos como pedidos pagados y enviarlos a picking.",
   "options": [
     {
-      "title": "Reservar durante el pago",
-      "body": "Definir una reserva temporal y su liberación por cancelación o vencimiento antes de implementar el flujo completo entre canales.",
+      "title": "Reservar desde la compra",
+      "body": "Retirar la unidad de los demás canales al detectar el pedido pendiente y definir un evento o plazo explícito para liberar la reserva impagada.",
       "recommended": true
     },
     {
-      "title": "Mantener la importación tras el pago",
-      "body": "Conservar el comportamiento actual y aceptar/documentar el riesgo de venta cruzada durante la espera de pago.",
+      "title": "Esperar al pago",
+      "body": "Mantener el flujo actual y documentar que se acepta la ventana de venta cruzada hasta que TodoColección confirme el pago.",
+      "recommended": false
+    },
+    {
+      "title": "Avisar sin reservar",
+      "body": "Mantener la importación tras el pago y añadir una alerta accionable cuando la retirada coincida con una unidad vendida en otro canal.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Reservar durante el pago",
-    "body": "Definir una reserva temporal y su liberación por cancelación o vencimiento antes de implementar el flujo completo entre canales.",
+    "title": "Reservar desde la compra",
+    "body": "Retirar la unidad de los demás canales al detectar el pedido pendiente y definir un evento o plazo explícito para liberar la reserva impagada.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Aparece en cambios recientes del adaptador TodoColección y en el comentario de revisión previo como candidato para esta decisión operativa.",
+    "reason": "Es el candidato de enrutamiento más claro por su trabajo reciente en el procesamiento de pedidos y su asignación a esta issue; la decisión también involucra a Marketplace y Operaciones.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10127.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10127#issuecomment-5834537301",
-    "reviewedAt": "2026-09-26T17:23:46.590Z",
-    "mainSha": "b7ca4ccf2295720375fc765a9fe4ea56a1f68320"
+    "reviewedAt": "2026-10-01T11:24:34.138Z",
+    "mainSha": "16d78daab656cd6fa3afef2d915a3a59a1a46da2"
   }
 }
