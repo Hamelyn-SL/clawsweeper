@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-01T05:57:04.377Z",
+  "updatedAt": "2026-10-01T05:48:13Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10312,
+    "title": "fix: tombstone mk mirrors instead of deleting them",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10312",
+    "state": "open",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-10-01T05:41:20Z",
+    "updatedAt": "2026-10-01T05:48:13Z",
+    "headSha": "7e47d7c5a49ceb61592a92d8385140c7dcd862cb"
+  },
+  "lane": "merge_risk",
+  "priority": "P2",
+  "question": "¿Se acepta el riesgo conocido de que una lápida de venta reciente reactive una retirada adicional o que una oferta eBay duplicada permanezca publicada?",
+  "rationale": "El PR describe ambos casos como riesgos aceptados, pero afectan a la retirada efectiva de anuncios y no quedan resueltos por las pruebas simuladas disponibles.",
+  "options": [
+    {
+      "title": "Integrar con el riesgo documentado",
+      "body": "Aceptar los casos conocidos y mantener el alcance actual de reactivación y retirada.",
+      "recommended": false
+    },
+    {
+      "title": "Acotar la reactivación antes de integrar",
+      "body": "Añadir guardas o una verificación de anuncios vivos para evitar reactivar lápidas de venta reciente y cubrir ofertas eBay duplicadas.",
+      "recommended": true
+    }
+  ],
+  "recommendation": {
+    "title": "Acotar la reactivación antes de integrar",
+    "body": "Añadir guardas o una verificación de anuncios vivos para evitar reactivar lápidas de venta reciente y cubrir ofertas eBay duplicadas.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Su trabajo reciente en la recuperación de retiradas le conecta directamente con la ruta que decide cuándo reactivar lápidas.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10312.md",
+    "reviewedAt": "2026-10-01T05:57:04.377Z",
+    "mainSha": "f46a7f7a86bdc48e74d1b7c0c263c34ecb3fa3a5"
+  }
+}
