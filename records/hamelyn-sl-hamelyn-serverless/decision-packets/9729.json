@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-19T14:58:18.197Z",
-  "updatedAt": "2026-09-19T14:53:44Z",
+  "generatedAt": "2026-10-01T09:51:58.924Z",
+  "updatedAt": "2026-10-01T09:38:05Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,46 +13,45 @@
       "app:supply",
       "feature",
       "triage:done",
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:needs-security-review",
       "reporter:danielmenchen-hamelyn",
       "origin:dev",
-      "epic:supply-v3",
-      "P2",
-      "clawsweeper:needs-product-decision",
-      "clawsweeper:needs-security-review"
+      "epic:supply-v3"
     ],
     "createdAt": "2026-09-18T08:03:31Z",
-    "updatedAt": "2026-09-19T14:53:44Z"
+    "updatedAt": "2026-10-01T09:38:05Z"
   },
   "lane": "security_boundary",
   "priority": "P2",
-  "question": "¿Debe la exportación móvil conservar almacenamiento seguro para la autorización del carrito o migrarla a `localStorage` como plantea el criterio de aceptación?",
-  "rationale": "El código actual separa explícitamente web y nativo; cambiar esa frontera afecta la exposición de una autorización de carrito y no se resuelve sólo con una elección técnica local.",
+  "question": "¿Debe la autorización del carrito mantenerse en almacenamiento seguro nativo en la exportación móvil, frente al criterio de unificarla en `localStorage`?",
+  "rationale": "La decisión cambia dónde persiste una capacidad de acceso al carrito y la issue no documenta una decisión que permita resolver ese límite sin elección del equipo.",
   "options": [
     {
-      "title": "Conservar almacenamiento seguro en móvil",
-      "body": "Mantener `SecureStore` o su equivalente nativo y usar `localStorage` únicamente en web, con una interfaz común versionada por mercado.",
+      "title": "Mantener almacenamiento seguro nativo",
+      "body": "Usar `SecureStore` o equivalente en móvil y `localStorage` en web mediante una interfaz común con namespace y versión por mercado.",
       "recommended": true
     },
     {
-      "title": "Unificar en localStorage",
-      "body": "Aceptar el cambio de frontera y documentar la amenaza asumida, el alcance WebView y las medidas compensatorias antes de implementarlo.",
+      "title": "Unificar en `localStorage`",
+      "body": "Adoptar el criterio actual para ambas plataformas y documentar explícitamente el modelo de amenaza y las medidas compensatorias.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Conservar almacenamiento seguro en móvil",
-    "body": "Mantener `SecureStore` o su equivalente nativo y usar `localStorage` únicamente en web, con una interfaz común versionada por mercado.",
+    "title": "Mantener almacenamiento seguro nativo",
+    "body": "Usar `SecureStore` o equivalente en móvil y `localStorage` en web mediante una interfaz común con namespace y versión por mercado.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "danielmenchen-hamelyn",
-    "reason": "Coordina el carril de integración de Supply v3 y debe resolver la compatibilidad entre web, móvil y los contratos de sesión.",
+    "person": "MiguelHamelyn",
+    "reason": "Es la persona asignada actualmente; la definición previa de la épica y del contrato corresponde a danielmenchen-hamelyn.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9729.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9729#issuecomment-5740979314",
-    "reviewedAt": "2026-09-19T14:58:18.197Z",
-    "mainSha": "d0e0b93e78bba63a1c6ff1614e823941e10afa9f"
+    "reviewedAt": "2026-10-01T09:51:58.924Z",
+    "mainSha": "ea97fa04f3efe717d44c75b9c5f993bf76d3a5e8"
   }
 }
