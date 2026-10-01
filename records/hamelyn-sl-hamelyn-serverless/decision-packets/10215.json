@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-01T08:00:41.340Z",
+  "generatedAt": "2026-10-01T08:03:14.192Z",
   "updatedAt": "2026-10-01T06:12:55Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -15,47 +15,46 @@
       "reporter:javier",
       "triage:done",
       "clawsweeper:needs-product-decision",
-      "mk:todocoleccion",
-      "P2"
+      "P2",
+      "mk:todocoleccion"
     ],
     "createdAt": "2026-09-29T06:41:22Z",
     "updatedAt": "2026-10-01T06:12:55Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué cuota y cadencia de consultas por SKU se autorizan para la recuperación inicial y la cobertura recurrente de TodoColección?",
-  "rationale": "La búsqueda por SKU usa una API compartida y el barrido completo podría consumir muchas horas; el código no puede determinar el presupuesto operativo aceptable.",
+  "question": "¿Debe hacerse un piloto acotado para buscar anuncios históricos de TodoColección sin fila, o basta con desplegar la prevención y observar la métrica durante dos semanas?",
+  "rationale": "La recuperación histórica y la cobertura recurrente requieren consultas por SKU; la muestra publicada no demuestra que no queden anuncios y la cuota de API compartida no está definida.",
   "options": [
     {
-      "title": "Autorizar un piloto acotado",
-      "body": "Definir un máximo de SKU y límites de concurrencia y frecuencia para probar primero el lote de ZoomBooks.",
+      "title": "Desplegar prevención y medir primero",
+      "body": "Resolver la PR preventiva y observar durante dos semanas las cancelaciones antes de autorizar consultas históricas adicionales.",
       "recommended": true
     },
     {
-      "title": "Aprobar solo cobertura recurrente",
-      "body": "Fijar una cuota periódica que detecte casos nuevos y dejar sin barrido la recuperación histórica.",
+      "title": "Autorizar piloto histórico acotado",
+      "body": "Fijar máximo de SKU y límites de concurrencia y frecuencia para comprobar si el residuo justifica una pasada mayor.",
       "recommended": false
     },
     {
-      "title": "No consultar el catálogo por SKU",
-      "body": "Mantener la detección basada en cancelaciones y documentar que no se recuperará el residuo histórico.",
+      "title": "Aceptar el residuo histórico",
+      "body": "No ejecutar búsquedas adicionales por SKU y tratar futuros casos mediante la cobertura preventiva y su telemetría.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Autorizar un piloto acotado",
-    "body": "Definir un máximo de SKU y límites de concurrencia y frecuencia para probar primero el lote de ZoomBooks.",
+    "title": "Desplegar prevención y medir primero",
+    "body": "Resolver la PR preventiva y observar durante dos semanas las cancelaciones antes de autorizar consultas históricas adicionales.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MarcosTerroso",
-    "reason": "Tiene asignada la PR preventiva vinculada y ha contribuido recientemente a la ruta de recuperación; la decisión debe coordinarse con el equipo de Marketplace.",
+    "person": "JavierHamelyn",
+    "reason": "El hilo pide la decisión de cuota a Marketplace y su historial incluye trabajo fusionado de telemetría de retiradas.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10215.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10215#issuecomment-5885553381",
-    "reviewedAt": "2026-10-01T08:00:41.340Z",
+    "reviewedAt": "2026-10-01T08:03:14.192Z",
     "mainSha": "bae21217ff3ac183e300df0625efc2bc0e79d612"
   }
 }
