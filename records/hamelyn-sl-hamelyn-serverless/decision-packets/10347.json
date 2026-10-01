@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-01T13:50:37.322Z",
+  "updatedAt": "2026-10-01T13:40:47Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10347,
+    "title": "Eliminar parte de las etiquetas Fedex Argentina",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10347",
+    "state": "open",
+    "labels": [
+      "source:admin-panel",
+      "app:admin",
+      "feature",
+      "reporter:rubenmorueco",
+      "triage:queued",
+      "P2"
+    ],
+    "createdAt": "2026-10-01T13:40:31Z",
+    "updatedAt": "2026-10-01T13:40:47Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué página debe dejar de imprimirse para los pedidos FedEx de Mercado Libre Argentina: el marcador «FACTURA», las páginas AWB adicionales del PDF del transportista u otra página?",
+  "rationale": "La ruta contiene dos mecanismos distintos que pueden producir páginas adicionales y uno está documentado como necesario para el emparejamiento físico; elegir la excepción sin identificar la página podría interrumpir el flujo del almacén.",
+  "options": [
+    {
+      "title": "Aclarar la página y el alcance",
+      "body": "Confirmar con el almacén qué página del adjunto sobra y si la excepción debe aplicarse solo a Mercado Libre Argentina.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener el marcador",
+      "body": "Conservar el marcador de factura mientras no se confirme que el almacén puede emparejar paquetes y facturas sin él.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aclarar la página y el alcance",
+    "body": "Confirmar con el almacén qué página del adjunto sobra y si la excepción debe aplicarse solo a Mercado Libre Argentina.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Lyno",
+    "reason": "Es la persona conectada por el historial local al generador del marcador; la evidencia disponible no identifica con seguridad a un responsable de la regla operativa de almacén.",
+    "confidence": "low"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10347.md",
+    "reviewedAt": "2026-10-01T13:50:37.322Z",
+    "mainSha": "0e1bbc8c04f2de435f8d05f6818e5ade444d9e30"
+  }
+}
