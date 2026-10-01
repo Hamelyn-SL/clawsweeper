@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-30T13:57:11.845Z",
-  "updatedAt": "2026-09-30T13:51:50Z",
+  "generatedAt": "2026-10-01T14:01:00.928Z",
+  "updatedAt": "2026-09-30T14:47:06Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,48 +14,42 @@
       "app:ecommerce",
       "reporter:jesus",
       "feature",
-      "triage:queued",
-      "P2",
-      "clawsweeper:needs-product-decision"
+      "triage:needs-info",
+      "clawsweeper:needs-product-decision",
+      "P2"
     ],
     "createdAt": "2026-09-30T13:51:36Z",
-    "updatedAt": "2026-09-30T13:51:50Z"
+    "updatedAt": "2026-09-30T14:47:06Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué semántica y límites de privacidad deben regir la atribución almacenada por pedido, especialmente para los múltiples toques, las cookies y los identificadores de cliente/sesión?",
-  "rationale": "El alcance enumera tanto datos de primer contacto como una lista de toques y cookies de varios proveedores, pero no fija precedencia, retención ni condiciones de captura; esas decisiones afectan al significado del dato y no se deducen del código existente.",
+  "question": "¿La primera entrega debe persistir el snapshot actual o el historial de toques completo y, en ese caso, qué ventana y máximo de toques deben aplicarse?",
+  "rationale": "La captura actual solo conserva un snapshot fusionado; la aceptación pide fechas y lista de toques, pero no define cómo se separan ni cuánto tiempo se retienen.",
   "options": [
     {
-      "title": "Definir el contrato antes de implementar",
-      "body": "Acordar precedencia y retención de los toques y qué identificadores/cookies se pueden guardar, y después persistir el contrato aprobado.",
+      "title": "Persistir solo el snapshot",
+      "body": "Guardar en checkout y pedido el snapshot actual de `localStorage` como primera entrega, dejando historial e IDs de GA4 fuera de alcance.",
+      "recommended": false
+    },
+    {
+      "title": "Definir y persistir historial",
+      "body": "Acordar qué visita cuenta como toque, la ventana temporal y el límite antes de implementar y validar la propagación completa.",
       "recommended": true
-    },
-    {
-      "title": "Guardar solo la atribución ya capturada",
-      "body": "Persistir UTM e identificadores disponibles en el snapshot actual, posponiendo cookies y datos GA4 adicionales.",
-      "recommended": false
-    },
-    {
-      "title": "Persistir atribución multitoque completa",
-      "body": "Mantener el historial de toques y los identificadores GA4/cookies solicitados, con reglas explícitas de consentimiento y retención.",
-      "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Definir el contrato antes de implementar",
-    "body": "Acordar precedencia y retención de los toques y qué identificadores/cookies se pueden guardar, y después persistir el contrato aprobado.",
+    "title": "Definir y persistir historial",
+    "body": "Acordar qué visita cuenta como toque, la ventana temporal y el límite antes de implementar y validar la propagación completa.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "La utilidad de atribución actual aparece en su historial reciente; no hay evidencia suficiente para atribuirle autoridad de producto.",
+    "person": "Lyno",
+    "reason": "Es la persona más conectada por el historial local disponible con la captura actual de atribución; la decisión debe confirmarse con quien mantiene ecommerce.",
     "confidence": "low"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10293.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10293#issuecomment-5912777763",
-    "reviewedAt": "2026-09-30T13:57:11.845Z",
-    "mainSha": "dee8167221595d403debbcf42dac485699e96fc0"
+    "reviewedAt": "2026-10-01T14:01:00.928Z",
+    "mainSha": "0e1bbc8c04f2de435f8d05f6818e5ade444d9e30"
   }
 }
