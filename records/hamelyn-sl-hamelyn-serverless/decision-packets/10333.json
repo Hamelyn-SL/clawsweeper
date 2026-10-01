@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-01T10:47:56.042Z",
+  "updatedAt": "2026-10-01T10:42:54Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10333,
+    "title": "Amazon: la oferta sigue comprable hasta 54 min después de aceptarse el DELETE de la retirada (7 cancelaciones SYNC_RECENT en 7 días)",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10333",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "reporter:javier",
+      "triage:running",
+      "P2",
+      "mk:amazon"
+    ],
+    "createdAt": "2026-10-01T10:37:28Z",
+    "updatedAt": "2026-10-01T10:42:54Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué política debe seguir la retirada cuando Amazon acepta el DELETE pero la oferta continúa BUYABLE durante la propagación eventual?",
+  "rationale": "La elección entre comprobación con reintentos, ajuste adicional de cantidad o solo alerta cambia el comportamiento operativo y no puede resolverse únicamente con el código: depende de los datos de latencia y del coste de nuevas llamadas a Amazon.",
+  "options": [
+    {
+      "title": "Verificar y reintentar de forma acotada",
+      "body": "Consultar la comprabilidad tras el DELETE y emitir una señal o reintentar dentro de un límite acordado.",
+      "recommended": true
+    },
+    {
+      "title": "Añadir una actualización de cantidad",
+      "body": "Medir si enviar cantidad cero junto al DELETE reduce la ventana, aceptando la complejidad de una segunda operación.",
+      "recommended": false
+    },
+    {
+      "title": "Documentar la propagación",
+      "body": "Si Amazon no permite acortar la ventana, dejar constancia de la limitación y acordar el impacto residual.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Verificar y reintentar de forma acotada",
+    "body": "Consultar la comprabilidad tras el DELETE y emitir una señal o reintentar dentro de un límite acordado.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "HamelynDev",
+    "reason": "Su historial local reciente cubre la confirmación del estado de listings de Amazon, la ruta más próxima para valorar una política de verificación.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10333.md",
+    "reviewedAt": "2026-10-01T10:47:56.042Z",
+    "mainSha": "16d78daab656cd6fa3afef2d915a3a59a1a46da2"
+  }
+}
