@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-01T05:57:04.377Z",
+  "generatedAt": "2026-10-01T06:03:53.822Z",
   "updatedAt": "2026-10-01T05:48:13Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -10,43 +10,41 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10312",
     "state": "open",
     "labels": [
-      "size/L",
-      "P2"
+      "size/L"
     ],
     "createdAt": "2026-10-01T05:41:20Z",
     "updatedAt": "2026-10-01T05:48:13Z",
     "headSha": "7e47d7c5a49ceb61592a92d8385140c7dcd862cb"
   },
-  "lane": "merge_risk",
+  "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se acepta el riesgo conocido de que una lápida de venta reciente reactive una retirada adicional o que una oferta eBay duplicada permanezca publicada?",
-  "rationale": "El PR describe ambos casos como riesgos aceptados, pero afectan a la retirada efectiva de anuncios y no quedan resueltos por las pruebas simuladas disponibles.",
+  "question": "¿Se acepta que los informes puedan reactivar inmediatamente una lápida de venta y repetir la retirada, incluso cuando eBay tenga ofertas duplicadas?",
+  "rationale": "La descripción del PR reconoce ambos efectos, pero el checkout no contiene una decisión humana que confirme que ese comportamiento es aceptable para las operaciones de marketplace.",
   "options": [
     {
-      "title": "Integrar con el riesgo documentado",
-      "body": "Aceptar los casos conocidos y mantener el alcance actual de reactivación y retirada.",
-      "recommended": false
+      "title": "Añadir guarda y cobertura de duplicados",
+      "body": "Conservar una gracia para lápidas de venta recientes y verificar que eBay retira todos los identificadores vivos antes de integrar.",
+      "recommended": true
     },
     {
-      "title": "Acotar la reactivación antes de integrar",
-      "body": "Añadir guardas o una verificación de anuncios vivos para evitar reactivar lápidas de venta reciente y cubrir ofertas eBay duplicadas.",
-      "recommended": true
+      "title": "Aceptar el comportamiento documentado",
+      "body": "Integrar el flujo actual aceptando las retiradas repetidas y el riesgo de que sobreviva una oferta duplicada.",
+      "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Acotar la reactivación antes de integrar",
-    "body": "Añadir guardas o una verificación de anuncios vivos para evitar reactivar lápidas de venta reciente y cubrir ofertas eBay duplicadas.",
+    "title": "Añadir guarda y cobertura de duplicados",
+    "body": "Conservar una gracia para lápidas de venta recientes y verificar que eBay retira todos los identificadores vivos antes de integrar.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MarcosTerroso",
-    "reason": "Su trabajo reciente en la recuperación de retiradas le conecta directamente con la ruta que decide cuándo reactivar lápidas.",
+    "person": "JavierHamelyn",
+    "reason": "Su historial cubre reconciliación de ofertas eBay y telemetría de retiradas, por lo que es el candidato más conectado con esta decisión operativa.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10312.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10312#issuecomment-5925655473",
-    "reviewedAt": "2026-10-01T05:57:04.377Z",
+    "reviewedAt": "2026-10-01T06:03:53.822Z",
     "mainSha": "f46a7f7a86bdc48e74d1b7c0c263c34ecb3fa3a5"
   }
 }
