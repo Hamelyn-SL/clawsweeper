@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-24T11:22:35.349Z",
-  "updatedAt": "2026-09-23T11:45:12Z",
+  "generatedAt": "2026-10-01T09:03:25.884Z",
+  "updatedAt": "2026-10-01T08:23:00Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,42 +15,41 @@
       "question",
       "triage:needs-info",
       "clawsweeper:needs-product-decision",
-      "reporter:carlotavarela",
-      "P2"
+      "P2",
+      "reporter:carlotavarela"
     ],
     "createdAt": "2026-09-21T13:53:37Z",
-    "updatedAt": "2026-09-23T11:45:12Z"
+    "updatedAt": "2026-10-01T08:23:00Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué fuente y proceso deben establecer el país de fabricación correcto por artículo antes de guardarlo en catálogo y enviarlo a Amazon?",
-  "rationale": "El dato existente describe producción de películas y el requisito de Amazon prohíbe inferir el origen a partir de la ubicación del almacén; el repositorio no determina cómo obtener o validar el origen físico de cada artículo.",
+  "question": "¿Qué fuente de catálogo debe ser la referencia del país de fabricación por artículo y qué productos/listings cubre el primer cambio?",
+  "rationale": "El repositorio no acredita actualmente el origen de fabricación como dato genérico, y elegirlo determina si se puede enviar un valor correcto sin inventar información.",
   "options": [
     {
-      "title": "Usar datos verificados de proveedor o fabricante",
-      "body": "Definir una fuente autorizada por artículo y después incorporar el campo de catálogo y el envío Amazon con validación por mercado.",
+      "title": "Definir fuente por artículo",
+      "body": "Confirmar proveedor, fabricante o etiquetado como fuente y acotar qué productos permiten completar el dato.",
       "recommended": true
     },
     {
-      "title": "Posponer el cambio de catálogo",
-      "body": "Solicitar el SKU/ASIN y confirmar el contrato Amazon aplicable antes de decidir cómo capturar y sincronizar el dato.",
+      "title": "Aplazar el cambio",
+      "body": "Mantener la issue pendiente hasta disponer de una fuente y de un listing/mercado de ejemplo verificable.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Usar datos verificados de proveedor o fabricante",
-    "body": "Definir una fuente autorizada por artículo y después incorporar el campo de catálogo y el envío Amazon con validación por mercado.",
+    "title": "Definir fuente por artículo",
+    "body": "Confirmar proveedor, fabricante o etiquetado como fuente y acotar qué productos permiten completar el dato.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "PabloMoran34",
-    "reason": "Su historial reciente en el flujo de listings de Amazon le conecta con la parte de sincronización; la decisión sobre procedencia del dato requiere también contexto de catálogo que el historial no identifica con claridad.",
-    "confidence": "low"
+    "person": "HamelynDev",
+    "reason": "Es la persona con cambios recientes identificables en el servicio de listings de Amazon.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9854.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9854#issuecomment-5761745113",
-    "reviewedAt": "2026-09-24T11:22:35.349Z",
-    "mainSha": "b3f7c1eace1f7638fa2f8de78cce0587ae8df711"
+    "reviewedAt": "2026-10-01T09:03:25.884Z",
+    "mainSha": "225790f4f9358f4ff407a5cd04a4b9c478597d7f"
   }
 }
