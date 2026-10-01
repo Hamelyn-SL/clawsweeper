@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-30T15:06:52.600Z",
-  "updatedAt": "2026-09-30T14:57:51Z",
+  "generatedAt": "2026-10-01T15:57:43.898Z",
+  "updatedAt": "2026-09-30T15:11:55Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,49 +14,48 @@
       "app:ecommerce",
       "reporter:jesus",
       "feature",
-      "triage:running",
+      "triage:pr-opened",
       "clawsweeper:needs-product-decision",
       "P2",
       "clawsweeper:needs-security-review"
     ],
     "createdAt": "2026-09-30T14:11:01Z",
-    "updatedAt": "2026-09-30T14:57:51Z"
+    "updatedAt": "2026-09-30T15:11:55Z"
   },
   "lane": "security_boundary",
   "priority": "P2",
-  "question": "¿Debe ecommerce enviar nombre y dirección de compra a Google Ads para Enhanced Conversions y, si se autoriza, bajo qué aviso y condición de consentimiento?",
-  "rationale": "La política publicada restringe la cesión comercial a terceros y no menciona Google Ads; elegir el tratamiento y sus controles requiere intención de producto y privacidad que no se deduce del código.",
+  "question": "¿Se autoriza enviar a Google Ads los hashes de nombre y los campos de dirección de `purchase` y, si se autoriza, qué aviso y condición de consentimiento deben aplicarse?",
+  "rationale": "La decisión determina si se amplía el tratamiento y la comunicación de datos personales; el código por sí solo no puede resolver el encaje con la política publicada.",
   "options": [
     {
       "title": "Aprobar con condiciones",
-      "body": "Confirmar el encaje y los controles de consentimiento y aviso antes de añadir únicamente los campos aprobados.",
+      "body": "Confirmar el propósito y los controles de aviso y consentimiento, y permitir únicamente los campos aprobados.",
       "recommended": true
     },
     {
       "title": "Definir primero la política",
-      "body": "Aclarar o actualizar el aviso y el flujo de consentimiento antes de decidir si se envían estos identificadores.",
+      "body": "Aclarar el aviso y el flujo de consentimiento antes de decidir qué datos pueden enviarse.",
       "recommended": false
     },
     {
-      "title": "No enviar dirección",
-      "body": "Descartar los campos de dirección a Google Ads y mantener el evento actual hasta una decisión posterior.",
+      "title": "Excluir la dirección",
+      "body": "Descartar los campos de dirección y mantener el evento actual mientras se decide sobre las demás señales.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Aprobar con condiciones",
-    "body": "Confirmar el encaje y los controles de consentimiento y aviso antes de añadir únicamente los campos aprobados.",
+    "body": "Confirmar el propósito y los controles de aviso y consentimiento, y permitir únicamente los campos aprobados.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "El historial lo vincula tanto al flujo actual de compra como al texto de privacidad afectado; no hay evidencia local de un responsable de privacidad más específico.",
-    "confidence": "medium"
+    "reason": "La revisión previa lo identifica como candidato para esta decisión de tratamiento; la atribución disponible no permite elevar la confianza.",
+    "confidence": "low"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10296.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10296#issuecomment-5913973350",
-    "reviewedAt": "2026-09-30T15:06:52.600Z",
-    "mainSha": "dee8167221595d403debbcf42dac485699e96fc0"
+    "reviewedAt": "2026-10-01T15:57:43.898Z",
+    "mainSha": "6994e00f2013c5e6e36148c27632ebdf062e9b46"
   }
 }

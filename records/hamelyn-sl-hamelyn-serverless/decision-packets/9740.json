@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-19T09:25:19.011Z",
-  "updatedAt": "2026-09-19T09:14:54Z",
+  "generatedAt": "2026-10-01T15:57:38.475Z",
+  "updatedAt": "2026-10-01T15:49:15Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,45 +12,49 @@
     "labels": [
       "app:supply",
       "feature",
-      "triage:blocked",
+      "triage:queued",
+      "P2",
       "reporter:danielmenchen-hamelyn",
       "origin:dev",
-      "epic:supply-v3",
-      "P2"
+      "epic:supply-v3"
     ],
     "createdAt": "2026-09-18T08:03:55Z",
-    "updatedAt": "2026-09-19T09:14:54Z"
+    "updatedAt": "2026-10-01T15:49:15Z"
   },
-  "lane": "manual_review",
+  "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe P16 implementarse contra `epic/supply-v3` conforme al plan de la épica, o esperar a que esa base se integre autorizadamente en `dev`?",
-  "rationale": "La rama revisada carece del workspace destino, mientras que el plan sitúa la base en una rama de épica y las dependencias de shell y rutas siguen abiertas.",
+  "question": "Al retirar la web Expo, ¿qué comportamiento debe tener `/about` y deben migrarse S24/S25 a la nueva web?",
+  "rationale": "La migración no debe inventar contenido ni decidir por su cuenta si una ruta pública existente desaparece o redirige.",
   "options": [
     {
-      "title": "Trabajar en la rama de la épica",
-      "body": "Confirmar el flujo de `epic/supply-v3` y coordinar P16 con los contratos de navegación y rutas antes de abrir implementación.",
+      "title": "Migrar las páginas y conservar `/about`",
+      "body": "Publicar S24/S25 con contenido aprobado y mantener `/about` como alias con canonical localizado.",
       "recommended": true
     },
     {
-      "title": "Esperar la integración en `dev`",
-      "body": "Mantener la issue bloqueada hasta que la base de Supply v3 llegue a `dev` mediante el proceso autorizado.",
+      "title": "Retirar las páginas y dejar 404",
+      "body": "Confirmar que sostenibilidad, quiénes somos y el alias `/about` quedan fuera de la nueva web.",
+      "recommended": false
+    },
+    {
+      "title": "Retirar páginas y redirigir `/about`",
+      "body": "Omitir S24/S25, pero definir un destino permanente para el alias existente.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Trabajar en la rama de la épica",
-    "body": "Confirmar el flujo de `epic/supply-v3` y coordinar P16 con los contratos de navegación y rutas antes de abrir implementación.",
+    "title": "Migrar las páginas y conservar `/about`",
+    "body": "Publicar S24/S25 con contenido aprobado y mantener `/about` como alias con canonical localizado.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "danielmenchen-hamelyn",
-    "reason": "La planificación y la integración previa de la base de Supply v3 le conectan directamente con la decisión de ruta.",
-    "confidence": "high"
+    "person": "MiguelHamelyn",
+    "reason": "Está asignado a la issue y documentó explícitamente la decisión de producto aún pendiente.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9740.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9740#issuecomment-5740764079",
-    "reviewedAt": "2026-09-19T09:25:19.011Z",
-    "mainSha": "d0e0b93e78bba63a1c6ff1614e823941e10afa9f"
+    "reviewedAt": "2026-10-01T15:57:38.475Z",
+    "mainSha": "6994e00f2013c5e6e36148c27632ebdf062e9b46"
   }
 }
