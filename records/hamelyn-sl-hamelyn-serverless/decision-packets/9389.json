@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-26T10:22:19.800Z",
-  "updatedAt": "2026-09-25T08:21:32Z",
+  "generatedAt": "2026-10-01T10:00:24.803Z",
+  "updatedAt": "2026-10-01T09:56:08Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,43 +12,42 @@
     "labels": [
       "bug",
       "app:infrastructure",
-      "triage:needs-info",
+      "triage:queued",
       "clawsweeper:needs-product-decision",
       "P2"
     ],
     "createdAt": "2026-09-10T09:51:02Z",
-    "updatedAt": "2026-09-25T08:21:32Z"
+    "updatedAt": "2026-10-01T09:56:08Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe Hamelyn crear el documento de usuario al registrarse aunque la persona nunca inicie sesión?",
-  "rationale": "Conservar la Action de registro o aplazar el aprovisionamiento cambia cuándo aparecen en Mongo los usuarios creados mediante Management API; el código del repositorio no determina ese comportamiento de negocio.",
+  "question": "¿Debe una cuenta creada por Management API aprovisionarse en Hamelyn antes de su primer login, conservando y autenticando `post-user-registration`, o se acepta aplazar el alta hasta `post-login` y retirar las Actions redundantes?",
+  "rationale": "Las opciones tienen resultados distintos para cuentas sin login y la conversación no confirma cuál es el contrato deseado; el snapshot histórico tampoco revela la configuración activa del tenant.",
   "options": [
     {
-      "title": "Conservar el alta al registrarse",
-      "body": "Mantener el aprovisionamiento previo al login y corregir las Actions activas para enviar el token, tras verificar su estado en el tenant.",
+      "title": "Conservar el alta en registro",
+      "body": "Confirmar que las cuentas deben aprovisionarse aunque no inicien sesión y alinear la Action con el token y la configuración verificada del tenant.",
       "recommended": true
     },
     {
       "title": "Aplazar el alta al primer login",
-      "body": "Retirar las Actions redundantes y documentar que las altas de Management API no aparecerán en Mongo hasta el primer acceso.",
+      "body": "Confirmar que el aprovisionamiento puede esperar al primer inicio de sesión y retirar las Actions redundantes tras verificar dependencias y configuración desplegada.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Conservar el alta al registrarse",
-    "body": "Mantener el aprovisionamiento previo al login y corregir las Actions activas para enviar el token, tras verificar su estado en el tenant.",
+    "title": "Conservar el alta en registro",
+    "body": "Confirmar que las cuentas deben aprovisionarse aunque no inicien sesión y alinear la Action con el token y la configuración verificada del tenant.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "Miguel Angel Hernández Perdomo",
-    "reason": "Su historial incluye la introducción del control de autenticación de estas Actions; es el candidato de decisión señalado en la revisión previa.",
+    "person": "Alex Cantón",
+    "reason": "Su cambio fusionado aborda la autenticación `PUT` de la Action y el envío de bienvenida, por lo que es el candidato mejor conectado para orientar esta decisión.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9389.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9389#issuecomment-5645006500",
-    "reviewedAt": "2026-09-26T10:22:19.800Z",
-    "mainSha": "b7ca4ccf2295720375fc765a9fe4ea56a1f68320"
+    "reviewedAt": "2026-10-01T10:00:24.803Z",
+    "mainSha": "ea97fa04f3efe717d44c75b9c5f993bf76d3a5e8"
   }
 }
