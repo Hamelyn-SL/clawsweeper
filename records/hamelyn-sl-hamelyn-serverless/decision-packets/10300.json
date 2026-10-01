@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-30T14:59:21.782Z",
-  "updatedAt": "2026-09-30T14:34:28Z",
+  "generatedAt": "2026-10-01T15:51:24.525Z",
+  "updatedAt": "2026-09-30T16:21:52Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,44 +13,43 @@
       "bug",
       "app:marketplace",
       "reporter:javier",
-      "triage:queued",
-      "mk:ebay",
+      "triage:needs-info",
+      "clawsweeper:needs-product-decision",
       "P2",
-      "clawsweeper:needs-product-decision"
+      "mk:ebay"
     ],
     "createdAt": "2026-09-30T14:34:12Z",
-    "updatedAt": "2026-09-30T14:34:28Z"
+    "updatedAt": "2026-09-30T16:21:52Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe el flujo sondear `getOffer` durante una ventana breve tras una retirada aceptada antes de registrar un error reintentable?",
-  "rationale": "La corrección depende de definir cuánto esperar a la consistencia eventual de eBay sin ocultar ofertas que continúen publicadas ni sobrepasar el presupuesto de ejecución.",
+  "question": "¿Qué ventana y frecuencia de relectura debe aplicar eBay ES después de aceptar una retirada antes de guardar el error reintentable?",
+  "rationale": "Las trazas demuestran que la lectura inmediata puede ser anterior a la retirada y que el reintento posterior a una hora suele confirmarla, pero no establecen una latencia intermedia segura; además, debe preservarse el control ante ofertas que continúan publicadas.",
   "options": [
     {
-      "title": "Añadir sondeo acotado",
-      "body": "Acordar un plazo y cadencia de relecturas breves y mantener el reintento existente si la oferta sigue publicada al agotarse el plazo.",
+      "title": "Medir primero y fijar después",
+      "body": "Obtener una traza de lecturas durante el primer minuto tras una retirada aceptada y elegir los límites de sondeo según esa propagación y el presupuesto del cron.",
       "recommended": true
     },
     {
-      "title": "Mantener el reintento horario",
-      "body": "No cambiar el comportamiento hasta obtener de eBay un contrato de consistencia o una señal remota más fiable.",
+      "title": "Adoptar una ventana conservadora",
+      "body": "Definir ahora un número fijo de relecturas espaciadas y aceptar que algunos casos sigan al reintento horario.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Añadir sondeo acotado",
-    "body": "Acordar un plazo y cadencia de relecturas breves y mantener el reintento existente si la oferta sigue publicada al agotarse el plazo.",
+    "title": "Medir primero y fijar después",
+    "body": "Obtener una traza de lecturas durante el primer minuto tras una retirada aceptada y elegir los límites de sondeo según esa propagación y el presupuesto del cron.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Su cambio reciente introdujo la confirmación posterior a la retirada que da lugar a esta decisión de comportamiento.",
+    "reason": "Su cambio introdujo la confirmación remota que requiere definir esta conducta posterior a la retirada.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10300.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10300#issuecomment-5913899918",
-    "reviewedAt": "2026-09-30T14:59:21.782Z",
-    "mainSha": "dee8167221595d403debbcf42dac485699e96fc0"
+    "reviewedAt": "2026-10-01T15:51:24.525Z",
+    "mainSha": "6994e00f2013c5e6e36148c27632ebdf062e9b46"
   }
 }
