@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-01T08:36:14.649Z",
+  "updatedAt": "2026-10-01T08:30:10Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10320,
+    "title": "Enlazar pedidos de invitado del ecommerce al crear la cuenta, solo con email verificado",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10320",
+    "state": "open",
+    "labels": [
+      "app:ecommerce",
+      "feature",
+      "triage:needs-info"
+    ],
+    "createdAt": "2026-10-01T08:19:43Z",
+    "updatedAt": "2026-10-01T08:30:10Z"
+  },
+  "lane": "security_boundary",
+  "priority": "P2",
+  "question": "¿Debe la reconciliación ejecutarse en cada login con email verificado para cubrir pedidos posteriores al alta, usando una señal de Auth0 autenticada, y se autoriza preparar el índice manual de Atlas necesario?",
+  "rationale": "El alta por sí sola no cubre cuentas existentes ni pedidos posteriores, y confiar en un flag aportado por un POST genérico podría exponer pedidos de otra persona; además, crear índices requiere autorización expresa.",
+  "options": [
+    {
+      "title": "Reconciliar en login verificado",
+      "body": "Confirmar el origen autenticado del flag, reconciliar en cada login verificado y autorizar el índice compatible en Atlas.",
+      "recommended": true
+    },
+    {
+      "title": "Enlazar solo en el alta",
+      "body": "Limitar la asociación al alta y aceptar que no cubrirá compras invitadas de cuentas ya existentes o pedidos posteriores.",
+      "recommended": false
+    },
+    {
+      "title": "Aplazar la implementación",
+      "body": "Esperar a confirmar la configuración viva de Auth0 y la disponibilidad del índice antes de definir el comportamiento.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Reconciliar en login verificado",
+    "body": "Confirmar el origen autenticado del flag, reconciliar en cada login verificado y autorizar el índice compatible en Atlas.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es la persona mejor conectada en el historial disponible con la consulta y el contrato de privacidad del perfil.",
+    "confidence": "low"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10320.md",
+    "reviewedAt": "2026-10-01T08:36:14.649Z",
+    "mainSha": "3dffbf45e998bdcf1a18848f289430654e18b849"
+  }
+}
