@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-01T13:56:50.423Z",
+  "updatedAt": "2026-10-01T13:50:53Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10348,
+    "title": "feat: redesign ecommerce incident form by order status",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10348",
+    "state": "open",
+    "labels": [
+      "size/XXL"
+    ],
+    "createdAt": "2026-10-01T13:44:10Z",
+    "updatedAt": "2026-10-01T13:50:53Z",
+    "headSha": "847fde478ba3fdf67506ebad06c60c8b0dbe1fbd"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué modelo debe guardar y mostrar hasta dos tickets de incidencia asociados a un pedido?",
+  "rationale": "La especificación fija el máximo de dos, pero el modelo actual usa un único edeskTicketId por envío; hay que acordar una representación que permita distinguir ambas incidencias y evitar duplicados.",
+  "options": [
+    {
+      "title": "Persistir un historial de incidencias",
+      "body": "Guardar cada incidencia y su ticket como registros diferenciados asociados al pedido para aplicar el límite de dos.",
+      "recommended": true
+    },
+    {
+      "title": "Ampliar el modelo existente",
+      "body": "Sustituir el campo único por una estructura de hasta dos tickets y definir cómo se conserva y lee el dato actual.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Persistir un historial de incidencias",
+    "body": "Guardar cada incidencia y su ticket como registros diferenciados asociados al pedido para aplicar el límite de dos.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Su trabajo reciente cubre el acceso a incidencias desde PurchaseOrderCard; el historial disponible no identifica con certeza al responsable del modelo de tickets.",
+    "confidence": "low"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10348.md",
+    "reviewedAt": "2026-10-01T13:56:50.423Z",
+    "mainSha": "0e1bbc8c04f2de435f8d05f6818e5ade444d9e30"
+  }
+}
