@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-01T17:23:44.052Z",
+  "updatedAt": "2026-10-01T17:02:33Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10352,
+    "title": "Añadir columna en pedidos de compra",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10352",
+    "state": "open",
+    "labels": [
+      "source:admin-panel",
+      "app:supply",
+      "feature",
+      "triage:needs-info",
+      "P2",
+      "reporter:daniellopez"
+    ],
+    "createdAt": "2026-10-01T16:55:31Z",
+    "updatedAt": "2026-10-01T17:02:33Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe «Revisor» mostrar únicamente los revisores que constan ahora en los artículos del lote, o también a quienes revisaron antes aunque otra persona cambiara después esos artículos?",
+  "rationale": "La elección cambia tanto el significado visible de la columna como el alcance de persistencia: reviewedBy es mutable y no garantiza un historial completo.",
+  "options": [
+    {
+      "title": "Mostrar revisores actuales",
+      "body": "Agregar los valores únicos de reviewedBy por artículo y dejar fuera participantes que ya no constan en esos registros.",
+      "recommended": true
+    },
+    {
+      "title": "Conservar el historial completo",
+      "body": "Definir y persistir el registro de todos los participantes antes de presentar la columna como historial completo.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mostrar revisores actuales",
+    "body": "Agregar los valores únicos de reviewedBy por artículo y dejar fuera participantes que ya no constan en esos registros.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "El blame disponible del bloque actual de la columna Revisor apunta a esta persona; la confianza es limitada por el historial remoto inaccesible.",
+    "confidence": "low"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10352.md",
+    "reviewedAt": "2026-10-01T17:23:44.052Z",
+    "mainSha": "6994e00f2013c5e6e36148c27632ebdf062e9b46"
+  }
+}
