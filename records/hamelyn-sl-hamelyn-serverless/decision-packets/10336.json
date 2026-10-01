@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-01T11:59:09.841Z",
+  "updatedAt": "2026-10-01T11:15:15Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10336,
+    "title": "fix: value meli invoices at stock purchase cost and estimate unpaid stock cost",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10336",
+    "state": "open",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-10-01T11:09:15Z",
+    "updatedAt": "2026-10-01T11:15:15Z",
+    "headSha": "3f1558f610166ab213b6627f5cd030202602600d"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se aprueba usar la media anual de `stocks.priceBuy` —y la media del año anterior mientras el año actual no alcance 1.000 unidades con coste— como coste contable persistido para las líneas pagadas a cero?",
+  "rationale": "La imputación modifica el significado de un dato persistido usado en costes y facturas; la intención expresada en el PR no basta para confirmar la política contable del equipo.",
+  "options": [
+    {
+      "title": "Aprobar la media anual",
+      "body": "Mantener la estimación anual y documentar que ese valor es la política aceptada para líneas sin coste pagado.",
+      "recommended": true
+    },
+    {
+      "title": "Definir otro criterio contable",
+      "body": "Acordar una fuente de coste distinta antes de persistir estimaciones en `stocks.priceBuy`.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar la media anual",
+    "body": "Mantener la estimación anual y documentar que ese valor es la política aceptada para líneas sin coste pagado.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Su historial reciente cubre los cambios de valoración de facturas MELI y sus fallbacks; es la referencia de código más directa disponible para elevar esta decisión.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10336.md",
+    "reviewedAt": "2026-10-01T11:59:09.841Z",
+    "mainSha": "16d78daab656cd6fa3afef2d915a3a59a1a46da2"
+  }
+}
