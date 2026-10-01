@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-01T13:30:16.121Z",
+  "updatedAt": "2026-10-01T13:26:25Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10346,
+    "title": "Watcher B2B: alta del cliente HOTEL_CORDOBA_ECO_ONE en B2B_CLIENTS",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10346",
+    "state": "open",
+    "labels": [
+      "app:infrastructure",
+      "feature",
+      "triage:queued",
+      "P2"
+    ],
+    "createdAt": "2026-10-01T13:26:11Z",
+    "updatedAt": "2026-10-01T13:26:25Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe HOTEL_CORDOBA_ECO_ONE contar como canal B2B en la clasificación y los gráficos de ventas del dashboard?",
+  "rationale": "La solicitud pide revisar esa clasificación, que determina cómo se segmentan las ventas; el código actual mantiene listas explícitas separadas y no basta con inferir la decisión del alta del watcher.",
+  "options": [
+    {
+      "title": "Incluirlo como B2B",
+      "body": "Añadir el marketplace a las listas de clasificación y canales de ventas con cobertura de pruebas.",
+      "recommended": true
+    },
+    {
+      "title": "Registrar solo en el watcher",
+      "body": "Dar de alta el cliente y dejar intacta la clasificación actual del dashboard.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Incluirlo como B2B",
+    "body": "Añadir el marketplace a las listas de clasificación y canales de ventas con cobertura de pruebas.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su historial local lo vincula con el flujo B2B afectado; no hay evidencia suficiente para identificar un responsable distinto de la decisión de clasificación.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10346.md",
+    "reviewedAt": "2026-10-01T13:30:16.121Z",
+    "mainSha": "0e1bbc8c04f2de435f8d05f6818e5ade444d9e30"
+  }
+}
