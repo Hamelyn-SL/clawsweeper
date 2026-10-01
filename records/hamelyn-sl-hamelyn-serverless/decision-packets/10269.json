@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-01T10:03:04.776Z",
+  "updatedAt": "2026-10-01T05:41:59Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10269,
+    "title": "Kiosko de revisión: un libro de otro lote entra como sobrante",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10269",
+    "state": "open",
+    "labels": [
+      "bug",
+      "source:admin-panel",
+      "app:admin",
+      "reporter:davidgonzalez",
+      "triage:done",
+      "P1"
+    ],
+    "createdAt": "2026-09-30T09:14:03Z",
+    "updatedAt": "2026-10-01T05:41:59Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe el kiosko bloquear la incorporación como sobrante cuando el EAN figura pendiente en otro lote abierto recepcionado, usando los estados y el criterio de receivedAt descritos en la issue?",
+  "rationale": "La comprobación introduce una regla operativa entre lotes y puede cambiar cómo se clasifican unidades físicas; aunque la issue propone un comportamiento concreto, conviene confirmar esa regla antes de alterar el flujo que registra unidades a precio cero.",
+  "options": [
+    {
+      "title": "Aplicar la regla propuesta",
+      "body": "Detectar el EAN pendiente en otro lote abierto con receivedAt, mostrar el aviso y no añadirlo al lote actual.",
+      "recommended": true
+    },
+    {
+      "title": "Avisar sin bloquear",
+      "body": "Mostrar el lote coincidente, pero permitir que el operario confirme manualmente el sobrante.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aplicar la regla propuesta",
+    "body": "Detectar el EAN pendiente en otro lote abierto con receivedAt, mostrar el aviso y no añadirlo al lote actual.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "Su historial reciente cubre el flujo de destino automático y las pantallas de revisión implicadas.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10269.md",
+    "reviewedAt": "2026-10-01T10:03:04.776Z",
+    "mainSha": "ea97fa04f3efe717d44c75b9c5f993bf76d3a5e8"
+  }
+}
