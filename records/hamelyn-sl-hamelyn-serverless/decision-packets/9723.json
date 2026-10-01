@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-01T09:58:14.630Z",
-  "updatedAt": "2026-10-01T09:55:21Z",
+  "generatedAt": "2026-10-01T10:01:11.237Z",
+  "updatedAt": "2026-10-01T09:59:00Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,44 +14,43 @@
       "feature",
       "triage:needs-info",
       "clawsweeper:needs-product-decision",
+      "P2",
       "reporter:danielmenchen-hamelyn",
       "origin:dev",
-      "epic:supply-v3",
-      "P2"
+      "epic:supply-v3"
     ],
     "createdAt": "2026-09-18T08:03:18Z",
-    "updatedAt": "2026-10-01T09:55:21Z"
+    "updatedAt": "2026-10-01T09:59:00Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué muestra etiquetada, matriz de dispositivos/navegadores/WebViews y umbrales de acierto, falsos positivos y tiempo de lectura se aprueban para comparar el motor común con el scanner actual?",
-  "rationale": "La implementación y el cierre dependen de criterios medibles y de decidir qué dispositivos y mínimos representan compatibilidad aceptada; la issue no fija esos valores.",
+  "question": "¿Qué muestra etiquetada, matriz de dispositivos/navegadores/WebViews y umbrales de acierto, falsos positivos y latencia se aprueban para validar F07?",
+  "rationale": "La aceptación depende de criterios comparativos que no aparecen acordados en el código ni en los comentarios disponibles; no es seguro inventarlos durante la implementación.",
   "options": [
     {
-      "title": "Aprobar un benchmark concreto",
-      "body": "Definir muestra, matriz y umbrales para medir el motor web antes de decidir si hace falta una adaptación nativa.",
+      "title": "Acordar benchmark ahora",
+      "body": "Definir muestra, dispositivos y umbrales para que el equipo complete la validación con criterios medibles.",
       "recommended": true
     },
     {
-      "title": "Mantener la decisión pendiente",
-      "body": "Dejar abierta la validación y continuar únicamente con tareas que no dependan de comparar el motor.",
+      "title": "Separar criterios por plataforma",
+      "body": "Aprobar umbrales distintos para web y contenedores físicos si sus capacidades no son comparables.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar un benchmark concreto",
-    "body": "Definir muestra, matriz y umbrales para medir el motor web antes de decidir si hace falta una adaptación nativa.",
+    "title": "Acordar benchmark ahora",
+    "body": "Definir muestra, dispositivos y umbrales para que el equipo complete la validación con criterios medibles.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Es la persona asignada actualmente y aportó el estado técnico de la implementación compartida; la definición puede coordinarse con quien abrió la épica.",
+    "reason": "La issue está asignada a esta persona y su comentario concreta el alcance técnico restante; la decisión puede coordinarse con el equipo Supply.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9723.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9723#issuecomment-5741059308",
-    "reviewedAt": "2026-10-01T09:58:14.630Z",
+    "reviewedAt": "2026-10-01T10:01:11.237Z",
     "mainSha": "ea97fa04f3efe717d44c75b9c5f993bf76d3a5e8"
   }
 }
