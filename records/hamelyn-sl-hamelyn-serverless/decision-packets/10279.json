@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-30T11:55:27.270Z",
-  "updatedAt": "2026-09-30T11:40:25Z",
+  "generatedAt": "2026-10-01T11:58:23.213Z",
+  "updatedAt": "2026-10-01T10:42:53Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,48 +13,42 @@
       "app:infrastructure",
       "reporter:pablo",
       "feature",
-      "triage:queued",
-      "P2",
-      "clawsweeper:needs-product-decision"
+      "triage:needs-info",
+      "clawsweeper:needs-product-decision",
+      "P2"
     ],
     "createdAt": "2026-09-30T11:39:59Z",
-    "updatedAt": "2026-09-30T11:40:25Z"
+    "updatedAt": "2026-10-01T10:42:53Z"
   },
-  "lane": "product_direction",
+  "lane": "merge_risk",
   "priority": "P2",
-  "question": "¿Se aprueba incorporar al monorepo la plataforma completa de scrapers —motor, catálogo, panel y las cinco fuentes— como un nuevo servicio de data-platform, manteniendo fuera el despliegue de la VM y la creación de tablas?",
-  "rationale": "La petición propone una capacidad amplia con componentes operativos nuevos. El repositorio ofrece un patrón de servicio Cloud Run, pero no determina si este alcance completo debe formar parte del monorepo ni cómo se delimita su responsabilidad.",
+  "question": "¿Debe la entrega vinculada limitarse a versionar el servicio sin desplegarlo en la VM ni crear tablas de BigQuery?",
+  "rationale": "La aceptación de esta issue excluye ambos cambios, mientras que la PR vinculada describe despliegue automático a la VM y su revisión señala creación de tablas en `setup`; esa discrepancia de alcance requiere confirmación del equipo antes de dar la issue por resuelta.",
   "options": [
     {
-      "title": "Aprobar el alcance completo",
-      "body": "Mantener la issue como iniciativa y concretar una entrega que versiona motor, catálogo, panel y fuentes sin desplegar la VM ni crear tablas.",
+      "title": "Mantener el alcance acordado",
+      "body": "Exigir que la entrega no despliegue en la VM ni cree tablas de BigQuery, y que valide las tablas existentes.",
       "recommended": true
     },
     {
-      "title": "Reducir el alcance inicial",
-      "body": "Limitar la primera entrega a versionar motor y fuentes, y decidir aparte el catálogo, el panel y las herramientas de alta.",
-      "recommended": false
-    },
-    {
-      "title": "No incorporarlo a data-platform",
-      "body": "Dejar el servicio fuera del monorepo y cerrar o redirigir la propuesta según el destino acordado.",
+      "title": "Autorizar cambios de infraestructura",
+      "body": "Ampliar explícitamente el alcance para incluir el despliegue de la VM y especificar qué tablas se autoriza a crear.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar el alcance completo",
-    "body": "Mantener la issue como iniciativa y concretar una entrega que versiona motor, catálogo, panel y fuentes sin desplegar la VM ni crear tablas.",
+    "title": "Mantener el alcance acordado",
+    "body": "Exigir que la entrega no despliegue en la VM ni cree tablas de BigQuery, y que valide las tablas existentes.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Su historial reciente en data-platform lo sitúa cerca de las convenciones y límites de los servicios existentes.",
+    "reason": "La revisión previa identificó a Miguel como candidato para decidir el alcance de incorporación y la PR incluye decisiones de infraestructura de data-platform.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10279.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10279#issuecomment-5910743075",
-    "reviewedAt": "2026-09-30T11:55:27.270Z",
-    "mainSha": "0a1efa3485443d9111ce50a02be8c2ff1a5d1c8e"
+    "reviewedAt": "2026-10-01T11:58:23.213Z",
+    "mainSha": "16d78daab656cd6fa3afef2d915a3a59a1a46da2"
   }
 }
