@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-01T15:57:38.475Z",
-  "updatedAt": "2026-10-01T15:49:15Z",
+  "generatedAt": "2026-10-02T20:46:31.217Z",
+  "updatedAt": "2026-10-01T16:00:11Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,51 +12,50 @@
     "labels": [
       "app:supply",
       "feature",
-      "triage:running",
+      "triage:needs-info",
+      "clawsweeper:needs-product-decision",
+      "P2",
       "reporter:danielmenchen-hamelyn",
       "origin:dev",
-      "epic:supply-v3",
-      "P2",
-      "clawsweeper:needs-product-decision"
+      "epic:supply-v3"
     ],
     "createdAt": "2026-09-18T08:03:55Z",
-    "updatedAt": "2026-10-01T15:49:15Z"
+    "updatedAt": "2026-10-01T16:00:11Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "Al retirar la web Expo, ¿qué comportamiento debe tener `/about` y deben migrarse S24/S25 a la nueva web?",
-  "rationale": "La migración no debe inventar contenido ni decidir por su cuenta si una ruta pública existente desaparece o redirige.",
+  "question": "¿Se mantienen S24/S25 y el alias `/about` en la web nueva? Si se retiran, ¿qué respuesta deben tener `/about` y `/<país>/about`: 404 o redirección, y a qué destino?",
+  "rationale": "La issue exige migrar y conservar el alias, mientras que el responsable indica que la decisión de producto actual los excluye y deja pendiente el comportamiento de ruta; escogerlo cambia el contrato visible para usuarios.",
   "options": [
     {
-      "title": "Migrar las páginas y conservar `/about`",
-      "body": "Publicar S24/S25 con contenido aprobado y mantener `/about` como alias con canonical localizado.",
+      "title": "Mantener la migración",
+      "body": "Completar S24/S25 con contenido aprobado y conservar `/about` con canonical hacia la página localizada.",
+      "recommended": false
+    },
+    {
+      "title": "Retirar y devolver 404",
+      "body": "Actualizar los criterios y hacer que ambas formas de `/about` respondan 404 al retirar Expo.",
+      "recommended": false
+    },
+    {
+      "title": "Retirar y redirigir",
+      "body": "Actualizar los criterios y definir un destino concreto de redirección para ambas formas de `/about`.",
       "recommended": true
-    },
-    {
-      "title": "Retirar las páginas y dejar 404",
-      "body": "Confirmar que sostenibilidad, quiénes somos y el alias `/about` quedan fuera de la nueva web.",
-      "recommended": false
-    },
-    {
-      "title": "Retirar páginas y redirigir `/about`",
-      "body": "Omitir S24/S25, pero definir un destino permanente para el alias existente.",
-      "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Migrar las páginas y conservar `/about`",
-    "body": "Publicar S24/S25 con contenido aprobado y mantener `/about` como alias con canonical localizado.",
+    "title": "Retirar y redirigir",
+    "body": "Actualizar los criterios y definir un destino concreto de redirección para ambas formas de `/about`.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Está asignado a la issue y documentó explícitamente la decisión de producto aún pendiente.",
-    "confidence": "medium"
+    "reason": "Está asignado y ya documentó el alcance que queda pendiente de decisión en la web nueva.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9740.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9740#issuecomment-5740764079",
-    "reviewedAt": "2026-10-01T15:57:38.475Z",
-    "mainSha": "6994e00f2013c5e6e36148c27632ebdf062e9b46"
+    "reviewedAt": "2026-10-02T20:46:31.217Z",
+    "mainSha": "994e8e77f90df7449a17c592ef555acc9d607ca3"
   }
 }
