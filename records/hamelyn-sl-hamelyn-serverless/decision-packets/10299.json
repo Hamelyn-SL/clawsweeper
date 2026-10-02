@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-30T14:59:27.351Z",
-  "updatedAt": "2026-09-30T14:16:26Z",
+  "generatedAt": "2026-10-02T16:27:52.505Z",
+  "updatedAt": "2026-10-02T08:22:44Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,43 +14,41 @@
       "app:ecommerce",
       "reporter:jesus",
       "feature",
-      "triage:queued",
-      "P2",
-      "clawsweeper:needs-product-decision"
+      "triage:needs-info",
+      "P2"
     ],
     "createdAt": "2026-09-30T14:16:11Z",
-    "updatedAt": "2026-09-30T14:16:26Z"
+    "updatedAt": "2026-10-02T08:22:44Z"
   },
-  "lane": "manual_review",
+  "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Hay en producción un índice existente que permita buscar los pedidos elegibles por email normalizado y fecha sin crear ni recrear índices?",
-  "rationale": "El schema revisado no declara un índice por email y las reglas del repositorio reservan la gestión de índices de Atlas; no se puede validar desde el checkout qué índices están desplegados.",
+  "question": "¿Qué índice existente de producción debe cubrir la búsqueda por email normalizado y los 540 días, y se autoriza avanzar cuando se confirme con una consulta verificada?",
+  "rationale": "La definición funcional está especificada, pero falta validar el requisito operativo de no introducir una consulta sin índice adecuado ni crear índices sin autorización.",
   "options": [
     {
-      "title": "Confirmar índice existente",
-      "body": "Indicar el índice disponible para que la implementación pueda hacer una búsqueda acotada y segura.",
+      "title": "Confirmar el índice existente",
+      "body": "Identificar colección, índice y claves/collation, y verificar que la consulta por email y fechas lo utiliza antes de implementar.",
       "recommended": true
     },
     {
-      "title": "Pedir evaluación de datos",
-      "body": "Revisar una alternativa que cumpla la definición sin escaneo amplio antes de implementar el cálculo.",
+      "title": "Aplazar la funcionalidad",
+      "body": "Mantener la issue abierta sin implementar hasta que se confirme una ruta de consulta compatible.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Confirmar índice existente",
-    "body": "Indicar el índice disponible para que la implementación pueda hacer una búsqueda acotada y segura.",
+    "title": "Confirmar el índice existente",
+    "body": "Identificar colección, índice y claves/collation, y verificar que la consulta por email y fechas lo utiliza antes de implementar.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Su historial está ligado a la ruta de checkout afectada; la disponibilidad operativa del índice requiere confirmación del equipo con acceso a Atlas.",
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Es la persona asignada actualmente; la evidencia no confirma quién gestiona el índice de Atlas.",
     "confidence": "low"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10299.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10299#issuecomment-5913897943",
-    "reviewedAt": "2026-09-30T14:59:27.351Z",
-    "mainSha": "dee8167221595d403debbcf42dac485699e96fc0"
+    "reviewedAt": "2026-10-02T16:27:52.505Z",
+    "mainSha": "994e8e77f90df7449a17c592ef555acc9d607ca3"
   }
 }
