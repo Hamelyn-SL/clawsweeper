@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-01T08:03:14.192Z",
-  "updatedAt": "2026-10-01T06:12:55Z",
+  "generatedAt": "2026-10-02T08:53:55.097Z",
+  "updatedAt": "2026-10-01T08:04:01Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -19,42 +19,37 @@
       "mk:todocoleccion"
     ],
     "createdAt": "2026-09-29T06:41:22Z",
-    "updatedAt": "2026-10-01T06:12:55Z"
+    "updatedAt": "2026-10-01T08:04:01Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe hacerse un piloto acotado para buscar anuncios históricos de TodoColección sin fila, o basta con desplegar la prevención y observar la métrica durante dos semanas?",
-  "rationale": "La recuperación histórica y la cobertura recurrente requieren consultas por SKU; la muestra publicada no demuestra que no queden anuncios y la cuota de API compartida no está definida.",
+  "question": "¿Se acepta el residuo histórico estimado tras la muestra de 5.000 SKU o se autoriza un piloto acotado de búsqueda por EAN con un límite explícito de SKU y consultas?",
+  "rationale": "El barrido completo se estima en unas 36 horas de API compartida y no hay catálogo exportable ni cuota aprobada; decidir el coste operativo frente al residuo es una elección de producto y operación.",
   "options": [
     {
-      "title": "Desplegar prevención y medir primero",
-      "body": "Resolver la PR preventiva y observar durante dos semanas las cancelaciones antes de autorizar consultas históricas adicionales.",
+      "title": "Aceptar el residuo y prevenir nuevos huérfanos",
+      "body": "Revisar y, si procede, aterrizar la PR preventiva y dejar el histórico sin barrido completo.",
       "recommended": true
     },
     {
-      "title": "Autorizar piloto histórico acotado",
-      "body": "Fijar máximo de SKU y límites de concurrencia y frecuencia para comprobar si el residuo justifica una pasada mayor.",
-      "recommended": false
-    },
-    {
-      "title": "Aceptar el residuo histórico",
-      "body": "No ejecutar búsquedas adicionales por SKU y tratar futuros casos mediante la cobertura preventiva y su telemetría.",
+      "title": "Autorizar un piloto acotado",
+      "body": "Definir un máximo de SKU y ritmo de consultas para medir y retirar anuncios históricos que sigan activos.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Desplegar prevención y medir primero",
-    "body": "Resolver la PR preventiva y observar durante dos semanas las cancelaciones antes de autorizar consultas históricas adicionales.",
+    "title": "Aceptar el residuo y prevenir nuevos huérfanos",
+    "body": "Revisar y, si procede, aterrizar la PR preventiva y dejar el histórico sin barrido completo.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "El hilo pide la decisión de cuota a Marketplace y su historial incluye trabajo fusionado de telemetría de retiradas.",
+    "person": "MarcosTerroso",
+    "reason": "Está asignado a la issue y vinculado al cambio preventivo; puede coordinar el límite operativo con el área de marketplace.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10215.md",
-    "reviewedAt": "2026-10-01T08:03:14.192Z",
-    "mainSha": "bae21217ff3ac183e300df0625efc2bc0e79d612"
+    "reviewedAt": "2026-10-02T08:53:55.097Z",
+    "mainSha": "9208b25fee67bf14606b51d27b24e07b948c67f0"
   }
 }
