@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-02T15:48:43.402Z",
+  "updatedAt": "2026-10-02T14:14:00Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10383,
+    "title": "feat: block coupons at checkout for vetoed shipping addresses",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10383",
+    "state": "open",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-10-02T14:07:42Z",
+    "updatedAt": "2026-10-02T14:14:00Z",
+    "headSha": "4705d6eba28b0c9d002461714511bf9aae8cca5c"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe el veto exigir coincidencia de calle además de país, código postal y número, o se acepta bloquear cualquier dirección del mismo CP que comparta ese número?",
+  "rationale": "La issue vinculada recomendó una comparación con calle y dejó la política pendiente; este PR omite la calle y amplía qué clientes pueden perder el cupón.",
+  "options": [
+    {
+      "title": "Exigir coincidencia de calle",
+      "body": "Limitar el veto a país, CP, calle normalizada y número para reducir falsos positivos.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar el alcance actual",
+      "body": "Bloquear por país, CP y número, asumiendo el impacto sobre otros domicilios que coincidan.",
+      "recommended": false
+    },
+    {
+      "title": "Definir otra regla",
+      "body": "Acordar primero un criterio distinto de identificación antes de integrar el bloqueo.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Exigir coincidencia de calle",
+    "body": "Limitar el veto a país, CP, calle normalizada y número para reducir falsos positivos.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "El historial disponible lo relaciona con la validación de cupones y el flujo de checkout.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10383.md",
+    "reviewedAt": "2026-10-02T15:48:43.402Z",
+    "mainSha": "994e8e77f90df7449a17c592ef555acc9d607ca3"
+  }
+}
