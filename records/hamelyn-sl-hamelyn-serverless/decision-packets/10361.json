@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-02T08:33:55.160Z",
+  "updatedAt": "2026-10-02T08:27:58Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10361,
+    "title": "Cainiao: pausar etiquetas 15 min cuando el servicio está saturado",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10361",
+    "state": "open",
+    "labels": [
+      "app:infrastructure",
+      "feature",
+      "reporter:miguel",
+      "triage:running",
+      "P1"
+    ],
+    "createdAt": "2026-10-02T08:15:00Z",
+    "updatedAt": "2026-10-02T08:27:58Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué mecanismo persistente existente debe coordinar la pausa de 15 minutos entre el cron y la cola, manteniendo la posibilidad de reintento manual durante la pausa?",
+  "rationale": "La issue define el comportamiento y prohíbe crear colecciones o índices, pero deja abierto dónde persistir y cómo coordinar el estado entre invocaciones; esa elección condiciona tanto la fiabilidad del reintento como la excepción manual.",
+  "options": [
+    {
+      "title": "Usar la cola existente",
+      "body": "Representar la espera y el reintento con mensajes de la cola actual, asegurando que cron y workers no sigan enviando etiquetas mientras dure la pausa.",
+      "recommended": true
+    },
+    {
+      "title": "Usar otro estado persistente existente",
+      "body": "Acordar qué almacenamiento ya disponible puede guardar la pausa compartida sin introducir colecciones ni índices nuevos.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Usar la cola existente",
+    "body": "Representar la espera y el reintento con mensajes de la cola actual, asegurando que cron y workers no sigan enviando etiquetas mientras dure la pausa.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "Su historial está ligado al flujo de reintentos de la cola que tendría que coordinar la pausa.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10361.md",
+    "reviewedAt": "2026-10-02T08:33:55.160Z",
+    "mainSha": "9208b25fee67bf14606b51d27b24e07b948c67f0"
+  }
+}
