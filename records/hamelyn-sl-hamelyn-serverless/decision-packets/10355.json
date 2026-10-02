@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-02T06:41:18.353Z",
+  "updatedAt": "2026-10-02T06:00:46Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10355,
+    "title": "Pricing: price OPTIMO products with the malvendido score formula split 50/50",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10355",
+    "state": "open",
+    "labels": [
+      "app:infrastructure",
+      "reporter:pablo",
+      "feature",
+      "triage:done",
+      "P2"
+    ],
+    "createdAt": "2026-10-02T05:48:50Z",
+    "updatedAt": "2026-10-02T06:00:46Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se aprueba probar la fórmula score 50/50 para OPTIMO con flag desactivado por defecto, una vez validadas las cifras de impacto reportadas?",
+  "rationale": "La propuesta altera una regla de precios con posible efecto amplio; el reporte aporta estimaciones, pero el triage no las ha verificado y el código actual define un comportamiento distinto.",
+  "options": [
+    {
+      "title": "Validar y pilotar",
+      "body": "Contrastar las cifras y, si encajan con el objetivo comercial, habilitarlo de forma controlada mediante el flag por tipo, inicialmente desactivado.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener precio histórico",
+      "body": "No incorporar esta estrategia y conservar el precio histórico actual de OPTIMO.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Validar y pilotar",
+    "body": "Contrastar las cifras y, si encajan con el objetivo comercial, habilitarlo de forma controlada mediante el flag por tipo, inicialmente desactivado.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "PabloMoran34",
+    "reason": "Es la persona asignada y además tiene cambios recientes en el pipeline de pricing relacionado.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10355.md",
+    "reviewedAt": "2026-10-02T06:41:18.353Z",
+    "mainSha": "15affc2015c4411b32ab90cf2b8a2451de155f20"
+  }
+}
