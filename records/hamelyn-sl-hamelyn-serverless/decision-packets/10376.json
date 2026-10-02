@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-02T12:36:30.130Z",
+  "updatedAt": "2026-10-02T11:37:07Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10376,
+    "title": "Reception shows stale carrier package counts because the tracking sync queue is saturated",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10376",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:infrastructure",
+      "triage:done",
+      "P1",
+      "reporter:daniellopez"
+    ],
+    "createdAt": "2026-10-02T11:07:44Z",
+    "updatedAt": "2026-10-02T11:37:07Z"
+  },
+  "lane": "merge_risk",
+  "priority": "P1",
+  "question": "¿Debe adoptarse el reparto de cupos entre pedidos activos y cancelados de menos de 90 días, aceptando el volumen de consultas adicional tras validar sus límites?",
+  "rationale": "El diagnóstico propone cambiar la selección y la cantidad de pedidos procesados; elegir el corte y aceptar el coste operativo requiere confirmar el criterio de Infraestructura.",
+  "options": [
+    {
+      "title": "Validar e implementar cupos separados",
+      "body": "Revisar filtros y volumen con pruebas dirigidas, desplegar y medir frescura y duración durante una jornada laboral.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener el selector actual",
+      "body": "No cambiar la política hasta disponer de una alternativa de menor volumen con evidencia de frescura suficiente.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Validar e implementar cupos separados",
+    "body": "Revisar filtros y volumen con pruebas dirigidas, desplegar y medir frescura y duración durante una jornada laboral.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Alex Cantón",
+    "reason": "Su historial incluye la mejora de equidad y la refactorización del sincronizador; la decisión también requiere validación del equipo de Infraestructura.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10376.md",
+    "reviewedAt": "2026-10-02T12:36:30.130Z",
+    "mainSha": "69bb61268a396323843405a8708da098fe70794a"
+  }
+}
