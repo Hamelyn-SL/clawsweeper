@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-26T11:44:35.885Z",
-  "updatedAt": "2026-09-25T08:21:27Z",
+  "generatedAt": "2026-10-02T08:57:50.287Z",
+  "updatedAt": "2026-10-02T08:21:17Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,49 +14,48 @@
       "feature",
       "triage:needs-info",
       "clawsweeper:needs-product-decision",
+      "P2",
       "clawsweeper:needs-security-review",
       "reporter:JavierHamelyn",
-      "origin:dev",
-      "P2"
+      "origin:dev"
     ],
     "createdAt": "2026-09-17T09:28:07Z",
-    "updatedAt": "2026-09-25T08:21:27Z"
+    "updatedAt": "2026-10-02T08:21:17Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué pantallas y acciones fuera de almacén deben permanecer en el admin para `support` y `finance`, y cuáles pasan al CLI?",
-  "rationale": "La propuesta de partida conserva funciones no logísticas, mientras que el objetivo pide un admin centrado en operaciones; la decisión afecta a permisos y alcance de migración.",
+  "question": "¿Qué pantallas y acciones de marketing, pagos, costes y cupones deben permanecer en el admin para finance/support, y qué operaciones concretas de incidencia podrá ejecutar support?",
+  "rationale": "La dirección funcional determina el límite del admin operativo y el alcance de los permisos; la propuesta actual y la conversación no resuelven estas excepciones.",
   "options": [
     {
       "title": "Aprobar excepciones por acción",
-      "body": "Mantener en el admin solo las pantallas y operaciones de `support` y `finance` aprobadas expresamente, enumerando también las acciones de incidencia permitidas a `support`.",
+      "body": "Mantener en el admin únicamente las pantallas y operaciones aprobadas para finance y support, detallando también las acciones de incidencia permitidas.",
       "recommended": true
     },
     {
       "title": "Admin solo de almacén",
-      "body": "Trasladar las funciones no operativas al CLI tras comprobar que cubre sus operaciones y controles de autorización.",
+      "body": "Trasladar las funciones no operativas al CLI, después de confirmar que cubre cada operación y sus controles de autorización.",
       "recommended": false
     },
     {
       "title": "Posponer retiradas",
-      "body": "Completar primero el mapeo de puestos y conservar temporalmente las superficies actuales hasta validar la cobertura del CLI.",
+      "body": "Aprobar primero los puestos y conservar temporalmente las superficies actuales hasta validar cobertura y permisos del CLI.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Aprobar excepciones por acción",
-    "body": "Mantener en el admin solo las pantallas y operaciones de `support` y `finance` aprobadas expresamente, enumerando también las acciones de incidencia permitidas a `support`.",
+    "body": "Mantener en el admin únicamente las pantallas y operaciones aprobadas para finance y support, detallando también las acciones de incidencia permitidas.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es el responsable asignado y la discusión le solicita coordinar la aprobación con dirección y operaciones.",
+    "reason": "Es la persona asignada y la propuesta exige aprobación de dirección y operaciones.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9665.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9665#issuecomment-5741440612",
-    "reviewedAt": "2026-09-26T11:44:35.885Z",
-    "mainSha": "b7ca4ccf2295720375fc765a9fe4ea56a1f68320"
+    "reviewedAt": "2026-10-02T08:57:50.287Z",
+    "mainSha": "9208b25fee67bf14606b51d27b24e07b948c67f0"
   }
 }
