@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-30T10:49:34.303Z",
-  "updatedAt": "2026-09-30T10:38:53Z",
+  "generatedAt": "2026-10-02T13:48:53.286Z",
+  "updatedAt": "2026-10-02T11:11:56Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,47 +15,46 @@
       "reporter:marta",
       "feature",
       "triage:done",
-      "P2",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2"
     ],
     "createdAt": "2026-09-30T10:13:08Z",
-    "updatedAt": "2026-09-30T10:38:53Z"
+    "updatedAt": "2026-10-02T11:11:56Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe bloquearse la aplicación de cupones al coincidir país, código postal, calle y número normalizados, y mantenerse permitido el checkout sin cupón?",
-  "rationale": "La comparación aproximada de direcciones puede afectar a clientes distintos; la política de coincidencia y el alcance del bloqueo requieren una decisión de ecommerce.",
+  "question": "¿Debe bloquearse el cupón cuando coincidan país, código postal, calle y número normalizados, manteniendo permitidas las compras sin cupón?",
+  "rationale": "Es una nueva regla comercial que afecta la aceptación de descuentos; el reporte y el comentario de triaje plantean una opción acotada, pero la política aún no está confirmada.",
   "options": [
     {
-      "title": "Regla acotada por domicilio",
-      "body": "Bloquear solo la aplicación de cupones al coincidir país, código postal, calle y número, con controles para evitar falsos positivos.",
+      "title": "Bloqueo acotado por domicilio",
+      "body": "Bloquear solo los cupones para coincidencias de país, código postal, calle y número, con controles para evitar falsos positivos.",
       "recommended": true
     },
     {
-      "title": "Bloqueo más amplio",
-      "body": "Definir otros campos o acciones que deban bloquearse además de los cupones antes de implementar la restricción.",
+      "title": "Definir un bloqueo más amplio",
+      "body": "Acordar primero qué otras acciones o datos deben cubrirse antes de implementar una restricción.",
       "recommended": false
     },
     {
       "title": "No bloquear por domicilio",
-      "body": "Mantener las restricciones actuales por usuario y tratar este patrón mediante otra política de promociones.",
+      "body": "Mantener los límites actuales por usuario y tratar el patrón mediante otra política de promociones.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Regla acotada por domicilio",
-    "body": "Bloquear solo la aplicación de cupones al coincidir país, código postal, calle y número, con controles para evitar falsos positivos.",
+    "title": "Bloqueo acotado por domicilio",
+    "body": "Bloquear solo los cupones para coincidencias de país, código postal, calle y número, con controles para evitar falsos positivos.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "Su historial reciente está ligado al contrato y la lógica de cupones; es el candidato mejor respaldado para valorar el impacto de la regla en esa área.",
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Está asignado al asunto y ha contribuido recientemente al flujo de checkout implicado.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10274.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10274#issuecomment-5909697802",
-    "reviewedAt": "2026-09-30T10:49:34.303Z",
-    "mainSha": "8a42f89ded984174cc5220724f4c69fdc2b079dc"
+    "reviewedAt": "2026-10-02T13:48:53.286Z",
+    "mainSha": "994e8e77f90df7449a17c592ef555acc9d607ca3"
   }
 }
