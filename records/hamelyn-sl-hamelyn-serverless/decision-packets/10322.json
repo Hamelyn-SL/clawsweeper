@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-02T09:06:58.580Z",
+  "updatedAt": "2026-10-01T12:56:58Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10322,
+    "title": "fix: restore todocoleccion health through a fixed proxy",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10322",
+    "state": "open",
+    "labels": [
+      "size/M",
+      "P2"
+    ],
+    "createdAt": "2026-10-01T08:28:27Z",
+    "updatedAt": "2026-10-01T12:56:58Z",
+    "headSha": "a0f92249b67242739e449e8a446e1e4cae692fc1"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe ser obligatorio `TODOCOLECCION_PROXY_URL` también para ejecuciones manuales desde redes que ya tienen acceso directo al perfil?",
+  "rationale": "La propuesta resuelve el bloqueo de los runners, pero sustituye la ruta directa existente y puede afectar a operadores locales; esa política de compatibilidad no se deduce de la implementación.",
+  "options": [
+    {
+      "title": "Mantener compatibilidad directa",
+      "body": "Usar el proxy dedicado en Actions y permitir la petición directa cuando una ejecución manual no tenga el secreto configurado.",
+      "recommended": true
+    },
+    {
+      "title": "Exigir proxy en todos los entornos",
+      "body": "Mantener el comportamiento propuesto y confirmar que la documentación y los operadores cubren el requisito del secreto en cada ejecución.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mantener compatibilidad directa",
+    "body": "Usar el proxy dedicado en Actions y permitir la petición directa cuando una ejecución manual no tenga el secreto configurado.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Aprobó este PR y es el candidato mejor respaldado para resolver la elección de integración disponible en el contexto.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10322.md",
+    "reviewedAt": "2026-10-02T09:06:58.580Z",
+    "mainSha": "9208b25fee67bf14606b51d27b24e07b948c67f0"
+  }
+}
