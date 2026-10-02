@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-02T10:47:26.444Z",
+  "updatedAt": "2026-10-02T10:44:57Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10369,
+    "title": "Almacén: catálogo de faltas por proceso con pesos y faltas automáticas validables",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10369",
+    "state": "open",
+    "labels": [
+      "app:admin",
+      "feature",
+      "triage:running",
+      "P2",
+      "reporter:danielmenchen-hamelyn",
+      "origin:dev",
+      "epic:warehouse-telemetry"
+    ],
+    "createdAt": "2026-10-02T09:52:13Z",
+    "updatedAt": "2026-10-02T10:44:57Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué reglas funcionales deben quedar cerradas con almacén antes de implementar la precarga y las faltas automáticas?",
+  "rationale": "La propia descripción deja sin confirmar nombres y pesos provisionales, atribución de los lotes abiertos, alcance del no encontrado falso en gaveta y comportamiento del panel; son decisiones de dominio que el código no puede resolver con seguridad.",
+  "options": [
+    {
+      "title": "Confirmar el cuadrante completo",
+      "body": "Validar con almacén los nombres, pesos, atribuciones y flujo del panel antes de convertirlos en una nueva versión del catálogo y automatizaciones.",
+      "recommended": true
+    },
+    {
+      "title": "Acotar una primera entrega",
+      "body": "Implementar solo las reglas ya acordadas y dejar fuera las faltas y comportamientos aún pendientes de confirmación.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Confirmar el cuadrante completo",
+    "body": "Validar con almacén los nombres, pesos, atribuciones y flujo del panel antes de convertirlos en una nueva versión del catálogo y automatizaciones.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Está asignado a la épica relacionada y aparece en la issue como interlocutor para confirmar con almacén el comportamiento del panel.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10369.md",
+    "reviewedAt": "2026-10-02T10:47:26.444Z",
+    "mainSha": "9e7f28f035445080796bfb60392354a5cef5f7bf"
+  }
+}
