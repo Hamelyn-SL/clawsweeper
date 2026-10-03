@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-02T10:57:31.067Z",
-  "updatedAt": "2026-10-02T09:17:11Z",
+  "generatedAt": "2026-10-03T11:00:28.927Z",
+  "updatedAt": "2026-10-02T12:57:51Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,42 +14,46 @@
       "app:marketplace",
       "reporter:marcos",
       "triage:done",
-      "P2",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2"
     ],
     "createdAt": "2026-10-02T09:09:02Z",
-    "updatedAt": "2026-10-02T09:17:11Z"
+    "updatedAt": "2026-10-02T12:57:51Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe «The product does not exist» aparcarse solo para Feltrinelli y CDL, manteniendo los reintentos actuales de Decathlon, y qué guardas deben cumplirse antes de activar la reconciliación de Feltrinelli?",
-  "rationale": "La clasificación común puede alterar reintentos existentes y la reconciliación puede cambiar estados persistidos; falta confirmar la semántica de CDL y las condiciones seguras para escrituras en Feltrinelli.",
+  "question": "¿Se aprueba aparcar durante 30 días los errores de producto inexistente para Feltrinelli y Casa del Libro, manteniendo Decathlon sin cambios, y las guardas propuestas para activar la reconciliación de Feltrinelli?",
+  "rationale": "La clasificación afecta a varias tiendas y la reconciliación puede modificar estados persistidos; el propio triage señala que el criterio de Casa del Libro y las salvaguardas del export requieren confirmación del equipo.",
   "options": [
     {
-      "title": "Separar tiendas y validar antes de escribir",
-      "body": "Aplicar el aparcado solo a Feltrinelli hasta confirmar CDL, y habilitar la reconciliación tras validar export completo, muestra real y protección ante operaciones recientes.",
+      "title": "Aprobar el alcance por tienda y validar guardas",
+      "body": "Mantener Decathlon sin cambios, confirmar el alcance de Casa del Libro y exigir validación del export y de las carreras antes de activar la reconciliación.",
       "recommended": true
     },
     {
-      "title": "Acordar primero el criterio compartido",
-      "body": "Posponer el cambio de clasificación hasta que Marketplace confirme si CDL comparte la misma regla y defina guardas de reconciliación comunes.",
+      "title": "Limitar inicialmente el aparcado a Feltrinelli",
+      "body": "Aplazar el cambio de Casa del Libro hasta confirmar que comparte el mismo criterio operativo.",
+      "recommended": false
+    },
+    {
+      "title": "Posponer la activación",
+      "body": "Mantener abierta la implementación pero no habilitar escrituras periódicas hasta contar con una validación operativa adicional.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Separar tiendas y validar antes de escribir",
-    "body": "Aplicar el aparcado solo a Feltrinelli hasta confirmar CDL, y habilitar la reconciliación tras validar export completo, muestra real y protección ante operaciones recientes.",
+    "title": "Aprobar el alcance por tienda y validar guardas",
+    "body": "Mantener Decathlon sin cambios, confirmar el alcance de Casa del Libro y exigir validación del export y de las carreras antes de activar la reconciliación.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Es la persona asignada y quien documentó el diagnóstico, las métricas y las preguntas operativas que requieren confirmación.",
+    "reason": "Es el autor del PR vinculado y el historial local lo conecta con el clasificador Mirakl implicado.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10365.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10365#issuecomment-5950886353",
-    "reviewedAt": "2026-10-02T10:57:31.067Z",
-    "mainSha": "9e7f28f035445080796bfb60392354a5cef5f7bf"
+    "reviewedAt": "2026-10-03T11:00:28.927Z",
+    "mainSha": "994e8e77f90df7449a17c592ef555acc9d607ca3"
   }
 }
