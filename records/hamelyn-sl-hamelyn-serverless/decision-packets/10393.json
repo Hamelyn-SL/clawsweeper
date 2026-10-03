@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-03T04:54:51.174Z",
+  "updatedAt": "2026-10-03T04:48:08Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10393,
+    "title": "fix: reprice todocoleccion listings recovered after already_reference",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10393",
+    "state": "open",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-10-03T04:43:15Z",
+    "updatedAt": "2026-10-03T04:48:08Z",
+    "headSha": "35a141b213cd281364501a21deff71599b8189f5"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe el precio de Mongo prevalecer en los anuncios recuperados y en su repreciado, aceptando este cambio preventivo y tratando aparte los cinco casos históricos?",
+  "rationale": "La issue vinculada deja sin resolver si las diferencias observadas son errores o divergencias intencionales; esa decisión determina si el nuevo repreciado refleja la política correcta.",
+  "options": [
+    {
+      "title": "Mongo es la fuente canónica",
+      "body": "Aceptar el comportamiento preventivo del PR y tratar los cinco anuncios existentes mediante una reconciliación aparte, acotada y autorizada.",
+      "recommended": true
+    },
+    {
+      "title": "Las divergencias pueden ser intencionales",
+      "body": "Aclarar el contrato y ajustar el cambio para evitar que el repreciado sobrescriba precios remotos válidos.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mongo es la fuente canónica",
+    "body": "Aceptar el comportamiento preventivo del PR y tratar los cinco anuncios existentes mediante una reconciliación aparte, acotada y autorizada.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Es el candidato de enrutamiento con señales recientes en el adaptador de TodoColección; no hay evidencia suficiente para atribuirle una decisión de producto.",
+    "confidence": "low"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10393.md",
+    "reviewedAt": "2026-10-03T04:54:51.174Z",
+    "mainSha": "994e8e77f90df7449a17c592ef555acc9d607ca3"
+  }
+}
