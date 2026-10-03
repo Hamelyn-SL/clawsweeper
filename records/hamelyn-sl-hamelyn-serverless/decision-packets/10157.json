@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-26T03:57:53.304Z",
-  "updatedAt": "2026-09-26T03:30:51Z",
+  "generatedAt": "2026-10-03T08:52:48.819Z",
+  "updatedAt": "2026-10-03T08:19:44Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,43 +14,42 @@
       "app:marketplace",
       "reporter:javier",
       "triage:needs-info",
-      "mk:feltrinelli",
+      "clawsweeper:needs-product-decision",
       "P2",
-      "clawsweeper:needs-product-decision"
+      "mk:feltrinelli"
     ],
     "createdAt": "2026-09-25T22:33:23Z",
-    "updatedAt": "2026-09-26T03:30:51Z"
+    "updatedAt": "2026-10-03T08:19:44Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se autoriza crear `hamelyn-data.marketplace_snapshots.feltrinelli_listings` para el historial que exige la recuperación, o debe diseñarse una alternativa que no cree esa tabla?",
-  "rationale": "La salvaguarda actual requiere snapshots previos para evitar falsas retiradas, y `AGENTS.md` exige autorización expresa antes de crear tablas BigQuery; la elección condiciona el diseño permanente.",
+  "question": "¿Autoriza el equipo crear y mantener `hamelyn-data.marketplace_snapshots.feltrinelli_listings` para habilitar una guarda de persistencia y recuperación diaria de ofertas huérfanas?",
+  "rationale": "La recuperación actual se niega a sembrar señales sin historial persistente, y la política prohíbe crear la tabla sin autorización. El equipo debe confirmar además que el export y su umbral permiten una reconciliación segura.",
   "options": [
     {
-      "title": "Autorizar la tabla propuesta",
-      "body": "Permitir al equipo Marketplace validar volumen y esquema del export y añadir el informe recurrente con su guarda de completitud.",
+      "title": "Autorizar historial y cobertura diaria",
+      "body": "Validar export, volumen y umbral de completitud; autorizar y asignar mantenimiento de la tabla antes de implementar la recuperación.",
       "recommended": true
     },
     {
-      "title": "Buscar alternativa sin tabla nueva",
-      "body": "Mantener el requisito de confirmación entre snapshots, pero definir otra persistencia ya autorizada antes de implementar la cobertura.",
+      "title": "No crear una tabla nueva",
+      "body": "Mantener la incidencia abierta mientras Marketplace define una fuente histórica existente o una alternativa segura sin nueva estructura.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Autorizar la tabla propuesta",
-    "body": "Permitir al equipo Marketplace validar volumen y esquema del export y añadir el informe recurrente con su guarda de completitud.",
+    "title": "Autorizar historial y cobertura diaria",
+    "body": "Validar export, volumen y umbral de completitud; autorizar y asignar mantenimiento de la tabla antes de implementar la recuperación.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "El contexto de la issue lo vincula al análisis operativo de Marketplace y a los antecedentes de recuperación de ofertas huérfanas.",
+    "person": "MarcosTerroso",
+    "reason": "Su historial incluye la integración más próxima, el informe de CDL con export Mirakl y recuperación protegida por snapshots.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10157.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10157#issuecomment-5842970312",
-    "reviewedAt": "2026-09-26T03:57:53.304Z",
-    "mainSha": "b7ca4ccf2295720375fc765a9fe4ea56a1f68320"
+    "reviewedAt": "2026-10-03T08:52:48.819Z",
+    "mainSha": "994e8e77f90df7449a17c592ef555acc9d607ca3"
   }
 }
