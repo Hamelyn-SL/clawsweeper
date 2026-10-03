@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-01T11:58:23.213Z",
-  "updatedAt": "2026-10-01T10:42:53Z",
+  "generatedAt": "2026-10-03T14:49:05.759Z",
+  "updatedAt": "2026-10-02T14:12:51Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,42 +14,40 @@
       "reporter:pablo",
       "feature",
       "triage:needs-info",
-      "clawsweeper:needs-product-decision",
       "P2"
     ],
     "createdAt": "2026-09-30T11:39:59Z",
-    "updatedAt": "2026-10-01T10:42:53Z"
+    "updatedAt": "2026-10-02T14:12:51Z"
   },
-  "lane": "merge_risk",
+  "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe la entrega vinculada limitarse a versionar el servicio sin desplegarlo en la VM ni crear tablas de BigQuery?",
-  "rationale": "La aceptación de esta issue excluye ambos cambios, mientras que la PR vinculada describe despliegue automático a la VM y su revisión señala creación de tablas en `setup`; esa discrepancia de alcance requiere confirmación del equipo antes de dar la issue por resuelta.",
+  "question": "¿Debe incluirse en este cambio el despliegue automático a `hamelyn-scrapers` al publicar en `master`, o debe versionarse primero el servicio y dejar el despliegue para un cambio posterior?",
+  "rationale": "La issue dice que la ampliación se decidió el 1 de octubre, pero la revisión más reciente del PR pide confirmarla con el responsable o separar el despliegue; esa intención no puede deducirse de forma segura.",
   "options": [
     {
-      "title": "Mantener el alcance acordado",
-      "body": "Exigir que la entrega no despliegue en la VM ni cree tablas de BigQuery, y que valide las tablas existentes.",
+      "title": "Mantener el despliegue en el PR",
+      "body": "Confirmar que el job de despliegue y su reinicio de la VM forman parte del alcance aprobado, sujeto a resolver los defectos de revisión.",
       "recommended": true
     },
     {
-      "title": "Autorizar cambios de infraestructura",
-      "body": "Ampliar explícitamente el alcance para incluir el despliegue de la VM y especificar qué tablas se autoriza a crear.",
+      "title": "Separar el despliegue",
+      "body": "Limitar este cambio a versionar el servicio y sus fuentes, y tramitar el despliegue automático en una propuesta posterior.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mantener el alcance acordado",
-    "body": "Exigir que la entrega no despliegue en la VM ni cree tablas de BigQuery, y que valide las tablas existentes.",
+    "title": "Mantener el despliegue en el PR",
+    "body": "Confirmar que el job de despliegue y su reinicio de la VM forman parte del alcance aprobado, sujeto a resolver los defectos de revisión.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "La revisión previa identificó a Miguel como candidato para decidir el alcance de incorporación y la PR incluye decisiones de infraestructura de data-platform.",
+    "person": "PabloMoran34",
+    "reason": "Está asignado a la issue y el PR atribuye al responsable la ampliación de alcance; es la referencia disponible para confirmar esa intención.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10279.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10279#issuecomment-5910743075",
-    "reviewedAt": "2026-10-01T11:58:23.213Z",
-    "mainSha": "16d78daab656cd6fa3afef2d915a3a59a1a46da2"
+    "reviewedAt": "2026-10-03T14:49:05.759Z",
+    "mainSha": "994e8e77f90df7449a17c592ef555acc9d607ca3"
   }
 }
