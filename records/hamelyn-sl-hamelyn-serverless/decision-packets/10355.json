@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-03T07:14:35.331Z",
+  "generatedAt": "2026-10-03T07:12:37.249Z",
   "updatedAt": "2026-10-02T11:12:52Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -22,39 +22,33 @@
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se aprueba incorporar la estrategia score 50/50 para OPTIMO con los parámetros compartidos de MALVENDIDO, tras valorar el impacto comercial reportado?",
-  "rationale": "La fórmula y el flag están definidos en la propuesta, pero aceptar una nueva estrategia que modifica precios es una decisión comercial; la evidencia del PR no sustituye esa aprobación.",
+  "question": "¿Aprueba el equipo probar el pricing por score 50/50 para OPTIMO, condicionado a validar las cifras comerciales reportadas y mantener el flag desactivado por defecto?",
+  "rationale": "La fórmula cambia precios con posible impacto amplio y la issue reporta resultados de simulación que no se han validado de forma independiente; el PR implementa el mecanismo, pero no sustituye la decisión comercial.",
   "options": [
     {
       "title": "Validar y pilotar",
-      "body": "Confirmar la estrategia y sus parámetros, mantener el flag apagado por defecto y habilitarlo de forma controlada tras validar el impacto.",
+      "body": "Contrastar las cifras y, si respaldan el objetivo comercial, aterrizar el cambio con activación controlada por tipo de producto.",
       "recommended": true
     },
     {
-      "title": "Pedir ajuste",
-      "body": "Solicitar cambios a la fórmula o a los parámetros antes de aprobar el piloto.",
-      "recommended": false
-    },
-    {
-      "title": "Mantener el precio histórico",
-      "body": "No incorporar la nueva estrategia y conservar el cálculo actual de OPTIMO.",
+      "title": "Mantener precio histórico",
+      "body": "Descartar la nueva estrategia y conservar el precio histórico actual de OPTIMO.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Validar y pilotar",
-    "body": "Confirmar la estrategia y sus parámetros, mantener el flag apagado por defecto y habilitarlo de forma controlada tras validar el impacto.",
+    "body": "Contrastar las cifras y, si respaldan el objetivo comercial, aterrizar el cambio con activación controlada por tipo de producto.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "PabloMoran34",
-    "reason": "Es el responsable vinculado a la issue y ha contribuido previamente al código de pricing.",
+    "reason": "Está asignado a la issue y es el autor del PR enlazado, por lo que es el candidato más directamente conectado para coordinar la validación propuesta.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10355.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10355#issuecomment-5946869020",
-    "reviewedAt": "2026-10-03T07:14:35.331Z",
+    "reviewedAt": "2026-10-03T07:12:37.249Z",
     "mainSha": "994e8e77f90df7449a17c592ef555acc9d607ca3"
   }
 }
