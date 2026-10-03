@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-03T07:12:17.939Z",
+  "updatedAt": "2026-10-03T07:04:20Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10405,
+    "title": "Amazon orphan recovery misses BUYABLE inventoried stocks without withdrawalDate",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10405",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "triage:queued",
+      "P2"
+    ],
+    "createdAt": "2026-10-03T07:04:07Z",
+    "updatedAt": "2026-10-03T07:04:20Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué evidencia temporal debe permitir sembrar una señal de retirada para un stock `WITHDRAWN` sin `withdrawalDate`?",
+  "rationale": "El snapshot histórico aportado confirma el estado del espejo en un instante, pero no la fecha original de retirada; la política afecta un helper compartido y no conviene inferir una fecha ni cambiar el criterio por defecto sin decisión explícita.",
+  "options": [
+    {
+      "title": "Excepción legacy con validación reforzada",
+      "body": "Permitir una ruta acotada que revalide stock maestro y listing `BUYABLE`, con canario y aprobación antes de ampliar el lote.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener la exclusión por fecha",
+      "body": "No sembrar estos casos hasta disponer de una fuente fiable para demostrar que superaron la ventana de gracia.",
+      "recommended": false
+    },
+    {
+      "title": "Definir otra evidencia temporal",
+      "body": "Acordar una señal alternativa verificable y probarla sin modificar `withdrawalDate` ni el comportamiento estándar.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Excepción legacy con validación reforzada",
+    "body": "Permitir una ruta acotada que revalide stock maestro y listing `BUYABLE`, con canario y aprobación antes de ampliar el lote.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Ha contribuido recientemente al helper compartido; la evidencia no identifica quién tiene autoridad final sobre esta política.",
+    "confidence": "low"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10405.md",
+    "reviewedAt": "2026-10-03T07:12:17.939Z",
+    "mainSha": "994e8e77f90df7449a17c592ef555acc9d607ca3"
+  }
+}
