@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-25T14:48:51.066Z",
-  "updatedAt": "2026-09-24T11:08:08Z",
+  "generatedAt": "2026-10-03T05:54:42.788Z",
+  "updatedAt": "2026-10-03T04:59:14Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -18,43 +18,37 @@
       "P2"
     ],
     "createdAt": "2026-09-23T10:37:50Z",
-    "updatedAt": "2026-09-24T11:08:08Z"
+    "updatedAt": "2026-10-03T04:59:14Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe la prioridad de lotes con stock vendido aplicarse en el selector compartido para todos los marketplaces o limitarse a Feltrinelli?",
-  "rationale": "La solución recomendada modifica el orden del selector compartido; elegir el alcance puede alterar la latencia de procesamiento de otros marketplaces y no se resuelve solo con evidencia local.",
+  "question": "¿Debe priorizarse en el selector compartido de todos los marketplaces cualquier lote abierto que contenga stock vendido, o limitarse el cambio a Feltrinelli?",
+  "rationale": "El PR candidato aplica una nueva prioridad en código compartido; la issue y su revisión previa dejan constancia de que elegir el alcance afecta a otros marketplaces y requiere intención del equipo.",
   "options": [
     {
       "title": "Prioridad compartida",
-      "body": "Priorizar en todos los marketplaces los lotes abiertos que contengan stock WITHDRAWN y validar los flujos afectados.",
+      "body": "Mantener la prioridad en tres niveles para todos los marketplaces y validar que las retiradas existentes conservan preferencia.",
       "recommended": true
     },
     {
       "title": "Solo Feltrinelli",
-      "body": "Acotar la nueva prioridad a Feltrinelli para reducir el impacto potencial en el resto de tiendas.",
-      "recommended": false
-    },
-    {
-      "title": "Mantener configuración",
-      "body": "Conservar el aumento operativo de process y recopilar más resultados antes de modificar la lógica compartida.",
+      "body": "Acotar la priorización a Feltrinelli para reducir el cambio de comportamiento en otras tiendas.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Prioridad compartida",
-    "body": "Priorizar en todos los marketplaces los lotes abiertos que contengan stock WITHDRAWN y validar los flujos afectados.",
+    "body": "Mantener la prioridad en tres niveles para todos los marketplaces y validar que las retiradas existentes conservan preferencia.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "HamelynDev",
-    "reason": "El triage de la issue analizó la posición de los lotes y propuso la modificación estructural; no hay evidencia local suficiente para elevar la confianza.",
-    "confidence": "low"
+    "reason": "La revisión previa lo señaló como candidato para resolver esta elección de alcance.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10009.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10009#issuecomment-5834386583",
-    "reviewedAt": "2026-09-25T14:48:51.066Z",
-    "mainSha": "88e0a9197e139b667c6a7ff20eebddb78e3bfd27"
+    "reviewedAt": "2026-10-03T05:54:42.788Z",
+    "mainSha": "994e8e77f90df7449a17c592ef555acc9d607ca3"
   }
 }
