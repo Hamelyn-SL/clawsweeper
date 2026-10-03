@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-03T06:05:04.456Z",
+  "updatedAt": "2026-10-03T05:39:28Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10400,
+    "title": "fix: check db-only amazon skus against listings before demoting",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10400",
+    "state": "open",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-10-03T05:34:31Z",
+    "updatedAt": "2026-10-03T05:39:28Z",
+    "headSha": "761d32039078e23e18d270a6fe7d8f39195ad3a2"
+  },
+  "lane": "merge_risk",
+  "priority": "P2",
+  "question": "¿Debe el report conservar activos y aplazar los SKU `DB_ONLY` que excedan el cupo, en vez de degradarlos sin verificación?",
+  "rationale": "Resolverlo requiere decidir entre consumir más cuota compartida de Listings y mantener el comportamiento anterior para el excedente, que deja sin cubrir el riesgo de democión de SKU comprables.",
+  "options": [
+    {
+      "title": "Aplazar el excedente",
+      "body": "Conservar activos los SKU no comprobados y verificarlos en ejecuciones posteriores, evitando degradaciones sin evidencia.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener la ruta anterior",
+      "body": "Aceptar que el excedente siga pasando a `INACTIVE` sin comprobación para respetar el cupo actual.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aplazar el excedente",
+    "body": "Conservar activos los SKU no comprobados y verificarlos en ejecuciones posteriores, evitando degradaciones sin evidencia.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Es el candidato con la señal más clara de trabajo reciente en la conciliación y Listings de Amazon.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10400.md",
+    "reviewedAt": "2026-10-03T06:05:04.456Z",
+    "mainSha": "994e8e77f90df7449a17c592ef555acc9d607ca3"
+  }
+}
