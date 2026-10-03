@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-27T08:52:33.136Z",
-  "updatedAt": "2026-09-27T08:19:26Z",
+  "generatedAt": "2026-10-03T01:22:22.338Z",
+  "updatedAt": "2026-10-03T00:42:50Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,48 +14,42 @@
       "bug",
       "app:marketplace",
       "triage:needs-info",
+      "P1",
       "clawsweeper:needs-product-decision",
-      "marketplace-crons",
-      "P1"
+      "marketplace-crons"
     ],
     "createdAt": "2026-09-12T17:30:34Z",
-    "updatedAt": "2026-09-27T08:19:26Z"
+    "updatedAt": "2026-10-03T00:42:50Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe mantenerse la cancelación tras 168 horas cuando Logista devuelve estado `0` sin tracking, o debe tratarse como señal inconcluyente hasta obtener confirmación operativa o una señal fiable del proveedor?",
-  "rationale": "El código confirma el timeout, pero la semántica de `0` y de una referencia ausente en la ventana de consulta no queda establecida por el contrato disponible; cambiarla afecta a la cancelación de pedidos.",
+  "question": "¿Debe el cron cancelar a las 168 h los pedidos que Logista marca como expedidos pero siguen sin tracking completo?",
+  "rationale": "El PR corrige la ventana que ocultaba pedidos antiguos, pero conserva la cancelación de pedidos posiblemente expedidos; el código no determina qué resultado operativo debe prevalecer.",
   "options": [
     {
-      "title": "Confirmar con Logista y Operaciones",
-      "body": "Aportar la respuesta saneada para las referencias afectadas y decidir el comportamiento con evidencia sobre expedición y tracking.",
+      "title": "Mantener la cancelación a las 168 h",
+      "body": "Conservar el límite actual aunque Logista indique expedición y falte tracking completo.",
+      "recommended": false
+    },
+    {
+      "title": "No cancelar ante un estado no concluyente",
+      "body": "Mantener el pedido pendiente hasta disponer de tracking o de una confirmación operativa.",
       "recommended": true
-    },
-    {
-      "title": "Mantener el límite actual",
-      "body": "Conservar la cancelación a las 168 horas si Operaciones confirma que la ausencia significa que el pedido no se expidió.",
-      "recommended": false
-    },
-    {
-      "title": "Escalar ausencia no concluyente",
-      "body": "No cancelar automáticamente por ausencia de señal y encaminar esos pedidos a revisión hasta disponer de un estado fiable.",
-      "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Confirmar con Logista y Operaciones",
-    "body": "Aportar la respuesta saneada para las referencias afectadas y decidir el comportamiento con evidencia sobre expedición y tracking.",
+    "title": "No cancelar ante un estado no concluyente",
+    "body": "Mantener el pedido pendiente hasta disponer de tracking o de una confirmación operativa.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "Daniel Menchen",
-    "reason": "Su historial local está ligado a la consulta de estado Logista relevante; la decisión operativa también requiere confirmación de Operaciones.",
-    "confidence": "medium"
+    "person": "MarcosTerroso",
+    "reason": "Es la persona con vínculo histórico más claro con la implementación actual del estado de Logista; no hay evidencia local que identifique al responsable final de la política operativa.",
+    "confidence": "low"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9455.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9455#issuecomment-5647610588",
-    "reviewedAt": "2026-09-27T08:52:33.136Z",
-    "mainSha": "b7ca4ccf2295720375fc765a9fe4ea56a1f68320"
+    "reviewedAt": "2026-10-03T01:22:22.338Z",
+    "mainSha": "994e8e77f90df7449a17c592ef555acc9d607ca3"
   }
 }

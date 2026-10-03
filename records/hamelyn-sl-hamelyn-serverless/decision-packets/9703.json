@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-30T09:08:47.026Z",
-  "updatedAt": "2026-09-30T08:22:14Z",
+  "generatedAt": "2026-10-03T01:21:46.292Z",
+  "updatedAt": "2026-10-03T00:59:28Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -18,38 +18,37 @@
       "P2"
     ],
     "createdAt": "2026-09-17T22:20:44Z",
-    "updatedAt": "2026-09-30T08:22:14Z"
+    "updatedAt": "2026-10-03T00:59:28Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe el equipo reservar o priorizar capacidad OF24 para las retiradas de Feltrinelli frente a altas y cambios de precio, o basta con mantener el presupuesto compartido y recopilar más mediciones?",
-  "rationale": "La configuración y el limitador actuales ya funcionan según la evidencia aportada; separar o priorizar la cuota cambia el reparto operativo y no se deduce del código ni de la medición disponible.",
+  "question": "¿Debe reservarse explícitamente capacidad OF24 para retiradas de stock vendido frente a altas y cambios de precio durante picos?",
+  "rationale": "El limitador comparte cuota entre operaciones y el historial muestra rechazos recurrentes, pero elegir una prioridad de cuota cambia el comportamiento operativo y no se deduce de los datos disponibles.",
   "options": [
     {
-      "title": "Medir antes de cambiar",
-      "body": "Mantener el presupuesto compartido y aportar una ventana de demanda con entradas únicas, retiradas confirmadas y denegaciones OF24.",
+      "title": "Reservar cuota para retiradas",
+      "body": "Definir una reserva o prioridad para retiradas y validar que no perjudique altas ni actualizaciones.",
       "recommended": true
     },
     {
-      "title": "Priorizar retiradas",
-      "body": "Definir una reserva o prioridad de cuota para retiradas y validar su efecto sin degradar altas ni cambios de precio.",
+      "title": "Mantener cuota compartida",
+      "body": "Conservar el reparto actual y documentar umbrales operativos y respuesta ante saturación.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Medir antes de cambiar",
-    "body": "Mantener el presupuesto compartido y aportar una ventana de demanda con entradas únicas, retiradas confirmadas y denegaciones OF24.",
+    "title": "Reservar cuota para retiradas",
+    "body": "Definir una reserva o prioridad para retiradas y validar que no perjudique altas ni actualizaciones.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Su historial está directamente vinculado al límite OF24 por tienda y a la documentación de su uso.",
+    "reason": "Su historial incluye la implementación del limitador OF24 por tienda y las mediciones operativas del caso.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9703.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9703#issuecomment-5740830359",
-    "reviewedAt": "2026-09-30T09:08:47.026Z",
-    "mainSha": "8a42f89ded984174cc5220724f4c69fdc2b079dc"
+    "reviewedAt": "2026-10-03T01:21:46.292Z",
+    "mainSha": "994e8e77f90df7449a17c592ef555acc9d607ca3"
   }
 }

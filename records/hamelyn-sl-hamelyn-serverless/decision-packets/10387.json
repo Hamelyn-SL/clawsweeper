@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-03T01:21:21.360Z",
+  "updatedAt": "2026-10-03T00:35:16Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10387,
+    "title": "fix: keep logista orders visible until the tracking hard timeout",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10387",
+    "state": "open",
+    "labels": [
+      "size/M"
+    ],
+    "createdAt": "2026-10-03T00:20:11Z",
+    "updatedAt": "2026-10-03T00:35:16Z",
+    "headSha": "ced4e4bf4237fb828aec188e3c63b61555daf3af"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se acepta cancelar a las 168 horas un pedido expedido sin tracking cuando la consulta de Logista queda truncada o no concluyente?",
+  "rationale": "La ruta actual y este PR conservan la cancelación; evitar cancelaciones potencialmente incorrectas requiere cambiar el contrato de resultado y la política del cron.",
+  "options": [
+    {
+      "title": "Mantener cancelación",
+      "body": "Aceptar el riesgo actual y conservar la cancelación a las 168 horas incluso si Logista no devuelve un resultado concluyente.",
+      "recommended": false
+    },
+    {
+      "title": "No cancelar si no concluye",
+      "body": "Distinguir ausencia confirmada de búsqueda truncada y mantener pendientes los pedidos cuyo estado no se pudo determinar.",
+      "recommended": true
+    }
+  ],
+  "recommendation": {
+    "title": "No cancelar si no concluye",
+    "body": "Distinguir ausencia confirmada de búsqueda truncada y mantener pendientes los pedidos cuyo estado no se pudo determinar.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Contribuye a la lógica reciente del cron y del timeout de tracking que define este comportamiento.",
+    "confidence": "low"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10387.md",
+    "reviewedAt": "2026-10-03T01:21:21.360Z",
+    "mainSha": "994e8e77f90df7449a17c592ef555acc9d607ca3"
+  }
+}

@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-24T10:56:37.325Z",
-  "updatedAt": "2026-09-24T08:22:00Z",
+  "generatedAt": "2026-10-03T01:23:09.806Z",
+  "updatedAt": "2026-10-03T01:11:09Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -17,38 +17,42 @@
       "P2"
     ],
     "createdAt": "2026-09-10T06:22:58Z",
-    "updatedAt": "2026-09-24T08:22:00Z"
+    "updatedAt": "2026-10-03T01:11:09Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué debe ocurrir cuando una retirada eBay acumula fallos sin confirmación de ausencia: seguir reintentando con alerta individual o pasar a revisión manual preservando la retirada pendiente?",
-  "rationale": "El código actual reintenta errores no confirmados; decidir el umbral y si se pausa la automatización cambia la política operativa y no debe resolverse cerrando la retirada sin evidencia de ausencia remota.",
+  "question": "¿Qué acción debe activarse cuando una retirada ambigua supera el umbral de reintentos, manteniendo la oferta pendiente y evitando marcarla como retirada sin confirmación?",
+  "rationale": "El código reintenta fallos ambiguos con backoff sin terminalizar; elegir umbral y destino de escalado cambia la política operativa y no se deduce del estado actual de las seis ofertas.",
   "options": [
     {
-      "title": "Reintentar y alertar",
-      "body": "Conservar la retirada pendiente y emitir diagnóstico por oferta y alerta cuando alcance el umbral acordado.",
+      "title": "Conservar reintento y alertar al superar un umbral",
+      "body": "Mantener la retirada en cola y emitir una señal de revisión al superar un umbral explícito.",
       "recommended": true
     },
     {
-      "title": "Pasar a revisión manual",
-      "body": "Al alcanzar el umbral, pausar nuevos intentos automáticos pero preservar el identificador y una acción explícita para completar la retirada.",
+      "title": "Conservar reintento sin umbral terminal",
+      "body": "Añadir diagnóstico por oferta y continuar con el backoff existente, sin política de escalado nueva.",
+      "recommended": false
+    },
+    {
+      "title": "Aparcar para revisión manual",
+      "body": "Tras un umbral explícito, sacar el caso del ciclo automático sin borrar la retirada pendiente y con alerta operativa.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Reintentar y alertar",
-    "body": "Conservar la retirada pendiente y emitir diagnóstico por oferta y alerta cuando alcance el umbral acordado.",
+    "title": "Conservar reintento y alertar al superar un umbral",
+    "body": "Mantener la retirada en cola y emitir una señal de revisión al superar un umbral explícito.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Es la persona con el trabajo más reciente del historial local sobre la conservación de intentos eBay; la propiedad de la decisión de política no queda identificada con certeza.",
-    "confidence": "low"
+    "reason": "Su trabajo reciente en errores de retirada eBay lo conecta con las garantías actuales del flujo; la elección final sigue siendo del equipo de producto/operaciones.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9364.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9364#issuecomment-5644931658",
-    "reviewedAt": "2026-09-24T10:56:37.325Z",
-    "mainSha": "b3f7c1eace1f7638fa2f8de78cce0587ae8df711"
+    "reviewedAt": "2026-10-03T01:23:09.806Z",
+    "mainSha": "994e8e77f90df7449a17c592ef555acc9d607ca3"
   }
 }

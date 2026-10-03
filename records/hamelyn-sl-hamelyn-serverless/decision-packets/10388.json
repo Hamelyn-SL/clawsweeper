@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-03T01:22:22.874Z",
+  "updatedAt": "2026-10-03T00:52:55Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10388,
+    "title": "fix: require upload tickets for new github assets in admin issues",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10388",
+    "state": "open",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-10-03T00:41:48Z",
+    "updatedAt": "2026-10-03T00:52:55Z",
+    "headSha": "efc6139afc3660ace12dbe755b0cbd552eee434e"
+  },
+  "lane": "security_boundary",
+  "priority": "P1",
+  "question": "¿Debe aterrizarse este PR como mitigación parcial mientras la issue vinculada sigue abierta, o se exige verificar el alcance del token y tratar los assets ajenos preexistentes antes de cerrar el trabajo de seguridad?",
+  "rationale": "La rama bloquea nuevas inserciones sin ticket, pero permite expresamente que continúen los assets históricos sin procedencia. Esa concesión deja una vía documentada sin resolver y requiere decidir el umbral aceptable de mitigación.",
+  "options": [
+    {
+      "title": "Aceptar la mitigación parcial",
+      "body": "Integrar la validación de nuevas escrituras y mantener abierta la issue para la verificación del token y los assets históricos.",
+      "recommended": true
+    },
+    {
+      "title": "Exigir cierre integral",
+      "body": "Esperar a verificar el alcance del token y acordar una revisión o retirada acotada de los assets ajenos preexistentes antes de integrar la solución como completa.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aceptar la mitigación parcial",
+    "body": "Integrar la validación de nuevas escrituras y mantener abierta la issue para la verificación del token y los assets históricos.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Es la persona con evidencia histórica más directa en el checkout para el resolver de adjuntos; la atribución es indirecta y de confianza baja.",
+    "confidence": "low"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10388.md",
+    "reviewedAt": "2026-10-03T01:22:22.874Z",
+    "mainSha": "994e8e77f90df7449a17c592ef555acc9d607ca3"
+  }
+}

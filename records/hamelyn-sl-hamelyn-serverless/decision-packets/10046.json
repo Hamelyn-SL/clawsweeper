@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-24T06:40:38.943Z",
-  "updatedAt": "2026-09-24T06:27:52Z",
+  "generatedAt": "2026-10-03T01:22:33.750Z",
+  "updatedAt": "2026-10-03T00:46:10Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -16,38 +16,37 @@
       "P2"
     ],
     "createdAt": "2026-09-24T06:02:10Z",
-    "updatedAt": "2026-09-24T06:27:52Z"
+    "updatedAt": "2026-10-03T00:46:10Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe el reconciliador verificar mediante Listings Items cada candidato MX ausente del report antes de demotarlo, o preferís otra salvaguarda para evitar falsos `DB_ONLY`?",
-  "rationale": "La evidencia confirma listings remotos vivos, pero el alcance y el coste de llamadas de una comprobación remota requieren elegir qué fuente prevalece y cómo limitar la verificación.",
+  "question": "¿Debe el report MX consultar Listings Items para cada candidato `DB_ONLY` y conservar los que sigan `BUYABLE`, dejando sin cambios los resultados ambiguos?",
+  "rationale": "Es una decisión de salvaguarda antes de una escritura de estado que retira listings de los flujos activos; el triage previo dejó esa elección pendiente y no consta una respuesta humana posterior.",
   "options": [
     {
-      "title": "Verificar candidatos con Listings Items",
-      "body": "Consultar solo los candidatos a democión y preservar los que sigan `BUYABLE`, con límites y pruebas de regresión.",
+      "title": "Verificar antes de demotar",
+      "body": "Consultar Listings Items solo para los candidatos y desactivar únicamente cuando la respuesta confirme que ya no son comprables.",
       "recommended": true
     },
     {
-      "title": "Usar otra salvaguarda de reconciliación",
-      "body": "Definir una comprobación alternativa basada en snapshots o repetición del report antes de cambiar el estado local.",
+      "title": "Aplicar otra salvaguarda",
+      "body": "Definir una alternativa, como exigir ausencia repetida en reports antes de cambiar el estado local.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Verificar candidatos con Listings Items",
-    "body": "Consultar solo los candidatos a democión y preservar los que sigan `BUYABLE`, con límites y pruebas de regresión.",
+    "title": "Verificar antes de demotar",
+    "body": "Consultar Listings Items solo para los candidatos y desactivar únicamente cuando la respuesta confirme que ya no son comprables.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "El historial del código actual lo vincula directamente con la comparación y democión del report Amazon.",
-    "confidence": "medium"
+    "reason": "Su historial incluye la introducción de la integración Amazon MX y del flujo relacionado con el informe.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10046.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10046#issuecomment-5809122747",
-    "reviewedAt": "2026-09-24T06:40:38.943Z",
-    "mainSha": "b2627c046e31185d9ffecd22f180a7fb49fbfe35"
+    "reviewedAt": "2026-10-03T01:22:33.750Z",
+    "mainSha": "994e8e77f90df7449a17c592ef555acc9d607ca3"
   }
 }

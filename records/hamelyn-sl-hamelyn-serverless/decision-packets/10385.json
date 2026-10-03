@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-03T01:22:29.937Z",
+  "updatedAt": "2026-10-03T00:25:09Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10385,
+    "title": "fix: stop data-dashboards-user from outranking operational roles",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10385",
+    "state": "open",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-10-03T00:08:11Z",
+    "updatedAt": "2026-10-03T00:25:09Z",
+    "headSha": "8a30a3e77e245a1aced78812798069b73eb94de7"
+  },
+  "lane": "security_boundary",
+  "priority": "P1",
+  "question": "¿Se despliega el rechazo por rango de inmediato o se revisan primero los PAT y las cuentas que podrían depender de `data-dashboards-user` para escrituras?",
+  "rationale": "La corrección evita que un rol de acceso satisfaga un requisito operativo, pero el PR anticipa respuestas 403 para flujos existentes y no hay evidencia de uso real o de cuentas afectadas.",
+  "options": [
+    {
+      "title": "Aprobar el cambio y revisar accesos",
+      "body": "Desplegar la separación de roles y comprobar con los responsables si los PAT afectados necesitan un rol operativo explícito.",
+      "recommended": true
+    },
+    {
+      "title": "Auditar antes del despliegue",
+      "body": "Identificar primero PAT y cuentas que dependen del rango actual, y coordinar sus roles antes de activar el rechazo.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar el cambio y revisar accesos",
+    "body": "Desplegar la separación de roles y comprobar con los responsables si los PAT afectados necesitan un rol operativo explícito.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "El historial disponible lo vincula más directamente con la definición de la escala de roles que decide esta compatibilidad.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10385.md",
+    "reviewedAt": "2026-10-03T01:22:29.937Z",
+    "mainSha": "994e8e77f90df7449a17c592ef555acc9d607ca3"
+  }
+}
