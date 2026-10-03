@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-02T08:53:55.097Z",
-  "updatedAt": "2026-10-01T08:04:01Z",
+  "generatedAt": "2026-10-03T09:01:23.283Z",
+  "updatedAt": "2026-10-02T10:57:53Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,42 +15,46 @@
       "reporter:javier",
       "triage:done",
       "clawsweeper:needs-product-decision",
-      "mk:todocoleccion",
-      "P2"
+      "P2",
+      "mk:todocoleccion"
     ],
     "createdAt": "2026-09-29T06:41:22Z",
-    "updatedAt": "2026-10-01T08:04:01Z"
+    "updatedAt": "2026-10-02T10:57:53Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se acepta el residuo histórico estimado tras la muestra de 5.000 SKU o se autoriza un piloto acotado de búsqueda por EAN con un límite explícito de SKU y consultas?",
-  "rationale": "El barrido completo se estima en unas 36 horas de API compartida y no hay catálogo exportable ni cuota aprobada; decidir el coste operativo frente al residuo es una elección de producto y operación.",
+  "question": "¿Se acepta la muestra y la protección preventiva de la PR como cierre del residuo histórico, o se debe autorizar una comprobación acotada y definir una cuota recurrente para TodoColección?",
+  "rationale": "No existe un catálogo completo utilizable en la cobertura descrita y las consultas SKU comparten la API; el equipo debe decidir qué coste operativo acepta. La PR abierta no resuelve por sí misma esa elección.",
   "options": [
     {
-      "title": "Aceptar el residuo y prevenir nuevos huérfanos",
-      "body": "Revisar y, si procede, aterrizar la PR preventiva y dejar el histórico sin barrido completo.",
+      "title": "Aceptar protección y muestreo",
+      "body": "Conservar la issue abierta hasta que la PR se fusione y comprobar la métrica de cierre durante dos semanas, sin barrido histórico completo.",
       "recommended": true
     },
     {
-      "title": "Autorizar un piloto acotado",
-      "body": "Definir un máximo de SKU y ritmo de consultas para medir y retirar anuncios históricos que sigan activos.",
+      "title": "Autorizar piloto acotado",
+      "body": "Definir un máximo de SKU y ritmo de consultas para revisar el lote histórico y evaluar cobertura recurrente sin saturar la API.",
+      "recommended": false
+    },
+    {
+      "title": "Posponer la cobertura histórica",
+      "body": "Mantener el cambio preventivo y dejar explícitamente sin resolver la recuperación de anuncios antiguos hasta contar con una vía de catálogo adecuada.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aceptar el residuo y prevenir nuevos huérfanos",
-    "body": "Revisar y, si procede, aterrizar la PR preventiva y dejar el histórico sin barrido completo.",
+    "title": "Aceptar protección y muestreo",
+    "body": "Conservar la issue abierta hasta que la PR se fusione y comprobar la métrica de cierre durante dos semanas, sin barrido histórico completo.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Está asignado a la issue y vinculado al cambio preventivo; puede coordinar el límite operativo con el área de marketplace.",
+    "reason": "Está asignado a la issue y su PR aborda la prevención que condiciona la decisión sobre el residuo.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10215.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10215#issuecomment-5885553381",
-    "reviewedAt": "2026-10-02T08:53:55.097Z",
-    "mainSha": "9208b25fee67bf14606b51d27b24e07b948c67f0"
+    "reviewedAt": "2026-10-03T09:01:23.283Z",
+    "mainSha": "994e8e77f90df7449a17c592ef555acc9d607ca3"
   }
 }

@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-02T08:33:55.160Z",
-  "updatedAt": "2026-10-02T08:27:58Z",
+  "generatedAt": "2026-10-03T09:01:45.807Z",
+  "updatedAt": "2026-10-02T13:01:46Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,43 +13,47 @@
       "app:infrastructure",
       "feature",
       "reporter:miguel",
-      "triage:running",
-      "P2",
-      "clawsweeper:needs-product-decision"
+      "triage:done",
+      "clawsweeper:needs-product-decision",
+      "P2"
     ],
     "createdAt": "2026-10-02T08:15:00Z",
-    "updatedAt": "2026-10-02T08:27:58Z"
+    "updatedAt": "2026-10-02T13:01:46Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué mecanismo persistente existente debe coordinar la pausa de 15 minutos entre el cron y la cola, manteniendo la posibilidad de reintento manual durante la pausa?",
-  "rationale": "La issue define el comportamiento y prohíbe crear colecciones o índices, pero deja abierto dónde persistir y cómo coordinar el estado entre invocaciones; esa elección condiciona tanto la fiabilidad del reintento como la excepción manual.",
+  "question": "¿Debe una saturación de Cainiao abrir una pausa persistida de 15 minutos compartida por cron y cola, con reintento automático al expirar y bypass manual desde admin?",
+  "rationale": "La propuesta introduce una política de recuperación que cambia cuándo se generan etiquetas y exige definir concurrencia, persistencia y garantías de reencolado; la elección no se deduce del contrato actual de errores transitorios.",
   "options": [
     {
-      "title": "Usar la cola existente",
-      "body": "Representar la espera y el reintento con mensajes de la cola actual, asegurando que cron y workers no sigan enviando etiquetas mientras dure la pausa.",
+      "title": "Aprobar la pausa propuesta",
+      "body": "Definir 15 minutos como ventana compartida, permitir el reintento manual y exigir recuperación segura al expirar incluso ante fallos de cola.",
       "recommended": true
     },
     {
-      "title": "Usar otro estado persistente existente",
-      "body": "Acordar qué almacenamiento ya disponible puede guardar la pausa compartida sin introducir colecciones ni índices nuevos.",
+      "title": "Limitar el alcance",
+      "body": "Añadir clasificación y reintentos selectivos de estas firmas sin detener globalmente las solicitudes Cainiao.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener el flujo actual",
+      "body": "No incorporar una pausa automática y conservar el relanzado manual como mecanismo de recuperación.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Usar la cola existente",
-    "body": "Representar la espera y el reintento con mensajes de la cola actual, asegurando que cron y workers no sigan enviando etiquetas mientras dure la pausa.",
+    "title": "Aprobar la pausa propuesta",
+    "body": "Definir 15 minutos como ventana compartida, permitir el reintento manual y exigir recuperación segura al expirar incluso ante fallos de cola.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "banosdavidhamelyn",
-    "reason": "Su historial está ligado al flujo de reintentos de la cola que tendría que coordinar la pausa.",
+    "person": "JavierHamelyn",
+    "reason": "Su historial toca la infraestructura de colas que tendría que coordinar la pausa con el reintento y la recuperación.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10361.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10361#issuecomment-5948290125",
-    "reviewedAt": "2026-10-02T08:33:55.160Z",
-    "mainSha": "9208b25fee67bf14606b51d27b24e07b948c67f0"
+    "reviewedAt": "2026-10-03T09:01:45.807Z",
+    "mainSha": "994e8e77f90df7449a17c592ef555acc9d607ca3"
   }
 }
