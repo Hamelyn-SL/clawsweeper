@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-02T12:36:30.130Z",
-  "updatedAt": "2026-10-02T11:37:07Z",
+  "generatedAt": "2026-10-03T13:30:56.443Z",
+  "updatedAt": "2026-10-03T13:28:21Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,43 +13,42 @@
       "bug",
       "app:infrastructure",
       "triage:done",
-      "reporter:daniellopez",
       "P1",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "reporter:daniellopez"
     ],
     "createdAt": "2026-10-02T11:07:44Z",
-    "updatedAt": "2026-10-02T11:37:07Z"
+    "updatedAt": "2026-10-03T13:28:21Z"
   },
-  "lane": "merge_risk",
+  "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe adoptarse el reparto de cupos entre pedidos activos y cancelados de menos de 90 días, aceptando el volumen de consultas adicional tras validar sus límites?",
-  "rationale": "El diagnóstico propone cambiar la selección y la cantidad de pedidos procesados; elegir el corte y aceptar el coste operativo requiere confirmar el criterio de Infraestructura.",
+  "question": "¿Se adopta el límite de 90 días desde la creación para sincronizar lotes cancelados, o se deben conservar los cancelados antiguos con cupos separados?",
+  "rationale": "La elección determina qué pedidos dejan de consultarse al transportista; las pruebas del PR aún no establecen una validación operativa completa y las cifras MRW discrepan.",
   "options": [
     {
-      "title": "Validar e implementar cupos separados",
-      "body": "Revisar filtros y volumen con pruebas dirigidas, desplegar y medir frescura y duración durante una jornada laboral.",
+      "title": "Adoptar el corte de 90 días",
+      "body": "Mantener el filtro propuesto y confirmar después del despliegue la frescura de Recepción, los errores y la duración de las pasadas.",
       "recommended": true
     },
     {
-      "title": "Mantener el selector actual",
-      "body": "No cambiar la política hasta disponer de una alternativa de menor volumen con evidencia de frescura suficiente.",
+      "title": "Separar cupos",
+      "body": "Seguir sincronizando cancelados antiguos, pero reservar turnos independientes para activos y cancelados recientes.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Validar e implementar cupos separados",
-    "body": "Revisar filtros y volumen con pruebas dirigidas, desplegar y medir frescura y duración durante una jornada laboral.",
+    "title": "Adoptar el corte de 90 días",
+    "body": "Mantener el filtro propuesto y confirmar después del despliegue la frescura de Recepción, los errores y la duración de las pasadas.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "Alex Cantón",
-    "reason": "Su historial incluye la mejora de equidad y la refactorización del sincronizador; la decisión también requiere validación del equipo de Infraestructura.",
-    "confidence": "medium"
+    "person": "banosdavidhamelyn",
+    "reason": "La revisión previa lo señaló como dueño probable de la decisión de comportamiento; no aparece una resolución posterior en la discusión disponible.",
+    "confidence": "low"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10376.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10376#issuecomment-5952481533",
-    "reviewedAt": "2026-10-02T12:36:30.130Z",
-    "mainSha": "69bb61268a396323843405a8708da098fe70794a"
+    "reviewedAt": "2026-10-03T13:30:56.443Z",
+    "mainSha": "994e8e77f90df7449a17c592ef555acc9d607ca3"
   }
 }
