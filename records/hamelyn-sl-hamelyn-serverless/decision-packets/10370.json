@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-02T10:26:59.885Z",
-  "updatedAt": "2026-10-02T10:12:51Z",
+  "generatedAt": "2026-10-03T10:56:43.329Z",
+  "updatedAt": "2026-10-02T10:27:52Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,47 +13,46 @@
       "bug",
       "app:infrastructure",
       "reporter:marcos",
-      "triage:running",
+      "triage:done",
       "P2"
     ],
     "createdAt": "2026-10-02T09:53:42Z",
-    "updatedAt": "2026-10-02T10:12:51Z"
+    "updatedAt": "2026-10-02T10:27:52Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué ventana y criterios de evidencia deben definir un único incidente Mongo entre rutas y fases, y cuándo se debe enlazar la alerta `atlas.primary_election`?",
-  "rationale": "El cambio amplía la correlación automática a fallos y superficies que hoy permanecen separadas; elegir el alcance y la ventana afecta a si incidentes independientes podrían fusionarse.",
+  "question": "¿Qué ventana y qué evidencia deben identificar un único incidente Mongo entre rutas y proyectos, y bajo qué condiciones se enlaza `atlas.primary_election`?",
+  "rationale": "La decisión determina cuándo fusionar alertas y cuándo mantenerlas separadas; una heurística demasiado amplia podría suprimir incidentes independientes o crear una segunda alerta durante recovery.",
   "options": [
     {
-      "title": "Aprobar consolidación acotada",
-      "body": "Definir una ventana de incidente y exigir una firma de conectividad Mongo y evidencia temporal coincidente antes de combinar rutas, fases y alerta.",
+      "title": "Correlación por incidente acotada",
+      "body": "Definir una ventana temporal y exigir evidencia Mongo coincidente antes de agrupar rutas y proyectos, enlazando la alerta de infraestructura solo si existe correlación temporal.",
       "recommended": true
     },
     {
-      "title": "Mantener agrupación por firma reconocida",
-      "body": "Ampliar únicamente las firmas Mongo demostrablemente comunes y dejar la asociación con la alerta para el análisis del agente.",
+      "title": "Agrupar firmas reconocidas",
+      "body": "Unificar solo firmas Mongo explícitas y mantener la asociación con la alerta `atlas.primary_election` fuera de la lógica automática.",
       "recommended": false
     },
     {
-      "title": "Separar los watchers",
-      "body": "Consolidar rutas dentro de cada watcher, pero mantener independientes `marketplace-crons`, `crons` y el watcher de infraestructura.",
+      "title": "Mantener separados los proyectos",
+      "body": "Consolidar rutas dentro de cada watcher, pero conservar alertas independientes para `marketplace-crons`, `crons` e infraestructura.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar consolidación acotada",
-    "body": "Definir una ventana de incidente y exigir una firma de conectividad Mongo y evidencia temporal coincidente antes de combinar rutas, fases y alerta.",
+    "title": "Correlación por incidente acotada",
+    "body": "Definir una ventana temporal y exigir evidencia Mongo coincidente antes de agrupar rutas y proyectos, enlazando la alerta de infraestructura solo si existe correlación temporal.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Su cambio previo define el comportamiento acotado más cercano y aporta el contexto técnico de la consolidación existente.",
-    "confidence": "high"
+    "reason": "Su historial reciente cubre normalización y recovery del watcher, y el comentario de triage señala que hace falta una decisión sobre la identidad común del incidente.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10370.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10370#issuecomment-5950363904",
-    "reviewedAt": "2026-10-02T10:26:59.885Z",
-    "mainSha": "9e7f28f035445080796bfb60392354a5cef5f7bf"
+    "reviewedAt": "2026-10-03T10:56:43.329Z",
+    "mainSha": "994e8e77f90df7449a17c592ef555acc9d607ca3"
   }
 }
