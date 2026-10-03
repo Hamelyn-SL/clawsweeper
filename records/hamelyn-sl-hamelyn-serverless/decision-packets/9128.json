@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-14T10:02:28.631Z",
-  "updatedAt": "2026-09-14T08:32:29Z",
+  "generatedAt": "2026-10-03T00:59:15.525Z",
+  "updatedAt": "2026-10-03T00:45:05Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,47 +15,40 @@
       "app:ecommerce",
       "triage:done",
       "reporter:victor",
-      "P2",
-      "clawsweeper:needs-product-decision"
+      "P2"
     ],
     "createdAt": "2026-09-04T11:01:20Z",
-    "updatedAt": "2026-09-14T08:32:29Z"
+    "updatedAt": "2026-10-03T00:45:05Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué regla permanente debe gobernar las categorías de libros y qué alcance de saneamiento debe aplicarse a los productos con asignaciones masivas?",
-  "rationale": "El código puede corregir la UI, pero el límite válido de categorías y la corrección de inventario requieren criterio de catálogo antes de modificar datos activos.",
+  "question": "¿Qué criterio estable debe regir el ranking de «También buscado» y qué alcance de saneamiento de categorías se aprueba para corregir asignaciones demasiado amplias?",
+  "rationale": "La issue pide reducir el solapamiento y conservar los mismos enlaces al refrescar; elegir la señal de ranking y los cambios de datos requiere acordar el comportamiento esperado y el alcance de la corrección.",
   "options": [
     {
-      "title": "Aprobar regla y saneamiento completo",
-      "body": "Definir el máximo o criterio taxonómico, validar el dry-run y corregir todos los productos activos que incumplan la regla.",
+      "title": "Acordar criterio y alcance antes de implementar",
+      "body": "Definir ranking determinista y revisar el mapeo de categorías afectado antes de autorizar cambios de datos.",
       "recommended": true
     },
     {
-      "title": "Resolver solo la UI",
-      "body": "Aterrizar los ajustes visuales y dejar la calidad de categorías en una incidencia específica de catálogo.",
-      "recommended": false
-    },
-    {
-      "title": "Mantener la clasificación actual",
-      "body": "Corregir únicamente la exclusión y los desempates, aceptando que productos multiclase sigan participando en varias categorías.",
+      "title": "Limitarse primero a la UI",
+      "body": "Resolver las correcciones visuales y dejar el ranking y el saneamiento de categorías para una decisión posterior.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar regla y saneamiento completo",
-    "body": "Definir el máximo o criterio taxonómico, validar el dry-run y corregir todos los productos activos que incumplan la regla.",
+    "title": "Acordar criterio y alcance antes de implementar",
+    "body": "Definir ranking determinista y revisar el mapeo de categorías afectado antes de autorizar cambios de datos.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "alexcanHamelyn",
-    "reason": "Su historial cubre el diseño y los flujos de highlights cuyo contrato debe evolucionar con la decisión de catálogo.",
-    "confidence": "medium"
+    "person": "JavierHamelyn",
+    "reason": "Figura como persona asignada actualmente a la issue.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9128.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9128#issuecomment-5565385535",
-    "reviewedAt": "2026-09-14T10:02:28.631Z",
-    "mainSha": "54661592cd176a3f29ebb899b1b9ed757b9a780a"
+    "reviewedAt": "2026-10-03T00:59:15.525Z",
+    "mainSha": "994e8e77f90df7449a17c592ef555acc9d607ca3"
   }
 }
