@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-15T08:01:38.436Z",
-  "updatedAt": "2026-09-15T07:52:48Z",
+  "generatedAt": "2026-10-03T01:16:14.759Z",
+  "updatedAt": "2026-10-03T01:00:08Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,43 +12,41 @@
     "labels": [
       "bug",
       "app:marketplace",
-      "triage:queued",
-      "clawsweeper:needs-product-decision",
+      "triage:done",
       "P2"
     ],
     "createdAt": "2026-09-15T07:51:59Z",
-    "updatedAt": "2026-09-15T07:52:48Z"
+    "updatedAt": "2026-10-03T01:00:08Z"
   },
-  "lane": "product_direction",
+  "lane": "security_boundary",
   "priority": "P2",
-  "question": "¿Debe TodoColeccion tratar el precio del stock maestro como fuente canónica y reconciliar al remoto cada discrepancia confirmada, o existen diferencias remotas válidas que deben excluirse?",
-  "rationale": "El código actual usa el stock maestro al reprocesar, pero la incidencia pide validar si los cinco desacuerdos deben sobrescribirse; esa semántica no puede inferirse solo del adapter.",
+  "question": "¿Debe la recuperación `already_reference` ejecutar el PUT completo para reconciliar el precio, o debe limitarse a marcar reprice pendiente hasta tener un mecanismo de actualización más acotado?",
+  "rationale": "El PUT de TodoColeccion envía más que el precio y su ejecución puede modificar el estado remoto; la elección define el límite seguro de la reparación, más allá de lo que puede concluirse solo con el código y la evidencia parcial del histórico.",
   "options": [
     {
-      "title": "Master canónico con canario",
-      "body": "Confirmar el stock maestro como precio canónico, señalar los cinco casos tras validación y ampliar la detección de forma acotada.",
-      "recommended": true
+      "title": "Usar el PUT existente",
+      "body": "Actualizar el anuncio al recuperar el ID y exigir respuesta satisfactoria antes de confirmar la publicación, con pruebas de fallo y concurrencia.",
+      "recommended": false
     },
     {
-      "title": "Catalogar excepciones",
-      "body": "Documentar y codificar las clases de listings donde el precio remoto puede diferir sin activar reprice.",
-      "recommended": false
+      "title": "Dejar reprice pendiente",
+      "body": "Confirmar la referencia y conservar una señal para que la ruta ordinaria de reprice realice la actualización controlada.",
+      "recommended": true
     }
   ],
   "recommendation": {
-    "title": "Master canónico con canario",
-    "body": "Confirmar el stock maestro como precio canónico, señalar los cinco casos tras validación y ampliar la detección de forma acotada.",
+    "title": "Dejar reprice pendiente",
+    "body": "Confirmar la referencia y conservar una señal para que la ruta ordinaria de reprice realice la actualización controlada.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MarcosTerroso",
-    "reason": "Su historial concentra la transición al modelo V2 que actualmente selecciona y publica los precios.",
-    "confidence": "medium"
+    "person": "HamelynDev",
+    "reason": "Su comentario técnico identifica la causa candidata y el impacto del PUT completo, por lo que es la mejor referencia disponible para decidir el límite de la corrección.",
+    "confidence": "low"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9551.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9551#issuecomment-5676823919",
-    "reviewedAt": "2026-09-15T08:01:38.436Z",
-    "mainSha": "c007d9dc476b56e9a39afc015ca4e0a1e00ee7a5"
+    "reviewedAt": "2026-10-03T01:16:14.759Z",
+    "mainSha": "994e8e77f90df7449a17c592ef555acc9d607ca3"
   }
 }
