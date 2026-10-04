@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-04T15:30:17.776Z",
+  "updatedAt": "2026-10-04T15:23:39Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10419,
+    "title": "Amazon: tras una venta B2B de 1.168 stocks, la retirada tarda hasta 3,6 h en SE y casi 2 h en FR, IT y MX, también para las ventas normales que llegan detrás",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10419",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "reporter:javier",
+      "triage:done",
+      "P2",
+      "mk:amazon"
+    ],
+    "createdAt": "2026-10-04T14:35:18Z",
+    "updatedAt": "2026-10-04T15:23:39Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Qué estrategia de capacidad debe adoptarse para retirar lotes B2B grandes de Amazon sin retrasar las ventas normales: elevar los límites por región, procesar esos lotes por una vía separada o mantener los límites hasta validar cuotas y presupuesto?",
+  "rationale": "El cambio de capacidad afecta a cuotas por mercado y duración del cron; la evidencia aportada no permite escoger de forma segura un nuevo límite operativo.",
+  "options": [
+    {
+      "title": "Validar cuotas y ajustar límites",
+      "body": "Medir cuotas y presupuesto por región y, con esos datos, elevar los límites de retirada necesarios.",
+      "recommended": true
+    },
+    {
+      "title": "Separar lotes B2B",
+      "body": "Diseñar una vía de retirada para lotes grandes que no bloquee la cola ordinaria.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener límites actuales",
+      "body": "Posponer el cambio de capacidad hasta disponer de mediciones operativas adicionales.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Validar cuotas y ajustar límites",
+    "body": "Medir cuotas y presupuesto por región y, con esos datos, elevar los límites de retirada necesarios.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Su historial reciente en consultas y gestión de marketplaces lo vincula con el área afectada por el dimensionamiento de la retirada.",
+    "confidence": "low"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10419.md",
+    "reviewedAt": "2026-10-04T15:30:17.776Z",
+    "mainSha": "e986613e415b72bdb64bdbc54a780463384727fe"
+  }
+}
