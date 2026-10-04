@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-04T15:25:03.269Z",
+  "updatedAt": "2026-10-04T14:58:07Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10418,
+    "title": "eBay ES: la confirmación de la retirada falla con «reconciliation failed» en todos los reintentos de la misma oferta y la causa no se registra",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10418",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "reporter:javier",
+      "triage:pr-opened",
+      "P2",
+      "mk:ebay"
+    ],
+    "createdAt": "2026-10-04T14:35:11Z",
+    "updatedAt": "2026-10-04T14:58:07Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué comportamiento debe seguir una retirada cuya confirmación falla repetidamente: mantener reintentos transitorios o pasar a revisión/una resolución alternativa?",
+  "rationale": "El PR abierto mejora la evidencia diagnóstica, pero deja intactos los reintentos; detenerlos o resolverlos de otra forma cambia la política operativa y requiere intención del equipo.",
+  "options": [
+    {
+      "title": "Mantener reintentos",
+      "body": "Conservar la clasificación transitoria y usar la causa registrada para diagnosticar el caso tras el despliegue.",
+      "recommended": false
+    },
+    {
+      "title": "Escalar tras fallos repetidos",
+      "body": "Definir un umbral y un estado/código de revisión para evitar reintentos indefinidos sin verificación manual.",
+      "recommended": true
+    }
+  ],
+  "recommendation": {
+    "title": "Escalar tras fallos repetidos",
+    "body": "Definir un umbral y un estado/código de revisión para evitar reintentos indefinidos sin verificación manual.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Su historial lo vincula con el flujo de confirmación de retirada que origina esta decisión; no hay evidencia suficiente para asignar la decisión a una persona concreta con mayor certeza.",
+    "confidence": "low"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10418.md",
+    "reviewedAt": "2026-10-04T15:25:03.269Z",
+    "mainSha": "bbeea89363a89623a62c934460bc807531c959ba"
+  }
+}
