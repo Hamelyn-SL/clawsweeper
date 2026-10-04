@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-28T08:59:31.122Z",
-  "updatedAt": "2026-09-28T08:28:23Z",
+  "generatedAt": "2026-10-04T11:24:13.886Z",
+  "updatedAt": "2026-10-04T10:11:19Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -18,38 +18,37 @@
       "P1"
     ],
     "createdAt": "2026-09-10T09:50:31Z",
-    "updatedAt": "2026-09-28T08:28:23Z"
+    "updatedAt": "2026-10-04T10:11:19Z"
   },
   "lane": "security_boundary",
   "priority": "P1",
-  "question": "¿Se ha comprobado el acceso de `GITHUB_ISSUES_TOKEN` a assets privados de este repositorio y de otro repositorio privado, y qué contención se aplicará si el token puede resolver ambos?",
-  "rationale": "La ruta de escritura insegura está respaldada por el código y las pruebas descritas, pero la consecuencia entre repositorios depende del comportamiento real de GitHub y de los permisos del token desplegado; eso requiere una comprobación operativa de seguridad.",
+  "question": "¿Debe limitarse `GITHUB_ISSUES_TOKEN` y revisarse el acceso a assets ajenos ya registrados antes de cerrar esta incidencia?",
+  "rationale": "El PR abierto cubre nuevas escrituras, pero no resuelve ni demuestra el aislamiento del token ni elimina referencias previas; aceptar ese riesgo requiere una decisión explícita.",
   "options": [
     {
-      "title": "Comprobar y limitar el acceso",
-      "body": "Ejecutar la matriz de `HEAD` con acceso anónimo, token actual y PAT limitado a un repositorio, y reducir el alcance o separar credenciales si el token actual resuelve assets ajenos.",
+      "title": "Restringir y verificar",
+      "body": "Limitar el token al repositorio cuando sea compatible con el endpoint y comprobar el acceso a assets de control antes de cerrar.",
       "recommended": true
     },
     {
-      "title": "Comprobar que el token ya está aislado",
-      "body": "Aportar resultados saneados que acrediten que el token desplegado no puede resolver assets privados fuera de este repositorio, manteniendo la corrección de escritura como trabajo pendiente.",
+      "title": "Aceptar el alcance actual",
+      "body": "Cerrar el seguimiento operativo solo después de documentar que el equipo acepta la exposición potencial de otros repositorios y el riesgo de referencias históricas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Comprobar y limitar el acceso",
-    "body": "Ejecutar la matriz de `HEAD` con acceso anónimo, token actual y PAT limitado a un repositorio, y reducir el alcance o separar credenciales si el token actual resuelve assets ajenos.",
+    "title": "Restringir y verificar",
+    "body": "Limitar el token al repositorio cuando sea compatible con el endpoint y comprobar el acceso a assets de control antes de cerrar.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Figura asignado y ha trabajado recientemente en el cliente y el resolver de adjuntos que delimitan esta comprobación.",
-    "confidence": "high"
+    "reason": "Figura como responsable de la incidencia y autor del PR que cubre el control de nuevas escrituras.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9388.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9388#issuecomment-5645006136",
-    "reviewedAt": "2026-09-28T08:59:31.122Z",
-    "mainSha": "1998ce12ff9e740ecaf2f9a64a37a2b859df40fe"
+    "reviewedAt": "2026-10-04T11:24:13.886Z",
+    "mainSha": "bbeea89363a89623a62c934460bc807531c959ba"
   }
 }
