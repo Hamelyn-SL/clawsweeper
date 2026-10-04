@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-04T05:54:22.800Z",
+  "updatedAt": "2026-10-03T05:02:00Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10395,
+    "title": "fix: reserve mirakl of24 slots for withdrawals",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10395",
+    "state": "open",
+    "labels": [
+      "size/L",
+      "P2"
+    ],
+    "createdAt": "2026-10-03T04:46:48Z",
+    "updatedAt": "2026-10-03T05:02:00Z",
+    "headSha": "c92f953c8bdbf4210b8c44f769ec41a83ab94e87"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se acepta reservar 20 plazas OF24 para retiradas, con el posible aumento de rechazos de altas y precios, antes de cerrar la validación de capacidad de https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9703?",
+  "rationale": "El código aplica una política operativa deliberada que redistribuye cuota entre operaciones; determinar si el coste en altas y precios es aceptable depende de la prioridad de negocio y la demanda observada.",
+  "options": [
+    {
+      "title": "Aceptar la reserva de 20",
+      "body": "Integrar la política propuesta y mantener el límite conjunto de 225 por tienda.",
+      "recommended": true
+    },
+    {
+      "title": "Ajustar la reserva",
+      "body": "Mantener hueco protegido para retiradas, pero elegir otro tamaño con datos de capacidad y demanda.",
+      "recommended": false
+    },
+    {
+      "title": "Aplazar el cambio",
+      "body": "Dejar el reparto actual hasta completar la validación de caudal y rechazos en el seguimiento canónico.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aceptar la reserva de 20",
+    "body": "Integrar la política propuesta y mantener el límite conjunto de 225 por tienda.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Introdujo el límite OF24 y mantiene recientemente el limitador compartido, por lo que su historial es el vínculo técnico más directo con la política de cuota.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10395.md",
+    "reviewedAt": "2026-10-04T05:54:22.800Z",
+    "mainSha": "994e8e77f90df7449a17c592ef555acc9d607ca3"
+  }
+}
