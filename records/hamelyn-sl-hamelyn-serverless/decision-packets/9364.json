@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-03T01:26:35.959Z",
-  "updatedAt": "2026-10-03T01:11:09Z",
+  "generatedAt": "2026-10-04T17:09:24.638Z",
+  "updatedAt": "2026-10-04T15:57:52Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -17,38 +17,37 @@
       "P2"
     ],
     "createdAt": "2026-09-10T06:22:58Z",
-    "updatedAt": "2026-10-03T01:11:09Z"
+    "updatedAt": "2026-10-04T15:57:52Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué debe ocurrir cuando una retirada eBay acumula fallos ambiguos: continuar reintentando con alerta visible, o aparcarla tras un umbral acordado para revisión manual?",
-  "rationale": "El diagnóstico por oferta puede añadirse sin cambiar el resultado, pero detener o aparcar reintentos cambia el riesgo operativo y necesita una política explícita para no ocultar ofertas aún publicadas.",
+  "question": "Ante fallos ambiguos recurrentes de retirada eBay, ¿se mantienen los reintentos con alerta visible por oferta o se aparca la operación tras un umbral para revisión manual?",
+  "rationale": "La issue y la PR enlazada dejan sin resolver la política de recurrencias; aparcar sin conservar una señal visible podría dejar retiradas pendientes sin atender.",
   "options": [
     {
       "title": "Mantener reintentos y alertar",
-      "body": "Conservar el estado reintentable y emitir diagnóstico/alerta por oferta cuando la recurrencia supere un umbral observable.",
+      "body": "Conservar el estado reintentable y hacer visible la recurrencia por oferta cuando supere un umbral observable.",
       "recommended": true
     },
     {
       "title": "Aparcar tras umbral",
-      "body": "Definir un límite de intentos y un estado de revisión manual, asegurando que la retirada pendiente y su alerta sigan visibles.",
+      "body": "Definir un límite y un estado de revisión manual que preserve la retirada pendiente y su alerta.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Mantener reintentos y alertar",
-    "body": "Conservar el estado reintentable y emitir diagnóstico/alerta por oferta cuando la recurrencia supere un umbral observable.",
+    "body": "Conservar el estado reintentable y hacer visible la recurrencia por oferta cuando supere un umbral observable.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es el autor y responsable asignado del seguimiento, y contribuyó previamente a la telemetría de retiradas eBay.",
+    "reason": "Ha aportado la evidencia operativa, la telemetría de retiradas fusionada y la PR abierta asociada a esta mejora.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9364.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9364#issuecomment-5644931658",
-    "reviewedAt": "2026-10-03T01:26:35.959Z",
-    "mainSha": "994e8e77f90df7449a17c592ef555acc9d607ca3"
+    "reviewedAt": "2026-10-04T17:09:24.638Z",
+    "mainSha": "ed7dbe4e00cd9c437e2d8d686b2a1a21e82f37ec"
   }
 }
