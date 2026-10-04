@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-03T01:21:46.292Z",
-  "updatedAt": "2026-10-03T00:59:28Z",
+  "generatedAt": "2026-10-04T01:56:18.492Z",
+  "updatedAt": "2026-10-03T05:12:51Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,42 +14,45 @@
       "app:marketplace",
       "reporter:javier",
       "triage:needs-info",
-      "clawsweeper:needs-product-decision",
       "P2"
     ],
     "createdAt": "2026-09-17T22:20:44Z",
-    "updatedAt": "2026-10-03T00:59:28Z"
+    "updatedAt": "2026-10-03T05:12:51Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe reservarse explícitamente capacidad OF24 para retiradas de stock vendido frente a altas y cambios de precio durante picos?",
-  "rationale": "El limitador comparte cuota entre operaciones y el historial muestra rechazos recurrentes, pero elegir una prioridad de cuota cambia el comportamiento operativo y no se deduce de los datos disponibles.",
+  "question": "¿Se acepta reservar 20 de las 225 plazas OF24 por hora de Casa del Libro y Feltrinelli para retiradas, dejando el umbral de altas y cambios de precio en 205?",
+  "rationale": "La propuesta puede reducir denegaciones y retrasos de retiradas, pero también limita las plazas disponibles para altas y cambios de precio; el tamaño de la reserva es una decisión operativa que no se deduce del código ni de las muestras actuales.",
   "options": [
     {
-      "title": "Reservar cuota para retiradas",
-      "body": "Definir una reserva o prioridad para retiradas y validar que no perjudique altas ni actualizaciones.",
+      "title": "Aceptar la reserva de 20 plazas",
+      "body": "Mantener el umbral propuesto y validar tras el despliegue tanto las retiradas como el efecto en altas y precios.",
       "recommended": true
     },
     {
-      "title": "Mantener cuota compartida",
-      "body": "Conservar el reparto actual y documentar umbrales operativos y respuesta ante saturación.",
+      "title": "Ajustar la reserva",
+      "body": "Definir otro número de plazas a partir de una ventana representativa de demanda y cuota antes de integrar el cambio.",
+      "recommended": false
+    },
+    {
+      "title": "No reservar plazas",
+      "body": "Mantener el presupuesto común y abordar la saturación con otra medida operativa o técnica.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Reservar cuota para retiradas",
-    "body": "Definir una reserva o prioridad para retiradas y validar que no perjudique altas ni actualizaciones.",
+    "title": "Aceptar la reserva de 20 plazas",
+    "body": "Mantener el umbral propuesto y validar tras el despliegue tanto las retiradas como el efecto en altas y precios.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Su historial incluye la implementación del limitador OF24 por tienda y las mediciones operativas del caso.",
-    "confidence": "medium"
+    "reason": "Introdujo el límite compartido por tienda que el cambio propone repartir de forma prioritaria.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9703.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9703#issuecomment-5740830359",
-    "reviewedAt": "2026-10-03T01:21:46.292Z",
+    "reviewedAt": "2026-10-04T01:56:18.492Z",
     "mainSha": "994e8e77f90df7449a17c592ef555acc9d607ca3"
   }
 }
