@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-03T06:05:04.456Z",
-  "updatedAt": "2026-10-03T05:39:28Z",
+  "generatedAt": "2026-10-04T06:30:28.045Z",
+  "updatedAt": "2026-10-03T06:05:58Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -14,39 +14,38 @@
       "P2"
     ],
     "createdAt": "2026-10-03T05:34:31Z",
-    "updatedAt": "2026-10-03T05:39:28Z",
+    "updatedAt": "2026-10-03T06:05:58Z",
     "headSha": "761d32039078e23e18d270a6fe7d8f39195ad3a2"
   },
-  "lane": "merge_risk",
+  "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe el report conservar activos y aplazar los SKU `DB_ONLY` que excedan el cupo, en vez de degradarlos sin verificación?",
-  "rationale": "Resolverlo requiere decidir entre consumir más cuota compartida de Listings y mantener el comportamiento anterior para el excedente, que deja sin cubrir el riesgo de democión de SKU comprables.",
+  "question": "¿Debe el report aplazar los SKU `DB_ONLY` que excedan el cupo y verificarlos en ejecuciones posteriores, en lugar de degradarlos sin comprobación?",
+  "rationale": "La decisión equilibra la cuota compartida de Listings con el riesgo operativo de dejar fuera de retirada una oferta que siga siendo comprable; el PR elige degradar el excedente sin evidencia.",
   "options": [
     {
       "title": "Aplazar el excedente",
-      "body": "Conservar activos los SKU no comprobados y verificarlos en ejecuciones posteriores, evitando degradaciones sin evidencia.",
+      "body": "Conservar activos los SKU no verificados y procesarlos en ejecuciones posteriores para evitar demociones basadas únicamente en la ausencia del export.",
       "recommended": true
     },
     {
       "title": "Mantener la ruta anterior",
-      "body": "Aceptar que el excedente siga pasando a `INACTIVE` sin comprobación para respetar el cupo actual.",
+      "body": "Permitir la democión no verificada del excedente para respetar el límite actual de consultas, aceptando que esos SKU puedan repetir el fallo reportado.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Aplazar el excedente",
-    "body": "Conservar activos los SKU no comprobados y verificarlos en ejecuciones posteriores, evitando degradaciones sin evidencia.",
+    "body": "Conservar activos los SKU no verificados y procesarlos en ejecuciones posteriores para evitar demociones basadas únicamente en la ausencia del export.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Es el candidato con la señal más clara de trabajo reciente en la conciliación y Listings de Amazon.",
-    "confidence": "medium"
+    "reason": "Ha trabajado recientemente en la seguridad de las transiciones del report de Amazon y fue señalado como responsable probable de esta decisión en la revisión anterior.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10400.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10400#issuecomment-5966179802",
-    "reviewedAt": "2026-10-03T06:05:04.456Z",
+    "reviewedAt": "2026-10-04T06:30:28.045Z",
     "mainSha": "994e8e77f90df7449a17c592ef555acc9d607ca3"
   }
 }
