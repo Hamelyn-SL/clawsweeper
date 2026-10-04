@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-25T09:30:34.840Z",
-  "updatedAt": "2026-09-25T09:16:12Z",
+  "generatedAt": "2026-10-04T15:34:15.876Z",
+  "updatedAt": "2026-10-04T15:28:44Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,47 +13,46 @@
       "bug",
       "app:marketplace",
       "triage:done",
-      "P2",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2"
     ],
     "createdAt": "2026-09-25T09:01:49Z",
-    "updatedAt": "2026-09-25T09:16:12Z"
+    "updatedAt": "2026-10-04T15:28:44Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe la reconciliación actualizar automáticamente productType en todos los espejos discrepantes, o debe excluir/listar para revisión manual los anuncios que puedan seguir activos remotamente?",
-  "rationale": "La discrepancia está identificada en varios marketplaces, pero la evidencia de réplica no confirma el estado remoto actual de 38 registros ACTIVE; automatizar la propagación sin acordar ese límite puede afectar anuncios publicados.",
+  "question": "¿Cómo deben tratarse las discrepancias de productType en espejos, en particular cuando el espejo figura ACTIVE?",
+  "rationale": "El código explica por qué los registros no avanzan, pero la corrección requiere decidir si se puede alinear el espejo automáticamente o si los anuncios activos necesitan comprobación remota o revisión manual.",
   "options": [
     {
-      "title": "Reconciliar con comprobación remota",
-      "body": "Alinear discrepancias solo tras verificar el estado vivo de los anuncios afectados y definir el tratamiento de los listados activos.",
+      "title": "Reconciliar tras verificar estado remoto",
+      "body": "Alinear los registros discrepantes solo después de comprobar el estado de los anuncios afectados en el marketplace.",
       "recommended": true
     },
     {
-      "title": "Alinear solo espejos inactivos",
-      "body": "Automatizar la sincronización únicamente para registros que consten inactivos y derivar los activos a revisión operativa.",
+      "title": "Sincronizar solo espejos inactivos",
+      "body": "Automatizar la actualización para registros inactivos y derivar los que figuran activos a revisión operativa.",
       "recommended": false
     },
     {
-      "title": "Mantener la cola y revisar cohortes",
-      "body": "Dejar estos casos fuera de creación y tratar cada cohorte como tarea manual hasta acordar una política común.",
+      "title": "Revisar cohortes manualmente",
+      "body": "Mantener estos casos fuera de creación y revisar cada cohorte hasta acordar una política común.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Reconciliar con comprobación remota",
-    "body": "Alinear discrepancias solo tras verificar el estado vivo de los anuncios afectados y definir el tratamiento de los listados activos.",
+    "title": "Reconciliar tras verificar estado remoto",
+    "body": "Alinear los registros discrepantes solo después de comprobar el estado de los anuncios afectados en el marketplace.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Su historial reciente en el selector de creación hace que sea el candidato mejor respaldado para valorar el comportamiento de la cola.",
-    "confidence": "medium"
+    "reason": "La revisión previa lo identificó como candidato para decidir el tratamiento de la reconciliación; la atribución tiene confianza baja porque el historial local no permitió verificarla.",
+    "confidence": "low"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10110.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10110#issuecomment-5830129291",
-    "reviewedAt": "2026-09-25T09:30:34.840Z",
-    "mainSha": "0418d6724224115c1ab39b3b626b3ec6603c1fc0"
+    "reviewedAt": "2026-10-04T15:34:15.876Z",
+    "mainSha": "e986613e415b72bdb64bdbc54a780463384727fe"
   }
 }
