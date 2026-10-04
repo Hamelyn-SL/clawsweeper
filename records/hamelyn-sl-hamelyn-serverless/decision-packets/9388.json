@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-04T11:24:13.886Z",
+  "generatedAt": "2026-10-04T11:19:14.591Z",
   "updatedAt": "2026-10-04T10:11:19Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -24,34 +24,33 @@
   },
   "lane": "security_boundary",
   "priority": "P1",
-  "question": "¿Debe limitarse `GITHUB_ISSUES_TOKEN` y revisarse el acceso a assets ajenos ya registrados antes de cerrar esta incidencia?",
-  "rationale": "El PR abierto cubre nuevas escrituras, pero no resuelve ni demuestra el aislamiento del token ni elimina referencias previas; aceptar ese riesgo requiere una decisión explícita.",
+  "question": "¿Qué identidad y alcance de token debe usar el resolver para acceder solo a los assets necesarios, manteniendo la lectura de adjuntos legítimos?",
+  "rationale": "La discusión no demuestra cómo GitHub autoriza la resolución de assets privados de otros repositorios con el token actual frente a un PAT limitado; esa evidencia determina si una restricción operativa es suficiente o si se necesita otra identidad.",
   "options": [
     {
-      "title": "Restringir y verificar",
-      "body": "Limitar el token al repositorio cuando sea compatible con el endpoint y comprobar el acceso a assets de control antes de cerrar.",
+      "title": "Validar PAT limitado",
+      "body": "Probar el endpoint con assets privados de dos repositorios y los controles anónimo, token actual y PAT limitado antes de fijar el alcance del resolver.",
       "recommended": true
     },
     {
-      "title": "Aceptar el alcance actual",
-      "body": "Cerrar el seguimiento operativo solo después de documentar que el equipo acepta la exposición potencial de otros repositorios y el riesgo de referencias históricas.",
+      "title": "Usar identidad aislada",
+      "body": "Si el PAT limitado no ofrece aislamiento compatible, migrar la resolución a una identidad técnica sin acceso heredado a otros repositorios.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Restringir y verificar",
-    "body": "Limitar el token al repositorio cuando sea compatible con el endpoint y comprobar el acceso a assets de control antes de cerrar.",
+    "title": "Validar PAT limitado",
+    "body": "Probar el endpoint con assets privados de dos repositorios y los controles anónimo, token actual y PAT limitado antes de fijar el alcance del resolver.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Figura como responsable de la incidencia y autor del PR que cubre el control de nuevas escrituras.",
-    "confidence": "medium"
+    "reason": "Está asignado a la issue y desarrolló la integración de adjuntos que introdujo el resolver afectado.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9388.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9388#issuecomment-5645006136",
-    "reviewedAt": "2026-10-04T11:24:13.886Z",
+    "reviewedAt": "2026-10-04T11:19:14.591Z",
     "mainSha": "bbeea89363a89623a62c934460bc807531c959ba"
   }
 }

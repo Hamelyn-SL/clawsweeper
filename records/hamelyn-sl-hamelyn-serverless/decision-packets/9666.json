@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-28T08:43:54.307Z",
-  "updatedAt": "2026-09-28T08:28:19Z",
+  "generatedAt": "2026-10-04T11:25:24.429Z",
+  "updatedAt": "2026-10-04T10:11:16Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,45 +13,49 @@
       "bug",
       "app:admin",
       "triage:needs-info",
+      "P1",
       "clawsweeper:needs-product-decision",
       "clawsweeper:needs-security-review",
       "reporter:JavierHamelyn",
-      "origin:dev",
-      "P1"
+      "origin:dev"
     ],
     "createdAt": "2026-09-17T09:28:25Z",
-    "updatedAt": "2026-09-28T08:28:19Z"
+    "updatedAt": "2026-10-04T10:11:16Z"
   },
   "lane": "security_boundary",
   "priority": "P1",
-  "question": "¿Qué identidad autenticada y qué permisos mínimos deben usar `inventoryExotec`, el desglose de picking y la validación de bins antes de retirar su acceso sin autenticación?",
-  "rationale": "La issue y su discusión confirman que esos flujos operativos no pueden recibir una comprobación de rol sin una alternativa; mantenerlos abiertos sin autenticación también mantiene el riesgo de acceso no autorizado.",
+  "question": "¿Qué identidad debe autorizar las rutas v5 que usan flujos operativos de almacén y no pueden depender de roles humanos?",
+  "rationale": "Aplicar roles humanos sin inventariar esos clientes puede interrumpir operaciones; mantener las rutas abiertas conserva un bypass de autenticación y autorización.",
   "options": [
     {
-      "title": "Definir credenciales operativas acotadas",
-      "body": "Acordar identidad y permisos mínimos para esos consumidores y proteger las rutas antes de retirar el acceso anónimo.",
+      "title": "Separar identidades humanas y de servicio",
+      "body": "Exigir roles por ruta y permitir solo a integraciones operativas documentadas una identidad de servicio con permisos mínimos.",
       "recommended": true
     },
     {
-      "title": "Mantener la operativa actual temporalmente",
-      "body": "Dejar esas rutas como excepción documentada mientras se prepara una alternativa, asumiendo explícitamente el riesgo temporal.",
+      "title": "Migrar primero los clientes",
+      "body": "Denegar las rutas sin roles hasta que todos los consumidores de almacén hayan migrado a los roles humanos aprobados.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar la migración de esas rutas",
+      "body": "Mantener temporalmente el flujo actual mientras se inventarían los consumidores, aceptando que persiste el riesgo de acceso.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Definir credenciales operativas acotadas",
-    "body": "Acordar identidad y permisos mínimos para esos consumidores y proteger las rutas antes de retirar el acceso anónimo.",
+    "title": "Separar identidades humanas y de servicio",
+    "body": "Exigir roles por ruta y permitir solo a integraciones operativas documentadas una identidad de servicio con permisos mínimos.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Está asignado a esta issue y coordina la iniciativa relacionada de gobierno de accesos.",
+    "reason": "Está asignado a esta issue y a la iniciativa paraguas de gobierno de accesos, y revisó la adopción del patrón de autorización del admin.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9666.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9666#issuecomment-5741441445",
-    "reviewedAt": "2026-09-28T08:43:54.307Z",
-    "mainSha": "1998ce12ff9e740ecaf2f9a64a37a2b859df40fe"
+    "reviewedAt": "2026-10-04T11:25:24.429Z",
+    "mainSha": "bbeea89363a89623a62c934460bc807531c959ba"
   }
 }
