@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-04T08:56:51.131Z",
+  "updatedAt": "2026-10-04T08:55:22Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10408,
+    "title": "ci: close watcher alert issues once the heartbeat emits",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10408",
+    "state": "open",
+    "labels": [
+      "size/L",
+      "P2"
+    ],
+    "createdAt": "2026-10-04T08:44:08Z",
+    "updatedAt": "2026-10-04T08:55:22Z",
+    "headSha": "0b83edfdb4ee73e2aac1ff899d89a6f11c35945f"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se debe aprobar este cambio acotado de autocierre de alertas de trigger por separado, dejando el resto de cierres y reaperturas para una continuación?",
+  "rationale": "La issue vinculada define un alcance mayor, con reglas de exclusión y reapertura que no aparecen en este PR; hace falta confirmar que esta entrega parcial es aceptable antes de dar por resuelta la coordinación.",
+  "options": [
+    {
+      "title": "Aprobar el alcance acotado",
+      "body": "Revisar y aterrizar el autocierre de alertas de trigger y llevar el resto del alcance a una continuación coordinada.",
+      "recommended": true
+    },
+    {
+      "title": "Ampliar el cambio",
+      "body": "Incluir en esta línea de trabajo los cierres y reaperturas adicionales solicitados por la issue antes de considerarla cubierta.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar el alcance acotado",
+    "body": "Revisar y aterrizar el autocierre de alertas de trigger y llevar el resto del alcance a una continuación coordinada.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Daniel",
+    "reason": "Su cambio reciente introdujo el flujo de despacho de watcher que centra esta decisión de alcance.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10408.md",
+    "reviewedAt": "2026-10-04T08:56:51.131Z",
+    "mainSha": "994e8e77f90df7449a17c592ef555acc9d607ca3"
+  }
+}
