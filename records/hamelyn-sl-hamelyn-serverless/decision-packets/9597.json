@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-04T11:29:40.459Z",
+  "updatedAt": "2026-10-04T09:50:34Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9597,
+    "title": "Productos ''sin stock''",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9597",
+    "state": "open",
+    "labels": [
+      "bug",
+      "source:admin-panel",
+      "app:ecommerce",
+      "reporter:arineligrigore",
+      "triage:done",
+      "P2"
+    ],
+    "createdAt": "2026-09-16T06:24:24Z",
+    "updatedAt": "2026-10-04T09:50:34Z"
+  },
+  "lane": "security_boundary",
+  "priority": "P2",
+  "question": "¿Debe el servidor vaciar el carrito solo cuando el checkout y el contenido actual coincidan, evitando afectar productos añadidos después del pago?",
+  "rationale": "El vaciado actual persiste una lista vacía; definir su vínculo con el checkout es necesario para corregir la carrera sin borrar productos de una compra posterior.",
+  "options": [
+    {
+      "title": "Condicionar al checkout y al contenido",
+      "body": "Aplicar el vaciado solo si el servidor confirma que el carrito sigue correspondiendo al checkout pagado.",
+      "recommended": true
+    },
+    {
+      "title": "Reconciliar únicamente en el cliente",
+      "body": "Mantener la limpieza del servidor sin cambios y resolver el estado mostrado mediante reconciliación del carrito en el navegador.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Condicionar al checkout y al contenido",
+    "body": "Aplicar el vaciado solo si el servidor confirma que el carrito sigue correspondiendo al checkout pagado.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Su trabajo fusionado definió el vaciado por checkout y su protección ante redeliveries.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9597.md",
+    "reviewedAt": "2026-10-04T11:29:40.459Z",
+    "mainSha": "bbeea89363a89623a62c934460bc807531c959ba"
+  }
+}

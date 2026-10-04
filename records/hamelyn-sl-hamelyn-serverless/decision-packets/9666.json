@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-04T11:25:24.429Z",
-  "updatedAt": "2026-10-04T10:11:16Z",
+  "generatedAt": "2026-10-04T11:29:37.632Z",
+  "updatedAt": "2026-10-04T11:26:17Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,50 +13,44 @@
       "bug",
       "app:admin",
       "triage:needs-info",
+      "P1",
       "clawsweeper:needs-product-decision",
       "clawsweeper:needs-security-review",
       "reporter:JavierHamelyn",
-      "origin:dev",
-      "P1"
+      "origin:dev"
     ],
     "createdAt": "2026-09-17T09:28:25Z",
-    "updatedAt": "2026-10-04T10:11:16Z"
+    "updatedAt": "2026-10-04T11:26:17Z"
   },
-  "lane": "security_boundary",
+  "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué identidad debe autorizar las rutas v5 que usan flujos operativos de almacén y no pueden depender de roles humanos?",
-  "rationale": "Aplicar roles humanos sin inventariar esos clientes puede interrumpir operaciones; mantener las rutas abiertas conserva un bypass de autenticación y autorización.",
+  "question": "¿Qué roles autorizados y qué mecanismo de acceso deben conservar las rutas v5 de operativa de almacén antes de exigir autenticación y autorización explícitas?",
+  "rationale": "La conversación señala que algunas rutas sostienen flujos de almacén que podrían romperse al aplicar roles sin alternativa, y el acceso permitido por ruta aún no está resuelto en la evidencia disponible.",
   "options": [
     {
-      "title": "Separar identidades humanas y de servicio",
-      "body": "Exigir roles por ruta y permitir solo a integraciones operativas documentadas una identidad de servicio con permisos mínimos.",
+      "title": "Definir roles antes de endurecer",
+      "body": "Acordar roles y alternativa operativa para cada ruta afectada y después aplicar los gates explícitos.",
       "recommended": true
     },
     {
-      "title": "Migrar primero los clientes",
-      "body": "Denegar las rutas sin roles hasta que todos los consumidores de almacén hayan migrado a los roles humanos aprobados.",
-      "recommended": false
-    },
-    {
-      "title": "Pausar la migración de esas rutas",
-      "body": "Mantener temporalmente el flujo actual mientras se inventarían los consumidores, aceptando que persiste el riesgo de acceso.",
+      "title": "Exigir autenticación primero",
+      "body": "Añadir autenticación a las rutas v5 mientras se mantiene pendiente la autorización por rol.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Separar identidades humanas y de servicio",
-    "body": "Exigir roles por ruta y permitir solo a integraciones operativas documentadas una identidad de servicio con permisos mínimos.",
+    "title": "Definir roles antes de endurecer",
+    "body": "Acordar roles y alternativa operativa para cada ruta afectada y después aplicar los gates explícitos.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Está asignado a esta issue y a la iniciativa paraguas de gobierno de accesos, y revisó la adopción del patrón de autorización del admin.",
-    "confidence": "high"
+    "reason": "Está asignado a esta issue y a la iniciativa relacionada que define los roles y los gates del admin.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9666.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9666#issuecomment-5741441445",
-    "reviewedAt": "2026-10-04T11:25:24.429Z",
+    "reviewedAt": "2026-10-04T11:29:37.632Z",
     "mainSha": "bbeea89363a89623a62c934460bc807531c959ba"
   }
 }
