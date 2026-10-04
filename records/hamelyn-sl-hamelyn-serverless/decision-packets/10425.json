@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-04T17:15:10.971Z",
+  "updatedAt": "2026-10-04T16:42:56Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10425,
+    "title": "fix: remove only the purchased lines from the cart after payment",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10425",
+    "state": "open",
+    "labels": [
+      "size/XL"
+    ],
+    "createdAt": "2026-10-04T16:33:32Z",
+    "updatedAt": "2026-10-04T16:42:56Z",
+    "headSha": "b43e7ab957ae852a19722603fd690a84f2d3f9e8"
+  },
+  "lane": "merge_risk",
+  "priority": "P2",
+  "question": "¿Debe este cambio esperar a una estrategia de despliegue compatible con pestañas antiguas de invitados, o aceptamos que esas confirmaciones puedan dejar el carrito sin limpiar?",
+  "rationale": "La ruta nueva requiere `checkoutId`, pero los clientes ya cargados no lo envían y los checkouts de invitado no tienen el webhook como alternativa; la aceptabilidad depende de la política de despliegue y compatibilidad.",
+  "options": [
+    {
+      "title": "Acordar compatibilidad antes de desplegar",
+      "body": "Mantener la ruta segura para datos del carrito y definir un mecanismo de transición que no vuelva a vaciar productos no comprados.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar la ventana de incompatibilidad",
+      "body": "Desplegar con el comportamiento actual y asumir que algunas pestañas antiguas de invitados tendrán que recargar para completar la limpieza.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Acordar compatibilidad antes de desplegar",
+    "body": "Mantener la ruta segura para datos del carrito y definir un mecanismo de transición que no vuelva a vaciar productos no comprados.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "HamelynDev",
+    "reason": "El historial local atribuye a HamelynDev la ruta de vaciado cuyo contrato cambia.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10425.md",
+    "reviewedAt": "2026-10-04T17:15:10.971Z",
+    "mainSha": "ec6298057d259b0a23c86805235302c6a2914531"
+  }
+}
