@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-04T17:38:24.200Z",
+  "updatedAt": "2026-10-04T17:32:09Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10368,
+    "title": "Paginación: noindex, follow a partir de la página 6",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10368",
+    "state": "open",
+    "labels": [
+      "source:admin-panel",
+      "app:ecommerce",
+      "feature",
+      "triage:queued",
+      "reporter:victor",
+      "P2"
+    ],
+    "createdAt": "2026-10-02T09:41:55Z",
+    "updatedAt": "2026-10-04T17:32:09Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe aplicarse `noindex, follow` desde la página 6 también a los cuatro minihomes, aunque leer `searchParams` afecte su renderizado estático, o se acepta limitar la política a los listados ya cubiertos por el PR?",
+  "rationale": "La petición incluye minihomes, pero el PR abierto los excluye por un coste de arquitectura descrito y respaldado por la especificación vigente; elegir entre cobertura SEO completa y preservar el renderizado estático requiere intención del equipo.",
+  "options": [
+    {
+      "title": "Incluir minihomes",
+      "body": "Ampliar el trabajo para cubrir los cuatro minihomes y valorar explícitamente el efecto sobre su renderizado estático.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener la exclusión",
+      "body": "Conservar el renderizado estático y acotar formalmente la política a los listados que el PR ya cubre.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Incluir minihomes",
+    "body": "Ampliar el trabajo para cubrir los cuatro minihomes y valorar explícitamente el efecto sobre su renderizado estático.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "El comentario del PR le atribuye la decisión de excluir minihomes y oferta flash del alcance actual.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10368.md",
+    "reviewedAt": "2026-10-04T17:38:24.200Z",
+    "mainSha": "79366c6075df69554eeeba68aa200b0eee07d5de"
+  }
+}
