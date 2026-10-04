@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-27T08:30:10.843Z",
-  "updatedAt": "2026-09-27T08:19:16Z",
+  "generatedAt": "2026-10-04T10:28:54.856Z",
+  "updatedAt": "2026-10-04T10:11:13Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,44 +14,43 @@
       "feature",
       "triage:needs-info",
       "clawsweeper:needs-product-decision",
+      "P2",
       "reporter:danielmenchen-hamelyn",
       "origin:dev",
-      "epic:supply-v3",
-      "P2"
+      "epic:supply-v3"
     ],
     "createdAt": "2026-09-18T08:04:05Z",
-    "updatedAt": "2026-09-27T08:19:16Z"
+    "updatedAt": "2026-10-04T10:11:13Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Quién aprueba, activa y revierte el rollout, y qué baseline, umbrales de errores/scanner/conversión/SEO y ventana de estabilidad determinan aceptar o revertir?",
-  "rationale": "La aceptación y la reversión dependen de umbrales operativos y autoridad de lanzamiento que el código y la issue no pueden decidir; el triage previo ya pidió esta definición y sigue pendiente.",
+  "question": "¿Quién aprueba, activa y revierte el lanzamiento, y qué baseline, umbrales de error/scanner/conversión/SEO y ventana de estabilidad autorizan aceptar o revertir?",
+  "rationale": "La ejecución depende de criterios operativos y responsables que no se pueden deducir del código; decidirlos sin el equipo podría autorizar o revertir tráfico productivo bajo condiciones no acordadas.",
   "options": [
     {
       "title": "Acordar gates y responsables",
-      "body": "El equipo Supply fija responsables, métricas, umbrales y ventana de estabilidad antes de ensayar el rollout.",
+      "body": "Definir aprobadores, baseline, umbrales y ventana de estabilidad antes de ensayar el rollout y rollback en staging.",
       "recommended": true
     },
     {
-      "title": "Aplazar la activación",
-      "body": "Mantener la issue abierta y no activar producción hasta que producto y operación proporcionen esos criterios.",
+      "title": "Aplazar el ensayo",
+      "body": "Mantener la issue abierta sin activar producción hasta cerrar QA, preview, transición y las decisiones operativas pendientes.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Acordar gates y responsables",
-    "body": "El equipo Supply fija responsables, métricas, umbrales y ventana de estabilidad antes de ensayar el rollout.",
+    "body": "Definir aprobadores, baseline, umbrales y ventana de estabilidad antes de ensayar el rollout y rollback en staging.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "danielmenchen-hamelyn",
-    "reason": "La discusión de la épica le identifica como dueño probable para coordinar la definición pendiente del equipo Supply.",
+    "reason": "Es el reportero y coordinador de la épica; el triage previo ya le solicitó recabar esta definición con el equipo Supply.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9745.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9745#issuecomment-5740689773",
-    "reviewedAt": "2026-09-27T08:30:10.843Z",
-    "mainSha": "b7ca4ccf2295720375fc765a9fe4ea56a1f68320"
+    "reviewedAt": "2026-10-04T10:28:54.856Z",
+    "mainSha": "8c43e4f7d780adc5b5e840a48726e2cb0d9ceb2d"
   }
 }
