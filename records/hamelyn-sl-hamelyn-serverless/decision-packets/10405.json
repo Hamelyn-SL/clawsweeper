@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-03T07:12:17.939Z",
-  "updatedAt": "2026-10-03T07:04:20Z",
+  "generatedAt": "2026-10-04T08:53:29.264Z",
+  "updatedAt": "2026-10-03T07:16:16Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,47 +12,41 @@
     "labels": [
       "bug",
       "app:marketplace",
-      "triage:running",
+      "triage:needs-info",
       "P2"
     ],
     "createdAt": "2026-10-03T07:04:07Z",
-    "updatedAt": "2026-10-03T07:04:20Z"
+    "updatedAt": "2026-10-03T07:16:16Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué evidencia temporal debe permitir sembrar una señal de retirada para un stock `WITHDRAWN` sin `withdrawalDate`?",
-  "rationale": "El snapshot histórico aportado confirma el estado del espejo en un instante, pero no la fecha original de retirada; la política afecta un helper compartido y no conviene inferir una fecha ni cambiar el criterio por defecto sin decisión explícita.",
+  "question": "¿Se acepta el estado histórico WITHDRAWN del espejo del 30 de septiembre, combinado con revalidación viva y persistencia MK_ONLY, como evidencia temporal suficiente para una excepción limitada a estos nueve stocks MX sin `withdrawalDate`, o se exige otra fuente temporal?",
+  "rationale": "La regla actual codifica una guarda temporal explícita; sustituirla o ampliarla define qué evidencia autoriza una retirada potencialmente irreversible y afecta a un helper compartido, por lo que el código no permite inferir la política correcta.",
   "options": [
     {
-      "title": "Excepción legacy con validación reforzada",
-      "body": "Permitir una ruta acotada que revalide stock maestro y listing `BUYABLE`, con canario y aprobación antes de ampliar el lote.",
+      "title": "Aceptar evidencia acotada",
+      "body": "Autorizar una excepción solo para la cohorte MX descrita, con revalidación viva, canario aprobado y comprobación remota antes de ampliar.",
       "recommended": true
     },
     {
-      "title": "Mantener la exclusión por fecha",
-      "body": "No sembrar estos casos hasta disponer de una fuente fiable para demostrar que superaron la ventana de gracia.",
-      "recommended": false
-    },
-    {
-      "title": "Definir otra evidencia temporal",
-      "body": "Acordar una señal alternativa verificable y probarla sin modificar `withdrawalDate` ni el comportamiento estándar.",
+      "title": "Exigir otra fuente temporal",
+      "body": "Mantener la guarda actual hasta identificar y validar una fuente que acredite la antigüedad de cada retirada.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Excepción legacy con validación reforzada",
-    "body": "Permitir una ruta acotada que revalide stock maestro y listing `BUYABLE`, con canario y aprobación antes de ampliar el lote.",
+    "title": "Aceptar evidencia acotada",
+    "body": "Autorizar una excepción solo para la cohorte MX descrita, con revalidación viva, canario aprobado y comprobación remota antes de ampliar.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MarcosTerroso",
-    "reason": "Ha contribuido recientemente al helper compartido; la evidencia no identifica quién tiene autoridad final sobre esta política.",
+    "person": "JavierHamelyn",
+    "reason": "Es el autor del reporte y aporta el contexto de reconciliación de Amazon MX; la decisión final corresponde al equipo de marketplaces.",
     "confidence": "low"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10405.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10405#issuecomment-5966662549",
-    "reviewedAt": "2026-10-03T07:12:17.939Z",
+    "reviewedAt": "2026-10-04T08:53:29.264Z",
     "mainSha": "994e8e77f90df7449a17c592ef555acc9d607ca3"
   }
 }
