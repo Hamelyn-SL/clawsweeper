@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-05T17:54:45.118Z",
+  "updatedAt": "2026-10-05T17:52:30Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10487,
+    "title": "feat: capture sessions outside hamelyn folders and purge personal ones",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10487",
+    "state": "open",
+    "labels": [
+      "size/XXL"
+    ],
+    "createdAt": "2026-10-05T17:47:08Z",
+    "updatedAt": "2026-10-05T17:52:30Z",
+    "headSha": "7108d415b519e5a4a17cf50a077f44f055a96f79"
+  },
+  "lane": "security_boundary",
+  "priority": "P2",
+  "question": "¿Se aprueba que `hybrid`/`all` puedan subir transcripciones de fuera de Hamelyn y que las sesiones clasificadas como personales se purguen de forma irreversible?",
+  "rationale": "Es una decisión sobre privacidad, límites de datos y borrado irreversible; las pruebas técnicas no establecen por sí solas que el equipo haya autorizado ese tratamiento.",
+  "options": [
+    {
+      "title": "Aprobar con salvaguardas",
+      "body": "Aprobar el alcance solo con autorización operativa documentada, activación deliberada y procedimiento probado de recuperación de falsos positivos.",
+      "recommended": true
+    },
+    {
+      "title": "Limitar la captura",
+      "body": "Mantener la captura fuera de Hamelyn desactivada o restringida hasta acordar una política menos amplia y su validación.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar con salvaguardas",
+    "body": "Aprobar el alcance solo con autorización operativa documentada, activación deliberada y procedimiento probado de recuperación de falsos positivos.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su historial en las reglas de datos personales y consolidación lo sitúa como candidato más próximo para concretar el comportamiento; la aprobación corresponde al equipo responsable de producto y datos.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10487.md",
+    "reviewedAt": "2026-10-05T17:54:45.118Z",
+    "mainSha": "639ba9a79a129b1f1b78635c757c3cae6aee1c8f"
+  }
+}
