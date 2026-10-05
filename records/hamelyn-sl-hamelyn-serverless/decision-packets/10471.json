@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-05T13:32:01.924Z",
+  "updatedAt": "2026-10-05T13:12:44Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10471,
+    "title": "fix: keep ambiguous arnoia orders pending at the tracking hard timeout",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10471",
+    "state": "open",
+    "labels": [
+      "size/M"
+    ],
+    "createdAt": "2026-10-05T13:07:31Z",
+    "updatedAt": "2026-10-05T13:12:44Z",
+    "headSha": "b380a64273c90ae2d1a4dc087fa0ec73a05c901d"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe un `-4` observado antes del hard timeout seguir protegiendo el pedido de cancelación automática en pasadas posteriores con otros errores, o solo debe evitar la cancelación cuando `-4` es el error actual?",
+  "rationale": "La PR conserva el pedido únicamente en la pasada que devuelve `-4`; su prueba verifica que un fallo de conexión posterior sí lo cancela. Elegir entre esas políticas cambia el riesgo operativo descrito en la issue.",
+  "options": [
+    {
+      "title": "Conservar pendiente tras `-4`",
+      "body": "Mantener el pedido pendiente hasta que el proveedor confirme el envío o exista una resolución operativa, aunque una consulta posterior falle por conexión.",
+      "recommended": true
+    },
+    {
+      "title": "Aplicar la excepción solo a la pasada actual",
+      "body": "Aceptar la cancelación a las 168 horas cuando el error de la consulta más reciente no sea `-4`.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Conservar pendiente tras `-4`",
+    "body": "Mantener el pedido pendiente hasta que el proveedor confirme el envío o exista una resolución operativa, aunque una consulta posterior falle por conexión.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su cambio reciente en el timeout de tracking es la conexión de historial más directa con esta política.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10471.md",
+    "reviewedAt": "2026-10-05T13:32:01.924Z",
+    "mainSha": "071de0af84358b02873aefee7a5f4d6e5c27f0cf"
+  }
+}
