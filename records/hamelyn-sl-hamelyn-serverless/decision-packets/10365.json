@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-05T07:27:27.240Z",
+  "generatedAt": "2026-10-05T07:32:19.774Z",
   "updatedAt": "2026-10-05T06:27:53Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -22,39 +22,38 @@
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe aplicarse el aparcado de 30 días a publicaciones de Casa del Libro además de Feltrinelli, manteniendo Decathlon sin cambios?",
-  "rationale": "El cambio compartido altera el ritmo de reintentos de una tienda ya operativa; el diagnóstico condiciona ese alcance a confirmar que Casa del Libro comparte el mismo criterio.",
+  "question": "¿Debe aplicarse también a Casa del Libro el aparcado de 30 días para publicaciones con producto inexistente, o limitar inicialmente el cambio a Feltrinelli?",
+  "rationale": "La clasificación afecta comportamiento por tienda; la issue condiciona CDL a confirmar el criterio y el PR propone incluirla, por lo que hace falta validar esa política operativa antes de dar por cerrado el alcance.",
   "options": [
     {
-      "title": "Aprobar ambas tiendas",
-      "body": "Aplicar el espaciado de 30 días en publicaciones de Casa del Libro y Feltrinelli, sin cambiar Decathlon, tras validar las guardas del report.",
-      "recommended": false
-    },
-    {
-      "title": "Empezar solo por Feltrinelli",
-      "body": "Limitar inicialmente el aparcado a Feltrinelli y aplazar Casa del Libro hasta confirmar su criterio operativo.",
+      "title": "Solo Feltrinelli inicialmente",
+      "body": "Limitar el nuevo espaciado a Feltrinelli y posponer Casa del Libro hasta confirmar su criterio operativo.",
       "recommended": true
     },
     {
+      "title": "Feltrinelli y Casa del Libro",
+      "body": "Aplicar el espaciado de 30 días a ambas tiendas de ofertas sin ficha, manteniendo Decathlon sin cambios.",
+      "recommended": false
+    },
+    {
       "title": "Aplazar el cambio de reintento",
-      "body": "Mantener la clasificación y el espaciado actuales hasta completar una validación operativa por tienda.",
+      "body": "Mantener la clasificación y los intervalos actuales hasta completar la validación operativa por tienda.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Empezar solo por Feltrinelli",
-    "body": "Limitar inicialmente el aparcado a Feltrinelli y aplazar Casa del Libro hasta confirmar su criterio operativo.",
+    "title": "Solo Feltrinelli inicialmente",
+    "body": "Limitar el nuevo espaciado a Feltrinelli y posponer Casa del Libro hasta confirmar su criterio operativo.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Figura como responsable asignado y autor de la propuesta que introduce el cambio por tienda.",
-    "confidence": "high"
+    "reason": "Está asignado a la issue y la revisión previa lo señala como candidato para resolver el alcance por tienda.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10365.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10365#issuecomment-5950886353",
-    "reviewedAt": "2026-10-05T07:27:27.240Z",
+    "reviewedAt": "2026-10-05T07:32:19.774Z",
     "mainSha": "872e463dbc105d17b2afa8380e5a20227f91e5db"
   }
 }
