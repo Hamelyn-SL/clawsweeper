@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-05T10:31:06.089Z",
+  "updatedAt": "2026-10-05T10:15:44Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10463,
+    "title": "Redirección 301 a https://deco.hamelyn.com/",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10463",
+    "state": "open",
+    "labels": [
+      "bug",
+      "source:admin-panel",
+      "app:ecommerce",
+      "reporter:marta",
+      "triage:queued",
+      "P2"
+    ],
+    "createdAt": "2026-10-05T10:15:30Z",
+    "updatedAt": "2026-10-05T10:15:44Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe `/libros-decoracion` volver a publicarse como redirección 301 a `https://deco.hamelyn.com/` en lugar del 404 aprobado recientemente?",
+  "rationale": "La petición propone un destino y un comportamiento que contradicen una retirada reciente documentada; el historial de código no determina si el cambio de destino es intencionado.",
+  "options": [
+    {
+      "title": "Aprobar la redirección",
+      "body": "Mantener esta solicitud y cambiar la ruta a una redirección 301, con cobertura para query strings.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener el 404",
+      "body": "Cerrar la solicitud si la retirada de la landing sigue siendo la decisión vigente.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar la redirección",
+    "body": "Mantener esta solicitud y cambiar la ruta a una redirección 301, con cobertura para query strings.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Su historial reciente cubre la retirada de la misma landing y la ruta afectada.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10463.md",
+    "reviewedAt": "2026-10-05T10:31:06.089Z",
+    "mainSha": "70c27e257f52aa60c53af9782d51147f889b22b5"
+  }
+}
