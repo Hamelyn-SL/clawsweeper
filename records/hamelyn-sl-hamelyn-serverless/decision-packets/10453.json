@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-05T09:14:26.473Z",
+  "updatedAt": "2026-10-05T08:47:26Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10453,
+    "title": "feat: store client list and discounted price on b2b ordersells",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10453",
+    "state": "open",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-10-05T08:34:33Z",
+    "updatedAt": "2026-10-05T08:47:26Z",
+    "headSha": "516091fb976dd9f60a71f73da8bb16aee9d81aa9"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe exigirse ya el par de precios normal/descontado a todos los clientes B2B, o conservarse temporalmente el flujo de precio único mientras se completa la transición?",
+  "rationale": "El PR avisa que varios clientes actuales pasarán a aprobación manual hasta enviar el precio descontado; decidir si ese impacto operativo es aceptable requiere intención del equipo.",
+  "options": [
+    {
+      "title": "Exigir ambos precios ahora",
+      "body": "Aceptar el escalado manual de clientes sin el par de precios y comunicar el requisito operativo antes de integrar el cambio.",
+      "recommended": false
+    },
+    {
+      "title": "Transición compatible",
+      "body": "Conservar el comportamiento de precio único como opción predeterminada y activar la exigencia del par cuando cada cliente esté preparado.",
+      "recommended": true
+    }
+  ],
+  "recommendation": {
+    "title": "Transición compatible",
+    "body": "Conservar el comportamiento de precio único como opción predeterminada y activar la exigencia del par cuando cada cliente esté preparado.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su trabajo reciente cubre el flujo de ejecución B2B que establece este nuevo requisito operativo.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10453.md",
+    "reviewedAt": "2026-10-05T09:14:26.473Z",
+    "mainSha": "758e57930297ce923fcc67cece2921df579b1a14"
+  }
+}

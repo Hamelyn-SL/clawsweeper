@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-29T08:05:44.128Z",
-  "updatedAt": "2026-09-28T07:45:40Z",
+  "generatedAt": "2026-10-05T09:13:37.210Z",
+  "updatedAt": "2026-10-05T08:46:48Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,44 +13,48 @@
       "codex",
       "bug",
       "app:marketplace",
-      "triage:done",
-      "marketplace-crons",
+      "triage:blocked",
+      "clawsweeper:needs-product-decision",
       "P2",
-      "clawsweeper:needs-product-decision"
+      "marketplace-crons"
     ],
     "createdAt": "2026-09-28T07:30:47Z",
-    "updatedAt": "2026-09-28T07:45:40Z"
+    "updatedAt": "2026-10-05T08:46:48Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "Cuando MercadoLibre responde `item.price.not_modifiable` por una ficha bajo revisión, ¿debemos mantener el reintento transitorio o retirar y republicar la ficha si el rechazo persiste?",
-  "rationale": "El código actual trata el estado como temporal, mientras que este incidente se recuperó sustituyendo las fichas; falta confirmar si el estado temporal acabó y qué resultado tuvo la publicación nueva.",
+  "question": "Si MercadoLibre mantiene un anuncio en `under_review` y rechaza cambios de precio, ¿qué política debe seguir el equipo cuando la revisión persiste?",
+  "rationale": "El estado observado pertenece al proveedor y el código no demuestra que sea un anuncio obsoleto; cambiarlo a retirada o republicación automática podría alterar anuncios válidos y exige acordar el criterio operativo.",
   "options": [
     {
-      "title": "Mantener el reintento temporal",
-      "body": "Conservar el tratamiento transitorio y verificar que las fichas nuevas se activen cuando termine la revisión del proveedor.",
+      "title": "Esperar y reintentar",
+      "body": "Conservar el error transitorio y los reintentos actuales mientras MercadoLibre mantiene la ficha bajo revisión.",
       "recommended": true
     },
     {
-      "title": "Reconciliar rechazos persistentes",
-      "body": "Definir una condición verificable para retirar y republicar la ficha si MercadoLibre sigue rechazando el precio tras la revisión.",
+      "title": "Escalar tras un umbral",
+      "body": "Definir un plazo o número de intentos y derivar los anuncios persistentes a revisión manual, sin republicarlos automáticamente.",
+      "recommended": false
+    },
+    {
+      "title": "Retirar y republicar",
+      "body": "Autorizar una recuperación automática con ficha nueva cuando se cumpla un criterio de revisión explícito y verificable.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mantener el reintento temporal",
-    "body": "Conservar el tratamiento transitorio y verificar que las fichas nuevas se activen cuando termine la revisión del proveedor.",
+    "title": "Esperar y reintentar",
+    "body": "Conservar el error transitorio y los reintentos actuales mientras MercadoLibre mantiene la ficha bajo revisión.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Su cambio histórico introdujo el tratamiento transitorio de errores de precio en esta integración; es una persona de enrutamiento para validar la intención del comportamiento.",
+    "person": "MarcosTerroso",
+    "reason": "Figura como asignado a la issue y ha contribuido recientemente al código afectado; no consta aquí una autoridad de producto más específica.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10173.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10173#issuecomment-5886217728",
-    "reviewedAt": "2026-09-29T08:05:44.128Z",
-    "mainSha": "d7533a4ffe3270e3fc179e39bbdd317e67cceadb"
+    "reviewedAt": "2026-10-05T09:13:37.210Z",
+    "mainSha": "758e57930297ce923fcc67cece2921df579b1a14"
   }
 }
