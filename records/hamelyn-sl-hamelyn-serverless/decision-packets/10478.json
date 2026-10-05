@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-05T14:57:06.228Z",
+  "updatedAt": "2026-10-05T14:36:47Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10478,
+    "title": "TodoColección, AbeBooks, eBay y MercadoLibre: tras una venta B2B grande las ventas normales esperan horas detrás del lote para retirarse (4 SYNC_RECENT el 05-10)",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10478",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "reporter:javier",
+      "triage:queued",
+      "P2"
+    ],
+    "createdAt": "2026-10-05T14:36:12Z",
+    "updatedAt": "2026-10-05T14:36:47Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe extenderse a estos canales una estrategia de doble carril para que las ventas recientes no esperen detrás de lotes B2B, y qué objetivo de latencia y presupuesto de cuota debe cumplir cada uno?",
+  "rationale": "El orden y los límites son configurables en código, pero escoger un SLA o reservar capacidad puede afectar cuotas compartidas y otros procesos; los datos no determinan por sí solos el nivel de riesgo aceptable.",
+  "options": [
+    {
+      "title": "Validar y diseñar por canal",
+      "body": "Acordar objetivos y cuotas, verificar las capacidades de lote y confirmación de cada proveedor y luego pilotar carriles para proteger las ventas recientes.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener los límites actuales",
+      "body": "Aceptar las esperas observadas y limitar el trabajo a medir antigüedad y nuevas cancelaciones hasta disponer de más evidencia operativa.",
+      "recommended": false
+    },
+    {
+      "title": "Ampliar límites directamente",
+      "body": "Elevar los topes por pasada para drenar antes los lotes, asumiendo el riesgo de consumo de cuotas y duración del cron.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Validar y diseñar por canal",
+    "body": "Acordar objetivos y cuotas, verificar las capacidades de lote y confirmación de cada proveedor y luego pilotar carriles para proteger las ventas recientes.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "La conversación de la issue relacionada le atribuye la decisión pendiente sobre capacidad de retirada de MercadoLibre; es la señal de ownership más directa disponible.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10478.md",
+    "reviewedAt": "2026-10-05T14:57:06.228Z",
+    "mainSha": "b753bf2b690ad8b09bd87e164180e9e8c8143bef"
+  }
+}
