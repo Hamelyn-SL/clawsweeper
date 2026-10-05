@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-01T11:24:34.138Z",
-  "updatedAt": "2026-10-01T11:15:37Z",
+  "generatedAt": "2026-10-05T07:21:21.933Z",
+  "updatedAt": "2026-10-05T07:00:21Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,47 +15,41 @@
       "reporter:javier",
       "triage:done",
       "clawsweeper:needs-product-decision",
-      "mk:todocoleccion",
-      "P2"
+      "P2",
+      "mk:todocoleccion"
     ],
     "createdAt": "2026-09-25T14:49:56Z",
-    "updatedAt": "2026-10-01T11:15:37Z"
+    "updatedAt": "2026-10-05T07:00:21Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe TodoColección reservar la unidad desde la compra pendiente de pago y, en ese caso, qué evento o plazo libera la reserva si el pedido no se paga?",
-  "rationale": "La implementación requiere escoger una política de inventario y estados; importar sin más los pedidos impagados podría tratarlos como pedidos pagados y enviarlos a picking.",
+  "question": "¿Se debe reservar el stock de TodoColección desde la creación del pedido impagado y, en ese caso, qué evento o plazo libera la reserva?",
+  "rationale": "La reserva temprana altera cuándo se considera comprometido el stock y la fuente revisada solo importa pedidos pagados; sin una política de anulación/liberación, cambiar el filtro puede bloquear unidades indebidamente.",
   "options": [
     {
+      "title": "Mantener reserva tras el pago",
+      "body": "Mantener la importación actual tras el pago y tratar el retraso restante como riesgo aceptado o de operación externa.",
+      "recommended": false
+    },
+    {
       "title": "Reservar desde la compra",
-      "body": "Retirar la unidad de los demás canales al detectar el pedido pendiente y definir un evento o plazo explícito para liberar la reserva impagada.",
+      "body": "Definir un ciclo para registrar pedidos impagados y liberar el stock al recibir una anulación o al vencer un plazo acordado.",
       "recommended": true
-    },
-    {
-      "title": "Esperar al pago",
-      "body": "Mantener el flujo actual y documentar que se acepta la ventana de venta cruzada hasta que TodoColección confirme el pago.",
-      "recommended": false
-    },
-    {
-      "title": "Avisar sin reservar",
-      "body": "Mantener la importación tras el pago y añadir una alerta accionable cuando la retirada coincida con una unidad vendida en otro canal.",
-      "recommended": false
     }
   ],
   "recommendation": {
     "title": "Reservar desde la compra",
-    "body": "Retirar la unidad de los demás canales al detectar el pedido pendiente y definir un evento o plazo explícito para liberar la reserva impagada.",
+    "body": "Definir un ciclo para registrar pedidos impagados y liberar el stock al recibir una anulación o al vencer un plazo acordado.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Es el candidato de enrutamiento más claro por su trabajo reciente en el procesamiento de pedidos y su asignación a esta issue; la decisión también involucra a Marketplace y Operaciones.",
+    "reason": "Es el contribuidor asignado que documentó el análisis reciente y la solución parcial de gastos; la decisión requiere coordinación con Marketplace y Operaciones.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10127.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10127#issuecomment-5834537301",
-    "reviewedAt": "2026-10-01T11:24:34.138Z",
-    "mainSha": "16d78daab656cd6fa3afef2d915a3a59a1a46da2"
+    "reviewedAt": "2026-10-05T07:21:21.933Z",
+    "mainSha": "872e463dbc105d17b2afa8380e5a20227f91e5db"
   }
 }
