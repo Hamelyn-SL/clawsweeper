@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-05T07:26:36.234Z",
+  "updatedAt": "2026-10-05T06:26:55Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10381,
+    "title": "fix: fall back to weight bucket for tiny mercadolibre package dimensions",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10381",
+    "state": "open",
+    "labels": [
+      "size/M",
+      "P2"
+    ],
+    "createdAt": "2026-10-02T13:13:00Z",
+    "updatedAt": "2026-10-05T06:26:55Z",
+    "headSha": "d5f81b4858c5d11c18774a27e04e714420d27f6e"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Aprobamos como heurística de catálogo los umbrales de lado mayor ≥ 5 cm y lado medio ≥ 4 cm para sustituir dimensiones reales por el paquete estimado por peso?",
+  "rationale": "El cambio reemplaza datos reales para productos que superan las validaciones actuales, mientras que la aceptación externa de los paquetes estimados no se ha comprobado; el censo y la revisión aportan contexto, pero la política operativa corresponde al equipo.",
+  "options": [
+    {
+      "title": "Aprobar la heurística",
+      "body": "Aceptar los umbrales y el fallback por peso como comportamiento para las altas futuras.",
+      "recommended": true
+    },
+    {
+      "title": "Ajustar el criterio",
+      "body": "Solicitar otro umbral o una regla que preserve más dimensiones reales antes de integrar el cambio.",
+      "recommended": false
+    },
+    {
+      "title": "Pedir validación externa",
+      "body": "Esperar evidencia de aceptación de MercadoLibre para paquetes estimados antes de decidir el criterio.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar la heurística",
+    "body": "Aceptar los umbrales y el fallback por peso como comportamiento para las altas futuras.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Su historial muestra que introdujo y mantuvo la ruta de formateo de dimensiones de MercadoLibre; es el candidato disponible más conectado al comportamiento.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10381.md",
+    "reviewedAt": "2026-10-05T07:26:36.234Z",
+    "mainSha": "872e463dbc105d17b2afa8380e5a20227f91e5db"
+  }
+}

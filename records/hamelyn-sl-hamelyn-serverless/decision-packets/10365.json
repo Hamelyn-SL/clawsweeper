@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-03T11:00:28.927Z",
-  "updatedAt": "2026-10-02T12:57:51Z",
+  "generatedAt": "2026-10-05T07:27:27.240Z",
+  "updatedAt": "2026-10-05T06:27:53Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -18,43 +18,42 @@
       "P2"
     ],
     "createdAt": "2026-10-02T09:09:02Z",
-    "updatedAt": "2026-10-02T12:57:51Z"
+    "updatedAt": "2026-10-05T06:27:53Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se aprueba aparcar durante 30 días los errores de producto inexistente para Feltrinelli y Casa del Libro, manteniendo Decathlon sin cambios, y las guardas propuestas para activar la reconciliación de Feltrinelli?",
-  "rationale": "La clasificación afecta a varias tiendas y la reconciliación puede modificar estados persistidos; el propio triage señala que el criterio de Casa del Libro y las salvaguardas del export requieren confirmación del equipo.",
+  "question": "¿Debe aplicarse el aparcado de 30 días a publicaciones de Casa del Libro además de Feltrinelli, manteniendo Decathlon sin cambios?",
+  "rationale": "El cambio compartido altera el ritmo de reintentos de una tienda ya operativa; el diagnóstico condiciona ese alcance a confirmar que Casa del Libro comparte el mismo criterio.",
   "options": [
     {
-      "title": "Aprobar el alcance por tienda y validar guardas",
-      "body": "Mantener Decathlon sin cambios, confirmar el alcance de Casa del Libro y exigir validación del export y de las carreras antes de activar la reconciliación.",
-      "recommended": true
-    },
-    {
-      "title": "Limitar inicialmente el aparcado a Feltrinelli",
-      "body": "Aplazar el cambio de Casa del Libro hasta confirmar que comparte el mismo criterio operativo.",
+      "title": "Aprobar ambas tiendas",
+      "body": "Aplicar el espaciado de 30 días en publicaciones de Casa del Libro y Feltrinelli, sin cambiar Decathlon, tras validar las guardas del report.",
       "recommended": false
     },
     {
-      "title": "Posponer la activación",
-      "body": "Mantener abierta la implementación pero no habilitar escrituras periódicas hasta contar con una validación operativa adicional.",
+      "title": "Empezar solo por Feltrinelli",
+      "body": "Limitar inicialmente el aparcado a Feltrinelli y aplazar Casa del Libro hasta confirmar su criterio operativo.",
+      "recommended": true
+    },
+    {
+      "title": "Aplazar el cambio de reintento",
+      "body": "Mantener la clasificación y el espaciado actuales hasta completar una validación operativa por tienda.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar el alcance por tienda y validar guardas",
-    "body": "Mantener Decathlon sin cambios, confirmar el alcance de Casa del Libro y exigir validación del export y de las carreras antes de activar la reconciliación.",
+    "title": "Empezar solo por Feltrinelli",
+    "body": "Limitar inicialmente el aparcado a Feltrinelli y aplazar Casa del Libro hasta confirmar su criterio operativo.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Es el autor del PR vinculado y el historial local lo conecta con el clasificador Mirakl implicado.",
-    "confidence": "medium"
+    "reason": "Figura como responsable asignado y autor de la propuesta que introduce el cambio por tienda.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10365.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10365#issuecomment-5950886353",
-    "reviewedAt": "2026-10-03T11:00:28.927Z",
-    "mainSha": "994e8e77f90df7449a17c592ef555acc9d607ca3"
+    "reviewedAt": "2026-10-05T07:27:27.240Z",
+    "mainSha": "872e463dbc105d17b2afa8380e5a20227f91e5db"
   }
 }

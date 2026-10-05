@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-02T18:51:06.962Z",
-  "updatedAt": "2026-10-02T13:05:26Z",
+  "generatedAt": "2026-10-05T07:28:00.485Z",
+  "updatedAt": "2026-10-05T07:05:31Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -14,39 +14,38 @@
       "P2"
     ],
     "createdAt": "2026-10-02T13:00:48Z",
-    "updatedAt": "2026-10-02T13:05:26Z",
+    "updatedAt": "2026-10-05T07:05:31Z",
     "headSha": "425b745c31451dc80780b4d35e2ed9df412de88d"
   },
-  "lane": "product_direction",
+  "lane": "merge_risk",
   "priority": "P2",
-  "question": "¿Qué extra por lote debe aplicarse con las tarifas predeterminadas de TodoColección y cómo se garantiza que la cuenta de vendedor las tenga configuradas antes de publicar?",
-  "rationale": "El PR deja explícito que el coste por lote requiere una elección comercial y que las tarifas de cuenta se configuraron manualmente fuera del cambio; el código no puede decidir esos importes ni la política de preparación de la cuenta.",
+  "question": "¿Está confirmado que se aplicarán las tarifas predeterminadas indicadas y se ejecutará y verificará la actualización en lote de los anuncios existentes como parte del despliegue?",
+  "rationale": "El PR cambia el comportamiento de publicación, pero por sí solo no configura la cuenta ni convierte los anuncios existentes; esa transición manual condiciona que el cambio resuelva el problema sin dejar el catálogo con comportamientos distintos.",
   "options": [
     {
-      "title": "Definir tarifa y requisito de cuenta",
-      "body": "Acordar el extra por lote y confirmar un mecanismo operativo para configurar y verificar las tarifas de vendedor antes de activar el nuevo payload.",
+      "title": "Aprobar el plan de despliegue",
+      "body": "Confirmar las tarifas de la cuenta y la actualización/verificación en lote antes de desplegar el cambio.",
       "recommended": true
     },
     {
-      "title": "Pausar el cambio",
-      "body": "Mantener el payload actual hasta que TodoColección admita el coste adicional deseado o se resuelva la configuración de la cuenta.",
+      "title": "Separar la migración",
+      "body": "Mantener el PR abierto hasta que exista una operación de migración coordinada y verificable.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Definir tarifa y requisito de cuenta",
-    "body": "Acordar el extra por lote y confirmar un mecanismo operativo para configurar y verificar las tarifas de vendedor antes de activar el nuevo payload.",
+    "title": "Aprobar el plan de despliegue",
+    "body": "Confirmar las tarifas de la cuenta y la actualización/verificación en lote antes de desplegar el cambio.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Es el candidato de enrutamiento mejor respaldado por su trabajo previo en este flujo de TodoColección; la decisión comercial también puede requerir a Operaciones.",
-    "confidence": "medium"
+    "reason": "Es el candidato de enrutamiento más cercano por su historial reciente en la integración, aunque la aprobación operativa corresponde al equipo responsable del canal.",
+    "confidence": "low"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10380.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10380#issuecomment-5959208859",
-    "reviewedAt": "2026-10-02T18:51:06.962Z",
-    "mainSha": "994e8e77f90df7449a17c592ef555acc9d607ca3"
+    "reviewedAt": "2026-10-05T07:28:00.485Z",
+    "mainSha": "872e463dbc105d17b2afa8380e5a20227f91e5db"
   }
 }

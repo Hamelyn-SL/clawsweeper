@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-05T07:27:36.554Z",
+  "updatedAt": "2026-10-05T06:38:59Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10288,
+    "title": "feat: exclude deco hamelyn sales from pricing demand",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10288",
+    "state": "open",
+    "labels": [
+      "size/L",
+      "P2"
+    ],
+    "createdAt": "2026-09-30T12:42:53Z",
+    "updatedAt": "2026-10-05T06:38:59Z",
+    "headSha": "2011c147fa087f20abd05f9df8f4e3d42584f8b5"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe el cambio invalidar o recalcular las referencias de pricing ya almacenadas que podrían proceder de ventas DECO?",
+  "rationale": "El PR conserva intencionadamente los registros históricos existentes; resolver el caso requiere acordar cómo tratar esos valores derivados persistidos.",
+  "options": [
+    {
+      "title": "Recalcular referencias recuperadas",
+      "body": "Reevaluar las referencias históricas de recuperación con la consulta que excluye DECO para que los precios existentes adopten el nuevo criterio.",
+      "recommended": true
+    },
+    {
+      "title": "Conservar históricos existentes",
+      "body": "Mantener los valores persistidos y limitar la exclusión a referencias calculadas después del cambio.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Recalcular referencias recuperadas",
+    "body": "Reevaluar las referencias históricas de recuperación con la consulta que excluye DECO para que los precios existentes adopten el nuevo criterio.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "danielmenchen-hamelyn",
+    "reason": "Revisó específicamente la persistencia y reutilización de referencias históricas en este PR.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10288.md",
+    "reviewedAt": "2026-10-05T07:27:36.554Z",
+    "mainSha": "872e463dbc105d17b2afa8380e5a20227f91e5db"
+  }
+}

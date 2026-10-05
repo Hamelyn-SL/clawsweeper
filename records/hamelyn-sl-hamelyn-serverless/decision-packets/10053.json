@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-03T04:03:40.681Z",
-  "updatedAt": "2026-10-02T13:09:02Z",
+  "generatedAt": "2026-10-05T07:27:10.681Z",
+  "updatedAt": "2026-10-05T06:42:57Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,43 +14,47 @@
       "bug",
       "app:marketplace",
       "triage:no-change",
-      "marketplace-crons",
+      "clawsweeper:needs-product-decision",
       "P2",
-      "clawsweeper:needs-product-decision"
+      "marketplace-crons"
     ],
     "createdAt": "2026-09-24T07:30:51Z",
-    "updatedAt": "2026-10-02T13:09:02Z"
+    "updatedAt": "2026-10-05T06:42:57Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se mantiene la decisión de aceptar estos rechazos o se valida el umbral de fallback propuesto en la PR vinculada?",
-  "rationale": "La discusión anterior descartó una corrección por falta de medidas reales, mientras que la propuesta nueva aporta datos posteriores y cambia el comportamiento de publicación; aceptar ese umbral requiere confirmar la política operativa.",
+  "question": "¿Se debe revertir la decisión de aceptar estos rechazos y adoptar el umbral de fallback por peso propuesto en la PR vinculada?",
+  "rationale": "La incidencia relacionada cerró con una decisión explícita de no corregir; la PR abierta invierte esa decisión y propone umbrales basados en un nuevo censo, así que debe confirmarse que ese criterio representa la política operativa deseada.",
   "options": [
     {
-      "title": "Validar la propuesta de fallback",
-      "body": "Revisar la evidencia de la PR y aceptar su umbral para recurrir a la estimación por peso en los casos contemplados.",
+      "title": "Aceptar el cambio propuesto",
+      "body": "Confirmar la política de fallback por peso y continuar la revisión de la PR vinculada.",
       "recommended": true
     },
     {
       "title": "Mantener el impacto aceptado",
-      "body": "Cerrar la PR sin merge y conservar el comportamiento actual hasta disponer de una prioridad o evidencia operativa distinta.",
+      "body": "Conservar el comportamiento actual y cerrar la PR vinculada sin implementar este fallback.",
+      "recommended": false
+    },
+    {
+      "title": "Validar embalajes antes de decidir",
+      "body": "Pedir medidas reales y payloads de los casos afectados antes de fijar un umbral general.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Validar la propuesta de fallback",
-    "body": "Revisar la evidencia de la PR y aceptar su umbral para recurrir a la estimación por peso en los casos contemplados.",
+    "title": "Aceptar el cambio propuesto",
+    "body": "Confirmar la política de fallback por peso y continuar la revisión de la PR vinculada.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Tomó la decisión operativa previa y está directamente conectado con el código y la propuesta abierta.",
+    "reason": "Acordó la decisión anterior y ahora propone revisarla con una corrección basada en nuevos datos del área.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10053.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10053#issuecomment-5810065696",
-    "reviewedAt": "2026-10-03T04:03:40.681Z",
-    "mainSha": "994e8e77f90df7449a17c592ef555acc9d607ca3"
+    "reviewedAt": "2026-10-05T07:27:10.681Z",
+    "mainSha": "872e463dbc105d17b2afa8380e5a20227f91e5db"
   }
 }
