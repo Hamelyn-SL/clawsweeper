@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-05T22:45:20.932Z",
-  "updatedAt": "2026-10-05T22:42:51Z",
+  "generatedAt": "2026-10-05T22:48:29.935Z",
+  "updatedAt": "2026-10-05T22:46:08Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -18,38 +18,37 @@
       "mk:amazon"
     ],
     "createdAt": "2026-10-05T22:30:41Z",
-    "updatedAt": "2026-10-05T22:42:51Z"
+    "updatedAt": "2026-10-05T22:46:08Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe Hamelyn reservar unidades al recibir un pedido Amazon `Pending` y, si es así, qué evento o plazo libera la reserva cuando no llega a `Unshipped`?",
-  "rationale": "La modificación cambia cuándo una unidad queda indisponible en todos los canales y exige decidir cómo tratar cancelaciones y pedidos pendientes prolongados; no puede derivarse esa política del código actual.",
+  "question": "¿Debe Hamelyn reservar el stock al recibir `Pending` de Amazon y, si se decide que sí, qué evento o comprobación remota permite liberar la reserva cuando no llega `Unshipped`?",
+  "rationale": "La reserva cambia la disponibilidad y el ciclo de picking; el código actual no tiene una transición de reserva anticipada ni garantiza su liberación ante cancelaciones o eventos ausentes.",
   "options": [
     {
-      "title": "Reservar desde `Pending`",
-      "body": "Diseñar el ciclo de reserva y liberación para cancelaciones y pedidos que no transicionan, y después implementarlo con cobertura de estados.",
+      "title": "Diseñar reserva desde `Pending`",
+      "body": "Definir la reserva por pedido/SKU, la retirada de otros canales, la conversión al recibir `Unshipped` y la liberación o reconciliación segura.",
       "recommended": true
     },
     {
       "title": "Aceptar el riesgo actual",
-      "body": "Mantener la reserva al llegar a `Unshipped` y documentar el impacto observado y el riesgo de cancelaciones cruzadas.",
+      "body": "Mantener la importación solo desde `Unshipped` y documentar el coste operativo de las cancelaciones observadas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Reservar desde `Pending`",
-    "body": "Diseñar el ciclo de reserva y liberación para cancelaciones y pedidos que no transicionan, y después implementarlo con cobertura de estados.",
+    "title": "Diseñar reserva desde `Pending`",
+    "body": "Definir la reserva por pedido/SKU, la retirada de otros canales, la conversión al recibir `Unshipped` y la liberación o reconciliación segura.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MarcosTerroso",
-    "reason": "Introdujo el flujo de notificaciones Amazon que tendría que evolucionar con la decisión de reserva.",
-    "confidence": "high"
+    "person": "JavierHamelyn",
+    "reason": "Ha aportado la medición de impacto y planteado las alternativas operativas; la decisión requiere además validación de Marketplace y Operaciones.",
+    "confidence": "low"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10491.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10491#issuecomment-6004727093",
-    "reviewedAt": "2026-10-05T22:45:20.932Z",
+    "reviewedAt": "2026-10-05T22:48:29.935Z",
     "mainSha": "1b4f02ec14e3419c1cc1d8752e90f141ae8b276e"
   }
 }
