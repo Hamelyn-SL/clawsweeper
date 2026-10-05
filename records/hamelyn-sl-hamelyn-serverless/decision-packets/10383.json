@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-02T15:48:43.402Z",
-  "updatedAt": "2026-10-02T14:14:00Z",
+  "generatedAt": "2026-10-05T06:09:57.207Z",
+  "updatedAt": "2026-10-05T06:06:14Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -14,44 +14,43 @@
       "P2"
     ],
     "createdAt": "2026-10-02T14:07:42Z",
-    "updatedAt": "2026-10-02T14:14:00Z",
+    "updatedAt": "2026-10-05T06:06:14Z",
     "headSha": "4705d6eba28b0c9d002461714511bf9aae8cca5c"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe el veto exigir coincidencia de calle además de país, código postal y número, o se acepta bloquear cualquier dirección del mismo CP que comparta ese número?",
-  "rationale": "La issue vinculada recomendó una comparación con calle y dejó la política pendiente; este PR omite la calle y amplía qué clientes pueden perder el cupón.",
+  "question": "¿Confirmamos que el veto se limite a país, CP, calle y número exterior normalizados, manteniendo permitidas las compras sin cupón?",
+  "rationale": "La issue vinculada mantiene pendiente el alcance del veto, y el criterio implementado puede alcanzar otros domicilios; la intención de producto no se puede deducir con seguridad.",
   "options": [
     {
-      "title": "Exigir coincidencia de calle",
-      "body": "Limitar el veto a país, CP, calle normalizada y número para reducir falsos positivos.",
+      "title": "Veto acotado por domicilio",
+      "body": "Limitar el bloqueo a una coincidencia normalizada de país, CP, calle y número exterior, con pruebas de falsos positivos.",
       "recommended": true
     },
     {
-      "title": "Aceptar el alcance actual",
-      "body": "Bloquear por país, CP y número, asumiendo el impacto sobre otros domicilios que coincidan.",
+      "title": "Definir una política más amplia",
+      "body": "Acordar expresamente qué domicilios y acciones deben cubrirse antes de integrar la restricción.",
       "recommended": false
     },
     {
-      "title": "Definir otra regla",
-      "body": "Acordar primero un criterio distinto de identificación antes de integrar el bloqueo.",
+      "title": "No bloquear por domicilio",
+      "body": "Mantener los límites actuales por usuario y gestionar el patrón mediante otra política de promociones.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Exigir coincidencia de calle",
-    "body": "Limitar el veto a país, CP, calle normalizada y número para reducir falsos positivos.",
+    "title": "Veto acotado por domicilio",
+    "body": "Limitar el bloqueo a una coincidencia normalizada de país, CP, calle y número exterior, con pruebas de falsos positivos.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "El historial disponible lo relaciona con la validación de cupones y el flujo de checkout.",
+    "reason": "Es colaborador reciente del checkout y figura como persona asignada al PR, según el contexto y el historial local consultado.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10383.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10383#issuecomment-5956041156",
-    "reviewedAt": "2026-10-02T15:48:43.402Z",
-    "mainSha": "994e8e77f90df7449a17c592ef555acc9d607ca3"
+    "reviewedAt": "2026-10-05T06:09:57.207Z",
+    "mainSha": "b87610f9d69b127b2f3f76860080b8296dacc143"
   }
 }
