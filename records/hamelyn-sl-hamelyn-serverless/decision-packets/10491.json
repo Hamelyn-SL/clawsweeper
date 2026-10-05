@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-05T22:45:20.932Z",
+  "updatedAt": "2026-10-05T22:42:51Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10491,
+    "title": "Amazon: los pedidos en Pending no reservan el stock y otro canal lo vende antes de importarlos (7 cancelaciones SYNC_RECENT en 7 días)",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10491",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "reporter:javier",
+      "triage:running",
+      "P2",
+      "mk:amazon"
+    ],
+    "createdAt": "2026-10-05T22:30:41Z",
+    "updatedAt": "2026-10-05T22:42:51Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe Hamelyn reservar unidades al recibir un pedido Amazon `Pending` y, si es así, qué evento o plazo libera la reserva cuando no llega a `Unshipped`?",
+  "rationale": "La modificación cambia cuándo una unidad queda indisponible en todos los canales y exige decidir cómo tratar cancelaciones y pedidos pendientes prolongados; no puede derivarse esa política del código actual.",
+  "options": [
+    {
+      "title": "Reservar desde `Pending`",
+      "body": "Diseñar el ciclo de reserva y liberación para cancelaciones y pedidos que no transicionan, y después implementarlo con cobertura de estados.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar el riesgo actual",
+      "body": "Mantener la reserva al llegar a `Unshipped` y documentar el impacto observado y el riesgo de cancelaciones cruzadas.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Reservar desde `Pending`",
+    "body": "Diseñar el ciclo de reserva y liberación para cancelaciones y pedidos que no transicionan, y después implementarlo con cobertura de estados.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Introdujo el flujo de notificaciones Amazon que tendría que evolucionar con la decisión de reserva.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10491.md",
+    "reviewedAt": "2026-10-05T22:45:20.932Z",
+    "mainSha": "1b4f02ec14e3419c1cc1d8752e90f141ae8b276e"
+  }
+}
