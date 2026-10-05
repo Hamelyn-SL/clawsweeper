@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-03T12:02:31.567Z",
-  "updatedAt": "2026-10-03T11:30:30Z",
+  "generatedAt": "2026-10-05T12:00:43.939Z",
+  "updatedAt": "2026-10-05T11:54:24Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,48 +14,47 @@
       "app:supply",
       "feature",
       "triage:needs-info",
-      "reporter:daniellopez",
+      "clawsweeper:needs-product-decision",
       "P2",
-      "clawsweeper:needs-product-decision"
+      "reporter:daniellopez"
     ],
     "createdAt": "2026-10-03T11:22:05Z",
-    "updatedAt": "2026-10-03T11:30:30Z"
+    "updatedAt": "2026-10-05T11:54:24Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué regla debe aplicar productividad al cambiar etiquetas o rollos y qué escaneo identifica cada caja envuelta sin contabilizarla dos veces?",
-  "rationale": "La implementación modifica métricas de productividad compartidas y requiere una definición operativa que el código y la conversación no determinan.",
+  "question": "¿Se excluye únicamente el tiempo real de cada intervención o se aplica además la franquicia de 7, 12 o 90 segundos/minutos como bonificación, y qué código identifica cada caja envuelta?",
+  "rationale": "Son decisiones de comportamiento de negocio que cambian las métricas de productividad; la conversación existente las plantea, pero no registra una decisión del equipo.",
   "options": [
     {
-      "title": "Excluir solo el tiempo consumido",
-      "body": "Restar del tiempo medido los minutos reales de intervención, sin bonificar el margen no utilizado.",
+      "title": "Acordar tiempo y caja",
+      "body": "Definir si se descuenta solo el tiempo real o se bonifica el margen, y especificar el código de caja y la deduplicación antes de implementar.",
       "recommended": true
     },
     {
-      "title": "Aplicar franquicia y bonificación",
-      "body": "Excluir la intervención hasta el presupuesto indicado y sumar como mejora el tiempo de presupuesto que no se haya consumido.",
+      "title": "Excluir solo el tiempo consumido",
+      "body": "Restar de la duración medida el tiempo real de intervención, sin añadir bonificación por el presupuesto no utilizado.",
       "recommended": false
     },
     {
-      "title": "Definir escaneo de caja",
-      "body": "Especificar el código o etiqueta que acredita cada caja y cómo se rechazan lecturas repetidas antes de diseñar el flujo múltiple.",
+      "title": "Aplicar franquicia y bonificación",
+      "body": "Usar los presupuestos como franquicias que también bonifican el tiempo sobrante, una vez acordada la identificación única de cada caja.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Excluir solo el tiempo consumido",
-    "body": "Restar del tiempo medido los minutos reales de intervención, sin bonificar el margen no utilizado.",
+    "title": "Acordar tiempo y caja",
+    "body": "Definir si se descuenta solo el tiempo real o se bonifica el margen, y especificar el código de caja y la deduplicación antes de implementar.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Su historial local incluye cambios recientes tanto en el progreso de packing como en el panel de productividad, ambos afectados por esta decisión.",
-    "confidence": "medium"
+    "reason": "Figura como persona asignada y tiene trabajo reciente en las rutas de packing y productividad implicadas.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10406.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10406#issuecomment-5968972128",
-    "reviewedAt": "2026-10-03T12:02:31.567Z",
-    "mainSha": "994e8e77f90df7449a17c592ef555acc9d607ca3"
+    "reviewedAt": "2026-10-05T12:00:43.939Z",
+    "mainSha": "efa7c1b5081fbc587d0df2ac87f70f966e6ff946"
   }
 }
