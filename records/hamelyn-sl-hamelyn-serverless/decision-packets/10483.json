@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-05T16:51:51.112Z",
+  "updatedAt": "2026-10-05T16:47:50Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10483,
+    "title": "Memoria de equipo: la captura deja fuera el 84 % de las sesiones de operaciones y no borra las personales",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10483",
+    "state": "open",
+    "labels": [
+      "app:infrastructure",
+      "feature",
+      "reporter:javier",
+      "triage:done",
+      "P1"
+    ],
+    "createdAt": "2026-10-05T16:31:18Z",
+    "updatedAt": "2026-10-05T16:47:50Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe la memoria de equipo permitir capturar sesiones fuera del ámbito Hamelyn mediante modos `hybrid`/`all`, y qué modo predeterminado y protección de datos deben aplicarse?",
+  "rationale": "La propuesta amplía la captura de datos personales y define nuevos modos y precedencias; el código y la evidencia técnica no determinan por sí solos qué alcance de recopilación aprueba el equipo.",
+  "options": [
+    {
+      "title": "Mantener captura solo Hamelyn",
+      "body": "Conservar el ámbito actual y limitar los cambios a completar el borrado y la protección de sesiones personales ya registradas.",
+      "recommended": false
+    },
+    {
+      "title": "Permitir hybrid con control de equipo",
+      "body": "Añadir el modo de menciones y una configuración de equipo, manteniendo `hamelyn` como valor predeterminado.",
+      "recommended": true
+    },
+    {
+      "title": "Permitir también all",
+      "body": "Incluir una opción explícita para capturar todas las sesiones, con comunicación previa y purga verificable antes de activarla.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Permitir hybrid con control de equipo",
+    "body": "Añadir el modo de menciones y una configuración de equipo, manteniendo `hamelyn` como valor predeterminado.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su historial reciente cubre la implementación de la captura, los informes de cobertura y las reglas de memoria personal implicadas en la decisión.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10483.md",
+    "reviewedAt": "2026-10-05T16:51:51.112Z",
+    "mainSha": "639ba9a79a129b1f1b78635c757c3cae6aee1c8f"
+  }
+}
