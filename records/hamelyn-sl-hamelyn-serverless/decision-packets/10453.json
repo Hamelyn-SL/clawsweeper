@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-05T09:14:26.473Z",
+  "generatedAt": "2026-10-05T09:13:08.511Z",
   "updatedAt": "2026-10-05T08:47:26Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -18,35 +18,34 @@
     "headSha": "516091fb976dd9f60a71f73da8bb16aee9d81aa9"
   },
   "lane": "product_direction",
-  "priority": "P2",
-  "question": "¿Debe exigirse ya el par de precios normal/descontado a todos los clientes B2B, o conservarse temporalmente el flujo de precio único mientras se completa la transición?",
-  "rationale": "El PR avisa que varios clientes actuales pasarán a aprobación manual hasta enviar el precio descontado; decidir si ese impacto operativo es aceptable requiere intención del equipo.",
+  "priority": "P1",
+  "question": "¿Debe ser obligatorio que cada línea B2B identificada incluya precio normal y descontado, haciendo que los pedidos de clientes sin ese par escalen a aprobación?",
+  "rationale": "El PR advierte que este cambio altera el flujo de clientes actuales; validar el cálculo técnico no determina si el equipo quiere imponer esa condición operativa.",
   "options": [
     {
-      "title": "Exigir ambos precios ahora",
-      "body": "Aceptar el escalado manual de clientes sin el par de precios y comunicar el requisito operativo antes de integrar el cambio.",
-      "recommended": false
+      "title": "Confirmar la obligatoriedad",
+      "body": "Mantener el escalado a aprobación para pedidos sin ambos precios y comunicar el cambio a los clientes afectados.",
+      "recommended": true
     },
     {
-      "title": "Transición compatible",
-      "body": "Conservar el comportamiento de precio único como opción predeterminada y activar la exigencia del par cuando cada cliente esté preparado.",
-      "recommended": true
+      "title": "Preservar la ruta de precio único",
+      "body": "Acordar una regla compatible para los clientes que aún envían un único precio antes de exigir el par.",
+      "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Transición compatible",
-    "body": "Conservar el comportamiento de precio único como opción predeterminada y activar la exigencia del par cuando cada cliente esté preparado.",
+    "title": "Confirmar la obligatoriedad",
+    "body": "Mantener el escalado a aprobación para pedidos sin ambos precios y comunicar el cambio a los clientes afectados.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su trabajo reciente cubre el flujo de ejecución B2B que establece este nuevo requisito operativo.",
-    "confidence": "medium"
+    "reason": "Su historial reciente está ligado al flujo de ejecución B2B que cambia con esta regla.",
+    "confidence": "low"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10453.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10453#issuecomment-5991550522",
-    "reviewedAt": "2026-10-05T09:14:26.473Z",
+    "reviewedAt": "2026-10-05T09:13:08.511Z",
     "mainSha": "758e57930297ce923fcc67cece2921df579b1a14"
   }
 }

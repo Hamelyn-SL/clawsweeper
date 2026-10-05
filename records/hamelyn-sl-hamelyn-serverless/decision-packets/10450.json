@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-05T09:11:36.179Z",
+  "updatedAt": "2026-10-05T09:09:59Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10450,
+    "title": "fix: give cancelled lots their own share of the tracking sync",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10450",
+    "state": "open",
+    "labels": [
+      "size/L",
+      "P2"
+    ],
+    "createdAt": "2026-10-05T08:11:58Z",
+    "updatedAt": "2026-10-05T09:09:59Z",
+    "headSha": "45b2bb9564fa715a22e28cfa67821369ae6df6c7"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe la sincronización reservar siempre el 30 % del cupo a cancelados recientes, y medir su ventana de 90 días desde `cancelledDate`?",
+  "rationale": "La propuesta cambia tanto la prioridad entre grupos como el campo que determina la antigüedad; la evidencia refleja las colas actuales, pero no determina el comportamiento deseado cuando sus tamaños relativos cambien.",
+  "options": [
+    {
+      "title": "Aprobar el reparto fijo",
+      "body": "Aceptar el 30 % para cancelados recientes y el resto para activos, junto con la ventana basada en `cancelledDate`.",
+      "recommended": true
+    },
+    {
+      "title": "Ajustar el reparto",
+      "body": "Definir otra cuota o una política que reasigne plazas sobrantes antes de integrar el cambio.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar el reparto fijo",
+    "body": "Aceptar el 30 % para cancelados recientes y el resto para activos, junto con la ventana basada en `cancelledDate`.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "El PR continúa el cambio que introdujo y le solicita expresamente revisar esta ampliación; es el candidato de decisión más directamente conectado en el contexto disponible.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10450.md",
+    "reviewedAt": "2026-10-05T09:11:36.179Z",
+    "mainSha": "758e57930297ce923fcc67cece2921df579b1a14"
+  }
+}

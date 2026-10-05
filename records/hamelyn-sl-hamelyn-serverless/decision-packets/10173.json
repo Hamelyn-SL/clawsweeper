@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-05T09:13:37.210Z",
+  "generatedAt": "2026-10-05T09:14:44.974Z",
   "updatedAt": "2026-10-05T08:46:48Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -23,39 +23,33 @@
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "Si MercadoLibre mantiene un anuncio en `under_review` y rechaza cambios de precio, ¿qué política debe seguir el equipo cuando la revisión persiste?",
-  "rationale": "El estado observado pertenece al proveedor y el código no demuestra que sea un anuncio obsoleto; cambiarlo a retirada o republicación automática podría alterar anuncios válidos y exige acordar el criterio operativo.",
+  "question": "¿Deben seguir reintentándose los cambios de precio mientras MercadoLibre mantiene las fichas `under_review`, o debe el sistema detenerlos y aplicar otra recuperación?",
+  "rationale": "El código las clasifica como transitorias y solo retira fichas tras confirmar estados terminales; retirarlas o republicarlas durante una revisión del proveedor cambia el comportamiento operativo y necesita un criterio de producto respaldado por el estado remoto.",
   "options": [
     {
-      "title": "Esperar y reintentar",
-      "body": "Conservar el error transitorio y los reintentos actuales mientras MercadoLibre mantiene la ficha bajo revisión.",
+      "title": "Mantener reintentos durante la revisión",
+      "body": "Conservar el comportamiento transitorio y no retirar ni republicar hasta que MercadoLibre comunique un estado terminal.",
       "recommended": true
     },
     {
-      "title": "Escalar tras un umbral",
-      "body": "Definir un plazo o número de intentos y derivar los anuncios persistentes a revisión manual, sin republicarlos automáticamente.",
-      "recommended": false
-    },
-    {
-      "title": "Retirar y republicar",
-      "body": "Autorizar una recuperación automática con ficha nueva cuando se cumpla un criterio de revisión explícito y verificable.",
+      "title": "Añadir recuperación específica",
+      "body": "Definir con evidencia del proveedor una transición distinta para `under_review` y validar su efecto antes de automatizar retirada o republicación.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Esperar y reintentar",
-    "body": "Conservar el error transitorio y los reintentos actuales mientras MercadoLibre mantiene la ficha bajo revisión.",
+    "title": "Mantener reintentos durante la revisión",
+    "body": "Conservar el comportamiento transitorio y no retirar ni republicar hasta que MercadoLibre comunique un estado terminal.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Figura como asignado a la issue y ha contribuido recientemente al código afectado; no consta aquí una autoridad de producto más específica.",
+    "reason": "Está asignado a la incidencia y ha contribuido recientemente a la ruta MercadoLibre afectada.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10173.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10173#issuecomment-5886217728",
-    "reviewedAt": "2026-10-05T09:13:37.210Z",
+    "reviewedAt": "2026-10-05T09:14:44.974Z",
     "mainSha": "758e57930297ce923fcc67cece2921df579b1a14"
   }
 }
