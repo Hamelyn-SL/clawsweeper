@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-05T09:08:26.072Z",
+  "updatedAt": "2026-10-05T08:40:15Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10451,
+    "title": "feat: send coupon usage to stripe for radar card blocking",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10451",
+    "state": "open",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-10-05T08:30:51Z",
+    "updatedAt": "2026-10-05T08:40:15Z",
+    "headSha": "8ff354e11bd8ed33d14324fe29e0a88358978199"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se debe activar la regla `coupon_blocked_cards` tras confirmar en la vista previa de Stripe Radar que evalúa correctamente `hasCoupon` en estos PaymentIntent?",
+  "rationale": "La prevención efectiva depende de una regla live pendiente y su comportamiento no queda demostrado por las pruebas aisladas; la decisión afecta al bloqueo de cobros con cupón.",
+  "options": [
+    {
+      "title": "Verificar y activar",
+      "body": "Comprobar la vista previa sobre pagos con y sin cupón y activar la regla solo si produce el bloqueo selectivo esperado.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener la regla inactiva",
+      "body": "Aprobar únicamente la emisión de metadatos y aplazar el bloqueo hasta contar con una verificación adicional de Stripe.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Verificar y activar",
+    "body": "Comprobar la vista previa sobre pagos con y sin cupón y activar la regla solo si produce el bloqueo selectivo esperado.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "PabloMoran34",
+    "reason": "Es la persona con evidencia de autoría sobre el flujo actual de PaymentIntent; no hay evidencia local suficiente para identificar al responsable de la configuración de Radar.",
+    "confidence": "low"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10451.md",
+    "reviewedAt": "2026-10-05T09:08:26.072Z",
+    "mainSha": "758e57930297ce923fcc67cece2921df579b1a14"
+  }
+}
