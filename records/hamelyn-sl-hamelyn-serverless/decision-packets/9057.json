@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-23T10:14:46.356Z",
-  "updatedAt": "2026-09-23T02:30:41Z",
+  "generatedAt": "2026-10-05T12:39:31.535Z",
+  "updatedAt": "2026-10-05T12:30:40Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,42 +15,41 @@
       "app:marketplace",
       "triage:no-change",
       "clawsweeper:needs-product-decision",
-      "marketplace-crons",
-      "P2"
+      "P2",
+      "marketplace-crons"
     ],
     "createdAt": "2026-09-02T17:30:44Z",
-    "updatedAt": "2026-09-23T02:30:41Z"
+    "updatedAt": "2026-10-05T12:30:40Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué política debe aplicarse a cada rechazo de `confirmShipment`: reintento acotado, estado terminal con revisión operativa o reconciliación contra el marketplace?",
-  "rationale": "El código puede implementar una firma concreta, pero decidir qué fallos son permanentes por marketplace altera la recuperación de pedidos recogidos y no se deduce con seguridad de los logs agregados.",
+  "question": "¿Debe esta issue seguir como seguimiento canónico de las alertas agregadas de confirmShipment mientras se investigan las firmas por marketplace, o dividirse y cerrarse cuando cada firma tenga su propio seguimiento?",
+  "rationale": "La misma firma de watcher aparece para varios proveedores, pero los casos documentados tienen respuestas remotas y soluciones distintas; el criterio para conservar o dividir el seguimiento requiere una decisión de triage del equipo.",
   "options": [
     {
-      "title": "Clasificar por proveedor y firma",
-      "body": "Mantener reintentos sólo para errores transitorios y añadir reglas terminales o reconciliación para rechazos identificados.",
+      "title": "Conservar el seguimiento agregado",
+      "body": "Mantener esta issue abierta como índice de las nuevas firmas y derivar cada causa reproducible a un seguimiento específico.",
       "recommended": true
     },
     {
-      "title": "Mantener recuperación genérica",
-      "body": "Seguir reabriendo cualquier error no reconocido mientras se recopilan más firmas y evidencia operativa.",
+      "title": "Dividir por proveedor y cerrar el agregador",
+      "body": "Crear o enlazar seguimientos específicos para los casos pendientes y cerrar esta issue cuando no queden firmas sin propietario.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Clasificar por proveedor y firma",
-    "body": "Mantener reintentos sólo para errores transitorios y añadir reglas terminales o reconciliación para rechazos identificados.",
+    "title": "Conservar el seguimiento agregado",
+    "body": "Mantener esta issue abierta como índice de las nuevas firmas y derivar cada causa reproducible a un seguimiento específico.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "La investigación de recovery y los cambios recientes de esta ruta lo sitúan como mejor punto de decisión técnica-operativa.",
-    "confidence": "high"
+    "person": "JavierHamelyn",
+    "reason": "Ha mantenido las observaciones recientes de la firma y está conectado con cambios recientes del flujo de envíos; la decisión de división aún corresponde al equipo.",
+    "confidence": "low"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9057.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9057#issuecomment-5516740876",
-    "reviewedAt": "2026-09-23T10:14:46.356Z",
-    "mainSha": "49cf8dd3dcd603e7191f56a17c28174ba52a5a98"
+    "reviewedAt": "2026-10-05T12:39:31.535Z",
+    "mainSha": "efa7c1b5081fbc587d0df2ac87f70f966e6ff946"
   }
 }
