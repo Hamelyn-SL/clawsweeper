@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-05T21:34:26.970Z",
+  "updatedAt": "2026-10-05T21:27:51Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10489,
+    "title": "Filtro API MELI Argentina - Sherry Argov",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10489",
+    "state": "open",
+    "labels": [
+      "bug",
+      "source:admin-panel",
+      "app:marketplace",
+      "triage:running",
+      "P1",
+      "reporter:carlotavarela"
+    ],
+    "createdAt": "2026-10-05T21:22:30Z",
+    "updatedAt": "2026-10-05T21:27:51Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Qué señal debe activar el bloqueo de publicaciones de Sherry Argov en Mercado Libre Argentina y en qué punto del flujo debe aplicarse?",
+  "rationale": "La issue pide un filtro, pero no identifica campos de producto, endpoint, ejemplos afectados ni si la restricción es una política temporal; elegirlo sin contexto puede bloquear títulos incorrectos o dejar pasar los afectados.",
+  "options": [
+    {
+      "title": "Filtro por atributos verificados",
+      "body": "Aplicar una exclusión específica para Argentina cuando los datos estructurados de autor/editorial identifiquen a Sherry Argov.",
+      "recommended": true
+    },
+    {
+      "title": "Filtro por coincidencia de título",
+      "body": "Bloquear coincidencias textuales en el título, aceptando el riesgo de falsos positivos por variaciones de escritura.",
+      "recommended": false
+    },
+    {
+      "title": "Aclarar primero el alcance",
+      "body": "Solicitar ejemplos de productos y la respuesta del proveedor antes de elegir la señal y el punto de rechazo.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Filtro por atributos verificados",
+    "body": "Aplicar una exclusión específica para Argentina cuando los datos estructurados de autor/editorial identifiquen a Sherry Argov.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Es la referencia de área más visible en el historial reciente del flujo MELI, aunque la decisión de política debe confirmarse con quien mantiene el proceso de catálogo.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10489.md",
+    "reviewedAt": "2026-10-05T21:34:26.970Z",
+    "mainSha": "a78fc219bcb9a49939f87fa6bf8bacef1f354ef0"
+  }
+}
