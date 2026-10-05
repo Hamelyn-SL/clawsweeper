@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-29T17:47:24.048Z",
-  "updatedAt": "2026-09-29T17:42:51Z",
+  "generatedAt": "2026-10-05T13:26:45.582Z",
+  "updatedAt": "2026-10-05T11:55:45Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -18,43 +18,42 @@
       "reporter:daniellopez"
     ],
     "createdAt": "2026-09-29T17:29:45Z",
-    "updatedAt": "2026-09-29T17:42:51Z"
+    "updatedAt": "2026-10-05T11:55:45Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Los 8 segundos deben aplicarse solo a CD o a todos los productos, y ante una incidencia se debe cancelar únicamente la etiqueta afectada o vaciar toda la cola compartida?",
-  "rationale": "Son elecciones de flujo operativo con consecuencias distintas para otros pedidos en impresión; el código actual no permite inferir la intención del equipo.",
+  "question": "¿A qué productos se aplica el intervalo de 8 segundos y, ante cada incidencia, se debe cancelar la etiqueta asociada al pedido o vaciar la cola compartida?",
+  "rationale": "La solicitud no aclara el alcance por producto ni por incidencia; vaciar una cola compartida puede afectar pedidos ajenos y la cancelación tras enviar al spooler requiere validar el comportamiento operativo.",
   "options": [
     {
-      "title": "Limitar el alcance",
-      "body": "Aplicar los 8 segundos solo a CD y cancelar únicamente el trabajo de impresión asociado al producto afectado, evitando retirar etiquetas de otros pedidos.",
+      "title": "Alcance limitado",
+      "body": "Aplicar los 8 segundos solo a CD y cancelar únicamente el trabajo del pedido afectado cuando la impresora permita identificarlo.",
       "recommended": true
     },
     {
-      "title": "Estandarizar todo el flujo",
-      "body": "Aplicar 8 segundos a todos los productos y vaciar la cola completa ante las incidencias acordadas.",
+      "title": "Estandarizar el flujo",
+      "body": "Aplicar los 8 segundos a todos los productos y permitir vaciar toda la cola ante las incidencias acordadas.",
       "recommended": false
     },
     {
-      "title": "Concretar primero los casos operativos",
-      "body": "Mantener el comportamiento actual mientras se acuerdan los productos y motivos concretos antes de modificar la temporización o la cola.",
+      "title": "Mantener el flujo mientras se concreta",
+      "body": "No cambiar temporizador ni cola hasta definir los productos y las incidencias que requieren intervención.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Limitar el alcance",
-    "body": "Aplicar los 8 segundos solo a CD y cancelar únicamente el trabajo de impresión asociado al producto afectado, evitando retirar etiquetas de otros pedidos.",
+    "title": "Alcance limitado",
+    "body": "Aplicar los 8 segundos solo a CD y cancelar únicamente el trabajo del pedido afectado cuando la impresora permita identificarlo.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Su historial reciente cubre temporización, impresión serializada y errores de AutoPacking, por lo que es el candidato de código más próximo para validar el impacto.",
-    "confidence": "medium"
+    "reason": "Tiene asignada la issue y aparece en cambios recientes del flujo AutoPacking.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10248.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10248#issuecomment-5895577794",
-    "reviewedAt": "2026-09-29T17:47:24.048Z",
-    "mainSha": "0f86707cd423b1ecb9ee90483c89c99a1c243318"
+    "reviewedAt": "2026-10-05T13:26:45.582Z",
+    "mainSha": "071de0af84358b02873aefee7a5f4d6e5c27f0cf"
   }
 }

@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-05T13:28:11.350Z",
+  "updatedAt": "2026-10-05T13:14:20Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10473,
+    "title": "fix: skip report reactivation of recently withdrawn amazon listings",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10473",
+    "state": "open",
+    "labels": [
+      "size/M"
+    ],
+    "createdAt": "2026-10-05T13:08:37Z",
+    "updatedAt": "2026-10-05T13:14:20Z",
+    "headSha": "a9a6321d0f7659df577cd3ceee5df9463f289a81"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Aceptamos que una oferta pueda seguir comprable hasta el siguiente report diario cuando Amazon no aplique un DELETE aceptado?",
+  "rationale": "El corte de 90 minutos reduce reactivaciones redundantes, pero también difiere la reconciliación de una oferta cuya retirada no se haya propagado; esa prioridad operativa no se puede decidir solo desde el código.",
+  "options": [
+    {
+      "title": "Aceptar la ventana diaria",
+      "body": "Mantener el corte de 90 minutos y aceptar hasta un ciclo diario de demora ante un DELETE no aplicado.",
+      "recommended": true
+    },
+    {
+      "title": "Reducir la demora",
+      "body": "Añadir una comprobación o reintento más frecuente antes de diferir una oferta que continúe comprable.",
+      "recommended": false
+    },
+    {
+      "title": "Ajustar el corte",
+      "body": "Elegir un margen menor y asumir que algunas retiradas recientes volverán a encolarse.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aceptar la ventana diaria",
+    "body": "Mantener el corte de 90 minutos y aceptar hasta un ciclo diario de demora ante un DELETE no aplicado.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es autor de la issue asociada, que documenta la incidencia Amazon y las alternativas de comportamiento.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10473.md",
+    "reviewedAt": "2026-10-05T13:28:11.350Z",
+    "mainSha": "071de0af84358b02873aefee7a5f4d6e5c27f0cf"
+  }
+}
