@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-28T06:02:24.403Z",
-  "updatedAt": "2026-09-28T05:46:12Z",
+  "generatedAt": "2026-10-05T09:02:39.663Z",
+  "updatedAt": "2026-10-05T08:30:17Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -16,43 +16,42 @@
       "P2"
     ],
     "createdAt": "2026-09-28T05:30:03Z",
-    "updatedAt": "2026-09-28T05:46:12Z"
+    "updatedAt": "2026-10-05T08:30:17Z"
   },
-  "lane": "proof_sufficiency",
+  "lane": "security_boundary",
   "priority": "P2",
-  "question": "¿Se ha confirmado desde Mongo vivo el universo completo de altas de Amazon COM del 28 de mayo y se autoriza el alcance de reconciliación propuesto?",
-  "rationale": "El comentario del triage deja ambas condiciones pendientes; sin ellas no se puede determinar el conjunto seguro de filas ni ejecutar una corrección de datos con garantías.",
+  "question": "¿Se confirma el universo completo de altas de Amazon COM del 28 de mayo y se autoriza reconciliarlo, o debe limitarse la operación a los cuatro IDs ya verificados?",
+  "rationale": "La reparación implica una operación sobre datos productivos y el alcance global aún no está validado; además, la política del repositorio exige autorización explícita para crear cualquier tabla temporal o estructura BigQuery.",
   "options": [
     {
-      "title": "Confirmar universo y autorizar alcance",
-      "body": "Validar el recuento completo con dry-run y autorizar el MERGE sobre las tablas existentes, con comprobación posterior.",
+      "title": "Validar universo y autorizar alcance",
+      "body": "Contrastar el recuento completo mediante dry-run y autorizar la reconciliación solo sobre destinos existentes, con verificación posterior.",
       "recommended": true
     },
     {
-      "title": "Limitar la corrección a los cuatro IDs",
-      "body": "Reconciliar solo los cuatro documentos confirmados y dejar la cobertura global de la ventana para una investigación separada.",
+      "title": "Limitar a cuatro IDs",
+      "body": "Reconciliar únicamente los documentos confirmados y dejar la cobertura completa de la ventana para otra investigación.",
       "recommended": false
     },
     {
-      "title": "Solicitar más evidencia",
-      "body": "Mantener pendiente la operación hasta obtener el recuento completo y confirmar el origen de las filas en Mongo vivo.",
+      "title": "Esperar más evidencia",
+      "body": "Mantener pendiente la operación hasta confirmar el origen y el recuento total en Mongo vivo.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Confirmar universo y autorizar alcance",
-    "body": "Validar el recuento completo con dry-run y autorizar el MERGE sobre las tablas existentes, con comprobación posterior.",
+    "title": "Validar universo y autorizar alcance",
+    "body": "Contrastar el recuento completo mediante dry-run y autorizar la reconciliación solo sobre destinos existentes, con verificación posterior.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Su contribución reciente al flujo CDC lo conecta con el comportamiento de recuperación; la decisión de alcance debe tomarla quien autorice la operación de datos.",
-    "confidence": "low"
+    "reason": "Su trabajo reciente cubre el merge CDC y la sincronización de stocks; el siguiente paso es operativo en ese flujo.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10166.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10166#issuecomment-5864365140",
-    "reviewedAt": "2026-09-28T06:02:24.403Z",
-    "mainSha": "24a71938366b5718429d4c6a7c712c046b4b0783"
+    "reviewedAt": "2026-10-05T09:02:39.663Z",
+    "mainSha": "758e57930297ce923fcc67cece2921df579b1a14"
   }
 }
