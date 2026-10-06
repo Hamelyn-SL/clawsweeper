@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-06T17:48:13.862Z",
+  "updatedAt": "2026-10-06T12:19:35Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10524,
+    "title": "chore: run dependency updates biweekly and group majors",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10524",
+    "state": "open",
+    "labels": [
+      "size/M"
+    ],
+    "createdAt": "2026-10-06T12:16:15Z",
+    "updatedAt": "2026-10-06T12:19:35Z",
+    "headSha": "9c3db48a761a77e5c617712f579d896c8e150980"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Confirma el equipo la cadencia agrupada quincenal y major mensual, con `other` como familia para todas las majors salvo `react-next` y `expo-react-native`?",
+  "rationale": "El cambio modifica cuándo se detectan actualizaciones y cómo se agrupan; decidir si ese retraso y aislamiento son aceptables es una elección operativa que no puede resolverse únicamente con el diff.",
+  "options": [
+    {
+      "title": "Adoptar la propuesta",
+      "body": "Aplicar los dos calendarios y las tres familias, manteniendo las exclusiones y la cobertura existente de CI/autofix.",
+      "recommended": true
+    },
+    {
+      "title": "Ajustar cadencia o familias",
+      "body": "Reducir parte del ruido conservando más frecuencia o aislamiento para otras dependencias.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener el esquema actual",
+      "body": "Conservar las ejecuciones y familias semanales si prima detectar antes las actualizaciones.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Adoptar la propuesta",
+    "body": "Aplicar los dos calendarios y las tres familias, manteniendo las exclusiones y la cobertura existente de CI/autofix.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es el autor de la issue que plantea el compromiso operativo; la conversación disponible no identifica una decisión aprobada por el equipo.",
+    "confidence": "low"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10524.md",
+    "reviewedAt": "2026-10-06T17:48:13.862Z",
+    "mainSha": "9c76bbeffd799a99a34a461135a584dfb14c08e3"
+  }
+}
