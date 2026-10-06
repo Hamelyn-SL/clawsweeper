@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-30T08:56:59.731Z",
-  "updatedAt": "2026-09-30T08:22:28Z",
+  "generatedAt": "2026-10-06T19:57:44.505Z",
+  "updatedAt": "2026-10-06T11:31:27Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,48 +14,47 @@
       "question",
       "triage:needs-info",
       "clawsweeper:needs-product-decision",
+      "P2",
       "origin:dev",
-      "mk:amazon",
-      "P2"
+      "mk:amazon"
     ],
     "createdAt": "2026-07-15T12:06:25Z",
-    "updatedAt": "2026-09-30T08:22:28Z"
+    "updatedAt": "2026-10-06T11:31:27Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué política debe aplicar V2 a un par (EAN, región) sin ASIN resoluble: reintentos transitorios continuos o una ventana inicial seguida de `UNRESOLVED` y revalidación periódica; y qué visibilidad necesita ese estado?",
-  "rationale": "El código puede registrar la ausencia, pero el umbral, la cadencia y el significado persistido de `UNRESOLVED` son decisiones de producto; además, deben coordinarse con la implementación regional abierta.",
+  "question": "¿Se aprueba evaluar en shadow los pares legacy mediante el resolver regional de https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8162 y qué cadencia debe aplicarse a los que sigan `UNRESOLVED`?",
+  "rationale": "La respuesta determina una política de reintento y el posible tratamiento de datos persistidos; la evidencia disponible no puede decidir el umbral ni la cadencia en nombre del equipo.",
   "options": [
     {
-      "title": "Adoptar ventana y revalidación",
-      "body": "Aprobar una ventana inicial de siete días, pasar después a `UNRESOLVED` y revalidar cada treinta días, concretando aparte su visibilidad.",
+      "title": "Shadow y revisión posterior",
+      "body": "Evaluar la cohorte sin reactivarla y decidir la cadencia tras revisar resultados.",
       "recommended": true
     },
     {
-      "title": "Mantener reintentos transitorios",
-      "body": "Conservar los reintentos según la política transitoria existente y posponer un estado regional persistido.",
+      "title": "Mantenerlos terminales",
+      "body": "Conservar la clasificación permanente y no programar revalidación automática.",
       "recommended": false
     },
     {
-      "title": "Definir otro ciclo de vida",
-      "body": "Acordar un umbral, una cadencia y una superficie de visibilidad distintos antes de implementar el estado.",
+      "title": "Definir otra cadencia",
+      "body": "Aprobar una ventana o intervalo distinto antes de implementar cambios.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Adoptar ventana y revalidación",
-    "body": "Aprobar una ventana inicial de siete días, pasar después a `UNRESOLVED` y revalidar cada treinta días, concretando aparte su visibilidad.",
+    "title": "Shadow y revisión posterior",
+    "body": "Evaluar la cohorte sin reactivarla y decidir la cadencia tras revisar resultados.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Está asignado a la issue abierta de identidad regional que la conversación señala como coordinación técnica para esta decisión.",
-    "confidence": "medium"
+    "reason": "Es quien aportó el contexto técnico más reciente sobre V2 y la coordinación con el resolver regional; la evidencia no confirma que sea el responsable final de la decisión de producto.",
+    "confidence": "low"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7599.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7599#issuecomment-4980638639",
-    "reviewedAt": "2026-09-30T08:56:59.731Z",
-    "mainSha": "b280e5a0a961d92ac217c62d052e0de29deb93a6"
+    "reviewedAt": "2026-10-06T19:57:44.505Z",
+    "mainSha": "83376e1fa49aa426b9c468ea9bc24e7a2f0f6bb9"
   }
 }
