@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-06T15:59:22.293Z",
+  "updatedAt": "2026-10-06T14:05:57Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10532,
+    "title": "ci: publish workflow emails through the communication queue",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10532",
+    "state": "open",
+    "labels": [
+      "size/S"
+    ],
+    "createdAt": "2026-10-06T14:01:33Z",
+    "updatedAt": "2026-10-06T14:05:57Z",
+    "headSha": "40ac77c74f6092f022d9b5f19f7819c7adaec368"
+  },
+  "lane": "release_inclusion",
+  "priority": "P2",
+  "question": "¿Está listo el ingreso y el worker de producción para que estos cinco workflows cambien del envío directo a la cola?",
+  "rationale": "El cambio elimina el transporte directo cuando la bandera está activa y el ingreso falla; la prueba cubre un mock, no el procesamiento real, y la issue vinculada aún solicita confirmar la preparación de producción.",
+  "options": [
+    {
+      "title": "Confirmar preparación y habilitar los cinco",
+      "body": "Validar ingreso, worker y alcance de los secrets antes de incorporar el cambio completo.",
+      "recommended": true
+    },
+    {
+      "title": "Habilitar por etapas",
+      "body": "Empezar con uno o varios workflows y ampliar tras verificar aceptación y entrega en producción.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Confirmar preparación y habilitar los cinco",
+    "body": "Validar ingreso, worker y alcance de los secrets antes de incorporar el cambio completo.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Daniel",
+    "reason": "Ha contribuido recientemente a la implementación de Communication Center y figura como responsable probable en el contexto de la issue vinculada.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10532.md",
+    "reviewedAt": "2026-10-06T15:59:22.293Z",
+    "mainSha": "9c76bbeffd799a99a34a461135a584dfb14c08e3"
+  }
+}
