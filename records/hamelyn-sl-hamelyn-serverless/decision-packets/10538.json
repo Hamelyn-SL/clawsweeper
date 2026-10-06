@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-06T22:46:07.952Z",
+  "updatedAt": "2026-10-06T22:42:55Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10538,
+    "title": "Marketplace: fnac provider http 503",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10538",
+    "state": "open",
+    "labels": [
+      "codex",
+      "bug",
+      "app:marketplace",
+      "triage:running",
+      "P1",
+      "marketplace-crons"
+    ],
+    "createdAt": "2026-10-06T22:30:41Z",
+    "updatedAt": "2026-10-06T22:42:55Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "Si vuelven a aparecer los 503 de Fnac, ¿se quiere añadir reintento acotado y selectivo en las operaciones con semántica idempotente, o mantener el tratamiento actual hasta que Fnac confirme la causa?",
+  "rationale": "La integración actual no reintenta las llamadas, pero las operaciones son POST y algunas pueden crear efectos remotos; los datos del issue no identifican cuáles admiten repetición segura.",
+  "options": [
+    {
+      "title": "Reintento selectivo",
+      "body": "Añadir reintentos limitados solo a endpoints cuya idempotencia quede verificada y cubrir el resto con errores observables sin repetición automática.",
+      "recommended": true
+    },
+    {
+      "title": "Sin reintentos hasta confirmar causa",
+      "body": "Mantener el comportamiento actual y retomar el cambio cuando haya evidencia de recurrencia o confirmación del proveedor sobre la semántica de las operaciones.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Reintento selectivo",
+    "body": "Añadir reintentos limitados solo a endpoints cuya idempotencia quede verificada y cubrir el resto con errores observables sin repetición automática.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "HamelynDev",
+    "reason": "El historial local disponible conecta a HamelynDev con la implementación actual de la capa HTTP Fnac, aunque no identifica un responsable con alta confianza.",
+    "confidence": "low"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10538.md",
+    "reviewedAt": "2026-10-06T22:46:07.952Z",
+    "mainSha": "8f0628dece3223b74646bc33fa10ae785826a761"
+  }
+}
