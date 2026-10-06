@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-29T09:04:41.287Z",
-  "updatedAt": "2026-09-29T08:21:58Z",
+  "generatedAt": "2026-10-06T08:56:12.212Z",
+  "updatedAt": "2026-10-06T08:21:27Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,47 +15,46 @@
       "feature",
       "triage:needs-info",
       "clawsweeper:needs-product-decision",
-      "reporter:daniellopez",
-      "P2"
+      "P2",
+      "reporter:daniellopez"
     ],
     "createdAt": "2026-09-21T13:05:39Z",
-    "updatedAt": "2026-09-29T08:21:58Z"
+    "updatedAt": "2026-10-06T08:21:27Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Cómo se recibirán los pedidos de Buscalibre y cuándo deben quedar disponibles para picking: retenidos por lote hasta selección, incluidos automáticamente o seleccionables individualmente?",
-  "rationale": "La issue pide automatización y una decisión sobre picking, pero no especifica el canal de entrada, proporciona un export de ejemplo ni aclara la unidad de selección; elegirlo cambia el flujo de pedidos y almacén.",
+  "question": "¿Cómo deben recibirse los pedidos Buscalibre y cuándo quedan disponibles para picking: retenidos por lote hasta activación, incluidos automáticamente o activables pedido a pedido?",
+  "rationale": "Esta decisión cambia la operación del almacén y determina el alcance de la importación, la idempotencia y la interfaz necesaria; no se desprende del reporte ni del comportamiento actual.",
   "options": [
     {
       "title": "Retener por lote",
-      "body": "Automatizar la importación y dejar cada lote fuera del picking hasta que alguien lo habilite explícitamente.",
+      "body": "Importar cada lote automáticamente y mantenerlo fuera del picking hasta que alguien habilite el lote.",
       "recommended": true
     },
     {
       "title": "Incluir automáticamente",
-      "body": "Hacer que cada pedido importado quede disponible para el siguiente picking sin una acción adicional.",
+      "body": "Dejar los pedidos importados disponibles para el siguiente picking sin acción manual adicional.",
       "recommended": false
     },
     {
-      "title": "Seleccionar por pedido",
-      "body": "Importar los pedidos y permitir activar individualmente cada uno para picking, con mayor control y más alcance de interfaz.",
+      "title": "Activar por pedido",
+      "body": "Importar los pedidos y permitir habilitarlos individualmente, con mayor control y más cambios de interfaz.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Retener por lote",
-    "body": "Automatizar la importación y dejar cada lote fuera del picking hasta que alguien lo habilite explícitamente.",
+    "body": "Importar cada lote automáticamente y mantenerlo fuera del picking hasta que alguien habilite el lote.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "daniellopez",
-    "reason": "El triage previo le pidió concretar el contrato de recepción y la selección operativa, y no consta respuesta posterior.",
-    "confidence": "medium"
+    "reason": "Es el contacto operativo mencionado en el comentario de triage para aportar el ejemplo de entrada y la regla de picking.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9851.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9851#issuecomment-5762509651",
-    "reviewedAt": "2026-09-29T09:04:41.287Z",
-    "mainSha": "06044b618d4da5888c7adb84b2cdda4d2f2f2039"
+    "reviewedAt": "2026-10-06T08:56:12.212Z",
+    "mainSha": "0541a2bcaea9f8a81b48093c1e26484622754fc3"
   }
 }
