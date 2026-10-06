@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-06T09:07:59.085Z",
+  "generatedAt": "2026-10-06T09:09:48.142Z",
   "updatedAt": "2026-10-06T08:21:23Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -15,47 +15,41 @@
       "feature",
       "triage:needs-info",
       "clawsweeper:needs-product-decision",
-      "reporter:jorgecano",
-      "P2"
+      "P2",
+      "reporter:jorgecano"
     ],
     "createdAt": "2026-09-28T08:33:21Z",
     "updatedAt": "2026-10-06T08:21:23Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué matriz final debe aplicarse al ecommerce por destino, servicio, moneda y producto adicional, y cómo cambia el reparto entre recargo al PVP, envío en checkout y envío gratis?",
-  "rationale": "La hoja y el código no resuelven esa política; elegir valores o trasladar tarifas de marketplace podría cambiar el precio final y las promociones sin autorización del negocio.",
+  "question": "¿Qué matriz y política de precios debe aplicar ecommerce a las nuevas tarifas: nuevos importes y reparto por destino, o las tarifas nuevas conservando el reparto y las promociones actuales?",
+  "rationale": "La hoja adjunta da tarifas logísticas, pero no decide cómo convertirlas en precios de producto y de checkout; escoger una alternativa cambia el importe final que paga el cliente.",
   "options": [
     {
-      "title": "Confirmar la matriz de ecommerce",
-      "body": "Definir importes por destino, servicio y productos adicionales, moneda, reparto en el PVP y condiciones de envío gratis antes de implementar.",
+      "title": "Definir matriz ecommerce",
+      "body": "Confirmar importes por destino, moneda y servicio, además del reparto entre PVP y checkout y las condiciones promocionales.",
       "recommended": true
     },
     {
-      "title": "Conservar el reparto actual",
-      "body": "Indicar expresamente qué nuevas tarifas deben aplicarse manteniendo sin cambios los recargos al PVP y las promociones vigentes.",
-      "recommended": false
-    },
-    {
-      "title": "Aplazar el cambio",
-      "body": "Mantener tarifas y reglas actuales hasta que logística y ecommerce acuerden la matriz.",
+      "title": "Conservar política actual",
+      "body": "Indicar expresamente que se actualicen solo los importes logísticos manteniendo el reparto y las promociones ecommerce existentes.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Confirmar la matriz de ecommerce",
-    "body": "Definir importes por destino, servicio y productos adicionales, moneda, reparto en el PVP y condiciones de envío gratis antes de implementar.",
+    "title": "Definir matriz ecommerce",
+    "body": "Confirmar importes por destino, moneda y servicio, además del reparto entre PVP y checkout y las condiciones promocionales.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "jorgecano",
-    "reason": "Es quien aportó la hoja y puede aclarar la interpretación comercial necesaria para completar la decisión.",
-    "confidence": "medium"
+    "person": "HamelynDev",
+    "reason": "Es la señal de persona relacionada con la lógica actual disponible en el historial local, aunque la atribución no confirma propiedad del criterio comercial.",
+    "confidence": "low"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10177.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10177#issuecomment-5866870221",
-    "reviewedAt": "2026-10-06T09:07:59.085Z",
+    "reviewedAt": "2026-10-06T09:09:48.142Z",
     "mainSha": "106c09915a4110c44d9766f7ba8df83ada7c0853"
   }
 }
