@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-05T14:57:06.228Z",
-  "updatedAt": "2026-10-05T14:36:47Z",
+  "generatedAt": "2026-10-06T15:01:05.070Z",
+  "updatedAt": "2026-10-05T15:02:03Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,47 +13,41 @@
       "bug",
       "app:marketplace",
       "reporter:javier",
-      "triage:running",
+      "triage:needs-info",
       "P2"
     ],
     "createdAt": "2026-10-05T14:36:12Z",
-    "updatedAt": "2026-10-05T14:36:47Z"
+    "updatedAt": "2026-10-05T15:02:03Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe extenderse a estos canales una estrategia de doble carril para que las ventas recientes no esperen detrás de lotes B2B, y qué objetivo de latencia y presupuesto de cuota debe cumplir cada uno?",
-  "rationale": "El orden y los límites son configurables en código, pero escoger un SLA o reservar capacidad puede afectar cuotas compartidas y otros procesos; los datos no determinan por sí solos el nivel de riesgo aceptable.",
+  "question": "¿Qué plazo máximo y qué reparto de capacidad entre ventas normales y lotes B2B debe aplicarse en cada canal, manteniendo las cuotas actuales?",
+  "rationale": "Las alternativas cambian quién recibe capacidad limitada y sus garantías de avance; el código y los datos aportados no determinan por sí solos la política adecuada.",
   "options": [
     {
-      "title": "Validar y diseñar por canal",
-      "body": "Acordar objetivos y cuotas, verificar las capacidades de lote y confirmación de cada proveedor y luego pilotar carriles para proteger las ventas recientes.",
+      "title": "Carriles con capacidad reservada",
+      "body": "Reservar por canal capacidad para ventas recientes y otra porción FIFO que garantice el drenaje del lote dentro del plazo acordado.",
       "recommended": true
     },
     {
-      "title": "Mantener los límites actuales",
-      "body": "Aceptar las esperas observadas y limitar el trabajo a medir antigüedad y nuevas cancelaciones hasta disponer de más evidencia operativa.",
-      "recommended": false
-    },
-    {
-      "title": "Ampliar límites directamente",
-      "body": "Elevar los topes por pasada para drenar antes los lotes, asumiendo el riesgo de consumo de cuotas y duración del cron.",
+      "title": "Solo fijar objetivos y alertas",
+      "body": "Mantener temporalmente la selección actual y acordar primero los plazos y umbrales de alerta antes de cambiar el reparto.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Validar y diseñar por canal",
-    "body": "Acordar objetivos y cuotas, verificar las capacidades de lote y confirmación de cada proveedor y luego pilotar carriles para proteger las ventas recientes.",
+    "title": "Carriles con capacidad reservada",
+    "body": "Reservar por canal capacidad para ventas recientes y otra porción FIFO que garantice el drenaje del lote dentro del plazo acordado.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "La conversación de la issue relacionada le atribuye la decisión pendiente sobre capacidad de retirada de MercadoLibre; es la señal de ownership más directa disponible.",
-    "confidence": "medium"
+    "reason": "Es un candidato de encaminamiento por su trabajo reciente en el flujo de marketplaces; el comentario de triage también dirige la definición al equipo de Marketplaces.",
+    "confidence": "low"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10478.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10478#issuecomment-5997064518",
-    "reviewedAt": "2026-10-05T14:57:06.228Z",
-    "mainSha": "b753bf2b690ad8b09bd87e164180e9e8c8143bef"
+    "reviewedAt": "2026-10-06T15:01:05.070Z",
+    "mainSha": "9c76bbeffd799a99a34a461135a584dfb14c08e3"
   }
 }
