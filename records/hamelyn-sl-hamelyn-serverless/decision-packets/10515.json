@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-06T17:59:27.383Z",
+  "updatedAt": "2026-10-06T11:02:38Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10515,
+    "title": "fix: pick the urgent oldest order as consolidation representative",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10515",
+    "state": "open",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-10-06T10:07:06Z",
+    "updatedAt": "2026-10-06T11:02:38Z",
+    "headSha": "84567512fe75065ebffd5d3902323704dd0692f7"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "Para grupos consolidados con prioridades mixtas, ¿debe mantenerse el representante actual y calcularse el carrier con la prioridad máxima del grupo, o debe elegirse como representante el pedido urgente más antiguo?",
+  "rationale": "Ambas alternativas solucionan el carrier incorrecto, pero la segunda también modifica qué pedido ocupa el hueco de picking y representa el envío; el triage previo recomendó preservar ese representante y no hay confirmación humana explícita de cambiarlo.",
+  "options": [
+    {
+      "title": "Mantener el representante actual",
+      "body": "Calcular el carrier con la prioridad máxima del grupo sin cambiar qué pedido representa operativamente el envío.",
+      "recommended": true
+    },
+    {
+      "title": "Elegir el urgente más antiguo",
+      "body": "Aceptar el cambio de representante que propone este PR y mantener esa regla documentada y probada.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mantener el representante actual",
+    "body": "Calcular el carrier con la prioridad máxima del grupo sin cambiar qué pedido representa operativamente el envío.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "Es el revisor que aprobó recientemente el flujo y la persona con la señal más directa sobre la validación del comportamiento propuesto.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10515.md",
+    "reviewedAt": "2026-10-06T17:59:27.383Z",
+    "mainSha": "9c76bbeffd799a99a34a461135a584dfb14c08e3"
+  }
+}
