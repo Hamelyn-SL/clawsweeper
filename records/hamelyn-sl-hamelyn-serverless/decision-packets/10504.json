@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-06T09:01:45.188Z",
+  "updatedAt": "2026-10-06T08:57:51Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10504,
+    "title": "Strip gutemberg down to what the auto packing admin uses",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10504",
+    "state": "open",
+    "labels": [
+      "app:infrastructure",
+      "triage:running",
+      "reporter:alejandrodiaz",
+      "P3"
+    ],
+    "createdAt": "2026-10-06T08:45:07Z",
+    "updatedAt": "2026-10-06T08:57:51Z"
+  },
+  "lane": "product_direction",
+  "priority": "P3",
+  "question": "¿Se confirma que el agente de impresión del puesto puede dejar de ofrecer el panel y las rutas retiradas, tras verificar que no existen consumidores fuera del admin y que el bundle permite volver atrás?",
+  "rationale": "La poda elimina capacidades ya desplegadas fuera del contrato visible en el monorepo; la ausencia de llamadas internas no determina por sí sola si el puesto u otros consumidores dependen de ellas.",
+  "options": [
+    {
+      "title": "Aprobar la retirada tras validación del puesto",
+      "body": "Confirmar que no hay consumidores externos y autorizar el cambio después de validar el contrato y la reversión con el operador.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener las rutas hasta inventariar consumidores",
+      "body": "Aplazar la retirada de las capacidades no usadas internamente hasta comprobar dependencias fuera del repositorio.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar la retirada tras validación del puesto",
+    "body": "Confirmar que no hay consumidores externos y autorizar el cambio después de validar el contrato y la reversión con el operador.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Es el autor y asignado de la propuesta y el contribuidor más reciente del código de Gutemberg en el historial local.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10504.md",
+    "reviewedAt": "2026-10-06T09:01:45.188Z",
+    "mainSha": "335a1042b7f594422b3ed16d4ce21b6ad9aeb610"
+  }
+}

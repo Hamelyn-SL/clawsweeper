@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-01T17:23:44.052Z",
-  "updatedAt": "2026-10-01T17:02:33Z",
+  "generatedAt": "2026-10-06T09:02:40.743Z",
+  "updatedAt": "2026-10-06T08:48:33Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,43 +14,42 @@
       "app:supply",
       "feature",
       "triage:needs-info",
-      "reporter:daniellopez",
+      "clawsweeper:needs-product-decision",
       "P2",
-      "clawsweeper:needs-product-decision"
+      "reporter:daniellopez"
     ],
     "createdAt": "2026-10-01T16:55:31Z",
-    "updatedAt": "2026-10-01T17:02:33Z"
+    "updatedAt": "2026-10-06T08:48:33Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe «Revisor» mostrar únicamente los revisores que constan ahora en los artículos del lote, o también a quienes revisaron antes aunque otra persona cambiara después esos artículos?",
-  "rationale": "La elección cambia tanto el significado visible de la columna como el alcance de persistencia: reviewedBy es mutable y no garantiza un historial completo.",
+  "question": "¿Debe «Revisor» listar solo las atribuciones actuales de los artículos del lote, o conservar y mostrar también a quienes revisaron antes de que otra persona cambiara esos artículos?",
+  "rationale": "El dato actual puede sobrescribirse; presentar la lista actual como historial completo sería inexacto y conservar el historial requiere ampliar qué se registra y consulta.",
   "options": [
     {
-      "title": "Mostrar revisores actuales",
-      "body": "Agregar los valores únicos de reviewedBy por artículo y dejar fuera participantes que ya no constan en esos registros.",
+      "title": "Mostrar atribuciones actuales",
+      "body": "Listar los valores únicos de `reviewedBy` presentes ahora en los artículos, aceptando que no incluye participantes cuya atribución ya cambió.",
       "recommended": true
     },
     {
-      "title": "Conservar el historial completo",
-      "body": "Definir y persistir el registro de todos los participantes antes de presentar la columna como historial completo.",
+      "title": "Conservar historial completo",
+      "body": "Definir y persistir cada participación de revisión antes de mostrar una columna que prometa representar el historial completo.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mostrar revisores actuales",
-    "body": "Agregar los valores únicos de reviewedBy por artículo y dejar fuera participantes que ya no constan en esos registros.",
+    "title": "Mostrar atribuciones actuales",
+    "body": "Listar los valores únicos de `reviewedBy` presentes ahora en los artículos, aceptando que no incluye participantes cuya atribución ya cambió.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "banosdavidhamelyn",
-    "reason": "El blame disponible del bloque actual de la columna Revisor apunta a esta persona; la confianza es limitada por el historial remoto inaccesible.",
-    "confidence": "low"
+    "reason": "Está asignado a la issue y su historial reciente incluye trabajo en las superficies afectadas.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10352.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10352#issuecomment-5936772369",
-    "reviewedAt": "2026-10-01T17:23:44.052Z",
-    "mainSha": "6994e00f2013c5e6e36148c27632ebdf062e9b46"
+    "reviewedAt": "2026-10-06T09:02:40.743Z",
+    "mainSha": "335a1042b7f594422b3ed16d4ce21b6ad9aeb610"
   }
 }
