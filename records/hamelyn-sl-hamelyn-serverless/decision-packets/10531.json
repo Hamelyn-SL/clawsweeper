@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-06T14:01:45.946Z",
+  "updatedAt": "2026-10-06T13:57:53Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10531,
+    "title": "Communication Center: enviar por la cola los correos de los workflows de GitHub Actions",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10531",
+    "state": "open",
+    "labels": [
+      "app:infrastructure",
+      "feature",
+      "triage:running",
+      "P2",
+      "reporter:danielmenchen-hamelyn"
+    ],
+    "createdAt": "2026-10-06T13:54:59Z",
+    "updatedAt": "2026-10-06T13:57:53Z"
+  },
+  "lane": "manual_review",
+  "priority": "P2",
+  "question": "¿Está listo el ingreso y el worker de producción para que estos cinco workflows publiquen sus correos en la cola con el alcance y los secretos indicados?",
+  "rationale": "El checkout confirma el mecanismo, pero no puede verificar la configuración operativa de producción ni si los secretos creados corresponden al alcance previsto; activar emisores sin esa comprobación puede afectar el envío de correo.",
+  "options": [
+    {
+      "title": "Validar y habilitar los cinco workflows",
+      "body": "Confirmar la preparación de ingreso y worker y que los secretos tienen el alcance adecuado antes de configurar los pasos indicados.",
+      "recommended": true
+    },
+    {
+      "title": "Habilitar por etapas",
+      "body": "Empezar por uno o varios workflows, verificar los registros de Communication Center y ampliar después al resto.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Validar y habilitar los cinco workflows",
+    "body": "Confirmar la preparación de ingreso y worker y que los secretos tienen el alcance adecuado antes de configurar los pasos indicados.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Daniel",
+    "reason": "Su historial reciente cubre la integración de emisores y el worker de Communication Center.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10531.md",
+    "reviewedAt": "2026-10-06T14:01:45.946Z",
+    "mainSha": "9c76bbeffd799a99a34a461135a584dfb14c08e3"
+  }
+}
