@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-06T09:01:36.515Z",
+  "generatedAt": "2026-10-06T09:08:51.678Z",
   "updatedAt": "2026-10-05T09:15:30Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -14,42 +14,41 @@
       "feature",
       "reporter:miguel",
       "triage:done",
-      "clawsweeper:needs-product-decision",
-      "P1"
+      "P1",
+      "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-10-05T08:06:18Z",
     "updatedAt": "2026-10-05T09:15:30Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Se aprueba el bloqueo selectivo de cupones mediante Stripe Radar y quién será responsable de mantener la lista de huellas vetadas?",
-  "rationale": "La implementación requiere una decisión operativa sobre activar una regla externa y asignar la gestión continuada de las tarjetas bloqueadas.",
+  "question": "¿Se aprueba el bloqueo selectivo de pagos con cupón mediante Stripe Radar y quién será responsable de mantener y validar la lista de huellas vetadas?",
+  "rationale": "La implementación depende de una regla y una lista administradas fuera del repositorio; el código por sí solo no activa ni mantiene el control en Stripe.",
   "options": [
     {
-      "title": "Aprobar Radar con responsable",
-      "body": "Acordar quién mantiene la lista y validar la regla con pagos de prueba o la vista previa de Stripe antes de activarla.",
+      "title": "Aprobar con responsable y validación",
+      "body": "Acordar quién mantiene la lista y validar en Radar los pagos con y sin cupón antes de activar la regla.",
       "recommended": true
     },
     {
-      "title": "Limitar la mitigación al domicilio",
-      "body": "No desplegar el bloqueo por tarjeta y continuar únicamente con la mitigación existente por dirección.",
+      "title": "No activar el bloqueo por tarjeta",
+      "body": "Mantener únicamente la mitigación por dirección y no desplegar la regla basada en huella de tarjeta.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar Radar con responsable",
-    "body": "Acordar quién mantiene la lista y validar la regla con pagos de prueba o la vista previa de Stripe antes de activarla.",
+    "title": "Aprobar con responsable y validación",
+    "body": "Acordar quién mantiene la lista y validar en Radar los pagos con y sin cupón antes de activar la regla.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Está asignado a la issue y es autor de la PR que contiene la implementación propuesta.",
-    "confidence": "high"
+    "reason": "Es la persona asignada y autora de la PR vinculada; no hay evidencia suficiente para atribuirle formalmente la titularidad operativa de Stripe.",
+    "confidence": "low"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10448.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10448#issuecomment-5990642151",
-    "reviewedAt": "2026-10-06T09:01:36.515Z",
-    "mainSha": "335a1042b7f594422b3ed16d4ce21b6ad9aeb610"
+    "reviewedAt": "2026-10-06T09:08:51.678Z",
+    "mainSha": "106c09915a4110c44d9766f7ba8df83ada7c0853"
   }
 }

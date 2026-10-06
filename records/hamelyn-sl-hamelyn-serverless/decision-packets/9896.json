@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-06T09:02:14.486Z",
+  "generatedAt": "2026-10-06T09:06:47.506Z",
   "updatedAt": "2026-10-06T08:21:26Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -15,42 +15,41 @@
       "feature",
       "triage:needs-info",
       "clawsweeper:needs-product-decision",
-      "reporter:daniellopez",
-      "P2"
+      "P2",
+      "reporter:daniellopez"
     ],
     "createdAt": "2026-09-22T06:52:46Z",
     "updatedAt": "2026-10-06T08:21:26Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se quiere automatizar también la generación y descarga del PDF en el portal de Correos y, si es así, qué portal, producto y opciones usa Operaciones?",
-  "rationale": "La petición abarca un paso externo que hoy no tiene una integración documentada; sin confirmar el flujo operativo no se puede escoger una vía de integración segura ni delimitar el alcance.",
+  "question": "¿Se quiere automatizar también la generación y recuperación del PDF en el portal Postlibri, o mantener ese paso manual y limitar la mejora a la carga y composición de etiquetas existente?",
+  "rationale": "La documentación confirma que Postlibri no usa una API de creación de etiquetas en el flujo actual; automatizar el portal implica elegir una operativa y un tratamiento de acceso que el repositorio no puede decidir por sí solo.",
   "options": [
     {
-      "title": "Automatizar el flujo completo",
-      "body": "Operaciones confirma el portal y sus opciones para evaluar y diseñar la generación y obtención automática del PDF.",
+      "title": "Aclarar automatización completa",
+      "body": "Operaciones confirma el portal y las opciones utilizadas, y el equipo evalúa si hay un mecanismo de acceso automatizable aceptable.",
       "recommended": true
     },
     {
       "title": "Mantener el paso externo",
-      "body": "Se conserva la generación manual del PDF y cualquier mejora se limita a la carga y composición de etiquetas que ya existen.",
+      "body": "Se conserva la generación manual del PDF y se concreta una mejora acotada a la carga o composición posterior.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Automatizar el flujo completo",
-    "body": "Operaciones confirma el portal y sus opciones para evaluar y diseñar la generación y obtención automática del PDF.",
+    "title": "Aclarar automatización completa",
+    "body": "Operaciones confirma el portal y las opciones utilizadas, y el equipo evalúa si hay un mecanismo de acceso automatizable aceptable.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Su historial incluye una contribución fusionada a las etiquetas Postlibri; es la conexión de implementación más directa disponible, aunque la decisión operativa corresponde al equipo de Operaciones.",
-    "confidence": "low"
+    "reason": "La revisión previa lo identificó como candidato para coordinar la decisión del flujo de transportistas; la confirmación operativa debe venir de Operaciones.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9896.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9896#issuecomment-5793744259",
-    "reviewedAt": "2026-10-06T09:02:14.486Z",
-    "mainSha": "335a1042b7f594422b3ed16d4ce21b6ad9aeb610"
+    "reviewedAt": "2026-10-06T09:06:47.506Z",
+    "mainSha": "106c09915a4110c44d9766f7ba8df83ada7c0853"
   }
 }

@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-06T09:06:11.865Z",
+  "updatedAt": "2026-10-06T08:54:00Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10503,
+    "title": "feat: exclude mercado libre from skypod single-item picking",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10503",
+    "state": "open",
+    "labels": [
+      "size/M"
+    ],
+    "createdAt": "2026-10-06T08:44:37Z",
+    "updatedAt": "2026-10-06T08:54:00Z",
+    "headSha": "2a5c4cf65ad2f3d468dbcbfdafd384a27e9a2060"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe el modo de monobultos excluir todos los pedidos de Mercado Libre o seleccionar los artículos de los contenedores P e I con independencia del marketplace?",
+  "rationale": "La issue vinculada expresa un criterio de contenedor, mientras que el PR implementa una exclusión por provider; elegir entre ambos cambia qué pedidos pueden entrar en la tanda.",
+  "options": [
+    {
+      "title": "Excluir todo Mercado Libre",
+      "body": "Confirmar el criterio del PR y conservar la selección limitada a otros marketplaces.",
+      "recommended": true
+    },
+    {
+      "title": "Seleccionar por contenedor",
+      "body": "Ajustar el selector para incluir o excluir pedidos según pertenezcan a los contenedores P e I, no según su marketplace.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Excluir todo Mercado Libre",
+    "body": "Confirmar el criterio del PR y conservar la selección limitada a otros marketplaces.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Daniel",
+    "reason": "Aparece en el historial reciente del repositorio de pedidos; no hay evidencia local suficiente para identificar un responsable de producto con más precisión.",
+    "confidence": "low"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10503.md",
+    "reviewedAt": "2026-10-06T09:06:11.865Z",
+    "mainSha": "106c09915a4110c44d9766f7ba8df83ada7c0853"
+  }
+}
