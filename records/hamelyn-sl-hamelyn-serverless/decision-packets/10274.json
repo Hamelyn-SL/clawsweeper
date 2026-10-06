@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-06T07:08:59.706Z",
-  "updatedAt": "2026-10-05T13:27:53Z",
+  "generatedAt": "2026-10-06T07:15:24.020Z",
+  "updatedAt": "2026-10-06T07:10:15Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -19,43 +19,37 @@
       "P2"
     ],
     "createdAt": "2026-09-30T10:13:08Z",
-    "updatedAt": "2026-10-05T13:27:53Z"
+    "updatedAt": "2026-10-06T07:10:15Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe el PR vinculado limitar el veto a una coincidencia normalizada de calle y número exterior antes de integrarse?",
-  "rationale": "La revisión pidió ese límite por riesgo de falsos positivos; el autor reconoce el riesgo, pero propone decidir si lo corrige en este PR o lo deja para un seguimiento cuando haya más domicilios vetados.",
+  "question": "¿Debe el veto exigir que coincidan la calle normalizada y el número exterior, sin considerar coincidencias en el interior?",
+  "rationale": "El criterio amplio del PR puede bloquear cupones en domicilios distintos. La dirección deseada del bloqueo no se puede inferir de los datos disponibles sin aceptar ese impacto en otros clientes.",
   "options": [
     {
-      "title": "Acotar el veto en el PR",
-      "body": "Exigir coincidencia de calle normalizada y número exterior, y añadir pruebas negativas para otras calles e interiores coincidentes.",
+      "title": "Exigir calle y número exterior",
+      "body": "Acotar el veto a la calle normalizada y al número exterior, añadiendo pruebas negativas para otra calle e interior coincidente.",
       "recommended": true
     },
     {
-      "title": "Mantener la regla actual",
-      "body": "Aceptar expresamente el alcance actual, con país, código postal y número, como política para esta entrada vetada.",
-      "recommended": false
-    },
-    {
-      "title": "Retirar el veto por domicilio",
-      "body": "No integrar el bloqueo por dirección y gestionar este patrón mediante otra política de promociones.",
+      "title": "Mantener el criterio amplio",
+      "body": "Aceptar coincidencias por país, código postal y número en calle o interior, asumiendo el riesgo de bloquear domicilios distintos.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Acotar el veto en el PR",
-    "body": "Exigir coincidencia de calle normalizada y número exterior, y añadir pruebas negativas para otras calles e interiores coincidentes.",
+    "title": "Exigir calle y número exterior",
+    "body": "Acotar el veto a la calle normalizada y al número exterior, añadiendo pruebas negativas para otra calle e interior coincidente.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Es responsable del PR vinculado y recibió la revisión que dejó pendiente este criterio.",
-    "confidence": "high"
+    "reason": "Está relacionado con la ruta de checkout y propuso el PR que implementa este veto.",
+    "confidence": "low"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10274.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10274#issuecomment-5909697802",
-    "reviewedAt": "2026-10-06T07:08:59.706Z",
+    "reviewedAt": "2026-10-06T07:15:24.020Z",
     "mainSha": "4f6a9256d7d05c9a53f380cb617263060fa7d670"
   }
 }
