@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-06T09:52:09.925Z",
+  "updatedAt": "2026-10-06T09:31:47Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10507,
+    "title": "Guardar el código de barras de las etiquetas Poslibri y la hora de impresión en el pedido",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10507",
+    "state": "open",
+    "labels": [
+      "source:admin-panel",
+      "app:supply",
+      "feature",
+      "triage:needs-info",
+      "P1",
+      "reporter:daniellopez"
+    ],
+    "createdAt": "2026-10-06T09:22:18Z",
+    "updatedAt": "2026-10-06T09:31:47Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe `labelPrintedDate` reflejar el primer avance de packing que asigna `reviewer`, o solo una impresión confirmada, adaptando también el flujo individual para confirmarla?",
+  "rationale": "El avance de packing y la confirmación de impresión son eventos distintos; el flujo automático recibe respuesta de Gutemberg, mientras el individual solo abre el PDF. La elección cambia el significado persistido de la fecha y cómo obtenerla en ambos flujos.",
+  "options": [
+    {
+      "title": "Usar avance de packing",
+      "body": "Guardar la primera fecha del evento que asigna `reviewer`, aceptando que representa el avance operativo y no prueba una impresión física.",
+      "recommended": false
+    },
+    {
+      "title": "Exigir confirmación de impresión",
+      "body": "Guardar la fecha solo tras confirmar la impresión y adaptar el flujo individual para que informe ese resultado.",
+      "recommended": true
+    }
+  ],
+  "recommendation": {
+    "title": "Exigir confirmación de impresión",
+    "body": "Guardar la fecha solo tras confirmar la impresión y adaptar el flujo individual para que informe ese resultado.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "HamelynDev",
+    "reason": "Figura como autor de la solicitud y el historial local le atribuye el parser POSTLIBRI; puede aclarar el evento operativo esperado.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10507.md",
+    "reviewedAt": "2026-10-06T09:52:09.925Z",
+    "mainSha": "ab727b7695cd6f5ea2fe96c121cfa30cda3e67b5"
+  }
+}
