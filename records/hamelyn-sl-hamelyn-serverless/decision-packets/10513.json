@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-06T09:56:53.644Z",
+  "updatedAt": "2026-10-06T09:54:02Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10513,
+    "title": "feat: add review attribution columns to buy orders and stocks",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10513",
+    "state": "open",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-10-06T09:48:43Z",
+    "updatedAt": "2026-10-06T09:54:02Z",
+    "headSha": "b006f28fb7c4d444af33dac6a62058fb018d3dcc"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe este cambio incluir también la columna «Tipo de revisión» en pedidos y stocks, además de las atribuciones solicitadas en la petición vinculada?",
+  "rationale": "La descripción de la petición vinculada solicita identificar quién revisó, quién cerró y quién recepcionó; el PR añade además una nueva vista derivada del tipo de sesión, por lo que el alcance de producto no queda confirmado por esa descripción.",
+  "options": [
+    {
+      "title": "Incluir el tipo de revisión",
+      "body": "Conservar la columna en pedidos y stocks como parte de este cambio, usando la sesión existente para calcularla.",
+      "recommended": true
+    },
+    {
+      "title": "Limitar el alcance a atribuciones",
+      "body": "Retirar la columna de tipo de revisión y dejar el cambio centrado en quién revisó, cerró y recepcionó.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Incluir el tipo de revisión",
+    "body": "Conservar la columna en pedidos y stocks como parte de este cambio, usando la sesión existente para calcularla.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "Es el candidato disponible con actividad reciente en la ruta de pedidos modificada; la decisión de producto debe confirmarla el responsable del área.",
+    "confidence": "low"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10513.md",
+    "reviewedAt": "2026-10-06T09:56:53.644Z",
+    "mainSha": "ab727b7695cd6f5ea2fe96c121cfa30cda3e67b5"
+  }
+}
