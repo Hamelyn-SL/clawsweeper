@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-05T08:12:21.521Z",
-  "updatedAt": "2026-10-05T08:06:32Z",
+  "generatedAt": "2026-10-06T09:01:36.515Z",
+  "updatedAt": "2026-10-05T09:15:30Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,43 +13,42 @@
       "app:ecommerce",
       "feature",
       "reporter:miguel",
-      "triage:queued",
+      "triage:done",
       "P1",
       "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-10-05T08:06:18Z",
-    "updatedAt": "2026-10-05T08:06:32Z"
+    "updatedAt": "2026-10-05T09:15:30Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe adoptarse una lista operativa de huellas de tarjeta para impedir el uso de cupones mediante Stripe Radar, y quién será responsable de mantenerla?",
-  "rationale": "El cambio introduce una nueva política antifraude y una lista operativa en Radar; el código puede transmitir la señal del cupón, pero no determina quién añade o retira huellas ni el criterio para hacerlo.",
+  "question": "¿Se aprueba el bloqueo selectivo de cupones mediante Stripe Radar y quién será responsable de mantener la lista de huellas vetadas?",
+  "rationale": "La implementación requiere una decisión operativa sobre activar una regla externa y asignar la gestión continuada de las tarjetas bloqueadas.",
   "options": [
     {
-      "title": "Adoptar el control en Radar",
-      "body": "Definir responsable y proceso de mantenimiento de la lista, y después implementar la señal de cupón en creación y reutilización de PaymentIntents.",
+      "title": "Aprobar Radar con responsable",
+      "body": "Acordar quién mantiene la lista y validar la regla con pagos de prueba o la vista previa de Stripe antes de activarla.",
       "recommended": true
     },
     {
-      "title": "Limitar el alcance al bloqueo por dirección",
-      "body": "Dejar esta señal de tarjeta fuera del flujo actual y continuar únicamente con la mitigación por domicilio ya planteada en la issue relacionada.",
+      "title": "Limitar la mitigación al domicilio",
+      "body": "No desplegar el bloqueo por tarjeta y continuar únicamente con la mitigación existente por dirección.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Adoptar el control en Radar",
-    "body": "Definir responsable y proceso de mantenimiento de la lista, y después implementar la señal de cupón en creación y reutilización de PaymentIntents.",
+    "title": "Aprobar Radar con responsable",
+    "body": "Acordar quién mantiene la lista y validar la regla con pagos de prueba o la vista previa de Stripe antes de activarla.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "Miguel Angel Hernández Perdomo",
-    "reason": "Es el contribuidor histórico identificado para la ruta de PaymentIntents; la decisión de política debería confirmarla la persona responsable del fraude y de la operación de Radar.",
-    "confidence": "low"
+    "person": "MiguelHamelyn",
+    "reason": "Está asignado a la issue y es autor de la PR que contiene la implementación propuesta.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10448.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10448#issuecomment-5990642151",
-    "reviewedAt": "2026-10-05T08:12:21.521Z",
-    "mainSha": "872e463dbc105d17b2afa8380e5a20227f91e5db"
+    "reviewedAt": "2026-10-06T09:01:36.515Z",
+    "mainSha": "335a1042b7f594422b3ed16d4ce21b6ad9aeb610"
   }
 }

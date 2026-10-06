@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-06T09:04:21.591Z",
+  "updatedAt": "2026-10-06T08:52:57Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10506,
+    "title": "refactor: strip gutemberg down to what auto packing uses",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10506",
+    "state": "open",
+    "labels": [
+      "size/XXL"
+    ],
+    "createdAt": "2026-10-06T08:52:45Z",
+    "updatedAt": "2026-10-06T08:52:57Z",
+    "headSha": "671796545c623489c76e57382ee364ffff682bba"
+  },
+  "lane": "product_direction",
+  "priority": "P3",
+  "question": "¿Se confirma que el puesto debe dejar de ofrecer el panel local y las rutas de configuración, gestión de cola y diagnóstico eliminadas por esta PR?",
+  "rationale": "La propuesta elimina capacidades operativas existentes y las sustituye por cambios directos en `config.json`; el uso observado no demuestra por sí solo que no sean necesarias para recuperación o mantenimiento.",
+  "options": [
+    {
+      "title": "Confirmar el recorte",
+      "body": "Aceptar el servicio sin panel ni controles eliminados, condicionado a validar impresión y vaciado SNMP en el puesto antes de instalarlo.",
+      "recommended": true
+    },
+    {
+      "title": "Conservar alguna vía operativa",
+      "body": "Ajustar la reducción para mantener las herramientas de configuración o diagnóstico que el equipo necesite en producción.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Confirmar el recorte",
+    "body": "Aceptar el servicio sin panel ni controles eliminados, condicionado a validar impresión y vaciado SNMP en el puesto antes de instalarlo.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Sus commits previos introdujeron y mantuvieron la integración reciente de Gutemberg con Auto Packing.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10506.md",
+    "reviewedAt": "2026-10-06T09:04:21.591Z",
+    "mainSha": "335a1042b7f594422b3ed16d4ce21b6ad9aeb610"
+  }
+}
