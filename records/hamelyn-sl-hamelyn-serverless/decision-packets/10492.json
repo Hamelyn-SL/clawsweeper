@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-06T06:00:26.394Z",
+  "updatedAt": "2026-10-06T05:57:50Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10492,
+    "title": "Consolidation: urgent orders ship with the normal carrier when the representative is NORMAL",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10492",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:infrastructure",
+      "reporter:marcos",
+      "triage:running",
+      "P2"
+    ],
+    "createdAt": "2026-10-06T05:55:44Z",
+    "updatedAt": "2026-10-06T05:57:50Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe un envío consolidado seleccionar el transportista con la prioridad máxima del grupo, independientemente del representante, o debe elegirse como representante el pedido de mayor prioridad?",
+  "rationale": "La documentación vigente propaga el transportista del representante y no resuelve grupos mixtos; las dos alternativas cambian cómo se obtiene el transportista y qué papel define el representante.",
+  "options": [
+    {
+      "title": "Usar la prioridad máxima del grupo",
+      "body": "Mantener el representante operativo actual y calcular el transportista con la prioridad más alta entre los pedidos consolidados.",
+      "recommended": true
+    },
+    {
+      "title": "Elegir representante por prioridad",
+      "body": "Ordenar los pedidos del grupo por prioridad y hacer que el representante de mayor prioridad determine el transportista.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Usar la prioridad máxima del grupo",
+    "body": "Mantener el representante operativo actual y calcular el transportista con la prioridad más alta entre los pedidos consolidados.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Miguel Angel Hernández Perdomo",
+    "reason": "Introdujo el flujo de consolidación y propagación que origina la decisión de negocio.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10492.md",
+    "reviewedAt": "2026-10-06T06:00:26.394Z",
+    "mainSha": "1b4f02ec14e3419c1cc1d8752e90f141ae8b276e"
+  }
+}
