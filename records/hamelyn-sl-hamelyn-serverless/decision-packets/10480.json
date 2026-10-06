@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-05T15:02:34.973Z",
-  "updatedAt": "2026-10-05T14:41:17Z",
+  "generatedAt": "2026-10-06T15:25:27.143Z",
+  "updatedAt": "2026-10-05T15:20:34Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,43 +13,47 @@
       "bug",
       "app:marketplace",
       "reporter:javier",
-      "triage:queued",
-      "P2",
-      "clawsweeper:needs-product-decision"
+      "triage:done",
+      "clawsweeper:needs-product-decision",
+      "P2"
     ],
     "createdAt": "2026-10-05T14:39:36Z",
-    "updatedAt": "2026-10-05T14:41:17Z"
+    "updatedAt": "2026-10-05T15:20:34Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué política debe seguir una retirada cuando `getOffer` continúa devolviendo HTTP 500 [25001]: probar una consulta alternativa, o agotar un límite de reintentos y dejar el caso en revisión manual?",
-  "rationale": "La consulta alternativa, el umbral de agotamiento y el estado operativo final no están definidos por el comportamiento actual; la decisión debe equilibrar la seguridad de no dar por retirada una oferta aún publicada y evitar reintentos indefinidos.",
+  "question": "Si eBay acepta el POST pero `getOffer` sigue fallando con [25001], ¿qué resultado debe aplicarse después de una lectura alternativa por SKU que tampoco permita confirmar la retirada?",
+  "rationale": "Una salida terminal puede ocultar un anuncio todavía publicado, mientras que mantener reintentos ilimitados conserva el estado incierto y la carga operativa; la política afecta al estado remoto y al tratamiento del inventario vendido.",
   "options": [
     {
-      "title": "Reconciliar y escalar al agotar",
-      "body": "Probar una lectura alternativa compatible con eBay y, si tampoco confirma el estado, detener el ciclo automático en un estado visible de revisión manual.",
+      "title": "Lectura alternativa y escalado manual",
+      "body": "Consultar la oferta por SKU con validación de identidad y, si no se puede confirmar, marcar el caso para revisión manual sin darlo por retirado.",
       "recommended": true
     },
     {
-      "title": "Mantener reintentos",
-      "body": "Conservar el backoff transitorio hasta disponer de evidencia de eBay que permita definir una salida terminal segura.",
+      "title": "Mantener reintentos acotados",
+      "body": "Definir un número o ventana máxima de intentos y una cola de revisión que preserve el estado incierto al agotarlos.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener reintentos indefinidos",
+      "body": "Conservar el comportamiento actual y posponer cualquier escalado terminal hasta disponer de otra fuente fiable para verificar el estado.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Reconciliar y escalar al agotar",
-    "body": "Probar una lectura alternativa compatible con eBay y, si tampoco confirma el estado, detener el ciclo automático en un estado visible de revisión manual.",
+    "title": "Lectura alternativa y escalado manual",
+    "body": "Consultar la oferta por SKU con validación de identidad y, si no se puede confirmar, marcar el caso para revisión manual sin darlo por retirado.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Introdujo la reconciliación de retirada en eBay y es el candidato más directamente conectado con la decisión sobre cómo preservar esa confirmación.",
-    "confidence": "medium"
+    "reason": "Su historial cubre la introducción de la reconciliación de retiradas eBay, el punto donde debe definirse el comportamiento final.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10480.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10480#issuecomment-5997159951",
-    "reviewedAt": "2026-10-05T15:02:34.973Z",
-    "mainSha": "639ba9a79a129b1f1b78635c757c3cae6aee1c8f"
+    "reviewedAt": "2026-10-06T15:25:27.143Z",
+    "mainSha": "9c76bbeffd799a99a34a461135a584dfb14c08e3"
   }
 }
