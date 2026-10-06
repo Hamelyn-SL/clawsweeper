@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-14T11:24:36.488Z",
-  "updatedAt": "2026-09-14T11:14:33Z",
+  "generatedAt": "2026-10-06T11:46:45.040Z",
+  "updatedAt": "2026-10-06T11:42:51Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,48 +12,42 @@
     "labels": [
       "bug",
       "app:marketplace",
-      "triage:done",
+      "triage:running",
       "clawsweeper:needs-product-decision",
       "P2"
     ],
     "createdAt": "2026-09-11T10:19:54Z",
-    "updatedAt": "2026-09-14T11:14:33Z"
+    "updatedAt": "2026-10-06T11:42:51Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe persistirse `SHIPPED` tras `PackageToUpdateNotFound` únicamente cuando `getOrder` confirme ese mismo pedido como enviado, dejando el backlog fuera del flujo en línea?",
-  "rationale": "La elección determina la semántica persistida de un rechazo ambiguo de Amazon y el límite entre recuperación automática y operación histórica.",
+  "question": "¿Debe implementarse la verificación remota acotada ante `PackageToUpdateNotFound` para marcar `SHIPPED` solo tras confirmar ese estado en el mismo pedido, dejando el backlog y las alertas como trabajo separado?",
+  "rationale": "El comportamiento cambia cómo se persiste el estado de envío ante un rechazo de Amazon, y la propia issue exige confirmar que el pedido remoto está enviado antes de considerar correcto el espejo.",
   "options": [
     {
-      "title": "Verificación remota acotada",
-      "body": "Consultar Amazon solo para la firma exacta y persistir `SHIPPED` únicamente si el mismo pedido devuelve ese estado; reconciliar el backlog por separado.",
+      "title": "Aprobar verificación acotada",
+      "body": "Consultar Amazon solo tras la firma exacta del rechazo y conservar `SYNC_ERROR` ante cualquier estado no verificable.",
       "recommended": true
     },
     {
-      "title": "Mantener el error terminal",
-      "body": "Conservar todos los casos como `SYNC_ERROR` hasta disponer de una operación manual o una política de reconciliación más amplia.",
-      "recommended": false
-    },
-    {
-      "title": "Crear estado específico",
-      "body": "Introducir un estado de envío previamente confirmado si los informes necesitan diferenciarlo de `SHIPPED` y de un fallo real.",
+      "title": "Mantener fallo terminal sin consulta",
+      "body": "Conservar el comportamiento actual y priorizar una reconciliación operativa independiente del estado remoto.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Verificación remota acotada",
-    "body": "Consultar Amazon solo para la firma exacta y persistir `SHIPPED` únicamente si el mismo pedido devuelve ese estado; reconciliar el backlog por separado.",
+    "title": "Aprobar verificación acotada",
+    "body": "Consultar Amazon solo tras la firma exacta del rechazo y conservar `SYNC_ERROR` ante cualquier estado no verificable.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "Integró el cambio que estableció la semántica terminal actual en los recoveries de envío.",
-    "confidence": "high"
+    "person": "JavierHamelyn",
+    "reason": "Introdujo y documentó el flujo Amazon de confirmación y el problema relacionado.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9448.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9448#issuecomment-5644977566",
-    "reviewedAt": "2026-09-14T11:24:36.488Z",
-    "mainSha": "31cd3d47473a303b1906da1fc19dd5219d052d49"
+    "reviewedAt": "2026-10-06T11:46:45.040Z",
+    "mainSha": "9c76bbeffd799a99a34a461135a584dfb14c08e3"
   }
 }
