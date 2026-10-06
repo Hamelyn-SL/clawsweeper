@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-19T09:27:07.087Z",
-  "updatedAt": "2026-09-17T08:22:05Z",
+  "generatedAt": "2026-10-06T10:06:14.881Z",
+  "updatedAt": "2026-10-06T09:55:27Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,43 +13,47 @@
       "bug",
       "app:infrastructure",
       "reporter:javier",
-      "triage:needs-info",
+      "triage:queued",
       "clawsweeper:needs-product-decision",
       "P2"
     ],
     "createdAt": "2026-08-25T11:13:59Z",
-    "updatedAt": "2026-09-17T08:22:05Z"
+    "updatedAt": "2026-10-06T09:55:27Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿La cohorte histórica pendiente debe exponerse solo para revisión manual o debe habilitarse un reencolado automático tras una comprobación física de cada cubeta?",
-  "rationale": "El endpoint existente encola BIN IN al consultar resultados, mientras que el estado físico de las cubetas no puede deducirse con seguridad desde Mongo ni desde el flujo de cola.",
+  "question": "¿Debe la cohorte antigua mostrarse únicamente para revisión manual, o se autoriza reencolar cubetas después de que Operaciones confirme su disponibilidad física?",
+  "rationale": "La consulta actual se usa en un endpoint con efecto lateral: ampliar el filtro puede iniciar BIN IN en cubetas cuya ubicación actual no está verificada. La implementación segura depende de la política operativa para esa cohorte.",
   "options": [
     {
-      "title": "Separar visibilidad y acción",
-      "body": "Añadir una vista o comando de revisión sin efecto lateral y ejecutar BIN IN únicamente para las cubetas confirmadas por Operaciones.",
+      "title": "Separar consulta y acción",
+      "body": "Añadir visibilidad de solo lectura y reencolar únicamente las cubetas confirmadas por Operaciones.",
       "recommended": true
     },
     {
-      "title": "Reencolar automáticamente",
-      "body": "Ampliar la ventana actual y aceptar el riesgo operativo de intentar introducir cubetas que ya no estén disponibles.",
+      "title": "Reencolar tras confirmación operativa",
+      "body": "Mantener el endpoint de acción y ejecutar el reescaneo solo sobre la lista de cubetas que Operaciones valide.",
+      "recommended": false
+    },
+    {
+      "title": "Cerrar como legacy confirmado",
+      "body": "Cerrar la incidencia si Operaciones verifica que la cohorte ya no existe o que no requiere recuperación.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Separar visibilidad y acción",
-    "body": "Añadir una vista o comando de revisión sin efecto lateral y ejecutar BIN IN únicamente para las cubetas confirmadas por Operaciones.",
+    "title": "Separar consulta y acción",
+    "body": "Añadir visibilidad de solo lectura y reencolar únicamente las cubetas confirmadas por Operaciones.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "banosdavidhamelyn",
-    "reason": "Es la persona con señales más recientes y directas en el historial del flujo de declaración y recuperación de bins.",
-    "confidence": "high"
+    "reason": "Participó en el flujo de reintentos de creación de cubetas y en la comprobación operativa de la cohorte reflejada en el hilo.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8700.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8700#issuecomment-5409648772",
-    "reviewedAt": "2026-09-19T09:27:07.087Z",
-    "mainSha": "d0e0b93e78bba63a1c6ff1614e823941e10afa9f"
+    "reviewedAt": "2026-10-06T10:06:14.881Z",
+    "mainSha": "ab727b7695cd6f5ea2fe96c121cfa30cda3e67b5"
   }
 }
