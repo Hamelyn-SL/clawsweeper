@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-06T10:48:01.891Z",
+  "updatedAt": "2026-10-06T10:40:13Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10517,
+    "title": "Amazon FR/IT: el stock vendido no se retira mientras Amazon no cierra su lote de precio, y hoy hay lotes abiertos más de 8 h (14 espejos retenidos)",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10517",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "reporter:javier",
+      "triage:queued",
+      "P2",
+      "mk:amazon"
+    ],
+    "createdAt": "2026-10-06T10:40:00Z",
+    "updatedAt": "2026-10-06T10:40:13Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe la venta invalidar o prevalecer sobre un feed Amazon de precio/alta aún abierto, y qué garantía debe impedir que su resultado tardío reactive el anuncio?",
+  "rationale": "La retirada inmediata satisface el objetivo de evitar anuncios comprables, pero puede competir con una operación remota aún en curso; la evidencia disponible no define la garantía de precedencia segura.",
+  "options": [
+    {
+      "title": "Retirada prevalente",
+      "body": "Invalidar o neutralizar la operación pendiente al vender y asegurar que su resultado tardío no reactive el espejo.",
+      "recommended": true
+    },
+    {
+      "title": "Retención acotada",
+      "body": "Mantener la guarda, pero limitar la espera de vendidos a un plazo breve y emitir telemetría de bloqueo.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Retirada prevalente",
+    "body": "Invalidar o neutralizar la operación pendiente al vender y asegurar que su resultado tardío no reactive el espejo.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Lyno",
+    "reason": "Su commit integrado modificó la priorización del selector común que determina cuándo se consultan las operaciones pendientes.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10517.md",
+    "reviewedAt": "2026-10-06T10:48:01.891Z",
+    "mainSha": "410c8d518f8ea2f76a9f6d0bcabd99d668030383"
+  }
+}
