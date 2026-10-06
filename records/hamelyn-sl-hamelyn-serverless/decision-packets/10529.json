@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-06T16:29:54.842Z",
+  "updatedAt": "2026-10-06T13:13:35Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10529,
+    "title": "fix: mark amazon orders already shipped as shipped on package not found",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10529",
+    "state": "open",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-10-06T13:06:10Z",
+    "updatedAt": "2026-10-06T13:13:35Z",
+    "headSha": "3cf85afd809609aa18261339aa0967122448e543"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Basta con confirmar que el mismo pedido figura como `SHIPPED` en Amazon, o debe coincidir también el tracking antes de persistirlo como enviado?",
+  "rationale": "El PR informa de confirmaciones realizadas por actores externos antes de que existiera nuestra etiqueta; permitir tracking distinto puede dejar el espejo en `SHIPPED` aunque no se haya vinculado el envío a nuestro tracking.",
+  "options": [
+    {
+      "title": "Aceptar estado remoto",
+      "body": "Persistir `SHIPPED` cuando el mismo pedido aparezca enviado en Amazon y gestionar aparte los casos con tracking distinto.",
+      "recommended": true
+    },
+    {
+      "title": "Exigir coincidencia de tracking",
+      "body": "Comparar el tracking remoto con el nuestro y conservar `SYNC_ERROR` o una ruta de revisión cuando no coincidan.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aceptar estado remoto",
+    "body": "Persistir `SHIPPED` cuando el mismo pedido aparezca enviado en Amazon y gestionar aparte los casos con tracking distinto.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Introdujo el flujo de confirmación SP-API y conoce el comportamiento del adaptador; la decisión operativa puede requerir validación del equipo marketplace.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10529.md",
+    "reviewedAt": "2026-10-06T16:29:54.842Z",
+    "mainSha": "9c76bbeffd799a99a34a461135a584dfb14c08e3"
+  }
+}
