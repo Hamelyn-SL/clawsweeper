@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-30T07:17:33.020Z",
-  "updatedAt": "2026-09-30T07:06:30Z",
+  "generatedAt": "2026-10-07T08:58:28.577Z",
+  "updatedAt": "2026-10-07T08:22:42Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -18,43 +18,42 @@
       "P2"
     ],
     "createdAt": "2026-09-30T07:06:16Z",
-    "updatedAt": "2026-09-30T07:06:30Z"
+    "updatedAt": "2026-10-07T08:22:42Z"
   },
-  "lane": "product_direction",
+  "lane": "proof_sufficiency",
   "priority": "P2",
-  "question": "¿Qué vía debe priorizarse para investigar y resolver el OOM de Vercel: medir primero las fases, evaluar una validación o artefacto verificable de CI, o acotar el grafo de core por aplicación?",
-  "rationale": "La evidencia confirma el fallo, pero no identifica el componente dominante ni demuestra que omitir el chequeo de Next sea seguro; elegir una intervención requiere acordar el equilibrio entre coste de build, cobertura de tipos y complejidad operativa.",
+  "question": "¿Qué evidencia de builds comparables de Admin debe considerarse suficiente para escoger entre instrumentar primero Vercel, acotar el análisis de core o validar en CI y omitir el chequeo de Next?",
+  "rationale": "Las alternativas tienen garantías y costes distintos; el repositorio no aporta mediciones del entorno remoto que determinen cuál mantiene la validación correcta sin agravar la memoria.",
   "options": [
     {
-      "title": "Medir primero",
-      "body": "Añadir evidencia comparable de duración, memoria y archivos por fase antes de modificar la validación de despliegue.",
+      "title": "Solicitar mediciones comparables",
+      "body": "Aportar informes de memoria y duración por fase para un build fallido y otro correcto del mismo SHA antes de cambiar el pipeline.",
       "recommended": true
     },
     {
-      "title": "Evaluar reutilización de CI",
-      "body": "Diseñar una transferencia vinculada a SHA, versiones y tipos generados, manteniendo una validación equivalente como condición del despliegue.",
+      "title": "Instrumentar Vercel primero",
+      "body": "Priorizar visibilidad de fase y consumo para separar el problema de TSC de los bloqueos anteriores a TypeScript.",
       "recommended": false
     },
     {
-      "title": "Acotar core por aplicación",
-      "body": "Medir los imports transitivos y reducir el grafo solo si CI sigue cubriendo el chequeo completo de core.",
+      "title": "Evaluar una validación equivalente en CI",
+      "body": "Probar transferencia o artefactos y demostrar que cubren el mismo código y configuración antes de omitir el chequeo de Next.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Medir primero",
-    "body": "Añadir evidencia comparable de duración, memoria y archivos por fase antes de modificar la validación de despliegue.",
+    "title": "Solicitar mediciones comparables",
+    "body": "Aportar informes de memoria y duración por fase para un build fallido y otro correcto del mismo SHA antes de cambiar el pipeline.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "banosdavidhamelyn",
-    "reason": "Sus cambios recientes abordaron la presión de memoria y el typecheck de Admin, el área más directamente afectada.",
-    "confidence": "high"
+    "person": "JavierHamelyn",
+    "reason": "Su historial reciente en el chequeo de tipos de CI lo hace un candidato de coordinación para comparar esa ruta con la validación remota; la evidencia disponible no identifica un único responsable de Vercel.",
+    "confidence": "low"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10260.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10260#issuecomment-5906110886",
-    "reviewedAt": "2026-09-30T07:17:33.020Z",
-    "mainSha": "8c4b24e5bb3a042893783bf8b08ee0840356528a"
+    "reviewedAt": "2026-10-07T08:58:28.577Z",
+    "mainSha": "80dac5266a4001d645a7491b82d8bfcd80ae7a15"
   }
 }
