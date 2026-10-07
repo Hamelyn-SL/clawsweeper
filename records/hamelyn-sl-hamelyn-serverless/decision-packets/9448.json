@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-06T11:46:45.040Z",
-  "updatedAt": "2026-10-06T11:42:51Z",
+  "generatedAt": "2026-10-07T11:50:22.203Z",
+  "updatedAt": "2026-10-06T18:27:55Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -17,38 +17,37 @@
       "P2"
     ],
     "createdAt": "2026-09-11T10:19:54Z",
-    "updatedAt": "2026-10-06T11:42:51Z"
+    "updatedAt": "2026-10-06T18:27:55Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe implementarse la verificación remota acotada ante `PackageToUpdateNotFound` para marcar `SHIPPED` solo tras confirmar ese estado en el mismo pedido, dejando el backlog y las alertas como trabajo separado?",
-  "rationale": "El comportamiento cambia cómo se persiste el estado de envío ante un rechazo de Amazon, y la propia issue exige confirmar que el pedido remoto está enviado antes de considerar correcto el espejo.",
+  "question": "¿Debe aceptarse como `SHIPPED` el mismo pedido que Amazon devuelve como enviado aunque el tracking remoto sea distinto, o se debe exigir que coincida con nuestro tracking?",
+  "rationale": "La revisión de la PR vinculada identifica que esta diferencia puede marcar como sincronizado un envío confirmado por un actor externo; la evidencia aportada no determina si ese caso es aceptable para operaciones.",
   "options": [
     {
-      "title": "Aprobar verificación acotada",
-      "body": "Consultar Amazon solo tras la firma exacta del rechazo y conservar `SYNC_ERROR` ante cualquier estado no verificable.",
-      "recommended": true
+      "title": "Aceptar mismo pedido enviado",
+      "body": "Permitir `SHIPPED` cuando coincidan el ID del pedido y el estado remoto, aunque el tracking difiera.",
+      "recommended": false
     },
     {
-      "title": "Mantener fallo terminal sin consulta",
-      "body": "Conservar el comportamiento actual y priorizar una reconciliación operativa independiente del estado remoto.",
-      "recommended": false
+      "title": "Exigir coincidencia de tracking",
+      "body": "Mantener `SYNC_ERROR` salvo que el pedido remoto también confirme el tracking esperado.",
+      "recommended": true
     }
   ],
   "recommendation": {
-    "title": "Aprobar verificación acotada",
-    "body": "Consultar Amazon solo tras la firma exacta del rechazo y conservar `SYNC_ERROR` ante cualquier estado no verificable.",
+    "title": "Exigir coincidencia de tracking",
+    "body": "Mantener `SYNC_ERROR` salvo que el pedido remoto también confirme el tracking esperado.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Introdujo y documentó el flujo Amazon de confirmación y el problema relacionado.",
-    "confidence": "medium"
+    "person": "MarcosTerroso",
+    "reason": "Es el responsable asignado de la issue y autor de la PR cuyo criterio de aceptación está pendiente de confirmación operativa.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9448.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9448#issuecomment-5644977566",
-    "reviewedAt": "2026-10-06T11:46:45.040Z",
-    "mainSha": "9c76bbeffd799a99a34a461135a584dfb14c08e3"
+    "reviewedAt": "2026-10-07T11:50:22.203Z",
+    "mainSha": "2b96cad4c1dca9a02d4594a190070214f1c6a897"
   }
 }
