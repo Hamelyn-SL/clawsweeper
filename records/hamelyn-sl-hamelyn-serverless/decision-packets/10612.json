@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-07T23:35:28.114Z",
+  "updatedAt": "2026-10-07T22:56:21Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10612,
+    "title": "fix: stop repeating cli writes and falling back to production on a broken config",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10612",
+    "state": "open",
+    "labels": [
+      "size/XL"
+    ],
+    "createdAt": "2026-10-07T22:53:05Z",
+    "updatedAt": "2026-10-07T22:56:21Z",
+    "headSha": "0dcdf1a241c63f22c651924f53322cee3ffeb9a7"
+  },
+  "lane": "merge_risk",
+  "priority": "P2",
+  "question": "¿Aceptamos que un `config.toml` inválido detenga los comandos de API en vez de continuar con la URL predeterminada?",
+  "rationale": "Es un cambio de compatibilidad intencional que elimina el envío potencial del token al entorno de producción; decidir el equilibrio entre protección y continuidad de comandos requiere confirmar la política del producto.",
+  "options": [
+    {
+      "title": "Aceptar el cierre seguro",
+      "body": "Mantener el error de parseo como bloqueo explícito para impedir que una configuración rota dirija credenciales a producción.",
+      "recommended": true
+    },
+    {
+      "title": "Conservar compatibilidad por defecto",
+      "body": "Mantener el fallback actual como predeterminado y añadir un modo estricto explícito, con cobertura para ambos comportamientos.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aceptar el cierre seguro",
+    "body": "Mantener el error de parseo como bloqueo explícito para impedir que una configuración rota dirija credenciales a producción.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Introdujo el cliente CLI y ha trabajado recientemente en resolución de configuración y rutas de memoria relacionadas.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10612.md",
+    "reviewedAt": "2026-10-07T23:35:28.114Z",
+    "mainSha": "9ad1b8886a111e512ed3c312197e1df885d5b508"
+  }
+}
