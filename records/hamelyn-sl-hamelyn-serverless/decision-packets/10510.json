@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-06T09:29:10.039Z",
-  "updatedAt": "2026-10-06T09:26:08Z",
+  "generatedAt": "2026-10-07T09:54:01.629Z",
+  "updatedAt": "2026-10-06T10:45:46Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,48 +13,47 @@
       "app:infrastructure",
       "feature",
       "reporter:javier",
-      "triage:queued",
-      "P2",
-      "clawsweeper:needs-product-decision"
+      "triage:done",
+      "clawsweeper:needs-product-decision",
+      "P2"
     ],
     "createdAt": "2026-10-06T09:25:55Z",
-    "updatedAt": "2026-10-06T09:26:08Z"
+    "updatedAt": "2026-10-06T10:45:46Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe reducirse la cadencia a dos ejecuciones agrupadas y una major al mes, y agruparse en `other` todas las majors salvo `react-next` y `expo-react-native`?",
-  "rationale": "La decisión cambia el ritmo de actualización y el tamaño de las PRs, con un compromiso entre menor carga de revisión y detección más tardía; no es una corrección mecánica derivable del comportamiento actual.",
+  "question": "¿Confirma el equipo pasar las actualizaciones agrupadas a los días 1 y 16, las major al día 1 y agrupar las major en `react-next`, `expo-react-native` y `other`?",
+  "rationale": "La elección cambia cuándo se detectan actualizaciones y cuánto aislamiento tienen las dependencias major; la PR vinculada ya solicita esta decisión y la prueba no acredita por sí sola el volumen mensual estimado.",
   "options": [
     {
       "title": "Adoptar la propuesta",
-      "body": "Cambiar calendario y familias según la issue, manteniendo las exclusiones y la cobertura de CI/autofix para las ramas existentes.",
+      "body": "Confirmar los dos calendarios y las tres familias, conservando las exclusiones y la cobertura actual de CI y autofix.",
       "recommended": true
     },
     {
-      "title": "Acordar una cadencia intermedia",
-      "body": "Reducir parte del ruido manteniendo más frecuencia o alguna familia adicional para aislar dependencias con riesgo operativo.",
+      "title": "Ajustar cadencia o familias",
+      "body": "Modificar la frecuencia o mantener más aislamiento para dependencias que el equipo considere sensibles.",
       "recommended": false
     },
     {
-      "title": "Mantener la configuración actual",
-      "body": "Conservar las ejecuciones y familias semanales si el coste de retrasar actualizaciones supera el ruido de revisión.",
+      "title": "Mantener el esquema actual",
+      "body": "Conservar la cadencia y separación actuales si prima detectar antes las actualizaciones.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Adoptar la propuesta",
-    "body": "Cambiar calendario y familias según la issue, manteniendo las exclusiones y la cobertura de CI/autofix para las ramas existentes.",
+    "body": "Confirmar los dos calendarios y las tres familias, conservando las exclusiones y la cobertura actual de CI y autofix.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "danielmenchen-hamelyn",
-    "reason": "Es la persona con evidencia más directa de participación en el diseño de las familias major existentes.",
+    "person": "JavierHamelyn",
+    "reason": "La revisión de la PR vinculada lo identifica como probable responsable de esta decisión.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10510.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10510#issuecomment-6013390472",
-    "reviewedAt": "2026-10-06T09:29:10.039Z",
-    "mainSha": "106c09915a4110c44d9766f7ba8df83ada7c0853"
+    "reviewedAt": "2026-10-07T09:54:01.629Z",
+    "mainSha": "5e3f2ce1528ba582d89d5109fe494d3c47bebdaf"
   }
 }
