@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-07T14:04:18.849Z",
+  "updatedAt": "2026-10-07T13:52:30Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10598,
+    "title": "Nueva entrada en turborevisión",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10598",
+    "state": "open",
+    "labels": [
+      "source:admin-panel",
+      "app:supply",
+      "feature",
+      "triage:queued",
+      "P2",
+      "reporter:daniellopez"
+    ],
+    "createdAt": "2026-10-07T13:52:18Z",
+    "updatedAt": "2026-10-07T13:52:30Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "Al crear un lote de Nueva entrada desde Turbo Revisión, ¿qué reglas de aceptación y atribución de productividad deben aplicarse?",
+  "rationale": "El flujo de Revisión ya tiene creación de lotes, pero Turbo usa una modalidad distinta; reutilizarlo sin fijar esas reglas podría registrar la operación o tratar los productos de forma incorrecta.",
+  "options": [
+    {
+      "title": "Mantener el contrato Turbo (recomendado)",
+      "body": "Aplicar a la nueva entrada las reglas de aceptación automática de Turbo y atribuir la actividad a Nueva entrada, manteniendo la trazabilidad del lote.",
+      "recommended": true
+    },
+    {
+      "title": "Usar las reglas de Revisión",
+      "body": "Crear el lote con el flujo de entrada existente y conservar sus pasos de revisión ordinarios dentro del kiosco Turbo.",
+      "recommended": false
+    },
+    {
+      "title": "Dejar la entrada en Revisión",
+      "body": "Mantener Nueva entrada únicamente en el kiosco normal hasta definir un contrato específico para Turbo.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mantener el contrato Turbo (recomendado)",
+    "body": "Aplicar a la nueva entrada las reglas de aceptación automática de Turbo y atribuir la actividad a Nueva entrada, manteniendo la trazabilidad del lote.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "Contribuyó tanto al flujo existente de Nueva entrada como a cambios recientes del kiosco Turbo, por lo que es el candidato mejor conectado con ambos comportamientos.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10598.md",
+    "reviewedAt": "2026-10-07T14:04:18.849Z",
+    "mainSha": "6fcf513679faf1ba217a94f7e0308469083910bb"
+  }
+}

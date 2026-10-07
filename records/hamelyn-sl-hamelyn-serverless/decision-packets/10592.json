@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-07T14:01:14.903Z",
+  "updatedAt": "2026-10-07T13:32:09Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10592,
+    "title": "feat: show the scrapers vm control panel in data-dashboards",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10592",
+    "state": "open",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-10-07T13:19:27Z",
+    "updatedAt": "2026-10-07T13:32:09Z",
+    "headSha": "8b0baf948c1efa91707db587f767f176eb41c39d"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se aprueba exponer el panel desde `data-dashboards` con lectura para sus usuarios autorizados y mutaciones reservadas a `developers`, usando el proxy con secreto compartido?",
+  "rationale": "La issue vinculada mantiene abiertas alternativas de acceso con distinto alcance operativo; el código no puede determinar qué política quiere adoptar el equipo.",
+  "options": [
+    {
+      "title": "Aprobar el proxy restringido",
+      "body": "Mantener lectura autenticada y permitir mutaciones solo a usuarios con rol `developers`, exigiendo el secreto compartido en la VM.",
+      "recommended": true
+    },
+    {
+      "title": "Limitarlo a lectura",
+      "body": "Exponer datos y stream, pero dejar las operaciones de control fuera de `data-dashboards`.",
+      "recommended": false
+    },
+    {
+      "title": "Conservar el acceso por túnel",
+      "body": "No publicar el panel en `data-dashboards` y mantener el flujo actual por SSH.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar el proxy restringido",
+    "body": "Mantener lectura autenticada y permitir mutaciones solo a usuarios con rol `developers`, exigiendo el secreto compartido en la VM.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "PabloMoran34",
+    "reason": "La issue de producto emparejada y el diseño de integración parten de su trabajo previo en esta área; JavierHamelyn figura como revisor técnico solicitado.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10592.md",
+    "reviewedAt": "2026-10-07T14:01:14.903Z",
+    "mainSha": "6fcf513679faf1ba217a94f7e0308469083910bb"
+  }
+}
