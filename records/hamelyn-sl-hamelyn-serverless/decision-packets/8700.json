@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-07T10:57:04.973Z",
-  "updatedAt": "2026-10-06T10:30:50Z",
+  "generatedAt": "2026-10-07T11:00:25.584Z",
+  "updatedAt": "2026-10-07T10:58:09Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -18,38 +18,37 @@
       "P2"
     ],
     "createdAt": "2026-08-25T11:13:59Z",
-    "updatedAt": "2026-10-06T10:30:50Z"
+    "updatedAt": "2026-10-07T10:58:09Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe añadirse una vista pasiva para stocks envejecidos separada del endpoint que encola BIN IN, y qué comprobación operativa autoriza recuperar cada cubeta?",
-  "rationale": "El flujo actual encola los resultados del endpoint; ampliar su alcance sin una política explícita mezcla visibilidad con una acción física que no puede validarse desde el código ni la réplica.",
+  "question": "¿Debe mostrarse la cohorte antigua en una vista de solo revisión, o puede reencolarse para BIN IN tras confirmar con Operaciones qué cubetas siguen disponibles?",
+  "rationale": "El endpoint actual ejecuta reencolado, pero los datos disponibles no verifican la posición física ni la causa de los stocks pendientes.",
   "options": [
     {
-      "title": "Separar visibilidad y recuperación",
-      "body": "Añadir una consulta o vista pasiva para los stocks envejecidos y mantener el reencolado sujeto a confirmación operativa.",
+      "title": "Vista de revisión sin reencolado",
+      "body": "Mostrar los pendientes antiguos en una consulta o panel pasivo mientras Operaciones determina su estado.",
       "recommended": true
     },
     {
-      "title": "Mantener revisión solo operativa",
-      "body": "No ampliar el panel hasta que Operaciones defina cómo comprobar y recuperar de forma segura cada cubeta.",
+      "title": "Reencolar cubetas confirmadas",
+      "body": "Permitir BIN IN únicamente para las cubetas cuya disponibilidad física haya confirmado Operaciones.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Separar visibilidad y recuperación",
-    "body": "Añadir una consulta o vista pasiva para los stocks envejecidos y mantener el reencolado sujeto a confirmación operativa.",
+    "title": "Vista de revisión sin reencolado",
+    "body": "Mostrar los pendientes antiguos en una consulta o panel pasivo mientras Operaciones determina su estado.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "banosdavidhamelyn",
-    "reason": "Es el candidato mejor respaldado por el historial local reciente del flujo Skypod y de recuperación de stocks pendientes.",
-    "confidence": "medium"
+    "reason": "Es el candidato mejor respaldado por el historial local del flujo de creación y recuperación por cubeta; la confirmación física corresponde a Operaciones.",
+    "confidence": "low"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8700.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8700#issuecomment-5409648772",
-    "reviewedAt": "2026-10-07T10:57:04.973Z",
+    "reviewedAt": "2026-10-07T11:00:25.584Z",
     "mainSha": "2b96cad4c1dca9a02d4594a190070214f1c6a897"
   }
 }
