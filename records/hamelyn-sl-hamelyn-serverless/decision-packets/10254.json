@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-30T02:49:00.924Z",
-  "updatedAt": "2026-09-30T02:45:58Z",
+  "generatedAt": "2026-10-07T09:03:19.339Z",
+  "updatedAt": "2026-10-07T08:59:48Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,47 +14,42 @@
       "app:marketplace",
       "reporter:javier",
       "triage:needs-info",
+      "clawsweeper:needs-product-decision",
       "P2",
       "mk:mercadolibre"
     ],
     "createdAt": "2026-09-30T02:32:40Z",
-    "updatedAt": "2026-09-30T02:45:58Z"
+    "updatedAt": "2026-10-07T08:59:48Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe mantenerse `inactive` como terminal en las retiradas de MercadoLibre AR durante una restricción reversible, o hay que retener/reconciliar esos anuncios hasta confirmar el estado posterior?",
-  "rationale": "La regla existente se apoyó en una muestra distinta y no hay evidencia del estado posterior de esta cohorte; cambiar la semántica puede alterar retiradas de todos los flujos MercadoLibre o requerir recuperación específica de AR.",
+  "question": "¿Debe `inactive` seguir contando como terminal para MercadoLibre AR durante una restricción reversible, o debe mantenerse la retirada pendiente y reconciliarse al recuperarse la cuenta?",
+  "rationale": "La respuesta correcta depende de una transición remota aún no comprobada; cambiar la regla compartida basándose solo en el nombre del estado podría romper el comportamiento acordado para MX.",
   "options": [
     {
-      "title": "Reconciliar AR tras la recuperación",
-      "body": "Mantener un camino para volver a comprobar y cerrar anuncios vendidos cuando la cuenta recupere capacidad de escritura.",
+      "title": "Mantener la regla compartida",
+      "body": "Conservar `inactive` como terminal y cerrar la issue si se confirma que esos anuncios no pueden volver a publicarse.",
+      "recommended": false
+    },
+    {
+      "title": "Añadir reconciliación de AR",
+      "body": "Mantener los anuncios vendidos localizables y volver a cerrarlos cuando la cuenta acepte escrituras, con cobertura para la recuperación de tombstones de AR.",
       "recommended": true
-    },
-    {
-      "title": "Mantener `inactive` como terminal",
-      "body": "Conservar la regla actual si una consulta remota confirma que `inactive` no vuelve a ser comprable en este escenario.",
-      "recommended": false
-    },
-    {
-      "title": "Esperar a evidencia remota",
-      "body": "Mantener la issue abierta hasta observar una muestra de los anuncios durante y después de levantar la restricción.",
-      "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Reconciliar AR tras la recuperación",
-    "body": "Mantener un camino para volver a comprobar y cerrar anuncios vendidos cuando la cuenta recupere capacidad de escritura.",
+    "title": "Añadir reconciliación de AR",
+    "body": "Mantener los anuncios vendidos localizables y volver a cerrarlos cuando la cuenta acepte escrituras, con cobertura para la recuperación de tombstones de AR.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Su historial reciente cubre los cambios de MercadoLibre AR y la lógica de retiradas que habría que ajustar o preservar.",
-    "confidence": "high"
+    "reason": "Su historial de incorporación de MercadoLibre Argentina lo relaciona directamente con el alcance de sitio afectado; la decisión debería confirmarse con quien tenga acceso al estado remoto de la cuenta.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10254.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10254#issuecomment-5903097730",
-    "reviewedAt": "2026-09-30T02:49:00.924Z",
-    "mainSha": "e460a6012b6baced9ee128e0f9bf0ff30163e871"
+    "reviewedAt": "2026-10-07T09:03:19.339Z",
+    "mainSha": "80dac5266a4001d645a7491b82d8bfcd80ae7a15"
   }
 }

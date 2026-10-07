@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-30T08:05:05.052Z",
-  "updatedAt": "2026-09-29T19:00:14Z",
+  "generatedAt": "2026-10-07T09:04:21.311Z",
+  "updatedAt": "2026-10-07T08:22:53Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,45 +14,44 @@
       "source:admin-panel",
       "app:marketplace",
       "triage:needs-info",
+      "P1",
       "clawsweeper:needs-product-decision",
       "reporter:JavierHamelyn",
       "origin:panel",
-      "mk:amazon",
-      "P1"
+      "mk:amazon"
     ],
     "createdAt": "2026-08-03T13:36:22Z",
-    "updatedAt": "2026-09-29T19:00:14Z"
+    "updatedAt": "2026-10-07T08:22:53Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Se separa el guard de no-retry de `101078` del flujo supervisado de resolución regional y backfill que sigue en curso?",
-  "rationale": "El guard es una mitigación acotada, mientras que la reconciliación afecta listings vivos y requiere evidencia regional y control operativo; confirmar la separación evita duplicar el lote activo o tratarlo como una reparación automática.",
+  "question": "¿Debe el equipo priorizar un guard de no-retry para `101078` como cambio acotado y mantener el resolver/backfill como operación supervisada independiente?",
+  "rationale": "El guard es una mitigación de código, mientras que decidir condición canónica, alcance de marketplaces y criterios para ampliar escrituras define una política operativa con impacto en listings y requiere intención del equipo.",
   "options": [
     {
-      "title": "Separar las dos líneas",
-      "body": "Priorizar un cambio acotado que excluya `101078` del retry y mantener la reconciliación de la cohorte bajo verificación operativa.",
+      "title": "Separar guard y reconciliación",
+      "body": "Aprobar primero un guard que excluya `101078` de retries y mantener el resolver y cualquier backfill en un flujo supervisado separado.",
       "recommended": true
     },
     {
-      "title": "Mantener el alcance conjunto",
-      "body": "Esperar a cerrar y evaluar el piloto antes de dividir el guard y la resolución regional en entregas distintas.",
+      "title": "Mantener solo la operación supervisada",
+      "body": "No cambiar la política de clasificación hasta completar las lecturas y verificaciones remotas de la cohorte.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Separar las dos líneas",
-    "body": "Priorizar un cambio acotado que excluya `101078` del retry y mantener la reconciliación de la cohorte bajo verificación operativa.",
+    "title": "Separar guard y reconciliación",
+    "body": "Aprobar primero un guard que excluya `101078` de retries y mantener el resolver y cualquier backfill en un flujo supervisado separado.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Está asignado a la issue y coordina las comprobaciones remotas y el lote de reparación descritos en los comentarios recientes.",
+    "reason": "Es la persona asignada que ha documentado el piloto y los controles operativos pendientes.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8188.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8188#issuecomment-5167219624",
-    "reviewedAt": "2026-09-30T08:05:05.052Z",
-    "mainSha": "736cec8d6ee735e181bb2b64b2f71867e9549775"
+    "reviewedAt": "2026-10-07T09:04:21.311Z",
+    "mainSha": "80dac5266a4001d645a7491b82d8bfcd80ae7a15"
   }
 }
