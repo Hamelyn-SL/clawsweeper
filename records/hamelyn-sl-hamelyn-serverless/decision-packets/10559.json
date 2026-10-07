@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-07T09:05:09.157Z",
+  "updatedAt": "2026-10-07T09:01:13Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10559,
+    "title": "Discogs paid no-stock orders remain TO_CANCEL for multiple days",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10559",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "triage:queued",
+      "P2"
+    ],
+    "createdAt": "2026-10-07T09:00:57Z",
+    "updatedAt": "2026-10-07T09:01:13Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Cuál es la resolución aprobada por fulfillment para estos dos pedidos que siguen pagados en Discogs y no tienen stock disponible?",
+  "rationale": "Los datos prueban la discrepancia de estados, pero no determinan si debe priorizarse una cancelación remota o una alternativa de fulfillment; automatizar cualquiera de ellas podría afectar una venta pagada.",
+  "options": [
+    {
+      "title": "Solicitar resolución a fulfillment",
+      "body": "Confirmar por pedido si existe una alternativa de fulfillment o si debe tramitarse la cancelación remota.",
+      "recommended": true
+    },
+    {
+      "title": "Tramitar cancelación remota",
+      "body": "Elegir esta opción solo si fulfillment confirma que ambos pedidos deben cancelarse y se puede verificar después el estado `Cancelled` en Discogs.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Solicitar resolución a fulfillment",
+    "body": "Confirmar por pedido si existe una alternativa de fulfillment o si debe tramitarse la cancelación remota.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Es la persona mejor conectada en el historial local disponible con la orquestación compartida de cancelaciones; la decisión operativa sigue correspondiendo a fulfillment.",
+    "confidence": "low"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10559.md",
+    "reviewedAt": "2026-10-07T09:05:09.157Z",
+    "mainSha": "80dac5266a4001d645a7491b82d8bfcd80ae7a15"
+  }
+}
