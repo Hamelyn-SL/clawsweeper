@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-02T10:47:26.444Z",
-  "updatedAt": "2026-10-02T10:44:57Z",
+  "generatedAt": "2026-10-07T10:26:26.474Z",
+  "updatedAt": "2026-10-07T10:12:51Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -19,38 +19,42 @@
       "epic:warehouse-telemetry"
     ],
     "createdAt": "2026-10-02T09:52:13Z",
-    "updatedAt": "2026-10-02T10:44:57Z"
+    "updatedAt": "2026-10-07T10:12:51Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué reglas funcionales deben quedar cerradas con almacén antes de implementar la precarga y las faltas automáticas?",
-  "rationale": "La propia descripción deja sin confirmar nombres y pesos provisionales, atribución de los lotes abiertos, alcance del no encontrado falso en gaveta y comportamiento del panel; son decisiones de dominio que el código no puede resolver con seguridad.",
+  "question": "¿Qué dato debe identificar al supervisor responsable al imputar una falta por lote abierto, y se confirma que las faltas de esos tres procesos se asignan a supervisores?",
+  "rationale": "El catálogo distingue faltas de supervisor, pero el registro actual solo resuelve operarios; el PR propone una atribución concreta que no queda resuelta por el código ni por la discusión aportada.",
   "options": [
     {
-      "title": "Confirmar el cuadrante completo",
-      "body": "Validar con almacén los nombres, pesos, atribuciones y flujo del panel antes de convertirlos en una nueva versión del catálogo y automatizaciones.",
+      "title": "Confirmar responsable del lote",
+      "body": "Acordar qué dato identifica al supervisor y validar que esa persona debe recibir la falta.",
       "recommended": true
     },
     {
-      "title": "Acotar una primera entrega",
-      "body": "Implementar solo las reglas ya acordadas y dejar fuera las faltas y comportamientos aún pendientes de confirmación.",
+      "title": "Atribuir al último operario",
+      "body": "Mantener la regla propuesta en el PR y dejar la falta de lote abierto a nombre del último operario que trabajó en él.",
+      "recommended": false
+    },
+    {
+      "title": "Excluir faltas de supervisor",
+      "body": "Aplazar esas faltas hasta que exista una fuente fiable para identificar al responsable.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Confirmar el cuadrante completo",
-    "body": "Validar con almacén los nombres, pesos, atribuciones y flujo del panel antes de convertirlos en una nueva versión del catálogo y automatizaciones.",
+    "title": "Confirmar responsable del lote",
+    "body": "Acordar qué dato identifica al supervisor y validar que esa persona debe recibir la falta.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Está asignado a la épica relacionada y aparece en la issue como interlocutor para confirmar con almacén el comportamiento del panel.",
+    "reason": "Está asignada a la issue y ha propuesto la implementación enlazada; puede coordinar la confirmación funcional con almacén.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10369.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10369#issuecomment-5950726672",
-    "reviewedAt": "2026-10-02T10:47:26.444Z",
-    "mainSha": "9e7f28f035445080796bfb60392354a5cef5f7bf"
+    "reviewedAt": "2026-10-07T10:26:26.474Z",
+    "mainSha": "63e81c1faad9eca65a3ac2d50ab095eba28a0a44"
   }
 }
