@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-07T11:47:26.326Z",
+  "updatedAt": "2026-10-07T11:45:52Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10581,
+    "title": "Almacén: bin out de una cubeta con picking pendiente hace que Exotec marque la línea como MISSING",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10581",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:admin",
+      "triage:done"
+    ],
+    "createdAt": "2026-10-07T11:28:50Z",
+    "updatedAt": "2026-10-07T11:45:52Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿La salida de una cubeta con líneas pendientes debe bloquearse siempre o permitir una confirmación explícita del operario?",
+  "rationale": "La issue plantea ambas opciones y la elección cambia el flujo operativo; la comprobación debe aplicarse igualmente a las salidas individuales y masivas.",
+  "options": [
+    {
+      "title": "Bloquear la salida",
+      "body": "Rechazar toda cubeta con unidades pendientes e indicar la OP y las unidades afectadas.",
+      "recommended": true
+    },
+    {
+      "title": "Permitir confirmación explícita",
+      "body": "Solicitar confirmación del operario y registrar quién autorizó sacar la cubeta.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Bloquear la salida",
+    "body": "Rechazar toda cubeta con unidades pendientes e indicar la OP y las unidades afectadas.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "El historial local lo conecta con las rutas de salida que habría que modificar; la decisión debe validarse con el equipo de almacén.",
+    "confidence": "low"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10581.md",
+    "reviewedAt": "2026-10-07T11:47:26.326Z",
+    "mainSha": "2b96cad4c1dca9a02d4594a190070214f1c6a897"
+  }
+}
