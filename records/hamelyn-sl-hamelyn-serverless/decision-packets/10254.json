@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-30T02:49:00.924Z",
-  "updatedAt": "2026-09-30T02:45:58Z",
+  "generatedAt": "2026-10-07T08:58:52.148Z",
+  "updatedAt": "2026-10-07T08:22:43Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -18,43 +18,37 @@
       "mk:mercadolibre"
     ],
     "createdAt": "2026-09-30T02:32:40Z",
-    "updatedAt": "2026-09-30T02:45:58Z"
+    "updatedAt": "2026-10-07T08:22:43Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe mantenerse `inactive` como terminal en las retiradas de MercadoLibre AR durante una restricción reversible, o hay que retener/reconciliar esos anuncios hasta confirmar el estado posterior?",
-  "rationale": "La regla existente se apoyó en una muestra distinta y no hay evidencia del estado posterior de esta cohorte; cambiar la semántica puede alterar retiradas de todos los flujos MercadoLibre o requerir recuperación específica de AR.",
+  "question": "¿Debe añadirse una reconciliación específica para MercadoLibre AR si la muestra confirma que los anuncios `inactive` se reactivan tras levantarse la restricción?",
+  "rationale": "La regla terminal existente se aprobó con evidencia de casos aislados; extender o cambiarla para una incidencia masiva depende de confirmar el comportamiento remoto y elegir cómo recuperar anuncios ya excluidos de la cola.",
   "options": [
     {
-      "title": "Reconciliar AR tras la recuperación",
-      "body": "Mantener un camino para volver a comprobar y cerrar anuncios vendidos cuando la cuenta recupere capacidad de escritura.",
+      "title": "Verificar y reconciliar si se reactivan",
+      "body": "Confirmar `status` y `sub_status` de la muestra y añadir recuperación para AR solo si vuelven a estar activos.",
       "recommended": true
     },
     {
-      "title": "Mantener `inactive` como terminal",
-      "body": "Conservar la regla actual si una consulta remota confirma que `inactive` no vuelve a ser comprable en este escenario.",
-      "recommended": false
-    },
-    {
-      "title": "Esperar a evidencia remota",
-      "body": "Mantener la issue abierta hasta observar una muestra de los anuncios durante y después de levantar la restricción.",
+      "title": "Mantener la regla actual",
+      "body": "Conservar `inactive` como terminal si la comprobación confirma que los anuncios no vuelven a ser comprables.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Reconciliar AR tras la recuperación",
-    "body": "Mantener un camino para volver a comprobar y cerrar anuncios vendidos cuando la cuenta recupere capacidad de escritura.",
+    "title": "Verificar y reconciliar si se reactivan",
+    "body": "Confirmar `status` y `sub_status` de la muestra y añadir recuperación para AR solo si vuelven a estar activos.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Su historial reciente cubre los cambios de MercadoLibre AR y la lógica de retiradas que habría que ajustar o preservar.",
-    "confidence": "high"
+    "reason": "Su historial incluye la incorporación de AR y cambios recientes en el flujo de retirada de MercadoLibre.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10254.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10254#issuecomment-5903097730",
-    "reviewedAt": "2026-09-30T02:49:00.924Z",
-    "mainSha": "e460a6012b6baced9ee128e0f9bf0ff30163e871"
+    "reviewedAt": "2026-10-07T08:58:52.148Z",
+    "mainSha": "80dac5266a4001d645a7491b82d8bfcd80ae7a15"
   }
 }
