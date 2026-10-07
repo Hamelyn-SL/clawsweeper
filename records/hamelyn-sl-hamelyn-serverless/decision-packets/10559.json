@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-07T09:08:18.840Z",
+  "generatedAt": "2026-10-07T09:05:09.157Z",
   "updatedAt": "2026-10-07T09:01:13Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -21,28 +21,28 @@
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué flujo y responsable deben resolver los pedidos Discogs pagados que llegan a `TO_CANCEL` por `INVENTORY_NO_STOCK`?",
-  "rationale": "El estado local y remoto requiere una decisión operativa sobre ownership y si corresponde cancelar en Discogs; el adaptador actual solo sincroniza cancelaciones que ya constan como completadas en remoto.",
+  "question": "¿Cuál es la resolución aprobada por fulfillment para estos dos pedidos que siguen pagados en Discogs y no tienen stock disponible?",
+  "rationale": "Los datos prueban la discrepancia de estados, pero no determinan si debe priorizarse una cancelación remota o una alternativa de fulfillment; automatizar cualquiera de ellas podría afectar una venta pagada.",
   "options": [
     {
-      "title": "Resolución por fulfillment",
-      "body": "Mantener la decisión y eventual cancelación en el flujo operativo de fulfillment, con registro de resolución por pedido.",
+      "title": "Solicitar resolución a fulfillment",
+      "body": "Confirmar por pedido si existe una alternativa de fulfillment o si debe tramitarse la cancelación remota.",
       "recommended": true
     },
     {
-      "title": "Cancelación desde integración",
-      "body": "Definir una transición Discogs explícita para estos pedidos y añadir verificación del resultado remoto antes de cerrar el caso.",
+      "title": "Tramitar cancelación remota",
+      "body": "Elegir esta opción solo si fulfillment confirma que ambos pedidos deben cancelarse y se puede verificar después el estado `Cancelled` en Discogs.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Resolución por fulfillment",
-    "body": "Mantener la decisión y eventual cancelación en el flujo operativo de fulfillment, con registro de resolución por pedido.",
+    "title": "Solicitar resolución a fulfillment",
+    "body": "Confirmar por pedido si existe una alternativa de fulfillment o si debe tramitarse la cancelación remota.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Es el candidato más cercano en el historial local de la orquestación marketplace, aunque la relación con la decisión de fulfillment es indirecta.",
+    "person": "MarcosTerroso",
+    "reason": "Es la persona mejor conectada en el historial local disponible con la orquestación compartida de cancelaciones; la decisión operativa sigue correspondiendo a fulfillment.",
     "confidence": "low"
   },
   "source": {
