@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-06T09:04:21.591Z",
-  "updatedAt": "2026-10-06T08:52:57Z",
+  "generatedAt": "2026-10-07T09:12:31.303Z",
+  "updatedAt": "2026-10-07T08:20:30Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -14,39 +14,38 @@
       "P3"
     ],
     "createdAt": "2026-10-06T08:52:45Z",
-    "updatedAt": "2026-10-06T08:52:57Z",
-    "headSha": "671796545c623489c76e57382ee364ffff682bba"
+    "updatedAt": "2026-10-07T08:20:30Z",
+    "headSha": "31ad5c5ffc7e8ea78a808475522d6fc6056e39cb"
   },
   "lane": "product_direction",
   "priority": "P3",
-  "question": "¿Se confirma que el puesto debe dejar de ofrecer el panel local y las rutas de configuración, gestión de cola y diagnóstico eliminadas por esta PR?",
-  "rationale": "La propuesta elimina capacidades operativas existentes y las sustituye por cambios directos en `config.json`; el uso observado no demuestra por sí solo que no sean necesarias para recuperación o mantenimiento.",
+  "question": "¿Confirma el equipo que Gutemberg debe dejar de ofrecer el panel local y sus endpoints de gestión, manteniendo solo las rutas necesarias para Auto Packing?",
+  "rationale": "La PR elimina capacidades existentes a partir de un inventario de uso conocido; decidir si deben retirarse permanentemente requiere confirmar la intención operativa del equipo.",
   "options": [
     {
-      "title": "Confirmar el recorte",
-      "body": "Aceptar el servicio sin panel ni controles eliminados, condicionado a validar impresión y vaciado SNMP en el puesto antes de instalarlo.",
+      "title": "Retirar el panel y las APIs",
+      "body": "Aceptar la reducción propuesta y resolver conjuntamente la PR y su issue vinculada.",
       "recommended": true
     },
     {
-      "title": "Conservar alguna vía operativa",
-      "body": "Ajustar la reducción para mantener las herramientas de configuración o diagnóstico que el equipo necesite en producción.",
+      "title": "Conservar alguna capacidad",
+      "body": "Identificar el panel o los endpoints operativos que deben permanecer y acotar el cambio antes de integrarlo.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Confirmar el recorte",
-    "body": "Aceptar el servicio sin panel ni controles eliminados, condicionado a validar impresión y vaciado SNMP en el puesto antes de instalarlo.",
+    "title": "Retirar el panel y las APIs",
+    "body": "Aceptar la reducción propuesta y resolver conjuntamente la PR y su issue vinculada.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Sus commits previos introdujeron y mantuvieron la integración reciente de Gutemberg con Auto Packing.",
+    "reason": "Introdujo y mantuvo recientemente la implementación de Gutemberg disponible en el historial local.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10506.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10506#issuecomment-6013010805",
-    "reviewedAt": "2026-10-06T09:04:21.591Z",
-    "mainSha": "335a1042b7f594422b3ed16d4ce21b6ad9aeb610"
+    "reviewedAt": "2026-10-07T09:12:31.303Z",
+    "mainSha": "5e3f2ce1528ba582d89d5109fe494d3c47bebdaf"
   }
 }

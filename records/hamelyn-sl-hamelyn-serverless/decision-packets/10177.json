@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-06T09:09:48.142Z",
-  "updatedAt": "2026-10-06T08:21:23Z",
+  "generatedAt": "2026-10-07T09:11:57.758Z",
+  "updatedAt": "2026-10-07T08:00:46Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,42 +15,41 @@
       "feature",
       "triage:needs-info",
       "clawsweeper:needs-product-decision",
-      "reporter:jorgecano",
-      "P2"
+      "P2",
+      "reporter:jorgecano"
     ],
     "createdAt": "2026-09-28T08:33:21Z",
-    "updatedAt": "2026-10-06T08:21:23Z"
+    "updatedAt": "2026-10-07T08:00:46Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué matriz y política de precios debe aplicar ecommerce a las nuevas tarifas: nuevos importes y reparto por destino, o las tarifas nuevas conservando el reparto y las promociones actuales?",
-  "rationale": "La hoja adjunta da tarifas logísticas, pero no decide cómo convertirlas en precios de producto y de checkout; escoger una alternativa cambia el importe final que paga el cliente.",
+  "question": "¿Para ecommerce se conservan los recargos regionales y promociones actuales al actualizar las tarifas de envío, o se ajustan también los recargos al PVP para mantener el envío normal gratuito donde hoy queda absorbido?",
+  "rationale": "La primera opción puede hacer que algunos destinos dejen de tener envío normal a cero; la segunda cambia el precio visible por unidad. La elección es comercial y no puede deducirse de la tabla logística ni del código.",
   "options": [
     {
-      "title": "Definir matriz ecommerce",
-      "body": "Confirmar importes por destino, moneda y servicio, además del reparto entre PVP y checkout y las condiciones promocionales.",
-      "recommended": true
+      "title": "Conservar recargos y promociones",
+      "body": "Actualizar las tarifas de envío y mantener los recargos y reglas promocionales vigentes, aceptando que algunos destinos puedan dejar de tener envío normal gratuito.",
+      "recommended": false
     },
     {
-      "title": "Conservar política actual",
-      "body": "Indicar expresamente que se actualicen solo los importes logísticos manteniendo el reparto y las promociones ecommerce existentes.",
-      "recommended": false
+      "title": "Reajustar recargos al PVP",
+      "body": "Actualizar también los recargos para que el envío normal siga quedando a cero en las tiendas donde actualmente lo absorbe, aceptando el cambio de PVP por unidad.",
+      "recommended": true
     }
   ],
   "recommendation": {
-    "title": "Definir matriz ecommerce",
-    "body": "Confirmar importes por destino, moneda y servicio, además del reparto entre PVP y checkout y las condiciones promocionales.",
+    "title": "Reajustar recargos al PVP",
+    "body": "Actualizar también los recargos para que el envío normal siga quedando a cero en las tiendas donde actualmente lo absorbe, aceptando el cambio de PVP por unidad.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "HamelynDev",
-    "reason": "Es la señal de persona relacionada con la lógica actual disponible en el historial local, aunque la atribución no confirma propiedad del criterio comercial.",
+    "person": "MarcosTerroso",
+    "reason": "Es la persona identificada en el historial como introductora de la lógica actual que habría que explicar o ajustar; el contexto disponible no identifica al responsable de la decisión comercial.",
     "confidence": "low"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10177.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10177#issuecomment-5866870221",
-    "reviewedAt": "2026-10-06T09:09:48.142Z",
-    "mainSha": "106c09915a4110c44d9766f7ba8df83ada7c0853"
+    "reviewedAt": "2026-10-07T09:11:57.758Z",
+    "mainSha": "5e3f2ce1528ba582d89d5109fe494d3c47bebdaf"
   }
 }
