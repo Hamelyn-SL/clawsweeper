@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-07T02:51:59.111Z",
+  "updatedAt": "2026-10-07T02:42:51Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10539,
+    "title": "Amazon: un espejo INACTIVE al venderse no recibe DELETE y la oferta vuelve a ser comprable días después (SYNC_NO_RECENT en MX)",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10539",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "reporter:javier",
+      "triage:running",
+      "P2",
+      "mk:amazon"
+    ],
+    "createdAt": "2026-10-07T02:33:30Z",
+    "updatedAt": "2026-10-07T02:42:51Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe la retirada incluir en todas las regiones Amazon los espejos vendidos `INACTIVE` con `REPORT_INACTIVE`, además de los criterios actuales?",
+  "rationale": "La selección actual limita expresamente los espejos `INACTIVE` a un marcador de exceso de cantidad en ES; ampliar el criterio puede afectar volumen y comportamiento regional, y requiere confirmar la política operativa.",
+  "options": [
+    {
+      "title": "Ampliar el criterio en todas las regiones",
+      "body": "Incluir los espejos vendidos con `REPORT_INACTIVE` en la cola de DELETE y validar carga y resultados por región.",
+      "recommended": true
+    },
+    {
+      "title": "Limitarlo a MX y COM",
+      "body": "Añadir el criterio solo a las regiones del caso medido y observar si resuelve la reaparición de ofertas.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener la selección actual",
+      "body": "No ampliar la retirada hasta contar con evidencia adicional sobre cómo Amazon vuelve a ofrecer la unidad.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Ampliar el criterio en todas las regiones",
+    "body": "Incluir los espejos vendidos con `REPORT_INACTIVE` en la cola de DELETE y validar carga y resultados por región.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Su cambio introdujo la selección Amazon reciente para espejos vendidos sin estado y es la conexión más directa con esta decisión de alcance.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10539.md",
+    "reviewedAt": "2026-10-07T02:51:59.111Z",
+    "mainSha": "8f0628dece3223b74646bc33fa10ae785826a761"
+  }
+}
