@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-07T13:06:34.753Z",
+  "updatedAt": "2026-10-06T13:23:10Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10525,
+    "title": "Catálogo: filtro «Nuevo» y carrusel de 0 resultados",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10525",
+    "state": "open",
+    "labels": [
+      "bug",
+      "source:admin-panel",
+      "app:ecommerce",
+      "triage:done",
+      "reporter:victor",
+      "P2"
+    ],
+    "createdAt": "2026-10-06T12:36:16Z",
+    "updatedAt": "2026-10-06T13:23:10Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se aprueba habilitar nuevos exclusivos BOOK/ES en el catálogo con selección de candidatos previa al límite y validación del índice existente?",
+  "rationale": "La decisión altera elegibilidad y orden/precio del catálogo y puede afectar latencia; hay que acordar el alcance funcional y validar la consulta sin crear ni modificar índices.",
+  "options": [
+    {
+      "title": "Validar y habilitar BOOK/ES",
+      "body": "Medir selección, precio, orden, permisos y caché con el índice existente antes de publicar el cambio.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener solo segunda mano",
+      "body": "Dejar la búsqueda como está y retirar el requisito de incluir nuevos exclusivos.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Validar y habilitar BOOK/ES",
+    "body": "Medir selección, precio, orden, permisos y caché con el índice existente antes de publicar el cambio.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "El historial cercano lo relaciona con páginas de categoría ecommerce; la asignación es provisional porque el historial completo no está disponible.",
+    "confidence": "low"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10525.md",
+    "reviewedAt": "2026-10-07T13:06:34.753Z",
+    "mainSha": "a638e35fbaf85b2b623c346aaac9a96c9c8d9f29"
+  }
+}
