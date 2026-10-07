@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-07T13:08:32.479Z",
+  "updatedAt": "2026-10-07T12:37:01Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10587,
+    "title": "fix: park casa del libro offers the operator keeps disabled",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10587",
+    "state": "open",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-10-07T12:29:38Z",
+    "updatedAt": "2026-10-07T12:37:01Z",
+    "headSha": "34c3733b24181cfe272088f7abc694867a47985c"
+  },
+  "lane": "merge_risk",
+  "priority": "P2",
+  "question": "¿Debe integrarse el rearmado de ofertas CDL deshabilitadas para retirada antes de confirmar que Mirakl acepta el borrado OF24 en ese estado?",
+  "rationale": "La venta cambia una fila aparcada a ACTIVE para que la selección de retirada la procese, pero el propio PR indica que el comportamiento remoto de OF24 sigue sin verificarse; el equipo debe decidir si acepta ese riesgo operativo o exige la comprobación.",
+  "options": [
+    {
+      "title": "Verificar OF24 antes de integrar",
+      "body": "Confirmar con una oferta deshabilitada que Mirakl acepta la retirada y revisar cómo queda el espejo cuando la rechaza.",
+      "recommended": true
+    },
+    {
+      "title": "Integrar aceptando el riesgo",
+      "body": "Permitir el cambio con la expectativa de que cualquier rechazo remoto quede registrado para seguimiento operativo.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Verificar OF24 antes de integrar",
+    "body": "Confirmar con una oferta deshabilitada que Mirakl acepta la retirada y revisar cómo queda el espejo cuando la rechaza.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su historial está ligado al marcador de venta que el cambio amplía y al comportamiento del flujo de retirada.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10587.md",
+    "reviewedAt": "2026-10-07T13:08:32.479Z",
+    "mainSha": "a638e35fbaf85b2b623c346aaac9a96c9c8d9f29"
+  }
+}
