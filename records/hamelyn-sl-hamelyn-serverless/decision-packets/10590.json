@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-07T13:14:04.134Z",
+  "updatedAt": "2026-10-07T13:09:06Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10590,
+    "title": "data-dashboards: show the scrapers VM control panel",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10590",
+    "state": "open",
+    "labels": [
+      "app:infrastructure",
+      "reporter:pablo",
+      "feature",
+      "triage:queued",
+      "P2"
+    ],
+    "createdAt": "2026-10-07T13:08:43Z",
+    "updatedAt": "2026-10-07T13:09:06Z"
+  },
+  "lane": "security_boundary",
+  "priority": "P2",
+  "question": "¿Se aprueba exponer el panel de scrapers a usuarios autenticados de `data-dashboards`, limitando las mutaciones a `developers` y exigiendo el secreto del proxy en la VM?",
+  "rationale": "La integración crea una nueva frontera hacia una consola con controles operativos; hace falta confirmar que esta exposición y separación de permisos es la política deseada antes de implementar el proxy.",
+  "options": [
+    {
+      "title": "Aprobar el proxy restringido",
+      "body": "Implementar lectura para usuarios autorizados de `data-dashboards`, mutaciones solo para `developers` y rechazo en la VM de solicitudes sin el secreto del proxy.",
+      "recommended": true
+    },
+    {
+      "title": "Limitar la integración a lectura",
+      "body": "Exponer el stream y los datos, pero mantener todas las operaciones de control fuera de `data-dashboards`.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener acceso por túnel",
+      "body": "No exponer el panel desde la aplicación y conservar el acceso operativo actual por SSH.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar el proxy restringido",
+    "body": "Implementar lectura para usuarios autorizados de `data-dashboards`, mutaciones solo para `developers` y rechazo en la VM de solicitudes sin el secreto del proxy.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "PabloMoran34",
+    "reason": "Su historial incluye la agrupación de navegación técnica y la plataforma de scrapers cuya consola se solicita integrar.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10590.md",
+    "reviewedAt": "2026-10-07T13:14:04.134Z",
+    "mainSha": "a638e35fbaf85b2b623c346aaac9a96c9c8d9f29"
+  }
+}

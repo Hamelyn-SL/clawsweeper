@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-07T13:08:32.479Z",
+  "generatedAt": "2026-10-07T13:12:40.423Z",
   "updatedAt": "2026-10-07T12:37:01Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -10,43 +10,41 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10587",
     "state": "open",
     "labels": [
-      "size/L",
-      "P2"
+      "size/L"
     ],
     "createdAt": "2026-10-07T12:29:38Z",
     "updatedAt": "2026-10-07T12:37:01Z",
     "headSha": "34c3733b24181cfe272088f7abc694867a47985c"
   },
-  "lane": "merge_risk",
+  "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe integrarse el rearmado de ofertas CDL deshabilitadas para retirada antes de confirmar que Mirakl acepta el borrado OF24 en ese estado?",
-  "rationale": "La venta cambia una fila aparcada a ACTIVE para que la selección de retirada la procese, pero el propio PR indica que el comportamiento remoto de OF24 sigue sin verificarse; el equipo debe decidir si acepta ese riesgo operativo o exige la comprobación.",
+  "question": "¿Debe integrarse el rearmado para retirada de ofertas CDL deshabilitadas antes de confirmar que Mirakl acepta OF24 en ese estado?",
+  "rationale": "El cambio altera qué ofertas vendidas entran en la retirada normal, pero la aceptación remota de OF24 no está verificada; decidir si exigir esa prueba o asumir el riesgo operativo corresponde al equipo.",
   "options": [
     {
       "title": "Verificar OF24 antes de integrar",
-      "body": "Confirmar con una oferta deshabilitada que Mirakl acepta la retirada y revisar cómo queda el espejo cuando la rechaza.",
+      "body": "Confirmar la retirada de una oferta deshabilitada y revisar el estado del espejo si Mirakl la rechaza.",
       "recommended": true
     },
     {
       "title": "Integrar aceptando el riesgo",
-      "body": "Permitir el cambio con la expectativa de que cualquier rechazo remoto quede registrado para seguimiento operativo.",
+      "body": "Permitir el cambio y tratar cualquier rechazo remoto como error operativo de retirada.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Verificar OF24 antes de integrar",
-    "body": "Confirmar con una oferta deshabilitada que Mirakl acepta la retirada y revisar cómo queda el espejo cuando la rechaza.",
+    "body": "Confirmar la retirada de una oferta deshabilitada y revisar el estado del espejo si Mirakl la rechaza.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su historial está ligado al marcador de venta que el cambio amplía y al comportamiento del flujo de retirada.",
-    "confidence": "medium"
+    "reason": "Su cambio reciente aborda el marcador que conserva las retiradas iniciadas por venta.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10587.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10587#issuecomment-6038641484",
-    "reviewedAt": "2026-10-07T13:08:32.479Z",
+    "reviewedAt": "2026-10-07T13:12:40.423Z",
     "mainSha": "a638e35fbaf85b2b623c346aaac9a96c9c8d9f29"
   }
 }
