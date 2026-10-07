@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-07T10:48:38.479Z",
+  "updatedAt": "2026-10-07T10:45:25Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10567,
+    "title": "Ecommerce: confirmación por WhatsApp de pedidos Postlibri vía Communication Center",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10567",
+    "state": "open",
+    "labels": [
+      "app:ecommerce",
+      "feature",
+      "triage:done",
+      "reporter:danielmenchen",
+      "P1"
+    ],
+    "createdAt": "2026-10-07T10:34:04Z",
+    "updatedAt": "2026-10-07T10:45:25Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se confirma como contrato de producto la plantilla y los campos de ManyChat, la ventana de asentamiento y el tratamiento de resultados de envío inciertos antes de activar los WhatsApp Postlibri?",
+  "rationale": "La emisión es una nueva comunicación externa y la issue deja por verificar los identificadores del flujo/campos y el intervalo de asentamiento; una decisión errónea puede producir mensajes duplicados o con datos de otro pedido.",
+  "options": [
+    {
+      "title": "Confirmar contrato y activar",
+      "body": "Validar con Ecommerce y Communication Center los campos, la ventana y el manejo de resultados inciertos antes de habilitar el worker.",
+      "recommended": true
+    },
+    {
+      "title": "Desplegar primero en modo controlado",
+      "body": "Implementar el flujo con envío desactivado o limitado hasta medir el asentamiento y validar los resultados con ManyChat.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Confirmar contrato y activar",
+    "body": "Validar con Ecommerce y Communication Center los campos, la ventana y el manejo de resultados inciertos antes de habilitar el worker.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Daniel",
+    "reason": "Su historial reciente cubre el catálogo, enrutamiento y claims del Communication Center, por lo que es el candidato mejor respaldado para coordinar el contrato técnico con Ecommerce.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10567.md",
+    "reviewedAt": "2026-10-07T10:48:38.479Z",
+    "mainSha": "2b96cad4c1dca9a02d4594a190070214f1c6a897"
+  }
+}
