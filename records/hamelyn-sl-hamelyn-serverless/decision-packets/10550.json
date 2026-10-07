@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-07T08:02:29.493Z",
+  "updatedAt": "2026-10-07T07:57:08Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10550,
+    "title": "feat: derive marketplace ship priority from service level only",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10550",
+    "state": "open",
+    "labels": [
+      "size/XXL"
+    ],
+    "createdAt": "2026-10-07T07:48:57Z",
+    "updatedAt": "2026-10-07T07:57:08Z",
+    "headSha": "41aa95d07bdb968a24c894a4565fa0855d894b88"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se aprueban para pedidos nuevos las reglas de prioridad fijas y geográficas propuestas, incluida la urgencia fija de Decathlon y la prioridad NORMAL por defecto?",
+  "rationale": "Estas reglas sustituyen el fallback actual por importe y afectan la prioridad con la que se tramitan pedidos nuevos; la evidencia del PR explica la petición y estima el impacto, pero no acredita por sí misma la aprobación operativa final.",
+  "options": [
+    {
+      "title": "Aprobar las reglas propuestas",
+      "body": "Aceptar el nuevo criterio de prioridad por marketplace para pedidos futuros, sin modificar los pedidos ya importados.",
+      "recommended": true
+    },
+    {
+      "title": "Acotar o ajustar el cambio",
+      "body": "Pedir cambios a reglas concretas antes de adoptar el nuevo criterio para todos los marketplaces.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar las reglas propuestas",
+    "body": "Aceptar el nuevo criterio de prioridad por marketplace para pedidos futuros, sin modificar los pedidos ya importados.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Miguel Angel Hernández Perdomo",
+    "reason": "Es el contribuidor reciente identificable en el módulo central de prioridad; la evidencia disponible no identifica un responsable logístico concreto.",
+    "confidence": "low"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10550.md",
+    "reviewedAt": "2026-10-07T08:02:29.493Z",
+    "mainSha": "ff35717c25d1677ab612d1d6378681904408707f"
+  }
+}
