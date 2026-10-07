@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-06T16:29:54.842Z",
-  "updatedAt": "2026-10-06T13:13:35Z",
+  "generatedAt": "2026-10-07T17:37:31.724Z",
+  "updatedAt": "2026-10-06T18:25:33Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -14,39 +14,38 @@
       "P2"
     ],
     "createdAt": "2026-10-06T13:06:10Z",
-    "updatedAt": "2026-10-06T13:13:35Z",
+    "updatedAt": "2026-10-06T18:25:33Z",
     "headSha": "3cf85afd809609aa18261339aa0967122448e543"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Basta con confirmar que el mismo pedido figura como `SHIPPED` en Amazon, o debe coincidir también el tracking antes de persistirlo como enviado?",
-  "rationale": "El PR informa de confirmaciones realizadas por actores externos antes de que existiera nuestra etiqueta; permitir tracking distinto puede dejar el espejo en `SHIPPED` aunque no se haya vinculado el envío a nuestro tracking.",
+  "question": "¿Basta con que el mismo pedido figure como `SHIPPED` en Amazon, aunque su tracking no coincida con el nuestro, o debe exigirse esa coincidencia antes de persistir `SHIPPED`?",
+  "rationale": "La regla cambia la fiabilidad del estado espejo cuando un actor externo confirma el pedido y el PR documenta casos en los que Amazon lo marcó enviado antes de que existiera nuestra etiqueta.",
   "options": [
     {
       "title": "Aceptar estado remoto",
-      "body": "Persistir `SHIPPED` cuando el mismo pedido aparezca enviado en Amazon y gestionar aparte los casos con tracking distinto.",
+      "body": "Persistir `SHIPPED` si coincide el pedido y Amazon informa ese estado; gestionar por separado los casos de tracking distinto.",
       "recommended": true
     },
     {
-      "title": "Exigir coincidencia de tracking",
-      "body": "Comparar el tracking remoto con el nuestro y conservar `SYNC_ERROR` o una ruta de revisión cuando no coincidan.",
+      "title": "Exigir tracking coincidente",
+      "body": "Comparar el tracking remoto y mantener una ruta de error o revisión cuando no coincida.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Aceptar estado remoto",
-    "body": "Persistir `SHIPPED` cuando el mismo pedido aparezca enviado en Amazon y gestionar aparte los casos con tracking distinto.",
+    "body": "Persistir `SHIPPED` si coincide el pedido y Amazon informa ese estado; gestionar por separado los casos de tracking distinto.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Introdujo el flujo de confirmación SP-API y conoce el comportamiento del adaptador; la decisión operativa puede requerir validación del equipo marketplace.",
+    "reason": "La issue asociada está asignada a esta persona y el hilo le atribuye la decisión de comportamiento ya propuesta.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10529.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10529#issuecomment-6020776816",
-    "reviewedAt": "2026-10-06T16:29:54.842Z",
-    "mainSha": "9c76bbeffd799a99a34a461135a584dfb14c08e3"
+    "reviewedAt": "2026-10-07T17:37:31.724Z",
+    "mainSha": "6fcf513679faf1ba217a94f7e0308469083910bb"
   }
 }
