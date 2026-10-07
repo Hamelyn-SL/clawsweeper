@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-06T10:06:14.881Z",
-  "updatedAt": "2026-10-06T09:55:27Z",
+  "generatedAt": "2026-10-07T10:57:04.973Z",
+  "updatedAt": "2026-10-06T10:30:50Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,48 +13,42 @@
       "bug",
       "app:infrastructure",
       "reporter:javier",
-      "triage:queued",
+      "triage:needs-info",
       "clawsweeper:needs-product-decision",
       "P2"
     ],
     "createdAt": "2026-08-25T11:13:59Z",
-    "updatedAt": "2026-10-06T09:55:27Z"
+    "updatedAt": "2026-10-06T10:30:50Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe la cohorte antigua mostrarse únicamente para revisión manual, o se autoriza reencolar cubetas después de que Operaciones confirme su disponibilidad física?",
-  "rationale": "La consulta actual se usa en un endpoint con efecto lateral: ampliar el filtro puede iniciar BIN IN en cubetas cuya ubicación actual no está verificada. La implementación segura depende de la política operativa para esa cohorte.",
+  "question": "¿Debe añadirse una vista pasiva para stocks envejecidos separada del endpoint que encola BIN IN, y qué comprobación operativa autoriza recuperar cada cubeta?",
+  "rationale": "El flujo actual encola los resultados del endpoint; ampliar su alcance sin una política explícita mezcla visibilidad con una acción física que no puede validarse desde el código ni la réplica.",
   "options": [
     {
-      "title": "Separar consulta y acción",
-      "body": "Añadir visibilidad de solo lectura y reencolar únicamente las cubetas confirmadas por Operaciones.",
+      "title": "Separar visibilidad y recuperación",
+      "body": "Añadir una consulta o vista pasiva para los stocks envejecidos y mantener el reencolado sujeto a confirmación operativa.",
       "recommended": true
     },
     {
-      "title": "Reencolar tras confirmación operativa",
-      "body": "Mantener el endpoint de acción y ejecutar el reescaneo solo sobre la lista de cubetas que Operaciones valide.",
-      "recommended": false
-    },
-    {
-      "title": "Cerrar como legacy confirmado",
-      "body": "Cerrar la incidencia si Operaciones verifica que la cohorte ya no existe o que no requiere recuperación.",
+      "title": "Mantener revisión solo operativa",
+      "body": "No ampliar el panel hasta que Operaciones defina cómo comprobar y recuperar de forma segura cada cubeta.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Separar consulta y acción",
-    "body": "Añadir visibilidad de solo lectura y reencolar únicamente las cubetas confirmadas por Operaciones.",
+    "title": "Separar visibilidad y recuperación",
+    "body": "Añadir una consulta o vista pasiva para los stocks envejecidos y mantener el reencolado sujeto a confirmación operativa.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "banosdavidhamelyn",
-    "reason": "Participó en el flujo de reintentos de creación de cubetas y en la comprobación operativa de la cohorte reflejada en el hilo.",
+    "reason": "Es el candidato mejor respaldado por el historial local reciente del flujo Skypod y de recuperación de stocks pendientes.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8700.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8700#issuecomment-5409648772",
-    "reviewedAt": "2026-10-06T10:06:14.881Z",
-    "mainSha": "ab727b7695cd6f5ea2fe96c121cfa30cda3e67b5"
+    "reviewedAt": "2026-10-07T10:57:04.973Z",
+    "mainSha": "2b96cad4c1dca9a02d4594a190070214f1c6a897"
   }
 }
