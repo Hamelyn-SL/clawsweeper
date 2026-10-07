@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-07T11:25:28.582Z",
+  "updatedAt": "2026-10-06T13:35:07Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10514,
+    "title": "Amazon reprice completion leaves suppressed listings ACTIVE after deferred report decisions",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10514",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "triage:done",
+      "P2"
+    ],
+    "createdAt": "2026-10-06T10:02:26Z",
+    "updatedAt": "2026-10-06T13:35:07Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "Cuando termine correctamente un reprice cuyo informe `REPORT_INACTIVE` se aplazó, ¿debe prevalecer esa decisión pendiente o una consulta dirigida de Listings para registrar la supresión observada?",
+  "rationale": "Ambos caminos pueden corregir el estado local, pero eligen distinta fuente de verdad y distinta interacción con la API antes de cambiar un estado que controla futuras acciones de publicación.",
+  "options": [
+    {
+      "title": "Revalidar el informe aplazado",
+      "body": "Aplicar la decisión pendiente al cierre del lote, manteniendo el precio confirmado y las guardas de concurrencia.",
+      "recommended": false
+    },
+    {
+      "title": "Consultar Listings al cerrar",
+      "body": "Verificar el estado remoto tras el ACK y persistir la supresión observada sin reenviar el precio.",
+      "recommended": true
+    }
+  ],
+  "recommendation": {
+    "title": "Consultar Listings al cerrar",
+    "body": "Verificar el estado remoto tras el ACK y persistir la supresión observada sin reenviar el precio.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Su historial reciente en reconciliación Amazon y procesamiento de lotes lo conecta con el comportamiento a decidir.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10514.md",
+    "reviewedAt": "2026-10-07T11:25:28.582Z",
+    "mainSha": "2b96cad4c1dca9a02d4594a190070214f1c6a897"
+  }
+}
