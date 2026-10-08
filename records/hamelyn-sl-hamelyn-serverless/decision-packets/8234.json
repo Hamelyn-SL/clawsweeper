@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-03T05:30:12.596Z",
-  "updatedAt": "2026-10-03T05:05:23Z",
+  "generatedAt": "2026-10-08T13:04:26.569Z",
+  "updatedAt": "2026-10-08T12:42:56Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -18,38 +18,37 @@
       "P3"
     ],
     "createdAt": "2026-08-05T06:55:07Z",
-    "updatedAt": "2026-10-03T05:05:23Z"
+    "updatedAt": "2026-10-08T12:42:56Z"
   },
   "lane": "product_direction",
   "priority": "P3",
-  "question": "¿Debe `countCouponUsage` tener como única spec canónica `BL-ecommerce-coupons-13` con referencias desde checkout, o deben mantenerse specs independientes por subdominio?",
-  "rationale": "La elección afecta a la titularidad y al grafo BL, y no puede inferirse con seguridad solo a partir del JSDoc actual.",
+  "question": "¿Deben las reglas compartidas tener una única spec canónica con referencias cruzadas, o conservar specs independientes por subdominio?",
+  "rationale": "La elección afecta al grafo BL y a cómo se vinculan las reglas compartidas; el PR abierto evita cambiar IDs sin esa decisión.",
   "options": [
     {
       "title": "Una spec canónica",
-      "body": "Mantener `BL-ecommerce-coupons-13` como propietaria de `countCouponUsage` y sustituir las duplicaciones por referencias cruzadas.",
+      "body": "Mantener `BL-ecommerce-coupons-13` como titular de `countCouponUsage` y usar referencias cruzadas desde checkout y los subdominios que compartan reglas.",
       "recommended": true
     },
     {
       "title": "Specs por subdominio",
-      "body": "Conservar una spec en cada subdominio cuando la regla compartida tenga relevancia local y documentar claramente el código común.",
+      "body": "Conservar specs independientes cuando cada subdominio necesite su propia representación y aclarar en ellas el código compartido.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Una spec canónica",
-    "body": "Mantener `BL-ecommerce-coupons-13` como propietaria de `countCouponUsage` y sustituir las duplicaciones por referencias cruzadas.",
+    "body": "Mantener `BL-ecommerce-coupons-13` como titular de `countCouponUsage` y usar referencias cruzadas desde checkout y los subdominios que compartan reglas.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es la persona asignada actualmente y la discusión requiere una decisión de titularidad del equipo.",
+    "reason": "Es la persona asignada a la issue y la señal disponible más directa para coordinar la decisión sobre este mantenimiento documental.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8234.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8234#issuecomment-5188663433",
-    "reviewedAt": "2026-10-03T05:30:12.596Z",
-    "mainSha": "994e8e77f90df7449a17c592ef555acc9d607ca3"
+    "reviewedAt": "2026-10-08T13:04:26.569Z",
+    "mainSha": "b11a123b093f01dbcebc7ba2a3da08a2d66797bc"
   }
 }
