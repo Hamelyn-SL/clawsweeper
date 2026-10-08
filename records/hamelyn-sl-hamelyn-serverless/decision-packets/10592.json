@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-07T14:01:14.903Z",
-  "updatedAt": "2026-10-07T13:32:09Z",
+  "generatedAt": "2026-10-08T14:09:57.102Z",
+  "updatedAt": "2026-10-08T05:42:33Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -14,44 +14,43 @@
       "P2"
     ],
     "createdAt": "2026-10-07T13:19:27Z",
-    "updatedAt": "2026-10-07T13:32:09Z",
-    "headSha": "8b0baf948c1efa91707db587f767f176eb41c39d"
+    "updatedAt": "2026-10-08T05:42:33Z",
+    "headSha": "0c1a9d25ef7f0dfc10d4877266f9997881e96b00"
   },
-  "lane": "product_direction",
+  "lane": "security_boundary",
   "priority": "P2",
-  "question": "¿Se aprueba exponer el panel desde `data-dashboards` con lectura para sus usuarios autorizados y mutaciones reservadas a `developers`, usando el proxy con secreto compartido?",
-  "rationale": "La issue vinculada mantiene abiertas alternativas de acceso con distinto alcance operativo; el código no puede determinar qué política quiere adoptar el equipo.",
+  "question": "¿Se acepta que el JavaScript servido por la VM de scrapers se ejecute en un iframe del mismo origen que data-dashboards y acceda a la función que obtiene el token del usuario?",
+  "rationale": "La elección determina si la VM y sus recursos estáticos quedan dentro de la frontera de confianza de la aplicación; ni las pruebas simuladas ni el control POST por rol resuelven esa decisión de seguridad.",
   "options": [
     {
-      "title": "Aprobar el proxy restringido",
-      "body": "Mantener lectura autenticada y permitir mutaciones solo a usuarios con rol `developers`, exigiendo el secreto compartido en la VM.",
-      "recommended": true
-    },
-    {
-      "title": "Limitarlo a lectura",
-      "body": "Exponer datos y stream, pero dejar las operaciones de control fuera de `data-dashboards`.",
+      "title": "Aprobar el modelo actual",
+      "body": "Aceptar la VM como fuente de código de confianza y continuar con el iframe y las restricciones de autorización existentes.",
       "recommended": false
     },
     {
+      "title": "Aislar el origen del panel",
+      "body": "Mantener el proxy y la autorización, pero servir el iframe desde un origen separado para limitar el acceso del código del panel al contexto de data-dashboards.",
+      "recommended": true
+    },
+    {
       "title": "Conservar el acceso por túnel",
-      "body": "No publicar el panel en `data-dashboards` y mantener el flujo actual por SSH.",
+      "body": "No exponer el panel desde data-dashboards y mantener el acceso operativo mediante SSH.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar el proxy restringido",
-    "body": "Mantener lectura autenticada y permitir mutaciones solo a usuarios con rol `developers`, exigiendo el secreto compartido en la VM.",
+    "title": "Aislar el origen del panel",
+    "body": "Mantener el proxy y la autorización, pero servir el iframe desde un origen separado para limitar el acceso del código del panel al contexto de data-dashboards.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "PabloMoran34",
-    "reason": "La issue de producto emparejada y el diseño de integración parten de su trabajo previo en esta área; JavierHamelyn figura como revisor técnico solicitado.",
+    "person": "JavierHamelyn",
+    "reason": "Su historial reciente en la autorización y estructura de data-dashboards lo convierte en el candidato disponible más cercano al límite afectado.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10592.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10592#issuecomment-6039673160",
-    "reviewedAt": "2026-10-07T14:01:14.903Z",
-    "mainSha": "6fcf513679faf1ba217a94f7e0308469083910bb"
+    "reviewedAt": "2026-10-08T14:09:57.102Z",
+    "mainSha": "fd5173754dea1e2bc1a511cb27c03be87a75b038"
   }
 }
