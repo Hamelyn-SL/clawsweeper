@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-05T13:12:38.092Z",
-  "updatedAt": "2026-10-05T12:30:47Z",
+  "generatedAt": "2026-10-08T13:53:19.994Z",
+  "updatedAt": "2026-10-08T13:49:37Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,44 +13,43 @@
       "codex",
       "bug",
       "app:marketplace",
-      "triage:blocked",
+      "triage:queued",
       "clawsweeper:needs-product-decision",
-      "marketplace-crons",
-      "P2"
+      "P2",
+      "marketplace-crons"
     ],
     "createdAt": "2026-09-22T10:30:41Z",
-    "updatedAt": "2026-10-05T12:30:47Z"
+    "updatedAt": "2026-10-08T13:49:37Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe el código `-4` de Arnoia/Azeta mantener el pedido en `PENDING_LABEL` al superar las 168 horas hasta confirmación humana, en vez de aplicar la cancelación automática actual?",
-  "rationale": "El cambio altera la política de cancelación de pedidos y la evidencia disponible no confirma por sí sola si el proveedor los expidió; la decisión afecta a la recuperación operativa y al riesgo de cancelar pedidos ya expedidos.",
+  "question": "¿Debe un error `-4` de Arnoia/Azeta impedir la cancelación automática al límite de 168 horas y dejar el pedido pendiente de confirmación operativa?",
+  "rationale": "La política decide cuándo un pedido potencialmente expedido puede pasar a cancelación; la evidencia de la issue muestra el impacto, pero corresponde al equipo confirmar este comportamiento operativo antes de aterrizar la excepción.",
   "options": [
     {
-      "title": "Conservar pendiente ante `-4`",
-      "body": "Aprobar la dirección de la PR vinculada y requerir confirmación del proveedor antes de cancelar esos pedidos.",
+      "title": "Mantener pendiente ante `-4`",
+      "body": "Aprobar la excepción acotada propuesta en la PR y exigir confirmación operativa antes de cancelar el pedido.",
       "recommended": true
     },
     {
       "title": "Mantener el timeout actual",
-      "body": "Cancelar al alcanzar las 168 horas aunque la última consulta haya devuelto `-4`, manteniendo la regla operativa vigente.",
+      "body": "Cancelar a las 168 horas incluso si la consulta devuelve `-4`, aceptando el riesgo documentado de cancelar sin tracking confirmado.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Conservar pendiente ante `-4`",
-    "body": "Aprobar la dirección de la PR vinculada y requerir confirmación del proveedor antes de cancelar esos pedidos.",
+    "title": "Mantener pendiente ante `-4`",
+    "body": "Aprobar la excepción acotada propuesta en la PR y exigir confirmación operativa antes de cancelar el pedido.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Su historial reciente incluye cambios en el comportamiento del hard timeout de tracking y aporta la mejor conexión observada con esta política.",
-    "confidence": "medium"
+    "person": "MarcosTerroso",
+    "reason": "Está asignado a la issue y propuso la excepción concreta en la PR vinculada.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9916.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9916#issuecomment-5793494354",
-    "reviewedAt": "2026-10-05T13:12:38.092Z",
-    "mainSha": "10a73bc526b68e0cad93eab82dcb7cd77944b966"
+    "reviewedAt": "2026-10-08T13:53:19.994Z",
+    "mainSha": "fd5173754dea1e2bc1a511cb27c03be87a75b038"
   }
 }
