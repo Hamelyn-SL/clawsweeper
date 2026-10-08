@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-07T13:14:04.134Z",
-  "updatedAt": "2026-10-07T13:09:06Z",
+  "generatedAt": "2026-10-08T13:17:58.162Z",
+  "updatedAt": "2026-10-07T14:15:45Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,49 +13,48 @@
       "app:infrastructure",
       "reporter:pablo",
       "feature",
-      "triage:queued",
-      "P2",
+      "triage:done",
       "clawsweeper:needs-product-decision",
+      "P2",
       "clawsweeper:needs-security-review"
     ],
     "createdAt": "2026-10-07T13:08:43Z",
-    "updatedAt": "2026-10-07T13:09:06Z"
+    "updatedAt": "2026-10-07T14:15:45Z"
   },
-  "lane": "security_boundary",
+  "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se aprueba exponer el panel de scrapers a usuarios autenticados de `data-dashboards`, limitando las mutaciones a `developers` y exigiendo el secreto del proxy en la VM?",
-  "rationale": "La integración crea una nueva frontera hacia una consola con controles operativos; hace falta confirmar que esta exposición y separación de permisos es la política deseada antes de implementar el proxy.",
+  "question": "¿Se aprueba exponer el panel de scrapers desde `data-dashboards` con lectura para sus usuarios autorizados, mutaciones limitadas a `developers` y secreto compartido exigido por la VM?",
+  "rationale": "La integración amplía el acceso a una consola con acciones operativas; el equipo debe confirmar explícitamente el alcance y el modelo de autorización antes de aceptar la PR vinculada.",
   "options": [
     {
-      "title": "Aprobar el proxy restringido",
-      "body": "Implementar lectura para usuarios autorizados de `data-dashboards`, mutaciones solo para `developers` y rechazo en la VM de solicitudes sin el secreto del proxy.",
+      "title": "Aprobar proxy restringido",
+      "body": "Permitir lectura autenticada y limitar las mutaciones a `developers`, con verificación del secreto en la VM.",
       "recommended": true
     },
     {
-      "title": "Limitar la integración a lectura",
-      "body": "Exponer el stream y los datos, pero mantener todas las operaciones de control fuera de `data-dashboards`.",
+      "title": "Aprobar solo lectura",
+      "body": "Exponer datos y stream, pero mantener las acciones de control fuera de `data-dashboards`.",
       "recommended": false
     },
     {
       "title": "Mantener acceso por túnel",
-      "body": "No exponer el panel desde la aplicación y conservar el acceso operativo actual por SSH.",
+      "body": "No publicar el panel desde la aplicación y conservar el acceso operativo mediante SSH.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar el proxy restringido",
-    "body": "Implementar lectura para usuarios autorizados de `data-dashboards`, mutaciones solo para `developers` y rechazo en la VM de solicitudes sin el secreto del proxy.",
+    "title": "Aprobar proxy restringido",
+    "body": "Permitir lectura autenticada y limitar las mutaciones a `developers`, con verificación del secreto en la VM.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "PabloMoran34",
-    "reason": "Su historial incluye la agrupación de navegación técnica y la plataforma de scrapers cuya consola se solicita integrar.",
-    "confidence": "high"
+    "reason": "Está asignado a la issue, propuso la integración y figura en el historial de organización de `data-dashboards`.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10590.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10590#issuecomment-6038729099",
-    "reviewedAt": "2026-10-07T13:14:04.134Z",
-    "mainSha": "a638e35fbaf85b2b623c346aaac9a96c9c8d9f29"
+    "reviewedAt": "2026-10-08T13:17:58.162Z",
+    "mainSha": "fd5173754dea1e2bc1a511cb27c03be87a75b038"
   }
 }
