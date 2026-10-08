@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-07T08:02:29.493Z",
-  "updatedAt": "2026-10-07T07:57:08Z",
+  "generatedAt": "2026-10-08T10:58:35.388Z",
+  "updatedAt": "2026-10-08T10:01:45Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -14,39 +14,43 @@
       "P2"
     ],
     "createdAt": "2026-10-07T07:48:57Z",
-    "updatedAt": "2026-10-07T07:57:08Z",
+    "updatedAt": "2026-10-08T10:01:45Z",
     "headSha": "41aa95d07bdb968a24c894a4565fa0855d894b88"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se aprueban para pedidos nuevos las reglas de prioridad fijas y geográficas propuestas, incluida la urgencia fija de Decathlon y la prioridad NORMAL por defecto?",
-  "rationale": "Estas reglas sustituyen el fallback actual por importe y afectan la prioridad con la que se tramitan pedidos nuevos; la evidencia del PR explica la petición y estima el impacto, pero no acredita por sí misma la aprobación operativa final.",
+  "question": "¿Aprueba el equipo las reglas de prioridad propuestas para pedidos nuevos y confirma que `GET /marketplace/orders` incluye `shipping.method` en sus objetos?",
+  "rationale": "La respuesta determina si Discogs podrá distinguir Express al importar desde el listado y si se aceptan los cambios de prioridad para los marketplaces afectados; el código y las pruebas locales no resuelven estas decisiones operativas.",
   "options": [
     {
-      "title": "Aprobar las reglas propuestas",
-      "body": "Aceptar el nuevo criterio de prioridad por marketplace para pedidos futuros, sin modificar los pedidos ya importados.",
+      "title": "Confirmar el listado y aprobar las reglas",
+      "body": "Aportar una respuesta saneada del endpoint de listado que contenga `shipping.method` y aceptar las reglas para pedidos nuevos.",
       "recommended": true
     },
     {
-      "title": "Acotar o ajustar el cambio",
-      "body": "Pedir cambios a reglas concretas antes de adoptar el nuevo criterio para todos los marketplaces.",
+      "title": "Acotar el cambio",
+      "body": "Solicitar ajustes a las reglas de marketplaces concretos antes de adoptar el nuevo criterio.",
+      "recommended": false
+    },
+    {
+      "title": "Aplazar la adopción",
+      "body": "Mantener pendiente el cambio hasta contar con evidencia del listado y una decisión operativa explícita.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar las reglas propuestas",
-    "body": "Aceptar el nuevo criterio de prioridad por marketplace para pedidos futuros, sin modificar los pedidos ya importados.",
+    "title": "Confirmar el listado y aprobar las reglas",
+    "body": "Aportar una respuesta saneada del endpoint de listado que contenga `shipping.method` y aceptar las reglas para pedidos nuevos.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "Miguel Angel Hernández Perdomo",
-    "reason": "Es el contribuidor reciente identificable en el módulo central de prioridad; la evidencia disponible no identifica un responsable logístico concreto.",
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Es la persona vinculada por el historial local disponible al flujo de importación de Discogs que debe confirmarse.",
     "confidence": "low"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10550.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10550#issuecomment-6033678622",
-    "reviewedAt": "2026-10-07T08:02:29.493Z",
-    "mainSha": "ff35717c25d1677ab612d1d6378681904408707f"
+    "reviewedAt": "2026-10-08T10:58:35.388Z",
+    "mainSha": "1acfb6ff310f3f1795ad4361416f5f5c64f29cc9"
   }
 }
