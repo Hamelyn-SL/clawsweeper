@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-07T13:53:44.196Z",
-  "updatedAt": "2026-10-07T13:41:10Z",
+  "generatedAt": "2026-10-08T13:58:42.941Z",
+  "updatedAt": "2026-10-07T14:46:02Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,44 +13,48 @@
       "bug",
       "source:admin-panel",
       "app:supply",
-      "triage:queued",
-      "reporter:daniellopez",
+      "triage:needs-info",
+      "clawsweeper:needs-product-decision",
       "P2",
-      "clawsweeper:needs-product-decision"
+      "reporter:daniellopez"
     ],
     "createdAt": "2026-10-07T13:40:55Z",
-    "updatedAt": "2026-10-07T13:41:10Z"
+    "updatedAt": "2026-10-07T14:46:02Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Cómo debe calcularse la productividad de un lote incompleto: proporcionalmente a los bultos escaneados, y con qué regla de redondeo y ajuste cuando llegan los bultos pendientes?",
-  "rationale": "La solicitud introduce una regla de atribución de productividad que no aparece definida en el flujo actual ni en el antecedente del flujo de incidencias.",
+  "question": "Para un lote con 65 artículos y 1 de 2 bultos recibidos, ¿cómo se redondea el crédito parcial y a qué operario se atribuyen los artículos correspondientes a los bultos pendientes cuando lleguen?",
+  "rationale": "La proporcionalidad solicitada no está definida por el comportamiento actual y el resultado afecta al crédito de productividad de recepciones realizadas en momentos distintos o por personas distintas.",
   "options": [
     {
-      "title": "Acordar reparto proporcional",
-      "body": "Definir porcentaje, redondeo y ajuste al resolver la incidencia antes de cambiar el recuento persistido.",
+      "title": "Proporcional con resto al siguiente receptor",
+      "body": "Acreditar la parte proporcional redondeada en la primera recepción y asignar el resto al operario que recepcione los bultos pendientes.",
       "recommended": true
     },
     {
-      "title": "Contar solo al cerrar la incidencia",
-      "body": "Mantener la atribución íntegra al recepcionar el lote completo y no repartirla entre recepciones parciales.",
+      "title": "Proporcional con resto al primer receptor",
+      "body": "Acreditar la parte proporcional redondeada en la primera recepción y reservar también el resto para el operario que abrió la incidencia.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener el crédito íntegro actual",
+      "body": "Conservar la acreditación completa al recepcionar el lote y no introducir reparto proporcional.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Acordar reparto proporcional",
-    "body": "Definir porcentaje, redondeo y ajuste al resolver la incidencia antes de cambiar el recuento persistido.",
+    "title": "Proporcional con resto al siguiente receptor",
+    "body": "Acreditar la parte proporcional redondeada en la primera recepción y asignar el resto al operario que recepcione los bultos pendientes.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "banosdavidhamelyn",
-    "reason": "Su trabajo reciente en el flujo de lotes incompletos lo convierte en un candidato de contexto para coordinar la decisión, sin que el historial pruebe que sea su responsable único.",
-    "confidence": "medium"
+    "reason": "Su historial reciente en el flujo de incidencias lo convierte en una referencia de código disponible; la decisión de atribución debe confirmarse con Operaciones.",
+    "confidence": "low"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10594.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10594#issuecomment-6039492074",
-    "reviewedAt": "2026-10-07T13:53:44.196Z",
-    "mainSha": "6fcf513679faf1ba217a94f7e0308469083910bb"
+    "reviewedAt": "2026-10-08T13:58:42.941Z",
+    "mainSha": "fd5173754dea1e2bc1a511cb27c03be87a75b038"
   }
 }
