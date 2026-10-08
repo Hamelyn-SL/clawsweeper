@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-08T09:52:25.267Z",
+  "updatedAt": "2026-10-08T09:45:45Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10636,
+    "title": "**Nueva lista de motivos y nuevo flujo de cancelación y reembolso**",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10636",
+    "state": "open",
+    "labels": [
+      "source:admin-panel",
+      "app:admin",
+      "feature",
+      "reporter:blanca",
+      "triage:needs-info",
+      "P1"
+    ],
+    "createdAt": "2026-10-08T09:39:46Z",
+    "updatedAt": "2026-10-08T09:45:45Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Reembolso debe ejecutar el abono o registrar uno externo, y LOGISTIC_NO_INFO debe conservar la clasificación del Excel o pasar a Reembolso?",
+  "rationale": "Las respuestas determinan el comportamiento de la transición de estado y cómo interpretar datos históricos; no se pueden deducir con seguridad del código ni del adjunto, que discrepan.",
+  "options": [
+    {
+      "title": "Confirmar abono externo y clasificación del Excel",
+      "body": "Registrar el reembolso sin ejecutar el pago y conservar LOGISTIC_NO_INFO como Cancelación en las equivalencias históricas.",
+      "recommended": false
+    },
+    {
+      "title": "Confirmar ejecución del abono y clasificación como reembolso",
+      "body": "Hacer que el flujo realice el abono y clasificar LOGISTIC_NO_INFO como Reembolso en el histórico.",
+      "recommended": false
+    },
+    {
+      "title": "Separar registro y pago, y resolver el histórico con ATC",
+      "body": "Definir explícitamente el registro frente a la ejecución del pago y pedir a Atención al Cliente que confirme la clasificación histórica antes de diseñar la migración.",
+      "recommended": true
+    }
+  ],
+  "recommendation": {
+    "title": "Separar registro y pago, y resolver el histórico con ATC",
+    "body": "Definir explícitamente el registro frente a la ejecución del pago y pedir a Atención al Cliente que confirme la clasificación histórica antes de diseñar la migración.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "PabloMoran34",
+    "reason": "El historial lo vincula con trabajo reciente de analítica de pedidos, uno de los ámbitos afectados por la equivalencia histórica; la decisión de negocio corresponde también a Blanca/ATC.",
+    "confidence": "low"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10636.md",
+    "reviewedAt": "2026-10-08T09:52:25.267Z",
+    "mainSha": "b9b17fe100c993797c5c7f2161a63b3320f2c118"
+  }
+}
