@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-07T09:54:01.629Z",
-  "updatedAt": "2026-10-06T10:45:46Z",
+  "generatedAt": "2026-10-08T10:57:22.686Z",
+  "updatedAt": "2026-10-08T10:42:51Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -18,43 +18,42 @@
       "P2"
     ],
     "createdAt": "2026-10-06T09:25:55Z",
-    "updatedAt": "2026-10-06T10:45:46Z"
+    "updatedAt": "2026-10-08T10:42:51Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Confirma el equipo pasar las actualizaciones agrupadas a los días 1 y 16, las major al día 1 y agrupar las major en `react-next`, `expo-react-native` y `other`?",
-  "rationale": "La elección cambia cuándo se detectan actualizaciones y cuánto aislamiento tienen las dependencias major; la PR vinculada ya solicita esta decisión y la prueba no acredita por sí sola el volumen mensual estimado.",
+  "question": "¿Quiere el equipo adoptar la cadencia quincenal para Grouped y mensual para Major, agrupando las major en `react-next`, `expo-react-native` y `other`?",
+  "rationale": "La propuesta modifica la frecuencia con que se detectan y revisan dependencias y cuánto aislamiento conservan las familias; esa preferencia operativa no se deduce del código.",
   "options": [
     {
       "title": "Adoptar la propuesta",
-      "body": "Confirmar los dos calendarios y las tres familias, conservando las exclusiones y la cobertura actual de CI y autofix.",
+      "body": "Conservar ambas exclusiones y la compatibilidad de CI/autofix y aceptar que el total mensual puede superar tres cuando cambien las dos familias separadas.",
       "recommended": true
     },
     {
-      "title": "Ajustar cadencia o familias",
-      "body": "Modificar la frecuencia o mantener más aislamiento para dependencias que el equipo considere sensibles.",
+      "title": "Ajustar calendario o agrupación",
+      "body": "Reducir parte del ruido manteniendo más frecuencia o aislamiento para dependencias que el equipo considere sensibles.",
       "recommended": false
     },
     {
-      "title": "Mantener el esquema actual",
-      "body": "Conservar la cadencia y separación actuales si prima detectar antes las actualizaciones.",
+      "title": "Mantener el esquema vigente",
+      "body": "Conservar los calendarios y familias actuales para detectar antes las actualizaciones y mantener el aislamiento existente.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Adoptar la propuesta",
-    "body": "Confirmar los dos calendarios y las tres familias, conservando las exclusiones y la cobertura actual de CI y autofix.",
+    "body": "Conservar ambas exclusiones y la compatibilidad de CI/autofix y aceptar que el total mensual puede superar tres cuando cambien las dos familias separadas.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "La revisión de la PR vinculada lo identifica como probable responsable de esta decisión.",
-    "confidence": "medium"
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Su historial conecta con la implementación del workflow major afectado; la decisión concreta de cadencia sigue siendo del equipo.",
+    "confidence": "low"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10510.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10510#issuecomment-6013390472",
-    "reviewedAt": "2026-10-07T09:54:01.629Z",
-    "mainSha": "5e3f2ce1528ba582d89d5109fe494d3c47bebdaf"
+    "reviewedAt": "2026-10-08T10:57:22.686Z",
+    "mainSha": "1acfb6ff310f3f1795ad4361416f5f5c64f29cc9"
   }
 }
