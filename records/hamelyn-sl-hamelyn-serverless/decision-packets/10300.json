@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-01T15:51:24.525Z",
-  "updatedAt": "2026-09-30T16:21:52Z",
+  "generatedAt": "2026-10-08T09:05:15.264Z",
+  "updatedAt": "2026-10-08T08:23:21Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,42 +15,41 @@
       "reporter:javier",
       "triage:needs-info",
       "clawsweeper:needs-product-decision",
-      "mk:ebay",
-      "P2"
+      "P2",
+      "mk:ebay"
     ],
     "createdAt": "2026-09-30T14:34:12Z",
-    "updatedAt": "2026-09-30T16:21:52Z"
+    "updatedAt": "2026-10-08T08:23:21Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué ventana y frecuencia de relectura debe aplicar eBay ES después de aceptar una retirada antes de guardar el error reintentable?",
-  "rationale": "Las trazas demuestran que la lectura inmediata puede ser anterior a la retirada y que el reintento posterior a una hora suele confirmarla, pero no establecen una latencia intermedia segura; además, debe preservarse el control ante ofertas que continúan publicadas.",
+  "question": "¿Qué ventana y frecuencia de relectura tras un POST aceptado debe usar eBay ES antes de guardar la retirada como pendiente?",
+  "rationale": "Las trazas confirman la espera actual, pero no miden la propagación intermedia ni permiten elegir con seguridad la ventana o el presupuesto de peticiones.",
   "options": [
     {
-      "title": "Medir primero y fijar después",
-      "body": "Obtener una traza de lecturas durante el primer minuto tras una retirada aceptada y elegir los límites de sondeo según esa propagación y el presupuesto del cron.",
+      "title": "Medir antes de fijar el sondeo",
+      "body": "Obtener una traza de lecturas tras una retirada aceptada y elegir después una ventana acotada que conserve la detección de ofertas aún publicadas.",
       "recommended": true
     },
     {
       "title": "Adoptar una ventana conservadora",
-      "body": "Definir ahora un número fijo de relecturas espaciadas y aceptar que algunos casos sigan al reintento horario.",
+      "body": "Definir ahora un número y separación de relecturas, aceptando que algunos casos continúen al siguiente reintento programado.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Medir primero y fijar después",
-    "body": "Obtener una traza de lecturas durante el primer minuto tras una retirada aceptada y elegir los límites de sondeo según esa propagación y el presupuesto del cron.",
+    "title": "Medir antes de fijar el sondeo",
+    "body": "Obtener una traza de lecturas tras una retirada aceptada y elegir después una ventana acotada que conserve la detección de ofertas aún publicadas.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Su cambio introdujo la confirmación remota que requiere definir esta conducta posterior a la retirada.",
+    "reason": "Su historial reciente está directamente relacionado con la confirmación de retirada eBay.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10300.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10300#issuecomment-5913899918",
-    "reviewedAt": "2026-10-01T15:51:24.525Z",
-    "mainSha": "6994e00f2013c5e6e36148c27632ebdf062e9b46"
+    "reviewedAt": "2026-10-08T09:05:15.264Z",
+    "mainSha": "b9b17fe100c993797c5c7f2161a63b3320f2c118"
   }
 }
