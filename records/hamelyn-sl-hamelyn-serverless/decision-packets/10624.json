@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-08T07:32:21.976Z",
+  "updatedAt": "2026-10-08T07:29:19Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10624,
+    "title": "feat: send postlibri whatsapp notice through manychat",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10624",
+    "state": "open",
+    "labels": [
+      "size/XXL"
+    ],
+    "createdAt": "2026-10-08T07:24:41Z",
+    "updatedAt": "2026-10-08T07:29:19Z",
+    "headSha": "573c54745d998ba1c469d661ee63690eb51854f9"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe activarse en producción el aviso WhatsApp de Postlibri tras desplegar este cambio, o debe permanecer desactivado hasta una aprobación operativa explícita?",
+  "rationale": "La issue relacionada está marcada para decisión de producto y el propio PR deja el worker apagado hasta cambiar una variable de entorno; el momento de iniciar comunicaciones a clientes no se deduce del código.",
+  "options": [
+    {
+      "title": "Desplegar apagado y aprobar activación aparte",
+      "body": "Integrar el código con el worker desactivado y requerir aprobación operativa antes de habilitar envíos a clientes.",
+      "recommended": true
+    },
+    {
+      "title": "Aprobar activación tras despliegue",
+      "body": "Autorizar que el equipo habilite la variable de entorno y supervise la primera tanda después del despliegue.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Desplegar apagado y aprobar activación aparte",
+    "body": "Integrar el código con el worker desactivado y requerir aprobación operativa antes de habilitar envíos a clientes.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Daniel",
+    "reason": "Su historial en el catálogo y los workers de comunicaciones es la señal disponible más próxima al diseño del flujo; la decisión de activación debe confirmarla el responsable de producto u operación.",
+    "confidence": "low"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10624.md",
+    "reviewedAt": "2026-10-08T07:32:21.976Z",
+    "mainSha": "7f2e3f93587ea1bc6b9cbf38917614238bdc04f1"
+  }
+}
