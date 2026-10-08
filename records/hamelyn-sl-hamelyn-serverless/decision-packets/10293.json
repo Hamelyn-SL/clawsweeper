@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-01T14:01:00.928Z",
-  "updatedAt": "2026-09-30T14:47:06Z",
+  "generatedAt": "2026-10-08T07:06:54.046Z",
+  "updatedAt": "2026-10-08T07:00:10Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,43 +14,42 @@
       "app:ecommerce",
       "reporter:jesus",
       "feature",
-      "triage:needs-info",
+      "triage:queued",
       "clawsweeper:needs-product-decision",
       "P2"
     ],
     "createdAt": "2026-09-30T13:51:36Z",
-    "updatedAt": "2026-09-30T14:47:06Z"
+    "updatedAt": "2026-10-08T07:00:10Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿La primera entrega debe persistir el snapshot actual o el historial de toques completo y, en ese caso, qué ventana y máximo de toques deben aplicarse?",
-  "rationale": "La captura actual solo conserva un snapshot fusionado; la aceptación pide fechas y lista de toques, pero no define cómo se separan ni cuánto tiempo se retienen.",
+  "question": "¿Se aprueba guardar en los pedidos el historial de 90 días y los campos identificativos solicitados —incluidos cookies gcl*, IDs GA4, _fbp, _fbc y user agent— o se debe acotar la primera entrega a los identificadores de campaña y sus toques?",
+  "rationale": "La definición funcional del multi-touch ya está concretada, pero la decisión sobre conservar identificadores de analítica/publicidad y user agent en pedidos no se deduce del código ni del comentario y afecta al alcance de datos persistidos.",
   "options": [
     {
-      "title": "Persistir solo el snapshot",
-      "body": "Guardar en checkout y pedido el snapshot actual de `localStorage` como primera entrega, dejando historial e IDs de GA4 fuera de alcance.",
+      "title": "Aprobar el alcance completo",
+      "body": "Persistir el historial, las cookies y los campos de analítica indicados, sujeto a las políticas de privacidad y retención aplicables.",
       "recommended": false
     },
     {
-      "title": "Definir y persistir historial",
-      "body": "Acordar qué visita cuenta como toque, la ventana temporal y el límite antes de implementar y validar la propagación completa.",
+      "title": "Acotar los datos",
+      "body": "Persistir los toques y parámetros de campaña, dejando fuera cookies, IDs analíticos y user agent hasta validar su necesidad y retención.",
       "recommended": true
     }
   ],
   "recommendation": {
-    "title": "Definir y persistir historial",
-    "body": "Acordar qué visita cuenta como toque, la ventana temporal y el límite antes de implementar y validar la propagación completa.",
+    "title": "Acotar los datos",
+    "body": "Persistir los toques y parámetros de campaña, dejando fuera cookies, IDs analíticos y user agent hasta validar su necesidad y retención.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "Lyno",
-    "reason": "Es la persona más conectada por el historial local disponible con la captura actual de atribución; la decisión debe confirmarse con quien mantiene ecommerce.",
+    "reason": "Introdujo el capturador existente y es la persona identificada por el historial local en este ámbito; el checkout y la persistencia requieren coordinación con sus responsables.",
     "confidence": "low"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10293.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10293#issuecomment-5912777763",
-    "reviewedAt": "2026-10-01T14:01:00.928Z",
-    "mainSha": "0e1bbc8c04f2de435f8d05f6818e5ade444d9e30"
+    "reviewedAt": "2026-10-08T07:06:54.046Z",
+    "mainSha": "7f2e3f93587ea1bc6b9cbf38917614238bdc04f1"
   }
 }
