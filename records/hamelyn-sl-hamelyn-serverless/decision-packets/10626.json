@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-08T09:04:30.429Z",
+  "updatedAt": "2026-10-08T08:14:13Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10626,
+    "title": "fix: let watcher heartbeats park for delegated agent results",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10626",
+    "state": "open",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-10-08T08:10:04Z",
+    "updatedAt": "2026-10-08T08:14:13Z",
+    "headSha": "71b727eaa865b85f4a6a0b74a48f3b740c124ca6"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Aceptamos que los heartbeats de marketplace usen sesiones `conversation` aparcadas, renunciando al reintento duradero de `task`?",
+  "rationale": "La implementación cambia el comportamiento de recuperación de ejecuciones existentes; la evidencia del PR cuantifica el historial, pero no determina qué compromiso operativo quiere asumir el equipo.",
+  "options": [
+    {
+      "title": "Aceptar sesiones aparcadas",
+      "body": "Integrar el cambio de modo para permitir que el heartbeat espere los resultados delegados.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener el reintento de `task`",
+      "body": "No cambiar el modo hasta definir una alternativa que permita esperar delegaciones sin perder el reintento actual.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aceptar sesiones aparcadas",
+    "body": "Integrar el cambio de modo para permitir que el heartbeat espere los resultados delegados.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "HamelynDev",
+    "reason": "El historial disponible conecta a esta cuenta con el contrato actual de creación de sesiones; es el candidato de decisión mejor sustentado por el checkout.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10626.md",
+    "reviewedAt": "2026-10-08T09:04:30.429Z",
+    "mainSha": "b9b17fe100c993797c5c7f2161a63b3320f2c118"
+  }
+}
