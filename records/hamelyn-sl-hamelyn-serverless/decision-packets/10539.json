@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-07T02:51:59.111Z",
-  "updatedAt": "2026-10-07T02:42:51Z",
+  "generatedAt": "2026-10-08T06:00:59.466Z",
+  "updatedAt": "2026-10-08T05:52:02Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -18,43 +18,37 @@
       "mk:amazon"
     ],
     "createdAt": "2026-10-07T02:33:30Z",
-    "updatedAt": "2026-10-07T02:42:51Z"
+    "updatedAt": "2026-10-08T05:52:02Z"
   },
-  "lane": "product_direction",
+  "lane": "security_boundary",
   "priority": "P2",
-  "question": "¿Debe la retirada incluir en todas las regiones Amazon los espejos vendidos `INACTIVE` con `REPORT_INACTIVE`, además de los criterios actuales?",
-  "rationale": "La selección actual limita expresamente los espejos `INACTIVE` a un marcador de exceso de cantidad en ES; ampliar el criterio puede afectar volumen y comportamiento regional, y requiere confirmar la política operativa.",
+  "question": "¿Debe la retirada Amazon seleccionar en las seis regiones los espejos vendidos `INACTIVE` con `REPORT_INACTIVE`, y qué guardas deben preservar otros errores permanentes?",
+  "rationale": "La selección provoca operaciones DELETE externas y el caso de producción no establece qué proceso reactivó la oferta; definir el alcance y guardas requiere criterio del equipo de marketplaces.",
   "options": [
     {
-      "title": "Ampliar el criterio en todas las regiones",
-      "body": "Incluir los espejos vendidos con `REPORT_INACTIVE` en la cola de DELETE y validar carga y resultados por región.",
+      "title": "Incluir el marcador en las seis regiones",
+      "body": "Permitir DELETE solo para `INACTIVE` con `REPORT_INACTIVE` y preservar las exclusiones actuales para otros errores permanentes.",
       "recommended": true
     },
     {
-      "title": "Limitarlo a MX y COM",
-      "body": "Añadir el criterio solo a las regiones del caso medido y observar si resuelve la reaparición de ofertas.",
-      "recommended": false
-    },
-    {
-      "title": "Mantener la selección actual",
-      "body": "No ampliar la retirada hasta contar con evidencia adicional sobre cómo Amazon vuelve a ofrecer la unidad.",
+      "title": "Limitar inicialmente el alcance",
+      "body": "Aplicar la selección solo a MX y COM hasta verificar el origen de la reactivación y el resultado de DELETE en producción.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Ampliar el criterio en todas las regiones",
-    "body": "Incluir los espejos vendidos con `REPORT_INACTIVE` en la cola de DELETE y validar carga y resultados por región.",
+    "title": "Incluir el marcador en las seis regiones",
+    "body": "Permitir DELETE solo para `INACTIVE` con `REPORT_INACTIVE` y preservar las exclusiones actuales para otros errores permanentes.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Su cambio introdujo la selección Amazon reciente para espejos vendidos sin estado y es la conexión más directa con esta decisión de alcance.",
-    "confidence": "medium"
+    "reason": "Su PR fusionada reciente implementó la selección de retiradas Amazon y los límites asociados.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10539.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10539#issuecomment-6029907138",
-    "reviewedAt": "2026-10-07T02:51:59.111Z",
-    "mainSha": "8f0628dece3223b74646bc33fa10ae785826a761"
+    "reviewedAt": "2026-10-08T06:00:59.466Z",
+    "mainSha": "9ad1b8886a111e512ed3c312197e1df885d5b508"
   }
 }
