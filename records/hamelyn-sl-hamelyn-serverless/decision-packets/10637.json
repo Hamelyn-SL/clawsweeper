@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-08T10:29:46.485Z",
+  "updatedAt": "2026-10-08T10:25:15Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10637,
+    "title": "feat: align supply-web SEO with the legacy country sites",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10637",
+    "state": "open",
+    "labels": [
+      "size/XXL"
+    ],
+    "createdAt": "2026-10-08T10:17:01Z",
+    "updatedAt": "2026-10-08T10:25:15Z",
+    "headSha": "18a7ac399396ba3ba79d78a67c483e25b70f4253"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se aprueba la política de retirar esas cuatro rutas y dejar `en` y `mx` fuera de indexación, y cuál debe ser la base de integración de este trabajo?",
+  "rationale": "El PR combina decisiones de indexación y retirada con una base distinta de `dev`; ni la dirección de migración ni la excepción de base deben inferirse de la implementación.",
+  "options": [
+    {
+      "title": "Validar el corte y alinear la base con `dev`",
+      "body": "Confirmar las rutas y mercados excluidos y preparar la integración contra la base establecida por el repo.",
+      "recommended": true
+    },
+    {
+      "title": "Mantenerlo en la rama épica",
+      "body": "Confirmar explícitamente que `epic/supply-v3` es el destino de integración de esta fase antes de aceptar sus cambios SEO.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Validar el corte y alinear la base con `dev`",
+    "body": "Confirmar las rutas y mercados excluidos y preparar la integración contra la base establecida por el repo.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Es el contribuidor de Supply con historial en el área y autor de la propuesta de migración descrita en este PR.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10637.md",
+    "reviewedAt": "2026-10-08T10:29:46.485Z",
+    "mainSha": "b9b17fe100c993797c5c7f2161a63b3320f2c118"
+  }
+}
