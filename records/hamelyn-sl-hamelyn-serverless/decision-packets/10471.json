@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-05T13:32:01.924Z",
-  "updatedAt": "2026-10-05T13:12:44Z",
+  "generatedAt": "2026-10-08T14:05:10.612Z",
+  "updatedAt": "2026-10-08T13:49:24Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -14,39 +14,38 @@
       "P2"
     ],
     "createdAt": "2026-10-05T13:07:31Z",
-    "updatedAt": "2026-10-05T13:12:44Z",
+    "updatedAt": "2026-10-08T13:49:24Z",
     "headSha": "b380a64273c90ae2d1a4dc087fa0ec73a05c901d"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe un `-4` observado antes del hard timeout seguir protegiendo el pedido de cancelación automática en pasadas posteriores con otros errores, o solo debe evitar la cancelación cuando `-4` es el error actual?",
-  "rationale": "La PR conserva el pedido únicamente en la pasada que devuelve `-4`; su prueba verifica que un fallo de conexión posterior sí lo cancela. Elegir entre esas políticas cambia el riesgo operativo descrito en la issue.",
+  "question": "¿Debe un error `-4` de Arnoia/Azeta mantener indefinidamente el pedido en `PENDING_LABEL` tras las 168 h, en vez de permitir que el timeout lo cancele?",
+  "rationale": "La issue vinculada plantea explícitamente esa política como pendiente, y esta PR elige una transición que puede prolongar pedidos sin tracking hasta una intervención operativa.",
   "options": [
     {
-      "title": "Conservar pendiente tras `-4`",
-      "body": "Mantener el pedido pendiente hasta que el proveedor confirme el envío o exista una resolución operativa, aunque una consulta posterior falle por conexión.",
+      "title": "Aprobar la excepción para `-4`",
+      "body": "Mantener el pedido pendiente y exigir confirmación operativa de la expedición antes de cancelarlo.",
       "recommended": true
     },
     {
-      "title": "Aplicar la excepción solo a la pasada actual",
-      "body": "Aceptar la cancelación a las 168 horas cuando el error de la consulta más reciente no sea `-4`.",
+      "title": "Mantener la cancelación a las 168 h",
+      "body": "No aplicar la excepción y conservar el comportamiento actual para los errores de tracking.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Conservar pendiente tras `-4`",
-    "body": "Mantener el pedido pendiente hasta que el proveedor confirme el envío o exista una resolución operativa, aunque una consulta posterior falle por conexión.",
+    "title": "Aprobar la excepción para `-4`",
+    "body": "Mantener el pedido pendiente y exigir confirmación operativa de la expedición antes de cancelarlo.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su cambio reciente en el timeout de tracking es la conexión de historial más directa con esta política.",
-    "confidence": "high"
+    "reason": "Su historial reciente está ligado a la política de timeout y puede ayudar a encaminar la decisión junto al responsable de negocio.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10471.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10471#issuecomment-5995544603",
-    "reviewedAt": "2026-10-05T13:32:01.924Z",
-    "mainSha": "071de0af84358b02873aefee7a5f4d6e5c27f0cf"
+    "reviewedAt": "2026-10-08T14:05:10.612Z",
+    "mainSha": "fd5173754dea1e2bc1a511cb27c03be87a75b038"
   }
 }

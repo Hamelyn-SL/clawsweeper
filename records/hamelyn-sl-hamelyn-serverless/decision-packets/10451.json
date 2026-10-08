@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-05T09:12:17.932Z",
-  "updatedAt": "2026-10-05T08:40:15Z",
+  "generatedAt": "2026-10-08T14:04:42.653Z",
+  "updatedAt": "2026-10-08T13:49:19Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -14,39 +14,43 @@
       "P2"
     ],
     "createdAt": "2026-10-05T08:30:51Z",
-    "updatedAt": "2026-10-05T08:40:15Z",
+    "updatedAt": "2026-10-08T13:49:19Z",
     "headSha": "8ff354e11bd8ed33d14324fe29e0a88358978199"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se aprueba el bloqueo selectivo de cupones mediante Stripe Radar y quién será responsable de mantener la lista de huellas vetadas?",
-  "rationale": "La issue emparejada conserva una decisión de producto pendiente sobre adoptar la lista y asignar su operación; el código puede enviar la señal, pero no resuelve esa decisión ni confirma la evaluación de Radar.",
+  "question": "¿Se adopta el bloqueo selectivo de cupones por huella de tarjeta mediante Stripe Radar y quién mantendrá la lista y validará la regla live?",
+  "rationale": "El cambio de código transmite y protege la señal, pero el resultado solicitado depende de una regla y una lista gestionadas en Stripe que aún no están verificadas; esa decisión operativa no se puede deducir del código.",
   "options": [
     {
-      "title": "Aprobar Radar con responsable",
-      "body": "Acordar quién mantiene la lista y validar la regla en la vista previa antes de activarla.",
+      "title": "Adoptar y completar la operación",
+      "body": "Confirmar la estrategia, asignar el mantenimiento de la lista y validar la regla Radar en Stripe antes de activar el flujo.",
       "recommended": true
     },
     {
-      "title": "Limitar la mitigación al domicilio",
-      "body": "No desplegar el bloqueo por tarjeta y continuar únicamente con la mitigación por dirección.",
+      "title": "Ajustar el alcance",
+      "body": "Mantener el envío protegido de metadatos, pero dejar la regla y la lista fuera del despliegue hasta definir su operación.",
+      "recommended": false
+    },
+    {
+      "title": "Descartar el enfoque por tarjeta",
+      "body": "Cerrar la vía de Radar y continuar con el bloqueo por dirección u otra estrategia aprobada.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar Radar con responsable",
-    "body": "Acordar quién mantiene la lista y validar la regla en la vista previa antes de activarla.",
+    "title": "Adoptar y completar la operación",
+    "body": "Confirmar la estrategia, asignar el mantenimiento de la lista y validar la regla Radar en Stripe antes de activar el flujo.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "Es autor y asignado de la issue vinculada que plantea explícitamente esta decisión.",
-    "confidence": "high"
+    "person": "Lyno",
+    "reason": "Es la única persona identificada en el historial local consultado para la ruta central; no hay evidencia suficiente para atribuirle la decisión de producto, por lo que la confianza es baja.",
+    "confidence": "low"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10451.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10451#issuecomment-5991472317",
-    "reviewedAt": "2026-10-05T09:12:17.932Z",
-    "mainSha": "758e57930297ce923fcc67cece2921df579b1a14"
+    "reviewedAt": "2026-10-08T14:04:42.653Z",
+    "mainSha": "fd5173754dea1e2bc1a511cb27c03be87a75b038"
   }
 }
