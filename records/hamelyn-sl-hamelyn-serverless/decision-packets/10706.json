@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-09T09:29:49.932Z",
+  "updatedAt": "2026-10-09T09:16:48Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10706,
+    "title": "Amazon: confirmar envíos Postlibri sin número de seguimiento",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10706",
+    "state": "open",
+    "labels": [
+      "app:marketplace",
+      "feature",
+      "triage:queued",
+      "reporter:danielmenchen",
+      "P1"
+    ],
+    "createdAt": "2026-10-09T09:16:37Z",
+    "updatedAt": "2026-10-09T09:16:48Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Qué mecanismo debe usar el piloto para confirmar a Amazon los envíos Postlibri sin seguimiento, y qué impacto sobre la métrica de tracking válido se acepta?",
+  "rationale": "La solución requiere elegir entre un endpoint/feed alternativo o un procedimiento operativo; la decisión tiene consecuencias para el cumplimiento y las métricas de la cuenta Amazon.",
+  "options": [
+    {
+      "title": "Usar un feed de envíos",
+      "body": "Validar con Amazon el feed que permite omitir el tracking y adaptar el flujo si la cuenta y el tipo de pedido lo admiten.",
+      "recommended": true
+    },
+    {
+      "title": "Definir otro procedimiento aprobado",
+      "body": "Mantener el piloto apagado mientras se confirma con Amazon un método alternativo compatible y su impacto operativo.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Usar un feed de envíos",
+    "body": "Validar con Amazon el feed que permite omitir el tracking y adaptar el flujo si la cuenta y el tipo de pedido lo admiten.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "desconocido",
+    "reason": "La elección cruza integración técnica y aceptación de métricas operativas; el historial disponible no identifica con certeza a una persona decisora.",
+    "confidence": "low"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10706.md",
+    "reviewedAt": "2026-10-09T09:29:49.932Z",
+    "mainSha": "f7f3432d27cdb0f94636912157d85f024230433d"
+  }
+}
