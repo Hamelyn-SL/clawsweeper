@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-09T01:33:57.924Z",
+  "updatedAt": "2026-10-09T01:31:56Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10669,
+    "title": "fix: keep customer personal data out of checkout slack alerts",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10669",
+    "state": "open",
+    "labels": [
+      "P1"
+    ],
+    "createdAt": "2026-10-09T00:46:08Z",
+    "updatedAt": "2026-10-09T01:31:56Z",
+    "headSha": "0eb2dc08edf1e34d0fb866c7d9960dcfad7c3ce0"
+  },
+  "lane": "security_boundary",
+  "priority": "P1",
+  "question": "¿Debe el aviso conservar algún detalle de `Error` en Slack, o limitarse a un código/resumen seguro que descarte mensajes, trazas y causas arbitrarias?",
+  "rationale": "El saneamiento puede reducir información diagnóstica útil o dejar una vía de exposición de datos; la política de qué detalle operativo se acepta en el canal requiere intención explícita.",
+  "options": [
+    {
+      "title": "Publicar solo resumen seguro",
+      "body": "Sustituir el error arbitrario por un código o resumen acotado y comprobar con datos canario que no filtra información personal.",
+      "recommended": true
+    },
+    {
+      "title": "Conservar detalle de error",
+      "body": "Mantener mensajes o causas en Slack y aceptar expresamente el riesgo residual, con emisores limitados y validados.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Publicar solo resumen seguro",
+    "body": "Sustituir el error arbitrario por un código o resumen acotado y comprobar con datos canario que no filtra información personal.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "HamelynDev",
+    "reason": "Es la única persona vinculada por el historial local reciente del fichero, aunque la confianza de atribución es baja.",
+    "confidence": "low"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10669.md",
+    "reviewedAt": "2026-10-09T01:33:57.924Z",
+    "mainSha": "418e0903688e6f57bed0c3413688806916c3ef71"
+  }
+}
