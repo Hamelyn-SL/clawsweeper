@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-01T08:36:14.649Z",
-  "updatedAt": "2026-10-01T08:30:10Z",
+  "generatedAt": "2026-10-09T08:36:40.777Z",
+  "updatedAt": "2026-10-09T08:23:23Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,48 +13,47 @@
       "app:ecommerce",
       "feature",
       "triage:needs-info",
-      "P2",
       "clawsweeper:needs-product-decision",
+      "P2",
       "clawsweeper:needs-security-review"
     ],
     "createdAt": "2026-10-01T08:19:43Z",
-    "updatedAt": "2026-10-01T08:30:10Z"
+    "updatedAt": "2026-10-09T08:23:23Z"
   },
-  "lane": "security_boundary",
+  "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe la reconciliación ejecutarse en cada login con email verificado para cubrir pedidos posteriores al alta, usando una señal de Auth0 autenticada, y se autoriza preparar el índice manual de Atlas necesario?",
-  "rationale": "El alta por sí sola no cubre cuentas existentes ni pedidos posteriores, y confiar en un flag aportado por un POST genérico podría exponer pedidos de otra persona; además, crear índices requiere autorización expresa.",
+  "question": "¿Debe la asociación segura ejecutarse en cada login con email verificado para cubrir cuentas existentes y compras invitadas posteriores, o solo al crear la cuenta?",
+  "rationale": "El caso descrito de una cuenta ya existente no se resuelve al alta, mientras que la ruta de login actual ejecuta el POST recurrentemente; además, falta confirmar el origen de verificación aceptado y la autorización del índice.",
   "options": [
     {
-      "title": "Reconciliar en login verificado",
-      "body": "Confirmar el origen autenticado del flag, reconciliar en cada login verificado y autorizar el índice compatible en Atlas.",
+      "title": "Reconciliar en cada login verificado",
+      "body": "Cubriría tanto pedidos anteriores como compras invitadas posteriores, una vez confirmado el origen de confianza del flag y el índice compatible.",
       "recommended": true
     },
     {
-      "title": "Enlazar solo en el alta",
-      "body": "Limitar la asociación al alta y aceptar que no cubrirá compras invitadas de cuentas ya existentes o pedidos posteriores.",
+      "title": "Reconciliar solo al crear la cuenta",
+      "body": "Limitaría el cambio al alta, pero dejaría fuera pedidos invitados de cuentas ya existentes y compras posteriores.",
       "recommended": false
     },
     {
-      "title": "Aplazar la implementación",
-      "body": "Esperar a confirmar la configuración viva de Auth0 y la disponibilidad del índice antes de definir el comportamiento.",
+      "title": "Aplazar hasta confirmar Auth0 y Atlas",
+      "body": "Mantendría la issue abierta hasta validar el tenant y acordar el índice requerido antes de concretar la implementación.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Reconciliar en login verificado",
-    "body": "Confirmar el origen autenticado del flag, reconciliar en cada login verificado y autorizar el índice compatible en Atlas.",
+    "title": "Reconciliar en cada login verificado",
+    "body": "Cubriría tanto pedidos anteriores como compras invitadas posteriores, una vez confirmado el origen de confianza del flag y el índice compatible.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Es la persona mejor conectada en el historial disponible con la consulta y el contrato de privacidad del perfil.",
-    "confidence": "low"
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Su historial reciente está más próximo al flujo de creación de pedidos y resolución de cliente que condiciona esta decisión.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10320.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10320#issuecomment-5927816276",
-    "reviewedAt": "2026-10-01T08:36:14.649Z",
-    "mainSha": "3dffbf45e998bdcf1a18848f289430654e18b849"
+    "reviewedAt": "2026-10-09T08:36:40.777Z",
+    "mainSha": "0eb412b66c97a158b15c78dc7a2a6ba161bc83d5"
   }
 }
