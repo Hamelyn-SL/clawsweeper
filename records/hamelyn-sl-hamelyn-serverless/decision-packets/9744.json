@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-19T11:37:47.402Z",
-  "updatedAt": "2026-09-19T11:30:12Z",
+  "generatedAt": "2026-10-09T05:53:09.060Z",
+  "updatedAt": "2026-10-09T05:49:01Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,47 +12,51 @@
     "labels": [
       "app:supply",
       "feature",
-      "triage:done",
+      "triage:queued",
       "clawsweeper:needs-product-decision",
+      "P2",
       "clawsweeper:needs-security-review",
       "reporter:danielmenchen-hamelyn",
       "origin:dev",
-      "epic:supply-v3",
-      "P2"
+      "epic:supply-v3"
     ],
     "createdAt": "2026-09-18T08:04:03Z",
-    "updatedAt": "2026-09-19T11:30:12Z"
+    "updatedAt": "2026-10-09T05:49:01Z"
   },
-  "lane": "security_boundary",
+  "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué política de recuperación entre orígenes y de separación de carritos por país se aprueba para el cutover antes de configurar Auth0/CORS y ensayarlo en staging?",
-  "rationale": "El alcance fija límites de seguridad y continuidad, pero no asigna el mecanismo aprobado ni los responsables de la reversión; esa elección no puede resolverse de forma segura desde código.",
+  "question": "¿Qué contrato de recuperación entre orígenes y separación de carrito por país debe aprobarse antes del ensayo de cutover de Supply?",
+  "rationale": "La recuperación entre orígenes implica una decisión de seguridad y continuidad de sesión que no puede deducirse de la implementación local; el equipo debe acordar el alcance antes de configurar y ensayar el dominio.",
   "options": [
     {
-      "title": "Aprobar contrato limitado",
-      "body": "Validar inventario, recuperación sin tokens reutilizables en URL, namespaces por país y responsables del rollback antes del ensayo.",
+      "title": "Aprobar traspaso limitado",
+      "body": "Acordar recuperación de alcance limitado sin tokens reutilizables en URL, namespaces por mercado y responsables de rollback antes del ensayo.",
       "recommended": true
     },
     {
+      "title": "Mantener sesiones separadas",
+      "body": "No transferir sesión ni carrito entre orígenes y documentar el nuevo inicio de sesión como comportamiento del cutover.",
+      "recommended": false
+    },
+    {
       "title": "Aplazar el ensayo",
-      "body": "Mantener el inventario y posponer Auth0/CORS de staging hasta cerrar los contratos de rutas, sesión, carrito y preview.",
+      "body": "Posponer Auth0/CORS y la validación de staging hasta que los contratos de ruta, sesión, carrito y preview estén acordados.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar contrato limitado",
-    "body": "Validar inventario, recuperación sin tokens reutilizables en URL, namespaces por país y responsables del rollback antes del ensayo.",
+    "title": "Aprobar traspaso limitado",
+    "body": "Acordar recuperación de alcance limitado sin tokens reutilizables en URL, namespaces por mercado y responsables de rollback antes del ensayo.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "danielmenchen-hamelyn",
-    "reason": "Coordina la épica y fusionó la base de `epic/supply-v3` donde debe integrarse este trabajo.",
-    "confidence": "high"
+    "person": "MiguelHamelyn",
+    "reason": "Figura como responsable actual de la issue y actualizó el plan de integración en `dev`; conviene coordinar con el introductor del alcance y las personas responsables de sesión, carrito y dominio.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9744.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9744#issuecomment-5740689461",
-    "reviewedAt": "2026-09-19T11:37:47.402Z",
-    "mainSha": "d0e0b93e78bba63a1c6ff1614e823941e10afa9f"
+    "reviewedAt": "2026-10-09T05:53:09.060Z",
+    "mainSha": "38ec3f1c3935be0313f7eb3293c696ef733b060d"
   }
 }
