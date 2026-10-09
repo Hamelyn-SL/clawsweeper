@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-09T01:05:17.922Z",
+  "updatedAt": "2026-10-09T01:03:17Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10670,
+    "title": "chore: prune dead agents code and fix watcher skill sql",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10670",
+    "state": "open",
+    "labels": [],
+    "createdAt": "2026-10-09T00:51:56Z",
+    "updatedAt": "2026-10-09T01:03:17Z",
+    "headSha": "dc2552eccb00e6a2efa462bd81c6238a6f88fcbb"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se debe retirar también la inyección de la guía dinámica de `factory-learning` de Horus y triage, aunque haya una guía activa almacenada?",
+  "rationale": "El cambio desactiva un comportamiento que podía estar vigente para usuarios internos; decidir si se conserva, migra o retira requiere confirmar la intención del piloto, no solo validar el diff.",
+  "options": [
+    {
+      "title": "Confirmar la retirada",
+      "body": "Aceptar que Horus y triage vuelvan a depender de la memoria estática y dejar intactos los datos históricos de Blob.",
+      "recommended": true
+    },
+    {
+      "title": "Conservar el comportamiento activo",
+      "body": "Mantener la lectura de la guía hasta definir una retirada o transición explícita.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Confirmar la retirada",
+    "body": "Aceptar que Horus y triage vuelvan a depender de la memoria estática y dejar intactos los datos históricos de Blob.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su historial reciente incluye el runner de triage y cambios en el comportamiento de los agentes afectados.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10670.md",
+    "reviewedAt": "2026-10-09T01:05:17.922Z",
+    "mainSha": "418e0903688e6f57bed0c3413688806916c3ef71"
+  }
+}
