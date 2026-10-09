@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-09T20:28:08.830Z",
+  "updatedAt": "2026-10-09T14:23:19Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10735,
+    "title": "fix: retire scraper ips only on hard blocks within ten minutes",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10735",
+    "state": "open",
+    "labels": [
+      "size/M"
+    ],
+    "createdAt": "2026-10-09T13:41:08Z",
+    "updatedAt": "2026-10-09T14:23:19Z",
+    "headSha": "b3b19d40c72561f0cfacba6e65577b0c13666823"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe mantenerse el enfriamiento de 600 s y aceptarse que el umbral de tres bloqueos dependa de respuestas concurrentes, o debe acortarse el enfriamiento para permitir acumularlos secuencialmente dentro de la ventana de 600 s?",
+  "rationale": "La incidencia pide apartar un 403 aislado durante 10 minutos y también retirar la IP tras tres bloqueos en 10 minutos; ambas condiciones limitan la acumulación secuencial y no conviene escoger una política distinta sin confirmar la intención operativa.",
+  "options": [
+    {
+      "title": "Conservar ambos plazos",
+      "body": "Mantener el enfriamiento y la ventana en 600 s, documentando y probando que el retiro por umbral está pensado para bloqueos concurrentes o ya en vuelo.",
+      "recommended": true
+    },
+    {
+      "title": "Permitir acumulación secuencial",
+      "body": "Reducir el enfriamiento por bloqueo por debajo de 600 s y validar el efecto operativo junto con la ventana de retirada.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Conservar ambos plazos",
+    "body": "Mantener el enfriamiento y la ventana en 600 s, documentando y probando que el retiro por umbral está pensado para bloqueos concurrentes o ya en vuelo.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "PabloMoran34",
+    "reason": "El historial local lo conecta con la introducción y evolución reciente del gestor de IPs.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10735.md",
+    "reviewedAt": "2026-10-09T20:28:08.830Z",
+    "mainSha": "68c59751cc0533f095ebb7b30a4624535872c467"
+  }
+}
