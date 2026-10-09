@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-08T13:58:42.941Z",
-  "updatedAt": "2026-10-07T14:46:02Z",
+  "generatedAt": "2026-10-09T17:35:35.119Z",
+  "updatedAt": "2026-10-08T14:01:30Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -19,42 +19,42 @@
       "reporter:daniellopez"
     ],
     "createdAt": "2026-10-07T13:40:55Z",
-    "updatedAt": "2026-10-07T14:46:02Z"
+    "updatedAt": "2026-10-08T14:01:30Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "Para un lote con 65 artículos y 1 de 2 bultos recibidos, ¿cómo se redondea el crédito parcial y a qué operario se atribuyen los artículos correspondientes a los bultos pendientes cuando lleguen?",
-  "rationale": "La proporcionalidad solicitada no está definida por el comportamiento actual y el resultado afecta al crédito de productividad de recepciones realizadas en momentos distintos o por personas distintas.",
+  "question": "Para un lote de 65 artículos con 1 de 2 bultos recibidos, ¿cómo se redondea el crédito y a quién se atribuyen los artículos restantes cuando llegue el otro bulto?",
+  "rationale": "El cambio altera la regla de productividad y el código actual acredita el lote completo en la primera recepción; sin una política para el saldo posterior no puede implementarse una atribución consistente.",
   "options": [
     {
-      "title": "Proporcional con resto al siguiente receptor",
-      "body": "Acreditar la parte proporcional redondeada en la primera recepción y asignar el resto al operario que recepcione los bultos pendientes.",
+      "title": "Resto al siguiente receptor",
+      "body": "Acreditar proporcionalmente la primera recepción con una regla de redondeo acordada y asignar el saldo al operario que reciba los bultos restantes.",
       "recommended": true
     },
     {
-      "title": "Proporcional con resto al primer receptor",
-      "body": "Acreditar la parte proporcional redondeada en la primera recepción y reservar también el resto para el operario que abrió la incidencia.",
+      "title": "Resto al primer receptor",
+      "body": "Acreditar proporcionalmente la primera recepción y reservar también el saldo para el operario que declaró la incidencia.",
       "recommended": false
     },
     {
-      "title": "Mantener el crédito íntegro actual",
-      "body": "Conservar la acreditación completa al recepcionar el lote y no introducir reparto proporcional.",
+      "title": "Mantener el crédito íntegro",
+      "body": "Conservar la regla actual de acreditar todos los artículos al recibir inicialmente el lote.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Proporcional con resto al siguiente receptor",
-    "body": "Acreditar la parte proporcional redondeada en la primera recepción y asignar el resto al operario que recepcione los bultos pendientes.",
+    "title": "Resto al siguiente receptor",
+    "body": "Acreditar proporcionalmente la primera recepción con una regla de redondeo acordada y asignar el saldo al operario que reciba los bultos restantes.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "banosdavidhamelyn",
-    "reason": "Su historial reciente en el flujo de incidencias lo convierte en una referencia de código disponible; la decisión de atribución debe confirmarse con Operaciones.",
+    "person": "Lyno",
+    "reason": "La revisión previa propone a Lyno como dueño probable de la decisión; el historial local no permite corroborar mejor candidato.",
     "confidence": "low"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10594.md",
-    "reviewedAt": "2026-10-08T13:58:42.941Z",
-    "mainSha": "fd5173754dea1e2bc1a511cb27c03be87a75b038"
+    "reviewedAt": "2026-10-09T17:35:35.119Z",
+    "mainSha": "68c59751cc0533f095ebb7b30a4624535872c467"
   }
 }
