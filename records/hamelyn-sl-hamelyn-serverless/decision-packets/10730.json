@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-09T13:30:05.715Z",
+  "updatedAt": "2026-10-09T13:15:39Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10730,
+    "title": "Proof Agent: evidencia visual real en el comentario del PR (login, Hamelyn_DEV y grabación)",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10730",
+    "state": "open",
+    "labels": [
+      "app:infrastructure",
+      "reporter:davidgonzalez",
+      "feature",
+      "triage:needs-info",
+      "P2"
+    ],
+    "createdAt": "2026-10-09T12:46:07Z",
+    "updatedAt": "2026-10-09T13:15:39Z"
+  },
+  "lane": "security_boundary",
+  "priority": "P2",
+  "question": "¿Se autorizan identidades de prueba con roles limitados para admin y Supply en `Hamelyn_DEV` y, si se autorizan, dónde se custodiarán sus credenciales?",
+  "rationale": "La decisión concede acceso de servicio y define la custodia de credenciales; el código actual no puede resolver esa autorización ni elegir la política de secretos.",
+  "options": [
+    {
+      "title": "Autorizar con variables del proyecto",
+      "body": "Crear identidades limitadas en `Hamelyn_DEV` y custodiar sus secretos en el entorno del proyecto `agents`.",
+      "recommended": true
+    },
+    {
+      "title": "Autorizar con bundle cifrado",
+      "body": "Crear las identidades y usar el bundle cifrado `PROOF_ENV_BUNDLE_KEY` para distribuir sus credenciales.",
+      "recommended": false
+    },
+    {
+      "title": "Posponer las identidades",
+      "body": "Avanzar primero con aislamiento y captura visual, dejando la autenticación real para una decisión posterior.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Autorizar con variables del proyecto",
+    "body": "Crear identidades limitadas en `Hamelyn_DEV` y custodiar sus secretos en el entorno del proyecto `agents`.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su historial reciente en Proof ofrece la señal disponible más clara para enrutar la decisión técnica; la autorización de identidades sigue correspondiendo al equipo responsable de infraestructura.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10730.md",
+    "reviewedAt": "2026-10-09T13:30:05.715Z",
+    "mainSha": "3cba8f4bb37193e3b2cd37f8fd88f97a34f2af00"
+  }
+}
