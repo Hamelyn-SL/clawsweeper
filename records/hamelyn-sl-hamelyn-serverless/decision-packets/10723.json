@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-09T12:35:29.823Z",
+  "updatedAt": "2026-10-09T12:31:31Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10723,
+    "title": "Supply v3: the Auth0 login screen shows the internal application name Supply Web",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10723",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:supply",
+      "reporter:miguel",
+      "triage:blocked",
+      "P3",
+      "origin:dev",
+      "epic:supply-v3"
+    ],
+    "createdAt": "2026-10-09T11:20:27Z",
+    "updatedAt": "2026-10-09T12:31:31Z"
+  },
+  "lane": "product_direction",
+  "priority": "P3",
+  "question": "¿Debe renombrarse en Auth0 la Application identificada por el `client_id` de Supply a «Hamelyn», y quién confirma que sus Actions, reglas y filtros activos no dependen de «Supply Web»?",
+  "rationale": "El cambio vive en la configuración del tenant, no en el código desplegado, y el repositorio solo conserva un snapshot histórico; hace falta confirmar el nombre de cara al usuario y la seguridad operativa del cambio en el tenant activo.",
+  "options": [
+    {
+      "title": "Renombrar a «Hamelyn» tras verificar dependencias",
+      "body": "La persona responsable del tenant conserva el `client_id`, comprueba Actions, reglas y filtros activos y valida login y registro después del cambio.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener «Supply Web»",
+      "body": "Se conserva el nombre actual si existe una dependencia activa o una decisión de marca que haga inadecuado el cambio.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Renombrar a «Hamelyn» tras verificar dependencias",
+    "body": "La persona responsable del tenant conserva el `client_id`, comprueba Actions, reglas y filtros activos y valida login y registro después del cambio.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Introdujo la configuración de Universal Login versionada; no hay evidencia local suficiente para identificar a la persona que administra actualmente el tenant.",
+    "confidence": "low"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10723.md",
+    "reviewedAt": "2026-10-09T12:35:29.823Z",
+    "mainSha": "bd20cde90d173ab2ca138a1e8aace7946cd36d64"
+  }
+}
