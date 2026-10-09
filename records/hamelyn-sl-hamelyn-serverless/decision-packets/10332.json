@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-09T15:51:20.713Z",
+  "updatedAt": "2026-10-09T08:23:22Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10332,
+    "title": "Asunto: Stock active EN/IT sin subir a Feltrinelli",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10332",
+    "state": "open",
+    "labels": [
+      "source:admin-panel",
+      "app:marketplace",
+      "feature",
+      "reporter:rubenmorueco",
+      "triage:needs-info",
+      "P2"
+    ],
+    "createdAt": "2026-10-01T10:23:24Z",
+    "updatedAt": "2026-10-09T08:23:22Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Feltrinelli debe limitarse a publicar ofertas para EAN ya presentes en el catálogo de IBS, o se quiere definir un flujo separado para solicitar o crear fichas ausentes?",
+  "rationale": "El código actual envía ofertas por EAN y no crea fichas; cambiar esa frontera depende del contrato con IBS y puede alterar qué productos se publican.",
+  "options": [
+    {
+      "title": "Mantener ofertas solo para EAN existentes",
+      "body": "Conservar el flujo actual y resolver los rechazos mediante validación de catálogo y recuperación acotada de estados elegibles.",
+      "recommended": true
+    },
+    {
+      "title": "Definir altas de fichas por separado",
+      "body": "Acordar con Marketplace e IBS el mecanismo y alcance de creación de fichas antes de ampliar la integración.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mantener ofertas solo para EAN existentes",
+    "body": "Conservar el flujo actual y resolver los rechazos mediante validación de catálogo y recuperación acotada de estados elegibles.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Ha trabajado recientemente en el flujo de Feltrinelli y en su reconciliación; es el candidato de código mejor respaldado para orientar la decisión técnica.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10332.md",
+    "reviewedAt": "2026-10-09T15:51:20.713Z",
+    "mainSha": "68c59751cc0533f095ebb7b30a4624535872c467"
+  }
+}
