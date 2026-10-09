@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-09T01:24:58.208Z",
+  "updatedAt": "2026-10-09T00:49:52Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10666,
+    "title": "feat: let watchers retire memory and unblock stale proposals",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10666",
+    "state": "open",
+    "labels": [],
+    "createdAt": "2026-10-09T00:40:00Z",
+    "updatedAt": "2026-10-09T00:49:52Z",
+    "headSha": "99cfb8ea5ea1ea42bea3314f7832696430284a87"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se deben volver a guardar con topic las tres memorias operativas duraderas identificadas antes del despliegue de producción?",
+  "rationale": "La nueva regla las deja fuera de la memoria activa por carecer de topic; decidir si siguen siendo necesarias requiere validar su vigencia operativa, no solo revisar el código.",
+  "options": [
+    {
+      "title": "Preservarlas antes del despliegue",
+      "body": "Validar y volver a guardar las tres memorias con topics estables antes de desplegar la nueva caducidad.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar que caduquen",
+      "body": "Mantener el cambio y permitir que esas entradas antiguas dejen de cargarse si ya no son necesarias.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Preservarlas antes del despliegue",
+    "body": "Validar y volver a guardar las tres memorias con topics estables antes de desplegar la nueva caducidad.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su historial previo en la memoria compartida de agentes lo conecta con el área afectada y puede ayudar a validar la vigencia de esos gotchas.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10666.md",
+    "reviewedAt": "2026-10-09T01:24:58.208Z",
+    "mainSha": "418e0903688e6f57bed0c3413688806916c3ef71"
+  }
+}
