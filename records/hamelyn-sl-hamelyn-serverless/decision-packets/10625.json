@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-09T18:31:22.413Z",
+  "updatedAt": "2026-10-08T09:15:14Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10625,
+    "title": "Infraestructura: los heartbeats de watchers no emiten métricas cuando delegan con la herramienta agent",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10625",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:infrastructure",
+      "triage:no-change",
+      "P2",
+      "reporter:danielmenchen-hamelyn"
+    ],
+    "createdAt": "2026-10-08T07:26:16Z",
+    "updatedAt": "2026-10-08T09:15:14Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Acepta el equipo que los heartbeats de marketplace pasen a sesiones `conversation` aparcadas y renuncien al reintento duradero de `task`?",
+  "rationale": "La PR ya identifica ese cambio operativo; las pruebas disponibles verifican el contrato de inicio, no la ejecución delegada ni la recuperación de errores en el runtime real.",
+  "options": [
+    {
+      "title": "Aceptar sesiones aparcadas",
+      "body": "Integrar la propuesta tras validar en un entorno controlado que la delegación despierta la misma sesión y termina emitiendo métricas.",
+      "recommended": true
+    },
+    {
+      "title": "Conservar `task`",
+      "body": "Mantener el reintento duradero y definir primero una alternativa que permita esperar resultados delegados sin cambiar ese comportamiento.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aceptar sesiones aparcadas",
+    "body": "Integrar la propuesta tras validar en un entorno controlado que la delegación despierta la misma sesión y termina emitiendo métricas.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Lyno",
+    "reason": "El historial del endpoint sitúa en su código el modo actual que está en el centro de la decisión.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10625.md",
+    "reviewedAt": "2026-10-09T18:31:22.413Z",
+    "mainSha": "68c59751cc0533f095ebb7b30a4624535872c467"
+  }
+}
