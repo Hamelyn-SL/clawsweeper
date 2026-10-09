@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-09T10:29:48.768Z",
+  "updatedAt": "2026-10-09T10:21:22Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10716,
+    "title": "Crear alertas en revisión con destino automático para evitar fallo de los operarios",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10716",
+    "state": "open",
+    "labels": [
+      "bug",
+      "source:admin-panel",
+      "app:supply",
+      "triage:queued",
+      "P2",
+      "reporter:daniellopez"
+    ],
+    "createdAt": "2026-10-09T10:21:11Z",
+    "updatedAt": "2026-10-09T10:21:22Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "Si un EAN escaneado está pendiente en otro lote abierto, ¿el kiosco debe impedir añadirlo al lote actual o permitirlo solo tras una confirmación explícita?",
+  "rationale": "La elección cambia si el flujo puede crear una unidad en un lote equivocado y afectar el pago; la discusión relacionada recomienda no añadirla, pero no hay una decisión implementada para este caso.",
+  "options": [
+    {
+      "title": "Bloquear el alta en este lote",
+      "body": "Avisar del lote coincidente y exigir apartar el artículo para su lote, siguiendo la recomendación documentada en la issue relacionada.",
+      "recommended": true
+    },
+    {
+      "title": "Permitir tras confirmación",
+      "body": "Mostrar el aviso y aceptar el sobrante solo después de que el operario confirme explícitamente que el artículo debe continuar en este lote.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Bloquear el alta en este lote",
+    "body": "Avisar del lote coincidente y exigir apartar el artículo para su lote, siguiendo la recomendación documentada en la issue relacionada.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "Ha trabajado recientemente en el kiosco turbo y en la clasificación de artículos fuera del lote.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10716.md",
+    "reviewedAt": "2026-10-09T10:29:48.768Z",
+    "mainSha": "f3aba7db3b7a119c3b2576b3ffe174d420df87e5"
+  }
+}
