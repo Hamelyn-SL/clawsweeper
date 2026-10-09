@@ -20,7 +20,7 @@
 import { createDecipheriv } from "node:crypto";
 import { createServer } from "node:http";
 import { writeFileSync } from "node:fs";
-import { Readable } from "node:stream";
+import { Readable, pipeline } from "node:stream";
 
 const UPSTREAM_URL = "https://chatgpt.com/backend-api/codex/responses";
 // Codex CLI sends session-id and thread-id; the backend routes prompt-cache
@@ -199,8 +199,15 @@ async function main() {
         "content-type": upstream.headers.get("content-type") ?? "application/json",
       });
       if (upstream.body) {
-        Readable.fromWeb(upstream.body).pipe(res);
         res.on("close", () => log(`${upstream.status} in ${Date.now() - started}ms`));
+        // pipe() turns an upstream that breaks mid-stream into an unhandled error that kills the
+        // proxy for every client; pipeline() ends this response and keeps serving the others. A
+        // client that hangs up once it has the completed response is not a failure.
+        pipeline(Readable.fromWeb(upstream.body), res, (err) => {
+          if (err && err.code !== "ERR_STREAM_PREMATURE_CLOSE") {
+            log(`stream broke after ${Date.now() - started}ms: ${err.message}`);
+          }
+        });
       } else {
         res.end();
       }
