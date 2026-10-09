@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-09T19:36:44.866Z",
+  "updatedAt": "2026-10-08T07:49:15Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10618,
+    "title": "Casa del Libro sold offer remains active after local WITHDRAWN confirmation",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10618",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "triage:done",
+      "P2"
+    ],
+    "createdAt": "2026-10-08T06:47:25Z",
+    "updatedAt": "2026-10-08T07:49:15Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe Casa del Libro conservar la retirada pendiente hasta confirmar el resultado remoto en los flujos de venta propia individual y bulk?",
+  "rationale": "La ruta actual confirma localmente la retirada; cambiarla puede afectar al procesamiento de ventas y requiere acordar si la excepción debe aplicarse a ambos flujos sin alterar el contrato de otros marketplaces.",
+  "options": [
+    {
+      "title": "Acordar excepción acotada a CDL",
+      "body": "Mantener pendiente la retirada de Casa del Libro en ambos flujos hasta el resultado del proveedor y añadir cobertura de regresión.",
+      "recommended": true
+    },
+    {
+      "title": "Conservar confirmación inmediata",
+      "body": "Mantener la semántica actual y resolver el caso mediante una vía de recuperación explícita del listing.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Acordar excepción acotada a CDL",
+    "body": "Mantener pendiente la retirada de Casa del Libro en ambos flujos hasta el resultado del proveedor y añadir cobertura de regresión.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su historial reciente incluye cambios en la retirada de ventas y el caso está descrito con datos de operación de marketplaces.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10618.md",
+    "reviewedAt": "2026-10-09T19:36:44.866Z",
+    "mainSha": "68c59751cc0533f095ebb7b30a4624535872c467"
+  }
+}
