@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-09T19:57:29.614Z",
+  "updatedAt": "2026-10-09T16:56:36Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10737,
+    "title": "feat: split stock sync errors into fixable, legacy and not uploadable",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10737",
+    "state": "open",
+    "labels": [],
+    "createdAt": "2026-10-09T16:52:28Z",
+    "updatedAt": "2026-10-09T16:56:36Z",
+    "headSha": "8e342eadb962524059d840acdfce82d879d5795a"
+  },
+  "lane": "merge_risk",
+  "priority": "P2",
+  "question": "¿Se acepta integrar la consulta con el margen de coste declarado del 0,62 % respecto al umbral de alerta de 400 GB?",
+  "rationale": "El margen es estrecho y puede depender de la variación del volumen consultado; los datos del PR no bastan para decidir si el nivel operativo es aceptable.",
+  "options": [
+    {
+      "title": "Reducir el coste antes de integrar",
+      "body": "Optimizar o acotar la consulta y verificar que queda un margen operativo suficiente bajo el umbral.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar el margen medido",
+      "body": "Integrar la consulta con el coste actual y asumir explícitamente el margen reducido frente a la alerta.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Reducir el coste antes de integrar",
+    "body": "Optimizar o acotar la consulta y verificar que queda un margen operativo suficiente bajo el umbral.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Ha trabajado recientemente en la query y en la clasificación de Stock Sync; es el candidato de enrutamiento más cercano a esta decisión operativa.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10737.md",
+    "reviewedAt": "2026-10-09T19:57:29.614Z",
+    "mainSha": "68c59751cc0533f095ebb7b30a4624535872c467"
+  }
+}
