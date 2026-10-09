@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-09T14:52:32.511Z",
+  "updatedAt": "2026-10-09T14:45:50Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10736,
+    "title": "Marketplace: [amazon confirm shipment] order 111-<number>-<number> failed: 400 invalidinput: failed to createpackage for",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10736",
+    "state": "open",
+    "labels": [
+      "codex",
+      "bug",
+      "app:marketplace",
+      "triage:needs-info",
+      "P2",
+      "marketplace-crons"
+    ],
+    "createdAt": "2026-10-09T14:30:44Z",
+    "updatedAt": "2026-10-09T14:45:50Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué estado mostraba Amazon para este pedido alrededor de las 12:57–14:06 UTC del 9 de octubre de 2026, y debe esta firma seguir en recuperación cuando Amazon la devuelve?",
+  "rationale": "La respuesta de Amazon no distingue por sí sola entre una condición terminal y un desfase temporal; elegir una política de reintento sin ese estado podría perpetuar el error o dejar una confirmación válida sin recuperar.",
+  "options": [
+    {
+      "title": "Consultar Seller Central primero",
+      "body": "Usar el estado y el historial remoto del pedido para decidir si esta respuesta debe tratarse como terminal o recuperable.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener el comportamiento de recuperación actual",
+      "body": "Dejar que los errores recientes vuelvan a `PENDING` hasta que haya evidencia de que esta firma es terminal.",
+      "recommended": false
+    },
+    {
+      "title": "Excluir esta firma del recovery",
+      "body": "Tratar el rechazo como terminal, aceptando que los casos recuperables requerirán una reconciliación operativa distinta.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Consultar Seller Central primero",
+    "body": "Usar el estado y el historial remoto del pedido para decidir si esta respuesta debe tratarse como terminal o recuperable.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Lyno",
+    "reason": "Su autoría del patrón terminal actual lo relaciona con la política que habría que modificar; la decisión operativa corresponde al equipo de Marketplaces y no puede asignarse con certeza a una persona a partir del historial disponible.",
+    "confidence": "low"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10736.md",
+    "reviewedAt": "2026-10-09T14:52:32.511Z",
+    "mainSha": "68c59751cc0533f095ebb7b30a4624535872c467"
+  }
+}
