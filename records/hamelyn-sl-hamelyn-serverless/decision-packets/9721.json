@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-04T11:19:19.915Z",
-  "updatedAt": "2026-10-04T10:11:15Z",
+  "generatedAt": "2026-10-09T06:03:30.908Z",
+  "updatedAt": "2026-10-09T05:41:56Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,47 +12,46 @@
     "labels": [
       "app:supply",
       "feature",
-      "triage:needs-info",
+      "triage:queued",
       "clawsweeper:needs-product-decision",
+      "P2",
       "reporter:danielmenchen-hamelyn",
       "origin:dev",
       "epic:supply-v3",
-      "platform:mobile-only",
-      "P2"
+      "platform:mobile-only"
     ],
     "createdAt": "2026-09-18T08:03:14Z",
-    "updatedAt": "2026-10-04T10:11:15Z"
+    "updatedAt": "2026-10-09T05:41:56Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se mantiene pendiente la habilitación móvil mientras se prepara el impacto de D12, o se aprueban ya mínimos explícitos para que F05 complete la validación nativa?",
-  "rationale": "La issue prohíbe tratar iOS 16.4+, API 24 y WebView 111+ como requisitos aprobados; elegir mínimos de soporte afecta compatibilidad y excluye dispositivos, por lo que requiere intención del equipo.",
+  "question": "¿Se aprueba el perfil propuesto de iOS 16.4+, Android 7/API 24+ y Chromium WebView 111+, o se mantiene pendiente hasta completar la evaluación de compatibilidad?",
+  "rationale": "El perfil condiciona el soporte de dispositivos y actualmente solo aparece como propuesta; el código ya impide habilitarlo sin una decisión explícita.",
   "options": [
     {
-      "title": "Preparar impacto antes de aprobar",
-      "body": "Mantener bloqueada la habilitación nativa hasta valorar dispositivos, WebViews y capacidades y acordar mínimos explícitos.",
+      "title": "Mantener pendiente",
+      "body": "Conservar bloqueada la configuración nativa mientras Supply documenta el impacto y completa la evaluación de compatibilidad.",
       "recommended": true
     },
     {
-      "title": "Aprobar los mínimos propuestos",
-      "body": "Adoptar iOS 16.4+, API 24 y WebView 111+ como soporte inicial y documentar los dispositivos excluidos.",
+      "title": "Aprobar el perfil propuesto",
+      "body": "Autorizar esos mínimos para los builds de desarrollo y continuar con la validación física bajo ese límite.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Preparar impacto antes de aprobar",
-    "body": "Mantener bloqueada la habilitación nativa hasta valorar dispositivos, WebViews y capacidades y acordar mínimos explícitos.",
+    "title": "Mantener pendiente",
+    "body": "Conservar bloqueada la configuración nativa mientras Supply documenta el impacto y completa la evaluación de compatibilidad.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "danielmenchen-hamelyn",
-    "reason": "Creó y coordinó la épica y la entrega que identifica D12 como decisión previa a habilitar el perfil.",
-    "confidence": "high"
+    "reason": "Es quien abrió la issue y la base de Supply v3 y figura como contacto de planificación D12; el contexto no identifica a un responsable de decisión con autoridad confirmada.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9721.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9721#issuecomment-5741058761",
-    "reviewedAt": "2026-10-04T11:19:19.915Z",
-    "mainSha": "bbeea89363a89623a62c934460bc807531c959ba"
+    "reviewedAt": "2026-10-09T06:03:30.908Z",
+    "mainSha": "37abc30680afdf9ba8f6df5c310410e14e818f5f"
   }
 }
