@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-09T02:16:53.767Z",
+  "updatedAt": "2026-10-09T01:55:53Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10676,
+    "title": "feat: let watchers requeue stuck marketplace work without a button",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10676",
+    "state": "open",
+    "labels": [],
+    "createdAt": "2026-10-09T01:48:42Z",
+    "updatedAt": "2026-10-09T01:55:53Z",
+    "headSha": "b0c9571f4bc44c7fb41d5004e8e89d5b1e23b5ba"
+  },
+  "lane": "security_boundary",
+  "priority": "P2",
+  "question": "¿Está aprobada la excepción descrita para ejecutar sin aprobación humana estas dos mutaciones de marketplace en producción?",
+  "rationale": "El cambio altera quién autoriza escrituras de producción, y la documentación de la rama base todavía exige aprobación para esas escrituras; el PR atribuye la excepción a una decisión previa, pero no se ha encontrado corroboración de ese alcance en el contexto revisado.",
+  "options": [
+    {
+      "title": "Confirmar la excepción acotada",
+      "body": "Mantener el alcance autónomo descrito en el PR y documentar la decisión vigente junto a la política de remediación.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener aprobación humana",
+      "body": "Conservar la aprobación para todas las escrituras de producción hasta que se acuerde y documente una excepción.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Confirmar la excepción acotada",
+    "body": "Mantener el alcance autónomo descrito en el PR y documentar la decisión vigente junto a la política de remediación.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su historial en las instrucciones y tools del watcher lo conecta con la política operacional que el PR modifica.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10676.md",
+    "reviewedAt": "2026-10-09T02:16:53.767Z",
+    "mainSha": "edd9d378acfd9f0294327f577ee75d851ee6d5d0"
+  }
+}
