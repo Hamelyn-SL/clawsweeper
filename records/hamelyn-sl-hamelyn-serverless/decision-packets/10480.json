@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-06T15:25:27.143Z",
-  "updatedAt": "2026-10-05T15:20:34Z",
+  "generatedAt": "2026-10-10T03:54:47.406Z",
+  "updatedAt": "2026-10-10T03:15:18Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -18,43 +18,37 @@
       "P2"
     ],
     "createdAt": "2026-10-05T14:39:36Z",
-    "updatedAt": "2026-10-05T15:20:34Z"
+    "updatedAt": "2026-10-10T03:15:18Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "Si eBay acepta el POST pero `getOffer` sigue fallando con [25001], ¿qué resultado debe aplicarse después de una lectura alternativa por SKU que tampoco permita confirmar la retirada?",
-  "rationale": "Una salida terminal puede ocultar un anuncio todavía publicado, mientras que mantener reintentos ilimitados conserva el estado incierto y la carga operativa; la política afecta al estado remoto y al tratamiento del inventario vendido.",
+  "question": "¿Qué límite de intentos y qué escalado manual deben aplicarse cuando la retirada de una oferta eBay siga sin poder confirmarse tras la relectura?",
+  "rationale": "La implementación actual mantiene el backoff transitorio indefinidamente. Elegir un umbral y el destino del espejo cuando la evidencia remota sea ambigua cambia el comportamiento operativo y no puede deducirse de la discusión.",
   "options": [
     {
-      "title": "Lectura alternativa y escalado manual",
-      "body": "Consultar la oferta por SKU con validación de identidad y, si no se puede confirmar, marcar el caso para revisión manual sin darlo por retirado.",
+      "title": "Definir umbral y escalado",
+      "body": "Acordar el número máximo de intentos y pasar después a un estado de revisión manual con aviso operativo, sin marcar como retirada una oferta no confirmada.",
       "recommended": true
     },
     {
-      "title": "Mantener reintentos acotados",
-      "body": "Definir un número o ventana máxima de intentos y una cola de revisión que preserve el estado incierto al agotarlos.",
-      "recommended": false
-    },
-    {
       "title": "Mantener reintentos indefinidos",
-      "body": "Conservar el comportamiento actual y posponer cualquier escalado terminal hasta disponer de otra fuente fiable para verificar el estado.",
+      "body": "Conservar el backoff actual y posponer cualquier estado final o aviso manual.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Lectura alternativa y escalado manual",
-    "body": "Consultar la oferta por SKU con validación de identidad y, si no se puede confirmar, marcar el caso para revisión manual sin darlo por retirado.",
+    "title": "Definir umbral y escalado",
+    "body": "Acordar el número máximo de intentos y pasar después a un estado de revisión manual con aviso operativo, sin marcar como retirada una oferta no confirmada.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MarcosTerroso",
-    "reason": "Su historial cubre la introducción de la reconciliación de retiradas eBay, el punto donde debe definirse el comportamiento final.",
-    "confidence": "high"
+    "person": "JavierHamelyn",
+    "reason": "Es el contribuidor reciente del flujo de retirada y aportó la medición que separa la cohorte resuelta de los casos que siguen ambiguos; la decisión corresponde al equipo Marketplace.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10480.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10480#issuecomment-5997159951",
-    "reviewedAt": "2026-10-06T15:25:27.143Z",
-    "mainSha": "9c76bbeffd799a99a34a461135a584dfb14c08e3"
+    "reviewedAt": "2026-10-10T03:54:47.406Z",
+    "mainSha": "a062057255c3f4894403644bf51b485f61e6c467"
   }
 }
