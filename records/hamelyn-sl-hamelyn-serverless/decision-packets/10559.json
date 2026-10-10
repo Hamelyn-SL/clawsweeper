@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-08T09:08:50.628Z",
-  "updatedAt": "2026-10-07T09:45:50Z",
+  "generatedAt": "2026-10-10T02:53:37.849Z",
+  "updatedAt": "2026-10-10T02:29:38Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -17,38 +17,37 @@
       "P2"
     ],
     "createdAt": "2026-10-07T09:00:57Z",
-    "updatedAt": "2026-10-07T09:45:50Z"
+    "updatedAt": "2026-10-10T02:29:38Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Fulfillment aprueba cancelar en Discogs los pedidos 29939614-C-1558 y 29939614-C-1576, o existe una alternativa de envío para cada uno?",
-  "rationale": "El código consultado reconcilia cancelaciones ya realizadas, pero la evidencia no acredita un intento remoto ni autoriza escoger entre cancelar y enviar; automatizar esa decisión afectaría pedidos pagados.",
+  "question": "¿Quién debe cancelar en Discogs los pedidos ya cancelados localmente y en qué plazo; se quiere mantener el proceso manual o diseñar una automatización aprobada?",
+  "rationale": "El código solo comprueba cancelaciones remotas existentes y el panel permite registrar la cancelación local; automatizar la acción remota o fijar un SLA requiere una decisión de operaciones/fulfillment.",
   "options": [
     {
-      "title": "Aprobar cancelación",
-      "body": "Fulfillment autoriza cancelar ambos pedidos en Discogs y documentar la respuesta remota y la reconciliación local.",
-      "recommended": false
+      "title": "Definir responsable y plazo manuales",
+      "body": "Documentar quién cancela cada pedido en Discogs y el plazo, conservando la operación manual.",
+      "recommended": true
     },
     {
-      "title": "Definir alternativa de envío",
-      "body": "Fulfillment determina si alguno de los pedidos puede enviarse y documenta el estado operativo resultante.",
-      "recommended": true
+      "title": "Diseñar una automatización aprobada",
+      "body": "Acordar criterios de elegibilidad, tratamiento de excepciones y confirmación remota antes de automatizar cancelaciones.",
+      "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Definir alternativa de envío",
-    "body": "Fulfillment determina si alguno de los pedidos puede enviarse y documenta el estado operativo resultante.",
+    "title": "Definir responsable y plazo manuales",
+    "body": "Documentar quién cancela cada pedido en Discogs y el plazo, conservando la operación manual.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "HamelynDev",
-    "reason": "Es el candidato de enrutamiento con señales locales en el flujo Discogs; la decisión de negocio corresponde a fulfillment y no queda identificado un responsable individual en la evidencia disponible.",
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Es la persona con la señal más directa en el historial del código Discogs relacionado; la decisión operativa puede requerir además coordinación con fulfillment.",
     "confidence": "low"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10559.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10559#issuecomment-6034740069",
-    "reviewedAt": "2026-10-08T09:08:50.628Z",
-    "mainSha": "b9b17fe100c993797c5c7f2161a63b3320f2c118"
+    "reviewedAt": "2026-10-10T02:53:37.849Z",
+    "mainSha": "eebecc2fd2fb933334965f3552e1aa1435f82ec1"
   }
 }
