@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-06T11:24:27.875Z",
-  "updatedAt": "2026-10-05T11:16:07Z",
+  "generatedAt": "2026-10-10T05:27:05.015Z",
+  "updatedAt": "2026-10-10T01:44:11Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,49 +13,48 @@
       "bug",
       "app:marketplace",
       "reporter:javier",
-      "triage:needs-info",
+      "triage:no-change",
       "clawsweeper:needs-product-decision",
-      "mk:amazon",
-      "P2"
+      "P2",
+      "mk:amazon"
     ],
     "createdAt": "2026-10-05T10:35:39Z",
-    "updatedAt": "2026-10-05T11:16:07Z"
+    "updatedAt": "2026-10-10T01:44:11Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "Cuando haya retiradas y precios pendientes para la misma cuenta Amazon, ¿deben tener prioridad las retiradas y qué demora máxima de precios se acepta durante un pico B2B?",
-  "rationale": "El código aplica hoy una cuota compartida sin prioridad, y las alternativas propuestas cambian el reparto de capacidad; sin el objetivo aceptado de demora no se puede escoger de forma segura entre prioridad, cuota reservada o combinación de operaciones.",
+  "question": "Durante una saturación de feeds Amazon del mismo vendedor, ¿qué regla debe proteger las retiradas y qué demora máxima de precios se acepta?",
+  "rationale": "La incidencia está respaldada por telemetría y por el código, pero escoger entre prioridad, capacidad reservada o feeds combinados implica un compromiso operativo entre retirar anuncios vendidos y mantener actualizados los precios.",
   "options": [
     {
-      "title": "Prioridad acotada a retiradas",
-      "body": "Dar preferencia a retiradas vendidas mientras haya pendientes, con un límite explícito de espera para feeds de precio.",
+      "title": "Priorizar retiradas con límite de espera de precio",
+      "body": "Acordar una demora máxima para precios y reservar o asignar huecos a retiradas dentro de ese presupuesto.",
       "recommended": true
     },
     {
-      "title": "Cuota reservada por operación",
-      "body": "Separar parte del cupo para retiradas y conservar capacidad predecible para precios, aunque pueda quedar capacidad sin usar en una ventana.",
+      "title": "Combinar precio y retirada cuando sea seguro",
+      "body": "Diseñar y validar un feed común por pasada, manteniendo las restricciones y el orden seguros para cada tipo de operación.",
       "recommended": false
     },
     {
-      "title": "Mantener cuota neutral",
-      "body": "Conservar el reparto actual y limitar el cambio a métricas y reintentos, aceptando que las retiradas puedan perder una pasada.",
+      "title": "Mantener el reparto actual",
+      "body": "Conservar la reserva compartida sin prioridad hasta acordar una garantía de servicio basada en nuevas mediciones.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Prioridad acotada a retiradas",
-    "body": "Dar preferencia a retiradas vendidas mientras haya pendientes, con un límite explícito de espera para feeds de precio.",
+    "title": "Priorizar retiradas con límite de espera de precio",
+    "body": "Acordar una demora máxima para precios y reservar o asignar huecos a retiradas dentro de ese presupuesto.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MarcosTerroso",
-    "reason": "La revisión relacionada sobre colas de marketplace lo identifica como candidato para acordar los objetivos de latencia y capacidad; conviene decidirlo con el equipo de Marketplaces.",
+    "person": "Lyno",
+    "reason": "Su historial introdujo la reserva compartida que da lugar a la decisión de arbitraje planteada.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10464.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10464#issuecomment-5993020521",
-    "reviewedAt": "2026-10-06T11:24:27.875Z",
-    "mainSha": "9c76bbeffd799a99a34a461135a584dfb14c08e3"
+    "reviewedAt": "2026-10-10T05:27:05.015Z",
+    "mainSha": "690b4786fb978ebf0e264e1d9afc7470133bbc56"
   }
 }
