@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-06T19:57:44.505Z",
-  "updatedAt": "2026-10-06T11:31:27Z",
+  "generatedAt": "2026-10-10T13:47:21.703Z",
+  "updatedAt": "2026-10-10T04:30:49Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,48 +14,47 @@
       "question",
       "triage:needs-info",
       "clawsweeper:needs-product-decision",
+      "P2",
       "origin:dev",
-      "mk:amazon",
-      "P2"
+      "mk:amazon"
     ],
     "createdAt": "2026-07-15T12:06:25Z",
-    "updatedAt": "2026-10-06T11:31:27Z"
+    "updatedAt": "2026-10-10T04:30:49Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se aprueba evaluar en shadow los pares legacy mediante el resolver regional de https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8162 y qué cadencia debe aplicarse a los que sigan `UNRESOLVED`?",
-  "rationale": "La respuesta determina una política de reintento y el posible tratamiento de datos persistidos; la evidencia disponible no puede decidir el umbral ni la cadencia en nombre del equipo.",
+  "question": "¿Se aprueba un shadow inicial limitado a FR/IT para libros con ASIN y el mismo SKU activo en ES, dejando aparcada la cohorte sin ASIN hasta validar el catálogo destino, o se elige otro alcance y cadencia?",
+  "rationale": "La evidencia reciente sugiere que la señal de anuncio ES puede priorizar candidatos, pero no demuestra disponibilidad en la región destino ni define qué hacer con los casos sin candidato; ampliar o activar la revalidación codificaría una política de producto.",
   "options": [
     {
-      "title": "Shadow y revisión posterior",
-      "body": "Evaluar la cohorte sin reactivarla y decidir la cadencia tras revisar resultados.",
+      "title": "Shadow acotado FR/IT",
+      "body": "Evaluar sin escrituras la cohorte con libro activo, ASIN y mismo SKU activo en ES, dejando el resto aparcado mientras se revisan resultados.",
       "recommended": true
     },
     {
-      "title": "Mantenerlos terminales",
-      "body": "Conservar la clasificación permanente y no programar revalidación automática.",
+      "title": "Mantener cohorte aparcada",
+      "body": "No ejecutar evaluación regional hasta acordar criterios de elegibilidad y cadencia para todos los mercados.",
       "recommended": false
     },
     {
-      "title": "Definir otra cadencia",
-      "body": "Aprobar una ventana o intervalo distinto antes de implementar cambios.",
+      "title": "Definir otra cohorte",
+      "body": "Acordar expresamente regiones, criterios de entrada y revalidación antes de modificar el flujo.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Shadow y revisión posterior",
-    "body": "Evaluar la cohorte sin reactivarla y decidir la cadencia tras revisar resultados.",
+    "title": "Shadow acotado FR/IT",
+    "body": "Evaluar sin escrituras la cohorte con libro activo, ASIN y mismo SKU activo en ES, dejando el resto aparcado mientras se revisan resultados.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es quien aportó el contexto técnico más reciente sobre V2 y la coordinación con el resolver regional; la evidencia no confirma que sea el responsable final de la decisión de producto.",
-    "confidence": "low"
+    "reason": "Está asignado a la issue relacionada de identidad regional y aportó el canario que motiva esta decisión.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7599.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7599#issuecomment-4980638639",
-    "reviewedAt": "2026-10-06T19:57:44.505Z",
-    "mainSha": "83376e1fa49aa426b9c468ea9bc24e7a2f0f6bb9"
+    "reviewedAt": "2026-10-10T13:47:21.703Z",
+    "mainSha": "67ee79c252051960ffbdc23a4089fbb0b3c3ed4e"
   }
 }
