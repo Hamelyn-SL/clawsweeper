@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-10T13:57:26.298Z",
+  "updatedAt": "2026-10-09T14:27:51Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10734,
+    "title": "Scrapers: IP manager retires the whole CDL pool after sporadic 403s",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10734",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:infrastructure",
+      "reporter:pablo",
+      "triage:done",
+      "P1"
+    ],
+    "createdAt": "2026-10-09T13:39:54Z",
+    "updatedAt": "2026-10-09T14:27:51Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe el enfriamiento de 600 segundos permitir acumular tres bloqueos secuenciales dentro de la ventana de retirada de 600 segundos, o se acepta que el umbral se alcance principalmente con bloqueos concurrentes o ya en curso?",
+  "rationale": "La elección cambia el comportamiento efectivo del umbral y no se deduce con seguridad del requisito, que fija ambos plazos en diez minutos.",
+  "options": [
+    {
+      "title": "Conservar ambos plazos",
+      "body": "Mantener ventana y enfriamiento de 600 segundos y validar/documentar el comportamiento del umbral bajo concurrencia.",
+      "recommended": true
+    },
+    {
+      "title": "Permitir acumulación secuencial",
+      "body": "Reducir el cooldown por bloqueo y comprobar el impacto operativo junto con la ventana de retirada.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Conservar ambos plazos",
+    "body": "Mantener ventana y enfriamiento de 600 segundos y validar/documentar el comportamiento del umbral bajo concurrencia.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "PabloMoran34",
+    "reason": "Es el autor de la PR candidata y aparece como responsable reciente del código de scrapers en el historial local.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10734.md",
+    "reviewedAt": "2026-10-10T13:57:26.298Z",
+    "mainSha": "67ee79c252051960ffbdc23a4089fbb0b3c3ed4e"
+  }
+}
