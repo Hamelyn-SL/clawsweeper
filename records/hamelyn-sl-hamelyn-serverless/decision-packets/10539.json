@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-08T06:00:59.466Z",
-  "updatedAt": "2026-10-08T05:52:02Z",
+  "generatedAt": "2026-10-10T03:07:30.756Z",
+  "updatedAt": "2026-10-10T02:23:49Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,44 +13,43 @@
       "bug",
       "app:marketplace",
       "reporter:javier",
-      "triage:done",
-      "mk:amazon",
+      "triage:queued",
+      "clawsweeper:needs-product-decision",
       "P2",
-      "clawsweeper:needs-product-decision"
+      "mk:amazon"
     ],
     "createdAt": "2026-10-07T02:33:30Z",
-    "updatedAt": "2026-10-08T05:52:02Z"
+    "updatedAt": "2026-10-10T02:23:49Z"
   },
-  "lane": "security_boundary",
+  "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe la retirada Amazon seleccionar en las seis regiones los espejos vendidos `INACTIVE` con `REPORT_INACTIVE`, y qué guardas deben preservar otros errores permanentes?",
-  "rationale": "La selección provoca operaciones DELETE externas y el caso de producción no establece qué proceso reactivó la oferta; definir el alcance y guardas requiere criterio del equipo de marketplaces.",
+  "question": "¿Se mantiene la PR vinculada limitada al fix preventivo y se gestiona aparte la cohorte histórica de espejos vendidos sin marca, cuya reencolación requiere validación operativa?",
+  "rationale": "Los datos compartidos después de abrir la PR identifican miles de espejos históricos y algunos sin documento; ampliar el fix preventivo no los cubre y ejecutar una remediación altera el alcance operativo.",
   "options": [
     {
-      "title": "Incluir el marcador en las seis regiones",
-      "body": "Permitir DELETE solo para `INACTIVE` con `REPORT_INACTIVE` y preservar las exclusiones actuales para otros errores permanentes.",
+      "title": "Separar prevención y remediación",
+      "body": "Revisar la PR abierta en su alcance actual y autorizar por separado un plan acotado con revalidación viva y comprobación remota.",
       "recommended": true
     },
     {
-      "title": "Limitar inicialmente el alcance",
-      "body": "Aplicar la selección solo a MX y COM hasta verificar el origen de la reactivación y el resultado de DELETE en producción.",
+      "title": "Ampliar el alcance preventivo",
+      "body": "Pedir que la PR incorpore más códigos legacy, aceptando que eso no resuelve los espejos ausentes ni sustituye la remediación.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Incluir el marcador en las seis regiones",
-    "body": "Permitir DELETE solo para `INACTIVE` con `REPORT_INACTIVE` y preservar las exclusiones actuales para otros errores permanentes.",
+    "title": "Separar prevención y remediación",
+    "body": "Revisar la PR abierta en su alcance actual y autorizar por separado un plan acotado con revalidación viva y comprobación remota.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Su PR fusionada reciente implementó la selección de retiradas Amazon y los límites asociados.",
+    "reason": "Es quien lleva la PR abierta que propone el cambio preventivo y puede coordinar su límite con la remediación separada.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10539.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10539#issuecomment-6029907138",
-    "reviewedAt": "2026-10-08T06:00:59.466Z",
-    "mainSha": "9ad1b8886a111e512ed3c312197e1df885d5b508"
+    "reviewedAt": "2026-10-10T03:07:30.756Z",
+    "mainSha": "eebecc2fd2fb933334965f3552e1aa1435f82ec1"
   }
 }
