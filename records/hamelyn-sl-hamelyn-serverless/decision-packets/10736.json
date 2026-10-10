@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-09T14:52:32.511Z",
-  "updatedAt": "2026-10-09T14:45:50Z",
+  "generatedAt": "2026-10-10T14:57:17.818Z",
+  "updatedAt": "2026-10-10T06:44:15Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,49 +13,43 @@
       "codex",
       "bug",
       "app:marketplace",
-      "triage:needs-info",
-      "marketplace-crons",
+      "triage:no-change",
+      "clawsweeper:needs-product-decision",
       "P2",
-      "clawsweeper:needs-product-decision"
+      "marketplace-crons"
     ],
     "createdAt": "2026-10-09T14:30:44Z",
-    "updatedAt": "2026-10-09T14:45:50Z"
+    "updatedAt": "2026-10-10T06:44:15Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué estado mostraba Amazon para este pedido alrededor de las 12:57–14:06 UTC del 9 de octubre de 2026, y debe esta firma seguir en recuperación cuando Amazon la devuelve?",
-  "rationale": "La respuesta de Amazon no distingue por sí sola entre una condición terminal y un desfase temporal; elegir una política de reintento sin ese estado podría perpetuar el error o dejar una confirmación válida sin recuperar.",
+  "question": "¿Qué estado e historial muestra Seller Central para el pedido en el momento de los rechazos, y debe este error conservar los reintentos mientras el pedido siga sin enviar?",
+  "rationale": "El código y la réplica local no determinan el estado autoritativo de Amazon; excluir este error de recuperación sin esa comprobación podría afectar pedidos que aún necesitan confirmación.",
   "options": [
     {
-      "title": "Consultar Seller Central primero",
-      "body": "Usar el estado y el historial remoto del pedido para decidir si esta respuesta debe tratarse como terminal o recuperable.",
+      "title": "Mantener reintentos",
+      "body": "Si Seller Central muestra el pedido pendiente de envío, conservar la recuperación actual y seguir investigando la causa del rechazo.",
       "recommended": true
     },
     {
-      "title": "Mantener el comportamiento de recuperación actual",
-      "body": "Dejar que los errores recientes vuelvan a `PENDING` hasta que haya evidencia de que esta firma es terminal.",
-      "recommended": false
-    },
-    {
-      "title": "Excluir esta firma del recovery",
-      "body": "Tratar el rechazo como terminal, aceptando que los casos recuperables requerirán una reconciliación operativa distinta.",
+      "title": "Reconciliar estado terminal",
+      "body": "Si Seller Central confirma que ya está enviado o cancelado, definir una comprobación remota acotada antes de cerrar o excluir el error.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Consultar Seller Central primero",
-    "body": "Usar el estado y el historial remoto del pedido para decidir si esta respuesta debe tratarse como terminal o recuperable.",
+    "title": "Mantener reintentos",
+    "body": "Si Seller Central muestra el pedido pendiente de envío, conservar la recuperación actual y seguir investigando la causa del rechazo.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "Lyno",
-    "reason": "Su autoría del patrón terminal actual lo relaciona con la política que habría que modificar; la decisión operativa corresponde al equipo de Marketplaces y no puede asignarse con certeza a una persona a partir del historial disponible.",
+    "reason": "Su historial incluye la definición de errores terminales que controla la recuperación; el estado remoto debe aportarlo el equipo de operaciones de marketplaces.",
     "confidence": "low"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10736.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10736#issuecomment-6083366452",
-    "reviewedAt": "2026-10-09T14:52:32.511Z",
-    "mainSha": "68c59751cc0533f095ebb7b30a4624535872c467"
+    "reviewedAt": "2026-10-10T14:57:17.818Z",
+    "mainSha": "67ee79c252051960ffbdc23a4089fbb0b3c3ed4e"
   }
 }
