@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-29T08:57:24.729Z",
-  "updatedAt": "2026-09-29T08:22:08Z",
+  "generatedAt": "2026-10-10T02:10:56.666Z",
+  "updatedAt": "2026-10-10T01:18:33Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,48 +13,42 @@
       "bug",
       "app:marketplace",
       "reporter:miguel",
-      "triage:needs-info",
-      "clawsweeper:needs-product-decision",
-      "P1"
+      "triage:queued",
+      "P1",
+      "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-09-14T05:50:08Z",
-    "updatedAt": "2026-09-29T08:22:08Z"
+    "updatedAt": "2026-10-10T01:18:33Z"
   },
-  "lane": "product_direction",
+  "lane": "security_boundary",
   "priority": "P1",
-  "question": "¿Qué flujo aprobado debe cubrir Amazon CA: una reconciliación propia basada en su marketplace ID o una extensión segura del informe COM, y qué validación por SKU se exigirá antes de la retirada inicial?",
-  "rationale": "La opción de implementación afecta al destino de las retiradas y al espejo compartido COM; la discusión indica que añadir CA al procesamiento COM no corrige por sí solo la cobertura del report y puede alterar reconciliación existente.",
+  "question": "¿Se autoriza enviar a Amazon CA los feeds de cantidad cero propuestos para los 44.334 SKU, empezando por un canario de 20 y verificándolo en el snapshot siguiente?",
+  "rationale": "La solución pendiente implica escrituras masivas en una API de producción y los datos del comentario no equivalen a autorización para ejecutarlas.",
   "options": [
     {
-      "title": "Report y reconciliación CA separados",
-      "body": "Obtener el report CA, validar una recuperación acotada y añadir cobertura periódica propia para CA.",
+      "title": "Autorizar canario y lotes",
+      "body": "Validar primero 20 SKU y, si el snapshot confirma el resultado, enviar los lotes restantes con el alcance documentado.",
       "recommended": true
     },
     {
-      "title": "Reutilizar COM con guardas explícitas",
-      "body": "Extender el flujo COM solo si se demuestra que puede aislar CA sin modificar la reconciliación de US.",
-      "recommended": false
-    },
-    {
-      "title": "Posponer la recuperación inicial",
-      "body": "Mantener la issue abierta hasta disponer del inventario CA reciente y acordar el filtro de SKU.",
+      "title": "Pedir validación adicional",
+      "body": "Mantener la medición y solicitar una revisión del CSV, filtros y plan de reversión antes de autorizar cualquier escritura.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Report y reconciliación CA separados",
-    "body": "Obtener el report CA, validar una recuperación acotada y añadir cobertura periódica propia para CA.",
+    "title": "Autorizar canario y lotes",
+    "body": "Validar primero 20 SKU y, si el snapshot confirma el resultado, enviar los lotes restantes con el alcance documentado.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MarcosTerroso",
-    "reason": "Es un candidato de enrutamiento con historial relevante en marketplaces y en la issue relacionada de retirada Amazon.",
-    "confidence": "medium"
+    "person": "JavierHamelyn",
+    "reason": "Presentó la medición actual de CA y el plan operativo de retirada que requiere autorización.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9465.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9465#issuecomment-5659733694",
-    "reviewedAt": "2026-09-29T08:57:24.729Z",
-    "mainSha": "c00d5ae9d8c22db43413e8bf075dca415382d803"
+    "reviewedAt": "2026-10-10T02:10:56.666Z",
+    "mainSha": "eebecc2fd2fb933334965f3552e1aa1435f82ec1"
   }
 }
