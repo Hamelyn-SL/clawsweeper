@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-07T09:03:19.339Z",
-  "updatedAt": "2026-10-07T08:59:48Z",
+  "generatedAt": "2026-10-10T13:23:27.567Z",
+  "updatedAt": "2026-10-10T07:27:52Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,44 +13,43 @@
       "bug",
       "app:marketplace",
       "reporter:javier",
-      "triage:needs-info",
+      "triage:done",
       "clawsweeper:needs-product-decision",
-      "mk:mercadolibre",
-      "P2"
+      "P2",
+      "mk:mercadolibre"
     ],
     "createdAt": "2026-09-30T02:32:40Z",
-    "updatedAt": "2026-10-07T08:59:48Z"
+    "updatedAt": "2026-10-10T07:27:52Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe `inactive` seguir contando como terminal para MercadoLibre AR durante una restricción reversible, o debe mantenerse la retirada pendiente y reconciliarse al recuperarse la cuenta?",
-  "rationale": "La respuesta correcta depende de una transición remota aún no comprobada; cambiar la regla compartida basándose solo en el nombre del estado podría romper el comportamiento acordado para MX.",
+  "question": "¿Debe añadirse una reconciliación periódica de tombstones para MercadoLibre AR y qué fuente, límites de lectura y comprobaciones de stock debe exigir?",
+  "rationale": "La medición descarta una reactivación masiva observada, mientras que el caso activo no está vinculado causalmente; elegir una reconciliación y sus guardas define comportamiento operativo nuevo.",
   "options": [
     {
-      "title": "Mantener la regla compartida",
-      "body": "Conservar `inactive` como terminal y cerrar la issue si se confirma que esos anuncios no pueden volver a publicarse.",
-      "recommended": false
+      "title": "Diseñar reconciliación acotada para AR",
+      "body": "Definir fuente, límites, modo de prueba y validación del stock maestro antes de implementar el cierre de tombstones reactivados.",
+      "recommended": true
     },
     {
-      "title": "Añadir reconciliación de AR",
-      "body": "Mantener los anuncios vendidos localizables y volver a cerrarlos cuando la cuenta acepte escrituras, con cobertura para la recuperación de tombstones de AR.",
-      "recommended": true
+      "title": "Mantener solo vigilancia manual",
+      "body": "No ampliar el proceso hasta que un caso activo quede vinculado a una respuesta `inactive` y se confirme su transición.",
+      "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Añadir reconciliación de AR",
-    "body": "Mantener los anuncios vendidos localizables y volver a cerrarlos cuando la cuenta acepte escrituras, con cobertura para la recuperación de tombstones de AR.",
+    "title": "Diseñar reconciliación acotada para AR",
+    "body": "Definir fuente, límites, modo de prueba y validación del stock maestro antes de implementar el cierre de tombstones reactivados.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Su historial de incorporación de MercadoLibre Argentina lo relaciona directamente con el alcance de sitio afectado; la decisión debería confirmarse con quien tenga acceso al estado remoto de la cuenta.",
+    "reason": "Su historial reciente cubre tanto la retirada de MercadoLibre como la recuperación de tombstones en el informe.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10254.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10254#issuecomment-5903097730",
-    "reviewedAt": "2026-10-07T09:03:19.339Z",
-    "mainSha": "80dac5266a4001d645a7491b82d8bfcd80ae7a15"
+    "reviewedAt": "2026-10-10T13:23:27.567Z",
+    "mainSha": "67ee79c252051960ffbdc23a4089fbb0b3c3ed4e"
   }
 }
