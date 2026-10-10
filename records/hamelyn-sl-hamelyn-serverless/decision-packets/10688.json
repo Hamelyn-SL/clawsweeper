@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-09T05:57:55.934Z",
-  "updatedAt": "2026-10-09T05:30:51Z",
+  "generatedAt": "2026-10-10T06:38:27.716Z",
+  "updatedAt": "2026-10-10T02:45:19Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,43 +12,42 @@
     "labels": [
       "bug",
       "app:marketplace",
-      "triage:queued",
-      "P2",
-      "clawsweeper:needs-product-decision"
+      "triage:needs-info",
+      "clawsweeper:needs-product-decision",
+      "P2"
     ],
     "createdAt": "2026-10-09T05:30:40Z",
-    "updatedAt": "2026-10-09T05:30:51Z"
+    "updatedAt": "2026-10-10T02:45:19Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe añadirse una vía controlada para revisar o recuperar listings `REPORT_INACTIVE` cuando Listings API confirma una oferta suprimida por 18155 pese a existir umbrales explícitos?",
-  "rationale": "La evidencia no identifica todavía el origen del precio ni establece que reactivar o reintentar sea seguro; una recuperación automática podría alterar una decisión comercial o reabrir una oferta no autorizada.",
+  "question": "Si se confirma que Amazon conserva umbrales anteriores pese a recibir un repricing correcto, ¿debe el flujo recuperar automáticamente el listing cuando el precio y los umbrales vuelvan a ser coherentes, o mantenerlo aparcado hasta una revisión explícita?",
+  "rationale": "La issue pide validar el canario antes de cualquier recuperación, y reactivar una oferta tiene consecuencias comerciales; el código no determina por sí solo el comportamiento deseado.",
   "options": [
     {
-      "title": "Investigar primero el canario",
-      "body": "Reconstruir el payload y el precio maestro antes de decidir si hace falta un cambio de código o una operación comercial.",
+      "title": "Mantener aparcado hasta revisión explícita",
+      "body": "Evita reactivar una oferta comercialmente no aprobada mientras se investiga la causa remota.",
       "recommended": true
     },
     {
-      "title": "Diseñar recuperación dirigida",
-      "body": "Definir una revisión explícita y acotada para este estado, preservando el precio aprobado y los controles de vendibilidad.",
+      "title": "Recuperar tras verificación remota",
+      "body": "Permite reactivarlo automáticamente solo después de confirmar precio, umbrales coherentes y estado BUYABLE.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Investigar primero el canario",
-    "body": "Reconstruir el payload y el precio maestro antes de decidir si hace falta un cambio de código o una operación comercial.",
+    "title": "Mantener aparcado hasta revisión explícita",
+    "body": "Evita reactivar una oferta comercialmente no aprobada mientras se investiga la causa remota.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "PabloMoran34",
-    "reason": "Su historial conecta con el cálculo de umbrales de precio que debe contrastarse para resolver el caso.",
+    "person": "MarcosTerroso",
+    "reason": "Es la persona asignada a la investigación actual, por lo que es el candidato de decisión más próximo según el contexto disponible.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10688.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10688#issuecomment-6075258395",
-    "reviewedAt": "2026-10-09T05:57:55.934Z",
-    "mainSha": "37abc30680afdf9ba8f6df5c310410e14e818f5f"
+    "reviewedAt": "2026-10-10T06:38:27.716Z",
+    "mainSha": "690b4786fb978ebf0e264e1d9afc7470133bbc56"
   }
 }
