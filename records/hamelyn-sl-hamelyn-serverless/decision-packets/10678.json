@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-10T05:03:57.343Z",
+  "updatedAt": "2026-10-10T01:59:42Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10678,
+    "title": "Discogs: 3 anuncios vendidos sin pedido importado en Hamelyn",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10678",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "triage:needs-info",
+      "P2"
+    ],
+    "createdAt": "2026-10-09T01:50:36Z",
+    "updatedAt": "2026-10-10T01:59:42Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué plazo y fecha de referencia deben activar la cancelación de pedidos Discogs `Invoice Sent` sin pagar, y debe aplicarse también a los 17 pedidos ya identificados?",
+  "rationale": "El plazo de 10 días se planteó como ejemplo, no como regla aprobada; cancelar en Discogs y liberar o republicar stock cambia el riesgo de venta y requiere decidir también el tratamiento de la cohorte existente.",
+  "options": [
+    {
+      "title": "Mantener gestión manual temporal",
+      "body": "No automatizar cancelaciones ni republicaciones hasta acordar el criterio, mientras Operaciones resuelve los pedidos abiertos manualmente.",
+      "recommended": true
+    },
+    {
+      "title": "Aprobar una regla automática",
+      "body": "Definir plazo, fecha de referencia, excepciones y sincronización del stock, e indicar expresamente si la regla abarca los pedidos existentes.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mantener gestión manual temporal",
+    "body": "No automatizar cancelaciones ni republicaciones hasta acordar el criterio, mientras Operaciones resuelve los pedidos abiertos manualmente.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Javier verificó los estados remotos y planteó el plazo como decisión pendiente junto con Operaciones; la política requiere coordinación con quien gestiona los pedidos de Discogs.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10678.md",
+    "reviewedAt": "2026-10-10T05:03:57.343Z",
+    "mainSha": "690b4786fb978ebf0e264e1d9afc7470133bbc56"
+  }
+}
