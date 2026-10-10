@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-08T14:52:13.340Z",
-  "updatedAt": "2026-10-08T14:42:55Z",
+  "generatedAt": "2026-10-10T05:59:29.227Z",
+  "updatedAt": "2026-10-10T01:29:50Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,43 +13,47 @@
       "bug",
       "app:marketplace",
       "reporter:javier",
-      "triage:done",
+      "triage:no-change",
       "P2",
       "mk:mercadolibre"
     ],
     "createdAt": "2026-10-08T14:39:43Z",
-    "updatedAt": "2026-10-08T14:42:55Z"
+    "updatedAt": "2026-10-10T01:29:50Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe un 403 de `items/search` mantener el backoff actual de una hora, o conviene un reintento más próximo una vez descartada una restricción de cuenta?",
-  "rationale": "La evidencia confirma fallos de búsqueda pero no su causa; un cambio de reintentos afecta llamadas al proveedor y no debe convertir una búsqueda incompleta en retirada confirmada.",
+  "question": "¿Debe una búsqueda fallida exclusivamente con 403, después de cerrar correctamente el anuncio conocido, reintentarse antes del backoff transitorio actual de una hora?",
+  "rationale": "La alternativa de cinco minutos propuesta en el comentario puede acortar la exposición a anuncios hermanos activos, pero también multiplicar llamadas ante un 403 sostenido; el historial no establece qué presupuesto ni umbral prefiere el equipo.",
   "options": [
     {
-      "title": "Conservar el backoff",
-      "body": "Mantener el reintento horario hasta disponer de evidencia que descarte una restricción de cuenta.",
+      "title": "Adelantar a cinco minutos con guardas",
+      "body": "Aplicar el intervalo solo si todos los fallos de búsqueda son 403, hubo al menos un cierre correcto y no falló ningún cierre; conservar la retirada incompleta hasta completar ambas búsquedas.",
       "recommended": true
     },
     {
-      "title": "Definir un reintento más temprano",
-      "body": "Acordar una ventana limitada de reintento y validar la causa del 403 antes de cambiar la política.",
+      "title": "Conservar el backoff actual",
+      "body": "Mantener el reintento transitorio existente y esperar evidencia de una nueva recurrencia o de anuncios hermanos aún activos antes de cambiar el ritmo.",
+      "recommended": false
+    },
+    {
+      "title": "Definir primero límites operativos",
+      "body": "Pedir al responsable de la integración una comprobación saneada del rechazo y acordar un límite de llamadas antes de modificar la política.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Conservar el backoff",
-    "body": "Mantener el reintento horario hasta disponer de evidencia que descarte una restricción de cuenta.",
+    "title": "Adelantar a cinco minutos con guardas",
+    "body": "Aplicar el intervalo solo si todos los fallos de búsqueda son 403, hubo al menos un cierre correcto y no falló ningún cierre; conservar la retirada incompleta hasta completar ambas búsquedas.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Su historial reciente cubre la lógica de búsqueda incompleta, clasificación y reintento que requiere la decisión.",
+    "reason": "Su implementación relacionada establece cómo se conservan los fallos y por qué no se confirma la retirada incompleta.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10660.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10660#issuecomment-6062569374",
-    "reviewedAt": "2026-10-08T14:52:13.340Z",
-    "mainSha": "fd5173754dea1e2bc1a511cb27c03be87a75b038"
+    "reviewedAt": "2026-10-10T05:59:29.227Z",
+    "mainSha": "690b4786fb978ebf0e264e1d9afc7470133bbc56"
   }
 }
