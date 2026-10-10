@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-10T05:48:40.612Z",
+  "updatedAt": "2026-10-10T01:40:01Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10747,
+    "title": "Fnac: una sola oferta por ficha y estado; las desplazadas siguen ACTIVE en el espejo y alimentan los DB_ONLY",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10747",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "reporter:javier",
+      "triage:queued",
+      "P2",
+      "mk:fnac"
+    ],
+    "createdAt": "2026-10-10T01:29:31Z",
+    "updatedAt": "2026-10-10T01:40:01Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué estado y política de reintento deben aplicarse a una oferta desplazada por otra de la misma ficha y estado, y cómo debe reconciliarse la oferta desplazada cuando no estaba en el lote?",
+  "rationale": "La solución afecta la semántica persistida de estados y la política de reencolado; clasificarla como ausente sin más podría recrear el ciclo de desplazamientos que el reporte describe.",
+  "options": [
+    {
+      "title": "Estado específico y reconciliación",
+      "body": "Registrar el desplazamiento con un estado distinguible y reconciliar tanto la oferta desplazada como su reemplazo antes de permitir otro reencolado.",
+      "recommended": true
+    },
+    {
+      "title": "Revisión operativa antes de reencolar",
+      "body": "Bloquear reencolados automáticos de `DB_ONLY` cuando la ficha y el estado ya estén ocupados y dejar la resolución para revisión operativa.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Estado específico y reconciliación",
+    "body": "Registrar el desplazamiento con un estado distinguible y reconciliar tanto la oferta desplazada como su reemplazo antes de permitir otro reencolado.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Lyno",
+    "reason": "El historial lo conecta directamente con la conversión de resultados Fnac en el adaptador actual.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10747.md",
+    "reviewedAt": "2026-10-10T05:48:40.612Z",
+    "mainSha": "690b4786fb978ebf0e264e1d9afc7470133bbc56"
+  }
+}
