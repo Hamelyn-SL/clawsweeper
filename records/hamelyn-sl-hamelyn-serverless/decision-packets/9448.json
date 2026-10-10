@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-07T11:50:22.203Z",
-  "updatedAt": "2026-10-06T18:27:55Z",
+  "generatedAt": "2026-10-10T14:46:01.165Z",
+  "updatedAt": "2026-10-10T03:45:38Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -17,38 +17,37 @@
       "P2"
     ],
     "createdAt": "2026-09-11T10:19:54Z",
-    "updatedAt": "2026-10-06T18:27:55Z"
+    "updatedAt": "2026-10-10T03:45:38Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe aceptarse como `SHIPPED` el mismo pedido que Amazon devuelve como enviado aunque el tracking remoto sea distinto, o se debe exigir que coincida con nuestro tracking?",
-  "rationale": "La revisión de la PR vinculada identifica que esta diferencia puede marcar como sincronizado un envío confirmado por un actor externo; la evidencia aportada no determina si ese caso es aceptable para operaciones.",
+  "question": "¿Debe bastar que Amazon devuelva el mismo pedido como `SHIPPED`, aunque el tracking remoto no coincida, o se exige coincidencia antes de actualizar el espejo?",
+  "rationale": "La PR abierta persiste `SHIPPED` al confirmar identidad y estado, pero no compara tracking; la revisión humana y el hilo señalan que la diferencia puede corresponder a confirmaciones externas.",
   "options": [
     {
-      "title": "Aceptar mismo pedido enviado",
-      "body": "Permitir `SHIPPED` cuando coincidan el ID del pedido y el estado remoto, aunque el tracking difiera.",
-      "recommended": false
+      "title": "Aceptar estado remoto",
+      "body": "Aceptar `SHIPPED` para el mismo pedido y gestionar los casos con tracking distinto en un seguimiento operativo separado.",
+      "recommended": true
     },
     {
-      "title": "Exigir coincidencia de tracking",
-      "body": "Mantener `SYNC_ERROR` salvo que el pedido remoto también confirme el tracking esperado.",
-      "recommended": true
+      "title": "Exigir tracking coincidente",
+      "body": "Mantener la ruta de error o revisión cuando Amazon informe un tracking distinto del local.",
+      "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Exigir coincidencia de tracking",
-    "body": "Mantener `SYNC_ERROR` salvo que el pedido remoto también confirme el tracking esperado.",
+    "title": "Aceptar estado remoto",
+    "body": "Aceptar `SHIPPED` para el mismo pedido y gestionar los casos con tracking distinto en un seguimiento operativo separado.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Es el responsable asignado de la issue y autor de la PR cuyo criterio de aceptación está pendiente de confirmación operativa.",
-    "confidence": "high"
+    "reason": "Tiene asignada la issue y es el autor de la PR cuya revisión depende de este criterio; la verificación operativa corresponde también a Operaciones.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9448.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9448#issuecomment-5644977566",
-    "reviewedAt": "2026-10-07T11:50:22.203Z",
-    "mainSha": "2b96cad4c1dca9a02d4594a190070214f1c6a897"
+    "reviewedAt": "2026-10-10T14:46:01.165Z",
+    "mainSha": "67ee79c252051960ffbdc23a4089fbb0b3c3ed4e"
   }
 }
