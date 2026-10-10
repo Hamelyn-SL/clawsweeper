@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-09T15:51:20.713Z",
-  "updatedAt": "2026-10-09T08:23:22Z",
+  "generatedAt": "2026-10-10T15:56:46.259Z",
+  "updatedAt": "2026-10-10T06:00:11Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,42 +15,41 @@
       "feature",
       "reporter:rubenmorueco",
       "triage:needs-info",
-      "P2",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2"
     ],
     "createdAt": "2026-10-01T10:23:24Z",
-    "updatedAt": "2026-10-09T08:23:22Z"
+    "updatedAt": "2026-10-10T06:00:11Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Feltrinelli debe limitarse a publicar ofertas para EAN ya presentes en el catálogo de IBS, o se quiere definir un flujo separado para solicitar o crear fichas ausentes?",
-  "rationale": "El código actual envía ofertas por EAN y no crea fichas; cambiar esa frontera depende del contrato con IBS y puede alterar qué productos se publican.",
+  "question": "¿Debe aprobarse la recuperación acotada de las filas restantes identificadas por Javier, tras revalidarlas contra el maestro y el catálogo de IBS, o se debe esperar al export original y a la lista de SKU completos solicitados?",
+  "rationale": "La ejecución puede publicar ofertas y los datos aportados aún no confirman que cada fila sea elegible ni resuelven la falta de fichas en IBS; la autorización y el alcance son decisiones operativas del equipo.",
   "options": [
     {
-      "title": "Mantener ofertas solo para EAN existentes",
-      "body": "Conservar el flujo actual y resolver los rechazos mediante validación de catálogo y recuperación acotada de estados elegibles.",
+      "title": "Aprobar recuperación verificada",
+      "body": "Revalidar y recuperar únicamente las filas concretas del canario, comprobando la aceptación final de IBS.",
       "recommended": true
     },
     {
-      "title": "Definir altas de fichas por separado",
-      "body": "Acordar con Marketplace e IBS el mecanismo y alcance de creación de fichas antes de ampliar la integración.",
+      "title": "Esperar evidencia del reportero",
+      "body": "Solicitar el export original fechado y la lista de SKU completos antes de definir el alcance restante.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mantener ofertas solo para EAN existentes",
-    "body": "Conservar el flujo actual y resolver los rechazos mediante validación de catálogo y recuperación acotada de estados elegibles.",
+    "title": "Aprobar recuperación verificada",
+    "body": "Revalidar y recuperar únicamente las filas concretas del canario, comprobando la aceptación final de IBS.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MarcosTerroso",
-    "reason": "Ha trabajado recientemente en el flujo de Feltrinelli y en su reconciliación; es el candidato de código mejor respaldado para orientar la decisión técnica.",
+    "person": "JavierHamelyn",
+    "reason": "Aportó la medición operativa más reciente y delimitó el grupo candidato a recuperación; la aprobación corresponde al equipo de Marketplace/Ingeniería.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10332.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10332#issuecomment-6084364128",
-    "reviewedAt": "2026-10-09T15:51:20.713Z",
-    "mainSha": "68c59751cc0533f095ebb7b30a4624535872c467"
+    "reviewedAt": "2026-10-10T15:56:46.259Z",
+    "mainSha": "67ee79c252051960ffbdc23a4089fbb0b3c3ed4e"
   }
 }
