@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-10T11:48:28.161Z",
+  "updatedAt": "2026-10-09T04:52:52Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10684,
+    "title": "feat: gate heartbeat issues on two cycles and a measurable effect",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10684",
+    "state": "open",
+    "labels": [
+      "P2"
+    ],
+    "createdAt": "2026-10-09T04:16:08Z",
+    "updatedAt": "2026-10-09T04:52:52Z",
+    "headSha": "908f758a9d945d83ee298d142746de8fdca62850"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe el gate de dos ciclos ser obligatorio para toda creación de issues desde heartbeat, incluso si requiere transmitir el origen de la llamada, y qué excepción debe aplicarse a P1 con impacto en ventas?",
+  "rationale": "El esquema actual no distingue llamadas de heartbeat de solicitudes manuales cuando se omiten los campos, y el autor aporta una medición de retrasos que incluye issues P1; aceptar la limitación o exigir una señal de origen y definir excepciones requiere intención del equipo.",
+  "options": [
+    {
+      "title": "Exigir origen verificable y definir excepción P1",
+      "body": "Añadir una señal de origen que el modelo no pueda omitir y especificar una excepción comprobable para P1 con impacto en ventas antes de adoptar el gate.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener el gate como validación voluntaria",
+      "body": "Aceptar que llamadas sin marketplace y finding_key siguen el comportamiento anterior y confiar en las instrucciones del heartbeat.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Exigir origen verificable y definir excepción P1",
+    "body": "Añadir una señal de origen que el modelo no pueda omitir y especificar una excepción comprobable para P1 con impacto en ventas antes de adoptar el gate.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es un contribuidor reciente del área y quien expuso en la conversación los datos de retraso y la posible excepción.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10684.md",
+    "reviewedAt": "2026-10-10T11:48:28.161Z",
+    "mainSha": "67ee79c252051960ffbdc23a4089fbb0b3c3ed4e"
+  }
+}
