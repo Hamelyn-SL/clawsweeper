@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-08T10:58:35.388Z",
-  "updatedAt": "2026-10-08T10:01:45Z",
+  "generatedAt": "2026-10-10T10:58:20.754Z",
+  "updatedAt": "2026-10-09T09:03:59Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -14,44 +14,43 @@
       "P2"
     ],
     "createdAt": "2026-10-07T07:48:57Z",
-    "updatedAt": "2026-10-08T10:01:45Z",
-    "headSha": "41aa95d07bdb968a24c894a4565fa0855d894b88"
+    "updatedAt": "2026-10-09T09:03:59Z",
+    "headSha": "b3b96f18f02669db5e9038900fb7ff1238350bc6"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Aprueba el equipo las reglas de prioridad propuestas para pedidos nuevos y confirma que `GET /marketplace/orders` incluye `shipping.method` en sus objetos?",
-  "rationale": "La respuesta determina si Discogs podrá distinguir Express al importar desde el listado y si se aceptan los cambios de prioridad para los marketplaces afectados; el código y las pruebas locales no resuelven estas decisiones operativas.",
+  "question": "¿Confirma el equipo la nueva política de prioridad para los marketplaces y, en particular, la regla Discogs basada en `shipping.method` del endpoint de listado?",
+  "rationale": "La prioridad afecta el procesamiento logístico y el hilo deja sin verificar el campo del endpoint que realmente alimenta la importación; la intención atribuida a Logística en el cuerpo no resuelve esa incertidumbre del contrato.",
   "options": [
     {
-      "title": "Confirmar el listado y aprobar las reglas",
-      "body": "Aportar una respuesta saneada del endpoint de listado que contenga `shipping.method` y aceptar las reglas para pedidos nuevos.",
+      "title": "Confirmar y pedir muestra del listado",
+      "body": "Validar una respuesta saneada con pedidos Express y Standard antes de aceptar la regla de Discogs.",
       "recommended": true
     },
     {
-      "title": "Acotar el cambio",
-      "body": "Solicitar ajustes a las reglas de marketplaces concretos antes de adoptar el nuevo criterio.",
+      "title": "Excluir Discogs por ahora",
+      "body": "Mantener para Discogs la lógica actual y tratar sus cambios de prioridad en una actualización separada cuando se confirme el contrato del listado.",
       "recommended": false
     },
     {
-      "title": "Aplazar la adopción",
-      "body": "Mantener pendiente el cambio hasta contar con evidencia del listado y una decisión operativa explícita.",
+      "title": "Aceptar el riesgo actual",
+      "body": "Dar por suficiente la evidencia del endpoint de detalle y aceptar que el listado pueda producir pedidos sin prioridad urgente.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Confirmar el listado y aprobar las reglas",
-    "body": "Aportar una respuesta saneada del endpoint de listado que contenga `shipping.method` y aceptar las reglas para pedidos nuevos.",
+    "title": "Confirmar y pedir muestra del listado",
+    "body": "Validar una respuesta saneada con pedidos Express y Standard antes de aceptar la regla de Discogs.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "AlexDiaz-Hamelyn",
-    "reason": "Es la persona vinculada por el historial local disponible al flujo de importación de Discogs que debe confirmarse.",
-    "confidence": "low"
+    "person": "MarcosTerroso",
+    "reason": "Señaló concretamente la incertidumbre del endpoint de listado en la revisión del PR.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10550.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10550#issuecomment-6033678622",
-    "reviewedAt": "2026-10-08T10:58:35.388Z",
-    "mainSha": "1acfb6ff310f3f1795ad4361416f5f5c64f29cc9"
+    "reviewedAt": "2026-10-10T10:58:20.754Z",
+    "mainSha": "67ee79c252051960ffbdc23a4089fbb0b3c3ed4e"
   }
 }
