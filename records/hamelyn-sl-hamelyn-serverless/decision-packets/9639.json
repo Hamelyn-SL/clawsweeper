@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-23T10:58:20.143Z",
-  "updatedAt": "2026-09-22T23:33:02Z",
+  "generatedAt": "2026-10-10T01:44:41.781Z",
+  "updatedAt": "2026-10-10T01:05:12Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,43 +12,42 @@
     "labels": [
       "bug",
       "app:marketplace",
-      "triage:done",
-      "P2",
-      "clawsweeper:needs-product-decision"
+      "triage:queued",
+      "clawsweeper:needs-product-decision",
+      "P2"
     ],
     "createdAt": "2026-09-17T06:28:55Z",
-    "updatedAt": "2026-09-22T23:33:02Z"
+    "updatedAt": "2026-10-10T01:05:12Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe una ejecución B2B interrumpida reanudar automáticamente las fases pendientes tras reconciliar el estado, o quedar bloqueada para recuperación explícita de un operador?",
-  "rationale": "La elección define la semántica operativa ante escrituras parciales y efectos externos inciertos; el código actual solo informa del residuo y bloquea un reintento seguro.",
+  "question": "Tras una interrupción B2B con escrituras parciales, ¿el sistema debe reanudar automáticamente los pasos pendientes o detenerse y exigir recuperación manual?",
+  "rationale": "La elección afecta cómo se coordinan los efectos parcialmente aplicados en Mongo y Skypod; la ruta actual solo informa del estado y no establece una recuperación segura.",
   "options": [
     {
-      "title": "Reanudar por fases confirmadas",
-      "body": "Persistir checkpoints e identidades, reconciliar antes de cada retoma y repetir únicamente los pasos todavía no acreditados.",
+      "title": "Reanudación durable",
+      "body": "Persistir el progreso por pasos y reanudar tras reconciliar los efectos ya aplicados.",
       "recommended": true
     },
     {
-      "title": "Recuperación manual controlada",
-      "body": "Marcar la ejecución parcial como fallida y ofrecer una operación explícita que un operador autorice tras revisar mirrors y Skypod.",
+      "title": "Bloqueo con recuperación manual",
+      "body": "Marcar las ejecuciones parciales para revisión operativa y evitar reintentos automáticos.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Reanudar por fases confirmadas",
-    "body": "Persistir checkpoints e identidades, reconciliar antes de cada retoma y repetir únicamente los pasos todavía no acreditados.",
+    "title": "Reanudación durable",
+    "body": "Persistir el progreso por pasos y reanudar tras reconciliar los efectos ya aplicados.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "El historial reciente le vincula directamente con el diseño del ledger, los claims y los flujos de ejecución B2B.",
+    "reason": "Su historial lo vincula con la implementación del servicio B2B compartido al que afecta la decisión.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9639.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9639#issuecomment-5793622442",
-    "reviewedAt": "2026-09-23T10:58:20.143Z",
-    "mainSha": "49cf8dd3dcd603e7191f56a17c28174ba52a5a98"
+    "reviewedAt": "2026-10-10T01:44:41.781Z",
+    "mainSha": "eebecc2fd2fb933334965f3552e1aa1435f82ec1"
   }
 }
