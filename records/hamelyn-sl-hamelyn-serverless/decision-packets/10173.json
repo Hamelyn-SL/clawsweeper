@@ -1,56 +1,54 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-05T09:14:44.974Z",
-  "updatedAt": "2026-10-05T08:46:48Z",
+  "generatedAt": "2026-10-10T15:22:33.347Z",
+  "updatedAt": "2026-10-10T03:00:10Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
     "number": 10173,
     "title": "Marketplace: [mercadolibre writes] {\"marketplace\":\"mercadolibrear\",\"operation\":\"put\",\"path\":\"/items/<id>\",\"status\":400,\"",
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10173",
-    "state": "closed",
+    "state": "open",
     "labels": [
       "codex",
       "bug",
       "app:marketplace",
       "triage:blocked",
-      "clawsweeper:needs-product-decision",
-      "marketplace-crons",
-      "P2"
+      "P2",
+      "marketplace-crons"
     ],
     "createdAt": "2026-09-28T07:30:47Z",
-    "updatedAt": "2026-10-05T08:46:48Z"
+    "updatedAt": "2026-10-10T03:00:10Z"
   },
   "lane": "product_direction",
-  "priority": "P2",
-  "question": "¿Deben seguir reintentándose los cambios de precio mientras MercadoLibre mantiene las fichas `under_review`, o debe el sistema detenerlos y aplicar otra recuperación?",
-  "rationale": "El código las clasifica como transitorias y solo retira fichas tras confirmar estados terminales; retirarlas o republicarlas durante una revisión del proveedor cambia el comportamiento operativo y necesita un criterio de producto respaldado por el estado remoto.",
+  "priority": "P1",
+  "question": "¿Debe pausarse temporalmente el reajuste de precios para fichas AR mientras se confirma su estado `under_review`, y qué comprobación debe permitir reanudarlo?",
+  "rationale": "La discusión no confirma que una pausa recupere anuncios suspendidos, y la elección afecta a los reajustes actuales y a cómo se gestionan precios pendientes; la automatización no puede determinar la política comercial ni el criterio de reanudación.",
   "options": [
     {
-      "title": "Mantener reintentos durante la revisión",
-      "body": "Conservar el comportamiento transitorio y no retirar ni republicar hasta que MercadoLibre comunique un estado terminal.",
+      "title": "Pausa acotada con reanudación verificada",
+      "body": "Acordar un criterio verificable de ficha activa antes de reanudar los reajustes pendientes.",
       "recommended": true
     },
     {
-      "title": "Añadir recuperación específica",
-      "body": "Definir con evidencia del proveedor una transición distinta para `under_review` y validar su efecto antes de automatizar retirada o republicación.",
+      "title": "Mantener reintentos actuales",
+      "body": "No cambiar el flujo de precios hasta recibir del proveedor el motivo y la vía de reactivación de la cohorte.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mantener reintentos durante la revisión",
-    "body": "Conservar el comportamiento transitorio y no retirar ni republicar hasta que MercadoLibre comunique un estado terminal.",
+    "title": "Pausa acotada con reanudación verificada",
+    "body": "Acordar un criterio verificable de ficha activa antes de reanudar los reajustes pendientes.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Está asignado a la incidencia y ha contribuido recientemente a la ruta MercadoLibre afectada.",
+    "reason": "Su trabajo reciente define la clasificación y el tratamiento de los reajustes de MercadoLibre bajo revisión, y la issue fue asignada a él.",
     "confidence": "medium"
   },
   "source": {
-    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/10173.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10173#issuecomment-5886217728",
-    "reviewedAt": "2026-10-05T09:14:44.974Z",
-    "mainSha": "758e57930297ce923fcc67cece2921df579b1a14"
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10173.md",
+    "reviewedAt": "2026-10-10T15:22:33.347Z",
+    "mainSha": "67ee79c252051960ffbdc23a4089fbb0b3c3ed4e"
   }
 }
