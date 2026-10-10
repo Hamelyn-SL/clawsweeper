@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-09T10:29:48.768Z",
-  "updatedAt": "2026-10-09T10:21:22Z",
+  "generatedAt": "2026-10-10T10:46:34.341Z",
+  "updatedAt": "2026-10-09T11:19:05Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,44 +13,48 @@
       "bug",
       "source:admin-panel",
       "app:supply",
-      "triage:queued",
-      "reporter:daniellopez",
+      "triage:done",
+      "clawsweeper:needs-product-decision",
       "P2",
-      "clawsweeper:needs-product-decision"
+      "reporter:daniellopez"
     ],
     "createdAt": "2026-10-09T10:21:11Z",
-    "updatedAt": "2026-10-09T10:21:22Z"
+    "updatedAt": "2026-10-09T11:19:05Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "Si un EAN escaneado está pendiente en otro lote abierto, ¿el kiosco debe impedir añadirlo al lote actual o permitirlo solo tras una confirmación explícita?",
-  "rationale": "La elección cambia si el flujo puede crear una unidad en un lote equivocado y afectar el pago; la discusión relacionada recomienda no añadirla, pero no hay una decisión implementada para este caso.",
+  "question": "¿Debe Revisión con destino automático pedir confirmación para EAN ya revisados y artículos fuera del lote, permitiendo continuar con la lectura si el operario confirma?",
+  "rationale": "El flujo actual interpreta artículos fuera del lote como posibles sobrantes y permite añadirlos; interrumpirlos o permitir continuar cambia el criterio operativo y puede afectar lecturas válidas de ejemplares adicionales.",
   "options": [
     {
-      "title": "Bloquear el alta en este lote",
-      "body": "Avisar del lote coincidente y exigir apartar el artículo para su lote, siguiendo la recomendación documentada en la issue relacionada.",
+      "title": "Avisar y permitir continuar",
+      "body": "Mostrar la confirmación en ambos hubs y registrar el ejemplar solo tras la confirmación del operario.",
       "recommended": true
     },
     {
-      "title": "Permitir tras confirmación",
-      "body": "Mostrar el aviso y aceptar el sobrante solo después de que el operario confirme explícitamente que el artículo debe continuar en este lote.",
+      "title": "Avisar solo en lecturas repetidas",
+      "body": "Solicitar confirmación para EAN ya procesados y conservar el flujo actual para otros artículos fuera del lote.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener el flujo actual",
+      "body": "No introducir confirmaciones hasta acordar otro control operativo para evitar sobrantes duplicados o cruzados.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Bloquear el alta en este lote",
-    "body": "Avisar del lote coincidente y exigir apartar el artículo para su lote, siguiendo la recomendación documentada en la issue relacionada.",
+    "title": "Avisar y permitir continuar",
+    "body": "Mostrar la confirmación en ambos hubs y registrar el ejemplar solo tras la confirmación del operario.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "banosdavidhamelyn",
-    "reason": "Ha trabajado recientemente en el kiosco turbo y en la clasificación de artículos fuera del lote.",
-    "confidence": "high"
+    "reason": "Su historial reciente cubre el flujo de sobrantes y la implementación de Turbo, por lo que puede orientar el alcance operativo.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10716.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10716#issuecomment-6079110619",
-    "reviewedAt": "2026-10-09T10:29:48.768Z",
-    "mainSha": "f3aba7db3b7a119c3b2576b3ffe174d420df87e5"
+    "reviewedAt": "2026-10-10T10:46:34.341Z",
+    "mainSha": "67ee79c252051960ffbdc23a4089fbb0b3c3ed4e"
   }
 }
