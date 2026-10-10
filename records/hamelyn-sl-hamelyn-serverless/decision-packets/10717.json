@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-10T09:03:13.470Z",
+  "updatedAt": "2026-10-09T10:33:56Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10717,
+    "title": "feat: return supply web logins to their own auth0 callback route",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10717",
+    "state": "open",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-10-09T10:23:19Z",
+    "updatedAt": "2026-10-09T10:33:56Z",
+    "headSha": "cb05a3c20a03108e81e8db207a8f7a486f421a98"
+  },
+  "lane": "merge_risk",
+  "priority": "P2",
+  "question": "¿Están preparados los callbacks permitidos de Auth0 y las variables de Vercel para desplegar el nuevo destino sin interrumpir los logins actuales?",
+  "rationale": "El cambio de destino requiere configuración externa y una variable `NEXT_PUBLIC_*` se fija durante el build; el repositorio no puede verificar que esos pasos estén completados.",
+  "options": [
+    {
+      "title": "Coordinar la activación",
+      "body": "Preparar y verificar allowlist y variables de Auth0/Vercel para producción y preview antes de desplegar el cambio.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener el destino anterior por ahora",
+      "body": "Conservar el destino raíz como comportamiento predeterminado y activar la nueva ruta en un despliegue coordinado posterior.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Coordinar la activación",
+    "body": "Preparar y verificar allowlist y variables de Auth0/Vercel para producción y preview antes de desplegar el cambio.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Ha trabajado recientemente en la configuración de autenticación y el proveedor de sesión de Supply web.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10717.md",
+    "reviewedAt": "2026-10-10T09:03:13.470Z",
+    "mainSha": "690b4786fb978ebf0e264e1d9afc7470133bbc56"
+  }
+}
