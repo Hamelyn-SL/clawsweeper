@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-10T09:27:52.927Z",
+  "updatedAt": "2026-10-10T09:18:42Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10751,
+    "title": "Discogs sold stock is tombstoned while its current listing remains For Sale",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10751",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "triage:done",
+      "P1"
+    ],
+    "createdAt": "2026-10-10T09:02:53Z",
+    "updatedAt": "2026-10-10T09:18:42Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe Discogs permitir recuperar la señal para un listing actual `For Sale` cuando la foto anterior era `BOTH`, siempre que GET confirme ID y SKU y el maestro siga retirado?",
+  "rationale": "La guarda actual evita activar una retirada externa basándose en una sola transición nueva; ampliarla sin una regla aprobada puede iniciar efectos remotos para candidatos no validados.",
+  "options": [
+    {
+      "title": "Aprobar recuperación dirigida",
+      "body": "Permitir solo el ID vigente verificado por GET, con relectura del maestro y CAS, y validar primero un único canario antes de lotes.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener la guarda y tratar manualmente",
+      "body": "No ampliar la recuperación automática; retirar estos casos mediante intervención aprobada hasta contar con una política más amplia.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar recuperación dirigida",
+    "body": "Permitir solo el ID vigente verificado por GET, con relectura del maestro y CAS, y validar primero un único canario antes de lotes.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Ha trabajado recientemente en el helper compartido de recuperación y figura como contribuidor del área Discogs.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10751.md",
+    "reviewedAt": "2026-10-10T09:27:52.927Z",
+    "mainSha": "690b4786fb978ebf0e264e1d9afc7470133bbc56"
+  }
+}
