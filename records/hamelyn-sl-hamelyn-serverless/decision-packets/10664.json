@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-10T08:50:56.539Z",
+  "updatedAt": "2026-10-10T01:13:39Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10664,
+    "title": "feat: capture cursor sessions and simplify the cli for 0.15.0",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10664",
+    "state": "open",
+    "labels": [
+      "P2"
+    ],
+    "createdAt": "2026-10-08T19:15:58Z",
+    "updatedAt": "2026-10-10T01:13:39Z",
+    "headSha": "8a47d250ad01a9b90d8378de1585fd3372d0e18d"
+  },
+  "lane": "release_inclusion",
+  "priority": "P2",
+  "question": "¿Está confirmado el despliegue de producción de la API con soporte para `cursor` antes de publicar el CLI 0.15.0?",
+  "rationale": "El orden determina si el nuevo CLI puede subir sesiones de Cursor sin errores; el código no puede garantizar por sí mismo la secuencia de despliegue.",
+  "options": [
+    {
+      "title": "Desplegar primero la API",
+      "body": "Confirmar el despliegue de producción que acepta `cursor` antes de etiquetar o distribuir el CLI 0.15.0.",
+      "recommended": true
+    },
+    {
+      "title": "Aplazar la publicación del CLI",
+      "body": "Mantener el PR sin publicar hasta que la API esté lista, asumiendo el retraso de la versión.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Desplegar primero la API",
+    "body": "Confirmar el despliegue de producción que acepta `cursor` antes de etiquetar o distribuir el CLI 0.15.0.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "El PR define explícitamente el orden de publicación y mantiene el código del CLI y la memoria relacionado.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10664.md",
+    "reviewedAt": "2026-10-10T08:50:56.539Z",
+    "mainSha": "690b4786fb978ebf0e264e1d9afc7470133bbc56"
+  }
+}
