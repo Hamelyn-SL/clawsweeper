@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-11T08:31:58.154Z",
+  "updatedAt": "2026-10-11T08:27:52Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10753,
+    "title": "Alibris order cancellation pipeline does not send EDI CN confirmations",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10753",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "triage:running",
+      "P2"
+    ],
+    "createdAt": "2026-10-11T08:24:42Z",
+    "updatedAt": "2026-10-11T08:27:52Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe habilitarse `CN` para las cancelaciones Alibris con la semántica de autorización y tratamiento de resultados ambiguos propuesta en la issue?",
+  "rationale": "El código actual carece de una fase de cancelación Alibris y la issue plantea decisiones operativas sobre elegibilidad, idempotencia y qué cuenta como confirmación remota; conviene acordar ese contrato antes de automatizarlo.",
+  "options": [
+    {
+      "title": "Aprobar el contrato propuesto",
+      "body": "Implementar envío `CN` idempotente y mantener los resultados ambiguos para revisión, sin tratar la subida FTP como aceptación remota.",
+      "recommended": true
+    },
+    {
+      "title": "Precisar el contrato con operaciones",
+      "body": "Confirmar primero con operaciones y Alibris el criterio de autorización y la evidencia que representa una cancelación aceptada.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar el contrato propuesto",
+    "body": "Implementar envío `CN` idempotente y mantener los resultados ambiguos para revisión, sin tratar la subida FTP como aceptación remota.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Participó en la integración original y la issue aporta el contexto del operador; es el candidato disponible más cercano al contrato funcional de Alibris.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10753.md",
+    "reviewedAt": "2026-10-11T08:31:58.154Z",
+    "mainSha": "67ee79c252051960ffbdc23a4089fbb0b3c3ed4e"
+  }
+}
