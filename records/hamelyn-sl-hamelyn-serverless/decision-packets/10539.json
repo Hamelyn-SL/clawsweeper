@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-10T03:07:30.756Z",
-  "updatedAt": "2026-10-10T02:23:49Z",
+  "generatedAt": "2026-10-11T04:53:00.513Z",
+  "updatedAt": "2026-10-10T06:30:03Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,44 +13,43 @@
       "bug",
       "app:marketplace",
       "reporter:javier",
-      "triage:queued",
+      "triage:done",
       "clawsweeper:needs-product-decision",
-      "mk:amazon",
-      "P2"
+      "P2",
+      "mk:amazon"
     ],
     "createdAt": "2026-10-07T02:33:30Z",
-    "updatedAt": "2026-10-10T02:23:49Z"
+    "updatedAt": "2026-10-10T06:30:03Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se mantiene la PR vinculada limitada al fix preventivo y se gestiona aparte la cohorte histórica de espejos vendidos sin marca, cuya reencolación requiere validación operativa?",
-  "rationale": "Los datos compartidos después de abrir la PR identifican miles de espejos históricos y algunos sin documento; ampliar el fix preventivo no los cubre y ejecutar una remediación altera el alcance operativo.",
+  "question": "¿Se mantiene el alcance preventivo de la PR vinculada y se gestiona aparte la cohorte histórica, o debe ampliarse el cambio para cubrir otras marcas, SKU `-A` y listings sin espejo?",
+  "rationale": "Los datos de seguimiento muestran que ampliar las marcas cubre solo una parte de los SKU vendidos existentes; cubrir el resto cambia el alcance y puede requerir acciones operativas sobre listings cuya presencia o comprabilidad no está confirmada.",
   "options": [
     {
       "title": "Separar prevención y remediación",
-      "body": "Revisar la PR abierta en su alcance actual y autorizar por separado un plan acotado con revalidación viva y comprobación remota.",
+      "body": "Revisar la prevención delimitada en la PR vinculada y decidir por separado los lotes históricos con revalidación y topes operativos.",
       "recommended": true
     },
     {
-      "title": "Ampliar el alcance preventivo",
-      "body": "Pedir que la PR incorpore más códigos legacy, aceptando que eso no resuelve los espejos ausentes ni sustituye la remediación.",
+      "title": "Ampliar el alcance del cambio",
+      "body": "Definir primero qué marcas, SKU derivados y listings sin espejo deben cubrirse, y aportar criterios seguros de selección y comprobación remota.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Separar prevención y remediación",
-    "body": "Revisar la PR abierta en su alcance actual y autorizar por separado un plan acotado con revalidación viva y comprobación remota.",
+    "body": "Revisar la prevención delimitada en la PR vinculada y decidir por separado los lotes históricos con revalidación y topes operativos.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Es quien lleva la PR abierta que propone el cambio preventivo y puede coordinar su límite con la remediación separada.",
+    "reason": "Es el responsable asignado y autor de la PR que implementa el cambio preventivo.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10539.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10539#issuecomment-6029907138",
-    "reviewedAt": "2026-10-10T03:07:30.756Z",
-    "mainSha": "eebecc2fd2fb933334965f3552e1aa1435f82ec1"
+    "reviewedAt": "2026-10-11T04:53:00.513Z",
+    "mainSha": "67ee79c252051960ffbdc23a4089fbb0b3c3ed4e"
   }
 }
