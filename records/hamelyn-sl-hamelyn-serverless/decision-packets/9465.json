@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-11T05:01:53.034Z",
+  "generatedAt": "2026-10-11T05:05:56.099Z",
   "updatedAt": "2026-10-10T06:15:46Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -14,47 +14,46 @@
       "app:marketplace",
       "reporter:miguel",
       "triage:needs-info",
-      "clawsweeper:needs-product-decision",
-      "P1"
+      "P1",
+      "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-09-14T05:50:08Z",
     "updatedAt": "2026-10-10T06:15:46Z"
   },
-  "lane": "security_boundary",
+  "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Se autoriza el canario de 20 SKU revalidados y, si el resultado se confirma, el envío por lotes de los 43.757 SKU con retirada fechada, dejando aparte los 577 sin fecha?",
-  "rationale": "La acción escribe en la API de Amazon de producción y el hilo plantea explícitamente que falta autorización; además, la evidencia no establece qué hacer con los SKU sin fecha ni confirma el resultado de los feeds históricos previos.",
+  "question": "¿Se autoriza un canario de 20 SKU de la cohorte con retirada fechada y, si se confirma el resultado por SKU/CA, ampliar a los 43.757; dejando aparte los 577 sin fecha?",
+  "rationale": "El envío modifica ofertas reales en Amazon con credenciales de producción y el reporte no acredita antigüedad para los SKU sin fecha; el equipo debe fijar explícitamente alcance y autorización.",
   "options": [
     {
-      "title": "Autorizar canario y expansión condicionada",
-      "body": "Revalidar 20 SKU fechados contra el maestro vivo, inspeccionar los processing reports y el snapshot CA, y ampliar solo si el resultado es correcto.",
+      "title": "Autorizar canario acotado",
+      "body": "Revalidar 20 SKU contra el maestro vivo, comprobar el procesamiento y snapshot CA, y someter después la ampliación a una confirmación separada.",
       "recommended": true
     },
     {
-      "title": "Pedir revisión del alcance",
-      "body": "Mantener la medición y solicitar revisión humana del inventario, filtros y plan de lotes antes de autorizar escrituras en Amazon.",
+      "title": "Autorizar también los lotes fechados",
+      "body": "Permitir la ampliación a los 43.757 SKU fechados solo tras validar el canario y mantener los 577 sin fecha fuera del envío.",
       "recommended": false
     },
     {
-      "title": "Separar la cohorte sin fecha",
-      "body": "Autorizar como máximo el canario fechado y dejar los 577 SKU sin fecha pendientes de validación y decisión aparte.",
+      "title": "Pausar la retirada",
+      "body": "No enviar cantidades hasta confirmar el mecanismo permanente y el tratamiento de todos los grupos de SKU.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Autorizar canario y expansión condicionada",
-    "body": "Revalidar 20 SKU fechados contra el maestro vivo, inspeccionar los processing reports y el snapshot CA, y ampliar solo si el resultado es correcto.",
+    "title": "Autorizar canario acotado",
+    "body": "Revalidar 20 SKU contra el maestro vivo, comprobar el procesamiento y snapshot CA, y someter después la ampliación a una confirmación separada.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Presentó el análisis más reciente del inventario CA y el plan concreto de canario y lotes.",
-    "confidence": "medium"
+    "reason": "Presentó la medición reciente de CA y detalló la secuencia propuesta de validación y envío.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9465.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9465#issuecomment-5659733694",
-    "reviewedAt": "2026-10-11T05:01:53.034Z",
+    "reviewedAt": "2026-10-11T05:05:56.099Z",
     "mainSha": "67ee79c252051960ffbdc23a4089fbb0b3c3ed4e"
   }
 }

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-11T05:01:53.136Z",
+  "generatedAt": "2026-10-11T05:06:08.510Z",
   "updatedAt": "2026-10-09T06:59:44Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -14,50 +14,49 @@
       "feature",
       "triage:no-change",
       "clawsweeper:needs-product-decision",
+      "P2",
       "reporter:danielmenchen-hamelyn",
       "origin:dev",
       "epic:supply-v3",
-      "platform:mobile-only",
-      "P2"
+      "platform:mobile-only"
     ],
     "createdAt": "2026-09-18T08:03:14Z",
     "updatedAt": "2026-10-09T06:59:44Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué mínimos de iOS, Android y WebView deben aprobarse para habilitar el perfil Capacitor de Supply, o se mantiene deshabilitado hasta una decisión posterior?",
-  "rationale": "El repositorio presenta iOS 16.4+, Android API 24+ y WebView 111+ como propuesta, y la configuración bloquea el perfil nativo mientras la elección siga pendiente; no corresponde inferir la política de compatibilidad.",
+  "question": "¿Qué mínimos móviles se aprueban para Supply v3: el perfil propuesto iOS 16.4+/Android API 24+/WebView 111+, otro conjunto de mínimos, o mantener la habilitación nativa pendiente?",
+  "rationale": "La decisión cambia qué dispositivos podrán ejecutar la app y el código ya impide activar el perfil sin una aprobación explícita; las pruebas técnicas no determinan por sí solas la política de compatibilidad.",
   "options": [
     {
       "title": "Aprobar el perfil propuesto",
-      "body": "Aprobar expresamente los mínimos documentados y continuar la acreditación sobre ellos.",
-      "recommended": true
+      "body": "Autorizar iOS 16.4+, Android API 24+ y Chromium WebView 111+ y continuar la acreditación con esos mínimos.",
+      "recommended": false
     },
     {
       "title": "Definir otros mínimos",
-      "body": "Acordar otra matriz de compatibilidad y actualizar la configuración y la documentación antes de habilitar el perfil.",
+      "body": "Acordar objetivos distintos tras valorar el impacto de compatibilidad y actualizar la configuración antes de habilitar builds.",
       "recommended": false
     },
     {
       "title": "Mantenerlo pendiente",
-      "body": "Dejar deshabilitada la configuración nativa y aplazar builds y validación física hasta una decisión futura.",
-      "recommended": false
+      "body": "Conservar el bloqueo nativo hasta disponer de la evaluación de impacto y una decisión documentada.",
+      "recommended": true
     }
   ],
   "recommendation": {
-    "title": "Aprobar el perfil propuesto",
-    "body": "Aprobar expresamente los mínimos documentados y continuar la acreditación sobre ellos.",
+    "title": "Mantenerlo pendiente",
+    "body": "Conservar el bloqueo nativo hasta disponer de la evaluación de impacto y una decisión documentada.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "danielmenchen-hamelyn",
-    "reason": "Propuso F05, documentó D12 como decisión pendiente y presentó los mínimos como propuesta sujeta a aprobación.",
+    "reason": "La épica y la issue sitúan la decisión D12 en la coordinación del trabajo Supply y piden explícitamente valorar el impacto antes de aprobar mínimos.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9721.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9721#issuecomment-5741058761",
-    "reviewedAt": "2026-10-11T05:01:53.136Z",
+    "reviewedAt": "2026-10-11T05:06:08.510Z",
     "mainSha": "67ee79c252051960ffbdc23a4089fbb0b3c3ed4e"
   }
 }

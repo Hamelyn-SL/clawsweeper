@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-11T05:02:16.816Z",
+  "generatedAt": "2026-10-11T05:05:26.627Z",
   "updatedAt": "2026-10-10T05:45:36Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -21,34 +21,33 @@
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe una ejecución B2B parcial reanudarse automáticamente desde los pasos pendientes o permanecer bloqueada para recuperación manual hasta completar una reconciliación operativa?",
-  "rationale": "La reanudación puede repetir efectos externos o escrituras si el progreso no es durable e idempotente; mantener el bloqueo evita duplicados, pero deja la operación pendiente de intervención.",
+  "question": "¿Debe una ejecución B2B parcial reanudarse automáticamente desde el último paso verificable o permanecer bloqueada para recuperación manual?",
+  "rationale": "La opción determina cómo tratar escrituras parciales en Mongo y efectos externos de Skypod; el código actual evita reintentos ciegos, pero no puede inferirse una política segura de recuperación solo desde el comportamiento existente.",
   "options": [
     {
-      "title": "Bloqueo y recuperación manual",
-      "body": "Conservar el bloqueo tras escrituras parciales y definir alertado y procedimiento operativo explícito mientras no exista reanudación segura.",
+      "title": "Mantener bloqueo y recuperación manual",
+      "body": "Conservar el claim tras escrituras parciales y documentar una recuperación operativa explícita hasta que haya progreso durable verificable.",
       "recommended": true
     },
     {
-      "title": "Reanudación durable automática",
-      "body": "Persistir el progreso por pasos y reanudar solo efectos pendientes, con pruebas de interrupción e idempotencia para Mongo y Skypod.",
+      "title": "Diseñar reanudación durable",
+      "body": "Persistir y reconciliar cada fase con operaciones idempotentes antes de permitir que el scanner retome ejecuciones interrumpidas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Bloqueo y recuperación manual",
-    "body": "Conservar el bloqueo tras escrituras parciales y definir alertado y procedimiento operativo explícito mientras no exista reanudación segura.",
+    "title": "Mantener bloqueo y recuperación manual",
+    "body": "Conservar el claim tras escrituras parciales y documentar una recuperación operativa explícita hasta que haya progreso durable verificable.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su historial de trabajo en la ejecución compartida B2B y su participación en la investigación lo convierten en el candidato de decisión mejor respaldado.",
-    "confidence": "medium"
+    "reason": "La issue le pregunta expresamente por esta política y su historial incluye la unificación reciente del ejecutor B2B.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9639.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9639#issuecomment-5793622442",
-    "reviewedAt": "2026-10-11T05:02:16.816Z",
+    "reviewedAt": "2026-10-11T05:05:26.627Z",
     "mainSha": "67ee79c252051960ffbdc23a4089fbb0b3c3ed4e"
   }
 }
