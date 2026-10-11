@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-10T05:48:40.612Z",
-  "updatedAt": "2026-10-10T01:40:01Z",
+  "generatedAt": "2026-10-11T05:52:24.343Z",
+  "updatedAt": "2026-10-10T07:16:34Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,44 +13,43 @@
       "bug",
       "app:marketplace",
       "reporter:javier",
-      "triage:queued",
-      "mk:fnac",
+      "triage:done",
+      "clawsweeper:needs-product-decision",
       "P2",
-      "clawsweeper:needs-product-decision"
+      "mk:fnac"
     ],
     "createdAt": "2026-10-10T01:29:31Z",
-    "updatedAt": "2026-10-10T01:40:01Z"
+    "updatedAt": "2026-10-10T07:16:34Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué estado y política de reintento deben aplicarse a una oferta desplazada por otra de la misma ficha y estado, y cómo debe reconciliarse la oferta desplazada cuando no estaba en el lote?",
-  "rationale": "La solución afecta la semántica persistida de estados y la política de reencolado; clasificarla como ausente sin más podría recrear el ciclo de desplazamientos que el reporte describe.",
+  "question": "¿Qué política debe aplicarse cuando Fnac desplaza una oferta por conflicto de ficha y estado, incluida la reconciliación del SKU que no venía en el lote?",
+  "rationale": "El mapeo técnico no determina por sí solo el estado persistido ni cuándo reintentar; la revisión previa también advierte que tratarlo como `gone` puede desplazar de vuelta la oferta hermana.",
   "options": [
     {
       "title": "Estado específico y reconciliación",
-      "body": "Registrar el desplazamiento con un estado distinguible y reconciliar tanto la oferta desplazada como su reemplazo antes de permitir otro reencolado.",
+      "body": "Registrar el desplazamiento con estado identificable y reconciliar la oferta desplazada y su reemplazo antes de permitir otro reencolado.",
       "recommended": true
     },
     {
-      "title": "Revisión operativa antes de reencolar",
-      "body": "Bloquear reencolados automáticos de `DB_ONLY` cuando la ficha y el estado ya estén ocupados y dejar la resolución para revisión operativa.",
+      "title": "Bloquear reencolados ocupados",
+      "body": "Impedir el reencolado automático si la ficha y el estado ya están ocupados y dejar esos casos para resolución operativa.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Estado específico y reconciliación",
-    "body": "Registrar el desplazamiento con un estado distinguible y reconciliar tanto la oferta desplazada como su reemplazo antes de permitir otro reencolado.",
+    "body": "Registrar el desplazamiento con estado identificable y reconciliar la oferta desplazada y su reemplazo antes de permitir otro reencolado.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "Lyno",
-    "reason": "El historial lo conecta directamente con la conversión de resultados Fnac en el adaptador actual.",
-    "confidence": "medium"
+    "reason": "Es el candidato de enrutamiento señalado en la revisión previa y vinculado al área Fnac, aunque la atribución histórica no se pudo confirmar plenamente.",
+    "confidence": "low"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10747.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10747#issuecomment-6094361077",
-    "reviewedAt": "2026-10-10T05:48:40.612Z",
-    "mainSha": "690b4786fb978ebf0e264e1d9afc7470133bbc56"
+    "reviewedAt": "2026-10-11T05:52:24.343Z",
+    "mainSha": "67ee79c252051960ffbdc23a4089fbb0b3c3ed4e"
   }
 }
