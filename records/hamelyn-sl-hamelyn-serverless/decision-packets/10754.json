@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-11T19:22:30.150Z",
+  "updatedAt": "2026-10-11T19:12:51Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10754,
+    "title": "[WATCHER-ALERT] mercadolibre: report trigger failed",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10754",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "triage:queued",
+      "P1"
+    ],
+    "createdAt": "2026-10-11T19:08:28Z",
+    "updatedAt": "2026-10-11T19:12:51Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe aplicarse a esta alerta la solución de la PR relacionada, que cambia los heartbeats de `task` a sesiones `conversation` aparcadas?",
+  "rationale": "La issue relacionada atribuye fallos repetidos a la delegación en segundo plano, pero la PR aún espera una decisión sobre renunciar al reintento duradero de `task` y validar el ciclo real.",
+  "options": [
+    {
+      "title": "Adoptar sesiones aparcadas",
+      "body": "Aceptar el cambio de modo tras validar que la delegación despierta la misma sesión y termina emitiendo métricas.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener `task`",
+      "body": "Conservar el reintento duradero y definir primero una alternativa compatible que espere el resultado delegado.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Adoptar sesiones aparcadas",
+    "body": "Aceptar el cambio de modo tras validar que la delegación despierta la misma sesión y termina emitiendo métricas.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Daniel",
+    "reason": "La investigación relacionada está asignada a Daniel y la PR existente propone el cambio de modo.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10754.md",
+    "reviewedAt": "2026-10-11T19:22:30.150Z",
+    "mainSha": "67ee79c252051960ffbdc23a4089fbb0b3c3ed4e"
+  }
+}
