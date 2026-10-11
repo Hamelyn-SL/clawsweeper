@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-05T12:00:43.939Z",
-  "updatedAt": "2026-10-05T11:54:24Z",
+  "generatedAt": "2026-10-11T08:52:21.567Z",
+  "updatedAt": "2026-10-11T08:19:59Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,47 +15,41 @@
       "feature",
       "triage:needs-info",
       "clawsweeper:needs-product-decision",
-      "reporter:daniellopez",
-      "P2"
+      "P2",
+      "reporter:daniellopez"
     ],
     "createdAt": "2026-10-03T11:22:05Z",
-    "updatedAt": "2026-10-05T11:54:24Z"
+    "updatedAt": "2026-10-11T08:19:59Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se excluye únicamente el tiempo real de cada intervención o se aplica además la franquicia de 7, 12 o 90 segundos/minutos como bonificación, y qué código identifica cada caja envuelta?",
-  "rationale": "Son decisiones de comportamiento de negocio que cambian las métricas de productividad; la conversación existente las plantea, pero no registra una decisión del equipo.",
+  "question": "¿Confirma el equipo la variante C de cálculo de productividad propuesta en el PR y el uso de `parcelCodes` para identificar y deduplicar cada caja envuelta?",
+  "rationale": "Son reglas operativas que afectan a las métricas de productividad y al recuento de cajas; la issue no las concreta y el PR abierto aún no acredita aprobación del equipo.",
   "options": [
     {
-      "title": "Acordar tiempo y caja",
-      "body": "Definir si se descuenta solo el tiempo real o se bonifica el margen, y especificar el código de caja y la deduplicación antes de implementar.",
+      "title": "Confirmar la propuesta del PR",
+      "body": "Validar la variante C y `parcelCodes` como contrato para que el PR pueda completar la implementación.",
       "recommended": true
     },
     {
-      "title": "Excluir solo el tiempo consumido",
-      "body": "Restar de la duración medida el tiempo real de intervención, sin añadir bonificación por el presupuesto no utilizado.",
-      "recommended": false
-    },
-    {
-      "title": "Aplicar franquicia y bonificación",
-      "body": "Usar los presupuestos como franquicias que también bonifican el tiempo sobrante, una vez acordada la identificación única de cada caja.",
+      "title": "Ajustar las reglas",
+      "body": "Especificar otra fórmula o identificador de caja antes de continuar con la implementación.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Acordar tiempo y caja",
-    "body": "Definir si se descuenta solo el tiempo real o se bonifica el margen, y especificar el código de caja y la deduplicación antes de implementar.",
+    "title": "Confirmar la propuesta del PR",
+    "body": "Validar la variante C y `parcelCodes` como contrato para que el PR pueda completar la implementación.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Figura como persona asignada y tiene trabajo reciente en las rutas de packing y productividad implicadas.",
+    "reason": "Tiene la issue asignada, contribuyó previamente a estas superficies y participa en el PR que propone las reglas.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10406.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10406#issuecomment-5968972128",
-    "reviewedAt": "2026-10-05T12:00:43.939Z",
-    "mainSha": "efa7c1b5081fbc587d0df2ac87f70f966e6ff946"
+    "reviewedAt": "2026-10-11T08:52:21.567Z",
+    "mainSha": "67ee79c252051960ffbdc23a4089fbb0b3c3ed4e"
   }
 }
