@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-10T01:44:41.781Z",
-  "updatedAt": "2026-10-10T01:05:12Z",
+  "generatedAt": "2026-10-11T05:02:16.816Z",
+  "updatedAt": "2026-10-10T05:45:36Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,43 +12,42 @@
     "labels": [
       "bug",
       "app:marketplace",
-      "triage:queued",
+      "triage:needs-info",
       "clawsweeper:needs-product-decision",
       "P2"
     ],
     "createdAt": "2026-09-17T06:28:55Z",
-    "updatedAt": "2026-10-10T01:05:12Z"
+    "updatedAt": "2026-10-10T05:45:36Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "Tras una interrupción B2B con escrituras parciales, ¿el sistema debe reanudar automáticamente los pasos pendientes o detenerse y exigir recuperación manual?",
-  "rationale": "La elección afecta cómo se coordinan los efectos parcialmente aplicados en Mongo y Skypod; la ruta actual solo informa del estado y no establece una recuperación segura.",
+  "question": "¿Debe una ejecución B2B parcial reanudarse automáticamente desde los pasos pendientes o permanecer bloqueada para recuperación manual hasta completar una reconciliación operativa?",
+  "rationale": "La reanudación puede repetir efectos externos o escrituras si el progreso no es durable e idempotente; mantener el bloqueo evita duplicados, pero deja la operación pendiente de intervención.",
   "options": [
     {
-      "title": "Reanudación durable",
-      "body": "Persistir el progreso por pasos y reanudar tras reconciliar los efectos ya aplicados.",
+      "title": "Bloqueo y recuperación manual",
+      "body": "Conservar el bloqueo tras escrituras parciales y definir alertado y procedimiento operativo explícito mientras no exista reanudación segura.",
       "recommended": true
     },
     {
-      "title": "Bloqueo con recuperación manual",
-      "body": "Marcar las ejecuciones parciales para revisión operativa y evitar reintentos automáticos.",
+      "title": "Reanudación durable automática",
+      "body": "Persistir el progreso por pasos y reanudar solo efectos pendientes, con pruebas de interrupción e idempotencia para Mongo y Skypod.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Reanudación durable",
-    "body": "Persistir el progreso por pasos y reanudar tras reconciliar los efectos ya aplicados.",
+    "title": "Bloqueo y recuperación manual",
+    "body": "Conservar el bloqueo tras escrituras parciales y definir alertado y procedimiento operativo explícito mientras no exista reanudación segura.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su historial lo vincula con la implementación del servicio B2B compartido al que afecta la decisión.",
-    "confidence": "high"
+    "reason": "Su historial de trabajo en la ejecución compartida B2B y su participación en la investigación lo convierten en el candidato de decisión mejor respaldado.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9639.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9639#issuecomment-5793622442",
-    "reviewedAt": "2026-10-10T01:44:41.781Z",
-    "mainSha": "eebecc2fd2fb933334965f3552e1aa1435f82ec1"
+    "reviewedAt": "2026-10-11T05:02:16.816Z",
+    "mainSha": "67ee79c252051960ffbdc23a4089fbb0b3c3ed4e"
   }
 }

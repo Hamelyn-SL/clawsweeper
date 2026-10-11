@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-09T05:53:09.060Z",
-  "updatedAt": "2026-10-09T05:49:01Z",
+  "generatedAt": "2026-10-11T05:02:34.969Z",
+  "updatedAt": "2026-10-09T06:45:07Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,51 +12,45 @@
     "labels": [
       "app:supply",
       "feature",
-      "triage:queued",
+      "triage:done",
       "clawsweeper:needs-product-decision",
+      "P2",
       "reporter:danielmenchen-hamelyn",
       "origin:dev",
-      "epic:supply-v3",
-      "P2"
+      "epic:supply-v3"
     ],
     "createdAt": "2026-09-18T08:04:03Z",
-    "updatedAt": "2026-10-09T05:49:01Z"
+    "updatedAt": "2026-10-09T06:45:07Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué contrato de recuperación entre orígenes y separación de carrito por país debe aprobarse antes del ensayo de cutover de Supply?",
-  "rationale": "La recuperación entre orígenes implica una decisión de seguridad y continuidad de sesión que no puede deducirse de la implementación local; el equipo debe acordar el alcance antes de configurar y ensayar el dominio.",
+  "question": "¿Qué mecanismo se debe admitir para recuperar de forma limitada la sesión entre los orígenes antiguos y el nuevo?",
+  "rationale": "La issue prohíbe leer directamente el localStorage antiguo y exponer tokens reutilizables en URLs, pero no fija el mecanismo de traspaso; esa elección afecta seguridad y continuidad de usuarios.",
   "options": [
     {
-      "title": "Aprobar traspaso limitado",
-      "body": "Acordar recuperación de alcance limitado sin tokens reutilizables en URL, namespaces por mercado y responsables de rollback antes del ensayo.",
+      "title": "Traspaso de un solo uso",
+      "body": "Acordar un intercambio mediado por servidor con credencial efímera y ensayar expiración, consumo único y recuperación del carrito.",
       "recommended": true
     },
     {
-      "title": "Mantener sesiones separadas",
-      "body": "No transferir sesión ni carrito entre orígenes y documentar el nuevo inicio de sesión como comportamiento del cutover.",
-      "recommended": false
-    },
-    {
-      "title": "Aplazar el ensayo",
-      "body": "Posponer Auth0/CORS y la validación de staging hasta que los contratos de ruta, sesión, carrito y preview estén acordados.",
+      "title": "Sin traspaso automático",
+      "body": "No migrar sesión entre orígenes y definir una recuperación posterior al corte que requiera volver a autenticarse.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar traspaso limitado",
-    "body": "Acordar recuperación de alcance limitado sin tokens reutilizables en URL, namespaces por mercado y responsables de rollback antes del ensayo.",
+    "title": "Traspaso de un solo uso",
+    "body": "Acordar un intercambio mediado por servidor con credencial efímera y ensayar expiración, consumo único y recuperación del carrito.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Figura como responsable actual de la issue y actualizó el plan de integración en `dev`; conviene coordinar con el introductor del alcance y las personas responsables de sesión, carrito y dominio.",
-    "confidence": "medium"
+    "reason": "Es la persona asignada a la issue y el responsable disponible más directamente conectado al estado actual del carrito; la coordinación de dominios debe validar la parte operativa.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9744.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9744#issuecomment-5740689461",
-    "reviewedAt": "2026-10-09T05:53:09.060Z",
-    "mainSha": "38ec3f1c3935be0313f7eb3293c696ef733b060d"
+    "reviewedAt": "2026-10-11T05:02:34.969Z",
+    "mainSha": "67ee79c252051960ffbdc23a4089fbb0b3c3ed4e"
   }
 }
