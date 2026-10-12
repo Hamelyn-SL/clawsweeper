@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-12T23:47:07.013Z",
-  "updatedAt": "2026-10-12T23:43:02Z",
+  "generatedAt": "2026-10-12T23:50:08.357Z",
+  "updatedAt": "2026-10-12T23:47:59Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -13,39 +13,38 @@
       "P2"
     ],
     "createdAt": "2026-10-12T23:36:12Z",
-    "updatedAt": "2026-10-12T23:43:02Z",
+    "updatedAt": "2026-10-12T23:47:59Z",
     "headSha": "18f444bd54df299ad35b819e00bbc408eeabd8a2"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe el botón «Sí» autorizar que el agente ejecute en el siguiente ciclo la acción descrita en cualquier finding needs_decision, sujeto a los límites y aprobaciones actuales de sus herramientas?",
-  "rationale": "Esto define el alcance de una nueva autorización operativa entre consola, decisiones persistidas y ejecución del watcher; el código no puede determinar la política que quiere el equipo.",
+  "question": "¿Debe un «Sí» en la consola autorizar al watcher a ejecutar la acción solicitada en el siguiente ciclo, dentro de los límites ya aplicados por sus herramientas?",
+  "rationale": "Es una nueva semántica de autorización operativa: ni los tests del PR ni la revisión previa establecen que la aprobación deba activar acciones, y no conviene inferir esa política solo del diseño de interfaz.",
   "options": [
     {
-      "title": "Aprobar el alcance propuesto",
-      "body": "Permitir la ejecución de la acción descrita en el siguiente ciclo, sin saltarse topes ni aprobaciones de las herramientas.",
+      "title": "Aprobar ejecución acotada",
+      "body": "Permitir que el siguiente ciclo ejecute la petición aprobada, respetando límites y aprobaciones propios de cada herramienta.",
       "recommended": true
     },
     {
-      "title": "Acotar las decisiones elegibles",
-      "body": "Limitar las aprobaciones a una lista explícita de acciones antes de habilitar el flujo general.",
+      "title": "Aprobar solo la decisión",
+      "body": "Registrar el «Sí» como respuesta, pero exigir confirmación o un paso operativo distinto antes de ejecutar acciones.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar el alcance propuesto",
-    "body": "Permitir la ejecución de la acción descrita en el siguiente ciclo, sin saltarse topes ni aprobaciones de las herramientas.",
+    "title": "Aprobar ejecución acotada",
+    "body": "Permitir que el siguiente ciclo ejecute la petición aprobada, respetando límites y aprobaciones propios de cada herramienta.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su historial reciente está más cerca de la consola y del flujo de agentes que se modifica.",
-    "confidence": "medium"
+    "reason": "Ha trabajado recientemente en la estructura de la consola y propone el flujo; la política final requiere validación del equipo responsable del watcher.",
+    "confidence": "low"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10767.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10767#issuecomment-6134805095",
-    "reviewedAt": "2026-10-12T23:47:07.013Z",
+    "reviewedAt": "2026-10-12T23:50:08.357Z",
     "mainSha": "67ee79c252051960ffbdc23a4089fbb0b3c3ed4e"
   }
 }
