@@ -1,56 +1,55 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-24T17:58:50.603Z",
-  "updatedAt": "2026-09-23T22:30:50Z",
+  "generatedAt": "2026-10-12T22:48:13.791Z",
+  "updatedAt": "2026-10-12T22:44:29Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
     "number": 9878,
     "title": "Marketplace: fnac provider http 500",
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9878",
-    "state": "closed",
+    "state": "open",
     "labels": [
       "codex",
       "bug",
       "app:marketplace",
-      "triage:blocked",
-      "marketplace-crons",
+      "triage:no-change",
       "P1",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "marketplace-crons"
     ],
     "createdAt": "2026-09-21T23:30:40Z",
-    "updatedAt": "2026-09-23T22:30:50Z"
+    "updatedAt": "2026-10-12T22:44:29Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "Mientras Fnac no aclare la causa de los 500, ¿se mantiene el manejo transitorio actual y se prioriza la conciliación operativa, o se diseña ya una política específica de reintentos y alertas para pedidos y cancelaciones?",
-  "rationale": "La evidencia no atribuye el fallo al código; reintentar operaciones del proveedor requiere acordar límites y efectos para evitar duplicar acciones o esconder trabajo pendiente.",
+  "question": "¿Debe el equipo limitarse a escalar esta degradación a Fnac y conciliar sus efectos, o quiere además definir una política de recuperación automática por operación para estos errores 500?",
+  "rationale": "La telemetría identifica fallos del proveedor, pero no prueba una causa corregible en el cliente; reintentar indiscriminadamente operaciones POST puede duplicar batches o mutaciones.",
   "options": [
     {
-      "title": "Investigar y conciliar primero",
-      "body": "Mantener el manejo actual, contrastar con Fnac los request IDs y verificar los resultados finales antes de decidir cambios de resiliencia.",
+      "title": "Escalar y conciliar",
+      "body": "Confirmar con Fnac el incidente y verificar pedidos y ofertas afectados sin añadir reintentos generales.",
       "recommended": true
     },
     {
-      "title": "Diseñar resiliencia específica",
-      "body": "Definir reintentos y alertas por operación, con límites y comprobaciones para pedidos, cancelaciones y lotes.",
+      "title": "Definir recuperación por operación",
+      "body": "Acordar idempotencia y reintentos diferenciados antes de implementar una recuperación automática para cada endpoint.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Investigar y conciliar primero",
-    "body": "Mantener el manejo actual, contrastar con Fnac los request IDs y verificar los resultados finales antes de decidir cambios de resiliencia.",
+    "title": "Escalar y conciliar",
+    "body": "Confirmar con Fnac el incidente y verificar pedidos y ofertas afectados sin añadir reintentos generales.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "HamelynDev",
-    "reason": "El historial local muestra cambios recientes en la clasificación de errores del adaptador Fnac y del sondeo de lotes.",
+    "person": "MarcosTerroso",
+    "reason": "Su historial reciente en el adaptador y la recuperación Fnac lo hace una referencia adecuada para valorar el límite técnico de los reintentos.",
     "confidence": "medium"
   },
   "source": {
-    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/9878.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9878#issuecomment-5799913805",
-    "reviewedAt": "2026-09-24T17:58:50.603Z",
-    "mainSha": "c0cbf3f71aaf34f6a1d1608497da5d6a4383550b"
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9878.md",
+    "reviewedAt": "2026-10-12T22:48:13.791Z",
+    "mainSha": "67ee79c252051960ffbdc23a4089fbb0b3c3ed4e"
   }
 }
