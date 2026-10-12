@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-12T23:47:07.013Z",
+  "updatedAt": "2026-10-12T23:43:02Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10767,
+    "title": "feat: put decisions and agent actions first in the agents console",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10767",
+    "state": "open",
+    "labels": [],
+    "createdAt": "2026-10-12T23:36:12Z",
+    "updatedAt": "2026-10-12T23:43:02Z",
+    "headSha": "18f444bd54df299ad35b819e00bbc408eeabd8a2"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe el botón «Sí» autorizar que el agente ejecute en el siguiente ciclo la acción descrita en cualquier finding needs_decision, sujeto a los límites y aprobaciones actuales de sus herramientas?",
+  "rationale": "Esto define el alcance de una nueva autorización operativa entre consola, decisiones persistidas y ejecución del watcher; el código no puede determinar la política que quiere el equipo.",
+  "options": [
+    {
+      "title": "Aprobar el alcance propuesto",
+      "body": "Permitir la ejecución de la acción descrita en el siguiente ciclo, sin saltarse topes ni aprobaciones de las herramientas.",
+      "recommended": true
+    },
+    {
+      "title": "Acotar las decisiones elegibles",
+      "body": "Limitar las aprobaciones a una lista explícita de acciones antes de habilitar el flujo general.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar el alcance propuesto",
+    "body": "Permitir la ejecución de la acción descrita en el siguiente ciclo, sin saltarse topes ni aprobaciones de las herramientas.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su historial reciente está más cerca de la consola y del flujo de agentes que se modifica.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10767.md",
+    "reviewedAt": "2026-10-12T23:47:07.013Z",
+    "mainSha": "67ee79c252051960ffbdc23a4089fbb0b3c3ed4e"
+  }
+}
