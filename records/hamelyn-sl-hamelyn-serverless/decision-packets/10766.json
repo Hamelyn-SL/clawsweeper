@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-12T22:51:09.466Z",
+  "updatedAt": "2026-10-12T22:48:22Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10766,
+    "title": "feat: compact watcher memory and show one memory per marketplace",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10766",
+    "state": "open",
+    "labels": [],
+    "createdAt": "2026-10-12T22:44:26Z",
+    "updatedAt": "2026-10-12T22:48:22Z",
+    "headSha": "fa71c66189747df9c2e2bb846e3876265d19c6b8"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Es aceptable eliminar del documento de memoria, en cada guardado, entradas inactivas creadas hace más de 14 días, dejando su recuperación a las versiones del Blob y a la copia plana congelada?",
+  "rationale": "Este cambio altera de forma deliberada la retención persistente del historial y su recuperación depende de respaldos con alcance temporal limitado; las pruebas técnicas no determinan la política de conservación esperada.",
+  "options": [
+    {
+      "title": "Aprobar la retención de 14 días",
+      "body": "Aceptar la poda descrita y completar la documentación de monitorización antes de integrar.",
+      "recommended": true
+    },
+    {
+      "title": "Conservar el historial en el documento",
+      "body": "Ajustar la compactación para mantener entradas históricas disponibles mediante las lecturas existentes.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar la retención de 14 días",
+    "body": "Aceptar la poda descrita y completar la documentación de monitorización antes de integrar.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su historial reciente cubre la memoria versionada y las reglas de retirada sobre las que se apoya esta decisión.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10766.md",
+    "reviewedAt": "2026-10-12T22:51:09.466Z",
+    "mainSha": "67ee79c252051960ffbdc23a4089fbb0b3c3ed4e"
+  }
+}
