@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-13T21:45:19.493Z",
+  "updatedAt": "2026-10-13T21:41:14Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10817,
+    "title": "fix: make watcher cycles carry out console approvals and survive overloads",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10817",
+    "state": "open",
+    "labels": [],
+    "createdAt": "2026-10-13T21:37:01Z",
+    "updatedAt": "2026-10-13T21:41:14Z",
+    "headSha": "42fea9ba0900f4fd0721da3476d43cdc8c23363b"
+  },
+  "lane": "security_boundary",
+  "priority": "P1",
+  "question": "¿Debe el «Sí» de consola autorizar llamadas mutadoras solo cuando herramienta, operación y objetivo coinciden con lo aprobado, o se acepta deliberadamente el alcance actual por marketplace?",
+  "rationale": "El parche no puede inferir de forma segura el alcance de autorización deseado: la decisión afecta a qué acciones de marketplace permite ejecutar un ciclo autónomo.",
+  "options": [
+    {
+      "title": "Exigir coincidencia exacta",
+      "body": "Vincular la aprobación a herramienta, operación y objetivo antes de habilitar la llamada mutadora.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar alcance por marketplace",
+      "body": "Mantener el permiso actual y asumir explícitamente el riesgo de que la llamada se dirija a otro objeto del mismo marketplace.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Exigir coincidencia exacta",
+    "body": "Vincular la aprobación a herramienta, operación y objetivo antes de habilitar la llamada mutadora.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "El historial reciente del flujo de approvals y la explicación del PR identifican a Javier como la persona más conectada con esta frontera de comportamiento.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10817.md",
+    "reviewedAt": "2026-10-13T21:45:19.493Z",
+    "mainSha": "7d9ad4608c9c8cf8d4661d215f8294a4202a4ce7"
+  }
+}
