@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-07T10:56:18.439Z",
-  "updatedAt": "2026-10-06T11:01:01Z",
+  "generatedAt": "2026-10-13T13:03:56.285Z",
+  "updatedAt": "2026-10-13T12:29:00Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,42 +15,46 @@
       "feature",
       "triage:needs-info",
       "clawsweeper:needs-product-decision",
-      "reporter:daniellopez",
-      "P2"
+      "P2",
+      "reporter:daniellopez"
     ],
     "createdAt": "2026-10-06T09:23:08Z",
-    "updatedAt": "2026-10-06T11:01:01Z"
+    "updatedAt": "2026-10-13T12:29:00Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué reglas operativas y de datos deben gobernar el contador antes de implementarlo: cómo confirmar cancelaciones, quién puede corregir cortes y qué evento define la fecha del corte?",
-  "rationale": "El conteo depende de un dato de impresión que actualmente no se persiste y de decisiones que cambian qué pedidos se incluyen y quién puede modificar un corte.",
+  "question": "¿Qué reglas debe aplicar el contador a los pedidos cancelados y quién puede ejecutar «corrige» antes de concretar su flujo de persistencia?",
+  "rationale": "Estas decisiones alteran el recuento declarado a Correos y los permisos de los operarios; no se deducen de la implementación actual ni están acordadas en la discusión.",
   "options": [
     {
-      "title": "Acordar reglas y contrato de datos",
-      "body": "Cerrar primero esas decisiones junto con la issue relacionada y después concretar la integración y persistencia del contador.",
+      "title": "Acordar reglas operativas",
+      "body": "Definir la gestión de cancelaciones y limitar «corrige» a responsables antes de concretar el comportamiento del bot.",
       "recommended": true
     },
     {
-      "title": "Aprobar una definición operativa provisional",
-      "body": "Usar el primer avance de packing como referencia temporal y dejar explícitos los límites de esa aproximación antes de iniciar el bot.",
+      "title": "Descontar cancelaciones automáticamente",
+      "body": "Excluir siempre pedidos cancelados sin pedir confirmación de retirada al operario.",
+      "recommended": false
+    },
+    {
+      "title": "Permitir correcciones a todo el canal",
+      "body": "Dar a cualquier integrante del canal capacidad para sustituir el último corte.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Acordar reglas y contrato de datos",
-    "body": "Cerrar primero esas decisiones junto con la issue relacionada y después concretar la integración y persistencia del contador.",
+    "title": "Acordar reglas operativas",
+    "body": "Definir la gestión de cancelaciones y limitar «corrige» a responsables antes de concretar el comportamiento del bot.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Su historial reciente en productividad de packing le conecta con la decisión sobre el evento temporal; la discusión también señala a Daniel y responsables de almacén para validar las reglas operativas.",
+    "reason": "La revisión previa lo señaló como candidato a decidir las reglas operativas; no hay evidencia directa de propiedad en el historial de código inspeccionado.",
     "confidence": "low"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10509.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10509#issuecomment-6013871306",
-    "reviewedAt": "2026-10-07T10:56:18.439Z",
-    "mainSha": "2b96cad4c1dca9a02d4594a190070214f1c6a897"
+    "reviewedAt": "2026-10-13T13:03:56.285Z",
+    "mainSha": "5fc28691f86fff433f48d19dff85903b7a6e158a"
   }
 }
