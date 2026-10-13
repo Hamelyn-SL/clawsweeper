@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-08T14:05:10.612Z",
-  "updatedAt": "2026-10-08T13:49:24Z",
+  "generatedAt": "2026-10-13T05:55:40.293Z",
+  "updatedAt": "2026-10-13T05:41:01Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -14,39 +14,43 @@
       "P2"
     ],
     "createdAt": "2026-10-05T13:07:31Z",
-    "updatedAt": "2026-10-08T13:49:24Z",
+    "updatedAt": "2026-10-13T05:41:01Z",
     "headSha": "b380a64273c90ae2d1a4dc087fa0ec73a05c901d"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe un error `-4` de Arnoia/Azeta mantener indefinidamente el pedido en `PENDING_LABEL` tras las 168 h, en vez de permitir que el timeout lo cancele?",
-  "rationale": "La issue vinculada plantea explícitamente esa política como pendiente, y esta PR elige una transición que puede prolongar pedidos sin tracking hasta una intervención operativa.",
+  "question": "¿Se acepta que los pedidos Arnoia/Azeta con error `-4` sigan en `PENDING_LABEL` después de 168 horas, sin aviso directo a Operaciones y dependiendo del log del watcher?",
+  "rationale": "La decisión cambia el resultado de cancelación existente y puede dejar pedidos pendientes hasta que Operaciones confirme manualmente la expedición; el código no puede determinar la política correcta ni si el watcher basta como aviso.",
   "options": [
     {
-      "title": "Aprobar la excepción para `-4`",
-      "body": "Mantener el pedido pendiente y exigir confirmación operativa de la expedición antes de cancelarlo.",
+      "title": "Aceptar el flujo basado en el log",
+      "body": "Mantener la excepción propuesta y confirmar que el watcher más la verificación manual son suficientes para gestionar pedidos ambiguos.",
       "recommended": true
     },
     {
-      "title": "Mantener la cancelación a las 168 h",
-      "body": "No aplicar la excepción y conservar el comportamiento actual para los errores de tracking.",
+      "title": "Exigir una alerta operativa",
+      "body": "Conservar el estado pendiente, pero añadir una notificación directa y verificable para que Operaciones confirme o cancele el pedido.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener el timeout de cancelación",
+      "body": "Cancelar a las 168 horas también ante `-4` y gestionar los casos dudosos mediante el procedimiento operativo vigente.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar la excepción para `-4`",
-    "body": "Mantener el pedido pendiente y exigir confirmación operativa de la expedición antes de cancelarlo.",
+    "title": "Aceptar el flujo basado en el log",
+    "body": "Mantener la excepción propuesta y confirmar que el watcher más la verificación manual son suficientes para gestionar pedidos ambiguos.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su historial reciente está ligado a la política de timeout y puede ayudar a encaminar la decisión junto al responsable de negocio.",
+    "reason": "Su cambio reciente trata el hard timeout de tracking en la misma ruta y es la conexión histórica más directa disponible para orientar la decisión.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10471.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10471#issuecomment-5995544603",
-    "reviewedAt": "2026-10-08T14:05:10.612Z",
-    "mainSha": "fd5173754dea1e2bc1a511cb27c03be87a75b038"
+    "reviewedAt": "2026-10-13T05:55:40.293Z",
+    "mainSha": "51b2f89c97d5b85fd50ab497eb470022d2b0d048"
   }
 }
