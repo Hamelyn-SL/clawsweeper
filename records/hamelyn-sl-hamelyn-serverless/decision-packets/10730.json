@@ -1,14 +1,14 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-13T13:15:26.469Z",
-  "updatedAt": "2026-10-13T12:27:54Z",
+  "generatedAt": "2026-10-13T15:03:39.466Z",
+  "updatedAt": "2026-10-13T13:42:51Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
     "number": 10730,
     "title": "Proof Agent: evidencia visual real en el comentario del PR (login, Hamelyn_DEV y grabación)",
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10730",
-    "state": "closed",
+    "state": "open",
     "labels": [
       "app:infrastructure",
       "reporter:davidgonzalez",
@@ -18,43 +18,37 @@
       "P2"
     ],
     "createdAt": "2026-10-09T12:46:07Z",
-    "updatedAt": "2026-10-13T12:27:54Z"
+    "updatedAt": "2026-10-13T13:42:51Z"
   },
   "lane": "security_boundary",
   "priority": "P2",
-  "question": "¿Se aprueban la identidad de servicio de prueba en Auth0 y su rol en `Hamelyn_DEV`, y qué mecanismo autorizado custodiará sus credenciales?",
-  "rationale": "La issue exige credenciales y permisos persistentes para automatizar el acceso; el repositorio y los datos de DEV requieren autorización explícita y una decisión de custodia.",
+  "question": "¿Se aprueba mantener el flujo de Proof con identidad Auth0 privilegiada y escrituras de fixtures en `Hamelyn_DEV`, y qué controles deben ser obligatorios para KV, anonimización y limpieza antes de integrarlo?",
+  "rationale": "La propuesta amplía credenciales y escrituras del agente; la revisión de la PR identifica rutas de KV no aisladas, posible exposición de datos y limpieza incompleta, por lo que la frontera aceptable requiere criterio del equipo.",
   "options": [
     {
-      "title": "Aprobar bundle cifrado",
-      "body": "Autorizar la identidad y guardar sus credenciales mediante el bundle cifrado propuesto, sujeto a validación del flujo y permisos.",
+      "title": "Exigir aislamiento antes de integrar",
+      "body": "Mantener la candidata y exigir que elimine o deshabilite variantes KV no seguras, proteja los datos finales y cubra limpieza y concurrencia.",
       "recommended": true
     },
     {
-      "title": "Aprobar variables del proyecto",
-      "body": "Autorizar la identidad y custodiar las credenciales como variables protegidas del proyecto `agents`.",
-      "recommended": false
-    },
-    {
-      "title": "Pausar la identidad real",
-      "body": "Mantener la validación sin autenticación real hasta que el equipo defina una alternativa aprobada para identidad y secretos.",
+      "title": "Reducir el alcance",
+      "body": "Separar autenticación/vídeo de fixtures mutables hasta disponer de un mecanismo aprobado para preparar datos y limpiar sus efectos secundarios.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar bundle cifrado",
-    "body": "Autorizar la identidad y guardar sus credenciales mediante el bundle cifrado propuesto, sujeto a validación del flujo y permisos.",
+    "title": "Exigir aislamiento antes de integrar",
+    "body": "Mantener la candidata y exigir que elimine o deshabilite variantes KV no seguras, proteja los datos finales y cubra limpieza y concurrencia.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Su historial previo en Proof ofrece una ruta de consulta técnica sobre el subsistema; la aprobación de credenciales corresponde al equipo con autoridad sobre Auth0 y `Hamelyn_DEV`.",
-    "confidence": "low"
+    "person": "MarcosTerroso",
+    "reason": "Es quien ha documentado los riesgos técnicos concretos en la revisión reciente; la aprobación final de credenciales e identidad corresponde al equipo responsable de infraestructura/Auth0.",
+    "confidence": "medium"
   },
   "source": {
-    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/10730.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10730#issuecomment-6081918327",
-    "reviewedAt": "2026-10-13T13:15:26.469Z",
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10730.md",
+    "reviewedAt": "2026-10-13T15:03:39.466Z",
     "mainSha": "5fc28691f86fff433f48d19dff85903b7a6e158a"
   }
 }
