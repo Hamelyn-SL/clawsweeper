@@ -1,14 +1,14 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-10T09:27:52.927Z",
-  "updatedAt": "2026-10-10T09:18:42Z",
+  "generatedAt": "2026-10-13T15:09:02.586Z",
+  "updatedAt": "2026-10-10T09:28:40Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
     "number": 10751,
     "title": "Discogs sold stock is tombstoned while its current listing remains For Sale",
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10751",
-    "state": "closed",
+    "state": "open",
     "labels": [
       "bug",
       "app:marketplace",
@@ -17,38 +17,37 @@
       "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-10-10T09:02:53Z",
-    "updatedAt": "2026-10-10T09:18:42Z"
+    "updatedAt": "2026-10-10T09:28:40Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe Discogs permitir recuperar la señal para un listing actual `For Sale` cuando la foto anterior era `BOTH`, siempre que GET confirme ID y SKU y el maestro siga retirado?",
-  "rationale": "La guarda actual evita activar una retirada externa basándose en una sola transición nueva; ampliarla sin una regla aprobada puede iniciar efectos remotos para candidatos no validados.",
+  "question": "¿Debe el report recuperar un único listing actual que sigue `For Sale` cuando el mirror ya está `WITHDRAWN/WITHDRAWN` y la foto previa era `BOTH`, siempre que GET confirme su identidad?",
+  "rationale": "Cambiar la guarda modifica cuándo el report reabre una señal de retirada y habilita una operación externa sobre un anuncio potencialmente vendible; la evidencia apunta a un candidato concreto, pero la política de recuperación y validación operativa corresponde al equipo.",
   "options": [
     {
-      "title": "Aprobar recuperación dirigida",
-      "body": "Permitir solo el ID vigente verificado por GET, con relectura del maestro y CAS, y validar primero un único canario antes de lotes.",
+      "title": "Autorizar recuperación acotada",
+      "body": "Añadir una ruta limitada al ID remoto verificado, protegida por CAS y validada primero sobre un único listing.",
       "recommended": true
     },
     {
-      "title": "Mantener la guarda y tratar manualmente",
-      "body": "No ampliar la recuperación automática; retirar estos casos mediante intervención aprobada hasta contar con una política más amplia.",
+      "title": "Mantener la guarda actual",
+      "body": "No recuperar este patrón hasta que snapshots posteriores aporten la evidencia histórica que las guardas actuales exigen.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar recuperación dirigida",
-    "body": "Permitir solo el ID vigente verificado por GET, con relectura del maestro y CAS, y validar primero un único canario antes de lotes.",
+    "title": "Autorizar recuperación acotada",
+    "body": "Añadir una ruta limitada al ID remoto verificado, protegida por CAS y validada primero sobre un único listing.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Ha trabajado recientemente en el helper compartido de recuperación y figura como contribuidor del área Discogs.",
+    "reason": "Su historial reciente cubre la recuperación de huérfanos y el report de Discogs, por lo que es el candidato más próximo para concretar el alcance técnico de la decisión.",
     "confidence": "medium"
   },
   "source": {
-    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/10751.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10751#issuecomment-6096127309",
-    "reviewedAt": "2026-10-10T09:27:52.927Z",
-    "mainSha": "690b4786fb978ebf0e264e1d9afc7470133bbc56"
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10751.md",
+    "reviewedAt": "2026-10-13T15:09:02.586Z",
+    "mainSha": "5fc28691f86fff433f48d19dff85903b7a6e158a"
   }
 }

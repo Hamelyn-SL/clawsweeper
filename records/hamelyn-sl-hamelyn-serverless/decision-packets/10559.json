@@ -1,14 +1,14 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-10T02:53:37.849Z",
-  "updatedAt": "2026-10-10T02:29:38Z",
+  "generatedAt": "2026-10-13T15:04:28.683Z",
+  "updatedAt": "2026-10-10T02:54:25Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
     "number": 10559,
     "title": "Discogs paid no-stock orders remain TO_CANCEL for multiple days",
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10559",
-    "state": "closed",
+    "state": "open",
     "labels": [
       "bug",
       "app:marketplace",
@@ -17,38 +17,42 @@
       "P2"
     ],
     "createdAt": "2026-10-07T09:00:57Z",
-    "updatedAt": "2026-10-10T02:29:38Z"
+    "updatedAt": "2026-10-10T02:54:25Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Quién debe cancelar en Discogs los pedidos ya cancelados localmente y en qué plazo; se quiere mantener el proceso manual o diseñar una automatización aprobada?",
-  "rationale": "El código solo comprueba cancelaciones remotas existentes y el panel permite registrar la cancelación local; automatizar la acción remota o fijar un SLA requiere una decisión de operaciones/fulfillment.",
+  "question": "¿Quién debe cancelar en Discogs los pedidos cancelados localmente por incidencias de inventario, en qué plazo y se autoriza automatizarlo?",
+  "rationale": "El código actual consulta cancelaciones remotas ya realizadas, pero la issue no acredita un fallo del cron ni una política que permita cancelar automáticamente pedidos pagados.",
   "options": [
     {
-      "title": "Definir responsable y plazo manuales",
-      "body": "Documentar quién cancela cada pedido en Discogs y el plazo, conservando la operación manual.",
+      "title": "Definir operación manual",
+      "body": "Asignar responsable y plazo para cancelar en Discogs y verificar el estado remoto posterior.",
       "recommended": true
     },
     {
-      "title": "Diseñar una automatización aprobada",
-      "body": "Acordar criterios de elegibilidad, tratamiento de excepciones y confirmación remota antes de automatizar cancelaciones.",
+      "title": "Aprobar automatización acotada",
+      "body": "Definir condiciones, excepciones y comprobación remota antes de implementar solicitudes automáticas.",
+      "recommended": false
+    },
+    {
+      "title": "No cambiar el proceso",
+      "body": "Mantener la intervención manual actual y cerrar la investigación operativa sin cambio de código.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Definir responsable y plazo manuales",
-    "body": "Documentar quién cancela cada pedido en Discogs y el plazo, conservando la operación manual.",
+    "title": "Definir operación manual",
+    "body": "Asignar responsable y plazo para cancelar en Discogs y verificar el estado remoto posterior.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "AlexDiaz-Hamelyn",
-    "reason": "Es la persona con la señal más directa en el historial del código Discogs relacionado; la decisión operativa puede requerir además coordinación con fulfillment.",
-    "confidence": "low"
+    "person": "JavierHamelyn",
+    "reason": "Su historial conecta directamente con el helper de cancelaciones Discogs; fulfillment debe participar en la decisión operativa.",
+    "confidence": "medium"
   },
   "source": {
-    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/10559.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10559#issuecomment-6034740069",
-    "reviewedAt": "2026-10-10T02:53:37.849Z",
-    "mainSha": "eebecc2fd2fb933334965f3552e1aa1435f82ec1"
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10559.md",
+    "reviewedAt": "2026-10-13T15:04:28.683Z",
+    "mainSha": "5fc28691f86fff433f48d19dff85903b7a6e158a"
   }
 }

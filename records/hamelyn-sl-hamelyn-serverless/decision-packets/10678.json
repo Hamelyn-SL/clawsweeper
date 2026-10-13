@@ -1,54 +1,53 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-10T05:03:57.343Z",
-  "updatedAt": "2026-10-10T01:59:42Z",
+  "generatedAt": "2026-10-13T15:05:21.624Z",
+  "updatedAt": "2026-10-10T05:04:53Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
     "number": 10678,
     "title": "Discogs: 3 anuncios vendidos sin pedido importado en Hamelyn",
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10678",
-    "state": "closed",
+    "state": "open",
     "labels": [
       "bug",
       "app:marketplace",
       "triage:needs-info",
-      "P2",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2"
     ],
     "createdAt": "2026-10-09T01:50:36Z",
-    "updatedAt": "2026-10-10T01:59:42Z"
+    "updatedAt": "2026-10-10T05:04:53Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué plazo y fecha de referencia deben activar la cancelación de pedidos Discogs `Invoice Sent` sin pagar, y debe aplicarse también a los 17 pedidos ya identificados?",
-  "rationale": "El plazo de 10 días se planteó como ejemplo, no como regla aprobada; cancelar en Discogs y liberar o republicar stock cambia el riesgo de venta y requiere decidir también el tratamiento de la cohorte existente.",
+  "question": "¿Qué plazo y fecha de referencia deben activar la cancelación de pedidos Discogs `Invoice Sent` sin pagar, y debe aplicarse también a los 17 pedidos existentes?",
+  "rationale": "Cancelar en Discogs y republicar stock cambia el comportamiento comercial y puede causar una segunda venta si el pago llega después; el código y la documentación actuales no fijan esa política.",
   "options": [
     {
-      "title": "Mantener gestión manual temporal",
-      "body": "No automatizar cancelaciones ni republicaciones hasta acordar el criterio, mientras Operaciones resuelve los pedidos abiertos manualmente.",
+      "title": "Mantener la gestión manual temporal",
+      "body": "Operaciones resuelve los pedidos abiertos manualmente y no se automatizan cancelaciones ni republicaciones hasta acordar criterios.",
       "recommended": true
     },
     {
       "title": "Aprobar una regla automática",
-      "body": "Definir plazo, fecha de referencia, excepciones y sincronización del stock, e indicar expresamente si la regla abarca los pedidos existentes.",
+      "body": "Definir plazo, fecha de referencia, excepciones y sincronización del stock, e indicar expresamente si se incluyen los pedidos existentes.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mantener gestión manual temporal",
-    "body": "No automatizar cancelaciones ni republicaciones hasta acordar el criterio, mientras Operaciones resuelve los pedidos abiertos manualmente.",
+    "title": "Mantener la gestión manual temporal",
+    "body": "Operaciones resuelve los pedidos abiertos manualmente y no se automatizan cancelaciones ni republicaciones hasta acordar criterios.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Javier verificó los estados remotos y planteó el plazo como decisión pendiente junto con Operaciones; la política requiere coordinación con quien gestiona los pedidos de Discogs.",
+    "reason": "Aportó la verificación en vivo y delimitó los pedidos existentes; su historial también le conecta con la ruta de importación Discogs.",
     "confidence": "medium"
   },
   "source": {
-    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/10678.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10678#issuecomment-6094036811",
-    "reviewedAt": "2026-10-10T05:03:57.343Z",
-    "mainSha": "690b4786fb978ebf0e264e1d9afc7470133bbc56"
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10678.md",
+    "reviewedAt": "2026-10-13T15:05:21.624Z",
+    "mainSha": "5fc28691f86fff433f48d19dff85903b7a6e158a"
   }
 }

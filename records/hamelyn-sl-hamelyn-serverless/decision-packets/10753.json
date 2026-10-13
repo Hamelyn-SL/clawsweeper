@@ -1,14 +1,14 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-11T08:31:58.154Z",
-  "updatedAt": "2026-10-11T08:27:52Z",
+  "generatedAt": "2026-10-13T15:09:56.557Z",
+  "updatedAt": "2026-10-11T08:32:59Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
     "number": 10753,
     "title": "Alibris order cancellation pipeline does not send EDI CN confirmations",
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10753",
-    "state": "closed",
+    "state": "open",
     "labels": [
       "bug",
       "app:marketplace",
@@ -16,38 +16,37 @@
       "P2"
     ],
     "createdAt": "2026-10-11T08:24:42Z",
-    "updatedAt": "2026-10-11T08:27:52Z"
+    "updatedAt": "2026-10-11T08:32:59Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe habilitarse `CN` para las cancelaciones Alibris con la semántica de autorización y tratamiento de resultados ambiguos propuesta en la issue?",
-  "rationale": "El código actual carece de una fase de cancelación Alibris y la issue plantea decisiones operativas sobre elegibilidad, idempotencia y qué cuenta como confirmación remota; conviene acordar ese contrato antes de automatizarlo.",
+  "question": "¿Debe enviarse `CN` automáticamente al pasar una línea a `TO_CANCEL` o solo tras aprobación manual, y qué evidencia de Alibris confirma su aceptación o rechazo?",
+  "rationale": "El código muestra que el consumidor no existe, pero la transición local y la subida FTP no establecen por sí mismas autorización ni aceptación remota; elegir ese contrato requiere criterio de Operaciones y Marketplace.",
   "options": [
     {
-      "title": "Aprobar el contrato propuesto",
-      "body": "Implementar envío `CN` idempotente y mantener los resultados ambiguos para revisión, sin tratar la subida FTP como aceptación remota.",
-      "recommended": true
+      "title": "Automatizar desde `TO_CANCEL`",
+      "body": "Enviar `CN` al entrar en ese estado y conservar los resultados ambiguos para reconciliación antes de reintentar.",
+      "recommended": false
     },
     {
-      "title": "Precisar el contrato con operaciones",
-      "body": "Confirmar primero con operaciones y Alibris el criterio de autorización y la evidencia que representa una cancelación aceptada.",
-      "recommended": false
+      "title": "Exigir aprobación manual",
+      "body": "Enviar `CN` únicamente tras una autorización explícita y registrar quién la aprobó junto con el resultado por línea.",
+      "recommended": true
     }
   ],
   "recommendation": {
-    "title": "Aprobar el contrato propuesto",
-    "body": "Implementar envío `CN` idempotente y mantener los resultados ambiguos para revisión, sin tratar la subida FTP como aceptación remota.",
+    "title": "Exigir aprobación manual",
+    "body": "Enviar `CN` únicamente tras una autorización explícita y registrar quién la aprobó junto con el resultado por línea.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Participó en la integración original y la issue aporta el contexto del operador; es el candidato disponible más cercano al contrato funcional de Alibris.",
+    "reason": "Su historial conecta directamente con el flujo EDI de Alibris; Operaciones debe aportar el criterio de autorización y aceptación remota.",
     "confidence": "medium"
   },
   "source": {
-    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/10753.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10753#issuecomment-6107166631",
-    "reviewedAt": "2026-10-11T08:31:58.154Z",
-    "mainSha": "67ee79c252051960ffbdc23a4089fbb0b3c3ed4e"
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10753.md",
+    "reviewedAt": "2026-10-13T15:09:56.557Z",
+    "mainSha": "5fc28691f86fff433f48d19dff85903b7a6e158a"
   }
 }

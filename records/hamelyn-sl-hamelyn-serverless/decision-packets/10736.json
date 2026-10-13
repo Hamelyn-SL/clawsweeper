@@ -1,56 +1,55 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-10T14:57:17.818Z",
-  "updatedAt": "2026-10-10T06:44:15Z",
+  "generatedAt": "2026-10-13T15:07:58.746Z",
+  "updatedAt": "2026-10-10T14:58:05Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
     "number": 10736,
     "title": "Marketplace: [amazon confirm shipment] order 111-<number>-<number> failed: 400 invalidinput: failed to createpackage for",
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10736",
-    "state": "closed",
+    "state": "open",
     "labels": [
       "codex",
       "bug",
       "app:marketplace",
       "triage:no-change",
       "clawsweeper:needs-product-decision",
-      "marketplace-crons",
-      "P2"
+      "P2",
+      "marketplace-crons"
     ],
     "createdAt": "2026-10-09T14:30:44Z",
-    "updatedAt": "2026-10-10T06:44:15Z"
+    "updatedAt": "2026-10-10T14:58:05Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué estado e historial muestra Seller Central para el pedido en el momento de los rechazos, y debe este error conservar los reintentos mientras el pedido siga sin enviar?",
-  "rationale": "El código y la réplica local no determinan el estado autoritativo de Amazon; excluir este error de recuperación sin esa comprobación podría afectar pedidos que aún necesitan confirmación.",
+  "question": "¿Qué estado e historial de Seller Central presenta este pedido y, según ese dato, debe mantenerse el reintento o reconciliarse como ya enviado?",
+  "rationale": "El mensaje de Amazon por sí solo no distingue entre un pedido ya enviado, cancelado o aún pendiente; la decisión cambia si el error debe seguir reintentándose o tratarse como terminal.",
   "options": [
     {
-      "title": "Mantener reintentos",
-      "body": "Si Seller Central muestra el pedido pendiente de envío, conservar la recuperación actual y seguir investigando la causa del rechazo.",
+      "title": "Verificar y reconciliar",
+      "body": "Confirmar en Seller Central el estado e historial y reconciliar solo si demuestra que Amazon ya confirmó el envío.",
       "recommended": true
     },
     {
-      "title": "Reconciliar estado terminal",
-      "body": "Si Seller Central confirma que ya está enviado o cancelado, definir una comprobación remota acotada antes de cerrar o excluir el error.",
+      "title": "Mantener reintentos",
+      "body": "Si no se puede verificar el estado remoto, conservar la recuperación actual hasta que haya evidencia suficiente.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mantener reintentos",
-    "body": "Si Seller Central muestra el pedido pendiente de envío, conservar la recuperación actual y seguir investigando la causa del rechazo.",
+    "title": "Verificar y reconciliar",
+    "body": "Confirmar en Seller Central el estado e historial y reconciliar solo si demuestra que Amazon ya confirmó el envío.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "Lyno",
-    "reason": "Su historial incluye la definición de errores terminales que controla la recuperación; el estado remoto debe aportarlo el equipo de operaciones de marketplaces.",
-    "confidence": "low"
+    "person": "MarcosTerroso",
+    "reason": "Está asignado a la incidencia relacionada y trabajó en la comprobación de estado remoto para errores de confirmación de Amazon.",
+    "confidence": "medium"
   },
   "source": {
-    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/10736.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10736#issuecomment-6083366452",
-    "reviewedAt": "2026-10-10T14:57:17.818Z",
-    "mainSha": "67ee79c252051960ffbdc23a4089fbb0b3c3ed4e"
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10736.md",
+    "reviewedAt": "2026-10-13T15:07:58.746Z",
+    "mainSha": "5fc28691f86fff433f48d19dff85903b7a6e158a"
   }
 }

@@ -1,61 +1,60 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-10T05:59:29.227Z",
-  "updatedAt": "2026-10-10T01:29:50Z",
+  "generatedAt": "2026-10-13T15:05:42.975Z",
+  "updatedAt": "2026-10-10T06:00:22Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
     "number": 10660,
     "title": "MercadoLibre MX: la búsqueda por seller_sku de la retirada responde 403 en pasadas enteras y retrasa 1 h la confirmación",
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10660",
-    "state": "closed",
+    "state": "open",
     "labels": [
       "bug",
       "app:marketplace",
       "reporter:javier",
       "triage:no-change",
-      "mk:mercadolibre",
+      "clawsweeper:needs-product-decision",
       "P2",
-      "clawsweeper:needs-product-decision"
+      "mk:mercadolibre"
     ],
     "createdAt": "2026-10-08T14:39:43Z",
-    "updatedAt": "2026-10-10T01:29:50Z"
+    "updatedAt": "2026-10-10T06:00:22Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe una búsqueda fallida exclusivamente con 403, después de cerrar correctamente el anuncio conocido, reintentarse antes del backoff transitorio actual de una hora?",
-  "rationale": "La alternativa de cinco minutos propuesta en el comentario puede acortar la exposición a anuncios hermanos activos, pero también multiplicar llamadas ante un 403 sostenido; el historial no establece qué presupuesto ni umbral prefiere el equipo.",
+  "question": "¿Debe una búsqueda de retirada fallida exclusivamente con 403, tras cerrar correctamente el anuncio conocido, reintentarse antes que el backoff transitorio actual?",
+  "rationale": "La opción de cinco minutos reduce el retraso, pero un rechazo sostenido incrementaría llamadas; el repositorio no documenta un límite operativo aprobado para este caso y la causa externa sigue sin identificarse.",
   "options": [
     {
-      "title": "Adelantar a cinco minutos con guardas",
-      "body": "Aplicar el intervalo solo si todos los fallos de búsqueda son 403, hubo al menos un cierre correcto y no falló ningún cierre; conservar la retirada incompleta hasta completar ambas búsquedas.",
+      "title": "Adelantar con límite",
+      "body": "Aplicar un intervalo menor acotado solo a búsquedas fallidas exclusivamente con 403 tras un cierre correcto, manteniendo la retirada pendiente hasta completar ambas búsquedas.",
       "recommended": true
     },
     {
-      "title": "Conservar el backoff actual",
-      "body": "Mantener el reintento transitorio existente y esperar evidencia de una nueva recurrencia o de anuncios hermanos aún activos antes de cambiar el ritmo.",
+      "title": "Mantener el backoff",
+      "body": "Conservar el primer reintento de una hora y reconsiderarlo si reaparecen los fallos o se verifica un anuncio hermano todavía vendible.",
       "recommended": false
     },
     {
-      "title": "Definir primero límites operativos",
-      "body": "Pedir al responsable de la integración una comprobación saneada del rechazo y acordar un límite de llamadas antes de modificar la política.",
+      "title": "Definir el presupuesto primero",
+      "body": "Esperar a disponer de un ejemplo saneado del rechazo y acordar el techo de llamadas antes de cambiar el intervalo.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Adelantar a cinco minutos con guardas",
-    "body": "Aplicar el intervalo solo si todos los fallos de búsqueda son 403, hubo al menos un cierre correcto y no falló ningún cierre; conservar la retirada incompleta hasta completar ambas búsquedas.",
+    "title": "Adelantar con límite",
+    "body": "Aplicar un intervalo menor acotado solo a búsquedas fallidas exclusivamente con 403 tras un cierre correcto, manteniendo la retirada pendiente hasta completar ambas búsquedas.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Su implementación relacionada establece cómo se conservan los fallos y por qué no se confirma la retirada incompleta.",
+    "reason": "Su historial de cambios en los diagnósticos y la política de búsquedas incompletas lo sitúa como candidato de referencia para valorar este comportamiento.",
     "confidence": "medium"
   },
   "source": {
-    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/10660.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10660#issuecomment-6062569374",
-    "reviewedAt": "2026-10-10T05:59:29.227Z",
-    "mainSha": "690b4786fb978ebf0e264e1d9afc7470133bbc56"
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10660.md",
+    "reviewedAt": "2026-10-13T15:05:42.975Z",
+    "mainSha": "5fc28691f86fff433f48d19dff85903b7a6e158a"
   }
 }

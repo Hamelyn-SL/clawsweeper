@@ -1,61 +1,60 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-10T10:46:34.341Z",
-  "updatedAt": "2026-10-09T11:19:05Z",
+  "generatedAt": "2026-10-13T15:05:22.669Z",
+  "updatedAt": "2026-10-10T10:47:20Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
     "number": 10716,
     "title": "Crear alertas en revisión con destino automático para evitar fallo de los operarios",
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10716",
-    "state": "closed",
+    "state": "open",
     "labels": [
       "bug",
       "source:admin-panel",
       "app:supply",
       "triage:done",
       "clawsweeper:needs-product-decision",
-      "reporter:daniellopez",
-      "P2"
+      "P2",
+      "reporter:daniellopez"
     ],
     "createdAt": "2026-10-09T10:21:11Z",
-    "updatedAt": "2026-10-09T11:19:05Z"
+    "updatedAt": "2026-10-10T10:47:20Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe Revisión con destino automático pedir confirmación para EAN ya revisados y artículos fuera del lote, permitiendo continuar con la lectura si el operario confirma?",
-  "rationale": "El flujo actual interpreta artículos fuera del lote como posibles sobrantes y permite añadirlos; interrumpirlos o permitir continuar cambia el criterio operativo y puede afectar lecturas válidas de ejemplares adicionales.",
+  "question": "¿Debe el destino automático pedir confirmación para productos ya revisados y artículos fuera del lote, permitiendo continuar con el escaneo si el operario confirma?",
+  "rationale": "La confirmación cambia cuándo se añade una unidad sobrante y qué decisión toma el operario; la issue propone textos y opciones, pero deja abierta la interacción final.",
   "options": [
     {
       "title": "Avisar y permitir continuar",
-      "body": "Mostrar la confirmación en ambos hubs y registrar el ejemplar solo tras la confirmación del operario.",
+      "body": "Mostrar confirmación en ambos hubs antes de procesar la unidad adicional y permitir el alta solo tras la confirmación.",
       "recommended": true
     },
     {
-      "title": "Avisar solo en lecturas repetidas",
-      "body": "Solicitar confirmación para EAN ya procesados y conservar el flujo actual para otros artículos fuera del lote.",
+      "title": "Avisar solo en relecturas",
+      "body": "Pedir confirmación para EAN ya procesados y conservar el tratamiento actual de otros artículos fuera del lote.",
       "recommended": false
     },
     {
       "title": "Mantener el flujo actual",
-      "body": "No introducir confirmaciones hasta acordar otro control operativo para evitar sobrantes duplicados o cruzados.",
+      "body": "No añadir confirmaciones hasta acordar otro control operativo para prevenir sobrantes duplicados o cruzados.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Avisar y permitir continuar",
-    "body": "Mostrar la confirmación en ambos hubs y registrar el ejemplar solo tras la confirmación del operario.",
+    "body": "Mostrar confirmación en ambos hubs antes de procesar la unidad adicional y permitir el alta solo tras la confirmación.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "banosdavidhamelyn",
-    "reason": "Su historial reciente cubre el flujo de sobrantes y la implementación de Turbo, por lo que puede orientar el alcance operativo.",
+    "reason": "Su historial reciente cubre los flujos de entrada y Turbo, y está vinculado a la issue relacionada de artículos de otro lote.",
     "confidence": "medium"
   },
   "source": {
-    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/10716.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10716#issuecomment-6079110619",
-    "reviewedAt": "2026-10-10T10:46:34.341Z",
-    "mainSha": "67ee79c252051960ffbdc23a4089fbb0b3c3ed4e"
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10716.md",
+    "reviewedAt": "2026-10-13T15:05:22.669Z",
+    "mainSha": "5fc28691f86fff433f48d19dff85903b7a6e158a"
   }
 }

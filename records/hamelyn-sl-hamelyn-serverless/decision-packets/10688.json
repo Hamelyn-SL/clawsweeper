@@ -1,14 +1,14 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-10T06:38:27.716Z",
-  "updatedAt": "2026-10-10T02:45:19Z",
+  "generatedAt": "2026-10-13T15:05:43.883Z",
+  "updatedAt": "2026-10-10T06:39:09Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
     "number": 10688,
     "title": "Amazon COM parked 18155 listing retains an offer below its explicit minimum",
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10688",
-    "state": "closed",
+    "state": "open",
     "labels": [
       "bug",
       "app:marketplace",
@@ -17,38 +17,37 @@
       "P2"
     ],
     "createdAt": "2026-10-09T05:30:40Z",
-    "updatedAt": "2026-10-10T02:45:19Z"
+    "updatedAt": "2026-10-10T06:39:09Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "Si se confirma que Amazon conserva umbrales anteriores pese a recibir un repricing correcto, ¿debe el flujo recuperar automáticamente el listing cuando el precio y los umbrales vuelvan a ser coherentes, o mantenerlo aparcado hasta una revisión explícita?",
-  "rationale": "La issue pide validar el canario antes de cualquier recuperación, y reactivar una oferta tiene consecuencias comerciales; el código no determina por sí solo el comportamiento deseado.",
+  "question": "Si la inspección confirma que el repricing dejó límites antiguos, ¿debe la corrección limitarse a actualizar los límites o también recuperar automáticamente listings en REPORT_INACTIVE?",
+  "rationale": "La primera opción corrige coherencia de precio; la segunda cambia la recuperación de una oferta aparcada y puede tener consecuencias comerciales, por lo que requiere intención explícita del equipo.",
   "options": [
     {
-      "title": "Mantener aparcado hasta revisión explícita",
-      "body": "Evita reactivar una oferta comercialmente no aprobada mientras se investiga la causa remota.",
+      "title": "Actualizar límites únicamente",
+      "body": "Mantener REPORT_INACTIVE aparcado y corregir solo el contrato de actualización de precio confirmado por el feed.",
       "recommended": true
     },
     {
-      "title": "Recuperar tras verificación remota",
-      "body": "Permite reactivarlo automáticamente solo después de confirmar precio, umbrales coherentes y estado BUYABLE.",
+      "title": "Añadir recuperación controlada",
+      "body": "Permitir recuperación automática solo tras verificar los límites remotos y preservar los controles de precio y vendibilidad.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mantener aparcado hasta revisión explícita",
-    "body": "Evita reactivar una oferta comercialmente no aprobada mientras se investiga la causa remota.",
+    "title": "Actualizar límites únicamente",
+    "body": "Mantener REPORT_INACTIVE aparcado y corregir solo el contrato de actualización de precio confirmado por el feed.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Es la persona asignada a la investigación actual, por lo que es el candidato de decisión más próximo según el contexto disponible.",
+    "reason": "Está asignado a la investigación y contribuye recientemente al flujo Amazon relacionado.",
     "confidence": "medium"
   },
   "source": {
-    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/10688.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10688#issuecomment-6075258395",
-    "reviewedAt": "2026-10-10T06:38:27.716Z",
-    "mainSha": "690b4786fb978ebf0e264e1d9afc7470133bbc56"
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10688.md",
+    "reviewedAt": "2026-10-13T15:05:43.883Z",
+    "mainSha": "5fc28691f86fff433f48d19dff85903b7a6e158a"
   }
 }

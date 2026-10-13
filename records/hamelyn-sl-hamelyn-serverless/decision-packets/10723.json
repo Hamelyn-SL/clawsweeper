@@ -1,57 +1,61 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-09T12:35:29.823Z",
-  "updatedAt": "2026-10-09T12:31:31Z",
+  "generatedAt": "2026-10-13T15:04:19.248Z",
+  "updatedAt": "2026-10-09T12:36:31Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
     "number": 10723,
     "title": "Supply v3: the Auth0 login screen shows the internal application name Supply Web",
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10723",
-    "state": "closed",
+    "state": "open",
     "labels": [
       "bug",
       "app:supply",
       "reporter:miguel",
       "triage:blocked",
-      "origin:dev",
-      "epic:supply-v3",
+      "clawsweeper:needs-product-decision",
       "P3",
-      "clawsweeper:needs-product-decision"
+      "origin:dev",
+      "epic:supply-v3"
     ],
     "createdAt": "2026-10-09T11:20:27Z",
-    "updatedAt": "2026-10-09T12:31:31Z"
+    "updatedAt": "2026-10-09T12:36:31Z"
   },
   "lane": "product_direction",
   "priority": "P3",
-  "question": "¿Debe renombrarse en Auth0 la Application identificada por el `client_id` de Supply a «Hamelyn», y quién confirma que sus Actions, reglas y filtros activos no dependen de «Supply Web»?",
-  "rationale": "El cambio vive en la configuración del tenant, no en el código desplegado, y el repositorio solo conserva un snapshot histórico; hace falta confirmar el nombre de cara al usuario y la seguridad operativa del cambio en el tenant activo.",
+  "question": "¿Qué nombre público debe mostrar Auth0 para Supply: «Hamelyn» o el nombre de la aplicación de ecommerce, y se autoriza al responsable del tenant a cambiarlo tras revisar sus dependencias activas?",
+  "rationale": "El reporte ofrece dos alternativas y el cambio vive en Auth0, no en el código versionado; además, el repositorio solo conserva un snapshot histórico y no permite verificar las dependencias activas del tenant.",
   "options": [
     {
-      "title": "Renombrar a «Hamelyn» tras verificar dependencias",
-      "body": "La persona responsable del tenant conserva el `client_id`, comprueba Actions, reglas y filtros activos y valida login y registro después del cambio.",
+      "title": "Usar «Hamelyn»",
+      "body": "Acordar esa marca y pedir al responsable del tenant que revise las dependencias activas y renombre la Application conservando su client_id.",
       "recommended": true
     },
     {
-      "title": "Mantener «Supply Web»",
-      "body": "Se conserva el nombre actual si existe una dependencia activa o una decisión de marca que haga inadecuado el cambio.",
+      "title": "Igualar ecommerce",
+      "body": "Confirmar el nombre usado por ecommerce y aplicar ese valor en Auth0 tras revisar las dependencias activas.",
+      "recommended": false
+    },
+    {
+      "title": "Mantenerlo por ahora",
+      "body": "Dejar el nombre actual hasta verificar las Actions, reglas y filtros que podrían depender de él.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Renombrar a «Hamelyn» tras verificar dependencias",
-    "body": "La persona responsable del tenant conserva el `client_id`, comprueba Actions, reglas y filtros activos y valida login y registro después del cambio.",
+    "title": "Usar «Hamelyn»",
+    "body": "Acordar esa marca y pedir al responsable del tenant que revise las dependencias activas y renombre la Application conservando su client_id.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Introdujo la configuración de Universal Login versionada; no hay evidencia local suficiente para identificar a la persona que administra actualmente el tenant.",
+    "reason": "Es el candidato de código más cercano por su contribución registrada al snapshot; la decisión operativa corresponde al responsable actual del tenant, que no se identifica en el historial disponible.",
     "confidence": "low"
   },
   "source": {
-    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/10723.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10723#issuecomment-6081018206",
-    "reviewedAt": "2026-10-09T12:35:29.823Z",
-    "mainSha": "bd20cde90d173ab2ca138a1e8aace7946cd36d64"
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10723.md",
+    "reviewedAt": "2026-10-13T15:04:19.248Z",
+    "mainSha": "5fc28691f86fff433f48d19dff85903b7a6e158a"
   }
 }

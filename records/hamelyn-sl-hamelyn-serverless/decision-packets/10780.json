@@ -1,60 +1,59 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-13T06:49:00.720Z",
-  "updatedAt": "2026-10-13T06:43:25Z",
+  "generatedAt": "2026-10-13T15:05:29.958Z",
+  "updatedAt": "2026-10-13T09:27:53Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
     "number": 10780,
     "title": "Deploy guard: halve long-tail cost, surface silent failures and route findings to open issues",
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10780",
-    "state": "closed",
+    "state": "open",
     "labels": [
       "app:infrastructure",
       "feature",
-      "triage:queued",
-      "reporter:danielmenchen-hamelyn",
+      "triage:done",
+      "clawsweeper:needs-product-decision",
       "P2",
-      "clawsweeper:needs-product-decision"
+      "reporter:danielmenchen-hamelyn"
     ],
     "createdAt": "2026-10-13T06:42:55Z",
-    "updatedAt": "2026-10-13T06:43:25Z"
+    "updatedAt": "2026-10-13T09:27:53Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe abordarse esta propuesta completa como una iniciativa de Heimdall o separarse en entregas priorizadas, empezando por coste y fallos silenciosos?",
-  "rationale": "Agrupa optimización de coste, cambios de cadencia, nuevos criterios de escalado y publicación de issues; fijar prioridades y garantías requiere intención del equipo.",
+  "question": "¿Debe mantenerse el alcance de los once cambios como una única iniciativa, o dividirse y priorizarse empezando por coste y visibilidad de fallos?",
+  "rationale": "La propuesta agrupa cambios de cadencia, recursos, persistencia y publicación; el triage previo recomienda entregas separadas y la PR abierta implementa el alcance completo.",
   "options": [
     {
-      "title": "Dividir y priorizar (recomendada)",
-      "body": "Empezar por coste y visibilidad de fallos con métricas verificables, y llevar las demás reglas a propuestas separadas.",
+      "title": "Dividir y priorizar",
+      "body": "Validar primero coste y trazabilidad de fallos con métricas y separar después los cambios restantes.",
       "recommended": true
     },
     {
-      "title": "Mantener el alcance completo",
-      "body": "Acordar una única iniciativa y definir el orden, las garantías y la validación de todos los puntos antes de implementarla.",
+      "title": "Mantener iniciativa completa",
+      "body": "Conservar los once puntos juntos y acordar explícitamente su orden y garantías de validación.",
       "recommended": false
     },
     {
-      "title": "Aplazar hasta validar el piloto",
-      "body": "Recoger datos de coste y fallos de más guardias antes de cambiar el comportamiento del agente.",
+      "title": "Aplazar y medir",
+      "body": "Esperar datos de más guardias antes de cambiar el comportamiento de vigilancia.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Dividir y priorizar (recomendada)",
-    "body": "Empezar por coste y visibilidad de fallos con métricas verificables, y llevar las demás reglas a propuestas separadas.",
+    "title": "Dividir y priorizar",
+    "body": "Validar primero coste y trazabilidad de fallos con métricas y separar después los cambios restantes.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "Daniel",
-    "reason": "Su historial abarca el diseño original y la lógica de prompts; puede ayudar a delimitar el alcance junto al contribuidor reciente de coste.",
-    "confidence": "medium"
+    "reason": "Es el responsable asignado y el autor de la PR que implementa la propuesta.",
+    "confidence": "high"
   },
   "source": {
-    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/10780.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10780#issuecomment-6139991973",
-    "reviewedAt": "2026-10-13T06:49:00.720Z",
-    "mainSha": "12a79e33f45b78ad77a3345ff7bb6413b958cda2"
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10780.md",
+    "reviewedAt": "2026-10-13T15:05:29.958Z",
+    "mainSha": "5fc28691f86fff433f48d19dff85903b7a6e158a"
   }
 }

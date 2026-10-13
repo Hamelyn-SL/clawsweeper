@@ -1,57 +1,56 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-10T11:35:27.877Z",
-  "updatedAt": "2026-10-09T12:45:32Z",
+  "generatedAt": "2026-10-13T15:06:46.356Z",
+  "updatedAt": "2026-10-10T11:36:22Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
     "number": 10724,
     "title": "Supply v3: cart line amounts do not add up to the displayed total",
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10724",
-    "state": "closed",
+    "state": "open",
     "labels": [
       "bug",
       "app:supply",
       "reporter:miguel",
       "triage:needs-info",
       "clawsweeper:needs-product-decision",
+      "P2",
       "origin:dev",
-      "epic:supply-v3",
-      "P2"
+      "epic:supply-v3"
     ],
     "createdAt": "2026-10-09T11:20:34Z",
-    "updatedAt": "2026-10-09T12:45:32Z"
+    "updatedAt": "2026-10-10T11:36:22Z"
   },
   "lane": "product_direction",
   "priority": "P2",
   "question": "¿Debe mantenerse la suma original sin redondear para el mínimo y `payOriginal`, reconciliando su presentación por línea, o deben redondearse los precios por unidad y cambiar también esos cálculos?",
-  "rationale": "La elección altera elegibilidad del mínimo y el importe persistido de la venta; ni el reporte ni el contrato actual determinan cómo deben reconciliarse los céntimos que ve el vendedor.",
+  "rationale": "La alternativa afecta tanto a la elegibilidad del checkout como al importe confirmado; la documentación establece la regla actual, pero no determina cómo reconciliar los céntimos visibles por línea.",
   "options": [
     {
-      "title": "Mantener suma original",
-      "body": "Conservar la regla actual del mínimo y `payOriginal`, y definir una presentación coherente de las líneas y el total.",
+      "title": "Mantener la suma original",
+      "body": "Preservar mínimo y `payOriginal` sin redondeo y definir una presentación que haga coherentes las líneas y el total.",
       "recommended": true
     },
     {
-      "title": "Adoptar importes redondeados por unidad",
-      "body": "Cambiar el cálculo del mínimo y el importe confirmado para que ambos usen la suma de precios unitarios redondeados.",
+      "title": "Redondear cada unidad",
+      "body": "Cambiar de forma intencionada el cálculo del mínimo y del importe confirmado para usar la suma de precios unitarios redondeados.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mantener suma original",
-    "body": "Conservar la regla actual del mínimo y `payOriginal`, y definir una presentación coherente de las líneas y el total.",
+    "title": "Mantener la suma original",
+    "body": "Preservar mínimo y `payOriginal` sin redondeo y definir una presentación que haga coherentes las líneas y el total.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Su trabajo reciente en Supply v3 le sitúa cerca del flujo afectado y puede ayudar a concretar el comportamiento esperado.",
+    "reason": "Es el reportero y el hilo le pregunta directamente por esta decisión; el historial local también lo vincula probablemente con el desarrollo reciente del carrito.",
     "confidence": "medium"
   },
   "source": {
-    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/10724.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10724#issuecomment-6079913890",
-    "reviewedAt": "2026-10-10T11:35:27.877Z",
-    "mainSha": "67ee79c252051960ffbdc23a4089fbb0b3c3ed4e"
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10724.md",
+    "reviewedAt": "2026-10-13T15:06:46.356Z",
+    "mainSha": "5fc28691f86fff433f48d19dff85903b7a6e158a"
   }
 }

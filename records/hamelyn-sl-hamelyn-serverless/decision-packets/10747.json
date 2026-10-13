@@ -1,56 +1,55 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-11T05:52:24.343Z",
-  "updatedAt": "2026-10-10T07:16:34Z",
+  "generatedAt": "2026-10-13T15:06:53.853Z",
+  "updatedAt": "2026-10-11T05:53:42Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
     "number": 10747,
     "title": "Fnac: una sola oferta por ficha y estado; las desplazadas siguen ACTIVE en el espejo y alimentan los DB_ONLY",
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10747",
-    "state": "closed",
+    "state": "open",
     "labels": [
       "bug",
       "app:marketplace",
       "reporter:javier",
       "triage:done",
       "clawsweeper:needs-product-decision",
-      "mk:fnac",
-      "P2"
+      "P2",
+      "mk:fnac"
     ],
     "createdAt": "2026-10-10T01:29:31Z",
-    "updatedAt": "2026-10-10T07:16:34Z"
+    "updatedAt": "2026-10-11T05:53:42Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué política debe aplicarse cuando Fnac desplaza una oferta por conflicto de ficha y estado, incluida la reconciliación del SKU que no venía en el lote?",
-  "rationale": "El mapeo técnico no determina por sí solo el estado persistido ni cuándo reintentar; la revisión previa también advierte que tratarlo como `gone` puede desplazar de vuelta la oferta hermana.",
+  "question": "¿Qué transición y política de reintento debe aplicarse a un SKU que Fnac informa como `Deleted` por desplazamiento, y cómo se debe reconciliar el SKU desplazado que no estaba en el lote?",
+  "rationale": "El código compartido conserva el estado en los errores y protege las escrituras por lote; elegir una transición incorrecta puede ocultar retiradas legítimas o provocar una alternancia de ofertas, así que hace falta acordar semántica y límites de concurrencia antes de implementar.",
   "options": [
     {
-      "title": "Estado específico y reconciliación",
-      "body": "Registrar el desplazamiento con estado identificable y reconciliar la oferta desplazada y su reemplazo antes de permitir otro reencolado.",
+      "title": "Acordar reconciliación por ficha/estado",
+      "body": "Definir transición diferenciada, reconciliación del SKU desplazado fuera del lote y bloqueo de reintentos duplicados antes de abrir una implementación coordinada.",
       "recommended": true
     },
     {
-      "title": "Bloquear reencolados ocupados",
-      "body": "Impedir el reencolado automático si la ficha y el estado ya están ocupados y dejar esos casos para resolución operativa.",
+      "title": "Separar primero publicación, repreciado y retirada",
+      "body": "Acotar inicialmente el tratamiento de `Deleted` por operación y dejar la reconciliación entre SKU para un seguimiento explícito.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Estado específico y reconciliación",
-    "body": "Registrar el desplazamiento con estado identificable y reconciliar la oferta desplazada y su reemplazo antes de permitir otro reencolado.",
+    "title": "Acordar reconciliación por ficha/estado",
+    "body": "Definir transición diferenciada, reconciliación del SKU desplazado fuera del lote y bloqueo de reintentos duplicados antes de abrir una implementación coordinada.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "Lyno",
-    "reason": "Es el candidato de enrutamiento señalado en la revisión previa y vinculado al área Fnac, aunque la atribución histórica no se pudo confirmar plenamente.",
-    "confidence": "low"
+    "person": "JavierHamelyn",
+    "reason": "El historial local lo conecta con la introducción del adaptador Fnac; la decisión también afecta al flujo batch compartido y conviene acordarla con el equipo de marketplaces.",
+    "confidence": "medium"
   },
   "source": {
-    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/10747.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10747#issuecomment-6094361077",
-    "reviewedAt": "2026-10-11T05:52:24.343Z",
-    "mainSha": "67ee79c252051960ffbdc23a4089fbb0b3c3ed4e"
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10747.md",
+    "reviewedAt": "2026-10-13T15:06:53.853Z",
+    "mainSha": "5fc28691f86fff433f48d19dff85903b7a6e158a"
   }
 }

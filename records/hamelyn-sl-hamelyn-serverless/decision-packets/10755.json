@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-13T15:07:09.260Z",
+  "updatedAt": "2026-10-12T02:50:16Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10755,
+    "title": "Crons: error en provider: error: connect etimedout 143.198.249.35:443 at <unknown> (error: connect etimedout 143.198.249",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10755",
+    "state": "open",
+    "labels": [
+      "codex",
+      "bug",
+      "app:infrastructure",
+      "triage:blocked",
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "crons"
+    ],
+    "createdAt": "2026-10-12T02:40:28Z",
+    "updatedAt": "2026-10-12T02:50:16Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe el pricing seguir calculando con los proveedores disponibles cuando Rainforest falla, o debe cambiar su política para reducir o impedir actualizaciones con ofertas incompletas?",
+  "rationale": "El código descarta las ofertas del proveedor fallido y las ejecuciones observadas terminaron con HTTP 200; elegir otra política puede cambiar los precios y no se puede resolver solo con la evidencia de conectividad disponible.",
+  "options": [
+    {
+      "title": "Mantener la degradación actual",
+      "body": "Conservar el cálculo con proveedores disponibles y pedir a Infraestructura que contraste la conectividad y mida el efecto en precios.",
+      "recommended": true
+    },
+    {
+      "title": "Revisar la política de pricing",
+      "body": "Definir una salvaguarda para ofertas incompletas y aportar evidencia de cómo cambia el resultado antes de implementarla.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mantener la degradación actual",
+    "body": "Conservar el cálculo con proveedores disponibles y pedir a Infraestructura que contraste la conectividad y mida el efecto en precios.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "El historial local lo vincula a la llamada Rainforest y su reintento; la decisión también requiere coordinación con Infraestructura.",
+    "confidence": "low"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10755.md",
+    "reviewedAt": "2026-10-13T15:07:09.260Z",
+    "mainSha": "5fc28691f86fff433f48d19dff85903b7a6e158a"
+  }
+}
