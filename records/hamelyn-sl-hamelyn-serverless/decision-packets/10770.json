@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-13T05:52:53.696Z",
+  "updatedAt": "2026-10-13T05:47:42Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10770,
+    "title": "Scrapers: IP cooling should follow how sites actually rate-limit",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10770",
+    "state": "open",
+    "labels": [
+      "app:infrastructure",
+      "reporter:pablo",
+      "feature",
+      "triage:queued",
+      "P2"
+    ],
+    "createdAt": "2026-10-13T05:47:19Z",
+    "updatedAt": "2026-10-13T05:47:42Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe el gestor incorporar límites configurables por hora y día por fuente, además de la regulación adaptativa ante saturación y bloqueos?",
+  "rationale": "Las cuotas y el umbral relativo de 403 introducen nuevas políticas por fuente; la evidencia del código no determina sus valores ni cómo deben coexistir con los límites actuales.",
+  "options": [
+    {
+      "title": "Añadir cuotas y señales adaptativas",
+      "body": "Definir políticas por fuente para cuotas, ventanas de bloqueo y señales del dominio, y cubrirlas con pruebas del gestor.",
+      "recommended": true
+    },
+    {
+      "title": "Acotar primero la mitigación del incidente",
+      "body": "Resolver la retirada y el cooldown de IP de la issue relacionada antes de decidir si se añaden cuotas horarias y diarias.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Añadir cuotas y señales adaptativas",
+    "body": "Definir políticas por fuente para cuotas, ventanas de bloqueo y señales del dominio, y cubrirlas con pruebas del gestor.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "PabloMoran34",
+    "reason": "Introdujo y ha contribuido recientemente al servicio y al gestor de IPs afectados.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10770.md",
+    "reviewedAt": "2026-10-13T05:52:53.696Z",
+    "mainSha": "a1314b9b258412ae9259751bd61d24aac82b1d8d"
+  }
+}
