@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-13T17:24:36.960Z",
+  "updatedAt": "2026-10-13T16:57:30Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10813,
+    "title": "fix: let a console approval carry out the action it approved",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10813",
+    "state": "open",
+    "labels": [],
+    "createdAt": "2026-10-13T16:56:37Z",
+    "updatedAt": "2026-10-13T16:57:30Z",
+    "headSha": "d0832ec5143e865aad10dd3cb4bd7debc0c69522"
+  },
+  "lane": "security_boundary",
+  "priority": "P1",
+  "question": "¿Debe un «Sí» de consola autorizar únicamente la acción, herramienta y objetivo exactos que presentó el ciclo, en lugar de hasta tres llamadas del mismo marketplace?",
+  "rationale": "El alcance determina qué operaciones mutables puede ejecutar un ciclo sin una nueva aprobación; el texto actual no mantiene el consentimiento ligado a la acción que vio la persona.",
+  "options": [
+    {
+      "title": "Exigir coincidencia exacta",
+      "body": "Vincular cada decisión a la herramienta, operación y objetivo presentados y rechazar llamadas que no coincidan.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener autorización amplia",
+      "body": "Aceptar hasta tres llamadas del marketplace con el id de decisión, asumiendo explícitamente el riesgo descrito en el PR.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Exigir coincidencia exacta",
+    "body": "Vincular cada decisión a la herramienta, operación y objetivo presentados y rechazar llamadas que no coincidan.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "HamelynDev",
+    "reason": "El historial local vincula a HamelynDev con el contrato de aprobación actual de las herramientas de marketplace.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10813.md",
+    "reviewedAt": "2026-10-13T17:24:36.960Z",
+    "mainSha": "7d9ad4608c9c8cf8d4661d215f8294a4202a4ce7"
+  }
+}
