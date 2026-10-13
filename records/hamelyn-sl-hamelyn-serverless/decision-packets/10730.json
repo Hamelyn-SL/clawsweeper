@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-09T13:30:05.715Z",
-  "updatedAt": "2026-10-09T13:15:39Z",
+  "generatedAt": "2026-10-13T13:11:25.911Z",
+  "updatedAt": "2026-10-13T12:27:54Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,47 +14,46 @@
       "reporter:davidgonzalez",
       "feature",
       "triage:needs-info",
-      "P2",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2"
     ],
     "createdAt": "2026-10-09T12:46:07Z",
-    "updatedAt": "2026-10-09T13:15:39Z"
+    "updatedAt": "2026-10-13T12:27:54Z"
   },
   "lane": "security_boundary",
   "priority": "P2",
-  "question": "¿Se autorizan identidades de prueba con roles limitados para admin y Supply en `Hamelyn_DEV` y, si se autorizan, dónde se custodiarán sus credenciales?",
-  "rationale": "La decisión concede acceso de servicio y define la custodia de credenciales; el código actual no puede resolver esa autorización ni elegir la política de secretos.",
+  "question": "¿Se autoriza mantener la identidad de servicio de Proof en Auth0/Hamelyn_DEV y qué mecanismo aprobado custodiará sus credenciales?",
+  "rationale": "La decisión afecta identidad privilegiada, secretos y escrituras automatizadas en una base compartida; la elección de autorización y custodia no se puede deducir del código.",
   "options": [
     {
-      "title": "Autorizar con variables del proyecto",
-      "body": "Crear identidades limitadas en `Hamelyn_DEV` y custodiar sus secretos en el entorno del proyecto `agents`.",
+      "title": "Autorizar identidad y bundle cifrado",
+      "body": "Aprobar el usuario/roles de prueba y custodiar las credenciales en el bundle cifrado del entorno.",
       "recommended": true
     },
     {
-      "title": "Autorizar con bundle cifrado",
-      "body": "Crear las identidades y usar el bundle cifrado `PROOF_ENV_BUNDLE_KEY` para distribuir sus credenciales.",
+      "title": "Autorizar identidad y variables del proyecto",
+      "body": "Aprobar el usuario/roles de prueba y custodiar las credenciales en variables protegidas del proyecto agents.",
       "recommended": false
     },
     {
-      "title": "Posponer las identidades",
-      "body": "Avanzar primero con aislamiento y captura visual, dejando la autenticación real para una decisión posterior.",
+      "title": "No autorizar todavía",
+      "body": "Mantener el flujo sin identidad ni escrituras reales hasta acordar controles alternativos.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Autorizar con variables del proyecto",
-    "body": "Crear identidades limitadas en `Hamelyn_DEV` y custodiar sus secretos en el entorno del proyecto `agents`.",
+    "title": "Autorizar identidad y bundle cifrado",
+    "body": "Aprobar el usuario/roles de prueba y custodiar las credenciales en el bundle cifrado del entorno.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su historial reciente en Proof ofrece la señal disponible más clara para enrutar la decisión técnica; la autorización de identidades sigue correspondiendo al equipo responsable de infraestructura.",
-    "confidence": "medium"
+    "reason": "Es el candidato mejor respaldado por el historial local reciente de Proof y sandbox; la decisión final corresponde al equipo con acceso a Auth0 y al entorno.",
+    "confidence": "low"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10730.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10730#issuecomment-6081918327",
-    "reviewedAt": "2026-10-09T13:30:05.715Z",
-    "mainSha": "3cba8f4bb37193e3b2cd37f8fd88f97a34f2af00"
+    "reviewedAt": "2026-10-13T13:11:25.911Z",
+    "mainSha": "5fc28691f86fff433f48d19dff85903b7a6e158a"
   }
 }

@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-13T13:09:38.928Z",
+  "updatedAt": "2026-10-13T12:46:31Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10803,
+    "title": "Watcher B2B: alta del cliente PALACIO_PINELLO en B2B_CLIENTS",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10803",
+    "state": "open",
+    "labels": [
+      "app:infrastructure",
+      "feature",
+      "triage:queued",
+      "P2"
+    ],
+    "createdAt": "2026-10-13T12:46:17Z",
+    "updatedAt": "2026-10-13T12:46:31Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe `PALACIO_PINELLO` incorporarse también como canal visible y clasificable en los dashboards B2B, o solo registrarse para el watcher?",
+  "rationale": "El reporte plantea explícitamente revisar el dashboard; añadir un canal allí afecta su clasificación y presentación, decisión funcional que el código disponible no determina por sí solo.",
+  "options": [
+    {
+      "title": "Registrar en watcher y dashboard",
+      "body": "Añadir el cliente y clasificar `PALACIO_PINELLO` como B2B en los filtros y gráficos de ventas.",
+      "recommended": true
+    },
+    {
+      "title": "Registrar solo en watcher",
+      "body": "Añadir el cliente a `B2B_CLIENTS` y dejar el canal fuera de las listas del dashboard por ahora.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Registrar en watcher y dashboard",
+    "body": "Añadir el cliente y clasificar `PALACIO_PINELLO` como B2B en los filtros y gráficos de ventas.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su historial reciente incluye la incorporación del flujo B2B al channel kit.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10803.md",
+    "reviewedAt": "2026-10-13T13:09:38.928Z",
+    "mainSha": "5fc28691f86fff433f48d19dff85903b7a6e158a"
+  }
+}
