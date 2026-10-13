@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-13T19:22:49.366Z",
+  "updatedAt": "2026-10-13T19:12:52Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10816,
+    "title": "[WATCHER-ALERT] mercadolibre: report trigger failed",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10816",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "triage:queued",
+      "P1"
+    ],
+    "createdAt": "2026-10-13T19:08:44Z",
+    "updatedAt": "2026-10-13T19:12:52Z"
+  },
+  "lane": "proof_sufficiency",
+  "priority": "P2",
+  "question": "¿La traza de la sesión de este run confirma que Eve delegó con `agent` y no llegó a `emit_metrics`, de modo que la propuesta de sesiones `conversation` de la PR relacionada sea aplicable?",
+  "rationale": "La alerta no contiene la sesión ni su traza; la PR propone un cambio de comportamiento cuya prueba disponible aún no verifica el despertar y la emisión en un entorno real.",
+  "options": [
+    {
+      "title": "Obtener la traza antes de aplicar el cambio",
+      "body": "Correlacionar la sesión fallida y decidir con esa evidencia si corresponde adoptar el modo `conversation`.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener el modo actual mientras se diagnostica",
+      "body": "Tratar este episodio como incidencia operativa y no atribuirlo a la delegación hasta contar con evidencia de sesión.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Obtener la traza antes de aplicar el cambio",
+    "body": "Correlacionar la sesión fallida y decidir con esa evidencia si corresponde adoptar el modo `conversation`.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Daniel",
+    "reason": "La PR relacionada que cambia el modo de heartbeat y el historial de esa superficie lo conectan directamente con la decisión técnica.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10816.md",
+    "reviewedAt": "2026-10-13T19:22:49.366Z",
+    "mainSha": "7d9ad4608c9c8cf8d4661d215f8294a4202a4ce7"
+  }
+}
