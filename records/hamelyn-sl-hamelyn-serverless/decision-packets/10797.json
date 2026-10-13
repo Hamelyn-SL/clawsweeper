@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-13T11:58:14.110Z",
+  "updatedAt": "2026-10-13T11:53:16Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10797,
+    "title": "feat: send the postlibri whatsapp when amazon confirms the shipment",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10797",
+    "state": "open",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-10-13T11:40:52Z",
+    "updatedAt": "2026-10-13T11:53:16Z",
+    "headSha": "2ec060cfe6e89ccc3db3b140888f196192421eb4"
+  },
+  "lane": "release_inclusion",
+  "priority": "P2",
+  "question": "¿Está habilitada `COMMUNICATIONS_QUEUE_ENABLED` en el entorno de `marketplace-crons` donde se activará el piloto, y está cubierto el límite de un WhatsApp por pedido ante reintentos?",
+  "rationale": "La nueva ruta emite desde `marketplace-crons`, mientras que el diff solo documenta la variable requerida; la prueba disponible no acredita la configuración desplegada ni la deduplicación real.",
+  "options": [
+    {
+      "title": "Confirmar configuración y deduplicación",
+      "body": "Verificar la variable del cron y la deduplicación del consumidor antes de integrar o activar el piloto.",
+      "recommended": true
+    },
+    {
+      "title": "Integrar con activación pospuesta",
+      "body": "Integrar el cambio, pero mantener el piloto apagado hasta completar esas verificaciones.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Confirmar configuración y deduplicación",
+    "body": "Verificar la variable del cron y la deduplicación del consumidor antes de integrar o activar el piloto.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "danielmenchen-hamelyn",
+    "reason": "Introdujo el piloto Amazon/Postlibri y está directamente conectado con el flujo funcional afectado.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10797.md",
+    "reviewedAt": "2026-10-13T11:58:14.110Z",
+    "mainSha": "274eff79062b2ec97e70f9e9893f4e23aa26a04a"
+  }
+}
