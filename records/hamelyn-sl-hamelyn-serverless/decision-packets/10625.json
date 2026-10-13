@@ -1,55 +1,54 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-13T09:54:28.144Z",
-  "updatedAt": "2026-10-13T09:27:57Z",
+  "generatedAt": "2026-10-13T15:15:12.101Z",
+  "updatedAt": "2026-10-13T09:55:18Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
     "number": 10625,
     "title": "Infraestructura: los heartbeats de watchers no emiten métricas cuando delegan con la herramienta agent",
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10625",
-    "state": "closed",
+    "state": "open",
     "labels": [
       "bug",
       "app:infrastructure",
       "triage:no-change",
       "clawsweeper:needs-product-decision",
-      "reporter:danielmenchen-hamelyn",
-      "P2"
+      "P2",
+      "reporter:danielmenchen-hamelyn"
     ],
     "createdAt": "2026-10-08T07:26:16Z",
-    "updatedAt": "2026-10-13T09:27:57Z"
+    "updatedAt": "2026-10-13T09:55:18Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se acepta que los heartbeats de marketplace usen sesiones `conversation` aparcadas y pierdan el reintento duradero de `task`?",
-  "rationale": "El cambio propuesto modifica el comportamiento de recuperación ante fallos del modelo; el comentario del autor acepta la alternativa, pero no consta una decisión del equipo sobre esa compensación.",
+  "question": "¿Se acepta que los heartbeats pasen a `conversation` sin `requestInput`, aun cuando los fallos recuperables ya no usen el reintento duradero de `task`?",
+  "rationale": "La PR vinculada documenta que el cambio corrige la espera del agente delegado, pero altera la recuperación ante fallos; la preferencia del equipo sobre ese intercambio no se deduce de las pruebas de contrato.",
   "options": [
     {
       "title": "Aceptar `conversation`",
-      "body": "Permitir que el heartbeat espere la notificación de la delegación y validar el ciclo completo hasta `emit_metrics`.",
+      "body": "Aprobar el cambio propuesto y verificar en un entorno controlado la delegación y la emisión de métricas.",
       "recommended": true
     },
     {
-      "title": "Conservar `task`",
-      "body": "Mantener el reintento duradero y pausar el cambio hasta definir otra forma de esperar resultados delegados.",
+      "title": "Conservar `task` y rediseñar la espera",
+      "body": "Mantener los reintentos duraderos y buscar otra forma de esperar el resultado delegado sin perder la emisión.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Aceptar `conversation`",
-    "body": "Permitir que el heartbeat espere la notificación de la delegación y validar el ciclo completo hasta `emit_metrics`.",
+    "body": "Aprobar el cambio propuesto y verificar en un entorno controlado la delegación y la emisión de métricas.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Ha contribuido recientemente al flujo de watchers y está conectado con el comportamiento operativo del área; la autoridad final de producto no queda establecida en el historial consultado.",
-    "confidence": "low"
+    "reason": "Su historial conecta directamente con la configuración actual de sesión en `/api/run`.",
+    "confidence": "medium"
   },
   "source": {
-    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/10625.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10625#issuecomment-6086928133",
-    "reviewedAt": "2026-10-13T09:54:28.144Z",
-    "mainSha": "63545aef9146d123034c7cc749aad4a90b01e597"
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10625.md",
+    "reviewedAt": "2026-10-13T15:15:12.101Z",
+    "mainSha": "5fc28691f86fff433f48d19dff85903b7a6e158a"
   }
 }
