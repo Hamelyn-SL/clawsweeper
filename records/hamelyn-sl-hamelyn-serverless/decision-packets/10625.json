@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-09T18:31:22.413Z",
-  "updatedAt": "2026-10-08T09:15:14Z",
+  "generatedAt": "2026-10-13T09:54:28.144Z",
+  "updatedAt": "2026-10-13T09:27:57Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,43 +13,42 @@
       "bug",
       "app:infrastructure",
       "triage:no-change",
-      "reporter:danielmenchen-hamelyn",
+      "clawsweeper:needs-product-decision",
       "P2",
-      "clawsweeper:needs-product-decision"
+      "reporter:danielmenchen-hamelyn"
     ],
     "createdAt": "2026-10-08T07:26:16Z",
-    "updatedAt": "2026-10-08T09:15:14Z"
+    "updatedAt": "2026-10-13T09:27:57Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Acepta el equipo que los heartbeats de marketplace pasen a sesiones `conversation` aparcadas y renuncien al reintento duradero de `task`?",
-  "rationale": "La PR ya identifica ese cambio operativo; las pruebas disponibles verifican el contrato de inicio, no la ejecución delegada ni la recuperación de errores en el runtime real.",
+  "question": "¿Se acepta que los heartbeats de marketplace usen sesiones `conversation` aparcadas y pierdan el reintento duradero de `task`?",
+  "rationale": "El cambio propuesto modifica el comportamiento de recuperación ante fallos del modelo; el comentario del autor acepta la alternativa, pero no consta una decisión del equipo sobre esa compensación.",
   "options": [
     {
-      "title": "Aceptar sesiones aparcadas",
-      "body": "Integrar la propuesta tras validar en un entorno controlado que la delegación despierta la misma sesión y termina emitiendo métricas.",
+      "title": "Aceptar `conversation`",
+      "body": "Permitir que el heartbeat espere la notificación de la delegación y validar el ciclo completo hasta `emit_metrics`.",
       "recommended": true
     },
     {
       "title": "Conservar `task`",
-      "body": "Mantener el reintento duradero y definir primero una alternativa que permita esperar resultados delegados sin cambiar ese comportamiento.",
+      "body": "Mantener el reintento duradero y pausar el cambio hasta definir otra forma de esperar resultados delegados.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aceptar sesiones aparcadas",
-    "body": "Integrar la propuesta tras validar en un entorno controlado que la delegación despierta la misma sesión y termina emitiendo métricas.",
+    "title": "Aceptar `conversation`",
+    "body": "Permitir que el heartbeat espere la notificación de la delegación y validar el ciclo completo hasta `emit_metrics`.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "Lyno",
-    "reason": "El historial del endpoint sitúa en su código el modo actual que está en el centro de la decisión.",
-    "confidence": "medium"
+    "person": "JavierHamelyn",
+    "reason": "Ha contribuido recientemente al flujo de watchers y está conectado con el comportamiento operativo del área; la autoridad final de producto no queda establecida en el historial consultado.",
+    "confidence": "low"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10625.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10625#issuecomment-6086928133",
-    "reviewedAt": "2026-10-09T18:31:22.413Z",
-    "mainSha": "68c59751cc0533f095ebb7b30a4624535872c467"
+    "reviewedAt": "2026-10-13T09:54:28.144Z",
+    "mainSha": "63545aef9146d123034c7cc749aad4a90b01e597"
   }
 }
