@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-13T14:53:50.382Z",
-  "updatedAt": "2026-10-13T14:51:00Z",
+  "generatedAt": "2026-10-13T14:57:42.593Z",
+  "updatedAt": "2026-10-13T14:54:49Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,43 +14,42 @@
       "app:marketplace",
       "feature",
       "triage:queued",
-      "reporter:jorgecano",
+      "clawsweeper:needs-product-decision",
       "P2",
-      "clawsweeper:needs-product-decision"
+      "reporter:jorgecano"
     ],
     "createdAt": "2026-10-13T14:50:49Z",
-    "updatedAt": "2026-10-13T14:51:00Z"
+    "updatedAt": "2026-10-13T14:54:49Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe el EORI de Alibris añadirse al dato de identificación del importador en la factura comercial FedEx, y basta con restringirlo por marketplace y dirección de Uxbridge?",
-  "rationale": "La issue confirma el identificador y alcance deseados, pero no determina el campo FedEx correcto ni cómo reconocer de forma estable los envíos afectados; una decisión operativa/fiscal evita declarar el dato en documentación incorrecta o en otros destinos.",
+  "question": "¿Debe el EORI de Alibris aplicarse solo a la dirección de Uxbridge o a todos los envíos de Alibris al Reino Unido, una vez confirmado el campo de factura requerido por FedEx?",
+  "rationale": "La issue limita el cambio a una dirección, mientras que la respuesta previa plantea un alcance nacional; elegir entre ambos cambia qué envíos reciben el identificador y requiere validación operativa.",
   "options": [
     {
-      "title": "Validar con FedEx y limitar al destino",
-      "body": "Confirmar el campo de factura requerido y añadir el EORI únicamente a envíos de Alibris con destino a Uxbridge.",
+      "title": "Limitar a Uxbridge",
+      "body": "Confirmar con FedEx el campo requerido y aplicar el EORI únicamente a envíos de Alibris con destino a la dirección indicada.",
       "recommended": true
     },
     {
-      "title": "Usar una regla más amplia",
-      "body": "Aplicar el EORI a todos los envíos de Alibris al Reino Unido si la operación confirma que el requisito no depende de esa dirección.",
+      "title": "Ampliar a Reino Unido",
+      "body": "Aplicar el EORI a todos los envíos de Alibris al Reino Unido si operaciones confirma que el requisito es general.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Validar con FedEx y limitar al destino",
-    "body": "Confirmar el campo de factura requerido y añadir el EORI únicamente a envíos de Alibris con destino a Uxbridge.",
+    "title": "Limitar a Uxbridge",
+    "body": "Confirmar con FedEx el campo requerido y aplicar el EORI únicamente a envíos de Alibris con destino a la dirección indicada.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "El historial disponible le vincula al servicio FedEx donde se integra la documentación del envío; no hay una persona identificada en la discusión como responsable de decidir el tratamiento aduanero.",
-    "confidence": "low"
+    "reason": "El historial disponible lo vincula al flujo FedEx afectado y la revisión previa también lo señala como candidato para resolver esta decisión.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10809.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10809#issuecomment-6148398995",
-    "reviewedAt": "2026-10-13T14:53:50.382Z",
+    "reviewedAt": "2026-10-13T14:57:42.593Z",
     "mainSha": "5fc28691f86fff433f48d19dff85903b7a6e158a"
   }
 }
