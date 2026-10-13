@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-09T17:35:35.119Z",
-  "updatedAt": "2026-10-08T14:01:30Z",
+  "generatedAt": "2026-10-13T07:59:53.896Z",
+  "updatedAt": "2026-10-13T07:48:59Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,47 +15,46 @@
       "app:supply",
       "triage:needs-info",
       "clawsweeper:needs-product-decision",
-      "reporter:daniellopez",
-      "P2"
+      "P2",
+      "reporter:daniellopez"
     ],
     "createdAt": "2026-10-07T13:40:55Z",
-    "updatedAt": "2026-10-08T14:01:30Z"
+    "updatedAt": "2026-10-13T07:48:59Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "Para un lote de 65 artículos con 1 de 2 bultos recibidos, ¿cómo se redondea el crédito y a quién se atribuyen los artículos restantes cuando llegue el otro bulto?",
-  "rationale": "El cambio altera la regla de productividad y el código actual acredita el lote completo en la primera recepción; sin una política para el saldo posterior no puede implementarse una atribución consistente.",
+  "question": "Cuando se recibe solo una parte de los bultos, ¿cómo se redondea el crédito proporcional de artículos y quién recibe el saldo cuando llegan los restantes?",
+  "rationale": "El comportamiento actual acredita el lote completo en la primera recepción; repartir el crédito cambia la atribución entre operarios y no puede resolverse solo a partir del código o de los datos observados.",
   "options": [
     {
-      "title": "Resto al siguiente receptor",
-      "body": "Acreditar proporcionalmente la primera recepción con una regla de redondeo acordada y asignar el saldo al operario que reciba los bultos restantes.",
+      "title": "Atribuir el saldo al siguiente receptor",
+      "body": "Acreditar proporcionalmente la primera recepción y asignar el saldo al operario que registre los bultos restantes, con una regla de redondeo definida.",
       "recommended": true
     },
     {
-      "title": "Resto al primer receptor",
-      "body": "Acreditar proporcionalmente la primera recepción y reservar también el saldo para el operario que declaró la incidencia.",
+      "title": "Atribuir el saldo al primer receptor",
+      "body": "Acreditar proporcionalmente la primera recepción y reservar el saldo para quien declaró la incidencia.",
       "recommended": false
     },
     {
       "title": "Mantener el crédito íntegro",
-      "body": "Conservar la regla actual de acreditar todos los artículos al recibir inicialmente el lote.",
+      "body": "Conservar la regla actual de acreditar todos los artículos al operario de la recepción inicial.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Resto al siguiente receptor",
-    "body": "Acreditar proporcionalmente la primera recepción con una regla de redondeo acordada y asignar el saldo al operario que reciba los bultos restantes.",
+    "title": "Atribuir el saldo al siguiente receptor",
+    "body": "Acreditar proporcionalmente la primera recepción y asignar el saldo al operario que registre los bultos restantes, con una regla de redondeo definida.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "Lyno",
-    "reason": "La revisión previa propone a Lyno como dueño probable de la decisión; el historial local no permite corroborar mejor candidato.",
-    "confidence": "low"
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Es la persona asignada y cuenta con historial reciente en sesiones y atribución de productividad; Operaciones debe validar la regla de negocio.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10594.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10594#issuecomment-6039492074",
-    "reviewedAt": "2026-10-09T17:35:35.119Z",
-    "mainSha": "68c59751cc0533f095ebb7b30a4624535872c467"
+    "reviewedAt": "2026-10-13T07:59:53.896Z",
+    "mainSha": "db3fe8493f765e1649ed250a787a5118f20e3d70"
   }
 }
