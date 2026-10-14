@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-14T13:06:07.253Z",
+  "updatedAt": "2026-10-14T12:54:06Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10869,
+    "title": "feat: allowlist b2b listing eans past the demand filters",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10869",
+    "state": "open",
+    "labels": [
+      "size/XXL"
+    ],
+    "createdAt": "2026-10-14T12:49:10Z",
+    "updatedAt": "2026-10-14T12:54:06Z",
+    "headSha": "dda83a0b99051e567b724425696ee4c7b2191772"
+  },
+  "lane": "manual_review",
+  "priority": "P2",
+  "question": "¿Se autoriza aprovisionar explícitamente `demandallowlist` antes de activar la ingesta B2B?",
+  "rationale": "El repositorio prohíbe crear colecciones de MongoDB, también de forma implícita, sin autorización expresa; el PR añade un upsert que puede crear esta colección si aún no existe.",
+  "options": [
+    {
+      "title": "Autorizar aprovisionamiento explícito",
+      "body": "Aprovisionar la colección mediante el proceso autorizado antes de habilitar la ingesta y confirmar ese requisito para el despliegue.",
+      "recommended": true
+    },
+    {
+      "title": "Pausar la ingesta",
+      "body": "Mantener el PR sin activar la escritura hasta que exista autorización y evidencia de aprovisionamiento.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Autorizar aprovisionamiento explícito",
+    "body": "Aprovisionar la colección mediante el proceso autorizado antes de habilitar la ingesta y confirmar ese requisito para el despliegue.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su historial lo vincula con los flujos B2B del Channel Kit; no hay evidencia clara sobre quién decide el aprovisionamiento de MongoDB.",
+    "confidence": "low"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10869.md",
+    "reviewedAt": "2026-10-14T13:06:07.253Z",
+    "mainSha": "5ce887ac193912d5c6b6d5bfb13e4dcfd791752a"
+  }
+}
