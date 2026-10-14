@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-07T08:58:28.577Z",
-  "updatedAt": "2026-10-07T08:22:42Z",
+  "generatedAt": "2026-10-14T08:54:43.812Z",
+  "updatedAt": "2026-10-14T08:20:55Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -18,43 +18,42 @@
       "P2"
     ],
     "createdAt": "2026-09-30T07:06:16Z",
-    "updatedAt": "2026-10-07T08:22:42Z"
+    "updatedAt": "2026-10-14T08:20:55Z"
   },
-  "lane": "proof_sufficiency",
+  "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué evidencia de builds comparables de Admin debe considerarse suficiente para escoger entre instrumentar primero Vercel, acotar el análisis de core o validar en CI y omitir el chequeo de Next?",
-  "rationale": "Las alternativas tienen garantías y costes distintos; el repositorio no aporta mediciones del entorno remoto que determinen cuál mantiene la validación correcta sin agravar la memoria.",
+  "question": "¿Debe el equipo priorizar la instrumentación comparativa de builds de Admin antes de elegir una optimización, o ya existe evidencia operativa suficiente para separar el typecheck de Vercel y confiar en la validación de CI?",
+  "rationale": "La alternativa afecta qué validación bloquea el despliegue; la configuración de CI demuestra que hay un chequeo separado, pero no que su ejecución equivalga a la del build de Vercel ni que el fallo observado se origine en TSC.",
   "options": [
     {
-      "title": "Solicitar mediciones comparables",
-      "body": "Aportar informes de memoria y duración por fase para un build fallido y otro correcto del mismo SHA antes de cambiar el pipeline.",
+      "title": "Medir antes de cambiar",
+      "body": "Solicitar informes de memoria por fase de ejecuciones fallida y correcta del mismo SHA y elegir el ajuste a partir del cuello de botella observado.",
       "recommended": true
     },
     {
-      "title": "Instrumentar Vercel primero",
-      "body": "Priorizar visibilidad de fase y consumo para separar el problema de TSC de los bloqueos anteriores a TypeScript.",
+      "title": "Separar el typecheck de Vercel",
+      "body": "Aceptar una validación equivalente y obligatoria en CI como única barrera de tipos antes del despliegue, con cobertura confirmada para Admin.",
       "recommended": false
     },
     {
-      "title": "Evaluar una validación equivalente en CI",
-      "body": "Probar transferencia o artefactos y demostrar que cubren el mismo código y configuración antes de omitir el chequeo de Next.",
+      "title": "Acotar el alcance de Admin",
+      "body": "Medir y reducir los imports/transitivos analizados por el typecheck de Next sin omitir la validación completa del paquete core en CI.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Solicitar mediciones comparables",
-    "body": "Aportar informes de memoria y duración por fase para un build fallido y otro correcto del mismo SHA antes de cambiar el pipeline.",
+    "title": "Medir antes de cambiar",
+    "body": "Solicitar informes de memoria por fase de ejecuciones fallida y correcta del mismo SHA y elegir el ajuste a partir del cuello de botella observado.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Su historial reciente en el chequeo de tipos de CI lo hace un candidato de coordinación para comparar esa ruta con la validación remota; la evidencia disponible no identifica un único responsable de Vercel.",
-    "confidence": "low"
+    "person": "MiguelHamelyn",
+    "reason": "El historial disponible lo vincula con la separación reciente del typecheck de ecommerce y con la configuración Next, aunque el alcance a Admin requiere confirmación del equipo.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10260.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10260#issuecomment-5906110886",
-    "reviewedAt": "2026-10-07T08:58:28.577Z",
-    "mainSha": "80dac5266a4001d645a7491b82d8bfcd80ae7a15"
+    "reviewedAt": "2026-10-14T08:54:43.812Z",
+    "mainSha": "87492ac1d4a74d3094018203271ecff90d61e8a7"
   }
 }
