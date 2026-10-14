@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-14T11:54:06.398Z",
+  "updatedAt": "2026-10-14T11:50:52Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10864,
+    "title": "chore: retire supply-pt and supply-fr in favor of supply-next redirects",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10864",
+    "state": "open",
+    "labels": [
+      "size/M"
+    ],
+    "createdAt": "2026-10-14T11:46:11Z",
+    "updatedAt": "2026-10-14T11:50:52Z",
+    "headSha": "00f8c106f0dc5c45fa414194d822b57f0579ea07"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe autorizarse el corte de hamelyn.pt, www.hamelyn.pt, hamelyn.fr y www.hamelyn.fr hacia `supply-next` únicamente después del despliegue y la verificación de las redirecciones en producción?",
+  "rationale": "La issue asociada plantea esta elección operativa explícitamente; retirar destinos de despliegue antes de completar la migración puede dejar los dominios sirviendo una versión antigua o sin el destino previsto.",
+  "options": [
+    {
+      "title": "Seguir la secuencia propuesta",
+      "body": "Desplegar las reglas, verificar las cuatro redirecciones y después retirar proyectos y secretos.",
+      "recommended": true
+    },
+    {
+      "title": "Ajustar el corte operativo",
+      "body": "Definir una secuencia o una comprobación diferente antes de mover dominios y retirar recursos.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Seguir la secuencia propuesta",
+    "body": "Desplegar las reglas, verificar las cuatro redirecciones y después retirar proyectos y secretos.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "La issue está asignada a Miguel y su descripción especifica el orden operativo propuesto.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10864.md",
+    "reviewedAt": "2026-10-14T11:54:06.398Z",
+    "mainSha": "e3c747fa18fafb185717c49cfbefb4e39cf60135"
+  }
+}
