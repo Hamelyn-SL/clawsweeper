@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-14T13:03:27.038Z",
+  "updatedAt": "2026-10-14T12:58:36Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10873,
+    "title": "Stocks reactivados conservan precio, grupo y ficha de cuando se retiraron: no hay un proceso único de reactivación",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10873",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:infrastructure",
+      "reporter:pablo",
+      "triage:queued",
+      "P2"
+    ],
+    "createdAt": "2026-10-14T12:58:24Z",
+    "updatedAt": "2026-10-14T12:58:36Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe calcularse el precio al reactivar desde el precio actual del producto aplicando la escalera por estado, o debe conservarse como base el precio del stock activo de peor estado que usa el trigger?",
+  "rationale": "La decisión cambia precios publicados y potencialmente los precios de stocks hermanos; la documentación consultada no establece cuál de estas dos bases es la fuente canónica para ese recálculo.",
+  "options": [
+    {
+      "title": "Producto como base canónica",
+      "body": "Recalcular desde el precio actual del producto y aplicar la escalera por estado, coordinando el trigger para que no vuelva a propagar una base obsoleta.",
+      "recommended": true
+    },
+    {
+      "title": "Conservar la base de stocks activos",
+      "body": "Mantener el criterio actual del trigger y sincronizar al reactivar solo los campos del producto que no afecten al precio.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Producto como base canónica",
+    "body": "Recalcular desde el precio actual del producto y aplicar la escalera por estado, coordinando el trigger para que no vuelva a propagar una base obsoleta.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "PabloMoran34",
+    "reason": "Ha contribuido recientemente a la sincronización de grupos de stocks y es el autor del análisis detallado de este caso.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10873.md",
+    "reviewedAt": "2026-10-14T13:03:27.038Z",
+    "mainSha": "5ce887ac193912d5c6b6d5bfb13e4dcfd791752a"
+  }
+}
