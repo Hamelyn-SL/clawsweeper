@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-14T07:08:24.973Z",
+  "updatedAt": "2026-10-14T07:04:20Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10831,
+    "title": "Amazon: confirmar los pedidos Postlibri y enviar el WhatsApp tras el packing",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10831",
+    "state": "open",
+    "labels": [
+      "app:marketplace",
+      "feature",
+      "triage:queued",
+      "reporter:danielmenchen",
+      "P1"
+    ],
+    "createdAt": "2026-10-14T07:04:07Z",
+    "updatedAt": "2026-10-14T07:04:20Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se aprueba esperar 45 minutos desde el inicio del packing para confirmar Postlibri y usar seis horas desde «Recogido» como límite para pedidos que no pasen por packing?",
+  "rationale": "Los plazos cambian cuándo se confirma el envío a Amazon y condicionan el WhatsApp; el código actual no fija esos umbrales ni establece una política equivalente.",
+  "options": [
+    {
+      "title": "Aprobar los dos umbrales propuestos",
+      "body": "Registrar el inicio del packing y confirmar según la ventana de 45 minutos, con el límite de seis horas desde «Recogido».",
+      "recommended": true
+    },
+    {
+      "title": "Ajustar los umbrales",
+      "body": "Definir otros plazos antes de añadir persistencia y cambiar la selección de pedidos para confirmar.",
+      "recommended": false
+    },
+    {
+      "title": "No cambiar el momento de confirmación",
+      "body": "Mantener el flujo actual y revisar el piloto o la regla de transportista por otra vía.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar los dos umbrales propuestos",
+    "body": "Registrar el inicio del packing y confirmar según la ventana de 45 minutos, con el límite de seis horas desde «Recogido».",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "danielmenchen-hamelyn",
+    "reason": "Está asignado a la issue y participó en la implementación reciente del flujo de confirmación Postlibri.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10831.md",
+    "reviewedAt": "2026-10-14T07:08:24.973Z",
+    "mainSha": "8c0849f6a423a56b05dc06bb682de0fd519f2eab"
+  }
+}
