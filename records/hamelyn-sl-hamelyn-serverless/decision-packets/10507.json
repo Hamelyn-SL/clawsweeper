@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-13T12:39:03.619Z",
-  "updatedAt": "2026-10-13T12:29:04Z",
+  "generatedAt": "2026-10-14T12:56:55.462Z",
+  "updatedAt": "2026-10-14T08:20:52Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,42 +15,41 @@
       "feature",
       "triage:needs-info",
       "clawsweeper:needs-product-decision",
-      "reporter:daniellopez",
-      "P2"
+      "P2",
+      "reporter:daniellopez"
     ],
     "createdAt": "2026-10-06T09:22:18Z",
-    "updatedAt": "2026-10-13T12:29:04Z"
+    "updatedAt": "2026-10-14T08:20:52Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué evento debe fijar labelPrintedDate: el primer avance de packing que asigna reviewer, o una impresión confirmada, incluyendo una forma equivalente de confirmación en packing individual?",
-  "rationale": "El dato alimenta el recuento de bultos de la issue relacionada; tratar la apertura de PDF o el cambio de reviewer como impresión puede asignar una hora que no corresponde a una impresión real.",
+  "question": "¿Qué evento debe fijar `labelPrintedDate`: el primer avance de packing que establece `reviewer`, o una confirmación de impresión efectiva que también debe añadirse al flujo individual?",
+  "rationale": "La fecha de `reviewer` está disponible, pero no demuestra que la etiqueta se imprimiera; registrar al abrir o generar el PDF podría incluir etiquetas no impresas. La elección cambia la semántica del campo y los dos flujos afectados.",
   "options": [
     {
-      "title": "Usar avance de packing",
-      "body": "Guardar la hora del primer evento de packing como fecha operativa, documentando que no acredita impresión física.",
+      "title": "Usar el avance de packing",
+      "body": "Guardar como fecha operativa el primer avance que establece `reviewer`, aceptando que no certifica impresión física.",
       "recommended": false
     },
     {
-      "title": "Exigir impresión confirmada",
-      "body": "Registrar la primera confirmación de impresión en Auto Packing y adaptar el flujo individual para capturar la misma señal.",
+      "title": "Exigir confirmación de impresión",
+      "body": "Registrar la primera confirmación efectiva y adaptar el packing individual para comunicar ese resultado.",
       "recommended": true
     }
   ],
   "recommendation": {
-    "title": "Exigir impresión confirmada",
-    "body": "Registrar la primera confirmación de impresión en Auto Packing y adaptar el flujo individual para capturar la misma señal.",
+    "title": "Exigir confirmación de impresión",
+    "body": "Registrar la primera confirmación efectiva y adaptar el packing individual para comunicar ese resultado.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "AlexDiaz-Hamelyn",
-    "reason": "Aparece como contribuidor reciente del código de packing e impresión en el historial local; el responsable funcional debe confirmar la definición operativa.",
+    "person": "Daniel",
+    "reason": "El comentario de triage solicita a Daniel resolver la semántica operativa y mantiene pendiente esa decisión.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10507.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10507#issuecomment-6013753673",
-    "reviewedAt": "2026-10-13T12:39:03.619Z",
-    "mainSha": "274eff79062b2ec97e70f9e9893f4e23aa26a04a"
+    "reviewedAt": "2026-10-14T12:56:55.462Z",
+    "mainSha": "5ce887ac193912d5c6b6d5bfb13e4dcfd791752a"
   }
 }
