@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-13T15:15:12.101Z",
-  "updatedAt": "2026-10-13T09:55:18Z",
+  "generatedAt": "2026-10-14T15:50:04.936Z",
+  "updatedAt": "2026-10-14T07:12:53Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,43 +13,42 @@
       "bug",
       "app:infrastructure",
       "triage:no-change",
-      "reporter:danielmenchen-hamelyn",
+      "clawsweeper:needs-product-decision",
       "P2",
-      "clawsweeper:needs-product-decision"
+      "reporter:danielmenchen-hamelyn"
     ],
     "createdAt": "2026-10-08T07:26:16Z",
-    "updatedAt": "2026-10-13T09:55:18Z"
+    "updatedAt": "2026-10-14T07:12:53Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se acepta que los heartbeats pasen a `conversation` sin `requestInput`, aun cuando los fallos recuperables ya no usen el reintento duradero de `task`?",
-  "rationale": "La PR vinculada documenta que el cambio corrige la espera del agente delegado, pero altera la recuperación ante fallos; la preferencia del equipo sobre ese intercambio no se deduce de las pruebas de contrato.",
+  "question": "¿Se acepta cambiar todos los heartbeats a sesiones `conversation` sin `requestInput`, asumiendo el cambio del reintento durable de `task` y la gestión de sesiones aparcadas?",
+  "rationale": "La PR enlazada documenta una diferencia de recuperación ante errores del modelo y posibles ciclos en paralelo si un ayudante supera la ventana del watcher; la decisión afecta el comportamiento operativo y no se deduce solo del contrato de arranque.",
   "options": [
     {
-      "title": "Aceptar `conversation`",
-      "body": "Aprobar el cambio propuesto y verificar en un entorno controlado la delegación y la emisión de métricas.",
+      "title": "Aceptar el cambio con validación",
+      "body": "Aprobar `conversation` sin input y exigir una prueba controlada de `agent` → notificación al padre → `emit_metrics` antes de cerrar la issue.",
       "recommended": true
     },
     {
-      "title": "Conservar `task` y rediseñar la espera",
-      "body": "Mantener los reintentos duraderos y buscar otra forma de esperar el resultado delegado sin perder la emisión.",
+      "title": "Conservar `task` como modo predeterminado",
+      "body": "Buscar una alternativa compatible que mantenga el reintento durable mientras evita terminar el trabajo delegado.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aceptar `conversation`",
-    "body": "Aprobar el cambio propuesto y verificar en un entorno controlado la delegación y la emisión de métricas.",
+    "title": "Aceptar el cambio con validación",
+    "body": "Aprobar `conversation` sin input y exigir una prueba controlada de `agent` → notificación al padre → `emit_metrics` antes de cerrar la issue.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su historial conecta directamente con la configuración actual de sesión en `/api/run`.",
+    "reason": "Su historial incluye trabajo reciente sobre el ciclo y la recuperación de watchers, ámbito que debe valorar el comportamiento operativo.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10625.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10625#issuecomment-6086928133",
-    "reviewedAt": "2026-10-13T15:15:12.101Z",
-    "mainSha": "5fc28691f86fff433f48d19dff85903b7a6e158a"
+    "reviewedAt": "2026-10-14T15:50:04.936Z",
+    "mainSha": "2e34cdfdbec18f54433eb9c3772d104705a6b08b"
   }
 }
