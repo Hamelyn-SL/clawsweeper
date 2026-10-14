@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-13T15:23:10.553Z",
-  "updatedAt": "2026-10-13T08:00:48Z",
+  "generatedAt": "2026-10-14T15:58:18.351Z",
+  "updatedAt": "2026-10-14T13:27:54Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -19,43 +19,43 @@
       "P2"
     ],
     "createdAt": "2026-10-07T13:40:55Z",
-    "updatedAt": "2026-10-13T08:00:48Z"
+    "updatedAt": "2026-10-14T13:27:54Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Cómo se redondea el crédito proporcional de artículos y a qué operario se asigna el saldo cuando se reciben los bultos pendientes?",
-  "rationale": "La propuesta modifica una regla de productividad y el saldo puede recaer en el primer receptor o en quien complete la recepción; el código no determina esa política operativa.",
+  "question": "¿Se aprueba la regla del PR vinculado: redondear hacia abajo el crédito inicial y asignar el saldo restante al operario que escanee los bultos pendientes?",
+  "rationale": "La regla vigente acredita todos los artículos al primer receptor; elegir otra atribución afecta a la productividad individual y requiere criterio de Operaciones.",
   "options": [
     {
-      "title": "Atribuir el saldo al siguiente receptor",
-      "body": "Registrar la parte proporcional en cada recepción y asignar el saldo restante al operario que reciba los bultos pendientes, con un redondeo acordado.",
+      "title": "Aprobar la regla propuesta",
+      "body": "Acreditar inicialmente la parte proporcional redondeada hacia abajo y asignar el saldo restante a quien reciba los bultos pendientes.",
       "recommended": true
     },
     {
-      "title": "Atribuir el saldo al primer receptor",
-      "body": "Registrar la parte proporcional inicialmente y reservar para el primer operario el crédito de los artículos restantes.",
+      "title": "Definir otra atribución",
+      "body": "Acordar un redondeo o destinatario distinto para el saldo antes de aceptar la implementación.",
       "recommended": false
     },
     {
-      "title": "Mantener el crédito íntegro actual",
-      "body": "Conservar la acreditación de todos los artículos al operario que registra la recepción inicial con incidencia.",
+      "title": "Mantener el criterio actual",
+      "body": "Seguir acreditando todos los artículos al operario que registra la recepción inicial con incidencia.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Atribuir el saldo al siguiente receptor",
-    "body": "Registrar la parte proporcional en cada recepción y asignar el saldo restante al operario que reciba los bultos pendientes, con un redondeo acordado.",
+    "title": "Aprobar la regla propuesta",
+    "body": "Acreditar inicialmente la parte proporcional redondeada hacia abajo y asignar el saldo restante a quien reciba los bultos pendientes.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Es la persona asignada y el candidato más directo para coordinar la respuesta operativa.",
-    "confidence": "medium"
+    "reason": "Está asignado a la incidencia y el PR que formaliza la regla pendiente está vinculado a su trabajo.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10594.md",
     "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10594#issuecomment-6039492074",
-    "reviewedAt": "2026-10-13T15:23:10.553Z",
-    "mainSha": "7d9ad4608c9c8cf8d4661d215f8294a4202a4ce7"
+    "reviewedAt": "2026-10-14T15:58:18.351Z",
+    "mainSha": "2e34cdfdbec18f54433eb9c3772d104705a6b08b"
   }
 }
