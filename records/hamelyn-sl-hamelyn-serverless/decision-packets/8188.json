@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-14T09:00:39.263Z",
+  "generatedAt": "2026-10-14T09:04:50.277Z",
   "updatedAt": "2026-10-14T08:21:01Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -25,33 +25,33 @@
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Se mantiene como objetivo de esta issue un resolver regional y un eventual backfill general, además del guard V2 de no-retry, o se limita el alcance al guard y se traslada la reconciliación a un seguimiento separado?",
-  "rationale": "Los comentarios distinguen una mitigación local de un proceso account-wide con decisiones de identidad y escrituras productivas; los pilotos individuales no determinan por sí solos si el equipo quiere escalarlo.",
+  "question": "¿Debe el alcance de esta issue limitarse al guard de no-retry V2 o debe incluir también el resolver regional y la reconciliación supervisada de la cohorte?",
+  "rationale": "El guard es un cambio acotado de clasificación, pero el resolver/backfill descrito requiere decisiones sobre evidencia regional, identidad, FBA y autorización de writes; la conversación los separa del arreglo inmediato.",
   "options": [
     {
-      "title": "Separar mitigación y reconciliación",
-      "body": "Cerrar primero el guard de no-retry en un cambio acotado y llevar el resolver/backfill a un plan operativo aprobado por separado.",
+      "title": "Separar guard y reconciliación",
+      "body": "Tratar el guard V2 como mitigación de código y seguir el resolver y la cohorte mediante trabajo operativo separado.",
       "recommended": true
     },
     {
-      "title": "Mantener alcance integrado",
-      "body": "Conservar aquí el resolver account-wide y el backfill como trabajo pendiente, condicionado a evidencia regional y aprobación explícita de escrituras.",
+      "title": "Mantener el alcance conjunto",
+      "body": "Conservar en esta issue el guard, el resolver regional y los criterios de rollout antes de considerar resuelta la incidencia.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Separar mitigación y reconciliación",
-    "body": "Cerrar primero el guard de no-retry en un cambio acotado y llevar el resolver/backfill a un plan operativo aprobado por separado.",
+    "title": "Separar guard y reconciliación",
+    "body": "Tratar el guard V2 como mitigación de código y seguir el resolver y la cohorte mediante trabajo operativo separado.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Ha aportado la evidencia de los pilotos y ha delimitado en la discusión el guard, el resolver y el backfill.",
+    "reason": "Es la persona asignada y ha aportado el contexto de los pilotos y del alcance pendiente.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8188.md",
-    "reviewedAt": "2026-10-14T09:00:39.263Z",
+    "reviewedAt": "2026-10-14T09:04:50.277Z",
     "mainSha": "87492ac1d4a74d3094018203271ecff90d61e8a7"
   }
 }

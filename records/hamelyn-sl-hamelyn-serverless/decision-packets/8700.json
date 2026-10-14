@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-14T09:01:14.368Z",
+  "generatedAt": "2026-10-14T09:04:57.952Z",
   "updatedAt": "2026-10-14T08:21:00Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -22,38 +22,33 @@
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe añadirse una vista de solo lectura para la cohorte envejecida, separada del endpoint que encola BIN IN, antes de decidir si procede recuperación automática?",
-  "rationale": "El código actual combina consulta y encolado, y la discusión no confirma la ubicación física de las cubetas; decidir solo por edad no determina si BIN IN es seguro.",
+  "question": "¿Debe la cohorte envejecida mostrarse primero en una vista de solo lectura para revisión operativa, o se autoriza reencolar cubetas tras confirmar cuáles siguen disponibles para BIN IN?",
+  "rationale": "El endpoint existente encola acciones de Skypod al devolver resultados; el código y la réplica no determinan si las cubetas pendientes siguen físicamente fuera del robot.",
   "options": [
     {
-      "title": "Vista separada de solo lectura",
-      "body": "Mostrar las cubetas envejecidas para revisión operativa sin encolarlas automáticamente.",
+      "title": "Vista de revisión sin reencolado",
+      "body": "Añadir visibilidad independiente para la cohorte antigua y dejar cualquier BIN IN sujeto a confirmación operativa.",
       "recommended": true
     },
     {
-      "title": "Recuperación automática con condición operativa",
-      "body": "Definir y verificar primero una señal fiable de disponibilidad física antes de encolar las cubetas antiguas.",
-      "recommended": false
-    },
-    {
-      "title": "Mantener el flujo actual",
-      "body": "No ampliar la recuperación hasta que Operaciones confirme el estado de la cohorte pendiente.",
+      "title": "Reencolar tras verificación física",
+      "body": "Operaciones confirma qué cubetas siguen disponibles y entonces se define un flujo explícito de reencolado para esas cubetas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Vista separada de solo lectura",
-    "body": "Mostrar las cubetas envejecidas para revisión operativa sin encolarlas automáticamente.",
+    "title": "Vista de revisión sin reencolado",
+    "body": "Añadir visibilidad independiente para la cohorte antigua y dejar cualquier BIN IN sujeto a confirmación operativa.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "banosdavidhamelyn",
-    "reason": "Su trabajo fusionado cubre la ruta de reintentos de creación de cubetas relacionada; la elección requiere además confirmación operativa del estado físico.",
-    "confidence": "low"
+    "reason": "Su trabajo fusionado sobre el flujo de bin-creation le conecta con la implementación; la disponibilidad física debe confirmarla Operaciones.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8700.md",
-    "reviewedAt": "2026-10-14T09:01:14.368Z",
+    "reviewedAt": "2026-10-14T09:04:57.952Z",
     "mainSha": "87492ac1d4a74d3094018203271ecff90d61e8a7"
   }
 }
