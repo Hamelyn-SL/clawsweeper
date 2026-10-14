@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-14T08:52:34.829Z",
+  "updatedAt": "2026-10-14T08:47:22Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10841,
+    "title": "Fnac shipment confirmation remains unresolved for ACCEPTED orders with ERR_002",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10841",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "triage:needs-info",
+      "P2"
+    ],
+    "createdAt": "2026-10-14T08:41:03Z",
+    "updatedAt": "2026-10-14T08:47:22Z"
+  },
+  "lane": "manual_review",
+  "priority": "P2",
+  "question": "¿Puede el equipo de marketplaces aportar el estado remoto actual de los dos pedidos y contrastarlo con Mongo antes de decidir una intervención?",
+  "rationale": "La fuente indica que el estado remoto no se consultó y el código no permite inferir por qué Fnac continúa en `ACCEPTED`; una corrección automática podría confirmar como enviado un pedido que aún no lo está.",
+  "options": [
+    {
+      "title": "Verificar ambos estados primero",
+      "body": "Consultar Fnac y Mongo en vivo y decidir el siguiente paso con la discrepancia observada.",
+      "recommended": true
+    },
+    {
+      "title": "Escalar a fulfillment",
+      "body": "Si Fnac sigue en `ACCEPTED`, identificar y resolver primero qué impide la transición a `ToShip`.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Verificar ambos estados primero",
+    "body": "Consultar Fnac y Mongo en vivo y decidir el siguiente paso con la discrepancia observada.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es quien documentó la cohorte, la evidencia y el paso de consulta pendiente.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10841.md",
+    "reviewedAt": "2026-10-14T08:52:34.829Z",
+    "mainSha": "81a92d0fb3546441b65d792671a0ff9b4ca2d78e"
+  }
+}
