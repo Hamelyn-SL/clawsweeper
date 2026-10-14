@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-14T05:47:43.360Z",
+  "updatedAt": "2026-10-14T05:42:57Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10825,
+    "title": "MercadoLibre AR: pasar a 15 días la disponibilidad de las publicaciones activas",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10825",
+    "state": "open",
+    "labels": [
+      "app:marketplace",
+      "feature",
+      "reporter:marcos",
+      "triage:queued",
+      "P2"
+    ],
+    "createdAt": "2026-10-14T05:42:42Z",
+    "updatedAt": "2026-10-14T05:42:57Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se aprueba actualizar también las publicaciones argentinas ya activas a 15 días, además de cambiar las altas nuevas?",
+  "rationale": "La issue general relacionada sigue abierta con la decisión sobre las publicaciones existentes pendiente; ejecutar un lote remoto modifica publicaciones de clientes y no debe deducirse solo del cambio de configuración para nuevas altas.",
+  "options": [
+    {
+      "title": "Aprobar la actualización de activas",
+      "body": "Autorizar el lote canario y la actualización remota reanudable, verificando disponibilidad y garantía mediante la API.",
+      "recommended": true
+    },
+    {
+      "title": "Cambiar solo las nuevas",
+      "body": "Mantener las publicaciones actuales con sus términos existentes y limitar el cambio a nuevas altas.",
+      "recommended": false
+    },
+    {
+      "title": "Validar antes de decidir",
+      "body": "Pedir al equipo de Marketplaces que confirme método, cuota y verificación antes de autorizar cambios remotos.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar la actualización de activas",
+    "body": "Autorizar el lote canario y la actualización remota reanudable, verificando disponibilidad y garantía mediante la API.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Es el candidato de enrutamiento mejor respaldado por su trabajo reciente en la configuración de MercadoLibre Argentina; la aprobación debe confirmarla el equipo responsable del catálogo.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10825.md",
+    "reviewedAt": "2026-10-14T05:47:43.360Z",
+    "mainSha": "8e76cfcec5551f7d61cb4abf0e47b59fd55bf9b6"
+  }
+}
