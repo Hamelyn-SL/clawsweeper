@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-14T12:37:33.554Z",
+  "updatedAt": "2026-10-14T12:01:22Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10865,
+    "title": "Spring EE.UU.: mandar en cada envío los IDs de Zonos (Broker ID y Broker PID) y el HS de 10 dígitos",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10865",
+    "state": "open",
+    "labels": [
+      "source:admin-panel",
+      "app:admin",
+      "feature",
+      "triage:needs-info",
+      "P1",
+      "reporter:jorgecano"
+    ],
+    "createdAt": "2026-10-14T11:55:57Z",
+    "updatedAt": "2026-10-14T12:01:22Z"
+  },
+  "lane": "manual_review",
+  "priority": "P1",
+  "question": "¿Qué campos y ubicación exactos exige el contrato `OrderShipment` de Spring/XBS para el Broker ID y el Broker PID en los envíos a EE.UU. y Puerto Rico?",
+  "rationale": "La propuesta de campos se deduce de la integración PostNL, mientras que las instrucciones oficiales de Zonos para Spring GDS siguen pendientes de publicación. ([zonos.com](https://zonos.com/spring-gds?utm_source=openai))",
+  "options": [
+    {
+      "title": "Aportar contrato oficial de Spring/XBS",
+      "body": "Adjuntar el manual actualizado o un ejemplo oficial de `OrderShipment` y continuar con el mapeo confirmado.",
+      "recommended": true
+    },
+    {
+      "title": "Solicitar confirmación al proveedor",
+      "body": "Pedir a Spring o Zonos que confirme la ruta y el nombre de los campos antes de implementar la integración.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aportar contrato oficial de Spring/XBS",
+    "body": "Adjuntar el manual actualizado o un ejemplo oficial de `OrderShipment` y continuar con el mapeo confirmado.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "jorgecano",
+    "reason": "La conversación le pide expresamente confirmar el contrato técnico con Spring/XBS o aportar su documentación.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10865.md",
+    "reviewedAt": "2026-10-14T12:37:33.554Z",
+    "mainSha": "5ce887ac193912d5c6b6d5bfb13e4dcfd791752a"
+  }
+}
