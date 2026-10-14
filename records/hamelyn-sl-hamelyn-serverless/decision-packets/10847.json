@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-14T09:09:49.211Z",
+  "updatedAt": "2026-10-14T09:07:35Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10847,
+    "title": "fix: stop copying numImages from products to stocks",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10847",
+    "state": "open",
+    "labels": [
+      "size/S"
+    ],
+    "createdAt": "2026-10-14T09:03:44Z",
+    "updatedAt": "2026-10-14T09:07:35Z",
+    "headSha": "9d36628c8ae9a597ba59fb6cdec0b1195e01f89a"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe `numImages` seguir copiándose desde `products` a los stocks vivos y nuevos, o debe conservar cada stock su recuento independiente?",
+  "rationale": "El cambio contradice el contrato de cinco campos fijado por el PR integrado que introdujo la sincronización; las pruebas confirman el comportamiento técnico, pero no establecen qué contrato de datos quieren mantener los consumidores.",
+  "options": [
+    {
+      "title": "Mantener el snapshot de catálogo",
+      "body": "Conservar `numImages` entre los campos sincronizados y aplicados al crear stocks, manteniendo el contrato integrado.",
+      "recommended": false
+    },
+    {
+      "title": "Tratarlo como dato propio del stock",
+      "body": "Aceptar la separación propuesta y actualizar el contrato con la confirmación de que los consumidores toleran valores independientes.",
+      "recommended": true
+    }
+  ],
+  "recommendation": {
+    "title": "Tratarlo como dato propio del stock",
+    "body": "Aceptar la separación propuesta y actualizar el contrato con la confirmación de que los consumidores toleran valores independientes.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "mariatapia-hamelyn",
+    "reason": "Introdujo y mantuvo recientemente la ruta de snapshot y propone este cambio de contrato.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10847.md",
+    "reviewedAt": "2026-10-14T09:09:49.211Z",
+    "mainSha": "87492ac1d4a74d3094018203271ecff90d61e8a7"
+  }
+}
