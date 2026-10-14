@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-14T13:13:15.278Z",
+  "updatedAt": "2026-10-14T13:05:30Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10874,
+    "title": "feat: send zonos references and 10-digit hs on spring us shipments",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10874",
+    "state": "open",
+    "labels": [
+      "size/XXL"
+    ],
+    "createdAt": "2026-10-14T13:00:50Z",
+    "updatedAt": "2026-10-14T13:05:30Z",
+    "headSha": "7f60aa4cfb6765bd6bdca2ed34f94a515d953a7e"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe este PR esperar a que Spring/XBS confirme los campos de Broker ID y Broker PID, o se acepta desplegar los alias provisionales?",
+  "rationale": "La issue vinculada dejó expresamente pendiente el contrato y el cambio propone nombres alternativos que el intermediario puede descartar sin error.",
+  "options": [
+    {
+      "title": "Esperar confirmación oficial",
+      "body": "Solicitar el esquema o ejemplo oficial de OrderShipment y actualizar el mapper para emitir solo los campos confirmados.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar los alias provisionales",
+      "body": "Mantener los cuatro nombres y asumir el riesgo de que Spring/XBS no los retransmita a Zonos.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Esperar confirmación oficial",
+    "body": "Solicitar el esquema o ejemplo oficial de OrderShipment y actualizar el mapper para emitir solo los campos confirmados.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "jorgecano",
+    "reason": "La issue le solicita directamente obtener la confirmación funcional del contrato con Spring o Zonos.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10874.md",
+    "reviewedAt": "2026-10-14T13:13:15.278Z",
+    "mainSha": "5ce887ac193912d5c6b6d5bfb13e4dcfd791752a"
+  }
+}
