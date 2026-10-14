@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-13T15:03:39.466Z",
-  "updatedAt": "2026-10-13T13:42:51Z",
+  "generatedAt": "2026-10-14T15:51:48.649Z",
+  "updatedAt": "2026-10-14T06:57:55Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -18,38 +18,37 @@
       "P2"
     ],
     "createdAt": "2026-10-09T12:46:07Z",
-    "updatedAt": "2026-10-13T13:42:51Z"
+    "updatedAt": "2026-10-14T06:57:55Z"
   },
   "lane": "security_boundary",
   "priority": "P2",
-  "question": "¿Se aprueba mantener el flujo de Proof con identidad Auth0 privilegiada y escrituras de fixtures en `Hamelyn_DEV`, y qué controles deben ser obligatorios para KV, anonimización y limpieza antes de integrarlo?",
-  "rationale": "La propuesta amplía credenciales y escrituras del agente; la revisión de la PR identifica rutas de KV no aisladas, posible exposición de datos y limpieza incompleta, por lo que la frontera aceptable requiere criterio del equipo.",
+  "question": "¿Debe mantenerse el flujo de Proof con identidad Auth0 privilegiada y fixtures mutables en `Hamelyn_DEV`, y qué garantías de aislamiento de KV, anonimización, limpieza y concurrencia son obligatorias antes de integrarlo?",
+  "rationale": "La decisión define el acceso y los efectos secundarios permitidos para un agente automatizado; la implementación propuesta y sus pruebas aún no demuestran esas garantías en un recorrido integrado.",
   "options": [
     {
-      "title": "Exigir aislamiento antes de integrar",
-      "body": "Mantener la candidata y exigir que elimine o deshabilite variantes KV no seguras, proteja los datos finales y cubra limpieza y concurrencia.",
+      "title": "Exigir controles antes de integrar",
+      "body": "Mantener la PR candidata y exigir aislamiento de KV, protección de datos publicados y cobertura de limpieza y concurrencia antes de aprobarla.",
       "recommended": true
     },
     {
       "title": "Reducir el alcance",
-      "body": "Separar autenticación/vídeo de fixtures mutables hasta disponer de un mecanismo aprobado para preparar datos y limpiar sus efectos secundarios.",
+      "body": "Separar autenticación y vídeo de los fixtures mutables hasta que exista un mecanismo aprobado para preparar datos y limpiar efectos secundarios.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Exigir aislamiento antes de integrar",
-    "body": "Mantener la candidata y exigir que elimine o deshabilite variantes KV no seguras, proteja los datos finales y cubra limpieza y concurrencia.",
+    "title": "Exigir controles antes de integrar",
+    "body": "Mantener la PR candidata y exigir aislamiento de KV, protección de datos publicados y cobertura de limpieza y concurrencia antes de aprobarla.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MarcosTerroso",
-    "reason": "Es quien ha documentado los riesgos técnicos concretos en la revisión reciente; la aprobación final de credenciales e identidad corresponde al equipo responsable de infraestructura/Auth0.",
+    "person": "JavierHamelyn",
+    "reason": "Su historial reciente en la ruta Proof lo convierte en el candidato mejor sustentado para concretar la decisión técnica con el equipo.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10730.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10730#issuecomment-6081918327",
-    "reviewedAt": "2026-10-13T15:03:39.466Z",
-    "mainSha": "5fc28691f86fff433f48d19dff85903b7a6e158a"
+    "reviewedAt": "2026-10-14T15:51:48.649Z",
+    "mainSha": "2e34cdfdbec18f54433eb9c3772d104705a6b08b"
   }
 }
