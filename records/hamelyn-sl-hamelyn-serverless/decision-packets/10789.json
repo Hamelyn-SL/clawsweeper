@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-14T09:57:12.216Z",
+  "updatedAt": "2026-10-14T06:52:53Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10789,
+    "title": "feat: prove prs with real sign-in, dev data and video",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10789",
+    "state": "open",
+    "labels": [
+      "size/XXL"
+    ],
+    "createdAt": "2026-10-13T08:47:51Z",
+    "updatedAt": "2026-10-14T06:52:53Z",
+    "headSha": "481dc394b6ef70665a9ec44fb3cd395a0ca86b24"
+  },
+  "lane": "security_boundary",
+  "priority": "P2",
+  "question": "¿Se autoriza que Proof mantenga y use una identidad Auth0 persistente con rol `admin-user` en `Hamelyn_DEV`, y qué controles deben preceder a su activación?",
+  "rationale": "La issue enlazada deja pendiente la autorización para crear la identidad y custodiar sus credenciales. La PR la convierte en una cuenta administrativa compartida que Proof siembra en DEV, una decisión de acceso que no se puede resolver solo revisando el código.",
+  "options": [
+    {
+      "title": "Autorizar con controles previos",
+      "body": "Aprobar la identidad dedicada y exigir aislamiento, custodia de credenciales y validación de la ejecución real antes de integrarla.",
+      "recommended": true
+    },
+    {
+      "title": "Separar los alcances",
+      "body": "Integrar únicamente las partes aprobadas y dejar login privilegiado y fixtures mutables fuera hasta decidir su autorización y controles.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Autorizar con controles previos",
+    "body": "Aprobar la identidad dedicada y exigir aislamiento, custodia de credenciales y validación de la ejecución real antes de integrarla.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Revisó esta PR y documentó los riesgos de aislamiento y limpieza; la issue también identifica al equipo de infraestructura para esta decisión.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10789.md",
+    "reviewedAt": "2026-10-14T09:57:12.216Z",
+    "mainSha": "d8141d3f70d2e0566da97e904dce0b4ca2b73334"
+  }
+}
