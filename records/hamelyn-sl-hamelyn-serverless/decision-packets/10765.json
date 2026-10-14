@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-14T15:57:18.190Z",
+  "updatedAt": "2026-10-14T06:07:20Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10765,
+    "title": "MercadoLibre MX report leaves a sold sibling buyable behind a withdrawal tombstone",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10765",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "triage:done",
+      "P1"
+    ],
+    "createdAt": "2026-10-12T18:42:34Z",
+    "updatedAt": "2026-10-14T06:07:20Z"
+  },
+  "lane": "security_boundary",
+  "priority": "P1",
+  "question": "¿Debe permitirse que el reporte rearme una retirada para tombstones `SOLD` recientes cuando el maestro sigue retirado y la API confirma un hermano activo?",
+  "rationale": "La decisión cambia cuándo se emiten efectos externos de retirada y si las guardas genéricas de snapshot y 48 horas se mantienen para esta cohorte; el diagnóstico no determina por sí solo el nivel de protección deseado.",
+  "options": [
+    {
+      "title": "Aprobar carril SOLD verificado",
+      "body": "Permitir un camino acotado que relea el maestro y confirme por API el anuncio activo antes de rearmar la retirada, con control de concurrencia y cobertura de regresión.",
+      "recommended": true
+    },
+    {
+      "title": "Conservar guardas actuales",
+      "body": "No rearmar tombstones SOLD recientes desde el informe y mantener el caso pendiente hasta contar con evidencia adicional o un procedimiento operativo separado.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar carril SOLD verificado",
+    "body": "Permitir un camino acotado que relea el maestro y confirme por API el anuncio activo antes de rearmar la retirada, con control de concurrencia y cobertura de regresión.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Su historial reciente incluye la incorporación de recuperación de tombstones de MercadoLibre y el ajuste de sus guardas.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10765.md",
+    "reviewedAt": "2026-10-14T15:57:18.190Z",
+    "mainSha": "2e34cdfdbec18f54433eb9c3772d104705a6b08b"
+  }
+}
