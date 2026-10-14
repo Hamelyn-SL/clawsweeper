@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-14T13:46:41.596Z",
+  "updatedAt": "2026-10-14T08:26:27Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10805,
+    "title": "feat: add capacitor native projects to supply-web",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10805",
+    "state": "open",
+    "labels": [
+      "size/XL",
+      "P2"
+    ],
+    "createdAt": "2026-10-13T12:53:25Z",
+    "updatedAt": "2026-10-14T08:26:27Z",
+    "headSha": "34ac7eef3e9a0c6458ee72a48d87ce2c0227dc26"
+  },
+  "lane": "release_inclusion",
+  "priority": "P2",
+  "question": "¿Se deben aprobar en este mismo cambio el canal de publicación OTA propio y los workflows de subida a App Store Connect/Google Play, además de los proyectos nativos de desarrollo?",
+  "rationale": "La issue asociada plantea como objetivo inicial versionar proyectos para builds de desarrollo, mientras que el PR amplía el alcance a actualizaciones OTA y publicación en tiendas; esa decisión de lanzamiento no puede inferirse de la evidencia técnica.",
+  "options": [
+    {
+      "title": "Aprobar el alcance completo",
+      "body": "Integrar proyectos nativos, OTA y workflows de release tras validar el circuito de publicación en los entornos configurados.",
+      "recommended": true
+    },
+    {
+      "title": "Limitarlo a proyectos de desarrollo",
+      "body": "Separar o retirar OTA y publicación de tiendas hasta que exista una decisión de producto y evidencia operativa específica.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar el alcance completo",
+    "body": "Integrar proyectos nativos, OTA y workflows de release tras validar el circuito de publicación en los entornos configurados.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Miguel Angel Hernández Perdomo",
+    "reason": "Es el contribuyente de la ruta de autenticación y la lógica de Supply Web relacionada, según el historial local disponible; no consta en el contexto otro responsable de esta decisión de producto.",
+    "confidence": "low"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10805.md",
+    "reviewedAt": "2026-10-14T13:46:41.596Z",
+    "mainSha": "2e34cdfdbec18f54433eb9c3772d104705a6b08b"
+  }
+}
