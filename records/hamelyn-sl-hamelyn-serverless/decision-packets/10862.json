@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-14T11:48:52.318Z",
+  "updatedAt": "2026-10-14T11:45:11Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10862,
+    "title": "supply-next: redirect hamelyn.pt and hamelyn.fr and retire supply-pt and supply-fr",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10862",
+    "state": "open",
+    "labels": [
+      "app:supply",
+      "feature",
+      "reporter:miguel",
+      "triage:queued",
+      "P2"
+    ],
+    "createdAt": "2026-10-14T11:44:46Z",
+    "updatedAt": "2026-10-14T11:45:11Z"
+  },
+  "lane": "release_inclusion",
+  "priority": "P2",
+  "question": "¿Se deben mover los cuatro dominios a `supply-next` y retirar `supply-pt`/`supply-fr` y sus secretos solo después de desplegar y verificar las redirecciones en producción?",
+  "rationale": "El PR enlazado separa explícitamente los cambios de código de las operaciones posteriores en Vercel; el orden puede afectar a la disponibilidad de los dominios y exige coordinación del entorno de producción.",
+  "options": [
+    {
+      "title": "Mantener el orden propuesto",
+      "body": "Desplegar primero las reglas, verificar los cuatro dominios y después retirar los proyectos y secretos antiguos.",
+      "recommended": true
+    },
+    {
+      "title": "Ajustar el corte operativo",
+      "body": "Definir otra secuencia o comprobación antes de cambiar dominios y retirar recursos en producción.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mantener el orden propuesto",
+    "body": "Desplegar primero las reglas, verificar los cuatro dominios y después retirar los proyectos y secretos antiguos.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "El PR vinculado detalla el orden operativo y su validación para este corte de dominios.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10862.md",
+    "reviewedAt": "2026-10-14T11:48:52.318Z",
+    "mainSha": "e3c747fa18fafb185717c49cfbefb4e39cf60135"
+  }
+}
