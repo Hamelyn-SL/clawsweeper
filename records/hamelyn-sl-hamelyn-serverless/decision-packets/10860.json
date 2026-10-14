@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-14T10:26:17.558Z",
+  "updatedAt": "2026-10-14T10:22:29Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10860,
+    "title": "Fnac FR – tiempo de preparación de pedidos a 4 días",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10860",
+    "state": "open",
+    "labels": [
+      "source:admin-panel",
+      "app:marketplace",
+      "feature",
+      "reporter:rubenmorueco",
+      "triage:queued",
+      "P2"
+    ],
+    "createdAt": "2026-10-14T10:22:16Z",
+    "updatedAt": "2026-10-14T10:22:29Z"
+  },
+  "lane": "manual_review",
+  "priority": "P2",
+  "question": "¿Se autoriza actualizar por API las aproximadamente 75.750 ofertas activas de Fnac FR a 4 días, una vez confirmado el payload admitido por Fnac?",
+  "rationale": "La modificación masiva afecta ofertas reales y el informe no demuestra el contrato exacto ni los límites de procesamiento aplicables a esta cuenta.",
+  "options": [
+    {
+      "title": "Confirmar y planificar la actualización",
+      "body": "Verificar con Fnac los campos requeridos y límites, y después ejecutar y revisar la actualización por lotes.",
+      "recommended": true
+    },
+    {
+      "title": "Aplicar primero a ofertas nuevas",
+      "body": "Cambiar las altas y posponer la actualización de las ofertas existentes hasta validar el impacto operativo.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Confirmar y planificar la actualización",
+    "body": "Verificar con Fnac los campos requeridos y límites, y después ejecutar y revisar la actualización por lotes.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Ha contribuido recientemente al formateador Fnac que construye el payload de ofertas.",
+    "confidence": "low"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10860.md",
+    "reviewedAt": "2026-10-14T10:26:17.558Z",
+    "mainSha": "eca10072a5dccccdc76318ae0e0c37f8bac0ced7"
+  }
+}
