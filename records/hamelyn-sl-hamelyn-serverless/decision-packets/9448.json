@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-10T14:46:01.165Z",
-  "updatedAt": "2026-10-10T03:45:38Z",
+  "generatedAt": "2026-10-14T07:56:59.943Z",
+  "updatedAt": "2026-10-14T07:27:54Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -17,38 +17,42 @@
       "P2"
     ],
     "createdAt": "2026-09-11T10:19:54Z",
-    "updatedAt": "2026-10-10T03:45:38Z"
+    "updatedAt": "2026-10-14T07:27:54Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe bastar que Amazon devuelva el mismo pedido como `SHIPPED`, aunque el tracking remoto no coincida, o se exige coincidencia antes de actualizar el espejo?",
-  "rationale": "La PR abierta persiste `SHIPPED` al confirmar identidad y estado, pero no compara tracking; la revisión humana y el hilo señalan que la diferencia puede corresponder a confirmaciones externas.",
+  "question": "¿Debe bastar que Amazon devuelva el mismo pedido como `SHIPPED` para reflejarlo como enviado, aunque el tracking remoto no coincida con el de esta expedición?",
+  "rationale": "La PR abierta implementa esa clasificación, pero el reviewer ha pedido confirmar el criterio con Operaciones; aceptarla sin esa decisión puede dar por sincronizado un envío confirmado por otro actor o con otro tracking.",
   "options": [
     {
-      "title": "Aceptar estado remoto",
-      "body": "Aceptar `SHIPPED` para el mismo pedido y gestionar los casos con tracking distinto en un seguimiento operativo separado.",
+      "title": "Exigir coincidencia de tracking",
+      "body": "Aceptar `SHIPPED` solo si el pedido y el tracking remoto corresponden a esta expedición.",
       "recommended": true
     },
     {
-      "title": "Exigir tracking coincidente",
-      "body": "Mantener la ruta de error o revisión cuando Amazon informe un tracking distinto del local.",
+      "title": "Aceptar el estado remoto",
+      "body": "Reflejar `SHIPPED` al coincidir el pedido, aunque el tracking remoto sea distinto o aún no se contraste.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener `SYNC_ERROR`",
+      "body": "No cambiar el estado local sin reconciliación adicional y tratar esos casos como incidencias accionables.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aceptar estado remoto",
-    "body": "Aceptar `SHIPPED` para el mismo pedido y gestionar los casos con tracking distinto en un seguimiento operativo separado.",
+    "title": "Exigir coincidencia de tracking",
+    "body": "Aceptar `SHIPPED` solo si el pedido y el tracking remoto corresponden a esta expedición.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Tiene asignada la issue y es el autor de la PR cuya revisión depende de este criterio; la verificación operativa corresponde también a Operaciones.",
-    "confidence": "medium"
+    "reason": "Está asignado a la issue y es el autor de la PR cuya regla de clasificación requiere esta decisión operativa.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9448.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9448#issuecomment-5644977566",
-    "reviewedAt": "2026-10-10T14:46:01.165Z",
-    "mainSha": "67ee79c252051960ffbdc23a4089fbb0b3c3ed4e"
+    "reviewedAt": "2026-10-14T07:56:59.943Z",
+    "mainSha": "27ce02da1949bfe1628bc2d877742c6d4581f47d"
   }
 }

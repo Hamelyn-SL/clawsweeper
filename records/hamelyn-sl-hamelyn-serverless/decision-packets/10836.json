@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-14T07:57:48.186Z",
+  "updatedAt": "2026-10-14T07:54:38Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10836,
+    "title": "Aduanas: VHS y casete a EE.UU. usan el HS6 genérico",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10836",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:infrastructure",
+      "reporter:miguel",
+      "triage:queued",
+      "P2"
+    ],
+    "createdAt": "2026-10-14T07:54:24Z",
+    "updatedAt": "2026-10-14T07:54:38Z"
+  },
+  "lane": "proof_sufficiency",
+  "priority": "P2",
+  "question": "¿Están verificados en una fuente arancelaria estadounidense autorizada los códigos `8523297010` para película en VHS y `8523294010` para música en casete?",
+  "rationale": "El contrato vigente ordena usar HS6 `852329` para esos soportes y no se aportó una referencia que permita confirmar la nueva clasificación nacional.",
+  "options": [
+    {
+      "title": "Validar y aceptar la excepción",
+      "body": "Confirmar los códigos con una fuente oficial y actualizar tabla, precedencia del resolver, regla documentada y pruebas.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener el criterio actual",
+      "body": "Conservar HS6 `852329` hasta disponer de confirmación arancelaria de las partidas propuestas.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Validar y aceptar la excepción",
+    "body": "Confirmar los códigos con una fuente oficial y actualizar tabla, precedencia del resolver, regla documentada y pruebas.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Ha realizado cambios recientes en el resolver y en la tabla arancelaria, por lo que puede orientar la verificación técnica y de fuentes.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10836.md",
+    "reviewedAt": "2026-10-14T07:57:48.186Z",
+    "mainSha": "27ce02da1949bfe1628bc2d877742c6d4581f47d"
+  }
+}
