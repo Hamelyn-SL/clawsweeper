@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-14T10:54:15.257Z",
-  "updatedAt": "2026-10-14T10:44:55Z",
+  "generatedAt": "2026-10-14T10:57:39.473Z",
+  "updatedAt": "2026-10-14T10:55:50Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -14,39 +14,38 @@
       "P2"
     ],
     "createdAt": "2026-10-14T10:36:04Z",
-    "updatedAt": "2026-10-14T10:44:55Z",
+    "updatedAt": "2026-10-14T10:55:50Z",
     "headSha": "7f2ef27d5c68a01cf0c8c8f1c5f1e77c563b5ab3"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe aterrizarse el cambio permanente de integración por separado mientras la migración masiva de ofertas existentes se planifica como operación independiente?",
-  "rationale": "La issue de origen incluye ambas partes; el PR explica que el cambio de código no actualiza las ofertas existentes y que no deben darse por resueltas al fusionarlo.",
+  "question": "¿Puede aterrizarse por separado el cambio permanente de la integración mientras la migración masiva de ofertas existentes se acuerda y verifica como operación independiente?",
+  "rationale": "La issue vinculada solicita ambas cosas, pero actualizar decenas de miles de ofertas requiere validar campos, filtro y efectos operativos; el PR declara explícitamente que no ejecuta esa migración.",
   "options": [
     {
-      "title": "Separar código y migración",
-      "body": "Revisar esta PR como cambio permanente y mantener la migración masiva como tarea operativa independiente.",
+      "title": "Separar integración y migración",
+      "body": "Revisar el cambio de código de forma independiente y mantener abierta la migración operativa hasta acordar y verificar su plan.",
       "recommended": true
     },
     {
-      "title": "Esperar a un plan conjunto",
-      "body": "Pausar la integración hasta acordar el filtro, la validación de actualización parcial y el procedimiento de migración.",
+      "title": "Esperar al plan conjunto",
+      "body": "Pausar la integración hasta que el equipo acuerde el filtro, las comprobaciones y el procedimiento de migración de ofertas existentes.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Separar código y migración",
-    "body": "Revisar esta PR como cambio permanente y mantener la migración masiva como tarea operativa independiente.",
+    "title": "Separar integración y migración",
+    "body": "Revisar el cambio de código de forma independiente y mantener abierta la migración operativa hasta acordar y verificar su plan.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "La revisión previa de la issue ya identificó a MiguelHamelyn como candidato probable para decidir el flujo de Marketplace y la actualización masiva.",
+    "reason": "La issue vinculada lo identifica como dueño probable de la decisión operativa y cuenta con trabajo reciente en el área de Fnac.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10861.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10861#issuecomment-6166757998",
-    "reviewedAt": "2026-10-14T10:54:15.257Z",
+    "reviewedAt": "2026-10-14T10:57:39.473Z",
     "mainSha": "eca10072a5dccccdc76318ae0e0c37f8bac0ced7"
   }
 }
