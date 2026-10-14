@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-13T15:05:29.958Z",
-  "updatedAt": "2026-10-13T09:27:53Z",
+  "generatedAt": "2026-10-14T15:26:43.262Z",
+  "updatedAt": "2026-10-14T10:12:53Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,47 +14,46 @@
       "feature",
       "triage:done",
       "clawsweeper:needs-product-decision",
-      "reporter:danielmenchen-hamelyn",
-      "P2"
+      "P2",
+      "reporter:danielmenchen-hamelyn"
     ],
     "createdAt": "2026-10-13T06:42:55Z",
-    "updatedAt": "2026-10-13T09:27:53Z"
+    "updatedAt": "2026-10-14T10:12:53Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe mantenerse el alcance de los once cambios como una única iniciativa, o dividirse y priorizarse empezando por coste y visibilidad de fallos?",
-  "rationale": "La propuesta agrupa cambios de cadencia, recursos, persistencia y publicación; el triage previo recomienda entregas separadas y la PR abierta implementa el alcance completo.",
+  "question": "¿Acepta el equipo integrar el rollout escalonado antes de medir una guardia completa con 2 vCPU, usando la primera ejecución para validar coste, arranque y detecciones?",
+  "rationale": "La PR añade cambios de comportamiento y recursos cuyo objetivo de ahorro aún no está demostrado; la prueba disponible cubre principalmente tests y salvaguardas simuladas.",
   "options": [
     {
-      "title": "Dividir y priorizar",
-      "body": "Validar primero coste y trazabilidad de fallos con métricas y separar después los cambios restantes.",
+      "title": "Integrar y medir en el primer rollout",
+      "body": "Aceptar el riesgo acotado y revisar el coste, el arranque y la cobertura de detección tras la primera guardia real.",
       "recommended": true
     },
     {
-      "title": "Mantener iniciativa completa",
-      "body": "Conservar los once puntos juntos y acordar explícitamente su orden y garantías de validación.",
+      "title": "Esperar evidencia operativa",
+      "body": "Mantener la PR pendiente hasta disponer de una ejecución completa que compruebe checkpoints y arranque con 2 vCPU.",
       "recommended": false
     },
     {
-      "title": "Aplazar y medir",
-      "body": "Esperar datos de más guardias antes de cambiar el comportamiento de vigilancia.",
+      "title": "Dividir el alcance",
+      "body": "Separar las mejoras de fallos y publicación de los cambios de cadencia y recursos para validar cada bloque por separado.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Dividir y priorizar",
-    "body": "Validar primero coste y trazabilidad de fallos con métricas y separar después los cambios restantes.",
+    "title": "Integrar y medir en el primer rollout",
+    "body": "Aceptar el riesgo acotado y revisar el coste, el arranque y la cobertura de detección tras la primera guardia real.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "Daniel",
-    "reason": "Es el responsable asignado y el autor de la PR que implementa la propuesta.",
-    "confidence": "high"
+    "person": "JavierHamelyn",
+    "reason": "La revisión previa del rollout lo señaló como candidato para decidir la aceptación de la validación posterior a la integración.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10780.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10780#issuecomment-6139991973",
-    "reviewedAt": "2026-10-13T15:05:29.958Z",
-    "mainSha": "5fc28691f86fff433f48d19dff85903b7a6e158a"
+    "reviewedAt": "2026-10-14T15:26:43.262Z",
+    "mainSha": "2e34cdfdbec18f54433eb9c3772d104705a6b08b"
   }
 }
