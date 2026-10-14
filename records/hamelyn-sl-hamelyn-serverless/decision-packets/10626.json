@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-13T10:00:31.636Z",
-  "updatedAt": "2026-10-13T09:26:14Z",
+  "generatedAt": "2026-10-14T10:59:07.586Z",
+  "updatedAt": "2026-10-14T10:56:52Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -14,39 +14,38 @@
       "P2"
     ],
     "createdAt": "2026-10-08T08:10:04Z",
-    "updatedAt": "2026-10-13T09:26:14Z",
-    "headSha": "c5c1a9a59d41e202a289f2cadfef2a9115c4ca56"
+    "updatedAt": "2026-10-14T10:56:52Z",
+    "headSha": "86405bec427f8550d3708e64e55f9523a5e9df1b"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe aceptarse para los heartbeats el modo `conversation`, que permite esperar resultados delegados pero renuncia al reintento duradero de `task`?",
-  "rationale": "El PR resuelve el caso de delegación mediante un cambio deliberado de comportamiento operativo; la nota del autor expresa su preferencia, pero no acredita una decisión del equipo.",
+  "question": "¿Debe el arranque compartido de heartbeats usar `conversation` con `requestInput: false`, aceptando la pérdida del reintento duradero de `task` ante errores recuperables?",
+  "rationale": "La elección modifica el comportamiento de recuperación ante fallos de modelo; la discusión reconoce el compromiso, pero no contiene una decisión final del equipo.",
   "options": [
     {
-      "title": "Aceptar `conversation`",
-      "body": "Integrar el modo que permite esperar resultados delegados, aceptando que los errores recuperables ya no usan el reintento duradero de `task`.",
+      "title": "Aprobar `conversation`",
+      "body": "Integrar el cambio y aceptar la recuperación mediante el vigilante y los reintentos existentes del proveedor.",
       "recommended": true
     },
     {
-      "title": "Conservar `task`",
-      "body": "Mantener el reintento actual y pausar este cambio hasta acordar otra forma de esperar resultados delegados.",
+      "title": "Mantener `task`",
+      "body": "Conservar el reintento duradero y buscar otra forma de completar los heartbeats que delegan.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aceptar `conversation`",
-    "body": "Integrar el modo que permite esperar resultados delegados, aceptando que los errores recuperables ya no usan el reintento duradero de `task`.",
+    "title": "Aprobar `conversation`",
+    "body": "Integrar el cambio y aceptar la recuperación mediante el vigilante y los reintentos existentes del proveedor.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su actividad reciente en la ruta de agentes lo sitúa como candidato de coordinación para confirmar el impacto operativo.",
-    "confidence": "low"
+    "reason": "Su trabajo reciente creó el helper compartido que este PR modifica y el hilo le solicita explícitamente validar la integración.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10626.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10626#issuecomment-6056508999",
-    "reviewedAt": "2026-10-13T10:00:31.636Z",
-    "mainSha": "93d83b482256d26d08e89d345594b6086d4afd22"
+    "reviewedAt": "2026-10-14T10:59:07.586Z",
+    "mainSha": "eca10072a5dccccdc76318ae0e0c37f8bac0ced7"
   }
 }
