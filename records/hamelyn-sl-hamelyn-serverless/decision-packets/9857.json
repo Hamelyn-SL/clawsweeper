@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-14T10:55:40.547Z",
+  "updatedAt": "2026-10-14T09:16:37Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 9857,
+    "title": "URLs dinámicas: Status code 200 con la página de 404 pintada",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9857",
+    "state": "open",
+    "labels": [
+      "bug",
+      "source:admin-panel",
+      "app:ecommerce",
+      "triage:done",
+      "reporter:victor",
+      "P1"
+    ],
+    "createdAt": "2026-09-21T15:06:01Z",
+    "updatedAt": "2026-10-14T09:16:37Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "Tras desplegar y medir la mitigación de la PR 10800, ¿se acepta su cobertura parcial o se prioriza resolver también productos válidos inexistentes, autores y paginación fuera de rango?",
+  "rationale": "Los casos pendientes requieren consultas o cambios de renderizado con impacto potencial en caché, latencia y navegación; la discusión propone decidir su alcance con evidencia de Search Console y validación de despliegue.",
+  "options": [
+    {
+      "title": "Priorizar corrección completa",
+      "body": "Investigar una solución que cubra también las ausencias dependientes de datos y verificar build, HTTP y rutas válidas antes de desplegarla.",
+      "recommended": false
+    },
+    {
+      "title": "Aceptar mitigación parcial condicionada",
+      "body": "Fusionar la mitigación acotada sin cerrar esta issue y decidir las fases restantes tras revisar Search Console y el HTTP de producción.",
+      "recommended": true
+    },
+    {
+      "title": "Posponer la mitigación",
+      "body": "Esperar evidencia de impacto residual antes de fusionar la fase parcial o comprometer cambios adicionales en el renderizado.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aceptar mitigación parcial condicionada",
+    "body": "Fusionar la mitigación acotada sin cerrar esta issue y decidir las fases restantes tras revisar Search Console y el HTTP de producción.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Está asignado a la issue y lidera la PR vinculada; la decisión puede coordinarse con Javier y el equipo Ecommerce, señalados en la discusión como responsables del alcance.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9857.md",
+    "reviewedAt": "2026-10-14T10:55:40.547Z",
+    "mainSha": "eca10072a5dccccdc76318ae0e0c37f8bac0ced7"
+  }
+}
