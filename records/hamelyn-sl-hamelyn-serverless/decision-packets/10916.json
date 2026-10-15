@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-15T13:56:50.275Z",
+  "updatedAt": "2026-10-15T13:30:47Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10916,
+    "title": "Marketplace: [mercadolibre writes] {\"marketplace\":\"mercadolibrear\",\"operation\":\"post\",\"path\":\"[redacted]\",\"status\":429,\"",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10916",
+    "state": "open",
+    "labels": [
+      "codex",
+      "bug",
+      "app:marketplace",
+      "triage:queued",
+      "P2",
+      "marketplace-crons"
+    ],
+    "createdAt": "2026-10-15T13:30:47Z",
+    "updatedAt": "2026-10-15T13:30:47Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué política debe aplicarse a los POST de MercadoLibre que reciben 429: reintentar solo en endpoints con idempotencia demostrada, o mantener el fallo rápido hasta contar con esa garantía?",
+  "rationale": "El código y la documentación confirman que actualmente no hay reintento general, pero el reporte no identifica la ruta concreta ni demuestra que repetir la escritura sea seguro.",
+  "options": [
+    {
+      "title": "Reintento acotado por endpoint",
+      "body": "Añadir reintentos limitados solo para operaciones cuya idempotencia y condiciones de espera estén verificadas.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener fallo rápido",
+      "body": "No reintentar POST hasta disponer de endpoint, respuesta y garantías de idempotencia suficientes.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Reintento acotado por endpoint",
+    "body": "Añadir reintentos limitados solo para operaciones cuya idempotencia y condiciones de espera estén verificadas.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Su historial disponible conecta con la política de recuperación por operación y la documentación de MercadoLibre.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10916.md",
+    "reviewedAt": "2026-10-15T13:56:50.275Z",
+    "mainSha": "6af27faf5e38dd96f99563360ec1da6f99514fd1"
+  }
+}

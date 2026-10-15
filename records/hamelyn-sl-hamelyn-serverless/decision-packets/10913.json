@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-15T13:56:55.096Z",
+  "updatedAt": "2026-10-15T13:35:14Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10913,
+    "title": "feat: migrate supply transactional emails to sp-* mandrill templates",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10913",
+    "state": "open",
+    "labels": [
+      "size/XXL"
+    ],
+    "createdAt": "2026-10-15T13:16:29Z",
+    "updatedAt": "2026-10-15T13:35:14Z",
+    "headSha": "fa90fe6d2ab7d4e488bd6cbdabd42d1706e574d4"
+  },
+  "lane": "release_inclusion",
+  "priority": "P2",
+  "question": "¿Se ha confirmado que no quedan trabajos en cola con slugs antiguos, o que pueden descartarse durante el despliegue indicado?",
+  "rationale": "La PR describe una consecuencia operativa explícita sobre correos ya encolados; el checkout no permite determinar cuántos quedan ni si la ventana propuesta evita su pérdida.",
+  "options": [
+    {
+      "title": "Desplegar tras drenar la cola",
+      "body": "Confirmar que los trabajos antiguos se procesaron o agotaron antes de desplegar los nuevos slugs.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar el descarte en ventana controlada",
+      "body": "Autorizar la pérdida potencial de esos correos y desplegar fuera del horario de los crons indicado en la PR.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Desplegar tras drenar la cola",
+    "body": "Confirmar que los trabajos antiguos se procesaron o agotaron antes de desplegar los nuevos slugs.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Daniel",
+    "reason": "Es la persona con más evidencia histórica sobre la centralización y el catálogo de comunicaciones afectados.",
+    "confidence": "low"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10913.md",
+    "reviewedAt": "2026-10-15T13:56:55.096Z",
+    "mainSha": "6af27faf5e38dd96f99563360ec1da6f99514fd1"
+  }
+}

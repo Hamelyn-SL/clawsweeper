@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-14T13:46:41.596Z",
-  "updatedAt": "2026-10-14T08:26:27Z",
+  "generatedAt": "2026-10-15T13:57:05.521Z",
+  "updatedAt": "2026-10-15T12:29:11Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -14,39 +14,43 @@
       "P2"
     ],
     "createdAt": "2026-10-13T12:53:25Z",
-    "updatedAt": "2026-10-14T08:26:27Z",
-    "headSha": "34ac7eef3e9a0c6458ee72a48d87ce2c0227dc26"
+    "updatedAt": "2026-10-15T12:29:11Z",
+    "headSha": "eb7d22808efc99380f8e039ae974b4aea30d73a1"
   },
-  "lane": "release_inclusion",
+  "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se deben aprobar en este mismo cambio el canal de publicación OTA propio y los workflows de subida a App Store Connect/Google Play, además de los proyectos nativos de desarrollo?",
-  "rationale": "La issue asociada plantea como objetivo inicial versionar proyectos para builds de desarrollo, mientras que el PR amplía el alcance a actualizaciones OTA y publicación en tiendas; esa decisión de lanzamiento no puede inferirse de la evidencia técnica.",
+  "question": "¿Debe este PR publicar `supply-web` sobre la identidad instalada de Expo ahora, y qué estado local debe preservarse durante esa actualización?",
+  "rationale": "La issue vinculada plantea versionar proyectos nativos para pruebas; el PR además propone reemplazar la app de tienda existente con el mismo identificador. La intención y compatibilidad de esa transición no se deducen de tests de compilación.",
   "options": [
     {
-      "title": "Aprobar el alcance completo",
-      "body": "Integrar proyectos nativos, OTA y workflows de release tras validar el circuito de publicación en los entornos configurados.",
+      "title": "Aprobar migración con compatibilidad",
+      "body": "Mantener el identificador compartido solo con una estrategia y evidencia de actualización para sesión y estado local.",
       "recommended": true
     },
     {
-      "title": "Limitarlo a proyectos de desarrollo",
-      "body": "Separar o retirar OTA y publicación de tiendas hasta que exista una decisión de producto y evidencia operativa específica.",
+      "title": "Separar la app nativa",
+      "body": "Usar una identidad distinta y tratar la publicación como una aplicación nueva, evitando sustituir instalaciones Expo existentes.",
+      "recommended": false
+    },
+    {
+      "title": "Limitar este PR al alcance inicial",
+      "body": "Dejar OTA y releases de tienda para una propuesta posterior con una decisión de migración explícita.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar el alcance completo",
-    "body": "Integrar proyectos nativos, OTA y workflows de release tras validar el circuito de publicación en los entornos configurados.",
+    "title": "Aprobar migración con compatibilidad",
+    "body": "Mantener el identificador compartido solo con una estrategia y evidencia de actualización para sesión y estado local.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "Miguel Angel Hernández Perdomo",
-    "reason": "Es el contribuyente de la ruta de autenticación y la lógica de Supply Web relacionada, según el historial local disponible; no consta en el contexto otro responsable de esta decisión de producto.",
-    "confidence": "low"
+    "person": "MiguelHamelyn",
+    "reason": "Tiene contribuciones previas en la autenticación de `supply-web` y lidera la implementación que define esta transición.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10805.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10805#issuecomment-6146409288",
-    "reviewedAt": "2026-10-14T13:46:41.596Z",
-    "mainSha": "2e34cdfdbec18f54433eb9c3772d104705a6b08b"
+    "reviewedAt": "2026-10-15T13:57:05.521Z",
+    "mainSha": "6af27faf5e38dd96f99563360ec1da6f99514fd1"
   }
 }
