@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-15T10:50:17.274Z",
+  "updatedAt": "2026-10-14T13:59:12Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10857,
+    "title": "feat: add national hs codes by destination",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10857",
+    "state": "open",
+    "labels": [
+      "size/XXL",
+      "P2"
+    ],
+    "createdAt": "2026-10-14T09:43:08Z",
+    "updatedAt": "2026-10-14T13:59:12Z",
+    "headSha": "b9ea9f1ef955b9a4d881cc4927e3740e59b62d76"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué regla debe prevalecer al combinar los códigos nacionales de esta PR con la normalización de territorios de EE. UU. y los códigos magnéticos integrados en `dev`?",
+  "rationale": "La conversación identifica resultados de clasificación incompatibles en los mismos destinos y soportes; resolverlos exige elegir la regla aduanera de producto antes de que pueda prepararse una integración fiable.",
+  "options": [
+    {
+      "title": "Integrar ambas reglas",
+      "body": "Conservar los códigos nacionales de destino y aplicar conjuntamente la normalización territorial y los códigos magnéticos ya integrados.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener las reglas de esta rama",
+      "body": "Priorizar los valores de esta rama y revisar explícitamente qué comportamiento integrado de territorios y soportes debe cambiar.",
+      "recommended": false
+    },
+    {
+      "title": "Separar el alcance",
+      "body": "Retirar de esta integración los casos en conflicto y seguirlos en una actualización acotada con reglas validadas.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Integrar ambas reglas",
+    "body": "Conservar los códigos nacionales de destino y aplicar conjuntamente la normalización territorial y los códigos magnéticos ya integrados.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Es el autor de la implementación y Javier le pidió directamente definir la regla antes de integrar.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10857.md",
+    "reviewedAt": "2026-10-15T10:50:17.274Z",
+    "mainSha": "454ca192284498cbefbf7accfc02d45383b47629"
+  }
+}
