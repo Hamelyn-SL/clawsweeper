@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-15T08:33:10.653Z",
+  "updatedAt": "2026-10-15T08:29:50Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10887,
+    "title": "Station Bin Vision: send the native 4K capture to the model when a CD is pending",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10887",
+    "state": "open",
+    "labels": [
+      "app:admin",
+      "feature",
+      "triage:done",
+      "P2"
+    ],
+    "createdAt": "2026-10-15T08:19:39Z",
+    "updatedAt": "2026-10-15T08:29:50Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se debe aceptar el aumento de latencia observado para mejorar la localización de CD y aplicar el modo 4K tanto a `locate` como a `prefetch`?",
+  "rationale": "La implementación es acotada, pero cambia el equilibrio entre precisión y latencia del flujo operativo; la evidencia comparativa citada no es accesible públicamente en esta revisión.",
+  "options": [
+    {
+      "title": "Aprobar el modo 4K para cubetas con CD",
+      "body": "Mantener la resolución actual para otros productos y aplicar el timeout ampliado cuando haya música pendiente.",
+      "recommended": true
+    },
+    {
+      "title": "Validar primero los resultados",
+      "body": "Compartir resultados accesibles o confirmar las métricas antes de introducir el cambio de latencia.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar el modo 4K para cubetas con CD",
+    "body": "Mantener la resolución actual para otros productos y aplicar el timeout ampliado cuando haya música pendiente.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "La issue está asignada a AlexDiaz-Hamelyn, que presentó los resultados operativos que motivan esta decisión.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10887.md",
+    "reviewedAt": "2026-10-15T08:33:10.653Z",
+    "mainSha": "97800e86858614d3badd6c53dd4da4038adba2a1"
+  }
+}
