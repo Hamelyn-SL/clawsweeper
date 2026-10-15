@@ -1,56 +1,60 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-09T15:18:37.998Z",
-  "updatedAt": "2026-09-09T15:12:17Z",
+  "generatedAt": "2026-10-15T21:36:33.566Z",
+  "updatedAt": "2026-10-15T21:30:46Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
     "number": 9246,
     "title": "Marketplace: [mercadolibre mx] response: { status: 429, message: 'local_rate_limited' }",
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9246",
-    "state": "closed",
+    "state": "open",
     "labels": [
       "codex",
       "bug",
       "app:marketplace",
-      "triage:needs-info",
+      "triage:queued",
       "clawsweeper:needs-product-decision",
-      "marketplace-crons",
-      "P2"
+      "P2",
+      "marketplace-crons"
     ],
     "createdAt": "2026-09-07T17:30:35Z",
-    "updatedAt": "2026-09-09T15:12:17Z"
+    "updatedAt": "2026-10-15T21:30:46Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe integrarse la reducción permanente del barrido de cancelaciones de 21 a 3 días además del reintento común ya presente en `dev`?",
-  "rationale": "La elección intercambia cobertura histórica de conciliación por menor exposición al límite de tasa; los tests no pueden decidir si ese margen operativo es aceptable.",
+  "question": "Cuando una búsqueda GET de pedidos de MercadoLibre recibe `429`, ¿debe depender la recuperación de la siguiente pasada con conciliación comprobable o introducirse un reintento acotado?",
+  "rationale": "La política actual limita los reintentos y el arreglo previo redujo llamadas del barrido; elegir otra conducta puede cambiar la carga al proveedor y las garantías de recuperación de pedidos.",
   "options": [
     {
-      "title": "Mantener 21 días con reintentos",
-      "body": "Conservar la red de seguridad histórica y observar el comportamiento de los reintentos antes de cambiar la cobertura.",
+      "title": "Diferir y conciliar",
+      "body": "Mantener el siguiente ciclo como recuperación y exigir una señal comprobable de conciliación tras cada fallo.",
       "recommended": true
     },
     {
-      "title": "Aceptar la ventana de tres días",
-      "body": "Integrar el PR si Marketplace confirma que las cancelaciones relevantes se recuperan dentro de esa ventana.",
+      "title": "Reintentar de forma acotada",
+      "body": "Añadir backoff limitado solo después de confirmar que el presupuesto de llamadas no agrava el rate limit.",
+      "recommended": false
+    },
+    {
+      "title": "Definir política por operación",
+      "body": "Separar pedidos pagados y cancelaciones con garantías distintas si sus requisitos de recuperación no coinciden.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mantener 21 días con reintentos",
-    "body": "Conservar la red de seguridad histórica y observar el comportamiento de los reintentos antes de cambiar la cobertura.",
+    "title": "Diferir y conciliar",
+    "body": "Mantener el siguiente ciclo como recuperación y exigir una señal comprobable de conciliación tras cada fallo.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Introdujo la política de reintentos ya integrada y la revisión previa lo señaló como dueño probable de esta decisión.",
-    "confidence": "high"
+    "person": "MarcosTerroso",
+    "reason": "Participó en el cambio que redujo la exposición del barrido y puede valorar el equilibrio entre cobertura y cuota.",
+    "confidence": "medium"
   },
   "source": {
-    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/9246.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9246#issuecomment-5580054754",
-    "reviewedAt": "2026-09-09T15:18:37.998Z",
-    "mainSha": "94cb970a57ae971c0f59e2f01b6667ba033b4085"
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9246.md",
+    "reviewedAt": "2026-10-15T21:36:33.566Z",
+    "mainSha": "6af27faf5e38dd96f99563360ec1da6f99514fd1"
   }
 }
