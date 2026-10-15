@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-15T09:02:13.892Z",
+  "updatedAt": "2026-10-15T08:58:55Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10889,
+    "title": "feat: split the poslibri count by correos weight bracket",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10889",
+    "state": "open",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-10-15T08:43:42Z",
+    "updatedAt": "2026-10-15T08:58:55Z",
+    "headSha": "cb097cc8e217969953270b065308133bb39dbf26"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "Cuando los porcentajes configurados sumen menos del 100 %, ¿debe el contador asignar igualmente todos los bultos a los tramos o dejar sin asignar la parte no cubierta?",
+  "rationale": "La aceptación de la issue exige que la suma de bultos coincida con el total, pero la documentación del PR describe que el excedente no cubierto queda sin asignar; ambas conductas producen declaraciones distintas.",
+  "options": [
+    {
+      "title": "Asignar el total",
+      "body": "Mantener el requisito de que los tramos sumen todos los bultos y documentar cómo se reparte la parte no cubierta.",
+      "recommended": true
+    },
+    {
+      "title": "Dejar parte sin asignar",
+      "body": "Cambiar la aceptación para permitir que la suma por tramos sea inferior al total y adaptar la vista y el mensaje de cierre.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Asignar el total",
+    "body": "Mantener el requisito de que los tramos sumen todos los bultos y documentar cómo se reparte la parte no cubierta.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "Su historial reciente de cambios en el contador Poslibri lo conecta directamente con la implementación y el comportamiento esperado.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10889.md",
+    "reviewedAt": "2026-10-15T09:02:13.892Z",
+    "mainSha": "a32fae8ea2a342afab5b30fab52d94c1e39e50c2"
+  }
+}
