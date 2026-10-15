@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-15T09:00:47.287Z",
+  "updatedAt": "2026-10-15T08:57:52Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10891,
+    "title": "admin: v5 API routes and some v4 exempt paths accept unauthenticated requests",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10891",
+    "state": "open",
+    "labels": [
+      "bug",
+      "source:admin-panel",
+      "app:admin",
+      "triage:running",
+      "reporter:alejandrodiaz",
+      "P1"
+    ],
+    "createdAt": "2026-10-15T08:50:46Z",
+    "updatedAt": "2026-10-15T08:57:52Z"
+  },
+  "lane": "security_boundary",
+  "priority": "P1",
+  "question": "¿Qué rutas exentas deben seguir aceptando llamadas de integraciones sin sesión y qué mecanismo verificable debe sustituir la autenticación de usuario?",
+  "rationale": "La corrección debe distinguir las APIs del panel de los puentes y callbacks de servicio; retirar exenciones sin identificar su mecanismo de autenticación podría interrumpir integraciones legítimas.",
+  "options": [
+    {
+      "title": "Proteger rutas de panel y definir excepciones por integración",
+      "body": "Exigir sesión y roles en las rutas administrativas y conservar solo excepciones con una credencial o validación específica documentada.",
+      "recommended": true
+    },
+    {
+      "title": "Exigir sesión en todas las rutas señaladas",
+      "body": "Eliminar las excepciones citadas y requerir autenticación de usuario, aceptando posibles cambios en integraciones que dependan de ellas.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Proteger rutas de panel y definir excepciones por integración",
+    "body": "Exigir sesión y roles en las rutas administrativas y conservar solo excepciones con una credencial o validación específica documentada.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Lyno",
+    "reason": "Su historial reciente cubre el proxy y las rutas afectadas; es el candidato más directo disponible para evaluar la frontera de autenticación.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10891.md",
+    "reviewedAt": "2026-10-15T09:00:47.287Z",
+    "mainSha": "a32fae8ea2a342afab5b30fab52d94c1e39e50c2"
+  }
+}
