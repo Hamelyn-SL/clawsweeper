@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-15T11:55:14.233Z",
+  "updatedAt": "2026-10-15T11:52:05Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10901,
+    "title": "feat: warehouse faults panel feedback from the warehouse",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10901",
+    "state": "open",
+    "labels": [
+      "size/XXL"
+    ],
+    "createdAt": "2026-10-15T11:37:26Z",
+    "updatedAt": "2026-10-15T11:52:05Z",
+    "headSha": "01cc58d290a2406c7c7b44d22b705458995673d9"
+  },
+  "lane": "merge_risk",
+  "priority": "P2",
+  "question": "¿Debe omitirse `faults.exemptOperators` conservar las exenciones existentes para clientes antiguos, o se desplegarán todos los clientes escritores coordinadamente antes de aceptar el borrado por omisión?",
+  "rationale": "El parámetro se guarda como snapshot completo y el cambio declara que la omisión equivale a vaciar la lista; el PR también indica que ya existen exenciones en parámetros de producción, por lo que la decisión afecta a usuarios y clientes actuales.",
+  "options": [
+    {
+      "title": "Preservar al omitir",
+      "body": "Hacer que los escritores que no envían `faults` mantengan la lista actual y permitir el vaciado solo cuando se envíe explícitamente.",
+      "recommended": true
+    },
+    {
+      "title": "Despliegue coordinado",
+      "body": "Mantener el borrado por omisión, pero demostrar que todos los clientes que guardan parámetros ya envían la lista antes del despliegue.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Preservar al omitir",
+    "body": "Hacer que los escritores que no envían `faults` mantengan la lista actual y permitir el vaciado solo cuando se envíe explícitamente.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "HamelynDev",
+    "reason": "Su historial local está vinculado a la evolución de los parámetros de productividad; la decisión requiere confirmar el contrato de guardado entre clientes.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10901.md",
+    "reviewedAt": "2026-10-15T11:55:14.233Z",
+    "mainSha": "22086282c1d5ce07af72bd2114ed305e40467a45"
+  }
+}
