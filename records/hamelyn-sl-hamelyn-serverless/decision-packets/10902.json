@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-15T11:49:55.132Z",
+  "updatedAt": "2026-10-15T11:38:02Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10902,
+    "title": "Supply web: un solo contenedor GTM para todos los países y mercado en el dataLayer",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10902",
+    "state": "open",
+    "labels": [
+      "app:supply",
+      "reporter:jesus",
+      "feature",
+      "triage:queued",
+      "P1"
+    ],
+    "createdAt": "2026-10-15T11:37:52Z",
+    "updatedAt": "2026-10-15T11:38:02Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Qué regla y fuente de datos deben definir `new_seller` para el lead de Supply: primer lote histórico del vendedor o una condición distinta?",
+  "rationale": "El issue pide el booleano y menciona checkout o perfil como posibles fuentes, pero no fija la regla de negocio; implementar una interpretación podría producir conversiones inconsistentes.",
+  "options": [
+    {
+      "title": "Acordar regla de primer lote",
+      "body": "Definir el criterio de vendedor nuevo y la fuente de datos antes de añadir el campo al evento.",
+      "recommended": true
+    },
+    {
+      "title": "Dejar `new_seller` fuera",
+      "body": "Unificar GTM y completar mercado e `items` mientras la medición de vendedor nuevo queda para una decisión posterior.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Acordar regla de primer lote",
+    "body": "Definir el criterio de vendedor nuevo y la fuente de datos antes de añadir el campo al evento.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Miguel Angel Hernández Perdomo",
+    "reason": "Su historial reciente conecta con la analítica de Supply web; la regla de negocio también puede requerir confirmación del área responsable de medición.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10902.md",
+    "reviewedAt": "2026-10-15T11:49:55.132Z",
+    "mainSha": "22086282c1d5ce07af72bd2114ed305e40467a45"
+  }
+}
