@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-14T13:03:27.038Z",
-  "updatedAt": "2026-10-14T12:58:36Z",
+  "generatedAt": "2026-10-15T13:25:49.682Z",
+  "updatedAt": "2026-10-14T13:31:08Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,43 +13,42 @@
       "bug",
       "app:infrastructure",
       "reporter:pablo",
-      "triage:queued",
-      "P2",
-      "clawsweeper:needs-product-decision"
+      "triage:done",
+      "clawsweeper:needs-product-decision",
+      "P2"
     ],
     "createdAt": "2026-10-14T12:58:24Z",
-    "updatedAt": "2026-10-14T12:58:36Z"
+    "updatedAt": "2026-10-14T13:31:08Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe calcularse el precio al reactivar desde el precio actual del producto aplicando la escalera por estado, o debe conservarse como base el precio del stock activo de peor estado que usa el trigger?",
-  "rationale": "La decisión cambia precios publicados y potencialmente los precios de stocks hermanos; la documentación consultada no establece cuál de estas dos bases es la fuente canónica para ese recálculo.",
+  "question": "¿Qué base debe usar la reactivación para calcular el precio por estado, coordinada con el trigger de Atlas: la política vigente del core o el precio del producto como propone el reporte?",
+  "rationale": "El caso concreto confirma el grupo desfasado, no un precio incorrecto; la elección puede afectar el precio recalculado de otros stocks y requiere una decisión funcional de Inventario y Pricing.",
   "options": [
     {
-      "title": "Producto como base canónica",
-      "body": "Recalcular desde el precio actual del producto y aplicar la escalera por estado, coordinando el trigger para que no vuelva a propagar una base obsoleta.",
+      "title": "Acordar la política de precio antes del servicio común",
+      "body": "Definir y validar conjuntamente con el trigger qué precio base se aplica al stock reactivado y cuándo recalcular sus hermanos.",
       "recommended": true
     },
     {
-      "title": "Conservar la base de stocks activos",
-      "body": "Mantener el criterio actual del trigger y sincronizar al reactivar solo los campos del producto que no afecten al precio.",
+      "title": "Separar el refresco de ficha del cambio de precios",
+      "body": "Corregir grupo y snapshot primero, dejando la política de precio para una decisión y cambio coordinados posteriores.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Producto como base canónica",
-    "body": "Recalcular desde el precio actual del producto y aplicar la escalera por estado, coordinando el trigger para que no vuelva a propagar una base obsoleta.",
+    "title": "Acordar la política de precio antes del servicio común",
+    "body": "Definir y validar conjuntamente con el trigger qué precio base se aplica al stock reactivado y cuándo recalcular sus hermanos.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "PabloMoran34",
-    "reason": "Ha contribuido recientemente a la sincronización de grupos de stocks y es el autor del análisis detallado de este caso.",
+    "person": "mariatapia-hamelyn",
+    "reason": "Su trabajo reciente aborda la sincronización de stocks desde el producto, el área más próxima al comportamiento que requiere decisión.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10873.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10873#issuecomment-6169043268",
-    "reviewedAt": "2026-10-14T13:03:27.038Z",
-    "mainSha": "5ce887ac193912d5c6b6d5bfb13e4dcfd791752a"
+    "reviewedAt": "2026-10-15T13:25:49.682Z",
+    "mainSha": "8f46285696efe60fa3abad4f8fae5777830dffc1"
   }
 }
