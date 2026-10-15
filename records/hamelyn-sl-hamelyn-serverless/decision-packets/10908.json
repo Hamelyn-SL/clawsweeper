@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-15T12:34:07.806Z",
+  "updatedAt": "2026-10-15T12:22:22Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10908,
+    "title": "[WATCHER-ALERT] amazon_se: report trigger failed",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10908",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "P1"
+    ],
+    "createdAt": "2026-10-15T12:22:22Z",
+    "updatedAt": "2026-10-15T12:22:22Z"
+  },
+  "lane": "manual_review",
+  "priority": "P2",
+  "question": "¿Puede el equipo revisar el run fallido y el recibo de la sesión Eve, y confirmar si el reintento ya verificó `emitted=true`?",
+  "rationale": "La causa depende de evidencia operativa del run, el deployment y la sesión que no puede establecerse desde el código disponible.",
+  "options": [
+    {
+      "title": "Revisar y reintentar",
+      "body": "Inspeccionar las respuestas y el recibo del run, y repetir el trigger para confirmar el cierre verificable del snapshot.",
+      "recommended": true
+    },
+    {
+      "title": "Escalar un defecto reproducible",
+      "body": "Si el run o el reintento confirma un fallo persistente, registrar la causa y abrir una reparación acotada del flujo afectado.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Revisar y reintentar",
+    "body": "Inspeccionar las respuestas y el recibo del run, y repetir el trigger para confirmar el cierre verificable del snapshot.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "HamelynDev",
+    "reason": "Ha realizado el cambio más reciente en los reintentos del estado del watcher, por lo que es una primera vía de contexto para revisar ese comportamiento.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10908.md",
+    "reviewedAt": "2026-10-15T12:34:07.806Z",
+    "mainSha": "7f0bd15a9a17365ff38d6bc3f3b6275999dab43b"
+  }
+}
