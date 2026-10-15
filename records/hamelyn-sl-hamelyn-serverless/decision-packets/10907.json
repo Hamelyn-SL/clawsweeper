@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-15T12:58:20.106Z",
+  "updatedAt": "2026-10-15T12:16:01Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10907,
+    "title": "Medición por cupón del carrito: vistas, usos y ventas",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10907",
+    "state": "open",
+    "labels": [
+      "app:ecommerce",
+      "feature",
+      "triage:queued",
+      "app:data"
+    ],
+    "createdAt": "2026-10-15T12:15:50Z",
+    "updatedAt": "2026-10-15T12:16:01Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué identificador y regla de vinculación se deben usar para atribuir una vista de GA4 a un pedido, especialmente para visitantes anónimos o sin consentimiento de analítica?",
+  "rationale": "Sin esta decisión no se puede definir de manera segura y coherente la atribución de pedidos de quienes vieron el cupón y no lo usaron.",
+  "options": [
+    {
+      "title": "Vinculación solo con identidad permitida",
+      "body": "Atribuir únicamente cuando los datos existentes permitan el vínculo conforme al consentimiento y dejar el resto sin atribuir.",
+      "recommended": true
+    },
+    {
+      "title": "Atribución por variante guardada en el pedido",
+      "body": "Guardar la variante asignada al crear el pedido y limitar el análisis a pedidos con ese dato, sin afirmar que hubo una vista individual.",
+      "recommended": false
+    },
+    {
+      "title": "Atribución basada en sesión GA4",
+      "body": "Adoptar un identificador de sesión compatible entre GA4 y pedidos, sujeto a validación de privacidad y cobertura.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Vinculación solo con identidad permitida",
+    "body": "Atribuir únicamente cuando los datos existentes permitan el vínculo conforme al consentimiento y dejar el resto sin atribuir.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "mariatapia-hamelyn",
+    "reason": "Su trabajo reciente en el dashboard de ventas la conecta con la definición de métricas y presentación de resultados; la elección debe confirmarse con el responsable de analítica y privacidad del equipo.",
+    "confidence": "low"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10907.md",
+    "reviewedAt": "2026-10-15T12:58:20.106Z",
+    "mainSha": "8f46285696efe60fa3abad4f8fae5777830dffc1"
+  }
+}
