@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-14T05:47:43.360Z",
-  "updatedAt": "2026-10-14T05:42:57Z",
+  "generatedAt": "2026-10-15T07:02:07.042Z",
+  "updatedAt": "2026-10-14T06:15:52Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,48 +13,47 @@
       "app:marketplace",
       "feature",
       "reporter:marcos",
-      "triage:queued",
-      "P2",
-      "clawsweeper:needs-product-decision"
+      "triage:done",
+      "clawsweeper:needs-product-decision",
+      "P2"
     ],
     "createdAt": "2026-10-14T05:42:42Z",
-    "updatedAt": "2026-10-14T05:42:57Z"
+    "updatedAt": "2026-10-14T06:15:52Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se aprueba actualizar también las publicaciones argentinas ya activas a 15 días, además de cambiar las altas nuevas?",
-  "rationale": "La issue general relacionada sigue abierta con la decisión sobre las publicaciones existentes pendiente; ejecutar un lote remoto modifica publicaciones de clientes y no debe deducirse solo del cambio de configuración para nuevas altas.",
+  "question": "¿Se autoriza actualizar remotamente las publicaciones activas de Argentina a 15 días, además de mantener el cambio ya integrado para las altas nuevas?",
+  "rationale": "El cambio de términos para anuncios existentes es una operación remota de gran volumen y no se deduce de la decisión aplicada a las altas nuevas; el equipo debe confirmar que quiere cambiar esos anuncios y aceptar el procedimiento controlado.",
   "options": [
     {
-      "title": "Aprobar la actualización de activas",
-      "body": "Autorizar el lote canario y la actualización remota reanudable, verificando disponibilidad y garantía mediante la API.",
+      "title": "Autorizar el lote controlado",
+      "body": "Aprobar un canario de cinco anuncios y, si se verifican plazo y garantía, continuar con la actualización reanudable del resto.",
       "recommended": true
     },
     {
-      "title": "Cambiar solo las nuevas",
-      "body": "Mantener las publicaciones actuales con sus términos existentes y limitar el cambio a nuevas altas.",
+      "title": "Limitar el cambio a nuevas altas",
+      "body": "Mantener los términos actuales en anuncios ya activos y cerrar el alcance operativo en el cambio ya integrado para publicaciones nuevas.",
       "recommended": false
     },
     {
-      "title": "Validar antes de decidir",
-      "body": "Pedir al equipo de Marketplaces que confirme método, cuota y verificación antes de autorizar cambios remotos.",
+      "title": "Validar el procedimiento primero",
+      "body": "Pedir al equipo de Marketplaces confirmar cuotas, ejecución y verificación antes de autorizar escrituras remotas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar la actualización de activas",
-    "body": "Autorizar el lote canario y la actualización remota reanudable, verificando disponibilidad y garantía mediante la API.",
+    "title": "Autorizar el lote controlado",
+    "body": "Aprobar un canario de cinco anuncios y, si se verifican plazo y garantía, continuar con la actualización reanudable del resto.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Es el candidato de enrutamiento mejor respaldado por su trabajo reciente en la configuración de MercadoLibre Argentina; la aprobación debe confirmarla el equipo responsable del catálogo.",
-    "confidence": "medium"
+    "reason": "La issue está asignada a Marcos y el historial local lo conecta con cambios recientes del flujo de MercadoLibre; el equipo de Marketplaces puede validar la operación de producción.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10825.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10825#issuecomment-6161843899",
-    "reviewedAt": "2026-10-14T05:47:43.360Z",
-    "mainSha": "8e76cfcec5551f7d61cb4abf0e47b59fd55bf9b6"
+    "reviewedAt": "2026-10-15T07:02:07.042Z",
+    "mainSha": "2e34cdfdbec18f54433eb9c3772d104705a6b08b"
   }
 }
