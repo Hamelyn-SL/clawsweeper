@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-15T13:48:58.947Z",
+  "updatedAt": "2026-10-15T13:42:52Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10914,
+    "title": "Marketplace: [meli_description_failed] sku=<value> item=<id> reason={\"status\":429,\"message\":\"local_rate_limited\"}",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10914",
+    "state": "open",
+    "labels": [
+      "codex",
+      "bug",
+      "app:marketplace",
+      "triage:running",
+      "P2",
+      "marketplace-crons"
+    ],
+    "createdAt": "2026-10-15T13:30:41Z",
+    "updatedAt": "2026-10-15T13:42:52Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe el sistema reintentar de forma acotada el POST de descripción tras un 429, o basta con conservar el anuncio y dejar constancia del fallo para recuperación posterior?",
+  "rationale": "La documentación define el POST de descripción como mejor esfuerzo, mientras que el reporte pide ejecuciones sin esta causa; automatizar un retry puede cambiar la latencia y el comportamiento de publicación.",
+  "options": [
+    {
+      "title": "Reintento acotado",
+      "body": "Añadir reintentos 429 limitados al POST de descripción y comprobar que no exceden el presupuesto del cron.",
+      "recommended": true
+    },
+    {
+      "title": "Recuperación separada",
+      "body": "Mantener el POST sin reintentos en línea y definir un flujo de recuperación para descripciones pendientes.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Reintento acotado",
+    "body": "Añadir reintentos 429 limitados al POST de descripción y comprobar que no exceden el presupuesto del cron.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Es la única persona identificable en el historial local cercano, aunque la atribución específica a MercadoLibre no está confirmada.",
+    "confidence": "low"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10914.md",
+    "reviewedAt": "2026-10-15T13:48:58.947Z",
+    "mainSha": "6af27faf5e38dd96f99563360ec1da6f99514fd1"
+  }
+}
