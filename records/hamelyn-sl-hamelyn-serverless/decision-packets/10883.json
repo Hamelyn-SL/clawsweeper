@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-15T07:52:02.412Z",
+  "updatedAt": "2026-10-15T07:45:12Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10883,
+    "title": "Contador Poslibri: reparto de bultos por tramo de peso para Correos",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10883",
+    "state": "open",
+    "labels": [
+      "source:admin-panel",
+      "app:admin",
+      "feature",
+      "reporter:sandra",
+      "triage:needs-info",
+      "P2"
+    ],
+    "createdAt": "2026-10-15T07:42:11Z",
+    "updatedAt": "2026-10-15T07:45:12Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué debe hacerse con los 18 bultos que quedan sin asignar por la tabla actual cuando el total es 1.000?",
+  "rationale": "Los porcentajes publicados suman 98,78 %, por lo que el algoritmo no puede simultáneamente respetarlos literalmente y garantizar que las cantidades sumen el total sin una regla adicional del negocio.",
+  "options": [
+    {
+      "title": "Corregir la tabla a 100 %",
+      "body": "Validar con almacén una distribución que sume 100 % y aplicar el método de mayor resto sobre esos porcentajes.",
+      "recommended": true
+    },
+    {
+      "title": "Normalizar los pesos al repartir",
+      "body": "Conservar los porcentajes publicados como pesos relativos y escalarlos proporcionalmente al total antes de asignar restos.",
+      "recommended": false
+    },
+    {
+      "title": "Repetir el orden de restos",
+      "body": "Conservar el cálculo inicial y repartir sobrantes adicionales repitiendo ciclos de tramos en orden de mayor resto.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Corregir la tabla a 100 %",
+    "body": "Validar con almacén una distribución que sume 100 % y aplicar el método de mayor resto sobre esos porcentajes.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "sandra",
+    "reason": "La regla depende de validar la tabla operativa atribuida a almacén en la issue.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10883.md",
+    "reviewedAt": "2026-10-15T07:52:02.412Z",
+    "mainSha": "2e34cdfdbec18f54433eb9c3772d104705a6b08b"
+  }
+}
