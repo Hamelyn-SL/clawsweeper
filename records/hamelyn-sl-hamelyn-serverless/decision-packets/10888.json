@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-15T09:04:59.036Z",
+  "updatedAt": "2026-10-15T09:03:24Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10888,
+    "title": "feat: send native 4K captures to bin vision when a CD is pending",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10888",
+    "state": "open",
+    "labels": [
+      "size/L",
+      "P2"
+    ],
+    "createdAt": "2026-10-15T08:43:36Z",
+    "updatedAt": "2026-10-15T09:03:24Z",
+    "headSha": "6b211336ee935e84f658237ecc54840a3138b201"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se acepta enviar la captura en resolución nativa cuando el lote incluye música, asumiendo la latencia adicional indicada, o se mantiene la reducción actual hasta contar con más validación?",
+  "rationale": "La implementación es acotada, pero las pruebas descritas reflejan un intercambio de precisión y latencia; el issue asociado marca explícitamente que falta una decisión de producto.",
+  "options": [
+    {
+      "title": "Aceptar la ruta condicional",
+      "body": "Mantener 4K solo para lotes que incluyen música y vigilar las métricas por resolución tras el despliegue.",
+      "recommended": true
+    },
+    {
+      "title": "Esperar más validación",
+      "body": "Dejar la reducción actual como comportamiento único hasta disponer de una decisión basada en las métricas acordadas.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aceptar la ruta condicional",
+    "body": "Mantener 4K solo para lotes que incluyen música y vigilar las métricas por resolución tras el despliegue.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Es el contribuidor con actividad reciente en esta ruta y aporta los datos que sustentan la propuesta; no consta en el historial local un responsable único de la decisión de producto.",
+    "confidence": "low"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10888.md",
+    "reviewedAt": "2026-10-15T09:04:59.036Z",
+    "mainSha": "a32fae8ea2a342afab5b30fab52d94c1e39e50c2"
+  }
+}

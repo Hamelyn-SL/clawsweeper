@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-14T09:00:54.498Z",
-  "updatedAt": "2026-10-14T07:13:45Z",
+  "generatedAt": "2026-10-15T09:05:33.442Z",
+  "updatedAt": "2026-10-14T10:16:18Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -14,38 +14,38 @@
       "P2"
     ],
     "createdAt": "2026-10-13T07:49:46Z",
-    "updatedAt": "2026-10-14T07:13:45Z",
-    "headSha": "656f92bc5b3340798428a3bb24f9896d586fbdb0"
+    "updatedAt": "2026-10-14T10:16:18Z",
+    "headSha": "72f1e30736a96f73222f32fbc9af344bd15e0640"
   },
-  "lane": "release_inclusion",
+  "lane": "merge_risk",
   "priority": "P2",
-  "question": "¿Se considera suficiente la aceptación del rollout escalonado para integrar el cambio antes de medir una guardia completa con 2 vCPU?",
-  "rationale": "La conversación acepta la dirección y deja las medidas reales para después del merge; hace falta confirmar que ese orden de validación es aceptable para una modificación del sistema de vigilancia de releases.",
+  "question": "¿Se acepta integrar este PR antes de medir una guardia completa con 2 vCPU, dejando el arranque, la cadencia y el coste como validación del primer rollout?",
+  "rationale": "El cambio reduce los recursos solicitados, pero la conversación no contiene una aceptación inequívoca de la persona identificada como responsable de asumir el riesgo de que la release quede sin vigilancia si el arranque agota los reintentos.",
   "options": [
     {
       "title": "Integrar y validar en el primer rollout",
-      "body": "Aceptar el riesgo acotado, dado que el PR contempla relanzamiento y aviso cuando la guardia no arranca, y revisar métricas de producción en la primera release vigilada.",
+      "body": "Aceptar el riesgo acotado y revisar arranque, checkpoints y coste en la primera guardia completa.",
       "recommended": true
     },
     {
-      "title": "Esperar evidencia operativa previa",
-      "body": "Mantener el PR sin integrar hasta contar con una ejecución completa que demuestre arranque y cadencia, si puede prepararse una validación segura antes del rollout.",
+      "title": "Esperar una prueba operativa",
+      "body": "Mantener el PR sin integrar hasta demostrar el arranque y la cadencia con 2 vCPU en un entorno seguro.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Integrar y validar en el primer rollout",
-    "body": "Aceptar el riesgo acotado, dado que el PR contempla relanzamiento y aviso cuando la guardia no arranca, y revisar métricas de producción en la primera release vigilada.",
+    "body": "Aceptar el riesgo acotado y revisar arranque, checkpoints y coste en la primera guardia completa.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su cambio reciente de ventanas y presupuesto enmarca la decisión de cadencia y coste; la issue emparejada y los comentarios del rollout aportan el contexto de Daniel.",
+    "reason": "La revisión previa lo identificó como candidato probable para decidir el rollout; su comentario más reciente solo confirma que integró dev.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10785.md",
-    "reviewedAt": "2026-10-14T09:00:54.498Z",
-    "mainSha": "87492ac1d4a74d3094018203271ecff90d61e8a7"
+    "reviewedAt": "2026-10-15T09:05:33.442Z",
+    "mainSha": "a32fae8ea2a342afab5b30fab52d94c1e39e50c2"
   }
 }
