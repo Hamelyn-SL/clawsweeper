@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-09T08:36:40.777Z",
-  "updatedAt": "2026-10-09T08:23:23Z",
+  "generatedAt": "2026-10-16T08:51:28.120Z",
+  "updatedAt": "2026-10-16T08:19:50Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -17,43 +17,42 @@
       "P2"
     ],
     "createdAt": "2026-10-01T08:19:43Z",
-    "updatedAt": "2026-10-09T08:23:23Z"
+    "updatedAt": "2026-10-16T08:19:50Z"
   },
-  "lane": "product_direction",
+  "lane": "security_boundary",
   "priority": "P2",
-  "question": "¿Debe la asociación segura ejecutarse en cada login con email verificado para cubrir cuentas existentes y compras invitadas posteriores, o solo al crear la cuenta?",
-  "rationale": "El caso descrito de una cuenta ya existente no se resuelve al alta, mientras que la ruta de login actual ejecuta el POST recurrentemente; además, falta confirmar el origen de verificación aceptado y la autorización del índice.",
+  "question": "¿Qué fuente autenticada debe acreditar email_verified y debe ejecutarse la reconciliación también en cada inicio de sesión verificado para incluir pedidos de invitado posteriores al alta?",
+  "rationale": "La elección afecta a la frontera de privacidad de los pedidos y al comportamiento de cuentas existentes; el snapshot Auth0 citado no acredita la configuración del tenant activo.",
   "options": [
     {
-      "title": "Reconciliar en cada login verificado",
-      "body": "Cubriría tanto pedidos anteriores como compras invitadas posteriores, una vez confirmado el origen de confianza del flag y el índice compatible.",
+      "title": "Reconciliar en login verificado",
+      "body": "Validar la señal de verificación desde una Action autenticada o Management API y reconciliar también cuentas existentes al iniciar sesión.",
       "recommended": true
     },
     {
-      "title": "Reconciliar solo al crear la cuenta",
-      "body": "Limitaría el cambio al alta, pero dejaría fuera pedidos invitados de cuentas ya existentes y compras posteriores.",
+      "title": "Vincular solo en el alta",
+      "body": "Limitar el vínculo a cuentas nuevas y dejar fuera pedidos de invitado realizados después de crear la cuenta.",
       "recommended": false
     },
     {
-      "title": "Aplazar hasta confirmar Auth0 y Atlas",
-      "body": "Mantendría la issue abierta hasta validar el tenant y acordar el índice requerido antes de concretar la implementación.",
+      "title": "Aplazar hasta confirmar Auth0",
+      "body": "Mantener la solicitud pendiente hasta verificar las Actions y la política de verificación en el tenant activo.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Reconciliar en cada login verificado",
-    "body": "Cubriría tanto pedidos anteriores como compras invitadas posteriores, una vez confirmado el origen de confianza del flag y el índice compatible.",
+    "title": "Reconciliar en login verificado",
+    "body": "Validar la señal de verificación desde una Action autenticada o Management API y reconciliar también cuentas existentes al iniciar sesión.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Su historial reciente está más próximo al flujo de creación de pedidos y resolución de cliente que condiciona esta decisión.",
-    "confidence": "medium"
+    "reason": "Su historial local reciente incluye cambios en checkout y flujos ecommerce relacionados; la decisión sobre la configuración activa de Auth0 debe confirmarla la persona responsable de ese tenant.",
+    "confidence": "low"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10320.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10320#issuecomment-5927816276",
-    "reviewedAt": "2026-10-09T08:36:40.777Z",
-    "mainSha": "0eb412b66c97a158b15c78dc7a2a6ba161bc83d5"
+    "reviewedAt": "2026-10-16T08:51:28.120Z",
+    "mainSha": "6f083344eb72cbf9e8f439b7187ef1722e7b7aa8"
   }
 }
