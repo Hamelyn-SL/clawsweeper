@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-15T07:52:02.412Z",
-  "updatedAt": "2026-10-15T07:45:12Z",
+  "generatedAt": "2026-10-16T07:56:34.830Z",
+  "updatedAt": "2026-10-15T10:42:51Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,47 +15,46 @@
       "feature",
       "reporter:sandra",
       "triage:needs-info",
-      "P2",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2"
     ],
     "createdAt": "2026-10-15T07:42:11Z",
-    "updatedAt": "2026-10-15T07:45:12Z"
+    "updatedAt": "2026-10-15T10:42:51Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué debe hacerse con los 18 bultos que quedan sin asignar por la tabla actual cuando el total es 1.000?",
-  "rationale": "Los porcentajes publicados suman 98,78 %, por lo que el algoritmo no puede simultáneamente respetarlos literalmente y garantizar que las cantidades sumen el total sin una regla adicional del negocio.",
+  "question": "¿Qué regla debe aplicarse a los bultos que quedan sin asignar porque los porcentajes actuales suman 98,78 %?",
+  "rationale": "La tabla deja 18 bultos sin asignar por cada 1.000, y las alternativas cambian lo que se declara a Correos; la conversación disponible no registra la decisión del almacén.",
   "options": [
     {
-      "title": "Corregir la tabla a 100 %",
-      "body": "Validar con almacén una distribución que sume 100 % y aplicar el método de mayor resto sobre esos porcentajes.",
+      "title": "Corregir porcentajes a 100 %",
+      "body": "Validar con el almacén una tabla que sume 100 % y aplicar el método de mayor resto.",
       "recommended": true
     },
     {
-      "title": "Normalizar los pesos al repartir",
-      "body": "Conservar los porcentajes publicados como pesos relativos y escalarlos proporcionalmente al total antes de asignar restos.",
+      "title": "Normalizar los pesos",
+      "body": "Conservar los porcentajes publicados como pesos relativos y escalarlos proporcionalmente antes del reparto.",
       "recommended": false
     },
     {
-      "title": "Repetir el orden de restos",
-      "body": "Conservar el cálculo inicial y repartir sobrantes adicionales repitiendo ciclos de tramos en orden de mayor resto.",
+      "title": "Repetir rondas de restos",
+      "body": "Mantener los porcentajes y volver a recorrer los tramos en orden de mayor resto hasta asignar todos los bultos.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Corregir la tabla a 100 %",
-    "body": "Validar con almacén una distribución que sume 100 % y aplicar el método de mayor resto sobre esos porcentajes.",
+    "title": "Corregir porcentajes a 100 %",
+    "body": "Validar con el almacén una tabla que sume 100 % y aplicar el método de mayor resto.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "sandra",
-    "reason": "La regla depende de validar la tabla operativa atribuida a almacén en la issue.",
-    "confidence": "medium"
+    "reason": "La issue la identifica como reportera y el comentario de triage pide al almacén concretar esta regla operativa.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10883.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10883#issuecomment-6187272598",
-    "reviewedAt": "2026-10-15T07:52:02.412Z",
-    "mainSha": "2e34cdfdbec18f54433eb9c3772d104705a6b08b"
+    "reviewedAt": "2026-10-16T07:56:34.830Z",
+    "mainSha": "6f083344eb72cbf9e8f439b7187ef1722e7b7aa8"
   }
 }
