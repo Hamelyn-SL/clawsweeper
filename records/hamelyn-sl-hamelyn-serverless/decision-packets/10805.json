@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-15T13:57:05.521Z",
-  "updatedAt": "2026-10-15T12:29:11Z",
+  "generatedAt": "2026-10-16T14:01:33.941Z",
+  "updatedAt": "2026-10-16T12:32:30Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -14,44 +14,43 @@
       "P2"
     ],
     "createdAt": "2026-10-13T12:53:25Z",
-    "updatedAt": "2026-10-15T12:29:11Z",
-    "headSha": "eb7d22808efc99380f8e039ae974b4aea30d73a1"
+    "updatedAt": "2026-10-16T12:32:30Z",
+    "headSha": "570dd5cea549ce9ed486d52b6a6164fc699b5ec5"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe este PR publicar `supply-web` sobre la identidad instalada de Expo ahora, y qué estado local debe preservarse durante esa actualización?",
-  "rationale": "La issue vinculada plantea versionar proyectos nativos para pruebas; el PR además propone reemplazar la app de tienda existente con el mismo identificador. La intención y compatibilidad de esa transición no se deducen de tests de compilación.",
+  "question": "¿Debe esta migración publicar Supply Web con el identificador instalado de Expo y activar ahora OTA/releases de tienda, o debe conservar una identidad separada hasta aprobar una migración explícita?",
+  "rationale": "La decisión afecta a la continuidad de instalaciones existentes y excede la creación de proyectos nativos; la issue 10804 aplaza expresamente el identificador de producción y la issue 9721 mantiene pendientes mínimos y límites de distribución.",
   "options": [
     {
-      "title": "Aprobar migración con compatibilidad",
-      "body": "Mantener el identificador compartido solo con una estrategia y evidencia de actualización para sesión y estado local.",
-      "recommended": true
-    },
-    {
-      "title": "Separar la app nativa",
-      "body": "Usar una identidad distinta y tratar la publicación como una aplicación nueva, evitando sustituir instalaciones Expo existentes.",
+      "title": "Aprobar migración compatible",
+      "body": "Mantener el identificador compartido y aportar una estrategia verificada para actualización de instalaciones, sesión y estado local.",
       "recommended": false
     },
     {
-      "title": "Limitar este PR al alcance inicial",
-      "body": "Dejar OTA y releases de tienda para una propuesta posterior con una decisión de migración explícita.",
+      "title": "Separar la aplicación nativa",
+      "body": "Usar un identificador distinto para evitar sustituir instalaciones Expo hasta que exista una migración aprobada.",
+      "recommended": true
+    },
+    {
+      "title": "Acotar el PR inicial",
+      "body": "Integrar los proyectos nativos y posponer OTA y releases de tienda a una decisión y propuesta separadas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar migración con compatibilidad",
-    "body": "Mantener el identificador compartido solo con una estrategia y evidencia de actualización para sesión y estado local.",
+    "title": "Separar la aplicación nativa",
+    "body": "Usar un identificador distinto para evitar sustituir instalaciones Expo hasta que exista una migración aprobada.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Tiene contribuciones previas en la autenticación de `supply-web` y lidera la implementación que define esta transición.",
+    "reason": "Es quien aparece con más continuidad reciente en la historia de Supply Web y puede aportar contexto de implementación a la decisión.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10805.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10805#issuecomment-6146409288",
-    "reviewedAt": "2026-10-15T13:57:05.521Z",
-    "mainSha": "6af27faf5e38dd96f99563360ec1da6f99514fd1"
+    "reviewedAt": "2026-10-16T14:01:33.941Z",
+    "mainSha": "52dd5756cadb832c60e976f3dc080733fa6b06cc"
   }
 }

@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-16T13:56:46.233Z",
-  "updatedAt": "2026-10-15T13:07:04Z",
+  "generatedAt": "2026-10-16T14:00:27.989Z",
+  "updatedAt": "2026-10-16T13:58:24Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -14,39 +14,38 @@
       "P2"
     ],
     "createdAt": "2026-10-15T12:11:59Z",
-    "updatedAt": "2026-10-15T13:07:04Z",
+    "updatedAt": "2026-10-16T13:58:24Z",
     "headSha": "8e01bfaa21953ccc2038add41bd61297f1cdf129"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se acepta cerrar mediante la API todos los anuncios del SKU aunque haya un pedido en curso, una vez que el stock maestro ya no es vendible?",
-  "rationale": "El PR cambia cuándo se ejecuta el cierre remoto y reconoce que no hay confirmación del efecto sobre pedidos en curso; esa tolerancia operativa no puede inferirse solo del código.",
+  "question": "¿Debe la retirada cerrar todos los anuncios de un SKU vendido aunque MercadoLibre tenga un pedido en curso?",
+  "rationale": "El PR declara que el código de picking y etiquetas no consulta el anuncio, pero no hay confirmación de MercadoLibre ni prueba operativa que descarte efectos sobre pedidos en curso; esta consecuencia de la política de retirada necesita criterio del equipo.",
   "options": [
     {
       "title": "Aceptar el cierre agregado",
-      "body": "Integrar el cierre por SKU y verificar después del despliegue el estado de anuncios y pedidos.",
+      "body": "Integrar el cierre por SKU y vigilar después del despliegue los pedidos y el estado de los anuncios.",
       "recommended": true
     },
     {
-      "title": "Exigir validación operativa previa",
-      "body": "Pedir confirmación del comportamiento de MercadoLibre con pedidos en curso antes de integrar el cierre automático.",
+      "title": "Validar el caso operativo antes",
+      "body": "Confirmar primero el comportamiento de MercadoLibre cuando se cierra un anuncio con un pedido en curso y ajustar el flujo si procede.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Aceptar el cierre agregado",
-    "body": "Integrar el cierre por SKU y verificar después del despliegue el estado de anuncios y pedidos.",
+    "body": "Integrar el cierre por SKU y vigilar después del despliegue los pedidos y el estado de los anuncios.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Su historial incluye el cambio de lápidas que originó esta interacción y los cambios recientes de sincronización asociados.",
-    "confidence": "high"
+    "reason": "Su historial reciente cubre el cambio de lápidas y la retirada de mirrors que origina esta interacción.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10905.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10905#issuecomment-6217112538",
-    "reviewedAt": "2026-10-16T13:56:46.233Z",
+    "reviewedAt": "2026-10-16T14:00:27.989Z",
     "mainSha": "52dd5756cadb832c60e976f3dc080733fa6b06cc"
   }
 }

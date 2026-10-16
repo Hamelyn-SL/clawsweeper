@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-16T14:01:06.374Z",
+  "updatedAt": "2026-10-15T13:06:55Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10904,
+    "title": "Rutas ecommerce UK y CAT erroneas",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10904",
+    "state": "open",
+    "labels": [
+      "bug",
+      "source:admin-panel",
+      "app:ecommerce",
+      "triage:blocked",
+      "reporter:victor",
+      "P2"
+    ],
+    "createdAt": "2026-10-15T12:06:42Z",
+    "updatedAt": "2026-10-15T13:06:55Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe servirse el storefront de ecommerce bajo `/uk/buy` y `/cat/comprar` además de los alias actuales, y está aprobada la delegación de esos prefijos en Vercel?",
+  "rationale": "La issue fija como resultado deseado las rutas históricas, pero el cambio afecta también al manifiesto de delegación y a las exclusiones de redirección; hace falta confirmar el comportamiento de despliegue esperado antes de elegir la implementación.",
+  "options": [
+    {
+      "title": "Conservar las rutas históricas",
+      "body": "Delegar ambos prefijos al ecommerce y ajustar las redirecciones para mantenerlos como destinos finales.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener los alias actuales",
+      "body": "Dejar `/en/buy` y `/ca/comprar` como destinos y actualizar el mapa de redirecciones de URLs antiguas para que apunte directamente a esos alias.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Conservar las rutas históricas",
+    "body": "Delegar ambos prefijos al ecommerce y ajustar las redirecciones para mantenerlos como destinos finales.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Su PR fusionado modificó la configuración de redirecciones de supply-web que origina el comportamiento actual.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10904.md",
+    "reviewedAt": "2026-10-16T14:01:06.374Z",
+    "mainSha": "52dd5756cadb832c60e976f3dc080733fa6b06cc"
+  }
+}
