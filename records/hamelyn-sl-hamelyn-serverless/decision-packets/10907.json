@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-15T12:58:20.106Z",
-  "updatedAt": "2026-10-15T12:16:01Z",
+  "generatedAt": "2026-10-16T13:50:40.737Z",
+  "updatedAt": "2026-10-15T13:15:32Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,49 +12,48 @@
     "labels": [
       "app:ecommerce",
       "feature",
-      "triage:queued",
-      "app:data",
+      "triage:needs-info",
+      "clawsweeper:needs-product-decision",
       "P2",
-      "clawsweeper:needs-product-decision"
+      "app:data"
     ],
     "createdAt": "2026-10-15T12:15:50Z",
-    "updatedAt": "2026-10-15T12:16:01Z"
+    "updatedAt": "2026-10-15T13:15:32Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué identificador y regla de vinculación se deben usar para atribuir una vista de GA4 a un pedido, especialmente para visitantes anónimos o sin consentimiento de analítica?",
-  "rationale": "Sin esta decisión no se puede definir de manera segura y coherente la atribución de pedidos de quienes vieron el cupón y no lo usaron.",
+  "question": "¿Qué fuente de exportación GA4 y qué regla de vinculación deben definir las vistas atribuibles a pedidos, incluidos visitantes anónimos o sin consentimiento analítico?",
+  "rationale": "La elección determina qué datos se pueden enlazar, qué pedidos quedan sin atribuir y qué significan las métricas del panel; no puede deducirse del comportamiento actual del producto.",
   "options": [
     {
-      "title": "Vinculación solo con identidad permitida",
-      "body": "Atribuir únicamente cuando los datos existentes permitan el vínculo conforme al consentimiento y dejar el resto sin atribuir.",
+      "title": "Atribuir solo con vínculo permitido",
+      "body": "Usar únicamente identificadores disponibles conforme al consentimiento y dejar sin atribuir los pedidos que no puedan vincularse de forma verificable.",
       "recommended": true
     },
     {
-      "title": "Atribución por variante guardada en el pedido",
-      "body": "Guardar la variante asignada al crear el pedido y limitar el análisis a pedidos con ese dato, sin afirmar que hubo una vista individual.",
+      "title": "Medir variante asignada por separado",
+      "body": "Guardar la variante en el pedido y presentar resultados por asignación sin afirmar que el cliente vio el anuncio.",
       "recommended": false
     },
     {
-      "title": "Atribución basada en sesión GA4",
-      "body": "Adoptar un identificador de sesión compatible entre GA4 y pedidos, sujeto a validación de privacidad y cobertura.",
+      "title": "Vincular por sesión GA4",
+      "body": "Adoptar un identificador de sesión compartido tras confirmar que existe en la fuente de México y que su uso es admisible.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Vinculación solo con identidad permitida",
-    "body": "Atribuir únicamente cuando los datos existentes permitan el vínculo conforme al consentimiento y dejar el resto sin atribuir.",
+    "title": "Atribuir solo con vínculo permitido",
+    "body": "Usar únicamente identificadores disponibles conforme al consentimiento y dejar sin atribuir los pedidos que no puedan vincularse de forma verificable.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "mariatapia-hamelyn",
-    "reason": "Su trabajo reciente en el dashboard de ventas la conecta con la definición de métricas y presentación de resultados; la elección debe confirmarse con el responsable de analítica y privacidad del equipo.",
+    "person": "Lyno",
+    "reason": "Es la persona con señal histórica local más concreta en la consulta de cupones de Data Dashboards; no hay suficiente historial disponible para identificar con seguridad al responsable de la decisión de atribución.",
     "confidence": "low"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10907.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10907#issuecomment-6192634044",
-    "reviewedAt": "2026-10-15T12:58:20.106Z",
-    "mainSha": "8f46285696efe60fa3abad4f8fae5777830dffc1"
+    "reviewedAt": "2026-10-16T13:50:40.737Z",
+    "mainSha": "52dd5756cadb832c60e976f3dc080733fa6b06cc"
   }
 }
