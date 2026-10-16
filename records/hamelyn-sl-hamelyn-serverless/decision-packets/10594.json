@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-15T16:26:46.591Z",
-  "updatedAt": "2026-10-15T13:12:51Z",
+  "generatedAt": "2026-10-16T16:47:11.702Z",
+  "updatedAt": "2026-10-16T12:57:51Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,42 +15,41 @@
       "app:supply",
       "triage:needs-info",
       "clawsweeper:needs-product-decision",
-      "reporter:daniellopez",
-      "P2"
+      "P2",
+      "reporter:daniellopez"
     ],
     "createdAt": "2026-10-07T13:40:55Z",
-    "updatedAt": "2026-10-15T13:12:51Z"
+    "updatedAt": "2026-10-16T12:57:51Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se aprueba repartir los artículos según los bultos escaneados, redondear hacia abajo al declarar y atribuir el crédito pendiente a quien escanee después los bultos faltantes?",
-  "rationale": "La issue pide una regla nueva de productividad y la PR candidata ya elige una política de redondeo y atribución, pero la discusión disponible no confirma que Operaciones la haya aprobado.",
+  "question": "¿Se aprueba la regla propuesta en el PR: redondeo hacia abajo con mínimo de un artículo al declarar y crédito de los bultos tardíos para quien los escanea?",
+  "rationale": "La elección afecta al cálculo de productividad entre operarios y no se deduce de un contrato existente; el PR abierto ya concreta una regla y tiene una aprobación, pero la issue mantiene pendiente esa decisión.",
   "options": [
     {
-      "title": "Aprobar la regla de la PR",
-      "body": "Confirmar el redondeo hacia abajo y asignar el crédito restante a quien reciba los bultos tardíos.",
+      "title": "Aprobar la regla del PR",
+      "body": "Validar el mínimo inicial de un artículo y asignar cada crédito tardío a quien escanee el bulto.",
       "recommended": true
     },
     {
-      "title": "Definir otra regla operativa",
-      "body": "Acordar el redondeo y el destinatario del crédito antes de aceptar la implementación.",
+      "title": "Definir otra regla",
+      "body": "Precisar el redondeo y la atribución del resto antes de ajustar el PR.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar la regla de la PR",
-    "body": "Confirmar el redondeo hacia abajo y asignar el crédito restante a quien reciba los bultos tardíos.",
+    "title": "Aprobar la regla del PR",
+    "body": "Validar el mínimo inicial de un artículo y asignar cada crédito tardío a quien escanee el bulto.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "daniellopez",
-    "reason": "Es el reportero identificado con el contexto de recepción; la decisión final debería validarse con Operaciones.",
-    "confidence": "low"
+    "person": "MiguelHamelyn",
+    "reason": "Es quien dejó la aprobación más reciente del PR candidato y puede confirmar la regla operativa reflejada allí.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10594.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10594#issuecomment-6039492074",
-    "reviewedAt": "2026-10-15T16:26:46.591Z",
-    "mainSha": "6af27faf5e38dd96f99563360ec1da6f99514fd1"
+    "reviewedAt": "2026-10-16T16:47:11.702Z",
+    "mainSha": "e3c66f16fe7382452dd6a7298981d6b1c22b52d3"
   }
 }
