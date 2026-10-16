@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-15T21:36:33.566Z",
-  "updatedAt": "2026-10-15T21:30:46Z",
+  "generatedAt": "2026-10-16T21:44:24.227Z",
+  "updatedAt": "2026-10-16T08:19:54Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,49 +13,43 @@
       "codex",
       "bug",
       "app:marketplace",
-      "triage:queued",
+      "triage:needs-info",
       "clawsweeper:needs-product-decision",
-      "marketplace-crons",
-      "P2"
+      "P2",
+      "marketplace-crons"
     ],
     "createdAt": "2026-09-07T17:30:35Z",
-    "updatedAt": "2026-10-15T21:30:46Z"
+    "updatedAt": "2026-10-16T08:19:54Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "Cuando una búsqueda GET de pedidos de MercadoLibre recibe `429`, ¿debe depender la recuperación de la siguiente pasada con conciliación comprobable o introducirse un reintento acotado?",
-  "rationale": "La política actual limita los reintentos y el arreglo previo redujo llamadas del barrido; elegir otra conducta puede cambiar la carga al proveedor y las garantías de recuperación de pedidos.",
+  "question": "¿Debe el flujo de búsqueda de pedidos pagados reintentar o aplicar backoff ante un 429, o se mantiene la política actual de no reintentar GETs?",
+  "rationale": "La solución mergeada redujo la exposición del barrido de cancelaciones, mientras la discusión acepta que persisten 429 en pedidos pagados; cambiar la política de llamadas requiere intención del equipo.",
   "options": [
     {
-      "title": "Diferir y conciliar",
-      "body": "Mantener el siguiente ciclo como recuperación y exigir una señal comprobable de conciliación tras cada fallo.",
+      "title": "Mantener la política actual",
+      "body": "Conservar los GET sin reintentos y confirmar que los siguientes ciclos del cron recuperan los pedidos afectados.",
+      "recommended": false
+    },
+    {
+      "title": "Añadir recuperación acotada",
+      "body": "Acordar e implementar un backoff o mecanismo de conciliación específico para los 429 de pedidos pagados.",
       "recommended": true
-    },
-    {
-      "title": "Reintentar de forma acotada",
-      "body": "Añadir backoff limitado solo después de confirmar que el presupuesto de llamadas no agrava el rate limit.",
-      "recommended": false
-    },
-    {
-      "title": "Definir política por operación",
-      "body": "Separar pedidos pagados y cancelaciones con garantías distintas si sus requisitos de recuperación no coinciden.",
-      "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Diferir y conciliar",
-    "body": "Mantener el siguiente ciclo como recuperación y exigir una señal comprobable de conciliación tras cada fallo.",
+    "title": "Añadir recuperación acotada",
+    "body": "Acordar e implementar un backoff o mecanismo de conciliación específico para los 429 de pedidos pagados.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Participó en el cambio que redujo la exposición del barrido y puede valorar el equilibrio entre cobertura y cuota.",
+    "reason": "Lideró el cambio relacionado que redujo fallos del barrido de cancelaciones y documentó el residuo de 429.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9246.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9246#issuecomment-5580054754",
-    "reviewedAt": "2026-10-15T21:36:33.566Z",
-    "mainSha": "6af27faf5e38dd96f99563360ec1da6f99514fd1"
+    "reviewedAt": "2026-10-16T21:44:24.227Z",
+    "mainSha": "e3c66f16fe7382452dd6a7298981d6b1c22b52d3"
   }
 }
