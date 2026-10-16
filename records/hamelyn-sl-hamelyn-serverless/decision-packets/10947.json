@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-16T10:46:55.197Z",
+  "updatedAt": "2026-10-16T10:37:38Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10947,
+    "title": "AbeBooks shipment confirmation capacity leaves picked-up orders pending for over 48 hours",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10947",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "triage:queued",
+      "P2"
+    ],
+    "createdAt": "2026-10-16T10:37:27Z",
+    "updatedAt": "2026-10-16T10:37:38Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué límite efectivo de confirmaciones `shipped` debe aplicarse a AbeBooks tras validar el límite del proveedor y la propagación de configuración?",
+  "rationale": "El código demuestra que el valor omitido cae a uno por pasada, pero el repositorio no determina el límite seguro del proveedor ni el valor operativo aprobado para producción.",
+  "options": [
+    {
+      "title": "Ajustar configuración tras validar el límite",
+      "body": "Confirmar el límite permitido por AbeBooks y aplicar un valor `shipped` explícito mediante el mecanismo de configuración existente.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener el valor actual hasta verificarlo",
+      "body": "No elevar la capacidad mientras falte evidencia del límite del proveedor y del valor efectivo de producción.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Ajustar configuración tras validar el límite",
+    "body": "Confirmar el límite permitido por AbeBooks y aplicar un valor `shipped` explícito mediante el mecanismo de configuración existente.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Su trabajo fusionado en la integración AbeBooks es la referencia de código más directa disponible; no consta aquí una persona responsable de aprobar la configuración operativa.",
+    "confidence": "low"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10947.md",
+    "reviewedAt": "2026-10-16T10:46:55.197Z",
+    "mainSha": "dca697ef00cb43c0500aaafee35fc67224a137e4"
+  }
+}
