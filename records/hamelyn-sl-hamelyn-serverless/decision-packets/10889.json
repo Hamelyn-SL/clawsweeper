@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-15T09:04:51.804Z",
-  "updatedAt": "2026-10-15T08:58:55Z",
+  "generatedAt": "2026-10-16T09:12:07.459Z",
+  "updatedAt": "2026-10-15T10:33:22Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -14,39 +14,43 @@
       "P2"
     ],
     "createdAt": "2026-10-15T08:43:42Z",
-    "updatedAt": "2026-10-15T08:58:55Z",
-    "headSha": "cb097cc8e217969953270b065308133bb39dbf26"
+    "updatedAt": "2026-10-15T10:33:22Z",
+    "headSha": "264cecfcb622f9a25da5bb713fc6e1a65bd62cc0"
   },
-  "lane": "proof_sufficiency",
+  "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se considera suficiente la validación descrita para incorporar el reparto por peso, o se exige verificar la integración de configuración y persistencia antes de aceptar el cambio?",
-  "rationale": "La prueba disponible valida el cálculo y el servicio con dependencias en memoria, pero no confirma dos bordes centrales del cambio: la configuración real ni el almacenamiento del snapshot en MongoDB.",
+  "question": "¿Se acepta el reparto estadístico por corte con la tabla de porcentajes indicada, y quién valida la configuración productiva y la persistencia antes de activarlo?",
+  "rationale": "La issue vinculada permanece abierta con una etiqueta de decisión de producto; el cambio afecta tanto al cálculo declarado como a un nuevo dato persistido, y el informe no verificó esas integraciones reales.",
   "options": [
     {
-      "title": "Solicitar validación de integración",
-      "body": "Pedir evidencia dirigida de carga de configuración y persistencia del corte antes de decidir el landing.",
+      "title": "Aprobar y validar antes de activar",
+      "body": "Acordar la tabla oficial y confirmar carga de configuración y persistencia real en DEV antes de activar la misma tabla en PROD.",
       "recommended": true
     },
     {
-      "title": "Aceptar las pruebas actuales",
-      "body": "Considerar suficiente la cobertura en memoria y verificar la integración durante la revisión habitual del despliegue.",
+      "title": "Aprobar el cálculo; diferir activación",
+      "body": "Aceptar el comportamiento del contador, pero mantener la tabla sin configurar hasta completar la validación de integración.",
+      "recommended": false
+    },
+    {
+      "title": "Revisar el comportamiento solicitado",
+      "body": "Aclarar primero la regla de reparto y actualizar la issue antes de decidir el landing.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Solicitar validación de integración",
-    "body": "Pedir evidencia dirigida de carga de configuración y persistencia del corte antes de decidir el landing.",
+    "title": "Aprobar y validar antes de activar",
+    "body": "Acordar la tabla oficial y confirmar carga de configuración y persistencia real en DEV antes de activar la misma tabla en PROD.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "HamelynDev",
-    "reason": "Su actividad reciente en el contador y el flujo de revisión del repositorio lo sitúan como candidato disponible para valorar el alcance de la prueba.",
+    "reason": "Coordinó la revisión previa y la sincronización de documentación del cambio.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10889.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10889#issuecomment-6188463052",
-    "reviewedAt": "2026-10-15T09:04:51.804Z",
-    "mainSha": "a32fae8ea2a342afab5b30fab52d94c1e39e50c2"
+    "reviewedAt": "2026-10-16T09:12:07.459Z",
+    "mainSha": "96ba1aad39f0a64bf632ef1cab5cc9c29b9f3673"
   }
 }

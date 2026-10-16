@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-15T09:04:59.036Z",
-  "updatedAt": "2026-10-15T09:03:24Z",
+  "generatedAt": "2026-10-16T09:11:45.439Z",
+  "updatedAt": "2026-10-15T11:18:30Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -14,39 +14,38 @@
       "P2"
     ],
     "createdAt": "2026-10-15T08:43:36Z",
-    "updatedAt": "2026-10-15T09:03:24Z",
-    "headSha": "6b211336ee935e84f658237ecc54840a3138b201"
+    "updatedAt": "2026-10-15T11:18:30Z",
+    "headSha": "2f81f8aeba058fa2c4299becb4a1017afb63a970"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se acepta enviar la captura en resolución nativa cuando el lote incluye música, asumiendo la latencia adicional indicada, o se mantiene la reducción actual hasta contar con más validación?",
-  "rationale": "La implementación es acotada, pero las pruebas descritas reflejan un intercambio de precisión y latencia; el issue asociado marca explícitamente que falta una decisión de producto.",
+  "question": "¿Se aprueba enviar capturas nativas de hasta 3 MiB al modelo cuando entre los productos enviados haya un CD, con el aumento de latencia descrito?",
+  "rationale": "La issue vinculada solicita explícitamente una decisión de producto y sigue abierta; el cambio altera el comportamiento del modelo y su latencia para ese flujo.",
   "options": [
     {
-      "title": "Aceptar la ruta condicional",
-      "body": "Mantener 4K solo para lotes que incluyen música y vigilar las métricas por resolución tras el despliegue.",
+      "title": "Aprobar el comportamiento condicionado",
+      "body": "Mantener el envío nativo para CDs dentro del límite de 3 MiB y observar las métricas de producción.",
       "recommended": true
     },
     {
-      "title": "Esperar más validación",
-      "body": "Dejar la reducción actual como comportamiento único hasta disponer de una decisión basada en las métricas acordadas.",
+      "title": "Pedir más validación",
+      "body": "Esperar a confirmar las mejoras de precisión y los límites efectivos del gateway antes de activar el cambio.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aceptar la ruta condicional",
-    "body": "Mantener 4K solo para lotes que incluyen música y vigilar las métricas por resolución tras el despliegue.",
+    "title": "Aprobar el comportamiento condicionado",
+    "body": "Mantener el envío nativo para CDs dentro del límite de 3 MiB y observar las métricas de producción.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Es el contribuidor con actividad reciente en esta ruta y aporta los datos que sustentan la propuesta; no consta en el historial local un responsable único de la decisión de producto.",
+    "reason": "Su historial local incluye la implementación previa del flujo Bin Vision; no hay evidencia local suficiente para identificar otro responsable de la decisión.",
     "confidence": "low"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10888.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10888#issuecomment-6188460681",
-    "reviewedAt": "2026-10-15T09:04:59.036Z",
-    "mainSha": "a32fae8ea2a342afab5b30fab52d94c1e39e50c2"
+    "reviewedAt": "2026-10-16T09:11:45.439Z",
+    "mainSha": "96ba1aad39f0a64bf632ef1cab5cc9c29b9f3673"
   }
 }
