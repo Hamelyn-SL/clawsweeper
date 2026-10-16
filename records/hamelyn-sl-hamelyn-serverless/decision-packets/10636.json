@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-13T15:04:06.499Z",
-  "updatedAt": "2026-10-08T09:53:25Z",
+  "generatedAt": "2026-10-16T08:54:38.106Z",
+  "updatedAt": "2026-10-16T08:19:47Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -19,43 +19,37 @@
       "P2"
     ],
     "createdAt": "2026-10-08T09:39:46Z",
-    "updatedAt": "2026-10-08T09:53:25Z"
+    "updatedAt": "2026-10-16T08:19:47Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿El flujo de Reembolso debe ejecutar el abono o registrar uno realizado fuera de Admin, y LOGISTIC_NO_INFO debe mantenerse como Cancelación según el Excel o clasificarse como Reembolso?",
-  "rationale": "La respuesta determina el comportamiento de pago y la clasificación de datos históricos, por lo que no puede inferirse de forma segura solo desde el código o el Excel, que se contradicen.",
+  "question": "¿El flujo de Admin debe ejecutar el abono o registrar uno realizado externamente, y qué clasificación histórica se debe aplicar a `LOGISTIC_NO_INFO`?",
+  "rationale": "La respuesta cambia el comportamiento financiero y la interpretación de datos históricos; el repositorio y la issue no permiten deducir con seguridad la regla de negocio elegida.",
   "options": [
     {
-      "title": "Separar registro y pago; confirmar histórico con ATC",
-      "body": "Definir expresamente que el nuevo flujo registra o ejecuta el pago y pedir a Atención al Cliente que confirme la clasificación de LOGISTIC_NO_INFO antes de diseñar el histórico.",
+      "title": "Registrar abono externo y confirmar el histórico con ATC",
+      "body": "Mantener la ejecución del pago fuera de Admin y acordar con Atención al Cliente la clasificación de `LOGISTIC_NO_INFO` antes de modificar la analítica.",
       "recommended": true
     },
     {
-      "title": "Registrar abono externo y mantener el Excel",
-      "body": "No ejecutar pagos desde Admin y conservar LOGISTIC_NO_INFO como Cancelación en las equivalencias históricas.",
-      "recommended": false
-    },
-    {
-      "title": "Ejecutar abono y clasificar como reembolso",
-      "body": "Hacer que el flujo ejecute el pago y clasificar LOGISTIC_NO_INFO como Reembolso en las equivalencias históricas.",
+      "title": "Ejecutar el abono desde Admin",
+      "body": "Ampliar el alcance para iniciar el pago desde Admin y definir con ATC la clasificación histórica antes de implementarla.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Separar registro y pago; confirmar histórico con ATC",
-    "body": "Definir expresamente que el nuevo flujo registra o ejecuta el pago y pedir a Atención al Cliente que confirme la clasificación de LOGISTIC_NO_INFO antes de diseñar el histórico.",
+    "title": "Registrar abono externo y confirmar el histórico con ATC",
+    "body": "Mantener la ejecución del pago fuera de Admin y acordar con Atención al Cliente la clasificación de `LOGISTIC_NO_INFO` antes de modificar la analítica.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "PabloMoran34",
-    "reason": "La revisión previa lo señala como candidato probable para coordinar la decisión funcional con Atención al Cliente.",
-    "confidence": "medium"
+    "reason": "Su historial reciente en consultas de analítica le hace una ruta plausible para coordinar la parte de clasificación, aunque la decisión operativa debe confirmarse con Atención al Cliente.",
+    "confidence": "low"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10636.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10636#issuecomment-6057287700",
-    "reviewedAt": "2026-10-13T15:04:06.499Z",
-    "mainSha": "5fc28691f86fff433f48d19dff85903b7a6e158a"
+    "reviewedAt": "2026-10-16T08:54:38.106Z",
+    "mainSha": "6f083344eb72cbf9e8f439b7187ef1722e7b7aa8"
   }
 }
