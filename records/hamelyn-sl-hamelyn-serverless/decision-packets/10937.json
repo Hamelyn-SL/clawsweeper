@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-16T09:25:58.882Z",
+  "updatedAt": "2026-10-16T09:23:34Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10937,
+    "title": "Data platform: move Auth0 logs in BigQuery to europe-southwest1",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10937",
+    "state": "open",
+    "labels": [
+      "app:infrastructure",
+      "reporter:pablo",
+      "feature",
+      "triage:queued",
+      "P2"
+    ],
+    "createdAt": "2026-10-16T09:23:13Z",
+    "updatedAt": "2026-10-16T09:23:34Z"
+  },
+  "lane": "security_boundary",
+  "priority": "P2",
+  "question": "¿Se autoriza crear `auth0_logs` en `europe-southwest1` y, tras validar el corte y los consumidores, retirar `auth0`?",
+  "rationale": "El cambio exige crear un dataset, copiar datos y eliminar una estructura existente; la política del repositorio requiere autorización expresa para esas operaciones y el borrado tiene impacto operativo.",
+  "options": [
+    {
+      "title": "Autorizar la migración controlada",
+      "body": "Crear el destino, validar ingesta e histórico y retirar el dataset anterior solo después de comprobar consumidores y aceptación.",
+      "recommended": true
+    },
+    {
+      "title": "Migrar y conservar el origen",
+      "body": "Mover ingesta e histórico, pero mantener `auth0` hasta una decisión operativa posterior sobre su eliminación.",
+      "recommended": false
+    },
+    {
+      "title": "Aplazar cambios de infraestructura",
+      "body": "Mantener la issue abierta hasta acordar autorización, ventana de corte y responsables de consumidores.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Autorizar la migración controlada",
+    "body": "Crear el destino, validar ingesta e histórico y retirar el dataset anterior solo después de comprobar consumidores y aceptación.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Es la pista local más cercana de contribución reciente en rutas de datos, aunque el historial disponible no identifica con claridad a la persona responsable de Auth0; la autorización debe confirmarla el equipo con potestad sobre BigQuery.",
+    "confidence": "low"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10937.md",
+    "reviewedAt": "2026-10-16T09:25:58.882Z",
+    "mainSha": "d552af0ce3106b090f2db513ea646c3c9743be34"
+  }
+}
