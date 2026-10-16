@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-16T10:55:04.251Z",
+  "updatedAt": "2026-10-16T10:52:04Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10945,
+    "title": "feat: self-host the scanner engine, defer the OCR and track the camera session",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10945",
+    "state": "open",
+    "labels": [
+      "size/XXL"
+    ],
+    "createdAt": "2026-10-16T10:21:14Z",
+    "updatedAt": "2026-10-16T10:52:04Z",
+    "headSha": "d8ccf3633b4bf85b0af8d5e818828dd7c1f42a7d"
+  },
+  "lane": "merge_risk",
+  "priority": "P2",
+  "question": "¿Debe mantenerse compatibilidad con `formats`, `videoScale`, `mobileMaxWidth` y `DEFAULT_SCANNER_FORMATS` en `@hamelyn/next-components`, o se acepta retirar esa API en esta entrega?",
+  "rationale": "La rama reemplaza nombres exportados que existen en la base actual; la elección afecta a consumidores del paquete y no puede resolverse solo con pruebas internas.",
+  "options": [
+    {
+      "title": "Mantener compatibilidad",
+      "body": "Añadir alias o una transición compatible para las opciones anteriores y cubrirlas con pruebas.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar el cambio incompatible",
+      "body": "Mantener la API nueva y documentar expresamente la migración de los consumidores afectados.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mantener compatibilidad",
+    "body": "Añadir alias o una transición compatible para las opciones anteriores y cubrirlas con pruebas.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "El historial local le vincula con la implementación compartida del escáner y su integración de OCR.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10945.md",
+    "reviewedAt": "2026-10-16T10:55:04.251Z",
+    "mainSha": "dca697ef00cb43c0500aaafee35fc67224a137e4"
+  }
+}
