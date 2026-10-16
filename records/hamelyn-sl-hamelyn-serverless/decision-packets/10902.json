@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-15T11:49:55.132Z",
-  "updatedAt": "2026-10-15T11:38:02Z",
+  "generatedAt": "2026-10-16T11:54:08.345Z",
+  "updatedAt": "2026-10-15T12:56:59Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,43 +13,42 @@
       "app:supply",
       "reporter:jesus",
       "feature",
-      "triage:queued",
+      "triage:pr-opened",
       "P1",
       "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-10-15T11:37:52Z",
-    "updatedAt": "2026-10-15T11:38:02Z"
+    "updatedAt": "2026-10-15T12:56:59Z"
   },
-  "lane": "product_direction",
+  "lane": "merge_risk",
   "priority": "P1",
-  "question": "¿Qué regla y fuente de datos deben definir `new_seller` para el lead de Supply: primer lote histórico del vendedor o una condición distinta?",
-  "rationale": "El issue pide el booleano y menciona checkout o perfil como posibles fuentes, pero no fija la regla de negocio; implementar una interpretación podría producir conversiones inconsistentes.",
+  "question": "¿Qué contrato de tamaño y transporte debe adoptar Supply para registrar todos los productos de leads grandes sin exceder el límite de ingesta ni descartar otros eventos del lote?",
+  "rationale": "La PR parcial se retiró tras reproducir un 413 en un lote grande. La elección entre limitar, dividir o transportar el payload de otra forma afecta el contrato de analítica y no queda determinada por el código actual.",
   "options": [
     {
-      "title": "Acordar regla de primer lote",
-      "body": "Definir el criterio de vendedor nuevo y la fuente de datos antes de añadir el campo al evento.",
+      "title": "Acordar un contrato de lotes grandes",
+      "body": "Definir el tamaño máximo y coordinar división/transporte e ingesta para conservar los productos y los demás eventos.",
       "recommended": true
     },
     {
-      "title": "Dejar `new_seller` fuera",
-      "body": "Unificar GTM y completar mercado e `items` mientras la medición de vendedor nuevo queda para una decisión posterior.",
+      "title": "Limitar los productos enviados",
+      "body": "Enviar un subconjunto acotado de productos y documentar explícitamente que el lead no representa lotes completos.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Acordar regla de primer lote",
-    "body": "Definir el criterio de vendedor nuevo y la fuente de datos antes de añadir el campo al evento.",
+    "title": "Acordar un contrato de lotes grandes",
+    "body": "Definir el tamaño máximo y coordinar división/transporte e ingesta para conservar los productos y los demás eventos.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "Miguel Angel Hernández Perdomo",
-    "reason": "Su historial reciente conecta con la analítica de Supply web; la regla de negocio también puede requerir confirmación del área responsable de medición.",
+    "person": "MiguelHamelyn",
+    "reason": "Su historial de cambios recientes en los emisores y el transporte de analítica Supply lo convierte en el candidato mejor respaldado para orientar la decisión técnica.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10902.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10902#issuecomment-6191370728",
-    "reviewedAt": "2026-10-15T11:49:55.132Z",
-    "mainSha": "22086282c1d5ce07af72bd2114ed305e40467a45"
+    "reviewedAt": "2026-10-16T11:54:08.345Z",
+    "mainSha": "b73ae3fcf867be905b9109f41842f9179ca3b050"
   }
 }
