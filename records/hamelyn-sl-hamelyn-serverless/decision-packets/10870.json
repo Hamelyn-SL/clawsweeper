@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-16T14:55:59.526Z",
+  "updatedAt": "2026-10-16T12:50:34Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10870,
+    "title": "fix: credit reception productivity in proportion to scanned packages",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10870",
+    "state": "open",
+    "labels": [
+      "size/XXL",
+      "P2"
+    ],
+    "createdAt": "2026-10-14T12:50:12Z",
+    "updatedAt": "2026-10-16T12:50:34Z",
+    "headSha": "cbdc57b8db21088974600e2f52b3e070fffb1f1f"
+  },
+  "lane": "merge_risk",
+  "priority": "P2",
+  "question": "¿Debe evitarse el doble cómputo cuando un lote con incidencia vuelve a recibirse completo el mismo día por el mismo operario?",
+  "rationale": "El PR reconoce que ese flujo puede inflar la productividad; decidir si es aceptable determina si el cambio puede integrarse tal cual o necesita una corrección de agregación.",
+  "options": [
+    {
+      "title": "Corregir antes de integrar",
+      "body": "Ajustar la agregación diaria para que una recepción completa del lote absorba los créditos tardíos ya contabilizados.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar la limitación",
+      "body": "Integrar el comportamiento actual si este escenario es suficientemente excepcional y la métrica puede tolerarlo.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Corregir antes de integrar",
+    "body": "Ajustar la agregación diaria para que una recepción completa del lote absorba los créditos tardíos ya contabilizados.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Ha revisado el caso residual y ya verificó las correcciones funcionales anteriores del PR.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10870.md",
+    "reviewedAt": "2026-10-16T14:55:59.526Z",
+    "mainSha": "e3c66f16fe7382452dd6a7298981d6b1c22b52d3"
+  }
+}
