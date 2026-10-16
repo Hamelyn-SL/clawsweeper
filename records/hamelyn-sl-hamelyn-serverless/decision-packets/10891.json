@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-15T09:00:47.287Z",
-  "updatedAt": "2026-10-15T08:57:52Z",
+  "generatedAt": "2026-10-16T09:06:17.909Z",
+  "updatedAt": "2026-10-15T13:25:26Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,45 +13,44 @@
       "bug",
       "source:admin-panel",
       "app:admin",
-      "triage:running",
+      "triage:done",
       "reporter:alejandrodiaz",
       "P1",
       "clawsweeper:needs-product-decision",
       "clawsweeper:needs-security-review"
     ],
     "createdAt": "2026-10-15T08:50:46Z",
-    "updatedAt": "2026-10-15T08:57:52Z"
+    "updatedAt": "2026-10-15T13:25:26Z"
   },
   "lane": "security_boundary",
   "priority": "P1",
-  "question": "¿Qué rutas exentas deben seguir aceptando llamadas de integraciones sin sesión y qué mecanismo verificable debe sustituir la autenticación de usuario?",
-  "rationale": "La corrección debe distinguir las APIs del panel de los puentes y callbacks de servicio; retirar exenciones sin identificar su mecanismo de autenticación podría interrumpir integraciones legítimas.",
+  "question": "¿Qué rutas exentas deben seguir aceptando llamadas de integraciones sin sesión y qué mecanismo verificable de autenticación debe sustituir la sesión de usuario en cada una?",
+  "rationale": "Cerrar las exenciones sin conocer sus consumidores podría interrumpir integraciones; mantenerlas sin una validación alternativa conserva el acceso administrativo no autenticado.",
   "options": [
     {
-      "title": "Proteger rutas de panel y definir excepciones por integración",
-      "body": "Exigir sesión y roles en las rutas administrativas y conservar solo excepciones con una credencial o validación específica documentada.",
+      "title": "Proteger rutas y documentar excepciones verificables",
+      "body": "Exigir sesión y roles en rutas administrativas y conservar únicamente excepciones respaldadas por una autenticación específica de integración.",
       "recommended": true
     },
     {
       "title": "Exigir sesión en todas las rutas señaladas",
-      "body": "Eliminar las excepciones citadas y requerir autenticación de usuario, aceptando posibles cambios en integraciones que dependan de ellas.",
+      "body": "Eliminar las exenciones reportadas y aceptar posibles cambios en las integraciones que dependan de ellas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Proteger rutas de panel y definir excepciones por integración",
-    "body": "Exigir sesión y roles en las rutas administrativas y conservar solo excepciones con una credencial o validación específica documentada.",
+    "title": "Proteger rutas y documentar excepciones verificables",
+    "body": "Exigir sesión y roles en rutas administrativas y conservar únicamente excepciones respaldadas por una autenticación específica de integración.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "Lyno",
-    "reason": "Su historial reciente cubre el proxy y las rutas afectadas; es el candidato más directo disponible para evaluar la frontera de autenticación.",
-    "confidence": "medium"
+    "reason": "La revisión previa lo señaló como candidato para decidir la frontera de seguridad y las excepciones de integración.",
+    "confidence": "low"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10891.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10891#issuecomment-6188435460",
-    "reviewedAt": "2026-10-15T09:00:47.287Z",
-    "mainSha": "a32fae8ea2a342afab5b30fab52d94c1e39e50c2"
+    "reviewedAt": "2026-10-16T09:06:17.909Z",
+    "mainSha": "96ba1aad39f0a64bf632ef1cab5cc9c29b9f3673"
   }
 }

@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-16T09:06:51.434Z",
+  "updatedAt": "2026-10-16T09:03:18Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10934,
+    "title": "Escáner web: cámara, OCR en diferido, zbar autoalojado y limpieza del iframe (supply-web y ecommerce)",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10934",
+    "state": "open",
+    "labels": [
+      "size/L",
+      "app:ecommerce",
+      "app:supply",
+      "feature",
+      "reporter:miguel",
+      "triage:queued",
+      "P2"
+    ],
+    "createdAt": "2026-10-16T09:01:19Z",
+    "updatedAt": "2026-10-16T09:03:18Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe mantenerse todo el alcance de cámara, OCR, zbar y ciclo de vida en una única entrega, o conviene priorizar fases separadas antes de iniciar la implementación?",
+  "rationale": "La propuesta agrupa varias áreas con impacto en dos consumidores y plantea criterios de rendimiento aún sin medir; la prioridad y el tamaño de entrega requieren criterio del equipo.",
+  "options": [
+    {
+      "title": "Priorizar por fases",
+      "body": "Separar los cambios de captura/OCR, assets zbar y protocolo para validar cada tramo antes de ampliar el alcance.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener una entrega conjunta",
+      "body": "Conservar el alcance de la issue como una única iniciativa y acordar internamente su secuencia de implementación.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Priorizar por fases",
+    "body": "Separar los cambios de captura/OCR, assets zbar y protocolo para validar cada tramo antes de ampliar el alcance.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Miguel Angel Hernández Perdomo",
+    "reason": "El historial local lo conecta con la implementación reciente del OCR y la pantalla del escáner; la asignación es orientativa.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10934.md",
+    "reviewedAt": "2026-10-16T09:06:51.434Z",
+    "mainSha": "96ba1aad39f0a64bf632ef1cab5cc9c29b9f3673"
+  }
+}
