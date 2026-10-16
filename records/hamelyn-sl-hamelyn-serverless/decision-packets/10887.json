@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-15T08:33:10.653Z",
-  "updatedAt": "2026-10-15T08:29:50Z",
+  "generatedAt": "2026-10-16T09:00:54.052Z",
+  "updatedAt": "2026-10-15T10:57:51Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,42 +13,41 @@
       "app:admin",
       "feature",
       "triage:done",
-      "P2",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2"
     ],
     "createdAt": "2026-10-15T08:19:39Z",
-    "updatedAt": "2026-10-15T08:29:50Z"
+    "updatedAt": "2026-10-15T10:57:51Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se debe aceptar el aumento de latencia observado para mejorar la localización de CD y aplicar el modo 4K tanto a `locate` como a `prefetch`?",
-  "rationale": "La implementación es acotada, pero cambia el equilibrio entre precisión y latencia del flujo operativo; la evidencia comparativa citada no es accesible públicamente en esta revisión.",
+  "question": "¿Se acepta para Bin Vision el modo de captura nativa cuando los productos enviados incluyen música, con el aumento de latencia medido y el límite de tamaño propuesto en la PR vinculada?",
+  "rationale": "La elección pondera una mejora observada en la localización de CD frente a una llamada al modelo más lenta; es una decisión operativa sobre el flujo de picking, no deducible solo del código.",
   "options": [
     {
-      "title": "Aprobar el modo 4K para cubetas con CD",
-      "body": "Mantener la resolución actual para otros productos y aplicar el timeout ampliado cuando haya música pendiente.",
+      "title": "Aprobar el alcance de la PR",
+      "body": "Validar el modo nativo condicionado a música y tamaño, con el timeout y la métrica propuestos.",
       "recommended": true
     },
     {
-      "title": "Validar primero los resultados",
-      "body": "Compartir resultados accesibles o confirmar las métricas antes de introducir el cambio de latencia.",
+      "title": "Pedir más validación",
+      "body": "Mantener el comportamiento actual hasta revisar resultados adicionales de latencia y localización por estación.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar el modo 4K para cubetas con CD",
-    "body": "Mantener la resolución actual para otros productos y aplicar el timeout ampliado cuando haya música pendiente.",
+    "title": "Aprobar el alcance de la PR",
+    "body": "Validar el modo nativo condicionado a música y tamaño, con el timeout y la métrica propuestos.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "La issue está asignada a AlexDiaz-Hamelyn, que presentó los resultados operativos que motivan esta decisión.",
+    "reason": "Introdujo la preparación de imágenes de Bin Vision y presentó la implementación y los resultados de validación vinculados.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10887.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10887#issuecomment-6187948852",
-    "reviewedAt": "2026-10-15T08:33:10.653Z",
-    "mainSha": "97800e86858614d3badd6c53dd4da4038adba2a1"
+    "reviewedAt": "2026-10-16T09:00:54.052Z",
+    "mainSha": "96ba1aad39f0a64bf632ef1cab5cc9c29b9f3673"
   }
 }
