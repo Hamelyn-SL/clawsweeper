@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-16T13:56:46.233Z",
+  "updatedAt": "2026-10-15T13:07:04Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10905,
+    "title": "fix: close every mercadolibre listing of a sku sold on mercadolibre",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10905",
+    "state": "open",
+    "labels": [
+      "size/L",
+      "P2"
+    ],
+    "createdAt": "2026-10-15T12:11:59Z",
+    "updatedAt": "2026-10-15T13:07:04Z",
+    "headSha": "8e01bfaa21953ccc2038add41bd61297f1cdf129"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se acepta cerrar mediante la API todos los anuncios del SKU aunque haya un pedido en curso, una vez que el stock maestro ya no es vendible?",
+  "rationale": "El PR cambia cuándo se ejecuta el cierre remoto y reconoce que no hay confirmación del efecto sobre pedidos en curso; esa tolerancia operativa no puede inferirse solo del código.",
+  "options": [
+    {
+      "title": "Aceptar el cierre agregado",
+      "body": "Integrar el cierre por SKU y verificar después del despliegue el estado de anuncios y pedidos.",
+      "recommended": true
+    },
+    {
+      "title": "Exigir validación operativa previa",
+      "body": "Pedir confirmación del comportamiento de MercadoLibre con pedidos en curso antes de integrar el cierre automático.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aceptar el cierre agregado",
+    "body": "Integrar el cierre por SKU y verificar después del despliegue el estado de anuncios y pedidos.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Su historial incluye el cambio de lápidas que originó esta interacción y los cambios recientes de sincronización asociados.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10905.md",
+    "reviewedAt": "2026-10-16T13:56:46.233Z",
+    "mainSha": "52dd5756cadb832c60e976f3dc080733fa6b06cc"
+  }
+}
