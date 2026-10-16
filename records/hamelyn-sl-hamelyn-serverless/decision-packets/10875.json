@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-14T14:24:56.499Z",
-  "updatedAt": "2026-10-14T14:01:51Z",
+  "generatedAt": "2026-10-16T07:26:33.371Z",
+  "updatedAt": "2026-10-16T07:05:43Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,42 +15,41 @@
       "feature",
       "triage:needs-info",
       "reporter:victor",
-      "P2",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2"
     ],
     "createdAt": "2026-10-14T13:56:32Z",
-    "updatedAt": "2026-10-14T14:01:51Z"
+    "updatedAt": "2026-10-16T07:05:43Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué destino y modelo de almacenamiento de BigQuery se aprueban para las métricas de Search Console y Merchant, y quién confirma el inventario de propiedades y cuentas de los 13 mercados?",
-  "rationale": "El repositorio prohíbe crear estructuras de BigQuery sin autorización expresa y el mapa de fuentes determina tanto el backfill como la cobertura y el mantenimiento del proceso.",
+  "question": "¿Qué propiedades y cuentas de Merchant corresponden a cada mercado, quién autoriza los accesos y el destino BigQuery, y qué nivel de cobertura histórica se considera aceptable?",
+  "rationale": "La decisión determina alcance, permisos, destino y viabilidad del backfill; no puede resolverse únicamente desde el código del repositorio.",
   "options": [
     {
-      "title": "Acordar destino e inventario",
-      "body": "Aprobar el dataset/modelo y designar responsables para validar propiedades, cuentas, permisos y cobertura antes de planificar la carga.",
+      "title": "Acordar alcance y autorización antes de implementar",
+      "body": "El equipo de Datos y SEO confirma el mapa de cuentas, accesos, destino y criterio de cobertura antes de diseñar la ingesta.",
       "recommended": true
     },
     {
-      "title": "Limitar el alcance inicial",
-      "body": "Definir primero los mercados y fuentes confirmados para una primera fase, dejando explícitos los mercados pendientes.",
+      "title": "Reducir el alcance inicial",
+      "body": "Empezar con los dominios y cuentas ya confirmados y tratar el resto de mercados y el histórico como fases posteriores.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Acordar destino e inventario",
-    "body": "Aprobar el dataset/modelo y designar responsables para validar propiedades, cuentas, permisos y cobertura antes de planificar la carga.",
+    "title": "Acordar alcance y autorización antes de implementar",
+    "body": "El equipo de Datos y SEO confirma el mapa de cuentas, accesos, destino y criterio de cobertura antes de diseñar la ingesta.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "victor",
-    "reason": "El comentario le solicita confirmar el mapa de propiedades y cuentas y quién facilitará accesos y aprobará el destino.",
+    "person": "PabloMoran34",
+    "reason": "La issue está asignada a esta persona y su historial reciente está relacionado con el dashboard de datos; la decisión requiere además coordinación con los responsables de Datos y SEO.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10875.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10875#issuecomment-6170667666",
-    "reviewedAt": "2026-10-14T14:24:56.499Z",
-    "mainSha": "2e34cdfdbec18f54433eb9c3772d104705a6b08b"
+    "reviewedAt": "2026-10-16T07:26:33.371Z",
+    "mainSha": "6f083344eb72cbf9e8f439b7187ef1722e7b7aa8"
   }
 }
