@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-16T10:46:55.197Z",
-  "updatedAt": "2026-10-16T10:37:38Z",
+  "generatedAt": "2026-10-17T10:55:40.367Z",
+  "updatedAt": "2026-10-16T12:30:55Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,43 +12,42 @@
     "labels": [
       "bug",
       "app:marketplace",
-      "triage:queued",
-      "P2",
-      "clawsweeper:needs-product-decision"
+      "triage:needs-info",
+      "clawsweeper:needs-product-decision",
+      "P2"
     ],
     "createdAt": "2026-10-16T10:37:27Z",
-    "updatedAt": "2026-10-16T10:37:38Z"
+    "updatedAt": "2026-10-16T12:30:55Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué límite efectivo de confirmaciones `shipped` debe aplicarse a AbeBooks tras validar el límite del proveedor y la propagación de configuración?",
-  "rationale": "El código demuestra que el valor omitido cae a uno por pasada, pero el repositorio no determina el límite seguro del proveedor ni el valor operativo aprobado para producción.",
+  "question": "¿Qué valor de `data.abebooks.shipped` autoriza el equipo tras validar el presupuesto de confirmaciones de esta cuenta y cómo se verificará su propagación a las instancias activas?",
+  "rationale": "El código ya permite configurar el límite por marketplace, pero la guía del proveedor citada no establece una cuota numérica y el cambio es una decisión operativa que no puede deducirse del repositorio.",
   "options": [
     {
-      "title": "Ajustar configuración tras validar el límite",
-      "body": "Confirmar el límite permitido por AbeBooks y aplicar un valor `shipped` explícito mediante el mecanismo de configuración existente.",
+      "title": "Validar y ajustar AbeBooks",
+      "body": "Acordar un límite con Marketplace/Operaciones, aplicarlo solo a AbeBooks y comprobar su valor efectivo en las instancias y la evolución de la cola.",
       "recommended": true
     },
     {
-      "title": "Mantener el valor actual hasta verificarlo",
-      "body": "No elevar la capacidad mientras falte evidencia del límite del proveedor y del valor efectivo de producción.",
+      "title": "Mantener el límite actual mientras se valida",
+      "body": "Dejar `shipped` en 1 hasta disponer de confirmación operativa del presupuesto y del mecanismo de propagación.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Ajustar configuración tras validar el límite",
-    "body": "Confirmar el límite permitido por AbeBooks y aplicar un valor `shipped` explícito mediante el mecanismo de configuración existente.",
+    "title": "Validar y ajustar AbeBooks",
+    "body": "Acordar un límite con Marketplace/Operaciones, aplicarlo solo a AbeBooks y comprobar su valor efectivo en las instancias y la evolución de la cola.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Su trabajo fusionado en la integración AbeBooks es la referencia de código más directa disponible; no consta aquí una persona responsable de aprobar la configuración operativa.",
-    "confidence": "low"
+    "reason": "La revisión previa lo identificó como candidato probable para coordinar la decisión del equipo sobre el límite operativo.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10947.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10947#issuecomment-6213815393",
-    "reviewedAt": "2026-10-16T10:46:55.197Z",
-    "mainSha": "dca697ef00cb43c0500aaafee35fc67224a137e4"
+    "reviewedAt": "2026-10-17T10:55:40.367Z",
+    "mainSha": "eb2d77bc460e09d7b2feb21cbce17cf26f63452a"
   }
 }
