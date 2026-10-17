@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-16T04:50:29.247Z",
-  "updatedAt": "2026-10-16T04:42:53Z",
+  "generatedAt": "2026-10-17T08:54:46.549Z",
+  "updatedAt": "2026-10-17T08:16:40Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -19,38 +19,37 @@
       "clawsweeper:needs-security-review"
     ],
     "createdAt": "2026-10-09T12:46:07Z",
-    "updatedAt": "2026-10-16T04:42:53Z"
+    "updatedAt": "2026-10-17T08:16:40Z"
   },
   "lane": "security_boundary",
   "priority": "P2",
-  "question": "¿Se aprueba que Proof use una identidad Auth0 privilegiada y fixtures mutables en `Hamelyn_DEV`, y qué controles de aislamiento de KV, anonimización, limpieza y concurrencia deben ser obligatorios antes de integrarlo?",
-  "rationale": "La decisión cambia el límite de confianza del agente y el tratamiento de credenciales y datos; la revisión estática no puede determinar qué riesgo operativo acepta el equipo.",
+  "question": "¿Qué condiciones deben cumplirse para autorizar la identidad privilegiada de Proof y las escrituras y limpieza de fixtures en `Hamelyn_DEV` antes de integrar la PR candidata?",
+  "rationale": "La decisión afecta a credenciales con rol de administración y a escrituras persistentes; las pruebas locales no demuestran todavía el aislamiento y el comportamiento real necesarios para aprobar esos límites.",
   "options": [
     {
       "title": "Exigir garantías antes de integrar",
-      "body": "Mantener la PR candidata y requerir aislamiento de KV, protección de datos publicados y cobertura de limpieza y concurrencia antes de aprobarla.",
+      "body": "Mantener la candidata pendiente hasta verificar aislamiento, protección de datos publicados y limpieza de fixtures incluso ante fallos.",
       "recommended": true
     },
     {
       "title": "Reducir el alcance inicial",
-      "body": "Separar autenticación y grabación de los fixtures mutables hasta aprobar un mecanismo acotado para preparar y limpiar datos.",
+      "body": "Separar login y grabación de la preparación mutable de datos hasta aprobar un mecanismo acotado para sembrar y limpiar fixtures.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Exigir garantías antes de integrar",
-    "body": "Mantener la PR candidata y requerir aislamiento de KV, protección de datos publicados y cobertura de limpieza y concurrencia antes de aprobarla.",
+    "body": "Mantener la candidata pendiente hasta verificar aislamiento, protección de datos publicados y limpieza de fixtures incluso ante fallos.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "La revisión previa de esta issue lo señala como responsable probable de la decisión y su historial incluye cambios del sandbox de Proof.",
-    "confidence": "high"
+    "reason": "El historial reciente lo vincula con el sandbox de Proof y la revisión previa lo identifica como candidato de decisión para el límite de seguridad.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10730.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10730#issuecomment-6081918327",
-    "reviewedAt": "2026-10-16T04:50:29.247Z",
-    "mainSha": "6af27faf5e38dd96f99563360ec1da6f99514fd1"
+    "reviewedAt": "2026-10-17T08:54:46.549Z",
+    "mainSha": "e3c66f16fe7382452dd6a7298981d6b1c22b52d3"
   }
 }

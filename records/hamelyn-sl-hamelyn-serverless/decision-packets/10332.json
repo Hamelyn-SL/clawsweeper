@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-10T15:56:46.259Z",
-  "updatedAt": "2026-10-10T06:00:11Z",
+  "generatedAt": "2026-10-17T08:55:23.324Z",
+  "updatedAt": "2026-10-17T08:16:48Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -19,38 +19,42 @@
       "P2"
     ],
     "createdAt": "2026-10-01T10:23:24Z",
-    "updatedAt": "2026-10-10T06:00:11Z"
+    "updatedAt": "2026-10-17T08:16:48Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe aprobarse la recuperación acotada de las filas restantes identificadas por Javier, tras revalidarlas contra el maestro y el catálogo de IBS, o se debe esperar al export original y a la lista de SKU completos solicitados?",
-  "rationale": "La ejecución puede publicar ofertas y los datos aportados aún no confirman que cada fila sea elegible ni resuelven la falta de fichas en IBS; la autorización y el alcance son decisiones operativas del equipo.",
+  "question": "¿Se aprueba recuperar el conjunto acotado de ofertas elegibles y se mantiene fuera de alcance la creación automática de fichas de catálogo en IBS?",
+  "rationale": "El código puede reconciliar y reintentar ofertas, pero crear fichas en IBS cambia el contrato de publicación; la recuperación de datos identificada también necesita aprobación explícita.",
   "options": [
     {
-      "title": "Aprobar recuperación verificada",
-      "body": "Revalidar y recuperar únicamente las filas concretas del canario, comprobando la aceptación final de IBS.",
+      "title": "Aprobar recuperación acotada",
+      "body": "Validar la lista exacta contra catálogo y estado vigente y autorizar únicamente las filas elegibles.",
       "recommended": true
     },
     {
-      "title": "Esperar evidencia del reportero",
-      "body": "Solicitar el export original fechado y la lista de SKU completos antes de definir el alcance restante.",
+      "title": "Acordar alta de fichas con IBS",
+      "body": "Definir primero con IBS el procedimiento y contrato para crear fichas antes de ampliar la publicación.",
+      "recommended": false
+    },
+    {
+      "title": "No ampliar el flujo actual",
+      "body": "Conservar la publicación por EAN existente y cerrar la investigación operativa sin recuperar filas adicionales.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar recuperación verificada",
-    "body": "Revalidar y recuperar únicamente las filas concretas del canario, comprobando la aceptación final de IBS.",
+    "title": "Aprobar recuperación acotada",
+    "body": "Validar la lista exacta contra catálogo y estado vigente y autorizar únicamente las filas elegibles.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Aportó la medición operativa más reciente y delimitó el grupo candidato a recuperación; la aprobación corresponde al equipo de Marketplace/Ingeniería.",
-    "confidence": "medium"
+    "reason": "Aportó el contraste operativo más reciente y cuantificó las filas cuya recuperación requiere aprobación.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10332.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10332#issuecomment-6084364128",
-    "reviewedAt": "2026-10-10T15:56:46.259Z",
-    "mainSha": "67ee79c252051960ffbdc23a4089fbb0b3c3ed4e"
+    "reviewedAt": "2026-10-17T08:55:23.324Z",
+    "mainSha": "e3c66f16fe7382452dd6a7298981d6b1c22b52d3"
   }
 }

@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-13T15:04:28.683Z",
-  "updatedAt": "2026-10-10T02:54:25Z",
+  "generatedAt": "2026-10-17T08:55:14.725Z",
+  "updatedAt": "2026-10-17T08:16:45Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -17,43 +17,37 @@
       "P2"
     ],
     "createdAt": "2026-10-07T09:00:57Z",
-    "updatedAt": "2026-10-10T02:54:25Z"
+    "updatedAt": "2026-10-17T08:16:45Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Quién debe cancelar en Discogs los pedidos cancelados localmente por incidencias de inventario, en qué plazo y se autoriza automatizarlo?",
-  "rationale": "El código actual consulta cancelaciones remotas ya realizadas, pero la issue no acredita un fallo del cron ni una política que permita cancelar automáticamente pedidos pagados.",
+  "question": "¿Qué procedimiento aprobado debe resolver los pedidos Discogs con cancelación local por inventario mientras el estado remoto sigue en Payment Received, y quién debe actuar dentro de qué plazo?",
+  "rationale": "La solución puede requerir intervención manual o un flujo distinto, porque la documentación actual indica que ese estado remoto no admite cancelación; elegir automatización sin política operativa podría dejar pedidos pagados sin resolución o ejecutar una transición inválida.",
   "options": [
     {
-      "title": "Definir operación manual",
-      "body": "Asignar responsable y plazo para cancelar en Discogs y verificar el estado remoto posterior.",
+      "title": "Definir procedimiento manual",
+      "body": "Asignar a fulfillment un responsable y un plazo, con verificación documentada del estado remoto y local.",
       "recommended": true
     },
     {
-      "title": "Aprobar automatización acotada",
-      "body": "Definir condiciones, excepciones y comprobación remota antes de implementar solicitudes automáticas.",
-      "recommended": false
-    },
-    {
-      "title": "No cambiar el proceso",
-      "body": "Mantener la intervención manual actual y cerrar la investigación operativa sin cambio de código.",
+      "title": "Investigar un flujo automatizable",
+      "body": "Validar primero con Discogs y el equipo responsable qué transición es admisible antes de diseñar una automatización.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Definir operación manual",
-    "body": "Asignar responsable y plazo para cancelar en Discogs y verificar el estado remoto posterior.",
+    "title": "Definir procedimiento manual",
+    "body": "Asignar a fulfillment un responsable y un plazo, con verificación documentada del estado remoto y local.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Su historial conecta directamente con el helper de cancelaciones Discogs; fulfillment debe participar en la decisión operativa.",
-    "confidence": "medium"
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Su historial en el controlador Discogs lo vincula con la ruta técnica que habría que consultar una vez acordada la política operativa.",
+    "confidence": "low"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10559.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10559#issuecomment-6034740069",
-    "reviewedAt": "2026-10-13T15:04:28.683Z",
-    "mainSha": "5fc28691f86fff433f48d19dff85903b7a6e158a"
+    "reviewedAt": "2026-10-17T08:55:14.725Z",
+    "mainSha": "e3c66f16fe7382452dd6a7298981d6b1c22b52d3"
   }
 }

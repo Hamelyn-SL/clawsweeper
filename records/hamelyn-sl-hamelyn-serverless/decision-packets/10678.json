@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-13T15:05:21.624Z",
-  "updatedAt": "2026-10-10T05:04:53Z",
+  "generatedAt": "2026-10-17T08:54:46.294Z",
+  "updatedAt": "2026-10-17T08:16:43Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -17,38 +17,37 @@
       "P2"
     ],
     "createdAt": "2026-10-09T01:50:36Z",
-    "updatedAt": "2026-10-10T05:04:53Z"
+    "updatedAt": "2026-10-17T08:16:43Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué plazo y fecha de referencia deben activar la cancelación de pedidos Discogs `Invoice Sent` sin pagar, y debe aplicarse también a los 17 pedidos existentes?",
-  "rationale": "Cancelar en Discogs y republicar stock cambia el comportamiento comercial y puede causar una segunda venta si el pago llega después; el código y la documentación actuales no fijan esa política.",
+  "question": "¿Qué plazo y fecha de referencia deben activar la cancelación de pedidos Discogs `Invoice Sent`, y debe aplicarse la regla a los pedidos pendientes existentes?",
+  "rationale": "Cancelar en Discogs o republicar stock mientras un pedido siga abierto puede permitir una segunda venta; los 10 días mencionados son una propuesta, no una regla aprobada.",
   "options": [
     {
-      "title": "Mantener la gestión manual temporal",
-      "body": "Operaciones resuelve los pedidos abiertos manualmente y no se automatizan cancelaciones ni republicaciones hasta acordar criterios.",
+      "title": "Definir plazo y aplicar a pendientes",
+      "body": "Acordar un umbral y fecha de referencia, y decidir expresamente si incluye los pedidos ya abiertos.",
       "recommended": true
     },
     {
-      "title": "Aprobar una regla automática",
-      "body": "Definir plazo, fecha de referencia, excepciones y sincronización del stock, e indicar expresamente si se incluyen los pedidos existentes.",
+      "title": "Mantener gestión manual",
+      "body": "No automatizar cancelaciones ni republicaciones hasta que operaciones establezca una política.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mantener la gestión manual temporal",
-    "body": "Operaciones resuelve los pedidos abiertos manualmente y no se automatizan cancelaciones ni republicaciones hasta acordar criterios.",
+    "title": "Definir plazo y aplicar a pendientes",
+    "body": "Acordar un umbral y fecha de referencia, y decidir expresamente si incluye los pedidos ya abiertos.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Aportó la verificación en vivo y delimitó los pedidos existentes; su historial también le conecta con la ruta de importación Discogs.",
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "El historial lo conecta con la lógica de estados de Discogs que limita esta decisión.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10678.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10678#issuecomment-6094036811",
-    "reviewedAt": "2026-10-13T15:05:21.624Z",
-    "mainSha": "5fc28691f86fff433f48d19dff85903b7a6e158a"
+    "reviewedAt": "2026-10-17T08:54:46.294Z",
+    "mainSha": "e3c66f16fe7382452dd6a7298981d6b1c22b52d3"
   }
 }
