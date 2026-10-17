@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-10T08:31:20.050Z",
-  "updatedAt": "2026-10-10T08:19:28Z",
+  "generatedAt": "2026-10-17T08:47:03.031Z",
+  "updatedAt": "2026-10-17T08:16:47Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -18,43 +18,42 @@
       "P2"
     ],
     "createdAt": "2026-10-03T06:40:21Z",
-    "updatedAt": "2026-10-10T08:19:28Z"
+    "updatedAt": "2026-10-17T08:16:47Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué regla debe aplicar la ingesta cuando un libro recibe demasiados géneros y qué conjunto de productos debe incluir el dry-run de saneamiento?",
-  "rationale": "El código admite múltiples géneros y las consultas usan las categorías resultantes, pero el repositorio no define un máximo ni permite inferir las categorías correctas; una elección automática podría dañar la clasificación y los datos.",
+  "question": "¿Qué límite y tratamiento deben aplicarse a libros con demasiados géneros, y qué alcance de saneamiento se autoriza tras revisar el dry-run?",
+  "rationale": "El código permite propagar todos los géneros válidos, pero ni la réplica identifica con certeza el origen ni existe una regla de negocio que determine qué categorías conservar; elegirla o escribir datos sin aprobación sería especulativo.",
   "options": [
     {
-      "title": "Definir límite y revisar todos los casos",
-      "body": "Acordar el límite y el tratamiento de excedentes, y preparar un dry-run para todos los libros activos identificados antes de autorizar cambios.",
+      "title": "Definir regla y revisar dry-run",
+      "body": "Acordar el límite y el criterio de conservación, y autorizar por separado el saneamiento después de validar los cambios propuestos.",
       "recommended": true
     },
     {
-      "title": "Resolver primero los dos EAN reportados",
-      "body": "Limitar el primer dry-run a «Eva» y «El elemento», dejando el resto para una decisión posterior.",
+      "title": "Corregir solo los EAN reportados",
+      "body": "Limitar la primera revisión de datos a «Eva» y «El elemento», sin generalizar hasta validar el alcance.",
       "recommended": false
     },
     {
-      "title": "Mantener la clasificación sin límite",
-      "body": "No añadir una guarda hasta que Catálogo establezca una política de clasificación distinta.",
+      "title": "Aplazar saneamiento",
+      "body": "Mantener la issue abierta para investigación de datos y no cambiar la ingesta hasta contar con una política definida.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Definir límite y revisar todos los casos",
-    "body": "Acordar el límite y el tratamiento de excedentes, y preparar un dry-run para todos los libros activos identificados antes de autorizar cambios.",
+    "title": "Definir regla y revisar dry-run",
+    "body": "Acordar el límite y el criterio de conservación, y autorizar por separado el saneamiento después de validar los cambios propuestos.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "Lyno",
-    "reason": "Es la única persona identificable en el historial local reciente de los puntos de entrada y mapeo de categorías, aunque no hay evidencia suficiente para confirmar que sea quien decide la política de Catálogo.",
-    "confidence": "low"
+    "person": "JavierHamelyn",
+    "reason": "Su PR sobre páginas de categoría documentó que esta anomalía de datos quedaba fuera de alcance y la derivó a seguimiento separado.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10402.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10402#issuecomment-5966662353",
-    "reviewedAt": "2026-10-10T08:31:20.050Z",
-    "mainSha": "690b4786fb978ebf0e264e1d9afc7470133bbc56"
+    "reviewedAt": "2026-10-17T08:47:03.031Z",
+    "mainSha": "e3c66f16fe7382452dd6a7298981d6b1c22b52d3"
   }
 }
