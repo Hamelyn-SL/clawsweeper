@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-17T08:55:28.928Z",
-  "updatedAt": "2026-10-17T08:16:42Z",
+  "generatedAt": "2026-10-17T08:59:11.004Z",
+  "updatedAt": "2026-10-17T08:56:22Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -17,38 +17,37 @@
       "P2"
     ],
     "createdAt": "2026-10-09T05:30:40Z",
-    "updatedAt": "2026-10-17T08:16:42Z"
+    "updatedAt": "2026-10-17T08:56:22Z"
   },
-  "lane": "proof_sufficiency",
+  "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Puede el equipo aportar el payload del SKU y su resultado por `messageId` del feed `703141020733`, junto con un Listings GET actual, para determinar si queda una corrección de código concreta?",
-  "rationale": "La evidencia actual demuestra una divergencia en un canario, pero el formatter vigente ya envía los límites; elegir una corrección antes de saber qué recibió y procesó Amazon podría reactivar una oferta suprimida o alterar el precio comercial.",
+  "question": "¿Debe el equipo de marketplaces priorizar la reconstrucción del feed y la validación del repricing de este SKU antes de decidir un cambio de código o una recuperación comercial?",
+  "rationale": "La evidencia aportada apunta a límites remotos anteriores, pero no identifica si el feed fue incorrecto, Amazon no aplicó el cambio o hubo otro escritor; elegir una recuperación sin esa distinción puede afectar al precio autorizado.",
   "options": [
     {
-      "title": "Aportar trazas del canario",
-      "body": "Compartir el mensaje y el resultado por `messageId`, la versión desplegada y un Listings GET actual, saneados de datos sensibles.",
+      "title": "Validar primero el feed",
+      "body": "Aportar el mensaje y resultado del feed, la versión desplegada y un Listings GET actual antes de decidir el cambio.",
       "recommended": true
     },
     {
-      "title": "Mantener aparcado y posponer",
-      "body": "No cambiar estado ni precio hasta disponer de trazas que atribuyan la divergencia a una causa concreta.",
+      "title": "Tratarlo como gestión comercial",
+      "body": "Mantener el aparcado y resolver el listing fuera del pipeline si el equipo confirma que no corresponde a un defecto de código.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aportar trazas del canario",
-    "body": "Compartir el mensaje y el resultado por `messageId`, la versión desplegada y un Listings GET actual, saneados de datos sensibles.",
+    "title": "Validar primero el feed",
+    "body": "Aportar el mensaje y resultado del feed, la versión desplegada y un Listings GET actual antes de decidir el cambio.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "AlexDiaz-Hamelyn",
-    "reason": "Su historial reciente cubre la ruta actual de construcción del feed; el equipo de marketplaces que gestiona el canario debe confirmar la evidencia operativa.",
-    "confidence": "medium"
+    "person": "MarcosTerroso",
+    "reason": "Es la persona asignada y su historial cubre cambios de umbrales y tratamiento de listings inactivos.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10688.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10688#issuecomment-6075258395",
-    "reviewedAt": "2026-10-17T08:55:28.928Z",
+    "reviewedAt": "2026-10-17T08:59:11.004Z",
     "mainSha": "e3c66f16fe7382452dd6a7298981d6b1c22b52d3"
   }
 }

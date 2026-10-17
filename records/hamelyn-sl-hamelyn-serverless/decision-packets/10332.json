@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-17T08:55:23.324Z",
-  "updatedAt": "2026-10-17T08:16:48Z",
+  "generatedAt": "2026-10-17T08:58:20.557Z",
+  "updatedAt": "2026-10-17T08:56:18Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -19,43 +19,37 @@
       "P2"
     ],
     "createdAt": "2026-10-01T10:23:24Z",
-    "updatedAt": "2026-10-17T08:16:48Z"
+    "updatedAt": "2026-10-17T08:56:18Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se aprueba recuperar el conjunto acotado de ofertas elegibles y se mantiene fuera de alcance la creación automática de fichas de catálogo en IBS?",
-  "rationale": "El código puede reconciliar y reintentar ofertas, pero crear fichas en IBS cambia el contrato de publicación; la recuperación de datos identificada también necesita aprobación explícita.",
+  "question": "¿Debe Marketplace tramitar por separado la recuperación acotada de ofertas elegibles y confirmar con IBS si existe un flujo autorizado para crear fichas ausentes?",
+  "rationale": "El código ya reconcilia ofertas, pero no crea fichas; reintentar no resuelve EAN ausentes y recuperar errores heredados modifica datos con alcance operativo que requiere aprobación.",
   "options": [
     {
-      "title": "Aprobar recuperación acotada",
-      "body": "Validar la lista exacta contra catálogo y estado vigente y autorizar únicamente las filas elegibles.",
+      "title": "Separar las actuaciones",
+      "body": "Aprobar solo una lista revalidada de ofertas recuperables y confirmar con IBS el procedimiento de alta de fichas antes de plantear cualquier ampliación.",
       "recommended": true
     },
     {
-      "title": "Acordar alta de fichas con IBS",
-      "body": "Definir primero con IBS el procedimiento y contrato para crear fichas antes de ampliar la publicación.",
-      "recommended": false
-    },
-    {
-      "title": "No ampliar el flujo actual",
-      "body": "Conservar la publicación por EAN existente y cerrar la investigación operativa sin recuperar filas adicionales.",
+      "title": "Cerrar sin nuevas actuaciones",
+      "body": "Considerar resuelta la parte de reconciliación y no programar recuperación ni creación de fichas hasta que Marketplace aporte una nueva solicitud delimitada.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar recuperación acotada",
-    "body": "Validar la lista exacta contra catálogo y estado vigente y autorizar únicamente las filas elegibles.",
+    "title": "Separar las actuaciones",
+    "body": "Aprobar solo una lista revalidada de ofertas recuperables y confirmar con IBS el procedimiento de alta de fichas antes de plantear cualquier ampliación.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Aportó el contraste operativo más reciente y cuantificó las filas cuya recuperación requiere aprobación.",
-    "confidence": "high"
+    "reason": "Aportó la validación de catálogo, el resultado del canario y el análisis operativo más reciente en la discusión.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10332.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10332#issuecomment-6084364128",
-    "reviewedAt": "2026-10-17T08:55:23.324Z",
+    "reviewedAt": "2026-10-17T08:58:20.557Z",
     "mainSha": "e3c66f16fe7382452dd6a7298981d6b1c22b52d3"
   }
 }

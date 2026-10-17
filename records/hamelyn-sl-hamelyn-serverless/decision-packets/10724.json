@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-17T08:54:53.165Z",
-  "updatedAt": "2026-10-17T08:16:42Z",
+  "generatedAt": "2026-10-17T08:59:06.963Z",
+  "updatedAt": "2026-10-17T08:56:23Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,43 +15,42 @@
       "reporter:miguel",
       "triage:needs-info",
       "clawsweeper:needs-product-decision",
+      "P2",
       "origin:dev",
-      "epic:supply-v3",
-      "P2"
+      "epic:supply-v3"
     ],
     "createdAt": "2026-10-09T11:20:34Z",
-    "updatedAt": "2026-10-17T08:16:42Z"
+    "updatedAt": "2026-10-17T08:56:23Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe mantenerse la suma sin redondear como base de payOriginal y del mínimo, reconciliando la presentación visible, o debe cambiarse la regla para sumar precios por unidad redondeados?",
-  "rationale": "Ambas opciones pueden mostrar cifras coherentes, pero producen importes de venta y elegibilidad del mínimo distintos; la elección modifica una regla de negocio y no se deduce de la presentación actual.",
+  "question": "¿Debe prevalecer el importe original sin redondear para `payOriginal` y el mínimo, reconciliando solo cómo se presentan las líneas, o deben redondearse los precios de cada unidad y usarse esa suma en todo el flujo?",
+  "rationale": "La especificación actual exige sumar los precios ofertados sin redondeo, mientras que el comportamiento visible solicitado presupone que las líneas redondeadas sumen el total; las dos opciones pueden producir distinto importe de venta y resultado del mínimo.",
   "options": [
     {
-      "title": "Mantener la suma original",
-      "body": "Conservar el cálculo sin redondeos para payOriginal y el mínimo, y definir una presentación que haga explícita y coherente la diferencia de céntimos.",
+      "title": "Conservar suma original",
+      "body": "Mantener `payOriginal` y el mínimo sobre valores sin redondear y definir una presentación que haga comprensible la diferencia de céntimos.",
       "recommended": true
     },
     {
       "title": "Redondear cada unidad",
-      "body": "Cambiar el cálculo de líneas, total, mínimo y payOriginal para basarlos todos en los importes unitarios redondeados.",
+      "body": "Redondear los precios de cada copia y actualizar de forma coherente el total, `payOriginal`, el mínimo, la especificación y las pruebas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mantener la suma original",
-    "body": "Conservar el cálculo sin redondeos para payOriginal y el mínimo, y definir una presentación que haga explícita y coherente la diferencia de céntimos.",
+    "title": "Conservar suma original",
+    "body": "Mantener `payOriginal` y el mínimo sobre valores sin redondear y definir una presentación que haga comprensible la diferencia de céntimos.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "El historial local lo relaciona con la evolución del carrito Supply Web; la discusión disponible no identifica un responsable de negocio más específico.",
+    "reason": "Su historial local muestra contribuciones recientes al carrito Supply web y al control del mínimo, además de la lógica de compra relacionada.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10724.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10724#issuecomment-6079913890",
-    "reviewedAt": "2026-10-17T08:54:53.165Z",
+    "reviewedAt": "2026-10-17T08:59:06.963Z",
     "mainSha": "e3c66f16fe7382452dd6a7298981d6b1c22b52d3"
   }
 }

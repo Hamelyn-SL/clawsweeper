@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-17T08:55:14.725Z",
-  "updatedAt": "2026-10-17T08:16:45Z",
+  "generatedAt": "2026-10-17T08:58:21.559Z",
+  "updatedAt": "2026-10-17T08:56:19Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -17,38 +17,42 @@
       "P2"
     ],
     "createdAt": "2026-10-07T09:00:57Z",
-    "updatedAt": "2026-10-17T08:16:45Z"
+    "updatedAt": "2026-10-17T08:56:19Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué procedimiento aprobado debe resolver los pedidos Discogs con cancelación local por inventario mientras el estado remoto sigue en Payment Received, y quién debe actuar dentro de qué plazo?",
-  "rationale": "La solución puede requerir intervención manual o un flujo distinto, porque la documentación actual indica que ese estado remoto no admite cancelación; elegir automatización sin política operativa podría dejar pedidos pagados sin resolución o ejecutar una transición inválida.",
+  "question": "¿Qué responsable y plazo deben regir la cancelación remota en Discogs cuando Hamelyn marca un pedido como cancelado por un motivo de inventario?",
+  "rationale": "El código distingue la consulta de cancelaciones remotas de la transición local, pero no determina si debe cancelar automáticamente, quién debe hacerlo manualmente ni qué plazo operativo aplicar.",
   "options": [
     {
-      "title": "Definir procedimiento manual",
-      "body": "Asignar a fulfillment un responsable y un plazo, con verificación documentada del estado remoto y local.",
+      "title": "Acordar responsable y SLA manual",
+      "body": "Mantener la cancelación remota como tarea de fulfillment y documentar responsable y plazo.",
       "recommended": true
     },
     {
-      "title": "Investigar un flujo automatizable",
-      "body": "Validar primero con Discogs y el equipo responsable qué transición es admisible antes de diseñar una automatización.",
+      "title": "Automatizar la cancelación",
+      "body": "Aprobar una política automática y concretar sus condiciones, motivos y tratamiento de pedidos ya cancelados localmente.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener la gestión fuera del código",
+      "body": "Resolver estos casos mediante el proceso operativo existente sin añadir comportamiento al repositorio.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Definir procedimiento manual",
-    "body": "Asignar a fulfillment un responsable y un plazo, con verificación documentada del estado remoto y local.",
+    "title": "Acordar responsable y SLA manual",
+    "body": "Mantener la cancelación remota como tarea de fulfillment y documentar responsable y plazo.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Su historial en el controlador Discogs lo vincula con la ruta técnica que habría que consultar una vez acordada la política operativa.",
+    "reason": "Es el candidato de enrutamiento más cercano por su historial reciente en la ruta Discogs, aunque la decisión final requiere al responsable de fulfillment.",
     "confidence": "low"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10559.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10559#issuecomment-6034740069",
-    "reviewedAt": "2026-10-17T08:55:14.725Z",
+    "reviewedAt": "2026-10-17T08:58:21.559Z",
     "mainSha": "e3c66f16fe7382452dd6a7298981d6b1c22b52d3"
   }
 }
