@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-18T07:56:30.386Z",
+  "updatedAt": "2026-10-18T07:52:21Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10969,
+    "title": "TodoColeccion reprice input exceeds processing capacity and backlog keeps growing",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10969",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "triage:queued",
+      "P2"
+    ],
+    "createdAt": "2026-10-18T07:52:06Z",
+    "updatedAt": "2026-10-18T07:52:21Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué capacidad y plazo objetivo debe aprobarse para TodoColección, considerando el pacing y la cuota efectiva del proveedor?",
+  "rationale": "El código ofrece un límite configurable, pero no existe un SLA documentado ni evidencia local suficiente para escoger un valor seguro sin decisión operativa.",
+  "options": [
+    {
+      "title": "Definir un objetivo medido",
+      "body": "Acordar capacidad y plazo junto con cuotas del proveedor y validar el drenaje y throttling en producción.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener el límite actual",
+      "body": "Conservar el límite mientras se recopilan más mediciones comparables de cola y tasa de entrada.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Definir un objetivo medido",
+    "body": "Acordar capacidad y plazo junto con cuotas del proveedor y validar el drenaje y throttling en producción.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Ha contribuido recientemente a la ruta de repricing TodoColección; la decisión debe coordinarse con el equipo de Marketplaces.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10969.md",
+    "reviewedAt": "2026-10-18T07:56:30.386Z",
+    "mainSha": "f24a0c231ca992aafdbc226a328f839d7a4d27f4"
+  }
+}
