@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-18T07:45:06.209Z",
+  "updatedAt": "2026-10-18T07:42:51Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10968,
+    "title": "Amazon FR BUYABLE listing remains parked with 90221 and an outdated price",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10968",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "triage:running",
+      "P2"
+    ],
+    "createdAt": "2026-10-18T07:31:58Z",
+    "updatedAt": "2026-10-18T07:42:51Z"
+  },
+  "lane": "security_boundary",
+  "priority": "P2",
+  "question": "¿Debe un `BUYABLE` verificado prevalecer sobre un error de atributo permanente para permitir la reconciliación del precio, conservando el error para diagnóstico?",
+  "rationale": "Cambiar la precedencia entre estado remoto, clasificación de error y operaciones de precio afecta una oferta activa y no puede decidirse solo desde la evidencia de un único canario.",
+  "options": [
+    {
+      "title": "Conservar el bloqueo hasta clasificar",
+      "body": "Mantener el listing aparcado hasta determinar si `90221` debe bloquear operaciones aunque Amazon confirme que la oferta es comprable.",
+      "recommended": false
+    },
+    {
+      "title": "Reconciliar precio con `BUYABLE` confirmado",
+      "body": "Permitir la actualización controlada del precio cuando una lectura remota confirme `BUYABLE`, sin borrar el error de catálogo.",
+      "recommended": true
+    }
+  ],
+  "recommendation": {
+    "title": "Reconciliar precio con `BUYABLE` confirmado",
+    "body": "Permitir la actualización controlada del precio cuando una lectura remota confirme `BUYABLE`, sin borrar el error de catálogo.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es el contribuidor reciente del área Amazon y el autor del reporte con evidencia directa del canario.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10968.md",
+    "reviewedAt": "2026-10-18T07:45:06.209Z",
+    "mainSha": "f24a0c231ca992aafdbc226a328f839d7a4d27f4"
+  }
+}
