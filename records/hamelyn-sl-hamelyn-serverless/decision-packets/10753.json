@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-13T15:09:56.557Z",
-  "updatedAt": "2026-10-11T08:32:59Z",
+  "generatedAt": "2026-10-19T09:04:59.363Z",
+  "updatedAt": "2026-10-19T08:24:19Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -17,38 +17,37 @@
       "P2"
     ],
     "createdAt": "2026-10-11T08:24:42Z",
-    "updatedAt": "2026-10-11T08:32:59Z"
+    "updatedAt": "2026-10-19T08:24:19Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe enviarse `CN` automáticamente al pasar una línea a `TO_CANCEL` o solo tras aprobación manual, y qué evidencia de Alibris confirma su aceptación o rechazo?",
-  "rationale": "El código muestra que el consumidor no existe, pero la transición local y la subida FTP no establecen por sí mismas autorización ni aceptación remota; elegir ese contrato requiere criterio de Operaciones y Marketplace.",
+  "question": "¿Debe enviarse CN automáticamente desde `TO_CANCEL` o únicamente tras aprobación manual, y qué evidencia/mecanismo remoto determinará aceptación, rechazo o resultado ambiguo?",
+  "rationale": "La implementación segura depende de una política de autorización por línea y de cómo reconciliar una transferencia cuyo resultado remoto no puede confirmarse; el estado interno y una subida FTP no resuelven esas decisiones.",
   "options": [
     {
-      "title": "Automatizar desde `TO_CANCEL`",
-      "body": "Enviar `CN` al entrar en ese estado y conservar los resultados ambiguos para reconciliación antes de reintentar.",
-      "recommended": false
+      "title": "Aprobación manual",
+      "body": "Enviar CN únicamente después de una aprobación explícita por línea y reconciliar el resultado remoto antes de cerrar la cancelación.",
+      "recommended": true
     },
     {
-      "title": "Exigir aprobación manual",
-      "body": "Enviar `CN` únicamente tras una autorización explícita y registrar quién la aprobó junto con el resultado por línea.",
-      "recommended": true
+      "title": "Automático con elegibilidad definida",
+      "body": "Permitir envío automático solo tras acordar criterios de elegibilidad y un procedimiento de revisión para resultados ambiguos.",
+      "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Exigir aprobación manual",
-    "body": "Enviar `CN` únicamente tras una autorización explícita y registrar quién la aprobó junto con el resultado por línea.",
+    "title": "Aprobación manual",
+    "body": "Enviar CN únicamente después de una aprobación explícita por línea y reconciliar el resultado remoto antes de cerrar la cancelación.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Su historial conecta directamente con el flujo EDI de Alibris; Operaciones debe aportar el criterio de autorización y aceptación remota.",
-    "confidence": "medium"
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Su historial incluye la configuración actual del manager Alibris; la política requiere además criterio de Operaciones.",
+    "confidence": "low"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10753.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10753#issuecomment-6107166631",
-    "reviewedAt": "2026-10-13T15:09:56.557Z",
-    "mainSha": "5fc28691f86fff433f48d19dff85903b7a6e158a"
+    "reviewedAt": "2026-10-19T09:04:59.363Z",
+    "mainSha": "a1f8773fe505b3898bb4cd40c3c8ed2f2fd9411b"
   }
 }

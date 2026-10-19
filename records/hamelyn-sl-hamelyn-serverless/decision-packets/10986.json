@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-19T09:04:17.806Z",
+  "updatedAt": "2026-10-19T08:25:38Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10986,
+    "title": "Station Guardian: automatic monitoring and safe repair of Skypod stations",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10986",
+    "state": "open",
+    "labels": [
+      "app:infrastructure",
+      "feature",
+      "triage:queued",
+      "reporter:alejandrodiaz",
+      "P2"
+    ],
+    "createdAt": "2026-10-19T08:25:10Z",
+    "updatedAt": "2026-10-19T08:25:38Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe avanzar Station Guardian como servicio de producción separado, limitado a los tres Skypod y desactivado hasta completar una ronda manual de verificación?",
+  "rationale": "La solicitud introduce automatización remota correctiva en puestos de almacén y define su canal de despliegue y activación; el código actual solo ofrece presencia y acceso de diagnóstico, así que el alcance operativo y la aceptación del riesgo necesitan decisión explícita.",
+  "options": [
+    {
+      "title": "Patrocinar el alcance propuesto",
+      "body": "Mantener la frontera de tres puestos, reparaciones permitidas y activación condicionada a una ronda manual verificada.",
+      "recommended": true
+    },
+    {
+      "title": "Acotar a monitorización primero",
+      "body": "Desplegar diagnósticos y avisos sin reparaciones automáticas hasta validar señales y operación en producción.",
+      "recommended": false
+    },
+    {
+      "title": "Aplazar la automatización",
+      "body": "Conservar el flujo de acceso y diagnóstico manual de Bifrost sin añadir reparación desatendida por ahora.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Patrocinar el alcance propuesto",
+    "body": "Mantener la frontera de tres puestos, reparaciones permitidas y activación condicionada a una ronda manual verificada.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Es el contribuidor reciente más conectado por historial local a Bifrost y al inventario de Skypod; la decisión de priorización sigue correspondiendo al equipo responsable de operaciones.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10986.md",
+    "reviewedAt": "2026-10-19T09:04:17.806Z",
+    "mainSha": "a1f8773fe505b3898bb4cd40c3c8ed2f2fd9411b"
+  }
+}

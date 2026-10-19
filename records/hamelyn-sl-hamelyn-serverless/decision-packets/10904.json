@@ -1,56 +1,54 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-16T14:01:06.374Z",
-  "updatedAt": "2026-10-15T13:06:55Z",
+  "generatedAt": "2026-10-19T09:04:06.724Z",
+  "updatedAt": "2026-10-19T08:44:44Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
     "number": 10904,
-    "title": "Rutas ecommerce UK y CAT erroneas",
+    "title": "Ecommerce en hamelyn.com: /cat/comprar en 200 por microfrontend y el resto de prefijos de tienda en 301 a su dominio",
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10904",
     "state": "open",
     "labels": [
       "bug",
       "source:admin-panel",
       "app:ecommerce",
-      "triage:blocked",
+      "triage:needs-info",
       "reporter:victor",
-      "P2",
-      "clawsweeper:needs-product-decision"
+      "P2"
     ],
     "createdAt": "2026-10-15T12:06:42Z",
-    "updatedAt": "2026-10-15T13:06:55Z"
+    "updatedAt": "2026-10-19T08:44:44Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe servirse el storefront de ecommerce bajo `/uk/buy` y `/cat/comprar` además de los alias actuales, y está aprobada la delegación de esos prefijos en Vercel?",
-  "rationale": "La issue fija como resultado deseado las rutas históricas, pero el cambio afecta también al manifiesto de delegación y a las exclusiones de redirección; hace falta confirmar el comportamiento de despliegue esperado antes de elegir la implementación.",
+  "question": "¿Qué proyecto de Vercel servirá `/cat/comprar/*` y mediante qué pipeline se desplegará, antes de iniciar la implementación coordinada?",
+  "rationale": "La decisión de comportamiento ya está registrada, pero la issue identifica la selección del proyecto y del despliegue como un requisito técnico pendiente; sin ello no se puede validar que el storefront responda en el nuevo prefijo.",
   "options": [
     {
-      "title": "Conservar las rutas históricas",
-      "body": "Delegar ambos prefijos al ecommerce y ajustar las redirecciones para mantenerlos como destinos finales.",
+      "title": "Definir proyecto e integración de despliegue",
+      "body": "Confirmar el proyecto Vercel y cómo se incorpora al pipeline para poder implementar y verificar el alcance acordado.",
       "recommended": true
     },
     {
-      "title": "Mantener los alias actuales",
-      "body": "Dejar `/en/buy` y `/ca/comprar` como destinos y actualizar el mapa de redirecciones de URLs antiguas para que apunte directamente a esos alias.",
+      "title": "Ajustar el alcance",
+      "body": "Revisar si CAT debe servirse en `hamelyn.com` mientras no exista una ruta de despliegue acordada.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Conservar las rutas históricas",
-    "body": "Delegar ambos prefijos al ecommerce y ajustar las redirecciones para mantenerlos como destinos finales.",
+    "title": "Definir proyecto e integración de despliegue",
+    "body": "Confirmar el proyecto Vercel y cómo se incorpora al pipeline para poder implementar y verificar el alcance acordado.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "Su PR fusionado modificó la configuración de redirecciones de supply-web que origina el comportamiento actual.",
+    "person": "Miguel Angel Hernández Perdomo",
+    "reason": "El hilo le atribuye la decisión funcional y el plan de implementación; es el candidato mejor respaldado para resolver la definición pendiente.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10904.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10904#issuecomment-6217188188",
-    "reviewedAt": "2026-10-16T14:01:06.374Z",
-    "mainSha": "52dd5756cadb832c60e976f3dc080733fa6b06cc"
+    "reviewedAt": "2026-10-19T09:04:06.724Z",
+    "mainSha": "a1f8773fe505b3898bb4cd40c3c8ed2f2fd9411b"
   }
 }

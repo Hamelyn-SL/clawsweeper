@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-19T09:05:01.991Z",
+  "updatedAt": "2026-10-19T08:29:48Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10983,
+    "title": "Ecommerce: «Descargar factura» da 404 o sale incompleta en pedidos con varias partes",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10983",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:ecommerce",
+      "reporter:davidgonzalez",
+      "triage:done",
+      "P2"
+    ],
+    "createdAt": "2026-10-19T08:05:14Z",
+    "updatedAt": "2026-10-19T08:29:48Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe «Descargar factura» emitir un único PDF con todas las partes facturables del pedido o un documento por cada parte no cancelada?",
+  "rationale": "La issue confirma el fallo, pero el diseño del documento afecta a facturación y el reporte presenta explícitamente ambas alternativas sin una decisión contable.",
+  "options": [
+    {
+      "title": "Factura conjunta",
+      "body": "Emitir un PDF único con todas las partes no canceladas y responder 404 solo si todas están canceladas.",
+      "recommended": true
+    },
+    {
+      "title": "Una factura por parte",
+      "body": "Mantener documentos separados y ofrecer al cliente cada parte no cancelada del pedido.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Factura conjunta",
+    "body": "Emitir un PDF único con todas las partes no canceladas y responder 404 solo si todas están canceladas.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "alexcanHamelyn",
+    "reason": "Su historial está ligado a la introducción del endpoint y la descarga de facturas; no hay evidencia local que identifique quién representa la decisión contable.",
+    "confidence": "low"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10983.md",
+    "reviewedAt": "2026-10-19T09:05:01.991Z",
+    "mainSha": "a1f8773fe505b3898bb4cd40c3c8ed2f2fd9411b"
+  }
+}
