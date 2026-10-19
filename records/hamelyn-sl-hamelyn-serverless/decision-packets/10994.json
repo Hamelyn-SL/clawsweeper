@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-19T10:49:53.508Z",
+  "updatedAt": "2026-10-19T10:42:41Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10994,
+    "title": "Argos: second pass agent that completes product sheets",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10994",
+    "state": "open",
+    "labels": [
+      "app:supply",
+      "reporter:pablo",
+      "feature",
+      "triage:queued",
+      "P2"
+    ],
+    "createdAt": "2026-10-19T10:42:15Z",
+    "updatedAt": "2026-10-19T10:42:41Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se quiere incorporar una segunda pasada manual de Argos en `apps/agents`, y qué esquema de auditoría persistente se autoriza para registrar cambios de campos?",
+  "rationale": "Es una capacidad nueva que escribe datos de catálogo y solicita una estructura de auditoría; la política de producto y cualquier nueva estructura persistente requieren decisión explícita.",
+  "options": [
+    {
+      "title": "Aprobar el flujo y concretar el esquema",
+      "body": "Acordar los límites de escritura por campo y autorizar explícitamente cualquier estructura persistente antes de implementarla.",
+      "recommended": true
+    },
+    {
+      "title": "Probarlo fuera de core",
+      "body": "Validar primero la mejora mediante un proceso operativo temporal sin crear estructuras persistentes nuevas.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar el flujo y concretar el esquema",
+    "body": "Acordar los límites de escritura por campo y autorizar explícitamente cualquier estructura persistente antes de implementarla.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "PabloMoran34",
+    "reason": "Es el contribuidor reciente mejor conectado al pipeline Argos y al caso de uso descrito.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10994.md",
+    "reviewedAt": "2026-10-19T10:49:53.508Z",
+    "mainSha": "89c50345e5c11432aafe604324dc31e01454b13e"
+  }
+}
