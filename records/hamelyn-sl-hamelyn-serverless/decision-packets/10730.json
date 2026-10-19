@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-17T08:54:46.549Z",
-  "updatedAt": "2026-10-17T08:16:40Z",
+  "generatedAt": "2026-10-19T07:14:24.728Z",
+  "updatedAt": "2026-10-19T06:57:53Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -18,38 +18,42 @@
       "P2"
     ],
     "createdAt": "2026-10-09T12:46:07Z",
-    "updatedAt": "2026-10-17T08:16:40Z"
+    "updatedAt": "2026-10-19T06:57:53Z"
   },
   "lane": "security_boundary",
   "priority": "P2",
-  "question": "¿Qué condiciones deben cumplirse para autorizar la identidad privilegiada de Proof y las escrituras y limpieza de fixtures en `Hamelyn_DEV` antes de integrar la PR candidata?",
-  "rationale": "La decisión afecta a credenciales con rol de administración y a escrituras persistentes; las pruebas locales no demuestran todavía el aislamiento y el comportamiento real necesarios para aprobar esos límites.",
+  "question": "¿Se autoriza mantener la identidad de servicio de Auth0 y sus roles de prueba en Hamelyn_DEV, y dónde deben custodiarse sus credenciales?",
+  "rationale": "El flujo depende de una identidad real y de credenciales; su aprovisionamiento y custodia son decisiones operativas y de seguridad que no puede resolver la revisión de código.",
   "options": [
     {
-      "title": "Exigir garantías antes de integrar",
-      "body": "Mantener la candidata pendiente hasta verificar aislamiento, protección de datos publicados y limpieza de fixtures incluso ante fallos.",
+      "title": "Autorizar bundle cifrado",
+      "body": "Aprovisionar la identidad de prueba y custodiar sus credenciales mediante el bundle cifrado del entorno.",
       "recommended": true
     },
     {
-      "title": "Reducir el alcance inicial",
-      "body": "Separar login y grabación de la preparación mutable de datos hasta aprobar un mecanismo acotado para sembrar y limpiar fixtures.",
+      "title": "Autorizar variables del proyecto",
+      "body": "Aprovisionar la identidad de prueba y custodiar las credenciales en variables protegidas del proyecto agents.",
+      "recommended": false
+    },
+    {
+      "title": "No autorizar todavía",
+      "body": "Pausar el uso de identidad real hasta acordar una alternativa de autenticación de prueba.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Exigir garantías antes de integrar",
-    "body": "Mantener la candidata pendiente hasta verificar aislamiento, protección de datos publicados y limpieza de fixtures incluso ante fallos.",
+    "title": "Autorizar bundle cifrado",
+    "body": "Aprovisionar la identidad de prueba y custodiar sus credenciales mediante el bundle cifrado del entorno.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "El historial reciente lo vincula con el sandbox de Proof y la revisión previa lo identifica como candidato de decisión para el límite de seguridad.",
-    "confidence": "medium"
+    "person": "HamelynDev",
+    "reason": "Es la identidad más conectada por el historial disponible al subsistema Proof; la decisión de credenciales requiere confirmación del equipo responsable de infraestructura.",
+    "confidence": "low"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10730.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10730#issuecomment-6081918327",
-    "reviewedAt": "2026-10-17T08:54:46.549Z",
-    "mainSha": "e3c66f16fe7382452dd6a7298981d6b1c22b52d3"
+    "reviewedAt": "2026-10-19T07:14:24.728Z",
+    "mainSha": "3f87f9bb8bc9a7071a2f47a7947e8f615cf60787"
   }
 }
