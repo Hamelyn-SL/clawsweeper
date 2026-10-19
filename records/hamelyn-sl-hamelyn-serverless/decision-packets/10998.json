@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-19T11:00:16.763Z",
+  "updatedAt": "2026-10-19T10:56:42Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10998,
+    "title": "Almacén: solo los operarios de almacén deben tener sesión de productividad y reclamar contenedores",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10998",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:admin",
+      "triage:queued",
+      "P1",
+      "reporter:AlexDiaz-Hamelyn"
+    ],
+    "createdAt": "2026-10-19T10:56:15Z",
+    "updatedAt": "2026-10-19T10:56:42Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe la restricción de claims de packing seguir siendo única por contenedor entre procesos, o debe permitir atribución independiente por proceso?",
+  "rationale": "La elegibilidad por rol está especificada, pero permitir que PACKING_INDIVIDUAL y AUTO_PACKING acrediten el mismo contenedor por separado puede duplicar producción y requiere decidir la política de atribución.",
+  "options": [
+    {
+      "title": "Mantener un claim global por contenedor",
+      "body": "Restringir quién puede reclamarlo y conservar una sola atribución aunque el contenedor pase por otro proceso.",
+      "recommended": true
+    },
+    {
+      "title": "Separar claims por proceso",
+      "body": "Permitir atribuciones independientes por proceso y definir cómo se evita contabilizar dos veces el mismo trabajo.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mantener un claim global por contenedor",
+    "body": "Restringir quién puede reclamarlo y conservar una sola atribución aunque el contenedor pase por otro proceso.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Su trabajo reciente cubre el mecanismo de atribución por contenedor que esta decisión modificaría.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10998.md",
+    "reviewedAt": "2026-10-19T11:00:16.763Z",
+    "mainSha": "89c50345e5c11432aafe604324dc31e01454b13e"
+  }
+}

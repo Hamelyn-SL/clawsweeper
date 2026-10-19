@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-19T10:59:48.597Z",
+  "updatedAt": "2026-10-19T10:56:35Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10997,
+    "title": "Communications: send transactional emails through Brevo in parallel with Mandrill",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10997",
+    "state": "open",
+    "labels": [
+      "app:infrastructure",
+      "feature",
+      "triage:queued",
+      "reporter:danielmenchen",
+      "P2"
+    ],
+    "createdAt": "2026-10-19T10:55:55Z",
+    "updatedAt": "2026-10-19T10:56:35Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se aprueba incorporar Brevo como proveedor transaccional optativo en paralelo con Mandrill, con una migración gradual por plantilla y entorno?",
+  "rationale": "La petición añade un proveedor, superficie de configuración y un nuevo flujo de eventos; decidir si ese camino forma parte del producto y cómo se habilita es una elección estratégica, no deducible del código actual.",
+  "options": [
+    {
+      "title": "Aprobar migración gradual",
+      "body": "Añadir Brevo detrás de configuración optativa por entorno y plantilla, manteniendo Mandrill como valor predeterminado.",
+      "recommended": true
+    },
+    {
+      "title": "Aplazar la decisión",
+      "body": "Mantener el flujo actual y reconsiderar Brevo cuando se confirme el plan y los requisitos operativos de migración.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar migración gradual",
+    "body": "Añadir Brevo detrás de configuración optativa por entorno y plantilla, manteniendo Mandrill como valor predeterminado.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Daniel",
+    "reason": "Su historial reciente abarca la extracción y el enrutado del centro de comunicaciones, el área principal que tendría que extenderse.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10997.md",
+    "reviewedAt": "2026-10-19T10:59:48.597Z",
+    "mainSha": "89c50345e5c11432aafe604324dc31e01454b13e"
+  }
+}
