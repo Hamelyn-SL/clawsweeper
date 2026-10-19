@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-19T13:06:38.914Z",
-  "updatedAt": "2026-10-19T12:36:09Z",
+  "generatedAt": "2026-10-19T13:10:27.647Z",
+  "updatedAt": "2026-10-19T13:08:30Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -14,44 +14,43 @@
       "P2"
     ],
     "createdAt": "2026-10-14T09:43:08Z",
-    "updatedAt": "2026-10-19T12:36:09Z",
+    "updatedAt": "2026-10-19T13:08:30Z",
     "headSha": "b9ea9f1ef955b9a4d881cc4927e3740e59b62d76"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué regla combinada debe regir los territorios aduaneros de EE. UU. y las partidas magnéticas de VHS/casete al integrar los códigos nacionales de esta rama?",
-  "rationale": "La discusión identifica discrepancias de comportamiento respecto a `dev`; resolverlas exige confirmar el contrato aduanero esperado, no solo resolver conflictos de texto.",
+  "question": "¿Qué regla combinada debe regir los territorios de EE. UU. y los soportes magnéticos al integrar esta cobertura nacional con los cambios ya incorporados en `dev`?",
+  "rationale": "Los comentarios identifican discrepancias concretas entre reglas aduaneras y expectativas de pruebas; elegir el código correcto requiere validar la interpretación operativa, no solo resolver conflictos de texto.",
   "options": [
     {
-      "title": "Conservar las reglas vigentes de `dev`",
-      "body": "Normalizar los territorios de EE. UU. y mantener sus códigos magnéticos actuales, integrando las nuevas partidas nacionales donde no entren en conflicto.",
+      "title": "Acordar una regla combinada",
+      "body": "Definir los códigos y territorios aplicables y actualizar la implementación, la especificación de lógica de negocio y las pruebas para que reflejen esa regla.",
       "recommended": true
     },
     {
-      "title": "Adoptar las reglas de esta rama",
-      "body": "Mantener las excepciones y códigos propuestos por la rama aunque difieran del comportamiento actual de `dev`.",
+      "title": "Mantener las reglas de dev",
+      "body": "Conservar los códigos actuales y ajustar o retirar las variantes de la propuesta que no encajen con el comportamiento ya acordado.",
       "recommended": false
     },
     {
-      "title": "Definir una tabla combinada revisada",
-      "body": "Acordar expresamente cada combinación afectada y actualizar la BL, la tabla y las pruebas antes de integrar.",
+      "title": "Pausar la ampliación",
+      "body": "Esperar a validar las partidas nacionales y las excepciones antes de incorporar la tabla y sus variantes.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Conservar las reglas vigentes de `dev`",
-    "body": "Normalizar los territorios de EE. UU. y mantener sus códigos magnéticos actuales, integrando las nuevas partidas nacionales donde no entren en conflicto.",
+    "title": "Acordar una regla combinada",
+    "body": "Definir los códigos y territorios aplicables y actualizar la implementación, la especificación de lógica de negocio y las pruebas para que reflejen esa regla.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "Es el autor de la implementación y del trabajo reciente del resolver; JavierHamelyn aporta la revisión de las divergencias concretas.",
+    "person": "JavierHamelyn",
+    "reason": "Expuso específicamente los puntos de discrepancia y solicitó una decisión sobre las reglas combinadas.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10857.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10857#issuecomment-6165762383",
-    "reviewedAt": "2026-10-19T13:06:38.914Z",
+    "reviewedAt": "2026-10-19T13:10:27.647Z",
     "mainSha": "89c50345e5c11432aafe604324dc31e01454b13e"
   }
 }
