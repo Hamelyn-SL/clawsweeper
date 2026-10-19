@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-16T13:24:54.634Z",
-  "updatedAt": "2026-10-16T11:12:51Z",
+  "generatedAt": "2026-10-19T05:59:44.925Z",
+  "updatedAt": "2026-10-19T05:57:51Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,47 +14,46 @@
       "reporter:pablo",
       "feature",
       "triage:done",
-      "P2",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2"
     ],
     "createdAt": "2026-10-14T12:48:42Z",
-    "updatedAt": "2026-10-16T11:12:51Z"
+    "updatedAt": "2026-10-19T05:57:51Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se autoriza crear y usar la colección `demandallowlist` para esta whitelist B2B?",
-  "rationale": "El comportamiento solicitado depende de persistencia nueva y la conversación de la PR indica que esa autorización todavía no consta.",
+  "question": "¿Se autoriza crear y usar `demandallowlist` para los EAN de listados B2B, o debe la PR reutilizar una estructura existente?",
+  "rationale": "La solución candidata necesita persistencia propia y la política del repositorio prohíbe crear colecciones sin autorización expresa; esta elección no puede deducirse del código ni de la aprobación técnica de la PR.",
   "options": [
     {
-      "title": "Autorizar la colección",
-      "body": "Permitir `demandallowlist` y continuar la revisión de la implementación candidata.",
+      "title": "Autorizar `demandallowlist`",
+      "body": "Permitir el uso de la colección nueva y continuar la validación de la implementación candidata.",
       "recommended": true
     },
     {
-      "title": "Reutilizar una estructura existente",
-      "body": "Pedir que la PR adapte la whitelist a una estructura ya autorizada antes de continuar.",
+      "title": "Reutilizar persistencia existente",
+      "body": "Solicitar que la PR adapte la whitelist a una estructura ya autorizada antes de integrar.",
       "recommended": false
     },
     {
       "title": "Aplazar la capacidad",
-      "body": "Dejar la implementación en pausa hasta decidir otra vía de persistencia.",
+      "body": "Mantener la implementación en pausa hasta acordar una vía de persistencia autorizada.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Autorizar la colección",
-    "body": "Permitir `demandallowlist` y continuar la revisión de la implementación candidata.",
+    "title": "Autorizar `demandallowlist`",
+    "body": "Permitir el uso de la colección nueva y continuar la validación de la implementación candidata.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "La conversación de la PR le atribuye la autorización pendiente sobre la colección.",
+    "reason": "El historial reciente en el flujo B2B y el contexto previo de triage lo sitúan como candidato de coordinación para esta decisión.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10868.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10868#issuecomment-6168854183",
-    "reviewedAt": "2026-10-16T13:24:54.634Z",
-    "mainSha": "52dd5756cadb832c60e976f3dc080733fa6b06cc"
+    "reviewedAt": "2026-10-19T05:59:44.925Z",
+    "mainSha": "f24a0c231ca992aafdbc226a328f839d7a4d27f4"
   }
 }
