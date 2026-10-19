@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-19T10:55:01.773Z",
+  "updatedAt": "2026-10-19T10:51:17Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10995,
+    "title": "feat: add argos second pass agent that completes product sheets",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10995",
+    "state": "open",
+    "labels": [
+      "size/XXL"
+    ],
+    "createdAt": "2026-10-19T10:50:49Z",
+    "updatedAt": "2026-10-19T10:51:17Z",
+    "headSha": "75a9b38b6e4ee139771beeb0aae728a5c15a1116"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se aprueba la segunda pasada manual de Argos en `apps/agents` y qué contrato de auditoría persistente se autoriza para sus cambios en `products` y `stocks`?",
+  "rationale": "El PR implementa una capacidad nueva que escribe datos de catálogo y añade auditoría persistente; la issue vinculada deja abierta precisamente esa elección, que no puede deducirse de pruebas o código.",
+  "options": [
+    {
+      "title": "Aprobar con contrato acordado",
+      "body": "Acordar los campos modificables y el esquema de auditoría antes de integrar y habilitar las escrituras.",
+      "recommended": true
+    },
+    {
+      "title": "Validar fuera del flujo persistente",
+      "body": "Mantener la investigación en modo de solo lectura hasta que el equipo defina y apruebe la política de escritura y auditoría.",
+      "recommended": false
+    },
+    {
+      "title": "No incorporar la segunda pasada",
+      "body": "Cerrar la dirección de producto y retirar la implementación de enriquecimiento automático del catálogo.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar con contrato acordado",
+    "body": "Acordar los campos modificables y el esquema de auditoría antes de integrar y habilitar las escrituras.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "PabloMoran34",
+    "reason": "Es responsable de la issue vinculada y quien propuso el comportamiento, por lo que puede aclarar sus límites y llevar la decisión al equipo.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10995.md",
+    "reviewedAt": "2026-10-19T10:55:01.773Z",
+    "mainSha": "89c50345e5c11432aafe604324dc31e01454b13e"
+  }
+}
