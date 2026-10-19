@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-18T07:48:00.329Z",
-  "updatedAt": "2026-10-18T07:45:59Z",
+  "generatedAt": "2026-10-19T13:06:14.291Z",
+  "updatedAt": "2026-10-19T13:01:20Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -17,43 +17,37 @@
       "P2"
     ],
     "createdAt": "2026-10-18T07:31:58Z",
-    "updatedAt": "2026-10-18T07:45:59Z"
+    "updatedAt": "2026-10-19T13:01:20Z"
   },
-  "lane": "product_direction",
+  "lane": "security_boundary",
   "priority": "P2",
-  "question": "¿Debe una confirmación remota BUYABLE prevalecer sobre un error de atributo 90221 para mantener el listing activo y elegible para reconciliación/reprice?",
-  "rationale": "El código actual trata errores permanentes como bloqueantes, mientras que el reporte muestra una oferta BUYABLE; resolver la prioridad entre ambos estados cambia el comportamiento de publicación y recuperación.",
+  "question": "¿Debe permitirse la recuperación de anuncios con `AMAZON_90221` y estado ausente cuando la lectura viva confirma `BUYABLE`, y qué condiciones deben cumplirse antes de encolar el reprice?",
+  "rationale": "La solución cambia cuándo se permite una escritura remota sobre una oferta activa; decidir el límite seguro exige criterio del equipo de marketplaces, no solo inferencia del código.",
   "options": [
     {
-      "title": "Investigar sin cambiar política",
-      "body": "Seguir la secuencia de confirmación, reconciliación y selección del canario antes de decidir una transición de estado.",
+      "title": "Recuperación estrictamente condicionada",
+      "body": "Permitirla solo para 90221 y estado ausente, tras lectura viva `BUYABLE` y escritura atómica condicionada, y validar el reprice con el canario descrito.",
       "recommended": true
     },
     {
-      "title": "Priorizar BUYABLE verificado",
-      "body": "Definir que BUYABLE remoto prevalezca para elegibilidad, conservando el error de catálogo como señal diagnóstica.",
-      "recommended": false
-    },
-    {
-      "title": "Mantener el bloqueo permanente",
-      "body": "Conservar el estado actual hasta que se determine cómo el precio remoto diverge del maestro.",
+      "title": "Mantener el bloqueo",
+      "body": "Dejar el anuncio fuera del selector hasta aclarar la divergencia y confirmar que el precio remoto puede actualizarse sin afectar la oferta activa.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Investigar sin cambiar política",
-    "body": "Seguir la secuencia de confirmación, reconciliación y selección del canario antes de decidir una transición de estado.",
+    "title": "Recuperación estrictamente condicionada",
+    "body": "Permitirla solo para 90221 y estado ausente, tras lectura viva `BUYABLE` y escritura atómica condicionada, y validar el reprice con el canario descrito.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Su historial en el manager y la confirmación de ofertas Amazon lo sitúa cerca de la ruta técnica que requiere investigación; la elección de política corresponde al equipo.",
-    "confidence": "low"
+    "reason": "Es la persona asignada y su historial local incluye cambios en confirmación y horizonte de ofertas Amazon.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10968.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10968#issuecomment-6247283893",
-    "reviewedAt": "2026-10-18T07:48:00.329Z",
-    "mainSha": "f24a0c231ca992aafdbc226a328f839d7a4d27f4"
+    "reviewedAt": "2026-10-19T13:06:14.291Z",
+    "mainSha": "89c50345e5c11432aafe604324dc31e01454b13e"
   }
 }
