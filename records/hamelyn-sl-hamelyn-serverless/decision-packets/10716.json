@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-17T09:46:32.822Z",
-  "updatedAt": "2026-10-16T14:57:51Z",
+  "generatedAt": "2026-10-19T05:57:28.290Z",
+  "updatedAt": "2026-10-19T05:42:52Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,42 +15,41 @@
       "app:supply",
       "triage:done",
       "clawsweeper:needs-product-decision",
-      "reporter:daniellopez",
-      "P2"
+      "P2",
+      "reporter:daniellopez"
     ],
     "createdAt": "2026-10-09T10:21:11Z",
-    "updatedAt": "2026-10-16T14:57:51Z"
+    "updatedAt": "2026-10-19T05:42:52Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe destino automático permitir procesar un artículo fuera de lote tras confirmación, y cómo debe distinguir una relectura ya revisada de un ejemplar adicional legítimo?",
-  "rationale": "La issue deja abierto el texto y el comportamiento, y la revisión de la PR vinculada plantea decisiones funcionales que determinan si un escaneo se añade como sobrante o se bloquea.",
+  "question": "¿Debe destino automático permitir añadir un ejemplar fuera del lote tras confirmación, y cómo debe diferenciar una relectura ya procesada de un ejemplar adicional legítimo?",
+  "rationale": "El PR relacionado concreta una opción de producto, pero la issue deja abiertos los textos y el comportamiento; confirmar esa regla evita que el flujo permita inadvertidamente duplicar unidades o mezclar lotes.",
   "options": [
     {
-      "title": "Confirmar y permitir el ejemplar extra",
-      "body": "Mantener la opción de cancelar o continuar, y corregir la distinción entre unidad esperada pendiente, repetición ya revisada y lectura fuera de lote.",
+      "title": "Confirmar y permitir el ejemplar adicional",
+      "body": "Mantener cancelar/continuar y asegurar que las unidades esperadas pendientes sigan su flujo normal.",
       "recommended": true
     },
     {
-      "title": "Bloquear artículos de otros lotes",
-      "body": "No permitir su incorporación al lote actual y coordinar esta regla con la detección de unidades pendientes en otros lotes.",
+      "title": "Bloquear la incorporación fuera de lote",
+      "body": "Impedir que un artículo ajeno se añada al lote actual y coordinarlo con la detección de artículos pendientes en otros lotes.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Confirmar y permitir el ejemplar extra",
-    "body": "Mantener la opción de cancelar o continuar, y corregir la distinción entre unidad esperada pendiente, repetición ya revisada y lectura fuera de lote.",
+    "title": "Confirmar y permitir el ejemplar adicional",
+    "body": "Mantener cancelar/continuar y asegurar que las unidades esperadas pendientes sigan su flujo normal.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "banosdavidhamelyn",
-    "reason": "Es el contribuidor de la PR que materializa el flujo solicitado y puede aclarar su comportamiento previsto.",
+    "reason": "Ha contribuido recientemente al flujo de Revisión/Turbo y aparece asignado a esta issue.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10716.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10716#issuecomment-6079110619",
-    "reviewedAt": "2026-10-17T09:46:32.822Z",
-    "mainSha": "eb2d77bc460e09d7b2feb21cbce17cf26f63452a"
+    "reviewedAt": "2026-10-19T05:57:28.290Z",
+    "mainSha": "f24a0c231ca992aafdbc226a328f839d7a4d27f4"
   }
 }

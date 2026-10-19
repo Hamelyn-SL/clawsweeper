@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-19T05:58:22.755Z",
+  "updatedAt": "2026-10-19T05:42:03Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10957,
+    "title": "fix: confirm unexpected EAN scans in review",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10957",
+    "state": "open",
+    "labels": [
+      "size/XL",
+      "P2"
+    ],
+    "createdAt": "2026-10-16T13:44:04Z",
+    "updatedAt": "2026-10-19T05:42:03Z",
+    "headSha": "cf40d444fb1ebe458f1db0a37ae85cd32487b36b"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se adopta en destino automático la confirmación previa a clasificar para cualquier EAN fuera de lote, con cancelación que conserva el historial de lectura y aceptación de una única unidad?",
+  "rationale": "El issue relacionado deja abiertos los mensajes y las opciones del operario; esas decisiones determinan si debe clasificarse antes o después de confirmar y qué lecturas deben contar como repetición.",
+  "options": [
+    {
+      "title": "Adoptar la propuesta del PR",
+      "body": "Confirmar antes de clasificar y distinguir repetición consecutiva, reescaneo ya revisado y EAN fuera de lote.",
+      "recommended": true
+    },
+    {
+      "title": "Ajustar el flujo antes de aprobar",
+      "body": "Definir primero los textos y casos de cancelación o reescaneo en el issue relacionado y adaptar el PR a ese acuerdo.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Adoptar la propuesta del PR",
+    "body": "Confirmar antes de clasificar y distinguir repetición consecutiva, reescaneo ya revisado y EAN fuera de lote.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "Ha contribuido recientemente al flujo de revisión y sobrantes; es el candidato mejor respaldado por el historial local para concretar el comportamiento con el equipo.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10957.md",
+    "reviewedAt": "2026-10-19T05:58:22.755Z",
+    "mainSha": "f24a0c231ca992aafdbc226a328f839d7a4d27f4"
+  }
+}
