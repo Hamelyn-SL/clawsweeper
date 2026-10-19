@@ -1,55 +1,54 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-15T13:56:50.275Z",
-  "updatedAt": "2026-10-15T13:30:47Z",
+  "generatedAt": "2026-10-19T14:52:11.372Z",
+  "updatedAt": "2026-10-19T14:49:39Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
     "number": 10916,
     "title": "Marketplace: [mercadolibre writes] {\"marketplace\":\"mercadolibrear\",\"operation\":\"post\",\"path\":\"[redacted]\",\"status\":429,\"",
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10916",
-    "state": "closed",
+    "state": "open",
     "labels": [
       "codex",
       "bug",
       "app:marketplace",
-      "triage:running",
+      "triage:no-change",
       "P2",
       "marketplace-crons"
     ],
     "createdAt": "2026-10-15T13:30:47Z",
-    "updatedAt": "2026-10-15T13:30:47Z"
+    "updatedAt": "2026-10-19T14:49:39Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué política debe aplicarse a los POST de MercadoLibre que reciben 429: reintentar solo en endpoints con idempotencia demostrada, o mantener el fallo rápido hasta contar con esa garantía?",
-  "rationale": "El código y la documentación confirman que actualmente no hay reintento general, pero el reporte no identifica la ruta concreta ni demuestra que repetir la escritura sea seguro.",
+  "question": "¿Debe mantenerse esta issue como registro separado de la recurrencia argentina o consolidarse toda la evidencia en la issue canónica #10914?",
+  "rationale": "La causa propuesta coincide con la issue #10914 y su PR abierta, pero la recurrencia posterior al despliegue aporta evidencia operativa nueva que podría justificar un seguimiento regional separado.",
   "options": [
     {
-      "title": "Reintento acotado por endpoint",
-      "body": "Añadir reintentos limitados solo para operaciones cuya idempotencia y condiciones de espera estén verificadas.",
+      "title": "Consolidar en la issue canónica",
+      "body": "Trasladar allí la evidencia de recurrencia y mantener un único hilo para los POST de descripción compartidos.",
       "recommended": true
     },
     {
-      "title": "Mantener fallo rápido",
-      "body": "No reintentar POST hasta disponer de endpoint, respuesta y garantías de idempotencia suficientes.",
+      "title": "Mantener seguimiento separado",
+      "body": "Conservar esta issue abierta para observar Argentina después del despliegue y enlazarla con el seguimiento canónico.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Reintento acotado por endpoint",
-    "body": "Añadir reintentos limitados solo para operaciones cuya idempotencia y condiciones de espera estén verificadas.",
+    "title": "Consolidar en la issue canónica",
+    "body": "Trasladar allí la evidencia de recurrencia y mantener un único hilo para los POST de descripción compartidos.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Su historial disponible conecta con la política de recuperación por operación y la documentación de MercadoLibre.",
+    "reason": "Cerró previamente esta issue como duplicada y figura en cambios recientes del flujo de creación afectado.",
     "confidence": "medium"
   },
   "source": {
-    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/10916.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10916#issuecomment-6193888184",
-    "reviewedAt": "2026-10-15T13:56:50.275Z",
-    "mainSha": "6af27faf5e38dd96f99563360ec1da6f99514fd1"
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10916.md",
+    "reviewedAt": "2026-10-19T14:52:11.372Z",
+    "mainSha": "89c50345e5c11432aafe604324dc31e01454b13e"
   }
 }
