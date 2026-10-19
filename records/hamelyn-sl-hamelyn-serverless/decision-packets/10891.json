@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-16T09:06:17.909Z",
-  "updatedAt": "2026-10-15T13:25:26Z",
+  "generatedAt": "2026-10-19T07:20:55.607Z",
+  "updatedAt": "2026-10-19T06:12:51Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,43 +15,47 @@
       "app:admin",
       "triage:done",
       "reporter:alejandrodiaz",
+      "P1",
       "clawsweeper:needs-product-decision",
-      "clawsweeper:needs-security-review",
-      "P1"
+      "clawsweeper:needs-security-review"
     ],
     "createdAt": "2026-10-15T08:50:46Z",
-    "updatedAt": "2026-10-15T13:25:26Z"
+    "updatedAt": "2026-10-19T06:12:51Z"
   },
   "lane": "security_boundary",
   "priority": "P1",
-  "question": "¿Qué rutas exentas deben seguir aceptando llamadas de integraciones sin sesión y qué mecanismo verificable de autenticación debe sustituir la sesión de usuario en cada una?",
-  "rationale": "Cerrar las exenciones sin conocer sus consumidores podría interrumpir integraciones; mantenerlas sin una validación alternativa conserva el acceso administrativo no autenticado.",
+  "question": "¿Debe mantenerse la protección diferida de las tres rutas de lectura hasta que desaparezcan los avisos en producción durante un día laborable, o se debe exigir autenticación antes con una estrategia de transición para sesiones antiguas?",
+  "rationale": "La autenticación inmediata podría interrumpir operaciones de almacén con el panel abierto; mantener temporalmente el acceso anónimo conserva ese riesgo mientras se recopila la señal operacional.",
   "options": [
     {
-      "title": "Proteger rutas y documentar excepciones verificables",
-      "body": "Exigir sesión y roles en rutas administrativas y conservar únicamente excepciones respaldadas por una autenticación específica de integración.",
+      "title": "Esperar la señal acordada",
+      "body": "Mantener la fase 2 pendiente hasta cumplir el umbral de producción y después activar las comprobaciones de roles.",
       "recommended": true
     },
     {
-      "title": "Exigir sesión en todas las rutas señaladas",
-      "body": "Eliminar las exenciones reportadas y aceptar posibles cambios en las integraciones que dependan de ellas.",
+      "title": "Proteger con transición compatible",
+      "body": "Definir una compatibilidad temporal o una actualización coordinada del panel para proteger las lecturas sin interrumpir sesiones antiguas.",
+      "recommended": false
+    },
+    {
+      "title": "Exigir autenticación inmediatamente",
+      "body": "Aceptar el posible impacto en sesiones antiguas y proteger ya los tres endpoints de lectura.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Proteger rutas y documentar excepciones verificables",
-    "body": "Exigir sesión y roles en rutas administrativas y conservar únicamente excepciones respaldadas por una autenticación específica de integración.",
+    "title": "Esperar la señal acordada",
+    "body": "Mantener la fase 2 pendiente hasta cumplir el umbral de producción y después activar las comprobaciones de roles.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "Lyno",
-    "reason": "La revisión previa lo señaló como candidato para decidir la frontera de seguridad y las excepciones de integración.",
-    "confidence": "low"
+    "person": "danielmenchen-hamelyn",
+    "reason": "Ha abierto la candidata de fase 1 y la issue que concreta la fase 2 y su condición de activación.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10891.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10891#issuecomment-6188435460",
-    "reviewedAt": "2026-10-16T09:06:17.909Z",
-    "mainSha": "96ba1aad39f0a64bf632ef1cab5cc9c29b9f3673"
+    "reviewedAt": "2026-10-19T07:20:55.607Z",
+    "mainSha": "3f87f9bb8bc9a7071a2f47a7947e8f615cf60787"
   }
 }
