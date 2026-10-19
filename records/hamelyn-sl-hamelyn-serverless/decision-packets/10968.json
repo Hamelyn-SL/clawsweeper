@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-19T13:00:24.346Z",
-  "updatedAt": "2026-10-19T11:59:04Z",
+  "generatedAt": "2026-10-18T07:48:00.329Z",
+  "updatedAt": "2026-10-18T07:45:59Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -17,38 +17,43 @@
       "P2"
     ],
     "createdAt": "2026-10-18T07:31:58Z",
-    "updatedAt": "2026-10-19T11:59:04Z"
+    "updatedAt": "2026-10-18T07:45:59Z"
   },
-  "lane": "security_boundary",
+  "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe permitirse recuperar un anuncio con `AMAZON_90221` y estado ausente cuando una lectura viva confirma BUYABLE, reactivando su seguimiento de precio?",
-  "rationale": "La decisión permite que un flujo existente cambie el estado y encole un reprice con efectos comerciales remotos; la evidencia del canario no identifica con certeza la escritura inicial ni justifica generalizar la recuperación a otros errores.",
+  "question": "¿Debe una confirmación remota BUYABLE prevalecer sobre un error de atributo 90221 para mantener el listing activo y elegible para reconciliación/reprice?",
+  "rationale": "El código actual trata errores permanentes como bloqueantes, mientras que el reporte muestra una oferta BUYABLE; resolver la prioridad entre ambos estados cambia el comportamiento de publicación y recuperación.",
   "options": [
     {
-      "title": "Recuperación limitada con verificación viva",
-      "body": "Permitirla solo para 90221 y estado ausente, con lectura BUYABLE y escritura atómica condicionada al estado observado.",
+      "title": "Investigar sin cambiar política",
+      "body": "Seguir la secuencia de confirmación, reconciliación y selección del canario antes de decidir una transición de estado.",
       "recommended": true
     },
     {
-      "title": "Mantener el bloqueo hasta aclarar la causa",
-      "body": "Conservar el error permanente y dejar el anuncio fuera del selector hasta confirmar por qué divergen el precio remoto y el maestro.",
+      "title": "Priorizar BUYABLE verificado",
+      "body": "Definir que BUYABLE remoto prevalezca para elegibilidad, conservando el error de catálogo como señal diagnóstica.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener el bloqueo permanente",
+      "body": "Conservar el estado actual hasta que se determine cómo el precio remoto diverge del maestro.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Recuperación limitada con verificación viva",
-    "body": "Permitirla solo para 90221 y estado ausente, con lectura BUYABLE y escritura atómica condicionada al estado observado.",
+    "title": "Investigar sin cambiar política",
+    "body": "Seguir la secuencia de confirmación, reconciliación y selección del canario antes de decidir una transición de estado.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Su historial reciente cubre la confirmación de ofertas y la ruta de estado de marketplace, y consta como persona asignada a la issue.",
-    "confidence": "high"
+    "reason": "Su historial en el manager y la confirmación de ofertas Amazon lo sitúa cerca de la ruta técnica que requiere investigación; la elección de política corresponde al equipo.",
+    "confidence": "low"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10968.md",
     "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10968#issuecomment-6247283893",
-    "reviewedAt": "2026-10-19T13:00:24.346Z",
-    "mainSha": "89c50345e5c11432aafe604324dc31e01454b13e"
+    "reviewedAt": "2026-10-18T07:48:00.329Z",
+    "mainSha": "f24a0c231ca992aafdbc226a328f839d7a4d27f4"
   }
 }
