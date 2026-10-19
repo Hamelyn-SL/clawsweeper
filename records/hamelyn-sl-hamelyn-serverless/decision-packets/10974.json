@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-19T06:01:59.653Z",
+  "updatedAt": "2026-10-19T05:53:29Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10974,
+    "title": "fix: require admin auth on unprotected v5 and exotec routes",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10974",
+    "state": "open",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-10-19T05:49:15Z",
+    "updatedAt": "2026-10-19T05:53:29Z",
+    "headSha": "cb7bb23ab7b226e6ade1df385578628e8ef105d6"
+  },
+  "lane": "security_boundary",
+  "priority": "P1",
+  "question": "¿Se confirma que todas las rutas Exotec alcanzadas por las exenciones eliminadas solo reciben llamadas del admin con sesión Auth0, o hay que conservar alguna ruta con autenticación específica de integración?",
+  "rationale": "La PR cambia el límite de autenticación para un prefijo amplio y la revisión de la incidencia relacionada dejó pendiente decidir qué excepciones de integración deben mantenerse.",
+  "options": [
+    {
+      "title": "Confirmar llamadas con sesión Auth0",
+      "body": "Validar que todos los clientes de las rutas Exotec afectadas envían un token válido y aceptar que las llamadas sin sesión dejen de funcionar.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener una excepción autenticada para integraciones",
+      "body": "Identificar las rutas usadas sin sesión y sustituir su exención amplia por un mecanismo verificable de autenticación de integración.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Confirmar llamadas con sesión Auth0",
+    "body": "Validar que todos los clientes de las rutas Exotec afectadas envían un token válido y aceptar que las llamadas sin sesión dejen de funcionar.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Lyno",
+    "reason": "La discusión de seguridad de la incidencia relacionada lo señala como candidato para decidir el alcance de las excepciones y el proxy actual aparece en su historial reciente.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10974.md",
+    "reviewedAt": "2026-10-19T06:01:59.653Z",
+    "mainSha": "f24a0c231ca992aafdbc226a328f839d7a4d27f4"
+  }
+}
