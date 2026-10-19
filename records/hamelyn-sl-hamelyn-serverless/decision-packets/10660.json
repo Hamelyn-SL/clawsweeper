@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-13T15:05:42.975Z",
-  "updatedAt": "2026-10-10T06:00:22Z",
+  "generatedAt": "2026-10-19T05:51:47.184Z",
+  "updatedAt": "2026-10-19T05:45:44Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,49 +13,48 @@
       "bug",
       "app:marketplace",
       "reporter:javier",
-      "triage:no-change",
+      "triage:queued",
       "clawsweeper:needs-product-decision",
-      "mk:mercadolibre",
-      "P2"
+      "P2",
+      "mk:mercadolibre"
     ],
     "createdAt": "2026-10-08T14:39:43Z",
-    "updatedAt": "2026-10-10T06:00:22Z"
+    "updatedAt": "2026-10-19T05:45:44Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe una búsqueda de retirada fallida exclusivamente con 403, tras cerrar correctamente el anuncio conocido, reintentarse antes que el backoff transitorio actual?",
-  "rationale": "La opción de cinco minutos reduce el retraso, pero un rechazo sostenido incrementaría llamadas; el repositorio no documenta un límite operativo aprobado para este caso y la causa externa sigue sin identificarse.",
+  "question": "¿Qué política debe adoptarse para una búsqueda de retirada que devuelve 403 o 5xx después de cerrar correctamente el anuncio conocido?",
+  "rationale": "Las alternativas cambian frecuencia de llamadas, presupuesto compartido y datos del proveedor que se registran; la discusión más reciente indica que aún no hay decisión.",
   "options": [
     {
-      "title": "Adelantar con límite",
-      "body": "Aplicar un intervalo menor acotado solo a búsquedas fallidas exclusivamente con 403 tras un cierre correcto, manteniendo la retirada pendiente hasta completar ambas búsquedas.",
+      "title": "Reintento inmediato único",
+      "body": "Reintentar una vez solo la búsqueda fallida con 403/5xx, excluyendo 429, y mantener el backoff persistido si vuelve a fallar.",
       "recommended": true
     },
     {
-      "title": "Mantener el backoff",
-      "body": "Conservar el primer reintento de una hora y reconsiderarlo si reaparecen los fallos o se verifica un anuncio hermano todavía vendible.",
+      "title": "Reintento corto limitado",
+      "body": "Adelantar la siguiente pasada cuando el cierre conocido tuvo éxito, con un límite explícito de frecuencia y conservación del presupuesto.",
       "recommended": false
     },
     {
-      "title": "Definir el presupuesto primero",
-      "body": "Esperar a disponer de un ejemplo saneado del rechazo y acordar el techo de llamadas antes de cambiar el intervalo.",
+      "title": "Mantener el backoff actual",
+      "body": "Conservar el intervalo de una hora hasta contar con un mensaje saneado del proveedor que aclare la causa.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Adelantar con límite",
-    "body": "Aplicar un intervalo menor acotado solo a búsquedas fallidas exclusivamente con 403 tras un cierre correcto, manteniendo la retirada pendiente hasta completar ambas búsquedas.",
+    "title": "Reintento inmediato único",
+    "body": "Reintentar una vez solo la búsqueda fallida con 403/5xx, excluyendo 429, y mantener el backoff persistido si vuelve a fallar.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Su historial de cambios en los diagnósticos y la política de búsquedas incompletas lo sitúa como candidato de referencia para valorar este comportamiento.",
-    "confidence": "medium"
+    "reason": "Su historial accesible cubre las decisiones recientes de diagnóstico y backoff de esta integración.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10660.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10660#issuecomment-6062569374",
-    "reviewedAt": "2026-10-13T15:05:42.975Z",
-    "mainSha": "5fc28691f86fff433f48d19dff85903b7a6e158a"
+    "reviewedAt": "2026-10-19T05:51:47.184Z",
+    "mainSha": "f24a0c231ca992aafdbc226a328f839d7a4d27f4"
   }
 }
