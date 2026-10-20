@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-20T07:12:00.804Z",
+  "generatedAt": "2026-10-20T07:08:07.890Z",
   "updatedAt": "2026-10-20T06:25:03Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -22,33 +22,28 @@
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué fuente de exportación GA4 de México y qué regla de vinculación se deben usar para asociar exposiciones con pedidos, incluidos los casos sin consentimiento o identificador disponible?",
-  "rationale": "La respuesta determina qué datos puede persistir el ecommerce y si el panel puede informar vistas atribuibles, en lugar de limitarse a comparar variantes asignadas.",
+  "question": "¿Qué fuente/dataset contiene la exportación GA4 de México y qué regla debe vincular una exposición con un pedido?",
+  "rationale": "La métrica de pedidos vistos/no usados depende de una exposición real y de una política de atribución que el código actual no determina; elegirla cambia el significado de las cifras de Marketing.",
   "options": [
     {
-      "title": "Atribución solo con vínculo permitido",
-      "body": "Vincular exposición y pedido únicamente cuando haya identificadores disponibles y permitidos; dejar los pedidos no verificables sin atribuir.",
+      "title": "Acordar fuente y ventana de atribución",
+      "body": "Definir el dataset GA4 y una ventana/regla —por ejemplo, misma sesión— antes de concretar instrumentación y panel.",
       "recommended": true
     },
     {
-      "title": "Medir asignación por separado",
-      "body": "Guardar la variante asignada y mostrar sus resultados sin afirmar que el cliente vio la promoción.",
-      "recommended": false
-    },
-    {
-      "title": "Vincular por sesión GA4",
-      "body": "Adoptar el identificador de sesión después de confirmar que existe en la fuente de México y que su uso es admisible.",
+      "title": "Medir solo asignación y uso",
+      "body": "Limitar la primera entrega a variante asignada y cupón usado, sin presentar esos datos como prueba de exposición ni calcular pedidos vistos/no usados.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Atribución solo con vínculo permitido",
-    "body": "Vincular exposición y pedido únicamente cuando haya identificadores disponibles y permitidos; dejar los pedidos no verificables sin atribuir.",
+    "title": "Acordar fuente y ventana de atribución",
+    "body": "Definir el dataset GA4 y una ventana/regla —por ejemplo, misma sesión— antes de concretar instrumentación y panel.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "AlexDiaz-Hamelyn",
-    "reason": "Está asignado al issue y puede coordinar la resolución de la decisión entre Marketing, Ecommerce y Data.",
+    "person": "Miguel Angel Hernández Perdomo",
+    "reason": "Su trabajo reciente introdujo la selección configurable de variantes de cupón de la que depende la instrumentación; la decisión requiere también Marketing y Data/Ecommerce.",
     "confidence": "medium"
   },
   "source": {
