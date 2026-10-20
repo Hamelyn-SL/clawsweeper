@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-20T11:23:57.711Z",
+  "updatedAt": "2026-10-20T10:59:58Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 11048,
+    "title": "Integrar el informe de devoluciones de Amazon en nuestro sistema",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/11048",
+    "state": "open",
+    "labels": [
+      "bug",
+      "source:admin-panel",
+      "app:admin",
+      "reporter:blanca",
+      "triage:queued",
+      "P1"
+    ],
+    "createdAt": "2026-10-20T10:59:34Z",
+    "updatedAt": "2026-10-20T10:59:58Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe el proceso diario marcar únicamente las devoluciones aprobadas como pendientes de reembolso, y se deben regularizar también los pedidos históricos que siguen en «Recogido»?",
+  "rationale": "La sincronización puede marcar solicitudes aprobadas como pendientes, pero el reporte menciona que Amazon puede haber reembolsado ya al cliente. Automatizar una transición o un backfill sin distinguir esos casos podría desalinear el estado operativo y el registro del reembolso.",
+  "options": [
+    {
+      "title": "Pendiente desde nuevas aprobaciones",
+      "body": "Automatizar la importación diaria como pendiente de reembolso y dejar los pedidos históricos sin cambios hasta una revisión separada.",
+      "recommended": true
+    },
+    {
+      "title": "Incluir regularización histórica",
+      "body": "Acordar un criterio de verificación y alcance antes de actualizar pedidos existentes que sigan en «Recogido».",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Pendiente desde nuevas aprobaciones",
+    "body": "Automatizar la importación diaria como pendiente de reembolso y dejar los pedidos históricos sin cambios hasta una revisión separada.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Alex Cantón",
+    "reason": "Su historial incluye la incorporación del seguimiento de motivos y datos de devolución en pedidos, el área funcional más próxima a esta decisión.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/11048.md",
+    "reviewedAt": "2026-10-20T11:23:57.711Z",
+    "mainSha": "9729f6326aba726b59fe0a448633e2fb8b1519aa"
+  }
+}
