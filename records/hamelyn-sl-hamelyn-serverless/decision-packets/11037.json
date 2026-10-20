@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-20T07:51:40.163Z",
+  "updatedAt": "2026-10-20T07:32:44Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 11037,
+    "title": "fix: servir el bootstrap de GTM en el head inicial",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/11037",
+    "state": "open",
+    "labels": [
+      "size/S"
+    ],
+    "createdAt": "2026-10-20T07:27:15Z",
+    "updatedAt": "2026-10-20T07:32:44Z",
+    "headSha": "43fca1fd79c262ce623860c3dc309d45f207817a"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe exigirse que el bootstrap de GTM aparezca antes de los chunks de Next, o basta con servirlo ejecutable en el head inicial?",
+  "rationale": "El PR demuestra que el bootstrap puede ejecutarse desde el head, pero informa que los chunks preceden al script; decidir si ese orden es obligatorio determina si el cambio satisface por completo el criterio de aceptación.",
+  "options": [
+    {
+      "title": "Exigir precedencia a los chunks",
+      "body": "Mantener pendiente la aceptación hasta que el bootstrap aparezca antes de los chunks y verificarlo en producción.",
+      "recommended": false
+    },
+    {
+      "title": "Aceptar head inicial ejecutable",
+      "body": "Considerar suficiente el bootstrap en el head y dejar la medición de producción y Ads como validación operativa posterior.",
+      "recommended": true
+    }
+  ],
+  "recommendation": {
+    "title": "Aceptar head inicial ejecutable",
+    "body": "Considerar suficiente el bootstrap en el head y dejar la medición de producción y Ads como validación operativa posterior.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su cambio previo sobre GTM se centró explícitamente en la carga temprana para atribución.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/11037.md",
+    "reviewedAt": "2026-10-20T07:51:40.163Z",
+    "mainSha": "24b4cb1a02adf5126c8358550480f4fbf04d0418"
+  }
+}
