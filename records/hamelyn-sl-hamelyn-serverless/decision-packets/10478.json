@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-13T09:00:12.721Z",
-  "updatedAt": "2026-10-13T08:25:32Z",
+  "generatedAt": "2026-10-20T08:55:34.020Z",
+  "updatedAt": "2026-10-20T08:19:52Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -18,43 +18,42 @@
       "P2"
     ],
     "createdAt": "2026-10-05T14:36:12Z",
-    "updatedAt": "2026-10-13T08:25:32Z"
+    "updatedAt": "2026-10-20T08:19:52Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué antigüedad máxima deben cumplir las retiradas de ventas normales y de lotes B2B en cada canal, y qué capacidad se reserva a cada grupo respetando las cuotas actuales?",
-  "rationale": "No existe un SLA ni un reparto aprobado. Priorizar siempre las ventas nuevas puede dejar atrás el lote, mientras que mantener el FIFO puede retrasarlas; cambiar topes o concurrencia sin medir las cuotas puede introducir fallos de proveedor.",
+  "question": "¿Qué plazo máximo y qué reparto de capacidad entre ventas normales y lotes B2B deben garantizarse en TodoColección, AbeBooks, eBay y MercadoLibre?",
+  "rationale": "La selección, los límites por pasada y las cuotas compartidas requieren un compromiso explícito: priorizar ventas nuevas puede prolongar el lote, mientras aumentar caudal puede competir con otras operaciones del marketplace.",
   "options": [
     {
-      "title": "Definir objetivos y validar un reparto",
-      "body": "Acordar límites de antigüedad por canal y probar una reserva de capacidad que garantice avance del lote sin bloquear las ventas nuevas.",
+      "title": "Acordar objetivos y piloto",
+      "body": "Fijar por canal plazos y reserva de capacidad, y validar un piloto con cuota, duración, reintentos y confirmación remota medidos.",
       "recommended": true
     },
     {
-      "title": "Mantener FIFO y límites actuales",
-      "body": "Aceptar el comportamiento y la exposición temporal actuales, sin introducir una política nueva de prioridad.",
+      "title": "Mantener el FIFO actual",
+      "body": "Aceptar la demora variable y limitar el trabajo a medir y alertar sobre la antigüedad de la cola.",
       "recommended": false
     },
     {
-      "title": "Diseñar batching por marketplace",
-      "body": "Evaluar operaciones masivas solo en los canales cuya API y presupuesto compartido permitan confirmar retiradas de forma segura.",
+      "title": "Diseñar carriles por canal",
+      "body": "Separar ventas recientes y lotes B2B, con límites independientes que eviten el bloqueo de cualquiera de las dos colas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Definir objetivos y validar un reparto",
-    "body": "Acordar límites de antigüedad por canal y probar una reserva de capacidad que garantice avance del lote sin bloquear las ventas nuevas.",
+    "title": "Acordar objetivos y piloto",
+    "body": "Fijar por canal plazos y reserva de capacidad, y validar un piloto con cuota, duración, reintentos y confirmación remota medidos.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Participó en la decisión documentada de mantener la capacidad actual de MercadoLibre, la cuestión más próxima al reparto pendiente.",
+    "reason": "Participó en el trabajo reciente del flujo de retirada y en la decisión relacionada sobre capacidad de MercadoLibre.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10478.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10478#issuecomment-5997064518",
-    "reviewedAt": "2026-10-13T09:00:12.721Z",
-    "mainSha": "018da3fcb7dd524d06c45c240ddf36bb097715a0"
+    "reviewedAt": "2026-10-20T08:55:34.020Z",
+    "mainSha": "ede6945261f68c2127929f90dd4909c20e65693b"
   }
 }
