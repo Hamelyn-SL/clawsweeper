@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-20T13:26:29.477Z",
+  "updatedAt": "2026-10-20T13:23:12Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 11062,
+    "title": "Ecommerce en hamelyn.com: enrutar /cat/comprar por ecom-next y sacar ecom del grupo de microfrontends",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/11062",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:ecommerce",
+      "reporter:miguel",
+      "triage:queued",
+      "P0"
+    ],
+    "createdAt": "2026-10-20T13:22:51Z",
+    "updatedAt": "2026-10-20T13:23:12Z"
+  },
+  "lane": "manual_review",
+  "priority": "P1",
+  "question": "¿Se confirma que el proyecto `ecom-next` debe ser el destino de la delegación de `/cat/comprar`, manteniendo `ecom` fuera del grupo que aplica el enrutado a `tienda.hamelyn.com`?",
+  "rationale": "La configuración del grupo y los dominios se administra en Vercel y no queda acreditada por los archivos del repositorio; confirmar la topología evita trasladar a código una suposición sobre el comportamiento de producción.",
+  "options": [
+    {
+      "title": "Confirmar la separación propuesta",
+      "body": "Crear/configurar `ecom-next`, mantener `ecom` como proyecto de `tienda.hamelyn.com` y actualizar el destino versionado de microfrontends.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener `ecom` en el grupo",
+      "body": "Investigar una configuración de dominios o enrutado en Vercel que evite que el grupo afecte a `tienda.hamelyn.com`.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Confirmar la separación propuesta",
+    "body": "Crear/configurar `ecom-next`, mantener `ecom` como proyecto de `tienda.hamelyn.com` y actualizar el destino versionado de microfrontends.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Es el autor de la integración reciente del prefijo catalán y figura como responsable del contexto de esta incidencia.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/11062.md",
+    "reviewedAt": "2026-10-20T13:26:29.477Z",
+    "mainSha": "e42a2852c270e2a9b2fb5ecb6fa18e08965d6477"
+  }
+}
