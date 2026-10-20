@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-16T08:54:38.106Z",
-  "updatedAt": "2026-10-16T08:19:47Z",
+  "generatedAt": "2026-10-20T09:09:20.807Z",
+  "updatedAt": "2026-10-20T07:58:38Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -19,38 +19,37 @@
       "P2"
     ],
     "createdAt": "2026-10-08T09:39:46Z",
-    "updatedAt": "2026-10-16T08:19:47Z"
+    "updatedAt": "2026-10-20T07:58:38Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿El flujo de Admin debe ejecutar el abono o registrar uno realizado externamente, y qué clasificación histórica se debe aplicar a `LOGISTIC_NO_INFO`?",
-  "rationale": "La respuesta cambia el comportamiento financiero y la interpretación de datos históricos; el repositorio y la issue no permiten deducir con seguridad la regla de negocio elegida.",
+  "question": "¿Admin debe ejecutar el abono o registrar uno realizado externamente, y `LOGISTIC_NO_INFO` debe conservar la clasificación histórica de cancelación del Excel o pasar a reembolso?",
+  "rationale": "Son decisiones de negocio que afectan al registro operativo del pago y a la comparabilidad de datos históricos; el código y el adjunto contienen señales contradictorias y no permiten elegir con seguridad.",
   "options": [
     {
-      "title": "Registrar abono externo y confirmar el histórico con ATC",
-      "body": "Mantener la ejecución del pago fuera de Admin y acordar con Atención al Cliente la clasificación de `LOGISTIC_NO_INFO` antes de modificar la analítica.",
+      "title": "Registrar abono externo y confirmar clasificación",
+      "body": "Mantener el pago fuera de Admin y confirmar con Atención al Cliente si `LOGISTIC_NO_INFO` permanece como cancelación antes de tocar la analítica.",
       "recommended": true
     },
     {
       "title": "Ejecutar el abono desde Admin",
-      "body": "Ampliar el alcance para iniciar el pago desde Admin y definir con ATC la clasificación histórica antes de implementarla.",
+      "body": "Ampliar el alcance para integrar la devolución del pago y acordar por separado la clasificación histórica de `LOGISTIC_NO_INFO`.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Registrar abono externo y confirmar el histórico con ATC",
-    "body": "Mantener la ejecución del pago fuera de Admin y acordar con Atención al Cliente la clasificación de `LOGISTIC_NO_INFO` antes de modificar la analítica.",
+    "title": "Registrar abono externo y confirmar clasificación",
+    "body": "Mantener el pago fuera de Admin y confirmar con Atención al Cliente si `LOGISTIC_NO_INFO` permanece como cancelación antes de tocar la analítica.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "PabloMoran34",
-    "reason": "Su historial reciente en consultas de analítica le hace una ruta plausible para coordinar la parte de clasificación, aunque la decisión operativa debe confirmarse con Atención al Cliente.",
-    "confidence": "low"
+    "person": "blanca",
+    "reason": "Es la reportera que aporta las reglas operativas y la tabla cuya clasificación debe aclararse.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10636.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10636#issuecomment-6057287700",
-    "reviewedAt": "2026-10-16T08:54:38.106Z",
-    "mainSha": "6f083344eb72cbf9e8f439b7187ef1722e7b7aa8"
+    "reviewedAt": "2026-10-20T09:09:20.807Z",
+    "mainSha": "a6de5111e15cb541262383f9d7ece1994fab6aec"
   }
 }
