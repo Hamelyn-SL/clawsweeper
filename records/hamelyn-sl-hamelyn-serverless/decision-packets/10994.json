@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-19T10:49:53.508Z",
-  "updatedAt": "2026-10-19T10:42:41Z",
+  "generatedAt": "2026-10-20T10:54:40.211Z",
+  "updatedAt": "2026-10-19T10:59:15Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,43 +13,47 @@
       "app:supply",
       "reporter:pablo",
       "feature",
-      "triage:queued",
-      "P2",
-      "clawsweeper:needs-product-decision"
+      "triage:no-change",
+      "clawsweeper:needs-product-decision",
+      "P2"
     ],
     "createdAt": "2026-10-19T10:42:15Z",
-    "updatedAt": "2026-10-19T10:42:41Z"
+    "updatedAt": "2026-10-19T10:59:15Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se quiere incorporar una segunda pasada manual de Argos en `apps/agents`, y qué esquema de auditoría persistente se autoriza para registrar cambios de campos?",
-  "rationale": "Es una capacidad nueva que escribe datos de catálogo y solicita una estructura de auditoría; la política de producto y cualquier nueva estructura persistente requieren decisión explícita.",
+  "question": "¿Se aprueba la segunda pasada manual de Argos y qué campos y contrato de auditoría persistente se autorizan para sus escrituras en products y stocks?",
+  "rationale": "La propuesta añade una nueva capacidad que modifica datos persistentes; la revisión de la PR identifica que el alcance de las escrituras y el esquema de auditoría necesitan aprobación del equipo antes de integrar.",
   "options": [
     {
-      "title": "Aprobar el flujo y concretar el esquema",
-      "body": "Acordar los límites de escritura por campo y autorizar explícitamente cualquier estructura persistente antes de implementarla.",
+      "title": "Aprobar con contrato acordado",
+      "body": "Definir los campos modificables y el esquema de auditoría antes de integrar y habilitar las escrituras.",
       "recommended": true
     },
     {
-      "title": "Probarlo fuera de core",
-      "body": "Validar primero la mejora mediante un proceso operativo temporal sin crear estructuras persistentes nuevas.",
+      "title": "Validar en solo lectura",
+      "body": "Mantener la investigación sin escrituras persistentes hasta acordar la política de cambios y auditoría.",
+      "recommended": false
+    },
+    {
+      "title": "No incorporar la segunda pasada",
+      "body": "Descartar esta dirección y retirar la implementación de enriquecimiento propuesta.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar el flujo y concretar el esquema",
-    "body": "Acordar los límites de escritura por campo y autorizar explícitamente cualquier estructura persistente antes de implementarla.",
+    "title": "Aprobar con contrato acordado",
+    "body": "Definir los campos modificables y el esquema de auditoría antes de integrar y habilitar las escrituras.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "PabloMoran34",
-    "reason": "Es el contribuidor reciente mejor conectado al pipeline Argos y al caso de uso descrito.",
-    "confidence": "medium"
+    "reason": "Es el candidato de enrutamiento con historial reciente en Argos y responsable de la PR enlazada; la decisión de producto corresponde al equipo.",
+    "confidence": "low"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10994.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10994#issuecomment-6265494292",
-    "reviewedAt": "2026-10-19T10:49:53.508Z",
-    "mainSha": "89c50345e5c11432aafe604324dc31e01454b13e"
+    "reviewedAt": "2026-10-20T10:54:40.211Z",
+    "mainSha": "17862bfdc5f20dfb8b74268970fee4d86e8bc21b"
   }
 }
