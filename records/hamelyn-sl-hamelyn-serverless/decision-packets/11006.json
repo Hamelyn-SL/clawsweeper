@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-19T17:46:53.914Z",
-  "updatedAt": "2026-10-19T17:42:52Z",
+  "generatedAt": "2026-10-20T17:57:14.913Z",
+  "updatedAt": "2026-10-19T17:51:17Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,44 +13,43 @@
       "bug",
       "source:admin-panel",
       "app:ecommerce",
-      "triage:running",
+      "triage:done",
       "reporter:victor",
-      "P2",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2"
     ],
     "createdAt": "2026-10-19T17:37:07Z",
-    "updatedAt": "2026-10-19T17:42:52Z"
+    "updatedAt": "2026-10-19T17:51:17Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe esta exclusión adelantarse como entrega independiente o quedar dentro de la implementación coordinada de tiers de indexación?",
-  "rationale": "La regla es una parte concreta del tier 3, pero se pide adelantarla respecto a una especificación más amplia que aún está pendiente y puede definir conjuntamente sitemap, metadatos y enlaces.",
+  "question": "¿Debe esta regla concreta implementarse como adelanto independiente, o incorporarse al trabajo de tiers de indexación abierto en https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10508?",
+  "rationale": "La issue relacionada define una política amplia de tiers que ya cubre noindex y sitemaps, mientras que esta solicitud adelanta un subconjunto y requiere una fuente histórica de stock; dividirlas podría duplicar decisiones y lógica SEO.",
   "options": [
     {
-      "title": "Coordinar con tiers",
-      "body": "Mantener esta regla dentro del alcance de la implementación de tiers para evitar cálculos de indexación paralelos.",
+      "title": "Integrar en tiers",
+      "body": "Mantener el comportamiento actual hasta que la regla de fichas sin historial forme parte de la implementación coordinada de tiers.",
       "recommended": true
     },
     {
-      "title": "Adelantar el subconjunto",
-      "body": "Tratar esta regla como entrega acotada y documentar cómo se integrará después con tier 3.",
+      "title": "Adelantar excepción",
+      "body": "Implementar esta regla primero con una política compartida que después pueda reutilizar el sistema de tiers.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Coordinar con tiers",
-    "body": "Mantener esta regla dentro del alcance de la implementación de tiers para evitar cálculos de indexación paralelos.",
+    "title": "Integrar en tiers",
+    "body": "Mantener el comportamiento actual hasta que la regla de fichas sin historial forme parte de la implementación coordinada de tiers.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "victorhamelyn",
-    "reason": "Participó en la definición y aclaración de las reglas SEO de tiers relacionadas.",
+    "reason": "Aclaró decisiones de política SEO en la issue relacionada y es el vínculo más directo disponible con la definición del comportamiento esperado.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/11006.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/11006#issuecomment-6273558602",
-    "reviewedAt": "2026-10-19T17:46:53.914Z",
-    "mainSha": "bfe2d6592c49d46a49a3ec296944a705b8d954bf"
+    "reviewedAt": "2026-10-20T17:57:14.913Z",
+    "mainSha": "c95584eaa262afcdf3c7aceaec29faf19ffcfa0d"
   }
 }
