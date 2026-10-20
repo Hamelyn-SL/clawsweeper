@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-20T13:05:35.831Z",
+  "generatedAt": "2026-10-20T13:09:53.832Z",
   "updatedAt": "2026-10-20T05:55:24Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -15,42 +15,41 @@
       "triage:needs-info",
       "reporter:danielmenchen",
       "clawsweeper:needs-product-decision",
-      "epic:brevo",
-      "P2"
+      "P2",
+      "epic:brevo"
     ],
     "createdAt": "2026-10-19T12:03:45Z",
     "updatedAt": "2026-10-20T05:55:24Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe quedar la integración sin activar hasta confirmar con WonderPush el soporte de tokens FCM de iOS y el ciclo de vida de instalaciones gestionado desde servidor?",
-  "rationale": "La aceptación de esta funcionalidad depende de condiciones del proveedor aún no confirmadas; implementarla o activarla sin ellas puede dejar campañas sin entrega o instalaciones suscritas tras el logout.",
+  "question": "¿Debe mantenerse la integración con WonderPush desactivada hasta confirmar el soporte de tokens FCM de iOS y el ciclo de vida de instalaciones gestionado desde servidor?",
+  "rationale": "La implementación candidata contempla alta y baja desde backend, pero la compatibilidad de iOS y la sincronización continua aún no están confirmadas; decidir la activación sin ese dato puede dejar campañas sin entrega.",
   "options": [
     {
       "title": "Exigir confirmación antes de activar",
-      "body": "Mantener la integración apagada hasta confirmar el contrato del proveedor y validar el alta y la baja de instalaciones.",
+      "body": "Mantener la integración apagada hasta validar con WonderPush los tokens por plataforma y comprobar altas, actualizaciones y bajas.",
       "recommended": true
     },
     {
       "title": "Aceptar el riesgo documentado",
-      "body": "Permitir la activación con las limitaciones descritas mientras se obtiene confirmación y se verifica la entrega real.",
+      "body": "Permitir la activación con las limitaciones actuales y verificar la entrega real en dispositivos de prueba.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Exigir confirmación antes de activar",
-    "body": "Mantener la integración apagada hasta confirmar el contrato del proveedor y validar el alta y la baja de instalaciones.",
+    "body": "Mantener la integración apagada hasta validar con WonderPush los tokens por plataforma y comprobar altas, actualizaciones y bajas.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "danielmenchen-hamelyn",
-    "reason": "Ha trabajado recientemente en el flujo push y ha presentado el PR que implementa la réplica solicitada.",
-    "confidence": "high"
+    "reason": "Es el autor del PR candidato y quien ha recogido en la issue las dudas pendientes del proveedor.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/11000.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/11000#issuecomment-6267364175",
-    "reviewedAt": "2026-10-20T13:05:35.831Z",
+    "reviewedAt": "2026-10-20T13:09:53.832Z",
     "mainSha": "50c5f0300d20c85ddbbd05482ec7ccb4a50d69fb"
   }
 }

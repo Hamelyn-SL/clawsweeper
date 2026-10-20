@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-20T13:06:29.119Z",
+  "generatedAt": "2026-10-20T13:10:14.979Z",
   "updatedAt": "2026-10-20T12:27:03Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -14,7 +14,6 @@
       "app:infrastructure",
       "reporter:javier",
       "triage:queued",
-      "clawsweeper:needs-product-decision",
       "P1"
     ],
     "createdAt": "2026-10-20T12:26:47Z",
@@ -22,39 +21,38 @@
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué estrategia debe aliviar la cuota de packing V3 y Buscalibre antes del agotamiento previsto, y se autoriza eliminar archivos antiguos bajo una política de retención?",
-  "rationale": "Las alternativas cambian dónde se almacenan archivos y cuánto histórico se conserva; el código no puede decidir con seguridad sobre la propiedad de las carpetas ni la eliminación irreversible.",
+  "question": "¿Qué estrategia debe aplicarse a Buscalibre y packing V3 para frenar el crecimiento de la cuenta de servicio, y qué retención se autoriza para los 13,6 GiB existentes?",
+  "rationale": "El código confirma el uso compartido de la cuenta, pero decidir entre delegación de dominio, retención o unidades compartidas implica permisos y posible eliminación irreversible de datos; no puede resolverse solo desde el repositorio.",
   "options": [
     {
-      "title": "Mover los destinos afectados a una unidad compartida",
-      "body": "Conservar los archivos actuales y probar permisos y subidas en almacenamiento compartido antes de cambiar las rutas operativas.",
-      "recommended": true
-    },
-    {
-      "title": "Aprobar retención por carpeta",
-      "body": "Definir cuánto histórico conservar y aplicar la eliminación solo a las carpetas y tipos de archivo expresamente aprobados.",
+      "title": "Retención acotada",
+      "body": "Definir cuántos CSV y ZIP conservar por carpeta y aprobar la eliminación de los anteriores.",
       "recommended": false
     },
     {
-      "title": "Delegar la identidad de Workspace",
-      "body": "Solicitar la configuración de delegación y validar que las subidas existentes usan la cuota y propiedad esperadas.",
+      "title": "Unidad compartida",
+      "body": "Acordar propietarios y permisos de las carpetas compartidas y mover allí los flujos que lo permitan.",
+      "recommended": true
+    },
+    {
+      "title": "Delegación de dominio",
+      "body": "Autorizar la configuración de delegación y el usuario de Workspace que asumirá las nuevas subidas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mover los destinos afectados a una unidad compartida",
-    "body": "Conservar los archivos actuales y probar permisos y subidas en almacenamiento compartido antes de cambiar las rutas operativas.",
+    "title": "Unidad compartida",
+    "body": "Acordar propietarios y permisos de las carpetas compartidas y mover allí los flujos que lo permitan.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "HamelynDev",
-    "reason": "Es la única persona que aparece en la historia local disponible del cargador compartido; la asignación de la decisión operativa no queda demostrada.",
-    "confidence": "low"
+    "person": "JavierHamelyn",
+    "reason": "Ha documentado las mediciones de consumo y las alternativas, y participa en el PR relacionado de archivo a Drive.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/11055.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/11055#issuecomment-6291596290",
-    "reviewedAt": "2026-10-20T13:06:29.119Z",
+    "reviewedAt": "2026-10-20T13:10:14.979Z",
     "mainSha": "50c5f0300d20c85ddbbd05482ec7ccb4a50d69fb"
   }
 }
