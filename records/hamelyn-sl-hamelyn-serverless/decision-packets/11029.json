@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-20T07:03:28.940Z",
+  "updatedAt": "2026-10-20T07:00:07Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 11029,
+    "title": "Brevo: remove Mandrill and Mailchimp after the migration",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/11029",
+    "state": "open",
+    "labels": [
+      "app:infrastructure",
+      "feature",
+      "triage:blocked",
+      "reporter:danielmenchen",
+      "P2",
+      "epic:brevo"
+    ],
+    "createdAt": "2026-10-20T06:19:14Z",
+    "updatedAt": "2026-10-20T07:00:07Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "Cuando se retire Mandrill, ¿el envío directo con la cola desactivada debe usar Brevo o debe exigirse que la cola esté activa?",
+  "rationale": "La elección cambia el comportamiento de un flujo existente; la eliminación de Mandrill no determina por sí sola cuál debe ser el contrato operativo.",
+  "options": [
+    {
+      "title": "Mantener el envío directo con Brevo",
+      "body": "Añadir transporte directo de Brevo para conservar el funcionamiento actual cuando la cola está desactivada.",
+      "recommended": true
+    },
+    {
+      "title": "Exigir la cola activa",
+      "body": "Eliminar el envío directo y hacer que la aplicación dependa del worker de comunicaciones para enviar.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mantener el envío directo con Brevo",
+    "body": "Añadir transporte directo de Brevo para conservar el funcionamiento actual cuando la cola está desactivada.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "danielmenchen-hamelyn",
+    "reason": "Ha coordinado la migración y documentado tanto el transporte pendiente como los prerrequisitos operativos.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/11029.md",
+    "reviewedAt": "2026-10-20T07:03:28.940Z",
+    "mainSha": "24b4cb1a02adf5126c8358550480f4fbf04d0418"
+  }
+}
