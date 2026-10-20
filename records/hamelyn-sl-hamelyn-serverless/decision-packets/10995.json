@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-20T13:05:22.445Z",
-  "updatedAt": "2026-10-20T13:01:27Z",
+  "generatedAt": "2026-10-20T13:15:31.956Z",
+  "updatedAt": "2026-10-20T13:08:37Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -14,44 +14,43 @@
       "P2"
     ],
     "createdAt": "2026-10-19T10:50:49Z",
-    "updatedAt": "2026-10-20T13:01:27Z",
+    "updatedAt": "2026-10-20T13:08:37Z",
     "headSha": "6dcddeed62c3ec2dd93ce43461fc8dba544a6855"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Aprueba el equipo que la segunda pasada manual reescriba y borre campos de `products`, propague cambios a `stocks` y persista auditoría en el contrato propuesto?",
-  "rationale": "La decisión afecta a la integridad del catálogo y a datos persistentes; el benchmark y las pruebas técnicas no determinan por sí solos qué campos y reemplazos acepta el equipo.",
+  "question": "¿Qué campos y reglas de borrado puede aplicar la segunda pasada de Argos, y qué auditoría persistente debe quedar antes de permitir que reescriba productos y stocks?",
+  "rationale": "El PR introduce una capacidad nueva que modifica datos operativos persistentes, y la revisión previa dejó esta política pendiente; el benchmark y las pruebas no determinan por sí solos qué cambios de catálogo acepta el equipo.",
   "options": [
     {
-      "title": "Aprobar con contrato acordado",
-      "body": "Definir y aprobar los campos modificables, reglas de sustitución y esquema de auditoría antes de integrar y activar las escrituras.",
+      "title": "Acordar y aprobar escrituras acotadas",
+      "body": "Definir los campos, reglas de borrado y auditoría requeridos antes de integrar la escritura automática.",
       "recommended": true
     },
     {
-      "title": "Mantener solo previsualización",
-      "body": "Dejar la investigación disponible sin escrituras persistentes hasta que se acuerde la política de cambios.",
+      "title": "Mantener solo vista previa",
+      "body": "Integrar o conservar la investigación sin escrituras persistentes hasta cerrar la política de cambios.",
       "recommended": false
     },
     {
-      "title": "No incorporar la segunda pasada",
-      "body": "Descartar esta dirección y retirar el flujo de enriquecimiento propuesto.",
+      "title": "No incorporar esta pasada",
+      "body": "Descartar el flujo de enriquecimiento automático si el equipo no quiere esa dirección de producto.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar con contrato acordado",
-    "body": "Definir y aprobar los campos modificables, reglas de sustitución y esquema de auditoría antes de integrar y activar las escrituras.",
+    "title": "Acordar y aprobar escrituras acotadas",
+    "body": "Definir los campos, reglas de borrado y auditoría requeridos antes de integrar la escritura automática.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "PabloMoran34",
-    "reason": "Es el autor de la propuesta y de la issue vinculada, aunque la aprobación corresponde al equipo.",
+    "reason": "Es el contribuidor reciente de `apps/agents` y autor de la propuesta técnica; el equipo debe confirmar quién tiene autoridad final sobre la política de catálogo.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10995.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10995#issuecomment-6265585549",
-    "reviewedAt": "2026-10-20T13:05:22.445Z",
+    "reviewedAt": "2026-10-20T13:15:31.956Z",
     "mainSha": "50c5f0300d20c85ddbbd05482ec7ccb4a50d69fb"
   }
 }
