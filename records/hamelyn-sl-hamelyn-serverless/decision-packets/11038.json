@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-20T08:01:43.216Z",
+  "updatedAt": "2026-10-20T07:57:33Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 11038,
+    "title": "fix: load ecommerce gtm only in production",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/11038",
+    "state": "open",
+    "labels": [
+      "size/M"
+    ],
+    "createdAt": "2026-10-20T07:54:48Z",
+    "updatedAt": "2026-10-20T07:57:33Z",
+    "headSha": "a6993cfb6ea2a79492acc9a3d75f12cc46901eba"
+  },
+  "lane": "release_inclusion",
+  "priority": "P2",
+  "question": "¿Se han confirmado los IDs explícitos de todas las tiendas en producción y que el target de `ECOM_DEV` no es `production` antes de aceptar el cambio?",
+  "rationale": "La condición nueva puede retirar medición de una tienda sin ID y no excluye staging si Vercel lo identifica como producción; la configuración externa no puede verificarse desde este diff.",
+  "options": [
+    {
+      "title": "Confirmar y aceptar",
+      "body": "Verificar los IDs productivos y el target de `ECOM_DEV`, y aceptar las condiciones propuestas cuando ambos estén cubiertos.",
+      "recommended": true
+    },
+    {
+      "title": "Ajustar antes de integrar",
+      "body": "Mantener la PR abierta para corregir el criterio de staging o el tratamiento de tiendas sin ID si la verificación revela una excepción necesaria.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Confirmar y aceptar",
+    "body": "Verificar los IDs productivos y el target de `ECOM_DEV`, y aceptar las condiciones propuestas cuando ambos estén cubiertos.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Es el contribuidor reciente más claramente conectado al layout en el historial local disponible; la decisión final sobre configuración de despliegue sigue siendo del equipo de Ecommerce.",
+    "confidence": "low"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/11038.md",
+    "reviewedAt": "2026-10-20T08:01:43.216Z",
+    "mainSha": "b78ab3574e91f2066f14571ddecb32d27e3125c5"
+  }
+}
