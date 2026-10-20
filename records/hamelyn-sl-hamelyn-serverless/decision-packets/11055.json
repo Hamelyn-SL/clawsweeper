@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-20T13:06:29.119Z",
+  "updatedAt": "2026-10-20T12:27:03Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 11055,
+    "title": "Drive: la cuota de la cuenta de servicio se llena hacia el 25-nov y rompe las subidas de packing V3",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/11055",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:infrastructure",
+      "reporter:javier",
+      "triage:queued",
+      "P1"
+    ],
+    "createdAt": "2026-10-20T12:26:47Z",
+    "updatedAt": "2026-10-20T12:27:03Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Qué estrategia debe aliviar la cuota de packing V3 y Buscalibre antes del agotamiento previsto, y se autoriza eliminar archivos antiguos bajo una política de retención?",
+  "rationale": "Las alternativas cambian dónde se almacenan archivos y cuánto histórico se conserva; el código no puede decidir con seguridad sobre la propiedad de las carpetas ni la eliminación irreversible.",
+  "options": [
+    {
+      "title": "Mover los destinos afectados a una unidad compartida",
+      "body": "Conservar los archivos actuales y probar permisos y subidas en almacenamiento compartido antes de cambiar las rutas operativas.",
+      "recommended": true
+    },
+    {
+      "title": "Aprobar retención por carpeta",
+      "body": "Definir cuánto histórico conservar y aplicar la eliminación solo a las carpetas y tipos de archivo expresamente aprobados.",
+      "recommended": false
+    },
+    {
+      "title": "Delegar la identidad de Workspace",
+      "body": "Solicitar la configuración de delegación y validar que las subidas existentes usan la cuota y propiedad esperadas.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mover los destinos afectados a una unidad compartida",
+    "body": "Conservar los archivos actuales y probar permisos y subidas en almacenamiento compartido antes de cambiar las rutas operativas.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "HamelynDev",
+    "reason": "Es la única persona que aparece en la historia local disponible del cargador compartido; la asignación de la decisión operativa no queda demostrada.",
+    "confidence": "low"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/11055.md",
+    "reviewedAt": "2026-10-20T13:06:29.119Z",
+    "mainSha": "50c5f0300d20c85ddbbd05482ec7ccb4a50d69fb"
+  }
+}

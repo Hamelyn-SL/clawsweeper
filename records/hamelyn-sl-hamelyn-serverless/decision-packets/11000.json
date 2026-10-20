@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-19T12:35:42.116Z",
-  "updatedAt": "2026-10-19T12:14:51Z",
+  "generatedAt": "2026-10-20T13:05:35.831Z",
+  "updatedAt": "2026-10-20T05:55:24Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,42 +14,42 @@
       "feature",
       "triage:needs-info",
       "reporter:danielmenchen",
+      "clawsweeper:needs-product-decision",
       "P2",
-      "clawsweeper:needs-product-decision"
+      "epic:brevo"
     ],
     "createdAt": "2026-10-19T12:03:45Z",
-    "updatedAt": "2026-10-19T12:14:51Z"
+    "updatedAt": "2026-10-20T05:55:24Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe avanzar esta integración solo tras obtener confirmación de WonderPush sobre tokens FCM de iOS, sincronización continua sin SDK y baja de instalaciones?",
-  "rationale": "La decisión condiciona si el flujo propuesto puede entregar campañas de forma fiable; el código local no puede resolver la compatibilidad del contrato externo.",
+  "question": "¿Debe quedar la integración sin activar hasta confirmar con WonderPush el soporte de tokens FCM de iOS y el ciclo de vida de instalaciones gestionado desde servidor?",
+  "rationale": "La aceptación de esta funcionalidad depende de condiciones del proveedor aún no confirmadas; implementarla o activarla sin ellas puede dejar campañas sin entrega o instalaciones suscritas tras el logout.",
   "options": [
     {
-      "title": "Esperar confirmación del proveedor",
-      "body": "Mantener la issue abierta hasta documentar el contrato de registro, actualización y baja, incluidos los tokens FCM de iOS.",
+      "title": "Exigir confirmación antes de activar",
+      "body": "Mantener la integración apagada hasta confirmar el contrato del proveedor y validar el alta y la baja de instalaciones.",
       "recommended": true
     },
     {
-      "title": "Limitar el alcance a plataformas confirmadas",
-      "body": "Diseñar una integración parcial solo si el proveedor confirma qué tokens y operaciones admite y el equipo acepta explícitamente esa limitación.",
+      "title": "Aceptar el riesgo documentado",
+      "body": "Permitir la activación con las limitaciones descritas mientras se obtiene confirmación y se verifica la entrega real.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Esperar confirmación del proveedor",
-    "body": "Mantener la issue abierta hasta documentar el contrato de registro, actualización y baja, incluidos los tokens FCM de iOS.",
+    "title": "Exigir confirmación antes de activar",
+    "body": "Mantener la integración apagada hasta confirmar el contrato del proveedor y validar el alta y la baja de instalaciones.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "Daniel",
-    "reason": "Es el contribuidor reciente identificado en el historial del canal push y la persona a quien el comentario de triage pide la confirmación externa.",
-    "confidence": "medium"
+    "person": "danielmenchen-hamelyn",
+    "reason": "Ha trabajado recientemente en el flujo push y ha presentado el PR que implementa la réplica solicitada.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/11000.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/11000#issuecomment-6267364175",
-    "reviewedAt": "2026-10-19T12:35:42.116Z",
-    "mainSha": "89c50345e5c11432aafe604324dc31e01454b13e"
+    "reviewedAt": "2026-10-20T13:05:35.831Z",
+    "mainSha": "50c5f0300d20c85ddbbd05482ec7ccb4a50d69fb"
   }
 }
