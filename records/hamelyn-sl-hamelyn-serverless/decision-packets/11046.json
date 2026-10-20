@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-20T09:59:25.590Z",
+  "updatedAt": "2026-10-20T09:53:21Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 11046,
+    "title": "Facturas enviadas a FedEx, recopilación mensual para Miguel Castro",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/11046",
+    "state": "open",
+    "labels": [
+      "source:admin-panel",
+      "app:admin",
+      "feature",
+      "reporter:blanca",
+      "triage:queued",
+      "P1"
+    ],
+    "createdAt": "2026-10-20T09:52:51Z",
+    "updatedAt": "2026-10-20T09:53:21Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se debe usar una carpeta compartida de Drive con aviso por correo como entrega principal, y qué fuente se acepta para recuperar facturas de meses previos cuando no se conserve el PDF original?",
+  "rationale": "La petición deja el correo con adjuntos como alternativa si Drive complica la implementación, y el código revisado no acredita disponibilidad de PDFs históricos; ambas decisiones condicionan acceso, retención e integridad contable.",
+  "options": [
+    {
+      "title": "Drive y solo originales recuperables",
+      "body": "Usar Drive organizado por año, mes y país, avisar por correo y limitar el histórico a PDFs originales verificables.",
+      "recommended": true
+    },
+    {
+      "title": "Correo con adjuntos",
+      "body": "Enviar los PDFs del mes por correo y excluir del histórico los documentos cuya versión original no pueda confirmarse.",
+      "recommended": false
+    },
+    {
+      "title": "Acordar fuente histórica primero",
+      "body": "Pausar el backfill hasta confirmar qué repositorio contiene los originales y su integridad.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Drive y solo originales recuperables",
+    "body": "Usar Drive organizado por año, mes y país, avisar por correo y limitar el histórico a PDFs originales verificables.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Lyno",
+    "reason": "Es la única persona identificada por el historial del flujo FedEx; no hay evidencia local que permita identificar al responsable de la política de archivo o del acceso a Drive.",
+    "confidence": "low"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/11046.md",
+    "reviewedAt": "2026-10-20T09:59:25.590Z",
+    "mainSha": "17862bfdc5f20dfb8b74268970fee4d86e8bc21b"
+  }
+}

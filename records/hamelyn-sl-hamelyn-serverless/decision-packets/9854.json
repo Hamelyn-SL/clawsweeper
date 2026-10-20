@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-19T09:35:49.426Z",
-  "updatedAt": "2026-10-19T09:15:04Z",
+  "generatedAt": "2026-10-20T09:57:14.833Z",
+  "updatedAt": "2026-10-20T08:42:56Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,47 +15,41 @@
       "question",
       "triage:needs-info",
       "clawsweeper:needs-product-decision",
-      "reporter:carlotavarela",
-      "P2"
+      "P2",
+      "reporter:carlotavarela"
     ],
     "createdAt": "2026-09-21T13:53:37Z",
-    "updatedAt": "2026-10-19T09:15:04Z"
+    "updatedAt": "2026-10-20T08:42:56Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué fuente y flujo de catálogo deben proporcionar y mantener el país real de fabricación por artículo antes de enviarlo a Amazon?",
-  "rationale": "El campo disponible es específico de películas y la conversación prohíbe inferir `ES` del lugar de almacenamiento; falta elegir una fuente de verdad y su modo de captura antes de modificar el modelo y la sincronización.",
+  "question": "¿Debe aceptarse el país inferido del EAN con «ES» como fallback para nuevas publicaciones, o se exige un origen de fabricación verificado por producto antes de enviarlo?",
+  "rationale": "El país de fabricación no equivale necesariamente al país del prefijo del código de barras o ISBN, y el fallback puede enviar un dato incorrecto; esta elección afecta la semántica del dato que se publica en marketplaces.",
   "options": [
     {
-      "title": "Usar una fuente de proveedor/fabricante",
-      "body": "Acordar qué dato de proveedor o fabricante es autoritativo y cómo se incorpora al catálogo antes de mapearlo a Amazon.",
+      "title": "Exigir origen verificable",
+      "body": "Enviar únicamente el país respaldado por una fuente fiable por producto y definir cómo tratar los artículos cuyo origen se desconoce.",
       "recommended": true
     },
     {
-      "title": "Capturarlo en el catálogo",
-      "body": "Definir quién puede informar y mantener el país por artículo en el flujo de gestión de producto.",
-      "recommended": false
-    },
-    {
-      "title": "Acotar o pausar la petición",
-      "body": "Mantener la issue pendiente hasta disponer de un artículo afectado y una fuente comprobable.",
+      "title": "Aceptar inferencia y fallback",
+      "body": "Permitir la heurística basada en EAN y «ES» cuando no haya otro dato, asumiendo el riesgo de que no represente la fabricación real.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Usar una fuente de proveedor/fabricante",
-    "body": "Acordar qué dato de proveedor o fabricante es autoritativo y cómo se incorpora al catálogo antes de mapearlo a Amazon.",
+    "title": "Exigir origen verificable",
+    "body": "Enviar únicamente el país respaldado por una fuente fiable por producto y definir cómo tratar los artículos cuyo origen se desconoce.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "AlexDiaz-Hamelyn",
-    "reason": "Su historial está conectado al esquema actual de atributos de producto; la decisión de fuente requiere además validación funcional del área de catálogo.",
-    "confidence": "low"
+    "person": "MarcosTerroso",
+    "reason": "Es el revisor solicitado en la PR vinculada y cuenta con trabajo reciente en las rutas de sincronización implicadas; la evidencia disponible no identifica a un responsable de producto más claro.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9854.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9854#issuecomment-5761745113",
-    "reviewedAt": "2026-10-19T09:35:49.426Z",
-    "mainSha": "2b8d462a72d3e3515bf20d1c3e1d071f7b2a8144"
+    "reviewedAt": "2026-10-20T09:57:14.833Z",
+    "mainSha": "17862bfdc5f20dfb8b74268970fee4d86e8bc21b"
   }
 }
