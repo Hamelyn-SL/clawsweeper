@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-20T10:29:04.250Z",
+  "updatedAt": "2026-10-20T10:02:15Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 11047,
+    "title": "Merchant: Modificar Fichero de libros nuevos de Merchant España",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/11047",
+    "state": "open",
+    "labels": [
+      "source:admin-panel",
+      "app:ecommerce",
+      "feature",
+      "triage:queued",
+      "reporter:victor",
+      "P1"
+    ],
+    "createdAt": "2026-10-20T10:02:01Z",
+    "updatedAt": "2026-10-20T10:02:15Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe considerarse que un ISBN deja de ser elegible para `new-books.csv` en cuanto exista cualquier ejemplar usado disponible, aunque el feed de usados lo distribuya entre `books`, `high_books` y `top_books` por tramo de ventas?",
+  "rationale": "El criterio determina qué productos se envían a Merchant y cómo se coordinan dos generadores hoy independientes; el código no establece cuál es la regla de negocio para decidir si un ejemplar usado cuenta como disponible.",
+  "options": [
+    {
+      "title": "Cualquier usado disponible excluye el nuevo",
+      "body": "Excluir el ISBN de `new-books.csv` cuando haya cualquier ejemplar usado en la selección de feeds españoles y generar ambos conjuntos con la misma fuente y pasada.",
+      "recommended": true
+    },
+    {
+      "title": "Excluir solo si aparece en los CSV resultantes",
+      "body": "Aplicar la exclusión contra los productos efectivamente incluidos en `books`, `high_books` o `top_books`, manteniendo el criterio de stock que usa cada feed.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Cualquier usado disponible excluye el nuevo",
+    "body": "Excluir el ISBN de `new-books.csv` cuando haya cualquier ejemplar usado en la selección de feeds españoles y generar ambos conjuntos con la misma fuente y pasada.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Lyno",
+    "reason": "Su historial local conecta con la generación actual de `new-books.csv`, por lo que es el candidato más cercano para resolver la decisión de elegibilidad, aunque el historial no acredita por sí solo autoridad formal de producto.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/11047.md",
+    "reviewedAt": "2026-10-20T10:29:04.250Z",
+    "mainSha": "17862bfdc5f20dfb8b74268970fee4d86e8bc21b"
+  }
+}
