@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-20T11:57:47.454Z",
+  "updatedAt": "2026-10-20T11:53:50Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 11050,
+    "title": "OrderSell: guardar por línea el recargo de envío sumado al precio base y reconstruirlo en el histórico",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/11050",
+    "state": "open",
+    "labels": [
+      "app:infrastructure",
+      "feature",
+      "reporter:marcos",
+      "triage:queued",
+      "P2"
+    ],
+    "createdAt": "2026-10-20T11:53:36Z",
+    "updatedAt": "2026-10-20T11:53:50Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué representación debe recibir el backfill para pedidos antiguos sin recargo identificado y debe incluirse en este alcance la reconstrucción estimada de MercadoLibre?",
+  "rationale": "La elección entre ausencia y cero afecta al significado del dato; incluir estimaciones de MercadoLibre afecta a la fiabilidad del histórico y requiere aceptar explícitamente sus limitaciones.",
+  "options": [
+    {
+      "title": "Separar exactos y estimados",
+      "body": "Guardar `0` donde la regla histórica confirme que no hubo recargo, dejar sin calcular los casos ambiguos y marcar las estimaciones de MercadoLibre con su origen.",
+      "recommended": true
+    },
+    {
+      "title": "Solo datos nuevos",
+      "body": "Registrar el recargo desde el despliegue y excluir del cambio la reconstrucción histórica para evitar incorporar estimaciones.",
+      "recommended": false
+    },
+    {
+      "title": "Backfill amplio",
+      "body": "Reconstruir también las líneas de MercadoLibre con la regla histórica disponible y aceptar expresamente que algunas cifras serán estimadas.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Separar exactos y estimados",
+    "body": "Guardar `0` donde la regla histórica confirme que no hubo recargo, dejar sin calcular los casos ambiguos y marcar las estimaciones de MercadoLibre con su origen.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Lyno",
+    "reason": "El cambio afecta a la interpretación del precio histórico, cuyo servicio central introdujo esta persona según el historial disponible.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/11050.md",
+    "reviewedAt": "2026-10-20T11:57:47.454Z",
+    "mainSha": "9729f6326aba726b59fe0a448633e2fb8b1519aa"
+  }
+}
