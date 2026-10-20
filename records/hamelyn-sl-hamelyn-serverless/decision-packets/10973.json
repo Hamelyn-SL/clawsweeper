@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-20T07:09:04.996Z",
+  "updatedAt": "2026-10-19T06:14:53Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10973,
+    "title": "admin: require auth on drawercount, drawer info and order transitions reads (phase 2 of #10891)",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10973",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:admin",
+      "triage:done",
+      "reporter:danielmenchen",
+      "P2"
+    ],
+    "createdAt": "2026-10-19T05:49:00Z",
+    "updatedAt": "2026-10-19T06:14:53Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se ha desplegado ya la fase 1 y se ha observado un día laborable completo con telemetría activa y sin peticiones sin token en estas tres rutas?",
+  "rationale": "La protección es técnicamente directa, pero activarla antes de confirmar la migración de clientes puede volver a interrumpir la revisión de gavetas; el código local no acredita el estado de producción ni la ventana de observación.",
+  "options": [
+    {
+      "title": "Esperar a completar la observación",
+      "body": "Mantener esta fase pendiente hasta confirmar el despliegue de la fase 1 y una jornada laborable completa con telemetría activa.",
+      "recommended": true
+    },
+    {
+      "title": "Autorizar la activación anticipada",
+      "body": "Aceptar el riesgo operativo y programar la protección antes de completar la ventana, con vigilancia reforzada del almacén.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Esperar a completar la observación",
+    "body": "Mantener esta fase pendiente hasta confirmar el despliegue de la fase 1 y una jornada laborable completa con telemetría activa.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "danielmenchen-hamelyn",
+    "reason": "Es el responsable asignado a la issue y autor de la fase 1 cuya observación condiciona esta decisión.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10973.md",
+    "reviewedAt": "2026-10-20T07:09:04.996Z",
+    "mainSha": "24b4cb1a02adf5126c8358550480f4fbf04d0418"
+  }
+}

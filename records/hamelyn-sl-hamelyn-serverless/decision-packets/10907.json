@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-16T13:50:40.737Z",
-  "updatedAt": "2026-10-15T13:15:32Z",
+  "generatedAt": "2026-10-20T07:08:07.890Z",
+  "updatedAt": "2026-10-20T06:25:03Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,47 +14,41 @@
       "feature",
       "triage:needs-info",
       "clawsweeper:needs-product-decision",
-      "app:data",
-      "P2"
+      "P2",
+      "app:data"
     ],
     "createdAt": "2026-10-15T12:15:50Z",
-    "updatedAt": "2026-10-15T13:15:32Z"
+    "updatedAt": "2026-10-20T06:25:03Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué fuente de exportación GA4 y qué regla de vinculación deben definir las vistas atribuibles a pedidos, incluidos visitantes anónimos o sin consentimiento analítico?",
-  "rationale": "La elección determina qué datos se pueden enlazar, qué pedidos quedan sin atribuir y qué significan las métricas del panel; no puede deducirse del comportamiento actual del producto.",
+  "question": "¿Qué fuente/dataset contiene la exportación GA4 de México y qué regla debe vincular una exposición con un pedido?",
+  "rationale": "La métrica de pedidos vistos/no usados depende de una exposición real y de una política de atribución que el código actual no determina; elegirla cambia el significado de las cifras de Marketing.",
   "options": [
     {
-      "title": "Atribuir solo con vínculo permitido",
-      "body": "Usar únicamente identificadores disponibles conforme al consentimiento y dejar sin atribuir los pedidos que no puedan vincularse de forma verificable.",
+      "title": "Acordar fuente y ventana de atribución",
+      "body": "Definir el dataset GA4 y una ventana/regla —por ejemplo, misma sesión— antes de concretar instrumentación y panel.",
       "recommended": true
     },
     {
-      "title": "Medir variante asignada por separado",
-      "body": "Guardar la variante en el pedido y presentar resultados por asignación sin afirmar que el cliente vio el anuncio.",
-      "recommended": false
-    },
-    {
-      "title": "Vincular por sesión GA4",
-      "body": "Adoptar un identificador de sesión compartido tras confirmar que existe en la fuente de México y que su uso es admisible.",
+      "title": "Medir solo asignación y uso",
+      "body": "Limitar la primera entrega a variante asignada y cupón usado, sin presentar esos datos como prueba de exposición ni calcular pedidos vistos/no usados.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Atribuir solo con vínculo permitido",
-    "body": "Usar únicamente identificadores disponibles conforme al consentimiento y dejar sin atribuir los pedidos que no puedan vincularse de forma verificable.",
+    "title": "Acordar fuente y ventana de atribución",
+    "body": "Definir el dataset GA4 y una ventana/regla —por ejemplo, misma sesión— antes de concretar instrumentación y panel.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "Lyno",
-    "reason": "Es la persona con señal histórica local más concreta en la consulta de cupones de Data Dashboards; no hay suficiente historial disponible para identificar con seguridad al responsable de la decisión de atribución.",
-    "confidence": "low"
+    "person": "Miguel Angel Hernández Perdomo",
+    "reason": "Su trabajo reciente introdujo la selección configurable de variantes de cupón de la que depende la instrumentación; la decisión requiere también Marketing y Data/Ecommerce.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10907.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10907#issuecomment-6192634044",
-    "reviewedAt": "2026-10-16T13:50:40.737Z",
-    "mainSha": "52dd5756cadb832c60e976f3dc080733fa6b06cc"
+    "reviewedAt": "2026-10-20T07:08:07.890Z",
+    "mainSha": "24b4cb1a02adf5126c8358550480f4fbf04d0418"
   }
 }

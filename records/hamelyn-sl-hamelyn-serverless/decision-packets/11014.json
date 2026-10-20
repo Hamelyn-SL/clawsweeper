@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-20T07:09:32.104Z",
+  "updatedAt": "2026-10-20T06:45:05Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 11014,
+    "title": "Data: carga incremental de eDesk a BigQuery (tickets, mensajes y entidades referenciadas)",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/11014",
+    "state": "open",
+    "labels": [
+      "app:infrastructure",
+      "feature",
+      "triage:done",
+      "P2",
+      "origin:dev",
+      "reporter:mariatapia"
+    ],
+    "createdAt": "2026-10-20T06:06:19Z",
+    "updatedAt": "2026-10-20T06:45:05Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué cobertura de tickets, mensajes y entidades debe considerarse definitiva para el primer corte, incluidos Spam/Archived, cambios en tickets cerrados y entidades cuya versión anterior queda fuera de 30 días?",
+  "rationale": "El alcance determina qué datos y cambios se conservan y cómo evitar duplicados; la issue enumera preguntas de ATC aún sin resolver, por lo que no es seguro fijar esas reglas solo desde el código.",
+  "options": [
+    {
+      "title": "Cerrar contrato con ATC",
+      "body": "Acordar estados, entidades y semántica de cambios antes de implementar la extracción y su deduplicación.",
+      "recommended": true
+    },
+    {
+      "title": "Reducir el primer corte",
+      "body": "Aplazar estados y entidades sin decisión y acotar el primer entregable a los datos ya confirmados.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Cerrar contrato con ATC",
+    "body": "Acordar estados, entidades y semántica de cambios antes de implementar la extracción y su deduplicación.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "mariatapia-hamelyn",
+    "reason": "Es la responsable asignada indicada en la issue y puede coordinar la definición con el equipo de ATC.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/11014.md",
+    "reviewedAt": "2026-10-20T07:09:32.104Z",
+    "mainSha": "24b4cb1a02adf5126c8358550480f4fbf04d0418"
+  }
+}

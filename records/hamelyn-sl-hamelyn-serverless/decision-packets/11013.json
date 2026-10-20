@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-20T07:09:21.019Z",
+  "updatedAt": "2026-10-20T06:18:05Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 11013,
+    "title": "feat: mirror app push tokens to WonderPush for Brevo campaigns",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/11013",
+    "state": "open",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-10-20T06:00:41Z",
+    "updatedAt": "2026-10-20T06:18:05Z",
+    "headSha": "d437d790e5a2a11e556aab089807554ab162af12"
+  },
+  "lane": "security_boundary",
+  "priority": "P2",
+  "question": "¿Se acepta activar la réplica de WonderPush sabiendo que una petición tardía podría suscribir una instalación después del cierre de sesión, y se han confirmado las condiciones de FCM de iOS con WonderPush?",
+  "rationale": "La discusión del PR deja ambas condiciones pendientes; la aceptación determina si el comportamiento de suscripción tras logout es admisible para campañas y privacidad.",
+  "options": [
+    {
+      "title": "Exigir confirmación y reconciliación",
+      "body": "Mantener desactivada la integración hasta confirmar FCM de iOS y añadir reconciliación periódica que corrija peticiones tardías.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar el riesgo documentado",
+      "body": "Permitir la activación tras confirmar el soporte del proveedor y aceptar que una petición tardía pueda dejar una instalación suscrita.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Exigir confirmación y reconciliación",
+    "body": "Mantener desactivada la integración hasta confirmar FCM de iOS y añadir reconciliación periódica que corrija peticiones tardías.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "danielmenchen-hamelyn",
+    "reason": "Lidera el trabajo de migración a Brevo y el PR identifica explícitamente estas confirmaciones pendientes.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/11013.md",
+    "reviewedAt": "2026-10-20T07:09:21.019Z",
+    "mainSha": "24b4cb1a02adf5126c8358550480f4fbf04d0418"
+  }
+}

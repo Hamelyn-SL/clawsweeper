@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-20T07:09:42.637Z",
+  "updatedAt": "2026-10-20T05:59:55Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 11012,
+    "title": "feat: write Mailchimp contacts to Brevo lists in parallel",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/11012",
+    "state": "open",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-10-20T05:59:39Z",
+    "updatedAt": "2026-10-20T05:59:55Z",
+    "headSha": "61f4b55f60d367aaf84ee139349265d963f72e63"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se aprueba la migración gradual a Brevo con Mailchimp en paralelo mientras se validan listas, consentimiento y operación, para integrar esta sincronización en la épica?",
+  "rationale": "La épica enlazada mantiene expresamente pendiente esa decisión de producto; esta PR implementa una pieza de ese plan y no puede determinar por sí sola si la convivencia y posterior sustitución son la dirección aprobada.",
+  "options": [
+    {
+      "title": "Aprobar la migración gradual",
+      "body": "Integrar esta sincronización en la épica y activar Brevo progresivamente solo tras validar sus dependencias.",
+      "recommended": true
+    },
+    {
+      "title": "Aplazar la migración",
+      "body": "Conservar Mailchimp como sistema activo y pausar la integración de marketing con Brevo hasta confirmar los requisitos comerciales y operativos.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar la migración gradual",
+    "body": "Integrar esta sincronización en la épica y activar Brevo progresivamente solo tras validar sus dependencias.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "danielmenchen-hamelyn",
+    "reason": "La conversación de la épica le atribuye coordinación del trabajo y el triage lo señala como responsable probable de la decisión.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/11012.md",
+    "reviewedAt": "2026-10-20T07:09:42.637Z",
+    "mainSha": "24b4cb1a02adf5126c8358550480f4fbf04d0418"
+  }
+}
