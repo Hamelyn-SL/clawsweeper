@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-16T11:54:08.345Z",
-  "updatedAt": "2026-10-15T12:56:59Z",
+  "generatedAt": "2026-10-20T07:07:42.207Z",
+  "updatedAt": "2026-10-20T06:53:54Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,42 +14,46 @@
       "reporter:jesus",
       "feature",
       "triage:pr-opened",
-      "clawsweeper:needs-product-decision",
-      "P1"
+      "P1",
+      "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-10-15T11:37:52Z",
-    "updatedAt": "2026-10-15T12:56:59Z"
+    "updatedAt": "2026-10-20T06:53:54Z"
   },
-  "lane": "merge_risk",
+  "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué contrato de tamaño y transporte debe adoptar Supply para registrar todos los productos de leads grandes sin exceder el límite de ingesta ni descartar otros eventos del lote?",
-  "rationale": "La PR parcial se retiró tras reproducir un 413 en un lote grande. La elección entre limitar, dividir o transportar el payload de otra forma afecta el contrato de analítica y no queda determinada por el código actual.",
+  "question": "¿Qué límite de productos por lead y qué estrategia de transporte debe usar Supply para preservar todos los items sin superar el límite de ingesta ni descartar otros eventos?",
+  "rationale": "La PR parcial se retiró tras reproducir un payload que supera el límite actual; la solución requiere elegir entre alternativas de batching o representación de datos y no conviene alterar el límite de seguridad sin una decisión explícita.",
   "options": [
     {
-      "title": "Acordar un contrato de lotes grandes",
-      "body": "Definir el tamaño máximo y coordinar división/transporte e ingesta para conservar los productos y los demás eventos.",
+      "title": "Acordar batching de items",
+      "body": "Mantener el límite de ingesta y dividir la entrega de items grandes en batches que preserven el lead y los demás eventos.",
       "recommended": true
     },
     {
-      "title": "Limitar los productos enviados",
-      "body": "Enviar un subconjunto acotado de productos y documentar explícitamente que el lead no representa lotes completos.",
+      "title": "Definir un límite de items",
+      "body": "Establecer un máximo explícito por lead y acordar cómo registrar los productos restantes sin pérdida silenciosa.",
+      "recommended": false
+    },
+    {
+      "title": "Cambiar la representación del lead",
+      "body": "Usar una representación compacta o un flujo separado para items, con contrato y validación compatibles.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Acordar un contrato de lotes grandes",
-    "body": "Definir el tamaño máximo y coordinar división/transporte e ingesta para conservar los productos y los demás eventos.",
+    "title": "Acordar batching de items",
+    "body": "Mantener el límite de ingesta y dividir la entrega de items grandes en batches que preserven el lead y los demás eventos.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "Su historial de cambios recientes en los emisores y el transporte de analítica Supply lo convierte en el candidato mejor respaldado para orientar la decisión técnica.",
+    "person": "JesusRamosLopez",
+    "reason": "La issue contiene su definición funcional y su comentario separa expresamente el alcance inmediato del indicador `new_seller`.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10902.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10902#issuecomment-6191370728",
-    "reviewedAt": "2026-10-16T11:54:08.345Z",
-    "mainSha": "b73ae3fcf867be905b9109f41842f9179ca3b050"
+    "reviewedAt": "2026-10-20T07:07:42.207Z",
+    "mainSha": "24b4cb1a02adf5126c8358550480f4fbf04d0418"
   }
 }
