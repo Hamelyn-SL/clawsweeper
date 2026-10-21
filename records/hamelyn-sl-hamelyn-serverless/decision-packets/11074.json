@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-21T07:09:29.815Z",
+  "updatedAt": "2026-10-21T07:00:16Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 11074,
+    "title": "Skypod picking: fixed per-station turn priority for picking OPs",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/11074",
+    "state": "open",
+    "labels": [
+      "app:admin",
+      "reporter:davidgonzalez",
+      "feature",
+      "triage:done",
+      "P2"
+    ],
+    "createdAt": "2026-10-21T06:43:08Z",
+    "updatedAt": "2026-10-21T07:00:16Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué fuente debe determinar si se planifica para dos o tres estaciones y cómo debe conservarse ese reparto para las OP creadas durante el día?",
+  "rationale": "La regla afecta a la asignación de OP, al orden inmutable enviado a Skypod y a la desfragmentación; el código actual no define la fuente operativa ni el ciclo de vida de ese plan.",
+  "options": [
+    {
+      "title": "Acordar un plan persistido compartido",
+      "body": "Definir la fuente de estaciones activas y guardar estación/turno por OP para que envío, documentos, admin y desfragmentación consuman el mismo reparto.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener el reparto en lógica de generación",
+      "body": "Calcular la asignación al crear las OP y confirmar cómo se mantendrá coherente con las OP posteriores y la desfragmentación.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Acordar un plan persistido compartido",
+    "body": "Definir la fuente de estaciones activas y guardar estación/turno por OP para que envío, documentos, admin y desfragmentación consuman el mismo reparto.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "El comentario de triage le señala como responsable actual y el acuerdo requerido es principalmente operativo.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/11074.md",
+    "reviewedAt": "2026-10-21T07:09:29.815Z",
+    "mainSha": "268e6196b668f9e7350ed647622c98be2dd88690"
+  }
+}
