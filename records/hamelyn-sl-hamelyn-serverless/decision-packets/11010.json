@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-21T07:15:10.355Z",
+  "updatedAt": "2026-10-20T07:13:21Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 11010,
+    "title": "feat: send transactional emails through Brevo in parallel with Mandrill",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/11010",
+    "state": "open",
+    "labels": [
+      "size/XXL",
+      "P2"
+    ],
+    "createdAt": "2026-10-20T05:51:33Z",
+    "updatedAt": "2026-10-20T07:13:21Z",
+    "headSha": "a87ab18a0a9e1859c212a8561d8a5af7f5463cf1"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se aprueba incorporar el envío transaccional paralelo por Brevo como primera fase de la migración de Mandrill, con activación posterior por configuración?",
+  "rationale": "Es una nueva capacidad de proveedor ligada a una migración operativa; la issue y la épica mantienen una señal de decisión de producto, y la activación de producción está separada de este PR.",
+  "options": [
+    {
+      "title": "Aprobar fase paralela",
+      "body": "Integrar la ruta optativa en la épica y habilitarla solo tras completar el plan de despliegue y validación.",
+      "recommended": true
+    },
+    {
+      "title": "Limitar o aplazar el alcance",
+      "body": "Dejar Brevo fuera del código de envío hasta que se confirme la estrategia y el calendario de sustitución.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar fase paralela",
+    "body": "Integrar la ruta optativa en la épica y habilitarla solo tras completar el plan de despliegue y validación.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "danielmenchen-hamelyn",
+    "reason": "Ha desarrollado el flujo de comunicaciones afectado y figura en el seguimiento de la épica de migración; no hay evidencia local que identifique un decisor de producto distinto.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/11010.md",
+    "reviewedAt": "2026-10-21T07:15:10.355Z",
+    "mainSha": "268e6196b668f9e7350ed647622c98be2dd88690"
+  }
+}
