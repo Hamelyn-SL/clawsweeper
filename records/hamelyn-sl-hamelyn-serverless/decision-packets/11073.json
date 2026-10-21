@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-21T07:12:11.227Z",
+  "updatedAt": "2026-10-21T06:53:00Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 11073,
+    "title": "feat: restrict coupons to shipping countries",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/11073",
+    "state": "open",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-10-21T06:35:56Z",
+    "updatedAt": "2026-10-21T06:53:00Z",
+    "headSha": "ee06360e2d04b6927ff83374ec6873571a87d260"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe restringirse el cupón por tienda de compra, por país de envío —como implementa este PR— o por ambos criterios?",
+  "rationale": "La issue describe el país de la tienda y el PR usa el país de destino; elegir uno cambia qué pedidos pueden aprovechar cada cupón y no se deduce de la implementación.",
+  "options": [
+    {
+      "title": "Tienda de compra",
+      "body": "Ajustar el alcance para que la validación use la tienda resuelta desde el host, como pide la issue.",
+      "recommended": true
+    },
+    {
+      "title": "País de envío",
+      "body": "Confirmar el cambio de alcance y actualizar la issue para reflejar que cuenta la dirección o el punto PUDO.",
+      "recommended": false
+    },
+    {
+      "title": "Ambos criterios",
+      "body": "Definir restricciones separadas para tienda y destino y documentar cómo interactúan.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Tienda de compra",
+    "body": "Ajustar el alcance para que la validación use la tienda resuelta desde el host, como pide la issue.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Su historial reciente cubre la resolución de tienda en el storefront, relevante para valorar la opción solicitada en la issue.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/11073.md",
+    "reviewedAt": "2026-10-21T07:12:11.227Z",
+    "mainSha": "268e6196b668f9e7350ed647622c98be2dd88690"
+  }
+}
