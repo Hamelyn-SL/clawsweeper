@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-21T15:49:55.669Z",
+  "updatedAt": "2026-10-21T15:30:51Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 11100,
+    "title": "Los lotes antiguos de mayo que se recepcionaron desde sistemas ya viene como revisados",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/11100",
+    "state": "open",
+    "labels": [
+      "bug",
+      "source:admin-panel",
+      "app:admin",
+      "triage:needs-info",
+      "P1",
+      "reporter:nicolasrein"
+    ],
+    "createdAt": "2026-10-21T15:10:59Z",
+    "updatedAt": "2026-10-21T15:30:51Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué lotes concretos de abril y mayo deben reabrirse, y se confirma que la corrección será una limpieza de datos acotada en vez de cambiar el criterio global de revisión?",
+  "rationale": "La decisión determina el alcance de una operación histórica con efectos sobre revisión, stock y pagos; la réplica aportada no confirma el estado vivo ni identifica todos los lotes.",
+  "options": [
+    {
+      "title": "Limitar la corrección a IDs confirmados",
+      "body": "Validar los lotes indicados contra datos vivos y reabrir solo los que sigan pendientes de revisión física, conservando el pago histórico.",
+      "recommended": true
+    },
+    {
+      "title": "Cambiar el criterio global",
+      "body": "Tratar la ausencia de trazas físicas como señal de revisión pendiente para todos los productos aceptados, tras confirmar y cubrir los casos legítimos.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Limitar la corrección a IDs confirmados",
+    "body": "Validar los lotes indicados contra datos vivos y reabrir solo los que sigan pendientes de revisión física, conservando el pago histórico.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "mariatapia-hamelyn",
+    "reason": "Su historial local reciente toca la validación de stocks, relacionada con la preservación de pagos durante una reapertura.",
+    "confidence": "low"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/11100.md",
+    "reviewedAt": "2026-10-21T15:49:55.669Z",
+    "mainSha": "b034f425d15d5f87a5e61496e7dcb14444d1c077"
+  }
+}
