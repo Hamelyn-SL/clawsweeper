@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-21T10:56:06.031Z",
-  "updatedAt": "2026-10-21T10:46:31Z",
+  "generatedAt": "2026-10-21T11:00:18.569Z",
+  "updatedAt": "2026-10-21T10:57:13Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -14,39 +14,38 @@
       "P2"
     ],
     "createdAt": "2026-10-13T12:53:25Z",
-    "updatedAt": "2026-10-21T10:46:31Z",
+    "updatedAt": "2026-10-21T10:57:13Z",
     "headSha": "8ba9ff92acc8ca91cd85b62b06eed4b0422e878a"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe Supply Web Capacitor sustituir la app Expo existente bajo `com.hamelyn.hamelynapp` y quedar preparada para publicación y OTA como propone esta PR?",
-  "rationale": "La issue vinculada limita inicialmente el trabajo a proyectos de desarrollo y deja el identificador de producción para una fase posterior; esta PR amplía ese alcance y puede afectar a la continuidad de las instalaciones publicadas.",
+  "question": "¿Debe Supply Web con Capacitor sustituir la app Expo publicada bajo `com.hamelyn.hamelynapp`, incluyendo releases y OTA, o debe limitarse ahora a proyectos de desarrollo?",
+  "rationale": "La decisión determina si se reutiliza la identidad de tienda y se habilitan despliegues capaces de sustituir la app instalada; el código y la prueba local no establecen por sí solos la intención de producto ni la compatibilidad de actualización aceptada.",
   "options": [
     {
       "title": "Confirmar la sustitución",
-      "body": "Aprobar la migración bajo el identificador existente y verificar la compatibilidad de actualización antes de publicar.",
+      "body": "Aprobar la migración bajo el identificador de tienda existente y exigir evidencia de compatibilidad de actualización antes de publicar.",
       "recommended": true
     },
     {
       "title": "Separar el alcance",
-      "body": "Mantener los proyectos Capacitor para desarrollo y aplazar identidad de tienda, publicación y OTA a una decisión posterior.",
+      "body": "Conservar los proyectos Capacitor para desarrollo y aplazar identidad de tienda, releases y OTA hasta decidir la migración.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Confirmar la sustitución",
-    "body": "Aprobar la migración bajo el identificador existente y verificar la compatibilidad de actualización antes de publicar.",
+    "body": "Aprobar la migración bajo el identificador de tienda existente y exigir evidencia de compatibilidad de actualización antes de publicar.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "Daniel",
-    "reason": "La revisión previa lo señaló como candidato más probable para decidir el alcance de sustitución de la app publicada.",
+    "person": "danielmenchen-hamelyn",
+    "reason": "La revisión previa lo señala como candidato para la decisión y abrió los issues de alcance F05 y F06.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10805.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10805#issuecomment-6146409288",
-    "reviewedAt": "2026-10-21T10:56:06.031Z",
+    "reviewedAt": "2026-10-21T11:00:18.569Z",
     "mainSha": "1a2fc56c58c08536a7896749a58f0a2212341c14"
   }
 }
