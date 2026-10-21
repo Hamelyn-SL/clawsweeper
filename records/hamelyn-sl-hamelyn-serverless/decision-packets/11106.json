@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-21T16:52:16.896Z",
+  "updatedAt": "2026-10-21T16:50:45Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 11106,
+    "title": "fix: upload drive files as a workspace user when configured",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/11106",
+    "state": "open",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-10-21T16:47:12Z",
+    "updatedAt": "2026-10-21T16:50:45Z",
+    "headSha": "2a8b9f9e7803939896e8f2a917f5147288728706"
+  },
+  "lane": "security_boundary",
+  "priority": "P1",
+  "question": "¿Se aprueba habilitar la delegación de dominio para las subidas a Drive con el scope `drive.file` y el usuario `drive@hamelyn.com`?",
+  "rationale": "La issue relacionada plantea varias alternativas y la configuración de Admin Console amplía la identidad en cuyo nombre opera el servicio; las pruebas disponibles no verifican la autorización efectiva en Google.",
+  "options": [
+    {
+      "title": "Aprobar delegación tras prueba real",
+      "body": "Autorizar la configuración descrita y confirmar una subida controlada antes de activar el secreto en los entornos.",
+      "recommended": true
+    },
+    {
+      "title": "Elegir otra mitigación",
+      "body": "Mantener las subidas con la cuenta de servicio y resolver la cuota mediante retención o almacenamiento compartido.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar delegación tras prueba real",
+    "body": "Autorizar la configuración descrita y confirmar una subida controlada antes de activar el secreto en los entornos.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es quien reportó la cuota y propuso la delegación en la issue relacionada; no consta en el contexto un responsable de política de Workspace más específico.",
+    "confidence": "low"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/11106.md",
+    "reviewedAt": "2026-10-21T16:52:16.896Z",
+    "mainSha": "784932200f8f2fa27cb958aab9fb485410a3520e"
+  }
+}
