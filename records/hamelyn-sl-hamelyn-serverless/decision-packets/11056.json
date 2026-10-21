@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-20T12:35:16.923Z",
-  "updatedAt": "2026-10-20T12:29:21Z",
+  "generatedAt": "2026-10-21T13:08:50.154Z",
+  "updatedAt": "2026-10-20T13:45:46Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,48 +14,47 @@
       "app:admin",
       "feature",
       "reporter:blanca",
-      "triage:queued",
-      "P2",
-      "clawsweeper:needs-product-decision"
+      "triage:done",
+      "clawsweeper:needs-product-decision",
+      "P2"
     ],
     "createdAt": "2026-10-20T12:29:02Z",
-    "updatedAt": "2026-10-20T12:29:21Z"
+    "updatedAt": "2026-10-20T13:45:46Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué fuente y umbral de confianza deben regir las imágenes y los metadatos, y se autoriza planificar un backfill masivo por marketplace además de asegurar los nuevos anuncios?",
-  "rationale": "La petición combina un enriquecimiento automático de catálogo a gran escala y cambios en varias integraciones; la evidencia disponible no determina las fuentes, los controles de calidad ni la priorización que deben adoptar.",
+  "question": "¿Qué fuentes y umbrales deben regir las imágenes y los metadatos, y se debe planificar un backfill histórico por marketplace además de completar las nuevas publicaciones?",
+  "rationale": "La issue agrupa recuperación de catálogo, publicación futura y sincronización de anuncios existentes; el orden, las fuentes y la escala cambian sustancialmente el trabajo y no se deducen del código actual.",
   "options": [
     {
       "title": "Acordar fuentes y fases",
-      "body": "Definir fuentes y controles, priorizar stock activo y aprobar fases de backfill y sincronización nueva antes de convertirlo en trabajo técnico.",
+      "body": "Definir las fuentes y controles, priorizar libros con stock y aprobar fases de backfill y sincronización futura antes de concretar el trabajo técnico.",
       "recommended": true
     },
     {
-      "title": "Limitarse a nuevos anuncios",
-      "body": "Garantizar datos disponibles en publicaciones futuras y dejar el catálogo histórico fuera del alcance inicial.",
+      "title": "Limitar el primer alcance a nuevas publicaciones",
+      "body": "Garantizar los datos disponibles en futuras altas y dejar el catálogo histórico fuera de la primera fase.",
       "recommended": false
     },
     {
-      "title": "Backfill por marketplace",
-      "body": "Elegir primero un marketplace y validar resultados en un lote acotado antes de ampliar la operación.",
+      "title": "Piloto por marketplace",
+      "body": "Elegir primero un marketplace, validar un lote pequeño y medir la aceptación remota antes de ampliar la operación.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Acordar fuentes y fases",
-    "body": "Definir fuentes y controles, priorizar stock activo y aprobar fases de backfill y sincronización nueva antes de convertirlo en trabajo técnico.",
+    "body": "Definir las fuentes y controles, priorizar libros con stock y aprobar fases de backfill y sincronización futura antes de concretar el trabajo técnico.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "Miguel Angel Hernández Perdomo",
-    "reason": "Su historial con metadatos editoriales en exportación de catálogo lo convierte en la ruta más cercana para evaluar el alcance por marketplace; la decisión debería coordinarse con producto.",
-    "confidence": "low"
+    "reason": "Su historial reciente toca el flujo de publicaciones de marketplace y la revisión previa lo señaló como candidato para la decisión de alcance.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/11056.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/11056#issuecomment-6290983736",
-    "reviewedAt": "2026-10-20T12:35:16.923Z",
-    "mainSha": "b8b73bdcc0031b94007fb0f1df2140b5bc8b22a2"
+    "reviewedAt": "2026-10-21T13:08:50.154Z",
+    "mainSha": "13e57cc7d0b8c98774b70cb406c43efa0c5df026"
   }
 }
