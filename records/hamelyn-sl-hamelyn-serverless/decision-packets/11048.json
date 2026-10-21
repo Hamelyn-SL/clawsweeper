@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-20T11:23:57.711Z",
-  "updatedAt": "2026-10-20T10:59:58Z",
+  "generatedAt": "2026-10-21T11:56:38.859Z",
+  "updatedAt": "2026-10-20T13:30:03Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,43 +14,42 @@
       "source:admin-panel",
       "app:admin",
       "reporter:blanca",
-      "triage:queued",
-      "P2",
-      "clawsweeper:needs-product-decision"
+      "triage:done",
+      "clawsweeper:needs-product-decision",
+      "P2"
     ],
     "createdAt": "2026-10-20T10:59:34Z",
-    "updatedAt": "2026-10-20T10:59:58Z"
+    "updatedAt": "2026-10-20T13:30:03Z"
   },
-  "lane": "product_direction",
+  "lane": "manual_review",
   "priority": "P2",
-  "question": "¿Debe el proceso diario marcar únicamente las devoluciones aprobadas como pendientes de reembolso, y se deben regularizar también los pedidos históricos que siguen en «Recogido»?",
-  "rationale": "La sincronización puede marcar solicitudes aprobadas como pendientes, pero el reporte menciona que Amazon puede haber reembolsado ya al cliente. Automatizar una transición o un backfill sin distinguir esos casos podría desalinear el estado operativo y el registro del reembolso.",
+  "question": "¿Qué periodo histórico debe regularizarse y qué evidencia mínima confirmará que Amazon ya realizó el reembolso antes de actualizar cada pedido?",
+  "rationale": "La petición confirma que quiere incluir históricos, pero no delimita el periodo recuperable ni el criterio que evita confundir una solicitud aprobada con un reembolso pagado.",
   "options": [
     {
-      "title": "Pendiente desde nuevas aprobaciones",
-      "body": "Automatizar la importación diaria como pendiente de reembolso y dejar los pedidos históricos sin cambios hasta una revisión separada.",
+      "title": "Definir periodo y verificación antes de regularizar",
+      "body": "Acordar con Operaciones un intervalo y una comprobación de reembolso realizado, y generar una lista de candidatos antes de cambiar pedidos.",
       "recommended": true
     },
     {
-      "title": "Incluir regularización histórica",
-      "body": "Acordar un criterio de verificación y alcance antes de actualizar pedidos existentes que sigan en «Recogido».",
+      "title": "Aplicar solo a nuevas devoluciones inicialmente",
+      "body": "Lanzar primero el flujo futuro y dejar la regularización histórica para una decisión posterior con datos revisados.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Pendiente desde nuevas aprobaciones",
-    "body": "Automatizar la importación diaria como pendiente de reembolso y dejar los pedidos históricos sin cambios hasta una revisión separada.",
+    "title": "Definir periodo y verificación antes de regularizar",
+    "body": "Acordar con Operaciones un intervalo y una comprobación de reembolso realizado, y generar una lista de candidatos antes de cambiar pedidos.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "Alex Cantón",
-    "reason": "Su historial incluye la incorporación del seguimiento de motivos y datos de devolución en pedidos, el área funcional más próxima a esta decisión.",
+    "person": "alexcanHamelyn",
+    "reason": "Es la persona con la relación histórica más directa con el diseño y la implementación del flujo de devoluciones; la decisión también requiere validación de Operaciones.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/11048.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/11048#issuecomment-6289766906",
-    "reviewedAt": "2026-10-20T11:23:57.711Z",
-    "mainSha": "9729f6326aba726b59fe0a448633e2fb8b1519aa"
+    "reviewedAt": "2026-10-21T11:56:38.859Z",
+    "mainSha": "3ed93694a673cbe17609fdd2955644de3a11884d"
   }
 }
