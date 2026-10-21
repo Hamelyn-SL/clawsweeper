@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-21T07:20:34.641Z",
+  "updatedAt": "2026-10-20T07:55:49Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 11031,
+    "title": "Ecommerce: los previews de Vercel cargan el GTM de producción y envían datos reales",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/11031",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:ecommerce",
+      "reporter:jesus",
+      "triage:pr-opened",
+      "P2"
+    ],
+    "createdAt": "2026-10-20T06:31:48Z",
+    "updatedAt": "2026-10-20T07:55:49Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se han verificado los IDs explícitos de todas las tiendas productivas y que el target de `ECOM_DEV` no sea `production` antes de integrar la corrección?",
+  "rationale": "La PR relacionada deja esas comprobaciones pendientes; sin ellas no se puede confirmar que producción conserve medición regional ni que staging quede fuera de la regla de producción.",
+  "options": [
+    {
+      "title": "Confirmar configuración e integrar",
+      "body": "Verificar los IDs productivos y el target de `ECOM_DEV`, y entonces aceptar la condición propuesta.",
+      "recommended": true
+    },
+    {
+      "title": "Ajustar el criterio",
+      "body": "Modificar la condición o el manejo de tiendas sin ID si la configuración real demuestra una excepción necesaria.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Confirmar configuración e integrar",
+    "body": "Verificar los IDs productivos y el target de `ECOM_DEV`, y entonces aceptar la condición propuesta.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "La discusión de la PR lo identifica como candidato para coordinar la confirmación de la configuración del equipo Ecommerce.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/11031.md",
+    "reviewedAt": "2026-10-21T07:20:34.641Z",
+    "mainSha": "268e6196b668f9e7350ed647622c98be2dd88690"
+  }
+}
