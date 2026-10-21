@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-15T10:25:32.066Z",
-  "updatedAt": "2026-10-15T09:58:44Z",
+  "generatedAt": "2026-10-21T07:03:43.862Z",
+  "updatedAt": "2026-10-21T06:57:51Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -19,43 +19,42 @@
       "P2"
     ],
     "createdAt": "2026-09-22T13:13:40Z",
-    "updatedAt": "2026-10-15T09:58:44Z"
+    "updatedAt": "2026-10-21T06:57:51Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe determinarse la elegibilidad por la tienda resuelta desde el host de compra, por el país de envío, o deben admitirse ambos ámbitos?",
-  "rationale": "La elección cambia el contrato comercial y qué contexto debe gobernar las dos validaciones; no se puede inferir con seguridad del ejemplo ni de la implementación actual.",
+  "question": "¿Debe limitarse cada cupón por la tienda de compra, por el país de envío —como propone el PR enlazado— o deben admitirse ambos criterios?",
+  "rationale": "La issue describe el aislamiento entre tiendas, pero el PR de cierre evalúa el destino de envío; elegir uno cambia cuándo se acepta o rechaza el descuento.",
   "options": [
     {
-      "title": "Restringir por tienda de compra",
-      "body": "Resolver la tienda desde el host, limitar el cupón a esa tienda y mantener globales los cupones sin restricción.",
+      "title": "Tienda de compra",
+      "body": "Limitar el cupón a la tienda resuelta desde el host de compra y conservar globales los cupones sin restricción.",
       "recommended": true
     },
     {
-      "title": "Restringir por destino",
-      "body": "Decidir la validez según el país de envío, aunque la compra se inicie desde otra tienda.",
+      "title": "País de envío",
+      "body": "Adoptar el criterio implementado por el PR enlazado, usando el país de la dirección o del punto PUDO.",
       "recommended": false
     },
     {
-      "title": "Admitir ambos ámbitos",
-      "body": "Añadir reglas diferenciadas para tienda y destino, con un contrato y configuración más complejos.",
+      "title": "Ambos criterios",
+      "body": "Definir ámbitos independientes para tienda y destino, con la configuración y validación adicional que eso requiere.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Restringir por tienda de compra",
-    "body": "Resolver la tienda desde el host, limitar el cupón a esa tienda y mantener globales los cupones sin restricción.",
+    "title": "Tienda de compra",
+    "body": "Limitar el cupón a la tienda resuelta desde el host de compra y conservar globales los cupones sin restricción.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "La revisión previa lo señaló como responsable probable y actualmente tiene asignada la issue; además, su historial incluye trabajo de rutas por país.",
-    "confidence": "high"
+    "reason": "Tiene asignada la issue y propuso el PR relacionado que hace explícita la alternativa de país de envío.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9937.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9937#issuecomment-5793872704",
-    "reviewedAt": "2026-10-15T10:25:32.066Z",
-    "mainSha": "51154247ef94be30c8122c859bed0f1a0f1e117b"
+    "reviewedAt": "2026-10-21T07:03:43.862Z",
+    "mainSha": "5357a912ae51926bb237755b5218b251d1978605"
   }
 }
