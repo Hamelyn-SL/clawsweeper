@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-20T13:10:14.979Z",
-  "updatedAt": "2026-10-20T12:27:03Z",
+  "generatedAt": "2026-10-21T13:15:34.636Z",
+  "updatedAt": "2026-10-20T14:00:08Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,48 +13,47 @@
       "bug",
       "app:infrastructure",
       "reporter:javier",
-      "triage:queued",
-      "clawsweeper:needs-product-decision",
-      "P1"
+      "triage:needs-info",
+      "P1",
+      "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-10-20T12:26:47Z",
-    "updatedAt": "2026-10-20T12:27:03Z"
+    "updatedAt": "2026-10-20T14:00:08Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué estrategia debe aplicarse a Buscalibre y packing V3 para frenar el crecimiento de la cuenta de servicio, y qué retención se autoriza para los 13,6 GiB existentes?",
-  "rationale": "El código confirma el uso compartido de la cuenta, pero decidir entre delegación de dominio, retención o unidades compartidas implica permisos y posible eliminación irreversible de datos; no puede resolverse solo desde el repositorio.",
+  "question": "¿Se aprueba una unidad compartida como destino para packing V3 y Buscalibre, y deben conservarse intactos los archivos actuales hasta decidir su tratamiento?",
+  "rationale": "La elección afecta permisos, ubicación y almacenamiento de los nuevos ficheros; además, cualquier limpieza de los datos actuales podría ser irreversible y no se debe decidir desde el código.",
   "options": [
     {
-      "title": "Retención acotada",
-      "body": "Definir cuántos CSV y ZIP conservar por carpeta y aprobar la eliminación de los anteriores.",
-      "recommended": false
-    },
-    {
-      "title": "Unidad compartida",
-      "body": "Acordar propietarios y permisos de las carpetas compartidas y mover allí los flujos que lo permitan.",
+      "title": "Unidad compartida y preservar histórico",
+      "body": "Aprobar carpetas y permisos para packing V3 y Buscalibre, y dejar los archivos existentes intactos hasta una decisión separada.",
       "recommended": true
     },
     {
+      "title": "Retención por flujo",
+      "body": "Definir cuántos ficheros conservar en cada ruta y qué histórico puede eliminarse antes de cambiar el código.",
+      "recommended": false
+    },
+    {
       "title": "Delegación de dominio",
-      "body": "Autorizar la configuración de delegación y el usuario de Workspace que asumirá las nuevas subidas.",
+      "body": "Aprobar la configuración administrativa de delegación y el usuario de Workspace que será propietario de las nuevas subidas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Unidad compartida",
-    "body": "Acordar propietarios y permisos de las carpetas compartidas y mover allí los flujos que lo permitan.",
+    "title": "Unidad compartida y preservar histórico",
+    "body": "Aprobar carpetas y permisos para packing V3 y Buscalibre, y dejar los archivos existentes intactos hasta una decisión separada.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Ha documentado las mediciones de consumo y las alternativas, y participa en el PR relacionado de archivo a Drive.",
-    "confidence": "medium"
+    "reason": "La discusión le solicita confirmar destino y permisos, y participa en la PR relacionada que ya concreta una unidad compartida para otro flujo.",
+    "confidence": "low"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/11055.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/11055#issuecomment-6291596290",
-    "reviewedAt": "2026-10-20T13:10:14.979Z",
-    "mainSha": "50c5f0300d20c85ddbbd05482ec7ccb4a50d69fb"
+    "reviewedAt": "2026-10-21T13:15:34.636Z",
+    "mainSha": "13e57cc7d0b8c98774b70cb406c43efa0c5df026"
   }
 }
