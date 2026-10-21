@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-21T09:22:45.340Z",
-  "updatedAt": "2026-10-21T09:11:13Z",
+  "generatedAt": "2026-10-21T09:28:21.798Z",
+  "updatedAt": "2026-10-21T09:24:09Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -14,44 +14,38 @@
       "P2"
     ],
     "createdAt": "2026-10-21T09:11:00Z",
-    "updatedAt": "2026-10-21T09:11:13Z",
+    "updatedAt": "2026-10-21T09:24:09Z",
     "headSha": "7e6d99b6e37d1cd3e2e4144869c4d77e92d2eede"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe esta entrega cerrar la issue de alcance completo aunque el backfill histórico quede para una fase posterior?",
-  "rationale": "La rama implementa una fase útil, pero la issue vinculada también incluye reconstrucción histórica y la decisión sobre líneas ambiguas; cerrar la referencia al integrarla podría ocultar trabajo aceptado que todavía no está hecho.",
+  "question": "¿Se acepta este PR como fase 1 de ventas nuevas dejando el backfill histórico para una fase posterior, o debe incluir la reconstrucción histórica antes de cerrar la issue?",
+  "rationale": "El PR implementa una parte útil y probada del alcance, pero la aceptación original incluye el histórico y el triage previo ya detectó que separar las fases necesita decisión explícita del equipo.",
   "options": [
     {
-      "title": "Separar el backfill y dejar la issue abierta",
-      "body": "Retirar el cierre de la issue de alcance completo y mantener visible el backfill como trabajo pendiente.",
+      "title": "Aceptar fase 1",
+      "body": "Aprobar la captura y persistencia para nuevas ventas y seguir el backfill histórico en una entrega separada.",
       "recommended": true
     },
     {
-      "title": "Convertir esta issue en fase 1",
-      "body": "Ajustar explícitamente el alcance de la issue a ventas nuevas y crear una tarea separada para la reconstrucción histórica.",
-      "recommended": false
-    },
-    {
-      "title": "Incluir el backfill en esta entrega",
-      "body": "Ampliar la rama para resolver y validar también la reconstrucción histórica antes de cerrar la issue.",
+      "title": "Ampliar esta entrega",
+      "body": "Mantener el alcance histórico en este trabajo e incorporar el backfill y su validación antes de cerrar la issue.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Separar el backfill y dejar la issue abierta",
-    "body": "Retirar el cierre de la issue de alcance completo y mantener visible el backfill como trabajo pendiente.",
+    "title": "Aceptar fase 1",
+    "body": "Aprobar la captura y persistencia para nuevas ventas y seguir el backfill histórico en una entrega separada.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "Lyno",
-    "reason": "Aparece en trabajo reciente del flujo ecommerce y en el contexto previo de triaje de la issue vinculada.",
-    "confidence": "low"
+    "person": "MarcosTerroso",
+    "reason": "Figura como responsable asignado de la issue que define el alcance de ambas fases.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/11086.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/11086#issuecomment-6312579254",
-    "reviewedAt": "2026-10-21T09:22:45.340Z",
+    "reviewedAt": "2026-10-21T09:28:21.798Z",
     "mainSha": "58d6870796109082545e399ce38f8b17674cb98f"
   }
 }
