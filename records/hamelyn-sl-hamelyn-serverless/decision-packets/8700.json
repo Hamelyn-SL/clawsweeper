@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-14T09:04:57.952Z",
-  "updatedAt": "2026-10-14T08:21:00Z",
+  "generatedAt": "2026-10-21T08:57:35.811Z",
+  "updatedAt": "2026-10-21T08:19:22Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -18,38 +18,42 @@
       "P2"
     ],
     "createdAt": "2026-08-25T11:13:59Z",
-    "updatedAt": "2026-10-14T08:21:00Z"
+    "updatedAt": "2026-10-21T08:19:22Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe la cohorte envejecida mostrarse primero en una vista de solo lectura para revisión operativa, o se autoriza reencolar cubetas tras confirmar cuáles siguen disponibles para BIN IN?",
-  "rationale": "El endpoint existente encola acciones de Skypod al devolver resultados; el código y la réplica no determinan si las cubetas pendientes siguen físicamente fuera del robot.",
+  "question": "¿La cohorte envejecida debe mostrarse solo para revisión manual, o se autoriza reencolar BIN IN para cubetas confirmadas físicamente disponibles?",
+  "rationale": "La consulta actual activa trabajos al devolver registros; el repositorio no puede determinar la ubicación física de las cubetas ni decidir si reencolarlas es seguro.",
   "options": [
     {
-      "title": "Vista de revisión sin reencolado",
-      "body": "Añadir visibilidad independiente para la cohorte antigua y dejar cualquier BIN IN sujeto a confirmación operativa.",
+      "title": "Vista pasiva y revisión manual",
+      "body": "Añadir visibilidad de la cohorte envejecida sin encolarla automáticamente y dejar la recuperación sujeta a revisión operativa.",
       "recommended": true
     },
     {
-      "title": "Reencolar tras verificación física",
-      "body": "Operaciones confirma qué cubetas siguen disponibles y entonces se define un flujo explícito de reencolado para esas cubetas.",
+      "title": "Reencolar cubetas confirmadas",
+      "body": "Permitir BIN IN solo para las cubetas que Operaciones confirme disponibles, manteniendo la visibilidad separada de la acción.",
+      "recommended": false
+    },
+    {
+      "title": "No ampliar el flujo actual",
+      "body": "Conservar el corte de 12 horas y posponer cambios hasta que exista un proceso operativo confirmado para los stocks antiguos.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Vista de revisión sin reencolado",
-    "body": "Añadir visibilidad independiente para la cohorte antigua y dejar cualquier BIN IN sujeto a confirmación operativa.",
+    "title": "Vista pasiva y revisión manual",
+    "body": "Añadir visibilidad de la cohorte envejecida sin encolarla automáticamente y dejar la recuperación sujeta a revisión operativa.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "banosdavidhamelyn",
-    "reason": "Su trabajo fusionado sobre el flujo de bin-creation le conecta con la implementación; la disponibilidad física debe confirmarla Operaciones.",
+    "reason": "Es la persona identificada en el historial proporcionado con trabajo mergeado sobre la cola de creación BIN; la confirmación física debe venir de Operaciones.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8700.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8700#issuecomment-5409648772",
-    "reviewedAt": "2026-10-14T09:04:57.952Z",
-    "mainSha": "87492ac1d4a74d3094018203271ecff90d61e8a7"
+    "reviewedAt": "2026-10-21T08:57:35.811Z",
+    "mainSha": "bf6e342d65e7e13b942658a7c52f1452f58aec11"
   }
 }
