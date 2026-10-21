@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-21T09:22:45.340Z",
+  "updatedAt": "2026-10-21T09:11:13Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 11086,
+    "title": "feat: persist per-unit shipping surplus on order sells",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/11086",
+    "state": "open",
+    "labels": [
+      "size/XL"
+    ],
+    "createdAt": "2026-10-21T09:11:00Z",
+    "updatedAt": "2026-10-21T09:11:13Z",
+    "headSha": "7e6d99b6e37d1cd3e2e4144869c4d77e92d2eede"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe esta entrega cerrar la issue de alcance completo aunque el backfill histórico quede para una fase posterior?",
+  "rationale": "La rama implementa una fase útil, pero la issue vinculada también incluye reconstrucción histórica y la decisión sobre líneas ambiguas; cerrar la referencia al integrarla podría ocultar trabajo aceptado que todavía no está hecho.",
+  "options": [
+    {
+      "title": "Separar el backfill y dejar la issue abierta",
+      "body": "Retirar el cierre de la issue de alcance completo y mantener visible el backfill como trabajo pendiente.",
+      "recommended": true
+    },
+    {
+      "title": "Convertir esta issue en fase 1",
+      "body": "Ajustar explícitamente el alcance de la issue a ventas nuevas y crear una tarea separada para la reconstrucción histórica.",
+      "recommended": false
+    },
+    {
+      "title": "Incluir el backfill en esta entrega",
+      "body": "Ampliar la rama para resolver y validar también la reconstrucción histórica antes de cerrar la issue.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Separar el backfill y dejar la issue abierta",
+    "body": "Retirar el cierre de la issue de alcance completo y mantener visible el backfill como trabajo pendiente.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Lyno",
+    "reason": "Aparece en trabajo reciente del flujo ecommerce y en el contexto previo de triaje de la issue vinculada.",
+    "confidence": "low"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/11086.md",
+    "reviewedAt": "2026-10-21T09:22:45.340Z",
+    "mainSha": "58d6870796109082545e399ce38f8b17674cb98f"
+  }
+}

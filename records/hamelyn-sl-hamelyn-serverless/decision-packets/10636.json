@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-20T09:09:20.807Z",
-  "updatedAt": "2026-10-20T07:58:38Z",
+  "generatedAt": "2026-10-21T09:23:00.173Z",
+  "updatedAt": "2026-10-20T10:14:24Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -19,38 +19,37 @@
       "P2"
     ],
     "createdAt": "2026-10-08T09:39:46Z",
-    "updatedAt": "2026-10-20T07:58:38Z"
+    "updatedAt": "2026-10-20T10:14:24Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Admin debe ejecutar el abono o registrar uno realizado externamente, y `LOGISTIC_NO_INFO` debe conservar la clasificación histórica de cancelación del Excel o pasar a reembolso?",
-  "rationale": "Son decisiones de negocio que afectan al registro operativo del pago y a la comparabilidad de datos históricos; el código y el adjunto contienen señales contradictorias y no permiten elegir con seguridad.",
+  "question": "¿`LOGISTIC_NO_INFO` debe conservar la categoría «Cancelación» indicada en el Excel o clasificarse como «Reembolso» según el motivo destino descrito?",
+  "rationale": "La documentación de negocio aportada es contradictoria y ambas alternativas afectan a la clasificación histórica; el código actual lo agrupa como reembolso, pero eso no resuelve cuál debe ser la regla aprobada.",
   "options": [
     {
-      "title": "Registrar abono externo y confirmar clasificación",
-      "body": "Mantener el pago fuera de Admin y confirmar con Atención al Cliente si `LOGISTIC_NO_INFO` permanece como cancelación antes de tocar la analítica.",
-      "recommended": true
+      "title": "Mantener cancelación",
+      "body": "Alinear la regla histórica con la clasificación que aparece en la hoja del Excel.",
+      "recommended": false
     },
     {
-      "title": "Ejecutar el abono desde Admin",
-      "body": "Ampliar el alcance para integrar la devolución del pago y acordar por separado la clasificación histórica de `LOGISTIC_NO_INFO`.",
-      "recommended": false
+      "title": "Clasificar como reembolso",
+      "body": "Alinear la regla histórica con la familia de motivo logístico descrita y con el mapeo actual del dashboard.",
+      "recommended": true
     }
   ],
   "recommendation": {
-    "title": "Registrar abono externo y confirmar clasificación",
-    "body": "Mantener el pago fuera de Admin y confirmar con Atención al Cliente si `LOGISTIC_NO_INFO` permanece como cancelación antes de tocar la analítica.",
+    "title": "Clasificar como reembolso",
+    "body": "Alinear la regla histórica con la familia de motivo logístico descrita y con el mapeo actual del dashboard.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "blanca",
-    "reason": "Es la reportera que aporta las reglas operativas y la tabla cuya clasificación debe aclararse.",
+    "person": "banosdavidhamelyn",
+    "reason": "Es la persona asignada y la conversación la señala para concretar la implementación por bloques una vez cerrada la decisión de clasificación.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10636.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10636#issuecomment-6057287700",
-    "reviewedAt": "2026-10-20T09:09:20.807Z",
-    "mainSha": "a6de5111e15cb541262383f9d7ece1994fab6aec"
+    "reviewedAt": "2026-10-21T09:23:00.173Z",
+    "mainSha": "58d6870796109082545e399ce38f8b17674cb98f"
   }
 }
