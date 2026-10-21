@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-20T07:08:31.922Z",
-  "updatedAt": "2026-10-20T07:05:15Z",
+  "generatedAt": "2026-10-21T10:56:06.031Z",
+  "updatedAt": "2026-10-21T10:46:31Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -14,39 +14,38 @@
       "P2"
     ],
     "createdAt": "2026-10-13T12:53:25Z",
-    "updatedAt": "2026-10-20T07:05:15Z",
-    "headSha": "1ec1fdc2b6609bb279a0f4389edc687b53441d12"
+    "updatedAt": "2026-10-21T10:46:31Z",
+    "headSha": "8ba9ff92acc8ca91cd85b62b06eed4b0422e878a"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se confirma el perfil de mínimos móviles `modern` (iOS 16.4+, Android API 24+ y WebView 111+) como requisito de distribución para esta migración?",
-  "rationale": "La issue relacionada https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9721 pide una decisión D12 antes de habilitar esos mínimos; el PR configura `SUPPLY_MOBILE_MINIMUMS=modern` en los workflows de publicación.",
+  "question": "¿Debe Supply Web Capacitor sustituir la app Expo existente bajo `com.hamelyn.hamelynapp` y quedar preparada para publicación y OTA como propone esta PR?",
+  "rationale": "La issue vinculada limita inicialmente el trabajo a proyectos de desarrollo y deja el identificador de producción para una fase posterior; esta PR amplía ese alcance y puede afectar a la continuidad de las instalaciones publicadas.",
   "options": [
     {
-      "title": "Confirmar `modern`",
-      "body": "Aceptar esos mínimos como base de compatibilidad para las builds móviles de Supply.",
+      "title": "Confirmar la sustitución",
+      "body": "Aprobar la migración bajo el identificador existente y verificar la compatibilidad de actualización antes de publicar.",
       "recommended": true
     },
     {
-      "title": "Pedir revisión del alcance",
-      "body": "Dejar la integración pendiente hasta acordar otros mínimos y su impacto en dispositivos compatibles.",
+      "title": "Separar el alcance",
+      "body": "Mantener los proyectos Capacitor para desarrollo y aplazar identidad de tienda, publicación y OTA a una decisión posterior.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Confirmar `modern`",
-    "body": "Aceptar esos mínimos como base de compatibilidad para las builds móviles de Supply.",
+    "title": "Confirmar la sustitución",
+    "body": "Aprobar la migración bajo el identificador existente y verificar la compatibilidad de actualización antes de publicar.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "Es el principal contribuidor histórico de Supply Web y la persona que mantiene la propuesta técnica de esta integración.",
+    "person": "Daniel",
+    "reason": "La revisión previa lo señaló como candidato más probable para decidir el alcance de sustitución de la app publicada.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10805.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10805#issuecomment-6146409288",
-    "reviewedAt": "2026-10-21T07:14:54.077Z",
-    "mainSha": "268e6196b668f9e7350ed647622c98be2dd88690"
+    "reviewedAt": "2026-10-21T10:56:06.031Z",
+    "mainSha": "1a2fc56c58c08536a7896749a58f0a2212341c14"
   }
 }
