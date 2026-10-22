@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-20T07:09:32.104Z",
-  "updatedAt": "2026-10-20T06:45:05Z",
+  "generatedAt": "2026-10-22T17:58:21.381Z",
+  "updatedAt": "2026-10-20T07:13:49Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,43 +14,47 @@
       "feature",
       "triage:done",
       "clawsweeper:needs-product-decision",
+      "P2",
       "origin:dev",
-      "reporter:mariatapia",
-      "P2"
+      "reporter:mariatapia"
     ],
     "createdAt": "2026-10-20T06:06:19Z",
-    "updatedAt": "2026-10-20T06:45:05Z"
+    "updatedAt": "2026-10-20T07:13:49Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué cobertura de tickets, mensajes y entidades debe considerarse definitiva para el primer corte, incluidos Spam/Archived, cambios en tickets cerrados y entidades cuya versión anterior queda fuera de 30 días?",
-  "rationale": "El alcance determina qué datos y cambios se conservan y cómo evitar duplicados; la issue enumera preguntas de ATC aún sin resolver, por lo que no es seguro fijar esas reglas solo desde el código.",
+  "question": "¿Qué subconjunto de datos y política de provisión de BigQuery se autoriza para la primera entrega de la sincronización eDesk?",
+  "rationale": "La propuesta abarca extracción histórica, avance persistido y estructuras nuevas, mientras que las preguntas de cobertura de tickets, mensajes y entidades aún afectan el contrato de datos y el alcance de la primera entrega.",
   "options": [
     {
-      "title": "Cerrar contrato con ATC",
-      "body": "Acordar estados, entidades y semántica de cambios antes de implementar la extracción y su deduplicación.",
+      "title": "Acordar y acotar la primera entrega",
+      "body": "Definir con Data/ATC entidades y cobertura inicial, y autorizar explícitamente la provisión necesaria antes de implementar la carga.",
       "recommended": true
     },
     {
-      "title": "Reducir el primer corte",
-      "body": "Aplazar estados y entidades sin decisión y acotar el primer entregable a los datos ya confirmados.",
+      "title": "Separar contrato y provisión",
+      "body": "Mantener la issue abierta y dividir primero el diseño/DDL y la autorización de estructuras de la implementación del sincronizador.",
+      "recommended": false
+    },
+    {
+      "title": "Posponer la extracción",
+      "body": "Esperar a que se resuelvan las preguntas de cobertura antes de comprometer cron, histórico y persistencia de avance.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Cerrar contrato con ATC",
-    "body": "Acordar estados, entidades y semántica de cambios antes de implementar la extracción y su deduplicación.",
+    "title": "Acordar y acotar la primera entrega",
+    "body": "Definir con Data/ATC entidades y cobertura inicial, y autorizar explícitamente la provisión necesaria antes de implementar la carga.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "mariatapia-hamelyn",
-    "reason": "Es la responsable asignada indicada en la issue y puede coordinar la definición con el equipo de ATC.",
+    "reason": "Figura como responsable de esta propuesta y de la issue dependiente de dashboard; la decisión requiere además participación de Data/ATC.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/11014.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/11014#issuecomment-6285514133",
-    "reviewedAt": "2026-10-20T07:09:32.104Z",
-    "mainSha": "24b4cb1a02adf5126c8358550480f4fbf04d0418"
+    "reviewedAt": "2026-10-22T17:58:21.381Z",
+    "mainSha": "8529fe8e4a3805c3a85f25a3abcc1a50e03a26af"
   }
 }

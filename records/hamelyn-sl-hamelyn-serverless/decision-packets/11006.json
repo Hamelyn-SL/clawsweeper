@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-20T17:57:14.913Z",
-  "updatedAt": "2026-10-19T17:51:17Z",
+  "generatedAt": "2026-10-22T17:57:00.003Z",
+  "updatedAt": "2026-10-20T17:58:13Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -19,38 +19,37 @@
       "P2"
     ],
     "createdAt": "2026-10-19T17:37:07Z",
-    "updatedAt": "2026-10-19T17:51:17Z"
+    "updatedAt": "2026-10-20T17:58:13Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe esta regla concreta implementarse como adelanto independiente, o incorporarse al trabajo de tiers de indexación abierto en https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10508?",
-  "rationale": "La issue relacionada define una política amplia de tiers que ya cubre noindex y sitemaps, mientras que esta solicitud adelanta un subconjunto y requiere una fuente histórica de stock; dividirlas podría duplicar decisiones y lógica SEO.",
+  "question": "¿Debe adelantarse esta regla acotada antes del sistema de tiers de la issue relacionada, y qué fuente fiable debe determinar si una ficha tuvo stock alguna vez?",
+  "rationale": "La solicitud modifica una política de SEO y su implementación depende de coordinar los datos históricos con metadata y sitemaps; la discusión existente identifica ese límite, pero no establece una solución aprobada para este subconjunto.",
   "options": [
     {
-      "title": "Integrar en tiers",
-      "body": "Mantener el comportamiento actual hasta que la regla de fichas sin historial forme parte de la implementación coordinada de tiers.",
+      "title": "Adelantar la regla acotada",
+      "body": "Definir ahora la fuente del historial y aplicar la exclusión coherentemente a metadata, respuesta y sitemaps.",
       "recommended": true
     },
     {
-      "title": "Adelantar excepción",
-      "body": "Implementar esta regla primero con una política compartida que después pueda reutilizar el sistema de tiers.",
+      "title": "Integrarla en los tiers",
+      "body": "Conservar esta regla como requisito del sistema más amplio y evitar una política temporal separada.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Integrar en tiers",
-    "body": "Mantener el comportamiento actual hasta que la regla de fichas sin historial forme parte de la implementación coordinada de tiers.",
+    "title": "Adelantar la regla acotada",
+    "body": "Definir ahora la fuente del historial y aplicar la exclusión coherentemente a metadata, respuesta y sitemaps.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "victorhamelyn",
-    "reason": "Aclaró decisiones de política SEO en la issue relacionada y es el vínculo más directo disponible con la definición del comportamiento esperado.",
-    "confidence": "medium"
+    "reason": "Aclaró la política de tier 3 y el alcance de exclusión del sitemap en la especificación relacionada.",
+    "confidence": "low"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/11006.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/11006#issuecomment-6273558602",
-    "reviewedAt": "2026-10-20T17:57:14.913Z",
-    "mainSha": "c95584eaa262afcdf3c7aceaec29faf19ffcfa0d"
+    "reviewedAt": "2026-10-22T17:57:00.003Z",
+    "mainSha": "8529fe8e4a3805c3a85f25a3abcc1a50e03a26af"
   }
 }

@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-20T07:09:21.019Z",
-  "updatedAt": "2026-10-20T06:18:05Z",
+  "generatedAt": "2026-10-22T17:57:53.157Z",
+  "updatedAt": "2026-10-20T07:13:44Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -14,39 +14,38 @@
       "P2"
     ],
     "createdAt": "2026-10-20T06:00:41Z",
-    "updatedAt": "2026-10-20T06:18:05Z",
+    "updatedAt": "2026-10-20T07:13:44Z",
     "headSha": "d437d790e5a2a11e556aab089807554ab162af12"
   },
-  "lane": "security_boundary",
+  "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se acepta activar la réplica de WonderPush sabiendo que una petición tardía podría suscribir una instalación después del cierre de sesión, y se han confirmado las condiciones de FCM de iOS con WonderPush?",
-  "rationale": "La discusión del PR deja ambas condiciones pendientes; la aceptación determina si el comportamiento de suscripción tras logout es admisible para campañas y privacidad.",
+  "question": "¿Se autoriza activar la réplica de tokens a WonderPush antes de confirmar con el proveedor los tokens FCM por plataforma y el ciclo de vida de las instalaciones desde servidor?",
+  "rationale": "El cambio queda desactivado sin configuración, pero la puesta en marcha puede producir instalaciones no utilizables o campañas que no lleguen; el PR y la épica señalan que esas capacidades aún deben confirmarse.",
   "options": [
     {
-      "title": "Exigir confirmación y reconciliación",
-      "body": "Mantener desactivada la integración hasta confirmar FCM de iOS y añadir reconciliación periódica que corrija peticiones tardías.",
+      "title": "Esperar confirmación y prueba",
+      "body": "Mantener la integración apagada hasta validar el contrato del proveedor y probar altas y bajas reales por plataforma.",
       "recommended": true
     },
     {
       "title": "Aceptar el riesgo documentado",
-      "body": "Permitir la activación tras confirmar el soporte del proveedor y aceptar que una petición tardía pueda dejar una instalación suscrita.",
+      "body": "Permitir activarla con la limitación actual y observar la entrega en dispositivos de prueba antes de ampliar campañas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Exigir confirmación y reconciliación",
-    "body": "Mantener desactivada la integración hasta confirmar FCM de iOS y añadir reconciliación periódica que corrija peticiones tardías.",
+    "title": "Esperar confirmación y prueba",
+    "body": "Mantener la integración apagada hasta validar el contrato del proveedor y probar altas y bajas reales por plataforma.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "danielmenchen-hamelyn",
-    "reason": "Lidera el trabajo de migración a Brevo y el PR identifica explícitamente estas confirmaciones pendientes.",
+    "person": "Daniel",
+    "reason": "El historial lo vincula con el canal de push de comunicación y la issue emparejada atribuye el seguimiento de la integración a quien lleva esta área.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/11013.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/11013#issuecomment-6285512927",
-    "reviewedAt": "2026-10-20T07:09:21.019Z",
-    "mainSha": "24b4cb1a02adf5126c8358550480f4fbf04d0418"
+    "reviewedAt": "2026-10-22T17:57:53.157Z",
+    "mainSha": "8529fe8e4a3805c3a85f25a3abcc1a50e03a26af"
   }
 }

@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-22T09:57:41.646Z",
-  "updatedAt": "2026-10-22T09:02:37Z",
+  "generatedAt": "2026-10-22T17:59:31.844Z",
+  "updatedAt": "2026-10-22T09:58:42Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -14,39 +14,38 @@
       "P2"
     ],
     "createdAt": "2026-10-20T08:02:04Z",
-    "updatedAt": "2026-10-22T09:02:37Z",
+    "updatedAt": "2026-10-22T09:58:42Z",
     "headSha": "3ba4345edbb4717de214a869224ca2863660d31d"
   },
   "lane": "release_inclusion",
   "priority": "P2",
-  "question": "¿Se puede garantizar que la actualización de `countries` se ejecute inmediatamente tras el despliegue de producción y antes de que la tienda opere con la matriz anterior?",
-  "rationale": "El PR declara que la actualización de tarifas es un paso operativo separado, y ya se ha observado el comportamiento incorrecto durante esa ventana; hace falta confirmar cómo se controlará el despliegue.",
+  "question": "¿Se puede coordinar el despliegue a producción para cargar la nueva matriz `countries` inmediatamente después del despliegue y antes de reanudar los feeds de Merchant?",
+  "rationale": "El cambio de código y la actualización de tarifas persistidas son pasos separados; el orden determina si los clientes ven tarifas urgentes erróneas o indisponibles durante la transición.",
   "options": [
     {
-      "title": "Coordinar ambos pasos",
-      "body": "Aprobar el cambio con el despliegue y la carga de `countries` coordinados, comprobando las tarifas afectadas antes de reabrir el tráfico normal.",
+      "title": "Aprobar con secuencia coordinada",
+      "body": "Programar el despliegue junto con la carga de `countries` y la reactivación del feed según el orden descrito en el PR.",
       "recommended": true
     },
     {
-      "title": "Pausar hasta automatizar la transición",
-      "body": "Mantener el PR pendiente hasta que la actualización de tarifas forme parte de un procedimiento de despliegue controlado que elimine la ventana de discrepancia.",
+      "title": "Pausar hasta preparar la carga",
+      "body": "No integrar hasta tener confirmada la ejecución operativa de la matriz y del feed en una misma ventana.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Coordinar ambos pasos",
-    "body": "Aprobar el cambio con el despliegue y la carga de `countries` coordinados, comprobando las tarifas afectadas antes de reabrir el tráfico normal.",
+    "title": "Aprobar con secuencia coordinada",
+    "body": "Programar el despliegue junto con la carga de `countries` y la reactivación del feed según el orden descrito en el PR.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "banosdavidhamelyn",
-    "reason": "Ha revisado el comportamiento visible y ha señalado expresamente la discrepancia de tarifas durante la transición.",
+    "person": "JavierHamelyn",
+    "reason": "Su historial local está vinculado al mapa de recargos por tienda, el componente de producto más directamente afectado por la decisión de tarifas.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/11039.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/11039#issuecomment-6287483470",
-    "reviewedAt": "2026-10-22T09:57:41.646Z",
-    "mainSha": "ce059dee063ef7b5d18c266a279dc984bf71d596"
+    "reviewedAt": "2026-10-22T17:59:31.844Z",
+    "mainSha": "8529fe8e4a3805c3a85f25a3abcc1a50e03a26af"
   }
 }

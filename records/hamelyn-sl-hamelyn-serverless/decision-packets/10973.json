@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-20T07:09:04.996Z",
-  "updatedAt": "2026-10-19T06:14:53Z",
+  "generatedAt": "2026-10-22T17:54:49.706Z",
+  "updatedAt": "2026-10-20T07:13:11Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -18,38 +18,37 @@
       "P2"
     ],
     "createdAt": "2026-10-19T05:49:00Z",
-    "updatedAt": "2026-10-19T06:14:53Z"
+    "updatedAt": "2026-10-20T07:13:11Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se ha desplegado ya la fase 1 y se ha observado un día laborable completo con telemetría activa y sin peticiones sin token en estas tres rutas?",
-  "rationale": "La protección es técnicamente directa, pero activarla antes de confirmar la migración de clientes puede volver a interrumpir la revisión de gavetas; el código local no acredita el estado de producción ni la ventana de observación.",
+  "question": "¿Se ha desplegado la fase 1 y se ha completado un día laborable con telemetría activa y sin peticiones sin token en estas rutas?",
+  "rationale": "La activación cambia el acceso de sesiones existentes y ya hubo una interrupción operativa al exigir autenticación antes de que los clientes antiguos dejaran de llamar sin token.",
   "options": [
     {
-      "title": "Esperar a completar la observación",
-      "body": "Mantener esta fase pendiente hasta confirmar el despliegue de la fase 1 y una jornada laborable completa con telemetría activa.",
+      "title": "Esperar la observación completa",
+      "body": "Mantener pendiente la fase 2 hasta confirmar despliegue de la fase 1 y una jornada laborable completa con telemetría activa.",
       "recommended": true
     },
     {
-      "title": "Autorizar la activación anticipada",
-      "body": "Aceptar el riesgo operativo y programar la protección antes de completar la ventana, con vigilancia reforzada del almacén.",
+      "title": "Autorizar activación anticipada",
+      "body": "Aceptar el riesgo de sesiones con bundle antiguo y programar la protección con vigilancia reforzada del almacén.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Esperar a completar la observación",
-    "body": "Mantener esta fase pendiente hasta confirmar el despliegue de la fase 1 y una jornada laborable completa con telemetría activa.",
+    "title": "Esperar la observación completa",
+    "body": "Mantener pendiente la fase 2 hasta confirmar despliegue de la fase 1 y una jornada laborable completa con telemetría activa.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "danielmenchen-hamelyn",
-    "reason": "Es el responsable asignado a la issue y autor de la fase 1 cuya observación condiciona esta decisión.",
-    "confidence": "high"
+    "reason": "La discusión le señala como responsable de completar el despliegue y comprobar la telemetría previa a esta fase.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10973.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10973#issuecomment-6285504872",
-    "reviewedAt": "2026-10-20T07:09:04.996Z",
-    "mainSha": "24b4cb1a02adf5126c8358550480f4fbf04d0418"
+    "reviewedAt": "2026-10-22T17:54:49.706Z",
+    "mainSha": "8529fe8e4a3805c3a85f25a3abcc1a50e03a26af"
   }
 }

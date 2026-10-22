@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-20T10:54:40.211Z",
-  "updatedAt": "2026-10-19T10:59:15Z",
+  "generatedAt": "2026-10-22T17:56:26.147Z",
+  "updatedAt": "2026-10-20T10:55:36Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -18,43 +18,42 @@
       "P2"
     ],
     "createdAt": "2026-10-19T10:42:15Z",
-    "updatedAt": "2026-10-19T10:59:15Z"
+    "updatedAt": "2026-10-20T10:55:36Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se aprueba la segunda pasada manual de Argos y qué campos y contrato de auditoría persistente se autorizan para sus escrituras en products y stocks?",
-  "rationale": "La propuesta añade una nueva capacidad que modifica datos persistentes; la revisión de la PR identifica que el alcance de las escrituras y el esquema de auditoría necesitan aprobación del equipo antes de integrar.",
+  "question": "¿Qué política debe seguir la segunda pasada de Argos para las escrituras en products y stocks y su auditoría persistente?",
+  "rationale": "La decisión define el comportamiento de una capacidad nueva que puede reemplazar o borrar datos de producto; el criterio no queda determinado por el contrato actual.",
   "options": [
     {
       "title": "Aprobar con contrato acordado",
-      "body": "Definir los campos modificables y el esquema de auditoría antes de integrar y habilitar las escrituras.",
+      "body": "Definir los campos editables y el esquema de auditoría antes de integrar y habilitar las escrituras.",
       "recommended": true
     },
     {
-      "title": "Validar en solo lectura",
-      "body": "Mantener la investigación sin escrituras persistentes hasta acordar la política de cambios y auditoría.",
+      "title": "Validar primero en solo lectura",
+      "body": "Mantener la investigación y el plan de cambios sin escrituras persistentes hasta cerrar la política.",
       "recommended": false
     },
     {
       "title": "No incorporar la segunda pasada",
-      "body": "Descartar esta dirección y retirar la implementación de enriquecimiento propuesta.",
+      "body": "Descartar esta dirección y retirar el enriquecimiento propuesto.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Aprobar con contrato acordado",
-    "body": "Definir los campos modificables y el esquema de auditoría antes de integrar y habilitar las escrituras.",
+    "body": "Definir los campos editables y el esquema de auditoría antes de integrar y habilitar las escrituras.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "PabloMoran34",
-    "reason": "Es el candidato de enrutamiento con historial reciente en Argos y responsable de la PR enlazada; la decisión de producto corresponde al equipo.",
-    "confidence": "low"
+    "reason": "Su historial local reciente toca el procesamiento Argos y es responsable de la PR candidata.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10994.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10994#issuecomment-6265494292",
-    "reviewedAt": "2026-10-20T10:54:40.211Z",
-    "mainSha": "17862bfdc5f20dfb8b74268970fee4d86e8bc21b"
+    "reviewedAt": "2026-10-22T17:56:26.147Z",
+    "mainSha": "8529fe8e4a3805c3a85f25a3abcc1a50e03a26af"
   }
 }

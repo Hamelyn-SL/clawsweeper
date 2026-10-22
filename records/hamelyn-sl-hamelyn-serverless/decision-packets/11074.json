@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-21T07:09:29.815Z",
-  "updatedAt": "2026-10-21T07:00:16Z",
+  "generatedAt": "2026-10-22T17:57:43.529Z",
+  "updatedAt": "2026-10-21T07:10:30Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,42 +14,41 @@
       "reporter:davidgonzalez",
       "feature",
       "triage:done",
-      "P2",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2"
     ],
     "createdAt": "2026-10-21T06:43:08Z",
-    "updatedAt": "2026-10-21T07:00:16Z"
+    "updatedAt": "2026-10-21T07:10:30Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué fuente debe determinar si se planifica para dos o tres estaciones y cómo debe conservarse ese reparto para las OP creadas durante el día?",
-  "rationale": "La regla afecta a la asignación de OP, al orden inmutable enviado a Skypod y a la desfragmentación; el código actual no define la fuente operativa ni el ciclo de vida de ese plan.",
+  "question": "¿Qué regla operativa debe fijarse para el reparto de OP entre dos o tres estaciones y para asignar Buscalibre y restos antes de implementar el plan persistente?",
+  "rationale": "El código confirma que falta la capacidad, pero no determina qué configuración de estaciones está activa ni cómo resolver los casos de reparto descritos; esas decisiones afectan el flujo físico del almacén y el consumidor nocturno.",
   "options": [
     {
-      "title": "Acordar un plan persistido compartido",
-      "body": "Definir la fuente de estaciones activas y guardar estación/turno por OP para que envío, documentos, admin y desfragmentación consuman el mismo reparto.",
+      "title": "Aprobar las reglas propuestas",
+      "body": "Implementar las reglas de estación, turno, Buscalibre/restos y prioridad 900 para S-EX/NE-EX descritas en la issue.",
       "recommended": true
     },
     {
-      "title": "Mantener el reparto en lógica de generación",
-      "body": "Calcular la asignación al crear las OP y confirmar cómo se mantendrá coherente con las OP posteriores y la desfragmentación.",
+      "title": "Ajustar las reglas operativas",
+      "body": "Definir primero una variante revisada para el reparto de OP y el comportamiento de la desfragmentación nocturna.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Acordar un plan persistido compartido",
-    "body": "Definir la fuente de estaciones activas y guardar estación/turno por OP para que envío, documentos, admin y desfragmentación consuman el mismo reparto.",
+    "title": "Aprobar las reglas propuestas",
+    "body": "Implementar las reglas de estación, turno, Buscalibre/restos y prioridad 900 para S-EX/NE-EX descritas en la issue.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "banosdavidhamelyn",
-    "reason": "El comentario de triage le señala como responsable actual y el acuerdo requerido es principalmente operativo.",
+    "reason": "Figura como responsable actual en la discusión y tiene contribuciones recientes en código de picking.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/11074.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/11074#issuecomment-6310249370",
-    "reviewedAt": "2026-10-21T07:09:29.815Z",
-    "mainSha": "268e6196b668f9e7350ed647622c98be2dd88690"
+    "reviewedAt": "2026-10-22T17:57:43.529Z",
+    "mainSha": "8529fe8e4a3805c3a85f25a3abcc1a50e03a26af"
   }
 }

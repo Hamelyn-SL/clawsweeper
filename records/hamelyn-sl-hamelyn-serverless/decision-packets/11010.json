@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-21T07:15:10.355Z",
-  "updatedAt": "2026-10-20T07:13:21Z",
+  "generatedAt": "2026-10-22T17:56:43.455Z",
+  "updatedAt": "2026-10-21T07:23:27Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -14,39 +14,38 @@
       "P2"
     ],
     "createdAt": "2026-10-20T05:51:33Z",
-    "updatedAt": "2026-10-20T07:13:21Z",
+    "updatedAt": "2026-10-21T07:23:27Z",
     "headSha": "a87ab18a0a9e1859c212a8561d8a5af7f5463cf1"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se aprueba incorporar el envío transaccional paralelo por Brevo como primera fase de la migración de Mandrill, con activación posterior por configuración?",
-  "rationale": "Es una nueva capacidad de proveedor ligada a una migración operativa; la issue y la épica mantienen una señal de decisión de producto, y la activación de producción está separada de este PR.",
+  "question": "¿Confirma el equipo incorporar Brevo como proveedor transaccional opcional por entorno y plantilla, manteniendo Mandrill para el resto y como ruta de envío directo?",
+  "rationale": "La issue enlazada marca esta decisión como pendiente y el cambio introduce un proveedor nuevo y un modo de migración que no se deducen solo de la corrección técnica.",
   "options": [
     {
-      "title": "Aprobar fase paralela",
-      "body": "Integrar la ruta optativa en la épica y habilitarla solo tras completar el plan de despliegue y validación.",
+      "title": "Aprobar migración gradual",
+      "body": "Continuar con Brevo optativo por plantilla y mantener Mandrill para el tráfico no activado.",
       "recommended": true
     },
     {
-      "title": "Limitar o aplazar el alcance",
-      "body": "Dejar Brevo fuera del código de envío hasta que se confirme la estrategia y el calendario de sustitución.",
+      "title": "Aplazar activación",
+      "body": "Mantener la integración sin activar hasta cerrar los requisitos operativos y comerciales de Brevo.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar fase paralela",
-    "body": "Integrar la ruta optativa en la épica y habilitarla solo tras completar el plan de despliegue y validación.",
+    "title": "Aprobar migración gradual",
+    "body": "Continuar con Brevo optativo por plantilla y mantener Mandrill para el tráfico no activado.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "danielmenchen-hamelyn",
-    "reason": "Ha desarrollado el flujo de comunicaciones afectado y figura en el seguimiento de la épica de migración; no hay evidencia local que identifique un decisor de producto distinto.",
-    "confidence": "medium"
+    "reason": "Es la persona responsable de la migración según la issue vinculada y ha mantenido recientemente el código de comunicaciones afectado.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/11010.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/11010#issuecomment-6310344293",
-    "reviewedAt": "2026-10-21T07:15:10.355Z",
-    "mainSha": "268e6196b668f9e7350ed647622c98be2dd88690"
+    "reviewedAt": "2026-10-22T17:56:43.455Z",
+    "mainSha": "8529fe8e4a3805c3a85f25a3abcc1a50e03a26af"
   }
 }

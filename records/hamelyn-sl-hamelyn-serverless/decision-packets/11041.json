@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-22T17:59:19.842Z",
+  "updatedAt": "2026-10-20T09:00:24Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 11041,
+    "title": "Supply Android: enable R8 obfuscation flagged by Play Console DEX optimization",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/11041",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:supply",
+      "reporter:miguel",
+      "triage:blocked",
+      "P2"
+    ],
+    "createdAt": "2026-10-20T08:29:55Z",
+    "updatedAt": "2026-10-20T09:00:24Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe activarse R8 con reducción de recursos en las builds release de Supply y conservarse el mapping de cada versión como parte del flujo de publicación?",
+  "rationale": "La configuración afecta a binarios de producción y el reporte solicita tanto cambiar el comportamiento como validar plugins y gestionar símbolos de desofuscación; la política de release debe quedar confirmada por el equipo responsable de Supply.",
+  "options": [
+    {
+      "title": "Adoptar R8 en release",
+      "body": "Integrar el cambio tras la PR nativa y exigir validación de los flujos afectados y conservación del mapping en cada publicación.",
+      "recommended": true
+    },
+    {
+      "title": "Separar decisión y diagnóstico",
+      "body": "Mantener la configuración actual hasta acordar primero el procedimiento de mapping y los criterios de aceptación de la build release.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Adoptar R8 en release",
+    "body": "Integrar el cambio tras la PR nativa y exigir validación de los flujos afectados y conservación del mapping en cada publicación.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Es el autor de la PR que incorpora el proyecto nativo de Supply web, base técnica necesaria para decidir e implementar el cambio.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/11041.md",
+    "reviewedAt": "2026-10-22T17:59:19.842Z",
+    "mainSha": "8529fe8e4a3805c3a85f25a3abcc1a50e03a26af"
+  }
+}

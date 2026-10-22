@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-19T08:07:12.885Z",
-  "updatedAt": "2026-10-18T08:00:42Z",
+  "generatedAt": "2026-10-22T17:55:19.774Z",
+  "updatedAt": "2026-10-19T08:08:09Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -17,38 +17,37 @@
       "P2"
     ],
     "createdAt": "2026-10-18T07:52:06Z",
-    "updatedAt": "2026-10-18T08:00:42Z"
+    "updatedAt": "2026-10-19T08:08:09Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué capacidad y plazo objetivo se aprueban para el reprice de TodoColección, teniendo en cuenta la cuota efectiva del proveedor y la capacidad necesaria para las otras fases?",
-  "rationale": "El código no documenta una cuota verificable ni un SLA de drenaje; aumentar el límite o reducir la espera sin esa decisión puede causar throttling o desplazar trabajo de otras fases.",
+  "question": "¿Qué plazo y capacidad de drenaje se aprueban para TodoColección, y qué mediciones de cuota y de impacto en altas y retiradas deben cumplirse antes de cambiar el pacing?",
+  "rationale": "El consumidor procesa lotes, pero la cuota efectiva no está documentada y la elección de capacidad afecta el equilibrio entre fases; no se puede derivar de forma segura un umbral solo del código.",
   "options": [
     {
-      "title": "Acordar y medir un objetivo",
-      "body": "Definir capacidad y plazo con datos de cuota, y validar en producción que la cola desciende sin throttling sostenido ni deterioro de otras fases.",
+      "title": "Acordar y medir una ampliación controlada",
+      "body": "Definir un objetivo de drenaje y validar en producción el margen de cuota y el impacto en las demás fases antes de ajustar capacidad o pacing.",
       "recommended": true
     },
     {
-      "title": "Mantener el pacing actual",
-      "body": "Conservar la configuración mientras se reúnen mediciones comparables de entradas, drenaje y respuestas del proveedor.",
+      "title": "Mantener el ritmo actual mientras se mide",
+      "body": "Conservar la configuración vigente hasta obtener mediciones comparables de entradas, drenaje y respuestas de TodoColección.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Acordar y medir un objetivo",
-    "body": "Definir capacidad y plazo con datos de cuota, y validar en producción que la cola desciende sin throttling sostenido ni deterioro de otras fases.",
+    "title": "Acordar y medir una ampliación controlada",
+    "body": "Definir un objetivo de drenaje y validar en producción el margen de cuota y el impacto en las demás fases antes de ajustar capacidad o pacing.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "El comentario de triage previo lo propone para esta decisión operativa, aunque no se ha podido confirmar mediante el historial del código.",
-    "confidence": "low"
+    "reason": "El historial local lo conecta con el reintento de reprice de TodoColección y el comentario de triage lo propone para coordinar la definición operativa.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10969.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10969#issuecomment-6247374403",
-    "reviewedAt": "2026-10-19T08:07:12.885Z",
-    "mainSha": "3f87f9bb8bc9a7071a2f47a7947e8f615cf60787"
+    "reviewedAt": "2026-10-22T17:55:19.774Z",
+    "mainSha": "8529fe8e4a3805c3a85f25a3abcc1a50e03a26af"
   }
 }

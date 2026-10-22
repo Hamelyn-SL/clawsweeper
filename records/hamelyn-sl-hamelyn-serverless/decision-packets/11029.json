@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-20T07:03:28.940Z",
-  "updatedAt": "2026-10-20T07:00:07Z",
+  "generatedAt": "2026-10-22T18:00:02.392Z",
+  "updatedAt": "2026-10-20T07:04:16Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,43 +14,47 @@
       "feature",
       "triage:blocked",
       "reporter:danielmenchen",
-      "epic:brevo",
+      "clawsweeper:needs-product-decision",
       "P2",
-      "clawsweeper:needs-product-decision"
+      "epic:brevo"
     ],
     "createdAt": "2026-10-20T06:19:14Z",
-    "updatedAt": "2026-10-20T07:00:07Z"
+    "updatedAt": "2026-10-20T07:04:16Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "Cuando se retire Mandrill, ¿el envío directo con la cola desactivada debe usar Brevo o debe exigirse que la cola esté activa?",
-  "rationale": "La elección cambia el comportamiento de un flujo existente; la eliminación de Mandrill no determina por sí sola cuál debe ser el contrato operativo.",
+  "question": "Tras migrar a Brevo, ¿el envío directo cuando la cola está desactivada debe seguir disponible mediante Brevo o debe exigirse que la cola esté activa?",
+  "rationale": "La opción altera el comportamiento existente de envío con la cola apagada; escogerla requiere intención del equipo antes de retirar Mandrill.",
   "options": [
     {
-      "title": "Mantener el envío directo con Brevo",
-      "body": "Añadir transporte directo de Brevo para conservar el funcionamiento actual cuando la cola está desactivada.",
+      "title": "Conservar envío directo con Brevo",
+      "body": "Mantener la ruta directa existente y sustituir su transporte para no hacer depender los envíos del estado de la cola.",
       "recommended": true
     },
     {
-      "title": "Exigir la cola activa",
-      "body": "Eliminar el envío directo y hacer que la aplicación dependa del worker de comunicaciones para enviar.",
+      "title": "Exigir cola activa",
+      "body": "Eliminar la ruta directa y hacer explícito el fallo cuando la cola esté desactivada, aceptando el cambio de comportamiento.",
+      "recommended": false
+    },
+    {
+      "title": "Aplazar esta retirada",
+      "body": "Conservar Mandrill hasta que el equipo acuerde y valide la política para el envío directo.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mantener el envío directo con Brevo",
-    "body": "Añadir transporte directo de Brevo para conservar el funcionamiento actual cuando la cola está desactivada.",
+    "title": "Conservar envío directo con Brevo",
+    "body": "Mantener la ruta directa existente y sustituir su transporte para no hacer depender los envíos del estado de la cola.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "danielmenchen-hamelyn",
-    "reason": "Ha coordinado la migración y documentado tanto el transporte pendiente como los prerrequisitos operativos.",
-    "confidence": "high"
+    "reason": "Coordina la épica y documentó esta ruta como parte pendiente de la migración.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/11029.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/11029#issuecomment-6285372642",
-    "reviewedAt": "2026-10-20T07:03:28.940Z",
-    "mainSha": "24b4cb1a02adf5126c8358550480f4fbf04d0418"
+    "reviewedAt": "2026-10-22T18:00:02.392Z",
+    "mainSha": "8529fe8e4a3805c3a85f25a3abcc1a50e03a26af"
   }
 }

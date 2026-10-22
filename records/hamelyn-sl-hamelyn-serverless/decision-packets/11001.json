@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-22T14:50:38.134Z",
-  "updatedAt": "2026-10-22T06:39:55Z",
+  "generatedAt": "2026-10-22T17:56:04.461Z",
+  "updatedAt": "2026-10-22T14:51:43Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -14,39 +14,38 @@
       "P2"
     ],
     "createdAt": "2026-10-19T12:18:41Z",
-    "updatedAt": "2026-10-22T06:39:55Z",
+    "updatedAt": "2026-10-22T14:51:43Z",
     "headSha": "0ceb940327e14b18f6923c941d434f6d037f66f2"
   },
-  "lane": "merge_risk",
+  "lane": "product_direction",
   "priority": "P2",
-  "question": "¿La cabeza que se pretende integrar mantiene el origen no verificable como desconocido y conserva el reintento del PATCH de UK ante fallos transitorios?",
-  "rationale": "El comentario más reciente contradice el comportamiento que muestra la cabeza actual, y no existe un commit nuevo que permita determinar cuál es la intención final.",
+  "question": "¿Debe este PR enviar el país editorial inferido del ISBN para libros o debe esperar a disponer de un dato verificable del país de fabricación por artículo, como pide la issue enlazada?",
+  "rationale": "Son datos distintos: los grupos ISBN identifican el registro/editorial, mientras que la issue y su aclaración piden fabricación. La decisión cambia el significado del dato persistido/publicado y no puede resolverse solo con una validación técnica.",
   "options": [
     {
-      "title": "Confirmar la cabeza actual",
-      "body": "Mantener `0ceb940` si sigue siendo el cambio final y revisar de nuevo su comportamiento antes de integrar.",
+      "title": "Exigir origen verificable",
+      "body": "Mantener la issue como objetivo y posponer el envío hasta acordar una fuente fiable del país de fabricación por artículo.",
       "recommended": true
     },
     {
-      "title": "Publicar la reversión descrita",
-      "body": "Actualizar la rama y solicitar otra revisión porque el valor por defecto y el descarte del fallo cambian los acuerdos previos.",
+      "title": "Aprobar país editorial para libros",
+      "body": "Aceptar que el dato para libros represente el país de publicación y documentar explícitamente ese alcance distinto del país de fabricación.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Confirmar la cabeza actual",
-    "body": "Mantener `0ceb940` si sigue siendo el cambio final y revisar de nuevo su comportamiento antes de integrar.",
+    "title": "Exigir origen verificable",
+    "body": "Mantener la issue como objetivo y posponer el envío hasta acordar una fuente fiable del país de fabricación por artículo.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Es quien planteó los dos requisitos técnicos en su revisión y tiene contexto directo sobre los casos de Amazon tratados.",
-    "confidence": "high"
+    "reason": "Revisó la semántica del dato y pidió que el origen publicado proceda de una fuente verificable.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/11001.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/11001#issuecomment-6267974803",
-    "reviewedAt": "2026-10-22T14:50:38.134Z",
-    "mainSha": "36a794e41a25c18888adb89d69906b4d9750f14e"
+    "reviewedAt": "2026-10-22T17:56:04.461Z",
+    "mainSha": "8529fe8e4a3805c3a85f25a3abcc1a50e03a26af"
   }
 }

@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-19T09:05:01.991Z",
-  "updatedAt": "2026-10-19T08:29:48Z",
+  "generatedAt": "2026-10-22T17:55:29.064Z",
+  "updatedAt": "2026-10-19T09:08:31Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -18,38 +18,37 @@
       "P2"
     ],
     "createdAt": "2026-10-19T08:05:14Z",
-    "updatedAt": "2026-10-19T08:29:48Z"
+    "updatedAt": "2026-10-19T09:08:31Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe «Descargar factura» emitir un único PDF con todas las partes facturables del pedido o un documento por cada parte no cancelada?",
-  "rationale": "La issue confirma el fallo, pero el diseño del documento afecta a facturación y el reporte presenta explícitamente ambas alternativas sin una decisión contable.",
+  "question": "¿Debe «Descargar factura» generar un único PDF con todas las partes no canceladas o documentos separados por cada parte facturable?",
+  "rationale": "La interfaz ofrece una única descarga, pero la emisión conjunta o separada afecta al criterio contable y el repositorio no define cuál debe ser el documento oficial del pedido dividido.",
   "options": [
     {
-      "title": "Factura conjunta",
-      "body": "Emitir un PDF único con todas las partes no canceladas y responder 404 solo si todas están canceladas.",
+      "title": "PDF conjunto",
+      "body": "Agrupar en un único PDF todas las partes no canceladas del pedido y conservar una sola acción de descarga.",
       "recommended": true
     },
     {
-      "title": "Una factura por parte",
-      "body": "Mantener documentos separados y ofrecer al cliente cada parte no cancelada del pedido.",
+      "title": "Documento por parte",
+      "body": "Emitir un documento por cada parte no cancelada y adaptar la experiencia para que el cliente pueda descargarlos por separado.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Factura conjunta",
-    "body": "Emitir un PDF único con todas las partes no canceladas y responder 404 solo si todas están canceladas.",
+    "title": "PDF conjunto",
+    "body": "Agrupar en un único PDF todas las partes no canceladas del pedido y conservar una sola acción de descarga.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "alexcanHamelyn",
-    "reason": "Su historial está ligado a la introducción del endpoint y la descarga de facturas; no hay evidencia local que identifique quién representa la decisión contable.",
-    "confidence": "low"
+    "person": "banosdavidhamelyn",
+    "reason": "Es la persona asignada y quien está coordinando el seguimiento del caso; debe concretar la opción con contabilidad.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10983.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10983#issuecomment-6263688450",
-    "reviewedAt": "2026-10-19T09:05:01.991Z",
-    "mainSha": "a1f8773fe505b3898bb4cd40c3c8ed2f2fd9411b"
+    "reviewedAt": "2026-10-22T17:55:29.064Z",
+    "mainSha": "8529fe8e4a3805c3a85f25a3abcc1a50e03a26af"
   }
 }

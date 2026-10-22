@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-19T13:06:14.291Z",
-  "updatedAt": "2026-10-19T13:01:20Z",
+  "generatedAt": "2026-10-22T17:55:16.809Z",
+  "updatedAt": "2026-10-19T13:06:59Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -17,38 +17,37 @@
       "P2"
     ],
     "createdAt": "2026-10-18T07:31:58Z",
-    "updatedAt": "2026-10-19T13:01:20Z"
+    "updatedAt": "2026-10-19T13:06:59Z"
   },
-  "lane": "security_boundary",
+  "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe permitirse la recuperación de anuncios con `AMAZON_90221` y estado ausente cuando la lectura viva confirma `BUYABLE`, y qué condiciones deben cumplirse antes de encolar el reprice?",
-  "rationale": "La solución cambia cuándo se permite una escritura remota sobre una oferta activa; decidir el límite seguro exige criterio del equipo de marketplaces, no solo inferencia del código.",
+  "question": "¿Debe recuperarse `AMAZON_90221` con estado ausente cuando Listings GET confirma `BUYABLE`, y qué precondiciones deben cumplirse antes de reencolar el precio?",
+  "rationale": "La recuperación altera el seguimiento y puede provocar una escritura de precio en una oferta que ya vende; el comportamiento seguro y los criterios para el canario requieren intención del equipo.",
   "options": [
     {
-      "title": "Recuperación estrictamente condicionada",
-      "body": "Permitirla solo para 90221 y estado ausente, tras lectura viva `BUYABLE` y escritura atómica condicionada, y validar el reprice con el canario descrito.",
+      "title": "Recuperar con controles acotados",
+      "body": "Limitarlo a `90221` y estado ausente, exigir lectura viva `BUYABLE` y escritura condicionada, y verificar el reprice del canario antes de ampliar.",
       "recommended": true
     },
     {
       "title": "Mantener el bloqueo",
-      "body": "Dejar el anuncio fuera del selector hasta aclarar la divergencia y confirmar que el precio remoto puede actualizarse sin afectar la oferta activa.",
+      "body": "Dejar las filas aparcadas hasta confirmar por separado la divergencia y autorizar un reencolado puntual del precio.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Recuperación estrictamente condicionada",
-    "body": "Permitirla solo para 90221 y estado ausente, tras lectura viva `BUYABLE` y escritura atómica condicionada, y validar el reprice con el canario descrito.",
+    "title": "Recuperar con controles acotados",
+    "body": "Limitarlo a `90221` y estado ausente, exigir lectura viva `BUYABLE` y escritura condicionada, y verificar el reprice del canario antes de ampliar.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Es la persona asignada y su historial local incluye cambios en confirmación y horizonte de ofertas Amazon.",
-    "confidence": "medium"
+    "reason": "Está asignado y su historial reciente cubre el flujo de confirmación y repricing de Amazon.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10968.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10968#issuecomment-6247283893",
-    "reviewedAt": "2026-10-19T13:06:14.291Z",
-    "mainSha": "89c50345e5c11432aafe604324dc31e01454b13e"
+    "reviewedAt": "2026-10-22T17:55:16.809Z",
+    "mainSha": "8529fe8e4a3805c3a85f25a3abcc1a50e03a26af"
   }
 }

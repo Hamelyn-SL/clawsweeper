@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-21T07:20:34.641Z",
-  "updatedAt": "2026-10-20T07:55:49Z",
+  "generatedAt": "2026-10-22T17:59:13.234Z",
+  "updatedAt": "2026-10-21T07:23:33Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -18,38 +18,37 @@
       "P2"
     ],
     "createdAt": "2026-10-20T06:31:48Z",
-    "updatedAt": "2026-10-20T07:55:49Z"
+    "updatedAt": "2026-10-21T07:23:33Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se han verificado los IDs explícitos de todas las tiendas productivas y que el target de `ECOM_DEV` no sea `production` antes de integrar la corrección?",
-  "rationale": "La PR relacionada deja esas comprobaciones pendientes; sin ellas no se puede confirmar que producción conserve medición regional ni que staging quede fuera de la regla de producción.",
+  "question": "¿Se han verificado los IDs explícitos de todas las tiendas productivas y se confirma que staging no debe cargar GTM antes de integrar la condición propuesta?",
+  "rationale": "La configuración real de Vercel no es visible en el repositorio; el hook `ECOM_DEV` no prueba cuál es su target y producción sin ID explícito dejaría de usar el fallback actual.",
   "options": [
     {
-      "title": "Confirmar configuración e integrar",
-      "body": "Verificar los IDs productivos y el target de `ECOM_DEV`, y entonces aceptar la condición propuesta.",
+      "title": "Confirmar y mantener el criterio",
+      "body": "Verificar los IDs de producción y el target de `ECOM_DEV`, y mantener GTM limitado a producción con ID explícito.",
       "recommended": true
     },
     {
-      "title": "Ajustar el criterio",
-      "body": "Modificar la condición o el manejo de tiendas sin ID si la configuración real demuestra una excepción necesaria.",
+      "title": "Definir medición de staging",
+      "body": "Acordar una regla explícita para staging si el equipo necesita medir ese entorno antes de integrar el cambio.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Confirmar configuración e integrar",
-    "body": "Verificar los IDs productivos y el target de `ECOM_DEV`, y entonces aceptar la condición propuesta.",
+    "title": "Confirmar y mantener el criterio",
+    "body": "Verificar los IDs de producción y el target de `ECOM_DEV`, y mantener GTM limitado a producción con ID explícito.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "La discusión de la PR lo identifica como candidato para coordinar la confirmación de la configuración del equipo Ecommerce.",
-    "confidence": "medium"
+    "reason": "Fue señalado como candidato de routing en la revisión anterior y aparece en el historial reciente del layout de Ecommerce.",
+    "confidence": "low"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/11031.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/11031#issuecomment-6310461414",
-    "reviewedAt": "2026-10-21T07:20:34.641Z",
-    "mainSha": "268e6196b668f9e7350ed647622c98be2dd88690"
+    "reviewedAt": "2026-10-22T17:59:13.234Z",
+    "mainSha": "8529fe8e4a3805c3a85f25a3abcc1a50e03a26af"
   }
 }

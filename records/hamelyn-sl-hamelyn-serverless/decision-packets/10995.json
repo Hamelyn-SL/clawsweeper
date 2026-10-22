@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-21T13:27:51.444Z",
-  "updatedAt": "2026-10-21T10:02:16Z",
+  "generatedAt": "2026-10-22T17:56:28.394Z",
+  "updatedAt": "2026-10-21T13:29:07Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -14,44 +14,43 @@
       "P1"
     ],
     "createdAt": "2026-10-19T10:50:49Z",
-    "updatedAt": "2026-10-21T10:02:16Z",
+    "updatedAt": "2026-10-21T13:29:07Z",
     "headSha": "1b0487f5086e616203f8ac5e087a81d53b50b3da"
   },
   "lane": "product_direction",
   "priority": "P1",
   "question": "¿Qué campos, borrados y efectos en `stocks` y precios puede aplicar automáticamente esta segunda pasada, y qué auditoría persistente debe exigirse?",
-  "rationale": "La propuesta pasa de investigar a reemplazar fichas y propagar efectos persistentes; la discusión previa identifica esta decisión, pero aún no aparece una aprobación humana del alcance.",
+  "rationale": "La PR propone reescribir fichas y descripciones, borrar valores no confirmados, propagar cambios y repreciar; la issue vinculada no contiene una aprobación humana de ese alcance.",
   "options": [
     {
-      "title": "Aprobar un contrato acotado",
-      "body": "Acordar por escrito los campos editables, las condiciones de borrado, la propagación a `stocks`, el repreciado y la auditoría antes de permitir escrituras automáticas.",
+      "title": "Acordar un contrato acotado",
+      "body": "Definir los campos y efectos permitidos, las condiciones de borrado y la auditoría antes de integrar las escrituras.",
       "recommended": true
     },
     {
-      "title": "Limitarlo a vista previa",
-      "body": "Conservar investigación y planificación sin escrituras persistentes hasta que se cierre la política de cambios.",
+      "title": "Conservar solo la vista previa",
+      "body": "Mantener investigación y planificación sin escrituras persistentes hasta que el equipo cierre la política.",
       "recommended": false
     },
     {
-      "title": "Descartar la segunda pasada",
-      "body": "No integrar el flujo automático si el equipo no quiere asumir esta dirección de producto.",
+      "title": "No incorporar la segunda pasada",
+      "body": "Retirar el flujo si el equipo no quiere asumir esta dirección de producto.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar un contrato acotado",
-    "body": "Acordar por escrito los campos editables, las condiciones de borrado, la propagación a `stocks`, el repreciado y la auditoría antes de permitir escrituras automáticas.",
+    "title": "Acordar un contrato acotado",
+    "body": "Definir los campos y efectos permitidos, las condiciones de borrado y la auditoría antes de integrar las escrituras.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "PabloMoran34",
-    "reason": "La issue relacionada lo identifica como responsable de la propuesta y la discusión previa le asigna la decisión pendiente.",
+    "reason": "La issue relacionada está asignada a esta persona y su historial reciente cubre Argos y precios; no consta una decisión de producto humana en la discusión revisada.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10995.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10995#issuecomment-6265585549",
-    "reviewedAt": "2026-10-21T13:27:51.444Z",
-    "mainSha": "13e57cc7d0b8c98774b70cb406c43efa0c5df026"
+    "reviewedAt": "2026-10-22T17:56:28.394Z",
+    "mainSha": "8529fe8e4a3805c3a85f25a3abcc1a50e03a26af"
   }
 }

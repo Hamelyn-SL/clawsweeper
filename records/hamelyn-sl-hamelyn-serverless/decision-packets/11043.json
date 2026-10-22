@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-20T09:49:04.974Z",
-  "updatedAt": "2026-10-20T09:45:16Z",
+  "generatedAt": "2026-10-22T17:58:07.806Z",
+  "updatedAt": "2026-10-20T09:49:51Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,43 +13,47 @@
       "app:infrastructure",
       "feature",
       "triage:done",
-      "reporter:mariatapia",
+      "clawsweeper:needs-product-decision",
       "P2",
-      "clawsweeper:needs-product-decision"
+      "reporter:mariatapia"
     ],
     "createdAt": "2026-10-20T09:27:26Z",
-    "updatedAt": "2026-10-20T09:45:16Z"
+    "updatedAt": "2026-10-20T09:49:51Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué métricas y nivel de cobertura se consideran válidos para la primera entrega del dashboard mientras la carga de mensajes sigue incompleta?",
-  "rationale": "La definición afecta a qué cifras puede interpretar ATC y a cómo distinguir datos parciales de resultados reales; no puede resolverse únicamente desde el código.",
+  "question": "¿Qué métricas y campos explícitos deben formar la primera entrega de la página de ATC y cómo se identificará a cada persona de eDesk para «Mis tickets»?",
+  "rationale": "La petición define varias vistas y métricas, pero la cobertura de la fuente es parcial y la identidad de eDesk no está vinculada todavía al usuario autenticado; elegir los contratos afecta el comportamiento esperado.",
   "options": [
     {
-      "title": "Acordar contrato con ATC",
-      "body": "Definir las métricas, su cobertura mínima y cómo señalar datos incompletos antes de implementar las vistas.",
+      "title": "Acordar y dividir entregas",
+      "body": "Definir primero métricas y campos con el equipo de ATC/Data, y después implementar la vista de equipo como primera entrega verificable.",
       "recommended": true
     },
     {
-      "title": "Acotar la primera entrega",
-      "body": "Lanzar primero las métricas basadas en tickets y aplazar las métricas dependientes de mensajes hasta que su carga sea suficiente.",
+      "title": "Reducir el alcance inicial",
+      "body": "Lanzar una página de equipo con las métricas respaldadas hoy por datos explícitos y dejar «Mis tickets» para una decisión posterior.",
+      "recommended": false
+    },
+    {
+      "title": "Esperar a completar la carga",
+      "body": "Posponer el dashboard hasta que aumente la cobertura de mensajes y se confirme el vínculo de identidad de eDesk.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Acordar contrato con ATC",
-    "body": "Definir las métricas, su cobertura mínima y cómo señalar datos incompletos antes de implementar las vistas.",
+    "title": "Acordar y dividir entregas",
+    "body": "Definir primero métricas y campos con el equipo de ATC/Data, y después implementar la vista de equipo como primera entrega verificable.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "mariatapia-hamelyn",
-    "reason": "La petición está asignada a esta persona y su historial reciente cubre filtros y vistas del área de dashboards.",
+    "reason": "Es la responsable asignada y el triage la señala junto al equipo de Data para acordar el alcance.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/11043.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/11043#issuecomment-6288216561",
-    "reviewedAt": "2026-10-20T09:49:04.974Z",
-    "mainSha": "17862bfdc5f20dfb8b74268970fee4d86e8bc21b"
+    "reviewedAt": "2026-10-22T17:58:07.806Z",
+    "mainSha": "8529fe8e4a3805c3a85f25a3abcc1a50e03a26af"
   }
 }
