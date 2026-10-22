@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-22T09:02:05.898Z",
-  "updatedAt": "2026-10-22T08:19:52Z",
+  "generatedAt": "2026-10-22T15:56:20.358Z",
+  "updatedAt": "2026-10-22T09:02:51Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -19,38 +19,37 @@
       "P2"
     ],
     "createdAt": "2026-10-14T13:56:32Z",
-    "updatedAt": "2026-10-22T08:19:52Z"
+    "updatedAt": "2026-10-22T09:02:51Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué equipo confirma el mapa mercado-propiedad/cuenta, el destino y esquema de BigQuery, y autoriza la carga histórica y su actualización programada?",
-  "rationale": "La cobertura, la disponibilidad de histórico, los permisos y la creación de estructuras determinan el alcance técnico y no se pueden decidir con seguridad a partir del código existente.",
+  "question": "¿Qué propiedades de Search Console y cuentas de Merchant corresponden a cada mercado, y quién aprobará el destino y los accesos de BigQuery?",
+  "rationale": "El alcance de los 13 mercados y la ubicación/esquema de los datos no se deducen del código; además, crear estructuras BigQuery requiere autorización expresa.",
   "options": [
     {
-      "title": "Acordar alcance antes de implementar",
-      "body": "Datos y SEO validan el inventario de mercados, cuentas, destino, esquema y autorización del backfill antes de dividir el trabajo.",
+      "title": "Confirmar inventario y destino",
+      "body": "Acordar el mapa mercado→propiedad/cuenta, el responsable de accesos y el destino/esquema antes de planificar la ingesta.",
       "recommended": true
     },
     {
-      "title": "Reducir a un piloto",
-      "body": "Limitar inicialmente la ingesta a las propiedades y cuentas ya identificadas y posponer los demás mercados hasta verificar cobertura y acceso.",
+      "title": "Reducir el alcance inicial",
+      "body": "Definir mercados prioritarios y una primera fase limitada mientras se completa el inventario del resto.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Acordar alcance antes de implementar",
-    "body": "Datos y SEO validan el inventario de mercados, cuentas, destino, esquema y autorización del backfill antes de dividir el trabajo.",
+    "title": "Confirmar inventario y destino",
+    "body": "Acordar el mapa mercado→propiedad/cuenta, el responsable de accesos y el destino/esquema antes de planificar la ingesta.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "PabloMoran34",
-    "reason": "Está asignado a la issue y tiene historial en el área de datos; la decisión también requiere coordinación con SEO y responsables de acceso.",
-    "confidence": "medium"
+    "reason": "Figura como asignado en la cronología y es el candidato de coordinación disponible; la decisión de SEO/datos puede requerir sumar a sus responsables.",
+    "confidence": "low"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10875.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10875#issuecomment-6170667666",
-    "reviewedAt": "2026-10-22T09:02:05.898Z",
-    "mainSha": "ce059dee063ef7b5d18c266a279dc984bf71d596"
+    "reviewedAt": "2026-10-22T15:56:20.358Z",
+    "mainSha": "8529fe8e4a3805c3a85f25a3abcc1a50e03a26af"
   }
 }

@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-15T13:25:49.682Z",
-  "updatedAt": "2026-10-14T13:31:08Z",
+  "generatedAt": "2026-10-22T15:55:53.800Z",
+  "updatedAt": "2026-10-15T13:26:41Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -18,38 +18,37 @@
       "P2"
     ],
     "createdAt": "2026-10-14T12:58:24Z",
-    "updatedAt": "2026-10-14T13:31:08Z"
+    "updatedAt": "2026-10-15T13:26:41Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué base debe usar la reactivación para calcular el precio por estado, coordinada con el trigger de Atlas: la política vigente del core o el precio del producto como propone el reporte?",
-  "rationale": "El caso concreto confirma el grupo desfasado, no un precio incorrecto; la elección puede afectar el precio recalculado de otros stocks y requiere una decisión funcional de Inventario y Pricing.",
+  "question": "¿Qué base de precio debe gobernar la reactivación y cómo debe coordinarse con el trigger de Atlas que recalcula los stocks hermanos?",
+  "rationale": "El reporte y el triage confirman el desfase de grupo, pero no un precio incorrecto en el SKU observado; el cambio de base de cálculo puede afectar otros stocks del mismo producto y requiere una decisión conjunta de Inventario y Pricing.",
   "options": [
     {
-      "title": "Acordar la política de precio antes del servicio común",
-      "body": "Definir y validar conjuntamente con el trigger qué precio base se aplica al stock reactivado y cuándo recalcular sus hermanos.",
+      "title": "Acordar una base común",
+      "body": "Definir con Inventario y Pricing una base de precio compartida por la reactivación del core y el trigger antes de implementar el cambio transversal.",
       "recommended": true
     },
     {
-      "title": "Separar el refresco de ficha del cambio de precios",
-      "body": "Corregir grupo y snapshot primero, dejando la política de precio para una decisión y cambio coordinados posteriores.",
+      "title": "Separar la corrección de ficha",
+      "body": "Resolver primero los desfases de grupo y ficha sin cambiar la base de repricing, dejando la coordinación del trigger para un seguimiento independiente.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Acordar la política de precio antes del servicio común",
-    "body": "Definir y validar conjuntamente con el trigger qué precio base se aplica al stock reactivado y cuándo recalcular sus hermanos.",
+    "title": "Acordar una base común",
+    "body": "Definir con Inventario y Pricing una base de precio compartida por la reactivación del core y el trigger antes de implementar el cambio transversal.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "mariatapia-hamelyn",
-    "reason": "Su trabajo reciente aborda la sincronización de stocks desde el producto, el área más próxima al comportamiento que requiere decisión.",
+    "person": "PabloMoran34",
+    "reason": "El comentario de triage lo señala como referente funcional del caso y el historial lo vincula a cambios de sincronización de grupos.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10873.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10873#issuecomment-6169043268",
-    "reviewedAt": "2026-10-15T13:25:49.682Z",
-    "mainSha": "8f46285696efe60fa3abad4f8fae5777830dffc1"
+    "reviewedAt": "2026-10-22T15:55:53.800Z",
+    "mainSha": "8529fe8e4a3805c3a85f25a3abcc1a50e03a26af"
   }
 }

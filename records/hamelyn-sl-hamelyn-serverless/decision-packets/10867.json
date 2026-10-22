@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-22T15:56:02.891Z",
+  "updatedAt": "2026-10-22T09:00:21Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 10867,
+    "title": "Reporte diario de logística: obtener los datos desde el CLI en vez de Mongo directo en la action",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10867",
+    "state": "open",
+    "labels": [
+      "feature",
+      "triage:queued",
+      "P3",
+      "app:agents",
+      "origin:dev",
+      "reporter:AlexDiaz-Hamelyn"
+    ],
+    "createdAt": "2026-10-14T12:43:51Z",
+    "updatedAt": "2026-10-22T09:00:21Z"
+  },
+  "lane": "product_direction",
+  "priority": "P3",
+  "question": "¿La paridad solicitada significa recalcular las cifras del día con los datos actuales o reproducir exactamente el mensaje de Slack publicado en su momento?",
+  "rationale": "El triaje indica que las sesiones sin cierre cambian según la hora de consulta; elegir entre cálculo actualizado y reproducción histórica altera el contrato del reporte y no se resuelve solo compartiendo código.",
+  "options": [
+    {
+      "title": "Usar cálculo actualizado compartido",
+      "body": "La API, el CLI, el admin y el workflow comparten la misma función, aunque consultar una fecha pasada pueda diferir del mensaje publicado entonces.",
+      "recommended": true
+    },
+    {
+      "title": "Reproducir el mensaje histórico",
+      "body": "Añadir o definir una fuente de datos persistida que permita reconstruir los valores y el texto originales de cada día.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Usar cálculo actualizado compartido",
+    "body": "La API, el CLI, el admin y el workflow comparten la misma función, aunque consultar una fecha pasada pueda diferir del mensaje publicado entonces.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Está asignado a la issue y lideró la implementación de API/CLI que define el contrato actual del reporte.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10867.md",
+    "reviewedAt": "2026-10-22T15:56:02.891Z",
+    "mainSha": "8529fe8e4a3805c3a85f25a3abcc1a50e03a26af"
+  }
+}

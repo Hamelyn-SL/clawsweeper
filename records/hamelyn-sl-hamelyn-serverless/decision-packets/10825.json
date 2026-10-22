@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-22T15:47:14.335Z",
-  "updatedAt": "2026-10-15T07:02:55Z",
+  "generatedAt": "2026-10-22T15:57:46.482Z",
+  "updatedAt": "2026-10-22T15:48:03Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -18,38 +18,37 @@
       "P2"
     ],
     "createdAt": "2026-10-14T05:42:42Z",
-    "updatedAt": "2026-10-15T07:02:55Z"
+    "updatedAt": "2026-10-22T15:48:03Z"
   },
-  "lane": "manual_review",
+  "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe el equipo ejecutar ahora la actualización puntual de las publicaciones activas de MercadoLibre Argentina mediante el procedimiento propuesto?",
-  "rationale": "La actualización remota masiva requiere acceso, ventana y supervisión de producción; la evidencia del repositorio no puede decidir ni ejecutar esa operación con seguridad.",
+  "question": "¿Se autoriza actualizar en producción las publicaciones activas de MercadoLibre Argentina a 15 días mediante un proceso local reanudable, después de validar un canario y recontar los anuncios activos?",
+  "rationale": "La decisión cambia términos de publicaciones ya activas y requiere escrituras remotas a gran escala; el código y la réplica no pueden acreditar por sí solos la autorización ni el estado actual del catálogo.",
   "options": [
     {
-      "title": "Autorizar ejecución operativa",
-      "body": "El equipo de Marketplaces valida el estado, ejecuta el canario y continúa el lote con límites compartidos y reconciliación.",
+      "title": "Autorizar lote con canario",
+      "body": "Revalidar candidatos, comprobar cinco anuncios y su garantía por API, y continuar con control de presupuesto y registro reanudable.",
       "recommended": true
     },
     {
-      "title": "Mantener pendiente",
-      "body": "Conservar la issue abierta hasta que el equipo confirme una ventana y responsable para la operación.",
+      "title": "Aplazar la ejecución",
+      "body": "Mantener sin cambios los anuncios existentes hasta que el equipo confirme el método operativo y el estado remoto.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Autorizar ejecución operativa",
-    "body": "El equipo de Marketplaces valida el estado, ejecuta el canario y continúa el lote con límites compartidos y reconciliación.",
+    "title": "Autorizar lote con canario",
+    "body": "Revalidar candidatos, comprobar cinco anuncios y su garantía por API, y continuar con control de presupuesto y registro reanudable.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Figura asignado y aportó el ajuste de altas que define los términos deseados.",
-    "confidence": "medium"
+    "reason": "Está asignado a la issue y figura como autor del cambio que fijó el plazo para nuevas publicaciones.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10825.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10825#issuecomment-6161843899",
-    "reviewedAt": "2026-10-22T15:47:14.335Z",
+    "reviewedAt": "2026-10-22T15:57:46.482Z",
     "mainSha": "8529fe8e4a3805c3a85f25a3abcc1a50e03a26af"
   }
 }
