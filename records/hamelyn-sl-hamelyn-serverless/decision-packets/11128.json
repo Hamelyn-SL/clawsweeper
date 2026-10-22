@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-22T13:06:11.959Z",
+  "updatedAt": "2026-10-22T12:58:41Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 11128,
+    "title": "feat: add station guardian for skypod station monitoring and repair",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/11128",
+    "state": "open",
+    "labels": [
+      "size/XXL"
+    ],
+    "createdAt": "2026-10-22T12:55:34Z",
+    "updatedAt": "2026-10-22T12:58:41Z",
+    "headSha": "5fb8cff9fb8befaf06a9da41cf8bd172b0f4e30e"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe el despliegue inicial permitir reparaciones automáticas tras validar una ronda manual, o debe arrancar solo en modo de monitorización?",
+  "rationale": "La elección define si el primer despliegue puede ejecutar cambios remotos en estaciones desatendidas; el PR incorpora esa capacidad, pero la discusión de la issue vinculada aún plantea ambas rutas.",
+  "options": [
+    {
+      "title": "Reparación condicionada",
+      "body": "Mantener las reparaciones acotadas y exigir una ronda manual validada antes de activar el cron en producción.",
+      "recommended": true
+    },
+    {
+      "title": "Monitorización inicial",
+      "body": "Desplegar sondeos y avisos primero, dejando las reparaciones automáticas desactivadas hasta obtener evidencia operativa adicional.",
+      "recommended": false
+    },
+    {
+      "title": "Aplazar reparaciones",
+      "body": "Dejar fuera la automatización de reparaciones y conservar el diagnóstico para intervención manual.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Reparación condicionada",
+    "body": "Mantener las reparaciones acotadas y exigir una ronda manual validada antes de activar el cron en producción.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "La revisión previa de la issue vinculada lo identificó como responsable probable de esta decisión de alcance operativo.",
+    "confidence": "low"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/11128.md",
+    "reviewedAt": "2026-10-22T13:06:11.959Z",
+    "mainSha": "36a794e41a25c18888adb89d69906b4d9750f14e"
+  }
+}
