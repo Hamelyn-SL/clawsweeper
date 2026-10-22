@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-21T11:56:38.859Z",
-  "updatedAt": "2026-10-20T13:30:03Z",
+  "generatedAt": "2026-10-22T17:54:12.841Z",
+  "updatedAt": "2026-10-21T11:57:42Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -19,38 +19,37 @@
       "P2"
     ],
     "createdAt": "2026-10-20T10:59:34Z",
-    "updatedAt": "2026-10-20T13:30:03Z"
+    "updatedAt": "2026-10-21T11:57:42Z"
   },
-  "lane": "manual_review",
+  "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué periodo histórico debe regularizarse y qué evidencia mínima confirmará que Amazon ya realizó el reembolso antes de actualizar cada pedido?",
-  "rationale": "La petición confirma que quiere incluir históricos, pero no delimita el periodo recuperable ni el criterio que evita confundir una solicitud aprobada con un reembolso pagado.",
+  "question": "¿Qué periodo histórico debe regularizarse y qué dato verificable de Amazon debe acreditar cada reembolso antes de actualizar el pedido?",
+  "rationale": "La solicitud confirma que se incluyan históricos, pero no define el límite temporal ni un criterio de comprobación; una solicitud Approved no basta para evitar registrar reembolsos inexistentes o incompletos.",
   "options": [
     {
-      "title": "Definir periodo y verificación antes de regularizar",
-      "body": "Acordar con Operaciones un intervalo y una comprobación de reembolso realizado, y generar una lista de candidatos antes de cambiar pedidos.",
+      "title": "Definir corte y evidencia antes de implementar",
+      "body": "Operaciones fija el periodo recuperable y valida un informe de candidatos con importe reembolsado antes de escribir cambios históricos.",
       "recommended": true
     },
     {
-      "title": "Aplicar solo a nuevas devoluciones inicialmente",
-      "body": "Lanzar primero el flujo futuro y dejar la regularización histórica para una decisión posterior con datos revisados.",
+      "title": "Aplicar solo a registros con importe confirmado",
+      "body": "La regularización excluye los casos sin importe de reembolso verificable y los deja para revisión manual.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Definir periodo y verificación antes de regularizar",
-    "body": "Acordar con Operaciones un intervalo y una comprobación de reembolso realizado, y generar una lista de candidatos antes de cambiar pedidos.",
+    "title": "Definir corte y evidencia antes de implementar",
+    "body": "Operaciones fija el periodo recuperable y valida un informe de candidatos con importe reembolsado antes de escribir cambios históricos.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "alexcanHamelyn",
-    "reason": "Es la persona con la relación histórica más directa con el diseño y la implementación del flujo de devoluciones; la decisión también requiere validación de Operaciones.",
+    "reason": "Su trabajo previo mantiene el modelo y el procesamiento de devoluciones de Amazon, por lo que es el candidato técnico más cercano para valorar los datos disponibles.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/11048.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/11048#issuecomment-6289766906",
-    "reviewedAt": "2026-10-21T11:56:38.859Z",
-    "mainSha": "3ed93694a673cbe17609fdd2955644de3a11884d"
+    "reviewedAt": "2026-10-22T17:54:12.841Z",
+    "mainSha": "8529fe8e4a3805c3a85f25a3abcc1a50e03a26af"
   }
 }
