@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-22T14:56:28.068Z",
+  "updatedAt": "2026-10-22T14:51:16Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 11130,
+    "title": "Preguntar al cliente por qué cancela en la web",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/11130",
+    "state": "open",
+    "labels": [
+      "source:admin-panel",
+      "app:ecommerce",
+      "feature",
+      "reporter:blanca",
+      "triage:queued",
+      "P2"
+    ],
+    "createdAt": "2026-10-22T14:51:00Z",
+    "updatedAt": "2026-10-22T14:51:16Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe la web solicitar y guardar obligatoriamente uno de los cinco motivos de Atención al Cliente al cancelar un pedido?",
+  "rationale": "Es una nueva captura de datos y un cambio visible en el flujo de cancelación; hace falta confirmar el comportamiento esperado antes de convertirlo en contrato de producto.",
+  "options": [
+    {
+      "title": "Solicitar un motivo obligatorio",
+      "body": "Incorporar los cinco motivos compartidos en el flujo web y guardar la opción elegida en el pedido.",
+      "recommended": true
+    },
+    {
+      "title": "Solicitarlo como dato opcional",
+      "body": "Permitir la cancelación aunque el cliente no seleccione motivo, manteniendo un valor de respaldo.",
+      "recommended": false
+    },
+    {
+      "title": "No cambiar el flujo web",
+      "body": "Mantener la cancelación actual y no introducir esta captura de motivos.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Solicitar un motivo obligatorio",
+    "body": "Incorporar los cinco motivos compartidos en el flujo web y guardar la opción elegida en el pedido.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "Su trabajo reciente define el catálogo compartido de motivos que el flujo web reutilizaría; la decisión de producto sigue correspondiendo al equipo responsable.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/11130.md",
+    "reviewedAt": "2026-10-22T14:56:28.068Z",
+    "mainSha": "36a794e41a25c18888adb89d69906b4d9750f14e"
+  }
+}
