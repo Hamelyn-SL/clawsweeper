@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-20T09:01:20.761Z",
-  "updatedAt": "2026-10-20T08:17:08Z",
+  "generatedAt": "2026-10-22T09:57:41.646Z",
+  "updatedAt": "2026-10-22T09:02:37Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -10,41 +10,42 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/11039",
     "state": "open",
     "labels": [
-      "size/L"
+      "size/L",
+      "P2"
     ],
     "createdAt": "2026-10-20T08:02:04Z",
-    "updatedAt": "2026-10-20T08:17:08Z",
-    "headSha": "6560789625218a012c005520296db46f04342dd6"
+    "updatedAt": "2026-10-22T09:02:37Z",
+    "headSha": "3ba4345edbb4717de214a869224ca2863660d31d"
   },
-  "lane": "product_direction",
+  "lane": "release_inclusion",
   "priority": "P2",
-  "question": "¿Debe este PR mantener el mapa compartido y la actualización operativa de países descrita, o limitar el cambio a una matriz de ecommerce aislada que preserve la respuesta consumida por Supply?",
-  "rationale": "La discusión vinculada pide expresamente aislar el alcance de ecommerce y coordinar consumidores adicionales; el PR propone una actualización posterior al despliegue y el cambio de una constante compartida, por lo que confirmar el límite de producto y operación es necesario antes de aceptar ese diseño.",
+  "question": "¿Se puede garantizar que la actualización de `countries` se ejecute inmediatamente tras el despliegue de producción y antes de que la tienda opere con la matriz anterior?",
+  "rationale": "El PR declara que la actualización de tarifas es un paso operativo separado, y ya se ha observado el comportamiento incorrecto durante esa ventana; hace falta confirmar cómo se controlará el despliegue.",
   "options": [
     {
-      "title": "Aislar ecommerce",
-      "body": "Mantener intacta la respuesta compartida de países y demostrar la coherencia de checkout, cupones y feed con la matriz ecommerce.",
+      "title": "Coordinar ambos pasos",
+      "body": "Aprobar el cambio con el despliegue y la carga de `countries` coordinados, comprobando las tarifas afectadas antes de reabrir el tráfico normal.",
       "recommended": true
     },
     {
-      "title": "Conservar el diseño propuesto",
-      "body": "Aceptar el mapa compartido y documentar y validar la secuencia de actualización de países y feed antes del despliegue.",
+      "title": "Pausar hasta automatizar la transición",
+      "body": "Mantener el PR pendiente hasta que la actualización de tarifas forme parte de un procedimiento de despliegue controlado que elimine la ventana de discrepancia.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aislar ecommerce",
-    "body": "Mantener intacta la respuesta compartida de países y demostrar la coherencia de checkout, cupones y feed con la matriz ecommerce.",
+    "title": "Coordinar ambos pasos",
+    "body": "Aprobar el cambio con el despliegue y la carga de `countries` coordinados, comprobando las tarifas afectadas antes de reabrir el tráfico normal.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "jorgecano",
-    "reason": "La conversación vinculada recoge su confirmación de la regla comercial que este cambio implementa.",
+    "person": "banosdavidhamelyn",
+    "reason": "Ha revisado el comportamiento visible y ha señalado expresamente la discrepancia de tarifas durante la transición.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/11039.md",
-    "reviewedAt": "2026-10-20T09:01:20.761Z",
-    "mainSha": "a6de5111e15cb541262383f9d7ece1994fab6aec"
+    "reviewedAt": "2026-10-22T09:57:41.646Z",
+    "mainSha": "ce059dee063ef7b5d18c266a279dc984bf71d596"
   }
 }
