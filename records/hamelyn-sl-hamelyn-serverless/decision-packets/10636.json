@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-21T09:23:00.173Z",
-  "updatedAt": "2026-10-20T10:14:24Z",
+  "generatedAt": "2026-10-22T09:52:19.735Z",
+  "updatedAt": "2026-10-22T09:00:06Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,43 +14,42 @@
       "app:admin",
       "feature",
       "reporter:blanca",
-      "triage:needs-info",
+      "triage:queued",
       "clawsweeper:needs-product-decision",
       "P2"
     ],
     "createdAt": "2026-10-08T09:39:46Z",
-    "updatedAt": "2026-10-20T10:14:24Z"
+    "updatedAt": "2026-10-22T09:00:06Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿`LOGISTIC_NO_INFO` debe conservar la categoría «Cancelación» indicada en el Excel o clasificarse como «Reembolso» según el motivo destino descrito?",
-  "rationale": "La documentación de negocio aportada es contradictoria y ambas alternativas afectan a la clasificación histórica; el código actual lo agrupa como reembolso, pero eso no resuelve cuál debe ser la regla aprobada.",
+  "question": "¿`LOGISTIC_NO_INFO` debe conservarse como cancelación según el Excel o reclasificarse como reembolso según el motivo destino?",
+  "rationale": "La tabla adjunta y la categoría del motivo destino se contradicen; automatizar esa equivalencia puede alterar la lectura histórica de pedidos.",
   "options": [
     {
-      "title": "Mantener cancelación",
-      "body": "Alinear la regla histórica con la clasificación que aparece en la hoja del Excel.",
+      "title": "Conservar cancelación",
+      "body": "Seguir la categoría indicada en el Excel para `LOGISTIC_NO_INFO`.",
       "recommended": false
     },
     {
       "title": "Clasificar como reembolso",
-      "body": "Alinear la regla histórica con la familia de motivo logístico descrita y con el mapeo actual del dashboard.",
+      "body": "Usar la categoría asociada al motivo destino para `LOGISTIC_NO_INFO`.",
       "recommended": true
     }
   ],
   "recommendation": {
     "title": "Clasificar como reembolso",
-    "body": "Alinear la regla histórica con la familia de motivo logístico descrita y con el mapeo actual del dashboard.",
+    "body": "Usar la categoría asociada al motivo destino para `LOGISTIC_NO_INFO`.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "banosdavidhamelyn",
-    "reason": "Es la persona asignada y la conversación la señala para concretar la implementación por bloques una vez cerrada la decisión de clasificación.",
+    "reason": "Está asignado a la issue y preparando la implementación vinculada; Blanca, que reportó la necesidad, debe confirmar la regla de negocio.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10636.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10636#issuecomment-6057287700",
-    "reviewedAt": "2026-10-21T09:23:00.173Z",
-    "mainSha": "58d6870796109082545e399ce38f8b17674cb98f"
+    "reviewedAt": "2026-10-22T09:52:19.735Z",
+    "mainSha": "ce059dee063ef7b5d18c266a279dc984bf71d596"
   }
 }
