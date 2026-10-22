@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-22T16:16:13.017Z",
+  "updatedAt": "2026-10-22T12:33:15Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 11126,
+    "title": "Scrapers Casa del Libro: el canario de ofertas v2 termina con 11/50 fallos y mantiene la alerta abierta",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/11126",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:infrastructure",
+      "triage:queued",
+      "P2",
+      "origin:agent"
+    ],
+    "createdAt": "2026-10-22T12:33:15Z",
+    "updatedAt": "2026-10-22T12:33:15Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe el canario forzar una descarga nueva cuando la versión declarada corrige la capa de descarga, aunque ya exista un cuerpo raw para la ficha?",
+  "rationale": "El flujo actual puede validar cuerpos antiguos y no ejercitar el cambio de descarga; forzar descargas cambia el tráfico a Casa del Libro y puede afectar al ritmo operativo.",
+  "options": [
+    {
+      "title": "Descarga nueva para fixes de fetch",
+      "body": "Ajustar el contrato del canario para que los fixes de descarga se validen con una respuesta nueva, conservando el replay actual para cambios de parser.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener el comportamiento actual",
+      "body": "Dejar el canario basado en raw y pedir muestras nuevas solo cuando no permita atribuir un fallo.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Descarga nueva para fixes de fetch",
+    "body": "Ajustar el contrato del canario para que los fixes de descarga se validen con una respuesta nueva, conservando el replay actual para cambios de parser.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "PabloMoran34",
+    "reason": "Su historial está más directamente vinculado al diseño y los límites operativos del canario.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/11126.md",
+    "reviewedAt": "2026-10-22T16:16:13.017Z",
+    "mainSha": "8529fe8e4a3805c3a85f25a3abcc1a50e03a26af"
+  }
+}

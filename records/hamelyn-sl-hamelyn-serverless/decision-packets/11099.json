@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-22T14:25:10.975Z",
-  "updatedAt": "2026-10-21T15:15:33Z",
+  "generatedAt": "2026-10-22T16:15:28.102Z",
+  "updatedAt": "2026-10-22T14:26:05Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,42 +15,41 @@
       "feature",
       "triage:needs-info",
       "clawsweeper:needs-product-decision",
-      "reporter:jorgecano",
-      "P2"
+      "P2",
+      "reporter:jorgecano"
     ],
     "createdAt": "2026-10-21T13:24:05Z",
-    "updatedAt": "2026-10-21T15:15:33Z"
+    "updatedAt": "2026-10-22T14:26:05Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué servicio y códigos API deben usar MRW y SEUR para reproducir las recogidas T1 manuales actuales, y quién debe recibir o imprimir cada etiqueta?",
-  "rationale": "La frecuencia diaria desde Admin está aclarada, pero los adjuntos y adaptadores disponibles describen operaciones/códigos distintos; elegirlos sin confirmación puede crear recogidas con una modalidad incorrecta.",
+  "question": "¿Qué códigos y operación API de MRW y SEUR corresponden a las recogidas T1 actuales, y quién debe recibir o imprimir las etiquetas?",
+  "rationale": "La discusión aclara la cadencia diaria, pero los adaptadores existentes y los ejemplos adjuntos usan operaciones o códigos distintos; elegirlos sin confirmación podría generar un servicio incorrecto.",
   "options": [
     {
-      "title": "Confirmar con los transportistas",
-      "body": "Obtener los códigos API equivalentes a la modalidad T1 manual de cada cuenta y definir el destino operativo de las etiquetas.",
+      "title": "Confirmar equivalencias antes de implementar",
+      "body": "Operaciones obtiene de cada transportista los códigos T1 de la cuenta y define el destino de las etiquetas antes de conectar los adaptadores al flujo diario.",
       "recommended": true
     },
     {
-      "title": "Aportar ejemplos de la operativa actual",
-      "body": "Compartir ejemplos saneados de recogidas MRW y SEUR que muestren modalidad y servicio para contrastarlos con las APIs.",
+      "title": "Validar en preproducción",
+      "body": "El equipo técnico prueba con los códigos y credenciales de prueba disponibles y obtiene confirmación operativa antes de habilitar la creación diaria.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Confirmar con los transportistas",
-    "body": "Obtener los códigos API equivalentes a la modalidad T1 manual de cada cuenta y definir el destino operativo de las etiquetas.",
+    "title": "Confirmar equivalencias antes de implementar",
+    "body": "Operaciones obtiene de cada transportista los códigos T1 de la cuenta y define el destino de las etiquetas antes de conectar los adaptadores al flujo diario.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Aparece en la historia reciente del adaptador SEUR; la decisión operativa debe validarse con el equipo que gestiona las recogidas.",
+    "person": "Lyno",
+    "reason": "Es el referente técnico disponible en el historial de los adaptadores de recogida y su documentación; la confirmación operativa de los códigos corresponde además a los contactos de negocio y los transportistas.",
     "confidence": "low"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/11099.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/11099#issuecomment-6317699810",
-    "reviewedAt": "2026-10-22T14:25:10.975Z",
-    "mainSha": "36a794e41a25c18888adb89d69906b4d9750f14e"
+    "reviewedAt": "2026-10-22T16:15:28.102Z",
+    "mainSha": "8529fe8e4a3805c3a85f25a3abcc1a50e03a26af"
   }
 }
