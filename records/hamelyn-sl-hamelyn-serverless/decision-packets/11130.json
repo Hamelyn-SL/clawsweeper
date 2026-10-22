@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-22T15:00:29.081Z",
-  "updatedAt": "2026-10-22T14:57:33Z",
+  "generatedAt": "2026-10-22T16:08:45.935Z",
+  "updatedAt": "2026-10-22T15:02:00Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -19,43 +19,42 @@
       "P2"
     ],
     "createdAt": "2026-10-22T14:51:00Z",
-    "updatedAt": "2026-10-22T14:57:33Z"
+    "updatedAt": "2026-10-22T15:02:00Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe la web exigir uno de los cinco motivos antes de cancelar, o permitir la cancelación sin respuesta y conservar un motivo de respaldo?",
-  "rationale": "La captura está solicitada con claridad, pero la obligatoriedad y el comportamiento de abandono afectan al flujo de cancelación y no quedan determinados por el contrato actual.",
+  "question": "¿Debe la web exigir que el cliente elija uno de los cinco motivos antes de confirmar la cancelación, o permitir omitirlo y conservar el motivo de respaldo actual?",
+  "rationale": "El comportamiento solicitado no define qué hacer si el cliente no responde; exigir una selección o permitir omitirla cambia el flujo y el dato persistido, y el comentario previo dejó expresamente esa elección al equipo.",
   "options": [
     {
-      "title": "Exigir un motivo",
-      "body": "Pedir una de las cinco opciones antes de confirmar la cancelación.",
+      "title": "Exigir selección",
+      "body": "Solicitar uno de los cinco motivos antes de confirmar la cancelación web.",
       "recommended": true
     },
     {
-      "title": "Permitir omitirlo",
-      "body": "Guardar la selección cuando exista y mantener el motivo de respaldo si el cliente no responde.",
+      "title": "Permitir omitir",
+      "body": "Guardar el motivo elegido cuando exista y conservar el respaldo actual si se omite.",
       "recommended": false
     },
     {
       "title": "Mantener el flujo actual",
-      "body": "No añadir la captura de motivos a la cancelación web.",
+      "body": "No añadir la captura de motivos al proceso de cancelación web.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Exigir un motivo",
-    "body": "Pedir una de las cinco opciones antes de confirmar la cancelación.",
+    "title": "Exigir selección",
+    "body": "Solicitar uno de los cinco motivos antes de confirmar la cancelación web.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "banosdavidhamelyn",
-    "reason": "Su trabajo reciente consolidó los motivos compartidos en el admin, por lo que tiene el contexto más directo sobre la semántica del catálogo.",
+    "reason": "Su cambio reciente incorporó el catálogo compartido de motivos que usaría el flujo solicitado.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/11130.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/11130#issuecomment-6343860465",
-    "reviewedAt": "2026-10-22T15:00:29.081Z",
-    "mainSha": "36a794e41a25c18888adb89d69906b4d9750f14e"
+    "reviewedAt": "2026-10-22T16:08:45.935Z",
+    "mainSha": "8529fe8e4a3805c3a85f25a3abcc1a50e03a26af"
   }
 }

@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-22T16:10:19.052Z",
+  "updatedAt": "2026-10-16T14:58:08Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10917,
+    "title": "fix: retry throttled mercadolibre descriptions",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10917",
+    "state": "open",
+    "labels": [
+      "size/M",
+      "P2"
+    ],
+    "createdAt": "2026-10-15T13:52:37Z",
+    "updatedAt": "2026-10-16T14:58:08Z",
+    "headSha": "d4648ec4197f7402430c0d1d1e959fa9b80cdb5f"
+  },
+  "lane": "merge_risk",
+  "priority": "P2",
+  "question": "¿Se acepta el presupuesto de espera acumulada que resulta de honrar hasta 20 segundos por reintento de descripción, o debe reducirse para proteger la duración máxima del cron?",
+  "rationale": "La política de reintentos propuesta es acotada por solicitud, pero el efecto agregado depende del número de descripciones y de las cabeceras recibidas; falta una decisión explícita sobre ese margen operativo.",
+  "options": [
+    {
+      "title": "Aceptar el límite actual",
+      "body": "Conservar el tope de 20 segundos por espera y validar la duración en la operación tras el despliegue.",
+      "recommended": true
+    },
+    {
+      "title": "Reducir la espera admitida",
+      "body": "Ajustar el límite o los reintentos para acotar más la latencia cuando hay varias descripciones afectadas.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aceptar el límite actual",
+    "body": "Conservar el tope de 20 segundos por espera y validar la duración en la operación tras el despliegue.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Su trabajo reciente en el flujo de publicación lo convierte en el candidato de enrutamiento mejor respaldado para valorar este impacto operativo.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10917.md",
+    "reviewedAt": "2026-10-22T16:10:19.052Z",
+    "mainSha": "8529fe8e4a3805c3a85f25a3abcc1a50e03a26af"
+  }
+}
