@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-22T18:52:51.242Z",
+  "updatedAt": "2026-10-22T18:42:33Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 11132,
+    "title": "MercadoLibre MX live listings have conflicting local stock, seller SKU and GTIN identities",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/11132",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "triage:queued",
+      "P2"
+    ],
+    "createdAt": "2026-10-22T18:42:14Z",
+    "updatedAt": "2026-10-22T18:42:33Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué criterio debe determinar la identidad canónica y la propiedad de estos cinco listings antes de corregir cualquier vínculo local o remoto?",
+  "rationale": "El reporte documenta el estado observado, pero no identifica la causa ni cuál de las identidades debe prevalecer; una decisión automática podría cambiar asociaciones de catálogo o anuncios activos.",
+  "options": [
+    {
+      "title": "Investigar procedencia primero",
+      "body": "Confirmar el historial de altas y titularidad de cada listing antes de decidir una corrección.",
+      "recommended": true
+    },
+    {
+      "title": "Corregir solo el espejo local",
+      "body": "Mantener intactos los anuncios remotos y modificar únicamente filas locales tras validar la relación correcta.",
+      "recommended": false
+    },
+    {
+      "title": "Aplazar la cohorte",
+      "body": "No realizar cambios hasta disponer de una regla de propiedad aplicable a los cinco casos.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Investigar procedencia primero",
+    "body": "Confirmar el historial de altas y titularidad de cada listing antes de decidir una corrección.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Lyno",
+    "reason": "Su historial es la señal local más directa sobre la ruta del cron que ejecuta el flujo de MercadoLibre.",
+    "confidence": "low"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/11132.md",
+    "reviewedAt": "2026-10-22T18:52:51.242Z",
+    "mainSha": "8529fe8e4a3805c3a85f25a3abcc1a50e03a26af"
+  }
+}
