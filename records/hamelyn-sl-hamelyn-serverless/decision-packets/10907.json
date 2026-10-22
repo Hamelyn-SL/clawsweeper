@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-20T07:08:07.890Z",
-  "updatedAt": "2026-10-20T06:25:03Z",
+  "generatedAt": "2026-10-22T11:55:18.271Z",
+  "updatedAt": "2026-10-22T11:46:20Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,44 +12,43 @@
     "labels": [
       "app:ecommerce",
       "feature",
-      "triage:needs-info",
+      "triage:queued",
       "clawsweeper:needs-product-decision",
-      "app:data",
-      "P2"
+      "P2",
+      "app:data"
     ],
     "createdAt": "2026-10-15T12:15:50Z",
-    "updatedAt": "2026-10-20T06:25:03Z"
+    "updatedAt": "2026-10-22T11:46:20Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué fuente/dataset contiene la exportación GA4 de México y qué regla debe vincular una exposición con un pedido?",
-  "rationale": "La métrica de pedidos vistos/no usados depende de una exposición real y de una política de atribución que el código actual no determina; elegirla cambia el significado de las cifras de Marketing.",
+  "question": "¿Debe aceptarse la comparación agregada por rango de fechas del PR como estimación de conversión, o se exige una atribución verificable entre la exposición y el pedido?",
+  "rationale": "La propuesta no puede enlazar de forma determinista los visitantes de GA4 con los pedidos; elegir una aproximación cambia el significado de la métrica que utilizará Marketing.",
   "options": [
     {
-      "title": "Acordar fuente y ventana de atribución",
-      "body": "Definir el dataset GA4 y una ventana/regla —por ejemplo, misma sesión— antes de concretar instrumentación y panel.",
-      "recommended": true
+      "title": "Aceptar estimación por rango",
+      "body": "Aprobar el enfoque del PR y presentar la comparación entre visitantes y pedidos como una estimación, no como atribución individual.",
+      "recommended": false
     },
     {
-      "title": "Medir solo asignación y uso",
-      "body": "Limitar la primera entrega a variante asignada y cupón usado, sin presentar esos datos como prueba de exposición ni calcular pedidos vistos/no usados.",
-      "recommended": false
+      "title": "Exigir vínculo verificable",
+      "body": "Definir un identificador y una ventana de atribución compartidos antes de considerar completas las métricas de conversión.",
+      "recommended": true
     }
   ],
   "recommendation": {
-    "title": "Acordar fuente y ventana de atribución",
-    "body": "Definir el dataset GA4 y una ventana/regla —por ejemplo, misma sesión— antes de concretar instrumentación y panel.",
+    "title": "Exigir vínculo verificable",
+    "body": "Definir un identificador y una ventana de atribución compartidos antes de considerar completas las métricas de conversión.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "Miguel Angel Hernández Perdomo",
-    "reason": "Su trabajo reciente introdujo la selección configurable de variantes de cupón de la que depende la instrumentación; la decisión requiere también Marketing y Data/Ecommerce.",
+    "person": "MiguelHamelyn",
+    "reason": "Introdujo la funcionalidad de cupón que sustenta el cambio y es el revisor identificado del PR candidato.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10907.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10907#issuecomment-6192634044",
-    "reviewedAt": "2026-10-20T07:08:07.890Z",
-    "mainSha": "24b4cb1a02adf5126c8358550480f4fbf04d0418"
+    "reviewedAt": "2026-10-22T11:55:18.271Z",
+    "mainSha": "bd56263c0bb512736e6d8b123ae315d0c90d2ad8"
   }
 }

@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-21T11:00:18.569Z",
-  "updatedAt": "2026-10-21T10:57:13Z",
+  "generatedAt": "2026-10-22T11:57:45.637Z",
+  "updatedAt": "2026-10-22T06:21:31Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -14,39 +14,38 @@
       "P2"
     ],
     "createdAt": "2026-10-13T12:53:25Z",
-    "updatedAt": "2026-10-21T10:57:13Z",
+    "updatedAt": "2026-10-22T06:21:31Z",
     "headSha": "8ba9ff92acc8ca91cd85b62b06eed4b0422e878a"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe Supply Web con Capacitor sustituir la app Expo publicada bajo `com.hamelyn.hamelynapp`, incluyendo releases y OTA, o debe limitarse ahora a proyectos de desarrollo?",
-  "rationale": "La decisión determina si se reutiliza la identidad de tienda y se habilitan despliegues capaces de sustituir la app instalada; el código y la prueba local no establecen por sí solos la intención de producto ni la compatibilidad de actualización aceptada.",
+  "question": "¿Aprueba el equipo para esta migración los mínimos de iOS 16.4+, Android API 24+ y WebView 111+ que exige el perfil `modern`?",
+  "rationale": "La issue vinculada registra esos mínimos como pendientes de decisión; el cuerpo de la PR los da por fijados, pero no hay una confirmación independiente que permita inferir la intención del equipo.",
   "options": [
     {
-      "title": "Confirmar la sustitución",
-      "body": "Aprobar la migración bajo el identificador de tienda existente y exigir evidencia de compatibilidad de actualización antes de publicar.",
+      "title": "Aprobar el perfil `modern`",
+      "body": "Confirmar iOS 16.4+, Android API 24+ y WebView 111+ para los builds nativos de Supply.",
       "recommended": true
     },
     {
-      "title": "Separar el alcance",
-      "body": "Conservar los proyectos Capacitor para desarrollo y aplazar identidad de tienda, releases y OTA hasta decidir la migración.",
+      "title": "Definir otros mínimos",
+      "body": "Acordar versiones distintas y actualizar la configuración y sus criterios antes de integrar la migración.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Confirmar la sustitución",
-    "body": "Aprobar la migración bajo el identificador de tienda existente y exigir evidencia de compatibilidad de actualización antes de publicar.",
+    "title": "Aprobar el perfil `modern`",
+    "body": "Confirmar iOS 16.4+, Android API 24+ y WebView 111+ para los builds nativos de Supply.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "danielmenchen-hamelyn",
-    "reason": "La revisión previa lo señala como candidato para la decisión y abrió los issues de alcance F05 y F06.",
+    "person": "MiguelHamelyn",
+    "reason": "Es responsable de la implementación y de la issue vinculada; la decisión afecta directamente al perfil configurado en esta PR.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10805.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10805#issuecomment-6146409288",
-    "reviewedAt": "2026-10-21T11:00:18.569Z",
-    "mainSha": "1a2fc56c58c08536a7896749a58f0a2212341c14"
+    "reviewedAt": "2026-10-22T11:57:45.637Z",
+    "mainSha": "bd56263c0bb512736e6d8b123ae315d0c90d2ad8"
   }
 }
