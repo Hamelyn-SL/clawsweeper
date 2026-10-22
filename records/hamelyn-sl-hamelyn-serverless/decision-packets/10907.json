@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-22T11:55:18.271Z",
-  "updatedAt": "2026-10-22T11:46:20Z",
+  "generatedAt": "2026-10-22T16:03:20.869Z",
+  "updatedAt": "2026-10-22T11:58:50Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,42 +14,41 @@
       "feature",
       "triage:queued",
       "clawsweeper:needs-product-decision",
-      "app:data",
-      "P2"
+      "P2",
+      "app:data"
     ],
     "createdAt": "2026-10-15T12:15:50Z",
-    "updatedAt": "2026-10-22T11:46:20Z"
+    "updatedAt": "2026-10-22T11:58:50Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe aceptarse la comparación agregada por rango de fechas del PR como estimación de conversión, o se exige una atribución verificable entre la exposición y el pedido?",
-  "rationale": "La propuesta no puede enlazar de forma determinista los visitantes de GA4 con los pedidos; elegir una aproximación cambia el significado de la métrica que utilizará Marketing.",
+  "question": "¿La comparación de visitantes GA4 y pedidos por variante dentro del mismo rango, sin vínculo individual ni ventana de atribución, satisface el objetivo de Marketing?",
+  "rationale": "El PR reconoce que ambas fuentes carecen de un identificador común, de modo que los pedidos no prueban que esos clientes vieran la variante; aceptar esa aproximación determina si el alcance pedido queda cubierto.",
   "options": [
     {
-      "title": "Aceptar estimación por rango",
-      "body": "Aprobar el enfoque del PR y presentar la comparación entre visitantes y pedidos como una estimación, no como atribución individual.",
-      "recommended": false
+      "title": "Aceptar la comparación agregada",
+      "body": "Aprobar esa limitación y documentar que el panel compara visitantes y pedidos del mismo rango, sin atribución individual.",
+      "recommended": true
     },
     {
-      "title": "Exigir vínculo verificable",
-      "body": "Definir un identificador y una ventana de atribución compartidos antes de considerar completas las métricas de conversión.",
-      "recommended": true
+      "title": "Exigir atribución verificable",
+      "body": "Mantener pendiente el objetivo hasta definir una señal e intervalo de atribución que permitan vincular la exposición con el pedido.",
+      "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Exigir vínculo verificable",
-    "body": "Definir un identificador y una ventana de atribución compartidos antes de considerar completas las métricas de conversión.",
+    "title": "Aceptar la comparación agregada",
+    "body": "Aprobar esa limitación y documentar que el panel compara visitantes y pedidos del mismo rango, sin atribución individual.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "Introdujo la funcionalidad de cupón que sustenta el cambio y es el revisor identificado del PR candidato.",
-    "confidence": "medium"
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Está asignado al issue y lidera el PR candidato, por lo que puede coordinar la decisión con Marketing y Data.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10907.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10907#issuecomment-6192634044",
-    "reviewedAt": "2026-10-22T11:55:18.271Z",
-    "mainSha": "bd56263c0bb512736e6d8b123ae315d0c90d2ad8"
+    "reviewedAt": "2026-10-22T16:03:20.869Z",
+    "mainSha": "8529fe8e4a3805c3a85f25a3abcc1a50e03a26af"
   }
 }

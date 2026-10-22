@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-22T16:03:32.738Z",
+  "updatedAt": "2026-10-15T09:50:06Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 10893,
+    "title": "ci: send the daily report through the hamelyn cli",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10893",
+    "state": "open",
+    "labels": [
+      "size/M",
+      "P2"
+    ],
+    "createdAt": "2026-10-15T09:14:34Z",
+    "updatedAt": "2026-10-15T09:50:06Z",
+    "headSha": "36f9110e74b3e5bab6ce5884791539a6bb784eb9"
+  },
+  "lane": "release_inclusion",
+  "priority": "P2",
+  "question": "¿Están completados en producción el despliegue de https://github.com/Hamelyn-SL/hamelyn-serverless/pull/10892, la publicación de `cli-v0.16.0` y la creación de `HAMELYN_DAILY_REPORT_TOKEN`?",
+  "rationale": "El cambio sustituye un envío que funciona por un cliente externo y un secreto nuevos; la descripción advierte que el cron puede fallar si se fusiona antes de completar estos pasos, cuya situación no se puede confirmar desde el checkout.",
+  "options": [
+    {
+      "title": "Fusionar tras verificar los prerrequisitos",
+      "body": "Confirmar el endpoint y CLI en producción, el secreto del workflow y una ejecución correcta antes de habilitar el nuevo envío.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener el flujo actual temporalmente",
+      "body": "Dejar este PR abierto hasta que las dependencias de producción estén listas y verificadas.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Fusionar tras verificar los prerrequisitos",
+    "body": "Confirmar el endpoint y CLI en producción, el secreto del workflow y una ejecución correcta antes de habilitar el nuevo envío.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Es autor del PR API/CLI fusionado del que depende este flujo y puede confirmar la secuencia de publicación prevista.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10893.md",
+    "reviewedAt": "2026-10-22T16:03:32.738Z",
+    "mainSha": "8529fe8e4a3805c3a85f25a3abcc1a50e03a26af"
+  }
+}
