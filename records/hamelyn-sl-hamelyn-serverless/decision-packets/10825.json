@@ -1,14 +1,14 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-15T07:02:07.042Z",
-  "updatedAt": "2026-10-14T06:15:52Z",
+  "generatedAt": "2026-10-22T15:47:14.335Z",
+  "updatedAt": "2026-10-15T07:02:55Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
     "number": 10825,
     "title": "MercadoLibre AR: pasar a 15 días la disponibilidad de las publicaciones activas",
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10825",
-    "state": "closed",
+    "state": "open",
     "labels": [
       "app:marketplace",
       "feature",
@@ -18,43 +18,37 @@
       "P2"
     ],
     "createdAt": "2026-10-14T05:42:42Z",
-    "updatedAt": "2026-10-14T06:15:52Z"
+    "updatedAt": "2026-10-15T07:02:55Z"
   },
-  "lane": "product_direction",
+  "lane": "manual_review",
   "priority": "P2",
-  "question": "¿Se autoriza actualizar remotamente las publicaciones activas de Argentina a 15 días, además de mantener el cambio ya integrado para las altas nuevas?",
-  "rationale": "El cambio de términos para anuncios existentes es una operación remota de gran volumen y no se deduce de la decisión aplicada a las altas nuevas; el equipo debe confirmar que quiere cambiar esos anuncios y aceptar el procedimiento controlado.",
+  "question": "¿Debe el equipo ejecutar ahora la actualización puntual de las publicaciones activas de MercadoLibre Argentina mediante el procedimiento propuesto?",
+  "rationale": "La actualización remota masiva requiere acceso, ventana y supervisión de producción; la evidencia del repositorio no puede decidir ni ejecutar esa operación con seguridad.",
   "options": [
     {
-      "title": "Autorizar el lote controlado",
-      "body": "Aprobar un canario de cinco anuncios y, si se verifican plazo y garantía, continuar con la actualización reanudable del resto.",
+      "title": "Autorizar ejecución operativa",
+      "body": "El equipo de Marketplaces valida el estado, ejecuta el canario y continúa el lote con límites compartidos y reconciliación.",
       "recommended": true
     },
     {
-      "title": "Limitar el cambio a nuevas altas",
-      "body": "Mantener los términos actuales en anuncios ya activos y cerrar el alcance operativo en el cambio ya integrado para publicaciones nuevas.",
-      "recommended": false
-    },
-    {
-      "title": "Validar el procedimiento primero",
-      "body": "Pedir al equipo de Marketplaces confirmar cuotas, ejecución y verificación antes de autorizar escrituras remotas.",
+      "title": "Mantener pendiente",
+      "body": "Conservar la issue abierta hasta que el equipo confirme una ventana y responsable para la operación.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Autorizar el lote controlado",
-    "body": "Aprobar un canario de cinco anuncios y, si se verifican plazo y garantía, continuar con la actualización reanudable del resto.",
+    "title": "Autorizar ejecución operativa",
+    "body": "El equipo de Marketplaces valida el estado, ejecuta el canario y continúa el lote con límites compartidos y reconciliación.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "La issue está asignada a Marcos y el historial local lo conecta con cambios recientes del flujo de MercadoLibre; el equipo de Marketplaces puede validar la operación de producción.",
-    "confidence": "high"
+    "reason": "Figura asignado y aportó el ajuste de altas que define los términos deseados.",
+    "confidence": "medium"
   },
   "source": {
-    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/10825.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10825#issuecomment-6161843899",
-    "reviewedAt": "2026-10-15T07:02:07.042Z",
-    "mainSha": "2e34cdfdbec18f54433eb9c3772d104705a6b08b"
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10825.md",
+    "reviewedAt": "2026-10-22T15:47:14.335Z",
+    "mainSha": "8529fe8e4a3805c3a85f25a3abcc1a50e03a26af"
   }
 }
