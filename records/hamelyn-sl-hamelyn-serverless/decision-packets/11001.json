@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-19T13:14:40.530Z",
-  "updatedAt": "2026-10-19T13:08:47Z",
+  "generatedAt": "2026-10-22T14:48:47.552Z",
+  "updatedAt": "2026-10-22T06:39:55Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -10,48 +10,42 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/11001",
     "state": "open",
     "labels": [
-      "size/L",
-      "P1"
+      "size/XL",
+      "P2"
     ],
     "createdAt": "2026-10-19T12:18:41Z",
-    "updatedAt": "2026-10-19T13:08:47Z",
-    "headSha": "0417fd50fad1b36e794e1791f7b9bbccb8f20805"
+    "updatedAt": "2026-10-22T06:39:55Z",
+    "headSha": "0ceb940327e14b18f6923c941d434f6d037f66f2"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué fuente debe considerarse autoritativa para el país de fabricación por artículo antes de enviarlo a los marketplaces?",
-  "rationale": "El ISBN identifica el registro editorial y el prefijo GS1 no acredita dónde se fabricó el artículo; el catálogo actual tampoco ofrece una fuente confirmada para este dato.",
+  "question": "¿Debe este flujo enviar únicamente el país de fabricación acreditado por artículo, o se acepta el país de publicación del ISBN para libros como dato distinto y explícitamente limitado a ese canal?",
+  "rationale": "La issue vinculada solicita país de fabricación, pero la propuesta deriva el país editorial para libros; decidir esa semántica determina si la fuente y los campos enviados son válidos.",
   "options": [
     {
-      "title": "Fuente de proveedor o fabricante",
-      "body": "Acordar cómo incorporar al catálogo el país de fabricación confirmado por proveedor o fabricante antes de publicarlo.",
+      "title": "Exigir fabricación verificable",
+      "body": "Limitar el envío a registros de producto con una fuente verificable del país de fabricación y dejar el resto sin informar.",
       "recommended": true
     },
     {
-      "title": "Captura en el catálogo",
-      "body": "Definir quién informará y mantendrá el país de fabricación en el flujo de gestión de producto.",
-      "recommended": false
-    },
-    {
-      "title": "Pausar el envío",
-      "body": "Dejar pendiente este cambio hasta disponer de una fuente verificable y un producto afectado validado.",
+      "title": "Aceptar país editorial para libros",
+      "body": "Definir explícitamente ese alcance para libros y separar su semántica del país de fabricación en los canales y documentación correspondientes.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Fuente de proveedor o fabricante",
-    "body": "Acordar cómo incorporar al catálogo el país de fabricación confirmado por proveedor o fabricante antes de publicarlo.",
+    "title": "Exigir fabricación verificable",
+    "body": "Limitar el envío a registros de producto con una fuente verificable del país de fabricación y dejar el resto sin informar.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "AlexDiaz-Hamelyn",
-    "reason": "La revisión previa de la issue vinculada lo señaló como candidato para esa decisión de catálogo.",
-    "confidence": "low"
+    "person": "MarcosTerroso",
+    "reason": "Su revisión ya identificó la diferencia entre origen de fabricación y país editorial y es el candidato disponible más directamente conectado con el comportamiento.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/11001.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/11001#issuecomment-6267974803",
-    "reviewedAt": "2026-10-19T13:14:40.530Z",
-    "mainSha": "89c50345e5c11432aafe604324dc31e01454b13e"
+    "reviewedAt": "2026-10-22T14:48:47.552Z",
+    "mainSha": "36a794e41a25c18888adb89d69906b4d9750f14e"
   }
 }
