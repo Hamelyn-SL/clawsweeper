@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-20T05:58:43.315Z",
-  "updatedAt": "2026-10-20T05:55:47Z",
+  "generatedAt": "2026-10-22T18:04:02.036Z",
+  "updatedAt": "2026-10-21T07:14:58Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,45 +12,44 @@
     "labels": [
       "app:infrastructure",
       "feature",
-      "triage:queued",
+      "triage:done",
       "reporter:danielmenchen",
-      "epic:brevo",
+      "clawsweeper:needs-product-decision",
       "P2",
-      "clawsweeper:needs-product-decision"
+      "epic:brevo"
     ],
     "createdAt": "2026-10-20T05:54:59Z",
-    "updatedAt": "2026-10-20T05:55:47Z"
+    "updatedAt": "2026-10-21T07:14:58Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe aprobarse la migración gradual a Brevo descrita en esta épica, manteniendo Mandrill y Mailchimp como respaldo hasta validar proveedor, consentimiento y operaciones externas?",
-  "rationale": "La propuesta combina cambios de proveedor con decisiones de coste, consentimiento, automatizaciones y retirada de servicios; la implementación depende de una decisión de alcance y de confirmar requisitos externos.",
+  "question": "¿Debe la parte de campañas push con WonderPush permanecer en el alcance de esta migración antes de confirmar compatibilidad de tokens FCM de iOS y sincronización de instalaciones?",
+  "rationale": "La aceptación de esa integración no se puede resolver solo con el código: el contexto indica que depende de confirmación del proveedor y de validar el flujo real antes de activarlo.",
   "options": [
     {
-      "title": "Aprobar migración gradual",
-      "body": "Mantener esta épica como coordinación del trabajo y activar Brevo de forma progresiva solo tras validar sus dependencias.",
+      "title": "Mantener push condicionado",
+      "body": "Conservar WonderPush en la épica, pero no activar ni dar por completada esa parte hasta verificar compatibilidad y sincronización.",
       "recommended": true
     },
     {
-      "title": "Aplazar la migración",
-      "body": "Conservar los proveedores actuales y dejar la integración en espera hasta confirmar requisitos operativos y comerciales.",
+      "title": "Separar push de la migración",
+      "body": "Retirar la parte de WonderPush del alcance actual y tratarla como una decisión o iniciativa independiente.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar migración gradual",
-    "body": "Mantener esta épica como coordinación del trabajo y activar Brevo de forma progresiva solo tras validar sus dependencias.",
+    "title": "Mantener push condicionado",
+    "body": "Conservar WonderPush en la épica, pero no activar ni dar por completada esa parte hasta verificar compatibilidad y sincronización.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "danielmenchen-hamelyn",
-    "reason": "Ha impulsado las issues de desglose y aparece en el historial reciente del Centro de Comunicaciones; la decisión sigue correspondiendo al equipo.",
-    "confidence": "medium"
+    "reason": "La issue está asignada a Daniel, que coordina las partes de la migración y sus PRs.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/11011.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/11011#issuecomment-6284486226",
-    "reviewedAt": "2026-10-20T05:58:43.315Z",
-    "mainSha": "440738332d696355dd7bea2e3c2d7c8c59d56317"
+    "reviewedAt": "2026-10-22T18:04:02.036Z",
+    "mainSha": "8529fe8e4a3805c3a85f25a3abcc1a50e03a26af"
   }
 }
