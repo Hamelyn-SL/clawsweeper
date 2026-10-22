@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-21T13:52:22.073Z",
-  "updatedAt": "2026-10-21T13:48:18Z",
+  "generatedAt": "2026-10-22T14:25:10.975Z",
+  "updatedAt": "2026-10-21T15:15:33Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,47 +15,41 @@
       "feature",
       "triage:needs-info",
       "clawsweeper:needs-product-decision",
-      "reporter:jorgecano",
-      "P2"
+      "P2",
+      "reporter:jorgecano"
     ],
     "createdAt": "2026-10-21T13:24:05Z",
-    "updatedAt": "2026-10-21T13:48:18Z"
+    "updatedAt": "2026-10-21T15:15:33Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué contrato T1 debe usarse con cada transportista y se deben lanzar las recogidas automáticamente al confirmar la venta o mediante una acción diaria en Admin?",
-  "rationale": "Los adjuntos no confirman los servicios habilitados y los adaptadores actuales usan contratos diferentes; elegir el endpoint o disparador sin validación puede crear una recogida incorrecta o duplicada. También debe aclararse quién recibe o imprime las etiquetas.",
+  "question": "¿Qué servicio y códigos API deben usar MRW y SEUR para reproducir las recogidas T1 manuales actuales, y quién debe recibir o imprimir cada etiqueta?",
+  "rationale": "La frecuencia diaria desde Admin está aclarada, pero los adjuntos y adaptadores disponibles describen operaciones/códigos distintos; elegirlos sin confirmación puede crear recogidas con una modalidad incorrecta.",
   "options": [
     {
-      "title": "Validar contrato y usar acción diaria en Admin",
-      "body": "Confirmar los servicios con ambos transportistas y permitir revisar y lanzar las recogidas con sus etiquetas desde Admin.",
+      "title": "Confirmar con los transportistas",
+      "body": "Obtener los códigos API equivalentes a la modalidad T1 manual de cada cuenta y definir el destino operativo de las etiquetas.",
       "recommended": true
     },
     {
-      "title": "Validar contrato y automatizar al confirmar venta",
-      "body": "Crear cada recogida al confirmar la venta, aceptando la necesidad de controles para evitar duplicados y gestionar fallos.",
-      "recommended": false
-    },
-    {
-      "title": "Mantener la operativa manual",
-      "body": "Posponer la integración y seguir creando recogidas en las webs de MRW y SEUR hasta aprobar contrato y flujo.",
+      "title": "Aportar ejemplos de la operativa actual",
+      "body": "Compartir ejemplos saneados de recogidas MRW y SEUR que muestren modalidad y servicio para contrastarlos con las APIs.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Validar contrato y usar acción diaria en Admin",
-    "body": "Confirmar los servicios con ambos transportistas y permitir revisar y lanzar las recogidas con sus etiquetas desde Admin.",
+    "title": "Confirmar con los transportistas",
+    "body": "Obtener los códigos API equivalentes a la modalidad T1 manual de cada cuenta y definir el destino operativo de las etiquetas.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "jorgecano",
-    "reason": "La respuesta de triage le solicita directamente las confirmaciones operativas pendientes.",
-    "confidence": "high"
+    "person": "JavierHamelyn",
+    "reason": "Aparece en la historia reciente del adaptador SEUR; la decisión operativa debe validarse con el equipo que gestiona las recogidas.",
+    "confidence": "low"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/11099.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/11099#issuecomment-6317699810",
-    "reviewedAt": "2026-10-21T13:52:22.073Z",
-    "mainSha": "13e57cc7d0b8c98774b70cb406c43efa0c5df026"
+    "reviewedAt": "2026-10-22T14:25:10.975Z",
+    "mainSha": "36a794e41a25c18888adb89d69906b4d9750f14e"
   }
 }
