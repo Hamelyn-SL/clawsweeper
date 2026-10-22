@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-22T07:47:20.708Z",
+  "updatedAt": "2026-10-22T07:30:33Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 11114,
+    "title": "Piloto Amazon→Postlibri a Madrid: pasar BL-shipping-carrier-16 a una fila de la shipMatrix",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/11114",
+    "state": "open",
+    "labels": [
+      "app:admin",
+      "feature",
+      "triage:done",
+      "reporter:danielmenchen",
+      "P2"
+    ],
+    "createdAt": "2026-10-22T07:13:09Z",
+    "updatedAt": "2026-10-22T07:30:33Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Confirma negocio sustituir la decisión documentada en https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10556 de mantener BL-16 en código por una fila de `shipMatrix` editable por operaciones, con prioridad 50/0?",
+  "rationale": "La propuesta cambia quién puede modificar la asignación de transportista y cómo se activa el piloto; la documentación actual recoge una decisión previa distinta y la recomendación técnica estaba condicionada a que el tope no regresara.",
+  "options": [
+    {
+      "title": "Aprobar el control por matriz",
+      "body": "Ratificar la nueva dirección y continuar con la fila y su procedimiento de despliegue coordinado.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener la regla en código",
+      "body": "Conservar el acuerdo documentado y posponer el traslado hasta que haya una necesidad operativa confirmada.",
+      "recommended": true
+    }
+  ],
+  "recommendation": {
+    "title": "Mantener la regla en código",
+    "body": "Conservar el acuerdo documentado y posponer el traslado hasta que haya una necesidad operativa confirmada.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "jorgecano",
+    "reason": "Es el solicitante original de la regla y la persona disponible más cercana a la validación de negocio; la nota atribuye la aprobación anterior a Javier, cuya identidad no queda establecida aquí.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/11114.md",
+    "reviewedAt": "2026-10-22T07:47:20.708Z",
+    "mainSha": "9fc589bd653fe0fae5fdab0c6ac4b43030803064"
+  }
+}
