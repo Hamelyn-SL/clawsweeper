@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-21T13:08:50.154Z",
-  "updatedAt": "2026-10-20T13:45:46Z",
+  "generatedAt": "2026-10-22T17:21:49.221Z",
+  "updatedAt": "2026-10-21T13:09:47Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -19,43 +19,42 @@
       "P2"
     ],
     "createdAt": "2026-10-20T12:29:02Z",
-    "updatedAt": "2026-10-20T13:45:46Z"
+    "updatedAt": "2026-10-21T13:09:47Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué fuentes y umbrales deben regir las imágenes y los metadatos, y se debe planificar un backfill histórico por marketplace además de completar las nuevas publicaciones?",
-  "rationale": "La issue agrupa recuperación de catálogo, publicación futura y sincronización de anuncios existentes; el orden, las fuentes y la escala cambian sustancialmente el trabajo y no se deducen del código actual.",
+  "question": "¿Qué alcance debe priorizarse primero: completar imágenes con stock, sincronizar metadatos históricos por marketplace o garantizar los campos en nuevas publicaciones?",
+  "rationale": "Son líneas de trabajo separables, con fuentes, APIs y criterios de éxito distintos; el código existente no determina qué canales ni qué tratamiento de datos incompletos debe priorizar el equipo.",
   "options": [
     {
-      "title": "Acordar fuentes y fases",
-      "body": "Definir las fuentes y controles, priorizar libros con stock y aprobar fases de backfill y sincronización futura antes de concretar el trabajo técnico.",
+      "title": "Priorizar lote piloto de imágenes",
+      "body": "Validar primero fuentes y resultados de imágenes para un lote acotado de libros con stock activo.",
       "recommended": true
     },
     {
-      "title": "Limitar el primer alcance a nuevas publicaciones",
-      "body": "Garantizar los datos disponibles en futuras altas y dejar el catálogo histórico fuera de la primera fase.",
+      "title": "Priorizar sincronización histórica",
+      "body": "Definir canal, atributos y mecanismo de actualización remota para fichas ya publicadas antes de ejecutar un lote.",
       "recommended": false
     },
     {
-      "title": "Piloto por marketplace",
-      "body": "Elegir primero un marketplace, validar un lote pequeño y medir la aceptación remota antes de ampliar la operación.",
+      "title": "Priorizar nuevas publicaciones",
+      "body": "Acordar una matriz de atributos por canal y comprobarla en altas nuevas antes de abordar datos históricos.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Acordar fuentes y fases",
-    "body": "Definir las fuentes y controles, priorizar libros con stock y aprobar fases de backfill y sincronización futura antes de concretar el trabajo técnico.",
+    "title": "Priorizar lote piloto de imágenes",
+    "body": "Validar primero fuentes y resultados de imágenes para un lote acotado de libros con stock activo.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "Miguel Angel Hernández Perdomo",
-    "reason": "Su historial reciente toca el flujo de publicaciones de marketplace y la revisión previa lo señaló como candidato para la decisión de alcance.",
-    "confidence": "medium"
+    "person": "mariatapia-hamelyn",
+    "reason": "Es la candidata más cercana al flujo existente de recuperación de imágenes; la decisión de alcance sigue siendo transversal y requiere Producto/Catálogo.",
+    "confidence": "low"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/11056.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/11056#issuecomment-6290983736",
-    "reviewedAt": "2026-10-21T13:08:50.154Z",
-    "mainSha": "13e57cc7d0b8c98774b70cb406c43efa0c5df026"
+    "reviewedAt": "2026-10-22T17:21:49.221Z",
+    "mainSha": "8529fe8e4a3805c3a85f25a3abcc1a50e03a26af"
   }
 }
