@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-20T09:10:34.333Z",
-  "updatedAt": "2026-10-19T09:14:38Z",
+  "generatedAt": "2026-10-22T13:27:11.292Z",
+  "updatedAt": "2026-10-22T13:21:51Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,49 +12,48 @@
     "labels": [
       "app:infrastructure",
       "feature",
-      "triage:needs-info",
+      "triage:queued",
       "reporter:alejandrodiaz",
       "clawsweeper:needs-product-decision",
       "P2"
     ],
     "createdAt": "2026-10-19T08:25:10Z",
-    "updatedAt": "2026-10-19T09:14:38Z"
+    "updatedAt": "2026-10-22T13:21:51Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe avanzar Station Guardian con reparaciones automáticas desactivadas hasta validar la ronda manual, o se debe empezar únicamente con monitorización y avisos?",
-  "rationale": "La propuesta incluye acciones remotas sobre cámaras y bridges de producción; elegir entre reparación desatendida y observación solamente es una decisión de operación y producto, no deducible del código actual.",
+  "question": "¿Se debe aprobar el alcance propuesto de reparaciones automáticas desatendidas, condicionado a una ronda manual previa, o limitar la primera puesta en producción a monitorización y avisos?",
+  "rationale": "La PR concreta una automatización operativa que puede actuar remotamente sobre cámaras y bridges; elegir entre reparar desde el primer despliegue o empezar solo observando requiere aceptar explícitamente ese nivel de intervención.",
   "options": [
     {
-      "title": "Patrocinar el alcance condicionado",
-      "body": "Mantener el alcance de tres puestos y las reparaciones acotadas, pero exigir el enlace al ensayo y validar una ronda manual antes de activar reparaciones.",
+      "title": "Aprobar alcance condicionado",
+      "body": "Mantener las reparaciones acotadas y exigir la ronda manual de aceptación antes de activar el cron.",
       "recommended": true
     },
     {
-      "title": "Empezar solo monitorizando",
-      "body": "Desplegar comprobaciones y avisos sin ejecutar reparaciones hasta validar las señales y el impacto operativo.",
+      "title": "Empezar en modo monitorización",
+      "body": "Desplegar detección y avisos primero, aplazando las reparaciones automáticas hasta acumular validación operacional.",
       "recommended": false
     },
     {
       "title": "Aplazar la automatización",
-      "body": "Conservar diagnóstico y acceso manual de Bifrost sin añadir reparación desatendida por ahora.",
+      "body": "No desplegar todavía el Guardian y conservar el diagnóstico y la operación manual existentes.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Patrocinar el alcance condicionado",
-    "body": "Mantener el alcance de tres puestos y las reparaciones acotadas, pero exigir el enlace al ensayo y validar una ronda manual antes de activar reparaciones.",
+    "title": "Aprobar alcance condicionado",
+    "body": "Mantener las reparaciones acotadas y exigir la ronda manual de aceptación antes de activar el cron.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Está asignado a la issue y el comentario de triage le pide enlazar el código del ensayo para concretar la integración.",
+    "reason": "Es la persona responsable de la issue y ha propuesto la implementación vinculada; es el candidato de contexto más directo para concretar el alcance.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10986.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10986#issuecomment-6263691222",
-    "reviewedAt": "2026-10-20T09:10:34.333Z",
-    "mainSha": "50ff0e07085364335996be12d34d6f745b518c35"
+    "reviewedAt": "2026-10-22T13:27:11.292Z",
+    "mainSha": "36a794e41a25c18888adb89d69906b4d9750f14e"
   }
 }
