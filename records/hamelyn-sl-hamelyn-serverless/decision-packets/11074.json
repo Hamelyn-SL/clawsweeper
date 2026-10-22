@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-22T18:04:23.414Z",
+  "generatedAt": "2026-10-22T17:57:43.529Z",
   "updatedAt": "2026-10-21T07:10:30Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -22,34 +22,34 @@
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Confirma el equipo la regla de reparto por estación y turno descrita en la issue, incluida la estación con menos OP para Buscalibre/restos y la prioridad 900 para S-EX/NE-EX?",
-  "rationale": "La asignación afecta el orden operativo de Skypod y la desfragmentación; el código existente no determina cuál de las alternativas de reparto debe convertirse en regla persistente.",
+  "question": "¿Qué regla operativa debe fijarse para el reparto de OP entre dos o tres estaciones y para asignar Buscalibre y restos antes de implementar el plan persistente?",
+  "rationale": "El código confirma que falta la capacidad, pero no determina qué configuración de estaciones está activa ni cómo resolver los casos de reparto descritos; esas decisiones afectan el flujo físico del almacén y el consumidor nocturno.",
   "options": [
     {
-      "title": "Confirmar el reparto propuesto",
-      "body": "Mantener estas reglas como contrato operativo e implementar un plan persistido compartido por Skypod, documentos, admin y desfragmentación.",
+      "title": "Aprobar las reglas propuestas",
+      "body": "Implementar las reglas de estación, turno, Buscalibre/restos y prioridad 900 para S-EX/NE-EX descritas en la issue.",
       "recommended": true
     },
     {
-      "title": "Ajustar las reglas antes de implementar",
-      "body": "Aclarar primero los escenarios de dos y tres estaciones, el orden de prioridades y la asignación de Buscalibre/restos.",
+      "title": "Ajustar las reglas operativas",
+      "body": "Definir primero una variante revisada para el reparto de OP y el comportamiento de la desfragmentación nocturna.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Confirmar el reparto propuesto",
-    "body": "Mantener estas reglas como contrato operativo e implementar un plan persistido compartido por Skypod, documentos, admin y desfragmentación.",
+    "title": "Aprobar las reglas propuestas",
+    "body": "Implementar las reglas de estación, turno, Buscalibre/restos y prioridad 900 para S-EX/NE-EX descritas en la issue.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "banosdavidhamelyn",
-    "reason": "Figura como responsable asignado y el triage ya le señala la definición del alcance operativo como siguiente paso.",
+    "reason": "Figura como responsable actual en la discusión y tiene contribuciones recientes en código de picking.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/11074.md",
     "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/11074#issuecomment-6310249370",
-    "reviewedAt": "2026-10-22T18:04:23.414Z",
+    "reviewedAt": "2026-10-22T17:57:43.529Z",
     "mainSha": "8529fe8e4a3805c3a85f25a3abcc1a50e03a26af"
   }
 }

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-22T18:04:42.910Z",
+  "generatedAt": "2026-10-22T17:56:04.461Z",
   "updatedAt": "2026-10-22T14:51:43Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -19,34 +19,34 @@
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe el PR limitar la inferencia ISBN al atributo de Amazon y dejar vacíos los campos de MercadoLibre y Decathlon hasta disponer de un origen de fabricación verificable?",
-  "rationale": "La propuesta reutiliza el país del editor para campos de otros marketplaces que describen origen o fabricación; aceptar esa equivalencia afecta al dato comercial que se declara y no puede decidirse solo desde el código.",
+  "question": "¿Debe este PR enviar el país editorial inferido del ISBN para libros o debe esperar a disponer de un dato verificable del país de fabricación por artículo, como pide la issue enlazada?",
+  "rationale": "Son datos distintos: los grupos ISBN identifican el registro/editorial, mientras que la issue y su aclaración piden fabricación. La decisión cambia el significado del dato persistido/publicado y no puede resolverse solo con una validación técnica.",
   "options": [
     {
-      "title": "Limitarlo a Amazon",
-      "body": "Mantener el dato ISBN para el atributo de publicación de Amazon y no enviar origen a los otros marketplaces sin fuente verificable.",
+      "title": "Exigir origen verificable",
+      "body": "Mantener la issue como objetivo y posponer el envío hasta acordar una fuente fiable del país de fabricación por artículo.",
       "recommended": true
     },
     {
-      "title": "Aportar una fuente de fabricación",
-      "body": "Ampliar el cambio para obtener y validar un dato de fabricación por producto antes de poblar los campos de origen de cada marketplace.",
+      "title": "Aprobar país editorial para libros",
+      "body": "Aceptar que el dato para libros represente el país de publicación y documentar explícitamente ese alcance distinto del país de fabricación.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Limitarlo a Amazon",
-    "body": "Mantener el dato ISBN para el atributo de publicación de Amazon y no enviar origen a los otros marketplaces sin fuente verificable.",
+    "title": "Exigir origen verificable",
+    "body": "Mantener la issue como objetivo y posponer el envío hasta acordar una fuente fiable del país de fabricación por artículo.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Es el revisor que señaló la necesidad de fuente verificable y semántica correcta por canal.",
-    "confidence": "high"
+    "reason": "Revisó la semántica del dato y pidió que el origen publicado proceda de una fuente verificable.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/11001.md",
     "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/11001#issuecomment-6267974803",
-    "reviewedAt": "2026-10-22T18:04:42.910Z",
+    "reviewedAt": "2026-10-22T17:56:04.461Z",
     "mainSha": "8529fe8e4a3805c3a85f25a3abcc1a50e03a26af"
   }
 }
