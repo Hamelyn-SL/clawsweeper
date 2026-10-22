@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-08T07:06:54.046Z",
-  "updatedAt": "2026-10-08T07:00:10Z",
+  "generatedAt": "2026-10-22T12:59:05.708Z",
+  "updatedAt": "2026-10-22T12:11:34Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,43 +14,41 @@
       "app:ecommerce",
       "reporter:jesus",
       "feature",
-      "triage:queued",
-      "clawsweeper:needs-product-decision",
-      "P2"
+      "triage:done",
+      "P1"
     ],
     "createdAt": "2026-09-30T13:51:36Z",
-    "updatedAt": "2026-10-08T07:00:10Z"
+    "updatedAt": "2026-10-22T12:11:34Z"
   },
   "lane": "product_direction",
-  "priority": "P2",
-  "question": "¿Se aprueba guardar en los pedidos el historial de 90 días y los campos identificativos solicitados —incluidos cookies gcl*, IDs GA4, _fbp, _fbc y user agent— o se debe acotar la primera entrega a los identificadores de campaña y sus toques?",
-  "rationale": "La definición funcional del multi-touch ya está concretada, pero la decisión sobre conservar identificadores de analítica/publicidad y user agent en pedidos no se deduce del código ni del comentario y afecta al alcance de datos persistidos.",
+  "priority": "P1",
+  "question": "¿Debe desplegarse la persistencia de identificadores publicitarios en checkout y pedidos sin un flujo de consentimiento nuevo, pese a la preocupación de privacidad documentada en la issue relacionada?",
+  "rationale": "La decisión afecta a la recogida y retención de identificadores de terceros; el cierre de la issue de consentimiento no demuestra por sí solo que esta nueva persistencia esté aprobada.",
   "options": [
     {
-      "title": "Aprobar el alcance completo",
-      "body": "Persistir el historial, las cookies y los campos de analítica indicados, sujeto a las políticas de privacidad y retención aplicables.",
+      "title": "Confirmar el despliegue sin nuevo consentimiento",
+      "body": "Autorizar la persistencia conforme al contrato actual y documentar el criterio aplicable a las tiendas.",
       "recommended": false
     },
     {
-      "title": "Acotar los datos",
-      "body": "Persistir los toques y parámetros de campaña, dejando fuera cookies, IDs analíticos y user agent hasta validar su necesidad y retención.",
+      "title": "Condicionar el despliegue al consentimiento",
+      "body": "Esperar a una solución aprobada de consentimiento antes de persistir identificadores publicitarios en pedidos.",
       "recommended": true
     }
   ],
   "recommendation": {
-    "title": "Acotar los datos",
-    "body": "Persistir los toques y parámetros de campaña, dejando fuera cookies, IDs analíticos y user agent hasta validar su necesidad y retención.",
+    "title": "Condicionar el despliegue al consentimiento",
+    "body": "Esperar a una solución aprobada de consentimiento antes de persistir identificadores publicitarios en pedidos.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "Lyno",
-    "reason": "Introdujo el capturador existente y es la persona identificada por el historial local en este ámbito; el checkout y la persistencia requieren coordinación con sus responsables.",
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Es la persona asignada actualmente y contribuye recientemente al flujo de creación de pedidos; la decisión de privacidad sigue correspondiendo al criterio del equipo responsable.",
     "confidence": "low"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10293.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10293#issuecomment-5912777763",
-    "reviewedAt": "2026-10-08T07:06:54.046Z",
-    "mainSha": "7f2e3f93587ea1bc6b9cbf38917614238bdc04f1"
+    "reviewedAt": "2026-10-22T12:59:05.708Z",
+    "mainSha": "36a794e41a25c18888adb89d69906b4d9750f14e"
   }
 }
