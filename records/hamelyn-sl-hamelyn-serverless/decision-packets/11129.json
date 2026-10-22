@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-22T13:05:40.350Z",
-  "updatedAt": "2026-10-22T13:02:44Z",
+  "generatedAt": "2026-10-22T18:11:03.935Z",
+  "updatedAt": "2026-10-22T13:25:28Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -10,41 +10,42 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/11129",
     "state": "open",
     "labels": [
-      "size/M"
+      "size/M",
+      "P2"
     ],
     "createdAt": "2026-10-22T12:58:45Z",
-    "updatedAt": "2026-10-22T13:02:44Z",
+    "updatedAt": "2026-10-22T13:25:28Z",
     "headSha": "f341d6b7bb6d177c111ce6e142dea0885d48e003"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se aprueba el refresco diario de medimops con su incremento de coste y el procedimiento de recreación de colas que descarta tareas pendientes de todas las fuentes?",
-  "rationale": "La aceptación implica una elección operativa y de coste compartido que no puede inferirse del código; además, la prueba disponible no demuestra el rendimiento real previsto.",
+  "question": "¿Se aprueba el refresco diario de medimops con el coste y el procedimiento de colas descritos, una vez corregidos los bloqueos de lectura y ritmo efectivo?",
+  "rationale": "La decisión cambia el volumen y coste de BigQuery y exige recrear colas compartidas que contienen tareas de otras fuentes; la preferencia de cadencia y el riesgo operativo no se deducen solo del código.",
   "options": [
     {
-      "title": "Aprobar con despliegue gradual",
-      "body": "Aceptar la cadencia diaria y exigir presupuesto, retención y gestión de colas aprobados antes de habilitar el ritmo completo.",
+      "title": "Autorizar despliegue gradual",
+      "body": "Aprobar la cadencia diaria cuando se resuelva el tope de lectura y se acuerden presupuesto, ritmo efectivo y recreación controlada de colas.",
       "recommended": true
     },
     {
-      "title": "Mantener cadencia semanal",
-      "body": "Conservar el ritmo actual hasta contar con capacidad real y coste confirmados para el refresco diario.",
+      "title": "Mantener el ciclo semanal",
+      "body": "Posponer el aumento hasta que la capacidad de BigQuery y la actualización de colas no requieran descartar trabajo de otras fuentes.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar con despliegue gradual",
-    "body": "Aceptar la cadencia diaria y exigir presupuesto, retención y gestión de colas aprobados antes de habilitar el ritmo completo.",
+    "title": "Autorizar despliegue gradual",
+    "body": "Aprobar la cadencia diaria cuando se resuelva el tope de lectura y se acuerden presupuesto, ritmo efectivo y recreación controlada de colas.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "PabloMoran34",
-    "reason": "Introdujo la plataforma de scrapers y ha mantenido recientemente el feeder y sus límites operativos.",
-    "confidence": "high"
+    "reason": "Su historial en la fuente y el feeder lo convierte en el candidato mejor respaldado para coordinar esta decisión operativa.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/11129.md",
-    "reviewedAt": "2026-10-22T13:05:40.350Z",
-    "mainSha": "36a794e41a25c18888adb89d69906b4d9750f14e"
+    "reviewedAt": "2026-10-22T18:11:03.935Z",
+    "mainSha": "8529fe8e4a3805c3a85f25a3abcc1a50e03a26af"
   }
 }

@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-22T18:08:11.793Z",
+  "updatedAt": "2026-10-21T09:24:27Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 11087,
+    "title": "chore(deps): bump certifi from 2024.8.30 to 2026.10.19 in /.github/scripts",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/11087",
+    "state": "open",
+    "labels": [
+      "size/XS",
+      "P2",
+      "dependencies",
+      "python"
+    ],
+    "createdAt": "2026-10-21T09:13:25Z",
+    "updatedAt": "2026-10-21T09:24:27Z",
+    "headSha": "8bddd6f79bb8f4fc2fa8576d8cc157c5ddbb09d6"
+  },
+  "lane": "merge_risk",
+  "priority": "P2",
+  "question": "¿Se acepta el cambio del almacén de autoridades certificadoras de `certifi` para los workflows que usan este fichero?",
+  "rationale": "El cambio de versión puede modificar qué cadenas TLS se validan; la evidencia disponible confirma que el paquete se publica y admite Python 3.11, pero no cubre las conexiones de los workflows.",
+  "options": [
+    {
+      "title": "Validar los endpoints de los workflows",
+      "body": "Comprobar las conexiones TLS relevantes con la nueva versión antes de integrar el cambio.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar el cambio",
+      "body": "Integrar el nuevo almacén CA asumiendo el impacto normal de una actualización de `certifi`.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Validar los endpoints de los workflows",
+    "body": "Comprobar las conexiones TLS relevantes con la nueva versión antes de integrar el cambio.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "dependabot[bot]",
+    "reason": "Es el único candidato del historial local cercano a las actualizaciones de dependencias de este fichero; la decisión sobre los endpoints corresponde al equipo que mantiene los workflows.",
+    "confidence": "low"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/11087.md",
+    "reviewedAt": "2026-10-22T18:08:11.793Z",
+    "mainSha": "8529fe8e4a3805c3a85f25a3abcc1a50e03a26af"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-22T18:08:51.928Z",
+  "updatedAt": "2026-10-22T10:25:39Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 11117,
+    "title": "feat: send the daily report from the cli in the nightly workflow",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/11117",
+    "state": "open",
+    "labels": [
+      "size/M",
+      "P2"
+    ],
+    "createdAt": "2026-10-22T08:24:26Z",
+    "updatedAt": "2026-10-22T10:25:39Z",
+    "headSha": "fd82bb5624652dd5c47e34c74da0a7957cbb45c0"
+  },
+  "lane": "release_inclusion",
+  "priority": "P2",
+  "question": "¿Están desplegados en producción los endpoints v6 y está configurado `HAMELYN_DAILY_REPORT_TOKEN` con el scope y rol necesarios para habilitar este workflow?",
+  "rationale": "El PR condiciona el cambio a esos requisitos; el tag `cli-v0.16.0` está presente, pero la inspección disponible no confirma el despliegue productivo ni la configuración del secreto.",
+  "options": [
+    {
+      "title": "Verificar requisitos antes de mergear",
+      "body": "Confirmar el despliegue productivo y la configuración del PAT antes de habilitar el nuevo envío.",
+      "recommended": true
+    },
+    {
+      "title": "Pausar el merge",
+      "body": "Mantener el workflow actual hasta que el despliegue y el secreto estén confirmados.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Verificar requisitos antes de mergear",
+    "body": "Confirmar el despliegue productivo y la configuración del PAT antes de habilitar el nuevo envío.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Ha desarrollado el flujo CLI/API relacionado y el PR documenta las dependencias de despliegue y credenciales.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/11117.md",
+    "reviewedAt": "2026-10-22T18:08:51.928Z",
+    "mainSha": "8529fe8e4a3805c3a85f25a3abcc1a50e03a26af"
+  }
+}

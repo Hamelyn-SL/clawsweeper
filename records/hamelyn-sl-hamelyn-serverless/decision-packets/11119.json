@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-22T09:57:41.726Z",
-  "updatedAt": "2026-10-22T09:23:37Z",
+  "generatedAt": "2026-10-22T18:07:43.365Z",
+  "updatedAt": "2026-10-22T12:12:47Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
     "number": 11119,
-    "title": "fix: wait amazon offer horizon and requeue reprice on reactivation",
+    "title": "fix: wait the amazon offer confirmation horizon on listing errors",
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/11119",
     "state": "open",
     "labels": [
@@ -14,39 +14,38 @@
       "P2"
     ],
     "createdAt": "2026-10-22T09:06:24Z",
-    "updatedAt": "2026-10-22T09:23:37Z",
-    "headSha": "ae53238a06a7706d6af9473335ee388770c89cc7"
+    "updatedAt": "2026-10-22T12:12:47Z",
+    "headSha": "8ffb603a2a955c7e63d049ab84867b36f0318a02"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe el informe reencolar el precio de todas las filas reactivadas que sean candidatas activas, o limitar la recuperación a filas cuya oferta se haya verificado como `BUYABLE`?",
-  "rationale": "La primera opción alcanza la cohorte medida y contempla retirada posterior de filas no elegibles; la issue vinculada formula una recuperación más estrecha para no alterar una oferta existente sin comprobar antes su estado remoto.",
+  "question": "¿Debe este PR cerrar la issue del anuncio ya aparcado aunque su reparación y verificación de precio queden fuera de alcance?",
+  "rationale": "La corrección propuesta evita nuevas clasificaciones prematuras, pero el cuerpo excluye la cohorte preexistente que motivó la issue y aun así incluye una referencia de cierre.",
   "options": [
     {
-      "title": "Reencolado general del informe",
-      "body": "Aceptar el reencolado de todas las filas seleccionadas y activas que reactive el informe, incluyendo la retirada posterior de las que no sigan siendo elegibles.",
+      "title": "Mantener la issue abierta",
+      "body": "Retirar la referencia de cierre y seguir el anuncio y su precio como trabajo pendiente separado.",
       "recommended": true
     },
     {
-      "title": "Recuperación verificada",
-      "body": "Restringir la reactivación y el reprice a filas cuya oferta remota se haya comprobado como `BUYABLE`.",
+      "title": "Ampliar el alcance",
+      "body": "Añadir una recuperación acotada y validada del caso existente antes de cerrar la issue.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Reencolado general del informe",
-    "body": "Aceptar el reencolado de todas las filas seleccionadas y activas que reactive el informe, incluyendo la retirada posterior de las que no sigan siendo elegibles.",
+    "title": "Mantener la issue abierta",
+    "body": "Retirar la referencia de cierre y seguir el anuncio y su precio como trabajo pendiente separado.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Es el candidato de enrutamiento más respaldado por su trabajo reciente en la confirmación y el reprice de Amazon; la decisión afecta a ese flujo.",
+    "reason": "Es el contribuidor reciente con cambios en el flujo de confirmación Amazon y puede aclarar el alcance previsto.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/11119.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/11119#issuecomment-6338004570",
-    "reviewedAt": "2026-10-22T09:57:41.726Z",
-    "mainSha": "ce059dee063ef7b5d18c266a279dc984bf71d596"
+    "reviewedAt": "2026-10-22T18:07:43.365Z",
+    "mainSha": "8529fe8e4a3805c3a85f25a3abcc1a50e03a26af"
   }
 }
