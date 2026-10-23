@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-22T18:52:51.242Z",
-  "updatedAt": "2026-10-22T18:42:33Z",
+  "generatedAt": "2026-10-23T18:58:12.005Z",
+  "updatedAt": "2026-10-23T07:30:53Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,48 +12,42 @@
     "labels": [
       "bug",
       "app:marketplace",
-      "triage:queued",
-      "P2",
-      "clawsweeper:needs-product-decision"
+      "triage:needs-info",
+      "clawsweeper:needs-product-decision",
+      "P2"
     ],
     "createdAt": "2026-10-22T18:42:14Z",
-    "updatedAt": "2026-10-22T18:42:33Z"
+    "updatedAt": "2026-10-23T07:30:53Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué criterio debe determinar la identidad canónica y la propiedad de estos cinco listings antes de corregir cualquier vínculo local o remoto?",
-  "rationale": "El reporte documenta el estado observado, pero no identifica la causa ni cuál de las identidades debe prevalecer; una decisión automática podría cambiar asociaciones de catálogo o anuncios activos.",
+  "question": "¿Qué historial y criterio de identidad canónica se aceptan para validar cada uno de los cinco anuncios antes de decidir si corresponde corregir el vínculo local, los atributos remotos o ninguno?",
+  "rationale": "El código actual explica los valores enviados al crear, pero no atribuye la escritura histórica ni permite deducir qué stock/EAN es correcto. La decisión afecta a datos remotos y locales y no puede resolverse con seguridad solo desde el repositorio.",
   "options": [
     {
-      "title": "Investigar procedencia primero",
-      "body": "Confirmar el historial de altas y titularidad de cada listing antes de decidir una corrección.",
+      "title": "Validar con historial antes de actuar",
+      "body": "Aportar o reconstruir las altas y modificaciones de cada anuncio y aprobar su correspondencia antes de cualquier reparación.",
       "recommended": true
     },
     {
-      "title": "Corregir solo el espejo local",
-      "body": "Mantener intactos los anuncios remotos y modificar únicamente filas locales tras validar la relación correcta.",
-      "recommended": false
-    },
-    {
-      "title": "Aplazar la cohorte",
-      "body": "No realizar cambios hasta disponer de una regla de propiedad aplicable a los cinco casos.",
+      "title": "No modificar los registros",
+      "body": "Dejar los cinco casos documentados sin cambios si no se puede establecer una identidad canónica fiable.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Investigar procedencia primero",
-    "body": "Confirmar el historial de altas y titularidad de cada listing antes de decidir una corrección.",
+    "title": "Validar con historial antes de actuar",
+    "body": "Aportar o reconstruir las altas y modificaciones de cada anuncio y aprobar su correspondencia antes de cualquier reparación.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "Lyno",
-    "reason": "Su historial es la señal local más directa sobre la ruta del cron que ejecuta el flujo de MercadoLibre.",
+    "person": "banosdavidhamelyn",
+    "reason": "Es una persona con trabajo reciente en el formateador del flujo de publicaciones de MercadoLibre; la decisión de identidad requiere además al equipo responsable del catálogo/cuenta.",
     "confidence": "low"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/11132.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/11132#issuecomment-6348745999",
-    "reviewedAt": "2026-10-22T18:52:51.242Z",
-    "mainSha": "8529fe8e4a3805c3a85f25a3abcc1a50e03a26af"
+    "reviewedAt": "2026-10-23T18:58:12.005Z",
+    "mainSha": "a81253047fae0772d3c220773fd288e9c5af221b"
   }
 }

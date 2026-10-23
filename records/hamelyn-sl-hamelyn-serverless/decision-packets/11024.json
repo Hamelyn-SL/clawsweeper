@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-22T17:58:37.118Z",
-  "updatedAt": "2026-10-21T07:10:24Z",
+  "generatedAt": "2026-10-23T18:58:20.325Z",
+  "updatedAt": "2026-10-22T18:13:01Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,47 +15,46 @@
       "triage:needs-info",
       "reporter:danielmenchen",
       "clawsweeper:needs-product-decision",
-      "epic:brevo",
-      "P2"
+      "P2",
+      "epic:brevo"
     ],
     "createdAt": "2026-10-20T06:18:57Z",
-    "updatedAt": "2026-10-21T07:10:24Z"
+    "updatedAt": "2026-10-22T18:13:01Z"
   },
   "lane": "product_direction",
   "priority": "P2",
   "question": "¿Qué herramienta sustituirá las siete encuestas NPS y se migrará el SMS marketing a Brevo o se retirará?",
-  "rationale": "Estas decisiones determinan los destinos y enlaces de los flujos de marketing y no se pueden inferir de la implementación existente; la conversación agrupa las preguntas, pero no registra una decisión final.",
+  "rationale": "El destino de ambos canales determina el alcance de la migración y no puede inferirse del código ni de los PRs de integración abiertos.",
   "options": [
     {
-      "title": "Elegir sustituto NPS y migrar SMS",
-      "body": "Definir una herramienta NPS con retorno de resultados a Brevo y trasladar el SMS antes de retirar Mailchimp.",
+      "title": "Definir NPS y migrar SMS",
+      "body": "Elegir una herramienta NPS que devuelva resultados a Brevo y trasladar SMS antes de retirar Mailchimp.",
       "recommended": true
     },
     {
-      "title": "Elegir sustituto NPS y retirar SMS",
-      "body": "Mantener el objetivo de sustituir las encuestas, pero retirar el canal SMS en vez de migrarlo.",
+      "title": "Definir NPS y retirar SMS",
+      "body": "Mantener la medición NPS con otra herramienta y retirar el canal SMS en vez de migrarlo.",
       "recommended": false
     },
     {
-      "title": "Aplazar la retirada de Mailchimp",
-      "body": "Conservar Mailchimp hasta acordar ambos destinos y completar la validación de consentimiento y automatizaciones.",
+      "title": "Aplazar la retirada",
+      "body": "Mantener Mailchimp activo hasta decidir ambos destinos y completar las validaciones operativas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Elegir sustituto NPS y migrar SMS",
-    "body": "Definir una herramienta NPS con retorno de resultados a Brevo y trasladar el SMS antes de retirar Mailchimp.",
+    "title": "Definir NPS y migrar SMS",
+    "body": "Elegir una herramienta NPS que devuelva resultados a Brevo y trasladar SMS antes de retirar Mailchimp.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "danielmenchen-hamelyn",
-    "reason": "Coordina las partes de la épica Brevo y puede recoger la decisión del equipo de marketing.",
+    "reason": "Ha coordinado la épica y los PRs vinculados; es el candidato de decisión señalado en la discusión previa.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/11024.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/11024#issuecomment-6310247626",
-    "reviewedAt": "2026-10-22T17:58:37.118Z",
-    "mainSha": "8529fe8e4a3805c3a85f25a3abcc1a50e03a26af"
+    "reviewedAt": "2026-10-23T18:58:20.325Z",
+    "mainSha": "a81253047fae0772d3c220773fd288e9c5af221b"
   }
 }
