@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-23T11:24:08.634Z",
+  "updatedAt": "2026-10-23T11:09:58Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 11157,
+    "title": "MercadoLibre MX FedEx shipments held at customs for missing importer RFC",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/11157",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "reporter:blanca",
+      "triage:queued",
+      "P1"
+    ],
+    "createdAt": "2026-10-23T11:08:27Z",
+    "updatedAt": "2026-10-23T11:09:58Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Está confirmado con FedEx que el RFC de Segunda Vida Market debe enviarse como identificador de importador en el request Ship API para los envíos MELI MX?",
+  "rationale": "El código demuestra que hoy falta el dato en el request, pero la documentación interna deja pendiente confirmar el contrato FedEx de la cuenta y el campo/tipo aceptado.",
+  "options": [
+    {
+      "title": "Confirmar contrato con FedEx",
+      "body": "Verificar el campo y tipo de TIN con el contrato de la cuenta y después implementar el RFC del importador para MELI MX.",
+      "recommended": true
+    },
+    {
+      "title": "Solicitar confirmación operativa",
+      "body": "Mantener la incidencia abierta mientras operaciones obtiene de FedEx la confirmación del formato requerido.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Confirmar contrato con FedEx",
+    "body": "Verificar el campo y tipo de TIN con el contrato de la cuenta y después implementar el RFC del importador para MELI MX.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Ha contribuido recientemente al flujo MELI FedEx y a la configuración de importadores asociada.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/11157.md",
+    "reviewedAt": "2026-10-23T11:24:08.634Z",
+    "mainSha": "0fd02eefe53aa4fd7b1352f23603726396e11c55"
+  }
+}
