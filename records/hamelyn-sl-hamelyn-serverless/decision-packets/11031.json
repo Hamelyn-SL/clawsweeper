@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-22T17:59:13.234Z",
-  "updatedAt": "2026-10-21T07:23:33Z",
+  "generatedAt": "2026-10-23T18:51:05.635Z",
+  "updatedAt": "2026-10-22T18:13:04Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -18,38 +18,42 @@
       "P2"
     ],
     "createdAt": "2026-10-20T06:31:48Z",
-    "updatedAt": "2026-10-21T07:23:33Z"
+    "updatedAt": "2026-10-22T18:13:04Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se han verificado los IDs explícitos de todas las tiendas productivas y se confirma que staging no debe cargar GTM antes de integrar la condición propuesta?",
-  "rationale": "La configuración real de Vercel no es visible en el repositorio; el hook `ECOM_DEV` no prueba cuál es su target y producción sin ID explícito dejaría de usar el fallback actual.",
+  "question": "¿Qué target de Vercel tiene `ECOM_DEV` y debe staging cargar GTM o permanecer sin analítica?",
+  "rationale": "La regla solicitada depende del target efectivo de staging, y el nombre del hook no permite inferirlo; el PR advierte que si se clasifica como production GTM seguirá cargándose.",
   "options": [
     {
-      "title": "Confirmar y mantener el criterio",
-      "body": "Verificar los IDs de producción y el target de `ECOM_DEV`, y mantener GTM limitado a producción con ID explícito.",
+      "title": "Staging sin GTM",
+      "body": "Confirmar que `ECOM_DEV` debe permanecer sin analítica y validar que su deployment usa un entorno distinto de production.",
       "recommended": true
     },
     {
-      "title": "Definir medición de staging",
-      "body": "Acordar una regla explícita para staging si el equipo necesita medir ese entorno antes de integrar el cambio.",
+      "title": "Staging con medición propia",
+      "body": "Definir explícitamente un ID y criterio de staging separados de los contenedores de producción.",
+      "recommended": false
+    },
+    {
+      "title": "Staging como production",
+      "body": "Aceptar que el target production cargue el ID regional configurado, documentando ese comportamiento para evitar confundirlo con previews.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Confirmar y mantener el criterio",
-    "body": "Verificar los IDs de producción y el target de `ECOM_DEV`, y mantener GTM limitado a producción con ID explícito.",
+    "title": "Staging sin GTM",
+    "body": "Confirmar que `ECOM_DEV` debe permanecer sin analítica y validar que su deployment usa un entorno distinto de production.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "AlexDiaz-Hamelyn",
-    "reason": "Fue señalado como candidato de routing en la revisión anterior y aparece en el historial reciente del layout de Ecommerce.",
+    "person": "Miguel Angel Hernández Perdomo",
+    "reason": "Su historial reciente en el layout de Ecommerce lo conecta con el comportamiento de runtime afectado; la confirmación del target de Vercel debe venir del responsable operativo de despliegues si es otra persona.",
     "confidence": "low"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/11031.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/11031#issuecomment-6310461414",
-    "reviewedAt": "2026-10-22T17:59:13.234Z",
-    "mainSha": "8529fe8e4a3805c3a85f25a3abcc1a50e03a26af"
+    "reviewedAt": "2026-10-23T18:51:05.635Z",
+    "mainSha": "a81253047fae0772d3c220773fd288e9c5af221b"
   }
 }
