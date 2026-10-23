@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-23T12:33:12.126Z",
+  "updatedAt": "2026-10-23T12:27:12Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 11159,
+    "title": "BigQuery: decidir cómo exponer la atribución de anuncios de los pedidos en mongodata.ordersells",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/11159",
+    "state": "open",
+    "labels": [
+      "app:infrastructure",
+      "question",
+      "triage:queued",
+      "reporter:alejandrodiaz",
+      "P2"
+    ],
+    "createdAt": "2026-10-23T12:00:21Z",
+    "updatedAt": "2026-10-23T12:27:12Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se debe exponer ahora la atribución en `mongodata.ordersells` como JSON, esperar a definir el cálculo de CAC o publicar solo columnas derivadas seleccionadas; y se autoriza que `fbp`, `fbc` y las cookies `_gcl_*` lleguen a BigQuery?",
+  "rationale": "La respuesta determina el momento, la granularidad y la exposición de identificadores en la capa analítica; el código actual no permite inferir la política de datos deseada.",
+  "options": [
+    {
+      "title": "Esperar a definir CAC",
+      "body": "Aplazar cambios en BigQuery hasta que marketing concrete las métricas y los campos necesarios.",
+      "recommended": true
+    },
+    {
+      "title": "Añadir JSON aprobado",
+      "body": "Exponer `attribution` como JSON solo tras confirmar expresamente qué identificadores y cookies se permiten.",
+      "recommended": false
+    },
+    {
+      "title": "Publicar columnas seleccionadas",
+      "body": "Añadir únicamente campos derivados necesarios para los informes y excluir identificadores de cookies salvo aprobación explícita.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Esperar a definir CAC",
+    "body": "Aplazar cambios en BigQuery hasta que marketing concrete las métricas y los campos necesarios.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "mariatapia-hamelyn",
+    "reason": "Su trabajo reciente en consultas de pedidos para marketing la sitúa cerca del uso analítico que motiva la decisión.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/11159.md",
+    "reviewedAt": "2026-10-23T12:33:12.126Z",
+    "mainSha": "0154293341a1cc0c5afdee204c959288ff4a6c91"
+  }
+}
