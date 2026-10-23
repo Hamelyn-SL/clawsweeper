@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-23T16:58:18.125Z",
+  "generatedAt": "2026-10-23T17:01:49.133Z",
   "updatedAt": "2026-10-23T15:44:39Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -14,48 +14,41 @@
       "bug",
       "app:marketplace",
       "triage:needs-info",
-      "clawsweeper:needs-product-decision",
-      "marketplace-crons",
-      "P2"
+      "P2",
+      "marketplace-crons"
     ],
     "createdAt": "2026-10-15T13:30:41Z",
     "updatedAt": "2026-10-23T15:44:39Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe retomarse el retry acotado del POST de descripción con el presupuesto de espera propuesto en la PR cerrada, o debe reducirse ese presupuesto para limitar la duración máxima del cron?",
-  "rationale": "El retry puede aliviar los 429 observados, pero el número de descripciones afectadas multiplica la espera acumulada; elegir ese límite implica priorizar recuperación frente a duración de ejecución y la PR previa se cerró con esa elección pendiente.",
+  "question": "¿Qué presupuesto máximo de espera acumulada debe permitirse al reintentar descripciones de MercadoLibre con 429 para equilibrar recuperación y duración del cron?",
+  "rationale": "La propuesta anterior se cerró sin merge porque no quedó resuelto si aceptar hasta 20 segundos por espera de `Retry-After` o reducir ese límite; elegirlo requiere priorizar la recuperación frente a la duración de las ejecuciones.",
   "options": [
     {
-      "title": "Retomar el presupuesto propuesto",
-      "body": "Recuperar los reintentos acotados y medir tras el despliegue la tasa de fallos y la duración del cron.",
+      "title": "Mantener el límite propuesto",
+      "body": "Permitir el tope actual de espera por reintento y medir la duración de las ejecuciones tras el despliegue.",
       "recommended": true
     },
     {
-      "title": "Reducir la espera acumulada",
-      "body": "Ajustar el número de intentos o el máximo de espera antes de reabrir la implementación para reducir latencia en lotes afectados.",
-      "recommended": false
-    },
-    {
-      "title": "Mantener el comportamiento actual",
-      "body": "No reintentar el POST y aceptar que los 429 de descripción sigan produciendo fallos de ejecución.",
+      "title": "Reducir el presupuesto",
+      "body": "Limitar la espera o el número de reintentos para proteger la duración de las ejecuciones con muchas descripciones.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Retomar el presupuesto propuesto",
-    "body": "Recuperar los reintentos acotados y medir tras el despliegue la tasa de fallos y la duración del cron.",
+    "title": "Mantener el límite propuesto",
+    "body": "Permitir el tope actual de espera por reintento y medir la duración de las ejecuciones tras el despliegue.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Ha contribuido recientemente al flujo de creación de MercadoLibre relacionado con la ruta afectada; el historial disponible no identifica un decisor único.",
+    "reason": "La revisión previa lo identificó como dueño probable de esta decisión operativa.",
     "confidence": "low"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10914.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10914#issuecomment-6193679038",
-    "reviewedAt": "2026-10-23T16:58:18.125Z",
+    "reviewedAt": "2026-10-23T17:01:49.133Z",
     "mainSha": "a81253047fae0772d3c220773fd288e9c5af221b"
   }
 }
