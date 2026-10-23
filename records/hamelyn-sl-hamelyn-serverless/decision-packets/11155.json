@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-23T10:54:51.697Z",
-  "updatedAt": "2026-10-23T10:52:01Z",
+  "generatedAt": "2026-10-23T10:58:04.697Z",
+  "updatedAt": "2026-10-23T10:55:54Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,42 +15,41 @@
       "app:marketplace",
       "triage:queued",
       "clawsweeper:needs-product-decision",
-      "reporter:carlotavarela",
-      "P3"
+      "P3",
+      "reporter:carlotavarela"
     ],
     "createdAt": "2026-10-23T10:51:49Z",
-    "updatedAt": "2026-10-23T10:52:01Z"
+    "updatedAt": "2026-10-23T10:55:54Z"
   },
-  "lane": "manual_review",
+  "lane": "product_direction",
   "priority": "P3",
-  "question": "¿Debe realizarse el renombrado de estos cuatro canales en Slack y quién tiene acceso para hacerlo?",
-  "rationale": "El repositorio identifica los destinos mediante IDs, pero no controla sus nombres visibles ni acredita que los canales enumerados sigan siendo los destinos correctos; hace falta confirmar el cambio administrativo antes de darlo por resuelto.",
+  "question": "¿Se confirma que estos cuatro canales de Slack son los destinos regionales actuales y que deben renombrarse con el prefijo `ai-`?",
+  "rationale": "La petición describe una modificación de nombres en Slack, pero el código solo enlaza marketplaces con IDs y no puede validar los nombres visibles ni ejecutar cambios en el espacio de trabajo.",
   "options": [
     {
-      "title": "Confirmar y renombrar en Slack",
-      "body": "Validar que los cuatro canales son los destinos actuales y cambiar sus nombres en Slack con una persona autorizada.",
+      "title": "Confirmar y renombrar",
+      "body": "Validar los cuatro destinos en Slack y pedir a una persona con acceso que aplique los nombres solicitados.",
       "recommended": true
     },
     {
-      "title": "Revisar los destinos primero",
-      "body": "Comprobar en Slack qué canales corresponden a las regiones antes de decidir si se renombra alguno.",
+      "title": "Verificar primero",
+      "body": "Comprobar en Slack qué canales corresponden a los IDs regionales antes de confirmar el renombrado.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Confirmar y renombrar en Slack",
-    "body": "Validar que los cuatro canales son los destinos actuales y cambiar sus nombres en Slack con una persona autorizada.",
+    "title": "Confirmar y renombrar",
+    "body": "Validar los cuatro destinos en Slack y pedir a una persona con acceso que aplique los nombres solicitados.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su contribución reciente al registro de destinos lo hace una referencia de contexto técnico, aunque no consta que sea responsable de la administración de Slack.",
-    "confidence": "low"
+    "reason": "Ha contribuido recientemente al registro de destinos Slack y fue identificado como candidato en la revisión previa.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/11155.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/11155#issuecomment-6363290113",
-    "reviewedAt": "2026-10-23T10:54:51.697Z",
+    "reviewedAt": "2026-10-23T10:58:04.697Z",
     "mainSha": "0fd02eefe53aa4fd7b1352f23603726396e11c55"
   }
 }
