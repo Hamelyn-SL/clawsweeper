@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-23T08:53:45.002Z",
+  "updatedAt": "2026-10-23T08:30:48Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 11146,
+    "title": "Agente de #b2b-cruces: cruzar solicitudes B2B con catálogos de proveedores",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/11146",
+    "state": "open",
+    "labels": [
+      "app:infrastructure",
+      "reporter:pablo",
+      "feature",
+      "triage:queued",
+      "P2"
+    ],
+    "createdAt": "2026-10-23T08:29:43Z",
+    "updatedAt": "2026-10-23T08:30:48Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué tabla o dataset existente debe alojar los catálogos normalizados y se autoriza crear una tabla nueva si no existe un destino adecuado?",
+  "rationale": "La elección determina el esquema persistente y la estrategia de sustitución; la política del repositorio exige autorización explícita antes de crear estructuras de BigQuery.",
+  "options": [
+    {
+      "title": "Usar un destino existente",
+      "body": "Identificar el dataset y la tabla disponibles y adaptar la ingesta a su esquema.",
+      "recommended": true
+    },
+    {
+      "title": "Autorizar una tabla nueva",
+      "body": "Aprobar explícitamente su nombre, propósito, esquema, volumen esperado y responsable antes de implementarla.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Usar un destino existente",
+    "body": "Identificar el dataset y la tabla disponibles y adaptar la ingesta a su esquema.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "PabloMoran34",
+    "reason": "Es el solicitante asignado y autor del flujo B2B de ingesta de listados que sirve de precedente.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/11146.md",
+    "reviewedAt": "2026-10-23T08:53:45.002Z",
+    "mainSha": "a975cf1607593d84b776b65fd31b84f9db2c04fa"
+  }
+}
