@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-23T19:04:04.833Z",
+  "updatedAt": "2026-10-23T10:45:48Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 11042,
+    "title": "fix: revert review productivity when a counted unit is rejected",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/11042",
+    "state": "open",
+    "labels": [
+      "size/L",
+      "P2"
+    ],
+    "createdAt": "2026-10-20T08:50:34Z",
+    "updatedAt": "2026-10-23T10:45:48Z",
+    "headSha": "97ab1a19d78ada97cc1deacd6f862e3f2d77238f"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe este cambio corregir también ordersCounted para lotes revisados que se fusionan antes del rechazo, o aceptamos la salvedad documentada?",
+  "rationale": "El arreglo completo podría requerir conservar el pedido original en la atribución; aceptar la salvedad mantiene un caso conocido de desglose inexacto aunque el total de sesión se corrija.",
+  "options": [
+    {
+      "title": "Ampliar el alcance",
+      "body": "Guardar el pedido que contabilizó la unidad y añadir cobertura para fusión seguida de rechazo.",
+      "recommended": false
+    },
+    {
+      "title": "Aceptar la salvedad",
+      "body": "Integrar la corrección del total de sesión manteniendo documentada la discrepancia excepcional del desglose por pedido.",
+      "recommended": true
+    }
+  ],
+  "recommendation": {
+    "title": "Aceptar la salvedad",
+    "body": "Integrar la corrección del total de sesión manteniendo documentada la discrepancia excepcional del desglose por pedido.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Ha contribuido recientemente al flujo de productividad y puede concretar el impacto operativo de la atribución tras una fusión.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/11042.md",
+    "reviewedAt": "2026-10-23T19:04:04.833Z",
+    "mainSha": "a81253047fae0772d3c220773fd288e9c5af221b"
+  }
+}

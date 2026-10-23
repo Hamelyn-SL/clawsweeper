@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-22T17:59:31.844Z",
-  "updatedAt": "2026-10-22T09:58:42Z",
+  "generatedAt": "2026-10-23T19:03:23.428Z",
+  "updatedAt": "2026-10-23T10:56:11Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -10,43 +10,42 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/11039",
     "state": "open",
     "labels": [
-      "size/L",
+      "size/XL",
       "P2"
     ],
     "createdAt": "2026-10-20T08:02:04Z",
-    "updatedAt": "2026-10-22T09:58:42Z",
-    "headSha": "3ba4345edbb4717de214a869224ca2863660d31d"
+    "updatedAt": "2026-10-23T10:56:11Z",
+    "headSha": "846725f92966a1fc757a90ec9ac54952ea7daa56"
   },
-  "lane": "release_inclusion",
+  "lane": "manual_review",
   "priority": "P2",
-  "question": "¿Se puede coordinar el despliegue a producción para cargar la nueva matriz `countries` inmediatamente después del despliegue y antes de reanudar los feeds de Merchant?",
-  "rationale": "El cambio de código y la actualización de tarifas persistidas son pasos separados; el orden determina si los clientes ven tarifas urgentes erróneas o indisponibles durante la transición.",
+  "question": "¿La explicación y secuencia de actualización de `countries` resuelven la solicitud de cambios sobre las tarifas urgentes y autorizan retirar ese bloqueo?",
+  "rationale": "La aceptación depende de confirmar que la actualización operativa se ejecutará junto al despliegue; el hilo visible no contiene la confirmación final del revisor.",
   "options": [
     {
-      "title": "Aprobar con secuencia coordinada",
-      "body": "Programar el despliegue junto con la carga de `countries` y la reactivación del feed según el orden descrito en el PR.",
+      "title": "Confirmar y retirar la solicitud",
+      "body": "Aceptar la secuencia coordinada descrita y continuar la revisión de merge.",
       "recommended": true
     },
     {
-      "title": "Pausar hasta preparar la carga",
-      "body": "No integrar hasta tener confirmada la ejecución operativa de la matriz y del feed en una misma ventana.",
+      "title": "Mantener bloqueado",
+      "body": "Pedir evidencia adicional de la matriz final y de la ventana de actualización antes de retirar la solicitud.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar con secuencia coordinada",
-    "body": "Programar el despliegue junto con la carga de `countries` y la reactivación del feed según el orden descrito en el PR.",
+    "title": "Confirmar y retirar la solicitud",
+    "body": "Aceptar la secuencia coordinada descrita y continuar la revisión de merge.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Su historial local está vinculado al mapa de recargos por tienda, el componente de producto más directamente afectado por la decisión de tarifas.",
+    "person": "banosdavidhamelyn",
+    "reason": "Es quien dejó la solicitud de cambios sobre la ventana de tarifas y quien puede confirmar que la respuesta la resuelve.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/11039.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/11039#issuecomment-6287483470",
-    "reviewedAt": "2026-10-22T17:59:31.844Z",
-    "mainSha": "8529fe8e4a3805c3a85f25a3abcc1a50e03a26af"
+    "reviewedAt": "2026-10-23T19:03:23.428Z",
+    "mainSha": "a81253047fae0772d3c220773fd288e9c5af221b"
   }
 }
