@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-19T10:02:23.200Z",
-  "updatedAt": "2026-10-19T09:55:53Z",
+  "generatedAt": "2026-10-23T08:58:42.191Z",
+  "updatedAt": "2026-10-23T08:55:31Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,45 +13,44 @@
       "source:admin-panel",
       "app:admin",
       "feature",
-      "triage:needs-info",
+      "triage:queued",
       "clawsweeper:needs-product-decision",
+      "P2",
       "reporter:danielmenchen-hamelyn",
-      "epic:warehouse-telemetry",
-      "P2"
+      "epic:warehouse-telemetry"
     ],
     "createdAt": "2026-09-10T07:39:46Z",
-    "updatedAt": "2026-10-19T09:55:53Z"
+    "updatedAt": "2026-10-23T08:55:31Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿F5B se limita a exponer sesiones y agregados diarios por API v6/CLI, o incluye también informes inmutables con listado y descarga en Admin?",
-  "rationale": "El alcance original combina consultas con un ciclo de archivo que implica contratos, persistencia y superficies de Admin; la discusión pide explícitamente resolver esa elección antes de implementar.",
+  "question": "¿Se acota F5B a consultas de sesiones y agregados por API/CLI, dejando el archivo inmutable, Admin y réplica analítica para una issue separada, o deben seguir siendo parte de F5B?",
+  "rationale": "El PR abierto implementa la primera parte y pretende cerrar la issue, mientras que los criterios originales incluyen el archivo y la descarga; aceptar esa división requiere confirmar el alcance del producto.",
   "options": [
     {
-      "title": "Consultas por CLI",
-      "body": "Acordar sesiones y agregados diarios por API v6/CLI y generar los informes fuera del sistema.",
+      "title": "Separar consultas y archivo",
+      "body": "Acotar F5B a sesiones y agregados por API/CLI y registrar el archivo, Admin y réplica como trabajo independiente.",
       "recommended": true
     },
     {
-      "title": "Consultas y archivo",
-      "body": "Conservar también el archivo inmutable y concretar sus snapshots, autoría, permisos, descarga y réplica antes de iniciar la fase.",
+      "title": "Mantener F5B completo",
+      "body": "Conservar los criterios originales y completar también el informe inmutable, su consulta desde Admin y la réplica analítica antes de cerrar F5B.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Consultas por CLI",
-    "body": "Acordar sesiones y agregados diarios por API v6/CLI y generar los informes fuera del sistema.",
+    "title": "Separar consultas y archivo",
+    "body": "Acotar F5B a sesiones y agregados por API/CLI y registrar el archivo, Admin y réplica como trabajo independiente.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "danielmenchen-hamelyn",
-    "reason": "La conversación identifica expresamente a Daniel como responsable de confirmar el alcance.",
+    "reason": "La discusión y la revisión del PR señalan explícitamente que la decisión de alcance corresponde a Daniel.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9373.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9373#issuecomment-5644932590",
-    "reviewedAt": "2026-10-19T10:02:23.200Z",
-    "mainSha": "2b8d462a72d3e3515bf20d1c3e1d071f7b2a8144"
+    "reviewedAt": "2026-10-23T08:58:42.191Z",
+    "mainSha": "a975cf1607593d84b776b65fd31b84f9db2c04fa"
   }
 }
