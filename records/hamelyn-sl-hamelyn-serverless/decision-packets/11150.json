@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-23T10:24:52.104Z",
+  "updatedAt": "2026-10-23T10:16:43Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 11150,
+    "title": "Admin: 107 pedidos Amazon Madrid recibieron CAINIAO antes de activarse la fila POSTLIBRI",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/11150",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:admin",
+      "triage:needs-info",
+      "P1",
+      "origin:agent"
+    ],
+    "createdAt": "2026-10-23T10:01:59Z",
+    "updatedAt": "2026-10-23T10:16:43Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe Operations conservar las 107 etiquetas CAINIAO o evaluar una reasignación manual tras confirmar la fila POSTLIBRI y una asignación nueva correcta?",
+  "rationale": "La matriz solo gobierna nuevas asignaciones y los carriers persistidos prevalecen; cambiar las etiquetas existentes puede afectar operaciones y el estado de pedidos reales.",
+  "options": [
+    {
+      "title": "Validar y decidir cada cambio",
+      "body": "Confirmar primero la fila viva y una nueva asignación POSTLIBRI, y después valorar con Operations el tratamiento de los 107 pedidos.",
+      "recommended": true
+    },
+    {
+      "title": "Conservar las etiquetas",
+      "body": "Mantener CAINIAO en los 107 pedidos y limitar la incidencia a la secuencia de activación ya corregida.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Validar y decidir cada cambio",
+    "body": "Confirmar primero la fila viva y una nueva asignación POSTLIBRI, y después valorar con Operations el tratamiento de los 107 pedidos.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "jorgecano",
+    "reason": "La revisión anterior de la decisión de la matriz lo señaló como candidato de negocio; conviene confirmar que también tiene autoridad sobre el tratamiento operativo de estos pedidos.",
+    "confidence": "low"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/11150.md",
+    "reviewedAt": "2026-10-23T10:24:52.104Z",
+    "mainSha": "f2ab659a79b84c4516f64c78c84971a8756b1745"
+  }
+}
