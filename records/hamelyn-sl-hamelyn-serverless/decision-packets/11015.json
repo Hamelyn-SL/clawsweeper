@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-22T17:58:20.754Z",
-  "updatedAt": "2026-10-20T07:13:59Z",
+  "generatedAt": "2026-10-23T18:58:54.782Z",
+  "updatedAt": "2026-10-23T09:08:13Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -14,39 +14,38 @@
       "P2"
     ],
     "createdAt": "2026-10-20T06:13:55Z",
-    "updatedAt": "2026-10-20T07:13:59Z",
-    "headSha": "4faa5a673f4fc15ba06c677f47e489835a885c23"
+    "updatedAt": "2026-10-23T09:08:13Z",
+    "headSha": "f82b8591612ac4b89f8d70119b5d875bfe595309"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se acepta que este PR entregue las consultas de sesiones y agregados por API/CLI y que el archivo inmutable y su listado/descarga en Admin se sigan por separado?",
-  "rationale": "La issue conserva criterios de aceptación para archivo y descarga, mientras que la conversación posterior deja esa parte expresamente pendiente; el PR implementa solo las consultas y no hay una decisión humana posterior que acote el alcance.",
+  "question": "¿Se acepta separar sesiones y agregados por API/CLI del archivo inmutable de informes, la vista de Admin y la réplica analítica que siguen en la issue vinculada?",
+  "rationale": "El PR implementa solo una parte del alcance descrito en la issue, que continúa abierta; decidir si este cambio satisface esa fase requiere confirmar la intención del equipo y actualizar el seguimiento.",
   "options": [
     {
-      "title": "Separar consultas y archivo",
-      "body": "Acordar que este PR cubra sesiones y agregados por API/CLI y registrar el archivo de informes como trabajo separado.",
+      "title": "Aceptar la separación",
+      "body": "Confirmar sesiones y agregados como entrega independiente y ajustar la issue para que el archivo de informes siga como trabajo separado.",
       "recommended": true
     },
     {
-      "title": "Mantener el alcance completo",
-      "body": "Exigir que F5B incluya también informes inmutables, su consulta desde Admin y los requisitos de conservación antes de considerar completo el trabajo.",
+      "title": "Mantener el alcance conjunto",
+      "body": "Dejar el PR en espera hasta que incluya también el archivo inmutable, la vista de Admin y la réplica analítica.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Separar consultas y archivo",
-    "body": "Acordar que este PR cubra sesiones y agregados por API/CLI y registrar el archivo de informes como trabajo separado.",
+    "title": "Aceptar la separación",
+    "body": "Confirmar sesiones y agregados como entrega independiente y ajustar la issue para que el archivo de informes siga como trabajo separado.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "danielmenchen-hamelyn",
-    "reason": "La issue y su conversación le asignan explícitamente la decisión sobre el alcance de F5B.",
-    "confidence": "high"
+    "reason": "Es el reporter de la issue y en la discusión propuso acotar F5B y separar el archivo como fase posterior.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/11015.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/11015#issuecomment-6285516544",
-    "reviewedAt": "2026-10-22T17:58:20.754Z",
-    "mainSha": "8529fe8e4a3805c3a85f25a3abcc1a50e03a26af"
+    "reviewedAt": "2026-10-23T18:58:54.782Z",
+    "mainSha": "a81253047fae0772d3c220773fd288e9c5af221b"
   }
 }
