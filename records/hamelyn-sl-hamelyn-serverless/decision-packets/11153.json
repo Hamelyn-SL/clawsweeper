@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-23T10:45:35.792Z",
+  "updatedAt": "2026-10-23T10:41:43Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 11153,
+    "title": "onStocksStatusChange trigger skips 6 price-pushing marketplaces: mk_amazonMx/Fr/It, mk_decathlon, mk_discogs and mk_mercadolibreGlobal keep stale prices",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/11153",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "reporter:pablo",
+      "P1"
+    ],
+    "createdAt": "2026-10-23T10:40:42Z",
+    "updatedAt": "2026-10-23T10:41:43Z"
+  },
+  "lane": "merge_risk",
+  "priority": "P1",
+  "question": "¿Se debe incluir en el trabajo de esta issue una reconciliación masiva de los anuncios afectados, además de corregir el trigger y añadir la prueba?",
+  "rationale": "La reparación del código y el guardarraíl son acotados, pero la reconciliación puede cambiar miles de registros y requiere confirmar el universo, el estado final y el plan operativo antes de implementarse o ejecutarse.",
+  "options": [
+    {
+      "title": "Separar la reconciliación",
+      "body": "Corregir trigger y prueba en un cambio acotado, y definir el backfill por separado con conteo, muestras y validación operativa.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener alcance conjunto",
+      "body": "Planificar conjuntamente trigger, prueba, documentación de alta y backfill, sin ejecutar escrituras hasta que se apruebe el alcance y el dry-run.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Separar la reconciliación",
+    "body": "Corregir trigger y prueba en un cambio acotado, y definir el backfill por separado con conteo, muestras y validación operativa.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Lyno",
+    "reason": "Su historial conecta con el trigger actual y la prueba de coherencia; es el candidato de enrutamiento más respaldado por el historial local.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/11153.md",
+    "reviewedAt": "2026-10-23T10:45:35.792Z",
+    "mainSha": "0fd02eefe53aa4fd7b1352f23603726396e11c55"
+  }
+}
