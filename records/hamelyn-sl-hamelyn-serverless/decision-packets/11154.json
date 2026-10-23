@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-23T10:54:09.847Z",
+  "updatedAt": "2026-10-23T10:49:15Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 11154,
+    "title": "Pricing cron overwrites existing prices with DEFAULT_PRICE when offer providers fail or return no offers",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/11154",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:infrastructure",
+      "reporter:pablo",
+      "triage:queued",
+      "P1"
+    ],
+    "createdAt": "2026-10-23T10:46:27Z",
+    "updatedAt": "2026-10-23T10:49:15Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "Si falla uno de varios proveedores, ¿el cron debe recalcular con las ofertas válidas restantes o saltar el producto completo?",
+  "rationale": "La issue identifica explícitamente ambas políticas posibles, y elegirlas determina si el fallo parcial puede producir una revaluación basada en una muestra incompleta.",
+  "options": [
+    {
+      "title": "Usar ofertas disponibles",
+      "body": "Recalcular cuando al menos un proveedor devuelve ofertas válidas y omitir solo cuando no hay datos utilizables.",
+      "recommended": true
+    },
+    {
+      "title": "Exigir respuesta completa",
+      "body": "Omitir la revaluación si falla cualquier proveedor para evitar cálculos con una muestra parcial.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Usar ofertas disponibles",
+    "body": "Recalcular cuando al menos un proveedor devuelve ofertas válidas y omitir solo cuando no hay datos utilizables.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "PabloMoran34",
+    "reason": "Su historial reciente incluye cambios de la fórmula de pricing Optimo y es el candidato de código más cercano disponible para esta decisión de comportamiento.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/11154.md",
+    "reviewedAt": "2026-10-23T10:54:09.847Z",
+    "mainSha": "0fd02eefe53aa4fd7b1352f23603726396e11c55"
+  }
+}
