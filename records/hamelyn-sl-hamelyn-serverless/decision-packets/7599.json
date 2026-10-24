@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-17T08:49:20.258Z",
-  "updatedAt": "2026-10-17T08:16:55Z",
+  "generatedAt": "2026-10-24T08:50:58.984Z",
+  "updatedAt": "2026-10-24T08:17:44Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,48 +14,47 @@
       "question",
       "triage:needs-info",
       "clawsweeper:needs-product-decision",
+      "P2",
       "origin:dev",
-      "mk:amazon",
-      "P2"
+      "mk:amazon"
     ],
     "createdAt": "2026-07-15T12:06:25Z",
-    "updatedAt": "2026-10-17T08:16:55Z"
+    "updatedAt": "2026-10-24T08:17:44Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué tratamiento debe recibir en V2 la cohorte legacy sin ASIN resoluble por región: mantenerse terminal, revalidarse en shadow para una cohorte acotada con ASIN disponible, o aplicarse otra ventana y cadencia?",
-  "rationale": "La elección define elegibilidad, persistencia y frecuencia de revalidación; los datos compartidos son señales acotadas, y cambiar estados o reintentos impondría una política no aprobada.",
+  "question": "¿Qué tratamiento debe tener en V2 la cohorte legacy sin ASIN resoluble: permanecer aparcada, evaluarse primero en shadow para una cohorte delimitada, o adoptar otra política y cadencia de revalidación?",
+  "rationale": "La respuesta determina si se vuelven a consultar o modificar stocks persistidos y cómo se coordinan con el resolver regional de #8162; el código por sí solo no puede elegir umbrales ni alcance de rollout.",
   "options": [
     {
-      "title": "Shadow acotado recomendado",
-      "body": "Evaluar primero la cohorte FR/IT con ASIN y el mismo SKU activo en ES, sin reactivar listings hasta revisar resultados.",
+      "title": "Shadow acotado",
+      "body": "Evaluar en shadow únicamente una cohorte aprobada, sin reactivar listings, y revisar resultados antes de fijar cadencia.",
       "recommended": true
     },
     {
-      "title": "Mantener terminales",
-      "body": "Dejar aparcada la cohorte legacy sin ASIN y evitar reintentos hasta que cambien los datos o se apruebe otra política.",
+      "title": "Mantener aparcados",
+      "body": "Dejar los errores legacy como permanentes y no revalidarlos hasta que exista otra señal o decisión.",
       "recommended": false
     },
     {
-      "title": "Definir política más amplia",
-      "body": "Acordar explícitamente una ventana y cadencia de revalidación aplicable a otras cohortes o regiones antes de implementarla.",
+      "title": "Definir política alternativa",
+      "body": "Acordar otra cohorte, regla de reintentos y cadencia antes de cambiar el runtime o los datos.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Shadow acotado recomendado",
-    "body": "Evaluar primero la cohorte FR/IT con ASIN y el mismo SKU activo en ES, sin reactivar listings hasta revisar resultados.",
+    "title": "Shadow acotado",
+    "body": "Evaluar en shadow únicamente una cohorte aprobada, sin reactivar listings, y revisar resultados antes de fijar cadencia.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Ha articulado la decisión pendiente y su coordinación con el resolver regional en la discusión más reciente.",
+    "reason": "Ha aportado el análisis técnico y los datos de canario más recientes en este hilo; la decisión también requiere Producto y Marketplace.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7599.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7599#issuecomment-4980638639",
-    "reviewedAt": "2026-10-17T08:49:20.258Z",
-    "mainSha": "e3c66f16fe7382452dd6a7298981d6b1c22b52d3"
+    "reviewedAt": "2026-10-24T08:50:58.984Z",
+    "mainSha": "a81253047fae0772d3c220773fd288e9c5af221b"
   }
 }
