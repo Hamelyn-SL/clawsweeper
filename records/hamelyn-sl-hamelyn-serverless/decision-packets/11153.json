@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-23T10:45:35.792Z",
-  "updatedAt": "2026-10-23T10:41:43Z",
+  "generatedAt": "2026-10-24T11:45:08.511Z",
+  "updatedAt": "2026-10-23T11:14:09Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,42 +13,41 @@
       "bug",
       "app:marketplace",
       "reporter:pablo",
-      "P1",
-      "clawsweeper:needs-product-decision"
+      "triage:done",
+      "P1"
     ],
     "createdAt": "2026-10-23T10:40:42Z",
-    "updatedAt": "2026-10-23T10:41:43Z"
+    "updatedAt": "2026-10-23T11:14:09Z"
   },
-  "lane": "merge_risk",
+  "lane": "manual_review",
   "priority": "P1",
-  "question": "¿Se debe incluir en el trabajo de esta issue una reconciliación masiva de los anuncios afectados, además de corregir el trigger y añadir la prueba?",
-  "rationale": "La reparación del código y el guardarraíl son acotados, pero la reconciliación puede cambiar miles de registros y requiere confirmar el universo, el estado final y el plan operativo antes de implementarse o ejecutarse.",
+  "question": "¿Qué alcance de reconciliación debe autorizarse tras validar en Atlas los candidatos y confirmar los precios remotos, dado que la réplica de BigQuery no acredita por sí sola los anuncios afectados?",
+  "rationale": "La actualización masiva puede cambiar datos de producción; las discrepancias agregadas de la réplica no identifican con certeza ni causalidad ni precio remoto para cada anuncio.",
   "options": [
     {
-      "title": "Separar la reconciliación",
-      "body": "Corregir trigger y prueba en un cambio acotado, y definir el backfill por separado con conteo, muestras y validación operativa.",
+      "title": "Reconciliación acotada y validada",
+      "body": "Preparar candidatos por canal, contrastar una muestra con Atlas y el precio remoto, y ejecutar solo el conjunto aprobado.",
       "recommended": true
     },
     {
-      "title": "Mantener alcance conjunto",
-      "body": "Planificar conjuntamente trigger, prueba, documentación de alta y backfill, sin ejecutar escrituras hasta que se apruebe el alcance y el dry-run.",
+      "title": "Corregir solo propagación futura",
+      "body": "Alinear el trigger y añadir el guardarraíl, dejando los datos existentes para una revisión operativa posterior.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Separar la reconciliación",
-    "body": "Corregir trigger y prueba en un cambio acotado, y definir el backfill por separado con conteo, muestras y validación operativa.",
+    "title": "Reconciliación acotada y validada",
+    "body": "Preparar candidatos por canal, contrastar una muestra con Atlas y el precio remoto, y ejecutar solo el conjunto aprobado.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "Lyno",
-    "reason": "Su historial conecta con el trigger actual y la prueba de coherencia; es el candidato de enrutamiento más respaldado por el historial local.",
+    "person": "mariatapia-hamelyn",
+    "reason": "Figura como responsable asignada en la issue y como contribuidora reciente del registry de marketplaces.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/11153.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/11153#issuecomment-6363135552",
-    "reviewedAt": "2026-10-23T10:45:35.792Z",
-    "mainSha": "0fd02eefe53aa4fd7b1352f23603726396e11c55"
+    "reviewedAt": "2026-10-24T11:45:08.511Z",
+    "mainSha": "a81253047fae0772d3c220773fd288e9c5af221b"
   }
 }
