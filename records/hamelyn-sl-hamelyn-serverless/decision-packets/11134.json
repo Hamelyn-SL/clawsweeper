@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-24T07:54:44.037Z",
+  "updatedAt": "2026-10-23T07:48:28Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 11134,
+    "title": "Amazon MX report parks three newly confirmed BUYABLE listings from stale Incomplete rows",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/11134",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "triage:done",
+      "P2"
+    ],
+    "createdAt": "2026-10-23T06:00:49Z",
+    "updatedAt": "2026-10-23T07:48:28Z"
+  },
+  "lane": "security_boundary",
+  "priority": "P2",
+  "question": "¿Debe el report MX revalidar Listings y recuperar automáticamente solo los mirrors `REPORT_INACTIVE` confirmados `BUYABLE`, o limitarse a evitar el aparcado de confirmaciones posteriores al export?",
+  "rationale": "La recuperación puede cambiar estado operativo de marketplace y requiere acordar alcance, presupuesto de consultas y garantías de concurrencia antes de implementar.",
+  "options": [
+    {
+      "title": "Revalidar y recuperar con guardas",
+      "body": "Permitir consulta remota acotada, corte `requestedAt` y recuperación exclusiva con `BUYABLE`, cantidad positiva y CAS exacto.",
+      "recommended": true
+    },
+    {
+      "title": "Solo proteger confirmaciones recientes",
+      "body": "Evitar el aparcado cuando la confirmación es posterior a la solicitud del export y dejar la recuperación para un flujo separado.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Revalidar y recuperar con guardas",
+    "body": "Permitir consulta remota acotada, corte `requestedAt` y recuperación exclusiva con `BUYABLE`, cantidad positiva y CAS exacto.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Su historial reciente en el reporte Amazon lo sitúa cerca del comportamiento afectado y puede orientar el alcance del cambio.",
+    "confidence": "low"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/11134.md",
+    "reviewedAt": "2026-10-24T07:54:44.037Z",
+    "mainSha": "a81253047fae0772d3c220773fd288e9c5af221b"
+  }
+}
