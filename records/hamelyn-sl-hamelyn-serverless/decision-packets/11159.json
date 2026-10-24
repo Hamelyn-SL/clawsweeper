@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-23T12:33:12.126Z",
-  "updatedAt": "2026-10-23T12:27:12Z",
+  "generatedAt": "2026-10-24T12:50:39.400Z",
+  "updatedAt": "2026-10-23T13:14:38Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,49 +12,48 @@
     "labels": [
       "app:infrastructure",
       "question",
-      "triage:queued",
+      "triage:needs-info",
       "reporter:alejandrodiaz",
-      "P2",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2"
     ],
     "createdAt": "2026-10-23T12:00:21Z",
-    "updatedAt": "2026-10-23T12:27:12Z"
+    "updatedAt": "2026-10-23T13:14:38Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se debe exponer ahora la atribución en `mongodata.ordersells` como JSON, esperar a definir el cálculo de CAC o publicar solo columnas derivadas seleccionadas; y se autoriza que `fbp`, `fbc` y las cookies `_gcl_*` lleguen a BigQuery?",
-  "rationale": "La respuesta determina el momento, la granularidad y la exposición de identificadores en la capa analítica; el código actual no permite inferir la política de datos deseada.",
+  "question": "¿Se autoriza exponer la atribución después del despliegue de la captura y qué campos concretos —incluidos `fbp`, `fbc` y cookies `_gcl_*`— pueden materializarse en `mongodata.ordersells`?",
+  "rationale": "El contenido contiene identificadores de atribución y cookies, y el equipo todavía no ha fijado el propósito ni los límites de exposición para consumidores de BigQuery; el código no puede determinar esa política por sí solo.",
   "options": [
     {
-      "title": "Esperar a definir CAC",
-      "body": "Aplazar cambios en BigQuery hasta que marketing concrete las métricas y los campos necesarios.",
+      "title": "Exponer JSON seleccionado tras el despliegue",
+      "body": "Autorizar la materialización de un objeto JSON con una lista acordada de campos y excluir cookies/identificadores que marketing no necesite.",
       "recommended": true
     },
     {
-      "title": "Añadir JSON aprobado",
-      "body": "Exponer `attribution` como JSON solo tras confirmar expresamente qué identificadores y cookies se permiten.",
+      "title": "Esperar al análisis de CAC",
+      "body": "Mantener la atribución solo en la tabla cruda hasta que marketing concrete consultas y campos requeridos.",
       "recommended": false
     },
     {
-      "title": "Publicar columnas seleccionadas",
-      "body": "Añadir únicamente campos derivados necesarios para los informes y excluir identificadores de cookies salvo aprobación explícita.",
+      "title": "Materializar columnas derivadas",
+      "body": "Acordar campos planos para consultas frecuentes además del JSON, asumiendo el coste de mantener esa proyección.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Esperar a definir CAC",
-    "body": "Aplazar cambios en BigQuery hasta que marketing concrete las métricas y los campos necesarios.",
+    "title": "Exponer JSON seleccionado tras el despliegue",
+    "body": "Autorizar la materialización de un objeto JSON con una lista acordada de campos y excluir cookies/identificadores que marketing no necesite.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "mariatapia-hamelyn",
-    "reason": "Su trabajo reciente en consultas de pedidos para marketing la sitúa cerca del uso analítico que motiva la decisión.",
-    "confidence": "medium"
+    "person": "JavierHamelyn",
+    "reason": "Es el contribuidor reciente identificado en el historial local de la query; la decisión también requiere a María y Pablo, citados en la discusión como responsables del acuerdo.",
+    "confidence": "low"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/11159.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/11159#issuecomment-6364979268",
-    "reviewedAt": "2026-10-23T12:33:12.126Z",
-    "mainSha": "0154293341a1cc0c5afdee204c959288ff4a6c91"
+    "reviewedAt": "2026-10-24T12:50:39.400Z",
+    "mainSha": "a81253047fae0772d3c220773fd288e9c5af221b"
   }
 }
