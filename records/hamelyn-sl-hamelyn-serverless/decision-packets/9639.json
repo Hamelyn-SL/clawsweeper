@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-17T08:54:18.539Z",
-  "updatedAt": "2026-10-17T08:16:51Z",
+  "generatedAt": "2026-10-24T08:55:58.110Z",
+  "updatedAt": "2026-10-24T08:17:41Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -17,38 +17,37 @@
       "P2"
     ],
     "createdAt": "2026-09-17T06:28:55Z",
-    "updatedAt": "2026-10-17T08:16:51Z"
+    "updatedAt": "2026-10-24T08:17:41Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Las ejecuciones B2B con escrituras parciales deben reanudarse automáticamente desde el progreso persistido o bloquearse para recuperación manual?",
-  "rationale": "La ruta actual conserva el claim tras escrituras parciales y no las reanuda; elegir una política implica decidir cómo proteger pedidos, espejos y efectos externos ante repeticiones.",
+  "question": "¿Debe el ejecutor B2B reanudar automáticamente las ejecuciones parciales desde el progreso persistido, o bloquearlas para recuperación manual?",
+  "rationale": "La recuperación automática y la manual implican distintos efectos sobre pedidos, espejos, claims y preparaciones Skypod; el refactor existente no resuelve esa elección ni la issue aporta una decisión confirmada.",
   "options": [
     {
       "title": "Reanudación durable",
-      "body": "Persistir progreso por paso e implementar continuación idempotente después de interrupciones.",
-      "recommended": false
+      "body": "Persistir progreso por paso y reanudar idempotentemente, con pruebas de interrupción entre grupos y durante Skypod.",
+      "recommended": true
     },
     {
-      "title": "Recuperación manual",
-      "body": "Mantener el bloqueo y ofrecer un flujo explícito y seguro para diagnosticar y resolver ejecuciones parciales.",
-      "recommended": true
+      "title": "Recuperación manual bloqueada",
+      "body": "Conservar el bloqueo tras escrituras parciales y añadir una vía operativa explícita para inspección, aviso y recuperación segura.",
+      "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Recuperación manual",
-    "body": "Mantener el bloqueo y ofrecer un flujo explícito y seguro para diagnosticar y resolver ejecuciones parciales.",
+    "title": "Reanudación durable",
+    "body": "Persistir progreso por paso y reanudar idempotentemente, con pruebas de interrupción entre grupos y durante Skypod.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Ha participado recientemente en la implementación B2B y formuló la pregunta de política aún pendiente en la discusión.",
-    "confidence": "medium"
+    "reason": "Ha trabajado recientemente en el flujo B2B y la discusión de la issue le pide concretar esta política.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/9639.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/9639#issuecomment-5793622442",
-    "reviewedAt": "2026-10-17T08:54:18.539Z",
-    "mainSha": "e3c66f16fe7382452dd6a7298981d6b1c22b52d3"
+    "reviewedAt": "2026-10-24T08:55:58.110Z",
+    "mainSha": "a81253047fae0772d3c220773fd288e9c5af221b"
   }
 }

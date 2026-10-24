@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-17T08:58:20.557Z",
-  "updatedAt": "2026-10-17T08:56:18Z",
+  "generatedAt": "2026-10-24T08:55:39.924Z",
+  "updatedAt": "2026-10-24T08:17:39Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -19,38 +19,42 @@
       "P2"
     ],
     "createdAt": "2026-10-01T10:23:24Z",
-    "updatedAt": "2026-10-17T08:56:18Z"
+    "updatedAt": "2026-10-24T08:17:39Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe Marketplace tramitar por separado la recuperación acotada de ofertas elegibles y confirmar con IBS si existe un flujo autorizado para crear fichas ausentes?",
-  "rationale": "El código ya reconcilia ofertas, pero no crea fichas; reintentar no resuelve EAN ausentes y recuperar errores heredados modifica datos con alcance operativo que requiere aprobación.",
+  "question": "¿Se limita el trabajo a validar y recuperar con aprobación las ofertas heredadas cuyo EAN ya existe en IBS, o se quiere además explorar la creación de fichas de catálogo para EAN ausentes?",
+  "rationale": "La recuperación afecta datos operativos y requiere un alcance aprobado; crear fichas añade un flujo distinto cuyo contrato con IBS no está confirmado.",
   "options": [
     {
-      "title": "Separar las actuaciones",
-      "body": "Aprobar solo una lista revalidada de ofertas recuperables y confirmar con IBS el procedimiento de alta de fichas antes de plantear cualquier ampliación.",
+      "title": "Recuperación acotada",
+      "body": "Validar la muestra con el export de IBS y autorizar únicamente la recuperación de ofertas elegibles cuyos EAN ya existan en el catálogo.",
       "recommended": true
     },
     {
-      "title": "Cerrar sin nuevas actuaciones",
-      "body": "Considerar resuelta la parte de reconciliación y no programar recuperación ni creación de fichas hasta que Marketplace aporte una nueva solicitud delimitada.",
+      "title": "Evaluar alta de fichas",
+      "body": "Abrir una decisión separada con Marketplace sobre el contrato y la viabilidad de crear fichas para EAN ausentes antes de ampliar el flujo.",
+      "recommended": false
+    },
+    {
+      "title": "Cerrar tras validar cobertura",
+      "body": "Si el export y la muestra confirman que no queda una brecha pendiente, cerrar esta solicitud con esa evidencia.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Separar las actuaciones",
-    "body": "Aprobar solo una lista revalidada de ofertas recuperables y confirmar con IBS el procedimiento de alta de fichas antes de plantear cualquier ampliación.",
+    "title": "Recuperación acotada",
+    "body": "Validar la muestra con el export de IBS y autorizar únicamente la recuperación de ofertas elegibles cuyos EAN ya existan en el catálogo.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Aportó la validación de catálogo, el resultado del canario y el análisis operativo más reciente en la discusión.",
+    "reason": "Aportó la comprobación operativa más reciente del catálogo y el estado de las ofertas; es la referencia disponible para acotar la recuperación.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10332.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10332#issuecomment-6084364128",
-    "reviewedAt": "2026-10-17T08:58:20.557Z",
-    "mainSha": "e3c66f16fe7382452dd6a7298981d6b1c22b52d3"
+    "reviewedAt": "2026-10-24T08:55:39.924Z",
+    "mainSha": "a81253047fae0772d3c220773fd288e9c5af221b"
   }
 }
