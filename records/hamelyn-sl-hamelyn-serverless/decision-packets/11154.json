@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-23T10:54:09.847Z",
-  "updatedAt": "2026-10-23T10:49:15Z",
+  "generatedAt": "2026-10-24T11:47:01.494Z",
+  "updatedAt": "2026-10-23T10:59:26Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,43 +13,42 @@
       "bug",
       "app:infrastructure",
       "reporter:pablo",
-      "triage:queued",
+      "triage:needs-info",
       "P1",
       "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-10-23T10:46:27Z",
-    "updatedAt": "2026-10-23T10:49:15Z"
+    "updatedAt": "2026-10-23T10:59:26Z"
   },
   "lane": "product_direction",
-  "priority": "P1",
-  "question": "Si falla uno de varios proveedores, ¿el cron debe recalcular con las ofertas válidas restantes o saltar el producto completo?",
-  "rationale": "La issue identifica explícitamente ambas políticas posibles, y elegirlas determina si el fallo parcial puede producir una revaluación basada en una muestra incompleta.",
+  "priority": "P2",
+  "question": "Si uno o dos proveedores fallan, pero otro devuelve ofertas válidas, ¿el cron debe recalcular con las ofertas disponibles o saltarse el producto completo?",
+  "rationale": "La respuesta cambia el comportamiento de pricing ante fallos parciales y el comentario de triage la solicita expresamente; no puede deducirse con seguridad del código existente.",
   "options": [
     {
       "title": "Usar ofertas disponibles",
-      "body": "Recalcular cuando al menos un proveedor devuelve ofertas válidas y omitir solo cuando no hay datos utilizables.",
+      "body": "Permitir la revaluación si queda al menos una oferta válida y distinguir este caso de un fallo total.",
       "recommended": true
     },
     {
-      "title": "Exigir respuesta completa",
-      "body": "Omitir la revaluación si falla cualquier proveedor para evitar cálculos con una muestra parcial.",
+      "title": "Omitir el producto",
+      "body": "No revaluar cuando falle cualquier proveedor, aunque otros devuelvan ofertas válidas.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Usar ofertas disponibles",
-    "body": "Recalcular cuando al menos un proveedor devuelve ofertas válidas y omitir solo cuando no hay datos utilizables.",
+    "body": "Permitir la revaluación si queda al menos una oferta válida y distinguir este caso de un fallo total.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "PabloMoran34",
-    "reason": "Su historial reciente incluye cambios de la fórmula de pricing Optimo y es el candidato de código más cercano disponible para esta decisión de comportamiento.",
+    "reason": "El comentario de triage le pide resolver esta política y su historial incluye cambios recientes en pricing.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/11154.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/11154#issuecomment-6363276782",
-    "reviewedAt": "2026-10-23T10:54:09.847Z",
-    "mainSha": "0fd02eefe53aa4fd7b1352f23603726396e11c55"
+    "reviewedAt": "2026-10-24T11:47:01.494Z",
+    "mainSha": "a81253047fae0772d3c220773fd288e9c5af221b"
   }
 }
