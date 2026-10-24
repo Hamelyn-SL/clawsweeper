@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-23T11:24:08.634Z",
-  "updatedAt": "2026-10-23T11:09:58Z",
+  "generatedAt": "2026-10-24T11:31:56.350Z",
+  "updatedAt": "2026-10-23T11:59:57Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,43 +13,42 @@
       "bug",
       "app:marketplace",
       "reporter:blanca",
-      "triage:queued",
+      "triage:needs-info",
       "P1",
       "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-10-23T11:08:27Z",
-    "updatedAt": "2026-10-23T11:09:58Z"
+    "updatedAt": "2026-10-23T11:59:57Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Está confirmado con FedEx que el RFC de Segunda Vida Market debe enviarse como identificador de importador en el request Ship API para los envíos MELI MX?",
-  "rationale": "El código demuestra que hoy falta el dato en el request, pero la documentación interna deja pendiente confirmar el contrato FedEx de la cuenta y el campo/tipo aceptado.",
+  "question": "¿Confirma Operaciones con FedEx el formato de importerOfRecord y el tinType para Segunda Vida Market, y la aceptación de la factura ETD del envío afectado?",
+  "rationale": "La omisión en código está verificada, pero la aceptación del formato y su efecto en el despacho dependen de la cuenta y del flujo operativo de FedEx.",
   "options": [
     {
-      "title": "Confirmar contrato con FedEx",
-      "body": "Verificar el campo y tipo de TIN con el contrato de la cuenta y después implementar el RFC del importador para MELI MX.",
+      "title": "Validar con FedEx antes del cambio",
+      "body": "Confirmar el payload requerido y la aceptación ETD del envío afectado antes de modificar el request.",
       "recommended": true
     },
     {
-      "title": "Solicitar confirmación operativa",
-      "body": "Mantener la incidencia abierta mientras operaciones obtiene de FedEx la confirmación del formato requerido.",
+      "title": "Solicitar más evidencia operativa",
+      "body": "Aportar una respuesta de FedEx o un caso confirmado que establezca el RFC y tinType que deben enviarse.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Confirmar contrato con FedEx",
-    "body": "Verificar el campo y tipo de TIN con el contrato de la cuenta y después implementar el RFC del importador para MELI MX.",
+    "title": "Validar con FedEx antes del cambio",
+    "body": "Confirmar el payload requerido y la aceptación ETD del envío afectado antes de modificar el request.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Ha contribuido recientemente al flujo MELI FedEx y a la configuración de importadores asociada.",
-    "confidence": "medium"
+    "person": "Lyno",
+    "reason": "Es la persona de historial disponible más directamente vinculada al perfil FedEx MELI; la validación concreta debe coordinarse con Operaciones.",
+    "confidence": "low"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/11157.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/11157#issuecomment-6363777469",
-    "reviewedAt": "2026-10-23T11:24:08.634Z",
-    "mainSha": "0fd02eefe53aa4fd7b1352f23603726396e11c55"
+    "reviewedAt": "2026-10-24T11:31:56.350Z",
+    "mainSha": "a81253047fae0772d3c220773fd288e9c5af221b"
   }
 }
