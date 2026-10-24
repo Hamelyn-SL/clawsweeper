@@ -18,6 +18,8 @@ import { existsSync, readFileSync, readdirSync } from "node:fs";
 import { join } from "node:path";
 
 const MAX_LISTED = 10;
+// Slack rejects a section whose text passes 3000 characters with invalid_blocks.
+const MAX_SECTION_CHARS = 2900;
 const MIN_FINDING_CONFIDENCE = 0.6;
 const PRIORITY_ORDER = { P0: 0, P1: 1, P2: 2, P3: 3, none: 4 };
 const GITHUB_API = "https://api.github.com";
@@ -181,8 +183,17 @@ function mentionFor(login, mentionMap) {
   return id ? `<@${id}>` : `@${value}`;
 }
 
-function overflowLine(total) {
-  return total > MAX_LISTED ? [`…y ${total - MAX_LISTED} más en el state repo.`] : [];
+function overflowLine(total, shown) {
+  return total > shown ? [`…y ${total - shown} más en el state repo.`] : [];
+}
+
+function sectionText(heading, lines, total, emptyText) {
+  if (lines.length === 0) return [heading, emptyText].join("\n");
+  const render = (shown) =>
+    [heading, ...lines.slice(0, shown), ...overflowLine(total, shown)].join("\n");
+  let shown = lines.length;
+  while (shown > 1 && render(shown).length > MAX_SECTION_CHARS) shown -= 1;
+  return render(shown);
 }
 
 export function buildDigest({ items, humanReplies, mentionMap, days }) {
@@ -243,11 +254,12 @@ export function buildDigest({ items, humanReplies, mentionMap, days }) {
     type: "section",
     text: {
       type: "mrkdwn",
-      text: [
+      text: sectionText(
         "*1. Decisiones de producto pendientes*",
-        ...(decisionLines.length ? decisionLines : ["Ninguna. 🎉"]),
-        ...overflowLine(decisions.length),
-      ].join("\n"),
+        decisionLines,
+        decisions.length,
+        "Ninguna. 🎉",
+      ),
     },
   });
 
@@ -260,11 +272,12 @@ export function buildDigest({ items, humanReplies, mentionMap, days }) {
     type: "section",
     text: {
       type: "mrkdwn",
-      text: [
+      text: sectionText(
         "*2. Hallazgos P0-P1 sin respuesta*",
-        ...(findingLines.length ? findingLines : ["Ninguno. 🎉"]),
-        ...overflowLine(findings.length),
-      ].join("\n"),
+        findingLines,
+        findings.length,
+        "Ninguno. 🎉",
+      ),
     },
   });
 
@@ -277,11 +290,12 @@ export function buildDigest({ items, humanReplies, mentionMap, days }) {
     type: "section",
     text: {
       type: "mrkdwn",
-      text: [
+      text: sectionText(
         "*3. Cierres propuestos* (nada se cierra solo; cierra una persona)",
-        ...(proposalLines.length ? proposalLines : ["Ninguno."]),
-        ...overflowLine(proposals.length),
-      ].join("\n"),
+        proposalLines,
+        proposals.length,
+        "Ninguno.",
+      ),
     },
   });
 
