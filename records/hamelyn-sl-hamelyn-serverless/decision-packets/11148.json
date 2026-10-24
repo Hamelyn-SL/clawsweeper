@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-24T10:21:47.782Z",
+  "updatedAt": "2026-10-23T11:40:05Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 11148,
+    "title": "feat: cross b2b requests with supplier catalogs in #b2b-cruces",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/11148",
+    "state": "open",
+    "labels": [
+      "size/XXL",
+      "P2"
+    ],
+    "createdAt": "2026-10-23T09:36:35Z",
+    "updatedAt": "2026-10-23T11:40:05Z",
+    "headSha": "bc8abd54d8bb1b690fa0a575fead568d956b18f4"
+  },
+  "lane": "security_boundary",
+  "priority": "P2",
+  "question": "¿Está autorizada la creación implícita de `b2b_cruces` y sus tablas, y qué señal debe habilitar la sustitución destructiva de un catálogo?",
+  "rationale": "La política del repositorio requiere autorización explícita para crear estructuras BigQuery, y decidir si un adjunto es un catálogo completo o una solicitud/extracto afecta a la sustitución del catálogo activo; el código por sí solo no puede determinar esa intención.",
+  "options": [
+    {
+      "title": "Fallar si falta el destino y exigir anuncio de catálogo",
+      "body": "Usar solo estructuras existentes y permitir `WRITE_TRUNCATE` desde Slack únicamente cuando el mensaje anuncie expresamente una carga de catálogo.",
+      "recommended": true
+    },
+    {
+      "title": "Autorizar creación y definir otra protección",
+      "body": "Confirmar explícitamente la creación necesaria y acordar una validación alternativa, como rechazar cargas cuya cantidad de filas caiga por debajo de un umbral acordado.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Fallar si falta el destino y exigir anuncio de catálogo",
+    "body": "Usar solo estructuras existentes y permitir `WRITE_TRUNCATE` desde Slack únicamente cuando el mensaje anuncie expresamente una carga de catálogo.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "PabloMoran34",
+    "reason": "Figura como responsable del trabajo B2B propuesto y como contribuidor anterior del parser compartido; la autorización de estructuras requiere además confirmación de quien tenga autoridad sobre el destino.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/11148.md",
+    "reviewedAt": "2026-10-24T10:21:47.782Z",
+    "mainSha": "a81253047fae0772d3c220773fd288e9c5af221b"
+  }
+}
