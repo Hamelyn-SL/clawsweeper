@@ -161,3 +161,41 @@ test("buildDigest marks unchecked replies and falls back to plain logins", () =>
   assert.match(text, /respuesta sin comprobar/);
   assert.match(text, /Ninguna\. 🎉/);
 });
+
+test("buildDigest keeps every section under the 3000 characters Slack accepts", () => {
+  const total = 12;
+  const items = Array.from({ length: total }, (_, index) => {
+    const number = 9000 + index;
+    return record({
+      number,
+      type: "issue",
+      url: `https://github.com/Hamelyn-SL/hamelyn-serverless/issues/${number}`,
+      title: "t".repeat(70),
+      requires_product_decision: "true",
+      maintainer_decision: JSON.stringify({
+        required: true,
+        kind: "product_direction",
+        question: "q".repeat(160),
+        rationale: "Cambia una API pública.",
+        options: [{ title: "o".repeat(60), body: "Definir.", recommended: true }],
+        likelyOwner: { person: "JavierHamelyn", reason: "Dueño.", confidence: "high" },
+      }),
+    });
+  });
+  const { blocks, counts } = buildDigest({
+    items,
+    humanReplies: new Map(),
+    mentionMap: { JavierHamelyn: "U03S59X3FK5" },
+    days: 7,
+  });
+  assert.equal(counts.decisions, total);
+  const sections = blocks
+    .filter((block: { type: string }) => block.type === "section")
+    .map((block: { text: { text: string } }) => block.text.text);
+  for (const text of sections)
+    assert.ok(text.length <= 3000, `section of ${text.length} characters`);
+  const decisions = sections.find((text: string) => text.startsWith("*1."));
+  const shown = decisions.split("\n").filter((line: string) => line.startsWith("• ")).length;
+  assert.ok(shown > 0 && shown < 10, `${shown} decisions shown`);
+  assert.match(decisions, new RegExp(`…y ${total - shown} más en el state repo\\.`));
+});
