@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-23T08:53:45.002Z",
-  "updatedAt": "2026-10-23T08:30:48Z",
+  "generatedAt": "2026-10-24T09:00:09.478Z",
+  "updatedAt": "2026-10-23T11:42:11Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,43 +13,42 @@
       "app:infrastructure",
       "reporter:pablo",
       "feature",
-      "triage:queued",
-      "P2",
-      "clawsweeper:needs-product-decision"
+      "triage:no-change",
+      "clawsweeper:needs-product-decision",
+      "P2"
     ],
     "createdAt": "2026-10-23T08:29:43Z",
-    "updatedAt": "2026-10-23T08:30:48Z"
+    "updatedAt": "2026-10-23T11:42:11Z"
   },
-  "lane": "product_direction",
+  "lane": "security_boundary",
   "priority": "P2",
-  "question": "¿Qué tabla o dataset existente debe alojar los catálogos normalizados y se autoriza crear una tabla nueva si no existe un destino adecuado?",
-  "rationale": "La elección determina el esquema persistente y la estrategia de sustitución; la política del repositorio exige autorización explícita antes de crear estructuras de BigQuery.",
+  "question": "¿Se autoriza el uso del dataset `hamelyn-data.b2b_cruces` y de sus tablas de catálogo, y debe fallar la ingesta si alguna tabla no existe?",
+  "rationale": "La implementación propuesta carga y reemplaza datos en tablas BigQuery, mientras que la política del repositorio exige autorización expresa y prohíbe la creación implícita; el comentario de revisión indica que esta decisión aún no está resuelta.",
   "options": [
     {
-      "title": "Usar un destino existente",
-      "body": "Identificar el dataset y la tabla disponibles y adaptar la ingesta a su esquema.",
+      "title": "Usar solo estructuras autorizadas",
+      "body": "Confirmar por escrito el dataset y las tablas existentes y hacer que la ingesta falle si falta alguna.",
       "recommended": true
     },
     {
-      "title": "Autorizar una tabla nueva",
-      "body": "Aprobar explícitamente su nombre, propósito, esquema, volumen esperado y responsable antes de implementarla.",
+      "title": "Autorizar estructuras nuevas",
+      "body": "Aprobar expresamente nombres, propósito, esquema, volumen y responsable antes de permitir su creación.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Usar un destino existente",
-    "body": "Identificar el dataset y la tabla disponibles y adaptar la ingesta a su esquema.",
+    "title": "Usar solo estructuras autorizadas",
+    "body": "Confirmar por escrito el dataset y las tablas existentes y hacer que la ingesta falle si falta alguna.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "PabloMoran34",
-    "reason": "Es el solicitante asignado y autor del flujo B2B de ingesta de listados que sirve de precedente.",
-    "confidence": "medium"
+    "reason": "Es la persona asignada y autora de la implementación vinculada; puede aportar los detalles del destino y del volumen previstos para que el equipo decida.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/11146.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/11146#issuecomment-6361228405",
-    "reviewedAt": "2026-10-23T08:53:45.002Z",
-    "mainSha": "a975cf1607593d84b776b65fd31b84f9db2c04fa"
+    "reviewedAt": "2026-10-24T09:00:09.478Z",
+    "mainSha": "a81253047fae0772d3c220773fd288e9c5af221b"
   }
 }

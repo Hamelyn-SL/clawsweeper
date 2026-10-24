@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-17T09:00:52.422Z",
-  "updatedAt": "2026-10-17T08:56:21Z",
+  "generatedAt": "2026-10-24T09:00:11.303Z",
+  "updatedAt": "2026-10-24T08:17:37Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -17,43 +17,42 @@
       "P2"
     ],
     "createdAt": "2026-10-09T01:50:36Z",
-    "updatedAt": "2026-10-17T08:56:21Z"
+    "updatedAt": "2026-10-24T08:17:37Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué plazo y fecha de referencia deben activar la cancelación de pedidos Discogs `Invoice Sent`, y se aplica también a los pedidos existentes?",
-  "rationale": "La cancelación modifica el estado remoto y republicar antes de confirmarla puede duplicar la venta; ni el código ni la conversación fijan una política aprobada.",
+  "question": "¿Qué plazo y fecha de referencia deben activar la cancelación de pedidos Discogs `Invoice Sent`, y debe aplicarse también a los pedidos existentes?",
+  "rationale": "Cancelar remotamente o republicar mientras el pedido sigue abierto puede crear una segunda venta; la conversación presenta diez días como propuesta, no como regla aprobada.",
   "options": [
     {
       "title": "Mantener gestión manual",
-      "body": "No automatizar ni republicar estos pedidos hasta que Operaciones cancele o confirme su estado en Discogs.",
+      "body": "No automatizar cancelaciones ni republicaciones hasta que Operaciones resuelva cada pedido abierto en Discogs.",
       "recommended": true
     },
     {
-      "title": "Cancelar al cumplir un plazo",
-      "body": "Acordar un umbral contado desde una fecha concreta y automatizar la cancelación remota antes de restaurar el stock.",
+      "title": "Acordar un umbral y automatizar",
+      "body": "Definir el plazo y su fecha de referencia, y cancelar el pedido remoto antes de liberar el stock.",
       "recommended": false
     },
     {
-      "title": "Resolver solo los casos actuales",
-      "body": "Acordar una intervención para los pedidos existentes y dejar la automatización futura para una decisión posterior.",
+      "title": "Resolver solo el backlog actual",
+      "body": "Acordar una intervención para los pedidos existentes y dejar la automatización futura para otra decisión.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Mantener gestión manual",
-    "body": "No automatizar ni republicar estos pedidos hasta que Operaciones cancele o confirme su estado en Discogs.",
+    "body": "No automatizar cancelaciones ni republicaciones hasta que Operaciones resuelva cada pedido abierto en Discogs.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Aportó la verificación de los pedidos y describió el riesgo operativo; es la referencia disponible para concretar el criterio con Operaciones.",
+    "reason": "Es quien verificó los estados en vivo y documentó el impacto operativo y la regla candidata.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10678.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10678#issuecomment-6094036811",
-    "reviewedAt": "2026-10-17T09:00:52.422Z",
-    "mainSha": "e3c66f16fe7382452dd6a7298981d6b1c22b52d3"
+    "reviewedAt": "2026-10-24T09:00:11.303Z",
+    "mainSha": "a81253047fae0772d3c220773fd288e9c5af221b"
   }
 }

@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-17T08:59:11.004Z",
-  "updatedAt": "2026-10-17T08:56:22Z",
+  "generatedAt": "2026-10-24T09:00:12.048Z",
+  "updatedAt": "2026-10-24T08:17:36Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -17,38 +17,42 @@
       "P2"
     ],
     "createdAt": "2026-10-09T05:30:40Z",
-    "updatedAt": "2026-10-17T08:56:22Z"
+    "updatedAt": "2026-10-24T08:17:36Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe el equipo de marketplaces priorizar la reconstrucción del feed y la validación del repricing de este SKU antes de decidir un cambio de código o una recuperación comercial?",
-  "rationale": "La evidencia aportada apunta a límites remotos anteriores, pero no identifica si el feed fue incorrecto, Amazon no aplicó el cambio o hubo otro escritor; elegir una recuperación sin esa distinción puede afectar al precio autorizado.",
+  "question": "Si se confirma que los límites remotos antiguos mantienen el anuncio suprimido, ¿qué criterio debe regir la corrección del canario: corregir únicamente la coherencia del repricing, permitir una recuperación dirigida con comprobación viva de BUYABLE, o mantener el bloqueo hasta una investigación comercial adicional?",
+  "rationale": "La discusión no confirma todavía la causa remota y advierte que una recuperación o modificación de precio puede tener efectos comerciales; elegir entre corregir el rango, reactivar el anuncio o conservar el bloqueo requiere intención del equipo de marketplaces.",
   "options": [
     {
-      "title": "Validar primero el feed",
-      "body": "Aportar el mensaje y resultado del feed, la versión desplegada y un Listings GET actual antes de decidir el cambio.",
+      "title": "Coherencia de repricing únicamente",
+      "body": "Actualizar y validar el rango junto al precio en el repricing, sin desbloquear automáticamente el anuncio aparcado.",
       "recommended": true
     },
     {
-      "title": "Tratarlo como gestión comercial",
-      "body": "Mantener el aparcado y resolver el listing fuera del pipeline si el equipo confirma que no corresponde a un defecto de código.",
+      "title": "Recuperación dirigida con control remoto",
+      "body": "Permitir una recuperación solo tras verificar estado BUYABLE y aplicar una escritura condicionada para el canario.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener aparcado",
+      "body": "No cambiar el anuncio hasta confirmar el procesamiento remoto y autorizar expresamente una intervención comercial puntual.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Validar primero el feed",
-    "body": "Aportar el mensaje y resultado del feed, la versión desplegada y un Listings GET actual antes de decidir el cambio.",
+    "title": "Coherencia de repricing únicamente",
+    "body": "Actualizar y validar el rango junto al precio en el repricing, sin desbloquear automáticamente el anuncio aparcado.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Es la persona asignada y su historial cubre cambios de umbrales y tratamiento de listings inactivos.",
-    "confidence": "high"
+    "reason": "Figura como responsable asignado y el triage lo identifica junto al equipo de marketplaces para revisar la evidencia causal.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/10688.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/10688#issuecomment-6075258395",
-    "reviewedAt": "2026-10-17T08:59:11.004Z",
-    "mainSha": "e3c66f16fe7382452dd6a7298981d6b1c22b52d3"
+    "reviewedAt": "2026-10-24T09:00:12.048Z",
+    "mainSha": "a81253047fae0772d3c220773fd288e9c5af221b"
   }
 }
